@@ -15,11 +15,6 @@
 
 <header>
     <div class="wrap">
-        <div class="main-controls">
-            <a href="#">New Ticket</a>
-            <div class="main-controls__sep"></div>
-            <a href="#">Login</a>
-        </div>
 
         <nav>
             {% for collection in site.data.chapters%}
@@ -130,7 +125,7 @@
         </ul>
         <div class="footer__bar">
             <div class="footer__copy">
-                &copy; 2017 Elastic.io GMBH
+                &copy; Copyright {{ 'now' | date: "%Y" }} elastic.io GmbH
             </div>
             <div class="social">
                 <a href="#" target="_blank" class="social__item fa fa-twitter"></a>
