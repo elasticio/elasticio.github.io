@@ -1,0 +1,32 @@
+getting-started:
+  title: Getting Started
+  description: The place to start learning our integration platform
+  class: categories__item_getting_started
+  welcommer-class: welcomer__icon_getting_started
+  fa-icon: fa-rocket
+  sections:
+    - title: Basic Concepts
+      description: Learn basic concepts of our integration platform to be ready to dive into more details
+    - title: Tutorials
+      description: Comprehensive tutorials and how-tos guding your through varios scenarios
+developer-guide:
+  title: Developer Guide
+  description: Developer bible on creation of integration components
+  class: categories__item_developer_guide
+  welcommer-class: welcomer__icon_developer_guide
+  fa-icon: fa-code
+  sections:
+    - title: Developing Components
+      description: Articles on component development and SDKs
+integrator-guide:
+  title: Integrator Guide
+  description: Everything you need to know to master creation of integration flows
+  class: categories__item_integrator_guide
+  welcommer-class: welcomer__icon_integrator_guide
+  fa-icon: fa-plug
+references:
+  title: References
+  description: Component structure references, classes and JSON Schema
+  class: categories__item_references
+  welcommer-class: welcomer__icon_references
+  fa-icon: fa-book

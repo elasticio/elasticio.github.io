@@ -1,0 +1,9 @@
+collections:
+  getting-started:
+      output: true
+  developer-guide:
+     output: true
+  integrator-guide:
+     output: true
+  references:
+     output: true

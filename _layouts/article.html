@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<div class="layout">
+    <div class="wrap">
+        <div class="breadcrumbs">
+            <a href="/" class="breadcrumbs__item">Home</a>
+            <a href="/{{page.collection}}" class="breadcrumbs__item">{{site.data.chapters[page.collection].title}}</a>
+            <span class="breadcrumbs__item">{{page.title}}</span>
+        </div>
+
+        {% assign related = site[page.collection] | where:'section', page.section %}
+        <div class="layout__side">
+            <div class="section-info">
+                <div class="section-info__icon section-info__icon_getting_started">
+                    <i class="fa fa-rocket"></i>
+                </div>
+                <div class="section-info__tit">
+                    More from: <span class="section-info__name">{{page.section}}</span>
+                </div>
+            </div>
+            <ul class="link-box">
+                <li class="link-box__item">
+                    <div class="link-box__holder">
+                        {% for item in related %}
+                        {% if item.url != page.url %}
+                        <a class="link-box__link" href="{{item.url}}">{{item.title}}</a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="layout__content">
+            <div class="article">
+                <h2>{{page.title}}</h2>
+                {{content}}
+            </div>
+
+            <div class="question">
+                <div class="question__tit">Did you find it helpful?</div>
+                <div class="buttons">
+                    <button class="button">Yes</button>
+                    <button class="button button_minor">Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="wrap">
+    <div class="breadcrumbs">
+        <a href="/" class="breadcrumbs__item">Home</a>
+        <span class="breadcrumbs__item">{{page.title}}</span>
+    </div>
+</div>
+{% assign chapter = site.data.chapters[page.collection] %}
+<div class="welcomer welcomer_icon">
+    <div class="wrap">
+        <div class="welcomer__icon {{chapter.welcommer-class}}"><i class="fa {{chapter.fa-icon}}"></i></div>
+        <div class="welcomer__tit">{{page.title}}</div>
+        <div class="welcomer__text">{{chapter.description}}</div>
+    </div>
+</div>
+
+<div class="link-box link-box_wide">
+    <div class="wrap">
+
+        <div class="link-box__list">
+
+            {% for section in chapter.sections %}
+
+            {% assign items = site[page.collection]| where: 'section': section.title | sort: 'order' %}
+            <ul class="link-box__column">
+                <li class="link-box__item">
+                    <div class="link-box__tit">{{section.title}}<div class="counter">{{items.size}}</div></div>
+                    <div class="link-box__desc">{{section.description}}</div>
+                    <div class="link-box__holder">
+                        {% for item in items %}
+                        <a class="link-box__link" href="{{item.url}}">{{item.title}}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="question">
+    <div class="question__tit">Didn’t find what you were looking for?</div>
+    <div class="buttons">
+        <button class="button">Contact Support</button>
+        <button class="button button_minor">New Ticket</button>
+    </div>
+</div>

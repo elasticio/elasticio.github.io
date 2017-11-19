@@ -1,0 +1,88 @@
+---
+layout: default
+---
+
+<div class="welcomer">
+    <div class="wrap">
+        <div class="welcomer__tit">Documentation Overview</div>
+        <div class="welcomer__text">Use the documentation on this site to learn how to use our API’s<br>& Learn best practices</div>
+    </div>
+</div>
+
+<div class="categories">
+    <div class="wrap">
+        <div class="categories__list">
+            {% for collection in site.data.chapters%}
+            <a href="{{collection[0]}}" class="categories__item {{collection[1].class}}">
+                <span class="categories__inner">
+                    <span class="categories__icon"></span>
+                    <span class="categories__name">{{collection[1].title}}</span>
+                    <span class="categories__desc">{{collection[1].description}}</span>
+                </span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="link-box">
+    <div class="wrap">
+        <div class="link-box__list">
+            <ul class="link-box__column">
+                <li class="link-box__item">
+                    <div class="link-box__tit">Integration Designer<div class="counter">4</div></div>
+                    <div class="link-box__holder">
+                        <a class="link-box__link" href="#">Integration component and functions</a>
+                        <a class="link-box__link" href="#">What is an integration flow?</a>
+                        <a class="link-box__link" href="#">Architecture</a>
+                        <a class="link-box__link" href="#">Flow execution details</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="link-box__column">
+                <li class="link-box__item">
+                    <div class="link-box__tit">Component Reference<div class="counter">17</div></div>
+                    <div class="link-box__holder">
+                        <a class="link-box__link" href="#">Component Descriptor Structure</a>
+                        <a class="link-box__link" href="#">elastic.io SDK</a>
+                        <a class="link-box__link" href="#">Root Object SDK</a>
+                        <span class="link-box__show">14 hidden articles.<i class="fa fa-angle-down"></i></span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="link-box__column">
+                <li class="link-box__item">
+                    <div class="link-box__tit">REST API<div class="counter">2</div></div>
+                    <div class="link-box__holder">
+                        <a class="link-box__link" href="#">
+                            <span class="label label_stable">Stable</span>
+                            REST API v1<i class="fa fa-external-link"></i>
+                        </a>
+                        <a class="link-box__link" href="#">
+                            <span class="label label_beta">Beta</span>
+                            REST API v2<i class="fa fa-external-link"></i>
+                        </a>
+                    </div>
+                </li>
+                <li class="link-box__item">
+                    <div class="link-box__tit">SDK<div class="counter">1</div></div>
+                    <div class="link-box__holder">
+                        <a class="link-box__link" href="#">
+                            elastic.io SDK
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="question">
+    <div class="question__tit">Didn’t find what you were looking for?</div>
+    <div class="buttons">
+        <button class="button">Contact Support</button>
+        <button class="button button_minor">New Ticket</button>
+    </div>
+</div>
