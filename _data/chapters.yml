@@ -30,3 +30,6 @@ references:
   class: categories__item_references
   welcommer-class: welcomer__icon_references
   fa-icon: fa-book
+  sections:
+    - title: Sailor
+      description: References on our SDKs
