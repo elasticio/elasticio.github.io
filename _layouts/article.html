@@ -9,17 +9,20 @@ layout: default
             <span class="breadcrumbs__item">{{page.title}}</span>
         </div>
 
-        {% assign related = site[page.collection] | where:'section', page.section %}
         <div class="layout__side">
             <div class="section-info">
                 <div class="section-info__icon section-info__icon_getting_started">
                     <i class="fa fa-rocket"></i>
                 </div>
                 <div class="section-info__tit">
-                    More from: <span class="section-info__name">{{page.section}}</span>
+                    Related articles
                 </div>
             </div>
             <ul class="link-box">
+                {% for collection in site.data.chapters%}
+                {% assign collectionName = collection[0] %}
+                {% assign related = site[collectionName] | where:'category', page.category%}
+                {% if related.size > 0 %}
                 <li class="link-box__item">
                     <div class="link-box__holder">
                         {% for item in related %}
@@ -29,6 +32,8 @@ layout: default
                         {% endfor %}
                     </div>
                 </li>
+                {% endif %}
+                {% endfor %}
             </ul>
         </div>
         <div class="layout__content">
