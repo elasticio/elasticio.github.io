@@ -15,21 +15,31 @@
 </head>
 <body>
 
-<header>
-    <div class="wrap">
+<div class="page">
 
-        <nav>
-            {% for collection in site.data.chapters%}
-            <a href="/{{collection[0]}}">{{collection[1].title}}</a>
-            {% endfor %}
-        </nav>
-        <a href="/" class="logo">
-            <span class="logo__ico"></span>{{site.data.tenant.name}} <span class="logo__section"></span>
-        </a>
-    </div>
-</header>
+    <header>
+        <div class="wrap">
 
-{{ content }}
+            <div class="search">
+                <i class="search__ico"></i>
+                <div class="search__inner">
+                    <input type="text" name="q" id="q" class="search__input" placeholder="Search Docs">
+                </div>
+            </div>
+
+            <a href="/" class="logo"></a>
+
+            <nav>
+                {% for collection in site.data.chapters%}
+                <a href="/{{collection[0]}}">{{collection[1].title}}</a>
+                {% endfor %}
+            </nav>
+        </div>
+    </header>
+
+    {{ content }}
+    <div class="footer__spacer"></div>
+</div>
 
 <footer>
     <div class="wrap">

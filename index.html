@@ -15,7 +15,7 @@ layout: default
             {% for collection in site.data.chapters%}
             <a href="{{collection[0]}}" class="categories__item {{collection[1].class}}">
                 <span class="categories__inner">
-                    <span class="categories__icon"></span>
+                    <span class="categories__icon"><i class="fa {{collection[1].fa-icon}}"></i></span>
                     <span class="categories__name">{{collection[1].title}}</span>
                     <span class="categories__desc">{{collection[1].description}}</span>
                 </span>
