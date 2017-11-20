@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>elastic.io Documenation</title>
+    <title>{{site.data.tenant.name}} Documenation</title>
 
     <link href="../assets/css/common.css" rel="stylesheet">
     <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
             {% endfor %}
         </nav>
         <a href="/" class="logo">
-            <span class="logo__ico"></span>Elastic.io <span class="logo__section"></span>
+            <span class="logo__ico"></span>{{site.data.tenant.name}} <span class="logo__section"></span>
         </a>
     </div>
 </header>
@@ -35,7 +35,7 @@
     <div class="wrap">
         <div class="footer__bar">
             <div class="footer__copy">
-                &copy; Copyright {{ 'now' | date: "%Y" }} elastic.io GmbH
+                &copy; Copyright {{ 'now' | date: "%Y" }} {{site.data.tenant.companyName}}
             </div>
         </div>
     </div>

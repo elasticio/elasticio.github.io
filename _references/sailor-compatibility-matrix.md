@@ -21,7 +21,7 @@ And more      | With an escaped '\|'         ||
 | :--- | :--- | :--- | :--- |
 |  Request-reply |  Yes |  Yes | Yes  |
 
-elastic.io follows the Semver semantics for the Sailor releases. In order to keep the compatibility matrix
+{{site.data.tenant.name}} follows the Semver semantics for the Sailor releases. In order to keep the compatibility matrix
 manageable, we might skip patch releases here.
 
 ## Node.js - package.json
