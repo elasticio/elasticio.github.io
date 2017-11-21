@@ -58,8 +58,8 @@
 <script type="text/html" id="hit-template">
 {% raw %}
     <div class="hit">
-        <h2 class="hit-title">{{{_highlightResult.title.value}}}</h2>
-        <p class="hit-text">{{{_highlightResult.text.value}}}</p>
+        <h2 class="hit-title"><a href="{{{url}}}">{{{_highlightResult.title.value}}}</a></h2>
+        <p class="hit-text"><a href="{{{url}}}">{{{_highlightResult.text.value}}}</a></p>
     </div>
 {% endraw %}
 </script>
