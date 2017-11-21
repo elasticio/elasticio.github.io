@@ -24,6 +24,13 @@ integrator-guide:
   class: categories__item_integrator_guide
   welcommer-class: welcomer__icon_integrator_guide
   fa-icon: fa-plug
+  sections:
+    - title: Building integration flows
+      description: Articles on how to build integration flows effectively
+    - title: Data transformation
+      description: Articles on how to query, transform and map data between steps of an integration flow
+    - title: Integration patterns
+      description: Articles on how to create complex non-linear integration flows
 references:
   title: References
   description: Component structure references, classes and JSON Schema

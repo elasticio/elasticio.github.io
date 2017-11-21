@@ -7,3 +7,7 @@ collections:
      output: true
   references:
      output: true
+
+algolia:
+  application_id: 'V2486N1OKP'
+  index_name:     'test_elasticio'

@@ -6,4 +6,4 @@ order: 1
 category: integration-flow
 ---
 
-Lorem ipsum
+In this article we will cover how to create your first integration flow.
