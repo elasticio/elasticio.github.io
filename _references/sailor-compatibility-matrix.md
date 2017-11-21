@@ -8,18 +8,13 @@ Starting from version 2.0.0, sailors for Java and Node.js programming languages 
 If a feature is available in a given version, you can be sure that Sailors for both programming languages are
 supporting this feature. The following table shows the support of the platform features in Sailor versions:
 
-|             |          Grouping           ||
-First Header  | Second Header | Third Header |
- ------------ | :-----------: | -----------: |
-Content       |          *Long Cell*        ||
-Content       |   **Cell**    |         Cell |
-
-New section   |     More      |         Data |
-And more      | With an escaped '\|'         ||
-
-| Features | v2.0.0 | v2.1.0 | v2.1.0 |
+| Features | v2.0.x | v2.1.x | v2.2.x |
 | :--- | :--- | :--- | :--- |
 |  Request-reply |  Yes |  Yes | Yes  |
+|  Startup Hook |  Yes |  Yes | Yes  |
+|  Init Hook |  Yes |  Yes | Yes  |
+|  Passthrough |  - |  Yes | Yes  |
+|  Shutdown Hook |  - |  - | Yes  |
 
 {{site.data.tenant.name}} follows the Semver semantics for the Sailor releases. In order to keep the compatibility matrix
 manageable, we might skip patch releases here.

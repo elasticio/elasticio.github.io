@@ -1,9 +1,9 @@
 ---
-title: Building a component in Node.js
+title: Building a component in Java
 layout: article
 section: Developing Components
 category: component
-order: 2
+order: 3
 ---
 
 Lorem ipsum

@@ -1,9 +1,9 @@
 ---
-title: Building a component in Node.js
+title: Deploying a component
 layout: article
 section: Developing Components
 category: component
-order: 2
+order: 5
 ---
 
 Lorem ipsum

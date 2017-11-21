@@ -1,8 +1,8 @@
 ---
-title: Take a tour of the product
+title: What is a credential?
 layout: article
 section: Basic Concepts
-order: 4
+order: 3
 ---
 
 Lorem ipsum

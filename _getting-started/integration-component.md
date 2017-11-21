@@ -6,4 +6,4 @@ order: 1
 category: component
 ---
 
-Lorem ipsum
+An integration component is
