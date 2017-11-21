@@ -1043,10 +1043,19 @@ span.breadcrumbs__item:after {
   top: 100%;
   right: -1px;
   left: -1px;
-  margin-top: -2px;
+  margin-top: -2px; }
+
+.ais-hits {
   background: #fff;
   border: 1px solid #cfd2d6;
   border-radius: 0 0 5px 5px; }
+
+.ais-hits__empty {
+  padding: 10px 20px 10px 38px;
+  color: #879DB5; }
+
+.ais-hits__empty em {
+  color: #445265; }
 
 .autocomplete__item,
 .ais-hits--item {
@@ -1061,6 +1070,13 @@ span.breadcrumbs__item:after {
   margin-bottom: 0;
   color: #445265; }
 
+.ais-hits--item .hit-title a,
+.ais-hits--item .hit-title a:link,
+.ais-hits--item .hit-title a:active,
+.ais-hits--item .hit-title a:visited,
+.ais-hits--item .hit-title a:hover {
+  color: inherit; }
+
 .autocomplete__item .desc,
 .ais-hits--item .desc,
 .autocomplete__item .hit-text,
@@ -1069,6 +1085,13 @@ span.breadcrumbs__item:after {
   display: block;
   line-height: 1.4;
   color: #879DB5; }
+
+.ais-hits--item .hit-text a,
+.ais-hits--item .hit-text a:link,
+.ais-hits--item .hit-text a:active,
+.ais-hits--item .hit-text a:visited,
+.ais-hits--item .hit-text a:hover {
+  color: inherit; }
 
 .autocomplete__item:hover,
 .autocomplete__item.hover,
