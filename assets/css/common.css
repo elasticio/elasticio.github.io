@@ -986,6 +986,18 @@ span.breadcrumbs__item:after {
   margin-bottom: 20px; }
 .article .code-tag {
   font-size: 15px; }
+.article em,
+.article i {
+  font-style: italic !important; }
+.article strong,
+.article b {
+  font-weight: 700; }
+.article del,
+.article s {
+  text-decoration: line-through; }
+.article u,
+.article strike {
+  text-decoration: underline; }
 
 .articles {
   padding-top: 40px; }
