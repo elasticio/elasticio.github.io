@@ -23,8 +23,10 @@
             <div class="search">
                 <i class="search__ico"></i>
                 <div class="search__inner">
-                    <input type="text" name="q" id="q" class="search__input" placeholder="Search Docs">
+                    <input type="text" name="q" id="search-input" class="search__input" placeholder="Search Docs">
                 </div>
+
+                <div id="hits"></div>
             </div>
 
             <a href="/" class="logo"></a>
@@ -51,5 +53,16 @@
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+
+<script type="text/html" id="hit-template">
+{% raw %}
+    <div class="hit">
+        <h2 class="hit-title">{{{_highlightResult.title.value}}}</h2>
+        <p class="hit-text">{{{_highlightResult.text.value}}}</p>
+    </div>
+{% endraw %}
+</script>
+<script src="../assets/js/search.js"></script>
 </body>
 </html>
