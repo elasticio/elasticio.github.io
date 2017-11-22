@@ -4,15 +4,14 @@ var search = instantsearch({
     indexName: 'test_elasticio',
     urlSync: false,
     searchFunction: function(helper) {
-        var searchResults = $('.search-results');
+        var searchResults = $('#hits');
         if (helper.state.query === '') {
-            console.log('Hiding search results');
             searchResults.hide();
+            $('#search-input').blur();
             return;
         }
         helper.search();
         searchResults.show();
-        console.log('Showing search results');
     }
 });
 
