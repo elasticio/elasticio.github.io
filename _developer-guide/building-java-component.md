@@ -6,9 +6,14 @@ category: component
 order: 3
 ---
 
+
+The {{site.data.tenant.name}} platform supports Java programming language for building integration components. Please read the [JavaDocs](http://www.elastic.io/javadoc/ "Java API documentation") of the Java SDK or browse the source code on [GitHub](https://github.com/elasticio/java-api "JAVA-API").
+
+
 Java is one of the supported languages that can gets used to build a component to run on elastic.io platform. To access our Java API navigate [java-API](https://github.com/elasticio/java-api) GitHub repository.
 
-To help you create a component in Java we have created a simple [Petstore component in Java](https://github.com/elasticio/petstore-component-java "Petstore Component in Java") which you can use to get started as well as [Java API documentation](http://www.elastic.io/javadoc/ "Java API documentation") if you need more details.
+To help you create a component in Java we have created a simple [Petstore component in Java](https://github.com/elasticio/petstore-component-java "Petstore Component in Java") which connects to the [Petstore API](https://petstore.elastic.io/docs/ "Petstore API") and demonstrates multiple features of the platform.
+
 
 ## Java Component Structure Overview
 
@@ -24,16 +29,16 @@ Here is the structure of the example Hello World component on our GitHub reposit
 
 ## Logo
 
-The file called **logo.png** should be present in the component. We include a generic logo which your are welcome to replace. If the logo is not included a replacement will gets added from our system as a placeholder. **We suggest you add a descriptive logo for your component.**
+If you have a logo for the component, you can place the file called logo.png in the root directory of the component. Typically the logo of the API vendor gets used as component logo. If you did not provide any logo, the component will show a generic logo for your component.
 
 Here are the requirements for the logo file:
 
-*   Do not change the name logo.png (PNG format)
-*   The logo should have 64 x 64 pixels dimension
+*   The name must be `logo.png` (PNG format). Do not change it.
+*   The logo should have at least 128 x 128 pixels in dimension.
 
 ## component.json
 
-In **component.json** we practically describe the main blocks of your component. This configuration file should include the title of your component along with the description and the method of credential verification if any. It should also include the information and dependencies of a trigger(s) and action(s) that your component has.
+The file **component.json** is the component descriptor which must be located in the root directory of the component. This descriptor is interpreted by the platform to gather all the required information to be presented to the user in the platform UI. For example, you can define simple things like component's title in the component descriptor but also the component's authentication mechanism. The descriptor is the only place to list the functionality provided by the component, the so called `triggers` and `actions`.
 
 **Please note that your `component.json` file should have/describe at least one trigger or action.**
 ```js
