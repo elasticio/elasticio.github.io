@@ -5,7 +5,9 @@ section: Developing Components
 order: 1
 ---
 
-At {{site.data.tenant.name}} platform every [integration component](/getting-started/integration-component) code resides in the hierarchical structure **developer-team/component**. Create a developer team first then the repository to deploy an integration component code.
+When developing your own [integration components](/getting-started/integration-component) for the {{site.data.tenant.name}} platform, you need to structure your work into Git repositories. Each repository represents an integration component and gets used to push your local code to {{site.data.tenant.name}} remote server. Every push results in a new deployment of the component.
+
+The access to the component repository is restricted to a team the repository belongs to. Each member of the team can change, configure and deploy a component. The team itself belongs to an organization and so only members of the organization can be invited to the team.
 
 In this guide you can learn how to:
 *   **[Manage developer teams](#manage-developer-teams)**
@@ -19,28 +21,29 @@ In this guide you can learn how to:
 
 ## Manage developer teams
 
-A developer team contains the code of any number of integration components. The team is suitable for a collaborative work on common integration component developer projects.
+A developer team controls access to the component repositories belonging to that team. The team members may collaborate on common integration component in integration projects.
 
 ### Creating a developer team
 
-To create a new developer team navigate to the Developers section and click on **+ Create new team**:
+To create a new developer team navigate to the Developers section and click on a button **+ Create new team**:
 
 ![Creating a team](/assets/img/developer-guide/team-repo/developer-team-create-new.png "Creating a team")
 
 **Please note: use letters, digits, `-` and `_` to name your team. No spaces!**
 
-After creating the team you are automatically becoming the member of that team (logically).
+After creating the team you are automatically becoming the member of that team.
 
-You can proceed to either creating your first repository in this team and uploading your custom component or you can invite your fellow developers into the same team to collaborate in the development of that particular component.
+You can proceed to either creating your first repository in this team and push your custom component or you can invite your fellow developers into the same team to collaborate in the development of that particular component.
 
 ### Invite developers into your team
 
-To invite your colleagues into your development team to work on the same custom component click **Invite developer** button:
+To invite your colleagues into your development team to work on the same custom component click **Invite developer** drop-down:
 
-![Invite a developer](/assets/img/developer-guide/team-repo/developer-team-invite-member.png "Invite a developer")
+![Invite a team member](/assets/img/developer-guide/team-repo/developer-team-members.png "Invite a team member")
 
-Your colleagues will receive an e-mail receiving an access to your development team. After inviting developers your team view on Developers section would have all your invited colleagues listed under Members section:
-![Invited team members](/assets/img/developer-guide/team-repo/develoer-team-members.png "Invited team members")
+Picture above shows a team with already invited developers and the drop-down menu with a possibility to invite more developers to the team. When you invite a developer to the team they receive an e-mail inviting them to join the team.
+
+**Please note that you can only invite members of the current organisation to this developer team.** The drop-down menu shows all the possible members that can be invited to this current team.
 
 You can skip to the integration component [repository creation section](#manage-integration-components) from here. Otherwise if you need to delete a developer team continue to the next section.
 
@@ -48,20 +51,20 @@ You can skip to the integration component [repository creation section](#manage-
 
 If you need to delete a developer team:
 *   You should have organisation admin access role and
-*   The developer team must contain no integration component repositories.
+*   The developer team must contain no integration component.
 
 If the above conditions are true, you can proceed and delete the developer team using [an API call](https://api.elastic.io/v2/docs/#delete-a-team).
 
 
 ## Manage integration components
 
-Almost every developer has worked with some sort of version control and repository management. GitHub, one of the most famous code developing and collaborating platforms, is the most famous for its use of repository practice. We use the same tactics which give developers complete autonomy to develop their code in their own sort of a **sandbox**.
+Almost every developer has worked with some sort of version control and repository management. GitHub, one of the most famous code developing and collaborating platforms, is the most famous for its use of repository practice. We use the same tactics which give developers complete autonomy to manage their code.
 
 > Please remind your fellow developers to follow the same procedure and upload their own unique SSH Key before proceeding further.
 
 ### Create a component repository
 
-For a clarity, we use the Repository/Component terms interchangeably here. Every component resides in a particular repository. To create a repository click on **New repo** button and input the desired name and press **Create**.
+As mentioned above, each repository represents a component. That's why we use repository and component terms interchangeably here. Every component resides in a particular repository. To create a repository click on **New repo** button and input the desired name and press **Create**.
 
 **Please note: As with the naming of the teams use letters, digits, `-` and `_` to name your repository. No spaces!**
 
