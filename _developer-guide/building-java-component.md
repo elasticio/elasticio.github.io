@@ -9,9 +9,6 @@ order: 3
 
 The {{site.data.tenant.name}} platform supports Java programming language for building integration components. Please read the [JavaDocs](http://www.elastic.io/javadoc/ "Java API documentation") of the Java SDK or browse the source code on [GitHub](https://github.com/elasticio/java-api "JAVA-API").
 
-
-Java is one of the supported languages that can gets used to build a component to run on elastic.io platform. To access our Java API navigate [java-API](https://github.com/elasticio/java-api) GitHub repository.
-
 To help you create a component in Java we have created a simple [Petstore component in Java](https://github.com/elasticio/petstore-component-java "Petstore Component in Java") which connects to the [Petstore API](https://petstore.elastic.io/docs/ "Petstore API") and demonstrates multiple features of the platform.
 
 
