@@ -6,129 +6,123 @@ category: component
 order: 3
 ---
 
-The {{site.data.tenant.name}} platform supports Java programming language for building integration components. Please read the [JavaDocs](http://www.elastic.io/javadoc/ "Java API documentation") of the Java SDK or browse the source code on [GitHub](https://github.com/elasticio/java-api "JAVA-API").
+The {{site.data.tenant.name}} platform supports Java programming language for building integration components.
+Please read the [JavaDocs](http://www.elastic.io/javadoc/ "Java API documentation") of the Java SDK or browse the
+source code on [GitHub](https://github.com/elasticio/java-api "JAVA-API").
 
-To help you create a component in Java we have created a simple [Petstore component in Java](https://github.com/elasticio/petstore-component-java "Petstore Component in Java") which connects to the [Petstore API](https://petstore.elastic.io/docs/ "Petstore API") and demonstrates multiple features of the platform.
+To help you create a component in Java we have created a simple
+[Petstore component in Java](https://github.com/elasticio/petstore-component-java "Petstore Component in Java")
+which connects to the [Petstore API](https://petstore.elastic.io/docs/ "Petstore API") and demonstrates multiple
+features of the platform.
 
-## Java Component Structure Overview
+## Petstore Component
 
-Here is the structure of the example Hello World component on our GitHub repository:
+Let's have a look at the structure of the Petstore component first.
 
-| **File Name** | **Type** | **Required** | **Description** |
-| --- | --- | --- | --- |
-| [logo.png](#logo) | image | suggested | Logo of your component |
-| [component.json](#componentjson)  | JSON | Yes | Description of the component structure |
-| [gradle/wrapper](#gradle) | directory | Yes | Gradle wrapper directory |
-| [build.gradle](#buildgradle) | Gradle | required | Gradle build file |
-| [src/main](#src-main) | directory | suggested | the main component directory |
+```sh
+petstore-component-java
+├── build.gradle                                (1)
+├── component.json                              (2)
+├── gradle
+│   └── wrapper                                 (3)
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew                                     (4)
+├── gradlew.bat                                 (5)
+├── logo.png                                    (6)
+├── schemas                                     (7)
+│   ├── createPet.in.json
+│   ├── createPet.out.json
+│   └── getPetsByStatus.out.json
+└── src
+    └── main
+        └── java                                (8)
+```
 
-## Logo
+The Java components for the {{site.data.tenant.name}} platform are build by [Gradle](https://gradle.org/) and so have a
+typical structure of a Gradle project. Each component has a `build.gradle` (1) file used to configure Gradle project,
+dependencies and plugins. Java components are always built with [Gradle Wrapper](https://docs.gradle.org/4.3.1/userguide/gradle_wrapper.html)
+in order to make sure that we build your component with the same version of Gradle as you did. That's why you are required
+to add Gradle wrapper (3), (4) and (5) to your project and commit it to Git.
 
-If you have a logo for the component, you can place the file called logo.png in the root directory of the component. Typically the logo of the API vendor gets used as component logo. If you did not provide any logo, the component will show a generic logo for your component.
+If you have a logo for the component, you can place the file called `logo.png` (5) in the root directory of the component.
+Typically the logo of the API vendor gets used as component logo. If you did not provide any logo, the component will
+show a generic logo for your component.
 
-Here are the requirements for the logo file:
+The directoty `src/main/java` (8) is predefined directory Gradle expects your Java sources to be located in and the
+`schemas` (7) directory is the location of JSON schemas defining the component's metatada which we will cover later in
+this article.
 
-*   The name must be `logo.png` (PNG format). Do not change it.
-*   The logo should have at least 128 x 128 pixels in dimension.
+Last but not least the `component.json` file (2) is the component descriptor interpreted by the platform to gather all
+the required information to be presented to the user in the platform UI. For example, you can define simple things like
+component's title in the component descriptor but also the component's authentication mechanism. The descriptor is
+the only place to list the functionality provided by the component, the so called `triggers` and `actions`.
 
-## component.json
+## Component descriptor
 
-The file **component.json** is the component descriptor which must be located in the root directory of the component. This descriptor is interpreted by the platform to gather all the required information to be presented to the user in the platform UI. For example, you can define simple things like component's title in the component descriptor but also the component's authentication mechanism. The descriptor is the only place to list the functionality provided by the component, the so called `triggers` and `actions`.
+As mentioned above the `component.json` file is the component descriptor interpreted by the platform to gather all the
+required information about the component. Let's explore the descriptor of the Petstore component:
 
-**Please note that your `component.json` file should have/describe at least one trigger or action.**
-```js
+```json
 {
-  "title": "Petstore API (Java)",
-  "description": "elastic.io component for the Petstore API",
-  "docsUrl": "https://github.com/elasticio/petstore-component-java",
-  "credentials": {
-    "fields": {
-      "apiKey": {
-        "label": "API key",
-        "required": true,
-        "viewClass": "TextFieldWithNoteView",
-        "note": "Please use <strong>elasticio</strong> as API key. For more details see <a href="https://petstore.elastic.io/docs/" target="_blank">Petstore API docs</a>."
-      }
-    },
-    "verifier": "io.elastic.petstore.ApiKeyVerifier"
-  },
-  "triggers": {
-    "getPetsByStatus": {
-      "main": "io.elastic.petstore.triggers.GetPetsByStatus",
-      "type": "polling",
-      "title": "Get Pets By Status (HttpClient)",
-      "description": "Retrieves pets from the Petstore API by given pet status using Apache HttpClient",
-      "fields": {
-        "status": {
-          "label": "Pet Status",
-          "required": true,
-          "viewClass": "SelectView",
-          "model": {
-            "available": "Available",
-            "pending": "Pending",
-            "sold": "Sold"
-          },
-          "prompt": "Select Pet Status"
-        }
-      },
-      "metadata": {
-        "out": "./schemas/getPetsByStatus.out.json"
-      }
-    },
-    "getPetsByStatusJaxRs": {
-      "main": "io.elastic.petstore.triggers.GetPetsByStatusJaxRs",
-      "type": "polling",
-      "title": "Get Pets By Status (JAX-RS)",
-      "description": "Retrieves pets from the Petstore API by given pet status using Java API for RESTful Web Services (JAX-RS)",
-      "fields": {
-        "status": {
-          "label": "Pet Status",
-          "required": true,
-          "viewClass": "SelectView",
-          "model": {
-            "available": "Available",
-            "pending": "Pending",
-            "sold": "Sold"
-          },
-          "prompt": "Select Pet Status"
-        }
-      },
-      "metadata": {
-        "out": "./schemas/getPetsByStatus.out.json"
-      }
-    },
-    "getPetsByStatusWithDynamicSelectModel": {
-      "main": "io.elastic.petstore.triggers.GetPetsByStatus",
-      "type": "polling",
-      "title": "Get Pets By Status With Dynamic Select Model",
-      "description": "Retrieves pets from the Petstore API by given pet status. The available statuses are retrieved from the Petstore API dynamically.",
-      "fields": {
-        "status": {
-          "label": "Pet Status",
-          "required": true,
-          "viewClass": "SelectView",
-          "model": "io.elastic.petstore.providers.PetStatusModelProvider",
-          "prompt": "Select Pet Status"
-        }
-      },
-      "metadata": {
-        "out": "./schemas/getPetsByStatus.out.json"
-      }
-    }
-  },
-  "actions": {
-    "createPet": {
-      "main": "io.elastic.petstore.actions.CreatePet",
-      "title": "Create a Pet",
-      "description": "Creates a new Pet",
-      "metadata": {
-        "in": "./schemas/createPet.in.json",
-        "out": "./schemas/createPet.out.json"
-      }
-    }
-  }
+  "title": "Petstore API (Java)",                                           (1)
+  "description": "elastic.io component for the Petstore API",               (2)
+  "docsUrl": "https://github.com/elasticio/petstore-component-java",
+  "credentials": {                                                          (3)
+    "fields": {
+      "apiKey": {
+        "label": "API key",
+        "required": true,
+        "viewClass": "TextFieldWithNoteView",
+      }
+    },
+    "verifier": "io.elastic.petstore.ApiKeyVerifier" (1)
+  },
+  "triggers": {                                                             (4)
+    ...
+  },
+  "actions": {                                                              (5)
+    ...
+  }
 }
 ```
+
+The component descriptor above defines the component title (1) and description (2). It also defines the fields used to
+ask the user to provide input for authentication (3). In this case a single field is define in which the user will input
+the API key for the Petstore API so that the component can communicate with the API on user's behalf.
+
+Now let's have a closer look on how to define triggers. The example below demonstrates the `triggers` section from the
+`component.json` component descriptor file.
+
+```json
+  "triggers": {
+    "getPetsByStatus": {                                                (1)
+      "main": "io.elastic.petstore.triggers.GetPetsByStatus",           (2)
+      "type": "polling",                                                (3)
+      "title": "Get Pets By Status (HttpClient)",
+      "fields": {                                                       (4)
+        "status": {
+          "label": "Pet Status",
+          "required": true,
+          "viewClass": "SelectView",
+          "model": {
+            "available": "Available",
+            "pending": "Pending",
+            "sold": "Sold"
+          },
+          "prompt": "Select Pet Status"
+        }
+      },
+      "metadata": {
+        "out": "./schemas/getPetsByStatus.out.json"                     (5)
+      }
+    }
+  },
+```
+
+The example above demonstrates that the trigger with id `getPetsByStatus` (1) is implemented by the `GetPetsByStatus`
+class (2). The trigger is of `polling` type (3) meaning it will wake up periodically to poll for changes in the Petstore
+API. The triggers can be configured with some fields (4) and defines out-metadata in the file `getPetsByStatus.out.json` (5).
 
 ## We are using Gradle wrapper
 
