@@ -39,9 +39,20 @@ petstore-component-java
         └── java                                (8)
 ```
 
-The Java components for the {{site.data.tenant.name}} platform are build by [Gradle](https://gradle.org/) and so have a
+The Java components for the {{site.data.tenant.name}} platform are built by [Gradle](https://gradle.org/) and so have a
 typical structure of a Gradle project. Each component has a `build.gradle` (1) file used to configure Gradle project,
-dependencies and plugins. Java components are always built with [Gradle Wrapper](https://docs.gradle.org/4.3.1/userguide/gradle_wrapper.html)
+dependencies, plugins, etc. Your build file can be a regular Gradle build file. We only require you to define the following
+dependency:
+
+````
+compile "io.elastic:sailor-jvm:2.0.1"
+````
+
+Sailor is the Java SDK for the {{site.data.tenant.name}} platform. It makes your component a citizen of the
+{{site.data.tenant.name}} platform by providing you a simple programming model for components and ensuring a smooth
+communication with the platform.
+
+Java components are always built with [Gradle Wrapper](https://docs.gradle.org/4.3.1/userguide/gradle_wrapper.html)
 in order to make sure that we build your component with the same version of Gradle as you did. That's why you are required
 to add Gradle wrapper (3), (4) and (5) to your project and commit it to Git.
 
@@ -76,12 +87,12 @@ required information about the component. Let's explore the descriptor of the Pe
         "viewClass": "TextFieldWithNoteView",
       }
     },
-    "verifier": "io.elastic.petstore.ApiKeyVerifier" (1)
+    "verifier": "io.elastic.petstore.ApiKeyVerifier"                        (4)
   },
-  "triggers": {                                                             (4)
+  "triggers": {                                                             (5)
     ...
   },
-  "actions": {                                                              (5)
+  "actions": {                                                              (6)
     ...
   }
 }
@@ -89,7 +100,11 @@ required information about the component. Let's explore the descriptor of the Pe
 
 The component descriptor above defines the component title (1) and description (2). It also defines the fields used to
 ask the user to provide input for authentication (3). In this case a single field is define in which the user will input
-the API key for the Petstore API so that the component can communicate with the API on user's behalf.
+the API key for the Petstore API so that the component can communicate with the API on user's behalf. The property
+`verifier` (4) is used to define an implementation of the `io.elastic.api.CredentialsVerifier` interface which will be
+invoked by the platform when a user credential, such as an API key, needs to be verified before storing it in the platform.
+
+The `triggers` (5) and `actions` (6) properties are used to define the component's triggers and actions.
 
 Now let's have a closer look on how to define triggers. The example below demonstrates the `triggers` section from the
 `component.json` component descriptor file.
@@ -124,74 +139,33 @@ The example above demonstrates that the trigger with id `getPetsByStatus` (1) is
 class (2). The trigger is of `polling` type (3) meaning it will wake up periodically to poll for changes in the Petstore
 API. The triggers can be configured with some fields (4) and defines out-metadata in the file `getPetsByStatus.out.json` (5).
 
-## We are using Gradle wrapper
+## Verifying credentials
 
-To build this component we are using a Gradle wrapper for convenience and cross-platform implementation since this wrapper is a batch script on Windows (gradlew.bat), and a shell script (gradlew) for other operating systems.
+As mentioned above you can configure a credentials verifying in the component's descriptor. In the Petstore component
+the verifier is implemented in the `io.elastic.petstore.ApiKeyVerifier` class, shown below:
 
-When you start a Gradle build via the wrapper, Gradle will be automatically downloaded and used to run the build. When the Gradle wrapper gets installed it will add the configuration files into your repository automatically. **You should not remove these files.** Here are the files and their purpose:
+````java
+public class ApiKeyVerifier implements CredentialsVerifier {                    (1)
 
-*   gradle/wrapper - directory which contains two files:
-    *   gradle-wrapper.jar
-    *   gradle-wrapper.properties
-
-### build.gradle
-
-This is Gradle build file which includes the rules of the build.
-
-```java
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'java-library-distribution'
-
-group = 'io.elastic'
-version = '1.0.0'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-repositories {
-    maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
-    mavenCentral()
-    mavenLocal()
+    @Override
+    public void verify(final JsonObject configuration)
+        throws InvalidCredentialsException {                                    (2)
+        try {
+            final JsonObject user
+                = HttpClientUtils.getSingle("/user/me", configuration);         (3)
+        } catch (Exception e) {                                                 (4)
+            throw new InvalidCredentialsException("Failed to verify credentials", e);
+        }
+    }
 }
+````
 
-dependencies {
-    compile "io.elastic:sailor-jvm:2.0.1"
-    compile "org.glassfish.jersey.core:jersey-client:2.25.1"
-    compile "org.glassfish.jersey.media:jersey-media-json-processing:2.25.1"
-}
+The `ApiKeyVerifier` class above is an implementation of the `io.elastic.api.CredentialsVerifier` interface (1) which
+defines the method `verify` (2). This method takes a `JsonObject` which represents the component's configuration and may
+throw an `InvalidCredentialsException` exception. The component's configuration holds the values user input into the
+credentials fields defined in `component.json` (see above). The verification above is implemented by sending a simple
+request to the Petstore API (3). If the request succeeds, the `verify` method's execution completes successfully and the
+credentials as assumed to be valid. Otherwise an `InvalidCredentialsException` is thrown to signla the platform that the
+provided credentials (API key) is invalid. An error will be displayed to the user.
 
-uploadArchives {
-    repositories {
-        mavenLocal()
-    }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
-}
-```
-
-## src/main
-
-This directory contains all the relevant dependency files and programs necessary for this component to work:
-
-*   `java/io/elastic/petstore`
-    *   `actions`
-        *   `CreatePet.java`
-    *   `providers`
-        *   `PetStatusModelProvider.java`
-    *   `triggers`
-        *   `GetPetsByStatus.java`
-        *   `GetPetsByStatusJaxRs.java`
-    *   `ApiKeyVerifier.java`
-    *   `Constants.java`
-    *   `HttpClientUtils.java`
-*   `schemas`
-    *   `getHello.out.json`
-    *   `updateHello.in.json`
-    *   `updateHello.out.json`
+## Implementing a trigger
