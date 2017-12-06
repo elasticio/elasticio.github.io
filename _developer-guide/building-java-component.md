@@ -132,7 +132,7 @@ Now let's have a closer look on how to define triggers. The example below demons
         "out": "./schemas/getPetsByStatus.out.json"                     (5)
       }
     }
-  },
+  }
 ```
 
 The example above demonstrates that the trigger with id `getPetsByStatus` (1) is implemented by the `GetPetsByStatus`

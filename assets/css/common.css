@@ -871,7 +871,8 @@ footer {
 span.breadcrumbs__item:after {
   display: none; }
 
-.code-tag {
+.code-tag,
+.highlighter-rouge {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   display: inline-block;
   height: 21px;
@@ -882,14 +883,20 @@ span.breadcrumbs__item:after {
   color: #445265; }
 
 .autocomplete__item .code-tag,
-.ais-hits--item .code-tag {
+.ais-hits--item .code-tag,
+.autocomplete__item .highlighter-rouge,
+.ais-hits--item .highlighter-rouge {
   font-size: 14px;
   margin-left: 5px; }
 
 .autocomplete__item:hover .code-tag,
 .autocomplete__item.hover .code-tag,
 .ais-hits--item:hover .code-tag,
-.ais-hits--item.hover .code-tag {
+.ais-hits--item.hover .code-tag,
+.autocomplete__item:hover .highlighter-rouge,
+.autocomplete__item.hover .highlighter-rouge,
+.ais-hits--item:hover .highlighter-rouge,
+.ais-hits--item.hover .highlighter-rouge {
   background: #e6e8eb; }
 
 .highlight {
@@ -984,7 +991,8 @@ span.breadcrumbs__item:after {
   width: 100%;
   height: auto;
   margin-bottom: 20px; }
-.article .code-tag {
+.article .code-tag,
+.article .highlighter-rouge {
   font-size: 15px; }
 .article em,
 .article i {
