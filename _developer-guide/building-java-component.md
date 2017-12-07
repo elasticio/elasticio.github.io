@@ -165,7 +165,60 @@ defines the method `verify` (2). This method takes a `JsonObject` which represen
 throw an `InvalidCredentialsException` exception. The component's configuration holds the values user input into the
 credentials fields defined in `component.json` (see above). The verification above is implemented by sending a simple
 request to the Petstore API (3). If the request succeeds, the `verify` method's execution completes successfully and the
-credentials as assumed to be valid. Otherwise an `InvalidCredentialsException` is thrown to signla the platform that the
+credentials as assumed to be valid. Otherwise an `InvalidCredentialsException` is thrown to signal the platform that the
 provided credentials (API key) is invalid. An error will be displayed to the user.
 
 ## Implementing a trigger
+
+Any [integration flow](/getting-started/integration-flow) starts with a trigger which is responsible to start the flow's
+execution by providing new data to be processed. A trigger might query an API for updates and in case of new changes
+start the integration flow.
+
+Now let's have a look at how to implement a trigger defined in the `component.json` descriptor above. The following
+listing demonstrates the `GetPetsByStatus` class which is responsible to retrieve pets from the Petstore API by a status.
+If new pets can be found, the trigger will start the flow to process the new pets.
+
+````java
+public class GetPetsByStatus implements Module {                            (1)
+
+    @Override
+    public void execute(ExecutionParameters parameters) {                   (2)
+        JsonObject configuration = parameters.getConfiguration();           (3)
+
+        JsonString status = configuration.getJsonString("status");          (4)
+
+        if (status == null) {
+            throw new IllegalStateException("status field is required");    (5)
+        }
+
+        JsonArray pets = HttpClientUtils.getMany(
+                "/pet/findByStatus?status=" + status.getString(),
+                configuration);                                             (6)
+
+        JsonObject body = Json.createObjectBuilder()
+                .add("pets", pets)
+                .build();                                                   (7)
+
+        Message data
+                = new Message.Builder().body(body).build();                 (8)
+
+        parameters.getEventEmitter().emitData(data);                        (9)
+    }
+}
+````
+
+The `GetPetsByStatus` class is an implementation of the `Module` interface (1). This interface specifies the `execute`
+method (2) to implement the trigger's logic. This method takes an instance of `ExecutionParameters` which provides a
+component with data required for execution. For example, the component may retrieve its configuration (3) from these
+parameters.
+
+The trigger's author defined a field named `status` in `component.json` to let the integrator enter a status of pets he
+is interested in. The value of this field is available to the component from the configuration (4). Because `status` is
+required, the trigger throws an exception if the value does not exist (5). The value of the `status` field is encoded
+into the request url as a query parameter and the request is sent to the Petstore API (6). The retrieved response is an
+array of pets, returned as `JsonArray` instance. Because {{site.data.tenant.name}} platform does not support naked arrays
+yet, the response is wrapped into an instance of `JsonObject` (7).
+
+Finally a `Message` is created (8) and emitted to the platform (9). Please note that you can't emit pure JSON objects to
+the platform but always must create a platform message from you payload and emit this message. The emitted message will
+be passed by the platform to the next step of the integration flow.
