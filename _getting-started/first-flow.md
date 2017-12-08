@@ -58,11 +58,7 @@ For E-mail component there is no need to go through credential creation stage. W
 
 ![Input fields for E-mail component](/assets/img/getting-started/first-flow/getting-started-flow-010.png "Input fields for E-mail component")
 
-**To field** expects a standard e-mail address in a `string` format like:
-
-```
-"your@email.com"
-```
+**To field** expects a standard e-mail address in a `string` format like `"your@email.com"`
 
 Please enter your e-mail address to receive the message. Note that if you enter the address without `" "` it will get rejected.
 
@@ -72,7 +68,7 @@ Please enter your e-mail address to receive the message. Note that if you enter 
 $count(pets.id) & " " & "new pets found"
 ```
 
-Please note that we will not necessary dive into JSONata at the moment. This is an example to copy and paste into the **Subject** field.
+Please note that we will not dive into JSONata at the moment, copy and paste this expression into the **Subject** field.
 
 **Body field** expects a `string` data format as well. Here is another JSONata expression to copy and paste:
 
@@ -80,22 +76,42 @@ Please note that we will not necessary dive into JSONata at the moment. This is 
 "Darling, I found some adorable pets for us. Here are their names: " & $join(pets.name, ", ") &". Which one shall I buy?"
 ```
 
-Click continue after filling-in the input form to proceed further.
+Click continue after filling-in the input form to proceed further. On next page click on **Retrieve sample from E-Mail** to start the process of sample generation.
 
 ![text](/assets/img/getting-started/first-flow/getting-started-flow-011.png "text")
 
+When the sample gets retrieved click on **Choose this sample** to proceed further.
+
 ![text](/assets/img/getting-started/first-flow/getting-started-flow-012.png "text")
+
+We have almost reached the end of flow configuration. Two components are already selected and it would be enough for this example. You could add more steps after this moment but we would advise you not to at this stage. Click on **I'm done** button once:
 
 ![text](/assets/img/getting-started/first-flow/getting-started-flow-013.png "text")
 
+You can name your integration flow or accept the suggested name by clicking on **I'm done** one more time to finish and save your flow.
+
 ![text](/assets/img/getting-started/first-flow/getting-started-flow-014.png "text")
+
+## Run and monitor
+
+Success, your integration flow is ready! Now you can start you flow by clicking **Start Flow** button.
 
 ![text](/assets/img/getting-started/first-flow/getting-started-flow-015.png "text")
 
+Your flow is now active and you can not edit any configurations unless you stop your flow. Go to Dashboard to see the results of your first integration flow execution.
+
 ![text](/assets/img/getting-started/first-flow/getting-started-flow-016.png "text")
+
+Here we are in the Dashboard view where in the **Runlog** part you can see the first execution. You can come back to this view from everywhere by clicking the Dashboard icon in the left-side menu. Let us check the details of the execution by clicking on the name of the flow in the runlog:
 
 ![text](/assets/img/getting-started/first-flow/getting-started-flow-017.png "text")
 
+Here we are in the execution view. Click on the component icons to view the logs for each step in your first integration flow. When you have examined all the logs you can return to the Dashboard.
+
 ![text](/assets/img/getting-started/first-flow/getting-started-flow-018.png "text")
 
+Here we have the Dashboard view after your flow was executed 3 times. You can view the details of each execution by clicking on the name of your flow in the runlog.
+
 ![text](/assets/img/getting-started/first-flow/getting-started-flow-019.png "text")
+
+Your flow is now active and working! Go ahead, make another one. Try using different integration components to build your flow.
