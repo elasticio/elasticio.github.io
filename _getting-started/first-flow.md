@@ -8,55 +8,57 @@ category: integration-flow
 
 In this article we will cover how to create your first [integration flow](integration-flow) to synchronize the data between two applications or services. We assume that this is your first experience with the {{site.data.tenant.name}} platform and present every step in detail. Please follow the steps to create your first fully functioning integration flow.
 
-## Step1 Petstore component
-
-When you login first time you will have a similar view of the **{{site.data.tenant.name}}** platform. Click to start with your first flow:
+## Choosing the data source
 
 ![Start creating your first flow](/assets/img/getting-started/first-flow/getting-started-flow-001.png "Start creating your first flow")
 
-After clicking on **+Add new flow** you will see the list of integration components where you can choose the **Petstore API (Node.js)** component. Type `petstore` in the search bar to find it:
+When you login first time you will have a similar view of the **{{site.data.tenant.name}}** platform. Click to start creating your first flow.
+
+After clicking on `+Add new flow` button you will see the **integration designer** which is the place to build integrations from reusable integration components. An integration flow always starts with a `trigger` component which is responsible to retrieve data from the data source. Let's find the `Petstore component` in the designer.
 
 ![Select our Petstore component](/assets/img/getting-started/first-flow/getting-started-flow-002.png "Select our Petstore component")
+
+For that purpose type `petstore` in the search bar and you will find it. Next click on `Choose Petstore API (Node.js)` button.
+
+![Create the credentials to access](/assets/img/getting-started/first-flow/getting-started-flow-003.png "Create the credentials to access")
 
 Next you will see the page **Choose Credentials** where you need to click on **+connect new credentials** link to create your first credentials. Let us fill-in an input form for these two fields:
 *   **Account name** - you can leave this unchanged or provide your own.
 *   **API key** - please use `elasticio` to get access to our [Petstore API](https://petstore.elastic.io/docs/).
 
-![Create the credentials to access](/assets/img/getting-started/first-flow/getting-started-flow-003.png "Create the credentials to access")
+![Select the trigger](/assets/img/getting-started/first-flow/getting-started-flow-004.png "Select the trigger")
 
 Click on **Save** to verify the credentials. This process takes not more than 30 seconds. Upon completion you will see the page to choose the Trigger for the Petstore API (Node.js) component. Select for example the **Get Pets By Status With Promises** radio button to continue.
 
-![Select the trigger](/assets/img/getting-started/first-flow/getting-started-flow-004.png "Select the trigger")
+![Choose trigger parameter](/assets/img/getting-started/first-flow/getting-started-flow-005.png "Choose trigger parameter")
 
 The **Get Pets By Status With Promises** trigger returns Available, Pending and Sold values for the **Pet Status** parameter. Click on drop-down menu to open it. Select the **Available** option and click on continue.
 
-![Choose trigger parameter](/assets/img/getting-started/first-flow/getting-started-flow-005.png "Choose trigger parameter")
-
-Now we retrieve a sample from Petstore API where the pet status is `Available`:
-
 ![Retrieve the sample](/assets/img/getting-started/first-flow/getting-started-flow-006.png "Retrieve the sample")
 
-When the process is successful you will see the following page to choose retrieved sample:
+Now we retrieve a sample from Petstore API where the pet status is `Available`.
 
 ![Choose this sample](/assets/img/getting-started/first-flow/getting-started-flow-007.png "Choose this sample")
 
-Next you will see the Retrieve sample page again. **Please click on Continue button here to go further.**
+When the process is successful you will see the following page to choose retrieved sample.
 
 ![Continue to finish step1 configuration](/assets/img/getting-started/first-flow/getting-started-flow-008.png "Continue to finish step1 configuration")
 
-**Please don't click on retrieve sample from Petstore API (Node.js) button again.** You will be getting back to the previous stage to again select the sample. This is not a problem, but not necessary at this stage.
+Next you will see the Retrieve sample page again. **Please click on Continue button here to go further.**
 
-## Step2 E-mail component
+**Please don't click on retrieve sample from Petstore API (Node.js) button again.** You will be getting back to the previous stage to select the sample again. This is not a problem, but not necessary at this stage.
 
-After the last stage in step1 you will be getting back to the component chooser again so that you can select your next integration component to build the integration flow.
+## Choosing the data target
 
-Let us choose the **E-mail** component and we find it in the component list similarly:
+After choosing the data source now we need to choose the data target. After completing the last stage above you will get back to the component chooser again so that you can select your next integration component to build the integration flow.
 
 ![Choosing the E-mail component](/assets/img/getting-started/first-flow/getting-started-flow-009.png "Choosing the E-mail component")
 
-For E-mail component there is no need to go through credential creation stage. We jump into configuration of the **To**, **Subject** and **Body** input fields.
+Let us choose the **E-mail** component and we find it in the component list similarly.
 
 ![Input fields for E-mail component](/assets/img/getting-started/first-flow/getting-started-flow-010.png "Input fields for E-mail component")
+
+For E-mail component there is no need to go through credential creation stage. We jump into configuration of the **To**, **Subject** and **Body** input fields.
 
 **To field** expects a standard e-mail address in a `string` format like `"your@email.com"`
 
@@ -76,42 +78,45 @@ Please note that we will not dive into JSONata at the moment, copy and paste thi
 "Darling, I found some adorable pets for us. Here are their names: " & $join(pets.name, ", ") &". Which one shall I buy?"
 ```
 
+![Retrieve a sample from Email](/assets/img/getting-started/first-flow/getting-started-flow-011.png "Retrieve a sample from Email")
+
 Click continue after filling-in the input form to proceed further. On next page click on **Retrieve sample from E-Mail** to start the process of sample generation.
 
-![text](/assets/img/getting-started/first-flow/getting-started-flow-011.png "text")
+![Continue with the Email components' sample](/assets/img/getting-started/first-flow/getting-started-flow-012.png "Continue with the Email components' sample")
 
 When the sample gets retrieved click on **Choose this sample** to proceed further.
 
-![text](/assets/img/getting-started/first-flow/getting-started-flow-012.png "text")
+![Almost done with the flow](/assets/img/getting-started/first-flow/getting-started-flow-013.png "Almost done with the flow")
 
-We have almost reached the end of flow configuration. Two components are already selected and it would be enough for this example. You could add more steps after this moment but we would advise you not to at this stage. Click on **I'm done** button once:
+We have almost reached the end of flow configuration. Two components are already selected and it would be enough for this example. You could add more steps after this moment but we would advise you not to at this stage. Click on **I'm done** button once.
 
-![text](/assets/img/getting-started/first-flow/getting-started-flow-013.png "text")
+![Save and continue](/assets/img/getting-started/first-flow/getting-started-flow-014.png "Save and continue")
 
 You can name your integration flow or accept the suggested name by clicking on **I'm done** one more time to finish and save your flow.
 
-![text](/assets/img/getting-started/first-flow/getting-started-flow-014.png "text")
 
-## Run and monitor
+## Running and monitoring the flow
 
-Success, your integration flow is ready! Now you can start you flow by clicking **Start Flow** button.
+Success, your integration flow is ready!
 
-![text](/assets/img/getting-started/first-flow/getting-started-flow-015.png "text")
+![Click to start your flow](/assets/img/getting-started/first-flow/getting-started-flow-015.png "Click to start your flow")
+
+Now you can start you flow by clicking **Start Flow** button.
+
+![Flow is active](/assets/img/getting-started/first-flow/getting-started-flow-016.png "Flow is active")
 
 Your flow is now active and you can not edit any configurations unless you stop your flow. Go to Dashboard to see the results of your first integration flow execution.
 
-![text](/assets/img/getting-started/first-flow/getting-started-flow-016.png "text")
+![Dashboard with first execution](/assets/img/getting-started/first-flow/getting-started-flow-017.png "Dashboard with first execution")
 
-Here we are in the Dashboard view where in the **Runlog** part you can see the first execution. You can come back to this view from everywhere by clicking the Dashboard icon in the left-side menu. Let us check the details of the execution by clicking on the name of the flow in the runlog:
+Here we are in the Dashboard view where in the **Runlog** part you can see the first execution. You can come back to this view from everywhere by clicking the Dashboard icon in the left-side menu. Let us check the details of the execution by clicking on the name of the flow in the runlog.
 
-![text](/assets/img/getting-started/first-flow/getting-started-flow-017.png "text")
+![Flow execution view](/assets/img/getting-started/first-flow/getting-started-flow-018.png "Flow execution view")
 
-Here we are in the execution view. Click on the component icons to view the logs for each step in your first integration flow. When you have examined all the logs you can return to the Dashboard.
+Here we are in the execution view. Click on the component icons to view the logs for each step in your first integration flow. When you have examined all the logs you can return to the Dashboard. After couple of minutes we can visit the Dashboard again.
 
-![text](/assets/img/getting-started/first-flow/getting-started-flow-018.png "text")
+![Dashboard with 3 executions](/assets/img/getting-started/first-flow/getting-started-flow-019.png "Dashboard with 3 executions")
 
-Here we have the Dashboard view after your flow was executed 3 times. You can view the details of each execution by clicking on the name of your flow in the runlog.
+Here we have the Dashboard view after your flow gets executed 3 times. You can view the details of each execution by clicking on the name of your flow in the runlog.
 
-![text](/assets/img/getting-started/first-flow/getting-started-flow-019.png "text")
-
-Your flow is now active and working! Go ahead, make another one. Try using different integration components to build your flow.
+Your flow is now active and working! Go ahead, make another one. Try using different [integration components](integration-component) to build your flow.
