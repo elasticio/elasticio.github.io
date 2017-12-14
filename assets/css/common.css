@@ -875,12 +875,15 @@ span.breadcrumbs__item:after {
 .highlighter-rouge {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   display: inline-block;
-  height: 21px;
   padding: 0 6px;
-  line-height: 21px;
   background: #f4f5f6;
   border-radius: 5px;
   color: #445265; }
+
+div[class^='language'].highlighter-rouge,
+div[class*=' language'].highlighter-rouge,
+.article > .highlighter-rouge {
+  margin-bottom: 15px; }
 
 .autocomplete__item .code-tag,
 .ais-hits--item .code-tag,
@@ -911,6 +914,10 @@ span.breadcrumbs__item:after {
 
 .highlight .highlight {
   padding: 0;
+  margin: 0; }
+
+.highlighter-rouge .highlight,
+.language-sh .highlight {
   margin: 0; }
 
 .highlight pre,
