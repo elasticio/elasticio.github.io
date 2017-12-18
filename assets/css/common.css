@@ -1144,6 +1144,8 @@ div[class*=' language'] .highlight {
 .ais-hits--item:last-child {
   border-bottom: none;
   border-radius: 0 0 5px 5px; }
+<<<<<<< HEAD
+=======
 
 blockquote {
   margin-bottom: 30px;
@@ -1152,3 +1154,4 @@ blockquote {
   border-radius: 0 4px 4px 0;
   border-left: 4px solid #499df3;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.17); }
+>>>>>>> master
