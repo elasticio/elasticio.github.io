@@ -6,7 +6,7 @@ order: 2
 category: integration-flow
 ---
 
-In this article we will cover how to create an [integration flow](integration-flow) which gets triggered by the changes in an external system.
+In this article we will cover how to create an [integration flow](integration-flow) which gets triggered by the changes in an external system. We will create an integration flow that exposes an externally-reachable URL to accept HTTP requests in JSON format. The received payload gets interpreted as a pet and gets stored into the [Petstore API](https://petstore.elastic.io/docs/).
 
 If this is your first experience with the {{site.data.tenant.name}} platform, then please follow every step to create your first integration flow. If you have already followed the steps in [Creating your first integration flow?](first-flow) tutorial, then some steps would be the same to you and you are welcome to skip them.
 
@@ -34,7 +34,13 @@ Next we need to give the sample data structure which the webhook expects to rec
 
 ![Select the format](/assets/img/getting-started/webhook-flow/webhook-flow-05.png "Select the format")
 
-Here we have an input field where we can add our data sample in `JSON`, `XML` or in a `List of properties` formats. Please select the `JSON` format from the drop-down selector menu.
+Next we need to choose the format you want to provide your input sample. Please choose your favourite format in the *Format type*. The supported types are:
+
+*   `JSON`: your sample must be a valid JSON object
+*   `XML`: your sample must be a valid XML structure
+*   `List of properties`: must be a comma-separated list of property names.
+
+Let's choose `JSON` type to provide a sample as a JSON object.
 
 ![Paste the JSON](/assets/img/getting-started/webhook-flow/webhook-flow-06.png "Paste the JSON")
 
@@ -67,16 +73,15 @@ Next you will see the page *Choose Credentials* where you can either use an exis
 ![Credential creation process](/assets/img/getting-started/webhook-flow/webhook-flow-10.png "Credential creation process")
 
 Let us fill-in an input form for these two fields:
-* **Account name** - you can leave this unchanged or give your own.
-* **API key** - please use `elasticio` to get access to our [Petstore API](https://petstore.elastic.io/docs/).
+*   **Account name**: allows you to give your credential a meaningful name. You can leave this unchanged or give your own name.
+*   **API key**: used to authenticate with the [Petstore API](https://petstore.elastic.io/docs/). Please use the API key `elasticio`.
 
 Click on *Save* to verify the credentials. The verification can take no more than 30 seconds. Upon completion you will
 see the page to choose one of the 3 triggers available in the Petstore component.
 
 ![Select action](/assets/img/getting-started/webhook-flow/webhook-flow-11.png "Select action")
 
-A typical {{site.data.tenant.name}} platform component can have multiple actions to modify the records at the target API. 
-The Petstore component has only two actions. These two actions differ only by the code implementation style. We can select *Create a Pet With Promise* and continue.
+A typical {{site.data.tenant.name}} platform component can have more than one action to change or add the records at the target API. Here we use the Petstore component to learn the {{site.data.tenant.name}} platform. It provides 2 different actions to create pets with their statuses. These two actions differ by the implemented code style. Let's select *Create a Pet With Promise* and continue.
 
 ![Mapping the values](/assets/img/getting-started/webhook-flow/webhook-flow-12.png "Mapping the values")
 
@@ -91,7 +96,7 @@ On the next page click on *Retrieve sample from Petstore API (Node.js)* to retri
 
 ![Name and save the flow](/assets/img/getting-started/webhook-flow/webhook-flow-14.png "Name and save the flow")
 
-We have reached the end of flow configuration. Two components are selected and it is enough for this example. You could add more steps after this moment but we recommend you not to at this stage. Click on *I’m done* button once. You can name your integration flow or accept the suggested name by clicking on *I'm done* one more time to finish and save your flow.
+We have finished configuring this demonstration flow. You could add more steps after this moment but we recommend you not to at this stage. Click on *I’m done* button once. You can name your integration flow or accept the suggested name by clicking on *I'm done* one more time to finish and save your flow.
 
 ## Running and monitoring the flow
 
@@ -104,22 +109,22 @@ Before navigating away from this page copy and save the generated webhook addres
 https://in.{{site.data.tenant.name}}/hook/FLOW_ID
 ```
 
-For the demonstration purposes, we will use an application called Postman to `POST` payloads to the copied webhook address.
+For the demonstration purposes, we will use an application called [Postman](https://www.getpostman.com/) to `POST` payloads to the copied webhook address.
 
 ![Sending data using Postman](/assets/img/getting-started/webhook-flow/webhook-flow-16.png "Sending data using Postman")
 
 Open the Postman and follow these steps:
 
-1. Choose the HTTP `POST` in the left upper corner.
-2. Paste the copied webhook URL into the address field.
-3. Select the HTTP post *Body* tab, then select *raw* and choose the `JSON (application/json)` from a drop-down selector menu. Now paste an example `JSON` into the input field. We used this `JSON`:
+1.  Choose the HTTP `POST` in the left upper corner.
+2.  Paste the copied webhook URL into the address field.
+3.  Select the HTTP post *Body* tab, then select *raw* and choose the `JSON (application/json)` from a drop-down selector menu. Now paste an example `JSON` into the input field. We used this `JSON`:
 ```js
 {
   "pet_name": "Preston",
   "pet_status": "sold"
 }
 ```
-4. Click on *Send* button in the right upper corner to send the data to your webhook flow. In response, {{site.data.tenant.name}} platform will reply with a similar message shown on the screenshot.
+4.  Click on *Send* button in the right upper corner to send the data to your webhook flow. In response, {{site.data.tenant.name}} platform will reply with a similar message shown on the screenshot.
 
 Keep sending your data to the webhook address.
 
@@ -127,4 +132,4 @@ Keep sending your data to the webhook address.
 
 Here we have the Dashboard view after your flow gets executed 3 times. You can view the details of each execution by clicking on the name of your flow in the runlog.
 
-Your flow is now active and working! Go ahead, make another one. Try using different [integration components](integration-component) to build your flow.
+Your flow is now active and working! Go ahead, make another one. Try using different [integration components](integration-component) to build more nice flows.
