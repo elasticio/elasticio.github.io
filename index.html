@@ -4,15 +4,22 @@ layout: default
 
 <div class="welcomer">
     <div class="wrap">
-        <div class="welcomer__tit">Documentation Overview</div>
-        <div class="welcomer__text">Use the documentation on this site to learn how to use our API’s<br>& Learn best practices</div>
+        <div class="welcomer__tit">{{site.data.tenant.name}} iPaaS Documentation</div>
+        <div class="welcomer__text">
+            Everything you need to know to build integrations with
+            <br>the most innovative integration platform on the market.
+        </div>
     </div>
 </div>
 
+{% assign allPages = "" | split: ", " %}
 <div class="categories">
     <div class="wrap">
         <div class="categories__list">
             {% for collection in site.data.chapters%}
+                {% assign collectionName = collection[0] %}
+                {% assign allPages = allPages | concat: site[collectionName] %}
+
             <a href="{{collection[0]}}" class="categories__item {{collection[1].class}}">
                 <span class="categories__inner">
                     <span class="categories__icon"><i class="fa {{collection[1].fa-icon}}"></i></span>
@@ -27,31 +34,70 @@ layout: default
 
 <hr>
 
+
+{% assign recentlyAddedPagesCount = 0%}
+{% assign newFeaturesCount = 0%}
+
+{% for currentPage in allPages%}
+    {% if currentPage.since > 0 %}
+        {% assign recentlyAddedPagesCount = recentlyAddedPagesCount | plus: 1 %}
+    {% endif %}
+    {% if currentPage.newFeatureSince > 0 %}
+        {% assign newFeaturesCount = newFeaturesCount | plus: 1 %}
+    {% endif %}
+{% endfor %}
+
+{% assign recentlyAddedPages = allPages | sort: 'since' | reverse %}
+{% assign newFeaturePages = allPages| sort: 'newFeatureSince' | reverse %}
+{% assign pagesLimit = 5%}
+
 <div class="link-box">
     <div class="wrap">
         <div class="link-box__list">
+            {% if recentlyAddedPagesCount > 0 %}
             <ul class="link-box__column">
                 <li class="link-box__item">
-                    <div class="link-box__tit">Integration Designer<div class="counter">4</div></div>
+                    <div class="link-box__tit">Recently Added Pages
+                        <div class="counter">
+                            {% if recentlyAddedPagesCount < pagesLimit %}
+                                {{recentlyAddedPagesCount}}
+                            {% else %}
+                                {{pagesLimit}}
+                            {% endif %}
+                        </div>
+                    </div>
                     <div class="link-box__holder">
-                        <a class="link-box__link" href="#">Integration component and functions</a>
-                        <a class="link-box__link" href="#">What is an integration flow?</a>
-                        <a class="link-box__link" href="#">Architecture</a>
-                        <a class="link-box__link" href="#">Flow execution details</a>
+                        {% for currentPage in recentlyAddedPages limit:pagesLimit %}
+                            {% if currentPage.since > 0 %}
+                                <a class="link-box__link" href="{{currentPage.url}}">{{currentPage.title}}</a>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </li>
             </ul>
+            {% endif %}
+            {% if newFeaturesCount > 0 %}
             <ul class="link-box__column">
                 <li class="link-box__item">
-                    <div class="link-box__tit">Component Reference<div class="counter">17</div></div>
+                    <div class="link-box__tit">New Features
+                        <div class="counter">
+                            {% if newFeaturesCount < pagesLimit %}
+                                {{newFeaturesCount}}
+                            {% else %}
+                                {{pagesLimit}}
+                            {% endif %}
+                        </div>
+                    </div>
                     <div class="link-box__holder">
-                        <a class="link-box__link" href="#">Component Descriptor Structure</a>
-                        <a class="link-box__link" href="#">{{site.data.tenant.name}} SDK</a>
-                        <a class="link-box__link" href="#">Root Object SDK</a>
-                        <span class="link-box__show">14 hidden articles.<i class="fa fa-angle-down"></i></span>
+                        {% for currentPage in newFeaturePages limit:pagesLimit %}
+                            {% if currentPage.newFeatureSince > 0 %}
+                                <a class="link-box__link" href="{{currentPage.url}}">{{currentPage.title}}</a>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </li>
             </ul>
+            {% endif %}
             <ul class="link-box__column">
                 <li class="link-box__item">
                     <div class="link-box__tit">REST API<div class="counter">2</div></div>
@@ -61,16 +107,8 @@ layout: default
                             REST API v2<i class="fa fa-external-link"></i>
                         </a>
                         <a class="link-box__link" href="{{site.data.tenant.apiBaseUri}}/v1/docs/">
-                            <span class="label label_beta">Beta</span>
+                            <span class="label label_beta">Deprecated</span>
                             REST API v1<i class="fa fa-external-link"></i>
-                        </a>
-                    </div>
-                </li>
-                <li class="link-box__item">
-                    <div class="link-box__tit">SDK<div class="counter">1</div></div>
-                    <div class="link-box__holder">
-                        <a class="link-box__link" href="{{site.data.tenant.apiBaseUri}}/v1/docs/">
-                            {{site.data.tenant.name}} SDK
                         </a>
                     </div>
                 </li>
@@ -82,7 +120,6 @@ layout: default
 <div class="question">
     <div class="question__tit">Didn’t find what you were looking for?</div>
     <div class="buttons">
-        <button class="button">Contact Support</button>
-        <button class="button button_minor">New Ticket</button>
+        <a href="mailto:{{site.data.tenant.supportEmail}}" class="button" >Contact Support</a>
     </div>
 </div>
