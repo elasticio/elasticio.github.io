@@ -37,9 +37,9 @@ see the page to choose one of the 3 triggers available in the Petstore component
 
 ![Select the trigger](/assets/img/getting-started/first-flow/getting-started-flow-004.png "Select the trigger")
 
-Typically a component provides multiple triggers to retrieve different objects from the source API. However the Petstore
-component is used to learn the {{site.data.tenant.name}} platform so that it provides 3 different triggers to retrieve
-pets by their status. These 3 triggers differ in the implementation code style only. So select any of them, for example
+Typically a component can have more than one triggers to retrieve different objects from the source API. Here we use the Petstore
+component to learn the {{site.data.tenant.name}} platform. It provides 3 different triggers to retrieve
+pets by their status. These 3 triggers differ by the implemented code style. So select any of them, for example
 click on the *Get Pets By Status With Promises* radio button to continue.
 
 ![Choose trigger parameter](/assets/img/getting-started/first-flow/getting-started-flow-005.png "Choose trigger parameter")
@@ -94,7 +94,7 @@ When the sample gets retrieved click on *Choose this sample* to continue.
 
 ![Almost done with the flow](/assets/img/getting-started/first-flow/getting-started-flow-013.png "Almost done with the flow")
 
-We have reached the end of flow configuration. Two components are selected and it would be enough for this example. You could add more steps after this moment but we recommend you not to at this stage. Click on *I’m done* button once.
+We have finished configuring this demonstration flow. You could add more steps after this moment but we recommend you not to at this stage. Click on *I’m done* button once.
 
 ![Save and continue](/assets/img/getting-started/first-flow/getting-started-flow-014.png "Save and continue")
 
