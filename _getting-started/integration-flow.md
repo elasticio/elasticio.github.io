@@ -4,6 +4,7 @@ layout: article
 section: Basic Concepts
 order: 2
 category: integration-flow
+since: 20180102
 ---
 
 An integration flow is an automated workflow used to synchronize data between multiple applications or services. A flow
