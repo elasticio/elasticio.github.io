@@ -87,7 +87,7 @@ A typical {{site.data.tenant.name}} platform component can have more than one ac
 
 The screenshot above demonstrates the mapping of data between the data from webhook and the Petstore action two fields. Please select these properties by pressing the drop-down menu on the right of each input field as shown.
 
-The `"pet_name"` gets mapped with the *Name* field and the `"pet_status"` with the *Status* field respectively. Click on *Continue* button after you have done with the mapping.
+The `pet_name` gets mapped with the *Name* field and the `pet_status` with the *Status* field respectively. Click on *Continue* button after you have done with the mapping.
 
 
 ![Retrieve the sample](/assets/img/getting-started/webhook-flow/webhook-flow-13.png "Retrieve the sample")
