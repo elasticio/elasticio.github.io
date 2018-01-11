@@ -4,6 +4,7 @@ layout: article
 section: Tutorials
 order: 2
 category: integration-flow
+since: 20180111
 ---
 
 In this article we will cover how to create an [integration flow](integration-flow) which gets triggered by the changes in an external system. We will create an integration flow that exposes an externally-reachable URL to accept HTTP requests in JSON format. The received payload gets interpreted as a pet and gets stored into the [Petstore API](https://petstore.elastic.io/docs/).
@@ -87,7 +88,7 @@ A typical {{site.data.tenant.name}} platform component can have more than one ac
 
 The screenshot above demonstrates the mapping of data between the data from webhook and the Petstore action two fields. Please select these properties by pressing the drop-down menu on the right of each input field as shown.
 
-The `"pet_name"` gets mapped with the *Name* field and the `"pet_status"` with the *Status* field respectively. Click on *Continue* button after you have done with the mapping.
+The `pet_name` gets mapped with the *Name* field and the `pet_status` with the *Status* field respectively. Click on *Continue* button after you have done with the mapping.
 
 
 ![Retrieve the sample](/assets/img/getting-started/webhook-flow/webhook-flow-13.png "Retrieve the sample")

@@ -4,6 +4,7 @@ layout: article
 section: Developing Components
 category: component
 order: 3
+since: 20171201
 ---
 
 The {{site.data.tenant.name}} platform supports Java programming language for building integration components.
