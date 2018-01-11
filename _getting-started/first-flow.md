@@ -4,6 +4,7 @@ layout: article
 section: Tutorials
 order: 1
 category: integration-flow
+since: 20171218
 ---
 
 In this article we will cover how to create your first [integration flow](integration-flow) to synchronize the data between two applications or services.
