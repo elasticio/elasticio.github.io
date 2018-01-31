@@ -162,13 +162,25 @@ a:active,
   padding: 0 7px;
   border-radius: 5px; }
 
-.label_beta {
+.label.success {
   background: #e6f7e1;
   color: #31b739; }
 
-.label_stable {
+.label.warning {
   background: #ffefd7;
   color: #c18832; }
+
+.label.danger {
+  background: #ffd7d7;
+  color: #f53b3b; }
+
+.label.info {
+  background: #e7f3ff;
+  color: #489df3; }
+
+.label.highlight {
+  background: #ece7ff;
+  color: #967afd; }
 
 .link-box__holder .label {
   float: right; }
@@ -1144,8 +1156,6 @@ div[class*=' language'] .highlight {
 .ais-hits--item:last-child {
   border-bottom: none;
   border-radius: 0 0 5px 5px; }
-<<<<<<< HEAD
-=======
 
 blockquote {
   margin-bottom: 30px;
@@ -1154,4 +1164,3 @@ blockquote {
   border-radius: 0 4px 4px 0;
   border-left: 4px solid #499df3;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.17); }
->>>>>>> master
