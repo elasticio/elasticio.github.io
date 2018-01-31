@@ -47,10 +47,8 @@ In the screenshot above we can see two versions in the list. The first one (1) i
 We will just change the name of the flow for this example. We can make as many changes to the draft as we need. All the changes will be persisted to the same version unless we press the *Publish Draft* button.
 
 If we publish the flow right now, when an active flow exist, we will get the following warning:
-```
-To publish this draft we need to restart the flow. Any unprocessed
-messages will be lost. Are you sure you want to continue?
-```
+
+   > **Note**: To publish this draft we need to restart the flow. Any unprocessed messages will be lost. Are you sure you want to continue?
 
 After we press the *Publish Draft* button the {{site.data.tenant.name}} will stop the active version of the flow, replace it with the version which you want to publish and then start it.
 
