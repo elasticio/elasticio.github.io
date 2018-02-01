@@ -351,6 +351,15 @@ nav a.active:hover {
   background: #cad1dc;
   transform: rotate(24deg); }
 
+h1 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #282828; }
+
 h2 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -361,7 +370,7 @@ h2 {
   color: #282828; }
 
 .articles h2 {
-  margin-bottom: 40px; }
+  margin-bottom: 30px; }
 
 .welcomer {
   text-rendering: optimizeLegibility;
@@ -491,6 +500,7 @@ h2 {
   font-size: 0;
   padding: 10px 0 10px 0;
   margin-top: 50px;
+  min-width: 1171px;
   background: #fafafb;
   border-top: 1px solid #f2f4f5; }
 
