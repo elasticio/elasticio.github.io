@@ -24,7 +24,7 @@ layout: default
 
             {% for section in chapter.sections %}
 
-            {% assign items = site[page.collection]| where: 'section': section.title | sort: 'order' %}
+            {% assign items = site[page.collection]| where: 'section', section.title | sort: 'order' %}
             <ul class="link-box__column">
                 <li class="link-box__item">
                     <div class="link-box__tit">{{section.title}}<div class="counter">{{items.size}}</div></div>
