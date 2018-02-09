@@ -64,11 +64,16 @@ screenshot below.
 Now go into `Security Credentials` to find an overview of credentials,
 shown in the following screenshot:
 
+<<<<<<< HEAD
 ![Credentials overview](/assets/img/getting-started/credential/credentials-overview.png "Credentials overview")
+=======
+TODO
+>>>>>>> Credentials page
 
 As you can see in the screenshot above the credentials are structured by
 components. You will probably recall that we mentioned above that a
 `credential` is specific to the API it is used to authenticate with. The
+<<<<<<< HEAD
 green number on a component icon tells you how many credentials exist for that
 component. Now if you click on a component, you will see the list of
 credentials for a given component, as shown in the screenshot below.
@@ -84,6 +89,16 @@ is edited.
 
 ![Editing a credential](/assets/img/getting-started/credential/credentials-edit.png "Editing a credential")
 
+=======
+number on a component icon tells you how many credentials exist for that
+component. Now if you click on a component, you will see the list of
+credentials for a given component, as shown in the screenshot below.
+
+TODO
+
+As you can see in the screenshot above each of the credential can be
+edited or deleted.
+>>>>>>> Credentials page
 
 > **Note** Please note that it is not possible to delete a credential used by an active integration flow as the flow would become broken. If you try to delete such a credential, a corresponding error message will be displays. Please delete these flow first or reconfigure them to use another credentials.
 
