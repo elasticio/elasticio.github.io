@@ -76,7 +76,7 @@ credentials for a given component, as shown in the screenshot below.
 TODO
 
 As you can see in the screenshot above each of the credential can be
-edited or deleted.
+edited or deleted. You can also create new credentials.
 
 > **Note** Please note that it is not possible to delete a credential used by an active integration flow as the flow would become broken. If you try to delete such a credential, a corresponding error message will be displays. Please delete these flow first or reconfigure them to use another credentials.
 
