@@ -39,7 +39,7 @@ In the screenshot above you can the used sample for *WebHook* component in the f
 
 We see that configuration fields for *Petstore API* component are also locked and you can not change it.
 
-> It is impossible to change any configuration of an existing version of integration flow. You have to create a new draft version from an existing flow to change any configuration field.
+> **Note** It is impossible to change any configuration of an existing version of integration flow. You have to create a new draft version from an existing flow to change any configuration field.
 
 
 ## Creating new version of your existing flow
