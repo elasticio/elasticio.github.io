@@ -4,7 +4,7 @@ layout: article
 section: Tutorials
 order: 2
 category: integration-flow
-since: 20180219
+since: 20180111
 ---
 
 In this article we will cover how to create an [integration flow](integration-flow) which gets triggered by the changes in an external system. We will create an integration flow that exposes an externally-reachable URL to accept HTTP requests in JSON format. The received payload gets interpreted as a pet and gets stored into the [Petstore API](https://petstore.elastic.io/docs/).
