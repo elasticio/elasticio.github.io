@@ -17,11 +17,11 @@ In this article we will cover how to create and manage a flow's history. You wil
 
 ## Creating the first version of your flow
 
-If you have followed our tutorials then you should now have the first draft of your integration flow.
+If you have followed our tutorials then you should now have the first draft of your integration flow, as shown in the following screenshot.
 
 ![First version is ready](/assets/img/integrator-guide/versions/versions-1.png "First version is ready")
 
-In the screenshot above you can see that you are able to delete your flow but not to start. This is because your flow is still unpublished. If you now check the dashboard you will see the following picture.
+In the screenshot above you can see that you are able to delete your flow but not to start. This is because your flow is still unpublished. An unpublished version of a flow is called a `Draft`. If you now check the dashboard you will see the following picture.
 
 ![Dashboard view of your unpublished flow](/assets/img/integrator-guide/versions/versions-2.png "Dashboard view of your unpublished flow")
 
@@ -29,28 +29,20 @@ Go back to your unpublished flow and click on the *History* tab.
 
 ![The History tab](/assets/img/integrator-guide/versions/versions-3.png "The History tab")
 
-Click on *Publish Draft* button to publish your flow and then start your flow. Your flow is now *running*. We can now examine the details of our running flow.
+Click on *Publish Draft* button to publish your flow and then start your flow. After a few moments your flow will be *running*.
 
-![Examine used sample](/assets/img/integrator-guide/versions/versions-4.png "Examine used sample")
-
-In the screenshot above you can the used sample for *WebHook* component in the flow. You can examine this record but not change it. Let us check the input details of the *Petstore API* component.
-
-![Examine used configuration](/assets/img/integrator-guide/versions/versions-5.png "Examine used configuration")
-
-We see that configuration fields for *Petstore API* component are also locked and you can not change it.
-
-> **Note** It is impossible to change any configuration of an existing version of integration flow. You have to create a new draft version from an existing flow to change any configuration field.
+> **Note** It is impossible to change any configuration of an existing version of integration flow. You have to create a new `draft` version from an existing flow to change any configuration field.
 
 
 ## Creating new version of your existing flow
 
-To create a new version of your existing flow you need to create a new draft.
+As discussed above, a flow is read-only by default. To change a flow, a new version of the flow must be created. Creating a new version of the flow starts with creating a new `Draft`, as shown in the screenshot below.
 
-![Creating new version](/assets/img/integrator-guide/versions/versions-6.png "Creating new version")
+![Creating new version](/assets/img/integrator-guide/versions/versions-4.png "Creating new version")
 
 In screenshot above we have the *History* tab where we have our flow published 6 minutes ago by William Thacker. The version has its own version hash `03b5625`. We have no other versions of this flow. Let us create one more version by clicking on *Create Draft* button. Before editing this version let us switch to the *History* tab again.
 
-![New draft version is active](/assets/img/integrator-guide/versions/versions-7.png "New draft version is active")
+![New draft version is active](/assets/img/integrator-guide/versions/versions-5.png "New draft version is active")
 
 In the screenshot above we can see two versions in the list. The first one (1) is the published and active version by William Thacker and the second one (2) is by Anna Smith, created a few seconds ago. The major difference is that you can edit it without stopping or changing the published version.
 
@@ -58,17 +50,14 @@ We will change the name of the flow for this example. We can make as many change
 
 
 If we publish the flow right now, when an active flow exist, we will get the following warning:
-```
-To publish this draft we need to restart the flow. Any unprocessed
-messages will be lost. Are you sure you want to continue?
-```
+> **Note** To publish this draft we need to restart the flow. Any unprocessed messages will be lost. Are you sure you want to continue?
 
 After we press the *Publish Draft* button the {{site.data.tenant.name}} will stop the active version of the flow, replace it with the version which you want to publish and then start it.
 
-![New draft version is active](/assets/img/integrator-guide/versions/versions-8.png "New draft version is active")
+![New draft version is active](/assets/img/integrator-guide/versions/versions-6.png "New draft version is active")
 
 In the screenshot above we see the version by Anna Smith (`a800029c`) is now published and running. We can create yet another version by clicking on the *Create Draft* button.
 
-![Third draft](/assets/img/integrator-guide/versions/versions-9.png "Third draft")
+![Third draft](/assets/img/integrator-guide/versions/versions-7.png "Third draft")
 
 This time William Thacker created a new version.
