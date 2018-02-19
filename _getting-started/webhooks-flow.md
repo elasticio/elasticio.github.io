@@ -49,70 +49,80 @@ Paste the following `JSON` in the input field:
 
 ```js
 {
-  "pet_name": "Gromit",
-  "pet_status": "sold"
+  "petname": "Gromit",
+  "petstatus": "sold"
 }
 ```
 The sample gets evaluated for the correctness of the format. Click on *Save* button to continue.
 
 ![Finish webhook configuration](/assets/img/getting-started/webhook-flow/webhook-flow-07.png "Finish webhook configuration")
 
-We have now the sample data for our webhook. Please click on *Continue* button to finish configuring the webhook component and load the component chooser again.
+We have now the sample data for our webhook. Please click on *Continue* button to finish configuring the webhook component and load the step summary page.
+
+![Webhook step summary](/assets/img/getting-started/webhook-flow/webhook-flow-08.png "Webhook step summary")
+
+Screenshot above shows the WebHook step summary page where you can add a note to descibe the step and change the step name. Click on *Add another step* button to finish the Webhook step and load the component chooser again.
+
 
 ## Choosing the data target
 
 We have the data source, now we need to choose the data target. After completing the trigger configuration you need to choose an `action` component to send the data from the webhook. Let us choose the *Petstore API (Node.js)* component.
 
-![Choose Petstore component](/assets/img/getting-started/webhook-flow/webhook-flow-08.png "Choose Petstore component")
+![Choose Petstore component](/assets/img/getting-started/webhook-flow/webhook-flow-09.png "Choose Petstore component")
 
 For that purpose type `petstore` in the search bar and you will find it. Next click on *Choose Petstore API (Node.js)* button.
 
-![Create the credentials to access](/assets/img/getting-started/webhook-flow/webhook-flow-09.png "Create the credentials to access")
+![Create the credentials to access](/assets/img/getting-started/webhook-flow/webhook-flow-10.png "Create the credentials to access")
 
 Next you will see the page *Choose Credentials* where you can either use an existing credential or click on *+connect new credentials* link to create new credentials.
 
-![Credential creation process](/assets/img/getting-started/webhook-flow/webhook-flow-10.png "Credential creation process")
+![Credential creation process](/assets/img/getting-started/webhook-flow/webhook-flow-11.png "Credential creation process")
 
 Let us fill-in an input form for these two fields:
 *   **Account name**: allows you to give your credential a meaningful name. You can leave this unchanged or give your own name.
 *   **API key**: used to authenticate with the [Petstore API](https://petstore.elastic.io/docs/). Please use the API key `elasticio`.
 
-Click on *Save* to verify the credentials. The verification can take no more than 30 seconds. Upon completion you will
-see the page to choose one of the 3 triggers available in the Petstore component.
+Click on *Save* to verify the credentials. The verification can take no more than 30 seconds. Upon completion you will see the page to choose one of the 2 available actions in the Petstore component.
 
-![Select action](/assets/img/getting-started/webhook-flow/webhook-flow-11.png "Select action")
+![Select action](/assets/img/getting-started/webhook-flow/webhook-flow-12.png "Select action")
 
 A typical {{site.data.tenant.name}} platform component can have more than one action to change or add the records at the target API. Here we use the Petstore component to learn the {{site.data.tenant.name}} platform. It provides 2 different actions to create pets with their statuses. These two actions differ by the implemented code style. Let's select *Create a Pet With Promise* and continue.
 
-![Mapping the values](/assets/img/getting-started/webhook-flow/webhook-flow-12.png "Mapping the values")
+![Mapping the values](/assets/img/getting-started/webhook-flow/webhook-flow-13.png "Mapping the values")
 
 The screenshot above demonstrates the mapping of data between the data from webhook and the Petstore action two fields. Please select these properties by pressing the drop-down menu on the right of each input field as shown.
 
-The `pet_name` gets mapped with the *Name* field and the `pet_status` with the *Status* field respectively. Click on *Continue* button after you have done with the mapping.
+The `petname` gets mapped with the *Name* field and the `petstatus` with the *Status* field respectively. Click on *Continue* button after you have done with the mapping.
 
 
-![Retrieve the sample](/assets/img/getting-started/webhook-flow/webhook-flow-13.png "Retrieve the sample")
+![Retrieve the sample](/assets/img/getting-started/webhook-flow/webhook-flow-14.png "Retrieve the sample")
 
 On the next page click on *Retrieve sample from Petstore API (Node.js)* to retrieve the sample. When the sample gets retrieved click on *Choose this sample* to continue.
 
-![Name and save the flow](/assets/img/getting-started/webhook-flow/webhook-flow-14.png "Name and save the flow")
+![Petstore step summary](/assets/img/getting-started/webhook-flow/webhook-flow-15.png "Petstore step summary")
 
-We have finished configuring this demonstration flow. You could add more steps after this moment but we recommend you not to at this stage. Click on *I’m done* button once. You can name your integration flow or accept the suggested name by clicking on *I'm done* one more time to finish and save your flow.
+We have finished configuring this step and reached the summary page for the *Petstore API* component. Here we can add note or change the step name. You could add more steps after this moment but we recommend you not to at this stage. Click on *I’m done* button once. You can name your integration flow or accept the suggested name by clicking on *I'm done* one more time to finish configuring this step.
+
+![Publish the draft](/assets/img/getting-started/webhook-flow/webhook-flow-16.png "Publish the draft")
+
+Success, the first draft version of your integration flow is ready! Click on *Publish Draft* button to save this draft.
+
+> **Note** You must publish your draft to save and proceed. You can not start your flow without publishing it.
 
 ## Running and monitoring the flow
 
-Success, your integration flow is ready! You may start your flow now.
+Now that our flow is published we can start it.
 
-![Set to live and copy the link](/assets/img/getting-started/webhook-flow/webhook-flow-15.png "Set to live and copy the link")
+![Set to live and copy the link](/assets/img/getting-started/webhook-flow/webhook-flow-17.png "Set to live and copy the link")
 
-Before navigating away from this page copy and save the generated webhook address (URL). The URL has the following structure:
+Click on *Start* button to set your flow live. Before navigating away from this page copy and save the generated webhook address (URL). The URL has the following structure:
 ```
 https://in.{{site.data.tenant.name}}/hook/FLOW_ID
 ```
 
 For the demonstration purposes, we will use an application called [Postman](https://www.getpostman.com/) to `POST` payloads to the copied webhook address.
 
-![Sending data using Postman](/assets/img/getting-started/webhook-flow/webhook-flow-16.png "Sending data using Postman")
+![Sending data using Postman](/assets/img/getting-started/webhook-flow/webhook-flow-18.png "Sending data using Postman")
 
 Open the Postman and follow these steps:
 
@@ -121,15 +131,15 @@ Open the Postman and follow these steps:
 3.  Select the HTTP post *Body* tab, then select *raw* and choose the `JSON (application/json)` from a drop-down selector menu. Now paste an example `JSON` into the input field. We used this `JSON`:
 ```js
 {
-  "pet_name": "Preston",
-  "pet_status": "sold"
+  "petname": "Gromit",
+  "petstatus": "sold"
 }
 ```
 4.  Click on *Send* button in the right upper corner to send the data to your webhook flow. In response, {{site.data.tenant.name}} platform will reply with a similar message shown on the screenshot.
 
 Keep sending your data to the webhook address.
 
-![The view after 3 requests](/assets/img/getting-started/webhook-flow/webhook-flow-17.png "The view after 3 requests")
+![The view after 3 requests](/assets/img/getting-started/webhook-flow/webhook-flow-19.png "The view after 3 requests")
 
 Here we have the Dashboard view after your flow gets executed 3 times. You can view the details of each execution by clicking on the name of your flow in the runlog.
 
