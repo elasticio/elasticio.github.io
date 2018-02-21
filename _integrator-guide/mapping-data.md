@@ -75,6 +75,10 @@ The following screenshot demonstrates how a generated JSONata expression can be 
 
 ![Developer mode edited values](/assets/img/integrator-guide/data-mapper/mapper-06.png "Developer mode edited values")
 
+In the screenshot above the generated property values have been replaced
+by variables `name` and `status`. The variables are resolved from the payload
+of the Webhook component which is placed at the beginning of the flow.
+
 Please note that your expression is evaluated as you are typing it. The
 evaluation result is immediately shown in the *Mapping result* section
 below the mapper input field. If you provide an invalid expression, an
