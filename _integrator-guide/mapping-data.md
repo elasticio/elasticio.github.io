@@ -49,24 +49,40 @@ We can match the *Status* field with the incoming `status` value as well to comp
 
 ## Using advanced mapping mode
 
-In the previous section you learned how to map data between two steps of an integration flow using JSONata expression. This is quite convenient approach, however, sometimes you might wish more flexibility during the mapper. For that purpose you can switch to the *Developer mode* which is displayed in the following screenshot.
-
-![Developer mode first view](/assets/img/integrator-guide/data-mapper/mapper-05.png "Developer mode first view")
-
-n the screenshot above you can see the mapper in *Developer mode*. This mode is used when you want to define the expressions for the entire input object instead of defining expressions for each individual step. If the input structure is complex the graphical mapping might limit you during the mapping process. For example defining array-to-array mappings is only possible in the *Developer mode*.
+In the previous section you learned how to map data between two steps of
+an integration flow using JSONata expression. This is a quite convenient
+approach, however, the graphical mapping in the *Integrator mode* has some limitations.
+For example defining array-to-array mappings is only possible in the *Developer mode*.
+For that purpose you can switch to the *Developer mode*.
 
 > **Note** Array-to-array mappings is only possible in the *Developer mode*.
 
-When switching to *Developer mode* first time the `JSON` parameter values get automatically filled by {{site.data.tenant.name}} with mock values generated according to incoming schema of the receiving component.
+The following screenshot demonstrates the *Developer mode*.
 
-The upper part is the editable area where you can change the values and the lower part will show the JSONata evaluation result.
+![Developer mode](/assets/img/integrator-guide/data-mapper/mapper-05.png "Developer mode")
+
+In the screenshot above you can see the mapper in *Developer mode*. In
+this mode you write a single JSONata expressions for the entire input object
+instead of defining expressions for each individual field. In order to use
+the *Developer mode* an integrator needs to know the meta-model
+of input data: the structure of the object and the property names. Without
+having access to component's source code knowing the input model is impossible. For that
+purpose, when you switch from *Integrator mode* to *Developer mode* , the
+mapper input field we be prepopulated with a JSONata expression that represents
+the required input. This expression is a generated JSON object with random
+property values. You can start writing your mapping by overriding property values.
+The following screenshot demonstrates how a generated JSONata expression can be changed.
 
 ![Developer mode edited values](/assets/img/integrator-guide/data-mapper/mapper-06.png "Developer mode edited values")
 
-We have changed the values to match better our case and we can see the mapping result below. Now, if we would like to add more parameters to the mapping structure, we can edit the `JSON`.
+Please note that your expression is evaluated as you are typing it. The
+evaluation result is immediately shown in the *Mapping result* section
+below the mapper input field. If you provide an invalid expression, an
+error message will be displayed, as shown in the following screenshot.
 
 ![Error in mapping](/assets/img/integrator-guide/data-mapper/mapper-07.png "Error in mapping")
 
-Screenshot above shows the incomplete `JSON` structure which is not accepted by {{site.data.tenant.name}} and the error is shown in the Mapping result field.
+The screenshot above shows the incomplete `JSON` structure which is not
+accepted by {{site.data.tenant.name}} and the error is shown in the *Mapping result* section.
 
 > **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new [draft version of a flow](managing-flow-history) must be created.
