@@ -64,21 +64,11 @@ screenshot below.
 Now go into `Security Credentials` to find an overview of credentials,
 shown in the following screenshot:
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ![Credentials overview](/assets/img/getting-started/credential/credentials-overview.png "Credentials overview")
-=======
-TODO
->>>>>>> Credentials page
-=======
-![Credentials overview](/assets/img/getting-started/credential/credentials-overview.png "Credentials overview")
->>>>>>> More Credentials screenshots
 
 As you can see in the screenshot above the credentials are structured by
 components. You will probably recall that we mentioned above that a
 `credential` is specific to the API it is used to authenticate with. The
-<<<<<<< HEAD
-<<<<<<< HEAD
 green number on a component icon tells you how many credentials exist for that
 component. Now if you click on a component, you will see the list of
 credentials for a given component, as shown in the screenshot below.
@@ -94,35 +84,6 @@ is edited.
 
 ![Editing a credential](/assets/img/getting-started/credential/credentials-edit.png "Editing a credential")
 
-=======
-number on a component icon tells you how many credentials exist for that
-=======
-green number on a component icon tells you how many credentials exist for that
->>>>>>> More Credentials screenshots
-component. Now if you click on a component, you will see the list of
-credentials for a given component, as shown in the screenshot below.
-
-![Component credentials](/assets/img/getting-started/credential/credentials-petstore.png "Component credentials")
-
-In the screenshot above you can see al available credentials for the
-`Petstore` component belonging to a user. A new credential can be added by
-pressing the `Add New Account` button. An existing credential can also be
-edited or deleted. This is accomplished by clicking the `Edit` or `Delete`
-button on an existing credential. The following screenshot shows how a credential
-is edited.
-
-![Editing a credential](/assets/img/getting-started/credential/credentials-edit.png "Editing a credential")
-
-<<<<<<< HEAD
-As you can see in the screenshot above each of the credential can be
-<<<<<<< HEAD
-edited or deleted.
->>>>>>> Credentials page
-=======
-edited or deleted. You can also create new credentials.
->>>>>>> Added article on Credentials
-=======
->>>>>>> More Credentials screenshots
 
 > **Note** Please note that it is not possible to delete a credential used by an active integration flow as the flow would become broken. If you try to delete such a credential, a corresponding error message will be displays. Please delete these flow first or reconfigure them to use another credentials.
 
