@@ -29,7 +29,7 @@ We intend to map these values into outgoing fields in *Petstore API* component. 
 
 ![Mapping: Configure input](/assets/img/integrator-guide/data-mapper/mapper-01.png "Mapping: Configure input")
 
-Screenshot above shows the stage in integration flow designer where the actual mapping or matching of the values is done. The *Petstore API* component expects values in two fields. These two fields are required (red exclamation marks), which means without providing the values for them we will no be able to proceed further and click on *Continue* button. Let us proceed with the mapping.
+The screenshot above shows the stage in integration flow designer where the actual mapping or matching of the values is done. The *Petstore API* operation for creating a Pet requires a name and a status for the new pet. That's why the component asks the user to provide input in two fields: `Name` and `Status`. These two fields are required (red exclamation marks), which means without providing the values for them we will no be able to proceed further and click on *Continue* button. Let us proceed with the mapping.
 
 ![Mapping: Selecting drop-down](/assets/img/integrator-guide/data-mapper/mapper-02.png "Mapping: Selecting drop-down")
 
@@ -37,7 +37,7 @@ To map the *Name* field click on drop-down menu on the right side and select the
 
 ![Mapping result of the field](/assets/img/integrator-guide/data-mapper/mapper-03.png "Mapping result of the field")
 
-The screenshot above shows the successful mapping result which is `Gromit`. Notice that you have jumped to the *Mapping results* tab here which shows the successful evaluation result. Note also the green check-mark appeared besides the mapping field. This means the mapping of this field is accepted.
+The screenshot above shows the successful mapping result which is `Gromit`. Notice that you have jumped to the *Mapping results* tab here which shows the successful evaluation result. Note also the green check-mark appeared besides the mapping field. This means the mapping of this field is valid.
 
 ![Expressions tab](/assets/img/integrator-guide/data-mapper/mapper-04.png "Expressions tab")
 
@@ -45,43 +45,28 @@ Before going further we can check the *Expressions* tab here. Here you can look 
 
 We can match the *Status* field with the incoming `status` value as well to complete the mapping and go forward.
 
-> **Note** The mapped values are from the incoming data sample. They will be replaced with different values if dependent on incoming data. These values serve as metadata.
+> **Note** During the mapping process the mapping expressions are evaluated on the samples. During component execution these expressions will be evaluated on the incoming data which are, of course, different from the samples.
 
-## Developer mode
+## Using advanced mapping mode
 
-As you have noticed we have been mapping the values using the *Integrator mode* of mapping. This is a convenient way to choose the values from the drop-down menu and possibly use some JSONata expressions in the way. What if you need some more power, what if you need to control the mapping exactly how it should be done?
-
-For that reason we have the *Developer mode* which gives a complete freedom to map and match the fields.
+In the previous section you learned how to map data between two steps of an integration flow using JSONata expression. This is quite convenient approach, however, sometimes you might wish more flexibility during the mapper. For that purpose you can switch to the *Developer mode* which is displayed in the following screenshot.
 
 ![Developer mode first view](/assets/img/integrator-guide/data-mapper/mapper-05.png "Developer mode first view")
 
-Screenshot above shows the view when the *Developer mode* is first selected. If the receiving component has an incoming schema then it will be used by {{site.data.tenant.name}} to populate the parameter values. The upper part is the editable area where you can change the values and the lower part will show the JSONata evaluation result.
+n the screenshot above you can see the mapper in *Developer mode*. This mode is used when you want to define the expressions for the entire input object instead of defining expressions for each individual step. If the input structure is complex the graphical mapping might limit you during the mapping process. For example defining array-to-array mappings is only possible in the *Developer mode*.
+
+> **Note** Array-to-array mappings is only possible in the *Developer mode*.
+
+When switching to *Developer mode* first time the `JSON` parameter values get automatically filled by {{site.data.tenant.name}} with mock values generated according to incoming schema of the receiving component.
+
+The upper part is the editable area where you can change the values and the lower part will show the JSONata evaluation result.
 
 ![Developer mode edited values](/assets/img/integrator-guide/data-mapper/mapper-06.png "Developer mode edited values")
 
-We have changed the values to match better our case and we can see the mapping result below. Now if we would like to add more parameters to the mapping structure we can edit the `JSON`.
+We have changed the values to match better our case and we can see the mapping result below. Now, if we would like to add more parameters to the mapping structure, we can edit the `JSON`.
 
 ![Error in mapping](/assets/img/integrator-guide/data-mapper/mapper-07.png "Error in mapping")
 
 Screenshot above shows the incomplete `JSON` structure which is not accepted by {{site.data.tenant.name}} and the error is shown in the Mapping result field.
 
-## Developer or Integrator mode
-
-We have learned how to use the *Integrator* and *Developer* modes. It is possible to switch between them during the design of integration flow but not after the flow is published.
-
-![Integrator mode saved](/assets/img/integrator-guide/data-mapper/mapper-08.png "Integrator mode saved")
-
-Screenshot above shows the case when the *Integrator mode* was used to map the values. The flow is published with this mode and it can not be change unless a new draft version is created and the mode is changed.
-
-![Developer mode saved](/assets/img/integrator-guide/data-mapper/mapper-09.png "Developer mode saved")
-
-Screenshot above shows the case when the *Developer mode* was used to map the values.
-
-
-
-## TODO
-
-* Working with strings
-* Working with numbers
-* Working with dates and times
-* Working with arrays
+> **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new [draft version of a flow](managing-flow-history) must be created.
