@@ -45,7 +45,7 @@ Before going further we can check the *Expressions* tab here. Here you can look 
 
 We can match the *Status* field with the incoming `status` value as well to complete the mapping and go forward.
 
-> **Note** During the mapping process the mapping expressions get evaluated on the samples. During the component execution {{site.data.tenant.name}} evaluates these expressions based on the incoming data which will differ from the presented sample.
+> **Note** During the mapping process the mapping expressions is evaluated on the samples. During the component execution {{site.data.tenant.name}} evaluates these expressions based on the incoming data which will differ from the presented sample.
 
 ## Using advanced mapping mode
 
@@ -65,9 +65,9 @@ Therefore, when you switch from *Integrator mode* to *Developer mode*, the mappe
 
 ![Developer mode edited values](/assets/img/integrator-guide/data-mapper/mapper-06.png "Developer mode edited values")
 
-The above screenshot shows how the property values get replaced by the variables `name` and `status`. These variables get their values from the incoming payload of the Webhook component.
+The above screenshot shows how the property values is replaced by the variables `name` and `status`. These variables get their values from the incoming payload of the Webhook component.
 
-> **Please note** your expression is evaluated as you are typing it. The result gets shown at once below the mapper input field, in the *Mapping result* section.  If you give an invalid expression, an error message gets displayed.
+> **Please note** your expression is evaluated as you are typing it. The result is shown at once below the mapper input field, in the *Mapping result* section. If you give an invalid expression, an error message is displayed.
 
 ![Error in mapping](/assets/img/integrator-guide/data-mapper/mapper-07.png "Error in mapping")
 
