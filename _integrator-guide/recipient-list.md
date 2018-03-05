@@ -59,8 +59,9 @@ already filled in with the values. Go ahead and fill-in these 3 required fields:
 *  Body: `"Dear " & department & " department," & "\n" & "A pet named " & name & " was aded to the "& status &" list. Please update your records."`
 
 You are welcome to provide your own values if you feel confident to do so at
-this stage. Just remember that the `department`, `name` and `status` get their values
-from the incoming *Webhook* component. Click on *Continue* button to go forward.
+this stage. Just remember that the variables `department`, `name` and `status`
+get their values from the incoming *Webhook* component. Click on *Continue*
+button to go forward.
 
 ![Saving the recipient list](/assets/img/integrator-guide/recipient-list/recipient-list-4.png "Saving the recipient list")
 
