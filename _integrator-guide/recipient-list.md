@@ -6,17 +6,13 @@ order: 0
 since: 20180220
 ---
 
-In this article we will explain how to send the same data to multiple recipients
-using a recipient list on the {{site.data.tenant.name}} platform
+A **Recipient List** is a *message processing pattern* described in the [Enterprise Integration Patterns](http://www.enterpriseintegrationpatterns.com/patterns/messaging/RecipientList.html)
+book (G. Hohpe and B. Woolf, 2003). The pattern is used to send a copy of the
+same message to the multiple predefined recipients.
 
-> A **Recipient List** is a *message processing pattern* for sending a copy of the same
-> message to multiple recipients as it is described in the [Enterprise Integration Patterns](http://www.enterpriseintegrationpatterns.com/patterns/messaging/RecipientList.html)
-> book (G. Hohpe and B. Woolf, 2003).
-
-For example, most of the e-mail systems use the recipient list pattern to send 
-the copy of each message to a list of pre-defined recipients. For integration
-flows, the recipient list can be implemented to get information from one source
-(CRM, ERP, etc) and send it to multiple systems for processing.
+In this article we will discuss how this pattern can be implemented in the
+{{site.data.tenant.name}} platform in integration flows. You will learn how to
+created branches in integration flows.
 
 We will assume that you already know how to create an [integration flow](/getting-started/integration-flow)
 on {{site.data.tenant.name}} platform. You have followed the steps in [creating your first integration flow](/getting-started/first-flow)
@@ -24,7 +20,7 @@ and [creating webhook flow](/getting-started/webhook-flow) tutorials.
 
 ## Creating recipient list
 
-Let us consider the following scenario. The system receives a message contaning
+Let us consider the following scenario. The system receives a message containing
 the information about a pet in this JSON:
 
 ```js
@@ -48,30 +44,29 @@ one is for creating a branch from here. Click on the branch icon.
 
 ![New branch](/assets/img/integrator-guide/recipient-list/recipient-list-2.png "New branch")
 
-Screenshot shows the newly created branch to the right from the previous branch.
-We are also taken to the component chooser screen to select the first component
-for newly created branch. Type *email* and click on *Select E-Mail* button to
-configure this step.
+The screenshot above shows the result of branch creation in a linear flow.
+Choose the component in the new branch to receive the data from Webhook. Type
+*email* in the search field to find the *E-Mail* component and click on
+*Select E-Mail* button to configure this step.
 
 ![Configuring e-mail component](/assets/img/integrator-guide/recipient-list/recipient-list-3.png "Configuring e-mail component")
 
 The screenshot above shows the configuration fields for the E-Mail component
 already filled in with the values. Go ahead and fill-in these 3 required fields:
 
-*  To: `department&"@acme.co"`
-*  Subject: `"A pet with name "&name&" was added"`
-*  Body: `"Dear "&department&" department,"& "\n" & "A pet named "&name&" was aded to the "&status&" list. Please update your records."`
+*  To: `department & "@acme.co"`
+*  Subject: `"A pet with name " & name & " was added"`
+*  Body: `"Dear " & department & " department," & "\n" & "A pet named " & name & " was aded to the "& status &" list. Please update your records."`
 
 You are welcome to provide your own values if you feel confident to do so at
-this stage. Just remember that `department`, `name` and `status` get their values
-from the incoming Webhook component. Click on *Continue* button to go forward.
+this stage. Just remember that the `department`, `name` and `status` get their values
+from the incoming *Webhook* component. Click on *Continue* button to go forward.
 
 ![Saving the recipient list](/assets/img/integrator-guide/recipient-list/recipient-list-4.png "Saving the recipient list")
 
-We are almost done with the recipient list creation. The screenshot above shows
-the current stage where we can either add another branch to this flow or publish
-it. For simplicity of explanation let us publish it by clicking on *I'm done!*
-button, then give a name to this integration flow and publish it.
+We are done with the recipient list creation. Let's publish the flow to see it
+in action. Please notice that you could also add more branches to the flow. Now
+click on the *I'm done!* button, then give a name to this integration flow and publish it.
 
 ![Start the flow](/assets/img/integrator-guide/recipient-list/recipient-list-5.png "Start the flow")
 
@@ -87,9 +82,11 @@ convenience:
   "department": "sales"
 }
 ```
-Let us send a couple of payloads to see the recipient list in action.
+Let us send a couple of payloads to see the recipient list in action. The
+following screenshot shows the details of a flow execution.
 
 ![Execution result](/assets/img/integrator-guide/recipient-list/recipient-list-6.png "Execution result")
 
-The screenshot above show the execution result after 3 payloads were sent. The
-recipient list sent the same message to two different recipients.
+In the screenshot above you see the details an execution of our flow after 3
+requests were sent to the flow's URL. As you can see the *Webhook* component passed
+its messages to both branches. This is what a recipient list is for.
