@@ -24,3 +24,41 @@ store or section for the sports shoes.
 
 In this article we will discuss how this pattern can be implemented on the
 {{site.data.tenant.name}} platform in integration flows.
+
+## Creating Content-Based ...
+
+Here is the incoming Data
+
+```js
+{
+  "ProductID": 345664,
+  "SKU": "0406654603",
+  "Product Name": "Cloak",
+  "Description": {
+    "Colour": "Black",
+    "Width": 30,
+    "Height": 20,
+    "Depth": 210,
+    "Weight": 2
+  },
+  "Channels": ["amazon", "ebay"],
+  "Price": 107.99,
+  "Quantity": 1
+}
+```
+
+![text](/assets/img/integrator-guide/cbr/create-cbr-1.png "text")
+
+![text](/assets/img/integrator-guide/cbr/create-cbr-2.png "text")
+
+![text](/assets/img/integrator-guide/cbr/create-cbr-3.png "text")
+
+![text](/assets/img/integrator-guide/cbr/create-cbr-4.png "text")
+
+![text](/assets/img/integrator-guide/cbr/create-cbr-5.png "text")
+
+![text](/assets/img/integrator-guide/cbr/create-cbr-6.png "text")
+
+![text](/assets/img/integrator-guide/cbr/create-cbr-7.png "text")
+
+![text](/assets/img/integrator-guide/cbr/create-cbr-8.png "text")
