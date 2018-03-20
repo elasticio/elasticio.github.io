@@ -40,3 +40,5 @@ references:
   sections:
     - title: Sailor
       description: References on our SDKs
+    - title: Component Descriptor
+      description: References on Component Structure
