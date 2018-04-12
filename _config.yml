@@ -9,5 +9,5 @@ collections:
      output: true
 
 algolia:
-  application_id: 'V2486N1OKP'
-  index_name:     'test_elasticio'
+  application_id: 'OIJ2XNEVHZ'
+  index_name:     'test_elasticio_documentation'
