@@ -27,4 +27,4 @@ jobs:
       # run indexing
       - run:
           name: run indexing
-          command: ALGOLIA_API_KEY='${ALGOLIA_API_KEY}' bundle exec jekyll algolia
+          command: bundle exec jekyll algolia
