@@ -1,6 +1,10 @@
 version: 2
 jobs:
   build:
+    filters:
+      branches:
+        only:
+          - master
     docker:
        - image: circleci/ruby:2.4.1-node-browsers
 
