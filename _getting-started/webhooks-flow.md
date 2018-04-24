@@ -44,9 +44,9 @@ be presented the following options.
 
 You can use:
 
-*   `No Auth` - this is the default option. Change according to your needs.
-*   `Badic Auth` - this is for securing with *username/password* pair
-*   `API Key Auth` - this is for securing with an *API Key*
+*   `No Auth` - used to make the webhook URL accesible by anyone,
+*   `Badic Auth` - used to define username and password for the webhook clients,
+*   `API Key Auth` - used to define an API key for the webhook clients,
 *   `HMAC verification` - this is to secure it with *HMAC* special key
 
 For example, if we use the `Basic Auth` the {{site.data.tenant.name}} interface
@@ -54,6 +54,18 @@ will show two field where you can enter your username and password like it is
 shown on the screenshot below.
 
 ![Basic Auth method](/assets/img/getting-started/webhook-flow/webhook-flow-06.png "Basic Auth method")
+
+To use these credentials during the HTTP request you could use the following approach:
+
+```
+curl -X POST https://in.{{site.data.tenant.name}}/hook/FLOW_ID -u USERNAME:PASSWORD \
+-H 'Content-Type: application/json' -d '{
+  "petname": "Gromit",
+  "petstatus": "sold"
+}'
+```
+The `FLOW_ID` will be shown in the [end of flow design](#running-and-monitoring-the-flow).
+`USERNAME` and `PASSWORD` are the ones you create during credential creation.
 
 For simplicity we will just use `No Auth` method and proceed further by clicking
 on *Save* button to continue.
