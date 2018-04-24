@@ -8,3 +8,4 @@ reports
 /*.png
 coverage
 _site
+vendor

@@ -29,13 +29,34 @@
                 <div id="hits"></div>
             </div>
 
-            <a href="/" class="logo"></a>
+            <div class="burger">
+                <div class="burger__control"></div>
+                <div class="big-menu">
+                    <div class="big-menu__list">
+                        {% for collection in site.data.chapters%}
+                            {% assign collectionName = collection[0] %}
+                            {% assign chapter = site.data.chapters[collectionName] %}
+                            <a class="big-menu__tit" href="/{{collectionName}}">
+                                <i class="fa {{collection[1].fa-icon}}"></i>{{collection[1].title}}
+                            </a>
 
-            <nav>
-                {% for collection in site.data.chapters%}
-                <a href="/{{collection[0]}}">{{collection[1].title}}</a>
-                {% endfor %}
-            </nav>
+                            {% for section in chapter.sections %}
+                                <div class="big-menu__item">{{section.title}}</div>
+                                {% assign items = site[collectionName]| where: 'section', section.title | sort: 'order' %}
+                                <div class="big-menu__sub">
+                                    {% for item in items %}
+                                    <a class="big-menu__item" href="{{item.url}}">{{item.title}}</a>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="big-overlay"></div>
+            </div>
+
+            <a href="/" class="logo"></a>
         </div>
     </header>
 
@@ -63,6 +84,41 @@
     </div>
 {% endraw %}
 </script>
-<script src="../assets/js/search.js"></script>
+<script>
+    var search = instantsearch({
+        appId: '{{ site.algolia.application_id }}',
+        apiKey: '{{ site.algolia.search_only_api_key }}',
+        indexName: '{{ site.algolia.index_name }}',
+        urlSync: false,
+        searchFunction: function(helper) {
+            var searchResults = $('#hits');
+            if (helper.state.query === '') {
+                searchResults.hide();
+                $('#search-input').blur();
+                return;
+            }
+            helper.search();
+            searchResults.show();
+        }
+    });
+
+    search.addWidget(
+            instantsearch.widgets.searchBox({
+                container: '#search-input'
+            })
+    );
+
+    search.addWidget(
+            instantsearch.widgets.hits({
+                container: '#hits',
+                hitsPerPage: 10,
+                templates: {
+                    item: document.getElementById('hit-template').innerHTML,
+                    empty: "We didn't find any results for the search <em>\"{{query}}\"</em>"
+                }
+            })
+    );
+    search.start();
+</script>
 </body>
 </html>
