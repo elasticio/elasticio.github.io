@@ -10,17 +10,13 @@ The **REST API component** is a simple yet powerful component that allows you to
 connect to any REST API without programming your own components and deploying
 them into the {{site.data.tenant.name}} platform.
 
-The REST API component will perform a single REST API call when executed. Incoming
-data can gets used to configure the API call made and the response from the API
-call will be the output.
-
 This document covers the following topics:
 
 *   [Authentication methods](#authentication-methods)
 *   [Configuring component](#configuring-component)
 *   [Defining HTTP headers](#defining-http-headers)
 *   [Defining request body](#defining-http-body)
-  -   [Working with JSON data](#working-with-json-data)
+  -   [Sending JSON payload](#sending-json-payload)
   -   [Working with XML data](#working-with-xml-data)
   -   [Sending Form data](#sending-form-data)
 *   [Known Limitations](#known-limitations)
@@ -32,29 +28,29 @@ The majority of REST APIs require their clients to authenticate when sending
 HTTP requests. In the {{site.data.tenant.name}} platform we use
 [Credentials](/getting-started/credential) to authenticate, as shown below.
 
-![Authentication methods](/assets/img/integrator-guide/rest-api/rest-api-component-02.png "Authentication methods")
+![Authentication methods](/assets/img/integrator-guide/rest-api/rest-api-component-01.png "Authentication methods")
 
 As you can see above REST API component supports 3 authentication types:
 
-*   `No Auth` - use this method to work with any open REST API
-*   `Basic Auth` - use it to provide login credentials like *username/password*
-*   `API Key Auth` - use it to provide `API Key` to access the resource
+*   `No Auth` - used to work with any open REST API
+*   `Basic Auth` - used to provide username and password for APIs that autheticate clients using [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
+*   `API Key Auth` - used to provide `API Key` to access the resource
 
 Please note that the result of creating a credential is an HTTP header automatically
-placed for you. You can also specify the authentication method in the headers section
-directly.
+placed for you. You can also specify the authentication method in the
+[headers section](#defining-http-headers) directly.
 
 Now let us use the `Basic Auth` as an example. The following screenshot demonstrates
 how to define the username and password for the `Basic Auth` method.
 
-![Basic Auth](/assets/img/integrator-guide/rest-api/rest-api-component-03.png "Basic Auth")
+![Basic Auth](/assets/img/integrator-guide/rest-api/rest-api-component-02.png "Basic Auth")
 
 ## Configuring component
 
 The example below shows how to send `POST` request to JSON API, such as {{site.data.tenant.name}}
 [REST API](https://api.{{site.data.tenant.name}}/docs) using the REST API component.
 
-![REST API component features](/assets/img/integrator-guide/rest-api/rest-api-component-01.png "REST API component features")
+![REST API component features](/assets/img/integrator-guide/rest-api/rest-api-component-03.png "REST API component features")
 
 Now let us explore the annotations on the screenshot above:
 
@@ -70,9 +66,13 @@ Use this section to add the request headers.
 
 ![REST API component Headers field](/assets/img/integrator-guide/rest-api/rest-api-component-04.png "REST API component Headers field")
 
-Each header has a name and a value. Header name should be colon-separated
-name-value pairs in clear-text `string` format. The header value can use
-[JSONata](http://jsonata.org/) expressions.
+As you can see above each header has a name and a value. You can add as many
+headers as you need. The header names can contain multiple words connected by
+the hyphen (`-`). The header value must be a [JSONata](http://jsonata.org)
+expression. For example, the value for the header *Content-type* is
+`"application/json"` which is a JSONata string.
+
+Now let's see how to define a request body in the next section.
 
 ## Defining HTTP body
 
@@ -90,48 +90,44 @@ Here is the list of all supported `content-types`:
 *   `text/xml`
 *   `text/html`
 
-The *body input field* changes according to the chosen content type.
+The *body input field* changes according to the chosen content type. Now let's
+explore how to use `application/json` content type to send JSON payloads.
 
-### Working with JSON data
+### Sending JSON payload
 
 Here is how to send a JSON data in the body. Change the `content-type` to
 `application/json` and the *body input part* would change accordingly to
 accept JSON object.
 
-> **Note** that this field supports [JSONata](http://jsonata.org) expressions.
-
 ![REST API component Body sending JSON data](/assets/img/integrator-guide/rest-api/rest-api-component-05.png "REST API component Body sending JSON data")
 
-Example shows the JSON in the body where the `name` parameter value gets mapped
-using the value of `project_name` from the previous step of integration.
+In the screenshot above you can see a JSON object in the *Body* text area. This
+object is actually a [JSONata](http://jsonata.org) expression in which the value
+of `data.attributes.name` property is defined by `project_name` variable provided
+by the previous step of this integration flow.
 
-Similarly, when a JSON object is received by REST API component it will be passed
-to the next step.
-
-![Receiving JSON data](/assets/img/integrator-guide/rest-api/rest-api-component-06.png "Receiving JSON data")
-
-The screenshot above shows the reply from `GET` method in JSON from the
-[httpbin.org/ip](http://httpbin.org/ip) resource.
+Any response from an external API resource with a content type `application/json`
+is fully supported. Now let's explore how  the `XML` is used and parsed.
 
 ### Working with XML data
 
 To send an `XML` data set the content type to `application/xml` or `text/xml`
-and place the `XML` in the body input field between double-quotes like it shown below.
+and place the `XML` in the `Body` text area between double-quotes as it is shown below.
 
-![Sending XML data](/assets/img/integrator-guide/rest-api/rest-api-component-07.png "Sending XML data")
+![Sending XML data](/assets/img/integrator-guide/rest-api/rest-api-component-06.png "Sending XML data")
 
-Use a JSONata expression to include and map any values coming from the previous
-steps. {{site.data.tenant.name}} will replace the variable with a real value in
-the final mapping.
+Again, the `Body` text area expects a [JSONata](http://jsonata.org) expression.
+Therefore, you need to provide the XML payload as a string which may be combined
+with the variables from previous steps. For example, in the screenshot above, we
+used the `project_name` variable to provide a value for the `<to>` tag.
 
-> **Note** that the rest of `XML` gets passed as a `string`.
-
-If the third party resource responds in `XML` the component will try to parse it
-assuming that the reply object would have a `Content-Type` of `application/xml`
-or `text/xml` set as MIME Content Type.
+In case when the third party resource responds in `XML` the component will parse it
+only when the reply object would have a `Content-Type` of `application/xml`
+or `text/xml` set as MIME Content Type. We will use a different third party resource
+to receive an `XML` response.
 
 Here is an example where the `XML` gets parsed by the {{site.data.tenant.name}}.
-![Receiving an XML data](/assets/img/integrator-guide/rest-api/rest-api-component-08.png "Receiving an XML data")
+![Receiving an XML data](/assets/img/integrator-guide/rest-api/rest-api-component-07.png "Receiving an XML data")
 
 The screenshot above shows how the `XML` is received and parsed to JSON using
 `xml2js` node library with a following settings:
@@ -163,7 +159,7 @@ In both cases the payload gets transmitted in the message body.
 In case of `application/x-www-form-urlencoded` content type add the necessary
 parameters by giving the name and the values like:
 
-![REST API component Body sending a simple form](/assets/img/integrator-guide/rest-api/rest-api-component-09.png "REST API component Body sending a simple form")
+![REST API component Body sending a simple form](/assets/img/integrator-guide/rest-api/rest-api-component-08.png "REST API component Body sending a simple form")
 
 > **Note** The parameter value fields support [JSONata](http://jsonata.org) expressions.
 
@@ -171,7 +167,7 @@ This HTTP request would submit `key1=value1&key2=value2` in the message body.
 
 In case of `multipart/form-data` content type add the parameters similarly.
 
-![REST API component Body sending a complex form](/assets/img/integrator-guide/rest-api/rest-api-component-10.png "REST API component Body sending a complex form")
+![REST API component Body sending a complex form](/assets/img/integrator-guide/rest-api/rest-api-component-09.png "REST API component Body sending a complex form")
 
 The transmitted HTTP request body would be:
 
@@ -192,19 +188,19 @@ of supporting attachments as well.
 
 ## Known Limitations
 
-> **Note** If the response content-type is anything else than `application/json`,
-> `application/xml` and `text/xml` then the component will through an error and
-> stop the execution.
+If the response content-type is anything else than `application/json`,
+`application/xml` and `text/xml` then the component will throw an error and
+stop the execution.
 
-In particular the REST API component still:
+In particular the REST API component still does not allow you to:
 
-*   Can't handle multi-part responses
-*   Can't handle HTML/Plain-text responses
+*   Process the multi-part responses
+*   Process the HTML/Plain-text responses
 
 Here are some further limitation of the REST API component:
 
-*   HTTP Response code gets ignored
+*   Status code of the HTTP response is not available in the component output
 *   Ignores and does not store HTTP Response headers
-*   Can't handle redirects
+*   Does not follow redirects
 *   No native `XML` support
 *   No attachment support
