@@ -44,10 +44,10 @@ be presented the following options.
 
 You can use:
 
-*   `No Auth` - used to make the webhook URL accesible by anyone,
-*   `Badic Auth` - used to define username and password for the webhook clients,
+*   `No Auth` - used to make the webhook URL accessible by anyone,
+*   `Basic Auth` - used to define username and password for the webhook clients,
 *   `API Key Auth` - used to define an API key for the webhook clients,
-*   `HMAC verification` - this is to secure it with *HMAC* special key
+*   `HMAC verification` - used to create a *HMAC* signature of the payload
 
 For example, if we use the `Basic Auth` the {{site.data.tenant.name}} interface
 will show two field where you can enter your username and password like it is
@@ -55,20 +55,9 @@ shown on the screenshot below.
 
 ![Basic Auth method](/assets/img/getting-started/webhook-flow/webhook-flow-06.png "Basic Auth method")
 
-To use these credentials during the HTTP request you could use the following approach:
-
-```
-curl -X POST https://in.{{site.data.tenant.name}}/hook/FLOW_ID -u USERNAME:PASSWORD \
--H 'Content-Type: application/json' -d '{
-  "petname": "Gromit",
-  "petstatus": "sold"
-}'
-```
-The `FLOW_ID` will be shown in the [end of flow design](#running-and-monitoring-the-flow).
-`USERNAME` and `PASSWORD` are the ones you create during credential creation.
-
-For simplicity we will just use `No Auth` method and proceed further by clicking
-on *Save* button to continue.
+We extend on [securing your webhook](#securing-your-webhooks) using one the
+available methods further down. For simplicity we will use `No Auth` method
+and proceed further by clicking on *Save* button to continue.
 
 ![Add sample manually](/assets/img/getting-started/webhook-flow/webhook-flow-07.png "Add sample manually")
 
@@ -185,3 +174,22 @@ Keep sending your data to the webhook address.
 Here we have the Dashboard view after your flow gets executed 3 times. You can view the details of each execution by clicking on the name of your flow in the runlog.
 
 Your flow is now active and working! Go ahead, make another one. Try using different [integration components](integration-component) to build more nice flows.
+
+## Securing your webhooks
+
+To secure your webhook you can use one of the `Basic Auth`, `API Key Auth` or
+`HMAC verification` methods. The actual used method depends on your specific use-case.
+
+For example, let us see how to use the `Basic Auth` which is used to provide
+username and password for APIs that authenticate clients using the
+[Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
+
+```
+curl -X POST https://in.{{site.data.tenant.name}}/hook/FLOW_ID -u USERNAME:PASSWORD \
+-H 'Content-Type: application/json' -d '{
+  "petname": "Gromit",
+  "petstatus": "sold"
+}'
+```
+The `FLOW_ID` is shown in the [end of flow design](#running-and-monitoring-the-flow).
+`USERNAME` and `PASSWORD` are the ones you create during the credential creation.
