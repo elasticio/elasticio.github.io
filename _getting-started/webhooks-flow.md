@@ -24,40 +24,25 @@ The designer helps building the flows from the reusable integration components s
 ![Selecting the webhook component](/assets/img/getting-started/webhook-flow/webhook-flow-02.png "Selecting the webhook component")
 
 Type `webhook` in the search bar to find it and click on *Choose Webhook* afterwards to select it.
+In the next step you will to create or choose an existing [credential](credential),
+as shown in the screenshot below.
 
 ![Add credentials](/assets/img/getting-started/webhook-flow/webhook-flow-03.png "Add credentials")
 
-To secure your Webhook you can add credentials. Click on *Connect new credentials*
-link as shown on the above screenshot to proceed further.
-
-> **Note** You must proceed with credentials section even if you do not require
-> securing your webhook at this stage. You can select `No Auth` option.
-
-![Create credentials](/assets/img/getting-started/webhook-flow/webhook-flow-04.png "Create credentials")
-
-You can click on *Save* button and proceed without securing webhook at this
-stage as it is shown on the above screenshot. However, if you need to secure Your
-webhook click to open the drop-down menu shown on the right of the `No Auth` to
-be presented the following options.
+If you have a credential for a webhook already, just choose it to proceed.
+Otherwise click on *Connect new credentials* link as shown on the screenshot above.
 
 ![Types of credentials](/assets/img/getting-started/webhook-flow/webhook-flow-05.png "Types of credentials")
 
-You can use:
+As you can see in the screenshot above there are multiple types of credentials
+available to choose in the *Type* dropdown. We will cover the Webhook credential
+[later in this article](#securing-your-webhooks). For now let's just choose the `No Auth` option to
+continue with webhook creation. The result should look like in the following
+screenshot.
 
-*   `No Auth` - used to make the webhook URL accessible by anyone,
-*   `Basic Auth` - used to define username and password for the webhook clients,
-*   `API Key Auth` - used to define an API key for the webhook clients,
-*   `HMAC verification` - used to create a *HMAC* signature of the payload
+![Create credentials](/assets/img/getting-started/webhook-flow/webhook-flow-04.png "Create credentials")
 
-For example, if we use the `Basic Auth` the {{site.data.tenant.name}} interface
-will show two field where you can enter your username and password like it is
-shown on the screenshot below.
-
-![Basic Auth method](/assets/img/getting-started/webhook-flow/webhook-flow-06.png "Basic Auth method")
-
-We extend on [securing your webhook](#securing-your-webhooks) using one the
-available methods further down. For simplicity we will use `No Auth` method
-and proceed further by clicking on *Save* button to continue.
+Now click on *Save* to continue to with webhook creation.
 
 ![Add sample manually](/assets/img/getting-started/webhook-flow/webhook-flow-07.png "Add sample manually")
 
@@ -177,19 +162,35 @@ Your flow is now active and working! Go ahead, make another one. Try using diffe
 
 ## Securing your webhooks
 
-To secure your webhook you can use one of the `Basic Auth`, `API Key Auth` or
-`HMAC verification` methods. The actual used method depends on your specific use-case.
+As discussed above webhhoks can be secured with credentials. There are four
+types of webhook credentials:
 
-For example, let us see how to use the `Basic Auth` which is used to provide
-username and password for APIs that authenticate clients using the
-[Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
+*   `No Auth` - used to make the webhook URL accessible by anyone,
+*   `Basic Auth` - used to define username and password to authenticate the webhook clients using [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+*   `API Key Auth` - used to define an API key for the webhook clients,
+*   `HMAC verification` - used to create a *HMAC* signature of the payload
 
-```
-curl -X POST https://in.{{site.data.tenant.name}}/hook/FLOW_ID -u USERNAME:PASSWORD \
+Let's explore the `Basic Auth` type as an example. In the following screenshot
+you see a credential configuration page when `Basic Auth` type is chosen.
+
+![Basic Auth method](/assets/img/getting-started/webhook-flow/webhook-flow-06.png "Basic Auth method")
+
+As you can see above you need to enter a username and a password which will
+be used to authenticate all the incoming requests to the webhook URL using the
+[Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+mechanism. Any request that is not authorized will be responded with
+`401 UNAUTHORIZED` error. Now let's see how to send a request to a secured
+webhook URL using `curl` on a terminal.
+
+```sh
+curl -X POST https://in.{{site.data.tenant.name}}/hook/{FLOW_ID} -u {USERNAME}:{PASSWORD} \
 -H 'Content-Type: application/json' -d '{
   "petname": "Gromit",
   "petstatus": "sold"
 }'
 ```
-The `FLOW_ID` is shown in the [end of flow design](#running-and-monitoring-the-flow).
-`USERNAME` and `PASSWORD` are the ones you create during the credential creation.
+
+In the example above `{FLOW_ID}` is the ID of your flow shown on the
+[flow summary screen](#running-and-monitoring-the-flow). The variables
+`{USERNAME}` and `{PASSWORD}` are the ones you entered when creating a
+credential for your webhook.
