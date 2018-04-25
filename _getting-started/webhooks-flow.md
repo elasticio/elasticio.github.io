@@ -24,12 +24,12 @@ The designer helps building the flows from the reusable integration components s
 ![Selecting the webhook component](/assets/img/getting-started/webhook-flow/webhook-flow-02.png "Selecting the webhook component")
 
 Type `webhook` in the search bar to find it and click on *Choose Webhook* afterwards to select it.
-In the next step you will to create or choose an existing [credential](credential),
+In the next step, you can create or choose an existing [credential](credential),
 as shown in the screenshot below.
 
 ![Add credentials](/assets/img/getting-started/webhook-flow/webhook-flow-03.png "Add credentials")
 
-If you have a credential for a webhook already, just choose it to proceed.
+If you already have a credential for a webhook, just choose it to proceed.
 Otherwise click on *Connect new credentials* link as shown on the screenshot above.
 
 ![Types of credentials](/assets/img/getting-started/webhook-flow/webhook-flow-05.png "Types of credentials")
