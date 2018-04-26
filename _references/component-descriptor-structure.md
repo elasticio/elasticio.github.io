@@ -42,7 +42,7 @@ Here is the bare-bone structure of the Root object:
   "envVars": { },
   "credentials": { },
   "triggers": { },
-  "actions":bare-bonee
+  "actions":"..."
 }
 ```
 As we have presented the information in the table above, only `title` and
