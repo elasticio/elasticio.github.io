@@ -6,21 +6,40 @@ since: 20180315
 ---
 
 Each integration component developed for {{site.data.tenant.name}} platform must
-have a **component descriptor** file called `component.json` in its root folder.
-It describes and links component's functions and the credentials necessary to run
-your component on the {{site.data.tenant.name}} platform.
+have a **component descriptor** file called `component.json` in its root folder,
+as shown below. It describes the component structure and tells the platform what functions
+are available, what credentials are necessary to run your component on
+the {{site.data.tenant.name}} platform, etc.
 
-To see the component descriptor structure implementation you are welcome to read
-our introductory guides about building [java](/developer-guide/building-java-component) or [node.js](/developer-guide/building-nodejs-component) components for the
-{{site.data.tenant.name}} platform environment. Here we will concentrate on
+````
+component-directory
+
+├── component.json                                          (1)
+├── lib
+│   ├── actions
+│   ├── schemas
+│   └── triggers
+├── logo.png
+├── package.json
+└── verifyCredentials.js
+````
+
+The example above shows the structure of a Node.js component. The components
+written Java programming language have a different structure but the location
+of the component descriptor is same: it is expected to be located in the
+root folder of the component (1). You are welcome to read our introductory
+guides about building components in [Java](/developer-guide/building-java-component)
+or [Node.js](/developer-guide/building-nodejs-component) for the
+{{site.data.tenant.name}} platform environment to see more details. Here we will concentrate on
 providing an in-depth reference about the structure and the objects which you can
 use to describe different parts of any component.
 
-# Root Object
+## Descriptor Structure
 
-The `component.json` consist of the **Root Object** which encompasses all the
-other objects and information necessary to be a proper citizen of the
-{{site.data.tenant.name}} platform. It contains the following properties:
+Let's explore the structure of the `component.json` in the following table.
+As you can see there a simple properties such as `title` and nested objects
+auch as `credentials`. You can follow the links to see details about nested
+ objects.
 
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |
@@ -32,7 +51,7 @@ other objects and information necessary to be a proper citizen of the
 | [triggers](#triggers-object) | `object` | Yes* | Used to expose component's triggers |
 | [actions](#actions-object) | `object` | Yes* | Used to expose component's actions |
 
-Here is the bare-bone structure of the Root object:
+Let's explore an example of a component descriptor:
 
 ```json
 {
@@ -52,7 +71,7 @@ must adhere for the component to function properly:
 1.  You must have at least one declared function. Either in `triggers` or `actions`.
 2.  If you include `triggers` or `actions` property they must not be empty.
 
-# envVars Object
+## envVars Object
 
 The **envVars object** is used to define the environment variables which can be used
 throughout the whole component. Every environment variable must have the following
@@ -80,7 +99,7 @@ object implemented in the [Salesforce Component](https://github.com/elasticio/sa
   }
 ```
 
-# Credentials Object
+## Credentials Object
 
 The **Credentials Object** specifies how a user can grant a component the access
 to his protected resources using API.
@@ -91,7 +110,7 @@ to his protected resources using API.
 | [oauth1](#oauth1) | `object` |  | Specifies the APIs details about Authenticating with OAuth 1.0 |
 | [oauth2](#oauth2) | `object` |  | Specifies the APIs details about Authenticating with OAuth 2.0 |
 
-## Basic Authentication
+### Basic Authentication
 
 If the authentication is done via HTTP headers, then it is sufficient to define
 a single input field (`TextFieldView` - check the View Classes for more) for an
@@ -111,7 +130,7 @@ component:
   }
 ```
 
-## OAuth1
+### OAuth1
 
 Specifies OAuth 1.0 specific details of the API used by the component. For more
 details about Authenticating with OAuth 1.0 refer to the
@@ -151,7 +170,7 @@ In case of OAuth1 Authentication we must use `fields` and `oauth1` objects toget
 The `fields` object defines the type of input field and the `oauth1` object provides
 the configuration.
 
-## OAuth2
+### OAuth2
 
 Specifies OAuth 2.0 specific details of the API used by the component. For more
 details about Authenticating with OAuth 2.0 please read the
@@ -224,7 +243,7 @@ the [Salesforce component](https://github.com/elasticio/salesforce-component/blo
 }
 ```
 
-# Triggers Object
+## Triggers Object
 
 The **Triggers Object** is Used to expose component's triggers. The properties of this
 object are used as unique trigger names.
@@ -259,7 +278,7 @@ Here is an example of a trigger definition in the `component.json` where the
  }
  ```
 
-# Actions Object
+## Actions Object
 
 The **Actions Object** is used to expose component's actions. The properties of
 this object are used as unique action names.
