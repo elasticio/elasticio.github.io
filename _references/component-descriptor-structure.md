@@ -26,7 +26,7 @@ component-directory
 
 The example above shows the structure of a Node.js component. The components
 written Java programming language have a different structure but the location
-of the component descriptor is same: it is expected to be located in the
+of the component descriptor is the same: it must be located in the
 root folder of the component (1). You are welcome to read our introductory
 guides about building components in [Java](/developer-guide/building-java-component)
 or [Node.js](/developer-guide/building-nodejs-component) for the
@@ -37,16 +37,16 @@ use to describe different parts of any component.
 ## Descriptor Structure
 
 Let's explore the structure of the `component.json` in the following table.
-As you can see there a simple properties such as `title` and nested objects
-auch as `credentials`. You can follow the links to see details about nested
- objects.
+As you can see there are simple properties such as `title` and nested objects
+such as `credentials`. You can follow the links to see details about of the
+nested objects.
 
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |
 | title       | `string` | Yes      | Specifies the component's title to be displayed below the component's logo |
 | description | `string` | Yes      | Description of the component |
 | docsURL     | `string` |       | URL to documentation |
-| [envVars](#envVars-object) | `object` |  | Used to declare environment variables |
+| [envVars](#envvars-object) | `object` |  | Used to declare environment variables |
 | [credentials](#credentials-object) | `object` |  | Used to specify the input fields for authentication with the given API |
 | [triggers](#triggers-object) | `object` | Yes* | Used to expose component's triggers |
 | [actions](#actions-object) | `object` | Yes* | Used to expose component's actions |
@@ -61,11 +61,11 @@ Let's explore an example of a component descriptor:
   "envVars": { },
   "credentials": { },
   "triggers": { },
-  "actions":"..."
+  "actions": { }
 }
 ```
 As we have presented the information in the table above, only `title` and
-`description` are required properties here. However, there are certian rules one
+`description` are required properties here. However, there are certain rules one
 must adhere for the component to function properly:
 
 1.  You must have at least one declared function. Either in `triggers` or `actions`.
@@ -238,14 +238,14 @@ the [Salesforce component](https://github.com/elasticio/salesforce-component/blo
 
 ```json
 "oauth2": {
-   "auth_uri": "https://login.windows.net/common/oauth2/authorize?resource={{encode resource}}",
+   "auth_uri": "https://login.windows.net/common/oauth2/authorize?resource=RESOURCSE",
    "token_uri": "https://login.windows.net/common/oauth2/token"
 }
 ```
 
 ## Triggers Object
 
-The **Triggers Object** is Used to expose component's triggers. The properties of this
+The **Triggers Object** is used to expose component's triggers. The properties of this
 object are used as unique trigger names.
 
 | Property Name | Type     | Required | Description |
@@ -253,7 +253,7 @@ object are used as unique trigger names.
 | title | `string` | Yes | Human readable title of the trigger |
 | main | `string` | Yes | Relative path to a Node.js module or a fully qualified name or a Java class |
 | metadata | `object` | Yes | Contains a single `out` property whose value is a JSON Schema describing the metadata of the message's body produced by the trigger |
-| type | `string` | No  | It can have only 2 values `polling` or `webhook`. If the `type` is omitted then it is considered to be a WebHook trigger and it will wait for the messages to arrive. Otherwise, it needs to be specifically written as a `polling` for it to be scheduled for an execution. |
+| type | `string` | No  | It can have only 2 values `polling` or `webhook`. If the `type` is omitted then it is considered to be a Webhook trigger and it will wait for the messages to arrive. Otherwise, it needs to be specifically written as a `polling` for it to be scheduled for an execution. |
 | fields | `object` | No | Trigger specific input fields used to provide configuration for the trigger |
 
 
