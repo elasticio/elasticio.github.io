@@ -9,9 +9,7 @@ docker pull jekyll/jekyll
 Once you have ``jekyll/jekyll`` image locally, execute the following command from the root folder of this repo:
 
 ````
-docker run --rm --label=jekyll --volume=$(pwd):/srv/jekyll \
-  -it -p $(docker-machine ip `docker-machine active`):4000:4000 \
-    jekyll/jekyll jekyll serve
+./start.sh
 ````
 
 If your see the following output in the terminal, the docs are up and running:
