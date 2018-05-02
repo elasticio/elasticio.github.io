@@ -7,8 +7,10 @@ the following steps:
 1. Fork this repository
 2. Customize [variables](_data/tenant.yml) used in documentation pages
 3. Customize the [styles](./assets/css/common.css)
-4. DO NOT edit any content to avoid merging conflicts
-5. Pull changes from the original repository regularly so that your docs
+4. Customize your [Algolia](https://www.algolia.com/) configuration in the
+[_config.yml](./_config.yml) file (`application_id`, `index_name` and `search_only_api_key`) or delete them if you don't need search
+5. DO NOT edit any content to avoid merging conflicts
+6. Pull changes from the original repository regularly so that your docs
 are up-to-date
 
 # Testing locally
