@@ -12,8 +12,6 @@ are available, what credentials are necessary to run your component on
 the {{site.data.tenant.name}} platform, etc.
 
 ````
-component-directory
-
 ├── component.json                                          (1)
 ├── lib
 │   ├── actions
@@ -25,12 +23,12 @@ component-directory
 ````
 
 The example above shows the structure of a Node.js component. The components
-written Java programming language have a different structure but the location
+written in Java programming language have a different structure but the location
 of the component descriptor is the same: it must be located in the
 root folder of the component (1). You are welcome to read our introductory
 guides about building components in [Java](/developer-guide/building-java-component)
 or [Node.js](/developer-guide/building-nodejs-component) for the
-{{site.data.tenant.name}} platform environment to see more details. Here we will concentrate on
+{{site.data.tenant.name}} platform. Here we will concentrate on
 providing an in-depth reference about the structure and the objects which you can
 use to describe different parts of any component.
 
@@ -43,11 +41,10 @@ nested objects.
 
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |
-| title       | `string` | Yes      | Specifies the component's title to be displayed below the component's logo |
-| description | `string` | Yes      | Description of the component |
-| docsURL     | `string` |       | URL to documentation |
+| title       | `string` | Yes      | Component's title to be displayed in the UI |
+| description | `string` | Yes      | Component's description to be displayed in the UI  |
 | [envVars](#envvars-object) | `object` |  | Used to declare environment variables |
-| [credentials](#credentials-object) | `object` |  | Used to specify the input fields for authentication with the given API |
+| [credentials](#credentials-object) | `object` |  | Used to specify the details about the authentication with the given API |
 | [triggers](#triggers-object) | `object` | Yes* | Used to expose component's triggers |
 | [actions](#actions-object) | `object` | Yes* | Used to expose component's actions |
 
@@ -73,13 +70,13 @@ must adhere for the component to function properly:
 
 ## envVars Object
 
-The **envVars object** is used to define the environment variables which can be used
-throughout the whole component. Every environment variable must have the following
-properties:
+The **envVars object** is used to define the environment variables to be used
+for component configuration. Every environment variable defined in the `component.json`
+file must have the following properties:
 
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |
-| required    | `boolean`|  | Specifies whether setting the environmental variable is required for the component to operate properly. If not present then the value is set `false` by default. |
+| required    | `boolean`|  | Specifies whether setting the environmental variable is required for the component to operate properly. If not present then the value is set to `false` by default. |
 | description | `string` |  | Description of the environment variable |
 
 An environment variable is defined using a word or words connected with hyphens
@@ -102,20 +99,20 @@ object implemented in the [Salesforce Component](https://github.com/elasticio/sa
 ## Credentials Object
 
 The **Credentials Object** specifies how a user can grant a component the access
-to his protected resources using API.
+to his protected resources using API. This is accomplished by defining fields
+used to gather authentication related data from the user.
 
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |
-| fields      | `object` | Yes | Input fields used to provide credentials for authentication. Each property of this object defines a name of a configuration property |
-| [oauth1](#oauth1) | `object` |  | Specifies the APIs details about Authenticating with OAuth 1.0 |
-| [oauth2](#oauth2) | `object` |  | Specifies the APIs details about Authenticating with OAuth 2.0 |
+| fields      | `object` | Yes | Object used to define input fields to gather authentication related data from the user. The keys of this object define field names, which must be unique. The values are definitions of the fields. |
+| [oauth1](#oauth1) | `object` |  | Specifies the details about OAuth v1.0 resources. Only used if a `OAuthFieldView` field is defined. |
+| [oauth2](#oauth2) | `object` |  | Specifies the details about OAuth v2.0 resources. Only used if a `OAuthFieldView` field is defined. |
 
-### Basic Authentication
-
-If the authentication is done via HTTP headers, then it is sufficient to define
-a single input field (`TextFieldView` - check the View Classes for more) for an
-API key like it is done in the [Petstore API (Node.js)](https://github.com/elasticio/petstore-component-nodejs/blob/master/component.json)
-component:
+Let's explore an example from the [Petstore API (Node.js)](https://github.com/elasticio/petstore-component-nodejs/blob/master/component.json)
+component. The client authenticated with the Petstore API using an API key
+which is send via an HTTP header. That's why it is sufficient to define in
+the `credentials` object a single field to gather the API key from the user,
+as shown below.
 
 ```json
 "credentials": {
@@ -124,13 +121,18 @@ component:
         "label": "API key",
         "required": true,
         "viewClass": "TextFieldWithNoteView",
-        "note": "Please use <b>elasticio</b> as API key ..."
+        "note": "Please use <b>elasticio</b> as API key"
       }
     }
   }
 ```
 
-### OAuth1
+In the example above the `apiKey` field is used to gather user's API key.
+The field is presented in the UI as a simple input field where a user must
+enter his API key. The value of this field will be provided to the component
+at runtime.
+
+## OAuth1
 
 Specifies OAuth 1.0 specific details of the API used by the component. For more
 details about Authenticating with OAuth 1.0 refer to the
@@ -170,7 +172,7 @@ In case of OAuth1 Authentication we must use `fields` and `oauth1` objects toget
 The `fields` object defines the type of input field and the `oauth1` object provides
 the configuration.
 
-### OAuth2
+## OAuth2
 
 Specifies OAuth 2.0 specific details of the API used by the component. For more
 details about Authenticating with OAuth 2.0 please read the
@@ -182,9 +184,7 @@ details about Authenticating with OAuth 2.0 please read the
 | client_secret | `string` | Yes      | The Consumer Secret |
 | auth_uri    | `string`   | Yes | URI to obtain User Authorization |
 | token_uri   | `string`   | Yes | URI to obtain a Access Token |
-| scopes      | `array` of `strings` |   No | Scope of the access request |
-| prompt      | `string` | No |  |
-| access_type | `string`| No |  |
+| scopes      | `array` of `strings` |   No | Scopes of the access request |
 
 Here is an example of `OAuth2` implementation in [Google Spreadsheets](https://github.com/elasticio/gspreadsheets/blob/master/component.json#L18) component:
 
@@ -196,15 +196,17 @@ Here is an example of `OAuth2` implementation in [Google Spreadsheets](https://g
    "token_uri":"https://www.googleapis.com/oauth2/v4/token",
    "scopes": [
       "https://spreadsheets.google.com/feeds"
-             ],
+   ],
    "access_type": "offline",
    "prompt": "consent"
 }
 ```
 
-In some cases `OAuth2` needs to receive some external parameters for accessing
-say production or sandbox environments. This kind of solution is implemented in
-the [Salesforce component](https://github.com/elasticio/salesforce-component/blob/master/component.json#L16):
+Please note that the properties `access_type` and `prompt` above are specific to Google. They are not defined in the OAuth2 specification.
+
+Sometimes you will need to access values in the `oauth2` properties you
+gathered from the user using fields, as for example is done in the [Salesforce component](https://github.com/elasticio/salesforce-component/blob/master/component.json).
+The following example demonstrates how to accomplish that.
 
 ```json
 "credentials" : {
@@ -216,25 +218,27 @@ the [Salesforce component](https://github.com/elasticio/salesforce-component/blo
          "model":{
             "test":"Sandbox",
             "login":"Production"
-            },
-         "prompt":"Select environment"
          },
-         "oauth":{
-            "label":"Authentication",
-            "viewClass":"OAuthFieldView",
-            "required": true
-            }
-        },
+         "prompt":"Select environment"
+       },
+       "oauth":{
+          "label":"Authentication",
+           "viewClass":"OAuthFieldView",
+           "required": true
+       }
+    },
    "oauth2":{
       "client_id":"{{SALESFORCE_KEY}}",
       "client_secret":"{{SALESFORCE_SECRET}}",
       "auth_uri":"https://{{prodEnv}}.salesforce.com/services/oauth2/authorize",
       "token_uri":"https://{{prodEnv}}.salesforce.com/services/oauth2/token"
-      }
+   }
 }
 ```
 
-`auth_url` can take additional parameters like this:
+In the example above the value of the `prodEnv` field is used to define the `auth_uri` and `token_uri` properties.
+
+The `auth_url` property can take additional query parameters as shown below:
 
 ```json
 "oauth2": {
@@ -251,7 +255,7 @@ object are used as unique trigger names.
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |
 | title | `string` | Yes | Human readable title of the trigger |
-| main | `string` | Yes | Relative path to a Node.js module or a fully qualified name or a Java class |
+| main | `string` | Yes | Relative path to a Node.js module or a fully qualified name of a Java class |
 | metadata | `object` | Yes | Contains a single `out` property whose value is a JSON Schema describing the metadata of the message's body produced by the trigger |
 | type | `string` | No  | It can have only 2 values `polling` or `webhook`. If the `type` is omitted then it is considered to be a Webhook trigger and it will wait for the messages to arrive. Otherwise, it needs to be specifically written as a `polling` for it to be scheduled for an execution. |
 | fields | `object` | No | Trigger specific input fields used to provide configuration for the trigger |
