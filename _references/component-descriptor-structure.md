@@ -62,11 +62,10 @@ Let's explore an example of a component descriptor:
 }
 ```
 As we have presented the information in the table above, only `title` and
-`description` are required properties here. However, there are certain rules one
-must adhere for the component to function properly:
+`description` are required properties here.
 
-1.  You must have at least one declared function. Either in `triggers` or `actions`.
-2.  If you include `triggers` or `actions` property they must not be empty.
+> **Note** You must declare at least one function, either in `triggers` or
+> `actions` for the component to function properly.
 
 ## envVars Object
 
@@ -79,9 +78,11 @@ file must have the following properties:
 | required    | `boolean`|  | Specifies whether setting the environmental variable is required for the component to operate properly. If not present then the value is set to `false` by default. |
 | description | `string` |  | Description of the environment variable |
 
-An environment variable is defined using a word or words connected with hyphens
-(`-`) or underscores (`_`) in capital letters. Here is an example of `envVars`
-object implemented in the [Salesforce Component](https://github.com/elasticio/salesforce-component/blob/master/component.json):
+The environment variable naming follows a standard UNIX/Linux Shell variable
+definitions. As a guidance, variable name must begin with an alphanumeric or alpha
+character, followed by one or more alphanumeric or underscore (`_`) characters.
+Avoid using reserved words like (`if`, `else`, `elif`, `do`, `done` ...). Here is
+an example of `envVars` object implemented in the [Salesforce Component](https://github.com/elasticio/salesforce-component/blob/master/component.json):
 
 ```json
 "envVars": {
