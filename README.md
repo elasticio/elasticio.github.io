@@ -17,7 +17,7 @@ If you don't have the ``jekyll/jekyll`` Docker image on your machine yet,
 install it once.
 
 ````
-docker install jekyll/jekyll
+docker pull jekyll/jekyll
 ````
 
 Once you have ``jekyll/jekyll`` image locally, execute the following
