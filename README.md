@@ -3,7 +3,7 @@
 If you don't have ``jekyll/jekyll`` on your machine yet, install it once.
 
 ````
-docker install jekyll/jekyll
+docker pull jekyll/jekyll
 ````
 
 Once you have ``jekyll/jekyll`` image locally, execute the following command from the root folder of this repo:
