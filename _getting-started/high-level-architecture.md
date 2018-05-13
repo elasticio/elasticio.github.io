@@ -50,6 +50,6 @@ category: component
 * During execution a component can receive information in the following places:
   * [The incoming message](https://support.elastic.io/support/solutions/articles/14000059492-emitdata-event)
   * [The snapshot produced by the previous execution](https://support.elastic.io/support/solutions/folders/14000112651)
-  * [The configuration configured for this specific step](https://support.elastic.io/support/solutions/folders/14000108605)
+  * [The fields configured for this specific step](https://support.elastic.io/support/solutions/folders/14000108605)
   * [The credentials object](https://support.elastic.io/support/solutions/articles/14000032297-add-and-manage-your-security-credentials)
   * [Environment variables](https://support.elastic.io/support/solutions/folders/14000108754)
