@@ -19,6 +19,12 @@ like `$abs(number)`, `$floor(number)`, `$ceil(number)`, `$power(base, exponent)`
 and more. In this guide, we give examples using few of them. To learn more
 please refer to the [JSONata documentation](http://docs.jsonata.org/numeric-functions.html).
 
+Here is the content of this article:
+
+*   [String to number](#string-to-number)
+*   [Simple number manipulations](#simple-number-manipulations)
+*   [Using numeric aggregation functions](#using-numeric-aggregation-functions)
+
 ## String to number
 
 Before starting with examples of number transformation it is worth to mention
