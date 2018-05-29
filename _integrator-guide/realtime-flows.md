@@ -3,7 +3,6 @@ title: Building real-time flows
 layout: article
 section: Building integration flows
 order: 0
-since: 20180430
 ---
 
 The {{site.data.tenant.name}} platform is microservices-based, which means that
@@ -17,7 +16,7 @@ There are two types of integration flows, ordinary and realtime.
 
 When you want to execute a task consisting of, say, two components with a
 Data Mapper in between, the {{site.data.tenant.name}} starts each corresponding
-container (in our case three in total) one after the other in order to pass data
+container (in our case three in total) one after the other to pass data
 from the first container to the last one, stopping every container after the use
 and proceeding to the next one.
 
@@ -34,7 +33,7 @@ and execution? Luckily, we have a solution for you and it is called **Realtime f
 ## Realtime Flows
 
 Realtime Flows on demand run at sub-second speeds. In these flows, containers
-start and don’t stop, while being "glued" together via our messaging queue. Thanks
+start and never stop, while being "glued" together via our messaging queue. Thanks
 to this, data passes through all of them basically in no time!
 
 **How fast can Realtime flow be?**
