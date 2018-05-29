@@ -2,7 +2,8 @@
 title: Mapping data
 layout: article
 section: Data transformation
-order: 1
+category: data-transformation
+order: 0
 since: 20180216
 ---
 
