@@ -8,7 +8,7 @@ order: 2
 
 The {{site.data.tenant.name}} platform supports `Node.js` programming language for building integration components.
 
-To help you create a component in `Node.js` we have created a simple [Petstore component in Node.js](https://github.com/elasticio/petstore-component-nodejs "Petstore Component in Node.js") which connects to the [Petstore API](https://petstore.elastic.io/docs/ "Petstore API") and demonstrates multiple features of the platform.
+To help you create a component in `Node.js` we have created a simple [Petstore component in Node.js]({{site.data.tenant.petStoreSourceNodeJS}} "Petstore Component in Node.js") which connects to the [Petstore API]({{site.data.tenant.petStoreDocs}} "Petstore API") and demonstrates multiple features of the platform.
 
 ## Petstore Component
 
@@ -62,15 +62,14 @@ As mentioned above, the `component.json` file is the component descriptor interp
 ```
 {
   "title": "Petstore API (Node.js)",                                       (1)
-  "description": "elastic.io component for the Petstore API",              (2)
-  "docsUrl": "https://github.com/elasticio/petstore-component-nodejs",
+  "description": "Component for the Petstore API",                         (2)
   "credentials": {                                                         (3)
     "fields": {
       "apiKey": {
         "label": "API key",
         "required": true,
         "viewClass": "TextFieldWithNoteView",
-        "note": "Please use <b>elasticio</b> as API key."
+        "note": "Please use <b>secret</b> as API key."
       }
     }
   },
@@ -140,7 +139,7 @@ In the example above the action with id `createPetWithPromise` (1) gets implemen
 
 ## Verify Credentials
 
-When creating an elastic.io component you may allow users to check entered credentials for validity, during the integration flow creation. This feature is useful when users need to type-in passwords, host-names, IP addresses, etc. Credentials verification is an optional step but it makes the user flow much more reliable and usable.
+When creating an {{site.data.tenant.name}} component you may allow users to check entered credentials for validity, during the integration flow creation. This feature is useful when users need to type-in passwords, host-names, IP addresses, etc. Credentials verification is an optional step but it makes the user flow much more reliable and usable.
 
 For node.js component you can use any libraries and/or functionality at your disposal to authorise the user credentials. But for the platform to find and call your verification code you have to make sure that:
 

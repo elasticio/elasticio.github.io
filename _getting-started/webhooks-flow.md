@@ -95,7 +95,7 @@ Next you will see the page *Choose Credentials* where you can either use an exis
 
 Let us fill-in an input form for these two fields:
 *   **Account name**: allows you to give your credential a meaningful name. You can leave this unchanged or give your own name.
-*   **API key**: used to authenticate with the [Petstore API](https://petstore.elastic.io/docs/). Please use the API key `elasticio`.
+*   **API key**: used to authenticate with the [Petstore API]({{site.data.tenant.petStoreDocs}}). Please use the API key `{site.data.tenant.petStoreApiKey}}`.
 
 Click on *Save* to verify the credentials. The verification can take no more than 30 seconds. Upon completion you will see the page to choose one of the 2 available actions in the Petstore component.
 

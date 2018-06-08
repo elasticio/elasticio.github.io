@@ -53,7 +53,7 @@ If you need to delete a developer team:
 *   You should have organisation admin access role and
 *   The developer team must contain no integration component.
 
-If the above conditions are true, you can proceed and delete the developer team using [an API call](https://api.elastic.io/v2/docs/#delete-a-team).
+If the above conditions are true, you can proceed and delete the developer team using [an API call]({{site.data.tenant.apiBaseUri}}/v2/docs/#delete-a-team).
 
 
 ## Manage integration components
@@ -75,14 +75,14 @@ In this particular example, the name of the repository is `salesforce-acme` and 
 1.  Upload SSH key - Please [upload your public SSH key](ssh-keys) here if you haven't uploaded it yet.
 2.  Clone our "Hello World" component
 ```sh
-git clone https://github.com/elasticio/hello-world-nodejs.git salesforce-acme
+git clone {{site.data.tenant.petStoreSourceNodeJS}} salesforce-acme
 cd salesforce-acme
 ```
 3.  Edit code to make your own component. Please read our documentation to learn how to implement your components.
 4.  Push your code
 ```sh
-git remote add elasticio acme-production@git.elastic.io:salesforce-acme.git
-git push elasticio master
+git remote add ipaas acme-production@{{site.data.tenant.gitDomain}}:salesforce-acme.git
+git push ipaas master
 ```
 
 ### Manage the component repository

@@ -31,7 +31,7 @@ For that purpose type `petstore` in the search bar and you will find it. Next cl
 
 Next you will see the page *Choose Credentials* where you need to click on *+connect new credentials* link to create your first credentials. Let us fill-in an input form for these two fields:
 *   **Account name** - you can leave this unchanged or provide your own.
-*   **API key** - please use `elasticio` to get access to our [Petstore API](https://petstore.elastic.io/docs/).
+*   **API key** - please use `{{site.data.tenant.petStoreApiKey}}` to get access to our [Petstore API]({{site.data.tenant.petStoreDocs}}).
 
 Click on *Save* to verify the credentials. The verification can take no more than 30 seconds. Upon completion you will
 see the page to choose one of the 3 triggers available in the Petstore component.

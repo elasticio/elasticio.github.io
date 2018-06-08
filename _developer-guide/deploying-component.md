@@ -24,13 +24,13 @@ The first step would be to [upload your SSH Key](ssh-key) to authorise your depl
 
 If you have you have prepared your component locally by following instructions in how to build a component in Node.js or Java then you can skip this step. Otherwise, you can clone one of our template repositories to go through these steps couple of times to familiarise yourself. At the moment we are supporting only Node.js and Java so here are component templates in each language respectively:
 
-*   [Petstore Component for Node.js](https://github.com/elasticio/petstore-component-nodejs "Petstore components for Node.js")
-*   [Petstore Component for Java](https://github.com/elasticio/petstore-component-java "Petstore Component for Java<")
+*   [Petstore Component for Node.js]({{site.data.tenant.petStoreSourceNodeJS}} "Petstore components for Node.js")
+*   [Petstore Component for Java]({{site.data.tenant.petStoreSourceNodeJS}} "Petstore Component for Java")
 
 For example, in case of Node.js you could start like this:
 
 ```sh
-$ git clone https://github.com/elasticio/petstore-component-nodejs.git
+$ git clone {{site.data.tenant.petStoreSourceNodeJS}}
 Cloning into 'petstore-component-nodejs'...
 remote: Counting objects: 130, done.
 remote: Compressing objects: 100% (9/9), done.
@@ -62,19 +62,19 @@ More information is available in [Building a component in Node.js](building-node
 At this stage, we want to know which repositories we have access to:
 ```sh
 $ git remote -v
-originhttps://github.com/elasticio/petstore-component-nodejs.git (fetch)
-originhttps://github.com/elasticio/petstore-component-nodejs.git (push)
+origin {{site.data.tenant.petStoreSourceNodeJS}} (fetch)
+origin {{site.data.tenant.petStoreSourceNodeJS}} (push)
 ```
 
 Now we need to add a new repository in our platform by following instructions in [Managing your Teams/Components](teams-and-repos) page. For a simplicity let us take the same name for the repository creation **petstore-component-nodejs**, and let's say we have created this particular repository in the development team called **dev-build**. The platform would create a specific git repository like this: `dev-build@git.{{site.data.tenant.name}}:petstore-component-nodejs.git`. Then we add this repository to our local git configuration of local repository like this
 
 ```sh
-$ git remote add elasticio dev-build@git.{{site.data.tenant.name}}:petstore-component-nodejs.git
+$ git remote add ipaas dev-build@{{site.data.tenant.gitDomain}}:petstore-component-nodejs.git
 $ git remote -v
-elasticio dev-build@git.{{site.data.tenant.name}}:petstore-component-nodejs.git (fetch)
-elasticio dev-build@git.{{site.data.tenant.name}}:petstore-component-nodejs.git (push)
-origin https://github.com/elasticio/petstore-component-nodejs.git (fetch)
-origin https://github.com/elasticio/petstore-component-nodejs.git (push)
+ipaas dev-build@{{site.data.tenant.gitDomain}}:petstore-component-nodejs.git (fetch)
+ipaas dev-build@{{site.data.tenant.gitDomain}}:petstore-component-nodejs.git (push)
+origin {{site.data.tenant.petStoreSourceNodeJS}} (fetch)
+origin {{site.data.tenant.petStoreSourceNodeJS}} (push)
 ```
 
 Our repository is ready to receive the **petstore-component-nodejs** component.
@@ -83,7 +83,7 @@ Our repository is ready to receive the **petstore-component-nodejs** component.
 
 After performing all the task described above we are ready to push our code to the newly created repository. To do that we will type:
 ```sh
-$ git push elasticio master
+$ git push ipaas master
 ```
 
 Before your push would go ahead the system will want to authenticate your SSH Key which we have created specifically for this. Please type yes and accept it to proceed.

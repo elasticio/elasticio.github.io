@@ -43,8 +43,8 @@ As you can see in the screenshot above, a user is asked to provide values
 for two input fields:
 *   **Account name** - an optional name for this credential
 *   **API key** - an API key to authenticate with the
-[Petstore API](https://petstore.elastic.io/docs/). You can use the
-`elasticio` API key to try out this API.
+[Petstore API]({{site.data.tenant.petStoreDocs}}). You can use the
+`{{site.data.tenant.petApiKey}}` API key to try out this API.
 
 Once a credential is saved, it will be linked with the current step of
 the flow. It can be also reused in other steps of the same flow or other
