@@ -1,4 +1,11 @@
 name: elastic.io
 companyName: elastic.io GmbH
 apiBaseUri: https://api.elastic.io
+gitDomain: git.elastic.io
 supportEmail: support@elastic.io
+petStoreDocs: https://petstore.elastic.io/docs
+petStoreApiKey: secret
+petStoreSourceNodeJS: https://github.com/elasticio/petstore-component-nodejs
+petStoreSourceJava: https://github.com/elasticio/petstore-component-java
+javaAPIDocs: http://www.elastic.io/javadoc/
+javaAPISource: https://github.com/elasticio/java-api

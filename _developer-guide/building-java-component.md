@@ -8,12 +8,12 @@ since: 20171201
 ---
 
 The {{site.data.tenant.name}} platform supports Java programming language for building integration components.
-Please read the [JavaDocs](http://www.elastic.io/javadoc/ "Java API documentation") of the Java SDK or browse the
-source code on [GitHub](https://github.com/elasticio/java-api "JAVA-API").
+Please read the [JavaDocs]({{site.data.tenant.javaAPIDocs}} "Java API documentation") of the Java SDK or browse the
+source code on [GitHub]({{site.data.tenant.javaAPISource}} "Java API").
 
 To help you create a component in Java we have created a simple
-[Petstore component in Java](https://github.com/elasticio/petstore-component-java "Petstore Component in Java")
-which connects to the [Petstore API](https://petstore.elastic.io/docs/ "Petstore API") and demonstrates multiple
+[Petstore component in Java]({{site.data.tenant.petStoreSourceJava}} "Petstore Component in Java")
+which connects to the [Petstore API]({{site.data.tenant.petStoreDocs}} "Petstore API") and demonstrates multiple
 features of the platform.
 
 ## Petstore Component
@@ -78,8 +78,7 @@ required information about the component. Let's explore the descriptor of the Pe
 ```json
 {
   "title": "Petstore API (Java)",                                           (1)
-  "description": "elastic.io component for the Petstore API",               (2)
-  "docsUrl": "https://github.com/elasticio/petstore-component-java",
+  "description": "Component for the Petstore API",                          (2)
   "credentials": {                                                          (3)
     "fields": {
       "apiKey": {
