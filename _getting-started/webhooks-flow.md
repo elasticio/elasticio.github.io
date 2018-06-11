@@ -11,6 +11,11 @@ In this article we will cover how to create an [integration flow](integration-fl
 
 If this is your first experience with the {{site.data.tenant.name}} platform, then please follow every step to create your first integration flow. If you have already followed the steps in [Creating your first integration flow?](first-flow) tutorial, then some steps would be the same to you and you are welcome to skip them.
 
+*   [Setting up the webhook](#setting-up-the-webhook)
+*   [Choosing the data target](#choosing-the-data-target)
+*   [Running and monitoring the flow](#running-and-monitoring-the-flow)
+*   [Securing your webhooks](#securing-your-webhooks)
+
 ## Setting up the webhook
 
 When you login you will have a similar view of the {{site.data.tenant.name}} platform.
@@ -95,7 +100,7 @@ Next you will see the page *Choose Credentials* where you can either use an exis
 
 Let us fill-in an input form for these two fields:
 *   **Account name**: allows you to give your credential a meaningful name. You can leave this unchanged or give your own name.
-*   **API key**: used to authenticate with the [Petstore API]({{site.data.tenant.petStoreDocs}}). Please use the API key `{site.data.tenant.petStoreApiKey}}`.
+*   **API key**: used to authenticate with the [Petstore API]({{site.data.tenant.petStoreDocs}}). Please use the API key `{{site.data.tenant.petStoreApiKey}}`.
 
 Click on *Save* to verify the credentials. The verification can take no more than 30 seconds. Upon completion you will see the page to choose one of the 2 available actions in the Petstore component.
 
