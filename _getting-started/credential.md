@@ -9,19 +9,19 @@ category: integration-flow
 An [integration flow](integration-flow) runs on behalf of a person or an
 organization to synchronize data between multiple applications. Each step
 of an integration flow is accessing a particular application, for example
-through an API, in order to retrieve, store or update some data. Usually
-an API requires a client to authenticate before the data can be access.
-This is each step of an integration flow needs a `credential`. Simply
-spoken, a credential is an object holding the required information to
+through an API, to retrieve, store or update some data. Usually
+an API requires a client to authenticate before the data can be accessed.
+Each step of an integration flow needs a `credential`. Simply
+put, a credential is an object holding the required information to
 authenticate with an API. Let's have a look at a couple of credential
 objects:
 
-* API Key: if the integration component is sending requests to a REST API
+*   **API Key**: if the integration component is sending requests to a REST API
 using API key for authorization, then a credential is a simple object
 holding the API key.
-* OAuth2: In case of a component authorizing through OAuth2, the credential
+*   **OAuth2**: In case of a component authorizing through OAuth2, the credential
 object holds multiple values, such as `access_key`, `refresh_key`, `scope`, etc.
-* Database credentials: If a component goes directly into an application's
+*   **Database credentials**: If a component goes directly into an application's
 database, the credential object holds database host url, port, database name,
 username, password.
 
@@ -34,17 +34,17 @@ component or any other API.
 
 When [creating a flow](first-flow) an credential must be chosen. You can
 either chose an existing one or create a new one. The following screenshot
-demonstrates how a credential is created for a trigger component for the
-[Petstore API](https://petstore.elastic.io/docs/).
+demonstrates how the credential is created for the [Petstore API](https://petstore.elastic.io/docs/)
+component.
 
-![Create the credentials to access](/assets/img/getting-started/first-flow/getting-started-flow-003.png "Create the credentials to access")
+![Create the credentials to access](/assets/img/getting-started/credential/credentials-create.png "Create the credentials to access")
 
 As you can see in the screenshot above, a user is asked to provide values
 for two input fields:
 *   **Account name** - an optional name for this credential
 *   **API key** - an API key to authenticate with the
-[Petstore API](https://petstore.elastic.io/docs/). You can use the
-`elasticio` API key to try out this API.
+[Petstore API]({{site.data.tenant.petStoreDocs}}). You can use the
+`{{site.data.tenant.petStoreApiKey}}` API key to try out this API.
 
 Once a credential is saved, it will be linked with the current step of
 the flow. It can be also reused in other steps of the same flow or other
@@ -59,7 +59,7 @@ have an on overview of all your credentials just go to `Settings` page
 where you will find the `Security Credentials` area, as shown in the
 screenshot below.
 
-![The settings page](/assets/img/getting-started/tour/tour6.png "The settings page")
+![The settings page](/assets/img/getting-started/credential/credentials-navigateto.png "The settings page")
 
 Now go into `Security Credentials` to find an overview of credentials,
 shown in the following screenshot:
@@ -75,7 +75,7 @@ credentials for a given component, as shown in the screenshot below.
 
 ![Component credentials](/assets/img/getting-started/credential/credentials-petstore.png "Component credentials")
 
-In the screenshot above you can see al available credentials for the
+In the screenshot above you can see all available credentials for the
 `Petstore` component belonging to a user. A new credential can be added by
 pressing the `Add New Account` button. An existing credential can also be
 edited or deleted. This is accomplished by clicking the `Edit` or `Delete`
@@ -86,4 +86,3 @@ is edited.
 
 
 > **Note** Please note that it is not possible to delete a credential used by an active integration flow as the flow would become broken. If you try to delete such a credential, a corresponding error message will be displays. Please delete these flow first or reconfigure them to use another credentials.
-
