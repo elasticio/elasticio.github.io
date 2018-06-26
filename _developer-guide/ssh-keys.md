@@ -2,11 +2,11 @@
 title: Managing your SSH keys
 layout: article
 section: Developing Components
+category: component
 order: 0
 ---
 
 {{site.data.tenant.name}} platform **requires from every developer a unique SSH key to authorise any code deployment into the system**. This is a standardised, industry accepted security feature which is widely used in similar services like GitHub.
-![Add your SSH Key](/assets/img/developer-guide/ssh-keys/sshkeys-empty.png "Add your SSH Key")
 
 In this article:
 
@@ -69,12 +69,31 @@ Use the newly generated `id_rsa.pub` key to work with the platform. For the simp
 ```sh
 $ less ~/.ssh/id_rsa.pub | pbcopy
 ```
-This command copies the newly created SSH Key into your clipboard, so that you can paste somewhere else.
+This command copies the newly created SSH Key into your clipboard, so that you
+can paste it into the SSH entry form on the {{site.data.tenant.name}} platform.
 
 ## Uploading your SSH keys
 
-To add a newly generated SSH Keys navigate to `Settings > SSH Key` section:
-![Adding the new SSH Key](/assets/img/developer-guide/ssh-keys/sshkeys-addnew-copied.png "Adding the new SSH Key")
-The final result would look like this:
-![Your SSH Keys](/assets/img/developer-guide/ssh-keys/sshkeys-key.png "Your SSH Keys")
+To add a newly generated SSH Keys navigate to `Settings > SSH Keys` section:
+
+![Navigate to SSH Keys section](/assets/img/developer-guide/ssh-keys/ssh-keys-01.png "Navigate to SSH Keys section")
+
+If you don't have any uploaded SSH Keys you will see the following screen:
+
+![First time to upload SSH Key](/assets/img/developer-guide/ssh-keys/ssh-keys-02.png "First time to upload SSH Key")
+
+Click on *+Upload* button to start.
+
+![Fill-in the SSH Key details](/assets/img/developer-guide/ssh-keys/ssh-keys-03.png "Fill-in the SSH Key details")
+
+The screenshot above shows a form where you must enter the name of your SSH Key
+and paste the actual SSH Key which should still be in your clipboard. The result
+would look like this:
+
+![Pasted SSH Key](/assets/img/developer-guide/ssh-keys/ssh-keys-04.png "Pasted SSH Key")
+
+Click on *Save* to finish. The final result would look like this:
+
+![Your SSH Keys](/assets/img/developer-guide/ssh-keys/ssh-keys-05.png "Your SSH Keys")
+
 You can add more SSH keys or delete the current one on this interface.

@@ -2,6 +2,7 @@
 title: Managing your Teams/Components
 layout: article
 section: Developing Components
+category: component
 order: 1
 ---
 
