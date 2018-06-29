@@ -18,6 +18,8 @@ developer-guide:
   sections:
     - title: Developing Components
       description: Articles on component development and SDKs
+    - title: Local Agents
+      description: Articles on Local Agent installation and running
 integrator-guide:
   title: Integrator Guide
   description: Everything you need to know to master creation of integration flows
