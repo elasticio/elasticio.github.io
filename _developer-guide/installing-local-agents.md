@@ -17,7 +17,6 @@ To successfully run your instance of the Agent you must do the following steps:
 5. [Deploy `agent-boatswain` to the VM](#deploy-agent-boatswain)
 6. [Check the agent is operational](#check-the-agent-is-operational)
 
-
 ## System Requirements
 
 ### Provided Image has default Configuration:
@@ -33,25 +32,34 @@ For example, flow that consists of 20 steps, approximately requires:
 - RAM 256 * 20 ~ 5 Gb
 - Storage 1 * 20 ~ 20 Gb
 
-## Create a db record for the Agent
+## Request Local Agent
 
-- [ ] Go to page `Settings > Agents`
+To begin working with local agent you must request it by navigating to
+`Settings > Agents` section of {{site.data.tenant.name}} platform as it is shown
+on the screenshot below.
 
-![Settings/Agents](https://user-images.githubusercontent.com/931046/35914209-228c4a6a-0c0b-11e8-8272-d3f445f4f6ad.png)
+![Navigate to Agents](/assets/img/developer-guide/local-agents/local-agents-01.png "Navigate to Agents")
 
-- [ ] Select an agent
+Click on button *+ Request an agent* to start.
 
-On the agent's page you can find all your agents and choose the one you would like to launch on VM or use button `+ Request an agent` and create the new instance.
+![Click to request a local agent](/assets/img/developer-guide/local-agents/local-agents-02.png "Click to request a local agent")
 
-- [ ] Make sure selected agent has `status` `offline`
+You will be guided through the steps to name your Agent (1), give the description
+(2) of for the agent and wait for the activation (3).
 
-Following statuses are available:
+![Requesting the local agent](/assets/img/developer-guide/local-agents/local-agents-03.png "Requesting the local agent")
 
-* pending: while we are preparing the agent for you, the circle next to agent's name is grey
-* offline: agent is ready but not started yet or agent is down for maintenance, the circle next to agent's name is red
-* green: the circle is green when agent is online
+Your requested agent has status as `pending`. If local agents have been reuqested
+and used by your colleagues you might see other agents with different statuses.
 
-![elastic io 2017-11-27 12-18-02](https://user-images.githubusercontent.com/931046/36025903-6f72f19c-0d9d-11e8-8043-5090276874f0.png)
+![Agents with different statuses](/assets/img/developer-guide/local-agents/local-agents-10.png "Agents with different statuses")
+
+The screenshot above shows the 3 different statuses which local agent can have.
+The statuses can be:
+
+*   `online` : **shown with a green dot** - agent is online and operational.
+*   `offline`: **shown with a red dot** - agent is ready but not started yet or agent is down for maintenance.
+*   `pending`: **shown with a grey dot** - we are preparing the agent for you.
 
 
 
