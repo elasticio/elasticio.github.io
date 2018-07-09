@@ -18,7 +18,7 @@ This document is a step-by-step guide to help you understand how our system work
 
 ## Upload your SSH Key
 
-The first step would be to [upload your SSH Key](ssh-key) to authorise your deployment via git-push process. Please note that **failure to provide (upload) a unique SSH key would result in error "Permission denied" during the code Push phase**.
+The first step would be to [upload your SSH Key](ssh-keys) to authorise your deployment via git-push process. Please note that **failure to provide (upload) a unique SSH key would result in error "Permission denied" during the code Push phase**.
 
 ## Clone and prepare your component locally
 
