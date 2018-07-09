@@ -13,7 +13,7 @@ Any integration flow in the {{site.data.tenant.name}} platform has a history of 
 *   Deploy any version in the history to the runtime
 *   Roll-back a version deployment
 
-In this article we will cover how to create and manage a flow's history. You will learn how to create a first version of a flow, how to create a new version from an existing one. You will also learn the concept of `Drafts`. This article assumes that you know how to create an [integration flow](/getting-started/integration-flow) on {{site.data.tenant.name}} platform. You are welcome to refresh your memory by following the steps in [creating your first integration flow](/getting-started/first-flow) and [creating webhook flow](/getting-started/webhook-flow) tutorials.
+In this article we will cover how to create and manage a flow's history. You will learn how to create a first version of a flow, how to create a new version from an existing one. You will also learn the concept of `Drafts`. This article assumes that you know how to create an [integration flow](/getting-started/integration-flow) on {{site.data.tenant.name}} platform. You are welcome to refresh your memory by following the steps in [creating your first integration flow](/getting-started/first-flow) and [creating webhook flow](/getting-started/webhooks-flow) tutorials.
 
 ## Creating the first version of your flow
 

@@ -14,7 +14,7 @@ Typically a flow consists of following steps:
 2. transforming the data according to a set of predefined rules
 3. sending data to one or multiple *target* applications.
 
-A flow is constructed from a set [integration components](integration-component.html) that are invoked in a predefined order.
+A flow is constructed from a set [integration components](integration-component) that are invoked in a predefined order.
 The components within a flow can be classified into two groups: *triggers* and *actions*, as shown in the following diagram.
 
 ![Flow structure](/assets/img/getting-started/integration-flow/flow-trigger-actions.png "Flow structure")

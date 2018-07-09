@@ -9,11 +9,11 @@ category: component
 An integration component is a small application specialized on
 retrieving/storing objects from/to a service such as Salesforce, Quickbooks,
 SAP, etc. In most cases a component connects to the service's API
-(REST, SOAP, etc) on user's behalf using the provided [credentials](credential.html).
+(REST, SOAP, etc) on user's behalf using the provided [credentials](credential).
 A component may also connect to a Database, an SFTP server, etc. to retrieve
 or store data.
 
-A component can expose multiple operations to be used in [integration flows](getting-started/integration-flow).
+A component can expose multiple operations to be used in [integration flows](integration-flow).
 As a rule of thumb a component talking to an application through its REST
 API will expose operations that reflect the endpoints of that API. Let's
 explore the integration component for the [Petstore](https://petstore.elastic.io/docs/)
@@ -56,7 +56,7 @@ An component acts as a black box: its internals are hidden to an integrator.
 The component exposes the following details only:
 
 * **How to authenticate**: what data does the component require in order
-to operate on integrator's behalf. Please read the details on [credentials](credential.html).
+to operate on integrator's behalf. Please read the details on [credentials](credential).
 * **Consumed input**: In order to operate properly a component needs
 some input data.
 * **Produced output**: For each incoming message a component typically produces
@@ -78,7 +78,7 @@ illustrates an interaction of two components.
 
 ![Component Interface Interaction](/assets/img/getting-started/integration-component/component-interface-interaction.png "Component Interface Interaction")
 
-In the diagram above you can see an interaction between two components: 
+In the diagram above you can see an interaction between two components:
 `Webhook` and `Petstore`. The `Webhook` component provides a `Payload`
 interfaces and the `Petstore` component requires a `Pet` interface. How
 do these two component interact with each other? This is where the `Mapper`
@@ -86,7 +86,7 @@ comes into play. The `Mapper` is responsible to transform an object into
 another one with a given set of transformation rules. In the example above
 the Mapper transforms a `Payload` object into a `Pet` object before it is
 being passed to `Petstore` component. Mode details on Mapper can be found
-[here](integrator-guide/mapping-data).
+[here](/integrator-guide/mapping-data).
 
 
 # Implementing own integration components
@@ -94,5 +94,5 @@ being passed to `Petstore` component. Mode details on Mapper can be found
 The {{site.data.tenant.name}} platform provides a set of built-in components
 to be used right away. Furthermore the platform is open for contributions
 of custom components. Please read how to build integration components using
-[Node.js](developer-guide/building-nodejs-component) or
-[Java programming](developer-guide/building-java-component)  languages.
+[Node.js](/developer-guide/building-nodejs-component) or
+[Java programming](/developer-guide/building-java-component)  languages.
