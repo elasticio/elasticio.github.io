@@ -8,8 +8,8 @@ order: 0
 
 To successfully run your instance of the Agent you must do the following steps:
 
-0. [Requirements](#system-requirements)
-1. [Create a db record for the Agent](#create-a-db-record-for-the-agent)
+0. [System Requirements](#system-requirements)
+1. [Request Local Agent](#request-local-agent)
 2. [Set the Virtual Machine up](#virtual-machine-setup)
 3. [Start the VM](#start-the-vm)
 4. [Make sure you can login to the VM](#make-sure-you-can-ssh-into-the-vm)
@@ -19,23 +19,32 @@ To successfully run your instance of the Agent you must do the following steps:
 
 ## System Requirements
 
-### Provided Image has default Configuration:
-- 2 CPU and 2Gb of RAM
-- Also Storage can be extended up to 100Gb
-- Images Size Before Download < 2Gb
-- Required Space - after first Init ~ 6 Gb
+The local agent provided by {{site.data.tenant.name}} runs in the Virtual Machine (VM)
+which must have the following resources:
 
-### Additionally:
-One step of flow requires about 0,1 CPU, 256 Mb RAM and 1Gb storage space.
-For example, flow that consists of 20 steps, approximately requires:
-- CPU 0.1 * 20 ~ 2 vCPU
-- RAM 256 * 20 ~ 5 Gb
-- Storage 1 * 20 ~ 20 Gb
+| Resource | Required Amount | Description |
+| :--------| :--------------:| :-----------|
+| RAM      | 2 CPU and 2 GB  | Extendable up to 100 GB, depending on the usage |
+| HD Space | > 6 GB          | Size of extracted VM files after the first run |
+
+The numbers above show the minimum required configuration. However, if you are
+planning to run many integration steps using the same local agent then here is
+an estimate to help you to check your resources and determine the feasibility.
+
+| Step  | vCPU | RAM | HD Space |
+| :---- | :---: | :---: | :----: |
+| 1 step | 0.1  | 256 MB | 1 GB |
+| 20 steps | ~2  | ~5 GB | ~20 GB |
+
+The **values listed in the above table are exclusive of the initial requirements**
+which are necessary for running the VM itself. Meaning, to run one integration step in
+your VM you would in average need 1 GB + 2 GB = 3 GB RAM. Please consider these values
+before installing and running the local agent on your own PC.
 
 ## Request Local Agent
 
 To begin working with local agent you must request it by navigating to
-`Settings > Agents` section of {{site.data.tenant.name}} platform as it is shown
+*Settings > Agents* section of {{site.data.tenant.name}} platform as it is shown
 on the screenshot below.
 
 ![Navigate to Agents](/assets/img/developer-guide/local-agents/local-agents-01.png "Navigate to Agents")
@@ -50,51 +59,55 @@ You will be guided through the steps to name your Agent (1), give the descriptio
 ![Requesting the local agent](/assets/img/developer-guide/local-agents/local-agents-03.png "Requesting the local agent")
 
 Your requested agent has status as `pending`. If local agents have been reuqested
-and used by your colleagues you might see other agents with different statuses.
+and used by your colleagues you might see other agents with different statuses when
+you visit the *Settings > Agents* page:
 
-![Agents with different statuses](/assets/img/developer-guide/local-agents/local-agents-10.png "Agents with different statuses")
+![Agents with different statuses](/assets/img/developer-guide/local-agents/local-agents-04.png "Agents with different statuses")
 
-The screenshot above shows the 3 different statuses which local agent can have.
-The statuses can be:
+The screenshot above shows 3 different agents with different statuses. The statuses
+can be:
 
 *   `online` : **shown with a green dot** - agent is online and operational.
 *   `offline`: **shown with a red dot** - agent is ready but not started yet or agent is down for maintenance.
 *   `pending`: **shown with a grey dot** - we are preparing the agent for you.
 
 
-
 ## Virtual Machine setup
 
-### VirtualBox
+To start setting up the Virtual Machine we need the following files and setups:
 
-- [ ] Make sure you have VirtualBox
+*   **Virtual Machine Manager** - we use the Oracle VM VirtualBox Manager. If you don't have it, visit the [VirtualBox Download page](https://www.virtualbox.org/wiki/Downloads) to get the version for your OS and install it.
+*   **Virtual Machine Image** - download the [elasticio-local-agent-1.0.3.tar.gz](https://cdn.elastic.io/localagent/elasticio-local-agent-1.0.3.tar.gz) compressed archive (about 1.6 GB).
+*   **Virtual Machine Descriptor files** - `agent-gateway` and `agent-boatswain` files specifically created for your agent. These files are provided by {{site.data.tenant.name}} directly.
 
-If you don't have VirtualBox, you can use this [link](https://www.virtualbox.org/wiki/Downloads) in order to download and setup `Oracle VM VirtualBox Manager`.
+To start with setup unpack the **Virtual Machine Image** to find these
+two files:
 
-- [ ] Download the VM image from here: [elasticio-local-agent-1.0.3.tar.gz](https://cdn.elastic.io/localagent/elasticio-local-agent-1.0.3.tar.gz)
+1.  Virtual Machine description – `elasticio-local-agent-1.0.3.ovf` (~ 8 KB)
+2.  Virtual Machine Disk image – `elasticio-local-agent-1.0.3-disk001.vmdk` (~ 1.57 GB)
 
-VM image contains the necessary environment for running the Agent and used as a template for a new VM.
+VM Disk image contains the necessary environment for running the Agent and used
+as a template for a new VM.
 
-- [ ] Unpack the downloaded archive
+Here we assume that you have installed the VirtualBox on your computer and have
+started it already. Let us import the image and create a new Virtual Machine (VM).
 
-Archive contains these two files:
+Click on the `*.ovf` file to launch the import wizard of the VirtualBox. Your OS
+must have associated these files types with it during the installation. Click on
+*Import* to start importing the Disk image:
 
-1. Virtual Machine description – `elasticio-local-agent-1.0.3.ovf`
-2. Virtual Disk image – `elasticio-local-agent-1.0.3-disk001.vmdk`
+![Importing the disk image](/assets/img/developer-guide/local-agents/local-agents-05.png "Importing the disk image")
 
-- [ ] Import the image and create a new Virtual Machine (VM)
+If clicking on the file did not work, you can launch VirtualBox and then navigate
+to the *Machine > Add* menu of the VirtualBox and select the `*.ovf` file from
+your files system to start the process.
 
-Most likely your operation system has assosiation with VirtualBox for files `*.ovf` so you can just click on the file `elasticio-local-agent-v0.02.ovf` in order to launch an import wizard. Click `Import` to begin.
+After the import is completed the newly created virtual machine should appear in
+the VirtualBox in the menu on the left-hand side.
 
-If clicking on the file did not work, you can launch VirtualBox and then navigate to the `Machine > Add` menu of the VirtualBox and select the `*.ovf` file from your files system.
+![Virtual Machine imported](/assets/img/developer-guide/local-agents/local-agents-06.png "Virtual Machine imported")
 
-![agent-import-dialog](https://user-images.githubusercontent.com/464220/33263606-c1c1f46a-d36a-11e7-9fc0-08e2e2e60028.png)
 
-After the import is completed the newly created virtual machine should appear in the VirtualBox in the menu on the left-hand side.
-
-![oracle vm virtualbox manager 2017-11-22 18-39-12](https://user-images.githubusercontent.com/464220/33263768-488a2e90-d36b-11e7-90fd-110651fc105c.png)
-
-- [ ] Ensure that VM imported properly
 
 The last important detail before starting the VM is to make sure that the NAT is configured correctly.
 
