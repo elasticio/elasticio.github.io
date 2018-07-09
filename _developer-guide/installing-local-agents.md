@@ -107,72 +107,71 @@ the VirtualBox in the menu on the left-hand side.
 
 ![Virtual Machine imported](/assets/img/developer-guide/local-agents/local-agents-06.png "Virtual Machine imported")
 
+At this stage it is important to make sure that the VM is configured correctly.
+While the VM is selected in the left-hand side menu, navigate to *Settings > Network*
+page to check if the NAT is configured correctly.
 
+![NAT setup](/assets/img/developer-guide/local-agents/local-agents-07.png "NAT setup")
 
-The last important detail before starting the VM is to make sure that the NAT is configured correctly.
+The above screenshot shows the Network part of the Setting. We need to make sure
+that:
 
-Please got to VM's settings, choose the `Network` tab and make sure:
-- The `Adapter 1` is enabled
-- The `Adapter 1` has type/attached to `NAT`
-- The checkbox `Cable Connected` is enabled
+1.  The *Adapter 1* is selected and the *Attached* is on value `NAT`.
+2.  Click on the *Advanced* drop-down menu to see the advanced settings if it is not extended.
+3.  Make sure that the checkbox besides the *Cable Connected* is on.
 
-Screenshot of the example:
+By default your VM is configured with port forwarding to expose some services from
+the VM to your host system. Click on the *Port Forwarding* button to see the
+configured ports (3).
 
-![elasticio_agent_networks](https://user-images.githubusercontent.com/931046/35916125-06dc388c-0c12-11e8-94ce-fcfb425f606b.png)
+![Port Forwarding](/assets/img/developer-guide/local-agents/local-agents-08.png "Port Forwarding")
 
-By default your VM is configured with port forwarding to expose some services from the VM to your host system. To see the configured ports, press on the button `Port Forwarding`.
+The screenshot above shows the port forwarding setup. Make sure that these values
+match in your case. Here are the values in one convenient table:
 
-Open the `Advanced` drop-down tab and click on `Port Forwarding`. Here ensure that:
-- There is record with `Guest Port: 2222` (`Name: SSH into Agent` and `Protocol: TCP`)
-Example:
-![virtualbox_ports](https://user-images.githubusercontent.com/931046/35916186-3dfaa2c2-0c12-11e8-839a-402ecc41fbbb.png)
+| Name | Protocol | Host IP | Host Port | Guest IP | Guest Port |
+| :--- | :--------| :-------| :---------| :--------| :----------|
+| SSH into Agent  | TCP |  | 2222 |  | 22 |
+| k8s Dashboard http | TCP |  | 30080 |  | 30080 |
+| k8s Dashboard https | TCP |  | 30443 |  | 30443 |
 
-The port 2222 is to be used for SSH login into your VM and 30080 to access the Kubernetes dashboard.
+> **Note** Do not change any configuration setup to avoid any unexpected behaviour or errors.
 
+After checking the details of Virtual Machine setup, close the Settings menues
+to return to the main window of VirtualBox with still inactive agent on the
+left-hand side menu.
 
-* TODO add description for VMWare etc
+## Start and Examine the Virtual Machine
 
+Click *Start* arrow-button in the top menu to start your VM. The first launch
+can take a couple of minutes. After the successful launch you will see a Linux
+terminal like this:
 
+![Linux terminal](/assets/img/developer-guide/local-agents/local-agents-09.png "Linux terminal")
 
+You can log into a newly started VM using the pre-configured credentials:
+*   Agent login: `root` - the main system administrator
+*   Agent password: `changeme` - **Please change the password after the first login**.
 
-
-
-## Start the VM
-
-- [ ] Start your newly imported and configured VM
-
-The first launch might take several minutes.
-
-Example of a window with launched VM:
-
-![agent_login](https://user-images.githubusercontent.com/464220/33263611-c5209094-d36a-11e7-9b38-ebcf1766d23f.png)
-
-
-
-
-
-
-## Make sure you can ssh into the VM
-
-Once VM is started, you should be able to ssh to the box.
-
-- [ ] login to VM
-
-Open a terminal an run the following command:
+Now let us check if we can login to the VM using a command line:
 
 ```
 ssh 127.0.0.1 -p 2222 -v -l root
 ```
 
-You will be asked to provide a password. The VM is pre-configured with default password `changeme`. It's recommended to change it right on the first launch.
+Provide the same password which we hope you have already changed. If the login is
+sucsessfull let us proceed further and check the Kubernetes (k8s).
 
-The fresh VM contains Kubernetes with system pods only. If you would like to make sure k8s is launched properly, you can use command
+> **Note** The fresh VM which is provided {{site.data.tenant.name}} to run local
+> agents contains Kubernetes installation with system pods only.
+
+If you would like to make sure k8s is launched properly, you can use command:
 
 ```
 kubectl get pods -n kube-system
 ```
 
-Output should be like this:
+The output should look like this:
 
 ```
 [root@agent ~]# kubectl get pods -n kube-system
@@ -186,62 +185,50 @@ kube-proxy-2kvfk                       1/1       Running   0          55m
 kube-scheduler-agent                   1/1       Running   0          55m
 kubernetes-dashboard-79ddfdc44-x4gq9   1/1       Running   0          55m
 ```
-
-Now you can add deployments with your agent.
-
-- [ ] stop ssh session
-```
-exit
-```
+If you see a similar output then everything is runnin properly. Time to deploy
+the **Virtual Machine Descriptor** files: `agent-gateway` and `agent-boatswain`.
 
 
 ## Deploy `agent-gateway`
 
-On this step, we are going to deploy the `agent-gateway` which establishes secure VPN connection between the VM and `elastic.io` data centre. To do so you would need a special descriptor file which is unique to your agent.
+On this step, we are going to deploy the `agent-gateway` which establishes a secure
+VPN connection between the VM and `{{site.data.tenant.name}}` data centre. To do
+so you would need a special descriptor file which is unique to your agent.
 
-- [ ] Download descriptor [TODO: add link]
+The file is in `JSON` format and must by of `gateway-ID.json`. The ID is 24
+characters long alpha-numeric and it is unique to your agent.
 
-- [ ] Keep the descriptor in secret
+> **WARNING** The descriptor contains unique security credential, unique to
+> your agent. Security of VPN connection is based on the secrecy of this descriptor.
+>
+> Do not share this with any third party! In case of disclosure of descriptor
+> contact [support@{{site.data.tenant.name}}](support@{{site.data.tenant.name}})
+> as soon as possible to block the old and re-issue a new descriptor with new credentials.
 
-*WARNING* The descriptor contains unique security credentials, dedicated to your instance of `Agent`. Security of VPN connection is based on the secrecy of the Descriptor. Act with it as with another security credential (do not share and so on).
-    * In case of disclosure of descriptor contact [support@elastic.io](support@elastic.io) as soon as possible in order to block the old and re-issue a new descriptor with credentials.
+Locate your `gateway-ID.json` and upload it into the runnig agent. On Linux based
+OS you can simply do:
 
-- [ ] Go to the folder with downloaded descriptor
 ```sh
-cd /path/to/the/directory/with/downloaded/descriptor/
+# Navigate to the directory with descriptor file
+$: cd /path/to/the/directory/with/downloaded/descriptor/
+# Copy the descriptor file to the VM
+$: scp -P 2222 gateway-5a7984dd8cd3360019524c22.json root@127.0.0.1:/root/
 ```
 
-- [ ] Upload descriptor to the VM
+Please replace `5a7984dd8cd3360019524c22` with `id` of your agent in the command
+above. At this stage you can switch to the terminal of VM in that case you should
+omit all the instances of `ssh root@127.0.0.1 -p 2222` from the following examples.
+Alternatively, you can stay at your OS's command line but every following command
+will ask for the password to execute.
 
-Please replace `5a7984dd8cd3360019524c22` with `id` of your agent in the command below.
-
-```
-scp -P 2222 5a7984dd8cd3360019524c22.json root@127.0.0.1:/root/
-```
-
-You will be asked for the [password](#make-sure-you-can-ssh-into-the-vm) since ssh login performing here.
-
-- [ ] Launch the deployment for `agent-gateway`
-
-Please replace `5a7984dd8cd3360019524c22` with `id` of your agent in the command below.
+Let us launch the `agent-gateway` as a pod on k8s of our Virtual Machine:
 
 ```
-ssh root@127.0.0.1 -p 2222 'kubectl create -f 5a7984dd8cd3360019524c22.json'
+ssh root@127.0.0.1 -p 2222 'kubectl create -f gateway-5a7984dd8cd3360019524c22.json'
 ```
 
-You will be asked for the [password](#make-sure-you-can-ssh-into-the-vm) since ssh login performing here.
-
-- [ ] Check the deployment
-
-```
-ssh root@127.0.0.1 -p 2222 'kubectl get deployments'
-```
-
-You will be asked for the [password](#make-sure-you-can-ssh-into-the-vm) since ssh login performing here.
-
-After about a minute `agent-gateway` should appear as `Running` in a list of Deployment.
-
-Example:
+It would take about a minute to fully launch the `agent-gateway`. We can check
+the deployment status using the following command:
 
 ```
 ssh root@127.0.0.1 -p 2222 'kubectl get deployments'
@@ -249,52 +236,44 @@ root@127.0.0.1's password:
 NAME          DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 agent-gateway   1         1         1            1           1m
 ```
-
+Success, the `agent-gateway` is up and running. Let's continue and deploy the
+`agent-boatswain`.
 
 ## Deploy `agent-boatswain`
 
-On this step, we are going to deploy the `agent-boatswain`, which provides coordination between the local `Kubernetes` cluster and the main orchestrator of `elastic.io` integration platform (`Admiral`)
+On this step, we are going to deploy the `agent-boatswain`, which provides
+coordination between the local Kubernetes cluster and the main orchestrator of
+`{{site.data.tenant.name}}` integration platform (`Admiral`).
 
-- [ ] Download descriptor [TODO: add link]
+The file is in `YML` format and must by of `boatswain-ID.yml`. The ID is 24
+characters long alpha-numeric and it is unique to your agent.
 
-- [ ] Keep the descriptor in secret
+> **WARNING** The descriptor contains unique security credential, unique to
+> your agent. Security of VPN connection is based on the secrecy of this descriptor.
+>
+> Do not share this with any third party! In case of disclosure of descriptor
+> contact [support@{{site.data.tenant.name}}](support@{{site.data.tenant.name}})
+> as soon as possible to block the old and re-issue a new descriptor with new credentials.
 
-*WARNING* The descriptor contains unique security credentials, dedicated to your instance of `Agent`. Security of VPN connection is based on the secrecy of the Descriptor. Act with it as with another security credential (do not share and so on).
-    * In case of disclosure of descriptor contact [support@elastic.io](support@elastic.io) as soon as possible in order to block the old and re-issue a new descriptor with credentials.
+Let us launch the `agent-boatswain` as a pod on k8s of our Virtual Machine:
 
-- [ ] Go to the folder with downloaded descriptor
 ```sh
-cd /path/to/the/directory/with/downloaded/descriptor/
+# Navigate to the directory with descriptor file
+$: cd /path/to/the/directory/with/downloaded/descriptor/
+# Copy the descriptor file to the VM
+$: scp -P 2222 boatswain-5a7984dd8cd3360019524c22.yml root@127.0.0.1:/root/
 ```
 
-- [ ] Upload descriptor to the VM
-
-Please replace `5a7984dd8cd3360019524c22` with `id` of youe agent in the command below.
-```sh
-scp -P 2222 boatswain-5a7984dd8cd3360019524c22.yml root@127.0.0.1:/root/
-```
-You will be asked for the [password](#make-sure-you-can-ssh-into-the-vm) since ssh login performing here.
-
-- [ ] Launch the deployment for `agent-boatswain`
-
-Please replace `5a7984dd8cd3360019524c22` with `id` of youe agent in the command below.
+Please replace `5a7984dd8cd3360019524c22` with `id` of your agent in the command
+above. Let us launch the deployment for the `agent-boatswain`
 
 ```sh
 ssh root@127.0.0.1 -p 2222 'kubectl create -f boatswain-5a7984dd8cd3360019524c22.yml'
 ```
 
-You will be asked for the [password](#make-sure-you-can-ssh-into-the-vm) since ssh login performing here.
+In about a minute `agent-boatswain` should appear as `Running` in a list of
+deployment. Let us check the situation:
 
--  Check the deployment
-```sh
-ssh root@127.0.0.1 -p 2222 'kubectl get deployments'
-```
-You will be asked for the [password](#make-sure-you-can-ssh-into-the-vm) since ssh login performing here.
-
-
-After about a minute `agent-boatswain` should appear as `Running` in a list of Deployment.
-
-Example:
 ```
 ssh root@127.0.0.1 -p 2222 'kubectl get deployments'
 root@127.0.0.1's password:
@@ -303,21 +282,19 @@ agent-boatswain   1         1         1            1           1m
 agent-gateway     1         1         1            1           6m
 ```
 
+If the `AVAILABLE` tab of `agent-boatswain` is still showing `0`, wait for a minute
+and check again until both pads show `1`. All the necessary pods are up and running.
+Time to check your agent on {{site.data.tenant.name}} UI.
+
 
 ## Check the agent is operational
-- [ ] Go to [agents page](#create-a-db-record-for-the-agent) and find the corresponding record for the Agent.
 
-- [ ] Make sure the agent became online.
+Navigate to *Settings > Agents* page of the {{site.data.tenant.name}} platform to
+check if the agent is `online` and operational.
 
-Once [`agent-gateway`](#deploy-agent-gateway) and [`agent-boatswain`](#deploy-agent-boatswain) are started, the agent should be displayed as `Online` (with `Last seen: a few seconds ago`).
+Once [`agent-gateway`](#deploy-agent-gateway) and [`agent-boatswain`](#deploy-agent-boatswain)
+are started, the agent should be displayed as `online`
+(with `Last seen: a few seconds ago`) as we have [explain earlier](#request-local-agent).
 
-![elastic io agent is online](https://user-images.githubusercontent.com/931046/35917507-114c1ee0-0c17-11e8-8f9c-5f750caa545a.png)
-
-
-
-
-
-
-## Notes
-You can also access the Kubernetes dashboard to see the pods running inside your local agent.
-Please hit the url [http://127.0.0.1:30080/](http://127.0.0.1:30080/) in your browser.
+> **Note** You can also access the Kubernetes dashboard to see the pods running
+> inside your local agent. Please visit the url [http://127.0.0.1:30080/](http://127.0.0.1:30080/) in your browser.
