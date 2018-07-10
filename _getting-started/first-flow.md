@@ -14,10 +14,6 @@ We assume that this is your first experience with the {{site.data.tenant.name}}
 platform, so we explain every step in detail. Please follow these steps to create
 your first integration flow.
 
-*   [Choosing the data source](#choosing-the-data-source) - *the trigger*
-*   [Choosing the data target](#choosing-the-data-target) - *the action*
-*   [Running and monitoring the flow](#running-and-monitoring-the-flow)
-
 ## Choosing the data source
 
 When you login first time you will have a similar view of the {{site.data.tenant.name}} platform.

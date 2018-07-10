@@ -30,7 +30,7 @@ API it is used to authenticate with. This means a credential for a
 *Salesforce* component will not work with a credential for a *Database*
 component or any other API.
 
-# Creating a credential for a flow
+## Creating a credential for a flow
 
 When [creating a flow](first-flow) an credential must be chosen. You can
 either chose an existing one or create a new one. The following screenshot
@@ -52,7 +52,7 @@ flows using same component.
 
 > **Note** Before saving a credential, the {{site.data.tenant.name}} platform performs a verification by sending a "dry" request to the particular API. This allows us to avoid saving invalid credentials caused by typos, invalidated API keys, etc.
 
-# Managing credentials
+## Managing credentials
 
 All the created credentials can be managed in one place. If you wish to
 have an on overview of all your credentials just go to `Settings` page

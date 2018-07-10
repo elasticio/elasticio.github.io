@@ -10,16 +10,6 @@ When developing your own [integration components](/getting-started/integration-c
 
 The access to the component repository is restricted to a team the repository belongs to. Each member of the team can change, configure and deploy a component. The team itself belongs to an organization and so only members of the organization can be invited to the team.
 
-In this guide you can learn how to:
-*   **[Manage developer teams](#manage-developer-teams)**
-    -   [Create a developer team](#creating-a-developer-team)
-    -   [Invite developers into your team](#invite-developers-into-your-team)
-    -   [Delete the developers team](#delete-the-developers-team)
-*   **[Manage integration components](#manage-integration-components)**
-    -   [Create a component repository](#create-a-component-repository)
-    -   [Manage the component repository](#manage-the-component-repository)
-
-
 ## Manage developer teams
 
 A developer team controls access to the component repositories belonging to that
@@ -27,7 +17,7 @@ team. The team members may collaborate on common integration component in integr
 
 ### Creating a developer team
 
-> **Note**: you must have organisation `Admin` priviledges for this to work.
+> **Note**: you must have organisation `Admin` privileges for this to work.
 
 To create a new developer team navigate to the Developers section and click on a
 button *+ Add New Team* as it shown on the screenshot below:
