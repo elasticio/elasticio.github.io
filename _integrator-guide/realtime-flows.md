@@ -43,7 +43,7 @@ In real-time use cases such a latency is not acceptable and this is where
 `real-time` flows come into play.
 
 
-## Real-time Flows
+## Real-time flows
 
 In contrast to an `ordinary` flow, a `real-time` flow never sleeps. All
 the steps of a real-time flow remain in the `Running` state until the flow
@@ -60,7 +60,7 @@ The warm-up time would also need to be considered when you re-start your
 flow.
 
 
-## How to switch to Real-time flow?
+## How to switch to real-time flow?
 
 Every integration flow can be switched to a real-time flow. Here is how to do it.
 
@@ -84,7 +84,7 @@ The process is successfully and a check-mark appears on the rights side of the m
 item *Enable real-time* as well as an icon with a rocket icon appears to the left
 of the flow's name.
 
-## Updating real-time Flows
+## Updating real-time flows
 
 In order to make changes to your real-time flows, you need to create a
 new [Draft](/integrator-guide/managing-flow-history). None of the changes
