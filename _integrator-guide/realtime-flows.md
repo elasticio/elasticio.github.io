@@ -5,7 +5,7 @@ section: Building integration flows
 order: 0
 ---
 
-As already discussed in the [Containers and Queues section](getting-started/integration-flow)
+As already discussed in the [Containers and Queues section](/getting-started/integration-flow)
 an integration flow in the {{site.data.tenant.name}} platform consists of multiple
 integration steps, each of which is running as an individual [Docker](https://www.docker.com/)
 container. These containers are linked with each other through messaging
@@ -87,7 +87,7 @@ of the flow's name.
 ## Updating real-time Flows
 
 In order to make changes to your real-time flows, you need to create a
-new [Draft](integrator-guide/managing-flow-history). None of the changes
+new [Draft](/integrator-guide/managing-flow-history). None of the changes
 made to the draft will affect the currently running flow containers, be
 it a mapping adjustment, a component version change or anything else. In
 order to apply the changes you need to publish the draft as a new version.
@@ -97,4 +97,3 @@ of the flow will be stopped by shutting down all the running flow
 containers. The new version will be deployed by starting new step containers.
 Please note that in this case the flow goes through the warm-up period
 again.
-
