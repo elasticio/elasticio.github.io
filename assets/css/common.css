@@ -128,7 +128,7 @@ table th {
 .layout__side {
   float: right;
   width: 290px;
-  padding: 0 20px 0 60px;
+  padding: 0 20px 0 30px;
   margin-left: -1px;
   border-left: 1px solid #f2f4f5; }
 
@@ -1199,7 +1199,7 @@ blockquote {
   text-align: left;
   white-space: nowrap;
   background: #2a3442;
-  transition: all 0.4s ease 0.4s; }
+  transition: all 0.2s ease 0s; }
 
 .app-setup .big-menu {
   top: 70px; }
@@ -1208,7 +1208,7 @@ blockquote {
   left: 0;
   opacity: 1;
   visibility: visible;
-  transition: all 0.4s ease 0s; }
+  transition: all 0.4s ease 0.4s; }
 
 .big-menu__tit,
 .big-menu__tit:link,
@@ -1294,10 +1294,10 @@ a.big-menu__item:hover {
   top: 70px; }
 
 .burger .big-overlay {
-  transition: all 0.4s ease 0.4s; }
+  transition: all 0.2s ease 0s; }
 
 .burger_open .big-overlay {
-  transition: all 0.4s ease 0s; }
+  transition: all 0.4s ease 0.4s; }
 
 .panel + .big-overlay {
   top: 0;
@@ -1565,3 +1565,52 @@ nav:hover .nav__text {
   .categories__inner {
     max-width: 300px;
     margin: 0 auto; } }
+.side {
+  position: relative;
+  padding-top: 20px; }
+
+.contents_fixed .side {
+  position: fixed;
+  top: 0; }
+
+.side__title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 11px; }
+
+.side__list {
+  padding-left: 16px;
+  margin-bottom: 30px; }
+
+.side__item {
+  position: relative;
+  display: block;
+  margin-bottom: 7px;
+  cursor: pointer; }
+
+.side__item.active {
+  color: #e74f39; }
+
+.side__item:hover {
+  color: #499df3; }
+
+.side__item:before {
+  position: absolute;
+  top: 11px;
+  left: -15px;
+  visibility: hidden;
+  width: 6px;
+  height: 6px;
+  content: "";
+  background: #ea6b58;
+  border-radius: 3px; }
+
+.side__item.active:before {
+  visibility: visible; }
+
+.contents {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  font-size: 14px;
+  position: relative; }

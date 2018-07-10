@@ -22,7 +22,7 @@ The components within a flow can be classified into two groups: *triggers* and *
 In the diagram above you can you can see that the first component of the flow is always as *trigger*.
 A flow can have a single trigger only. All the other components of the flow are *actions*.
 
-# Flow triggers
+## Flow triggers
 
 A flow is always started by a *trigger* component which used to monitor changes in the source application. For example, a Salesforce
 trigger monitors insertion of new objects or changes to existing objects in Salesforce and starts the integration flow
@@ -42,14 +42,14 @@ is triggered by the changes in an external system. For that purpose a webhook fl
 and wait to be notified about changes. More details on webhook flows can be found [here](webhooks-flow).
 
 
-# Flow actions
+## Flow actions
 
 The data produced by a *trigger* are sent to an *action* for consumption. For example, a new object from a Salesforce
 trigger is sent to a Quickbooks action for insertion or update. After consuming the incoming data an action
 is producing new data which can be consumed by the next *action*. Typically the response of the API the action is talking to
 is sent to the next action. Upon an insertion or update most APIs responds with the new object containing the internal ID or the updated object.
 
-# Containers and Queues
+## Containers and Queues
 
 Both *triggers* and *actions* can be referred to as flow's *steps*. Each step of an integration flow is running as an individual [Docker](https://www.docker.com/) container.
 All the containers a connected through a messaging queue, as shown in the following diagram:

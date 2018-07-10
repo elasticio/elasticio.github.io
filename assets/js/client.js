@@ -31,7 +31,49 @@ $(function() {
         } else {
             $('body').removeClass('burger_open');
         }
-    })
+    });
 
+
+    $('.layout__side').css('min-height', $('.layout__content').height());
+
+
+    setTimeout(function() {
+        $('.article h2').each( function (i, v) {
+            $('.layout__side .short-list').append('<div class="side__item" data-href="' + $(v).attr('id') + '">' + $(v).text() + '</div>')
+        });
+        $('.short-list .side__item:first-child').addClass('active');
+
+        $('[data-href]').click(function() {
+            var $this = $(this),
+                link = $this.data('href');
+
+            if (link !== 'undefined') {
+                $("html, body").animate({scrollTop: $('[id="' + link + '"]').offset().top - 30});
+            } else {
+                $("html, body").animate({scrollTop: 0});
+            }
+
+        });
+
+    }, 10);
+
+
+    $(window).on('scroll', function(e) {
+        var scrollTop = $(this).scrollTop();
+        if (scrollTop > $('.contents').offset().top) {
+            $('.contents').addClass('contents_fixed');
+        } else {
+            $('.contents').removeClass('contents_fixed');
+        }
+
+        $('.article h2').each(function(i, v) {
+            if (scrollTop > $(v).offset().top - ($(window).height() / 2)) {
+                $('[data-href]').removeClass('active');
+                $('[data-href="' + $('.article h2').eq(i).attr('id') + '"]').addClass('active');
+                return
+            }
+        })
+
+    });
 
 });

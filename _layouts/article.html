@@ -10,6 +10,40 @@ layout: default
         </div>
 
         <div class="layout__side">
+            <div class="contents">
+                <div class="side">
+                    <div class="side__title">Covered in this article</div>
+                    <div id="article_toc" class="side__list">
+                    </div>
+                    <div class="side__title">Related articles</div>
+                    <div class="side__list">
+                        {% for collection in site.data.chapters%}
+                            {% assign collectionName = collection[0] %}
+                            {% assign related = site[collectionName] | where:'category', page.category%}
+                            {% if related.size > 0 %}
+                                {% for item in related %}
+                                    {% if item.url != page.url %}
+                                    <a class="side__item" href="{{item.url}}">{{item.title}}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="layout__side">
+            <div class="section-info">
+                <div class="section-info__icon section-info__icon_getting_started">
+                    <i class="fa fa-rocket"></i>
+                </div>
+                <div class="section-info__tit">
+                    {{page.title}}
+                </div>
+            </div>
+            <ul id="toc-items-holder" class="link-box">
+            </ul>
             <div class="section-info">
                 <div class="section-info__icon section-info__icon_getting_started">
                     <i class="fa fa-rocket"></i>
@@ -36,11 +70,21 @@ layout: default
                 {% endfor %}
             </ul>
         </div>
+        -->
         <div class="layout__content">
             <div class="article">
-                <h2>{{page.title}}</h2>
+                <h1>{{page.title}}</h1>
                 {{content}}
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    jQuery('.article h2')
+            .each(function(e, x){
+                var item = $( "<div></div>" );
+                item.addClass('side__item').attr('data-href', x.id).text(x.innerText);
+                jQuery('#article_toc').append(item);
+            });
+</script>
