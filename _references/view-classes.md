@@ -27,8 +27,8 @@ Here are the general view classes which are used to render the input fields in
 
 ## TextFieldView
 
-`TextFieldView` can be used for many purposes. Use it to draw a one-liner text
-field from to input the information. For example, it is used in case of
+`TextFieldView` has many purposes. Use it to draw a one-liner text
+field form to input the information. For example, you can use it in case of
 [Basic Authorization](component-descriptor-structure#credentials-object) to input
 the API key. The possibilities are many but the implementation is similar.
 
@@ -62,11 +62,37 @@ Here is an example implementation of `TextFieldView` view class:
   }
 }
 ```
-Here is how it is rendered on the {{site.data.tenant.name}} UI:
+The above example is rendered on the {{site.data.tenant.name}} UI the following way:
 
 ![Rendering of TextFieldView view class](/assets/img/references/view-classes/view-class-text-field-view.png "Rendering of TextFieldView view class")
 
 ## TextAreaView
+
+`TextAreaView` can be used to render multi-line text area for the different
+purposes.
+
+| Property Name | Type     | Required | Description |
+| :------------ | :------: | :------: | :---------- |
+| label         | `string` | Yes      | Renders a label with the given text above the input field |
+| required      | `boolean`| Yes      | Specifies whether the input value is required for the component to operate properly or not. When `true` is set a red asterisks `(*)` to appear along with input field or the label. If the value is `false` then it is optional to fill the field.|
+| placeholder   | `string` | No       | Used to give a short and descriptive text which is rendered in the input field. |
+| note          | `string` | No        | Used to provide more information about the input field. When present a question mark `(?)` will appear and the text will be shown in a tool-tip when hovered. It accepts a simple text, URL and HTML `<em>`. The text in tool-tip will be folded for longer texts.|
+
+Here is an example implementation of `TextAreaView` view class:
+
+```
+"query": {
+  "label": "SQL Query",
+  "viewClass": "TextAreaView",
+  "required": true,
+  "placeholder": "INSERT INTO films (code,title,kind) VALUES (${code},${title},${kind})",
+  "note": "You can use properties of message body as <em>${values}</em>&nbsp; in your insert or update or delete"
+}
+```
+
+Which would render the following way:
+
+![Rendering of TextAreaView view class](/assets/img/references/view-classes/view-class-text-area-view.png "Rendering of TextAreaView view class")
 
 
 ## SelectView
