@@ -249,3 +249,42 @@ This is rendered in the following way:
 
 
 ## OAuthFieldView
+
+The `OAuthFieldView` view class is used to render a button in the credentials of
+the component with *Authenticate* or *Re-Authenticate*. When the button is pressed
+the process of OAuth1/Oauth2 authentication is started or repeated. This view classes
+has only one parameter:
+
+| Property Name | Type     | Required | Description |
+| :------------ | :------: | :------: | :---------- |
+| required      | `boolean`| Yes      | Specifies whether it is required to authenticate or not. When `true` is set a red asterisks `(*)` appears along with the label. If the value is `false` then it is optional to authenticate.|
+
+Since the main purpose of the `OAuthFieldView` view class is to facilitate the
+OAuth1/Oauth2 authentication then it is worth to present how to use it in
+conjunctions with the [OAuth object](/references/component-descriptor-structure#oauth2):
+
+```
+"credentials" : {
+  "fields":{
+    "oauth":{
+      "viewClass":"OAuthFieldView",
+      "required":true
+    }
+  },
+  "oauth2":{
+    "client_id":"{{GOOGLE_APP_ID}}",
+    "client_secret":"{{GOOGLE_APP_SECRET}}",
+    "auth_uri":"https://accounts.google.com/o/oauth2/v2/auth",
+    "token_uri":"https://www.googleapis.com/oauth2/v4/token",
+    "scopes": [ "https://spreadsheets.google.com/feeds" ],
+    "access_type": "offline",
+    "prompt": "consent"
+  }
+}
+```
+This will render in the following way:
+
+![Rendering of the OAuthFieldView view class](/assets/img/references/view-classes/view-class-oauth-field-view.png "Rendering of the OAuthFieldView view class")
+
+In the above presented method the OAuth2 authentication will be initiated when the
+button *Authenticate* is pressed.
