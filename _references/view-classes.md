@@ -18,8 +18,8 @@ Here are the general view classes which are used to render the input fields in
 | :---------------- | :----------- |
 | [TextFieldView](#textfieldview)     | Renders a single line text field |
 | [TextAreaView](#textareaview)      | Renders a multi-line text area |
-| [SelectView](#selectview)        | Renders a drop-down menu to select from available values |
 | [CheckBoxView](#checkboxview)      | Renders a checkbox |
+| [SelectView](#selectview)        | Renders a drop-down menu to select from available values |
 | [PasswordFieldView](#passwordfieldview) | Renders a standard password entry text field where the input values are replaced by symbols such as the asterisk (`*`) or a dot (`•`) |
 | [OAuthFieldView](#oauthfieldview)    | Renders button for initiating the OAuth process |
 
@@ -95,11 +95,115 @@ Which would render the following way:
 ![Rendering of TextAreaView view class](/assets/img/references/view-classes/view-class-text-area-view.png "Rendering of TextAreaView view class")
 
 
-## SelectView
-
-
 ## CheckBoxView
 
+The `CheckBoxView` view class can be used to render a check-box for enabling an
+option during the integration flow design. This view class had only one option:
+
+| Property Name | Type     | Required | Description |
+| :------------ | :------: | :------: | :---------- |
+| label         | `string` | Yes      | Renders a label with the given text above the input field |
+
+Here is an example implementation of `CheckBoxView` view class:
+
+```
+"fields" : {
+  "SomeOption" : {
+    ......
+  },
+  "CheckSomething": {
+    "label": "CheckBoxView Label",
+     "viewClass": "CheckBoxView"
+  }
+}
+```
+When the checkbox is selected it will transmit to the next stage `"CheckSomething": on`
+(following our example above). Alternatively, if the checkbox is not selected it
+will transmit nothing.
+
+If multiple check-boxes are necessary then they have to be implemented one-by-one
+in the component descriptor.
+
+
+## SelectView
+
+| Property Name | Type     | Required | Description |
+| :------------ | :------: | :------: | :---------- |
+| label         | `string` | Yes      | Renders a label with the given text above the input field |
+| required      | `boolean`| Yes      | Specifies whether the selection is required for the component to operate properly or not. When `true` is set a red asterisks `(*)` to appear along with the label. If the value is `false` then it is optional to select.|
+| model | `object` or `string` | Yes | Contains the name (`string`) of a function exposed by a component that returns the JSON `object` or the JSON `object` containing the values. |
+| prompt   | `string` | No       | Used to give a short and descriptive text which is rendered in the select field. |
+
+Here is an example of `SelectView` view class where the `model` property is an
+`object` containing the values:
+
+```
+"fields": {
+  "status": {
+    "label": "Pet Status",
+    "required": true,
+    "viewClass": "SelectView",
+    "model": {
+      "available": "Available",
+      "pending": "Pending",
+      "sold": "Sold"
+    },
+    "prompt": "Select Pet Status"
+}
+```
+
+This is rendered the following way:
+
+![Rendering of the SelectView view class](/assets/img/references/view-classes/view-class-slect-view.png "Rendering of the SelectView view class")
+
+The true power of this view class is in the ability to pass a `string` containing
+the name of a function exposed by a component that returns a JSON `object`. This
+is commonly implemented with the dynamic select models. For example the
+component descriptor of the [MailChimp component](https://github.com/elasticio/mailchimp-component/blob/master/component.json) has the following structure:
+
+```
+"fields": {
+  "listId": {
+    "viewClass": "SelectView",
+    "prompt": "Select your MailChimp List",
+    "label": "List",
+    "required": true,
+    "model": "getLists"
+  }
+}
+```
+Here the `model` has a `getLists` which is exposed in the `lib/commons.js` as a
+[function `getLists`](https://github.com/elasticio/mailchimp-component/blob/master/lib/common.js#L14):
+
+```
+/**
+ * Function that returns values for the list selection box
+ *
+ * @param conf
+ * @param cb
+ */
+function getLists(conf, cb) {
+  co(function*() {
+    console.log('Fetching lists');
+
+    mailchimp.setApiKey(conf.apiKey);
+    const lists = yield mailchimp
+      .get('lists');
+    let result = {};
+    lists.lists.map((list) => {
+      result[list.id] = list.name
+    });
+    console.log('Result ', result);
+    cb(null, result);
+  }).catch(err => {
+    console.log('Error occurred', err.stack || err);
+    cb(err);
+  });
+}
+```
+This function itself uses the `mailchimp-v3` libraries to query the MailChimp API
+for the names of the lists in your connected account, which is not predetermined
+anywhere in the component descriptor.
 
 ## PasswordFieldView
 
