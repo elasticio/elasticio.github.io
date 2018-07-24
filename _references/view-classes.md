@@ -28,7 +28,7 @@ Here are the general view classes which are used to render the input fields in
 ## TextFieldView
 
 `TextFieldView` has many purposes. Use it to draw a one-liner text
-field form to input the information. For example, you can use it in case of
+field form to input the information. For example, you can use it in the case of
 [Basic Authorization](component-descriptor-structure#credentials-object) to input
 the API key. The possibilities are many but the implementation is similar.
 
