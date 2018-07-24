@@ -62,7 +62,7 @@ Here is an example implementation of `TextFieldView` view class:
   }
 }
 ```
-The above example is rendered on the {{site.data.tenant.name}} UI the following way:
+The above example is rendered on the {{site.data.tenant.name}} UI in the following way:
 
 ![Rendering of TextFieldView view class](/assets/img/references/view-classes/view-class-text-field-view.png "Rendering of TextFieldView view class")
 
@@ -90,7 +90,7 @@ Here is an example implementation of `TextAreaView` view class:
 }
 ```
 
-Which would render the following way:
+Which would render in the following way:
 
 ![Rendering of TextAreaView view class](/assets/img/references/view-classes/view-class-text-area-view.png "Rendering of TextAreaView view class")
 
@@ -152,7 +152,7 @@ Here is an example of `SelectView` view class where the `model` property is an
 }
 ```
 
-This is rendered the following way:
+This is rendered in the following way:
 
 ![Rendering of the SelectView view class](/assets/img/references/view-classes/view-class-slect-view.png "Rendering of the SelectView view class")
 
@@ -206,6 +206,46 @@ for the names of the lists in your connected account, which is not predetermined
 anywhere in the component descriptor.
 
 ## PasswordFieldView
+
+The `PasswordFieldView` view class is used to provide a sequre input field for
+passwords in the credentials of the integration components. It has the following
+properties:
+
+| Property Name | Type     | Required | Description |
+| :------------ | :------: | :------: | :---------- |
+| label         | `string` | Yes      | Renders a label with the given text above the input field |
+| required      | `boolean`| Yes      | Specifies whether the input data is required for the component to operate properly or not. When `true` is set a red asterisks `(*)` to appear along with the label. If the value is `false` then it is optional to fill-in.|
+| placeholder  | `string` | No  |  Used to give a short and descriptive text which is rendered in the input field. |
+
+Here is an example of `PasswordFieldView` view class usage in the credentials:
+
+```
+"credentials" : {
+  "fields": {
+    "host":{
+      "viewClass":"TextFieldView",
+      "label":"Host",
+      "required":true,
+      "placeholder":"Name of the host"
+    },
+    "username": {
+      "viewClass": "TextFieldView",
+      "label": "User Name",
+      "required": true,
+      "placeholder": "Paste your SFTP user name"
+    },
+    "password": {
+      "viewClass": "PasswordFieldView",
+      "label": "Password",
+      "required": true,
+      "placeholder": "Paste your SFTP password"
+    }
+  }
+}
+```
+This is rendered in the following way:
+
+![Rendering of the PasswordFieldView view class](/assets/img/references/view-classes/view-class-password-field-view.png "Rendering of the PasswordFieldView view class")
 
 
 ## OAuthFieldView
