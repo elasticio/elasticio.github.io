@@ -10,18 +10,6 @@ The **REST API component** is a simple yet powerful component that allows you to
 connect to any REST API without programming your own components and deploying
 them into the {{site.data.tenant.name}} platform.
 
-This document covers the following topics:
-
-*   [Authentication methods](#authentication-methods)
-*   [Configuring component](#configuring-component)
-*   [Defining HTTP headers](#defining-http-headers)
-*   [Defining request body](#defining-http-body)
-  -   [Sending JSON payload](#sending-json-payload)
-  -   [Working with XML data](#working-with-xml-data)
-  -   [Sending Form data](#sending-form-data)
-*   [Known Limitations](#known-limitations)
-
-
 ## Authentication methods
 
 The majority of REST APIs require their clients to authenticate when sending
@@ -33,7 +21,7 @@ HTTP requests. In the {{site.data.tenant.name}} platform we use
 As you can see above REST API component supports 3 authentication types:
 
 *   `No Auth` - used to work with any open REST API
-*   `Basic Auth` - used to provide username and password for APIs that autheticate clients using [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
+*   `Basic Auth` - used to provide username and password for APIs that authenticate clients using [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
 *   `API Key Auth` - used to provide `API Key` to access the resource
 
 Please note that the result of creating a credential is an HTTP header automatically

@@ -11,11 +11,6 @@ In this article we will cover how to create an [integration flow](integration-fl
 
 If this is your first experience with the {{site.data.tenant.name}} platform, then please follow every step to create your first integration flow. If you have already followed the steps in [Creating your first integration flow?](first-flow) tutorial, then some steps would be the same to you and you are welcome to skip them.
 
-*   [Setting up the webhook](#setting-up-the-webhook)
-*   [Choosing the data target](#choosing-the-data-target)
-*   [Running and monitoring the flow](#running-and-monitoring-the-flow)
-*   [Securing your webhooks](#securing-your-webhooks)
-
 ## Setting up the webhook
 
 When you login you will have a similar view of the {{site.data.tenant.name}} platform.
@@ -34,14 +29,14 @@ as shown in the screenshot below.
 
 ![Add credentials](/assets/img/getting-started/webhook-flow/webhook-flow-03.png "Add credentials")
 
-If you already have a credential for a webhook, just choose it to proceed.
+If you already have a credential for a webhook, select it to proceed.
 Otherwise click on *Connect new credentials* link as shown on the screenshot above.
 
 ![Types of credentials](/assets/img/getting-started/webhook-flow/webhook-flow-05.png "Types of credentials")
 
 As you can see in the screenshot above there are multiple types of credentials
-available to choose in the *Type* dropdown. We will cover the Webhook credential
-[later in this article](#securing-your-webhooks). For now let's just choose the `No Auth` option to
+available to choose in the *Type* drop-down. We will cover the Webhook credential
+[later in this article](#securing-your-webhooks). For now let's choose the `No Auth` option to
 continue with webhook creation. The result should look like in the following
 screenshot.
 

@@ -8,19 +8,11 @@ order: 5
 
 This document is a step-by-step guide to help you understand how our system works and the steps necessary to get a simple component pushed and ready for a successful integration using {{site.data.tenant.name}} platform.
 
-#### In this guide
-
-1.  [Upload your SSH Key](#upload-your-ssh-key)
-2.  [Clone component](#clone-and-prepare-your-component-locally)
-3.  [Prepare remote repository](#prepare-the-remote-repository)
-4.  [Push into the repository](#push-your-component)
-5.  [Use it](#use-the-component)
-
 ## Upload your SSH Key
 
 The first step would be to [upload your SSH Key](ssh-keys) to authorise your deployment via git-push process. Please note that **failure to provide (upload) a unique SSH key would result in error "Permission denied" during the code Push phase**.
 
-## Clone and prepare your component locally
+## Clone and prepare your component
 
 If you have you have prepared your component locally by following instructions in how to build a component in Node.js or Java then you can skip this step. Otherwise, you can clone one of our template repositories to go through these steps couple of times to familiarise yourself. At the moment we are supporting only Node.js and Java so here are component templates in each language respectively:
 

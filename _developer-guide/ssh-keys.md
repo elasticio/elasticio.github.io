@@ -8,11 +8,6 @@ order: 0
 
 {{site.data.tenant.name}} platform **requires from every developer a unique SSH key to authorise any code deployment into the system**. This is a standardised, industry accepted security feature which is widely used in similar services like GitHub.
 
-In this article:
-
-*   [Creating your SSH keys](#creating-your-ssh-keys)
-*   [Uploading your SSH Keys](#uploading-your-ssh-keys)
-
 ## Creating your SSH keys
 
 GitHub has an informative page on SSH Key generation and what you see here is practically taken from the page [Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/). Before moving forward it would be prudent to check for existing SSH Keys on your computer and if it's necessary to create a new one.

@@ -50,7 +50,7 @@ resource in the Petstore API is accessible through `POST` method.
 
 > **Note** A component developer is not required to cover 100% of the API in his/her component. Typically a developer would implement only those API resources that are required in the current integration project. Indeed the coverage of the APIs in the built-in {{site.data.tenant.name}} platform components varies from component to component.
 
-# Understanding component's interaction
+## Understanding component's interaction
 
 An component acts as a black box: its internals are hidden to an integrator.
 The component exposes the following details only:
@@ -89,7 +89,7 @@ being passed to `Petstore` component. Mode details on Mapper can be found
 [here](/integrator-guide/mapping-data).
 
 
-# Implementing own integration components
+## Implementing own integration components
 
 The {{site.data.tenant.name}} platform provides a set of built-in components
 to be used right away. Furthermore the platform is open for contributions

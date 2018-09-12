@@ -9,14 +9,7 @@ Welcome to the user {{site.data.tenant.name}} interface tour. After first login 
 
 ![Dashboard](/assets/img/getting-started/tour/tour1.png "Dashboard")
 
-Picture above shows the {{site.data.tenant.name}} dashboard. While helping to build and run integration flows is the main goal of this interface there are certain settings and options that we would like to point to for your reference. The numbers show important sections which get explained further down in the tour:
-
-1.  [The user profile page](#the-user-profile)
-2.  [The dashboard](#the-dashboard)
-3.  [Organisation management page](#organisation-management)
-4.  [Developer section](#developer-section)
-5.  [Settings](#settings)
-6.  Logging out.
+Picture above shows the {{site.data.tenant.name}} dashboard. While helping to build and run integration flows is the main goal of this interface there are certain settings and options that we would like to point to for your reference.
 
 ## The user profile
 
@@ -32,7 +25,7 @@ The user profile page on {{site.data.tenant.name}} platform interface gives acce
 
 ## The dashboard
 
-This is the dashboard. As this is the first time you login into the platform it will look pretty much empty since you haven't created any [integration flows](integration-flow.html):
+This is the dashboard. As this is the first time you login into the platform it will look pretty much empty since you haven't created any [integration flows](integration-flow):
 
 ![Dashboard details](/assets/img/getting-started/tour/tour3.png "Dashboard details")
 
@@ -50,7 +43,7 @@ The current member has an Admin role which gives him/her an ability to change an
 
 ## Developer section
 
-The developer section is for managing [developer teams](/developer-guide/teams-and-repos.html), integration repositories and their environment variables. Here is an example how a developer section might look like with one team and 3 [integration components](integration-component.html) already deployed:
+The developer section is for managing [developer teams](/developer-guide/teams-and-repos), integration repositories and their environment variables. Here is an example how a developer section might look like with one team and 3 [integration components](integration-component) already deployed:
 
 ![Developer team management](/assets/img/getting-started/tour/tour5a.png "Developer team management")
 
@@ -73,6 +66,6 @@ The picture shows the `postgresql` integration component repository page. Here y
 
 ## Settings
 
-The settings page is for managing your [security credentials](credential.html), [SSH Keys](/developer-guide/ssh-keys.html) and Local Agents. The page looks like this:
+The settings page is for managing your [security credentials](credential), [SSH Keys](/developer-guide/ssh-keys) and Local Agents. The page looks like this:
 
 ![The settings page](/assets/img/getting-started/tour/tour6.png "The settings page")
