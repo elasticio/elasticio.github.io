@@ -2,7 +2,8 @@
 title: Component Descriptor Structure
 layout: article
 section: Component Descriptor
-since: 20180315
+order: 0
+category: component descriptor
 ---
 
 Each integration component developed for {{site.data.tenant.name}} platform must
@@ -121,7 +122,7 @@ as shown below.
       "apiKey": {
         "label": "API key",
         "required": true,
-        "viewClass": "TextFieldWithNoteView",
+        "viewClass": "TextFieldView",
         "note": "Please use <b>{{site.data.tenant.petStoreApiKey}}</b> as API key"
       }
     }
@@ -130,7 +131,7 @@ as shown below.
 
 In the example above the `apiKey` field is used to gather user's API key.
 
-The view of the field is defined as `TextFieldWithNoteView` which tells the platform
+The view of the field is defined as `TextFieldView` which tells the platform
 to present it in the UI as a simple input field where a user must enter his API key.
 Please read more details on field types [here](#fields-object).
 
@@ -343,4 +344,4 @@ the given API or to configure a trigger/action with some parameters:
 | placeholder	| `string` |           | Used to pre-fill descriptive text on an HTML form.|
 
 Any object implementation is directly connected with one or several `View Class`
-definitions, therefore it is advisable to check them as well.
+definitions, therefore it is [advisable to check them as well](view-classes).
