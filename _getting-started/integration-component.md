@@ -22,7 +22,7 @@ Petstore API documentation.
 
 ![Petstore API](/assets/img/getting-started/integration-component/petstore-swagger.png "Petstore API")
 
-Now if a developer would implement a Petstore component he/she will typically end
+Now if a developer would use a Petstore component he/she will typically end
 up with a component as shown in the following diagram.
 
 ![Petstore Component](/assets/img/getting-started/integration-component/petstore-component-diagram.png "Petstore Component")
@@ -33,14 +33,14 @@ in green boxes are called `actions`. Please note that the color of the
 operations in the  diagram above reflect the color of the resources in
 the screenshot showing Petstore API documentation.
 
-A `trigger` is used to start an [integration flow](integration-flow)
+We use a `trigger` to start an [integration flow](integration-flow)
 by exporting data for processing. For that purpose a trigger is monitoring
 changes in the source application, e.g. by sending requests to the particular API.
-Once changes has been detected the trigger starts the integration flow.
+Once the system detects changes the trigger starts the integration flow.
 As a rule of thumb any `GET` resource in a REST API is implemented as `trigger`
 in an integration component.
 
-An `action` is used to consume data produced by a `trigger` or another action.
+We use an `action` to consume data produced by a `trigger` or another action.
 Typically an action inserts objects into target application. That's why
 any writing resource (`POST`, `PUT`, etc.) in a REST API will be implemented
 as `actions` in an integration component. For example the
@@ -48,19 +48,16 @@ as `actions` in an integration component. For example the
 resource in the Petstore API is accessible through `POST` method.
 
 
-> **Note** A component developer is not required to cover 100% of the API in his/her component. Typically a developer would implement only those API resources that are required in the current integration project. Indeed the coverage of the APIs in the built-in {{site.data.tenant.name}} platform components varies from component to component.
+> **Note** A component developer is not required to cover 100% of the API in his/her component. Typically a developer would develop the required API resources in the current integration project. Indeed the coverage of the APIs in the built-in {{site.data.tenant.name}} platform components varies from component to component.
 
 ## Understanding component's interaction
 
-An component acts as a black box: its internals are hidden to an integrator.
-The component exposes the following details only:
+A component acts as a black box: its internals are hidden to an integrator.
+The component exposes the following details:
 
-* **How to authenticate**: what data does the component require in order
-to operate on integrator's behalf. Please read the details on [credentials](credential).
-* **Consumed input**: In order to operate properly a component needs
-some input data.
-* **Produced output**: For each incoming message a component typically produces
-an output message.
+*   **How to authenticate**: what data does the component require to operate on behalf of the integrator. Please read the details on [credentials](credential).
+*   **Consumed input**: To operate properly a component needs some input data.
+*   **Produced output**: For each incoming message a component typically produces an output message.
 
 The following diagram shows the `Add a new pet to the store` operation from
 the Petstore component.
@@ -84,15 +81,14 @@ interfaces and the `Petstore` component requires a `Pet` interface. How
 do these two component interact with each other? This is where the `Mapper`
 comes into play. The `Mapper` is responsible to transform an object into
 another one with a given set of transformation rules. In the example above
-the Mapper transforms a `Payload` object into a `Pet` object before it is
-being passed to `Petstore` component. Mode details on Mapper can be found
-[here](/integrator-guide/mapping-data).
+the Mapper transforms a `Payload` object into a `Pet` object before passing it
+to `Petstore` component. Mode details on Mapper are [here](/integrator-guide/mapping-data).
 
 
 ## Implementing own integration components
 
 The {{site.data.tenant.name}} platform provides a set of built-in components
-to be used right away. Furthermore the platform is open for contributions
+to use right away. Furthermore the platform is open for contributions
 of custom components. Please read how to build integration components using
 [Node.js](/developer-guide/building-nodejs-component) or
 [Java programming](/developer-guide/building-java-component)  languages.
