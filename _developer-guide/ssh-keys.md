@@ -6,11 +6,16 @@ category: component
 order: 0
 ---
 
-{{site.data.tenant.name}} platform **requires from every developer a unique SSH key to authorise any code deployment into the system**. This is a standardised, industry accepted security feature which is widely used in similar services like GitHub.
+{{site.data.tenant.name}} platform **requires from every developer a unique SSH key to authorise any code deployment into the system**. This is a standardised, industry accepted security feature
+which is widely used in similar services like GitHub.
 
 ## Creating your SSH keys
 
-GitHub has an informative page on SSH Key generation and what you see here is practically taken from the page [Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/). Before moving forward it would be prudent to check for existing SSH Keys on your computer and if it's necessary to create a new one.
+GitHub has an informative page on SSH Key generation and what you see here is
+practically taken from the page
+[Generating SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/). Before
+moving forward it would be prudent to check for existing SSH Keys on your
+computer and if it's necessary to create a new one.
 
 ### Check for Existing SSH keys
 
@@ -26,7 +31,9 @@ drwxr-xr-x+ 33 username  staff  1122 Jul 24 09:06 ..
 -rw-r--r--   1 username  staff  2005 Aug  3 14:11 known_hosts
 ```
 
-This shows that this user called username has already GitHub created SSH key which is possible to use. We recommend creating a new one for a simplicity and proper record keeping.
+This shows that this user called username has already GitHub created SSH key
+which is possible to use. We recommend creating a new one for a simplicity and
+proper record keeping.
 
 ### Creating a new SSH key
 
@@ -69,26 +76,32 @@ can paste it into the SSH entry form on the {{site.data.tenant.name}} platform.
 
 ## Uploading your SSH keys
 
-To add a newly generated SSH Keys navigate to `Settings > SSH Keys` section:
+To add a newly generated SSH Keys navigate to the **Settings** section from
+the personal menu is it shown below:
 
-![Navigate to SSH Keys section](/assets/img/developer-guide/ssh-keys/ssh-keys-01.png "Navigate to SSH Keys section")
+![Navigate to the Settings section](/assets/img/developer-guide/ssh-keys/ssh-keys-01.png "Navigate to the Settings section")
+
+You are now at your **Profile** page. Click on **SSH Keys** to load your SSH Keys.
+
+![Load your SSH Keys](/assets/img/developer-guide/ssh-keys/ssh-keys-02.png "Load your SSH Keys")
 
 If you don't have any uploaded SSH Keys you will see the following screen:
 
-![First time to upload SSH Key](/assets/img/developer-guide/ssh-keys/ssh-keys-02.png "First time to upload SSH Key")
+![No SSH Keys](/assets/img/developer-guide/ssh-keys/ssh-keys-03.png "No SSH Keys")
 
 Click on *+Upload* button to start.
 
-![Fill-in the SSH Key details](/assets/img/developer-guide/ssh-keys/ssh-keys-03.png "Fill-in the SSH Key details")
-
-The screenshot above shows a form where you must enter the name of your SSH Key
-and paste the actual SSH Key which should still be in your clipboard. The result
+The screenshot below shows a form where you must enter the name of your SSH Key (1)
+then paste the actual SSH Key (2) which should still be in your clipboard. The result
 would look like this:
 
 ![Pasted SSH Key](/assets/img/developer-guide/ssh-keys/ssh-keys-04.png "Pasted SSH Key")
 
-Click on *Save* to finish. The final result would look like this:
+Click on *Save* (3) to finish. The final result would look like this:
 
 ![Your SSH Keys](/assets/img/developer-guide/ssh-keys/ssh-keys-05.png "Your SSH Keys")
 
 You can add more SSH keys or delete the current one on this interface.
+
+> **Note** you need this SSH Key to deploy your integration components. If you
+> delete it you will not be permitted to deploy any components.
