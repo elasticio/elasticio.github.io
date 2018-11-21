@@ -21,22 +21,9 @@ layout: default
     <div class="wrap">
 
         <div class="link-box__list">
-
-            {% for section in chapter.sections %}
-
-            {% assign items = site[page.collection]| where: 'section', section.title | sort: 'order' %}
-            <ul class="link-box__column">
-                <li class="link-box__item">
-                    <div class="link-box__tit">{{section.title}}<div class="counter">{{items.size}}</div></div>
-                    <div class="link-box__desc">{{section.description}}</div>
-                    <div class="link-box__holder">
-                        {% for item in items %}
-                        <a class="link-box__link" href="{{item.url}}">{{item.title}}</a>
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
-            {% endfor %}
+            {% include sections.html sections=chapter.sections column=0%}
+            {% include sections.html sections=chapter.sections column=1%}
+            {% include sections.html sections=chapter.sections column=2%}
         </div>
     </div>
 </div>

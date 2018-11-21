@@ -1,0 +1,22 @@
+<ul class="link-box__column">
+{% for section in include.sections %}
+
+{% assign items = site[page.collection]| where: 'section', section.title | sort: 'order' %}
+{% assign currentColumn = forloop.index0 | modulo: 3 %}
+
+{% if currentColumn == include.column %}
+
+    <li class="link-box__item">
+        <div class="link-box__tit">{{section.title}}<div class="counter">{{items.size}}</div></div>
+        <div class="link-box__desc">{{section.description}}</div>
+        <div class="link-box__holder">
+            {% for item in items %}
+            <a class="link-box__link" href="{{item.url}}">{{item.title}}</a>
+            {% endfor %}
+        </div>
+    </li>
+
+{% endif %}
+
+{% endfor %}
+</ul>

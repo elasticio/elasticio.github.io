@@ -1,4 +1,4 @@
 ---
 layout: chapter
-title: Integrator Guide
+title: How-to Guides
 ---
