@@ -365,7 +365,7 @@ h2 {
   background: linear-gradient(52deg, #fb5b97 0%, #fb5b66 100%);
   color: #fff; }
 
-.welcomer__icon_developer_guide {
+.welcomer__icon_guides {
   background: linear-gradient(52deg, #ff8c4a 0%, #ff6338 100%);
   color: #fff; }
 
@@ -489,10 +489,10 @@ h2 {
   color: #ff8c4a; }
 
 .categories__item:nth-child(3) .categories__icon .fa {
-  color: #1e9aea; }
+  color: #d74aff; }
 
 .categories__item:nth-child(4) .categories__icon .fa {
-  color: #d74aff; }
+  color: #1e9aea; }
 
 .categories__item:hover .categories__icon .fa {
   color: #fff !important; }
@@ -514,7 +514,7 @@ h2 {
 .categories__item_getting_started:hover .categories__inner {
   background: linear-gradient(52deg, #fb5b97 0%, #fb5b66 100%); }
 
-.categories__item_developer_guide:hover .categories__inner {
+.categories__item_guides:hover .categories__inner {
   background: linear-gradient(52deg, #ff8c4a 0%, #ff6338 100%); }
 
 .categories__item_integrator_guide:hover .categories__inner {

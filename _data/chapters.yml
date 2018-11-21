@@ -9,12 +9,12 @@ getting-started:
       description: Learn basic concepts of our integration platform to be ready to dive into more details
     - title: Tutorials
       description: Comprehensive tutorials and how-tos guding your through varios scenarios
-integrator-guide:
+guides:
   title: How-to Guides
   description: Everything you need to know to master creation of integration flows
-  class: categories__item_integrator_guide
-  welcommer-class: welcomer__icon_integrator_guide
-  fa-icon: fa-plug
+  class: categories__item_guides
+  welcommer-class: welcomer__icon_guides
+  fa-icon: fa-puzzle-piece
   sections:
     - title: Building integration flows
       description: Articles on how to build integration flows effectively
