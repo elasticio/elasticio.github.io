@@ -107,7 +107,7 @@ table th {
   margin: auto;
   padding: 0 45px; }
 
-.welcomer .wrap {
+.welcomer:not(.welcomer_icon) .wrap {
   width: 569px;
   max-width: none;
   min-width: 0;
@@ -135,6 +135,8 @@ table th {
 .layout__content {
   overflow: hidden;
   padding-right: 45px;
+  padding-left: 24px;
+  margin-left: -24px;
   border-right: 1px solid #f2f4f5; }
 
 a,
@@ -214,10 +216,10 @@ a:active,
   line-height: 40px;
   background: #ff4e35;
   border-radius: 20px; }
-.button:link, .button:visited, .button:active {
-  text-decoration: none;
-  background: #ff4e35;
-  color: #fff; }
+  .button:link, .button:visited, .button:active {
+    text-decoration: none;
+    background: #ff4e35;
+    color: #fff; }
 
 .button:hover {
   background: #ff2102; }
@@ -244,16 +246,16 @@ a:active,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-.button_minor:link, .button_minor:visited, .button_minor:active,
-.button_minor:link:link,
-.button_minor:link:visited,
-.button_minor:link:active,
-.button_minor:visited:link,
-.button_minor:visited:visited,
-.button_minor:visited:active {
-  text-decoration: none;
-  background: #fff;
-  color: #445265; }
+  .button_minor:link, .button_minor:visited, .button_minor:active,
+  .button_minor:link:link,
+  .button_minor:link:visited,
+  .button_minor:link:active,
+  .button_minor:visited:link,
+  .button_minor:visited:visited,
+  .button_minor:visited:active {
+    text-decoration: none;
+    background: #fff;
+    color: #445265; }
 
 .button_minor:hover {
   background: #f6f9fd;
@@ -333,12 +335,12 @@ h2 {
   -webkit-font-smoothing: antialiased;
   -webkit-backface-visibility: hidden;
   padding: 66px 0 0 0;
-  min-width: 1171px;
   text-align: center; }
 
 .welcomer_icon {
-  padding: 0;
-  margin-bottom: 80px; }
+  padding: 20px 0 0 0;
+  margin-bottom: 40px;
+  text-align: left; }
 
 .welcomer__tit {
   font-size: 28px;
@@ -353,11 +355,12 @@ h2 {
 
 .welcomer__icon {
   font-size: 27px;
-  display: block;
+  float: left;
   width: 55px;
   height: 55px;
-  margin: 0 auto 20px;
+  margin: 0 20px 0 0;
   line-height: 54px;
+  text-align: center;
   border-radius: 50%;
   color: #fff; }
 
@@ -462,7 +465,8 @@ h2 {
 
 .categories__list {
   overflow: hidden;
-  margin: 0 40px; }
+  margin: 0 40px;
+  text-align: center; }
 
 .categories__item,
 .categories__item:link,
@@ -562,11 +566,12 @@ h2 {
 .link-box__list {
   font-size: 0;
   margin: 0 -15px;
-  text-align: center; }
+  text-align: left; }
 
 .link-box__column {
   display: inline-block;
   width: 33.3%;
+  margin-bottom: 40px;
   vertical-align: top;
   text-align: left; }
 
@@ -947,59 +952,59 @@ div[class*=' language'] .highlight {
   -webkit-backface-visibility: hidden;
   font-size: 16px;
   line-height: 26px; }
-.article h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0 0 40px 0; }
-.article h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0 0 30px 0; }
-.article h4 {
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0 0 15px 0; }
-.article time {
-  font-size: 15px;
-  color: #879DB5; }
-.article h2 + time {
-  display: block;
-  margin-top: -30px;
-  margin-bottom: 17px; }
-.article ul {
-  margin: 5px 0 30px 30px;
-  list-style: disc outside; }
-.article ol {
-  margin: 5px 0 30px 30px;
-  list-style: decimal outside; }
-.article li {
-  margin-bottom: 10px; }
-.article p {
-  margin-bottom: 30px; }
-.article b {
-  font-weight: 700; }
-.article .spec-character {
-  font-family: "Arial", sans-serif; }
-.article img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px; }
-.article .code-tag,
-.article .highlighter-rouge {
-  font-size: 15px; }
-.article em,
-.article i {
-  font-style: italic !important; }
-.article strong,
-.article b {
-  font-weight: 700; }
-.article del,
-.article s {
-  text-decoration: line-through; }
-.article u,
-.article strike {
-  text-decoration: underline; }
+  .article h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 40px 0; }
+  .article h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 30px 0; }
+  .article h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 15px 0; }
+  .article time {
+    font-size: 15px;
+    color: #879DB5; }
+  .article h2 + time {
+    display: block;
+    margin-top: -30px;
+    margin-bottom: 17px; }
+  .article ul {
+    margin: 5px 0 30px 30px;
+    list-style: disc outside; }
+  .article ol {
+    margin: 5px 0 30px 30px;
+    list-style: decimal outside; }
+  .article li {
+    margin-bottom: 10px; }
+  .article p {
+    margin-bottom: 30px; }
+  .article b {
+    font-weight: 700; }
+  .article .spec-character {
+    font-family: "Arial", sans-serif; }
+  .article img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; }
+  .article .code-tag,
+  .article .highlighter-rouge {
+    font-size: 15px; }
+  .article em,
+  .article i {
+    font-style: italic !important; }
+  .article strong,
+  .article b {
+    font-weight: 700; }
+  .article del,
+  .article s {
+    text-decoration: line-through; }
+  .article u,
+  .article strike {
+    text-decoration: underline; }
 
 .articles {
   padding-top: 40px; }
@@ -1333,13 +1338,13 @@ nav:hover {
   overflow: hidden;
   min-height: 100%;
   box-sizing: border-box; }
-.nav__inner:after {
-  clear: both;
-  display: block;
-  visibility: hidden;
-  height: 0;
-  content: ".";
-  line-height: 0; }
+  .nav__inner:after {
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    content: ".";
+    line-height: 0; }
 
 .nav__item,
 .nav__item:visited,
@@ -1475,7 +1480,7 @@ nav:hover .nav__text {
     padding: 0;
     margin: 0 20px; }
 
-  .welcomer .wrap {
+  .welcomer:not(.welcomer_icon) .wrap {
     max-width: 569px;
     width: auto;
     margin: auto;
@@ -1614,3 +1619,29 @@ nav:hover .nav__text {
   -webkit-backface-visibility: hidden;
   font-size: 14px;
   position: relative; }
+
+.deep-link {
+  display: inline-block;
+  opacity: 0;
+  padding-top: 5px;
+  margin-left: -24px;
+  color: #879DB5 !important;
+  transition: all 0.3s ease-out; }
+
+.deep-link:hover,
+.deep-link:visited,
+.deep-link:active {
+  color: #879DB5; }
+
+h1:hover .deep-link,
+h2:hover .deep-link,
+h3:hover .deep-link,
+h4:hover .deep-link {
+  opacity: 1; }
+
+.deep-link .fa-link {
+  font-style: normal !important;
+  font-weight: normal;
+  font-size: 19px;
+  padding-right: 5px;
+  vertical-align: middle; }
