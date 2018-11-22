@@ -9,21 +9,12 @@ getting-started:
       description: Learn basic concepts of our integration platform to be ready to dive into more details
     - title: Tutorials
       description: Comprehensive tutorials and how-tos guding your through varios scenarios
-developer-guide:
-  title: Developer Guide
-  description: Developer bible on creation of integration components
-  class: categories__item_developer_guide
-  welcommer-class: welcomer__icon_developer_guide
-  fa-icon: fa-code
-  sections:
-    - title: Developing Components
-      description: Articles on component development and SDKs
-integrator-guide:
-  title: Integrator Guide
+guides:
+  title: How-to Guides
   description: Everything you need to know to master creation of integration flows
-  class: categories__item_integrator_guide
-  welcommer-class: welcomer__icon_integrator_guide
-  fa-icon: fa-plug
+  class: categories__item_guides
+  welcommer-class: welcomer__icon_guides
+  fa-icon: fa-puzzle-piece
   sections:
     - title: Building integration flows
       description: Articles on how to build integration flows effectively
@@ -31,6 +22,8 @@ integrator-guide:
       description: Articles on how to query, transform and map data between steps of an integration flow
     - title: Integration patterns
       description: Articles on how to create complex non-linear integration flows
+    - title: Developing Components
+      description: Articles on component development and SDKs
 references:
   title: References
   description: Component structure references, classes and JSON Schema

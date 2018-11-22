@@ -1,4 +1,4 @@
 ---
 layout: chapter
-title: Developer Guide
+title: How-to Guides
 ---
