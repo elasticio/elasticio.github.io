@@ -1,7 +1,96 @@
 $(function() {
     var $header = $('header'),
         $search = $('.search input'),
-        burgerDelay = 0;
+        burgerDelay = 0,
+        $dateControl = $('.date__control'),
+        $dateList = $('.date__list'),
+        $date = $('.date'),
+        dateItemOutPos = [],
+        dateItemOutWidth = [];
+
+
+    datePositionControl($('.date__item.active'));
+
+
+    $dateControl.click(function() {
+        if ($(this).is('.date__control_r')) {
+            $.each($('.date__item'), function(i, v) {
+                if ($(v).position().left > ($('.date__view').width() - parseInt($('.date__list').css('left'), 10))) {
+                    dateItemOutPos.push($(v).position().left);
+                    dateItemOutWidth.push($(v).width());
+                }
+            });
+            $dateList.css('left', ($('.date__view').width() - (dateItemOutPos[0] + dateItemOutWidth[0])) + 'px');
+            if ( Math.ceil((-($('.date__view').width() - (dateItemOutPos[0] + dateItemOutWidth[0])))) + $('.date__view').width() >= dateItemSum()) {
+                $date.addClass('date_none_next');
+            } else {
+                $date.removeClass('date_none_next');
+                $date.addClass('date_has_prev');
+            }
+        } else {
+            $.each($('.date__item'), function(i, v) {
+                if (($(v).position().left < (-parseInt($('.date__list').css('left'), 10)))) {
+                    dateItemOutPos.push($(v).position().left);
+                    dateItemOutWidth.push($(v).width());
+                }
+            });
+            $dateList.css('left', '-' + dateItemOutPos[dateItemOutPos.length-1] + 'px');
+            if (dateItemOutPos[dateItemOutPos.length-1] == 0) {
+                $date.removeClass('date_has_prev');
+            } else {
+                $date.addClass('date_has_prev');
+                $date.removeClass('date_none_next');
+            }
+        }
+        dateItemOutPos = [];
+        dateItemOutWidth = [];
+    });
+
+
+
+
+    function dateItemSum() {
+        var dateItemSum = 0;
+        $.each($('.date__item'), function() {
+            dateItemSum += parseInt($(this).width(), 10) + parseInt($(this).css('marginRight'), 10);
+        });
+        if ($('.date').length == 1) {
+            dateItemSum = dateItemSum;
+        } else if ($('.date').length == 2) {
+            dateItemSum = dateItemSum / 2;
+        }
+        return dateItemSum;
+    }
+
+    function datePositionControl($node) {
+        var nodeLeftPosition = $node.position().left,
+            $Ddate = $node.parents('.date'),
+            $DdateView = $('.date__view', $Ddate),
+            $DdateList = $('.date__list', $Ddate),
+            newDatePos = 0;
+
+        newDatePos = nodeLeftPosition;
+        $Ddate.removeClass('date_none_next');
+
+        if (nodeLeftPosition > dateItemSum() - $DdateView.width()) {
+            newDatePos = dateItemSum() - $DdateView.width();
+            $Ddate.addClass('date_none_next');
+            $Ddate.addClass('date_has_prev');
+        }
+
+        if (nodeLeftPosition > 0) {
+            $Ddate.addClass('date_has_prev');
+        } else {
+            $Ddate.removeClass('date_has_prev');
+        }
+
+        $DdateList.css('left', '-' + newDatePos + 'px');
+    }
+
+
+
+
+
 
     $search.on('focus', function() {
         $header.addClass('header_search');

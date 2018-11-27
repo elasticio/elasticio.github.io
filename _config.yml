@@ -5,6 +5,8 @@ collections:
      output: true
   references:
      output: true
+  releases:
+     output: true
 
 algolia:
   application_id: 'OIJ2XNEVHZ'
