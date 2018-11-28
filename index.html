@@ -36,20 +36,17 @@ layout: default
 
 
 {% assign recentlyAddedPagesCount = 0%}
-{% assign newFeaturesCount = 0%}
 
 {% for currentPage in allPages%}
     {% if currentPage.since > 0 %}
         {% assign recentlyAddedPagesCount = recentlyAddedPagesCount | plus: 1 %}
     {% endif %}
-    {% if currentPage.newFeatureSince > 0 %}
-        {% assign newFeaturesCount = newFeaturesCount | plus: 1 %}
-    {% endif %}
 {% endfor %}
 
 {% assign recentlyAddedPages = allPages | sort: 'since' | reverse %}
-{% assign newFeaturePages = allPages| sort: 'newFeatureSince' | reverse %}
 {% assign pagesLimit = 5%}
+
+{% assign releasesCount = site.releases.size%}
 
 <div class="link-box">
     <div class="wrap">
@@ -76,23 +73,21 @@ layout: default
                 </li>
             </ul>
             {% endif %}
-            {% if newFeaturesCount > 0 %}
+            {% if releasesCount > 0 %}
             <ul class="link-box__column">
                 <li class="link-box__item">
-                    <div class="link-box__tit">New Features
+                    <div class="link-box__tit">Recent Releases
                         <div class="counter">
-                            {% if newFeaturesCount < pagesLimit %}
-                                {{newFeaturesCount}}
+                            {% if releasesCount < pagesLimit %}
+                                {{releasesCount}}
                             {% else %}
                                 {{pagesLimit}}
                             {% endif %}
                         </div>
                     </div>
                     <div class="link-box__holder">
-                        {% for currentPage in newFeaturePages limit:pagesLimit %}
-                            {% if currentPage.newFeatureSince > 0 %}
-                                <a class="link-box__link" href="{{currentPage.url}}">{{currentPage.title}}</a>
-                            {% endif %}
+                        {% for release in site.releases limit:pagesLimit %}
+                            <a class="link-box__link" href="{{release.url}}">v{{release.version}}</a>
                         {% endfor %}
                     </div>
                 </li>
