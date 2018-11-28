@@ -19,7 +19,6 @@ layout: default
             </div>
         </div>
         <div class="layout__content">
-            <div class="date__list">
             <div class="date">
                 <div class="date__control date__control_r">
                     <i class="fa fa-angle-right"></i>
@@ -28,63 +27,23 @@ layout: default
                     <i class="fa fa-angle-left"></i>
                 </div>
                 <div class="date__view">
-
+                    <div class="date__list">
                         {% for release in site.releases %}
                             {% if release.version == page.version %}
                                 {% assign active = "active"%}
                             {% endif %}
                             <a class="date__item {{active}}" href="{{release.url}}">
                                 <div class="date__tit">{{release.version}}</div>
-                                {{ release.date | date: '%B %d, %Y' }}
+                                {{ release.releaseDate | date: '%B %d, %Y' }}
                             </a>
                             {% assign active = ""%}
                         {% endfor %}
-                        <a class="date__item" href="#">
-                            <div class="date__tit">1.12</div>
-                            November 27, 2017
-                        </a>
-                        <a class="date__item" href="#">
-                            <div class="date__tit">1.28</div>
-                            December 2, 2017
-                        </a>
-                        <a class="date__item" href="#">
-                            <div class="date__tit">2.0</div>
-                            January 19, 2018
-                        </a>
-                        <a class="date__item" href="#">
-                            <div class="date__tit">2.2</div>
-                            February 4, 2018
-                        </a>
-                        <a class="date__item" href="#">
-                            <div class="date__tit">2.3</div>
-                            March 22, 2018
-                        </a>
-                        <a class="date__item" href="#">
-                            <div class="date__tit">2.4</div>
-                            June 18, 2018
-                        </a>
-                        <a class="date__item" href="#">
-                            <div class="date__tit">2.5</div>
-                            July 15, 2018
-                        </a>
-                        <a class="date__item" href="#">
-                            <div class="date__tit">2.6</div>
-                            August 1, 2018
-                        </a>
-                        <a class="date__item" href="#">
-                            <div class="date__tit">2.7</div>
-                            September 12, 2018
-                        </a>
-                        <a class="date__item" href="#">
-                            <div class="date__tit">2.9</div>
-                            October 13, 2018
-                        </a>
                     </div>
                 </div>
             </div>
             <div class="article">
                 <h1>v{{page.title}} Release Notes</h1>
-                The release was released on {{ page.date | date: '%B %d, %Y' }}.
+                The release v{{page.version}} was released on {{ page.date | date: '%B %d, %Y' }}.
 
 
                 {{content}}
