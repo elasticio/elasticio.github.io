@@ -79,7 +79,7 @@ layout: default
                     <div class="link-box__tit">Recent Releases
                         <div class="counter">
                             {% if releasesCount < pagesLimit %}
-                                {{releasesCount}}
+                                {{ releasesCount | minus: 1 }}
                             {% else %}
                                 {{pagesLimit}}
                             {% endif %}
@@ -87,7 +87,9 @@ layout: default
                     </div>
                     <div class="link-box__holder">
                         {% for release in site.releases limit:pagesLimit %}
+                            {% if release.version%}
                             <a class="link-box__link" href="{{release.url}}">v{{release.version}}</a>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </li>
