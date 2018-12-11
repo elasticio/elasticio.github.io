@@ -9,7 +9,9 @@ $(function() {
         dateItemOutWidth = [];
 
 
-    datePositionControl($('.date__item.active'));
+    if ($('.date__item').length > 0) {
+        datePositionControl($('.date__item.active'));
+    }
 
 
     $dateControl.click(function() {

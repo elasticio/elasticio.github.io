@@ -136,8 +136,7 @@ table th {
 .layout__content {
     overflow: hidden;
     padding-right: 45px;
-    padding-left: 24px;
-    border-right: 1px solid #f2f4f5; }
+    padding-left: 24px; }
 
 a,
 a:link,
@@ -497,7 +496,7 @@ h2 {
     color: #ff8c4a; }
 
 .categories__item:nth-child(3) .categories__icon .fa {
-  color: #d74aff; }
+    color: #d74aff; }
 
 .categories__item:nth-child(4) .categories__icon .fa {
     color: #1e9aea; }
@@ -1658,7 +1657,10 @@ nav:hover .nav__text {
 
 .contents_fixed .side {
     position: fixed;
-    top: 0; }
+    top: 0;
+    overflow: auto;
+    max-height: 100%;
+    padding-right: 20px; }
 
 .side__title {
     font-size: 15px;
