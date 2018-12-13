@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<div class="layout">
+    <div class="wrap">
+        <div class="breadcrumbs">
+            <a href="/" class="breadcrumbs__item">Home</a>
+            <a href="/{{page.collection}}" class="breadcrumbs__item">Releases</a>
+            <span class="breadcrumbs__item">v{{page.title}}</span>
+        </div>
+
+        <div class="layout__content">
+            <div class="date">
+                <div class="date__control date__control_r">
+                    <i class="fa fa-angle-right"></i>
+                </div>
+                <div class="date__control date__control_l">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="date__view">
+                    <div class="date__list">
+                        {% for release in site.releases %}
+                            {% if release.version == page.version %}
+                                {% assign active = "active"%}
+                            {% endif %}
+                            <a class="date__item {{active}}" href="{{release.url}}">
+                                <div class="date__tit">{{release.version}}</div>
+                                {{ release.releaseDate | date: '%B %d, %Y' }}
+                            </a>
+                            {% assign active = ""%}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="article">
+                <h1>v{{page.title}} Release Notes</h1>
+                The release v{{page.version}} was released on {{ page.date | date: '%B %d, %Y' }}.
+
+
+                {{content}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery('.article h2')
+            .each(function(e, x){
+                var item = $( "<div></div>" );
+                item.addClass('side__item').attr('data-href', x.id).text(x.innerText);
+                jQuery('#article_toc').append(item);
+            });
+</script>
