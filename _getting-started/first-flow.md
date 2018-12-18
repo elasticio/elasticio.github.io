@@ -1,5 +1,5 @@
 ---
-title: Creating your first integration flow?
+title: Creating your first integration flow
 layout: article
 section: Tutorials
 order: 1
