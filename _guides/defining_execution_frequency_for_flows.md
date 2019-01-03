@@ -7,7 +7,7 @@ order: 4
 since: 20181218
 ---
 
-Scheduling tasks are part of the {{site.data.tenant.name}} functionality. Every flow is executed every 3 minutes which is Platform's default setting. Depending on your business needs, the default setting might not always be suitable for you. In order to proceed further, you may use some of the flow scheduling features that are going to be described in this article.
+Scheduling tasks are part of the {{site.data.tenant.name}} functionality. Every flow is executed every 3 minutes which is Platform's default setting. Depending on the business needs, that default setting might not always be suitable. To proceed further, you may take advantage of some of the flow scheduling features that are going to be described in this article.
 
 ## The Scheduling
 
@@ -16,7 +16,7 @@ Please be aware, that changing the flow's schedule means modifying the flow. Her
 *   For modifying a flow, you should have specific permissions.
 *   As soon as you modify the flow's schedule, you should restart it to let the System apply the changes.
 
-To proceed further with CRON scheduling follow the steps below:
+For more information regarding the CRON scheduling, please follow the steps below:
 
 ### Navigation
 
@@ -28,7 +28,7 @@ Create a [flow](#realtime-flows) or pick the existing one by navigating to the *
 
 The *Scheduling tab* consists of the *Cron Expression* section and the *Next Occurrences* one. 
 
-Specify the necessary value into the *Minute field* that is under the *Cron Expression* title. For example, we want to restart the flow every minute, so we type in the following `*/1` value. The *Next Occurrences* section represents the result. Check the screenshot below.
+Specify the necessary value into the *Minute field* that is under the *Cron Expression* title. For example, we want to restart the flow every minute, so we type in the following `*/1` value. The *Next Occurrences* section represents the expected result. Check the screenshot below.
 
 ![Scheduling](/assets/img/developer-guide/cron/scheduling.png "Scheduling")
 
@@ -87,6 +87,3 @@ Let's briefly review the key points we have learned from this article.
 * Defining a custom execution frequency is accomplished by a CRON expression applied to a flow.
 * *Cron Expression* section utilizes the standard GMT time format unlike the *Next Occurrences* one.
 * CRON scheduling is not available for the Webhook-like flows.
-
-
-This is how you schedule your flow with CRON in the {{site.data.tenant.name}}. 
