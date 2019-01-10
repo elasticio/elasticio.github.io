@@ -7,67 +7,66 @@ order: 4
 since: 20181218
 ---
 
-Scheduling tasks are part of the {{site.data.tenant.name}} functionality. Every flow is executed every 3 minutes which is Platform's default setting. Depending on the business needs, that default setting might not always be suitable. To proceed further, you may take advantage of some of the flow scheduling features that are going to be described in this article.
+Scheduling flows are part of the {{site.data.tenant.name}} platform's functionality. Every flow is executed every 3 minutes which is platform's default setting. Depending on the business needs, that default setting might not always be suitable. To proceed further, you may take advantage of some of the flow scheduling features that are going to be described in this article.
 
-## The Scheduling
+## Scheduling
 
 Please be aware, that changing the flow's schedule means modifying the flow. Here some of the requirements to follow: 
 
 *   For modifying a flow, you should have specific permissions.
-*   As soon as you modify the flow's schedule, you should restart it to let the System apply the changes.
+*   As soon as you modify the flow's schedule, you should restart it to let the system apply the changes.
 
 For more information regarding the CRON scheduling, please follow the steps below:
 
-### Navigation
+## Navigating to a Flow
 
 Create a [flow](#realtime-flows) or pick the existing one by navigating to the *Workspace > Flows > Choose the necessary Flow > Settings* tab. See the screenshot below.
 
-![CRON Navigation](/assets/img/developer-guide/cron/cron_navigation.png "CRON Navigation")
+![Navigating to a Flow](/assets/img/developer-guide/cron/cron_navigation.png "Navigating to a Flow")
 
-### Working with Expressions
+## Working with CRON Expressions
 
-The *Scheduling tab* consists of the *Cron Expression* section and the *Next Occurrences* one. 
-
-Specify the necessary value into the *Minute field* that is under the *Cron Expression* title. For example, we want to restart the flow every minute, so we type in the following `*/1` value. The *Next Occurrences* section represents the expected result. Check the screenshot below.
-
-![Scheduling](/assets/img/developer-guide/cron/scheduling.png "Scheduling")
-
-> **Please Note**: By default, the *Cron Expression* section's value is always in the *GMT* format. The *Next Occurrences* section converts the specified GMT value into your Local Time format one. This way it demonstrates the expected result, so you can make sure it is correct.
-
-In case of mistake or wrong value, the System displays an Error Message.
-
-![Scheduling Error](/assets/img/developer-guide/cron/scheduling_error.png "Scheduling Error")
-
-
-Below are some predefined scheduling definitions:
-
-| Description                                                | Equal to        |
-| :---------:                                                | :-----------:   |
-| Run once at every 5th minute                               | `*/5 * * * * `  |
-| Run once at every 10th minute                              | `*/10 * * * * ` |
-| Run once every hour at minute 0                            | `0 * * * *`     |
-| Run once every day at midnight 00:00                       | `0 0 * * *`     |
-| Run once every week at 00:00 on Sunday                     | `0 0 * * 0`     |
-| Run every month at 00:00 on day-of-month 1                 | `0 0 1 * *`     |
-| Run every year at 00:00 on day-of-month 1 in January       | `0 0 1 1 *`     |
-
-To find more definitions, please follow this [link](https://crontab.guru).
-
-### Understanding CRON 
-
-[CRON](https://en.wikipedia.org/wiki/Cron) is the UNIX-like job scheduler that executes commands or scripts at given time and date. 
-CRON is driven by a *cron table*, to run periodically on a given schedule. See the *crontab* line on the screenshot below:
+Before we move with expressions, let's briefly describe what CRON is all about. 
+So [CRON](https://en.wikipedia.org/wiki/Cron) is a UNIX-like job scheduler that executes commands or scripts at given time and date. 
+It is driven by a *cron table*, to run periodically on a given schedule. See the *crontab* line on the screenshot below:
 
 ![Crontab](/assets/img/developer-guide/cron/cron.png "Crontab")
 
 The line's syntax expects a CRON expression made of five values. For more information on how to generate CRON's expressions, please follow this [link](https://www.freeformatter.com/cron-expression-generator-quartz.html).
 
+Now let's proceed with defining CRON's functionality in terms of platform's UI. 
 
-### Saving Changes
+The *Scheduling tab* consists of the *Cron Expression* section and the *Next Occurrences* one. Specify the necessary value into the *Minute field* that is under the *Cron Expression* title. For example, we want to restart the flow every minute, so we type in the following `*/1` value. The *Next Occurrences* section represents the expected result. Check the screenshot below.
+
+![Scheduling](/assets/img/developer-guide/cron/scheduling.png "Scheduling")
+
+> **Please Note**: By default, the *Cron Expression* section's value is always in the *GMT* format. The *Next Occurrences* section converts the specified GMT value into your Local Time format one. This way it demonstrates the expected result, so you can make sure it is correct.
+
+In case of mistake or wrong value, an Error Message will be shown.
+
+![Scheduling Error](/assets/img/developer-guide/cron/scheduling_error.png "Scheduling Error")
+
+
+Below are some examples of CRON expressions and their explanations:
+
+
+| Equal to CRON Expression    | Description                                                |
+| :-----------                | :---------                                                 |
+| `*/5 * * * * `              | Run once at every 5th minute                               |
+| `*/10 * * * * `             | Run once at every 10th minute                              |
+| `0 * * * *`                 | Run once every hour at minute 0                            |
+| `0 0 * * *`                 | Run once every day at midnight 00:00                       |
+| `0 0 * * 0`                 | Run once every week at 00:00 on Sunday                     | 
+| `0 0 1 * *`                 | Run every month at 00:00 on day-of-month 1                 |
+| `0 0 1 1 *`                 | Run every year at 00:00 on day-of-month 1 in January       |
+
+
+Please follow this [link](https://crontab.guru) for more definitions.
+
 
 Once you finish the setup, click the *Save* button to apply the changes. The *Successfully updated the flow scheduling* text message appears in the upper right corner. 
 
-### Finishing the Setup
+## Finishing the Setup
 
 Now let's publish our Draft. To do that, please navigate back to the **Graph** tab and click the **Publish Draft** button. Once it's done, start the flow by clicking the green play-icon on your right.
 
