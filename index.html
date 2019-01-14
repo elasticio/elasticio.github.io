@@ -46,7 +46,9 @@ layout: default
 {% assign recentlyAddedPages = allPages | sort: 'since' | reverse %}
 {% assign pagesLimit = 5%}
 
-{% assign releasesCount = site.releases.size%}
+{% assign releases = site.releases | sort: 'releaseDate' | reverse %}
+
+{% assign releasesCount = releases.size%}
 
 <div class="link-box">
     <div class="wrap">
@@ -86,7 +88,7 @@ layout: default
                         </div>
                     </div>
                     <div class="link-box__holder">
-                        {% for release in site.releases limit:pagesLimit %}
+                        {% for release in releases limit:pagesLimit %}
                             {% if release.version%}
                             <a class="link-box__link" href="{{release.url}}">v{{release.version}}</a>
                             {% endif %}
