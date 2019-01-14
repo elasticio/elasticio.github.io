@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+{% assign releases = site.releases | sort: 'releaseDate' | reverse %}
+
 <div class="wrap">
     <div class="breadcrumbs">
         <a href="/" class="breadcrumbs__item">Home</a>
@@ -30,7 +33,7 @@ layout: default
 <div class="file-box file-box_release_notes">
     <div class="wrap">
         <div class="file-box__list">
-            {% for release in site.releases %}
+            {% for release in releases %}
                 {% if release.version%}
                 <a class="file-box__item" href="{{release.url}}">
                         <span class="file-box__inner">

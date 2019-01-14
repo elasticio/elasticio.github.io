@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+{% assign releases = site.releases | sort: 'releaseDate' | reverse %}
+
 <div class="layout">
     <div class="wrap">
         <div class="breadcrumbs">
@@ -19,7 +21,7 @@ layout: default
                 </div>
                 <div class="date__view">
                     <div class="date__list">
-                        {% for release in site.releases %}
+                        {% for release in releases %}
                             {% if release.version == page.version %}
                                 {% assign active = "active"%}
                             {% endif %}
