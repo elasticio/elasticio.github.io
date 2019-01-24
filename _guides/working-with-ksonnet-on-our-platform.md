@@ -7,14 +7,39 @@ order: 1
 since: 20190119
 ---
 
+One of the first problems this article solves is simplifying how users configure the applications they deploy to Kubernetes clusters.
+
+With that in mind, we are representing a detailed step by step instruction on how to implement the {{site.data.tenant.name}} platform's cluster and all the required Kubernetes descriptors onto a customer's hardware utilizing KSonnet.
+
 ## What is KSonnet
 
-## Elastic.io platform KSonnet registry
+> A CLI-supported framework for extensible Kubernetes configurations
 
-The following repository contains the [KSonnet registry](https://ksonnet.io/docs/concepts#registry) of Elastic.io's platform components.
-To proceed further with this repository you should install the [KSonnet CLI](https://github.com/ksonnet/ksonnet/releases) first.
+Ksonnet is an alternate way of defining application configuration for Kubernetes. It utilizes Jsonnet, a JSON templating language instead of the default YAML files to determine k8s manifests. The KSonnet CLI renders the final YAML files and then applies it to the cluster.
 
-## Installation
+It is intended to be used for defining reusable components and incrementally applying them to build an application.
+
+### How does KSonnet work
+
+KSonnet is a mixture of two things: a set of patterened, generic mixin functions that are generated from the kubernetes API spec, and a handful of hand-written helper functions that provide a shorthand for creating some of the more common API object types (like deployments).
+
+In short, Ksonnet helps you define and manage applications as collection of components using Jsonnet and then deploy them on different Kubernetes clusters.
+
+### Common Use Cases
+
+* Flexibility in writing configuration using Jsonnet.
+* Packaging: Complex configurations can be built as mixing and matching components.
+* Reusable component and prototype library: avoid duplication.
+* Easy deployments to multiple environments.
+* Last-mile deployment: CD step.
+
+
+## Platform Deployment
+
+The following repository contains the [KSonnet registry](https://ksonnet.io/docs/concepts#registry) of {{site.data.tenant.name}} platform components.
+To proceed further, please install the [KSonnet CLI](https://github.com/ksonnet/ksonnet/releases).
+
+### Installation
 
 To be able to execute the platform's fresh installation you should configure all the necessary parameters in the `config.json` & `platform.json` files.
 
@@ -223,7 +248,7 @@ gendry-qzjfp   0/1     Completed   0          1d
 ks apply elasticio --gc-tag elasticio0 --context <kubectl_context>
 ```
 
-## Update
+## Platform Updating
 
 Below are the steps required for updating to the new version.
 
@@ -306,3 +331,10 @@ Find the list of known issues and its workarounds below.
 *Solution:*
 
 Remove the KSonnet project directory and execute all the previous installation steps again.
+
+## Summary
+
+Let's briefly review the key points we have learned from this article.
+
+* Ksonnet helps defining and managing applications as collection of components using Jsonnet and then deploying them on different Kubernetes clusters.
+
