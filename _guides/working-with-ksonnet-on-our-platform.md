@@ -36,6 +36,7 @@ In short, Ksonnet helps you define and manage applications as collection of comp
 
 ## Platform Deployment
 
+In this section we describe how to install, configure the necessary components and get them ready for deploying  
 The following repository contains the [KSonnet registry](https://ksonnet.io/docs/concepts#registry) of {{site.data.tenant.name}} platform components.
 To proceed further, please install the [KSonnet CLI](https://github.com/ksonnet/ksonnet/releases).
 
@@ -177,13 +178,13 @@ Check the following [README.md](https://github.com/elasticio/k8s-deployment/blob
 
 * `ingress_cert_crt` and `ingress_cert_key` - https SSL certificate and key for application domains, base64 encoded.
 
-* `docker_username`, `docker_password`, `docker_email` - docker registry credential; used for the registry where the elasticios' apps are.
+* `docker_username`, `docker_password`, `docker_email` - docker registry credential; used for the registry where the {{site.data.tenant.name}} applications are.
 
-* `app_domain`, `api-domain`, `webhooks_domain` - elasticio applications domains.
+* `app_domain`, `api-domain`, `webhooks_domain` - {{site.data.tenant.name}} applications domains.
 
 * `gitreceiver_key` - public key for gitreceiver, base64 encoded
 
-* `load_balancer_ip` - external IP-address of the elasticio application.
+* `load_balancer_ip` - external IP-address of the {{site.data.tenant.name}} application.
 
 * `nfs_server_address` and `nfs_share` - configuration of NFS instance for slugs component and slugs storage.
 
@@ -201,13 +202,13 @@ ks init elasticio --skip-default-registries --env elasticio --context <kubectl_c
 cd elasticio
 ```
 
-### Adding the elasticio registry
+### Adding the {{site.data.tenant.name}} registry
 
 ```bash
 ks registry add elasticio github.com/elasticio/KSonnet-registry/tree/master
 ```
 
-### Installing the elasticio packages
+### Installing the {{site.data.tenant.name}} packages
 
 ```bash
 ks pkg install elasticio/platform@<current_elasticio_version>
@@ -227,7 +228,7 @@ ks generate elastic.io.platform platform --values-file=platform.json
 ks apply -c config elasticio --skip-gc --gc-tag elasticio0 --context <kubectl_context>
 ```
 
-### Running the Gendry app to initialize the elasticio platform
+### Running Gendry application to initialize the {{site.data.tenant.name}} platform
 
 ```bash
 ks apply -c gendry elasticio --skip-gc --gc-tag elasticio0 --context <kubectl_context>
@@ -248,7 +249,7 @@ gendry-qzjfp   0/1     Completed   0          1d
 ks apply elasticio --gc-tag elasticio0 --context <kubectl_context>
 ```
 
-## Platform Updating
+## Platform Update
 
 Below are the steps required for updating to the new version.
 
@@ -280,7 +281,7 @@ ks generate elastic.io.platform platform --values-file=platform.json
 ks apply -c config elasticio --skip-gc --gc-tag elasticio0 --context <kubectl_context>
 ```
 
-### Run gendry app to init elasticio platform
+### Run Gendry application to initialize the {{site.data.tenant.name}} platform
 
 ```bash
 ks delete -c gendry elasticio --skip-gc --gc-tag elasticio0 --context <kubectl_context>
@@ -316,7 +317,7 @@ Find the list of known issues and its workarounds below.
 
 *Solution:*
 
-1. Create GitHub [personal access token](https://github.com/settings/tokens)
+1. Create a GitHub [personal access token](https://github.com/settings/tokens)
 
 2. Set `GITHUB_TOKEN` environment variable, i.e. 
 
