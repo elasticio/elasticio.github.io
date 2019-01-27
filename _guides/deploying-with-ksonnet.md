@@ -1,5 +1,6 @@
 ---
-title: Working with KSonnet on our platform
+title: Deploying with KSonnet
+collection: How-to Guides
 layout: article
 section: On-prem
 category: component
@@ -11,9 +12,47 @@ One of the first problems this article solves is simplifying how users configure
 
 With that in mind, we are representing a detailed step by step instruction on how to implement the {{site.data.tenant.name}} platform's cluster and all the required Kubernetes descriptors onto a customer's hardware utilizing KSonnet.
 
+Before we go ahead and dive into the configuration peculiarities, let's deal with some of the basic terminologies.
+
+## What is Kubernetes 
+
+> Kubernetes is an open source container orchestration tool developed by Google. [Source code in GitHub](https://github.com/kubernetes/kubernetes).
+
+Kubernetes or K8s for short is an open source toolkit for building a fault-tolerant, scalable platform designed to automate and centrally manage [containerized applications](https://www.techradar.com/news/what-is-container-technology).
+
+The platform itself can be deployed within almost any infrastructure – in the local network, server cluster, data center, any kind of cloud – public (Google Cloud, Microsoft Azure, AWS, etc.), private, hybrid, or even over the combination of these methods.
+
+### Kubernetes Architecture
+
+To build a platform based on Kubernetes, we will need physical or virtual servers that perform the following roles:
+
+* *Node* is a separate host in the Kubernetes cluster, which is used to start worker threads and containerized applications;
+
+* *Minion node* – “slave” node, used only for deploying and launching the application containers;
+
+* *The master node* is the node on which the Kubernetes control modules are running (note that nothing prevents the same node from being a minion if resources allow it). In a cluster, there may be more than one master node that distributes the load among themselves or serves to provide the fault tolerance.
+
+Kubelet is the process launched on each minion node and designed to manage it, control its load and operability.
+
+Below is a high-level diagram of the architecture.
+
+![Kubernetes Architecture](/assets/img/getting-started/deploying-with-ksonnet/kubernetes_architecture_diagram.png "Kubernetes Architecture")
+
+### Benefits of Using Kubernetes
+
+* Provide the fastest possible and least costly horizontal scalability by distributing Docker containers over multiple hosts;
+
+* Reduce the need for new hardware resources when scaling;
+
+* Provide the comprehensive control and automation in the administration processes;
+
+* Introduce algorithms for replication, scaling, self-recovery, and resumption of system operability;
+
+* Provide increased fault tolerance and minimize downtime by launching containers on different machines.
+
 ## What is KSonnet
 
-> A CLI-supported framework for extensible Kubernetes configurations
+> A [CLI-supported framework](https://ksonnet.io/docs/) for extensible Kubernetes configurations.
 
 Ksonnet is an alternate way of defining application configuration for Kubernetes. It utilizes Jsonnet, a JSON templating language instead of the default YAML files to determine k8s manifests. The KSonnet CLI renders the final YAML files and then applies it to the cluster.
 
@@ -27,18 +66,23 @@ In short, Ksonnet helps you define and manage applications as collection of comp
 
 ### Common Use Cases
 
-* Flexibility in writing configuration using Jsonnet.
-* Packaging: Complex configurations can be built as mixing and matching components.
-* Reusable component and prototype library: avoid duplication.
-* Easy deployments to multiple environments.
+* Flexibility in writing configuration using Jsonnet;
+
+* Packaging: Complex configurations can be built as mixing and matching components;
+
+* Reusable component and prototype library: avoid duplication;
+
+* Easy deployments to multiple environments;
+
 * Last-mile deployment: CD step.
 
 
-## Platform Deployment
+## Deploying Platform
 
-In this section we describe how to install, configure the necessary components and get them ready for deploying  
+In this section we describe how to install, configure the necessary components, and get everything ready for deployment. 
+
 The following repository contains the [KSonnet registry](https://ksonnet.io/docs/concepts#registry) of {{site.data.tenant.name}} platform components.
-To proceed further, please install the [KSonnet CLI](https://github.com/ksonnet/ksonnet/releases).
+To proceed further, please install the [KSonnet CLI](https://github.com/ksonnet/ksonnet/releases) first.
 
 ### Installation
 
@@ -249,7 +293,7 @@ gendry-qzjfp   0/1     Completed   0          1d
 ks apply elasticio --gc-tag elasticio0 --context <kubectl_context>
 ```
 
-## Platform Update
+## Updating Platform
 
 Below are the steps required for updating to the new version.
 
@@ -307,7 +351,7 @@ ks apply elasticio --gc-tag elasticio0 --context <kubectl_context>
 
 ## Known issues
 
-Find the list of known issues and its workarounds below.
+In this section you can find the list of known issues and its workarounds.
 
 ### Error: 403 API rate limit exceeded
 
@@ -317,7 +361,7 @@ Find the list of known issues and its workarounds below.
 
 *Solution:*
 
-1. Create a GitHub [personal access token](https://github.com/settings/tokens)
+1. Create a GitHub [personal access token](https://github.com/settings/tokens);
 
 2. Set `GITHUB_TOKEN` environment variable, i.e. 
 
@@ -331,11 +375,15 @@ Find the list of known issues and its workarounds below.
 
 *Solution:*
 
-Remove the KSonnet project directory and execute all the previous installation steps again.
+Remove the KSonnet project directory and execute all the previous installation steps once again.
 
 ## Summary
 
 Let's briefly review the key points we have learned from this article.
 
-* Ksonnet helps defining and managing applications as collection of components using Jsonnet and then deploying them on different Kubernetes clusters.
+* Kubernetes is a core tool in DevOps, and is the world's most popular open-source container orchestration engine. It offers the ability to schedule and manage containers (Docker or otherwise) at scale;
+
+* Ksonnet helps defining and managing applications as collection of components using Jsonnet and then deploying them on different Kubernetes clusters;
+
+* The `config.json` & `platform.json` files have to be configured first, before proceeding with KSonnet deployment;
 
