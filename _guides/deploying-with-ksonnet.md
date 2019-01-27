@@ -90,7 +90,9 @@ To be able to execute the platform's fresh installation you should configure all
 
 ### Configuration
 
-See the configuration files below:
+On this step you can find all the necessary descriptors parameters and its classification to be able to proceed with further configuration.
+
+Let's start with the first configuration file to set up:
 
 #### config.json
 
@@ -171,11 +173,137 @@ See the configuration files below:
 }
 ```
 
-* `amqp_uri` - RabbitMQ's unique indentifier. More information about 'amqp' can be found [here](https://www.rabbitmq.com/uri-spec.html)
+* `accounts_password` - description;
+
+* `amqp_uri` - RabbitMQ's unique identifier. More information about 'amqp' can be found [here](https://www.rabbitmq.com/uri-spec.html)
+
+* `api_uri` - description;
+
+* `api_service` - description;
+
+* `appdirect_marketplace_url` - description;
+
+* `appdirect_subscription_events_uri` - description;
+
+* `apidocs_service` - description;
+
+* `apprunner_image` - description;
+
+* `company_name` - description;
+
+* `component_mem_default` - description;
+
+* `cookie_max_age` - description;
+
+* `debug_data_size_limit_mb` - description;
+
+* `default_driver_backend` - description;
+
+* `default_per_contract_quota` - description;
+
+* `elastic_search_uri` - description;
+
+* `enforce_quota` - description;
+
+* `environment` - description;
+
+* `env_password` - description;
+
+* `external_api_uri` - description;
+
+* `external_app_uri` - description;
+
+* `external_gateway_uri` - description;
+
+* `external_steward_uri` - description;
+
+* `frontend_service` - description;
+
+* `gelf_address` - description;
+
+* `gelf_host` - description;
+
+* `gelf_port` - description;
+
+* `gelf_protocol` - description;
+
+* `git_receiver_host` - description;
+
+* `hooks_data_password` - description;
+
+* `intercom_access_token` - description;
+
+* `intercom_app_id` - description;
+
+* `intercom_secret_key` - description;
+
+* `kubernetes_rabbitmq_uri_sailor` - description;
+
+* `kubernetes_slugs_base_url` - description;
+
+* `mandrill_api_key` - description;
+
+* `marathon_uri` - description;
+
+* `message_crypto_iv` - description;
+
+* `message_crypto_password` - description;
+
+* `mongo_uri` - description;
+
+* `node_env` - description;
+
+* `petstore_api_host` - description;
+
+* `predefined_users` - description;
+
+* `quotas_uri` - description;
+
+* `rabbitmq_stats_login`, `rabbitmq_stats_pass`, `rabbitmq_stats_uri`, `rabbitmq_uri_boatswains`, `rabbitmq_uri_sailor`, `rabbitmq_virtual_host`, `rabbitmq_max_messages_per_queue`, `rabbitmq_max_messages_mbytes_per_queue`, - number of RabbitMQ-related instances that are responsible for proper functioning of RabbitMQ DataBase components.
+
+* `raven_uri` - description;
+
+* `secondary_marathon_uri` - description;
+
+* `service_account_password` - description;
+
+* `service_account_username` - description;
+
+* `session_mongo_uri` - description;
+
+* `slug_base_url` - description;
+
+* `steward_storage_uri` - description;
+
+* `steward_uri` - description;
+
+* `suspended_task_max_messages_count` - description;
+
+* `suspend_watch_kubernetes_max_events` - description;
+
+* `team_name` - description;
+
+* `tenant_code` - description;
+
+* `tenant_domain` - description;
+
+* `tenant_name` - description;
+
+* `user_amqp_crypto_password` - description;
+
+* `user_api_crypto_password` - description;
+
+* `webhooks_base_uri` - description;
+
+* `webhooks_service` - description;
+
+* `tenant_admin_email` - description;
+
+* `tenant_admin_password` - description;
+
+* `log_level` - description;
 
 * `external_api_uri`, `external_app_uri`, `external_gateway_uri`, `external_steward_uri` - number of instances responsible for pointing API, Frontend, Webhooks and the Steward application respectively to the DNS names. 
-
-* `rabbitmq_stats_login`, `rabbitmq_stats_pass`, `rabbitmq_stats_uri`, `rabbitmq_uri_boatswains`, `rabbitmq_uri_sailor`, `rabbitmq_virtual_host`, `rabbitmq_max_messages_per_queue`, `rabbitmq_max_messages_mbytes_per_queue`, - number of RabbitMQ-related instances that are responsbile for 
 
 * `mongo_uri` and `session_mongo_uri` - MongoDB-related instances responsible for the most DataBase payload storage and session storage for a web applications respectively.
 
@@ -183,6 +311,8 @@ See the configuration files below:
 
 
 Check the following [README.md](https://github.com/elasticio/k8s-deployment/blob/master/README.md) file for more detailed parameters description.  
+
+The next configuration file to work on is related to the platform itself:
 
 #### platform.json
 
