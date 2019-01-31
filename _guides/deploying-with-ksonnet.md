@@ -444,9 +444,9 @@ ks component rm platform
 ### Generating a new version of KSonnet components
 
 ```bash
-ks generate elastic.io.config config --values-file=config.json
+ks generate elastic.io.config config --values-file=/path/to/config.json
 ks generate elastic.io.gendry gendry
-ks generate elastic.io.platform platform --values-file=platform.json
+ks generate elastic.io.platform platform --values-file=/path/to/platform.json
 ```
 
 ### Updating configuration
@@ -458,7 +458,7 @@ ks apply -c config elasticio --skip-gc --gc-tag elasticio0 --context <kubectl_co
 ### Run Gendry application to initialize the {{site.data.tenant.name}} platform
 
 ```bash
-ks delete -c gendry elasticio --skip-gc --gc-tag elasticio0 --context <kubectl_context>
+ks delete -c gendry elasticio --context <kubectl_context>
 ks apply -c gendry elasticio --skip-gc --gc-tag elasticio0 --context <kubectl_context>
 ```
 
