@@ -18,9 +18,9 @@ Before we go ahead and dive into the configuration peculiarities, let's deal wit
 
 > Kubernetes is an open source container orchestration tool developed by Google. [Source code in GitHub](https://github.com/kubernetes/kubernetes).
 
-Kubernetes or K8s for short is an open source toolkit for building a fault-tolerant, scalable platform designed to automate and centrally manage [containerized applications](https://www.techradar.com/news/what-is-container-technology).
+Kubernetes is an open source toolkit for building a fault-tolerant, scalable platform designed to automate and centrally manage [containerized applications](https://www.techradar.com/news/what-is-container-technology).
 
-The platform itself can be deployed within almost any infrastructure – in the local network, server cluster, data center, any kind of cloud – public (Google Cloud, Microsoft Azure, AWS, etc.), private, hybrid, or even over the combination of these methods.
+The platform itself can be deployed within almost any infrastructure – into any working Kubernetes cluster (manually installed into private infrastructure) in the local network, server cluster, data center, any kind of cloud – public (Google Kubernetes Engine, Azure Kubernetes Service, Amazon Elastic Container Service for Kubernetes, etc.), private, hybrid, or even over the combination of these methods.
 
 ### Kubernetes Architecture
 
@@ -28,7 +28,7 @@ To build a platform based on Kubernetes, we will need physical or virtual server
 
 * *Node* is a separate host in the Kubernetes cluster, which is used to start worker threads and containerized applications;
 
-* *Minion node* – “slave” node, used only for deploying and launching the application containers;
+* *Worker node* – “slave” node, used only for deploying and launching the application containers;
 
 * *The master node* is the node on which the Kubernetes control modules are running (note that nothing prevents the same node from being a minion if resources allow it). In a cluster, there may be more than one master node that distributes the load among themselves or serves to provide the fault tolerance.
 
