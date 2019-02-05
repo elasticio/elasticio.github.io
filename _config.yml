@@ -5,6 +5,8 @@ collections:
      output: true
   references:
      output: true
+  components:
+     output: true
   releases:
      output: true
 
