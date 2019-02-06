@@ -26,6 +26,17 @@ guides:
       description: Articles on how to create complex non-linear integration flows
     - title: Developing Components
       description: Articles on component development and SDKs
+components:
+  title: Components
+  description: Extensive documentation of the integration components
+  class: categories__item_components
+  welcommer-class: welcomer__icon_components
+  fa-icon: fa-archive
+  sections:
+    - title: Basic Components
+      description: Basic components used in many integration projects
+    - title: Utility Components
+      description: Generic utility components not bound to any specific system
 references:
   title: References
   description: Component structure references, classes and JSON Schema
