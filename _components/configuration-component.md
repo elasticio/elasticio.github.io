@@ -11,17 +11,29 @@ modification of configurable values from the modification of the flow.
 
 ### How works.  API version / SDK version
 
-Configuration component has a credential which is a text field with some valid
-JSON. (JSON must be valid in order for credentials to be verified). It emits a
-message with an object equivalent to the JSON in the configuration. So any data which
-is used in the flow and is repeated in multiple places can be configured (or
-later changed) in the single step. After that new values are used where it is needed.
+Configuration component has a credential which is a text field with the following
+rules:
+
+*   It must be a valid JSON in order for the credentials to be verified.
+*   It must not exceed 5KB in size.
+
+The screenshot below shows the configuration component *Choose Credential* stage
+during the integration flow design. The text field will be evaluated to check if
+the above conditions are met.
+
+![Configuration component credential](/assets/img/components/configuration-component/configuration-component01.png)
+
+Afterwards, it emits a message with an object equivalent to the JSON in the configuration.
+So any data which is used in the flow and is repeated in multiple places can be
+configured (or later changed) in the single step. After that new values are used
+where it is needed.
+
 
 ### Requirements
 
 #### Environment variables
 
-No environment variables are used to configure the component.
+No environment variables are necessary to configure the component.
 
 ## Credentials
 
