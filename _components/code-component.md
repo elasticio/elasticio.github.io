@@ -11,7 +11,7 @@ as an essential utility in our platform.
 
 ### Purpose
 
-To execute a custom code (only `Node.js`, see the [known limitations for more](#Known-limitations))
+To execute a custom code (only `Node.js`, see the [known limitations for more](#known-limitations))
 without developing a full fledged component. The code is immediately executed
 during the normal execution of the component and the results are immediately
 available as an output data from the component.
@@ -91,7 +91,7 @@ Only the code written in `Node.js` is supported at this moment.
 
 Here are several examples where it's possible to see how can Code component be
 used. For purposes of displaying the functionality, we will use the
-{{site.data.tenant.name}} [Rest API](https://{{site.data.tenant.apiBaseUri}}/docs/#introduction).
+{{site.data.tenant.name}} [Rest API]({{site.data.tenant.apiBaseUri}}/docs/#introduction).
 
 In the examples below, we make an HTTP request to retrieve your user information
 from our API and pass this information to the next stage of integration. We use
@@ -99,7 +99,7 @@ Environment variables to retrieve your API username and API Key which is already
 defined in your account while logged into the platform Dashboard.
 
 The information that we are accessing is normally given back in the
-[JSON form like](https://{{site.data.tenant.apiBaseUri}}/docs/#users):
+[JSON form like]({{site.data.tenant.apiBaseUri}}/docs/#users):
 
 ```js
 HTTP/1.1 200 OK
@@ -121,7 +121,7 @@ The simplest way to retrieve this information could be done using JavaScript cal
 console.log('Starting Node.js code execution');
 
 var opts = {
-    uri: 'https://api.elastic.io/v2/users',
+    uri: '{{site.data.tenant.apiBaseUri}}/v2/users',
     auth: {
         user: process.env.ELASTICIO\_API\_USERNAME,
         pass: process.env.ELASTICIO\_API\_KEY
@@ -169,7 +169,7 @@ the example above into something short and robust:
 function\* run() {
     console.log('Incoming message=%j', msg);
     return request.get({
-        uri: 'https://api.elastic.io/v2/users',
+        uri: '{{site.data.tenant.apiBaseUri}}/v2/users',
         auth: {
             user: process.env.ELASTICIO\_API\_USERNAME,
             pass: process.env.ELASTICIO\_API\_KEY
@@ -199,12 +199,12 @@ function\* run() {
         pass: process.env.ELASTICIO\_API\_KEY
     }
     var result = yield request.get({
-        uri: 'https://api.elastic.io/v2/users',
+        uri: '{{site.data.tenant.apiBaseUri}}/v2/users',
         auth: auth,
         json: true
     });
     var result2 = yield request.get({
-        uri: 'https://api.elastic.io/v2/teams',
+        uri: '{{site.data.tenant.apiBaseUri}}/v2/teams',
         auth: auth,
         json: true
     });
