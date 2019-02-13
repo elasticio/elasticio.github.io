@@ -1,16 +1,15 @@
 ---
 title: Deploying with KSonnet
-collection: How-to Guides
 layout: article
-section: On-prem
+section: Developing Components
 category: component
 order: 1
 since: 20190119
 ---
 
-One of the first problems this article solves is simplifying how users configure the applications they deploy to Kubernetes clusters.
+One of the first problems this article solves is simplifying how users deploying the {{site.data.tenant.name}} platform to Kubernetes clusters.
 
-With that in mind, we are representing a detailed step by step instruction on how to implement the {{site.data.tenant.name}} platform's cluster and all the required Kubernetes descriptors onto a customer's hardware utilizing KSonnet.
+With that in mind, we are representing a detailed step by step instruction on how to deploy the {{site.data.tenant.name}} platform into a running Kubernetes cluster with all the required descriptors onto that should work on customer's hardware utilizing KSonnet.
 
 Before we go ahead and dive into the configuration peculiarities, let's deal with some of the basic terminologies.
 
@@ -22,21 +21,6 @@ Kubernetes is an open source toolkit for building a fault-tolerant, scalable pla
 
 The platform itself can be deployed within almost any infrastructure – into any working Kubernetes cluster (manually installed into private infrastructure) in the local network, server cluster, data center, any kind of cloud – public (Google Kubernetes Engine, Azure Kubernetes Service, Amazon Elastic Container Service for Kubernetes, etc.), private, hybrid, or even over the combination of these methods.
 
-### Kubernetes Architecture
-
-To build a platform based on Kubernetes, we will need physical or virtual servers that perform the following roles:
-
-* *Node* is a separate host in the Kubernetes cluster, which is used to start worker threads and containerized applications;
-
-* *Worker node* – “slave” node, used only for deploying and launching the application containers;
-
-* *The master node* is the node on which the Kubernetes control modules are running (note that nothing prevents the same node from being a minion if resources allow it). In a cluster, there may be more than one master node that distributes the load among themselves or serves to provide the fault tolerance.
-
-Kubelet is the process launched on each minion node and designed to manage it, control its load and operability.
-
-Below is a high-level diagram of the architecture.
-
-![Kubernetes Architecture](/assets/img/getting-started/deploying-with-ksonnet/kubernetes_architecture_diagram.png "Kubernetes Architecture")
 
 ### Benefits of Using Kubernetes
 
@@ -173,7 +157,7 @@ Let's start with the first configuration file to set up:
 }
 ```
 
-* `accounts_password` - description;
+* `accounts_password` - a secret key, used for encryption of payload of user's credentials in a database;
 
 * `amqp_uri` - RabbitMQ's unique identifier. More information about 'amqp' can be found [here](https://www.rabbitmq.com/uri-spec.html)
 
@@ -515,5 +499,5 @@ Let's briefly review the key points we have learned from this article.
 
 * Ksonnet helps defining and managing applications as collection of components using Jsonnet and then deploying them on different Kubernetes clusters;
 
-* The `config.json` & `platform.json` files have to be configured first, before proceeding with KSonnet deployment;
+* The `config.json` & `platform.json` files have to be configured first, before proceeding with KSonnet deployment.
 
