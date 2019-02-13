@@ -24,7 +24,7 @@ you could if you have extended it yourself). In our Dashboard start building you
 integration and include the Code component as well. You will see a picture similar
 to the one below:
 
-![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/14018804997/original/JeiuYO-31ocTuv6E-O3lqUzqVMTqMRxSOw.png?1501499642)
+![Code component](/assets/img/components/code-component/code-component01.png "Code component")
 
 However, don't let the _simple look_ fool you - it has a full-fledged interface
 with many very useful features like the ones you would expect from your favourite
