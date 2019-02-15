@@ -33,6 +33,12 @@ components:
   welcommer-class: welcomer__icon_components
   fa-icon: fa-archive
   sections:
+    - title: CRM Components
+      description: Generic utility components not bound to any specific system
+    - title: ERP Components
+      description: Generic utility components not bound to any specific system
+    - title: E-Commerce Components
+      description: Generic utility components not bound to any specific system
     - title: Basic Components
       description: Basic components used in many integration projects
     - title: Utility Components
