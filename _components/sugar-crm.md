@@ -11,11 +11,11 @@ platform.
 
 This is an open source component template for [Sugar
 CRM](https://www.sugarcrm.com) which is developed specifically to run on
-[elastic.io platform](https://www.elastic.io "elastic.io platform"). You can
+[{{site.data.tenant.name}} platform](https://www.{{site.data.tenant.name}} "{{site.data.tenant.name}} platform"). You can
 clone it and change it as you wish.
 
 # Authentication
-In order for the elastic.io platform to authenticate with SugarCRM, the
+In order for the {{site.data.tenant.name}} platform to authenticate with SugarCRM, the
 following tasks need to be completed:
 * An admin must manually create an OAuth App on the SugarCRM instance through SugarCRM's UI *(step by step instructions below)*
 * [If using a version of SugarCRM that was released after Winter '18, you must
@@ -27,14 +27,14 @@ instance](https://community.sugarcrm.com/community/developer/blog/2017/11/20/unk
   * It is also possible to load new platform values by [creating and installing
    a
    module](https://community.sugarcrm.com/docs/DOC-5875-tutorial-how-to-register-custom-platforms-in-sugar-instances)
-* Finally, authentication information for your Sugar instance must be entered into the elastic.io UI *(step by step instructions below)*
+* Finally, authentication information for your Sugar instance must be entered into the {{site.data.tenant.name}} UI *(step by step instructions below)*
 
 ## Creating an app on a SugarCRM instance
 In order the platform to connect to your SugarCRM instance, an app needs to be
 created on that instance.  Below are the steps to do so.  Once that is done, you
-will provide a valid username and password to the elastic.io platform.  The
+will provide a valid username and password to the {{site.data.tenant.name}} platform.  The
 platform will exchange that username and password for a token.  In a production
-system, the best practice is to create a dedicated user for the elastic.io
+system, the best practice is to create a dedicated user for the {{site.data.tenant.name}}
 platform.  This user should have the minimum required permissions.
 
 1. As an admin on your SugarCRM instance, go to the Administration panel
@@ -72,12 +72,12 @@ platform.  This user should have the minimum required permissions.
 
    ![screenshot from 2018-05-04 12-03-31](https://user-images.githubusercontent.com/5710732/39622613-35964b26-4f93-11e8-82e6-fed4b70fce56.png)
 
-## Authentication on elastic.io
+## Authentication on {{site.data.tenant.name}}
 
 ![screenshot from 2018-05-04 13-45-46](https://user-images.githubusercontent.com/5710732/39626260-7a34e34c-4fa1-11e8-8cb2-de57183cd403.png)
 
 Fill in the following for your account:
-* **Name Your Account**: Name to identify this account on elastic.io
+* **Name Your Account**: Name to identify this account on {{site.data.tenant.name}}
 * **Your SugarCRM domain**: URL of your Sugar CRM instance
 * **Your login**: Username used to login to SugarCRM instance
 * **Your password**: Password used to login to SugarCRM instance
@@ -105,18 +105,18 @@ then configure the following:
 
 ## Fetching New and Updated Objects from SugarCRM - Webhook
 
-It is possible to have new and updated objects be pushed to the elastic.io
+It is possible to have new and updated objects be pushed to the {{site.data.tenant.name}}
 platform via webhooks.  In order to do so, select **Fetch new and updated
 objects (getObjects - Webhook)**.  When a flow with this trigger is started, the
-elastic.io platform will register webhooks on the SugarCRM instance.  When the
+{{site.data.tenant.name}} platform will register webhooks on the SugarCRM instance.  When the
 flow is stopped, this webhook will be destroyed by the platform.
 
 ## Fetch Deleted Objects from SugarCRM - Webhook
 
-It is possible to have the ids of deleted objects be pushed to the elastic.io
+It is possible to have the ids of deleted objects be pushed to the {{site.data.tenant.name}}
 platform via webhooks.  In order to do so, select **Fetch deleted objects
 (getDeletedObjects - Webhook)**.  When a flow with this trigger is started, the
-elastic.io platform will register webhooks on the SugarCRM instance.  When the
+{{site.data.tenant.name}} platform will register webhooks on the SugarCRM instance.  When the
 flow is stopped, this webhook will be destroyed by the platform.
 
 # Actions

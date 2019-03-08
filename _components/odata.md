@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 
-OData with OAuth component for the [elastic.io platform](http://www.elastic.io).
+OData with OAuth component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
 
 A component designed to work with generic APIs which implement the [OData v4
 specification](http://www.odata.org).

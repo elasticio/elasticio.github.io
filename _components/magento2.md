@@ -6,7 +6,7 @@ section: E-Commerce Components
 
 
 ### Description
-Magento v2 component for the elastic.io platform.
+Magento v2 component for the {{site.data.tenant.name}} platform.
 
 Every form of actions is generated from appropriate Magento2 API endpoint JSONschema.
 

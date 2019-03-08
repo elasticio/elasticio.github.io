@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 ### Description
-Lionbridge translation component for the elastic.io platform.
+Lionbridge translation component for the {{site.data.tenant.name}} platform.
 
 ### Credentials
  - username

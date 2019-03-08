@@ -4,7 +4,7 @@ layout: article
 section: Utility Components
 ---
 
-Mailchimp connector for elastic.io platform
+Mailchimp connector for {{site.data.tenant.name}} platform
 
 ## Actions
 

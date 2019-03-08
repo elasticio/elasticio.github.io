@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 
-Splitter component for the elastic.io platform
+Splitter component for the {{site.data.tenant.name}} platform
 
 ## Actions
 

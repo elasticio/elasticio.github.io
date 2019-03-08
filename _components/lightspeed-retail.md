@@ -6,7 +6,7 @@ section: E-Commerce Components
 
 ## Description
 
-Lightspeed Retail API component for elastic.io iPaaS.
+Lightspeed Retail API component for {{site.data.tenant.name}} iPaaS.
 
 ## Authentication
 Lightspeed uses the OAuth2 protocol to authenticate integrations and grant access to the API. See the section on [Authentication](https://developers.lightspeedhq.com/retail/authentication/authentication-overview 'Authentication') for more details.

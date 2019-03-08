@@ -1,16 +1,16 @@
 ---
-title: Soap-component component
+title: Soap component
 layout: article
 section: Utility Components
 ---
 
 
 ## Description
-The SOAP Component provides the SOAP Web Services work opportunity within a elastic.io flow.
+The SOAP Component provides the SOAP Web Services work opportunity within a {{site.data.tenant.name}} flow.
 
 ### Purpose
 
-As an integration platform, elastic.io should has an opportunity to invoke SOAP Web services over HTTP.
+As an integration platform, {{site.data.tenant.name}} should has an opportunity to invoke SOAP Web services over HTTP.
 
 ### How it works
 #### Step 1

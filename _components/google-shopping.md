@@ -40,7 +40,7 @@ Component supports Service account as authentication mechanism.
 19. File content-api-key.json file has been downloaded.
 
 
-## How to insert credentials into elastic.io platform:
+## How to insert credentials into {{site.data.tenant.name}} platform:
 
 1. Settings -> Security credentials -> Google Shopping component -> Add New Account
 2. Enter Name of account.

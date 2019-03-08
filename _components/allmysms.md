@@ -23,7 +23,7 @@ Login of user account for AllMySMS API.
 
 If one of credential fields will be blank then component will work in Trial mode:
 * "TRIAL USE: " will be added before text
-* Number of receivers will be limitetd to two
+* Number of receivers will be limited to two
 
 # Actions
 ## Send
@@ -47,18 +47,18 @@ https://doc.allmysms.com/api/allmysms_api_https_v9.0_1.18_EN.pdf - API doc.
 
 AllMySMS Connector Overview:
 
-To create a component to allow the sending of SMS from elastic.io platform. The component includes a demo API key and "Trial" sending ability, when the trial is used the message that is sent has a prefix of "TRIAL USE: " added to the message, the number of senders is limited to 2 in trial mode.
+To create a component to allow the sending of SMS from {{site.data.tenant.name}} platform. The component includes a demo API key and "Trial" sending ability, when the trial is used the message that is sent has a prefix of "TRIAL USE: " added to the message, the number of senders is limited to 2 in trial mode.
 
 Action:
 
 The component will have a single action to send SMS, this will take number and message as inputs.
 
-The action can take a string of numbers or a single number, the string should be comma separated. Clean the input to only allow +0-9 and skip any number that fails this basic check. Specific number validation is not performed by elastic.io. ** check batch sending
+The action can take a string of numbers or a single number, the string should be comma separated. Clean the input to only allow +0-9 and skip any number that fails this basic check. Specific number validation is not performed by {{site.data.tenant.name}}. ** check batch sending
 
 Component Credentials:
 
-API key is needed, if no API key is supplied then the component is assumed to be in "trial" mode and the hard coded elastic.io API key is used with the message prefix of "TRIAL USE: " added.
+API key is needed, if no API key is supplied then the component is assumed to be in "trial" mode and the hard coded {{site.data.tenant.name}} API key is used with the message prefix of "TRIAL USE: " added.
 
 Deployment:
 
-The plugin should be available on ALL elastic.io organisations as standard.
+The plugin should be available on ALL {{site.data.tenant.name}} contracts as standard.

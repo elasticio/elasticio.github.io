@@ -5,14 +5,14 @@ section: CRM Components
 ---
 
 
-> elastic.io integration component for Pipedriver
+> {{site.data.tenant.name}} integration component for Pipedriver
 
 # pipedrive-component
-pipedrive Component component for the [elastic.io platform](http://www.elastic.io &#34;elastic.io platform&#34;)
+pipedrive Component component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}} &#34;{{site.data.tenant.name}} platform&#34;)
 
 ## Before you Begin
 
-Before you can deploy any code into elastic.io **you must be a registered elastic.io platform user**. Please see our home page at [http://www.elastic.io](http://www.elastic.io) to learn how.
+Before you can deploy any code into {{site.data.tenant.name}} **you must be a registered {{site.data.tenant.name}} platform user**. Please see our home page at [http://www.{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) to learn how.
 
 ## Getting Started
 
@@ -33,7 +33,7 @@ No known issues are there yet.
 
 ## License
 
-Apache-2.0 © [elastic.io GmbH](https://www.elastic.io)
+Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
 
 
 [travis-image]: https://travis-ci.org/elasticio/pipedrive-component.svg?branch=master

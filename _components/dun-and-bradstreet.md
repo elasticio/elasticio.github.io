@@ -4,7 +4,7 @@ layout: article
 section: Utility Components
 ---
 
-Dun &amp; Bradstreet component for elastic.io platform
+Dun &amp; Bradstreet component for {{site.data.tenant.name}} platform
 
 ## Description
 Component exposes Dun &amp; Bradstreet API.
@@ -14,7 +14,7 @@ Component requires at least 1GB of RAM to work correct:
 
 Set env variable `EIO_REQUIRED_RAM_MB` to 1024
 
-### How to insert env variable into elastic.io platform:
+### How to insert env variable into {{site.data.tenant.name}} platform:
 1. Navigate to 'Developers' tab
 2. Choose your component Repository. Here you should already have your component pushed to the platform.
 3. Click the link `You can configure your environment variables here.`
@@ -26,7 +26,7 @@ Access to the D&B Direct web services are secured by a **Username** and **Passwo
 
 **Note:** in some cases your developer account must be registered as US located one. As soon as some services are not available in other countries.
 
-### How to insert credentials into elastic.io platform:
+### How to insert credentials into {{site.data.tenant.name}} platform:
 1. Settings -> Security credentials -> Dun and Bradstreet -> Add New Credential
 Enter Name of account.
 

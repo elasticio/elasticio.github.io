@@ -4,7 +4,7 @@ layout: article
 section: Utility Components
 ---
 
-elastic.io iPaaS integration component / connector for speaking with DocuSign API
+{{site.data.tenant.name}} iPaaS integration component / connector for speaking with DocuSign API
 
 # Environment Variables & OAuth Callback Values
 This component requires the following environment variables:

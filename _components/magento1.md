@@ -4,4 +4,4 @@ layout: article
 section: E-Commerce Components
 ---
 
-Magento component for the elastic.io platform
+Magento component for the {{site.data.tenant.name}} platform

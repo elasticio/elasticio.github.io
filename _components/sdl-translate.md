@@ -6,7 +6,7 @@ section: Utility Components
 
 
 ### Description
-SDL translate component for the elastic.io platform.
+SDL translate component for the {{site.data.tenant.name}} platform.
 
 ### Credentials
 In oprder to authenticate, you need to retrieve an `apiKey` from your `SDL languagecloud` account

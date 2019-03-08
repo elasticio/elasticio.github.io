@@ -5,12 +5,12 @@ section: Utility Components
 ---
 
 
-> elastic.io filter component to filter incoming data based on arbitrary expression
+> {{site.data.tenant.name}} filter component to filter incoming data based on arbitrary expression
 
 # filter-component
-Filter component for the [elastic.io platform](http://www.elastic.io &#34;elastic.io platform&#34;)
+Filter component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}} &#34;{{site.data.tenant.name}} platform&#34;)
 
-If you plan to **deploy it into [elastic.io platform](http://www.elastic.io &#34;elastic.io platform&#34;) you must follow sets of instructions to succseed**.
+If you plan to **deploy it into [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}} &#34;{{site.data.tenant.name}} platform&#34;) you must follow sets of instructions to succseed**.
 
 ![image](https://cloud.githubusercontent.com/assets/56208/22467841/7b19fa48-e7c6-11e6-934d-7ad224d5cd54.png)
 
@@ -43,19 +43,19 @@ that start with **Webhook** and may potentially accept the incoming data could b
 ## Known limitations
 
 * Reject task should be:
- * Start with elastic.io standard WebHook
+ * Start with {{site.data.tenant.name}} standard WebHook
 * Only body of the rejected message got propagated to reject flow, not the attachments or headers
 
 ## Deploying your fork of this component
 
 After registration and uploading of your SSH Key you can proceed to deploy it into our system. At this stage we suggest you to:
-* [Create a team](http://docs.elastic.io/docs/teams) to work on your new component. This is not required but will be automatically created using random naming by our system so we suggest you name your team accordingly.
-* [Create a repository](http://docs.elastic.io/docs/component-repositories) where your new component is going to *reside* inside the team that you have just created.
+* [Create a team](http://docs.{{site.data.tenant.name}}/docs/teams) to work on your new component. This is not required but will be automatically created using random naming by our system so we suggest you name your team accordingly.
+* [Create a repository](http://docs.{{site.data.tenant.name}}/docs/component-repositories) where your new component is going to *reside* inside the team that you have just created.
 
 Now as you have a team name and component repository name you can add a new git remote where code shall be pushed to. It is usually displayed on the empty repository page:
 
 ```bash
-$ git remote add elasticio your-team@git.elastic.io:your-repository.git
+$ git remote add elasticio your-team@git.{{site.data.tenant.name}}:your-repository.git
 ```
 
 Obviously the naming of your team and repository is entirely upto you and if you do not put any corresponding naming our system will auto generate it for you but the naming might not entirely correspond to your project requirements.
@@ -68,11 +68,11 @@ $ git push elasticio master
 ## Configure environment variables
 
 Current version of the component requires a Webhook URL basis for your environment
- * ```HOOKS_URL``` - basis url for your webhooks, like ``https://in.elastic.io/hook/`` (note the slash at the end)
+ * ```HOOKS_URL``` - basis url for your webhooks, like ``https://in.{{site.data.tenant.name}}/hook/`` (note the slash at the end)
 
 ## License
 
-Apache-2.0 © [elastic.io GmbH](https://www.elastic.io)
+Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
 
 
 [npm-image]: https://badge.fury.io/js/filter-component.svg

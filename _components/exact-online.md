@@ -4,7 +4,7 @@ layout: article
 section: ERP Components
 ---
 
-elastic.io iPaaS integration component / connector for speaking with Exact Online API
+{{site.data.tenant.name}} iPaaS integration component / connector for speaking with Exact Online API
 
 Exact Online REST API documentation: https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-restrefdocs
 

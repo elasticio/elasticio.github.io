@@ -4,12 +4,10 @@ layout: article
 section: Utility Components
 ---
 
-> elastic.io integration component that calls out to AWS Lambda API
+> {{site.data.tenant.name}} integration component that calls out to AWS Lambda API
 
 #
-AWS Lambda Component component for the [elastic.io platform](http://www.elastic.io &#34;elastic.io platform&#34;)
-
-If you plan to **deploy it into [elastic.io platform](http://www.elastic.io &#34;elastic.io platform&#34;) you must follow sets of instructions to succeed**.
+AWS Lambda Component component for the {{site.data.tenant.name}} platform.
 
 ## Authentication
 
@@ -32,11 +30,11 @@ Incoming JSON can be adjusted using the *JSONata Expression* field. Please make 
 Action supports returning JSON value as result.
 
 If invocation was successful then action will try to parse resulting payload
-as JSON and if parsing was successful then action will emit a new elastic.io message
+as JSON and if parsing was successful then action will emit a new {{site.data.tenant.name}} message
 with the resulting JSON as ``body``.
 
 If JSON parsing of the payload after successful invocation will fail then action
-will emit the elastic.io message with body equal to ``AWS.Response``, like this:
+will emit the {{site.data.tenant.name}} message with body equal to ``AWS.Response``, like this:
 
 ```json
 {
@@ -46,7 +44,7 @@ will emit the elastic.io message with body equal to ``AWS.Response``, like this:
 ```
 
 If ``LogType`` was set to ``Tail`` then returned (last 4 KB of log) that is returned with the
-response will be logged out to compoentn log standard output (and visible in the elastic.io log)
+response will be logged out to component log standard output (and visible in the {{site.data.tenant.name}} log)
 
 ## Known issues
 
@@ -54,12 +52,4 @@ response will be logged out to compoentn log standard output (and visible in the
 
 ## License
 
-Apache-2.0 © [elasticio](https://elastic.io)
-
-
-[npm-image]: https://badge.fury.io/js/aws-lambda-component.svg
-[npm-url]: https://npmjs.org/package/aws-lambda-component
-[travis-image]: https://travis-ci.org/elasticio/aws-lambda-component.svg?branch=master
-[travis-url]: https://travis-ci.org/elasticio/aws-lambda-component
-[daviddm-image]: https://david-dm.org/elasticio/aws-lambda-component.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/elasticio/aws-lambda-component
+Apache-2.0 © [elasticio GmBH](https://www.{{site.data.tenant.name}})

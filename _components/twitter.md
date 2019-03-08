@@ -6,7 +6,7 @@ section: Utility Components
 
 
 ### Description
-Twitter component for the elastic.io platform.
+Twitter component for the {{site.data.tenant.name}} platform.
 
 ### Credentials
  - Consumer key

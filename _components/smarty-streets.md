@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 
-Smarty Streets component for elastic.io platform
+Smarty Streets component for {{site.data.tenant.name}} platform
 
 ## Description
 Address Verification Products.
@@ -13,7 +13,7 @@ Address Verification Products.
 ## Credentials
 Key pairs must be kept secret, so they should not be used on client-side HTML or in client-side applications. Use secret key pairs on server-side code that connects directly to the SmartyStreets API servers. A secret key pair is not limited to any particular hostname like website keys are. A key pair consists of an ID to identify your account and a token which is like a password.
 
-### How to insert credentials into elastic.io platform:
+### How to insert credentials into {{site.data.tenant.name}} platform:
 1. Settings -> Security credentials -> Smarty Streets -> Add New Credential
 Enter Name of account.
 

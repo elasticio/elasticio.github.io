@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 
-elastic.io iPaaS integration component / connector for speaking with QuickBooks API.
+{{site.data.tenant.name}} iPaaS integration component / connector for speaking with QuickBooks API.
 
 ## OAuth keys and credentials
 
