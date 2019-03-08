@@ -56,9 +56,9 @@ Can be found here:
 2. Find APPLICATION ID field there.
 
 ![Get Application ID](https://user-images.githubusercontent.com/8449044/44274840-e4392f80-a24b-11e8-9d1d-00676e0b9217.png)
-## Authentication on elastic.io
+## Authentication on {{site.data.tenant.name}}
 #### Step 1
-On elastic.io go to Settings -> Security credentials select NetSuite component and click "Add New Credential"
+On {{site.data.tenant.name}} go to Settings -> Security credentials select NetSuite component and click "Add New Credential"
 
 ![Step 1](https://user-images.githubusercontent.com/16806832/44389705-391ec380-a534-11e8-851b-e6d27cf6e1f4.png)
 #### Step 2

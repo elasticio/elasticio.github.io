@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 
-elastic.io component for the Mandrill API
+{{site.data.tenant.name}} component for the Mandrill API
 
 ## Authentication
 

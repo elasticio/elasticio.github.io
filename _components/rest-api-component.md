@@ -24,9 +24,9 @@ This document covers the following topics:
 
 ## Introduction
 
-The example below shows the development team creation using the REST API component with our own [REST API service](https://api.elastic.io/docs "elastic.io REST API service").
+The example below shows the development team creation using the REST API component with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
 
-![alt text](https://cdn.elastic.io/documentation/restapi-component-featuresv2.png "REST API component features")
+![alt text](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-featuresv2.png "REST API component features")
 *Numbers show: (1) HTTP methods, (2) the URL of the REST API resource, (3) the HTTP call headers and (4) the body of the HTTP request.*
 
 1.  REST API component supports the following HTTP methods: `GET`, `PUT`, `POST`, `DELETE` and `PATCH`.
@@ -44,7 +44,7 @@ The component supports extended logging. `Enable debug logging` checkbox should 
 
 To use the REST API component with any restricted access API provide the authorisation information.
 
-![alt text](https://cdn.elastic.io/documentation/restapi-component-auth.png "REST API component Basic authorisation")
+![alt text](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-auth.png "REST API component Basic authorisation")
 *Example above shows how to add the username/password to access the API during the integration flow design.*
 
 You can add the authorisation methods during the integration flow design or by going to your `Settings > Security credentials > REST client` and adding there.
@@ -61,7 +61,7 @@ Please note that the result of creating a credential is an HTTP header automatic
 
 Use this section to add the request headers.
 
-![alt text](https://cdn.elastic.io/documentation/rest-api-component-headers-get.png "REST API component Headers field")
+![alt text](https://cdn.{{site.data.tenant.name}}/documentation/rest-api-component-headers-get.png "REST API component Headers field")
 
 Each header has a name and a value. Header name should be colon-separated name-value pairs in clear-text `string` format. The header value can use [JSONata](http://jsonata.org/) expressions.
 
@@ -85,7 +85,7 @@ The **body input field** changes according to the chosen content type.
 
 Here is how to send a JSON data in the body. Change the **content type** to `application/json` and the **body input part** would change accordingly to accept JSON object. Please note that this field supports [JSONata](http://jsonata.org) expressions.
 
-![alt text](https://cdn.elastic.io/documentation/restapi-component-body-json-var.png "REST API component Body sending JSON data")
+![alt text](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-body-json-var.png "REST API component Body sending JSON data")
 *Example shows the JSON in the body where the `name` parameter value gets mapped using the value of `project_name` from the previous step of integration.*
 
 ### Sending XML data
@@ -115,14 +115,14 @@ In both cases the payload gets transmitted in the message body.
 
 In case of `application/x-www-form-urlencoded` content type add the necessary parameters by giving the name and the values like:
 
-![alt text](https://cdn.elastic.io/documentation/restapi-component-body-form-simple.png "REST API component Body sending a simple form")
+![alt text](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-body-form-simple.png "REST API component Body sending a simple form")
 *Please note that parameter value fields support [JSONata](http://jsonata.org) expressions.*
 
 This HTTP request would submit `key1=value1&key2=value2` in the message body.
 
 In case of `multipart/form-data` content type add the parameters similarly.
 
-![alt text](https://cdn.elastic.io/documentation/restapi-component-body-form-complex.png "REST API component Body sending a complex form")
+![alt text](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-body-form-complex.png "REST API component Body sending a complex form")
 
 The transmitted HTTP request body would be:
 

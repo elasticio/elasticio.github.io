@@ -5,27 +5,27 @@ section: Utility Components
 ---
 
 
-> This is Google Spreadsheets component for the [elastic.io platform](http://www.elastic.io "elastic.io platform").
+> This is Google Spreadsheets component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}} "{{site.data.tenant.name}} platform").
 
-This is an open source component template for Google Spreadsheets or [Google Sheets](https://www.google.com/sheets/about/) which is developed specifically to run on [elastic.io platform](http://www.elastic.io "elastic.io platform"). You can clone it and change it as you wish. However, **if you plan to deploy it into [elastic.io platform](http://www.elastic.io "elastic.io platform") you must follow sets of instructions to succeed**.
+This is an open source component template for Google Spreadsheets or [Google Sheets](https://www.google.com/sheets/about/) which is developed specifically to run on [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}} "{{site.data.tenant.name}} platform"). You can clone it and change it as you wish. However, **if you plan to deploy it into [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}} "{{site.data.tenant.name}} platform") you must follow sets of instructions to succeed**.
 
 > **PLEASE NOTE:** This is a working component for **Google Spreadsheets**, however, it may not be suitable for every use case. Not all functionalities are included in this component template. **It is your responsibility to add and modify this component to suit your integration needs.**
 
 ## Before you Begin
 
-Before you can deploy any code into our system **you must be a registered elastic.io platform user**. Please see our home page at [http://www.elastic.io](http://www.elastic.io) to learn how.
+Before you can deploy any code into our system **you must be a registered {{site.data.tenant.name}} platform user**. Please see our home page at [http://www.{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) to learn how.
 
 > Any attempt to deploy a code into our platform without a registration would fail.
 
-After the registration and opening of the account you must **[upload your SSH Key](http://docs.elastic.io/docs/ssh-key)** into our platform.
+After the registration and opening of the account you must **[upload your SSH Key](http://docs.{{site.data.tenant.name}}/docs/ssh-key)** into our platform.
 
 > If you fail to upload you SSH Key you will get **permission denied** error during the deployment.
 
 ## Getting Started
 
 After registration and uploading of your SSH Key you can proceed to deploy it into our system. At this stage we suggest you to:
-* [Create a team](http://docs.elastic.io/page/team-management) to work on your new component. This is not required but will be automatically created using random naming by our system so we suggest you name your team accordingly.
-* [Create a repository](http://docs.elastic.io/page/repository-management) where your new component is going to *reside* inside the team that you have just created. For a simplicity you can name your repository **gspreadsheets**.
+* [Create a team](http://docs.{{site.data.tenant.name}}/page/team-management) to work on your new component. This is not required but will be automatically created using random naming by our system so we suggest you name your team accordingly.
+* [Create a repository](http://docs.{{site.data.tenant.name}}/page/repository-management) where your new component is going to *reside* inside the team that you have just created. For a simplicity you can name your repository **gspreadsheets**.
 
 ```bash
 $ git clone https://github.com/elasticio/gspreadsheets.git gspreadsheets
@@ -35,7 +35,7 @@ $ cd gspreadsheets
 Now you can edit your version of **gspreadsheets** component and change according to your needs - that is if you know what you are doing. Or you can just ``PUSH``it into our system to see the process in action:
 
 ```bash
-$ git remote add elasticio your-created-team-name@git.elastic.io:gspreadsheets.git
+$ git remote add elasticio your-created-team-name@git.{{site.data.tenant.name}}:gspreadsheets.git
 
 $ git push elasticio master
 ```
@@ -49,13 +49,13 @@ Following environment are required:
  - ``GOOGLE_APP_ID`` oauth App ID
  - ``GOOGLE_APP_SECRET`` oauth App Secret
 
-To get these please use the Google Developers Console is available from https://console.developers.google.com. As a callback please use ``https://your-tenant.elastic.io/callback/oauth2``
+To get these please use the Google Developers Console is available from https://console.developers.google.com. As a callback please use ``https://your-tenant.{{site.data.tenant.name}}/callback/oauth2``
 
 # How to use Google Spreadsheets Component
 
 To install Google Spreadsheets component please follow instructions in [README.md](https://github.com/elasticio/gspreadsheets/blob/master/README.md).
 
-Within the elastic.io environment Google Spreadsheets **can be used both as a trigger and an action component**.
+Within the {{site.data.tenant.name}} environment Google Spreadsheets **can be used both as a trigger and an action component**.
 
 > The description below is based on the initial state of the Google Spreadsheet component presented here. Any third party modification should also be documented for the consistency.
 
@@ -73,7 +73,7 @@ After the initial read, any further requests for update will be compared to this
 
 #### What is a readable spreadsheet?
 
-The nature of API that Elastic.IO uses to read the rows in Google Spreadsheets dictates the use of certain rules that it is useful to follow for a smooth integration of your data. In addition to the **Minimum Requirements** your spreadsheet must have:
+The nature of API that {{site.data.tenant.name}} uses to read the rows in Google Spreadsheets dictates the use of certain rules that it is useful to follow for a smooth integration of your data. In addition to the **Minimum Requirements** your spreadsheet must have:
 
 1. **No empty spaces** - This means no empty columns, no empty rows and no spaces or newlines after each record. The **reading process stops if it encounters empty columns or rows** since there is no way to know if there are new or more records afterwards.
 

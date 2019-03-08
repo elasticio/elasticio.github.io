@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 ### Description
-Bazaarvoice component for the elastic.io platform.
+Bazaarvoice component for the {{site.data.tenant.name}} platform.
 
 ### Credentials
  - apiUri (for Conversations API)

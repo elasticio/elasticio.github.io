@@ -6,7 +6,7 @@ section: Utility Components
 
 
 ### Description
-Google translate component for the elastic.io platform.
+Google translate component for the {{site.data.tenant.name}} platform.
 
 ### Credentials
 In oprder to authenticate, you need to receive `apiKey` from your `Google cloud platform` account

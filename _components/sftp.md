@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 
-SFTP component for the elastic.io platform
+SFTP component for the {{site.data.tenant.name}} platform
 
 ![image](https://cloud.githubusercontent.com/assets/56208/22926023/33899f22-f2ab-11e6-9e2b-3736a2e135ac.png)
 

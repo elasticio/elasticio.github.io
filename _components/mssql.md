@@ -5,16 +5,16 @@ section: Basic Components
 ---
 
 
-> elastic.io integration component for Microsoft SQL Server
+> {{site.data.tenant.name}} integration component for Microsoft SQL Server
 
 # mssql-component
-MSSQL Component component for the [elastic.io platform](http://www.elastic.io)
+MSSQL Component component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}})
 
 ![image](https://user-images.githubusercontent.com/56208/29715706-b4930bdc-89a8-11e7-8a0d-969959d26dd6.png)
 
 ## Before you Begin
 
-Before you can deploy any code into elastic.io **you must be a registered elastic.io platform user**. Please see our home page at [http://www.elastic.io](http://www.elastic.io) to learn how.
+Before you can deploy any code into {{site.data.tenant.name}} **you must be a registered {{site.data.tenant.name}} platform user**. Please see our home page at [http://www.{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) to learn how.
 
 ## Getting Started
 
@@ -98,7 +98,7 @@ No known issues are there yet.
 
 ## License
 
-Apache-2.0 © [elastic.io GmbH](https://www.elastic.io)
+Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
 
 
 [npm-image]: https://badge.fury.io/js/mssql-component.svg

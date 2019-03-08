@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 
-elastic.io iPaaS integration component for the Shopify Admin API
+{{site.data.tenant.name}} iPaaS integration component for the Shopify Admin API
 
 
 ### Credentials

@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 
-> Dedicated data transformation component for elastic.io platform based on JSONata
+> Dedicated data transformation component for {{site.data.tenant.name}} platform based on JSONata
 
 ## Authentication
 
@@ -116,7 +116,7 @@ resulting in ([jsonata link](http://try.jsonata.org/B1ctn36ub)):
 
 ## License
 
-Apache-2.0 © [elastic.io GmbH](http://elastic.io)
+Apache-2.0 © [{{site.data.tenant.name}} GmbH](http://{{site.data.tenant.name}})
 
 
 [npm-image]: https://badge.fury.io/js/jsonata-transform-component.svg

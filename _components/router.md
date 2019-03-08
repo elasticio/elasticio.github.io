@@ -96,7 +96,7 @@ If condition is evaluated to ``true`` then a copy of the message is sent to the 
 
 If condition is not defined on the outgoung edge, then this edge considered to be **default** edge. Default edge will get all
 messages that didn't matched **any** other edges. Please note - CBR component may only have a single **default** edge.
-Multilple default edges will fail validation of elastic.io API.
+Multilple default edges will fail validation of {{site.data.tenant.name}} API.
 
 Now let us examine our sample from above:
  - Incoming webhook has a message like

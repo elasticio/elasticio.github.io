@@ -7,13 +7,13 @@ section: Utility Components
 
 
 ## Description
-This is an open source component for Converting XML to and from JSON on elastic.io platform.
-Component to be used on the elastic.io platform, which is able to convert XML to and from JSON.
+This is an open source component for Converting XML to and from JSON on {{site.data.tenant.name}} platform.
+Component to be used on the {{site.data.tenant.name}} platform, which is able to convert XML to and from JSON.
 ### Purpose
 This component has 3 actions allowing users to pass in either generic but well format XML/JSON string or XML attachment and produces a generic string of the other file type. The output then can be maped and used in other components.
 
 ### How it works.
-Before you can deploy any code into elastic.io you must be a registered elastic.io platform user. Please see our home page at http://www.elastic.io to learn how.
+Before you can deploy any code into {{site.data.tenant.name}} you must be a registered {{site.data.tenant.name}} platform user. Please see our home page at http://www.{{site.data.tenant.name}} to learn how.
 
 ### Requirements
 #### Environment variables
@@ -49,5 +49,5 @@ Looks at the json array of attachments passed in to component and converts all X
 
 ## License
 
-Apache-2.0 © [elastic.io GmbH](https://elastic.io)
+Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://{{site.data.tenant.name}})
 Icon made by Freepik from www.flaticon.com

@@ -5,14 +5,14 @@ section: E-Commerce Components
 ---
 
 
-> Shopware _component_ for the [elastic.io platform](http://www.elastic.io
-"elastic.io platform")
+> Shopware _component_ for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}
+"{{site.data.tenant.name}} platform")
 
 This is component for [Shopware](https://shopware.com/) eCommerce software which
-is developed specifically to run on [elastic.io platform](http://www.elastic.io
-"elastic.io platform"). You can clone it and change it as you wish. However,
-**if you plan to deploy it into [elastic.io platform](http://www.elastic.io
-"elastic.io platform") you must follow sets of instructions to succeed**.
+is developed specifically to run on [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}
+"{{site.data.tenant.name}} platform"). You can clone it and change it as you wish. However,
+**if you plan to deploy it into [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}
+"{{site.data.tenant.name}} platform") you must follow sets of instructions to succeed**.
 
 ## Before you Begin
 
@@ -21,14 +21,14 @@ extenstions](https://github.com/elasticio/elasticio-shopware-api-extension),
 please install it first before proceeding further.
 
 Before you can deploy any code into our system **you must be a registered
-elastic.io platform user**. Please see our home page at
-[http://www.elastic.io](http://www.elastic.io) to learn how.
+{{site.data.tenant.name}} platform user**. Please see our home page at
+[http://www.{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) to learn how.
 
 > Any attempt to deploy a code into our platform without a registration would
 fail.
 
 After the registration and opening of the account you must **[upload your SSH
-Key](http://docs.elastic.io/docs/ssh-key)** into our platform.
+Key](http://docs.{{site.data.tenant.name}}/docs/ssh-key)** into our platform.
 
 > If you fail to upload you SSH Key you will get **permission denied** error
 during the deployment.
@@ -37,10 +37,10 @@ during the deployment.
 
 After registration and uploading of your SSH Key you can proceed to deploy it
 into our system. At this stage we suggest you to:
-* [Create a team](http://docs.elastic.io/page/team-management) to work on your
+* [Create a team](http://docs.{{site.data.tenant.name}}/page/team-management) to work on your
 * new component. This is not required but will be automatically created using
 * random naming by our system so we suggest you name your team accordingly.
-* [Create a repository](http://docs.elastic.io/page/repository-management) where
+* [Create a repository](http://docs.{{site.data.tenant.name}}/page/repository-management) where
 * your new component is going to *reside* inside the team that you have just
 * created.
 
@@ -54,7 +54,7 @@ your needs - that is if you know what you are doing. Or you can just ``PUSH``it
 into our system to see the process in action:
 
 ```bash
-$ git remote add elasticio your-created-team-name@git.elastic.io:shopware.git
+$ git remote add elasticio your-created-team-name@git.{{site.data.tenant.name}}:shopware.git
 
 $ git push elasticio master
 ```
@@ -63,7 +63,7 @@ you do not put any corresponding naming our system will auto generate it for you
 but the naming might not entirely correspond to your project requirements.
 
 To learn on how to use this component please check our [Shopware component
-documentation](http://docs.elastic.io/docs/shopware).
+documentation](http://docs.{{site.data.tenant.name}}/docs/shopware).
 
 ## Query Articles/Products
 Shopware has a concept of ``Artikel`` in German which their UI translates to
@@ -80,7 +80,7 @@ products.  The results are returned in batches of the form
 
 The batch size is configurable as a parameter.  The batches can be broken up by
 the [JSONata
-mapper](https://support.elastic.io/support/solutions/articles/14000069448-jsonata-powered-mapper)
+mapper](https://support.{{site.data.tenant.name}}/support/solutions/articles/14000069448-jsonata-powered-mapper)
 as they proceed to the next step.
 
 The output of this method includes only information about the product.  It does
@@ -97,11 +97,11 @@ tracker](http://en.community.shopware.com/_detail_1282.html#Ticket_overview).
 Here are some of the feature requests which would allow additional functionality
 to be built into the component for out of the box functionality.
 
-* [Allow elastic.io to detect changes to product
+* [Allow {{site.data.tenant.name}} to detect changes to product
  variants](https://issues.shopware.com/issues/SW-19617)
-* [Allow elastic.io to differentiate between new and updated
+* [Allow {{site.data.tenant.name}} to differentiate between new and updated
  objects](https://issues.shopware.com/issues/SW-19619)
-* [Allow elastic.io to detect changes to
+* [Allow {{site.data.tenant.name}} to detect changes to
  customers](https://issues.shopware.com/issues/SW-19618)
-* [Allow elastic.io to detect changes to
+* [Allow {{site.data.tenant.name}} to detect changes to
  orders](https://issues.shopware.com/issues/SW-17467)

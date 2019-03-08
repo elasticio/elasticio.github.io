@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 ### Purpose
-The goal of the component is to provide possibility to interact with eBay API from the Elastic.io platform.
+The goal of the component is to provide possibility to interact with eBay API from the {{site.data.tenant.name}} platform.
 
 *_Note:_ Currently only Buying Feed API is accessible.
 ### How works
@@ -135,7 +135,7 @@ This is why data in actions
 
 is storing and transferred as an attachment.
 
-You can get an additional information about Elastic.io from our doc page: https://support.elastic.io/support/solutions/articles/14000057806-working-with-binary-data-attachments-
+You can get an additional information about {{site.data.tenant.name}} from our doc page: https://support.{{site.data.tenant.name}}/support/solutions/articles/14000057806-working-with-binary-data-attachments-
 
 The data in that actions mentioned above has the next format:
 

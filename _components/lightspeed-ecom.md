@@ -6,7 +6,7 @@ section: Utility Components
 
 ## Description
 
-Lightspeed ECom API component for elastic.io iPaaS.
+Lightspeed ECom API component for {{site.data.tenant.name}} iPaaS.
 
 ## Authentication
 
