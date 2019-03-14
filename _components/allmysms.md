@@ -3,62 +3,59 @@ title: Allmysms component
 layout: article
 section: Utility Components
 ---
+---
+## Description
 
+This component provides a simple possibility to send SMS to one or multiple
+receivers using the [AllMySMS](https://www.allmysms.com/en/) API.
 
-# Description
-## Purpose
-Main goal of this component is to provide simple possibility to send SMS to one or multiple receivers.
 ## How works
-Under the hood used AllMySMS API https://www.allmysms.com.
+
+The component enables sending of the SMS from the platform.
+It includes a demo API key and `Trial` sending ability, when the trial is used
+the message that is sent has a prefix of `TRIAL USE: ` added to the message, the
+number of senders is limited to 2 in trial mode.
+
+## Credentials
+
+*   `API key` - API key to access AllMySMS service API.
+*   `login` - Login of user account for AllMySMS API.
+
+If one of the credential fields is blank then component will work in a trial mode:
+
+*   `TRIAL USE: ` will be added before the text
+*   Number of recipients will be limited to two.
+
+
+## Requirements
 
 ### Environment variables
 No.
-### Others
-# Credentials
-**ApiKey -**
-API key to access AllMySMS service API.
 
-**login -**
-Login of user account for AllMySMS API.
+## Triggers
 
-If one of credential fields will be blank then component will work in Trial mode:
-* "TRIAL USE: " will be added before text
-* Number of receivers will be limited to two
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
-# Actions
-## Send
-Sends SMS to one or multiple receivers.
+## Actions
 
-### Input fields:
+### Send
 
-**nums -** List of receivers mobile numbers separated with comma. E.g. `"3xxxxxxxx,3xxxxxxxxx"`. Recommended to limit number of receivers to 2000.
+This action will send SMS to one or multiple numbers provided all the input
+fields are filled are filled correctly. Here are the input fields:
 
-**sender -** Sender name that will be displayed on receiver side.
-Requirements: 3 to 11 characters, only alpha-numeric (A-Z/0-9) and must start with a letter.
+*   **Mobile numbers** - List of receivers mobile numbers separated with comma. E.g. `"3xxxxxxxx,3xxxxxxxxx"`. Recommended to limit number of receivers to 2000. **N.B. Specific number validation is not performed by the platform.**
+*   **Sender Name** - Sender name that will be displayed on receiver side. Requirements: 3 to 11 characters, only alpha-numeric (`A-Z/0-9`) and must start with a letter.
+*   **Message Text** - Text that will be sent. Requirements: Maximal length is 160. Everything above will be truncated.
 
-**message -** Text that will be sent.
-Requirements: Maximal length is 160. Everything above will be truncated.
+### Additional information
 
-## Links
-https://doc.allmysms.com/api/allmysms_api_https_v9.0_1.18_EN.pdf - API doc.
+Here is the document describing the API documentation of the AllMySMS [https://doc.allmysms.com/api/allmysms_api_https_v9.0_1.18_EN.pdf](https://doc.allmysms.com/api/allmysms_api_https_v9.0_1.18_EN.pdf).
 
+## Known limitations
 
-# Requirements
+Here are the limitation of this component enforced by the [AllMySMS](https://www.allmysms.com/en/).
 
-AllMySMS Connector Overview:
-
-To create a component to allow the sending of SMS from {{site.data.tenant.name}} platform. The component includes a demo API key and "Trial" sending ability, when the trial is used the message that is sent has a prefix of "TRIAL USE: " added to the message, the number of senders is limited to 2 in trial mode.
-
-Action:
-
-The component will have a single action to send SMS, this will take number and message as inputs.
-
-The action can take a string of numbers or a single number, the string should be comma separated. Clean the input to only allow +0-9 and skip any number that fails this basic check. Specific number validation is not performed by {{site.data.tenant.name}}. ** check batch sending
-
-Component Credentials:
-
-API key is needed, if no API key is supplied then the component is assumed to be in "trial" mode and the hard coded {{site.data.tenant.name}} API key is used with the message prefix of "TRIAL USE: " added.
-
-Deployment:
-
-The plugin should be available on ALL {{site.data.tenant.name}} contracts as standard.
+*   **Sender Name** must be 3 to 11 characters long and contain only alpha-numeric (`A-Z/0-9`) values and must start with a letter.
+*   **Message Text** must be no longer than 160 characters for a single SMS.
+*   **Number of recipients** is recommended to keep below 2000.

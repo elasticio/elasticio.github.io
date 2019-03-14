@@ -1,74 +1,69 @@
 ---
-title: Amqp component
+title: AMQP component
 layout: article
 section: Utility Components
 ---
+---
+## Description
 
-PubSub component for the {{site.data.tenant.name}} platform.
+A component designed to talk to Advanced Message Queuing Protocol,
+(**AMQP**) APIs. AMQP is an open standard for passing business messages
+between applications or organisations (see [amqp.org](https://www.amqp.org) for more).
 
-If you plan to **deploy it into {{site.data.tenant.name}} platform you must follow sets of instructions to succeed**.
+AMQP component establishes an asynchronous communications with queues and topics
+to publish or consume records.
 
-## Before you Begin
+## How works
 
-Before you can deploy any code into {{site.data.tenant.name}} **you must be a registered {{site.data.tenant.name}} platform user**. Please see our home page at [http://www.{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) to learn how.
+The consumer will register a non-exclusive non-durable queue with `autodelete=true` and
+without any dead-letter. Name of the queue will be dynamically generated based on
+the `USER_ID`, `FLOW_ID` prefixed with `eio_consumer_`. This
+queue will be bound to the exchange with specified bound key or multiple bound
+keys that are specified in one string separated by commas.
 
-We will use git and SSH public key authentication to upload your component code, therefore you must **[upload your SSH Key](http://docs.{{site.data.tenant.name}}/docs/ssh-key)**.
+## Requirements
 
-If you fail to upload you SSH Key you will get **permission denied** error during the deployment.
-
-## Getting Started
-
-After registration and uploading of your SSH Key you can proceed to deploy it into our system. At this stage we suggest you to:
-* [Create a team](http://docs.{{site.data.tenant.name}}/docs/teams) to work on your new component. This is not required but will be automatically created using random naming by our system so we suggest you name your team accordingly.
-* [Create a repository](http://docs.{{site.data.tenant.name}}/docs/component-repositories) where your new component is going to *reside* inside the team that you have just created.
-
-Now as you have a team name and component repository name you can add a new git remote where code shall be pushed to. It is usually displayed on the empty repository page:
-
-```bash
-$ git remote add elasticio your-team@git.{{site.data.tenant.name}}:your-repository.git
-```
-
-Obviously the naming of your team and repository is entirely upto you and if you do not put any corresponding naming our system will auto generate it for you but the naming might not entirely correspond to your project requirements.
-Now we are ready to push it:
-
-```bash
-$ git push elasticio master
-```
-
-## How consumer works
-
-Consumer will register a non-exclusive non-durable queue with autodelete=true without
-  any dead-letter. Name of the queue will be dynamically
-  generated based on the user ID, TASK ID prefixed with ``eio_consumer_``.
-  This queue will be bound to the exchange with specified bound key or multiple
-   bound keys that are specified in one string separated by commas.
-
-## Authentication
-
-This component exects user to provide a AMQP URI, username and password should be embedded
-as part of the URI, for example ``amqp://foo:bar@server``. You can also use URI syntax
-to parametrize any other options (e.g. vHost or port)
-
-## Encryption
+### Environment variables
 
 This component will automatically encrypt data that is sent to the queue when following
 environment variables are set:
 
-* ``ELASTICIO_MESSAGE_CRYPTO_IV`` vector for symmetric encryption
-* ``ELASTICIO_MESSAGE_CRYPTO_PASSWORD`` password for symmetric encryption
+*   `ELASTICIO_MESSAGE_CRYPTO_IV` - vector for symmetric encryption
+*   `ELASTICIO_MESSAGE_CRYPTO_PASSWORD` - password for symmetric encryption
 
-These variables are by default available in {{site.data.tenant.name}} environment.
-Data will be encrypted using symmetric AES-256 encryption.
+These variables are by default available in the platform environment.
+Data will be encrypted using symmetric `AES-256` encryption.
 
 
-## Known issues
+## Credentials
+
+This component expects user to provide a AMQP URL, username and password should
+be embedded as part of the URL, for example `amqp://foo:bar@server`. You can
+also use URL syntax to provide further parameters and any other options
+(e.g. `vHost` or port).
+
+## Triggers
+
+### Consume
+
+Will consume the incoming message object that contains `body` with the payload.
+If the exchange doesn't exist it will be created on start.
+
+Optionally you can use `#` or `*` to wildcard. For more information check the
+tutorial provided at the [RabbitMQ site](http://www.rabbitmq.com/tutorials/tutorial-five-javascript.html).
+
+## Actions
+
+### Publish
+
+Will publish the messages into an exchange. This exchange will be created on
+start if it doesn't exists.
+
+## Known limitations
 
 Following limitations of the component are known:
-* You can not publish to the default exchange. Not a huge limitation can be easily fixed
-but IMHO makes no sense now.
-* All exchanges you publish to are by default 'topic' exchanges - not a big limitation
-either, but with topic exchanges you can emulate direct and fanout exchanges
-so is't a sensible default so far.
+*   You can not publish to the default exchange.
+*   All published exchanges are `topic` exchanges by default. However, with the `topic` exchanges one can emulate `direct` and `fanout` exchanges.
 
 
 ## License
