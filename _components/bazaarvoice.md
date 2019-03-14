@@ -3,32 +3,37 @@ title: Bazaarvoice component
 layout: article
 section: Utility Components
 ---
-
-### Description
+---
+## Description
 Bazaarvoice component for the {{site.data.tenant.name}} platform.
 
-### Credentials
- - apiUri (for Conversations API)
- - apiKey (for Conversations API)
- - curationsApiUri (for Curations API)
- - curationsApiKey (for Curations API)
+## Credentials
+
+Here are the credentials necessary to authenticate with the Bazaarvoice:
+
+*   `apiUri` - for Conversations API
+*   `apiKey` - for Conversations API
+*   `curationsApiUri` - for Curations API
+*   `curationsApiKey` - for Curations API
 
 
-### Actions
+## Actions
 
-#### Retrieve reviews
-in/out metadata can be found at `/lib/schemas/retrieveReviews.{in/out}.json`
+### Retrieve reviews
 
-##### usage example
-input message:
-```
+The in/out metadata can be found at `/lib/schemas/retrieveReviews.{in/out}.json`
+
+Here is the usage example of the input message:
+```json
 {
     "productId": "data-gen-moppq9ekthfzbc6qff3bqokie"
     "limit": 2
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"Limit": 2,
 	"Offset": 0,
@@ -72,12 +77,12 @@ output message:
 ```
 
 
-#### Submit review
-in/out metadata can be found at `/lib/schemas/submitReview.{in/out}.json`
+### Submit review
+The in/out metadata can be found at `/lib/schemas/submitReview.{in/out}.json`
 
-##### usage example
-input message:
-```
+Here is an example input message:
+
+```json
 {
 	"authorSecurityInformation": {
 		"authorIP": "127.0.0.1",
@@ -88,12 +93,13 @@ input message:
 	"productId": "data-gen-moppq9ekthfzbc6qff3bqokie1234",
 	"rating": 5,
 	"title": "My title",
-	"reviewText": "My review textMy review textMy review textMy review textMy review textMy review textMy review textMy review textMy review textMy review text",
+	"reviewText": "My review text",
 	"authorNickname": "user123"
 }
 ```
 output message:
-```
+
+```json
 {
 	"Locale": "en_US",
 	"Form": [],
@@ -104,7 +110,7 @@ output message:
 		"SendEmailAlertWhenCommented": false,
 		"Rating": 5,
 		"SubmissionTime": "2018-04-04T15:28:18.152+00:00",
-		"ReviewText": "My review textMy review textMy review textMy review textMy review textMy review textMy review textMy review textMy review textMy review text",
+		"ReviewText": "My review text",
 		"SubmissionId": null,
 		"Title": "My title",
 		"IsRecommended": null,
@@ -112,17 +118,16 @@ output message:
 		"Id": null,
 		"SendEmailAlertWhenPublished": false
 	},
-	"AuthorSubmissionToken": "90a8ecb07d49e47ee6df9bff4b47a18b7573657269643d61736461736426646174653d3230313830343034266d61786167653d37"
+	"AuthorSubmissionToken": "90a8ecb07d49e47ee6df9bff4b47a18b7573657269643d6"
 }
 ```
 
 
-#### Retrieve products
-in/out metadata can be found at `/lib/schemas/retrieveProducts.{in/out}.json`
+### Retrieve products
+The in/out metadata can be found at `/lib/schemas/retrieveProducts.{in/out}.json`
 
-##### usage example
-input message:
-```
+An example of input message:
+```json
 {
 	"productsIds": [
 		"data-gen-moppq9ekthfzbc6qff3bqokie"
@@ -133,8 +138,10 @@ input message:
     "searchString": null
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"Limit": 10,
 	"Offset": 0,
@@ -142,7 +149,7 @@ output message:
 	"Locale": "en_US",
 	"Results": [
 		{
-			"Description": "Increase your potential to shine with this beautiful Diamond necklace. A 16\" chain holds a White Gold teardrop studded with beautiful and shiny Diamonds. The smooth, shiny\n                bail adds texture and contrast to this piece. Wear alone or complete this look with the matching ring and earrings.",
+			"Description": "Increase your potential to shine ...",
 			"ImageUrl": "http://myshco.com/productImages/teardrop.jpg",
 			"Name": "14K White Gold Diamond Teardrop Necklace",
 			"Id": "data-gen-moppq9ekthfzbc6qff3bqokie",
@@ -163,27 +170,7 @@ output message:
 			"Attributes": {},
 			"ProductPageUrl": null,
 			"ReviewIds": [],
-			"QAStatistics": {
-				"QuestionHelpfulVoteCount": 0,
-				"FirstAnswerTime": null,
-				"LastQuestionAnswerTime": null,
-				"FirstQuestionTime": null,
-				"FeaturedAnswerCount": 0,
-				"LastAnswerTime": null,
-				"TagDistribution": {},
-				"ContextDataDistribution": {},
-				"TotalAnswerCount": 11,
-				"FeaturedQuestionCount": 0,
-				"LastQuestionTime": null,
-				"QuestionNotHelpfulVoteCount": 0,
-				"BestAnswerCount": 0,
-				"TagDistributionOrder": [],
-				"AnswerHelpfulVoteCount": 0,
-				"HelpfulVoteCount": 0,
-				"AnswerNotHelpfulVoteCount": 0,
-				"TotalQuestionCount": 20,
-				"ContextDataDistributionOrder": []
-			},
+			"QAStatistics": { },
 			"TotalQuestionCount": 20,
 			"TotalAnswerCount": 11
 		}
@@ -193,12 +180,13 @@ output message:
 ```
 
 
-#### Retrieve categories
-in/out metadata can be found at `/lib/schemas/retrieveCategories.{in/out}.json`
+### Retrieve categories
 
-##### usage example
-input message:
-```
+The in/out metadata can be found at `/lib/schemas/retrieveCategories.{in/out}.json`
+
+The input message:
+
+```json
 {
 	"categoriesIds": [
 		"data-gen-t3jxodbtmy8n9fzn1vm88yjec"
@@ -207,8 +195,10 @@ input message:
 	"offset": null
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"Limit": 2,
 	"Offset": 0,
@@ -235,16 +225,18 @@ output message:
 ```
 
 
-#### Retrieve statistics
-in/out metadata can be found at `/lib/schemas/retrieveStatistics.{in/out}.json`
+### Retrieve statistics
+
+The in/out metadata can be found at `/lib/schemas/retrieveStatistics.{in/out}.json`
 
 There are 2 supported statistic's content types:
- - Reviews
- - NativeReviews
 
-##### usage example
-input message:
-```
+*   Reviews
+*   NativeReviews
+
+An input message:
+
+```json
 {
 	"productsIds": [
 		"data-gen-2s9kaf0ugzn0p2flzl73ahuys"
@@ -260,7 +252,8 @@ input message:
 }
 ```
 output message:
-```
+
+```json
 {
 	"Limit": 1,
 	"Offset": 0,
@@ -288,12 +281,12 @@ output message:
 ```
 
 
-#### Retrieve comments
-in/out metadata can be found at `/lib/schemas/retrieveComments.{in/out}.json`
+### Retrieve comments
 
-##### usage example
-input message:
-```
+The in/out metadata can be found at `/lib/schemas/retrieveComments.{in/out}.json`
+
+An input message:
+```json
 {
 	"commentId": "338201",
 	"reviewId": null,
@@ -312,8 +305,10 @@ input message:
 	"locale": "en_US"
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"Limit": 10,
 	"Offset": 0,
@@ -357,7 +352,7 @@ output message:
 	"Includes": {
 		"Products": {
 			"data-gen-3jxhm78sfqfy8tg5qyinqioal": {
-				"Description": "This extra-large capacity dryer lets you choose between 8 dry cycles, so you can use the proper settings for your clothes. The auto dry function uses thermostats to tell when\n                your laundry is dry, reducing wear and tear.",
+				"Description": "This extra-large capacity ...",
 				"ImageUrl": "http://myshco.com/productImages/profile.png",
 				"Name": "GE Profile 7.5 Cu. Ft. Colossal Capacity Electric Dryer",
 				"Id": "data-gen-3jxhm78sfqfy8tg5qyinqioal",
@@ -413,12 +408,13 @@ output message:
 }
 ```
 
-#### Submit question
-in/out metadata can be found at `/lib/schemas/submitQuestion.{in/out}.json`
+### Submit question
 
-##### usage example
-input message:
-```
+The in/out metadata can be found at `/lib/schemas/submitQuestion.{in/out}.json`
+
+An input message:
+
+```json
 {
 	"authorSecurityInformation": {
 		"authorIP": "127.0.0.1",
@@ -438,7 +434,8 @@ input message:
 }
 ```
 output message:
-```
+
+```json
 {
 	"Locale": "en_US",
 	"Form": [],
@@ -455,16 +452,17 @@ output message:
 	},
 	"TypicalHoursToPost": 72,
 	"Data": {},
-	"AuthorSubmissionToken": "621e1ca874ebadbb9a7db3ff68652e707573657269643d61736461736426646174653d3230313830343137266d61786167653d37"
+	"AuthorSubmissionToken": "621e1ca874ebadbb9a7db3ff68652e7075736572"
 }
 ```
 
-#### Submit answer
-in/out metadata can be found at `/lib/schemas/submitAnswer.{in/out}.json`
+### Submit answer
 
-##### usage example
-input message:
-```
+The in/out metadata can be found at `/lib/schemas/submitAnswer.{in/out}.json`
+
+An input message:
+
+```json
 {
 	"authorSecurityInformation": {
 		"authorIP": "127.0.0.1",
@@ -486,7 +484,8 @@ input message:
 ```
 
 output message:
-```
+
+```json
 {
 	"Locale": "en_US",
 	"Answer": {
@@ -501,16 +500,16 @@ output message:
 	"SubmissionId": "egk3w9b6wtt3mgikb58hlay8q",
 	"TypicalHoursToPost": 72,
 	"Data": {},
-	"AuthorSubmissionToken": "621e1ca874ebadbb9a7db3ff68652e707573657269643d61736461736426646174653d3230313830343137266d61786167653d37"
+	"AuthorSubmissionToken": "621e1ca874ebadbb9a7db3ff68652e707573657269"
 }
 ```
 
-#### Submit comment
-in/out metadata can be found at `/lib/schemas/submitComment.{in/out}.json`
+### Submit comment
 
-##### usage example
-input message:
-```
+The in/out metadata can be found at `/lib/schemas/submitComment.{in/out}.json`
+
+An input message:
+```json
 {
 	"authorSecurityInformation": {
 		"authorIP": "127.0.0.1",
@@ -532,7 +531,7 @@ input message:
 ```
 
 output message:
-```
+```json
 {
 	"Locale": "en_US",
 	"Comment": {
@@ -548,28 +547,29 @@ output message:
 	"SubmissionId": "etu86zfzwl8676tf2u30w7xnx",
 	"TypicalHoursToPost": 72,
 	"Data": {},
-	"AuthorSubmissionToken": "621e1ca874ebadbb9a7db3ff68652e707573657269643d61736461736426646174653d3230313830343137266d61786167653d37"
+	"AuthorSubmissionToken": "621e1ca874ebadbb9a7db3ff68652e70757365726"
 }
 ```
 
-#### Submit photo
-in/out metadata can be found at `/lib/schemas/submitPhoto.{in/out}.json`
+### Submit photo
+The in/out metadata can be found at `/lib/schemas/submitPhoto.{in/out}.json`
 
-##### usage example
-input message:
-```
+
+An input message:
+```json
 {
 	"authorSecurityInformation": {
 		"externalAuthorId": "craiggil"
 	},
-	"photoUrl": "https://vignette.wikia.nocookie.net/rio/images/9/91/Rio-2-Official-Trailer-3-40.jpg/revision/latest?cb=20131002062355",
+	"photoUrl": "https://url-to-image",
 	"Locale": "en_US",
 	"ContentType": "review"
 }
 ```
 
 output message:
-```
+
+```json
 {
 	"Locale": "en_US",
 	"Form": [
@@ -603,11 +603,11 @@ output message:
 		"Sizes": {
 			"normal": {
 				"Id": "normal",
-				"Url": "https://reviews.apitestcustomer.bazaarvoice.com/bvstaging/submit/5555-en_us/ps_amazon_s3_l0r7l2xvmaytb6fph0ubp5u4j/photo.jpg"
+				"Url": "https://url-to-image"
 			},
 			"thumbnail": {
 				"Id": "thumbnail",
-				"Url": "https://reviews.apitestcustomer.bazaarvoice.com/bvstaging/submit/5555-en_us/ps_amazon_s3_l0r7l2xvmaytb6fph0ubp5u4j/photoThumb.jpg"
+				"Url": "https://rurl-to-image"
 			}
 		},
 		"Id": "l0r7l2xvmaytb6fph0ubp5u4j",
@@ -622,12 +622,11 @@ output message:
 }
 ```
 
-#### Submit feedback
-in/out metadata can be found at `/lib/schemas/submitFeedback.{in/out}.json`
+### Submit feedback
+The in/out metadata can be found at `/lib/schemas/submitFeedback.{in/out}.json`
 
-##### usage example
-input message:
-```
+An input message:
+```json
 {
 	"authorSecurityInformation": {
 		"authorIP": "127.0.0.1"
@@ -640,7 +639,7 @@ input message:
 ```
 
 output message:
-```
+```json
 {
 	"Locale": "en_US",
 	"Feedback": {
@@ -657,14 +656,14 @@ output message:
 }
 ```
 
-#### Retrieve curations content
-in/out metadata can be found at `/lib/schemas/retrieveCurationsContent.{in/out}.json`
+### Retrieve curations content
 
-source doc: https://developer.bazaarvoice.com/curations-api/reference/curations-3/requesting-contents
+The in/out metadata can be found at `/lib/schemas/retrieveCurationsContent.{in/out}.json`
 
-##### usage example
-input message:
-```
+The source doc [can be located here](https://developer.bazaarvoice.com/curations-api/reference/curations-3/requesting-contents).
+
+An input message:
+```json
 {
 	"productId": null,
 	"client": "branddemo",
@@ -679,7 +678,7 @@ input message:
 ```
 
 output message:
-```
+```json
 {
 	"status": "ok",
 	"code": 200,
@@ -693,10 +692,10 @@ output message:
 					{
 						"role": "photo",
 						"origin": "instagram",
-						"token": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/17663258_1494744337232078_4902599108461592576_n.jpg",
-						"image_service_url": "https://api.bazaarvoice.com/curations/c3/imagingAPI?passkey=kuuqd395w5u7gv43987gxshh&url=https%3A%2F%2Fscontent.cdninstagram.com%2Ft51.2885-15%2Fs640x640%2Fsh0.08%2Fe35%2F17663258_1494744337232078_4902599108461592576_n.jpg&media_type=photo&permalink_url=https%3A%2F%2Fwww.instagram.com%2Fp%2FBShouI-lXQM%2F&client=branddemo&contentId=58e5a15bbe1f2d0100f8b447",
-						"url": "https://api.bazaarvoice.com/curations/c3/imagingAPI?passkey=kuuqd395w5u7gv43987gxshh&url=https%3A%2F%2Fscontent.cdninstagram.com%2Ft51.2885-15%2Fs640x640%2Fsh0.08%2Fe35%2F17663258_1494744337232078_4902599108461592576_n.jpg&media_type=photo&permalink_url=https%3A%2F%2Fwww.instagram.com%2Fp%2FBShouI-lXQM%2F&client=branddemo&contentId=58e5a15bbe1f2d0100f8b447",
-						"display_url": "https://api.bazaarvoice.com/curations/c3/imagingAPI?passkey=kuuqd395w5u7gv43987gxshh&url=https%3A%2F%2Fscontent.cdninstagram.com%2Ft51.2885-15%2Fs640x640%2Fsh0.08%2Fe35%2F17663258_1494744337232078_4902599108461592576_n.jpg&media_type=photo&permalink_url=https%3A%2F%2Fwww.instagram.com%2Fp%2FBShouI-lXQM%2F&client=branddemo&contentId=58e5a15bbe1f2d0100f8b447"
+						"token": "https://url-to-resource",
+						"image_service_url": "https://url-to-resource",
+						"url": "https://url-to-resource",
+						"display_url": "https://url-to-resource"
 					}
 				],
 				"videos": [],
@@ -710,7 +709,7 @@ output message:
 					"alias": "Remote BV",
 					"channel": "instagram",
 					"token": "4006361074",
-					"avatar": "https://api.bazaarvoice.com/curations/c3/imagingAPI?passkey=kuuqd395w5u7gv43987gxshh&url=https%3A%2F%2Fscontent.cdninstagram.com%2Ft51.2885-19%2Fs150x150%2F14474510_1192702484102493_4504149254335365120_a.jpg&media_type=avatar&permalink_url=https%3A%2F%2Fwww.instagram.com%2Fp%2FBShouI-lXQM%2F&client=branddemo&contentId=58e5a15bbe1f2d0100f8b447",
+					"avatar": "https://api.bazaarvoice.com/curations/url-to-resource",
 					"profile": "https://instagram.com/remote_bv"
 				},
 				"groups": [
@@ -759,6 +758,5 @@ output message:
 
 ### Links
 
-Bazaarvoice Conversations API documentation https://developer.bazaarvoice.com/conversations-api
-
-How to retrieve user's device fingerprint https://developer.bazaarvoice.com/conversations-api/tutorials/authenticity#device-fingerprint
+*   Bazaarvoice [Conversations API documentation](https://developer.bazaarvoice.com/conversations-api)
+*   How to retrieve [user's device fingerprint](https://developer.bazaarvoice.com/conversations-api/tutorials/authenticity#device-fingerprint)

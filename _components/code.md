@@ -3,47 +3,109 @@ title: Code component
 layout: article
 section: Utility Components
 ---
+---
+## Description
 
-> A code component for the [{{site.data.tenant.name}} platform](https://www.{{site.data.tenant.name}} "{{site.data.tenant.name}} platform"), runs a piece of synchronous JavaScript inside your integration flow.
+A code component for the platform, runs a piece of a JavaScript code inside your
+integration flow.
 
-This is an open source component to run a code inside your integration flow and is developed specifically to run on [{{site.data.tenant.name}} platform](https://www.{{site.data.tenant.name}}). You can clone it and change it as you wish. However, **if you plan to deploy it into [{{site.data.tenant.name}} platform](https://www.{{site.data.tenant.name}}) you must follow sets of instructions to succeed**.
+## How Works
 
-> **PLEASE NOTE:** This purpose of this component to test pieces of JavaScript code within your integration process. This component can help the development of your own component, however, it may not be suitable for every use case. **It is not a replacement for a real component, rather than a tool to test the functionalities before adding them into your component.**
+Pretty much the same way that you would use any other component in our system.
+It is deployed by default to production, so no need to deploy it yourself
+(although you could if you have extended it yourself). In our Dashboard start
+building your integration and include the Code component as well. You will see a
+picture similar to the one below:
 
-## Documentation
+![image](https://user-images.githubusercontent.com/56208/52571227-71cd9480-2e15-11e9-9c62-17e5085d7ada.png)
 
-Documentation on how to use this component you can find in [{{site.data.tenant.name}} docuemntation](http://go2.{{site.data.tenant.name}}/code-component).
+However, don't let the simple look fool you - it has a full-fledged interface
+with many very useful features like the ones you would expect from your
+favourite desktop developing tool:
 
-## Before you Begin
+*   Syntax highlighting - a standard for any online real-time coding interface
+*   Code auto-completion - again a standard that you got used to from your desktop tool
+*   Support for number of variables and libraries within the context of the execution
+*   Support latest ECMAScript standard
+*   Run and troubleshoot within the designer interface.
 
-Before you can deploy any code into our system **you must be a registered {{site.data.tenant.name}} platform user**. Please see our home page at [https://www.{{site.data.tenant.name}}](https://www.{{site.data.tenant.name}}) to learn how.
+## Available Variables and Libraries
 
-> Any attempt to deploy a code into our platform without a registration would fail.
+Here are the available variables and libraries that can be used within the context of execution. The most up-to-date list
+can always be found in be used within the context of execution. The most up-to-date list can always be found in code.js
+of the component. Below is a sample for the reference:
 
-After the registration and opening of the account you must **[upload your SSH Key](http://go2.{{site.data.tenant.name}}/manage-ssh-keys)** into our platform.
+-   `console`: - more on [Node.js console](https://nodejs.org/dist/latest-v5.x/docs/api/console.html),
+-   `process`: - Current Node.js process,
+-   `require`: - Module require,
+-   `setTimeout`: - more on [setTimeout](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html),
+-   `clearTimeout`: - more on [clearTimeout](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html),
+-   `setInterval`: - more on [setInterval](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html),
+-   `clearInterval`: - more on [clearInterval](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html),
+-   `msg`: - Incoming message containing the payload from the previous step,
+-   `exports`: {},
+-   `messages`: - Utility for convenient message creation,
+-   `request`: - Http Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request)),
+-   `wait`: - wait,
+-   `emitter`: user to emit messages and errors
 
-> If you fail to upload you SSH Key you will get **permission denied** error during the deployment.
+## Code component usage Examples
 
-## Getting Started
+Use code is very simple, just do following:
 
-After registration and uploading of your SSH Key you can proceed to deploy it into our system. At this stage we suggest you to:
-* [Create a team](http://go2.{{site.data.tenant.name}}/manage-teams) to work on your new component. This is not required but will be automatically created using random naming by our system so we suggest you name your team accordingly.
-* [Create a repository](http://go2.{{site.data.tenant.name}}/manage-repositories) where your new component is going to *reside* inside the team that you have just created. For a simplicity you can name your repository **code-component** or **code*.
-
-```bash
-$ git clone https://github.com/elasticio/code-component.git code-component
-
-$ cd code-component
+```javascript
+async function run(msg) {
+  console.log('Incoming message is %s', JSON.stringify(msg));
+  const body = { result : 'Hello world!' };
+  // You can emit as many data messages as required
+  await this.emit('data', { body });
+  console.log('Execution finished');
+}
 ```
-Now you can edit your version of **code-component** component and change according to your needs - that is if you know what you are doing. Or you can just ``PUSH``it into our system to see the process in action:
+transform
+Please note if you have a simple one-in-one-out function you can simply return a
+JSON object as a result of your function, it will be automatically emitted as data.
 
-```bash
-$ git remote add elasticio your-created-team-name@git.{{site.data.tenant.name}}:code-component.git
+## Common usage scenarios
 
-$ git push elasticio master
+### Doing complex data transformation
+
+[JSONata](http://jsonata.org/) is great however sometimes it's easier to do
+things in JavaScript, if you want to transform an incoming message with code,
+just use following sample:
+
+```javascript
+async function run(msg) => {
+  addition : "You can use code",
+  keys : Object.keys(msg)
+}
 ```
-Obviously the naming of your team and repository is entirely up-to you and if you do not put any corresponding naming our system will auto generate it for you but the naming might not entirely correspond to your project requirements.
 
-![image](https://cloud.githubusercontent.com/assets/56208/14851075/c4cf0702-0c7d-11e6-818a-035b8ad6f25c.png)
+### Calling an external REST API
 
-More documentation and samples on how to use it you can find [here](http://go2.{{site.data.tenant.name}}/code-component).
+It's very simple to code a small REST API call out of the Code component, see
+following example:
+
+```javascript
+async function run(msg) {
+  const res = await request.get({
+    uri: '{{site.data.tenant.apiBaseUri}}/v2/users',
+    auth: {
+      user: process.env.ELASTICIO_API_USERNAME,
+      pass: process.env.ELASTICIO_API_KEY
+    },
+    json: true
+  });
+  return {
+    fullName: res.body.first_name + " " + res.body.last_name,
+    email: res.body.email,
+    userID: res.body.id
+  }
+}
+```
+
+## Known issues and limitations
+
+-   Snapshots are not supported
+-   Credentials are not supported
+-   No `async` is supported
