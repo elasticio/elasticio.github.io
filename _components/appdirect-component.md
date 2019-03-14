@@ -1,12 +1,9 @@
-# appdirect-component [![Circle CI Build Status][circle-image]][circle-url]
-Integration component for AppDirect API for the [elastic.io platform](http://www.elastic.io;).
-
 ---
-title: AWS Lambda component
+title: AppDirect Component
 layout: article
 section: E-Commerce Components
 ---
-   
+---
 ## General Information
 ### Description
 AppDirect component is designed for AppMarket API integration.
