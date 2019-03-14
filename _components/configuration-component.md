@@ -6,8 +6,8 @@ section: Utility Components
 
 ## Description
 
-{{site.data.tenant.name}} configuration component which allows separating the
-modification of configurable values from the modification of the flow.
+The configuration component allows separating the modification of configurable
+values from the modification of the flow.
 
 ### How works.  API version / SDK version
 
@@ -60,7 +60,7 @@ If one needed to change the exchange rate, that value could be edited by modifyi
 the configuration credentials to include the new rate and then resetting the snapshot
 for all the price import flows. Currency rates sample:
 
-```
+```json
 {
   "USDEUR": 0.881715,
   "USDFJD": 2.115102,
@@ -77,7 +77,7 @@ where it is used.
 
 ## Triggers
 
-The {{site.data.tenant.name}} configuration component has no trigger functions.
+The configuration component has no trigger functions.
 This means **the component can not be selected as a first step in any integration flow.**
 
 ## Actions
@@ -92,7 +92,7 @@ The output json schema can have any complexity.
 1.  As realtime flows use credentials which were saved at the moment of starting the flow, **this component should be used only in ordinary flows**. This is not a bug or limitation, but the platform specific case.
 2.  Despite naked arrays are valid JSON, there are some platform limitations, which do not allow to access the data in such arrays, that has been emitted from a component, from the next step. This is why **the naked arrays should not be passed to the component directly**. So instead of
 
-```
+```json
 [
  {
    "Product Name": "Bowler Hat",
@@ -112,7 +112,7 @@ The output json schema can have any complexity.
 ```
 use something like:
 
-```
+```json
 {
   "Product": [
     {
