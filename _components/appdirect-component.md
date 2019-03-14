@@ -1,49 +1,11 @@
 # appdirect-component [![Circle CI Build Status][circle-image]][circle-url]
 Integration component for AppDirect API for the [elastic.io platform](http://www.elastic.io;).
 
-## Table of Contents
-* [General information](#general-information)
-   * [Description](#description)
-   * [API version](#api-version)
-   * [Authentication](#authentication)
-* [Configuring your environment](#configuring-your-environment)
-* [Credentials](#credentials)
-   * [Environment URL](#environment-url)
-   * [Consumer Key](#consumer-key)
-   * [Consumer Secret](#consumer-secret)
-   * [Creating credentials](#creating-credentials)
-* [Actions](#actions)
-   * [Create Entity](#create-entity)
-      * [Create Entity. Input fields](#create-entity-input-fields)
-      * [Create Entity. Input json schema locations](#create-entity-input-json-schema-locations)
-      * [Create Entity. Output json schema locations](#create-entity-output-json-schema-locations)
-   * [Update Entity](#update-entity)
-      * [Update Entity. Input fields](#update-entity-input-fields)
-      * [Update Entity. Input json schema locations](#update-entity-input-json-schema-locations)
-      * [Update Entity. Output json schema locations](#update-entity-output-json-schema-locations)
-   * [Lookup Object By ID](#lookup-object-by-id)
-      * [Lookup Object By ID. Input fields](#lookup-object-by-id-input-fields)
-      * [Lookup Object By ID. Input json schema locations](#lookup-object-by-id-input-json-schema-locations)
-      * [Lookup Object By ID. Output json schema locations](#lookup-object-by-id-output-json-schema-locations)
-   * [Lookup Objects](#lookup-objects)
-      * [Lookup Objects. Input fields](#lookup-objects-input-fields)
-      * [Lookup Objects. Input Metadata description](#lookup-objects-input-metadata-description)
-      * [Lookup Objects. Input metadata imitations](#lookup-objects-input-metadata-limitations)
-      * [Lookup Objects. Input json schema locations](#lookup-objects-input-json-schema-locations)
-      * [Lookup Objects. Output json schema locations](#lookup-objects-output-json-schema-locations)
-   * [Delete Object By ID](#delete-object-by-id)
-      * [Delete Object By ID. Input fields](#delete-object-by-id-input-fields)
-      * [Delete Object By ID. Input json schema locations](#delete-object-by-id-input-json-schema-locations)
-      * [Delete Object By ID. Output json schema locations](#delete-object-by-id-output-json-schema-locations)
-   * [Enable/Disable company membership](#enabledisable-company-membership)
-      * [Enable/Disable company membership. Json schema locations](#enabledisable-company-membership-json-schema-locations)
-   * [Invite company membership](#invite-company-membership)
-      * [Invite company membership. Json schema locations](#invite-company-membership-json-schema-locations)
-* [Triggers](#triggers)
-   * [Webhook subscription](#webhook-subscription)
-      * [Webhook subscription. Input fields](#webhook-subscription-input-fields)
-* [AppDirect API and Documentation links](#appdirect-api-and-documentation-links)
-* [License](#license)
+---
+title: AWS Lambda component
+layout: article
+section: E-Commerce Components
+---
    
 ## General Information
 ### Description
@@ -67,12 +29,7 @@ Authentication occurs via OAuth 2.0. In order to make OAuth work, you need a new
 Your callback URL should be 
 
 ```
-https://your-tenant.elastic.io/callback/oauth2
-```
-
-If you are testing it on default public tenant just use 
-```
-https://app.elastic.io/callback/oauth2
+https://your-tenant.address/callback/oauth2
 ```
 
 ![API Client Configuration](https://user-images.githubusercontent.com/13310949/45288071-83231580-b4f2-11e8-9c1f-52ce07bbdade.png)
@@ -352,13 +309,4 @@ You can use [documentation](https://help.appdirect.com/appmarket/Default.htm#Mar
  - [Webhook integration documentation](https://help.appdirect.com/appmarket/Default.htm#MarketplaceManager/mm-set-integ-webhook.htm)
 
 ## License
-Apache-2.0 © [elastic.io GmbH](http://elastic.io)
-
-[npm-image]: https://badge.fury.io/js/appdirect.svg
-[npm-url]: https://npmjs.org/package/appdirect
-[travis-image]: https://travis-ci.org/elasticio/appdirect.svg?branch=master
-[travis-url]: https://travis-ci.org/elasticio/appdirect
-[daviddm-image]: https://david-dm.org/elasticio/appdirect.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/elasticio/appdirect-component
-[circle-image]: https://circleci.com/gh/elasticio/appdirect-component.svg?style=svg&circle-token=d2e9efa7e18e5a3f2d3a08b5fbf30f4d0c5f4679
-[circle-url]: https://circleci.com/gh/elasticio/appdirect-component
+Apache-2.0 © [{{site.data.tenant.name}} GmbH](http://www.{{site.data.tenant.name}})
