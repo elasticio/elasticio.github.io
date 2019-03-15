@@ -401,5 +401,3 @@ The current version of the component doesn't support next list of entities:
 ## API and Documentation links
 
 [Lightspeed eCom API Documentation](https://developers.lightspeedhq.com/ecom/)
-
-[circle-image]: https://circleci.com/gh/elasticio/lightspeed-ecom-component.svg?style=svg&circle-token=db5cb42aff0e86c991e4a57f8c195fd0f954b87d [circle-url]: https://circleci.com/gh/elasticio/lightspeed-ecom-component

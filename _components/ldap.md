@@ -50,8 +50,3 @@ This component interacts with LDAP v3.
 ## License
 
 Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})
-
-[travis-image]: https://travis-ci.org/elasticio/ldap-component.svg?branch=master
-[travis-url]: https://travis-ci.org/elasticio/ldap-component
-[daviddm-image]: https://david-dm.org/elasticio/ldap-component.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/elasticio/ldap-component

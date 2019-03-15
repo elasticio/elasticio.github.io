@@ -135,9 +135,3 @@ If in doubt call support.
 ## License
 
 Apache-2.0 © [{{site.data.tenant.name}} GmbH](http://{{site.data.tenant.name}})
-
-
-[travis-image]: https://travis-ci.org/elasticio/postgresql-component.svg?branch=master
-[travis-url]: https://travis-ci.org/elasticio/postgresql-component
-[daviddm-image]: https://david-dm.org/elasticio/postgresql-component.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/elasticio/postgresql-component
