@@ -3,41 +3,11 @@ title: Outlook component
 layout: article
 section: Utility Components
 ---
+---
+## Description
 
+An integration component for the Office 365 Outlook REST API
 
-> {{site.data.tenant.name}} integration component for the Office 365 Outlook REST API
-
-# MS Office 365 Outlook
-Microsoft Outlook component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}} &#34;{{site.data.tenant.name}} platform&#34;)
-
-If you plan to **deploy it into [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}} &#34;{{site.data.tenant.name}} platform&#34;) you must follow sets of instructions to succseed**.
-
-## Before you Begin
-
-Before you can deploy any code into {{site.data.tenant.name}} **you must be a registered {{site.data.tenant.name}} platform user**. Please see our home page at [http://www.{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) to learn how.
-
-We&#39;ll use git and SSH public key authentication to upload your component code, therefore you must **[upload your SSH Key](http://docs.{{site.data.tenant.name}}/docs/ssh-key)**.
-
-&gt; If you fail to upload you SSH Key you will get **permission denied** error during the deployment.
-
-## Getting Started
-
-After registration and uploading of your SSH Key you can proceed to deploy it into our system. At this stage we suggest you to:
-* [Create a team](http://docs.{{site.data.tenant.name}}/docs/teams) to work on your new component. This is not required but will be automatically created using random naming by our system so we suggest you name your team accordingly.
-* [Create a repository](http://docs.{{site.data.tenant.name}}/docs/component-repositories) where your new component is going to *reside* inside the team that you have just created.
-
-Now as you have a team name and component repository name you can add a new git remote where code shall be pushed to. It is usually displayed on the empty repository page:
-
-```bash
-$ git remote add elasticio your-team@git.{{site.data.tenant.name}}:your-repository.git
-```
-
-Obviously the naming of your team and repository is entirely up to you and if you do not put any corresponding naming our system will auto generate it for you but the naming might not entirely correspond to your project requirements.
-Now we are ready to push it:
-
-```bash
-$ git push elasticio master
-```
 
 ## Authentication
 
@@ -52,10 +22,10 @@ Client ID and Secret need to be configured in the environment variables
 callback URI  please use your callback URL in a form
 
 ```
-https://your-tenant.{{site.data.tenant.name}}/callback/oauth2
+https://your-tenant.address/callback/oauth2
 ```
 
-for public cloud default tenant just use ``https://app.{{site.data.tenant.name}}/callback/oauth2``
+for public cloud default tenant just use ``https://your-tenant.address/callback/oauth2``
 
 Apart from the OAuth 2.0 button you would need to specify the __AD tenant ID__
  if you not sure about that just use ``common``.
@@ -75,17 +45,11 @@ Second version of AD protocol has [some advantages](https://azure.microsoft.com/
 
 ### OData output for lastModifiedDateTime has a precision issue
 
-Apparently the ``lastModifiedDateTime`` returned by MS Graph has no milliseconds in it is obvious that filter query accept and treat millisecond values correctly
-there is a workaround for that issue implemented in the code, however you need to keep an eye on it.
+Apparently the ``lastModifiedDateTime`` returned by MS Graph has no milliseconds
+in it is obvious that filter query accept and treat millisecond values correctly
+there is a workaround for that issue implemented in the code, however you need to
+keep an eye on it.
 
 ## License
 
 Apache-2.0 © [{{site.data.tenant.name}} GmbH](http://{{site.data.tenant.name}})
-
-
-[npm-image]: https://badge.fury.io/js/outlook.svg
-[npm-url]: https://npmjs.org/package/outlook
-[travis-image]: https://travis-ci.org/elasticio/outlook.svg?branch=master
-[travis-url]: https://travis-ci.org/elasticio/outlook
-[daviddm-image]: https://david-dm.org/elasticio/outlook.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/elasticio/outlook

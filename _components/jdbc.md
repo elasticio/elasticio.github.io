@@ -3,10 +3,14 @@ title: JDBC Component
 layout: article
 section: Utility Components
 ---
+---
+## Description
 
-This is an open source component for working with object-relational database management systems on {{site.data.tenant.name}} platform.
+This a component for working with object-relational database management systems.
+It works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
 
-### Purpose
+## Purpose
+
 With this component you will have following triggers:
 
 ``SELECT`` - this trigger will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that returns multiple results, it has limitations on the query and suited only for SELECT type of queries. The trigger will remember last execution timestamp and let you build queries on it.
@@ -22,12 +26,14 @@ Following actions are inside:
 ``UPSERT BY PRIMARY KEY`` - this action will execute select command from specified table, as search criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"), and execute insert command by PRIMARY KEY with specified field, if result does not found, else - action will execute update command by PRIMARY KEY with specified field. The action returns only one result row (a primary key is unique).
 
 ``DELETE BY PRIMARY KEY`` - this action will execute delete query from specified table, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns an integer value that indicates the number of rows affected, the returned value can be 0 or 1 (a primary key is unique).
-### How works
 
-### Requirements
-Before you can deploy any code into {{site.data.tenant.name}} **you must be a registered {{site.data.tenant.name}} platform user**.
+## Requirements
 
-#### Environment variables
+### Environment variables
+
+For day-to-day operations no environment variable is required. However, for the
+further development and testing of this component the following variables can be used:
+
 For unit-testing is needed to specify following environment variables:
 1. Connection to MSSQL:
  - ``CONN_USER_MSSQL`` - user login
@@ -53,36 +59,32 @@ For unit-testing is needed to specify following environment variables:
  - ``CONN_DBNAME_POSTGRESQL`` - DataBase name
  - ``CONN_HOST_POSTGRESQL`` - DataBase host
  - ``CONN_PORT_POSTGRESQL`` - DataBase port
-#### Others
+
+
 ## Credentials
+
 You may use following properties to configure a connection:
-![image](https://user-images.githubusercontent.com/40201204/43577550-ce99efe6-9654-11e8-87ed-f3e0839d618a.png)
-You can add the authorisation methods during the integration flow design or by going to your Settings > Security credentials > REST client and adding there.
-### DB Engine
-You are able to choose one of existing database types:
-![image](https://user-images.githubusercontent.com/40201204/43577772-6f85bdea-9655-11e8-96e1-368493a36c9d.png)
 
-### Connection URI
-In the Connection URI field please provide hostname of the server, e.g. ``acme.com``
-### Connection port
-In the Connection port field please provide port of the server instance, as by default:
-- ``3306`` - MySQL
-- ``5432`` - PostgreSQL
-- ``1521`` - Oracle
-- ``1433`` - MSSQL
-### Database Name
-In the Database Name field please provide name of database at the instance that you want to interact with.
-### User
-In the User field please provide a username that has permissions to interact with the Database.
-### Password
-In the Password field please provide a password of the user that has permissions to interact with the Database.
+*   `DB Engine` - You are able to choose one of existing database types: `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL`
+*   `Connection URI` - In the Connection URL field please provide host name of the server, e.g. `acme.com`.
+*   `Connection port` - In the Connection port field please provide port of the server instance, as by default: (`3306` - MySQL), (`5432` - PostgreSQL), (`1521` - Oracle) and (`1433` - MSSQL)
+*    `Database Name` - In the Database Name field please provide name of database at the instance that you want to interact with.
+*    `User` - In the User field please provide a username that has permissions to interact with the Database.
+*    `Password` - In the Password field please provide a password of the user that has permissions to interact with the Database.
 
-Validation will start right after click on a Save button. You will be able to continue working with component after validation if all provided credentials will be valid.
+Validation will start right after click on a Save button. You will be able to
+continue working with component after validation if all provided credentials will
+be valid.
+
+
 ## Triggers
+
 ### Select trigger
-You are able to provide SELECT query with last execution timestamp as WHERE clause criteria.
+
+You are able to provide SELECT query with last execution timestamp as WHERE
+clause criteria.
 ![image](https://user-images.githubusercontent.com/40201204/43591075-2a032dcc-967b-11e8-968d-851355c2646e.png)
-Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
+Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled `datetime`, for example ``2018-08-01T00:00:00.000``.
 During the first execution, date will be equal to ["start" of Unix Time](https://en.wikipedia.org/wiki/Unix_time) - ``1970-01-01 00:00:00.000``.
 Precision of the polling clause can be till milliseconds.
 The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-dd hh:mi:ss[.sss]``, where
@@ -93,7 +95,9 @@ The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-d
 - ``mi`` - minute
 - ``ss`` - second
 - ``sss`` - millisecond (optional)
+
 ### Get Rows Polling trigger
+
 This trigger can polling data from provided table. As WHERE clause you can use column, which has datatype like DATE or TIMESTAMP.
 ![image](https://user-images.githubusercontent.com/40201204/43591332-c99f6b3e-967b-11e8-8a77-bf8386e83d51.png)
 Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
@@ -109,12 +113,17 @@ The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-d
 - ``sss`` - millisecond (optional)
 
 ### SELECT trigger (Deprecated)
-This action exists in JDBC component only for backward compatibility. New [**Select trigger**](#select-trigger) is recommended to use.
+
+This action exists in JDBC component only for backward compatibility.
+New [**Select trigger**](#select-trigger) is recommended to use.
 
 
 ## Actions
+
 ### Select action
+
 ![image](https://user-images.githubusercontent.com/40201204/43592439-39ec5738-967e-11e8-8632-3655b08982d3.png)
+
 The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
 In SQL query you can use clause variables with specific data types.
 Internally we use prepared statements, so all incoming data is
@@ -155,57 +164,38 @@ Component supports dynamic incoming metadata - as soon as your query is in place
 ### Lookup Row By Primary Key
 ![image](https://user-images.githubusercontent.com/40201204/43592505-5b6bbfe8-967e-11e8-845e-2ce8ac707357.png)
 
-The action will execute select query from a ``Table`` dropdown field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns only one result (a primary key is unique).
+The action will execute select query from a ``Table`` drop-down field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns only one result (a primary key is unique).
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
+
 #### Input fields description
-![image](https://user-images.githubusercontent.com/40201204/43644579-f593d1c8-9737-11e8-9b97-ee9e575a19f7.png)
+
 As an input metadata you will get a Primary Key field to provide the data inside as a clause value.
 
 ### Upsert Row By Primary Key action
-The action will execute ``SELECT`` command from a ``Tables`` dropdown field, as search criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"), and execute ``INSERT`` command by PRIMARY KEY with specified field, if result does not found, else - action will execute ``UPDATE`` command by PRIMARY KEY with specified field. The action returns only one result row (a primary key is unique).
-1. Find and select jdbc-component in the component repository
-![image](https://user-images.githubusercontent.com/16806832/44981615-c70a9d80-af7b-11e8-8055-3b553abe8212.png)
 
-2. Create new or select existing credentials
-![image](https://user-images.githubusercontent.com/16806832/44981652-e86b8980-af7b-11e8-897e-04d1fc9a93cf.png)
-
-3. Select action "Upsert Row By Primary Key" from list
-![image](https://user-images.githubusercontent.com/16806832/44981700-0d5ffc80-af7c-11e8-9ac3-aedb16e1d788.png)
-
-4. Select table from ``Table`` dropdown list
-![image](https://user-images.githubusercontent.com/16806832/44981754-38e2e700-af7c-11e8-87d3-f029a7fec8fa.png)
-
-5. Specify input data (field with red asterisk is Primary key), and click "Continue"
-![image](https://user-images.githubusercontent.com/16806832/44981854-83fcfa00-af7c-11e8-9ef2-8c06e77fed1e.png)
-
-6. Retrieving sample
-![image](https://user-images.githubusercontent.com/16806832/44983059-86f9e980-af80-11e8-8178-77e463488c7a.png)
-
-7. Retrieve sample result
-![image](https://user-images.githubusercontent.com/16806832/44982952-2ec2e780-af80-11e8-98b1-58c3adbc15b9.png)
-
-8. Click "Continue"
-![image](https://user-images.githubusercontent.com/16806832/44983101-b0b31080-af80-11e8-82d8-0e70e4b4ff97.png)
-
-9. Finish component configuration
-![image](https://user-images.githubusercontent.com/16806832/44983365-90378600-af81-11e8-9be4-4dbb39af0fdc.png)
+The action will execute ``SELECT`` command from a ``Tables`` drop-down field, as search criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"), and execute ``INSERT`` command by PRIMARY KEY with specified field, if result does not found, else - action will execute ``UPDATE`` command by PRIMARY KEY with specified field. The action returns only one result row (a primary key is unique).
 
 #### Input fields description
+
 As an input metadata you will get all fields of selected table. [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY") is required field (will mark as asterisk) and other input fields are optional.
 ![image](https://user-images.githubusercontent.com/16806832/44397461-1a76f780-a549-11e8-8247-9a6f9aa3f3b4.png)
 
 ### Delete Row By Primary Key action
+
 ![image](https://user-images.githubusercontent.com/40201204/43592505-5b6bbfe8-967e-11e8-845e-2ce8ac707357.png)
-The action will execute delete query from a ``Table`` dropdown field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns count of affected rows.
+The action will execute delete query from a ``Table`` drop-down field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns count of affected rows.
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
+
 #### Input fields description
-![image](https://user-images.githubusercontent.com/40201204/43644579-f593d1c8-9737-11e8-9b97-ee9e575a19f7.png)
+
 As an input metadata you will get a Primary Key field to provide the data inside as a clause value.
 
 ### Create or update record action (Deprecated)
+
 This action exists in JDBC component only for backward compatibility. [**Upsert row by primary key**](#upsert-row-by-primary-key-action) Action is recommended to use.
 
 ## Current limitations
+
 1. Only tables with one [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY") is supported. You will see the message ``Table has not Primary Key. Should be one Primary Key
 ``, if the selected table doesn't have a primary key. Also, you will see the message ``Composite Primary Key is not supported
 ``, if the selected table has composite primary key.

@@ -320,6 +320,3 @@ The current version of the component doesn't support next list of entities:
 ## API and Documentation links
 
 [Lightspeed Retail API Documentation](https://developers.lightspeedhq.com/retail/)
-
-[circle-image]: https://circleci.com/gh/elasticio/lightspeed-retail-component.svg?style=svg&circle-token=b93881af60040b655730e98faec1d86449dd4fa4
-[circle-url]: https://circleci.com/gh/elasticio/lightspeed-retail-component

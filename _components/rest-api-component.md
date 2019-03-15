@@ -8,20 +8,6 @@ The **REST API component** is a simple yet powerful component that allows you to
 
 The REST API component will perform a single REST API call when executed. Incoming data can gets used to configure the API call made and the response from the API call will be the output.
 
-This document covers the following topics:
-
-*   [Introduction](#introduction)
-*   [Enable debug logging](#enable-debug-logging)
-*   [Authorisation methods](#authorisation-methods)
-*   [Defining HTTP headers](#defining-http-headers)
-*   [Defining request body](#defining-request-body)
-*   [Working with XML Response](#working-with-xml)
-*   [HTTP Headers in Response](#http-headers)
-*   [Redirection](#redirection)
-*   [Attachments](#attachments)
-*   [Exception handling](#exception-handling)
-*   [Known Limitations](#known-limitations)
-
 ## Introduction
 
 The example below shows the development team creation using the REST API component with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
@@ -127,15 +113,15 @@ In case of `multipart/form-data` content type add the parameters similarly.
 The transmitted HTTP request body would be:
 
 ```
---__X_ELASTICIO_BOUNDARY__
+--__X_BOUNDARY__
 Content-Disposition: form-data; name="part1"
 
 Please note that this fields supports [JSONata](http://jsonata.org) expressions.
---__X_ELASTICIO_BOUNDARY__
+--__X_BOUNDARY__
 Content-Disposition: form-data; name="part2"
 
 <p>Some more text</p>
---__X_ELASTICIO_BOUNDARY__--
+--__X_BOUNDARY__--
 ```
 
 Notice how different parts get separated by the boundary. This form is capable of supporting attachments as well.

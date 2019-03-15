@@ -5,7 +5,7 @@ section: CRM Components
 ---
 
 
-[SugarCRM](https://www.sugarcrm.com) is a CRM system with a  a simple user
+[SugarCRM](https://www.sugarcrm.com) is a CRM system with a simple user
 interface, industry-leading customer experience, and an intuitive customization
 platform.
 
@@ -15,6 +15,7 @@ CRM](https://www.sugarcrm.com) which is developed specifically to run on
 clone it and change it as you wish.
 
 # Authentication
+
 In order for the {{site.data.tenant.name}} platform to authenticate with SugarCRM, the
 following tasks need to be completed:
 * An admin must manually create an OAuth App on the SugarCRM instance through SugarCRM's UI *(step by step instructions below)*
@@ -30,6 +31,7 @@ instance](https://community.sugarcrm.com/community/developer/blog/2017/11/20/unk
 * Finally, authentication information for your Sugar instance must be entered into the {{site.data.tenant.name}} UI *(step by step instructions below)*
 
 ## Creating an app on a SugarCRM instance
+
 In order the platform to connect to your SugarCRM instance, an app needs to be
 created on that instance.  Below are the steps to do so.  Once that is done, you
 will provide a valid username and password to the {{site.data.tenant.name}} platform.  The
@@ -72,9 +74,7 @@ platform.  This user should have the minimum required permissions.
 
    ![screenshot from 2018-05-04 12-03-31](https://user-images.githubusercontent.com/5710732/39622613-35964b26-4f93-11e8-82e6-fed4b70fce56.png)
 
-## Authentication on {{site.data.tenant.name}}
-
-![screenshot from 2018-05-04 13-45-46](https://user-images.githubusercontent.com/5710732/39626260-7a34e34c-4fa1-11e8-8cb2-de57183cd403.png)
+## Authentication on platform
 
 Fill in the following for your account:
 * **Name Your Account**: Name to identify this account on {{site.data.tenant.name}}
@@ -135,20 +135,12 @@ object to lookup.
 Update an existing entry if the id provided.  Otherwise create a new entry.  You
 must select the type of object to lookup.
 
-# Configuration Info
-## Required environment variables
-For the local testing (e.g. spec-integration) `ELASTICIO_TASK_ID` and `ELASTICIO_STEP_ID` envs should be provided.
-
 ## Version and compatibility information
-This component interacts with version 10 of the SugarCRM REST API.  It has been
-tested with ``SugarCRM Enterprise, Version 7.9.1.0 (Build 1074)`` and ``SugarCRM
-Enterprise, Version 8.0.0 (Build 211) (Spring '18)``.
 
-[npm-image]: https://badge.fury.io/js/sugarcrm-component.svg
-[npm-url]: https://npmjs.org/package/sugarcrm-component
-[travis-image]: https://travis-ci.org/elasticio/sugarcrm-component.svg?branch=master
-[travis-url]: https://travis-ci.org/elasticio/sugarcrm-component
-[daviddm-image]: https://david-dm.org/elasticio/sugarcrm-component.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/elasticio/sugarcrm-component
-[circle-image]: https://circleci.com/gh/elasticio/sugarcrm-component.svg?style=svg&circle-token=b1275f44aed2c3448bee5dccf7cb0a8970a1a0d1
-[circle-url]: https://circleci.com/gh/elasticio/sugarcrm-component
+This component interacts with version 10 of the SugarCRM REST API.  It has been
+tested with the following versions:
+
+```
+SugarCRM Enterprise, Version 7.9.1.0 (Build 1074)
+SugarCRM Enterprise, Version 8.0.0 (Build 211) (Spring '18).
+```

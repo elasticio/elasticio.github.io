@@ -5,7 +5,7 @@ section: Utility Components
 ---
 
 
-Examines the message content and routes the message onto a different flow branch 
+Examines the message content and routes the message onto a different flow branch
 based on data contained in the message.
 This component implements the The [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
 
@@ -22,32 +22,32 @@ Here is the sample integration flow with CBR inside it:
             "graph": {
                 "nodes": [
                     {
-                        "command": "elasticio/webhook:receive@latest",
+                        "command": "platform/webhook:receive@latest",
                         "fields": {
                             "payload": "test"
                         },
                         "id": "in"
                     },
                     {
-                        "command": "elasticio/router:route@latest",
+                        "command": "platform/router:route@latest",
                         "id": "router"
                     },
                     {
-                        "command": "elasticio/code:execute@latest",
+                        "command": "platform/code:execute@latest",
                         "fields": {
                             "code": "console.log('one');emitter.emit('data',msg)"
                         },
                         "id": "one"
                     },
                     {
-                        "command": "elasticio/code:execute@latest",
+                        "command": "platform/code:execute@latest",
                         "fields": {
                             "code": "console.log('two');emitter.emit('data',msg)"
                         },
                         "id": "two"
                     },
                     {
-                        "command": "elasticio/code:execute@latest",
+                        "command": "platform/code:execute@latest",
                         "fields": {
                             "code": "console.log('default');emitter.emit('data',msg)"
                         },
@@ -86,17 +86,13 @@ Here is the sample integration flow with CBR inside it:
 ```
 
 
-As you can see it's a simple integration flow that has following structure:
-
-![image](https://user-images.githubusercontent.com/56208/27584735-5c2955ca-5b39-11e7-9a2d-a40f10d3261c.png)
-
 The content based router (CBR) component has a single input and multiple outputs (edges).
-Outgoing edge from CBR component should have a conifguration property called ``condition`` that defines a [JSONata](http://jsonata.org/) expression. Expression on each edge is validated based on message that arrived to the CBR component.
+Outgoing edge from CBR component should have a configuration property called ``condition`` that defines a [JSONata](http://jsonata.org/) expression. Expression on each edge is validated based on message that arrived to the CBR component.
 If condition is evaluated to ``true`` then a copy of the message is sent to the component connected to the outgoing edge.
 
-If condition is not defined on the outgoung edge, then this edge considered to be **default** edge. Default edge will get all
+If condition is not defined on the outgoing edge, then this edge considered to be **default** edge. Default edge will get all
 messages that didn't matched **any** other edges. Please note - CBR component may only have a single **default** edge.
-Multilple default edges will fail validation of {{site.data.tenant.name}} API.
+Multiple default edges will fail validation of {{site.data.tenant.name}} API.
 
 Now let us examine our sample from above:
  - Incoming webhook has a message like
