@@ -5,6 +5,7 @@ section: Utility Components
 ---
 
 Email component for the {{site.data.tenant.name}} platform using [Mandrill](http://mandrillapp.com/) REST API. In order to use this API. For each incoming message the component send a new transactional message through Mandrill using the [Send](https://mandrillapp.com/api/docs/messages.JSON.html#method=send) API resource.
+
 ### Error handling types
 
 You can choose different scenarios of exception handler using "**Do not throw an error when e-mail send failed**" switch.
@@ -13,10 +14,9 @@ You can choose different scenarios of exception handler using "**Do not throw an
 
  * If switch above has true value, error events will not emitted to the flow level. In this case sending result will be in output message.
 
-![alt text](./doc/2.png "Exception handling type")
-
 
 ### Multiple recipients
+
 Email component can send messages to multiple recipients.
 You can fill comma separated list of email addresses for input parameters:
 * **To**
@@ -91,4 +91,4 @@ The component can be configured using the following environmental variables
 | MANDRILL_FROM_NAME | no      |    {{site.data.tenant.name}} |
 
 
-Please note that you must [verify your domain](https://mandrill.zendesk.com/hc/en-us/articles/205582247) before using this component and configuring it with your envorinmetal variables.
+Please note that you must [verify your domain](https://mandrill.zendesk.com/hc/en-us/articles/205582247) before using this component and configuring it with your environment variables.
