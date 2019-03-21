@@ -77,11 +77,11 @@ To set a role for a user when adding or inviting new users to a workspace:
 
   a)  Click **Add new member**, select an existing user and use the **Role** dropdown menu.
 
-![](https://user-images.githubusercontent.com/48761764/54754038-3891fc80-4beb-11e9-818f-af131fe6bfd9.jpg)
+<img alt ="docs" src="https://user-images.githubusercontent.com/48761764/54754038-3891fc80-4beb-11e9-818f-af131fe6bfd9.jpg">
 
   b)  Click **Invite new member**, enter user email and use **Contract Role** and **Workspace Role** dropdown menus.
 
-![](https://user-images.githubusercontent.com/48761764/54754026-33cd4880-4beb-11e9-8677-fc9ced4ff1c1.jpg)
+<img alt ="docs" src="https://user-images.githubusercontent.com/48761764/54754026-33cd4880-4beb-11e9-8677-fc9ced4ff1c1.jpg">
 
 4\.  In the corresponding menu, select the required role. If your tenant has an extensive list of roles, use the **Find role** field to optimize search. Start typing to gradually filter out unwanted roles.
 
@@ -92,9 +92,9 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 5\.  Click **Add** or **Send Invite**, depending on your previous actions.
 
-![](https://user-images.githubusercontent.com/48761764/54754014-2d3ed100-4beb-11e9-9622-2861f33537fc.jpg)
+<img alt ="docs" src="https://user-images.githubusercontent.com/48761764/54754014-2d3ed100-4beb-11e9-9622-2861f33537fc.jpg">
 
-![](https://user-images.githubusercontent.com/48761764/54754025-33cd4880-4beb-11e9-908a-63febb3873a8.jpg)
+<img alt ="docs" src="https://user-images.githubusercontent.com/48761764/54754025-33cd4880-4beb-11e9-908a-63febb3873a8.jpg">
 
 To set a role for a user when adding or inviting new users to a workspace:
 
@@ -112,7 +112,7 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 4\.  Alternatively, invite a new member and set the roles. Initially, only **Contract Role** dropdown menu is visible. To assign the new member’s workspace and workspace role, click **Specify invitee’s workspace**, and use the **Workspace Role** dropdown menu. Then click **Send Invite**.
 
-![](https://user-images.githubusercontent.com/48761764/54754027-3465df00-4beb-11e9-8b97-6cec9f836768.png)
+<img alt ="docs" src="https://user-images.githubusercontent.com/48761764/54754027-3465df00-4beb-11e9-8b97-6cec9f836768.png">
 
 ## Configuring custom user roles
 
