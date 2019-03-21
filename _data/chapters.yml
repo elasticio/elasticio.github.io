@@ -26,7 +26,7 @@ guides:
       description: Articles on how to create complex non-linear integration flows
     - title: Developing Components
       description: Articles on component development and SDKs
-    - title: User Management (test)
+    - title: User Management
       description: Articles on user management, or not
 components:
   title: Components

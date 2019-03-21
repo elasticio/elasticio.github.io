@@ -4,7 +4,7 @@ title: Managing user roles in a tenant
 
 layout: article
 
-section: User Management (test)
+section: User Management
 
 order: 1
 
