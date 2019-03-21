@@ -4,7 +4,7 @@ title: Managing user roles in a tenant
 
 layout: article
 
-section: Roles
+section: User Management (test)
 
 order: 1
 
@@ -70,58 +70,34 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 1.  Open **Workspace** in navigation menu:
 
-![](media/6082571faa75ed77d16449c9622a4c11.jpg)
+2.  Edit members’ roles:
 
-1.  Edit members’ roles:
-
-![](media/3a06173e07eb422077b74f115b3ce135.png)
-
-1.  Either add or invite a new member:
+3.  Either add or invite a new member:
 
     1.  Click **Add new member**, select an existing user and use the **Role**
         dropdown menu.
 
-![](media/f9e6dbb52df672eeb7e66ecca5c4236a.jpg)
-
-1.  Click **Invite new member**, enter user email and use **Contract Role** and
+4.  Click **Invite new member**, enter user email and use **Contract Role** and
     **Workspace Role** dropdown menus.
 
-![](media/b576609c81907893b545a788379c9dbb.jpg)
-
-1.  In the corresponding menu, select the required role. If your tenant has an
+5.  In the corresponding menu, select the required role. If your tenant has an
     extensive list of roles, use the **Find role** field to optimize search.
     Start typing to gradually filter out unwanted roles.
 
-![](media/1d263bc1fa2581b36f2fcec3bc6729d1.jpg)
-
-![](media/88a46b573be8cdd08e52c50eb226ecec.jpg)
-
-1.  Click **Add** or **Send Invite**, depending on your previous actions.
-
-![](media/31d1c99d1d8935cbdb09d6761493db68.jpg)
-
-![](media/0519383191a5344ee6c36b6a1a477560.jpg)
+6.  Click **Add** or **Send Invite**, depending on your previous actions.
 
 To set a role for a user when adding or inviting new users to a workspace:
 
 1.  Open profile **Settings** in the navigation menu:
 
-![](media/7b5f74a67969a75f73617dbec0ecff9d.png)
+2.  Select your contract:
 
-1.  Select your contract:
+3.  Edit members’ roles In the **Members** tab:
 
-![](media/06dac3cadbcdd531d852fbeba17d37c7.png)
-
-1.  Edit members’ roles In the **Members** tab:
-
-![](media/3a06173e07eb422077b74f115b3ce135.png)
-
-1.  Alternatively, invite a new member and set the roles. Initially, only
+4.  Alternatively, invite a new member and set the roles. Initially, only
     **Contract Role** dropdown menu is visible. To assign the new member’s
     workspace and workspace role, click **Specify invitee’s workspace**, and use
     the **Workspace Role** dropdown menu. Then click **Send Invite**.
-
-![](media/bce6d393d88337b57edd17554d5ae035.png)
 
 Configuring custom user roles
 -----------------------------
