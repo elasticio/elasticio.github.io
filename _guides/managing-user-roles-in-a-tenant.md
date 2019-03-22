@@ -107,7 +107,7 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 3\.  Edit members’ roles In the **Members** tab:
 
-<img src="https://user-images.githubusercontent.com/48761764/54753985-1a2c0100-4beb-11e9-88dc-e95cf3b28c03.png" width="250"/>
+<img src="https://user-images.githubusercontent.com/48761764/54753985-1a2c0100-4beb-11e9-88dc-e95cf3b28c03.png" width="250" height="145"/>
 
 4\.  Alternatively, invite a new member and set the roles. Initially, only **Contract Role** dropdown menu is visible. To assign the new member’s workspace and workspace role, click **Specify invitee’s workspace**, and use the **Workspace Role** dropdown menu. Then click **Send Invite**.
 
