@@ -27,7 +27,7 @@ guides:
     - title: Developing Components
       description: Articles on component development and SDKs
     - title: User Management
-      description: Articles on user management, or not
+      description: Articles on user management
 components:
   title: Components
   description: Extensive documentation of the integration components
