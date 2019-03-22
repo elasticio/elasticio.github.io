@@ -64,12 +64,12 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 1\.  Open **Workspace** in navigation menu:
 
-<img src="https://user-images.githubusercontent.com/48761764/54754019-3039c180-4beb-11e9-97a0-8e29d9093981.jpg" width="250"/>
+<img src="https://user-images.githubusercontent.com/48761764/54820230-16f64b00-4ca7-11e9-9eb1-261b1008cf49.png">
 
 
 2\.  Edit members’ roles:
 
-<img src="https://user-images.githubusercontent.com/48761764/54753985-1a2c0100-4beb-11e9-88dc-e95cf3b28c03.png" width="250"/>
+<img src="https://user-images.githubusercontent.com/48761764/54820229-16f64b00-4ca7-11e9-9cf6-b059e7d735de.png">
 
 
 3\.  Either add or invite a new member:
@@ -84,9 +84,9 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 4\.  In the corresponding menu, select the required role. If your tenant has an extensive list of roles, use the **Find role** field to optimize search. Start typing to gradually filter out unwanted roles.
 
-<img src="https://user-images.githubusercontent.com/48761764/54753842-b6093d00-4bea-11e9-8641-174a76b36d2f.jpg" width="250"/>
+<img src="https://user-images.githubusercontent.com/48761764/54820231-178ee180-4ca7-11e9-8562-35dc6adecd87.png">
 
-<img src="https://user-images.githubusercontent.com/48761764/54754016-2f089480-4beb-11e9-96aa-26bc1888b095.jpg" width="250"/>
+<img src="https://user-images.githubusercontent.com/48761764/54820233-178ee180-4ca7-11e9-9a28-4fbde1775da2.png">
 
 
 5\.  Click **Add** or **Send Invite**, depending on your previous actions.
@@ -99,15 +99,15 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 1\.  Open profile **Settings** in the navigation menu:
 
-<img src="https://user-images.githubusercontent.com/48761764/54754010-2b750d80-4beb-11e9-9064-b12fb573a822.png" width="250"/>
+<img src="https://user-images.githubusercontent.com/48761764/54820234-178ee180-4ca7-11e9-8342-321366c77cdf.png">
 
 2\.  Select your contract:
 
-<img src="https://user-images.githubusercontent.com/48761764/54753989-1c8e5b00-4beb-11e9-8d1c-0a522329f48b.png" width="250"/>
+<img src="https://user-images.githubusercontent.com/48761764/54820235-178ee180-4ca7-11e9-9e3f-e012c5cd87a7.png">
 
 3\.  Edit members’ roles In the **Members** tab:
 
-<img src="https://user-images.githubusercontent.com/48761764/54753985-1a2c0100-4beb-11e9-88dc-e95cf3b28c03.png" width="250" height="145"/>
+<img src="https://user-images.githubusercontent.com/48761764/54820236-18277800-4ca7-11e9-97e1-c165af13f1ac.png">
 
 4\.  Alternatively, invite a new member and set the roles. Initially, only **Contract Role** dropdown menu is visible. To assign the new member’s workspace and workspace role, click **Specify invitee’s workspace**, and use the **Workspace Role** dropdown menu. Then click **Send Invite**.
 
