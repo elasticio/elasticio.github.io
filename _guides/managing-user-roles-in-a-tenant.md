@@ -125,9 +125,9 @@ When the tenant admin uses the *service account* privileges, he can [create
 custom roles](https://api.elastic.io/docs/v2/#update-tenant's-roles) via the
 following API request:
 
-PATCH https://api.elastic.io/v2/tenants/{TENANT_ID}/roles , where
+`PATCH https://api.elastic.io/v2/tenants/{TENANT_ID}/roles` , where
 
-{TENANT_ID} parameter stands for the ID of the tenant.
+`{TENANT_ID}` parameter stands for the ID of the tenant.
 
 Below are request payload parameters:
 
