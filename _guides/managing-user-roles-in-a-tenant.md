@@ -69,7 +69,7 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 2\.  Edit members’ roles:
 
-<img src="https://user-images.githubusercontent.com/48761764/54820229-16f64b00-4ca7-11e9-9cf6-b059e7d735de.png">
+<img src="https://user-images.githubusercontent.com/48761764/54928557-bff9ab80-4f1c-11e9-9e6a-7a4fd274c49b.png">
 
 
 3\.  Either add or invite a new member:
@@ -84,9 +84,9 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 4\.  In the corresponding menu, select the required role. If your tenant has an extensive list of roles, use the **Find role** field to optimize search. Start typing to gradually filter out unwanted roles.
 
-<img src="https://user-images.githubusercontent.com/48761764/54820231-178ee180-4ca7-11e9-8562-35dc6adecd87.png">
+<img src="https://user-images.githubusercontent.com/48761764/54928558-bff9ab80-4f1c-11e9-88e6-7368d41771e7.png">
 
-<img src="https://user-images.githubusercontent.com/48761764/54820233-178ee180-4ca7-11e9-9a28-4fbde1775da2.png">
+<img src="https://user-images.githubusercontent.com/48761764/54928559-c0924200-4f1c-11e9-8307-98a4f15a8777.png">
 
 
 5\.  Click **Add** or **Send Invite**, depending on your previous actions.
@@ -107,7 +107,7 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 3\.  Edit members’ roles In the **Members** tab:
 
-<img src="https://user-images.githubusercontent.com/48761764/54820236-18277800-4ca7-11e9-97e1-c165af13f1ac.png">
+<img src="https://user-images.githubusercontent.com/48761764/54928556-bff9ab80-4f1c-11e9-938b-8f4c440024d8.png">
 
 4\.  Alternatively, invite a new member and set the roles. Initially, only **Contract Role** dropdown menu is visible. To assign the new member’s workspace and workspace role, click **Specify invitee’s workspace**, and use the **Workspace Role** dropdown menu. Then click **Send Invite**.
 
@@ -133,12 +133,12 @@ Below are request payload parameters:
 
 | **Parameter**                            | **Required** | **Description**                                                                                                                                                                                                 |
 |------------------------------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| type                                     | yes          | This parameter should have the value: **tenant-policy**                                                                                                                                                         |
+| type                                     | yes          | This parameter should have the value: `tenant-policy`                                                                                                                                                         |
 | attributes.roles[]                       | yes          | An array of Tenant’s roles. It can be empty.                                                                                                                                                                    |
 | attributes.roles[].role                  | no           | Custom role name                                                                                                                                                                                                |
-| attributes.roles[].scope                 | no           | The group of objects, which is affected by this role. Value can be: **contracts** or **workspaces.**                                                                                                            |
+| attributes.roles[].scope                 | no           | The group of objects, which is affected by this role. Value can be: `contracts` or `workspaces`.                                                                                                            |
 | attributes.roles[].permissions[]         | yes          | An array of permissions. It can be empty. To get the list of available permissions execute the endpoint: GET https://api.elastic.io/v2/permissions or see [this reference table](#permissions-reference-table). |
-| attributes.roles[].i18n.{{language_key}} | no           | The name of a role in different languages. The value is only required for “**en**” key. For other languages value is optional.                                                                                  |
+| attributes.roles[].i18n.{{language_key}} | no           | The name of a role in different languages. The value is only required for `en` key. For other languages value is optional.                                                                                  |
 
 **EXAMPLE:**
 
@@ -182,8 +182,8 @@ curl https://api.elastic.io/v2/tenants/{TENANT_ID}/roles
     }'
 ```
 
-| **NOTE:** these endpoints are still in development and are subject to change. |
-|-------------------------------------------------------------------------------|
+ **NOTE:** these endpoints are still in development and are subject to change.
+
 
 
 ## Permissions reference table
@@ -191,14 +191,14 @@ curl https://api.elastic.io/v2/tenants/{TENANT_ID}/roles
 
 | **Permission**                 | **Description**                                             |
 |--------------------------------|-------------------------------------------------------------|
-| contracts.membership.edit      | Edit members in the contract                                |
-| contracts.workspace.create     | Create workspaces in the contract                           |
-| contracts.workspace.listAll    | View all workspaces in the contract                         |
-| contracts.workspace.delete     | Delete workspaces in the contract                           |
-| contracts.repository.edit      | Edit contract repository                                    |
-| contracts.devTeam.edit         | Edit developer team                                         |
-| workspaces.workspace.edit      | Edit the workspace                                          |
-| workspaces.flow.edit           | Edit flows in the workspace                                 |
-| workspaces.flow.toggleStatus   | Toggle flow statuses between **active** and **inactive**    |
-| workspaces.flow.toggleRealtime | Toggle flow statuses between **ordinary** and **real-time** |
-| workspaces.credential.edit     | Edit credentials                                            |
+| `contracts.membership.edit`      | Edit members in the contract                                |
+| `contracts.workspace.create `    | Create workspaces in the contract                           |
+| `contracts.workspace.listAll`    | View all workspaces in the contract                         |
+| `contracts.workspace.delete`     | Delete workspaces in the contract                           |
+| `contracts.repository.edit `     | Edit contract repository                                    |
+| `contracts.devTeam.edit  `       | Edit developer team                                         |
+| `workspaces.workspace.edit`      | Edit the workspace                                          |
+| `workspaces.flow.edit`           | Edit flows in the workspace                                 |
+| `workspaces.flow.toggleStatus`   | Toggle flow statuses between **active** and **inactive**    |
+| `workspaces.flow.toggleRealtime` | Toggle flow statuses between **ordinary** and **real-time** |
+| `workspaces.credential.edit `    | Edit credentials                                            |
