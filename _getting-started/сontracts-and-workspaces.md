@@ -1,29 +1,23 @@
-\---
-
+---
 title: Contracts and Workspaces
-
 layout: article
-
 section: Basic Concepts
-
 order: 1
-
 since: 20190328
-
-\---
+---
 
 This document provides information on [contracts](#contracts), [contract
 management](#contract-management), [workspaces](#workspaces) and [workspace
 management](#section). Additionally, it explains the basic application of this
 approach in [solution life cycle](#workspaces-and-life-cycles). The following
 scheme shows here contracts and workspaces stand in solution hierarchy.  
-  
+
 
 
 ![](media/73655d79cfa16743bcf8248345ea618b.png)
 
-<br>Contracts
--------------
+## Contracts
+
 
 A client’s enclosed environment within a
 [tenant](https://docs.elastic.io/getting-started/tenant.html) is called a
@@ -44,8 +38,8 @@ teams, and workspaces:
 Contracts are virtually separated from each other and require corresponding
 memberships to enter and work in. With the invitation a user gets a user role.
 
-Contract Management
--------------------
+## Contract Management
+
 
 A tenant Admin can [create
 contracts](https://api.elastic.io/docs/v2/#create-a-contract) and set contract
@@ -71,8 +65,8 @@ Here is the full list of contract permissions:
 
 A detailed description of contract management process can be found here.
 
-<br>Workspaces
---------------
+## Workspaces
+
 
 A client’s enclosed environment within a contract is called a workspace. Each
 contract can have multiple workspaces, and each workspace is virtually separated
@@ -94,8 +88,8 @@ members with the corresponding permissions. Members can contribute to
 integration flows in their workspace in collaboration with other members, or
 individually.
 
-Workspace Management
---------------------
+## Workspace Management
+
 
 Any contract member can create workspaces. Only workspace Owner or member with
 corresponding permissions can manage workspaces. Here is the full list of
@@ -113,8 +107,8 @@ workspace permissions:
 
 A detailed description of workspace management process can be found here.
 
-Workspaces and Life Cycles
---------------------------
+## Workspaces and Life Cycles
+
 
 Workspaces in a contract are separated from each other, but they can utilize the
 same components for their integration flows. This means that one can create
