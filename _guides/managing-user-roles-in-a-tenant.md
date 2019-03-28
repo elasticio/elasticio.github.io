@@ -6,9 +6,6 @@ order: 1
 since: 20190321
 ---
 
-# User Roles
-
-
 This document explains [what roles and permissions are](#roles-and-permissions),
 how [roles are set in the UI](#setting-user-roles) and how [custom roles are
 configured](#configuring-custom-user-roles). Additionally, it provides
@@ -28,7 +25,7 @@ The default *contract roles* are:
 -   **Owner.** Users with this role can edit contract members list, create and
     delete workspaces, and see all workspaces in the contract.
 
--   **Admin.** Users with this role can edit contract members list, create and
+-   **Admin.** Users with this role create and
     delete workspaces, see all workspaces in the contract, make changes into
     repository, and edit development team.
 
@@ -199,6 +196,6 @@ curl https://api.elastic.io/v2/tenants/{TENANT_ID}/roles
 | `contracts.devTeam.edit  `       | Edit developer team                                         |
 | `workspaces.workspace.edit`      | Edit the workspace                                          |
 | `workspaces.flow.edit`           | Edit flows in the workspace                                 |
-| `workspaces.flow.toggleStatus`   | Toggle flow statuses between **active** and **inactive**    |
-| `workspaces.flow.toggleRealtime` | Toggle flow statuses between **ordinary** and **real-time** |
+| `workspaces.flow.toggleStatus`   | Toggle flow status between **active** and **inactive**    |
+| `workspaces.flow.toggleRealtime` | Toggle flow status between **ordinary** and **real-time** |
 | `workspaces.credential.edit `    | Edit credentials                                            |
