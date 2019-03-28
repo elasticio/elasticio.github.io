@@ -6,9 +6,6 @@ order: 1
 since: 20190321
 ---
 
-# User Roles
-
-
 This document explains [what roles and permissions are](#roles-and-permissions),
 how [roles are set in the UI](#setting-user-roles) and how [custom roles are
 configured](#configuring-custom-user-roles). Additionally, it provides
