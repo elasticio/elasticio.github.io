@@ -10,7 +10,7 @@ This document provides information on [contracts](#contracts), [contract
 management](#contract-management), [workspaces](#workspaces) and [workspace
 management](#section). Additionally, it explains the basic application of this
 approach in [solution life cycle](#workspaces-and-life-cycles). The following
-scheme shows here contracts and workspaces stand in solution hierarchy.  
+scheme shows how contracts and workspaces stand in solution hierarchy.  
 
 
 
@@ -41,8 +41,7 @@ memberships to enter and work in. With the invitation a user gets a user role.
 ## Contract Management
 
 
-A tenant Admin can [create
-contracts](apiBaseUri/docs/v2/#create-a-contract) and set contract
+A tenant Admin can and set contract
 Owners. By default, only members with contract Owner or a other
 [roles](managing-user-roles-in-a-tenant) with the right permissions can
 manage contracts. However, roles can be customized, so in this document we will
