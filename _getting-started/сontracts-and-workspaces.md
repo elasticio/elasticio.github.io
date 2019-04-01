@@ -3,7 +3,7 @@ title: Contracts and Workspaces
 layout: article
 section: Basic Concepts
 order: 1
-since: 20190328
+since: 20190401
 ---
 
 This document provides information on [contracts](#contracts), [contract
@@ -14,26 +14,26 @@ scheme shows here contracts and workspaces stand in solution hierarchy.
 
 
 
-![](media/73655d79cfa16743bcf8248345ea618b.png)
+![](https://user-images.githubusercontent.com/48761764/55168339-51665900-517b-11e9-990d-0d707fe2ad62.png)
 
 ## Contracts
 
 
 A client’s enclosed environment within a
-[tenant](https://docs.elastic.io/getting-started/tenant.html) is called a
-contract. It is usually backed by a formal agreement, hence the name. Each
+[tenant](tenant) is called a
+contract. It is usually backed by a formal contract, hence the name. Each
 client can have multiple contracts. A contract includes members, developer
 teams, and workspaces:
 
 -   A **workspace** is a smaller enclosed environment that contains integration
-    flows. Details on workspaces can be found [here](#workspaces).
+    flows and credentials. Details on workspaces can be found [here](#workspaces).
 
 -   A **member** is a registered platform user that has been invited the
     contract by Owner and given a contract
-    [role](https://docs.elastic.io/guides/managing-user-roles-in-a-tenant.html).
+    [role](managing-user-roles-in-a-tenant). Members can collaborate or work individually.
 
 -   A **developer team** is a smaller enclosed environment that contains
-    component developers and their GitHub repositories.
+    component developers and their repositories.
 
 Contracts are virtually separated from each other and require corresponding
 memberships to enter and work in. With the invitation a user gets a user role.
@@ -42,12 +42,12 @@ memberships to enter and work in. With the invitation a user gets a user role.
 
 
 A tenant Admin can [create
-contracts](https://api.elastic.io/docs/v2/#create-a-contract) and set contract
-Owners. By default, only members with contract Owner or Admin
-[roles](https://docs.elastic.io/guides/managing-user-roles-in-a-tenant.html) can
+contracts](apiBaseUri/docs/v2/#create-a-contract) and set contract
+Owners. By default, only members with contract Owner or a other
+[roles](managing-user-roles-in-a-tenant) with the right permissions can
 manage contracts. However, roles can be customized, so in this document we will
 differentiate contract and workspace members by
-[permissions](https://docs.elastic.io/guides/managing-user-roles-in-a-tenant.html#permissions-reference-table).
+[permissions](managing-user-roles-in-a-tenant.html#permissions-reference-table).
 
 Here is the full list of contract permissions:
 
@@ -63,25 +63,24 @@ Here is the full list of contract permissions:
 
 6.  Edit developer team
 
-A detailed description of contract management process can be found here.
 
 ## Workspaces
 
 
 A client’s enclosed environment within a contract is called a workspace. Each
 contract can have multiple workspaces, and each workspace is virtually separated
-from other workspaces within a contract. A workspace includes members and
-[integration flows](https://docs.elastic.io/getting-started/integration-flow):
+from other workspaces within a contract. A workspace includes members, [credentials](credential) and
+[integration flows](integration-flow):
 
 -   A **member** is a user with certain access rights in the workspace. These
-    rights are defined by user roles set by workspace Owner or Admin upon
+    rights are defined by user roles set by workspace Owner upon
     invitation of a contract member to a workspace.
 
 -   An **integration flow** is a set of integration components and
-    [credentials](https://docs.elastic.io/getting-started/credential.html) used
+    credentials used
     to synchronize data between multiple applications or services. More details
     on integration flows can be found
-    [here](https://docs.elastic.io/getting-started/integration-flow).
+    [here](integration-flow).
 
 Contract members can be invited to a workspace within their contract by other
 members with the corresponding permissions. Members can contribute to
@@ -105,7 +104,6 @@ workspace permissions:
 
 5.  Edit credentials
 
-A detailed description of workspace management process can be found here.
 
 ## Workspaces and Life Cycles
 
