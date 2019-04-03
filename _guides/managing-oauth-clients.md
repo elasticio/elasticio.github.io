@@ -7,7 +7,7 @@ since: 20190403
 ---
 This document reveals the new approach to OAuth utilization within the platform
 and explains how to [manage](#managing-oauth-client) OAuth clients for
-components in a [tenant](getting-started/tenant).
+components in a tenant.
 
 ## Changes
 
