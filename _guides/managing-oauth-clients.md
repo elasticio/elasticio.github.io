@@ -7,16 +7,16 @@ since: 20190403
 ---
 This document reveals the new approach to OAuth utilization within the platform
 and explains how to [manage](#managing-oauth-client) OAuth clients for
-components in a tenant.
+components in a [tenant](tenant).
 
 ## Changes
 
 
 OAuth client was defined for a component in its environment variables. This way
-even with global accessibility enabled, users in other tenants could not see the
-component in the available components list. Now OAuth clients are defined
+global access to the component could not be enabled, because users in other tenants would see the
+component and its keys. Now OAuth clients are defined
 separately from the components’ environment variables, allowing the users in the
-other tenant to see all available components.
+other tenant to see all available components without security breach.
 
 To manage OAuth clients the user requires the following permissions:
 
@@ -34,6 +34,32 @@ To acquire these permissions, please contact support.
 
 ## Managing OAuth Client
 
+To initiate work with OAuth client, first specify `"useOAuthClient": true` in the _component.json_ file. For compatibility reasons, we should also create a link between the new implementation and environment variables if they were present.
+
+**EXAMPLE:**
+
+If you had the following defined for environment variables:
+```
+"envVars": {
+    "PIZZAVAN_KEY": {
+      "required": true,
+      "description": "Your Pizza Van OAuth client key"
+    },
+    "PIZZAVAN_SECRET": {
+      "required": true,
+      "description": "Your Pizza Van OAuth client secret"
+    }
+  }
+```
+Add the following object to _component.json_:
+```
+"oauth2": {
+      "client_id": "{{PIZZAVAN_KEY}}",
+      "client_secret": "{{PIZZAVAN_SECRET}}",
+      "auth_uri": "https://auth_uri",
+      "token_uri": "https://token_uri"
+    }
+```
 
 OAuth client management includes the following actions: create,
 [retrieve](#to-retrieve-oauth-clients-in-a-tenant-we),
