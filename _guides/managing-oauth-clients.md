@@ -1,7 +1,7 @@
 ---
 title: Managing OAuth Clients
 layout: article
-section: How to Guides
+section: Developing Components
 order: 1
 since: 20190402
 ---
