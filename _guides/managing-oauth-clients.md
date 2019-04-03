@@ -36,7 +36,7 @@ To acquire these permissions, please contact support.
 
 
 OAuth client management includes the following actions: create,
-[retrieve](#retrieve_oauth_client), update and delete.
+[retrieve](#retrieve_oauth_client), [update](#update_oauth_client) and delete.
 
 #### To create OAuth clients, we will use the following API request:
 
