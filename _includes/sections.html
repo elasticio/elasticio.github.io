@@ -11,7 +11,13 @@
         <div class="link-box__desc">{{section.description}}</div>
         <div class="link-box__holder">
             {% for item in items %}
-            <a class="link-box__link" href="{{item.url}}">{{item.title}}</a>
+            {% assign urlParts = item.url | split: '/' %}
+            	{% if urlParts.size > 3 %}
+            		{% if urlParts.last != 'index.html' %}
+	            		{% continue %}
+            		{% endif %}
+	            {% endif %}
+            	<a class="link-box__link" href="{{item.url}}">{{item.title}}</a>
             {% endfor %}
         </div>
     </li>
