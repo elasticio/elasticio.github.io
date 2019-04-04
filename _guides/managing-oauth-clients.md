@@ -1,7 +1,7 @@
 ---
 title: Managing OAuth Clients
 layout: article
-section: Developing Components
+section: Tenant Management
 order: 1
 since: 20190403
 ---
