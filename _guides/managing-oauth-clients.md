@@ -5,8 +5,8 @@ section: Tenant Management
 order: 1
 since: 20190403
 ---
-This document reveals the new approach to OAuth utilization within the platform
-and explains how to [use](#Using-OAuth-Client-in-Components) OAuth clients for
+This document contains [brief information](#oauth-brief) on OAuth, reveals the [new approach to OAuth utilization](#Changes) within the platform
+and explains how to [use OAuth clients](#Using-OAuth-Client-in-Components) for
 components in a tenant.
 
 ## OAuth Brief
