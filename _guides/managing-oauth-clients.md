@@ -5,8 +5,8 @@ section: Tenant Management
 order: 1
 since: 20190403
 ---
-This document contains [brief information](#oauth-brief) on OAuth, reveals the [new approach to OAuth utilization](#Changes) within the platform
-and explains how to [use OAuth clients](#Using-OAuth-Client-in-Components) for
+This document contains [brief information](#oauth-brief) on OAuth, reveals the [new approach to OAuth utilization](#changes-in-approach) within the platform
+and explains how to [use OAuth clients](#using-oauth-client-in-components) for
 components in a tenant.
 
 ## OAuth Brief
@@ -33,7 +33,7 @@ Obviously, `"SALESFORCE_KEY"` defines Oauth key for Salesforce component, and `"
 This way `global` access to the component could not be enabled, because users in other tenants would see the
 component with its keys and secrets.
 
-## Changes
+## Changes in Approach
 Now OAuth clients are defined separately from the components’ environment variables and belong to tenants rather than components. This means that even if we make a component globally accessible, its OAuth client will still remain in our tenant. Users in other tenants will not be able to see or use this `global` component until they define a component-specific OAuth client for their tenant.
 
 
