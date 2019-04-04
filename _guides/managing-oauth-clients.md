@@ -30,13 +30,13 @@ For example, for Salesforce component the following environment variables were r
 ```
 Obviously, `"SALESFORCE_KEY"` defines Oauth key for Salesforce component, and `"SALESFORCE_SECRET"` defines Oauth secret.
 
-This way global access to the component could not be enabled, because users in other tenants would see the
-component and its keys.
+This way `global` access to the component could not be enabled, because users in other tenants would see the
+component with its keys and secrets.
 
 ## Changes
-Now OAuth clients are defined
-separately from the components’ environment variables, allowing the users in the
-other tenant to see all available components without security breach.
+Now OAuth clients are defined separately from the components’ environment variables and belong to tenants rather than components. This means that even if we make a component globally accessible, its OAuth client will still remain in our tenant. Users in other tenants will not be able to see or use this `global` component until they define a component-specific OAuth client for their tenant.
+
+
 
 
 ## Using OAuth Client in Components
@@ -53,7 +53,7 @@ To manage OAuth clients the user requires the following permissions:
 
 To acquire these permissions, please contact support.
 
-To define OAuth client for a component, first specify `"useOAuthClient": true` in the _component.json_ file. For compatibility reasons, we should also create a link between the new implementation and environment variables if they were present.
+To define OAuth client for a component, be sure to specify `"useOAuthClient": true` in the _component.json_ file (see example below). For compatibility reasons, we should also create a link between the new implementation and environment variables if they were present.
 
 **EXAMPLE:**
 
@@ -77,7 +77,9 @@ Add the following object to _component.json_:
       "client_secret": "{{PIZZAVAN_SECRET}}",
       "auth_uri": "https://auth_uri",
       "token_uri": "https://token_uri"
-    }
+    },
+    "useOAuthClient": true
+  },
 ```
 
 OAuth client usage includes the following actions: create,
@@ -94,8 +96,8 @@ Below are request payload parameters:
 | **Parameter**                       | **Required** | **Description**                 |
 |-------------------------------------|--------------|---------------------------------|
 | `attributes.client_id`              | yes          | OAuth client ID                 |
-| `type`                              | yes          | The value should be `flow`      |
-| `attributes.client_secret`          | yes          | OAuth client secret             |
+|       `attributes.client_secret`                        | yes          | OAuth client secret      |
+| `type`          | yes          |     The value should be `flow`         |
 | `relationships.component.data.id`   | yes          | Component ID                    |
 | `relationships.component.data.type` | yes          | The value should be `component` |
 
@@ -226,3 +228,5 @@ Below are request payload parameters:
 `curl -i
 {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
 -X DELETE \  -u {EMAIL}:{APIKEY}`
+
+**Note:** you can only delete an OAuth client that is not used. An OAuth client is considered used when at least one integration flow in the tenant includes the component with this OAuth client. In case you delete a component with a defined OAuth client, this client will remain on the platform. However, it will not be usable. A user with corresponding permissions can remove this OAuth client, if required.
