@@ -6,24 +6,42 @@ order: 1
 since: 20190403
 ---
 This document reveals the new approach to OAuth utilization within the platform
-and explains how to [manage](#managing-oauth-client) OAuth clients for
+and explains how to [use](#Using-OAuth-Client-in-Components) OAuth clients for
 components in a tenant.
 
 ## OAuth Brief
 
-OAuth
+[OAuth (Open Authorization)](https://en.wikipedia.org/wiki/OAuth) is authorization and authentication protocol based on access tokens. It allows users to forego credential sharing between different secure Internet-based services. Instead it uses automated authorization process that involves dedicated sets of OAuth credentials - "keys" and "secrets".  
+
+Some [integration components](/getting-started/integration-component) use OAuth client to provide accessibility. However, our legacy implementation restricted the user to a single OAuth client per component per [tenant](/getting-started/tenant). The OAuth client for component was defined in the component's environment variables.
+
+For example, for Salesforce component the following environment variables were required in its _component.json_ file:
+```
+"envVars": {
+   "SALESFORCE_KEY": {
+     "required": true,
+     "description": "Your Salesforce OAuth client key"
+   },
+   "SALESFORCE_SECRET": {
+     "required": true,
+     "description": "Your Salesforce OAuth client secret"
+   }
+},
+```
+Obviously, `"SALESFORCE_KEY"` defines Oauth key for Salesforce component, and `"SALESFORCE_SECRET"` defines Oauth secret.
+
+This way global access to the component could not be enabled, because users in other tenants would see the
+component and its keys.
 
 ## Changes
-
-
-OAuth client was defined for a component in its environment variables. This way
-global access to the component could not be enabled, because users in other tenants would see the
-component and its keys. Now OAuth clients are defined
+Now OAuth clients are defined
 separately from the components’ environment variables, allowing the users in the
 other tenant to see all available components without security breach.
 
-To manage OAuth clients the user requires the following permissions:
 
+## Using OAuth Client in Components
+
+To manage OAuth clients the user requires the following permissions:
 
 `tenants.oauth_clients.get`
 
@@ -33,12 +51,9 @@ To manage OAuth clients the user requires the following permissions:
 
 `tenants.oauth_clients.delete`
 
-
 To acquire these permissions, please contact support.
 
-## Managing OAuth Client
-
-To initiate work with OAuth client, first specify `"useOAuthClient": true` in the _component.json_ file. For compatibility reasons, we should also create a link between the new implementation and environment variables if they were present.
+To define OAuth client for a component, first specify `"useOAuthClient": true` in the _component.json_ file. For compatibility reasons, we should also create a link between the new implementation and environment variables if they were present.
 
 **EXAMPLE:**
 
@@ -65,7 +80,7 @@ Add the following object to _component.json_:
     }
 ```
 
-OAuth client management includes the following actions: create,
+OAuth client usage includes the following actions: create,
 [retrieve](#to-retrieve-oauth-clients-in-a-tenant-we),
 [update](#to-update-oauth-clients-in-a-tenant-we-will-use-the-following-api-request)
 and [delete](#to-delete-an-oauth-client-we-will-use-the-following-api-request).

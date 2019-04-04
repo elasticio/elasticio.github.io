@@ -1,7 +1,7 @@
 ---
 title: Managing user roles in a tenant
 layout: article
-section: User Management
+section: Tenant Management
 order: 1
 since: 20190321
 ---
