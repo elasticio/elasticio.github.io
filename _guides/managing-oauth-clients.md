@@ -75,7 +75,7 @@ Below are request payload parameters:
 | **Parameter**                       | **Required** | **Description**                 |
 |-------------------------------------|--------------|---------------------------------|
 | `attributes.client_id`              | yes          | OAuth client ID                 |
-| `type`                              | yes          | The value should be `flow`      |
+| `type`                              | yes          | The value should be `oauth-client`      |
 | `attributes.client_secret`          | yes          | OAuth client secret             |
 | `relationships.component.data.id`   | yes          | Component ID                    |
 | `relationships.component.data.type` | yes          | The value should be `component` |
