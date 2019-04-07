@@ -1,11 +1,9 @@
 ---
-title: JDBC Component
+title: JDBC Component test
 layout: component
 section: Utility Components
-description: This a component for working with object-relational database management systems.
-icon: jdbc.png
-icontext: JDBC component
 category: jdbc
+---
 ---
 ## Description
 
