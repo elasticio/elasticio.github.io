@@ -53,7 +53,7 @@ To manage OAuth clients the user requires the following permissions:
 
 To acquire these permissions, please contact support.
 
-To define OAuth client for a component, be sure to specify `"useOAuthClient": true` in the _component.json_ file (see example below). For compatibility reasons, we should also create a link between the new implementation and environment variables if they were present.
+To define OAuth client for a component, be sure to specify `"useOAuthClient": true` in the _component.json_ file. For compatibility reasons, we should also create a link between the new implementation and environment variables if they were present. You can find the corresponding code in the example below.
 
 **EXAMPLE:**
 
