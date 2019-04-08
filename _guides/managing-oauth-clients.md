@@ -82,7 +82,7 @@ Add the following object to _component.json_:
   },
 ```
 
-OAuth client usage includes the following actions:
+OAuth client management includes the following actions:
 - [Create](#creating-oauth-clients)
 - [Retrieve](#retrieving-oauth-clients)
 - [Update](#updating-oauth-clients)
