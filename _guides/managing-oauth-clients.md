@@ -83,12 +83,14 @@ Add the following object to _component.json_:
 ```
 
 OAuth client usage includes the following actions:
-- [Create](#to-create-oauth-clients),
-- [Retrieve](#to-retrieve-oauth-clients-in-a-tenant),
-- [Update](#to-update-oauth-clients-in-a-tenant-we-will-use-the-following-api-request)
-- [Delete](#to-delete-an-oauth-client-we-will-use-the-following-api-request).
+- [Create](#creating-oauth-clients)
+- [Retrieve](#retrieving-oauth-clients)
+- [Update](#updating-oauth-clients)
+- [Delete](#deleting-oauth-clients)
 
-#### To create OAuth clients, we will use the following API request:
+#### Creating OAuth Clients
+
+To create OAuth clients, we will use the following API request:
 
 `POST {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients`
 
@@ -128,7 +130,9 @@ Below are request payload parameters:
 ```
 **NOTE:** A user is restricted to one OAuth client per component in a tenant.
 
-#### To retrieve OAuth clients in a tenant, we will use the following API request:
+#### Retrieving OAuth Clients
+
+To retrieve OAuth clients in a tenant, we will use the following API request:
 
 `GET {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients`
 
@@ -152,7 +156,7 @@ The second example includes filtering by component ID.
 {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients/?filter[component]={{COMPONENT_ID}}
 \    -u {EMAIL}:{APIKEY}`
 
-#### OAuth clients can also be retrieved by their own ID, using the following API request:
+OAuth clients can also be retrieved by their own ID, using the following API request:
 
 `curl
 {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
@@ -171,7 +175,9 @@ Below are request payload parameters:
 {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
 -u {EMAIL}:{APIKEY}`
 
-#### To update OAuth clients in a tenant, we will use the following API request:
+#### Updating OAuth Clients
+
+To update OAuth clients in a tenant, we will use the following API request:
 
 `PATCH
 {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID}`
@@ -212,7 +218,9 @@ curl {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
   }'
   ```
 
-#### To delete an OAuth client, we will use the following API request:
+#### Deleting OAuth Clients
+
+To delete an OAuth client, we will use the following API request:
 
 `DELETE
 {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID}
