@@ -90,6 +90,8 @@ OAuth client usage includes the following actions:
 
 #### Creating OAuth Clients
 
+You can create one OAuth client per component in a tenant.
+
 To create OAuth clients, we will use the following API request:
 
 `POST {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients`
@@ -128,7 +130,7 @@ Below are request payload parameters:
      }
    }'
 ```
-**NOTE:** A user is restricted to one OAuth client per component in a tenant.
+
 
 #### Retrieving OAuth Clients
 
@@ -220,6 +222,8 @@ curl {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
 
 #### Deleting OAuth Clients
 
+You can only delete an OAuth client that is not used. An OAuth client is considered used when at least one integration flow in the tenant includes the component with this OAuth client. In case you delete a component with a defined OAuth client, this client will remain on the platform. However, it will not be usable. A user with corresponding permissions can remove this OAuth client, if required.
+
 To delete an OAuth client, we will use the following API request:
 
 `DELETE
@@ -239,4 +243,4 @@ Below are request payload parameters:
 {apiBaseUri}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
 -X DELETE \  -u {EMAIL}:{APIKEY}`
 
-**Note:** you can only delete an OAuth client that is not used. An OAuth client is considered used when at least one integration flow in the tenant includes the component with this OAuth client. In case you delete a component with a defined OAuth client, this client will remain on the platform. However, it will not be usable. A user with corresponding permissions can remove this OAuth client, if required.
+You can only delete an OAuth client that is not used. An OAuth client is considered used when at least one integration flow in the tenant includes the component with this OAuth client. In case you delete a component with a defined OAuth client, this client will remain on the platform. However, it will not be usable. A user with corresponding permissions can remove this OAuth client, if required.
