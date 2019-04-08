@@ -82,10 +82,11 @@ Add the following object to _component.json_:
   },
 ```
 
-OAuth client usage includes the following actions: create,
-[retrieve](#to-retrieve-oauth-clients-in-a-tenant-we),
-[update](#to-update-oauth-clients-in-a-tenant-we-will-use-the-following-api-request)
-and [delete](#to-delete-an-oauth-client-we-will-use-the-following-api-request).
+OAuth client usage includes the following actions:
+- [Create](#to-create-oauth-clients),
+- [Retrieve](#to-retrieve-oauth-clients-in-a-tenant),
+- [Update](#to-update-oauth-clients-in-a-tenant-we-will-use-the-following-api-request)
+- [Delete](#to-delete-an-oauth-client-we-will-use-the-following-api-request).
 
 #### To create OAuth clients, we will use the following API request:
 
@@ -125,6 +126,7 @@ Below are request payload parameters:
      }
    }'
 ```
+**NOTE:** A user is restricted to one OAuth client per component in a tenant.
 
 #### To retrieve OAuth clients in a tenant, we will use the following API request:
 
