@@ -11,7 +11,7 @@ components in a tenant.
 
 ## OAuth Brief
 
-[OAuth (Open Authorization)](https://en.wikipedia.org/wiki/OAuth) is authorization and authentication protocol based on access tokens. It allows users to forego credential sharing between different secure Internet-based services. Instead it uses automated authorization process that involves dedicated sets of OAuth credentials - "keys" and "secrets".  
+[OAuth (Open Authorization)](https://en.wikipedia.org/wiki/OAuth) is authorization and authentication protocol based on access tokens. It allows users to forego credential sharing between different secure Internet-based services. Instead it uses automated authorization process that involves dedicated sets of OAuth credentials - "keys" and "secrets". We call this set of credentials `OAuth client`.
 
 Some [integration components](/getting-started/integration-component) use OAuth client to provide accessibility. However, our legacy implementation restricted the user to a single OAuth client per component per [tenant](/getting-started/tenant). The OAuth client for component was defined in the component's environment variables.
 
@@ -90,7 +90,7 @@ OAuth client management includes the following actions:
 
 #### Creating OAuth Clients
 
-You can create one OAuth client per component in a tenant.
+You can create one OAuth client per component in a tenant. Also, OAuth client can only be defined for a component that exists in the tenant, and is visible.
 
 To create OAuth clients, we will use the following API request:
 
