@@ -118,7 +118,7 @@ needs a special set of credentials called *service account*. It can be acquired
 by an authorized client employee via support.
 
 When the tenant admin uses the *service account* privileges, he can [create
-custom roles]({apiBaseUri}/docs/v2/#update-tenant's-roles) via the
+custom roles]({{apiBaseUri}}/docs/v2/#update-tenant's-roles) via the
 following API request:
 
 `PATCH {apiBaseUri}/v2/tenants/{TENANT_ID}/roles` , where
