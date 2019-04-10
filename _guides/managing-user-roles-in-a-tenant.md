@@ -118,10 +118,10 @@ needs a special set of credentials called *service account*. It can be acquired
 by an authorized client employee via support.
 
 When the tenant admin uses the *service account* privileges, he can [create
-custom roles]({apiBaseUri}/docs/v2/#update-tenant's-roles) via the
+custom roles]({{apiBaseUri}}/docs/v2/#update-tenant's-roles) via the
 following API request:
 
-`PATCH {apiBaseUri}/v2/tenants/{TENANT_ID}/roles` , where
+`PATCH {{apiBaseUri}}/v2/tenants/{TENANT_ID}/roles` , where
 
 `{TENANT_ID}` parameter stands for the ID of the tenant.
 
@@ -133,7 +133,7 @@ Below are request payload parameters:
 | `attributes.roles[]`                       | yes          | An array of Tenant’s roles. It can be empty.                                                                                                                                                                    |
 | `attributes.roles[].role`                  | no           | Custom role name                                                                                                                                                                                                |
 | `attributes.roles[].scope`                 | no           | The group of objects, which is affected by this role. Value can be: `contracts` or `workspaces`.                                                                                                            |
-| `attributes.roles[].permissions[]`         | yes          | An array of permissions. It can be empty. To get the list of available permissions execute the endpoint: GET {apiBaseUri}/v2/permissions or see [this reference table](#permissions-reference-table). |
+| `attributes.roles[].permissions[]`         | yes          | An array of permissions. It can be empty. To get the list of available permissions execute the endpoint: GET {{apiBaseUri}}/v2/permissions or see [this reference table](#permissions-reference-table). |
 | `attributes.roles[].i18n.{{language_key}}` | no           | The name of a role in different languages. The value is only required for `en` key. For other languages value is optional.                                                                                  |
 
 **EXAMPLE:**
@@ -142,7 +142,7 @@ To add a new role called *Godzilla*, with permissions to see and delete
 workspaces in the contract, and edit a workspace, we will use the following
 request:
 ```
-curl {apiBaseUri}/v2/tenants/{TENANT_ID}/roles
+curl {{apiBaseUri}}/v2/tenants/{TENANT_ID}/roles
    -X PATCH
    -u {EMAIL}:{APIKEY}
    -H 'Content-Type: application/json' -d '
