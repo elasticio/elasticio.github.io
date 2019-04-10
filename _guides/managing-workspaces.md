@@ -1,4 +1,4 @@
-\---  
+---
 title: Managing Workspaces  
 layout: article  
 section: Tenant Management  
