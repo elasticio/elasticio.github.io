@@ -89,13 +89,11 @@ curl {{apiBaseUri}}/v2/workspaces \
 With the right
 [permissions](/managing-user-roles-in-a-tenant)
 a workspace member can perform workspace management via the
-[UI](#workspace-management-via-the-ui) or the API.
+[UI](#workspace-management-via-the-ui-includes-the-following-actions) or the [API](#workspace-management-via-the-api-includes-the-following-actions).
 
-##### 1\. Workspace management via the UI
-includes such actions as adding or
-inviting new members, managing their workspace [user
-roles](/managing-user-roles-in-a-tenant),
-removing members, and deleting the
+##### 1\. Workspace management via the UI includes the following actions:
+adding or inviting new members, managing their workspace [user
+roles](/managing-user-roles-in-a-tenant), removing members, and deleting the
 workspace. All these actions are done in **Workspace** tab
 of the navigational menu:
 
@@ -129,7 +127,8 @@ To delete workspace, click **Delete workspace**:
 
 ![](https://user-images.githubusercontent.com/48761764/55892421-fc850280-5bbe-11e9-939a-11f34119e2a8.png)
 
-2\. Workspace management via the API includes such actions as adding new members,
+##### 2\. Workspace management via the API includes the following actions:
+adding new members,
 managing their workspace user roles, removing
 members, renaming the workspace, and deleting the
 workspace.
@@ -272,9 +271,9 @@ curl -i {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
 An integration [flow](//getting-started/integration-flow) is a set
 of components used to synchronize data between multiple applications or
 services. A workspace member with corresponding permissions can create flows in
-his contract via the UI or the [API](#flow_via_api).
+his contract via the [UI](#to-create-a-new-flow-in-the-ui) or the [API](#to-create-a-flow-via-the-api-use-the-following-request).
 
-To create a new flow in the UI:
+##### To create a new flow in the UI:
 
 1\.  On the dashboard, click **Add new flow**:
 
@@ -288,7 +287,7 @@ Alternatively, you can click **Add New Flow** in **Flows**:
 
 ![](http://user-images.githubusercontent.com/48761764/55892430-fdb62f80-5bbe-11e9-9aa9-41e6db19c76a.png)
 
-To create a flow via the API, use the following request:
+##### To create a flow via the API, use the following request:
 
 `POST {{apiBaseUri}}/v2/flows/`
 
@@ -370,10 +369,11 @@ curl -X POST {{apiBaseUri}}/v2/flows \
 
 With the right
 [permissions](/managing-user-roles-in-a-tenant)
-a workspace member can perform flow management via the UI or
-the API.
+a workspace member can perform flow management via the [UI](#flow-management-via-the-ui-includes-the-following-actions) or
+the [API](#flow-management-via-the-api-includes-the-following-actions).
 
-1\. Flow management via the UI includes toggling type between **Realtime** and
+##### 1\. Flow management via the UI includes the following actions:
+toggling type between **Realtime** and
     **Ordinary**, starting and stopping flows, and deleting flows. All your
     flows can be found in **Flows** inside the navigational menu. You can use
     search and filters to find the required flow. To manage the flow, click on
@@ -396,7 +396,8 @@ switch:
 
 ![](https://user-images.githubusercontent.com/48761764/55892431-fdb62f80-5bbe-11e9-8d9d-a49eed205711.png)
 
-2\.  Flow management via the API includes [toggling type](#update_flow_api)
+##### 2\.  Flow management via the API includes the following actions:
+ [toggling type](#update_flow_api)
     between **Realtime** and **Ordinary**, [starting and
     stopping](#start_stop_api) flows, and deleting flows.
 
@@ -479,9 +480,9 @@ curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
 
 Credentials contain authorization information that is required by components.
 Workspace members with corresponding permissions can create credentials via the
-[UI](#create_credentials_UI) and the [API](#create_credentials_api).
+[UI](#to-create-new-credentials-via-the-ui) and the [API](#to-create-new-credential-via-the-api-we-will-use-the-following-api-request).
 
-To create new credentials via the UI:
+##### To create new credentials via the UI:
 
 1\.  In the navigational menu, click **Credentials**. Then choose the required
     component from the list and click it. For example, let’s use SFTP:
@@ -497,7 +498,7 @@ To create new credentials via the UI:
 
 After the credential gets verified, click **Save**, which will appear in the place of **Verify**:
 
-To create new credential via the API, we will use the following API request:
+##### To create new credential via the API, we will use the following API request:
 
 `POST {{apiBaseUri}}/v2/credentials/`
 
@@ -556,10 +557,10 @@ curl {{apiBaseUri}}/v2/credentials/ \
 ## Editing Credentials
 
 A member with the right permissions can manage credentials – update or delete
-them via the [UI](#Editing_credentials_ui) or the
-[API](#editing_credentials_api):
+them via the [UI](#editing-credentials-via-the-ui-includes-updating-and-deleting-credentials) or the
+[API](#editing-credentials-via-the-api-includes-updating-and-deleting-credentials):
 
-1\.  Editing credentials via the UI includes updating and deleting credentials.
+##### 1\.  Editing credentials via the UI includes updating and deleting credentials.
 
 To edit credentials, choose the required credential from the list in
 **Credentials**:
@@ -575,7 +576,7 @@ click **Delete**:
 
 ![](https://user-images.githubusercontent.com/48761764/55943605-8aa8c980-5c4f-11e9-801e-6b48f1c596d2.png)
 
-2\.  Editing credentials via the API includes updating and deleting credentials.
+##### 2\.  Editing credentials via the API includes updating and deleting credentials.
 
 To update credentials, we will use the following request:
 
