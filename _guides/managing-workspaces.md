@@ -37,7 +37,7 @@ To create a new workspace in the UI:
 ![](https://user-images.githubusercontent.com/48761764/55963278-30bdf900-5c7b-11e9-9c09-6cf4a9e96be3.png)
 
 5\. Choose your contract:
-![](https://user-images.githubusercontent.com/48761764/55963278-30bdf900-5c7b-11e9-9c09-6cf4a9e96be3.png)
+![](https://user-images.githubusercontent.com/48761764/55963280-30bdf900-5c7b-11e9-849a-52a0f2e0ea32.png)
 
 6\. In Workspaces tab, click **Create New Workspace**:
 ![](https://user-images.githubusercontent.com/48761764/55963277-30256280-5c7b-11e9-9b11-4f9a1cf46528.png)
