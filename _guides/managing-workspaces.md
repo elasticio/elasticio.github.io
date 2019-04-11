@@ -11,15 +11,14 @@ actions: [workspace creation](#workspace-creation), [editing the
 workspace](#editing-the-workspace), [flow creation](#Flow_creation), [editing
 flows](#editing-flows) in the workspace, [credentials
 creation](#credentials-creation) and [editing
-credentials](#editing_credentials).
+credentials](#editing_credentials). Additionally, you will find all workspace-related [retrieval API requests](#retrieval-requests).
 
-Workspace Creation
-------------------
+## Workspace Creation
 
 Workspaces are enclosed environments in a
-[contract](https://docs.elastic.io/getting-started/contracts-and-workspaces.html#contracts).
+[contract](//getting-started/contracts-and-workspaces.html#contracts).
 You can find the basic information about workspaces
-[here](https://docs.elastic.io/getting-started/contracts-and-workspaces.html#workspaces).
+[here](//getting-started/contracts-and-workspaces.html#workspaces).
 A contract member can create workspaces in his contract via the UI or the
 [API](#API).
 
@@ -27,232 +26,180 @@ To create a new workspace in the UI:
 
 1.  On the sidebar, click **Add**.
 
-![](media/c7c9f863f084eaefc849e762b39cbf36.png)
+![](https://user-images.githubusercontent.com/48761764/55892416-fbec6c00-5bbe-11e9-9099-c60e925c93b4.png)
 
 1.  Enter new workspace name and click **Create.**
 
-![](media/ee32dc8b15eee6ef9207bbff8034994f.png)
+![](https://user-images.githubusercontent.com/48761764/55892417-fbec6c00-5bbe-11e9-9a8a-d6699170c74b.png)
 
 1.  Your new workspace is ready.
 
-![](media/946e124f2e4ada9a2f68dd78638f244a.png)
+![](https://user-images.githubusercontent.com/48761764/55892418-fbec6c00-5bbe-11e9-9295-3e5dd7a71c5b.png)
 
 To create a workspace via the API, use the following request:
 
-POST [{{apiBaseUri}}/v2/workspaces](https://api.elastic.io/v2/workspaces)
+`POST {{apiBaseUri}}/v2/workspaces`
 
 Below are request payload parameters:
 
 | **Parameter**                    | **Required** | **Description**                                   |
 |----------------------------------|--------------|---------------------------------------------------|
-| type                             | yes          | This parameter should have the value: “workspace” |
-| attributes.name                  | yes          | Name of the new workspace                         |
-| relationships.contract.data.id   | yes          | ID of the contract                                |
-| relationships.contract.data.type | yes          | This parameter should have the value: “contract”  |
+| `type`                             | yes          | This parameter should have the value: `workspace` |
+| `attributes.name`                  | yes          | Name of the new workspace                         |
+| `relationships.contract.data.id`   | yes          | ID of the contract                                |
+| `relationships.contract.data.type` | yes          | This parameter should have the value: `contract`  |
 
 **EXAMPLE:**
 
 To create a new workspace called *Integrator 2: Judgement Day*, we will use the
 following request:
+```
+curl {{apiBaseUri}}/v2/workspaces \
+  -X POST \
+  -u {EMAIL}:{APIKEY} \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' -d '
+  {
+    "data":{
+      "type":"workspace",
+      "attributes":{
+        "name":"Integrator 2: Judgement Day"
+      },
+      "relationships":{
+        "contract":{
+          "data":{
+            "id":"{CONTRACT_ID}",
+            "type":"contract"
+          }
+        }
+      }
+    }
+  }'
+```
 
-curl {{apiBaseUri}}/v2/workspaces \\
 
-\-X POST \\
+## Editing the Workspace
 
-\-u {EMAIL}:{APIKEY} \\
-
-\-H 'Accept: application/json' \\
-
-\-H 'Content-Type: application/json' -d '
-
-{
-
-"data":{
-
-"type":"workspace",
-
-"attributes":{
-
-"name":"Integrator 2: Judgement Day"
-
-},
-
-"relationships":{
-
-"contract":{
-
-"data":{
-
-"id":"{CONTRACT_ID}",
-
-"type":"contract"
-
-}
-
-}
-
-}
-
-}
-
-}'
-
-Editing the Workspace
----------------------
 
 With the right
-[permissions](https://docs.elastic.io/guides/managing-user-roles-in-a-tenant.html#permissions-reference-table)
+[permissions](/managing-user-roles-in-a-tenant.html#permissions-reference-table)
 a workspace member can perform workspace management via the
 [UI](#Editing_the_workspace_ui) or the [API](#API2).
 
-1. Workspace management via the UI includes such actions as [adding or
+1/. Workspace management via the UI includes such actions as [adding or
 inviting](#add_or_invite) new members, managing their workspace [user
-roles](https://docs.elastic.io/guides/managing-user-roles-in-a-tenant.html),
+roles](/managing-user-roles-in-a-tenant),
 [removing members](#remove_members), and [deleting the
 workspace](#delete_workspace). All these actions are done in **Workspace** tab
 of the navigational menu:
 
-![](media/231a4a98181c89be79642685bf1bcab7.png)
+![](https://user-images.githubusercontent.com/48761764/55892423-fc850280-5bbe-11e9-947e-99d94f86c873.png)
 
 To add or invite new members to the workspace, click **Add new member** or
-**Invite new member\***:
+**Invite new member**:
 
-![](media/f94e9d53d4699154955715e2320e7e03.png)
+![](https://user-images.githubusercontent.com/48761764/55892424-fd1d9900-5bbe-11e9-9874-79bf2786d3b9.png)
 
 For adding new member, select a contract member from the list, assign a user
 role in the corresponding menu, and click **Add**:
 
-![](media/14e1382b0e774671300e05f1a5291886.png)
+![](https://user-images.githubusercontent.com/48761764/55892426-fd1d9900-5bbe-11e9-9020-b43dc499c01c.png)
 
 For inviting a new member, fill in user email address, define contract role and
-workspace role, and click Send Invite:
+workspace role, and click **Send Invite**:
 
-![](media/fc3e3c36108dcd47e3838c851d6294c3.png)
+![](https://user-images.githubusercontent.com/48761764/55892427-fd1d9900-5bbe-11e9-9e3d-979b17efd94b.png)
 
-**\*** Note that only contract members with the corresponding contract
-permission will have the option to invite new members to the workspace.
-
-Find how to assign member roles
-[here](https://docs.elastic.io/guides/managing-user-roles-in-a-tenant.html).
+Note that only contract members with the corresponding contract
+permission will have the option to invite new members to the workspace. You can learn how to assign member roles
+[here](/managing-user-roles-in-a-tenant).
 
 To remove members from a workspace, click the corresponding icon on the user
 list:
 
-![](media/058b1a1c7781c91cac6d61cf46c66964.png)
+![](https://user-images.githubusercontent.com/48761764/55892428-fdb62f80-5bbe-11e9-82c4-9f89ee6a26da.png)
 
 To delete workspace, click **Delete workspace**:
 
-![](media/744a1d9bd17e21d0100ccd4465281a09.png)
+![](https://user-images.githubusercontent.com/48761764/55892421-fc850280-5bbe-11e9-939a-11f34119e2a8.png)
 
-2. Workspace management via the API includes such actions as adding new members,
+2/. Workspace management via the API includes such actions as adding new members,
 managing their [workspace user roles](#update_roles_api), [removing
 members](#remove_member_api), and [deleting the
 workspace](#delete_workspace_api).
 
 To add a new member via the API, use the following request:
 
-POST
-[{{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members](https://api.elastic.io/v2/workspaces/%7bWORKSPACE_ID%7d/members)
+`POST {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members`
 
 Below are request payload parameters:
 
 | **Parameter**      | **Required** | **Description**                                                                  |
 |--------------------|--------------|----------------------------------------------------------------------------------|
-| id                 | yes          | ID of an already registered user, who will be added as a member of the workspace |
-| type               | yes          | A value should be “member”.                                                      |
-| attributes.roles[] | yes          | New member roles.                                                                |
+| `id`                 | yes          | ID of an already registered user, who will be added as a member of the workspace |
+| `type`               | yes          | The value should be `member`.                                                      |
+| `attributes.roles[]` | yes          | New member roles.                                                                |
 
 **EXAMPLE:**
 
-To add a user with the ID *Elvis* with *King* role we will use the following
+To add a user with the ID *Elvis* with *King* and *Immortal* roles we will use the following
 request:
-
-curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/ \\
-
-\-X POST \\
-
-\-u {EMAIL}:{APIKEY} \\
-
-\-H 'Accept: application/json' \\
-
-\-H 'Content-Type: application/json' -d '
-
-{
-
-"data": {
-
-"type": "member",
-
-"id": "Elvis",
-
-"attributes": {
-
-"roles": [
-
-"{King}",
-
-]
-
-}
-
-}
-
-}'
-
+```
+curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/ \
+    -X POST \
+    -u {EMAIL}:{APIKEY} \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' -d '
+    {
+       "data": {
+           "type": "member",
+           "id": "{Elvis}",
+           "attributes": {
+               "roles": [
+                 "{King}",
+                 "{Immortal}"
+               ]
+           }
+       }
+    }'
+```
 To update user roles via the API, use the following request:
 
-PATCH
-[{{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/](https://api.elastic.io/v2/workspaces/%7bWORKSPACE_ID%7d/members/%7bUSER_ID%7d/)
+`PATCH {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/`
 
 Below are request payload parameters:
 
 | **Parameter**      | **Required** | **Description**                                                 |
 |--------------------|--------------|-----------------------------------------------------------------|
-| id                 | yes          | ID of an already registered user, match URL parameter {USER_ID} |
-| type               | yes          | A value should be “member”.                                     |
-| attributes.roles[] | yes          | Roles.                                                          |
+| `id`                 | yes          | ID of an already registered user, match URL parameter `{USER_ID}` |
+| `type`               | yes          | The value must be `member`.                                     |
+| `attributes.roles[]` | yes          | Roles.                                                          |
 
 **EXAMPLE:**
 
-To change the role of *Elvis* to *Alive* we will use the following request:
-
-curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \\
-
-\-X PATCH \\
-
-\-u {EMAIL}:{APIKEY} \\
-
-\-H 'Accept: application/json' \\
-
-\-H 'Content-Type: application/json' -d '
-
-{
-
-"data": {
-
-"type": "member",
-
-"id": "Elvis",
-
-"attributes": {
-
-"roles": [
-
-"Alive"
-
-]
-
-}
-
-}
-
-}'
-
+To change user roles we will use the following request:
+```
+curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
+    -X PATCH  \
+    -u {EMAIL}:{APIKEY} \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' -d '
+    {
+       "data": {
+           "type": "member",
+           "id": "{USER_ID}",
+           "attributes": {
+               "roles": [
+                 "{NEW_ROLE}"
+               ]
+           }
+       }
+    }'
+```
 To remove a member from the workspace via the API we will use the following
 request:
 
-DELETE
-[{{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/](https://api.elastic.io/v2/workspaces/%7bWORKSPACE_ID%7d/members/%7bUSER_ID%7d/)
+`DELETE {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/`
 
 Below are request payload parameters:
 
@@ -262,319 +209,237 @@ Below are request payload parameters:
 | USER_ID       | The ID of the user, which requires deletion. |
 
 **EXAMPLE:**
-
-curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \\
-
-\-X DELETE \\
-
-\-u {EMAIL}:{APIKEY}
+```
+curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
+    -X DELETE    \
+    -u {EMAIL}:{APIKEY}
+```
 
 To delete workspace via the API we will use the following request:
 
-DELETE {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \\
+`DELETE {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \`
 
 Below are request payload parameters:
 
 | **Parameter** | **Description**          |
 |---------------|--------------------------|
-| WORKSPACE_ID  | The ID of the Workspace. |
+| `WORKSPACE_ID`  | The ID of the Workspace. |
 
 **EXAMPLE:**
+```
+curl -i {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
+ -X DELETE \
+ -u {EMAIL}:{APIKEY}
+ ```
 
-curl -i {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \\
+## Flow Creation  
 
-\-X DELETE \\
-
-\-u {EMAIL}:{APIKEY}
-
-Flow Creation  
-An integration
-[flow](https://docs.elastic.io/getting-started/integration-flow.html) is a set
+An integration [flow](//getting-started/integration-flow) is a set
 of components used to synchronize data between multiple applications or
 services. A workspace member with corresponding permissions can create flows in
 his contract via the UI or the [API](#flow_via_api).
 
 To create a new flow in the UI:
 
-1.  On the dashboard, click **Add new flow**.
+1/.  On the dashboard, click **Add new flow**:
 
-![](media/fe36e156286d6c6d034944969f894473.png)
+![](https://user-images.githubusercontent.com/48761764/55892429-fdb62f80-5bbe-11e9-9f92-170b1508468f.png)
 
-Alternatively, you can click **Add New Flow** in **Flows**.
+Alternatively, you can click **Add New Flow** in **Flows**:
 
-![](media/d7ce143be85fb4957333298ea1755d0a.png)
+![](https://user-images.githubusercontent.com/48761764/55892437-fee75c80-5bbe-11e9-88ae-5b059578d7d5.png)
 
-1.  Your new flow is ready. Be sure to name it and write a description, which is
-    optional.
+2/.  Your new flow is ready. Be sure to name it and write a description, which is optional:
 
-![](media/b026a24d2e63e19d16d6049d436b00ff.png)
+![](http://user-images.githubusercontent.com/48761764/55892430-fdb62f80-5bbe-11e9-9aa9-41e6db19c76a.png)
 
 To create a flow via the API, use the following request:
 
-POST {{apiBaseUri}}/v2/flows/
+`POST {{apiBaseUri}}/v2/flows/`
 
 Below are request payload parameters:
 
 | **Parameter**                     | **Required** | **Description**                                |
 |-----------------------------------|--------------|------------------------------------------------|
-| type                              | yes          | A value must be flow.                          |
-| attributes.name                   | yes          | Flow name.                                     |
-| attributes.type                   | yes          | Flow type. Value may be:                       |
-| attributes.graph                  | yes          | Flow graph representing component connections. |
-| relationships.workspace.data.id   | yes          | The ID of the workspace.                       |
-| relationships.workspace.data.type | yes          | The value must be \`workspace\`.               |
+| `type`                              | yes          | The value must be `flow`.                          |
+| `attributes.name`                   | yes          | Flow name.                                     |
+| `attributes.type`                   | yes          | Flow type. Value may be:   `ordinary` or  `long_running`                    |
+| `attributes.graph`                  | yes          | Flow graph representing component connections. |
+| `relationships.workspace.data.id`   | yes          | The ID of the workspace.                       |
+| `relationships.workspace.data.type` | yes          | The value must be `workspace`.               |
 
--   ordinary,
 
--   long_running
 
 **EXAMPLE:**
+```
+curl -X POST {{apiBaseUri}}/v2/flows \
+  -u {EMAIL}:{APIKEY} \
+   -H 'Accept: application/json' \
+   -H 'Content-Type: application/json' -d '
+   {  
+  "data":{  
+    "attributes":{  
+      "default_mapper_type":"jsonata",
+      "type":"ordinary",
+      "name":"Timer to E-Mail",
+      "description":null,
+      "cron":null,
+      "graph":{  
+        "nodes":[  
+          {  
+            "id":"step_1",
+            "command":"elasticio/timer:timer@latest",
+            "fields":{  
+              "interval":"minute"
+            }
+          },
+          {  
+            "command":"elasticio/email:send@latest",
+            "fields":{  
 
-curl -X POST {{apiBaseUri}}/v2/flows \\
-
-\-u {EMAIL}:{APIKEY} \\
-
-\-H 'Accept: application/json' \\
-
-\-H 'Content-Type: application/json' -d '
-
-{
-
-"data":{
-
-"attributes":{
-
-"default_mapper_type":"jsonata",
-
-"type":"ordinary",
-
-"name":"Timer to E-Mail",
-
-"description":null,
-
-"cron":null,
-
-"graph":{
-
-"nodes":[
-
-{
-
-"id":"step_1",
-
-"command":"elasticio/timer:timer\@latest",
-
-"fields":{
-
-"interval":"minute"
-
-}
-
-},
-
-{
-
-"command":"elasticio/email:send\@latest",
-
-"fields":{
-
-},
-
-"id":"step_2"
-
-}
-
-],
-
-"edges":[
-
-{
-
-"config":{
-
-"mapper_type":"jsonata",
-
-"mapper":{
-
-"to":"info\@acme.org",
-
-"subject":"Subject",
-
-"textBody":"fireTime"
-
-}
-
-},
-
-"source":"step_1",
-
-"target":"step_2"
-
-}
-
-]
-
-}
-
-},
-
-"type":"flow",
-
-"relationships":{
-
-"workspace":{
-
-"data":{
-
-"id":"59d341e9037f7200184a408b",
-
-"type":"workspace"
-
-}
-
-}
-
-}
-
-}
-
+            },
+            "id":"step_2"
+          }
+        ],
+        "edges":[  
+          {  
+            "config":{  
+              "mapper_type":"jsonata",
+              "mapper":{  
+                "to":"info@acme.org",
+                "subject":"Subject",
+                "textBody":"fireTime"
+              }
+            },
+            "source":"step_1",
+            "target":"step_2"
+          }
+        ]
+      }
+    },
+    "type":"flow",
+    "relationships":{  
+      "workspace":{  
+        "data":{  
+          "id":"59d341e9037f7200184a408b",
+          "type":"workspace"
+        }
+      }
+    }
+  }
 }'
+```
 
-Editing Flows
--------------
+## Editing Flows
+
 
 With the right
-[permissions](https://docs.elastic.io/guides/managing-user-roles-in-a-tenant.html#permissions-reference-table)
+[permissions](/managing-user-roles-in-a-tenant.html#permissions-reference-table)
 a workspace member can perform flow management via the [UI](#flow_manage_ui) or
 the [API](#Flow_management_API).
 
-1.  Flow management via the UI includes toggling type between **Realtime** and
+1\. Flow management via the UI includes toggling type between **Realtime** and
     **Ordinary**, starting and stopping flows, and deleting flows. All your
     flows can be found in **Flows** inside the navigational menu. You can use
     search and filters to find the required flow. To manage the flow, click on
-    the flow’s name, in our case – “**Test flow**”.
+    the flow’s name, in our case – “**Test flow**”:
 
-![](media/83dad26f27a29de066db729ab8e0c0df.png)
+![](https://user-images.githubusercontent.com/48761764/55892432-fdb62f80-5bbe-11e9-8d00-aa8f7fff82a7.png)
 
 You will see your flow control page, where you can rename, start, stop, edit,
-and delete the flow.
+and delete the flow:
 
-![](media/58e49aacec34c53215f931e4b89e3e00.png)
+![](https://user-images.githubusercontent.com/48761764/55892433-fe4ec600-5bbe-11e9-9a3a-7ad10117e78e.png)
 
-Click **Settings** to access the settings tab where you can toggle flow type.
+Click **Settings** to access the settings tab where you can toggle flow type:
 
-![](media/2974214f733d8be3dc31e9c1dc02d3ab.png)
+![](https://user-images.githubusercontent.com/48761764/55892435-fe4ec600-5bbe-11e9-9510-c3283430ca0b.png)
 
 Flows can be **Realtime** and **Ordinary**. You can find more info about these
 types [here](/realtime-flows). You can toggle flow type with the corresponding
-switch.
+switch:
 
-![](media/a069af9744d948f0c01d73ef8566cc20.png)
+![](https://user-images.githubusercontent.com/48761764/55892431-fdb62f80-5bbe-11e9-8d9d-a49eed205711.png)
 
-1.  Flow management via the API includes [toggling type](#update_flow_api)
+2\.  Flow management via the API includes [toggling type](#update_flow_api)
     between **Realtime** and **Ordinary**, [starting and
     stopping](#start_stop_api) flows, and deleting flows.
 
 To update flow type or name, we will use the following API request:
 
-PATCH
-[{{apiBaseUri}}/v2/flows/{FLOW_ID}](https://api.elastic.io/v2/flows/%7bFLOW_ID%7d)
+`PATCH {{apiBaseUri}}/v2/flows/{FLOW_ID}`
 
 Below are request payload parameters:
 
 | **Parameter**    | **Required** | **Description**                                |
 |------------------|--------------|------------------------------------------------|
-| type             | yes          | A value must be flow.                          |
-| id               | yes          | ID of the flow you want to update.             |
-| attributes.name  | no           | Flow name.                                     |
-| attributes.type  | no           | Flow type. Value may be:                       |
-| attributes.graph | no           | Flow graph representing component connections. |
-| attributes.cron  | no           | Cron expression representing flow timing.      |
+| `type`             | yes          | The value must be `flow`.                          |
+| `id `              | yes          | ID of the flow you want to update.             |
+| `attributes.name`  | no           | Flow name.                                     |
+| `attributes.type`  | no           | Flow type. Value may be: `ordinary` or `long_running`.                      |
+| `attributes.graph` | no           | Flow graph representing component connections. |
+| `attributes.cron`  | no           | Cron expression representing flow timing.      |
 
--   ordinary,
-
--   long_running
 
 **EXAMPLE:**
-
-curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \\
-
-\-X PATCH \\
-
-\-u {EMAIL}:{APIKEY} \\
-
-\-H 'Accept: application/json' \\
-
-\-H 'Content-Type: application/json' -d '
-
-{
-
-"data": {
-
-"type": "flow",
-
-"id": "{FLOW_ID}",
-
-"attributes": {
-
-"name": "New flow name"
-
-}
-
-}
-
-}'
-
+```
+curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
+   -X PATCH \
+   -u {EMAIL}:{APIKEY} \
+   -H 'Accept: application/json' \
+   -H 'Content-Type: application/json' -d '
+    {
+          "data": {
+            "type": "flow",
+            "id": "{FLOW_ID}",
+            "attributes": {
+              "name": "this is a test task"
+            }
+          }
+    }'
+```
 To start or stop a flow we will use the following requests:
 
-POST
-[{{apiBaseUri}}/v2/flows/{FLOW_ID}/start](https://api.elastic.io/v2/flows/%7bFLOW_ID%7d/start)
+`POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/start`
 
-POST
-[{{apiBaseUri}}/v2/flows/{FLOW_ID}/stop](https://api.elastic.io/v2/flows/%7bFLOW_ID%7d/stop)
+`POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/stop`
 
 As you can see, the only difference between requests is the corresponding
-\`start\` or \`stop\`.
+`start` or `stop`.
 
 Below are request payload parameters:
 
 | **Parameter** | **Required** | **Description** |
 |---------------|--------------|-----------------|
-| FLOW_ID       | yes          | Flow ID.        |
+| `FLOW_ID `      | yes          | Flow ID.        |
 
 **EXAMPLE:**
-
-curl {{apiBaseUri}}/v2/flows/{FLOW_ID}/start \\
-
-\-X POST \\
-
-\-u {EMAIL}:{APIKEY} \\
-
-\-H 'Accept: application/json' \\
-
-\-H 'Content-Type: application/json'
+```
+curl {{apiBaseUri}}/v2/flows/{FLOW_ID}/start \
+   -X POST \
+   -u {EMAIL}:{APIKEY} \
+   -H 'Accept: application/json' \
+   -H 'Content-Type: application/json'
+```
 
 To delete a flow, we will use the following requests:
 
-DELETE
-[{{apiBaseUri}}/v2/flows/{FLOW_ID}](https://api.elastic.io/v2/flows/%7bFLOW_ID%7d)
+`DELETE {{apiBaseUri}}/v2/flows/{FLOW_ID}`
 
 Below are request payload parameters:
 
 | **Parameter** | **Required** | **Description** |
 |---------------|--------------|-----------------|
-| FLOW_ID       | yes          | Flow ID.        |
+| `FLOW_ID `      | yes          | Flow ID.        |
 
 **EXAMPLE:**
+```
+curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
+   -X DELETE \
+   -u {EMAIL}:{APIKEY}
+```
 
-curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \\
-
-\-X DELETE \\
-
-\-u {EMAIL}:{APIKEY}
-
-Credentials Creation
---------------------
+## Credentials Creation
 
 Credentials contain authorization information that is required by components.
 Workspace members with corresponding permissions can create credentials via the
@@ -582,208 +447,289 @@ Workspace members with corresponding permissions can create credentials via the
 
 To create new credentials via the UI:
 
-1.  In the navigational menu, click **Credentials**. Then choose the required
-    component from the list and click it. For example, let’s use Magento.
+1/.  In the navigational menu, click **Credentials**. Then choose the required
+    component from the list and click it. For example, let’s use SFTP:
 
-![](media/1441f63e602274451521116870b21d20.png)
+![](https://user-images.githubusercontent.com/48761764/55948367-03f8ea00-5c59-11e9-8fa2-ce7aaf9ed824.png)
 
-1.  Click **Add New Credential** and fill in the appearing fields. When done,
-    click **Verify**.
+2/.  Click **Add New Credential** and fill in the appearing fields. When done,
+    click **Verify**:
 
-![](media/d6b93eae7be36097a12728fa182b010c.png)
+![](https://user-images.githubusercontent.com/48761764/55943603-8aa8c980-5c4f-11e9-83d6-8532f1cea8ae.png)
+
+![](https://user-images.githubusercontent.com/48761764/55943604-8aa8c980-5c4f-11e9-8d26-4c6fb897b0e3.png)
+
+After the credential gets verified, click **Save**, which will appear in the place of **Verify**:
 
 To create new credential via the API, we will use the following API request:
 
-POST [{{apiBaseUri}}/v2/credentials/](https://api.elastic.io/v2/credentials/)
+`POST {{apiBaseUri}}/v2/credentials/`
 
 Below are request payload parameters:
 
 | **Parameter**                     | **Required** | **Description**                                                                    |
 |-----------------------------------|--------------|------------------------------------------------------------------------------------|
-| type                              | yes          | The value must be \`credential\`.                                                  |
-| attributes.name                   | no           | Credential name. An automatic name will be generated if you ignore this parameter. |
-| relationships.component.data.id   | yes          | ID of the target component.                                                        |
-| relationships.component.data.type | yes          | The value must be \`component\`.                                                   |
-| relationships.workspace.data.id   | yes          | Workspace ID.                                                                      |
-| relationships.workspace.data.type | yes          | The value must be \`workspace\`.                                                   |
-| relationships.agent               | no           | Agent relation object.                                                             |
-| relationships.agent.data.id       | no           | Agent ID.                                                                          |
-| relationships.agent.data.type     | no           | The value must be \`agent\`                                                        |
-| attributes.keys                   | no           | An object which represents component’s configuration (OAuth keys, etc.)            |
+| `type`                              | yes          | The value must be `credential`.                                                  |
+| `attributes.name`                   | no           | Credential name. An automatic name will be generated if you ignore this parameter. |
+| `relationships.component.data.id`   | yes          | ID of the target component.                                                        |
+| `relationships.component.data.type` | yes          | The value must be `component`.                                                   |
+| `relationships.workspace.data.id`   | yes          | Workspace ID.                                                                      |
+| `relationships.workspace.data.type` | yes          | The value must be `workspace`.                                                   |
+| `relationships.agent`               | no           | Agent relation object.                                                             |
+| `relationships.agent.data.id`       | no           | Agent ID.                                                                          |
+| `relationships.agent.data.type`     | no           | The value must be `agent`                                                        |
+| `attributes.keys`                   | no           | An object which represents component’s configuration (OAuth keys, etc.)            |
 
 **EXAMPLE:**
+```
+curl {{apiBaseUri}}/v2/credentials/ \
+    -X POST \
+    -u {EMAIL}:{APIKEY} \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' -d '
+    {
+     "data":{
+       "type":"credential",
+       "attributes":{
+         "name":"credname",
+         "keys":{
+           "host":"hostname",
+           "username":"username",
+           "password":"pass"
+         }
+       },
+       "relationships":{
+         "component":{
+           "data":{
+             "id":"56793fb4d8057406000000f7",
+             "type":"component"
+           }
+         },
+         "workspace":{
+           "data":{
+             "id":"59d341e9037f7200184a408b",
+             "type":"workspace"
+           }
+         }
+       }
+     }
+   }'
+```
 
-curl {{apiBaseUri}}/v2/credentials/ \\
-
-\-X POST \\
-
-\-u {EMAIL}:{APIKEY} \\
-
-\-H 'Accept: application/json' \\
-
-\-H 'Content-Type: application/json' -d '
-
-{
-
-"data":{
-
-"type":"credential",
-
-"attributes":{
-
-"name":"credname",
-
-"keys":{
-
-"host":"hostname",
-
-"username":"Pumbaa",
-
-"password":"hakunamatata"
-
-}
-
-},
-
-"relationships":{
-
-"component":{
-
-"data":{
-
-"id":"56793fb4d8057406000000f7",
-
-"type":"component"
-
-}
-
-},
-
-"workspace":{
-
-"data":{
-
-"id":"59d341e9037f7200184a408b",
-
-"type":"workspace"
-
-}
-
-}
-
-}
-
-}
-
-}'
-
-Editing Credentials
--------------------
+## Editing Credentials
 
 A member with the right permissions can manage credentials – update or delete
 them via the [UI](#Editing_credentials_ui) or the
 [API](#editing_credentials_api):
 
-1.  Editing credentials via the UI includes updating and deleting credentials.
+1/.  Editing credentials via the UI includes updating and deleting credentials.
 
 To edit credentials, choose the required credential from the list in
-**Credentials**.
+**Credentials**:
 
-![](media/a37d4673fcf6276bb837ca235b3a9760.png)
+![](https://user-images.githubusercontent.com/48761764/55943607-8b416000-5c4f-11e9-8ab7-6495bae6c753.png)
 
-Click **Edit** and fill in all the required fields. Then click **Verify**.
+Click **Edit** and fill in all the required fields. Then click **Verify**, and **Save** after verification:
 
-![](media/abfd5e434989fff286a5986980fd016e.png)
+![](https://user-images.githubusercontent.com/48761764/55943608-8b416000-5c4f-11e9-84fb-01e927e5ad0e.png)
 
 To delete credentials, choose the required credential in **Credentials**, and
-click **Delete**.
+click **Delete**:
 
-![](media/64a9519f06537bb0fba4c14f38ceb0b4.png)
+![](https://user-images.githubusercontent.com/48761764/55943605-8aa8c980-5c4f-11e9-801e-6b48f1c596d2.png)
 
-1.  Editing credentials via the API includes updating and deleting credentials.
+2/.  Editing credentials via the API includes updating and deleting credentials.
 
 To update credentials, we will use the following request:
 
-PATCH
-[{{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/](https://api.elastic.io/v2/credentials/%7bCREDENTIAL_ID%7d/)
+`PATCH {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
 
 Below are request payload parameters:
 
 | **Parameter**                 | **Required** | **Description**                                                                                                                                                          |
 |-------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id                            | yes          | The value must be the same as the URL parameter \`CREDENTIAL_ID\`                                                                                                        |
-| type                          | yes          | The value must be \`credential\`.                                                                                                                                        |
-| attributes.name               | no           | Credential name. Will not change if you choose to ignore this parameter.                                                                                                 |
-| attributes.keys               | no           | An object which represents component’s configuration. Will not change if you choose to ignore this parameter. Please note, that \`keys\` object is overwritten entirely. |
-| relationships.agent           | no           | The agent relation object. Will not change if you choose to ignore this parameter.                                                                                       |
-| relationships.agent.data.id   | no           | Agent ID.                                                                                                                                                                |
-| relationships.agent.data.type | no           | The value must be \`agent\`.                                                                                                                                             |
+| `id`                            | yes          | The value must be the same as the URL parameter `CREDENTIAL_ID`                                                                                                        |
+| `type`                          | yes          | The value must be `credential`.                                                                                                                                        |
+|` attributes.name`               | no           | Credential name. Will not change if you choose to ignore this parameter.                                                                                                 |
+| `attributes.keys`               | no           | An object which represents component’s configuration. Will not change if you choose to ignore this parameter. Please note, that `keys` object is overwritten entirely. |
+| `relationships.agent`           | no           | The agent relation object. Will not change if you choose to ignore this parameter.                                                                                       |
+| `relationships.agent.data.id`   | no           | Agent ID.                                                                                                                                                                |
+| `relationships.agent.data.type` | no           | The value must be `agent`.                                                                                                                                             |
 
 **EXAMPLE:**
-
-curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \\
-
-\-u {EMAIL}:{APIKEY} \\
-
-\-X PATCH \\
-
-\-H 'Accept: application/json' \\
-
-\-H 'Content-Type: application/json' -d '
-
-{
-
-"data": {
-
-"id": "585430d3f02852a8a9fac45e",
-
-"type": "credential",
-
-"attributes": {
-
-"keys": {
-
-"key1": "updated value"
-
-}
-
-},
-
-"relationships": {
-
-"agent": {
-
-"data": {
-
-"id": "59a410d76b670400182f190e",
-
-"type": "agent"
-
-}
-
-}
-
-}
-
-}
-
-}'
+```
+curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
+   -u {EMAIL}:{APIKEY} \
+   -X PATCH \
+   -H 'Accept: application/json' \
+   -H 'Content-Type: application/json' -d '
+    {
+        "data": {
+            "id": "585430d3f02852a8a9fac45e",
+            "type": "credential",
+            "attributes": {
+                "keys": {
+                    "key1": "updated value"  
+                }
+            },                     
+            "relationships": {
+               "agent": {
+                   "data": {
+                       "id": "59a410d76b670400182f190e",
+                           "type": "agent"
+                       }
+                   }
+               }
+           }
+        }'
+```
 
 To delete credentials, we will use the following request:
 
-DELETE
-[{{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/](https://api.elastic.io/v2/credentials/%7bCREDENTIAL_ID%7d/)
+`DELETE {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
 
 Below are request payload parameters:
 
 | **Parameter**     | **Required** | **Description** |
 |-------------------|--------------|-----------------|
-| \`CREDENTIAL_ID\` | yes          | Credential ID.  |
+| `CREDENTIAL_ID` | yes          | Credential ID.  |
+
+**EXAMPLE:**
+```
+curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
+   -X DELETE \
+   -u {EMAIL}:{APIKEY}
+```
+## Retrieval Requests
+The UI automatically shows you lists of entities (workspaces, users, flows, etc.) in corresponding tabs if you have the corresponding permissions. To see these entities via the API, we will use the following requests. Note, that they will only work for members with the corresponding permissions.
+
+1/. To get workspace by ID:
+
+`GET {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/`
+
+Below are request payload parameters:
+
+| **Parameter** | **Required** | **Description** |
+|---------------|--------------|-----------------|
+| `FLOW_ID `      | yes          | Flow ID.        |
+| `include `      | no          | Include or full resource objects in response for related entities, or not. Possible values: `members` and/or `invites`.        |
+
+**EXAMPLE:**
+```
+curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}?include=members,invites \
+  -u {EMAIL}:{APIKEY} \
+  -H 'Accept: application/json'
+  ```
+2/. To get user's workspaces:
+
+`GET {{apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID}`
+
+Below are request payload parameters:
+
+| **Parameter** | **Required** | **Description** |
+|---------------|--------------|-----------------|
+| `CONTRACT_ID`      | yes          | Contract ID.        |
 
 **EXAMPLE:**
 
-curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \\
+```
+curl {{apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID} \
+   -u {EMAIL}:{APIKEY} \
+   -H 'Accept: application/json'
+```
+3/. To get workspace member list:
 
-\-X DELETE \\
+`GET {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/`
 
-\-u {EMAIL}:{APIKEY}
+Below are request payload parameters:
+
+| **Parameter** | **Required** | **Description** |
+|---------------|--------------|-----------------|
+| `WORKSPACE_ID`      | yes          | Workspace ID.        |
+
+4/. To retrieve all flows in the workspace:
+
+`GET {{apiBaseUri}}/v2/flows/`
+
+Below are request payload parameters:
+
+| **Parameter**                     | **Required** | **Description**                                                                    |
+|-----------------------------------|--------------|------------------------------------------------------------------------------------|
+| `WORKSPACE_ID`                              | yes          | Workspace ID.                                                  |
+| `page[size]`                   | no           | Amount of items per list page. Default value is `50`|
+| `page[number]`   | no          | Number of page you want to display. Default value is `1`.                                                        |
+| `filter[has_draft]` | no         | Filter flows only with or without a draft. Value may be `true` or `false`.                                                   |
+| `filter[status]`   | no          | Filter by `status`. Value may be:` active` or `inactive`.                                                                      |
+| `filter[type]` | no          | Filter by flow `type`. Value may be `ordinary` or `long_running`.                                                   |
+| `filter[user]`               | no           | Filter by `user`. Must be the ID of the user who created the flow. User can be found in relationships of the flow.                                                             |
+| `sort`       | no           | Sort flows list by certain field. Value may be `created_at`, `updated_at` or `name`. Prefix field name with `-` for reversed order (example: `sort=-updated_at`) . Default sort is by ID.                                                                          |
+| `search`     | no           | Search flows by a word or a phrase contained in the `description` or in the `name`. Behavior is similar to operator `LIKE` in SQL. Case insensitive. Leading/following spaces are trimmed.                                                     
+**EXAMPLES:**
+
+Custom paging:
+
+`curl '{{apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&page[size]=20&page[number]=1' \
+   -g -u {EMAIL}:{APIKEY}`
+
+Filter:
+
+`curl '{{apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&filter[status]=active' \
+   -g -u {EMAIL}:{APIKEY}`
+
+Search:
+
+`curl '{{apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&search=webhook' \
+   -g -u {EMAIL}:{APIKEY} `
+
+Custom sorting:
+
+`curl '{{apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&sort=-updated_at' \
+   -g -u {EMAIL}:{APIKEY}`
+
+5/. To retrieve a flow by ID:
+
+`GET {{apiBaseUri}}/v2/flows/{FLOW_ID}`
+
+Below are request payload parameters:
+
+| **Parameter** | **Required** | **Description** |
+|---------------|--------------|-----------------|
+| `FLOW_ID`      | yes          | Flow ID.        |
+
+**EXAMPLE:**
+
+`curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
+   -u {EMAIL}:{APIKEY}`
+
+6/. To retrieve all credentials:
+
+GET {{apiBaseUri}}/v2/credentials?workspace_id={WORKSPACE_ID}/
+
+Below are request payload parameters:
+
+| **Parameter** | **Required** | **Description** |
+|---------------|--------------|-----------------|
+| `WORKSPACE_ID`      | yes          | Workspace ID.        |
+| `filter[component]`      | no          | Retrieve credentials that belong only to the given component ID.        |
+
+**EXAMPLE:**
+
+`curl {{apiBaseUri}}/v2/credentials/?filter[component]={COMPONENT_ID}&workspace_id={WORKSPACE_ID} \
+   -u {EMAIL}:{APIKEY} \
+   -H 'Accept: application/json'`
+
+7/. Retrieve a credential by ID:
+
+`GET {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
+
+Below are request payload parameters:
+
+| **Parameter** | **Required** | **Description** |
+|---------------|--------------|-----------------|
+| `CREDENTIAL_ID`      | yes          | Credential ID.        |
+
+**EXAMPLE:**
+
+`curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
+   -u {EMAIL}:{APIKEY} \
+   -H 'Accept: application/json'`
