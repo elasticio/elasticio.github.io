@@ -721,7 +721,8 @@ Below are request payload parameters:
 | `filter[type]` | no          | Filter by flow `type`. Value may be `ordinary` or `long_running`.                                                   |
 | `filter[user]`               | no           | Filter by `user`. Must be the ID of the user who created the flow. User can be found in relationships of the flow.                                                             |
 | `sort`       | no           | Sort flows list by certain field. Value may be `created_at`, `updated_at` or `name`. Prefix field name with `-` for reversed order (example: `sort=-updated_at`) . Default sort is by ID.                                                                          |
-| `search`     | no           | Search flows by a word or a phrase contained in the `description` or in the `name`. Behavior is similar to operator `LIKE` in SQL. Case insensitive. Leading/following spaces are trimmed.                                                     
+| `search`     | no           | Search flows by a word or a phrase contained in the `description` or in the `name`. Behavior is similar to operator `LIKE` in SQL. Case insensitive. Leading/following spaces are trimmed.     |
+
 **EXAMPLES:**
 
 Custom paging:
