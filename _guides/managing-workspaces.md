@@ -17,7 +17,7 @@ Workspaces are enclosed environments in a
 You can find the basic information about workspaces
 [here](//getting-started/contracts-and-workspaces).
 A contract member can create workspaces in his contract via the UI or the
-API.
+[API](#to-create-a-workspace-via-the-api-use-the-following-request).
 
 To create a new workspace in the UI:
 
@@ -42,7 +42,7 @@ To create a new workspace in the UI:
 6\. In Workspaces tab, click **Create New Workspace**:
 ![](https://user-images.githubusercontent.com/48761764/55963277-30256280-5c7b-11e9-9b11-4f9a1cf46528.png)
 
-To create a workspace via the API, use the following request:
+##### To create a workspace via the API, use the following request:
 
 `POST {{apiBaseUri}}/v2/workspaces`
 
