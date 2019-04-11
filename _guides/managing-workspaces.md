@@ -370,7 +370,7 @@ curl -X POST {{apiBaseUri}}/v2/flows \
 With the right
 [permissions](/managing-user-roles-in-a-tenant)
 a workspace member can perform flow management via the [UI](#flow-management-via-the-ui) or
-the [API](#flow-management-via-the-api).
+the [API](#2-flow-management-via-the-api).
 
 ##### 1\. Flow management via the UI.
 
@@ -398,9 +398,8 @@ switch:
 
 ![](https://user-images.githubusercontent.com/48761764/55892431-fdb62f80-5bbe-11e9-8d9d-a49eed205711.png)
 
-##### 2\.  Flow management via the API.
-
-This part includes the following actions:
+##### 2\.  Flow management via the API
+includes the following actions:
  [toggling type](#update_flow_api)
     between **Realtime** and **Ordinary**, [starting and
     stopping](#start_stop_api) flows, and deleting flows.
