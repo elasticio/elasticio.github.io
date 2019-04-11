@@ -92,6 +92,7 @@ a workspace member can perform workspace management via the
 [UI](#workspace-management-via-the-ui) or the [API](#workspace-management-via-the-api).
 
 ##### 1\. Workspace management via the UI.
+
 This part includes:
 adding or inviting new members, managing their workspace [user
 roles](/managing-user-roles-in-a-tenant), removing members, and deleting the
@@ -129,6 +130,7 @@ To delete workspace, click **Delete workspace**:
 ![](https://user-images.githubusercontent.com/48761764/55892421-fc850280-5bbe-11e9-939a-11f34119e2a8.png)
 
 ##### 2\. Workspace management via the API.
+
 This part includes adding new members, managing their workspace user roles, removing members, renaming the workspace, and deleting the workspace.
 
 To add a new member via the API, use the following request:
@@ -371,6 +373,7 @@ a workspace member can perform flow management via the [UI](#flow-management-via
 the [API](#flow-management-via-the-api).
 
 ##### 1\. Flow management via the UI.
+
 This part includes the following actions:
 toggling type between **Realtime** and
     **Ordinary**, starting and stopping flows, and deleting flows. All your
@@ -396,6 +399,7 @@ switch:
 ![](https://user-images.githubusercontent.com/48761764/55892431-fdb62f80-5bbe-11e9-8d9d-a49eed205711.png)
 
 ##### 2\.  Flow management via the API.
+
 This part includes the following actions:
  [toggling type](#update_flow_api)
     between **Realtime** and **Ordinary**, [starting and
