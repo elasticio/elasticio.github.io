@@ -7,31 +7,40 @@ since: 20190411
 ---
 
 This document provides information on workspace management, namely the following
-actions: [workspace creation](#workspace-creation), [editing the
+actions: [creating workspaces](#creating-workspaces), [editing the
 workspace](#editing-the-workspace), [creating flows](#creating-flows), [editing flows](#editing-flows) in the workspace, [creating credentials](#creating-credentials) and [editing  credentials](#editing_credentials). Additionally, you will find all workspace-related [retrieval API requests](#retrieval-requests).
 
-## Workspace Creation
+## Creating Workspaces
 
 Workspaces are enclosed environments in a
-[contract](//getting-started/contracts-and-workspaces.html#contracts).
+[contract](//getting-started/contracts-and-workspaces).
 You can find the basic information about workspaces
-[here](//getting-started/contracts-and-workspaces.html#workspaces).
+[here](//getting-started/contracts-and-workspaces).
 A contract member can create workspaces in his contract via the UI or the
 API.
 
 To create a new workspace in the UI:
 
-1.  On the sidebar, click **Add**.
+1\.  On the sidebar, click **Add**.
 
 ![](https://user-images.githubusercontent.com/48761764/55892416-fbec6c00-5bbe-11e9-9099-c60e925c93b4.png)
 
-1.  Enter new workspace name and click **Create.**
+2\.  Enter new workspace name and click **Create.**
 
 ![](https://user-images.githubusercontent.com/48761764/55892417-fbec6c00-5bbe-11e9-9a8a-d6699170c74b.png)
 
-1.  Your new workspace is ready.
+3\.  Your new workspace is ready.
 
 ![](https://user-images.githubusercontent.com/48761764/55892418-fbec6c00-5bbe-11e9-9295-3e5dd7a71c5b.png)
+
+4\. Alternatively, you can create a new workspace in contracts settings. Click your avatar at the bottom of the navigational menu, and choose **Settings**:
+![](https://user-images.githubusercontent.com/48761764/55963278-30bdf900-5c7b-11e9-9c09-6cf4a9e96be3.png)
+
+5\. Choose your contract:
+![](https://user-images.githubusercontent.com/48761764/55963278-30bdf900-5c7b-11e9-9c09-6cf4a9e96be3.png)
+
+6\. In Workspaces tab, click **Create New Workspace**:
+![](https://user-images.githubusercontent.com/48761764/55963277-30256280-5c7b-11e9-9b11-4f9a1cf46528.png)
 
 To create a workspace via the API, use the following request:
 
@@ -73,20 +82,20 @@ curl {{apiBaseUri}}/v2/workspaces \
     }
   }'
 ```
-
+**NOTE:** Workspace name is limited by usable characters and length. It may contain only letters, digits, whitespaces, `-` and `_` symbols, and be up to 40 symbols long.
 
 ## Editing the Workspace
 
 With the right
-[permissions](/managing-user-roles-in-a-tenant.html#permissions-reference-table)
+[permissions](/managing-user-roles-in-a-tenant)
 a workspace member can perform workspace management via the
 UI or the API.
 
-1/. Workspace management via the UI includes such actions as [adding or
-inviting](#add_or_invite) new members, managing their workspace [user
+1\. Workspace management via the UI includes such actions as adding or
+inviting new members, managing their workspace [user
 roles](/managing-user-roles-in-a-tenant),
-[removing members](#remove_members), and [deleting the
-workspace](#delete_workspace). All these actions are done in **Workspace** tab
+removing members, and deleting the
+workspace. All these actions are done in **Workspace** tab
 of the navigational menu:
 
 ![](https://user-images.githubusercontent.com/48761764/55892423-fc850280-5bbe-11e9-947e-99d94f86c873.png)
@@ -119,10 +128,10 @@ To delete workspace, click **Delete workspace**:
 
 ![](https://user-images.githubusercontent.com/48761764/55892421-fc850280-5bbe-11e9-939a-11f34119e2a8.png)
 
-2/. Workspace management via the API includes such actions as adding new members,
-managing their [workspace user roles](#update_roles_api), [removing
-members](#remove_member_api), and [deleting the
-workspace](#delete_workspace_api).
+2\. Workspace management via the API includes such actions as adding new members,
+managing their workspace user roles, removing
+members, renaming the workspace, and deleting the
+workspace.
 
 To add a new member via the API, use the following request:
 
@@ -201,14 +210,42 @@ Below are request payload parameters:
 
 | **Parameter** | **Description**                              |
 |---------------|----------------------------------------------|
-| WORKSPACE_ID  | The ID of the Workspace.                     |
-| USER_ID       | The ID of the user, which requires deletion. |
+| `WORKSPACE_ID`  | The ID of the Workspace.                     |
+| `USER_ID `      | The ID of the user, which requires deletion. |
 
 **EXAMPLE:**
 ```
 curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
     -X DELETE    \
     -u {EMAIL}:{APIKEY}
+```
+
+To rename a workspace via the API we will use the following request:
+
+`POST {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}`
+
+Below are request payload parameters:
+
+| **Parameter** | **Description**                              |
+|---------------|----------------------------------------------|
+| `type`  | The value must be `workspace`.                    |
+| `attributes.name`      | Name of the workspace. |
+
+**EXAMPLE:**
+```
+curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
+  -X PATCH \
+  -u {EMAIL}:{APIKEY} \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' -d '
+   {
+  "data":{
+    "type":"workspace",
+    "attributes":{
+      "name":"New Workspace Name"
+      }
+    }
+  }'
 ```
 
 To delete workspace via the API we will use the following request:
@@ -238,7 +275,7 @@ his contract via the UI or the [API](#flow_via_api).
 
 To create a new flow in the UI:
 
-1/.  On the dashboard, click **Add new flow**:
+1\.  On the dashboard, click **Add new flow**:
 
 ![](https://user-images.githubusercontent.com/48761764/55892429-fdb62f80-5bbe-11e9-9f92-170b1508468f.png)
 
@@ -246,7 +283,7 @@ Alternatively, you can click **Add New Flow** in **Flows**:
 
 ![](https://user-images.githubusercontent.com/48761764/55892437-fee75c80-5bbe-11e9-88ae-5b059578d7d5.png)
 
-2/.  Your new flow is ready. Be sure to name it and write a description, which is optional:
+2\.  Your new flow is ready. Be sure to name it and write a description, which is optional:
 
 ![](http://user-images.githubusercontent.com/48761764/55892430-fdb62f80-5bbe-11e9-9aa9-41e6db19c76a.png)
 
@@ -331,9 +368,9 @@ curl -X POST {{apiBaseUri}}/v2/flows \
 ## Editing Flows
 
 With the right
-[permissions](/managing-user-roles-in-a-tenant.html#permissions-reference-table)
-a workspace member can perform flow management via the [UI](#flow_manage_ui) or
-the [API](#Flow_management_API).
+[permissions](/managing-user-roles-in-a-tenant)
+a workspace member can perform flow management via the UI or
+the API.
 
 1\. Flow management via the UI includes toggling type between **Realtime** and
     **Ordinary**, starting and stopping flows, and deleting flows. All your
@@ -445,12 +482,12 @@ Workspace members with corresponding permissions can create credentials via the
 
 To create new credentials via the UI:
 
-1/.  In the navigational menu, click **Credentials**. Then choose the required
+1\.  In the navigational menu, click **Credentials**. Then choose the required
     component from the list and click it. For example, let’s use SFTP:
 
 ![](https://user-images.githubusercontent.com/48761764/55948367-03f8ea00-5c59-11e9-8fa2-ce7aaf9ed824.png)
 
-2/.  Click **Add New Credential** and fill in the appearing fields. When done,
+2\.  Click **Add New Credential** and fill in the appearing fields. When done,
     click **Verify**:
 
 ![](https://user-images.githubusercontent.com/48761764/55943603-8aa8c980-5c4f-11e9-83d6-8532f1cea8ae.png)
@@ -521,7 +558,7 @@ A member with the right permissions can manage credentials – update or delete
 them via the [UI](#Editing_credentials_ui) or the
 [API](#editing_credentials_api):
 
-1/.  Editing credentials via the UI includes updating and deleting credentials.
+1\.  Editing credentials via the UI includes updating and deleting credentials.
 
 To edit credentials, choose the required credential from the list in
 **Credentials**:
@@ -537,7 +574,7 @@ click **Delete**:
 
 ![](https://user-images.githubusercontent.com/48761764/55943605-8aa8c980-5c4f-11e9-801e-6b48f1c596d2.png)
 
-2/.  Editing credentials via the API includes updating and deleting credentials.
+2\.  Editing credentials via the API includes updating and deleting credentials.
 
 To update credentials, we will use the following request:
 
@@ -602,7 +639,7 @@ curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
 ## Retrieval Requests
 The UI automatically shows you lists of entities (workspaces, users, flows, etc.) in corresponding tabs if you have the corresponding permissions. To see these entities via the API, we will use the following requests. Note, that they will only work for members with the corresponding permissions.
 
-1/. To get workspace by ID:
+1\. To get workspace by ID:
 
 `GET {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/`
 
@@ -619,7 +656,7 @@ curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}?include=members,invites \
   -u {EMAIL}:{APIKEY} \
   -H 'Accept: application/json'
   ```
-2/. To get user's workspaces:
+2\. To get user's workspaces:
 
 `GET {{apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID}`
 
@@ -636,7 +673,7 @@ curl {{apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID} \
    -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json'
 ```
-3/. To get workspace member list:
+3\. To get workspace member list:
 
 `GET {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/`
 
@@ -646,7 +683,7 @@ Below are request payload parameters:
 |---------------|--------------|-----------------|
 | `WORKSPACE_ID`      | yes          | Workspace ID.        |
 
-4/. To retrieve all flows in the workspace:
+4\. To retrieve all flows in the workspace:
 
 `GET {{apiBaseUri}}/v2/flows/`
 
@@ -685,7 +722,7 @@ Custom sorting:
 `curl '{{apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&sort=-updated_at' \
    -g -u {EMAIL}:{APIKEY}`
 
-5/. To retrieve a flow by ID:
+5\. To retrieve a flow by ID:
 
 `GET {{apiBaseUri}}/v2/flows/{FLOW_ID}`
 
@@ -700,7 +737,7 @@ Below are request payload parameters:
 `curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
    -u {EMAIL}:{APIKEY}`
 
-6/. To retrieve all credentials:
+6\. To retrieve all credentials:
 
 GET {{apiBaseUri}}/v2/credentials?workspace_id={WORKSPACE_ID}/
 
@@ -717,7 +754,7 @@ Below are request payload parameters:
    -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json'`
 
-7/. Retrieve a credential by ID:
+7\. Retrieve a credential by ID:
 
 `GET {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
 
