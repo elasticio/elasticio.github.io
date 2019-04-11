@@ -34,9 +34,11 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 ![](https://user-images.githubusercontent.com/48761764/55892418-fbec6c00-5bbe-11e9-9295-3e5dd7a71c5b.png)
 
 4\. Alternatively, you can create a new workspace in contracts settings. Click your avatar at the bottom of the navigational menu, and choose **Settings**:
+
 ![](https://user-images.githubusercontent.com/48761764/55963278-30bdf900-5c7b-11e9-9c09-6cf4a9e96be3.png)
 
 5\. Choose your contract:
+
 ![](https://user-images.githubusercontent.com/48761764/55963280-30bdf900-5c7b-11e9-849a-52a0f2e0ea32.png)
 
 6\. In Workspaces tab, click **Create New Workspace**:
@@ -89,12 +91,10 @@ curl {{apiBaseUri}}/v2/workspaces \
 With the right
 [permissions](/managing-user-roles-in-a-tenant)
 a workspace member can perform workspace management via the
-[UI](#workspace-management-via-the-ui) or the [API](#workspace-management-via-the-api).
+[UI](#1-workspace-management-via-the-ui) or the [API](#2-workspace-management-via-the-api).
 
-##### 1\. Workspace management via the UI.
-
-This part includes:
-adding or inviting new members, managing their workspace [user
+##### 1\. Workspace management via the UI
+includes adding or inviting new members, managing their workspace [user
 roles](/managing-user-roles-in-a-tenant), removing members, and deleting the
 workspace. All these actions are done in **Workspace** tab
 of the navigational menu:
@@ -129,9 +129,8 @@ To delete workspace, click **Delete workspace**:
 
 ![](https://user-images.githubusercontent.com/48761764/55892421-fc850280-5bbe-11e9-939a-11f34119e2a8.png)
 
-##### 2\. Workspace management via the API.
-
-This part includes adding new members, managing their workspace user roles, removing members, renaming the workspace, and deleting the workspace.
+##### 2\. Workspace management via the API
+includes adding new members, managing their workspace user roles, removing members, renaming the workspace, and deleting the workspace.
 
 To add a new member via the API, use the following request:
 
@@ -369,12 +368,11 @@ curl -X POST {{apiBaseUri}}/v2/flows \
 
 With the right
 [permissions](/managing-user-roles-in-a-tenant)
-a workspace member can perform flow management via the [UI](#flow-management-via-the-ui) or
+a workspace member can perform flow management via the [UI](#1-flow-management-via-the-ui) or
 the [API](#2-flow-management-via-the-api).
 
 ##### 1\. Flow management via the UI.
-
-This part includes the following actions:
+includes the following actions:
 toggling type between **Realtime** and
     **Ordinary**, starting and stopping flows, and deleting flows. All your
     flows can be found in **Flows** inside the navigational menu. You can use
@@ -499,7 +497,27 @@ Workspace members with corresponding permissions can create credentials via the
 
 ![](https://user-images.githubusercontent.com/48761764/55943604-8aa8c980-5c4f-11e9-8d26-4c6fb897b0e3.png)
 
-After the credential gets verified, click **Save**, which will appear in the place of **Verify**:
+3\. After the credential gets verified, click **Save**, which will appear in the place of **Verify**.
+
+4\. Alternatively, you can create credentials when adding components to a flow. In **Flows**, choose the required flow:
+
+![](https://user-images.githubusercontent.com/48761764/55970289-f1e27000-5c87-11e9-869f-9c5bb84b74b3.png)
+
+5\. Click **Add the initial step** or **edit flow** button, depending on the existence of flow steps:
+
+![](https://user-images.githubusercontent.com/48761764/55970291-f1e27000-5c87-11e9-8dce-6aa762846c59.png)
+
+![](https://user-images.githubusercontent.com/48761764/55970292-f1e27000-5c87-11e9-90cb-b77d4db2c0c8.png)
+
+6\. Search for your component in the list and click it:
+
+![](https://user-images.githubusercontent.com/48761764/55970286-f149d980-5c87-11e9-8b94-159e8acd7dc1.png)  
+
+7\. Click **connect new credentials**:
+
+![](https://user-images.githubusercontent.com/48761764/55970631-95338500-5c88-11e9-95bc-f985e3e8a982.png)
+
+
 
 ##### To create new credential via the API, we will use the following API request:
 
