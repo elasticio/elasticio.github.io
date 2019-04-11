@@ -21,16 +21,15 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 
 ##### To create a new workspace in the UI:
 
-1\.  On the sidebar, click **Add**.
+1\.  On the sidebar, click **Add**:
 
 ![](https://user-images.githubusercontent.com/48761764/55892416-fbec6c00-5bbe-11e9-9099-c60e925c93b4.png)
 
-2\.  Enter new workspace name and click **Create.**
+2\.  Enter new workspace name and click **Create**:
 
 ![](https://user-images.githubusercontent.com/48761764/55892417-fbec6c00-5bbe-11e9-9a8a-d6699170c74b.png)
 
-3\.  Your new workspace is ready.
-
+3\.  Your new workspace is ready:
 ![](https://user-images.githubusercontent.com/48761764/55892418-fbec6c00-5bbe-11e9-9295-3e5dd7a71c5b.png)
 
 4\. Alternatively, you can create a new workspace in contracts settings. Click your avatar at the bottom of the navigational menu, and choose **Settings**:
