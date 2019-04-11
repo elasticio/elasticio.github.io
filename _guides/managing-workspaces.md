@@ -40,7 +40,7 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 
 ![](https://user-images.githubusercontent.com/48761764/55963280-30bdf900-5c7b-11e9-849a-52a0f2e0ea32.png)
 
-6\. In Workspaces tab, click **Create New Workspace**:
+6\. In **Workspaces tab**, click **Create New Workspace**:
 ![](https://user-images.githubusercontent.com/48761764/55963277-30256280-5c7b-11e9-9b11-4f9a1cf46528.png)
 
 ##### To create a workspace via the API, use the following request:
