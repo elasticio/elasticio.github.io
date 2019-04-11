@@ -16,10 +16,10 @@ Workspaces are enclosed environments in a
 [contract](//getting-started/contracts-and-workspaces).
 You can find the basic information about workspaces
 [here](//getting-started/contracts-and-workspaces).
-A contract member can create workspaces in his contract via the UI or the
+A contract member can create workspaces in his contract via the [UI](#to-create-a-new-workspace-in-the-ui) or the
 [API](#to-create-a-workspace-via-the-api-use-the-following-request).
 
-To create a new workspace in the UI:
+##### To create a new workspace in the UI:
 
 1\.  On the sidebar, click **Add**.
 
@@ -89,9 +89,10 @@ curl {{apiBaseUri}}/v2/workspaces \
 With the right
 [permissions](/managing-user-roles-in-a-tenant)
 a workspace member can perform workspace management via the
-UI or the API.
+[UI](#workspace-management-via-the-ui) or the API.
 
-1\. Workspace management via the UI includes such actions as adding or
+##### 1\. Workspace management via the UI
+includes such actions as adding or
 inviting new members, managing their workspace [user
 roles](/managing-user-roles-in-a-tenant),
 removing members, and deleting the
