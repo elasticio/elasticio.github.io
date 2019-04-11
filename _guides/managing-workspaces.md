@@ -89,9 +89,10 @@ curl {{apiBaseUri}}/v2/workspaces \
 With the right
 [permissions](/managing-user-roles-in-a-tenant)
 a workspace member can perform workspace management via the
-[UI](#workspace-management-via-the-ui-includes-the-following-actions) or the [API](#workspace-management-via-the-api-includes-the-following-actions).
+[UI](#workspace-management-via-the-ui) or the [API](#workspace-management-via-the-api).
 
-##### 1\. Workspace management via the UI includes the following actions:
+##### 1\. Workspace management via the UI.
+This part includes:
 adding or inviting new members, managing their workspace [user
 roles](/managing-user-roles-in-a-tenant), removing members, and deleting the
 workspace. All these actions are done in **Workspace** tab
@@ -127,11 +128,8 @@ To delete workspace, click **Delete workspace**:
 
 ![](https://user-images.githubusercontent.com/48761764/55892421-fc850280-5bbe-11e9-939a-11f34119e2a8.png)
 
-##### 2\. Workspace management via the API includes the following actions:
-adding new members,
-managing their workspace user roles, removing
-members, renaming the workspace, and deleting the
-workspace.
+##### 2\. Workspace management via the API.
+This part includes adding new members, managing their workspace user roles, removing members, renaming the workspace, and deleting the workspace.
 
 To add a new member via the API, use the following request:
 
@@ -369,10 +367,11 @@ curl -X POST {{apiBaseUri}}/v2/flows \
 
 With the right
 [permissions](/managing-user-roles-in-a-tenant)
-a workspace member can perform flow management via the [UI](#flow-management-via-the-ui-includes-the-following-actions) or
-the [API](#flow-management-via-the-api-includes-the-following-actions).
+a workspace member can perform flow management via the [UI](#flow-management-via-the-ui) or
+the [API](#flow-management-via-the-api).
 
-##### 1\. Flow management via the UI includes the following actions:
+##### 1\. Flow management via the UI.
+This part includes the following actions:
 toggling type between **Realtime** and
     **Ordinary**, starting and stopping flows, and deleting flows. All your
     flows can be found in **Flows** inside the navigational menu. You can use
@@ -396,7 +395,8 @@ switch:
 
 ![](https://user-images.githubusercontent.com/48761764/55892431-fdb62f80-5bbe-11e9-8d9d-a49eed205711.png)
 
-##### 2\.  Flow management via the API includes the following actions:
+##### 2\.  Flow management via the API.
+This part includes the following actions:
  [toggling type](#update_flow_api)
     between **Realtime** and **Ordinary**, [starting and
     stopping](#start_stop_api) flows, and deleting flows.
