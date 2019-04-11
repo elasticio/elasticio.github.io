@@ -8,10 +8,7 @@ since: 20190411
 
 This document provides information on workspace management, namely the following
 actions: [workspace creation](#workspace-creation), [editing the
-workspace](#editing-the-workspace), [flow creation](#Flow_creation), [editing
-flows](#editing-flows) in the workspace, [credentials
-creation](#credentials-creation) and [editing
-credentials](#editing_credentials). Additionally, you will find all workspace-related [retrieval API requests](#retrieval-requests).
+workspace](#editing-the-workspace), [creating flows](#creating-flows), [editing flows](#editing-flows) in the workspace, [creating credentials](#creating-credentials) and [editing  credentials](#editing_credentials). Additionally, you will find all workspace-related [retrieval API requests](#retrieval-requests).
 
 ## Workspace Creation
 
@@ -20,7 +17,7 @@ Workspaces are enclosed environments in a
 You can find the basic information about workspaces
 [here](//getting-started/contracts-and-workspaces.html#workspaces).
 A contract member can create workspaces in his contract via the UI or the
-[API](#API).
+API.
 
 To create a new workspace in the UI:
 
@@ -80,11 +77,10 @@ curl {{apiBaseUri}}/v2/workspaces \
 
 ## Editing the Workspace
 
-
 With the right
 [permissions](/managing-user-roles-in-a-tenant.html#permissions-reference-table)
 a workspace member can perform workspace management via the
-[UI](#Editing_the_workspace_ui) or the [API](#API2).
+UI or the API.
 
 1/. Workspace management via the UI includes such actions as [adding or
 inviting](#add_or_invite) new members, managing their workspace [user
@@ -232,7 +228,8 @@ curl -i {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
  -u {EMAIL}:{APIKEY}
  ```
 
-## Flow Creation  
+
+## Creating Flows  
 
 An integration [flow](//getting-started/integration-flow) is a set
 of components used to synchronize data between multiple applications or
@@ -330,8 +327,8 @@ curl -X POST {{apiBaseUri}}/v2/flows \
 }'
 ```
 
-## Editing Flows
 
+## Editing Flows
 
 With the right
 [permissions](/managing-user-roles-in-a-tenant.html#permissions-reference-table)
@@ -439,7 +436,8 @@ curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
    -u {EMAIL}:{APIKEY}
 ```
 
-## Credentials Creation
+
+## Creating Credentials
 
 Credentials contain authorization information that is required by components.
 Workspace members with corresponding permissions can create credentials via the
@@ -515,6 +513,7 @@ curl {{apiBaseUri}}/v2/credentials/ \
      }
    }'
 ```
+
 
 ## Editing Credentials
 
