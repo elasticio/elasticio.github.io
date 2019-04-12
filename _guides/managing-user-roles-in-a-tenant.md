@@ -14,7 +14,7 @@ configured](#configuring-custom-user-roles). Additionally, it provides
 ## Roles and permissions
 
 
-A [tenant](/getting-started/tenant) admin can
+A [tenant](//getting-started/tenant) admin can
 control user rights in his tenant by configuring user roles. A role is a user
 attribute that defines a set of permissions for the user. Contract roles define
 permissions for contract management, and workspace roles define permissions for
@@ -34,7 +34,7 @@ The default *contract roles* are:
 The default *workspace roles* are:
 
 -   **Owner.** Users with this role can edit the workspace, edit
-    [flows](/getting-started/integration-flow),
+    [flows](//getting-started/integration-flow),
     toggle flows’ active/inactive status, toggle flows’
     [real-time/ordinary](realtime-flows)
     status, and edit workspace credentials.
@@ -43,7 +43,7 @@ The default *workspace roles* are:
 
 -   **Integrator.** Users with this role can edit flows, toggle flows’
     active/inactive status, toggle flows’ real-time/ordinary status, and edit
-    [credentials](/getting-started/credential).
+    [credentials](//getting-started/credential).
 
 -   **Guest.** Users with this role can browse the workspace.
 
@@ -61,54 +61,54 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 1\.  Open **Workspace** in navigation menu:
 
-<img src="https://user-images.githubusercontent.com/48761764/54820230-16f64b00-4ca7-11e9-9eb1-261b1008cf49.png">
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_2.png)
 
 
 2\.  Edit members’ roles:
 
-<img src="https://user-images.githubusercontent.com/48761764/54928557-bff9ab80-4f1c-11e9-9e6a-7a4fd274c49b.png">
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_1.png)
 
 
 3\.  Either add or invite a new member:
 
   a)  Click **Add new member**, select an existing user and use the **Role** dropdown menu.
 
-<img src="https://user-images.githubusercontent.com/48761764/54754038-3891fc80-4beb-11e9-818f-af131fe6bfd9.jpg"/>
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_18.jpg)
 
   b)  Click **Invite new member**, enter user email and use **Contract Role** and **Workspace Role** dropdown menus.
 
-<img src="https://user-images.githubusercontent.com/48761764/54754026-33cd4880-4beb-11e9-8677-fc9ced4ff1c1.jpg"/>
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_19.jpg)
 
 4\.  In the corresponding menu, select the required role. If your tenant has an extensive list of roles, use the **Find role** field to optimize search. Start typing to gradually filter out unwanted roles.
 
-<img src="https://user-images.githubusercontent.com/48761764/54928558-bff9ab80-4f1c-11e9-88e6-7368d41771e7.png">
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_3.png)
 
-<img src="https://user-images.githubusercontent.com/48761764/54928559-c0924200-4f1c-11e9-8307-98a4f15a8777.png">
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_4.png)
 
 
 5\.  Click **Add** or **Send Invite**, depending on your previous actions.
 
-<img src="https://user-images.githubusercontent.com/48761764/54754014-2d3ed100-4beb-11e9-9622-2861f33537fc.jpg"/>
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_24.jpg)
 
-<img src="https://user-images.githubusercontent.com/48761764/54754025-33cd4880-4beb-11e9-908a-63febb3873a8.jpg"/>
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_20.jpg)
 
 To set a role for a user when adding or inviting new users to a workspace:
 
 1\.  Open profile **Settings** in the navigation menu:
 
-<img src="https://user-images.githubusercontent.com/48761764/54820234-178ee180-4ca7-11e9-8342-321366c77cdf.png">
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_5.png)
 
 2\.  Select your contract:
 
-<img src="https://user-images.githubusercontent.com/48761764/54820235-178ee180-4ca7-11e9-9e3f-e012c5cd87a7.png">
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_6.png)
 
 3\.  Edit members’ roles In the **Members** tab:
 
-<img src="https://user-images.githubusercontent.com/48761764/54928556-bff9ab80-4f1c-11e9-938b-8f4c440024d8.png">
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_7.png)
 
 4\.  Alternatively, invite a new member and set the roles. Initially, only **Contract Role** dropdown menu is visible. To assign the new member’s workspace and workspace role, click **Specify invitee’s workspace**, and use the **Workspace Role** dropdown menu. Then click **Send Invite**.
 
-<img src="https://user-images.githubusercontent.com/48761764/54754027-3465df00-4beb-11e9-8b97-6cec9f836768.png"/>
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_29.png)
 
 ## Configuring custom user roles
 
