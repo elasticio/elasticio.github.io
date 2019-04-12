@@ -23,7 +23,7 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 
 1\.  On the sidebar, click **Add**:
 
-![](https://user-images.githubusercontent.com/48761764/55892416-fbec6c00-5bbe-11e9-9099-c60e925c93b4.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/screenshot_1.png)
 
 2\.  Enter new workspace name and click **Create**:
 
