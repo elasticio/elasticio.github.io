@@ -73,11 +73,11 @@ To set a role for a user when adding or inviting new users to a workspace:
 
   a)  Click **Add new member**, select an existing user and use the **Role** dropdown menu.
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_18.png)
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_18.jpg)
 
   b)  Click **Invite new member**, enter user email and use **Contract Role** and **Workspace Role** dropdown menus.
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_19.png)
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_19.jpg)
 
 4\.  In the corresponding menu, select the required role. If your tenant has an extensive list of roles, use the **Find role** field to optimize search. Start typing to gradually filter out unwanted roles.
 
@@ -88,9 +88,9 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 5\.  Click **Add** or **Send Invite**, depending on your previous actions.
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_24.png)
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_24.jpg)
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_20.png)
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_20.jpg)
 
 To set a role for a user when adding or inviting new users to a workspace:
 
