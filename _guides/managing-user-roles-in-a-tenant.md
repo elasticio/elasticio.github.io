@@ -8,8 +8,7 @@ since: 20190321
 
 This document explains [what roles and permissions are](#roles-and-permissions),
 how [roles are set in the UI](#setting-user-roles) and how [custom roles are
-configured](#configuring-custom-user-roles). Additionally, it provides
-[permissions reference](#permissions-reference-table) table.
+configured](#configuring-custom-user-roles). Additionally, it provides a list of [non-deletable roles](#essential-roles), and a [permissions reference](#permissions-reference-table) table.
 
 ## Roles and permissions
 
@@ -117,6 +116,14 @@ A tenant admin can configure custom roles if required. To do that, the admin
 needs a special set of credentials called *service account*. It can be acquired
 by an authorized client employee via support.
 
+There are a few restrictions for custom role creation and role deletion:
+
+- You cannot create multiple roles with identical names in one scope;
+- You cannot delete a role that is assigned to a member;
+- You cannot delete [essential roles](#essential-roles);
+- You cannot delete a role that is used in `contract.availableRoles` (learn more about it [here]({{apiBaseUri}}/docs/v2/#create-a-contract)).
+
+
 When the tenant admin uses the *service account* privileges, he can [create
 custom roles]({{apiBaseUri}}/docs/v2/#update-tenant's-roles) via the
 following API request:
@@ -180,7 +187,14 @@ curl {{apiBaseUri}}/v2/tenants/{TENANT_ID}/roles
 
  **NOTE:** these endpoints are still in development and are subject to change.
 
+## Essential roles
 
+A number of roles cannot be edited or deleted, because their functionality is unique. They are:
+
+- contract.owner - this role is assigned to the first member of the contract;
+- workspace.owner - this role is assigned to the user who created the workspace;
+
+These roles have exclusive permissions, which are essential for contract and workspace management.    
 
 ## Permissions reference table
 
