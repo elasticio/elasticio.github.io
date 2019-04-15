@@ -140,7 +140,7 @@ Below are request payload parameters:
 | `attributes.roles[]`                       | yes          | An array of Tenant’s roles. It can be empty.                                                                                                                                                                    |
 | `attributes.roles[].role`                  | no           | Custom role name                                                                                                                                                                                                |
 | `attributes.roles[].scope`                 | no           | The group of objects, which is affected by this role. Value can be: `contracts` or `workspaces`.                                                                                                            |
-| `attributes.roles[].permissions[]`         | yes          | An array of permissions. It can be empty. To get the list of available permissions execute the endpoint: GET {{apiBaseUri}}/v2/permissions or see [this reference table](#permissions-reference-table). |
+| `attributes.roles[].permissions[]`         | yes          | An array of permissions. It can be empty. To get the list of available permissions execute the endpoint: `GET {{apiBaseUri}}/v2/permissions` or see [this reference table](#permissions-reference-table). |
 | `attributes.roles[].i18n.{{language_key}}` | no           | The name of a role in different languages. The value is only required for `en` key. For other languages value is optional.                                                                                  |
 
 **EXAMPLE:**
