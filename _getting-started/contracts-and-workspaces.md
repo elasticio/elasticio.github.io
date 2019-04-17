@@ -14,7 +14,7 @@ scheme shows how contracts and workspaces stand in solution hierarchy.
 
 
 
-![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_1.png
+![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_1.png)
 
 ## Contracts
 
@@ -126,8 +126,8 @@ Workspaces can have the `limited` or `full` type. `Full` is the default workspac
 
 Though not forbidden, **it is highly unrecommended to use `limited` workspaces for any production purposes**. `Limited` workspaces are indicated in the UI:
 
-![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_2.png
+![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_2.png)
 
-![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_3.png
+![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_3.png)
 
 To change workspace type from `limited` to `full`, contact support.
