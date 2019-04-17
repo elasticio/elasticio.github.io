@@ -118,7 +118,7 @@ client’s engineers, and production environment is customer-facing only.
 
 ## Limited Workspaces
 
-Workspaces can have the `limited` or `full` type. `Full` is the default workspace type, which is considered normal. `Limited` is intended for platform trial period. Workspaces with `limited` type have certain restrictions for integration flows:
+Workspaces can have the `limited` or `full` type. `Limited` is intended for platform trial period. Workspaces with `limited` type have certain restrictions for integration flows:
 
 - Integration flows in `limited` workspaces are restricted by work time. This time is defined for each installation with an environment variable.
 
@@ -131,3 +131,5 @@ Though not forbidden, **it is highly unrecommended to use `limited` workspaces f
 ![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_3.png)
 
 To change workspace type from `limited` to `full`, contact support.
+
+`Full` is the default workspace type. However, the default type for workspaces created in a tenant can be changed. A user with corresponding permission can do that, using `"default_workspace_type"`, setting `limited` or `full` as a value.
