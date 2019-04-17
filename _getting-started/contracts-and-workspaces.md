@@ -9,12 +9,12 @@ since: 20190401
 This document provides information on [contracts](#contracts), [contract
 management](#contract-management), [workspaces](#workspaces) and [workspace
 management](#section). Additionally, it explains the basic application of this
-approach in [solution life cycle](#workspaces-and-life-cycles). The following
+approach in [solution life cycle](#workspaces-and-life-cycles), and what [limited workspaces](#limited-workspaces) are. The following
 scheme shows how contracts and workspaces stand in solution hierarchy.  
 
 
 
-![](https://user-images.githubusercontent.com/48761764/55168339-51665900-517b-11e9-990d-0d707fe2ad62.png)
+![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_1.png
 
 ## Contracts
 
@@ -30,7 +30,7 @@ teams, and workspaces:
 
 -   A **member** is a registered platform user that has been invited the
     contract by Owner and given a contract
-    [role](managing-user-roles-in-a-tenant). Members can collaborate or work individually.
+    [role](//guides/managing-user-roles-in-a-tenant). Members can collaborate or work individually.
 
 -   A **developer team** is a smaller enclosed environment that contains
     component developers and their repositories.
@@ -43,10 +43,10 @@ memberships to enter and work in. With the invitation a user gets a user role.
 
 A tenant Admin can create contracts and set contract
 Owners. By default, only members with contract Owner or a other
-[roles](managing-user-roles-in-a-tenant) with the right permissions can
+[roles](//guides/managing-user-roles-in-a-tenant) with the right permissions can
 manage contracts. However, roles can be customized, so in this document we will
 differentiate contract and workspace members by
-[permissions](managing-user-roles-in-a-tenant.html#permissions-reference-table).
+[permissions](//guides/managing-user-roles-in-a-tenant).
 
 Here is the full list of contract permissions:
 
@@ -114,3 +114,20 @@ non-disruptive testing one can create dedicated workspaces for testing and
 production stages, both running near-identical integration flows. The workspaces
 will have different credentials, so the testing stage may be accessed by the
 client’s engineers, and production environment is customer-facing only.
+
+
+## Limited Workspaces
+
+Workspaces can have the `limited` or `full` type. `Full` is the default workspace type, which is considered normal. `Limited` is intended for platform trial period. Workspaces with `limited` type have certain restrictions for integration flows:
+
+- Integration flows in `limited` workspaces are restricted by work time. This time is defined for each installation with an environment variable.
+
+- In `limited` workspaces, integration flows that contain errors will not be suspended. Instead, they will be stopped without saving any data.
+
+Though not forbidden, **it is highly unrecommended to use `limited` workspaces for any production purposes**. `Limited` workspaces are indicated in the UI:
+
+![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_2.png
+
+![]({{gitDomain}}/assets/img/getting-started/contracts-and-workspaces/Screenshot_3.png
+
+To change workspace type from `limited` to `full`, contact support.
