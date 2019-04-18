@@ -118,7 +118,7 @@ client’s engineers, and production environment is customer-facing only.
 
 Workspaces can have the `limited` or `full` type. `Limited` is intended for platform trial period. Workspaces with `limited` type have certain restrictions for integration flows:
 
-- Integration flows in `limited` workspaces are restricted by work time. This time is defined for each installation with an environment variable.
+- Integration flows in `limited` workspaces are restricted by work time. This means that they are automatically stopped after a certain time. This time is defined for each installation with an environment variable.
 
 - In `limited` workspaces, integration flows that contain errors will not be suspended. Instead, they will be stopped without saving any data.
 
