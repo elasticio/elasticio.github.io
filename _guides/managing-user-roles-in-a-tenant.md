@@ -60,12 +60,12 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 1\.  Open **Workspace** in navigation menu:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_2.png)
+![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_2.png)
 
 
 2\.  Edit members’ roles:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_1.png)
+![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_1.png)
 
 
 3\.  Either add or invite a new member:
