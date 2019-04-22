@@ -393,7 +393,7 @@ Flows can be **Realtime** and **Ordinary**. You can find more info about these
 types [here](/realtime-flows). You can toggle flow type with the corresponding
 switch:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_13.png)
+![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/screenshot_13.png)
 
 ##### 2\.  Flow management via the API
 includes the following actions:
