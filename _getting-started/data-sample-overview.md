@@ -35,7 +35,7 @@ or may require it in completely different order. That’s when you configure
 proper mapping so that the receiving component gets input in accordance with its
 standard.
 
-**NOTE:** Samples exist for flow building and testing purposes. However, the data from samples will go into production when you generate a sample. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards.
+**NOTE:** Samples exist for flow building and testing purposes. Retrieving a sample for an action creates new objects in the target system. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards.
 
 Let’s observe the following process example:
 
@@ -59,7 +59,6 @@ Let’s observe the following process example:
 
 ![](/assets/img/getting-started/what-is-a-sample/Screenshot_1.png)
 
-**NOTE:** Not all components work in by the same process. Some of them, for example service components, have their own setup behavior.
 
 ## Exceptions
 
