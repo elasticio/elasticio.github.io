@@ -41,7 +41,7 @@ memberships to enter and work in. With the invitation a user gets a user role.
 
 A tenant Admin can create contracts and set contract
 Owners. By default, only members with contract Owner or a other
-[roles](\\guides/managing-user-roles-in-a-tenant) with the right permissions can
+[roles](..guides/managing-user-roles-in-a-tenant) with the right permissions can
 manage contracts. However, roles can be customized, so in this document we will
 differentiate contract and workspace members by
 [permissions](\\guides/managing-user-roles-in-a-tenant).
