@@ -33,27 +33,31 @@ or may require it in completely different order. That’s when you configure
 proper mapping so that the receiving component gets input in accordance with its
 standard.
 
-Let’s observe the following step-by-step process example:
+**NOTE:** Samples exist for flow building and testing purposes. However, the data from samples will go into production when you run the flow. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards.
+
+Let’s observe the following process example:
 
 1.  Component Baboon is followed by Component Toucan.
 
-2.  When we select Component Toucan, we can see what sort of data it accepts as
+2.  When we select *Component Toucan*, we can see what sort of data it accepts as
     input.
 
-3.  By retrieving a data sample from Component Baboon, we can see what sort of
+3.  By retrieving a data sample from *Component Baboon*, we can see what sort of
     data it provides as output.
 
-4.  Then we configure the data mapper to relay Baboon data to Toucan, converting
-    it first into a form acceptable by Toucan. The mapping process may include
+4.  Then we configure the data mapper to relay *Baboon* data to *Toucan*, converting
+    it first into a form acceptable by *Toucan*. The mapping process may include
     ignoring some of the output fields, switching field places, etc.
 
-5.  On the example scheme we can see, that Baboon sends out the following data:
-    Name, Surname, Address, Phone Number and Email. Component Toucan doesn’t
-    need Email. Also, it has Name and Surname together in one field. Data mapper
-    makes the necessary changes into Baboon output, so that the data fits Toucan
+5.  On the example scheme we can see, that *Baboon* sends out the following data:
+    `Name`, `Surname`, `Address`, `Phone Number` and `Email`. Component *Toucan* doesn’t
+    need `Email`. Also, it has `Name and Surname` together in one field. Data mapper
+    makes the necessary changes into Baboon output, so that the data fits *Toucan*
     input standard.
 
 ![](/assets/img/getting-started/what-is-a-sample/Screenshot_1.png)
+
+**NOTE:** Not all components work in by the same process. Some of them, for example service components, have their own setup behavior.
 
 ## Exceptions
 
@@ -61,4 +65,6 @@ There are components that have a different approach to input or output, for exam
 
 - Components that expect a file, for example a *.json* array, as input. They will parse the file for the required data.
 
-- Components that accept 
+- Components that do not accept manual mapping, but instead accept a certain type of data as input, for example a *JSONata* expression.
+
+- Components that only accept manual mapping.
