@@ -101,6 +101,8 @@ workspace permissions:
 
 5.  Edit credentials
 
+You can learn more about workspace management [here](//guides/managing-workspaces).
+
 
 ## Workspaces and Life Cycles
 
