@@ -13,9 +13,9 @@ workspace](#editing-the-workspace), [creating flows](#creating-flows), [editing 
 ## Creating Workspaces
 
 Workspaces are enclosed environments in a
-[contract](//getting-started/contracts-and-workspaces).
+[contract](/getting-started/contracts-and-workspaces).
 You can find the basic information about workspaces
-[here](//getting-started/contracts-and-workspaces).
+[here](/getting-started/contracts-and-workspaces).
 A contract member can create workspaces in his contract via the [UI](#to-create-a-new-workspace-in-the-ui) or the
 [API](#to-create-a-workspace-via-the-api-use-the-following-request).
 
@@ -93,8 +93,7 @@ a workspace member can perform workspace management via the
 [UI](#1-workspace-management-via-the-ui) or the [API](#2-workspace-management-via-the-api).
 
 ##### 1\. Workspace management via the UI
-includes adding or inviting new members, managing their workspace [user
-roles](/managing-user-roles-in-a-tenant), removing members, and deleting the
+includes adding or inviting new members, managing their workspace [user roles](/managing-user-roles-in-a-tenant), removing members, and deleting the
 workspace. All these actions are done in **Workspace** tab
 of the navigational menu:
 
@@ -266,7 +265,7 @@ curl -i {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
 
 ## Creating Flows  
 
-An integration [flow](//getting-started/integration-flow) is a set
+An integration [flow](/getting-started/integration-flow) is a set
 of components used to synchronize data between multiple applications or
 services. A workspace member with corresponding permissions can create flows in
 his contract via the [UI](#to-create-a-new-flow-in-the-ui) or the [API](#to-create-a-flow-via-the-api-use-the-following-request).
