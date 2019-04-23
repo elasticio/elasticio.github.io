@@ -22,7 +22,7 @@ You can generate more than one sample from a component. By default, the first on
 
 
 Each component in a flow has its own input/output data standards. For proper
-flow operation, the components need [data mapping](//guides/mapping-data). It is a process of
+flow operation, the components need [data mapping](/guides/mapping-data). It is a process of
 data conversion from one component’s standard to the next one’s. Basically, data
 mapper retrieves data from one component and relays it to the next component in
 a compatible form. In order to see what sort of output data the first component
