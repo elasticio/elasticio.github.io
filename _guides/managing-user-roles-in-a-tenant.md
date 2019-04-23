@@ -13,7 +13,7 @@ configured](#configuring-custom-user-roles). Additionally, it provides a list of
 ## Roles and permissions
 
 
-A [tenant](//getting-started/tenant) admin can
+A [tenant](/getting-started/tenant) admin can
 control user rights in his tenant by configuring user roles. A role is a user
 attribute that defines a set of permissions for the user. Contract roles define
 permissions for contract management, and workspace roles define permissions for
@@ -33,7 +33,7 @@ The default *contract roles* are:
 The default *workspace roles* are:
 
 -   **Owner.** Users with this role can edit the workspace, edit
-    [flows](//getting-started/integration-flow),
+    [flows](/getting-started/integration-flow),
     toggle flows’ active/inactive status, toggle flows’
     [real-time/ordinary](realtime-flows)
     status, and edit workspace credentials.
@@ -42,7 +42,7 @@ The default *workspace roles* are:
 
 -   **Integrator.** Users with this role can edit flows, toggle flows’
     active/inactive status, toggle flows’ real-time/ordinary status, and edit
-    [credentials](//getting-started/credential).
+    [credentials](/getting-started/credential).
 
 -   **Guest.** Users with this role can browse the workspace.
 

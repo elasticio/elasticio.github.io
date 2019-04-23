@@ -13,9 +13,9 @@ workspace](#editing-the-workspace), [creating flows](#creating-flows), [editing 
 ## Creating Workspaces
 
 Workspaces are enclosed environments in a
-[contract](//getting-started/contracts-and-workspaces).
+[contract](/getting-started/contracts-and-workspaces).
 You can find the basic information about workspaces
-[here](//getting-started/contracts-and-workspaces).
+[here](/getting-started/contracts-and-workspaces).
 A contract member can create workspaces in his contract via the [UI](#to-create-a-new-workspace-in-the-ui) or the
 [API](#to-create-a-workspace-via-the-api-use-the-following-request).
 
@@ -23,25 +23,25 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 
 1\.  On the sidebar, click **Add**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_1.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_1.png)
 
 2\.  Enter new workspace name and click **Create**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_2.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_2.png)
 
 3\.  Your new workspace is ready:
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_3.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_3.png)
 
 4\. Alternatively, you can create a new workspace in contracts settings. Click your avatar at the bottom of the navigational menu, and choose **Settings**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_26.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_26.png)
 
 5\. Choose your contract:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_27.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_27.png)
 
 6\. In **Workspaces tab**, click **Create New Workspace**:
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_28.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_28.png)
 
 ##### To create a workspace via the API, use the following request:
 
@@ -93,27 +93,26 @@ a workspace member can perform workspace management via the
 [UI](#1-workspace-management-via-the-ui) or the [API](#2-workspace-management-via-the-api).
 
 ##### 1\. Workspace management via the UI
-includes adding or inviting new members, managing their workspace [user
-roles](/managing-user-roles-in-a-tenant), removing members, and deleting the
+includes adding or inviting new members, managing their workspace [user roles](/managing-user-roles-in-a-tenant), removing members, and deleting the
 workspace. All these actions are done in **Workspace** tab
 of the navigational menu:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_6.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_6.png)
 
 To add or invite new members to the workspace, click **Add new member** or
 **Invite new member**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_7.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_7.png)
 
 For adding new member, select a contract member from the list, assign a user
 role in the corresponding menu, and click **Add**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_8.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_8.png)
 
 For inviting a new member, fill in user email address, define contract role and
 workspace role, and click **Send Invite**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_9.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_9.png)
 
 Note that only contract members with the corresponding contract
 permission will have the option to invite new members to the workspace. You can learn how to assign member roles
@@ -122,11 +121,11 @@ permission will have the option to invite new members to the workspace. You can 
 To remove members from a workspace, click the corresponding icon on the user
 list:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_10.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_10.png)
 
 To delete workspace, click **Delete workspace**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_5.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_5.png)
 
 ##### 2\. Workspace management via the API
 includes adding new members, managing their workspace user roles, removing members, renaming the workspace, and deleting the workspace.
@@ -266,7 +265,7 @@ curl -i {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
 
 ## Creating Flows  
 
-An integration [flow](//getting-started/integration-flow) is a set
+An integration [flow](/getting-started/integration-flow) is a set
 of components used to synchronize data between multiple applications or
 services. A workspace member with corresponding permissions can create flows in
 his contract via the [UI](#to-create-a-new-flow-in-the-ui) or the [API](#to-create-a-flow-via-the-api-use-the-following-request).
@@ -275,15 +274,15 @@ his contract via the [UI](#to-create-a-new-flow-in-the-ui) or the [API](#to-crea
 
 1\.  On the dashboard, click **Add new flow**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_11.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_11.png)
 
 Alternatively, you can click **Add New Flow** in **Flows**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_17.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_17.png)
 
 2\.  Your new flow is ready. Be sure to name it and write a description, which is optional:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_12.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_12.png)
 
 ##### To create a flow via the API, use the following request:
 
@@ -378,22 +377,22 @@ toggling type between **Realtime** and
     search and filters to find the required flow. To manage the flow, click on
     the flow’s name, in our case – “**Test flow**”:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_14.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_14.png)
 
 You will see your flow control page, where you can rename, start, stop, edit,
 and delete the flow:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_15.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_15.png)
 
 Click **Settings** to access the settings tab where you can toggle flow type:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_16.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_16.png)
 
 Flows can be **Realtime** and **Ordinary**. You can find more info about these
 types [here](/realtime-flows). You can toggle flow type with the corresponding
 switch:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/screenshot_13.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/screenshot_13.png)
 
 ##### 2\.  Flow management via the API
 includes the following actions:
@@ -487,34 +486,34 @@ Workspace members with corresponding permissions can create credentials via the
 1\.  In the navigational menu, click **Credentials**. Then choose the required
     component from the list and click it. For example, let’s use SFTP:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_22.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_22.png)
 
 2\.  Click **Add New Credential** and fill in the appearing fields. When done,
     click **Verify**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_19.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_19.png)
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_20.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_20.png)
 
 3\. After the credential gets verified, click **Save**, which will appear in the place of **Verify**.
 
 4\. Alternatively, you can create credentials when adding components to a flow. In **Flows**, choose the required flow:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_29.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_29.png)
 
 5\. Click **Add the initial step** or **edit flow** button, depending on the existence of flow steps:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_30.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_30.png)
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_31.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_31.png)
 
 6\. Search for your component in the list and click it:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_32.png)  
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_32.png)  
 
 7\. Click **connect new credentials**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_34.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_34.png)
 
 
 
@@ -585,16 +584,16 @@ them via the [UI](#editing-credentials-via-the-ui-includes-updating-and-deleting
 To edit credentials, choose the required credential from the list in
 **Credentials**:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_x.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_x.png)
 
 Click **Edit** and fill in all the required fields. Then click **Verify**, and **Save** after verification:
 
-![]({{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_23.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_23.png)
 
 To delete credentials, choose the required credential in **Credentials**, and
 click **Delete**:
 
-![](/{{gitDomain}}/assets/img/tenant-management-guide/managing-workspaces/Screenshot_21.png)
+![](//assets/img/tenant-management-guide/managing-workspaces/Screenshot_21.png)
 
 ##### 2\.  Editing credentials via the API includes updating and deleting credentials.
 

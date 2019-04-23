@@ -28,7 +28,7 @@ teams, and workspaces:
 
 -   A **member** is a registered platform user that has been invited the
     contract by Owner and given a contract
-    [role](//guides/managing-user-roles-in-a-tenant). Members can collaborate or work individually.
+    [role](/guides/managing-user-roles-in-a-tenant). Members can collaborate or work individually.
 
 -   A **developer team** is a smaller enclosed environment that contains
     component developers and their repositories.
@@ -41,10 +41,10 @@ memberships to enter and work in. With the invitation a user gets a user role.
 
 A tenant Admin can create contracts and set contract
 Owners. By default, only members with contract Owner or a other
-[roles](//guides/managing-user-roles-in-a-tenant) with the right permissions can
+[roles](/guides/managing-user-roles-in-a-tenant) with the right permissions can
 manage contracts. However, roles can be customized, so in this document we will
 differentiate contract and workspace members by
-[permissions](//guides/managing-user-roles-in-a-tenant).
+[permissions](/guides/managing-user-roles-in-a-tenant).
 
 Here is the full list of contract permissions:
 
@@ -100,6 +100,8 @@ workspace permissions:
 4.  Toggle flow status between ordinary and real-time
 
 5.  Edit credentials
+
+You can learn more about workspace management [here](/guides/managing-workspaces).
 
 
 ## Workspaces and Life Cycles

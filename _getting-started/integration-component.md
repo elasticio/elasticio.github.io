@@ -86,7 +86,7 @@ comes into play. The `Mapper` is responsible to transform an object into
 another one with a given set of transformation rules. In the example above
 the Mapper transforms a `Payload` object into a `Pet` object before it is
 being passed to `Petstore` component. Mode details on Mapper can be found
-[here](/integrator-guide/mapping-data).
+[here](/guides/mapping-data).
 
 
 ## Implementing own integration components
