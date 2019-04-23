@@ -67,4 +67,4 @@ There are components that have a different approach to input or output, for exam
 
 - Components that do not accept manual mapping, but instead accept a certain type of data as input, for example a *JSONata* expression.
 
-- Components that only accept manual mapping.
+- Components that only accept manual sample creation and mapping.
