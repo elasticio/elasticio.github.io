@@ -28,7 +28,7 @@ teams, and workspaces:
 
 -   A **member** is a registered platform user that has been invited the
     contract by Owner and given a contract
-    [role](//guides/managing-user-roles-in-a-tenant). Members can collaborate or work individually.
+    [role](/guides/managing-user-roles-in-a-tenant). Members can collaborate or work individually.
 
 -   A **developer team** is a smaller enclosed environment that contains
     component developers and their repositories.
@@ -101,7 +101,7 @@ workspace permissions:
 
 5.  Edit credentials
 
-You can learn more about workspace management [here](//guides/managing-workspaces).
+You can learn more about workspace management [here](/guides/managing-workspaces).
 
 
 ## Workspaces and Life Cycles
