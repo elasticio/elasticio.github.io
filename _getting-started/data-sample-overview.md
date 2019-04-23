@@ -16,6 +16,8 @@ sort of data the next component in the flow will receive from the previous one.
 With this information you can configure the next component to act properly on
 the input it receives.
 
+You can generate more than one sample from a component. By default, the first one in the list will be used. Also, you can manually select the proper sample from the list. All unused samples will be deleted once you make a choice.
+
 ## Samples in Integration Flows
 
 
@@ -33,11 +35,11 @@ or may require it in completely different order. That’s when you configure
 proper mapping so that the receiving component gets input in accordance with its
 standard.
 
-**NOTE:** Samples exist for flow building and testing purposes. However, the data from samples will go into production when you run the flow. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards.
+**NOTE:** Samples exist for flow building and testing purposes. However, the data from samples will go into production when you generate a sample. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards.
 
 Let’s observe the following process example:
 
-1.  Component Baboon is followed by Component Toucan.
+1.  *Component Baboon* is followed by *Component Toucan*.
 
 2.  When we select *Component Toucan*, we can see what sort of data it accepts as
     input.
