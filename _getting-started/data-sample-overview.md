@@ -5,7 +5,7 @@ section: Basic Concepts
 order: 1
 ---
 
-This document provides basic information on [data samples](#data-samples) and how they are useful when [building integration flows](#samples-in-integraton-flows). Additionally, it gives high-level information about [exceptions](#exceptions).
+This document provides basic information on [data samples](#data-samples) and how they are useful when [building integration flows](#samples-in-integraton-flows).
 
 ## Data Sample
 
@@ -58,14 +58,3 @@ Let’s observe the following process example:
     input standard.
 
 ![](/assets/img/getting-started/what-is-a-sample/Screenshot_1.png)
-
-
-## Exceptions
-
-There are components that have a different approach to input or output, for example:
-
-- Components that expect a file, for example a *.json* array, as input. They will parse the file for the required data.
-
-- Components that do not accept manual mapping, but instead accept a certain type of data as input, for example a *JSONata* expression.
-
-- Components that only accept manual sample creation and mapping.
