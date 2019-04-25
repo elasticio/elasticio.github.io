@@ -93,7 +93,8 @@ a workspace member can perform workspace management via the
 [UI](#1-workspace-management-via-the-ui) or the [API](#2-workspace-management-via-the-api).
 
 ##### 1\. Workspace management via the UI
-includes adding or inviting new members, managing their workspace [user roles](/managing-user-roles-in-a-tenant), removing members, and deleting the
+includes adding or inviting new members, managing their workspace [user
+roles](/managing-user-roles-in-a-tenant), removing members, renaming and deleting the
 workspace. All these actions are done in **Workspace** tab
 of the navigational menu:
 
@@ -123,7 +124,11 @@ list:
 
 ![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_10.png)
 
-To delete workspace, click **Delete workspace**:
+To rename a workspace, click on the corresponding icon or its name:
+
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_35.png)
+
+To delete a workspace, click **Delete workspace**:
 
 ![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_5.png)
 
@@ -584,7 +589,7 @@ them via the [UI](#editing-credentials-via-the-ui-includes-updating-and-deleting
 To edit credentials, choose the required credential from the list in
 **Credentials**:
 
-![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_x.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/screenshot_x.png)
 
 Click **Edit** and fill in all the required fields. Then click **Verify**, and **Save** after verification:
 
@@ -593,7 +598,7 @@ Click **Edit** and fill in all the required fields. Then click **Verify**, and *
 To delete credentials, choose the required credential in **Credentials**, and
 click **Delete**:
 
-![](//assets/img/tenant-management-guide/managing-workspaces/Screenshot_21.png)
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_21.png)
 
 ##### 2\.  Editing credentials via the API includes updating and deleting credentials.
 
