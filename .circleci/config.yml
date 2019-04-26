@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - checkout
-      - run: git submodule update --remote
+      - run: git submodule update --init
 
       - restore_cache:
           keys:
