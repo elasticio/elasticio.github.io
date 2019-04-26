@@ -1,5 +1,5 @@
 ---
-title: What is an integration flow?
+title: Integration Flow Overview
 layout: article
 section: Basic Concepts
 order: 2

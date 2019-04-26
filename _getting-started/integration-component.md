@@ -1,5 +1,5 @@
 ---
-title: What is an integration component?
+title: Integration Component Overview
 layout: article
 section: Basic Concepts
 order: 1
@@ -94,5 +94,5 @@ being passed to `Petstore` component. Mode details on Mapper can be found
 The {{site.data.tenant.name}} platform provides a set of built-in components
 to be used right away. Furthermore the platform is open for contributions
 of custom components. Please read how to build integration components using
-[Node.js](/developer-guide/building-nodejs-component) or
-[Java programming](/developer-guide/building-java-component)  languages.
+[Node.js](/guides/building-nodejs-component) or
+[Java programming](/guides/building-java-component)  languages.
