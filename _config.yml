@@ -1,3 +1,5 @@
+collections_dir: docs
+
 collections:
   getting-started:
       output: true
