@@ -30,8 +30,18 @@ If you are returning user, perform the following steps:
 
 ## Publishing the docs to production
 
-1. Repeat steps 1-9 above in the repo https://github.com/elasticio/elasticio.github.io
-2. Enjoy the content on https://docs.elastic.io
+Please note that the following steps are for the repo https://github.com/elasticio/elasticio.github.io
+
+1. `git checkout master`
+2. `git pull --rebease origin master`
+3. `git checkout -b {MY_BRANCH}`
+4. Update submodule `git submodule update --update`
+5. The last step will create changes to the `docs` folder. Please commit them to your branch
+6. `git push origin {MY_BRANCH}`
+7. Go to GitHub and create a PR from `MY_BRANCH` to `master`. 
+8. Go through review
+9. Merge the content to `master`
+10. Enjoy the content on https://docs.elastic.io
 
 # White-labeling the docs
 
