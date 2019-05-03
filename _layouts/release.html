@@ -35,8 +35,8 @@ layout: default
                 </div>
             </div>
             <div class="article">
-                <h1>v{{page.title}} Release Notes</h1>
-                The release v{{page.version}} was released on {{ page.releaseDate | date: '%B %d, %Y' }}.
+                <h1>{{page.title}} Release Notes</h1>
+                v{{page.version}} release date is {{ page.releaseDate | date: '%B %d, %Y' }}.
 
 
                 {{content}}
