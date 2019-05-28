@@ -1,3 +1,48 @@
+# How to contribute
+
+1. Make changes to the documentation contents in the https://github.com/elasticio/docs repo in your branch.
+2. Create a PR and go through a review
+3. Update the docs submodule in the text Jekyll application 
+4. Publishing the content to production
+
+## Updating the docs submodule in the Jekyll application 
+
+The test version of the docs is accessible on http://docs.eio.ninja. In this section we describe how to publish the new docs content to this web site. 
+
+If you are first-time user, do the following steps
+
+1. Clone https://github.com/drobiazko/elasticio.github.io
+2. Init the submodule by executing `git submodule update --init`
+3. Start your Jekyll app locally if you want to see the docs
+
+If you are returning user, perform the following steps:
+
+1. `git checkout master`
+2. `git pull --rebease origin master`
+3. `git checkout -b {MY_BRANCH}`
+4. Update submodule `git submodule update --update`
+5. The last step will create changes to the `docs` folder. Please commit them to your branch
+6. `git push origin {MY_BRANCH}`
+7. Go to GitHub and create a PR from `MY_BRANCH` to `master`. Please note that you must create a PR to `master` in `drobiazko/elasticio.github.io` repository and not in `elasticio/elasticio.github.io`.
+8. Go through review
+9. Merge the content to `master`
+10. Enjoy the content on http://docs.eio.ninja
+
+## Publishing the docs to production
+
+Please note that the following steps are for the repo https://github.com/elasticio/elasticio.github.io
+
+1. `git checkout master`
+2. `git pull --rebease origin master`
+3. `git checkout -b {MY_BRANCH}`
+4. Update submodule `git submodule update --update`
+5. The last step will create changes to the `docs` folder. Please commit them to your branch
+6. `git push origin {MY_BRANCH}`
+7. Go to GitHub and create a PR from `MY_BRANCH` to `master`. 
+8. Go through review
+9. Merge the content to `master`
+10. Enjoy the content on https://docs.elastic.io
+
 # White-labeling the docs
 
 This project is a documentation for the elastic.io platform. In order to provide a white-labeled documentation to your customers, please follow the following steps: 
