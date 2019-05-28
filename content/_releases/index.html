@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+{% assign releases = site.releases | sort: 'releaseDate' | reverse %}
+
+<div class="wrap">
+    <div class="breadcrumbs">
+        <a href="/" class="breadcrumbs__item">Home</a>
+        <span class="breadcrumbs__item">Releases</span>
+    </div>
+</div>
+
+<div class="welcomer welcomer_icon">
+    <div class="wrap">
+        <div class="welcomer__icon welcomer__icon_release_notes"><i class="fa fa-tag"></i></div>
+        <div class="welcomer__tit">Release Notes</div>
+        <div class="welcomer__text">The release notes for the releases of the {{site.data.tenant.name}} platform</div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="description">
+        {{site.data.tenant.name}} follows the <a href="https://semver.org/" target="_blank">Semver</a> semantics releases.
+        Given a version number MAJOR.MINOR.PATCH, increment the:
+        <ul>
+            <li>MAJOR version when incompatible changes are made in the platform,</li>
+            <li>MINOR version for each monthly release, and</li>
+            <li>PATCH version for bug fix releases.</li>
+        </ul>
+        Here is the list of the past releases:
+    </div>
+</div>
+<div class="file-box file-box_release_notes">
+    <div class="wrap">
+        <div class="file-box__list">
+            {% for release in releases %}
+                {% if release.version%}
+                <a class="file-box__item" href="{{release.url}}">
+                        <span class="file-box__inner">
+                            <i class="fa fa-tag"></i>
+                            <span class="file-box__tit">v{{release.version}}</span>
+                            <time>{{ release.releaseDate | date: '%B %d, %Y' }}</time>
+                        </span>
+                </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
