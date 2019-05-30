@@ -132,4 +132,4 @@ Though not forbidden, **it is highly unrecommended to use `limited` workspaces f
 
 To change workspace type from `limited` to `full`, contact support.
 
-`Full` is the default workspace type. However, the default type for workspaces created in a tenant can be changed. A user with corresponding permission can do that, using `"default_workspace_type"`, setting `limited` or `full` as a value.
+The default type for workspaces created in a tenant can be changed. A user with corresponding permission can do that, using `"default_workspace_type"`, setting `limited` or `full` as a value.
