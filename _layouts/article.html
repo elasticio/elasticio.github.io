@@ -23,7 +23,7 @@ layout: default
                             {% if related.size > 0 %}
                                 {% for item in related %}
                                     {% if item.url != page.url %}
-                                    <a class="side__item" href="{{item.url}}">{{item.title}}</a>
+                                    <a class="side__item" href="{{item.url}}" ic="{{item.category}}" pc="{{page.category}}">{{item.title}}</a>
                                     {% endif %}
                                 {% endfor %}
                             {% endif %}
