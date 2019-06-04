@@ -15,20 +15,28 @@ layout: default
                     <div class="side__title">Covered in this article</div>
                     <div id="article_toc" class="side__list">
                     </div>
-                    <div class="side__title">Related articles</div>
-                    <div class="side__list">
+                    {% if page.category %}
+                        {% assign related = "" | split: ", " %}
+
                         {% for collection in site.data.chapters%}
                             {% assign collectionName = collection[0] %}
-                            {% assign related = site[collectionName] | where:'category', page.category%}
-                            {% if related.size > 0 %}
-                                {% for item in related %}
-                                    {% if item.url != page.url %}
-                                    <a class="side__item" href="{{item.url}}" ic="{{item.category}}" pc="{{page.category}}">{{item.title}}</a>
-                                    {% endif %}
-                                {% endfor %}
+                            {% assign relatedFromCollection = site[collectionName] | where:'category', page.category%}
+                            {% if relatedFromCollection.size > 0 %}
+                                {% assign related = related | concat: relatedFromCollection %}
                             {% endif %}
                         {% endfor %}
-                    </div>
+
+                        {% if related.size > 1 %}
+                            <div class="side__title">Related articles</div>
+                            <div class="side__list">
+                                {% for item in related %}
+                                    {% if item.url != page.url %}
+                                        <a class="side__item" href="{{item.url}}">{{item.title}}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>
