@@ -24,13 +24,13 @@ Let's look at a small "real life" example for a clear vision. There is backend b
 
 ## Webhook flows
 
-A Webhook [integration flow](integration-flow) is a flow that has a Webhook component as the initiator. It means that the actions get started by an external input to the Webhook URL.
+A Webhook [integration flow](integration-flow) is a flow that has a Webhook component as the trigger. It means that the actions get started by an external input to the Webhook URL.
 
 The following scheme shows how our platform uses Webhooks for integration flows.
 
 ![](/assets/img/getting-started/webhooks-overview/scheme_1.png)
 
-We have Webhook component and Webhook service. An external HTTP request in JSON or XML format reaches a Webhook component's URL exposed by Webhook Service. The Webhook Service differentiates the requests by flow ID, and sends them to the platform for queueing. The queue of requests is then processed and sent to the corresponding Webhook flows. As a running flow gets its request, it initiates execution of steps.   
+We have Webhook component and Webhooks Service. An external HTTP request in JSON or XML format, a list of properties, or a file reaches a Webhook component's URL exposed by Webhooks Service. The Webhooks Service differentiates the requests by flow ID, and sends them to the platform for queueing. The queue of requests is then processed and sent to the corresponding Webhook flows. As a running flow gets its request, it initiates execution of steps.   
 
 Webhook components can be secured with credentials to avoid unwanted activity. There are four types of Webhook [credentials](credential):
 
