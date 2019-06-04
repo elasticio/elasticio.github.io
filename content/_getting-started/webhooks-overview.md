@@ -9,7 +9,7 @@ since: 20190406
 
 This document provides basic information on [Webhooks](#webhooks) and [Webhook integration flows](#webhook-flows).
 
-##Webhooks
+## Webhooks
 
 Webhooks allow applications to communicate between each other automatically. Here is a basic principle of their work:
 
