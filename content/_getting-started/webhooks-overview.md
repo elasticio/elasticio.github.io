@@ -17,7 +17,7 @@ Webhooks allow applications to communicate between each other automatically. Her
 
 2\. You configure the "sender application" to send certain data to the "receiver application" Webhook URL as soon as a certain input triggers it. The data is usually a HTTP request in JSON format.
 
-3\. The "action application" receives the data and acts accordingly, optionally replying with `404` if not successful, or some other pre-configured feedback.    
+3\. The "receiver application" receives the data and acts accordingly, optionally replying with `404` if not successful, or some other pre-configured feedback.
 
 Let's look at a small "real life" example for a clear vision. There is backend banking application, which actually moves the money and registers account states. Then, there is your personal client-bank application, typically web-based. This personal app is configured to receive transaction details on its exposed Webhook URL, and send you a report to your mobile messenger of choice. So as the backend app sends the appropriate data to client-bank Webhook URL, you immediately get a message about what is happening to your money.
 
