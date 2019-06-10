@@ -23,7 +23,7 @@ Say we have two applications running in different environments. One of them will
 
 Let's look at a small "real life" example for a clear vision. Most of us use the services of banks quite often. There is a backend banking application, which actually moves the money and registers account states. Then, there is your personal client-bank application, typically web-based. This personal app is configured to receive transaction details on its exposed Webhook URL, and send you a report to your mobile messenger of choice. So as the backend app sends the appropriate data to client-bank Webhook URL, you immediately get a message about what is happening to your money.
 
-## Webhook Components
+## Webhooks on the Platform
 
 Our platform utilizes Webhooks in the form of *Webhook Component*, and *Webhooks Service*:
 
