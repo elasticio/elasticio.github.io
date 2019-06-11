@@ -135,7 +135,7 @@ To trigger the message, follow these steps:
 
 5\. Click *Send Invites* link.
 
-On the execution of step 4, the selected user will receive an invitation email.
+On the execution of step 5, the selected user will receive an invitation email.
 
 ### 7. Task Error Notification
 Template name: `task-error-notification`
