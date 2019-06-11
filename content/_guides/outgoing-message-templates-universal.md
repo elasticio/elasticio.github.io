@@ -140,7 +140,7 @@ On the execution of step 4, the selected user will receive an invitation email.
 ### 7. Task Error Notification
 Template name: `task-error-notification`
 
-This message is sent out to a user that subscribed to Flow errors, when a component fails in the Flow.
+This message is sent out to a user that subscribed to Flow errors, when a component in the Flow reports an error.
 
 To trigger the message, follow these steps:
 1\.  Create the simple Flow *Simple Trigger =>> Node.js Code*
