@@ -45,7 +45,7 @@ These are all the messages that our platform is configured to send out at the mo
 ### 1. Agent Request
 Template name: `agent-request`
 
-This message is sent out in case a local agent is requested. By default, the email is sent to support address. However, you can specify an email address per installation using the following environment variable: `AGENT_REQUESTS_EMAIL`.
+This message is sent out in case a local agent is requested. By default, the email is sent to support address. However, your Platform Operations Team can specify an email address per installation using the following environment variable per installation: `AGENT_REQUESTS_EMAIL`.
 
 To trigger the message, follow these steps:
 
@@ -184,7 +184,7 @@ Template name: `wiper-flow-suspended`
 
 This message is sent out to the Flow author when his Flow gets suspended due to failing containers. A Flow switches into `suspended` status in case any its containers fails more then `X` times in `Y` minutes.
 
-`X` and `Y` values are configurable with the following environment variables:
+`X` and `Y` values are configurable by your Platform Operations Team with the following environment variables per installation:
 
 - `SUSPEND_WATCH_KUBERNETES_MAX_EVENTS` for `X`
 
@@ -207,7 +207,7 @@ On the execution of step 5, the Flow author will receive the corresponding email
 ### 10. Flow Suspended due to Queue Overflow
 Template name: `wiper-flow-suspended-due-to-queue-overflow`
 
-This message is sent out to the Flow author when his Flow gets suspended due to RabbitMQ queue overflow. The overflow is triggered when the total count of messages or total size of a queue exceeds the 80% threshold. This percentage value is non-changeable. However, you can configure the absolute maximum values of messages per queue or size in MB per queue with the following environment variables:
+This message is sent out to the Flow author when his Flow gets suspended due to RabbitMQ queue overflow. The overflow is triggered when the total count of messages or total size of a queue exceeds the 80% threshold. This percentage value is non-changeable. However, your Platform Operations Team can configure the absolute maximum values of messages per queue or size in MB per queue with the following environment variables per installation:
 
 - `RABBITMQ_MAX_MESSAGES_PER_QUEUE` for message limit
 
