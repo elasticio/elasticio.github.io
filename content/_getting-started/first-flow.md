@@ -13,7 +13,7 @@ This document provides a step-by-step instruction on creating a basic [Integrati
 
 The first step of an Integration Flow is called an initial trigger. Its job is to trigger the running Flow execution. Different Components can be used for a trigger: Node.js, Webhook Component, Simple Trigger, etc. For this instruction we will use Simple Trigger as an example of the first step.  
 
-To start the creation of our Flow, go to the navigational menu, select your Workspace and either click "Add new flow":
+To start the creation of our Flow, go to the navigational menu, select your Workspace and either click "Add new flow" on the dashboard:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_0.png)
 
@@ -21,7 +21,7 @@ To start the creation of our Flow, go to the navigational menu, select your Work
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_1.png)
 
-This brings you to *Flow management page*. Let's start with naming your Flow, which is optional, and adding the initial trigger:
+This brings you to *Designer* page. Let's start with naming your Flow, which is optional, and adding the initial trigger:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_4.png)
 
@@ -102,7 +102,7 @@ The Flow is now published. You can run it, edit it or delete it using the corres
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_23.png)
 
-You can also manage it using the tabs on *Flow Management* page. The *Implement* tab allows you to clone the Flow in the same Workspace:
+You can also manage it using the tabs on *Designer* page. The *Implement* tab allows you to clone the Flow in the same Workspace:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_25.png)
 
