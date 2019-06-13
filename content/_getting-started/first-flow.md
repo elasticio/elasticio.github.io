@@ -1,172 +1,123 @@
 ---
-title: Creating your first integration flow
+title: Creating a Basic Integration Flow
 layout: article
 section: Tutorials
 order: 1
 category: integration-flow
-since: 20171218
+since: 20190613
 ---
 
-In this article we will cover how to create your first [integration flow](integration-flow)
-to synchronize the data between two applications or services.
+This document provides a step-by-step instruction on creating a basic [Integration Flow](integration-flow). It is intended for platform users who have little to no experience in Flow creation. The instruction includes the following sections: [configuring trigger](#configuring-trigger), [configuring action step](#configuring-action-steps) and post-creation activities.
 
-We assume that this is your first experience with the {{site.data.tenant.name}}
-platform, so we explain every step in detail. Please follow these steps to create
-your first integration flow.
+## Configuring Trigger
 
-## Choosing the data source
+The first step of an Integration Flow is called an initial trigger. Its job is to trigger the running Flow execution. Different Components can be used for a trigger: Node.js, Webhook Component, Simple Trigger, etc. For this instruction we will use Simple Trigger as an example of the first step.  
 
-When you login first time you will have a similar view of the {{site.data.tenant.name}} platform.
+To start the creation of our Flow, go to the navigational menu, select your Workspace and either click "Add new flow":
 
-![Start creating your first flow](/assets/img/getting-started/first-flow/getting-started-flow-001.png "Start creating your first flow")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_0.png)
 
-To start click on *+Add new flow* button to load the integration flow designer.
+**OR** go to *Flows* and click "Add New Flow":
 
-The designer helps building the flows from the reusable integration components
-such as `triggers` and `actions`. Every integration flow starts with a `trigger`
-component to retrieve data from the source. To start let us find the
-*Petstore component* in the list of integration components.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_1.png)
 
-![Select our Petstore component](/assets/img/getting-started/first-flow/getting-started-flow-002.png "Select our Petstore component")
+This brings you to *Flow management page*. Let's start with naming your Flow, which is optional, and adding the initial trigger:
 
-For that purpose type `petstore` in the search bar and you will find it. Next,
-click on *Choose Petstore API (Node.js)* button.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_4.png)
 
-![Create the credentials to access](/assets/img/getting-started/first-flow/getting-started-flow-003.png "Create the credentials to access")
+The platform prompts you to setup the first step. First you may give the step a special name. Then you can select the Component you want to use, by using search bar, Component list, or load new Component from Catalog:
 
-Next, you will see the page *Choose Credentials* where you need to click on
-*+connect new credentials* link to create your first credentials. Let us fill-in
-an input form for these two fields:
-*   **Account name** - you can leave this unchanged or provide your own.
-*   **API key** - please use `{{site.data.tenant.petStoreApiKey}}` to get access to our [Petstore API]({{site.data.tenant.petStoreDocs}}).
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_5.png)
 
-Click on *Save* to verify the credentials. The verification can take no more than
-30 seconds. Upon completion you will see the page to choose one of the 3 triggers
-available in the Petstore component.
+We want to use Simple Trigger, so we will start typing "simple" to the search bar, and find it faster. Then select it and click "Choose Simple trigger":
 
-![Select the trigger](/assets/img/getting-started/first-flow/getting-started-flow-004.png "Select the trigger")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_6.png)
 
-Typically a component can have more than one triggers to retrieve different
-objects from the source API. Here we use the Petstore component to learn the
-{{site.data.tenant.name}} platform. It provides 3 different triggers to retrieve
-pets by their status. These 3 triggers differ by the implemented code style. So
-select any of them, for example click on the *Get Pets By Status With Promises*
-radio button to continue.
+The next step is [data sample](/data-sample-overview) retrieval. Click "Retrieve sample from Simple trigger" and then "Continue" to proceed:
 
-![Choose trigger parameter](/assets/img/getting-started/first-flow/getting-started-flow-005.png "Choose trigger parameter")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_7.png)
 
-The *Get Pets By Status With Promises* trigger returns `Available`, `Pending` and
-`Sold` values for the `Pet Status` parameter. Click on drop-down menu to open it.
-Select the `Available` option and click on *Continue* button.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_8.png)
 
-![Retrieve the sample](/assets/img/getting-started/first-flow/getting-started-flow-006.png "Retrieve the sample")
+In the next tab you may add a description if you want, and click "Finish step" to finalize the initial trigger:
 
-Now we retrieve a sample from Petstore API where the pet status is `Available`.
-When the process is successful you will see the following page to choose retrieved sample.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_9.png)
 
-![Choose this sample](/assets/img/getting-started/first-flow/getting-started-flow-007.png "Choose this sample")
 
-Click to *Choose this sample* and continue. Next you will see the Retrieve sample page again.
+## Configuring Action Steps
 
-![Continue to finish step1 configuration](/assets/img/getting-started/first-flow/getting-started-flow-008.png "Continue to finish step1 configuration")
+As our initial trigger is ready, let's proceed with the second step, which is an action triggered by the first step. To start configuring the action, click "Add a new action":
 
-Please click on Continue button here to go further.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_10.png)
 
-> **Note**: Please don't click on *Retrieve sample from Petstore API (Node.js)*
-> button again. You will get back to the earlier stage to select the sample again.
-> This is not a problem, but unnecessary at this stage.
+Again, we're prompted to setup the step, similar to the first one. We have chosen Node.js as the second Component. Select it and click "Choose Node.js Code":
 
-![Step summary page](/assets/img/getting-started/first-flow/getting-started-flow-009.png "Step summary page")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_11.png)
 
-The screenshot shows the summary page for this step. Here you can rename the step
-and add some descriptive notes. Click on *+ Add another step* button to continue.
+Node.js requires a code to execute. We will use the basic one:
 
-## Choosing the data target
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_2.png)
 
-We have the data source, now we need to choose the data target. After completing
-the trigger configuration you need to choose an `action` component to send the
-data from the Petstore API to. Let us choose the *E-Mail* component.
+Next, we need to retrieve a data sample and continue:
 
-![Choosing the E-mail component](/assets/img/getting-started/first-flow/getting-started-flow-010.png "Choosing the E-mail component")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_13.png)
 
-We can find it in the list of components. The E-Mail component has no credentials,
-so we jump directly to the mapping of data between Petstore and E-Mail components.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_14.png)
 
-![Input fields for E-mail component](/assets/img/getting-started/first-flow/getting-started-flow-011.png "Input fields for E-mail component")
+Let's finalize the step by adding a description and clicking "Finish step":
 
-The screenshot above demonstrates the mapping of data between the Petstore trigger
-and E-Mail action. The E-Mail components requires a configuration of 3 following
-fields to work properly:
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_15.png)
 
-*   **To** field: expects an e-mail address wrapped by colons, such as `"your@email.com"`. E-Mail component will use this field to send the data to. Note that if you enter the address without wrapping them by `" "` it will get rejected.
+Now we will add another action step:
 
-*   **Subject** field: expects email's subject as a `string` expression. Here we use some advance JSONata expression: `$count(pets.id) & " " & "new pets found"`
-Please note that we will not dive into JSONata at the moment, copy and paste this expression into the *Subject* field.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_16.png)
 
-*   **Body** field: expects email's body as a `string`. Here is another JSONata expression to copy and paste:
-``
-"Darling, I found some adorable pets for us. Here are their names: " & $join(pets.name, ", ") &". Which one shall I buy?"
-``
+Optionally, set a name for the step. We're going to use Email Component for our third step. Select it and click "Choose Email":
 
-Click *Continue* after filling-in the form to continue.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_17.png)
 
-![Retrieve a sample from Email](/assets/img/getting-started/first-flow/getting-started-flow-012.png "Retrieve a sample from Email")
+Email Component sends an email when triggered, so you should just fill in the details as you would for an email. Also, you can cancel error message on the event of sending fail. After you've entered all the data, click "Continue":
 
-On the next page click on *Retrieve sample from E-Mail* to retrieve the sample.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_18.png)
 
-![Continue with the Email components' sample](/assets/img/getting-started/first-flow/getting-started-flow-013.png "Continue with the Email components' sample")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_19.png)
 
-When the sample gets retrieved click on *Choose this sample* to continue.
+Next, you retrieve a data sample and click "Continue":
 
-![Almost done with the flow](/assets/img/getting-started/first-flow/getting-started-flow-014.png "Almost done with the flow")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_20.png)
 
-We have finished configuring this demonstration flow. You could add more steps
-after this moment but we recommend you not to at this stage. Click on *I’m done*
-button once.
+Finally, you may add a description and click "Finish step":
 
-![Save and continue](/assets/img/getting-started/first-flow/getting-started-flow-015.png "Save and continue")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_21.png)
 
-You can name your integration flow or accept the suggested name by clicking on
-*I'm done* one more time to finish and save the current state of your Draft.
+To publish the Flow draft and be able to run the Flow, click the corresponding button:
 
-> **Note**: at this stage you can still modify this draft flow.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_22.png)
 
-![Publish the draft](/assets/img/getting-started/first-flow/getting-started-flow-016.png "Publish the draft")
 
-Before the flow can be used we need to publish the current draft. After you
-publish this flow you cannot change this version of the flow, unless you create a
-[new draft of this flow](/integrator-guide/managing-flow-history). Click on *Publish Draft*
-button to finish modifying it and saving this version of the flow.
 
-## Running and monitoring the flow
+## Post-Creation Activities
 
-Success, your integration flow is ready!
+The Flow is now published. You can run it, edit it or delete it using the corresponding buttons:
 
-![Click to start your flow](/assets/img/getting-started/first-flow/getting-started-flow-017.png "Click to start your flow")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_23.png)
 
-Now you can start you flow by clicking *Start Flow* button.
+You can also manage it using the tabs on *Flow Management* page. The *Implement* tab allows you to clone the Flow in the same Workspace:
 
-![Flow is active](/assets/img/getting-started/first-flow/getting-started-flow-018.png "Flow is active")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_25.png)
 
-Your flow is now active, congratulations! Go to Dashboard to see the results of
-your first integration flow execution.
+The *History* tab shows you a log of activity associated with the Flow:
 
-![Dashboard with first execution](/assets/img/getting-started/first-flow/getting-started-flow-019.png "Dashboard with first execution")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_26.png)
 
-Here we are in the Dashboard view. In the *Runlog* part you can see the first
-execution. You can come back to this view from everywhere by clicking the Dashboard
-icon in the left-side menu. Let us check the details of the execution by clicking
-on the name of the flow in the runlog.
+In the *Settings* tab you can switch Flow type from Realtime to Ordinary:
 
-![Flow execution view](/assets/img/getting-started/first-flow/getting-started-flow-020.png "Flow execution view")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_27.png)
 
-Here we are in the execution view. Click on the component icons to view the logs
-for each step in your first integration flow. When you have examined the logs, you
-can return to the Dashboard. After a couple of minutes we can visit the Dashboard again.
+Additionally, you can switch Flow type via settings in its settings menu on *Flows* page:
 
-![Dashboard with 3 executions](/assets/img/getting-started/first-flow/getting-started-flow-021.png "Dashboard with 3 executions")
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_28.png)
 
-Here we have the Dashboard view after your flow gets executed 3 times. You can
-view the details of each execution by clicking on the name of your flow in the runlog.
+The same menu allows you to **Subscribe to errors**. This feature will order the platform to send you emails in case of any errors in your running Flow. However, it will not just mindlessly spam you with messages if an error repeats. With some errors, messaging interval is one email per hour, while with others its one per 24 hours. This interval is hardcoded and cannot be configured.
 
-Your flow is now active and working! Go ahead, make another one. Try using different [integration components](integration-component) to build your flow.
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_24.png)
