@@ -7,7 +7,7 @@ category: integration-flow
 since: 20190613
 ---
 
-This document provides a step-by-step instruction on creating a basic [Integration Flow](integration-flow). It is intended for platform users who have little to no experience in Flow creation. The instruction includes the following sections: [configuring trigger](#configuring-trigger), [configuring action step](#configuring-action-steps) and [post-creation activities](#post-creation-activities).
+This document provides a step-by-step instruction on creating a basic [Integration Flow](integration-flow). It is intended for platform users who have little to no experience in Flow creation. The instruction includes the following sections: [configuring trigger](#configuring-trigger), [configuring action steps](#configuring-action-steps) and [post-creation activities](#post-creation-activities).
 
 ## Configuring Trigger
 
