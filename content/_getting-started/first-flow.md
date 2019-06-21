@@ -25,17 +25,16 @@ This brings you to *Designer* page. Let's start with naming your Flow, which is 
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_4.png)
 
-The platform prompts you to setup the first step. First you may give the step a special name. Then you can select the Component you want to use, by using search bar, Component list, or load new Component from Catalog:
+The platform prompts you to setup the first step. First you may give the step a special name. Then you can select the Component you want to use by using search bar or Component list. We want to use Simple Trigger, so we will start typing "simple" to the search bar, and find it faster. Then select it and click "Choose Simple trigger":
 
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_5.png)
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_2.png)
 
-We want to use Simple Trigger, so we will start typing "simple" to the search bar, and find it faster. Then select it and click "Choose Simple trigger":
 
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_6.png)
-
-The next step is [data sample](/data-sample-overview) retrieval. Click "Retrieve sample from Simple trigger" and then "Continue" to proceed:
+The next step is [data sample](/data-sample-overview) retrieval. Click "Retrieve sample from Simple trigger".
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_7.png)
+
+Then click "Continue" to proceed:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_8.png)
 
@@ -50,37 +49,17 @@ As our initial trigger is ready, let's proceed with the second step, which is an
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_10.png)
 
-Again, we're prompted to setup the step, similar to the first one. We have chosen Node.js as the second Component. Select it and click "Choose Node.js Code":
+Again, we're prompted to setup the step, similar to the first one. We're going to use Email Component for our third step. Select it and click "Choose Email":
 
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_11.png)
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_3.png)
 
-Node.js requires a code to execute. We will use the basic one:
+Email Component sends an email when triggered, so you should just fill in the details as you would for an email:
 
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_2.png)
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_5.png)
 
-Next, we need to retrieve a data sample and continue:
+After you've entered all the data, click "Continue":
 
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_13.png)
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_14.png)
-
-Let's finalize the step by adding a description and clicking "Finish step":
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_15.png)
-
-Now we will add another action step:
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_16.png)
-
-Optionally, set a name for the step. We're going to use Email Component for our third step. Select it and click "Choose Email":
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_17.png)
-
-Email Component sends an email when triggered, so you should just fill in the details as you would for an email. Also, you can cancel error message on the event of sending fail. After you've entered all the data, click "Continue":
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_18.png)
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_19.png)
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_6.png)
 
 Next, you retrieve a data sample and click "Continue":
 
@@ -92,7 +71,7 @@ Finally, you may add a description and click "Finish step":
 
 To publish the Flow draft and be able to run the Flow, click the corresponding button:
 
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_22.png)
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_11.png)
 
 
 
