@@ -7,11 +7,13 @@ category: integration-flow
 since: 20190613
 ---
 
-This document provides a step-by-step instruction on creating a basic [Integration Flow](integration-flow). It is intended for platform users who have little to no experience in Flow creation. The instruction includes the following sections: [configuring trigger](#configuring-trigger), [configuring action steps](#configuring-action-steps) and [post-creation activities](#post-creation-activities).
+This document provides a step-by-step instruction on creating a basic [Integration Flow](integration-flow). It is intended for platform users who have little to no experience in Flow creation. The instruction includes the following sections: [configuring trigger](#configuring-trigger) and [configuring action steps](#configuring-action-steps).
 
 ## Configuring Trigger
 
-The first step of an Integration Flow is called an initial trigger. Its job is to trigger the running Flow execution. [Components](/integration-component) that have a trigger mode can be used for a trigger, for example: Node.js, Webhook Component, Simple Trigger, etc. For the first step, the list of available components is limited to those that have trigger mode. In this instruction we will use Simple Trigger as an example of the first step.  
+The first step of an Integration Flow is called an initial trigger. Its job is to trigger the running Flow execution. Some [components](/integration-component) can be used for a trigger, for example: Node.js, Webhook Component, Simple Trigger, etc.
+
+For the first step, the list of available components is limited to can be a trigger, so you can't go wrong. In this instruction we will use Simple Trigger as an example of the first step.  
 
 To start the creation of our Flow, go to the navigational menu, select your Workspace and either click "Add new flow" on the dashboard:
 
@@ -29,8 +31,7 @@ The platform prompts you to setup the first step. First you may give the step a 
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_2.png)
 
-
-The next step is [data sample](/data-sample-overview) retrieval. Click "Retrieve sample from Simple trigger".
+The next step is data sample retrieval. You can read about [data samples here](/data-sample-overview). Click "Retrieve sample from Simple trigger".
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_7.png)
 
@@ -73,30 +74,6 @@ To publish the Flow draft and be able to run the Flow, click the corresponding b
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_11.png)
 
-
-
-## Post-Creation Activities
-
-The Flow is now published. You can run it, edit it or delete it using the corresponding buttons:
+Congratulations! You Flow has been published, and it's ready to run. You can run it, edit it or delete it using the corresponding buttons:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_23.png)
-
-You can also manage it using the tabs on *Designer* page. The *Implement* tab allows you to clone the Flow in the same Workspace:
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_25.png)
-
-The *History* tab shows you a log of activity associated with the Flow:
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_26.png)
-
-In the *Settings* tab you can switch Flow type from Realtime to Ordinary:
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_27.png)
-
-Additionally, you can switch Flow type via settings in its settings menu on *Flows* page:
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_28.png)
-
-The same menu allows you to **Subscribe to errors**. This feature will order the platform to send you emails in case of any errors in your running Flow. However, it will not just mindlessly spam you with messages if an error repeats. With some errors, messaging interval is one email per hour, while with others its one per 24 hours. This interval is hardcoded and cannot be configured.
-
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_24.png)
