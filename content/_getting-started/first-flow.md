@@ -23,15 +23,15 @@ To start the creation of our Flow, go to the navigational menu, select your Work
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_1.png)
 
-This brings you to *Designer* page. Let's start with naming your Flow, which is optional, and adding the initial trigger:
+This brings you to *Designer* page. Let's start with naming your Flow (1), which is optional, and adding the initial trigger (2):
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_4.png)
 
-The platform prompts you to setup the first step. First you may give the step a special name. Then you can select the Component you want to use by using search bar or Component list. We want to use Simple Trigger, so we will start typing "simple" to the search bar, and find it faster. Then select it and click "Choose Simple trigger":
+The platform prompts you to setup the first step. First you may give the step a special name (1). Then you can select the Component you want to use by using search bar or Component list. We want to use Simple Trigger, so we will start typing "simple" to the search bar (2), and find it faster. Then select it(3) and click "Choose Simple trigger" (4):
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_2.png)
 
-The next step is data sample retrieval. You can read about [data samples here](/data-sample-overview). Click "Retrieve sample from Simple trigger".
+The next step is data sample retrieval. You can read about [data samples here](/data-sample-overview). Click "Retrieve sample from Simple trigger" (1), then "Continue" (2) will become active on success.
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_7.png)
 
@@ -50,7 +50,7 @@ As our initial trigger is ready, let's proceed with the second step, which is an
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_10.png)
 
-Again, we're prompted to setup the step, similar to the first one. We're going to use Email Component for our third step. Select it and click "Choose Email":
+Again, we're prompted to setup the step, similar to the first one. You can give it a specific name (1). We're going to use Email Component for our third step, so let's start typing into the search bar (2). Select the component (3) and click "Choose Email" (4):
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_3.png)
 
