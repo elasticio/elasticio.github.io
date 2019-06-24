@@ -23,15 +23,15 @@ To start the creation of our Flow, go to the navigational menu, select your Work
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_1.png)
 
-This brings you to *Designer* page. Let's start with naming your Flow (1), which is optional, and adding the initial trigger (2):
+This brings you to *Designer* page. Let's start with naming your Flow **(1)**, which is optional, and adding the initial trigger **(2)**:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_4.png)
 
-The platform prompts you to setup the first step. First you may give the step a special name (1). Then you can select the Component you want to use by using search bar or Component list. We want to use Simple Trigger, so we will start typing "simple" to the search bar (2), and find it faster. Then select it(3) and click "Choose Simple trigger" (4):
+The platform prompts you to setup the first step. First you may give the step a special name **(1)**. Then you can select the Component you want to use by using search bar or Component list. We want to use Simple Trigger, so we will start typing "simple" to the search bar **(2)**, and find it faster. Then select it **(3)** and click "Choose Simple trigger" **(4)**:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_2.png)
 
-The next step is data sample retrieval. You can read about [data samples here](/data-sample-overview). Click "Retrieve sample from Simple trigger" (1), then "Continue" (2) will become active on success.
+The next step is data sample retrieval. You can read about [data samples here](/data-sample-overview). Click "Retrieve sample from Simple trigger" **(1)**, then "Continue" **(2)** will become active on success.
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_7.png)
 
@@ -39,7 +39,7 @@ Then click "Continue" to proceed:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_8.png)
 
-In the next tab you may add a description if you want, and click "Finish step" to finalize the initial trigger:
+In the next tab you may add a description if you want **(1)**, and click "Finish step" **(2)** to finalize the initial trigger:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_9.png)
 
@@ -50,7 +50,7 @@ As our initial trigger is ready, let's proceed with the second step, which is an
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_10.png)
 
-Again, we're prompted to setup the step, similar to the first one. You can give it a specific name (1). We're going to use Email Component for our third step, so let's start typing into the search bar (2). Select the component (3) and click "Choose Email" (4):
+Again, we're prompted to setup the step, similar to the first one. You can give it a specific name **(1)**. We're going to use Email Component for our third step, so let's start typing into the search bar **(2)**. Select the component **(3)** and click "Choose Email" **(4)**:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_3.png)
 
@@ -66,7 +66,7 @@ Next, you retrieve a data sample and click "Continue":
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_20.png)
 
-Finally, you may add a description and click "Finish step":
+Finally, you may add a description **(1)** and click "Finish step" **(2)**:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_21.png)
 
@@ -74,6 +74,6 @@ To publish the Flow draft and be able to run the Flow, click the corresponding b
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_11.png)
 
-Congratulations! You Flow has been published, and it's ready to run. You can run it, edit it or delete it using the corresponding buttons:
+Congratulations! You Flow has been published, and it's ready to run. You can run it **(1)**, edit it **(2)** or delete it **(3)** using the corresponding buttons:
 
-![](/assets/img/getting-started/creating-basic-flow/Screenshot_23.png)
+![](/assets/img/getting-started/creating-basic-flow/Screenshot_12.png)
