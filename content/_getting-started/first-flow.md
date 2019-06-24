@@ -62,7 +62,7 @@ After you've entered all the data, click "Continue":
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_6.png)
 
-Next, you retrieve a data sample and click "Continue":
+Next, you retrieve a data sample **(1)** and click "Continue" **(2)**:
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_20.png)
 
