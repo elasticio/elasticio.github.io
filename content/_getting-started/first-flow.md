@@ -13,7 +13,7 @@ This document provides a step-by-step instruction on creating a basic [Integrati
 
 The first step of an Integration Flow is called an initial trigger. Its job is to trigger the running Flow execution. Some [components](/integration-component) can be used for a trigger, for example: Node.js, Webhook Component, Simple Trigger, etc.
 
-For the first step, the list of available components is limited to can be a trigger, so you can't go wrong. In this instruction we will use Simple Trigger as an example of the first step.  
+For the first step, the list of available Components is limited to those that can be a trigger, so you can't go wrong. In this instruction we will use Simple Trigger as an example of the first step.  
 
 To start the creation of our Flow, go to the navigational menu, select your Workspace and either click "Add new flow" on the dashboard:
 
