@@ -3,7 +3,7 @@ title: Customizing Platform Page Metadata
 layout: article
 section: Tenant Management
 order: 1
-since: 20190321
+since: 20190705
 ---
 
 This document provides an [introduction](#introduction) and a step-by-step [instruction](#instruction) on changing your Platform page metadata from the defaults.
