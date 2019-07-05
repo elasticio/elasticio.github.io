@@ -1,7 +1,7 @@
 ---
 title: MsSQL component
 layout: article
-section: Basic Components
+section: Database components
 ---
 ---
 ## Description

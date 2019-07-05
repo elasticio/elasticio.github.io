@@ -1,7 +1,7 @@
 ---
 title: Webhook component
 layout: article
-section: Utility Components
+section: Utility components
 ---
 ---
 ## Description

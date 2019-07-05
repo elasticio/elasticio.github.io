@@ -1,7 +1,7 @@
 ---
 title: Mailchimp component
 layout: article
-section: Utility Components
+section: Marketing-related components
 ---
 
 Mailchimp connector for {{site.data.tenant.name}} platform

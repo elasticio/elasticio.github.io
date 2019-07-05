@@ -1,7 +1,7 @@
 ---
 title: Rest API component
 layout: article
-section: Utility Components
+section: Utility components
 ---
 
 The **REST API component** is a simple yet powerful component that allows you to connect to any REST API without programming your own components and deploying them into the platform.

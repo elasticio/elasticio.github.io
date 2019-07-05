@@ -1,7 +1,7 @@
 ---
 title: AWS SNS component
 layout: article
-section: Utility Components
+section: Protocol components
 ---
 ---
 ## Description

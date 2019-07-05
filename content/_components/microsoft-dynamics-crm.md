@@ -1,7 +1,7 @@
 ---
 title: Microsoft Dynamics CRM component
 layout: article
-section: CRM Components
+section: CRM components
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: ChannelAdvisor component
 layout: article
-section: Utility Components
+section: E-Commerce components
 ---
 ---
 ## Description

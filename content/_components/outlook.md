@@ -1,7 +1,7 @@
 ---
 title: Outlook component
 layout: article
-section: Utility Components
+section: Office components
 ---
 ---
 ## Description

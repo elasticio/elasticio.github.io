@@ -1,7 +1,7 @@
 ---
 title: Salesforce-cpq component
 layout: article
-section: Utility Components
+section: CRM components
 ---
 
 

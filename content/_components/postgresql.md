@@ -1,7 +1,7 @@
 ---
 title: Postgresql component
 layout: article
-section: Basic Components
+section: Database components
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: CSV component
 layout: article
-section: Utility Components
+section: Protocol components
 ---
 ---
 ## Description

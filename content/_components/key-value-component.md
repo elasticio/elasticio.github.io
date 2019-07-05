@@ -1,7 +1,7 @@
 ---
 title: Key-value-component component
 layout: article
-section: Utility Components
+section: Utility components
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Sdl-translate component
 layout: article
-section: Utility Components
+section: Marketing-related components
 ---
 
 

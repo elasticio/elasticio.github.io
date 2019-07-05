@@ -1,7 +1,7 @@
 ---
 title: Sugar-crm component
 layout: article
-section: CRM Components
+section: CRM components
 ---
 
 

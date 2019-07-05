@@ -1,7 +1,7 @@
 ---
 title: Google PubSub component
 layout: article
-section: Utility Components
+section: Protocol components
 ---
 ---
 ## Description

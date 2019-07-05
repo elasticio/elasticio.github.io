@@ -1,7 +1,7 @@
 ---
 title: Exact Online component
 layout: article
-section: ERP Components
+section: Finance-related components
 ---
 ---
 ## Description

@@ -1,7 +1,7 @@
 ---
 title: Jsonata component
 layout: article
-section: Utility Components
+section: Utility components
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Mandrillapp component
 layout: article
-section: Utility Components
+section: Marketing-related components
 ---
 
 

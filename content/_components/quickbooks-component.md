@@ -1,7 +1,7 @@
 ---
 title: Quickbooks-component component
 layout: article
-section: Utility Components
+section: Finance-related components
 ---
 
 
