@@ -1,7 +1,7 @@
 ---
 title: AppDirect Component
 layout: article
-section: E-Commerce Components
+section: Marketing-related components
 ---
 ---
 ## Description

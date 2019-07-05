@@ -1,7 +1,7 @@
 ---
 title: JDBC Component
 layout: article
-section: Utility Components
+section: Database components
 ---
 ---
 ## Description

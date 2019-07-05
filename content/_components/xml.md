@@ -1,7 +1,7 @@
 ---
-title: Xml component
+title: XML component
 layout: article
-section: Utility Components
+section: Protocol components
 ---
 
 
@@ -10,7 +10,7 @@ section: Utility Components
 This is an open source component for Converting XML to and from JSON on {{site.data.tenant.name}} platform.
 Component to be used on the {{site.data.tenant.name}} platform, which is able to convert XML to and from JSON.
 ### Purpose
-This component has 3 actions allowing users to pass in either generic but well format XML/JSON string or XML attachment and produces a generic string of the other file type. The output then can be maped and used in other components.
+This component has 3 actions allowing users to pass in either generic but well format XML/JSON string or XML attachment and produces a generic string of the other file type. The output then can be mapped and used in other components.
 
 ### How it works.
 Before you can deploy any code into {{site.data.tenant.name}} you must be a registered {{site.data.tenant.name}} platform user. Please see our home page at http://www.{{site.data.tenant.name}} to learn how.

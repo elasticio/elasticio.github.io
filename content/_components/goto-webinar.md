@@ -1,7 +1,7 @@
 ---
 title: Goto-webinar component
 layout: article
-section: Utility Components
+section: Marketing-related components
 ---
 ---
 ## Description

@@ -1,7 +1,7 @@
 ---
 title: Ldap component
 layout: article
-section: Utility Components
+section: Protocol components
 ---
 
 LDAP component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}})

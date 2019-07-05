@@ -1,7 +1,7 @@
 ---
 title: Shopware component
 layout: article
-section: E-Commerce Components
+section: E-Commerce components
 ---
 ---
 ## Description

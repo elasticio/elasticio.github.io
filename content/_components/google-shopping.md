@@ -1,7 +1,7 @@
 ---
 title: Google-shopping component
 layout: article
-section: Utility Components
+section: E-Commerce components
 ---
 
 

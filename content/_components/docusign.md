@@ -1,7 +1,7 @@
 ---
 title: Docusign component
 layout: article
-section: Utility Components
+section: Office components
 ---
 
 {{site.data.tenant.name}} iPaaS integration component / connector for speaking with DocuSign API

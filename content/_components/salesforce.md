@@ -1,7 +1,7 @@
 ---
 title: Salesfoce Component
 layout: article
-section: Basic Components
+section: CRM components
 ---
 
 Integration component for Salesforce API for the {{site.data.tenant.name}} platform.

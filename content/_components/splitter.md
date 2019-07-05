@@ -1,7 +1,7 @@
 ---
 title: Splitter component
 layout: article
-section: Utility Components
+section: Utility components
 ---
 
 

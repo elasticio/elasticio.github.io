@@ -1,7 +1,7 @@
 ---
 title: Pipedrive component
 layout: article
-section: CRM Components
+section: CRM components
 ---
 ---
 ## Description

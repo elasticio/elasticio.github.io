@@ -1,7 +1,7 @@
 ---
 title: Smarty-streets component
 layout: article
-section: Utility Components
+section: Service components
 ---
 
 

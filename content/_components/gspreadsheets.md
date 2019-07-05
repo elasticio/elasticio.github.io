@@ -1,7 +1,7 @@
 ---
 title: Google Spreadsheets component
 layout: article
-section: Utility Components
+section: Office components
 ---
 ---
 ## Description

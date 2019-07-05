@@ -1,7 +1,7 @@
 ---
 title: NetSuite component
 layout: article
-section: ERP Components
+section: ERP components
 ---
 ---
 ## Description

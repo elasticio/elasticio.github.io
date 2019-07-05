@@ -1,7 +1,7 @@
 ---
 title: Edifact-parser component
 layout: article
-section: Utility Components
+section: Protocol components
 ---
 
 > Integration component for {{site.data.tenant.name}} that parses EDIFACT files

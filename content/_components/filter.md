@@ -1,7 +1,7 @@
 ---
 title: Filter component
 layout: article
-section: Utility Components
+section: Utility components
 ---
 ---
 ## Description

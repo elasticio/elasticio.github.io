@@ -1,7 +1,7 @@
 ---
 title: Lionbridge-translation component
 layout: article
-section: Utility Components
+section: Service components
 ---
 
 ### Description

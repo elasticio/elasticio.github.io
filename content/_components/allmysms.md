@@ -1,7 +1,7 @@
 ---
 title: Allmysms component
 layout: article
-section: Utility Components
+section: Service components
 ---
 ---
 ## Description

@@ -1,7 +1,7 @@
 ---
 title: Shopify-admin component
 layout: article
-section: Utility Components
+section: E-Commerce components
 ---
 
 

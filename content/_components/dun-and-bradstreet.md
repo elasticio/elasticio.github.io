@@ -1,7 +1,7 @@
 ---
 title: Dun-and-bradstreet component
 layout: article
-section: Utility Components
+section: E-Commerce components
 ---
 
 Dun &amp; Bradstreet component for {{site.data.tenant.name}} platform
