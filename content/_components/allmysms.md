@@ -34,8 +34,8 @@ No.
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+This component has no trigger functions. This means you can not select it as a first
+component during the integration flow design.
 
 ## Actions
 
