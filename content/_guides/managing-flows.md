@@ -140,4 +140,8 @@ To subscribe to errors, use the settings menu **(1)** of the corresponding Flow 
 
 Unsubscribing works the same way.
 
-2\. 
+2\. To schedule the Flow via CRON expressions, you need to be in drafting mode. You can turn it on by [editing the Flow](#start-stop-edit-delete-via-the-ui). While editing the Flow, switch to *Settings* tab **(1)**, use CRON expression to schedule the Flow, and click *Save*:
+
+![](Screenshot_13.png)
+
+Use the hint below the CRON expression field for reference. The default schedule is every 3 minutes.
