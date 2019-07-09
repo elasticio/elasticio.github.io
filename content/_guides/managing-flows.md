@@ -3,7 +3,7 @@ title: Managing Flows
 layout: article  
 section: Tenant Management  
 order: 1  
-since: 20190411  
+since: 20190719  
 ---
 
 This document provides information on Flow management, namely the following
@@ -14,8 +14,6 @@ actions:
 - [Copy Flow within the same Workspace, switch between *real-time* and *ordinary*](#copy-flow-switch-flow-type)
 
 - [Subscribe to errors, schedule via CRON expressions](#additional-actions)
-
--
 
 ## Start, Stop, Edit, Delete
 
