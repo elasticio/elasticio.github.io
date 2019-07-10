@@ -110,7 +110,7 @@ Alternatively, you can navigate to the Flow itself by clicking on its name:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_3.png)
 
-Then switch to *Implement* tab **(1)** and copy the command **(2)** to clipboard to [create a copy of the Flow via the API](/managing-workspaces):
+Then switch to *Implement* tab **(1)** and click the command **(2)** to copy it to clipboard, and [create a copy of the Flow via the API](/managing-workspaces):
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_8.png)  
 
@@ -118,13 +118,15 @@ As a result, you get a copy of your Flow:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_9.png)  
 
-To copy a Flow within the same Workspace, navigate to see your Flows. Then click on the corresponding icon to open the settings menu of the selected Flow:
+To switch between real-time and ordinary types, navigate to see your Flows. Then click on the corresponding icon to open the settings menu of the selected Flow:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_10.png)
 
 Switching back works the same way. Alternatively, you can navigate to the Flow itself by clicking on its name, switch to *Settings* tab **(1)**, scroll down and toggle the corresponding switch **(2)**:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_11.png)
+
+Note, that you can only switch Flow type if there's at least one published Flow version, and it is not running.
 
 ## Additional Actions
 
@@ -142,4 +144,4 @@ Unsubscribing works the same way.
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_13.png)
 
-Use the hint below the CRON expression field for reference. The default schedule is every 3 minutes.
+Use the hint below the CRON expression field for reference. The default schedule is every 3 minutes. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request.
