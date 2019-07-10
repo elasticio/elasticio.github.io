@@ -144,4 +144,4 @@ Unsubscribing works the same way.
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_13.png)
 
-Use the hint below the CRON expression field for reference. The default schedule is every 3 minutes. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request.
+Use the hint below the CRON expression field for reference. The default schedule is every 3 minutes. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
