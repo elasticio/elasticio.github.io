@@ -17,7 +17,7 @@ This component should be used as a first step in your flow to trigger integratio
 
 This component should be the first step in your flow.
 
-![image](img/1ststep.png)
+![set as first step](img/1ststep.png)
 
 ### Environment variables
 
@@ -29,14 +29,13 @@ This component does not require credentials to work.
 
 ## Triggers
 
-Simple trigger.
 
 ### Timer
 
 This component can have a cronjob so you can choose when exactly and how often
 you want this component to work.
 
-![image](img/cron.png)
+![the cron setup](img/cron.png)
 
 ## Actions
 
@@ -46,7 +45,7 @@ This component has no action functions.
 
 Here is how generated sample looks. You also can edit it.
 
-![image](img/sample.png)
+![generated sample](img/sample.png)
 
 ## Known limitations
 
