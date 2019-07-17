@@ -1,5 +1,5 @@
 ---
-title: Customizing Platform Page Metadata
+title: Customizing HTML Meta Tags
 layout: article
 section: Tenant Management
 order: 1
@@ -10,9 +10,9 @@ This document provides an [introduction](#introduction) and a step-by-step [inst
 
 ## Introduction
 
-As of version 3.17.0, you can change the default meta content of your platform page. There are two reasons to do this. First of all, the more you can customize and personalize the Platform, the better in terms of whitelabeling. The second reason is the uncertain rules of search engine optimization. Google's policies change all the time to prevent grey and black hat SEO activities, or improve consumers' search experience. What stays the same is the fact that meta content always remains important to a certain extent for page evaluation. Whatever this extent may be presently, it's better to have relevant metadata.    
+As of version 3.17.0, you can change the default HTML meta tags of your platform page. There are two reasons to do this. First of all, the more you can customize and personalize the Platform, the better in terms of whitelabeling. The second reason is the uncertain rules of search engine optimization. Google's policies change all the time to prevent grey and black hat SEO activities, or improve consumers' search experience. What stays the same is the fact that HTML meta tags always remain important to a certain extent for page evaluation. Whatever this extent may be presently, it's better to have relevant tags.    
 
-We offer the following meta content for customization:
+We offer the following meta tags for customization:
 
 - **Description.** This is a brief text that you can see near the link to your page in the search results. It's not recommended to exceed 158 characters, because everything else will be cropped.  
 
