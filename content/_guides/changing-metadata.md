@@ -45,11 +45,7 @@ These is the default metadata.
 ```
 curl {{apiBaseUri}}/v2/tenants/{TENANT_ID}\
     -X PATCH \
-    -u{
-   EMAIL
-}:{
-   APIKEY
-}\
+    -u{EMAIL}:{APIKEY} \
     -H 'Content-Type:application/json' -d '{
    "data":{
       "type":"tenant",
