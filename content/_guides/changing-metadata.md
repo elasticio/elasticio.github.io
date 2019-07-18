@@ -10,7 +10,7 @@ This document provides an [introduction](#introduction) and a step-by-step [inst
 
 ## Introduction
 
-As of version 3.17.0, you can change the default HTML meta tags of your platform page. There are two reasons to do this. First of all, the more you can customize and personalize the Platform, the better in terms of whitelabeling. The second reason is the uncertain rules of search engine optimization. Google's policies change all the time to prevent grey and black hat SEO activities, or improve consumers' search experience. What stays the same is the fact that HTML meta tags always remain important to a certain extent for page evaluation. Whatever this extent may be presently, it's better to have relevant tags.    
+As of version 3.17.0, you can change the default HTML meta tags of your platform page. There are two reasons to do this. First of all, the more you can customize and personalize the Platform, the better in terms of whitelabeling. The second reason is the uncertain rules of search engine optimization. Google's policies change all the time to prevent grey and black hat SEO activities, or improve consumers' search experience. Still, HTML meta tags always remain important to a certain extent for page evaluation. Whatever this extent may be presently, it's better to have relevant tags.    
 
 We offer the following meta tags for customization:
 
@@ -54,7 +54,6 @@ curl {{apiBaseUri}}/v2/tenants/{TENANT_ID}\
    "data":{
       "type":"tenant",
       "attributes":{
-         "default_workspace_type":"full",
          "html_meta":{
             "description":"Bla bla bla",
             "keywords":[
