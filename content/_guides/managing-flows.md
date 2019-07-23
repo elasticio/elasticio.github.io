@@ -15,6 +15,8 @@ actions:
 
 - [Subscribe to errors, schedule via CRON expressions](#additional-actions)
 
+- [Flow versioning](#flow-versioning)
+
 ## Start, Stop, Edit, Delete
 
 These basic actions may be done via the [UI](#start-stop-edit-delete-via-the-ui), and via the [API](#start-stop-edit-delete-via-the-api).
@@ -145,3 +147,11 @@ Unsubscribing works the same way.
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_13.png)
 
 Use the hint below the CRON expression field for reference. The default schedule is every 3 minutes. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
+
+## Flow Versioning
+
+There are two general Flow states in Flow creation process:
+
+- **Draft**. In this state you can edit or add steps, verify credentials, retrieve data samples and configure CRON expressions. When everything is ready, you should publish the Flow before you can run it. A draft is created when you create a new Flow, or edit an existing one. A draft created for an existing Flow does not affect it until it is published.
+
+- **Published**.
