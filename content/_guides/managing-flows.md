@@ -13,7 +13,9 @@ actions:
 
 - [Copy Flow within the same Workspace, switch between *real-time* and *ordinary*](#copy-flow-switch-flow-type)
 
-- [Subscribe to errors, schedule via CRON expressions](#additional-actions)
+- [Subscribe to errors](#subscribe-to-errors)
+
+- [Schedule via CRON expressions](#scheduling)
 
 - [Flow versioning](#flow-versioning)
 
@@ -29,7 +31,7 @@ To start, stop, edit and delete a Flow via the UI, navigate to Flows. Here you c
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_1.png)
 
-Also you can run **(1)** or stop **(2)** a started Flow:
+Also you can run Flow on demand **(1)** or stop **(2)** a started Flow:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_2.png)
 
@@ -131,9 +133,9 @@ Switching back works the same way. Alternatively, you can navigate to the Flow i
 
 Note, that you can only switch Flow type if there's at least one published Flow version, and it is not running.
 
-## Additional Actions
+## Subscribe to Errors
 
-You can also subscribe to errors, and schedule your Flow via [CRON expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression).
+You can also subscribe to errors, and
 
 1\. Subscribe to errors is a feature that orders the platform to send you emails in case of any errors in your running Flow. However, it will not just mindlessly spam you with messages if an error repeats. With some errors, messaging interval is one email per hour, while with others its one per 24 hours. This interval is hardcoded and cannot be configured.
 
@@ -143,11 +145,40 @@ To subscribe to errors, use the settings menu **(1)** of the corresponding Flow 
 
 Unsubscribing works the same way.
 
-2\. To schedule the Flow via CRON expressions, you need to be in drafting mode. You can turn it on by [editing the Flow](#start-stop-edit-delete-via-the-ui). While editing the Flow, switch to *Settings* tab **(1)**, use CRON expression to schedule the Flow, and click *Save*:
+## Scheduling
+
+To schedule your Flow via [CRON expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression), you need to be in drafting mode. You can turn it on by [editing the Flow](#start-stop-edit-delete-via-the-ui). While editing the Flow, switch to *Settings* tab **(1)**, use CRON expression to schedule the Flow, and click *Save*:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_13.png)
 
-Use the hint below the CRON expression field for reference. The default schedule is every 3 minutes. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
+The default CRON expression is `*/3 * * * *`, meaning "every 3 minutes". The positions in the expression from left to right represent:
+
+- Minutes (allowed values: from `0` to `59`)
+- Hours (allowed values: from `0` to `23`)
+- Days of the month (allowed values: from `1` to `31`)
+- Months (allowed values: from `1` to `12` or from `JAN` to `DEC`)
+- Days of the week (allowed values: from `0` to `6` or from `MON` to `SUN`)
+
+The month and weekday abbreviations are not case-sensitive.
+Also, the following special characters are in use:
+
+- `*` - wildcard, means any value
+
+**EXAMPLE:** `* * * * *` means every minute of every day of every week, etc.
+
+- `,` - value list separator
+
+**EXAMPLE:** `* * * * MON,WED,FRI` means every Monday, Wednesday and Friday
+
+- `-` - defines a range of values
+
+**EXAMPLE:** `* 2-5 * * *` means every hour between 2 and 5 AM
+
+- `/` - specifies repetition steps
+
+**EXAMPLE:** `* * * */2 *` means every two months
+
+Feel free to use the hint below the CRON expression field for reference. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
 
 ## Flow Versioning
 
