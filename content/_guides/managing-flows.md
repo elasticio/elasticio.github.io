@@ -17,6 +17,8 @@ actions:
 
 - [Flow versioning](#flow-versioning)
 
+All actions are available to users with the corresponding [permissions](/managing-user-roles-in-a-tenant).
+
 ## Start, Stop, Edit, Delete
 
 These basic actions may be done via the [UI](#start-stop-edit-delete-via-the-ui), and via the [API](#start-stop-edit-delete-via-the-api). Note that when you start a Flow, the latest [Flow version](#flow-versioning) is used.
