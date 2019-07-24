@@ -180,6 +180,10 @@ Also, the following special characters are in use:
 
 Feel free to use the hint below the CRON expression field for reference. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
 
+If the CRON expression was written properly, you'll see your schedule in the Next Occurrences:  
+
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_17.png)
+
 ## Flow Versioning
 
 There are two general Flow states in Flow creation process: *draft mode* and *published version*. Every time you publish a draft, you create a new Flow version.
