@@ -19,7 +19,7 @@ actions:
 
 ## Start, Stop, Edit, Delete
 
-These basic actions may be done via the [UI](#start-stop-edit-delete-via-the-ui), and via the [API](#start-stop-edit-delete-via-the-api).
+These basic actions may be done via the [UI](#start-stop-edit-delete-via-the-ui), and via the [API](#start-stop-edit-delete-via-the-api). Note that when you start a Flow, the latest [Flow version](#flow-versioning) is used.
 
 #### Start, Stop, Edit, Delete via the UI
 
@@ -46,7 +46,6 @@ Then click the corresponding buttons to start **(1)**, edit **(2)** or delete **
 In case you need to stop a running Flow, click the stop button:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_5.png)
-
 
 
 #### Start, Stop, Edit, Delete via the API
@@ -158,8 +157,12 @@ In the draft state you can edit or add steps, verify credentials, retrieve data 
 
 Note, that you need to finish all the steps for the button to become active.
 
-Each published **(1)** draft is, basically, a separate version of the Flow. All the versions are listed in History tab **(2)**. Once you publish the Flow, you can then revert to the any other published version **(3)**.
+Each published **(1)** draft is, basically, a separate version of the Flow. All the versions are listed in History tab **(2)**. Once you publish the Flow, you can then revert to the any other published version **(3)** by making it the latest version. To achieve that, you should select the required draft:
+
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_16.png)
+
+Then publish it, and it becomes the latest Flow version.
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_14.png)
 
-You can work on more than one draft of a given Flow at the same time. Remember that a draft can only become a new version of a Flow if you publish it. It is possible to publish drafts of active and stopped Flows. In case you publish a draft of an active Flow, it will stop immediately, and then restart from scratch as a new version.
+You can work on one draft of a given Flow at a time. If you try to create another one, the Platform will ask you if you want to overwrite the existing one.  Remember that a draft can only become a new version of a Flow if you publish it. It is possible to publish drafts of active and stopped Flows. In case you publish a draft of an active Flow, it will stop immediately, and then restart from scratch as a new version.
