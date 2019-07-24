@@ -150,8 +150,16 @@ Use the hint below the CRON expression field for reference. The default schedule
 
 ## Flow Versioning
 
-There are two general Flow states in Flow creation process:
+There are two general Flow states in Flow creation process: *draft mode* and *published version*. Every time you publish a draft, you create a new Flow version.
 
-- **Draft**. In this state you can edit or add steps, verify credentials, retrieve data samples and configure CRON expressions. When everything is ready, you should publish the Flow before you can run it. A draft is created when you create a new Flow, or edit an existing one. A draft created for an existing Flow does not affect it until it is published.
+In the draft state you can edit or add steps, verify credentials, retrieve data samples and configure CRON expressions. When everything is ready, you should publish the draft before you can run the Flow. A new draft is created when you create a new Flow, or edit an existing one. If a draft is created for an existing Flow, it does not affect the Flow until it is published. To publish a draft, use the corresponding button:
 
-- **Published**.
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_15.png)
+
+Note, that you need to finish all the steps for the button to become active.
+
+Each published **(1)** draft is, basically, a separate version of the Flow. All the versions are listed in History tab **(2)**. Once you publish the Flow, you can then revert to the any other published version **(3)**.
+
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_14.png)
+
+You can work on more than one draft of a given Flow at the same time. Remember that a draft can only become a new version of a Flow if you publish it. It is possible to publish drafts of active and stopped Flows. In case you publish a draft of an active Flow, it will stop immediately, and then restart from scratch as a new version.
