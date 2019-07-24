@@ -159,12 +159,14 @@ In the draft state you can edit or add steps, verify credentials, retrieve data 
 
 Note, that you need to finish all the steps for the button to become active.
 
-Each published **(1)** draft is, basically, a separate version of the Flow. All the versions are listed in History tab **(2)**. Once you publish the Flow, you can then revert to the any other published version **(3)** by making it the latest version. To achieve that, you should select the required draft:
+Each published **(1)** draft is, basically, a separate version of the Flow. All the versions are listed in History tab **(2)**. Once you publish the Flow, you can then revert to the any other published version **(3)**.
+
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_14.png)
+
+To achieve that, you should select the required version:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_16.png)
 
-Then publish it, and it becomes the latest Flow version.
-
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_14.png)
+Then [edit](#start-stop-edit-delete) it to create a draft, and publish this draft so it becomes the latest Flow version.
 
 You can work on one draft of a given Flow at a time. If you try to create another one, the Platform will ask you if you want to overwrite the existing one.  Remember that a draft can only become a new version of a Flow if you publish it. It is possible to publish drafts of active and stopped Flows. In case you publish a draft of an active Flow, it will stop immediately, and then restart from scratch as a new version.
