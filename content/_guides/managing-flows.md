@@ -19,6 +19,8 @@ actions:
 
 - [Flow versioning](#flow-versioning)
 
+- [Reset Snaphot](#reset-snapshot)
+
 All actions are available to users with the corresponding [permissions](/managing-user-roles-in-a-tenant).
 
 ## Start, Stop, Edit, Delete
@@ -204,3 +206,12 @@ To achieve that, you should select the required version:
 Then [edit](#start-stop-edit-delete) it to create a draft, and publish this draft so it becomes the latest Flow version.
 
 You can work on one draft of a given Flow at a time. If you try to create another one, the Platform will ask you if you want to overwrite the existing one.  Remember that a draft can only become a new version of a Flow if you publish it. It is possible to publish drafts of active and stopped Flows. In case you publish a draft of an active Flow, it will stop immediately, and then restart from scratch as a new version.
+
+
+## Reset Snapshot
+
+A Snapshot is the data saved by a Component during its execution. When the Component is run next time, it will read the Snapshot to continue the process from the point it finished last time. You can manually reset this Snapshot, so the Component starts from scratch next time. Note that you can only reset Snapshot for a stopped Flow. To do this, click the settings button on the Flow **(1)**, and select Reset Snapshot **(2)**:
+
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_18.png)  
+
+This is the only way to delete an existing snapshot.
