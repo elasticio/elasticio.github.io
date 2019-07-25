@@ -135,9 +135,7 @@ Note, that you can only switch Flow type if there's at least one published Flow 
 
 ## Subscribe to Errors
 
-You can also subscribe to errors, and
-
-1\. Subscribe to errors is a feature that orders the platform to send you emails in case of any errors in your running Flow. However, it will not just mindlessly spam you with messages if an error repeats. With some errors, messaging interval is one email per hour, while with others its one per 24 hours. This interval is hardcoded and cannot be configured.
+You can order the platform to send you emails in case of any errors in your running Flow. However, it will not just mindlessly spam you with messages if an error repeats. With some errors, messaging interval is one email per hour, while with others its one per 24 hours. This interval is hardcoded and cannot be configured.
 
 To subscribe to errors, use the settings menu **(1)** of the corresponding Flow and click *Subscribe to Errors* **(2)**:
 
@@ -184,9 +182,10 @@ If the CRON expression was written properly, you'll see your schedule in the Nex
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_17.png)
 
+
 ## Flow Versioning
 
-There are two general Flow states in Flow creation process: *draft mode* and *published version*. Every time you publish a draft, you create a new Flow version.
+The Platform allows you to create different versions of a Flow and switch between themif required. There are two general Flow states in Flow creation process: *draft mode* and *published version*. Every time you publish a draft, you create a new Flow version.
 
 In the draft state you can edit or add steps, verify credentials, retrieve data samples and configure CRON expressions. When everything is ready, you should publish the draft before you can run the Flow. A new draft is created when you create a new Flow, or edit an existing one. If a draft is created for an existing Flow, it does not affect the Flow until it is published. To publish a draft, use the corresponding button:
 
