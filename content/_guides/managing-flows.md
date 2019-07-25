@@ -168,15 +168,15 @@ Also, the following special characters are in use:
 
 - `,` - value list separator
 
-**EXAMPLE:** `* * * * MON,WED,FRI` means every Monday, Wednesday and Friday
+**EXAMPLE:** `* * * * MON,WED,FRI` means every Monday, Wednesday and Friday.
 
 - `-` - defines a range of values
 
-**EXAMPLE:** `* 2-5 * * *` means every hour between 2 and 5 AM
+**EXAMPLE:** `* 2-5 * * *` means every hour between 2 and 5 AM.
 
 - `/` - specifies repetition steps
 
-**EXAMPLE:** `* * * */2 *` means every two months
+**EXAMPLE:** `* * * */2 *` means every two months.
 
 Feel free to use the hint below the CRON expression field for reference. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
 
