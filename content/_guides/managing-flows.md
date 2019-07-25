@@ -187,7 +187,7 @@ If the CRON expression was written properly, you'll see your schedule in the Nex
 
 ## Flow Versioning
 
-The Platform allows you to create different versions of a Flow and switch between themif required. There are two general Flow states in Flow creation process: *draft mode* and *published version*. Every time you publish a draft, you create a new Flow version.
+The Platform allows you to create different versions of a Flow and switch between them if required. There are two general Flow states in Flow creation process: *draft mode* and *published version*. Every time you publish a draft, you create a new Flow version.
 
 In the draft state you can edit or add steps, verify credentials, retrieve data samples and configure CRON expressions. When everything is ready, you should publish the draft before you can run the Flow. A new draft is created when you create a new Flow, or edit an existing one. If a draft is created for an existing Flow, it does not affect the Flow until it is published. To publish a draft, use the corresponding button:
 
