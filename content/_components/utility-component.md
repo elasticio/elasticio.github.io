@@ -22,9 +22,6 @@ iPaaS component that is designed for utility operations
 Creates attachment from input `value`. Output is `attachmentId` in `message.body` and attachment object in `message.attachments`.
 #### Configuration fields description
 * `encodeToBase64` - if checked encode an input `value` using Base64 encode. Than saves encoded value into attachment. 
-#### Input and output schema description
-[Input schema](lib/schemas/upload.in.json) 
-[Output schema](lib/schemas/upload.out.json)
 
 ### String From Attachment
 Creates string from attachment with provided input `attachmentId`. 
@@ -48,4 +45,4 @@ Encodes input `value` using Base64 encoding.
 
 ### Limitations
 1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with [Local Agent Installation](https://support.elastic.io/support/solutions/articles/14000076461-announcing-the-local-agent-)
+2. Attachments mechanism does not work with [Local Agent Installation]
