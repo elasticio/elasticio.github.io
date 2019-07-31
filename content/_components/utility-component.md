@@ -27,21 +27,12 @@ Creates attachment from input `value`. Output is `attachmentId` in `message.body
 Creates string from attachment with provided input `attachmentId`. 
 #### Configuration fields description
 * `decodeFromBase64` - if checked decode attachment content using Base64 decode before output. If content of attachment is malformed or not Base64 encoded string, result will be malformed.  
-#### Input and output schema description
-[Input schema](lib/schemas/download.in.json) 
-[Output schema](lib/schemas/download.out.json)
 
 ### Base64 Decode
 Decodes input `value` using Base64 decoding to regular string. If malformed input provided or not Base64 encoded string, result will be malformed. 
-#### Input and output schema description
-[Input schema](lib/schemas/base64.in.json) 
-[Output schema](lib/schemas/base64.out.json)
 
 ### Base64 Encode
 Encodes input `value` using Base64 encoding.
-#### Input and output schema description
-[Input schema](lib/schemas/base64.in.json) 
-[Output schema](lib/schemas/base64.out.json)
 
 ### Limitations
 1. Maximal possible size for an attachment is 10 MB.
