@@ -8,13 +8,11 @@ section: Utility components
 iPaaS component that is designed for utility operations
 
 #### Environment variables 
-| NAME                       | DESCRIPTION                                                                             | DEFAULT   | OPTIONAL |
-|----------------------------|-----------------------------------------------------------------------------------------|-----------|----------|
-| EIO_REQUIRED_RAM_MB        | Number of MB allocated to container. Recommended value of allocated memory is `512` MB. | 256       | true     |
-| REQUEST_TIMEOUT            | HTTP request timeout in milliseconds.                                                   | 10000     | true     |
-| REQUEST_RETRY_DELAY        | Delay between retry attempts in milliseconds                                            | 7000      | true     |
-| REQUEST_MAX_RETRY          | Number of HTTP request retry attempts.                                                  | 7         | true     |
-| REQUEST_MAX_CONTENT_LENGTH | Max size of HTTP request in bytes.                                                      | 10485760 | true     |
+* [optional] **EIO_REQUIRED_RAM_MB** - Number of MB allocated to container. Recommended value of allocated memory is `512` MB. 256 by default 
+* [optional] **REQUEST_TIMEOUT** - HTTP request timeout in milliseconds. 10000 by default
+* [optional] **REQUEST_RETRY_DELAY** - Delay between retry attempts in milliseconds. 7000 by default
+* [optional] **REQUEST_MAX_RETRY** - Number of HTTP request retry attempts. 7 by default
+* [optional] **REQUEST_MAX_CONTENT_LENGTH** - Max size of HTTP request in bytes. 10485760 by default
 
 ## Actions
 
