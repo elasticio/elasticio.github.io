@@ -10,39 +10,31 @@ layout: default
             <a href="/{{page.collection}}" class="breadcrumbs__item">Releases</a>
             <span class="breadcrumbs__item">v{{page.title}}</span>
         </div>
-
-        <div class="layout__content">
-            <div class="date">
-                <div class="date__control date__control_r">
-                    <i class="fa fa-angle-right"></i>
-                </div>
-                <div class="date__control date__control_l">
-                    <i class="fa fa-angle-left"></i>
-                </div>
-                <div class="date__view">
-                    <div class="date__list">
-                        {% for release in releases %}
-                            {% if release.version == page.version %}
-                                {% assign active = "active"%}
-                            {% endif %}
-                            <a class="date__item {{active}}" href="{{release.url}}">
-                                <div class="date__tit">{{release.version}}</div>
-                                {{ release.releaseDate | date: '%B %d, %Y' }}
-                            </a>
-                            {% assign active = ""%}
-                        {% endfor %}
-                    </div>
-                </div>
+        <div class="date">
+            <div class="date__control date__control_r">
+                <i class="fa fa-angle-right"></i>
             </div>
-            <div class="article">
-                <h1>{{page.title}} Release Notes</h1>
-                v{{page.version}} release date is {{ page.releaseDate | date: '%B %d, %Y' }}.
-
-
-                {{content}}
+            <div class="date__control date__control_l">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="date__view">
+                <div class="date__list">
+                    {% for release in releases %}
+                        {% if release.version == page.version %}
+                            {% assign active = "active"%}
+                        {% endif %}
+                        <a class="date__item {{active}}" href="{{release.url}}">
+                            <div class="date__tit">{{release.version}}</div>
+                            {{ release.releaseDate | date: '%B %d, %Y' }}
+                        </a>
+                        {% assign active = ""%}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+
+    {{content}}
 </div>
 
 <script>

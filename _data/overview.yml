@@ -1,0 +1,15 @@
+features:
+  fa-icon: fa-star
+  title: New Features
+  button: Go to Features
+  link: features
+bugs:
+  fa-icon: fa-bug
+  title: Fixed Bugs
+  button: Go to Bugs
+  link: bugs
+details:
+  fa-icon: fa-coffee
+  title: Technical Details
+  button: Go to Details
+  link: details
