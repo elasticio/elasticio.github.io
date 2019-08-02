@@ -1041,8 +1041,8 @@ div[class*=' language'].highlighter-rouge,
 .article__content {
   overflow: hidden;
 
-  width: 66.67%;
-  padding: 0 30px 0 35px;
+  width: auto;
+  padding: 0 0 0 35px;
   box-sizing: border-box;
 
   border-left: 1px solid #e6e7e8;
