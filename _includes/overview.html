@@ -1,0 +1,14 @@
+<div class="wrap">
+    <div class="article-welcome">
+        <div class="article-welcome__icon">
+            <i class="release-notes-icon"></i>
+        </div>
+        <time class="article-welcome__date">{{ page.releaseDate | date: '%B %d, %Y' }}.</time>
+        <div class="article-welcome__tit">Version <b>{{page.version}}</b> is full of new stuff!</div>
+    </div>
+    <div class="overview">
+        {% include overview_item.html data=site.data.overview.features items=features %}
+        {% include overview_item.html data=site.data.overview.bugs items=bugs %}
+        {% include overview_item.html data=site.data.overview.details items=details %}
+    </div>
+</div>

@@ -151,10 +151,12 @@ $(function() {
 
     $(window).on('scroll', function(e) {
         var scrollTop = $(this).scrollTop();
-        if (scrollTop > $('.contents').offset().top) {
-            $('.contents').addClass('contents_fixed');
-        } else {
-            $('.contents').removeClass('contents_fixed');
+        if ($('.contents').length) {
+            if (scrollTop > $('.contents').offset().top) {
+                $('.contents').addClass('contents_fixed');
+            } else {
+                $('.contents').removeClass('contents_fixed');
+            }
         }
 
         $('.article h2').each(function(i, v) {
