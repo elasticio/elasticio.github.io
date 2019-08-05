@@ -20,6 +20,7 @@ Here are the general view classes which are used to render the input fields in
 | [TextAreaView](#textareaview)      | Renders a multi-line text area |
 | [CheckBoxView](#checkboxview)      | Renders a checkbox |
 | [SelectView](#selectview)        | Renders a drop-down menu to select from available values |
+| [MultiSelectView](#multiselectview)        | Renders a drop-down menu to select multiple values from the available ones |
 | [PasswordFieldView](#passwordfieldview) | Renders a standard password entry text field where the input values are replaced by symbols such as the asterisk (`*`) or a dot (`•`) |
 | [OAuthFieldView](#oauthfieldview)    | Renders button for initiating the OAuth process |
 
@@ -204,6 +205,43 @@ function getLists(conf, cb) {
 This function itself uses the `mailchimp-v3` libraries to query the MailChimp API
 for the names of the lists in your connected account, which is not predetermined
 anywhere in the component descriptor.
+
+## MultiSelectView
+
+`MultiSelectView` shares the properties of [SelectView](#selectview):
+
+| Property Name | Type     | Required | Description |
+| :------------ | :------: | :------: | :---------- |
+| label         | `string` | Yes      | Renders a label with the given text above the input field |
+| required      | `boolean`| Yes      | Specifies whether the selection is required for the component to operate properly or not. When `true` is set a red asterisks `(*)` to appear along with the label. If the value is `false` then it is optional to select.|
+| model | `object` or `string` | Yes | Contains the name (`string`) of a function exposed by a component that returns the JSON `object` or the JSON `object` containing the values. |
+| prompt   | `string` | No       | Used to give a short and descriptive text which is rendered in the select field. |
+
+**EXAMPLE:**
+```
+"triggers": {
+    "getPetsByStatusWithGenerators": {
+      "main": "./lib/triggers/getPetsByStatusWithGenerators.js",
+      "type": "polling",
+      "title": "Get Pets By Status With Generators",
+      "fields": {
+        "status": {
+          "label": "Pet Status",
+          "required": true,
+          "viewClass": "MultiSelectView",
+          "model": {
+            "available": "Available",
+            "pending": "Pending",
+            "sold": "Sold"
+          },
+          "prompt": "Select Pet Status"
+        }
+```
+
+Here is how it looks like in the UI:
+
+![](/assets/img/references/view-classes/Screenshot_1.png)
+
 
 ## PasswordFieldView
 
