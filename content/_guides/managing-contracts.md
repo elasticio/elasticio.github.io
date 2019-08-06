@@ -14,7 +14,7 @@ actions: [creating Contracts](#creating-contracts), [retrieving Contract data](#
 A [Contract](/getting-started/contracts-and-workspaces) is an enclosed environment, which contains Workspaces and DevTeams.
 A Tenant member with the corresponding permissions can create Contracts in their Tenant via the following request:
 
-`POST {{apiBaseUri}}/v2/contracts`
+`POST {{site.data.tenant.apiBaseUri}}/v2/contracts`
 
 Below are request parameters:
 
@@ -29,7 +29,7 @@ Below are request parameters:
 
 To create a new contract, we will use the following request:
 ```
-curl {{apiBaseUri}}/v2/contracts \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts \
   -X POST \
   -u {EMAIL}:{APIKEY} \
   -H 'Content-Type: application/json' -d '
@@ -61,7 +61,7 @@ a Contract member can get Contract data via the API. Namely, the following actio
 
 1\. Get Contract by ID via the following request:
 
-`GET {{apiBaseUri}}/v2/contracts/CONTRACT_ID/`
+`GET {{site.data.tenant.apiBaseUri}}/v2/contracts/CONTRACT_ID/`
 
 Below are request parameters:
 
@@ -72,23 +72,23 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}?include=members,invites \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}?include=members,invites \
    -u {EMAIL}:{APIKEY}
 ```
 
 2\. Get Contracts via the following request:
 
-`GET {{apiBaseUri}}/v2/contracts/`
+`GET {{site.data.tenant.apiBaseUri}}/v2/contracts/`
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/
   -u {EMAIL}:{APIKEY}
 ```
 
 2\. Get a list of Contract members via the following request:
 
-`GET {{apiBaseUri}}/v2/contracts/CONTRACT_ID/members/`
+`GET {{site.data.tenant.apiBaseUri}}/v2/contracts/CONTRACT_ID/members/`
 
 Below are request parameters:
 
@@ -98,13 +98,13 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/ \
   -u {EMAIL}:{APIKEY}
 ```
 
 3\. Get a list of pending invites via the following request:
 
-`GET {{apiBaseUri}}/v2/contracts/CONTRACT_ID/invites/`
+`GET {{site.data.tenant.apiBaseUri}}/v2/contracts/CONTRACT_ID/invites/`
 
 Below are request parameters:
 
@@ -114,13 +114,13 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/invites/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/invites/ \
    -u {EMAIL}:{APIKEY}
 ```
 
 4\. Get Contract roles via the following request:
 
-`GET {{apiBaseUri}}/v2/contracts/CONTRACT_ID/roles/`
+`GET {{site.data.tenant.apiBaseUri}}/v2/contracts/CONTRACT_ID/roles/`
 
 Below are request parameters:
 
@@ -130,7 +130,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/roles/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/roles/ \
   -u {EMAIL}:{APIKEY}
 ```
 
@@ -141,7 +141,7 @@ A Contract member with the corresponding permissions can:
 
 1\. Invite a user to the Contract via the following request:
 
-`POST {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/invites/`
+`POST {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/invites/`
 
 Below are request parameters:
 
@@ -159,7 +159,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/invites/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/invites/ \
     -X POST \
     -u {EMAIL}:{APIKEY} \
     -H 'Content-Type: application/json' -d '
@@ -182,7 +182,7 @@ curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/invites/ \
 
 2\. Add a new member to the Contract via the following request:
 
-`POST {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members`
+`POST {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members`
 
 Below are request parameters:
 
@@ -194,7 +194,7 @@ Below are request parameters:
 
 3\. Update membership in the contract via the following request:
 
-`PATCH {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/`
+`PATCH {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/`
 
 Below are request parameters:
 
@@ -212,7 +212,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/ \
     -X PATCH  \
     -u {EMAIL}:{APIKEY} \
     -H 'Content-Type: application/json' -d '
@@ -231,7 +231,7 @@ curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/ \
 
 4\. Remove a user from a contract via the following request:
 
-`DELETE {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/`
+`DELETE {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/`
 
 Below are request parameters:
 
@@ -242,7 +242,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/ \
    -X DELETE    \
    -u {EMAIL}:{APIKEY}
 ```
@@ -259,7 +259,7 @@ A Contract member with the corresponding permissions can edit the Contract in th
 
 1\. Suspend Contract, which means stopping of all of its flows and inability of performing any actions with the Contract, via the following request:
 
-`POST {{apiBaseUri}}/v2/contracts/CONTRACT_ID/suspend/`
+`POST {{site.data.tenant.apiBaseUri}}/v2/contracts/CONTRACT_ID/suspend/`
 
 Below are request parameters:
 
@@ -269,14 +269,14 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/suspend \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/suspend \
 -X POST \
   -u {EMAIL}:{APIKEY}
 ```
 
 2\. Unsuspend Contract via the following request:
 
-`POST {{apiBaseUri}}/v2/contracts/CONTRACT_ID/unsuspend/`
+`POST {{site.data.tenant.apiBaseUri}}/v2/contracts/CONTRACT_ID/unsuspend/`
 
 Below are request parameters:
 
@@ -286,14 +286,14 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}/unsuspend \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/unsuspend \
 -X POST \
   -u {EMAIL}:{APIKEY}
 ```
 
 3\. Delete the Contract via the following request:
 
-`DELETE {{apiBaseUri}}/v2/contracts/{CONTRACT_ID} \`
+`DELETE {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID} \`
 
 Below are request parameters:
 
@@ -303,7 +303,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl -i {{apiBaseUri}}/v2/contracts/{CONTRACT_ID} \
+curl -i {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID} \
   -X DELETE \
   -u {EMAIL}:{APIKEY}
 ```
@@ -313,7 +313,7 @@ The actual data deletion will be performed after an API response, as it requires
 
 4\. Update a Contract's name and available roles via the following request:
 
-`PATCH {{apiBaseUri}}/v2/contracts/{CONTRACT_ID}`
+`PATCH {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}`
 
 Below are request parameters:
 
@@ -325,7 +325,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/contracts/{CONTRACT_ID} \
+curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID} \
   -X PATCH \
   -u {EMAIL}:{APIKEY} \
   -H 'Content-Type: application/json' -d '
