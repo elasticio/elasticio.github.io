@@ -45,7 +45,7 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 
 ##### To create a workspace via the API, use the following request:
 
-`POST {{apiBaseUri}}/v2/workspaces`
+`POST {{site.data.tenant.apiBaseUri}}/v2/workspaces`
 
 Below are request parameters:
 
@@ -61,7 +61,7 @@ Below are request parameters:
 To create a new workspace called *Integrator 2: Judgement Day*, we will use the
 following request:
 ```
-curl {{apiBaseUri}}/v2/workspaces \
+curl {{site.data.tenant.apiBaseUri}}/v2/workspaces \
   -X POST \
   -u {EMAIL}:{APIKEY} \
   -H 'Accept: application/json' \
@@ -137,7 +137,7 @@ includes adding new members, managing their workspace user roles, removing membe
 
 To add a new member via the API, use the following request:
 
-`POST {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members`
+`POST {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members`
 
 Below are request parameters:
 
@@ -152,7 +152,7 @@ Below are request parameters:
 To add a user with the ID *Elvis* with *King* and *Immortal* roles we will use the following
 request:
 ```
-curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/ \
     -X POST \
     -u {EMAIL}:{APIKEY} \
     -H 'Accept: application/json' \
@@ -172,7 +172,7 @@ curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/ \
 ```
 To update user roles via the API, use the following request:
 
-`PATCH {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/`
+`PATCH {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/`
 
 Below are request parameters:
 
@@ -192,7 +192,7 @@ Below are request parameters:
 
 To change user roles we will use the following request:
 ```
-curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
     -X PATCH  \
     -u {EMAIL}:{APIKEY} \
     -H 'Accept: application/json' \
@@ -212,7 +212,7 @@ curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
 To remove a member from the workspace via the API we will use the following
 request:
 
-`DELETE {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/`
+`DELETE {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/`
 
 Below are request parameters:
 
@@ -223,14 +223,14 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
     -X DELETE    \
     -u {EMAIL}:{APIKEY}
 ```
 
 To rename a workspace via the API we will use the following request:
 
-`POST {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}`
+`POST {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}`
 
 Below are request parameters:
 
@@ -241,7 +241,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
+curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
   -X PATCH \
   -u {EMAIL}:{APIKEY} \
   -H 'Accept: application/json' \
@@ -258,7 +258,7 @@ curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
 
 To delete workspace via the API we will use the following request:
 
-`DELETE {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \`
+`DELETE {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \`
 
 Below are request parameters:
 
@@ -268,7 +268,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl -i {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
+curl -i {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
  -X DELETE \
  -u {EMAIL}:{APIKEY}
  ```
@@ -297,7 +297,7 @@ Alternatively, you can click **Add New Flow** in **Flows**:
 
 ##### To create a flow via the API, use the following request:
 
-`POST {{apiBaseUri}}/v2/flows/`
+`POST {{site.data.tenant.apiBaseUri}}/v2/flows/`
 
 Below are request parameters:
 
@@ -314,7 +314,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl -X POST {{apiBaseUri}}/v2/flows \
+curl -X POST {{site.data.tenant.apiBaseUri}}/v2/flows \
   -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json' \
    -H 'Content-Type: application/json' -d '
@@ -413,7 +413,7 @@ includes the following actions:
 
 To update flow type or name, we will use the following API request:
 
-`PATCH {{apiBaseUri}}/v2/flows/{FLOW_ID}`
+`PATCH {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}`
 
 Below are request parameters:
 
@@ -433,7 +433,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
+curl {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID} \
    -X PATCH \
    -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json' \
@@ -450,9 +450,9 @@ curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
 ```
 To start or stop a flow we will use the following requests:
 
-`POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/start`
+`POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/start`
 
-`POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/stop`
+`POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/stop`
 
 As you can see, the only difference between requests is the corresponding
 `start` or `stop`.
@@ -465,7 +465,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/flows/{FLOW_ID}/start \
+curl {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/start \
    -X POST \
    -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json' \
@@ -474,7 +474,7 @@ curl {{apiBaseUri}}/v2/flows/{FLOW_ID}/start \
 
 To delete a flow, we will use the following requests:
 
-`DELETE {{apiBaseUri}}/v2/flows/{FLOW_ID}`
+`DELETE {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}`
 
 Below are request parameters:
 
@@ -484,7 +484,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
+curl {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID} \
    -X DELETE \
    -u {EMAIL}:{APIKEY}
 ```
@@ -534,7 +534,7 @@ Workspace members with corresponding permissions can create credentials via the
 
 ##### To create new credential via the API, we will use the following API request:
 
-`POST {{apiBaseUri}}/v2/credentials/`
+`POST {{site.data.tenant.apiBaseUri}}/v2/credentials/`
 
 Below are request parameters:
 
@@ -553,7 +553,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/credentials/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/credentials/ \
     -X POST \
     -u {EMAIL}:{APIKEY} \
     -H 'Accept: application/json' \
@@ -614,7 +614,7 @@ click **Delete**:
 
 To update credentials, we will use the following request:
 
-`PATCH {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
+`PATCH {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
 
 Below are request parameters:
 
@@ -630,7 +630,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
    -u {EMAIL}:{APIKEY} \
    -X PATCH \
    -H 'Accept: application/json' \
@@ -658,7 +658,7 @@ curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
 
 To delete credentials, we will use the following request:
 
-`DELETE {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
+`DELETE {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
 
 Below are request parameters:
 
@@ -668,7 +668,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
+curl {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
    -X DELETE \
    -u {EMAIL}:{APIKEY}
 ```
@@ -677,7 +677,7 @@ The UI automatically shows you lists of entities (workspaces, users, flows, etc.
 
 1\. To get workspace by ID:
 
-`GET {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/`
+`GET {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/`
 
 Below are request parameters:
 
@@ -688,13 +688,13 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
-curl {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}?include=members,invites \
+curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}?include=members,invites \
   -u {EMAIL}:{APIKEY} \
   -H 'Accept: application/json'
   ```
 2\. To get user's workspaces:
 
-`GET {{apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID}`
+`GET {{site.data.tenant.apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID}`
 
 Below are request parameters:
 
@@ -705,13 +705,13 @@ Below are request parameters:
 **EXAMPLE:**
 
 ```
-curl {{apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID} \
+curl {{site.data.tenant.apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID} \
    -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json'
 ```
 3\. To get workspace member list:
 
-`GET {{apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/`
+`GET {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/`
 
 Below are request parameters:
 
@@ -721,7 +721,7 @@ Below are request parameters:
 
 4\. To retrieve all flows in the workspace:
 
-`GET {{apiBaseUri}}/v2/flows/`
+`GET {{site.data.tenant.apiBaseUri}}/v2/flows/`
 
 Below are request parameters:
 
@@ -741,27 +741,27 @@ Below are request parameters:
 
 Custom paging:
 
-`curl '{{apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&page[size]=20&page[number]=1' \
+`curl '{{site.data.tenant.apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&page[size]=20&page[number]=1' \
    -g -u {EMAIL}:{APIKEY}`
 
 Filter:
 
-`curl '{{apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&filter[status]=active' \
+`curl '{{site.data.tenant.apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&filter[status]=active' \
    -g -u {EMAIL}:{APIKEY}`
 
 Search:
 
-`curl '{{apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&search=webhook' \
+`curl '{{site.data.tenant.apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&search=webhook' \
    -g -u {EMAIL}:{APIKEY} `
 
 Custom sorting:
 
-`curl '{{apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&sort=-updated_at' \
+`curl '{{site.data.tenant.apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&sort=-updated_at' \
    -g -u {EMAIL}:{APIKEY}`
 
 5\. To retrieve a flow by ID:
 
-`GET {{apiBaseUri}}/v2/flows/{FLOW_ID}`
+`GET {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}`
 
 Below are request parameters:
 
@@ -771,12 +771,12 @@ Below are request parameters:
 
 **EXAMPLE:**
 
-`curl {{apiBaseUri}}/v2/flows/{FLOW_ID} \
+`curl {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID} \
    -u {EMAIL}:{APIKEY}`
 
 6\. To retrieve all credentials:
 
-GET {{apiBaseUri}}/v2/credentials?workspace_id={WORKSPACE_ID}/
+GET {{site.data.tenant.apiBaseUri}}/v2/credentials?workspace_id={WORKSPACE_ID}/
 
 Below are request parameters:
 
@@ -787,13 +787,13 @@ Below are request parameters:
 
 **EXAMPLE:**
 
-`curl {{apiBaseUri}}/v2/credentials/?filter[component]={COMPONENT_ID}&workspace_id={WORKSPACE_ID} \
+`curl {{site.data.tenant.apiBaseUri}}/v2/credentials/?filter[component]={COMPONENT_ID}&workspace_id={WORKSPACE_ID} \
    -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json'`
 
 7\. Retrieve a credential by ID:
 
-`GET {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
+`GET {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
 
 Below are request parameters:
 
@@ -803,6 +803,6 @@ Below are request parameters:
 
 **EXAMPLE:**
 
-`curl {{apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
+`curl {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
    -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json'`

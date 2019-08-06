@@ -121,14 +121,14 @@ There are a few restrictions for custom role creation and role deletion:
 - You cannot create multiple roles with identical names in one scope;
 - You cannot delete a role that is assigned to a member;
 - You cannot delete [essential roles](#essential-roles);
-- You cannot delete a role that is used in `contract.availableRoles` (learn more about it [here]({{apiBaseUri}}/docs/v2/#create-a-contract)).
+- You cannot delete a role that is used in `contract.availableRoles` (learn more about it [here]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-contract)).
 
 
 When the tenant admin uses the *service account* privileges, he can [create
-custom roles]({{apiBaseUri}}/docs/v2/#update-tenant's-roles) via the
+custom roles]({{site.data.tenant.apiBaseUri}}/docs/v2/#update-tenant's-roles) via the
 following API request:
 
-`PATCH {{apiBaseUri}}/v2/tenants/{TENANT_ID}/roles` , where
+`PATCH {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/roles` , where
 
 `{TENANT_ID}` parameter stands for the ID of the tenant.
 
@@ -140,7 +140,7 @@ Below are request parameters:
 | `attributes.roles[]`                       | yes          | An array of Tenant’s roles. It can be empty.                                                                                                                                                                    |
 | `attributes.roles[].role`                  | no           | Custom role name                                                                                                                                                                                                |
 | `attributes.roles[].scope`                 | no           | The group of objects, which is affected by this role. Value can be: `contracts` or `workspaces`.                                                                                                            |
-| `attributes.roles[].permissions[]`         | yes          | An array of permissions. It can be empty. To get the list of available permissions execute the endpoint: `GET {{apiBaseUri}}/v2/permissions` or see [this reference table](#permissions-reference-table). |
+| `attributes.roles[].permissions[]`         | yes          | An array of permissions. It can be empty. To get the list of available permissions execute the endpoint: `GET {{site.data.tenant.apiBaseUri}}/v2/permissions` or see [this reference table](#permissions-reference-table). |
 | `attributes.roles[].i18n.{{language_key}}` | no           | The name of a role in different languages. The value is only required for `en` key. For other languages value is optional.                                                                                  |
 
 **EXAMPLE:**
@@ -149,7 +149,7 @@ To add a new role called *Godzilla*, with permissions to see and delete
 workspaces in the contract, and edit a workspace, we will use the following
 request:
 ```
-curl {{apiBaseUri}}/v2/tenants/{TENANT_ID}/roles
+curl {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/roles
    -X PATCH
    -u {EMAIL}:{APIKEY}
    -H 'Content-Type: application/json' -d '

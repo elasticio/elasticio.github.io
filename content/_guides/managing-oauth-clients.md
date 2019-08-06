@@ -94,7 +94,7 @@ You can create one OAuth client per component in a tenant. Also, OAuth client ca
 
 To create OAuth clients, we will use the following API request:
 
-`POST {{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients`
+`POST {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients`
 
 Below are request parameters:
 
@@ -113,7 +113,7 @@ Below are request parameters:
 
 **EXAMPLE:**
 ```
- curl {{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients \
+ curl {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients \
    -X POST \
    -u {EMAIL}:{APIKEY} \
    -H 'Content-Type: application/json' -d '
@@ -141,7 +141,7 @@ Below are request parameters:
 
 To retrieve OAuth clients in a tenant, we will use the following API request:
 
-`GET {{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients`
+`GET {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients`
 
 Below are request parameters:
 
@@ -154,19 +154,19 @@ Below are request parameters:
 
 The first example is without filtering by component ID.
 
-`curl {{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients \    -u
+`curl {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients \    -u
 {EMAIL}:{APIKEY}`
 
 The second example includes filtering by component ID.
 
 `curl
-{{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/?filter[component]={{COMPONENT_ID}}
+{{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/?filter[component]={{COMPONENT_ID}}
 \    -u {EMAIL}:{APIKEY}`
 
 OAuth clients can also be retrieved by their own ID, using the following API request:
 
 `curl
-{{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
+{{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
 -u {EMAIL}:{APIKEY}`
 
 Below are request parameters:
@@ -179,7 +179,7 @@ Below are request parameters:
 **EXAMPLE:**
 
 `curl
-{{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
+{{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
 -u {EMAIL}:{APIKEY}`
 
 #### Updating OAuth Clients
@@ -187,7 +187,7 @@ Below are request parameters:
 To update OAuth clients in a tenant, we will use the following API request:
 
 `PATCH
-{{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID}`
+{{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID}`
 
 Below are request parameters:
 
@@ -208,7 +208,7 @@ Below are request parameters:
 **EXAMPLE:**
 
 ```
-curl {{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
+curl {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
   -X PATCH \
   -u {EMAIL}:{APIKEY} \
   -H 'Content-Type: application/json' -d '
@@ -238,7 +238,7 @@ You can only delete an OAuth client that is not used. An OAuth client is conside
 To delete an OAuth client, we will use the following API request:
 
 `DELETE
-{{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID}
+{{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID}
 \\`
 
 Below are request payload parameters:
@@ -251,7 +251,7 @@ Below are request payload parameters:
 **EXAMPLE:**
 
 `curl -i
-{{apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
+{{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/oauth-clients/{OAUTH-CLIENT_ID} \
 -X DELETE \  -u {EMAIL}:{APIKEY}`
 
 You can only delete an OAuth client that is not used. An OAuth client is considered used when at least one integration flow in the tenant includes the component with this OAuth client. In case you delete a component with a defined OAuth client, this client will remain on the platform. However, it will not be usable. A user with corresponding permissions can remove this OAuth client, if required.

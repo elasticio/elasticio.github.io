@@ -58,7 +58,7 @@ In case you need to stop a running Flow, click the stop button:
 
 1\. To start a Flow via the API, we will use the following request:
 
-`POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/start`
+`POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/start`
 
 Below are request parameters:
 
@@ -68,7 +68,7 @@ Below are request parameters:
 
 2\. To stop a Flow via the API, we will use the following request:
 
-`POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/stop`
+`POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/stop`
 
 Below are request parameters:
 
@@ -78,7 +78,7 @@ Below are request parameters:
 
 3\. To delete a Flow via the API, we will use the following request:
 
-`DELETE {{apiBaseUri}}/v2/flows/{FLOW_ID}`
+`DELETE {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}`
 
 Below are request parameters:
 
@@ -88,7 +88,7 @@ Below are request parameters:
 
 4\. To edit a Flow to some extent via the API, we will use the following request:
 
-`PATCH {{apiBaseUri}}/v2/flows/{FLOW_ID}`
+`PATCH {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}`
 
 Below are request parameters:
 
@@ -178,7 +178,7 @@ Also, the following special characters are in use:
 
 **EXAMPLE:** `* * * */2 *` means every two months.
 
-Feel free to use the hint below the CRON expression field for reference. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
+Feel free to use the hint below the CRON expression field for reference. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
 
 If the CRON expression was written properly, you'll see your schedule in the Next Occurrences:  
 
