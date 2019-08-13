@@ -9,9 +9,24 @@ This document provides basic information on [passthrough feature](#passthrough-f
 
 ## Passthrough Feature
 
-Most components in an integration Flow receive data, process it in some way, and send data to the next step, or elsewhere. The thing is, in a generic Flow the message fed to Step 6 may be completely different from the data on Step 1. What if Step 6 requires the initial data that was fed to Step 1 in the beginning? That's exactly what Passthrough is for. Basically, it adds every previous message to the next one in a numbered "list". In the end, the data sent by Step 5 to Step 6 includes the "operational" message of Step 5, and all the messages from the previous steps.
+Most components in an integration Flow receive, process and send messages. After processing, some or even all the data may be lost, so the message a component receives is typically different from the data it sends. The final component may receive something completely different, without even a small trace of the initial message. If you want a component to process data other than what it receives from the previous step, you can use passthrough.
 
-## Samples in Integration Flows
+Basically, passthrough maintains copies of all messages per step in the Flow, and adds them to each following message. This way, data received by *Step 4* will contain the message sent by *Step 3*, and a special section with the messages received by *Step 1*, *Step 2* and *Step 3*. Normally, *Step 4* would only read and process the data sent by *Step 3*, but you can configure it to choose a message from any other previous step, if required.      
+
+
+## Example
+
+Let's say that Flow Baboon consists of 4 steps: Webhook, CRM, Logger and Email.
+
+1\. The Webhook receives a trigger message when someone fills in a registration form, and sends the registration data to the CRM.
+
+2\. The CRM does its magic and sends a "report" to the Logger.   
+
+3\. The Logger logs the new registered member, but its outgoing message does not contain anything beneficial for the Email component.
+
+4\. The Email uses passthrough to read the required data from the initial message, or CRM message, and sends out an email.
+
+
 
 
 [data mapping](/guides/mapping-data). It is a process of
