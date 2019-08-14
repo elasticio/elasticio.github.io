@@ -16,52 +16,12 @@ Basically, passthrough maintains copies of all messages per step in the Flow, an
 
 ## Example
 
-Let's say that Flow Baboon consists of 4 steps: Webhook, CRM, Logger and Email.
+Let's say that *Flow Baboon* consists of 4 steps: *Webhook*, *CRM*, *Logger* and *Email*.
 
-1\. The Webhook receives a trigger message when someone fills in a registration form, and sends the registration data to the CRM.
+1\. The *Webhook* receives a trigger message when someone fills in a registration form, and sends the registration data to the *CRM*.
 
-2\. The CRM does its magic and sends a "report" to the Logger.   
+2\. The *CRM* does its magic and sends a "report" to the *Logger*.   
 
-3\. The Logger logs the new registered member, but its outgoing message does not contain anything beneficial for the Email component.
+3\. The *Logger* logs the new registered member, but its outgoing message does not contain anything beneficial for the *Email* component.
 
-4\. The Email uses passthrough to read the required data from the initial message, or CRM message, and sends out an email.
-
-
-
-
-[data mapping](/guides/mapping-data). It is a process of
-data conversion from one component’s standard to the next one’s. Basically, data
-mapper retrieves data from one component and relays it to the next component in
-a compatible form. In order to see what sort of output data the first component
-produces we use data sample.
-
-A data sample can be retrieved from a component or written manually by the
-integrator. In any case, the sample is then given as input to the next
-component. The receiving component may not require all the data from the sample
-or may require it in completely different order. That’s when you configure
-proper mapping so that the receiving component gets input in accordance with its
-standard.
-
-**NOTE:** Samples exist for flow building and testing purposes. Retrieving a sample for an action creates new objects in the target system. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards.
-
-Let’s observe the following process example:
-
-1.  *Component Baboon* is followed by *Component Toucan*.
-
-2.  When we select *Component Toucan*, we can see what sort of data it accepts as
-    input.
-
-3.  By retrieving a data sample from *Component Baboon*, we can see what sort of
-    data it provides as output.
-
-4.  Then we configure the data mapper to relay *Baboon* data to *Toucan*, converting
-    it first into a form acceptable by *Toucan*. The mapping process may include
-    ignoring some of the output fields, switching field places, etc.
-
-5.  On the example scheme we can see, that *Baboon* sends out the following data:
-    `Name`, `Surname`, `Address`, `Phone Number` and `Email`. Component *Toucan* doesn’t
-    need `Email`. Also, it has `Name and Surname` together in one field. Data mapper
-    makes the necessary changes into Baboon output, so that the data fits *Toucan*
-    input standard.
-
-![](/assets/img/getting-started/what-is-a-sample/Screenshot_1.png)
+4\. The *Email* uses passthrough to read the required data from the initial trigger message, or *CRM* message, and sends out an email.
