@@ -1,0 +1,44 @@
+# Usage of Script
+
+## Description
+This scripts creates pull requests in [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) 
+See also examples of **circle.ci** configs for:
+1. [Java]()
+2. [NodeJs]()
+
+## Options
+| Option | Mandatory                          | Description                                                                                                                                                                                                                                                                  |
+|--------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| n      | Yes                                | Name of markdown file without extension e.g: utility-component, salesforce-component. You can find out value for ths parameter in [components directory of elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io/tree/master/content/_components) |
+| p      | No. Default ouptput of pwd command | Path to project. If running from circle.ci can be safely omitted otherwise you may want to provide path to project                                                                                                                                                           |
+#### Examples
+1) `bash create_pr.bash -p /path/to/component -n utility-component` - creates docs for utility component. It is assumed that component root is in provided path.
+2) `bash create_pr.bash -n salesforce-component` - creates docs for salesforce component. It is assumed that component root is in output of command `pwd`.
+
+## How to use
+1) Setup circle.ci for your project
+2) Open example circle.ci file for [Java]() or [NodeJs]()
+3) Copy paste `docs` job to `jobs` section of your `config.yml` file
+4) In step `Create PR` provide correct values for options `n` - **name of target markdown file without extension** and `p` - path to component in system **can be omitted in circle.ci**
+5) Copy paste `deploy_docs` workflow to `workflows` section of your `config.yml` file
+6) Create environment variable `DOCS_GITHUB_TOKEN` in your circle.ci configs for project with value: token for technical user: `username`  with correct rights to push into [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io). Can be found in Bitwarden.
+
+## How it works
+1) Clone repository [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) locally
+2) Create branch with name: `docs-update-$project_name-$current_time` where is: $project_name - provided name in option `n`, $current_time - epoch time.
+3) Switch to created branch
+4) Copy README.md file from provided in option `p` path.  If option not provided, default value is output of `pwd` command
+5) Replace content of `/content/_components/$project_name.md` with content of README.md from previous step.
+6) Create a default header with following information(title, layout, section) in updated file
+7) Commit and push changes to [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io)
+8) Using github API create pull request into mater with title: `Updating docs for component: $project_name`
+
+## Limitations
+Components that have complex structure of documentation, not supported yet:
+1) aws-s3
+2) batch
+3) jdbc
+4) sap-bydesign
+5) simple-trigger
+6) zip
+Value for `section` header must be added manually, in current version its populated with: `PLACEHOLDER`
