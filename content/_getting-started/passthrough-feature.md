@@ -17,20 +17,6 @@ Basically, passthrough maintains copies of all messages per step in the Flow, an
 
 ## Passthrough Usage
 
-To begin with, it would have been strange not to allow a component in the Flow to access data other than what the previous step sends it. Use cases are numerous, because even similar applications often work with slightly different data. The most common use case is customer data processing, when a Flow has to retrieve different pieces of this data from different sources, and then merge them into a full profile. As a quick example, say your Flow serves a small internet store. What you need is for the Flow to start upon receiving an order form with Order ID and the customer's data. Then you want it to retrieve customer data from your CRM, to see if it is a returning customer. Also, you need it to send an email to the customer, that his order is being processed, and another email to a sales manager who will process it. The Email Component will have to use the original message, which includes customer email.  
+To begin with, it would have been strange not to allow a component in the Flow to access data other than what the previous step sends it. Use cases are numerous, because even similar applications often work with slightly different data. The most common use case is customer data processing, when a Flow has to retrieve different pieces of this data from different sources, and then merge them into a full profile. As a quick example, say your Flow serves a small internet store. What you need is for the Flow to start upon receiving an order form with Order ID and the customer's data. Then you want it to retrieve customer data from your CRM, to see if it is a returning customer. Also, you need it to send an email to the customer, that his order is being processed, and another email to a sales manager who will process it. The Email Component will have to use the original message, which includes customer email. That is where passthrough comes in to let the last step, meaning Email Component, fetch data from the initial message, or any other step's message in the Flow.
 
-
-
-
-
-## Example
-
-Let's say that *Flow Baboon* consists of 4 steps: *Webhook*, *CRM*, *Logger* and *Email*.
-
-1\. The *Webhook* receives a trigger message when someone fills in a registration form, and sends the registration data to the *CRM*.
-
-2\. The *CRM* does its magic and sends a "report" to the *Logger*.   
-
-3\. The *Logger* logs the new registered member, but its outgoing message does not contain anything beneficial for the *Email* component.
-
-4\. The *Email* uses passthrough to read the required data from the initial trigger message, or *CRM* message, and sends out an email.
+## Practical  Example
