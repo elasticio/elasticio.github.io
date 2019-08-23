@@ -3,8 +3,8 @@
 ## Description
 This scripts creates pull requests in [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) 
 See also examples of **circle.ci** configs for:
-1. [Java]()
-2. [NodeJs]()
+1. [Java](circle_java.yml)
+2. [NodeJs](node_java.yml)
 
 ## Options
 | Option | Mandatory                          | Description                                                                                                                                                                                                                                                                  |
@@ -17,7 +17,7 @@ See also examples of **circle.ci** configs for:
 
 ## How to use
 1) Setup circle.ci for your project
-2) Open example circle.ci file for [Java]() or [NodeJs]()
+2) Open example circle.ci file for [Java](circle_java.yml) or [NodeJs](node_java.yml)
 3) Copy paste `docs` job to `jobs` section of your `config.yml` file
 4) In step `Create PR` provide correct values for options `n` - **name of target markdown file without extension** and `p` - path to component in system **can be omitted in circle.ci**
 5) Copy paste `deploy_docs` workflow to `workflows` section of your `config.yml` file
