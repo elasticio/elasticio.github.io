@@ -10,7 +10,7 @@ See also examples of **circle.ci** configs for:
 | Name                 | Description                                                                              |
 |----------------------|------------------------------------------------------------------------------------------|
 | DOCS_GITHUB_TOKEN    | Token with read/write to elasticio.github.io repository                                  |
-| DOCS_GITHUB_EMAIL    | Email of user, this user will be used to create PR in elasticio.github.io repository     |
+| DOCS_GITHUB_EMAIL    | Email of a user, this user will be used to create a PR in elasticio.github.io repository     |
 | DOCS_GITHUB_USERNAME | Username of user, this user will be used to create PR in  elasticio.github.io repository |
 
 ## Options
