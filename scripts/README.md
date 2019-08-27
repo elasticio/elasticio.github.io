@@ -4,7 +4,7 @@
 This script creates a pull request in [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) 
 See also examples of **circle.ci** configs for:
 1. [Java](circle_java.yml)
-2. [NodeJs](node_java.yml)
+2. [NodeJs](circle_node.yml)
 
 ## Environment Variables
 | Name                 | Description                                                                              |
@@ -25,7 +25,7 @@ See also examples of **circle.ci** configs for:
 ## How to use
 1) Setup circle.ci for your project
 2) Create environment variables described in `Environment Variables` section
-3) Open example circle.ci file for [Java](circle_java.yml) or [NodeJs](node_java.yml)
+3) Open example circle.ci file for [Java](circle_java.yml) or [NodeJs](circle_node.yml)
 4) Copy paste `docs` job to `jobs` section of your `config.yml` file
 5) In step `Create PR` provide correct values for options `n` - **name of target markdown file without extension** and `p` - path to component in system **can be omitted in circle.ci**
 6) Copy paste `deploy_docs` workflow to `workflows` section of your `config.yml` file
