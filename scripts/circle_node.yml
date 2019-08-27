@@ -8,15 +8,6 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Debug pwd
-          command: pwd
-      - run:
-          name: Debug ls
-          command: ls -a
-      - run:
-          name: Debug ls /
-          command: ls -la /
-      - run:
           name: Installing Dependencies
           command: npm install
       - save_cache:
