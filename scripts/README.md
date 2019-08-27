@@ -1,7 +1,7 @@
 # Usage of Script
 
 ## Description
-This scripts creates pull requests in [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) 
+This script creates a pull request in [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) 
 See also examples of **circle.ci** configs for:
 1. [Java](circle_java.yml)
 2. [NodeJs](node_java.yml)
