@@ -39,7 +39,7 @@ See also examples of **circle.ci** configs for:
 5) Replaces a content of `/content/_components/$project_name.md` with a content of README.md from the previous step.
 6) Creates a default header with the following information(title, layout, section) in an updated file
 7) Commits and pushes the changes to the [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io)
-8) Using github API create pull request into mater with title: `Updating docs for component: $project_name`
+8) Using GitHub API creates a pull request into the master with the title: `Updating docs for the component: $project_name`
 
 ## Limitations
 Components that have complex structure of documentation, not supported yet:
