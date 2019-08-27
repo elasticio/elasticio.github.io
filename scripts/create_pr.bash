@@ -16,8 +16,8 @@ repo="https://$DOCS_GITHUB_TOKEN@github.com/elasticio/elasticio.github.io"
 repo_name='elasticio.github.io'
 current_time=$(date +'%s')
 branch_name=docs-update-$project_name-$current_time
-email="arsenzhd@gmail.com"
-username="uaArsen"
+email="$DOCS_GITHUB_EMAIL"
+username="$DOCS_GITHUB_USERNAME"
 
 git config --global credential.helper store
 git config --global user.email $email
