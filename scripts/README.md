@@ -32,11 +32,11 @@ See also examples of **circle.ci** configs for:
 7) Create environment variable `DOCS_GITHUB_TOKEN` in your circle.ci configs for project with value: token for technical user: `username`  with correct rights to push into [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io). Can be found in Bitwarden.
 
 ## How it works
-1) Clone repository [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) locally
+1) Clones the repository [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) locally
 2) Creates a branch with the name: `docs-update-$project_name-$current_time` where is: $project_name - provided name in option `n`, $current_time - epoch time.
-3) Switch to created branch
-4) Copy README.md file from provided in option `p` path.  If option not provided, default value is output of `pwd` command
-5) Replace content of `/content/_components/$project_name.md` with content of README.md from previous step.
+3) Switches to the created branch
+4) Copies the README.md file from provided in option `p` path.  If the option is not provided, the default value is an output of `pwd` command
+5) Replaces a content of `/content/_components/$project_name.md` with a content of README.md from the previous step.
 6) Creates a default header with the following information(title, layout, section) in an updated file
 7) Commits and pushes the changes to the [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io)
 8) Using github API create pull request into mater with title: `Updating docs for component: $project_name`
