@@ -6,6 +6,13 @@ See also examples of **circle.ci** configs for:
 1. [Java](circle_java.yml)
 2. [NodeJs](node_java.yml)
 
+## Environment Variables
+| Name                 | Description                                                                              |
+|----------------------|------------------------------------------------------------------------------------------|
+| DOCS_GITHUB_TOKEN    | Token with read/write to elasticio.github.io repository                                  |
+| DOCS_GITHUB_EMAIL    | Email of user, this user will be used to create PR in elasticio.github.io repository     |
+| DOCS_GITHUB_USERNAME | Username of user, this user will be used to create PR in  elasticio.github.io repository |
+
 ## Options
 | Option | Mandatory                          | Description                                                                                                                                                                                                                                                                  |
 |--------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -17,11 +24,12 @@ See also examples of **circle.ci** configs for:
 
 ## How to use
 1) Setup circle.ci for your project
-2) Open example circle.ci file for [Java](circle_java.yml) or [NodeJs](node_java.yml)
-3) Copy paste `docs` job to `jobs` section of your `config.yml` file
-4) In step `Create PR` provide correct values for options `n` - **name of target markdown file without extension** and `p` - path to component in system **can be omitted in circle.ci**
-5) Copy paste `deploy_docs` workflow to `workflows` section of your `config.yml` file
-6) Create environment variable `DOCS_GITHUB_TOKEN` in your circle.ci configs for project with value: token for technical user: `username`  with correct rights to push into [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io). Can be found in Bitwarden.
+2) Create environment variables described in `Environment Variables` section
+3) Open example circle.ci file for [Java](circle_java.yml) or [NodeJs](node_java.yml)
+4) Copy paste `docs` job to `jobs` section of your `config.yml` file
+5) In step `Create PR` provide correct values for options `n` - **name of target markdown file without extension** and `p` - path to component in system **can be omitted in circle.ci**
+6) Copy paste `deploy_docs` workflow to `workflows` section of your `config.yml` file
+7) Create environment variable `DOCS_GITHUB_TOKEN` in your circle.ci configs for project with value: token for technical user: `username`  with correct rights to push into [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io). Can be found in Bitwarden.
 
 ## How it works
 1) Clone repository [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) locally
