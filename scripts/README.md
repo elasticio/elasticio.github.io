@@ -33,7 +33,7 @@ See also examples of **circle.ci** configs for:
 
 ## How it works
 1) Clone repository [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io) locally
-2) Create branch with name: `docs-update-$project_name-$current_time` where is: $project_name - provided name in option `n`, $current_time - epoch time.
+2) Creates a branch with the name: `docs-update-$project_name-$current_time` where is: $project_name - provided name in option `n`, $current_time - epoch time.
 3) Switch to created branch
 4) Copy README.md file from provided in option `p` path.  If option not provided, default value is output of `pwd` command
 5) Replace content of `/content/_components/$project_name.md` with content of README.md from previous step.
