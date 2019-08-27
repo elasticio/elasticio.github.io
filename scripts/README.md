@@ -37,7 +37,7 @@ See also examples of **circle.ci** configs for:
 3) Switch to created branch
 4) Copy README.md file from provided in option `p` path.  If option not provided, default value is output of `pwd` command
 5) Replace content of `/content/_components/$project_name.md` with content of README.md from previous step.
-6) Create a default header with following information(title, layout, section) in updated file
+6) Creates a default header with the following information(title, layout, section) in an updated file
 7) Commit and push changes to [elasticio.github.io repository](https://github.com/elasticio/elasticio.github.io)
 8) Using github API create pull request into mater with title: `Updating docs for component: $project_name`
 
