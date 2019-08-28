@@ -17,6 +17,10 @@ Basically, passthrough maintains copies of all messages per step in the Flow, an
 
 ## Passthrough Usage
 
-To begin with, it would have been strange not to allow a component in the Flow to access data other than what the previous step sends it. Use cases are numerous, because even similar applications often work with slightly different data. The most common use case is customer data processing, when a Flow has to retrieve different pieces of this data from different sources, and then merge them into a full profile. As a quick example, say your Flow serves a small internet store. What you need is for the Flow to start upon receiving an order form with Order ID and the customer's data. Then you want it to retrieve customer data from your CRM, to see if it is a returning customer. Also, you need it to send an email to the customer, that his order is being processed, and another email to a sales manager who will process it. The Email Component will have to use the original message, which includes customer email. That is where passthrough comes in to let the last step, meaning Email Component, fetch data from the initial message, or any other step's message in the Flow.
+To begin with, it would have been strange not to allow a component in the Flow to access data other than what the previous step sends it. Use cases are numerous, because even similar applications often work with slightly different data. The most common use case is customer data processing, when a Flow has to retrieve different pieces of this data from different sources, and then merge them into a full profile.
+
+As a quick example, say your Flow serves a small internet store. What you need is for the Flow to start upon receiving an order form with Order ID and the customer's data. Then you want it to retrieve customer data from your CRM, to see if it is a returning customer. Also, you need it to send an email to the customer, that his order is being processed, and another email to a sales manager who will process it. The Email Component will have to use the original message, which includes customer email. That is where passthrough comes in to let the last step, meaning Email Component, fetch data from the initial message, or any other step's message in the Flow.
 
 ## Practical  Example
+
+Here is a detailed example of an actual real-life Flow. It involves Amazon orders   
