@@ -40,4 +40,4 @@ git push -q --repo $repo --set-upstream  origin $branch_name
 
 json_template='{"title":"%s", "head":"%s", "base":"master"}'
 payload=$(printf "$json_template" "Updating docs for the component: $project_name" "$branch_name")
-curl -u $username:$DOCS_GITHUB_TOKEN --data "$payload" https://api.github.com/repos/$username/$repo_name/pulls
+curl -u $username:$DOCS_GITHUB_TOKEN --data "$payload" https://api.github.com/repos/elasticio/$repo_name/pulls
