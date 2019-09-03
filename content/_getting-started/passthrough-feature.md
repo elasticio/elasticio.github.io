@@ -23,4 +23,32 @@ As a quick example, say your Flow serves a small internet store. What you need i
 
 ## Practical  Example
 
-Here is a detailed example of an actual real-life Flow. It involves Amazon orders   
+Here is a detailed example of an actual real-life Flow. It involves Amazon orders being managed by Salesforce. The problem here is that while `listOrders` query to Amazon MWS provides beneficial order data, it can not get a list of the items in the order. To get the item list, we need to query Amazon MWS with `listOrderItems` using a specific order ID. However, without having the order IDs, we obviously can not use `listOrderItems`.
+
+In the imaginary unlucky case when we didn't have passthrough, we would have to create an additional Flow for second query. There may be problems of synchronization between the two Flows, which we usually solve with Rebounds. The system tries to get the external IDs of those orders before asking for items. If the IDs are still not there it will try again later and later. However, there is always a limit on how many times the system can try and that many connections can fail if one end of integration reports a timeout.
+
+However, we do have passthrough, so we can just use `listOrders` and `listOrderItems` in two separate steps. Let's take a look at our Flow:
+
+![](/assets/img/getting-started/passthrough/Passthrough_flow.gif)
+
+1\. Step 1 gets a list of orders:
+
+![](/assets/img/getting-started/passthrough/Screenshot_1.png)
+
+2\. Step 2 splits the list by order:
+
+![](/assets/img/getting-started/passthrough/Screenshot_2.png)
+
+3\. Step 3 gets items in the orders:
+
+![](/assets/img/getting-started/passthrough/Screenshot_3.png)
+
+4\. Step 4 retrieves orders from Step 2 via passthrough by update date:
+
+![](/assets/img/getting-started/passthrough/Screenshot_4.png)
+
+5\. Step 5 retrieves order items from Step 3 via passthrough, adding data on scheduled delivery date, shipping date, item price and quantity of ordered items:
+
+![](/assets/img/getting-started/passthrough/Screenshot_5.png)
+
+That's how instead of separating order item handling to a second Flow, we reduce overall complexity by using passthrough.
