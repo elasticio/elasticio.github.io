@@ -1,5 +1,5 @@
 ---
-title: Managing your SSH keys
+title: Managing SSH Keys
 layout: article
 section: Developing Components
 category: component
@@ -69,26 +69,10 @@ can paste it into the SSH entry form on the {{site.data.tenant.name}} platform.
 
 ## Uploading your SSH keys
 
-To add a newly generated SSH Keys navigate to `Settings > SSH Keys` section:
+To add a newly generated SSH Keys, click your "avatar" and navigate to *Identity Keys* section. There you can define key name, enter the SSH key and save it:
 
-![Navigate to SSH Keys section](/assets/img/developer-guide/ssh-keys/ssh-keys-01.png "Navigate to SSH Keys section")
+![](/assets/img/developer-guide/ssh-keys/SSH.gif)
 
-If you don't have any uploaded SSH Keys you will see the following screen:
+If you already have some SSH keys, just click *Add New SSH Key*:
 
-![First time to upload SSH Key](/assets/img/developer-guide/ssh-keys/ssh-keys-02.png "First time to upload SSH Key")
-
-Click on *+Upload* button to start.
-
-![Fill-in the SSH Key details](/assets/img/developer-guide/ssh-keys/ssh-keys-03.png "Fill-in the SSH Key details")
-
-The screenshot above shows a form where you must enter the name of your SSH Key
-and paste the actual SSH Key which should still be in your clipboard. The result
-would look like this:
-
-![Pasted SSH Key](/assets/img/developer-guide/ssh-keys/ssh-keys-04.png "Pasted SSH Key")
-
-Click on *Save* to finish. The final result would look like this:
-
-![Your SSH Keys](/assets/img/developer-guide/ssh-keys/ssh-keys-05.png "Your SSH Keys")
-
-You can add more SSH keys or delete the current one on this interface.
+![](/assets/img/developer-guide/ssh-keys/SSH_1.png)
