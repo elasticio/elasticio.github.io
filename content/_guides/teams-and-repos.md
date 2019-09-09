@@ -77,22 +77,6 @@ You can now see it in the list of repositories:
 
 **Note:** As with the naming of the teams use letters, digits, `-` and `_` to name your repository.
 
-In this particular example, the name of the repository is `ac-petstore` and it
-belongs to the `academia_team`. The screenshot above includes further instructions and
-guidelines on how to proceed further. Here are the necessary steps for the clarity:
-
-1.  Upload SSH key - Please [upload your public SSH key](ssh-keys) here if you haven't uploaded it yet.
-2.  Clone our "Petstore" component
-```sh
-git clone {{site.data.tenant.petStoreSourceNodeJS}}.git ac-petstore
-cd ac-petstore
-```
-3.  Edit code to make your own component. Please read our documentation to learn how to implement your components.
-4.  Push your code
-```sh
-git remote add ipaas academia_team@{{site.data.tenant.gitDomain}}:ac-petstore.git
-git push ipaas master
-```
 
 ### Manage the component repository
 
