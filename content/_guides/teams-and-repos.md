@@ -21,7 +21,7 @@ team. The team members may collaborate on common integration component in integr
 
 To create a new developer team, navigate to *Developer Teams* and click *Add New Team* button. Then give the team a unique name and click *Save*. Your team has been added to the list:
 
-![](/assets/img/developer-guide/team-repo/SSHonline.gif)
+![](/assets/img/developer-guide/team-repo/devteam.gif)
 
 **Note**: you can only use letters, digits, `-` and `_` to name your team.
 
@@ -33,7 +33,7 @@ As you can see, you're the only member of the team. To add more developers, clic
 
 ![](/assets/img/developer-guide/team-repo/Screenshot_2.png)
 
-You will see a list of members **(1)**, which you can choose from. Select the required members and click *Send Invites* to invite developers:
+You will see a list of members **(1)**, which you can choose from. Select the required members and click *Send Invites* **(2)** to invite developers:
 
 ![](/assets/img/developer-guide/team-repo/Screenshot_3.png)
 
@@ -45,7 +45,7 @@ As soon as you click *Send Invites*, the selected users become team members.
 ### Delete the developers team
 
 If you need to delete a developer team:
-*   You should have the appropriate permissions and
+*   You should have the appropriate [permissions](managing-user-roles) and
 *   The developer team must contain no integration component.
 
 If the above conditions are true, you can proceed and delete the developer team using [an API call]({{site.data.tenant.apiBaseUri}}/v2/docs/#delete-a-team).
@@ -100,18 +100,18 @@ You can set all environment variables for this particular repository by followin
 
 #### Access:
 
-This feature gives a possibility to set the component as Private, Public and Global:
+This feature gives a possibility to set the component as Team, Tenant and Global:
 
 *   `Team` means accessible to the current Contract members.
-*   `Public` means accessible for entire Tenant.
+*   `Tenant` means accessible for entire Tenant.
 *   `Global` means accessible for all Tenants - **can be set only by support**.
 
 #### Build history:
 
 Here is the deployment history of the repository containing:
 
-*   The date of deployment
-*   the version of the repository deployment and the commit ID.
+*   The date of deployment.
+*   The version of the repository deployment and the commit ID.
 *   Status of the build - green check mark means success. If the deployment failed it will show a red cross.
 *   State of the build - showing which build is the default.
 *   Log of the deployment - clicking the "View" button will open a pop-out window showing the log of that particular deployment.
