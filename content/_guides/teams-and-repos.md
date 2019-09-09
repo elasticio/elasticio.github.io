@@ -8,7 +8,7 @@ order: 1
 
 When developing your own [integration components](/getting-started/integration-component) for the {{site.data.tenant.name}} platform, you need to structure your work into Git repositories. Each repository represents an integration component and gets used to push your local code to {{site.data.tenant.name}} remote server. Every push results in a new deployment of the component.
 
-The access to the component repository is restricted to a team the repository belongs to. Each member of the team can change, configure and deploy a component. The team itself belongs to an organization and so only members of the organization can be invited to the team.
+The access to the component repository is restricted to a team the repository belongs to. Each member of the team can change, configure and deploy a component. The team itself belongs to a Contract and so only members of the Contract can be invited to the team.
 
 ## Manage developer teams
 
