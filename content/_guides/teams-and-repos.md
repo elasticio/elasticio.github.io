@@ -17,24 +17,33 @@ team. The team members may collaborate on common integration component in integr
 
 ### Creating a developer team
 
-> **Note**: you must have organisation `Admin` privileges for this to work.
+**Note**: you must have organization `Admin` privileges for this to work.
 
-To create a new developer team navigate to the Developers section and click on a
-button *+ Add New Team* as it shown on the screenshot below:
+To create a new developer team, navigate to *Developer Teams* and click *Add New Team* button. Then give the team a unique name and click *Save*. Your team has been added to the list:
 
-![Creating a team](/assets/img/developer-guide/team-repo/developer-team-1.png "Creating a team")
+![](/assets/img/developer-guide/team-repo/SSHonline.gif)
 
-After clicking the button a menu is presented to enter the name of your team:
+**Note**: you can only use letters, digits, `-` and `_` to name your team.
 
-![Naming the team](/assets/img/developer-guide/team-repo/developer-team-2.png "Naming the team")
+To access your new team, click *See Details*:
 
-The naming of the team must adhere to specific rules:
+![](/assets/img/developer-guide/team-repo/Screenshot_1.png)
 
-> **Note**: use letters, digits, `-` and `_` to name your team. No spaces!
+You can now create a new repository for your custom Components. Click *New Repo* button, enter repository name, and then click *Save*:
 
-After creating the team you are automatically becoming the member of that team.
+![](/assets/img/developer-guide/team-repo/Screenshot_4.png)
 
-![Explore the team](/assets/img/developer-guide/team-repo/developer-team-3.png "Explore the team")
+You can now see it in the list of repositories:
+
+![](/assets/img/developer-guide/team-repo/Screenshot_5.png)
+
+Now, if you click it, you will open the repository:
+
+![](/assets/img/developer-guide/team-repo/Screenshot_6.png)
+
+As you can see, you're the only member of the team. To add more developers, click *Invite Developer*:
+
+![](/assets/img/developer-guide/team-repo/Screenshot_2.png)
 
 You can proceed to either creating your first repository in this team and push your
 custom component or you can invite your fellow developers into the same team to
