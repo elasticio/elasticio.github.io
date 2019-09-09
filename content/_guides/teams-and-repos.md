@@ -17,7 +17,7 @@ team. The team members may collaborate on common integration component in integr
 
 ### Creating a developer team
 
-**Note**: you must have `contracts.devTeam.edit` and `contracts.repository.edit` [permissions](managing-user-roles).
+**Note**: you must have appropriate [permissions](managing-user-roles).
 
 To create a new developer team, navigate to *Developer Teams* and click *Add New Team* button. Then give the team a unique name and click *Save*. Your team has been added to the list:
 
