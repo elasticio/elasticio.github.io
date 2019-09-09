@@ -37,7 +37,7 @@ You can now see it in the list of repositories:
 
 ![](/assets/img/developer-guide/team-repo/Screenshot_5.png)
 
-Now, if you click it, you will open the repository:
+Now, if you click it, you will open the repository, where you can manage it and work on your custom Component:
 
 ![](/assets/img/developer-guide/team-repo/Screenshot_6.png)
 
@@ -45,11 +45,8 @@ As you can see, you're the only member of the team. To add more developers, clic
 
 ![](/assets/img/developer-guide/team-repo/Screenshot_2.png)
 
-You can proceed to either creating your first repository in this team and push your
-custom component or you can invite your fellow developers into the same team to
-collaborate in the development of that particular component.
+**Note,** only members of the same organization can be invited into this developer team. The list shows all the possible members that can be invited to this current team.
 
-![Start inviting Developers](/assets/img/developer-guide/team-repo/developer-team-4.png "Start inviting Developers")
 
 ### Invite developers into your team
 
@@ -62,8 +59,7 @@ To invite a developer, click on the check-mark in front of the their names and t
 click on the *Send Invites*. The developers will receive invitation to by e-mail
 and would need to accept it to join the team.
 
-> **Note,** only members of the same organisation can be invited into this developer team.
-> The list shows all the possible members that can be invited to this current team.
+
 
 You can skip to the integration component [repository creation section](#manage-integration-components)
 from here. Otherwise if you need to delete a developer team continue to the next section.
