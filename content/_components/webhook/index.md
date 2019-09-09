@@ -4,10 +4,12 @@ layout: article
 section: Utility components
 ---
 ## Description
+
 ### Purpose
 An open source component for sending and receiving [WebHooks](https://en.wikipedia.org/wiki/Webhook) on [elastic.io platform](https://www.elastic.io "elastic.io platform").
 
 ## Credentials
+
 Webhook component supports the following authorisation types:
 * **No Auth** - use this method to work with any open REST API
 * **Basic Auth** - use it to provide login credentials like username/password
@@ -17,13 +19,16 @@ Webhook component supports the following authorisation types:
 ![Webhook Credentials](/img/credentials.png)
 
 ## Triggers
+
   ### Receive
+
   Simple webhook trigger which receives data as an input and starts the flow execution after this.
 
    #### Expected output metadata
 
    Example:
-   ```metadata json
+
+   ```
 {
     "recievedBody": "recievedBody",
     "_query": {},
@@ -38,13 +43,16 @@ Webhook component supports the following authorisation types:
 ```
 
 ## Actions
+
   ### Send data
+  
   Simply sends data it receives as an input to a URL provided.
 
   WebHook action can also be used to troubleshoot many processes to see the outcome.
   For example one could create Invoices (in Salesforce) to Webhook flow and configure the Webhook with a url created in https://webhook.site or with any similar services.
 
-  #### List of Expected Config fields
+  ### List of Expected Config fields
+
   * **[required]** **HTTP Verb**
     * **POST**. The WebHook component can POST information to preconfigured WebHook address. This action could be used for different purposes. For example WebHook can be used to inform your custom connector about an event which it waits to work.
     * **PUT**. The WebHook component can also PUT a specific preconfigured JSON into specific address where the process will not be handled by the server. For this reason the "Output JSON Sample" field can be used.
@@ -53,10 +61,11 @@ Webhook component supports the following authorisation types:
 
   ![Send Data config fields](img/httpverb.png)
 
-  #### Expected output metadata
+  ### Expected output metadata
 
    Example:
-   ```metadata json
+
+   ```
   {
       "recievedBody": "recievedBody",
       "_query": {},
@@ -73,4 +82,5 @@ Webhook component supports the following authorisation types:
 ## Known limitations
 
 1. Maximal possible size for an attachment is 10 MB.
+
 2. Attachments mechanism does not work with [Local Agent Installation](https://support.elastic.io/support/solutions/articles/14000076461-announcing-the-local-agent-)
