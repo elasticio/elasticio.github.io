@@ -17,7 +17,7 @@ team. The team members may collaborate on common integration component in integr
 
 ### Creating a developer team
 
-**Note**: you must have organization `Admin` privileges for this to work.
+**Note**: you must have `contracts.devTeam.edit` and `contracts.repository.edit` [permissions](managing-user-roles).
 
 To create a new developer team, navigate to *Developer Teams* and click *Add New Team* button. Then give the team a unique name and click *Save*. Your team has been added to the list:
 
@@ -37,15 +37,15 @@ You will see a list of members **(1)**, which you can choose from. Select the re
 
 ![](/assets/img/developer-guide/team-repo/Screenshot_3.png)
 
-As soon as they accept the invitations, they become team members.
+As soon as you click *Send Invites*, the selected users become team members.
 
-**Note,** only members of the same organization can be invited into this developer team. The list shows all the possible members that can be invited to this current team.
+**Note,** only members of the same Contract can be invited into this developer team. The list shows all the possible members that can be invited to this current team.
 
 
 ### Delete the developers team
 
 If you need to delete a developer team:
-*   You should have organisation admin access role and
+*   You should have the appropriate permissions and
 *   The developer team must contain no integration component.
 
 If the above conditions are true, you can proceed and delete the developer team using [an API call]({{site.data.tenant.apiBaseUri}}/v2/docs/#delete-a-team).
@@ -58,14 +58,16 @@ management. GitHub, one of the most famous code developing and collaborating pla
 is the most famous for its use of repository practice. We use the same tactics which
 give developers complete autonomy to manage their code.
 
-> **Note**: Remind your fellow developers to follow the same procedure and upload
-> their own unique SSH Key before proceeding further.
+**Note**: Remind your fellow developers to follow the same procedure and upload
+their own unique SSH Key before proceeding further.
 
 ### Create a component repository
 
 As mentioned above, each repository represents a component. That's why we use
 repository and component terms interchangeably here. Every component resides in
 a particular repository.
+
+**Note**: you must have appropriate [permissions](managing-user-roles) to create repositories.
 
 To create a new repository for your custom Components, click *New Repo* button **(1)**, enter repository name **(2)**, and then click *Save* **(3)**:
 
@@ -100,9 +102,9 @@ You can set all environment variables for this particular repository by followin
 
 This feature gives a possibility to set the component as Private, Public and Global:
 
-*   `Team` means accessible to the current team members.
-*   `Public` means accessible for entire tenant.
-*   `Global` means accessible for all tenants - **can be set only by support**.
+*   `Team` means accessible to the current Contract members.
+*   `Public` means accessible for entire Tenant.
+*   `Global` means accessible for all Tenants - **can be set only by support**.
 
 #### Build history:
 
