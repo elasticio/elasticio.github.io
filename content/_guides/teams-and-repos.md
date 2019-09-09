@@ -45,7 +45,7 @@ As soon as you click *Send Invites*, the selected users become team members.
 ### Delete the developers team
 
 If you need to delete a developer team:
-*   You should have the appropriate permissions and
+*   You should have the appropriate [permissions](managing-user-roles) and
 *   The developer team must contain no integration component.
 
 If the above conditions are true, you can proceed and delete the developer team using [an API call]({{site.data.tenant.apiBaseUri}}/v2/docs/#delete-a-team).
