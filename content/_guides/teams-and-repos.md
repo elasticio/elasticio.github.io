@@ -21,7 +21,7 @@ team. The team members may collaborate on common integration component in integr
 
 To create a new developer team, navigate to *Developer Teams* and click *Add New Team* button. Then give the team a unique name and click *Save*. Your team has been added to the list:
 
-![](/assets/img/developer-guide/team-repo/SSHonline.gif)
+![](/assets/img/developer-guide/team-repo/devteam.gif)
 
 **Note**: you can only use letters, digits, `-` and `_` to name your team.
 
@@ -33,7 +33,7 @@ As you can see, you're the only member of the team. To add more developers, clic
 
 ![](/assets/img/developer-guide/team-repo/Screenshot_2.png)
 
-You will see a list of members **(1)**, which you can choose from. Select the required members and click *Send Invites* to invite developers:
+You will see a list of members **(1)**, which you can choose from. Select the required members and click *Send Invites* **(2)** to invite developers:
 
 ![](/assets/img/developer-guide/team-repo/Screenshot_3.png)
 
