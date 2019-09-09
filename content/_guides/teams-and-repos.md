@@ -100,18 +100,18 @@ You can set all environment variables for this particular repository by followin
 
 #### Access:
 
-This feature gives a possibility to set the component as Private, Public and Global:
+This feature gives a possibility to set the component as Team, Tenant and Global:
 
 *   `Team` means accessible to the current Contract members.
-*   `Public` means accessible for entire Tenant.
+*   `Tenant` means accessible for entire Tenant.
 *   `Global` means accessible for all Tenants - **can be set only by support**.
 
 #### Build history:
 
 Here is the deployment history of the repository containing:
 
-*   The date of deployment
-*   the version of the repository deployment and the commit ID.
+*   The date of deployment.
+*   The version of the repository deployment and the commit ID.
 *   Status of the build - green check mark means success. If the deployment failed it will show a red cross.
 *   State of the build - showing which build is the default.
 *   Log of the deployment - clicking the "View" button will open a pop-out window showing the log of that particular deployment.
