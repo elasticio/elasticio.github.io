@@ -3,8 +3,8 @@ title: Webhook component
 layout: article
 section: Utility components
 ---
-## Description
 
+## Description
 
 ### Purpose
 An open source component for sending and receiving [WebHooks](https://en.wikipedia.org/wiki/Webhook) on [elastic.io platform](https://www.elastic.io "elastic.io platform").
@@ -24,13 +24,11 @@ Webhook component supports the following authorisation types:
 
 ### Triggers
 
-  ### Receive
+## Receive
 
-  Simple webhook trigger which receives data as an input and starts the flow execution after this.
+Simple webhook trigger which receives data as an input and starts the flow execution after this.
 
-   #### Expected output metadata
-
-   Example:
+Example:
 
    ```
 {
@@ -58,6 +56,7 @@ For example one could create Invoices (in Salesforce) to Webhook flow and config
 
 ## List of Expected Config fields
 
+
   * **[required]** **HTTP Verb**
     * **POST**. The WebHook component can POST information to preconfigured WebHook address. This action could be used for different purposes. For example WebHook can be used to inform your custom connector about an event which it waits to work.
     * **PUT**. The WebHook component can also PUT a specific preconfigured JSON into specific address where the process will not be handled by the server. For this reason the "Output JSON Sample" field can be used.
@@ -67,7 +66,7 @@ For example one could create Invoices (in Salesforce) to Webhook flow and config
 
 ![Webhookcredentials](img/httpverb.png)
 
-  Example:
+Example:
 
      ```metadata json
     {
