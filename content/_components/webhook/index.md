@@ -30,7 +30,7 @@ Simple webhook trigger which receives data as an input and starts the flow execu
 
 Example:
 
-   ```
+```
 {
     "recievedBody": "recievedBody",
     "_query": {},
@@ -57,6 +57,7 @@ For example one could create Invoices (in Salesforce) to Webhook flow and config
 ## List of Expected Config fields
 
 
+
   * **[required]** **HTTP Verb**
     * **POST**. The WebHook component can POST information to preconfigured WebHook address. This action could be used for different purposes. For example WebHook can be used to inform your custom connector about an event which it waits to work.
     * **PUT**. The WebHook component can also PUT a specific preconfigured JSON into specific address where the process will not be handled by the server. For this reason the "Output JSON Sample" field can be used.
@@ -68,7 +69,7 @@ For example one could create Invoices (in Salesforce) to Webhook flow and config
 
 Example:
 
-     ```metadata json
+```metadata json
     {
         "recievedBody": "recievedBody",
         "_query": {},
@@ -80,8 +81,7 @@ Example:
         "_method": "POST",
         "_url": "/hook/5d691738cb5a286adc1e68e2"
       }
-
-    ```
+```
 
 ## Known limitations
 
