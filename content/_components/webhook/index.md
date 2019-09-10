@@ -7,7 +7,7 @@ section: Utility components
 ## Description
 
 ### Purpose
-An open source component for sending and receiving [WebHooks](https://en.wikipedia.org/wiki/Webhook) on [elastic.io platform](https://www.elastic.io "elastic.io platform").
+An open source component for sending and receiving [WebHooks](https://en.wikipedia.org/wiki/Webhook) on {{site.data.tenant.name}}.
 
 
 ## Credentials
@@ -86,4 +86,4 @@ Example:
 
 1. Maximal possible size for an attachment is 10 MB.
 
-2. Attachments mechanism does not work with [Local Agent Installation](https://support.elastic.io/support/solutions/articles/14000076461-announcing-the-local-agent-)
+2. Attachments mechanism does not work with the Local Agents.
