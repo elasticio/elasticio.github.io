@@ -68,7 +68,7 @@ For example one could create Invoices (in Salesforce) to Webhook flow and config
 
 Example:
 
-  ```
+     ```metadata json
     {
         "recievedBody": "recievedBody",
         "_query": {},
@@ -80,7 +80,7 @@ Example:
         "_method": "POST",
         "_url": "/hook/5d691738cb5a286adc1e68e2"
       }
-  ```
+      ```
 
 ## Known limitations
 
