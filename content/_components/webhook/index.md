@@ -22,9 +22,9 @@ Webhook component supports the following authorisation types:
 ![creds](img/credentials.png)
 
 
-### Triggers
+## Triggers
 
-## Receive
+### Receive
 
 Simple webhook trigger which receives data as an input and starts the flow execution after this.
 
@@ -44,9 +44,9 @@ Example:
   }
 ```
 
-## Actions
+### Actions
 
-### Send data
+## Send data
 
 Simply sends data it receives as an input to a URL provided.
 
@@ -82,7 +82,7 @@ Example:
       }
 ```
 
-### Known limitations
+## Known limitations
 
 1. Maximal possible size for an attachment is 10 MB.
 
