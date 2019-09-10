@@ -82,7 +82,7 @@ Example:
       }
 ```
 
-## Known limitations
+### Known limitations
 
 1. Maximal possible size for an attachment is 10 MB.
 
