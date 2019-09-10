@@ -31,7 +31,7 @@ Simple webhook trigger which receives data as an input and starts the flow execu
 Example:
 
    ```
-   {
+{
     "recievedBody": "recievedBody",
     "_query": {},
     "_headers": {
@@ -41,8 +41,7 @@ Example:
     },
     "_method": "POST",
     "_url": "/hook/5d691738cb5a286adc1e68e2"
-    }
-    
+  }
     ```
 
 ## Actions
@@ -69,19 +68,19 @@ For example one could create Invoices (in Salesforce) to Webhook flow and config
 
 Example:
 
-    ```
-{
-        "recievedBody": "recievedBody",
-        "_query": {},
-        "_headers": {
-          "content-type": "application/json",
-          "accept": "*/*",
-          "accept-encoding": "gzip, deflate"
-        },
-        "_method": "POST",
-        "_url": "/hook/5d691738cb5a286adc1e68e2"
-  }
-    ```
+```
+  {
+      "recievedBody": "recievedBody",
+      "_query": {},
+      "_headers": {
+        "content-type": "application/json",
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate"
+      },
+      "_method": "POST",
+      "_url": "/hook/5d691738cb5a286adc1e68e2"
+    }
+  ```
 
 ## Known limitations
 
