@@ -3,7 +3,6 @@ title: Webhook component
 layout: article
 section: Utility components
 ---
-
 ## Description
 
 ### Purpose
@@ -44,9 +43,9 @@ Example:
   }
 ```
 
-### Actions
+## Actions
 
-## Send data
+### Send data
 
 Simply sends data it receives as an input to a URL provided.
 
@@ -54,7 +53,7 @@ WebHook action can also be used to troubleshoot many processes to see the outcom
 For example one could create Invoices (in Salesforce) to Webhook flow and configure the Webhook with a url created in https://webhook.site or with any similar services.
 
 
-## List of Expected Config fields
+### List of Expected Config fields
 
 
   * **[required]** **HTTP Verb**
