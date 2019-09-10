@@ -18,7 +18,7 @@ Webhook component supports the following authorisation types:
 * **API Key Auth** - use it to provide API Key to access the resource
 * **HMAC verification shared secret** - use it to verify via a shared secret
 
-![the Webhook Credentials](/img/credentials.png)
+![the Webhook Credentials](webhook/img/credentials.png)
 
 
 ### Triggers
@@ -63,7 +63,7 @@ For example one could create Invoices (in Salesforce) to Webhook flow and config
   * **[required]** **URI**. This is the address to send WebHook.
   * **[not required]** **Secret**. This is an optional field to authenticate WebHook POST. There maybe cases when a special password or a secret might be required. For example the WebHook address was generated explicitly with a password so that to prevent any third parties to use it. This could be your specific WebHook address that you use to send your Wordpress posts into your server.
 
-  ![Send data config fields](/img/httpverb.png)
+![Send data config fields](webhook/img/httpverb.png)
 
   Example:
      ```metadata json
