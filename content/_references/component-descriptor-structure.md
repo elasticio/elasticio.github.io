@@ -345,3 +345,8 @@ the given API or to configure a trigger/action with some parameters:
 
 Any object implementation is directly connected with one or several `View Class`
 definitions, therefore it is [advisable to check them as well](view-classes).
+
+
+## JSONSchema References
+
+You can use [JSONSchema references](https://json-schema.org) in Component metadata. Basically, it allows you to avoid repetitive coding by referencing certain keys called definitions.
