@@ -21,16 +21,16 @@ As an iPaaS platform {site.data.tenant.name}} must have an opportunity to intera
 ### Requirements
 #### Environment variables 
 | Name | Mandatory | Description | Values |
-|----|---------|-----------|------|
-| LOG_LEVEL | false | Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
-| EIO_REQUIRED_RAM_MB | false | Value of allocated memory | `2048` recommended |
+|---------------------|-------|-----------------------------------|-----------------------------------------------|
+| LOG_LEVEL           | false | Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
+| EIO_REQUIRED_RAM_MB | false | Value of allocated memory         | `2048` recommended                            |
 
 ## Credentials
 | Property name | Required | Description | Example|
-|-------------|--------|-----------|-------|
-| Service URL       | true   | `https://my3443532.sapbydesign.com` |
-| Username        | true   | Username for authentication | `sapAdmin` |
-| Password     | true   | Password for authentication | `adminPassw` |
+|-------------|--------|-------------------------------------|--------------|
+| Service URL | true   | `https://my3443532.sapbydesign.com` |              |
+| Username    | true   | Username for authentication         | `sapAdmin`   |
+| Password    | true   | Password for authentication         | `adminPassw` |
 
 **Important:** User should have access rights to get WSIL service descriptor and rights to call a service operation which was specified during the `Call Service` configuration.
 
@@ -54,11 +54,11 @@ At the moment only few object types are supported:
 Calls SAP byDesign service for specified binding and operation.
 
 #### Call Service. Config Fields
-| Input field|Required|Description|Example|
-|-----------|--------|---------|---------|
+| Input field | Required | Description | Example|
+|--------------|------|----------------------------------|------------------|
 | Service Name | true | Service of SAP By Design to call | `Query Accounts` |
-| Binding | true | SOAP Service binding | `binding_SOAP12` |
-| Operation | true | SOAP Service operation` | `FindByElements` |
+| Binding      | true | SOAP Service binding             | `binding_SOAP12` |
+| Operation    | true | SOAP Service operation`          | `FindByElements` |
 
 
 ## Request examples
