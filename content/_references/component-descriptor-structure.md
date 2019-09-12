@@ -413,3 +413,5 @@ So if we go back to our initial Email Component, with a set reference it will lo
     "$ref": "#/definitions/addressfields"    
           },
 ```  
+
+**IMPORTANT:** We do not support referencing by $id at the moment.
