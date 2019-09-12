@@ -398,3 +398,18 @@ The thing about them is that they are basically the same element. So what you ca
 When you need to refer to this definition from elsewhere using the `$ref` keyword:
 
 `{ "$ref": "#/definitions/addressfields" }`
+
+So if we go back to our initial Email Component, with a set reference it will look like this:
+
+```
+"actions": {
+  "send": {
+    "main": "./send.js",
+    "title": "Send Mail",
+    "metadata": {
+      "in": {
+        "type": "object",
+        "properties": {
+    "$ref": "#/definitions/addressfields"    
+          },
+```  
