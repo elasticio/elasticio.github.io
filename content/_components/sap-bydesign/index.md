@@ -7,11 +7,11 @@ category: sap-byDesign
 
 ## General Information
 ### Description
-[elastic.io](http://www.elastic.io;) iPaaS component that provides an opportunity to interact with SAP byDesign API.
-SAP byDesign API integration with elastic.io
+An iPaaS component that provides an opportunity to interact with SAP byDesign API.
+SAP byDesign API integration with {site.data.tenant.name}}
 
 #### Purpose
-As an iPaaS platform [elastic.io](http://www.elastic.io;) must have an opportunity to interact with SAP Business byDesign API.
+As an iPaaS platform {site.data.tenant.name}} must have an opportunity to interact with SAP Business byDesign API.
 
 #### Completeness Matrix
 ![Completeness Matrix](https://user-images.githubusercontent.com/8449044/64691726-11cac980-d49c-11e9-9257-01a3770c2f4a.png)
@@ -20,17 +20,17 @@ As an iPaaS platform [elastic.io](http://www.elastic.io;) must have an opportuni
 
 ### Requirements
 #### Environment variables 
-|Name|Mandatory|Description|Values|
+| Name | Mandatory | Description | Values |
 |----|---------|-----------|------|
-|LOG_LEVEL| false| Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
-|EIO_REQUIRED_RAM_MB| false| Value of allocated memory | `2048` recommended |
+| LOG_LEVEL | false | Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
+| EIO_REQUIRED_RAM_MB | false | Value of allocated memory | `2048` recommended |
 
 ## Credentials
-|Property name|Required|Description|Example|
+| Property name | Required | Description | Example|
 |-------------|--------|-----------|-------|
-|Service URL       | true   | `https://my3443532.sapbydesign.com`|
-|Username        | true   |Username for authentication| `sapAdmin`|
-|Password     | true   |Password for authentication| `adminPassw`|
+| Service URL       | true   | `https://my3443532.sapbydesign.com` |
+| Username        | true   | Username for authentication | `sapAdmin` |
+| Password     | true   | Password for authentication | `adminPassw` |
 
 **Important:** User should have access rights to get WSIL service descriptor and rights to call a service operation which was specified during the `Call Service` configuration.
 
@@ -54,11 +54,11 @@ At the moment only few object types are supported:
 Calls SAP byDesign service for specified binding and operation.
 
 #### Call Service. Config Fields
-|Input field|Required|Description|Example|
+| Input field|Required|Description|Example|
 |-----------|--------|---------|---------|
-|Service Name|true|Service of SAP By Design to call|`Query Accounts`|
-|Binding|true|SOAP Service binding|`binding_SOAP12`|
-|Operation|true|SOAP Service operation`|`FindByElements`|
+| Service Name | true | Service of SAP By Design to call | `Query Accounts` |
+| Binding | true | SOAP Service binding | `binding_SOAP12` |
+| Operation | true | SOAP Service operation` | `FindByElements` |
 
 
 ## Request examples
