@@ -5,54 +5,67 @@ section: ERP components
 category: sap-byDesign
 ---
 
-## Description
+## General Information
+### Description
+[elastic.io](http://www.elastic.io;) iPaaS component that provides an opportunity to interact with SAP byDesign API.
+SAP byDesign API integration with elastic.io
 
-The component that provides an opportunity to interact with the SAP Business
-ByDesign API. SAP Business ByDesign (ByD) is a cloud enterprise resource
-planning software (Cloud ERP) operated as software as a service by SAP SE.
+#### Purpose
+As an iPaaS platform [elastic.io](http://www.elastic.io;) must have an opportunity to interact with SAP Business byDesign API.
 
-## Environment variables
+#### Completeness Matrix
+![Completeness Matrix](https://user-images.githubusercontent.com/8449044/64691726-11cac980-d49c-11e9-9257-01a3770c2f4a.png)
 
-| Name | Mandatory | Description | Values |
-|-------------------- |---------|-----------|------|
-| `LOG_LEVEL`           | false   | Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
-| `EIO_REQUIRED_RAM_MB` | false   | Default value: `256`MB | Recommended value: `2048`MB |
+[SAP Business byDesign Component Completeness Matrix](https://docs.google.com/spreadsheets/d/1j4dlUIkKxYmx-cFHrECUCw6PI2wGLcTZx2RZimaSoEY/edit?usp=sharing)
 
+### Requirements
+#### Environment variables 
+|Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|LOG_LEVEL| false| Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
+|EIO_REQUIRED_RAM_MB| false| Value of allocated memory | `2048` recommended |
 
 ## Credentials
-
-| Property name | Required | Description | Example |
+|Property name|Required|Description|Example|
 |-------------|--------|-----------|-------|
-| Service URL | true   | `https://my3443532.sapbydesign.com` |
-| Username    | true   | Username for authentication | `sapAdmin` |
-| Password    | true   | Password for authentication | `adminPassw` |
+|Service URL       | true   | `https://my3443532.sapbydesign.com`|
+|Username        | true   |Username for authentication| `sapAdmin`|
+|Password     | true   |Password for authentication| `adminPassw`|
 
-> **Important:** User should have access rights to get `WSIL` service descriptor
-> and rights to call a service operation specified during the `Call Service` configuration.
+**Important:** User should have access rights to get WSIL service descriptor and rights to call a service operation which was specified during the `Call Service` configuration.
 
 ## Triggers
+### Get New And Updated Objects Polling
+#### Get New And Updated Objects Polling. Config Fields
+1. Polling Object - objects that going to be polled by the trigger.
+2. Emit Behaviour - `Fetch All` emit all polled objects in one message, `Emit Individually` creates separate message for each object.
+3. Polling Type - `Created` poll for created objects, `Updated` poll for updated objects.
+4. Size Of Polling Page - the maximum number of objects retrieved by one poll call.
+5. Start Datetime Of Polling - the start datetime of polling in the iso format.
 
-This component has no trigger functions. This means you can not select it as a first
-component during the integration flow design.
+#### Supported Objects
+At the moment only few object types are supported:
+1. Query Materials
+2. Query Sales Orders
+3. Query Accounts
 
 ## Actions
-
 ### Call Service
+Calls SAP byDesign service for specified binding and operation.
 
-Calls SAP ByDesign service for specified binding and operation.
-
-#### Input fields description
-
-| Input field | Required | Description | Example |
-|--------------|--------|---------|---------|
-| Service Name | true   | Service of SAP By Design to call | `Query Accounts` |
-| Binding      | true   | SOAP Service binding             | `binding_SOAP12` |
-| Operation    | true   | SOAP Service operation           | `FindByElements` |
+#### Call Service. Config Fields
+|Input field|Required|Description|Example|
+|-----------|--------|---------|---------|
+|Service Name|true|Service of SAP By Design to call|`Query Accounts`|
+|Binding|true|SOAP Service binding|`binding_SOAP12`|
+|Operation|true|SOAP Service operation`|`FindByElements`|
 
 
 ## Request examples
 
-1.  Query Accounts ![Query Accounts](img/action-query-accounts.png). Example in metadata:
+1.  Query Accounts ![Query Accounts](img/action-query-accounts.png). 
+
+Example in metadata:
 ```json
 {
     "CustomerByElementsQuery_sync": {
@@ -72,7 +85,9 @@ Calls SAP ByDesign service for specified binding and operation.
     }
 }
 ```
-2.  Query Price Lists ![Query Price Lists](img/action-query-pricelists.png). Example in metadata:
+2.  Query Price Lists ![Query Price Lists](img/action-query-pricelists.png). 
+
+Example in metadata:
 ```json
 {
     "SalesPriceListFindByTypeCodeAndPropertyIDAndPropertyValueQuery_sync": {
@@ -85,7 +100,8 @@ Calls SAP ByDesign service for specified binding and operation.
     }
 }
 ```
-3.  Query Sales Orders ![Query Sales Orders](img/action-query-salesorders.png). Example in metadata:
+3.  Query Sales Orders ![Query Sales Orders](img/action-query-salesorders.png). 
+Example in metadata:
 ```json
  {
     "SalesOrderByElementsQuery_sync": {
@@ -105,7 +121,9 @@ Calls SAP ByDesign service for specified binding and operation.
     }
  }
 ```
-4.  Query Materials ![Query Materials](img/action-query-materials.png). Example in metadata:
+4.  Query Materials ![Query Materials](img/action-query-materials.png). 
+
+Example in metadata:
 ```json
 {
     "MaterialByElementsQuery_sync": {
@@ -120,7 +138,9 @@ Calls SAP ByDesign service for specified binding and operation.
 }
 ```
 
-5.  Product Availability (Available To Promise Check) ![Determine availability of products](img/action-determine-availability.png). Example in metadata:
+5.  Product Availability (Available To Promise Check) ![Determine availability of products](img/action-determine-availability.png). 
+
+Example in metadata:
 ```json
 {
     "ProductAvailabilityDeterminationQuery_sync": {
@@ -144,11 +164,13 @@ Calls SAP ByDesign service for specified binding and operation.
 ```
 
 
-## Limitations
+## Limitations 
+version: 2.1.1
 
-version: 2.0.0
-
-*   Component has no Trigger functions.
+1. Currently, the component documentation does not contain JSON schemas for each object types. The documentation contains only request examples and links to SOAP service documentation. 
+2. The component does not comply with OIH standards.
+3. Polling trigger only supports `Query Materials`, `Query Accounts`, `Query Sales Orders` objects.
+4. Due to a platform feature 'retrieving sample' timeout a sample may not be retrieved during the component setup process. It is not a bug as it is caused by a heavy-weight Java process for serialization/deserialization of JAXB structure for SAP's WSDL. Which is normally of huge size. We are hardly working on this issue and it will likely be fixed in the nearest releases. But for now please be patient. As this issue is only for UI retrieve sample functionality it will NOT affect you in runtime.
 
 ## License
 
