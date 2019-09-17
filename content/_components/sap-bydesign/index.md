@@ -8,24 +8,21 @@ category: sap-byDesign
 ## General Information
 ### Description
 An iPaaS component that provides an opportunity to interact with SAP byDesign API.
-SAP byDesign API integration with {site.data.tenant.name}}
+SAP byDesign API integration with {{site.data.tenant.name}}
 
 #### Purpose
-As an iPaaS platform {site.data.tenant.name}} must have an opportunity to interact with SAP Business byDesign API.
-
-#### Completeness Matrix
-![Completeness Matrix](https://user-images.githubusercontent.com/8449044/64691726-11cac980-d49c-11e9-9257-01a3770c2f4a.png)
-
-[SAP Business byDesign Component Completeness Matrix](https://docs.google.com/spreadsheets/d/1j4dlUIkKxYmx-cFHrECUCw6PI2wGLcTZx2RZimaSoEY/edit?usp=sharing)
+As an iPaaS platform {{site.data.tenant.name}} must have an opportunity to interact with SAP Business byDesign API.
 
 ### Requirements
 #### Environment variables 
+
 | Name | Mandatory | Description | Values |
 |---------------------|-------|-----------------------------------|-----------------------------------------------|
 | LOG_LEVEL           | false | Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
 | EIO_REQUIRED_RAM_MB | false | Value of allocated memory         | `2048` recommended                            |
 
 ## Credentials
+
 | Property name | Required | Description | Example|
 |-------------|--------|-------------------------------------|--------------|
 | Service URL | true   | `https://my3443532.sapbydesign.com` |              |
@@ -54,16 +51,17 @@ At the moment only few object types are supported:
 Calls SAP byDesign service for specified binding and operation.
 
 #### Call Service. Config Fields
+
 | Input field | Required | Description | Example|
 |--------------|------|----------------------------------|------------------|
 | Service Name | true | Service of SAP By Design to call | `Query Accounts` |
 | Binding      | true | SOAP Service binding             | `binding_SOAP12` |
-| Operation    | true | SOAP Service operation`          | `FindByElements` |
+| Operation    | true | SOAP Service operation           | `FindByElements` |
 
 
 ## Request examples
 
-1.  Query Accounts ![Query Accounts](img/action-query-accounts.png). 
+1.  Query Accounts ![Query Accounts](img/action-query-accounts.png)
 
 Example in metadata:
 ```json
@@ -85,7 +83,7 @@ Example in metadata:
     }
 }
 ```
-2.  Query Price Lists ![Query Price Lists](img/action-query-pricelists.png). 
+2.  Query Price Lists ![Query Price Lists](img/action-query-pricelists.png)
 
 Example in metadata:
 ```json
@@ -121,7 +119,7 @@ Example in metadata:
     }
  }
 ```
-4.  Query Materials ![Query Materials](img/action-query-materials.png). 
+4.  Query Materials ![Query Materials](img/action-query-materials.png)
 
 Example in metadata:
 ```json
@@ -138,7 +136,7 @@ Example in metadata:
 }
 ```
 
-5.  Product Availability (Available To Promise Check) ![Determine availability of products](img/action-determine-availability.png). 
+5.  Product Availability (Available To Promise Check) ![Determine availability of products](img/action-determine-availability.png)
 
 Example in metadata:
 ```json
