@@ -10,16 +10,6 @@ The REST API component will perform a single REST API call when executed. Incomi
 
 This document covers the following topics:
 
-*   [Introduction](#introduction)
-*   [Authorisation methods](#authorisation-methods)
-*   [Defining HTTP headers](#defining-http-headers)
-*   [Defining request body](#defining-request-body)
-*   [Working with XML Response](#working-with-xml)
-*   [HTTP Headers in Response](#http-headers)
-*   [Attachments](#attachments)
-*   [Exception handling](#exception-handling)
-*   [Known Limitations](#known-limitations)
-
 ## Introduction
 
 The example below shows the development team creation using the REST API component with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
@@ -198,7 +188,7 @@ Rest-api component automatically load binary data to attachments with next conte
 * image/*
 * text/csv
 * application/msword
-* application/msexcel
+* application/msexcgel
 * application/pdf
 * application/octet-stream
 
@@ -217,8 +207,6 @@ There are:
 
 `If content type is not  exists  in response header, component will try parse response as json. 
 If it get parse exception, it return response as is.`
-
-> Make sure not to perform your tests using the [requestb.in](https://requestb.in/) since it responds with the `content-type: text/html`.
 
 Attachments limitations:
 
