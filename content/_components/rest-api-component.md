@@ -223,4 +223,4 @@ If it get parse exception, it return response as is.`
 Attachments limitations:
 
 1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with [Local Agent Installation](https://support.{{site.data.tenant.name}}/support/solutions/articles/14000076461-announcing-the-local-agent-)
+2. Attachments mechanism does not work with the Local Agents
