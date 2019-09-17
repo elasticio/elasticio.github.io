@@ -17,7 +17,7 @@ Webhook component supports the following authorisation types:
 * **No Auth** - use this method to work with any open REST API
 * **Basic Auth** - use it to provide login credentials like username/password
 * **API Key Auth** - use it to provide API Key to access the resource
-* **HMAC verification shared secret** - use it to verify via a shared secret
+* **HMAC verification shared secret** - use it to verify via a shared secret. Note: only SHA512 encryption algorithm is supported.
 
 ![creds](img/credentials.png)
 
