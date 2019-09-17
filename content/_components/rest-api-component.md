@@ -1,5 +1,5 @@
 ---
-title: Rest API component
+title: REST API component
 layout: article
 section: Utility components
 ---
@@ -8,23 +8,37 @@ The **REST API component** is a simple yet powerful component that allows you to
 
 The REST API component will perform a single REST API call when executed. Incoming data can gets used to configure the API call made and the response from the API call will be the output.
 
+This document covers the following topics:
+
 ## Introduction
 
 The example below shows the development team creation using the REST API component with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
 
-![alt text](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-featuresv2.png "REST API component features")
-*Numbers show: (1) HTTP methods, (2) the URL of the REST API resource, (3) the HTTP call headers and (4) the body of the HTTP request.*
+![alt text](https://user-images.githubusercontent.com/16806832/63769383-591d5b80-c8db-11e9-8b57-5890d4d4f21f.png)
+*Numbers show: (1) The URL and method of the REST API resource, (2) the HTTP call headers. (3) configuration options and (4) follow redirect mode.*
 
-1.  REST API component supports the following HTTP methods: `GET`, `PUT`, `POST`, `DELETE` and `PATCH`.
-2.  The URL of the REST API accepts JSONata expressions, meaning the URL address evaluates [JSONata](http://jsonata.org/) expressions.
-3.  Definition of request [headers](#defining-http-headers)
-4.  Definition of request [body](#defining-http-body), if the HTTP method is not `GET`
-
-## Enable debug logging
-
-The component supports extended logging. `Enable debug logging` checkbox should be enabled for it. After that you may check your logs in the logs console.
-
-*Note:* in case of using **ordinary flows**, adding of `DEBUG` environment variable in component repository will override disabled `Enable debug logging` checkbox during flow run, so all logs will be extended until an environment variable is removed.
+1.  HTTP methods and URL
+ * REST API component supports the following HTTP methods: `GET`, `PUT`, `POST`, `DELETE` and `PATCH`.
+ * The URL of the REST API resources. Accepts JSONata expressions, meaning the URL address evaluates [JSONata](http://jsonata.org/) expressions.
+2. Request Headers and Body
+ * Definition of request [headers](#defining-http-headers)
+ * Definition of request [body](#defining-http-body), if the HTTP method is not `GET`
+3. Configuration options
+ * ``Don`t throw Error on Failed Calls`` - if enabled return error, error code and stacktrace in message body otherwise throw error in flow.
+ * ``Split Result if it is an Array`` - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array. 
+ * ``Enable debug logging`` - The component supports extended logging. `Enable debug logging` checkbox should be enabled for it. After that you may check your logs in the logs console. 
+    
+    *Note:* in case of using **ordinary flows**, adding of `DEBUG` environment variable in component repository will override disabled `Enable debug logging` checkbox during flow run, so all logs will be extended until an environment variable is removed.
+ * ``Retry on failure`` - enabling [rebound](https://support.{{site.data.tenant.name}}/support/solutions/articles/14000044750-why-and-where-we-use-the-rebound-) feature for following HTTP status codes:
+    - 408: Request Timeout
+    - 423: Locked
+    - 429: Too Many Requests
+    - 500: Internal Server Error
+    - 502: Bad Gateway
+    - 503: Service Unavailable
+    - 504: Gateway Timeout
+    - DNS lookup timeout
+4. ``Follow redirect mode`` - If you want disable Follow Redirect functionality, you can use option ``Follow redirect mode``.By default ``Follow redirect mode`` option has value ``Follow redirects``.
 
 ## Authorisation methods
 
@@ -51,6 +65,8 @@ Use this section to add the request headers.
 
 Each header has a name and a value. Header name should be colon-separated name-value pairs in clear-text `string` format. The header value can use [JSONata](http://jsonata.org/) expressions.
 
+*Note:* **HTTP Response headers** will not be stored, the components stores body and attachment only.
+ 
 ## Defining request body
 
 The body may be defined if the HTTP method is not `GET`. The **body** tab enables configuration options such as the **content type** drop-down menu and the **body input field**.
@@ -66,6 +82,10 @@ Here is the list of all supported **content types**:
 *   `text/html`
 
 The **body input field** changes according to the chosen content type.
+
+*Notes:* 
+1. **Response body** will be stored in msg.body
+2. Request body that causes empty response body will return `{}`
 
 ### Sending JSON data
 
@@ -129,7 +149,7 @@ Notice how different parts get separated by the boundary. This form is capable o
 ### Working with XML
 
 This component will try to parse XML content types in the HTTP Response assuming the `Content-Type` header has a
-**MIME Content Type** with `xml` in it (e.g. `application/xml`).
+**MIME Content Type** with `xml` in it (e.g. `application/xml`). 
 In this case response body will be parsed to JSON using `xml2js` node library and following settings:
 
 ```js
@@ -145,13 +165,13 @@ In this case response body will be parsed to JSON using `xml2js` node library an
 }
 ```
 
-for more information please see the
+for more information please see the 
 [Documenattion of XML2JS library](https://github.com/Leonidas-from-XIV/node-xml2js#options)
 
-## HTTP Headers
+## HTTP Headers 
 
 You can to get HTTP response header only if ``Don`t throw Error on Failed Calls`` option is checked.
-In this case output structure of component will be:
+In this case output structure of component will be: 
 ```js
     {
       headers:<HTTP headers>,
@@ -160,10 +180,6 @@ In this case output structure of component will be:
       statusMessage:<HTTP response status message>
     }
 ```
-## Redirection
-If you want disable Follow Redirect functionality, you can use option ``Follow redirect mode``.
-
-By default ``Follow redirect mode`` option has value ``Follow redirects``
 
 ## Attachments
 Rest API component has opportunity of binary data sending. You just need choose ``multipart/form-data`` Content type and attachments from input message will be included to the request payload automatically.
@@ -172,28 +188,27 @@ Rest-api component automatically load binary data to attachments with next conte
 * image/*
 * text/csv
 * application/msword
-* application/msexcel
+* application/msexcgel
 * application/pdf
 * application/octet-stream
 
 ## Exception handling
-Rest API component uses exception handling logic below:
+Rest API component uses exception handling logic below: 
 ![Exception handling logic](https://user-images.githubusercontent.com/13310949/41960520-9bd468ca-79f8-11e8-83f4-d9b2096deb6d.png)
 
 ## Known Limitations
 
-The component can parse any of json and xml content types.
+The component can parse any of json and xml content types. 
 There are:
 * application/json
 * application/xml
 * text/xml
 * etc.
 
-`If content type is not  exists  in response header, component will try parse response as json.
+`If content type is not  exists  in response header, component will try parse response as json. 
 If it get parse exception, it return response as is.`
 
-> Make sure not to perform your tests using the [requestb.in](https://requestb.in/) since it responds with the `content-type: text/html`.
+Attachments limitations:
 
-Here are some further limitation of the REST API component:
-
-*   The component can't handle multi-part responses
+1. Maximal possible size for an attachment is 10 MB.
+2. Attachments mechanism does not work with the Local Agents
