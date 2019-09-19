@@ -5,7 +5,6 @@ section: Utility components
 ---
 ---
 
-[![CircleCI](https://circleci.com/gh/elasticio/splitter-component/tree/master.svg?style=svg)](https://circleci.com/gh/elasticio/splitter-component/tree/master)
 # splitter-component
 Splitter is the basic component for the [elastic.io platform](http://www.elastic.io).
 
@@ -98,9 +97,6 @@ and the JSONata expression `Phone.{type: number}`, an object constructor, the ac
 
 #### List of Expected Config fields
 ```Split Property``` - use this field to choose a separator.
-
-## Known limitations (common for the component)
-No.
 
 ## Documentation links
 More information and some examples can be found here: [Splitter documentation](https://www.elastic.io/connectors/splitter-integration/)
