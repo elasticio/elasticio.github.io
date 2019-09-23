@@ -37,10 +37,9 @@ either chose an existing one or create a new one. The following screenshot
 demonstrates how the credential is created for the [Petstore API](https://petstore.elastic.io/docs/)
 component.
 
-![Create the credentials to access](/assets/img/getting-started/credential/credentials-create.png "Create the credentials to access")
+![](/assets/img/getting-started/credential/creds.gif)
 
-As you can see in the screenshot above, a user is asked to provide values
-for two input fields:
+You will need to fill in data for two input fields:
 *   **Account name** - an optional name for this credential
 *   **API key** - an API key to authenticate with the
 [Petstore API]({{site.data.tenant.petStoreDocs}}). You can use the
