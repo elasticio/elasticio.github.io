@@ -145,3 +145,7 @@ For the local testing (e.g. spec-integration) `ELASTICIO_TASK_ID` and `ELASTICIO
 This component interacts with version 10 of the SugarCRM REST API.  It has been
 tested with ``SugarCRM Enterprise, Version 7.9.1.0 (Build 1074)`` and ``SugarCRM
 Enterprise, Version 8.0.0 (Build 211) (Spring '18)``.
+
+## License
+
+Apache-2.0 © [elastic.io GmbH](http://elastic.io)
