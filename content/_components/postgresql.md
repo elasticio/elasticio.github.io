@@ -1,11 +1,11 @@
 ---
 title: postgresql
 layout: article
-section: PLACEHOLDER
+section: Database components
 ---
 ---
 
-# postgresql-component [![Build Status](https://travis-ci.org/elasticio/postgresql-component.svg?branch=master)](https://travis-ci.org/elasticio/postgresql-component) [![Dependency Status][daviddm-image]][daviddm-url]
+# postgresql-component
 
 > PostgreSQL component for the [elastic.io platform](http://www.elastic.io) that also works well with AWS Redshift
 
@@ -280,9 +280,3 @@ If in doubt call support.
 ## License
 
 Apache-2.0 © [elastic.io GmbH](http://elastic.io)
-
-
-[travis-image]: https://travis-ci.org/elasticio/postgresql-component.svg?branch=master
-[travis-url]: https://travis-ci.org/elasticio/postgresql-component
-[daviddm-image]: https://david-dm.org/elasticio/postgresql-component.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/elasticio/postgresql-component
