@@ -6,24 +6,15 @@ order: 2
 since: 20190924
 ---
 
-This document describes the most common errors that occur during Flow execution, and the general ways to fix them. You will find info on the following errors:
+This document describes the way to find errors that occur in your Flows, and deal with.
 
-- Component failed to start
+## Flow Errors
 
--
-
--
-
-To see the errors that occurred in your Flows, navigate to the Dashboard and click *Errors* tab:
+To see the list of errors, navigate to the Dashboard and click *Errors* tab:
 
 ![](/assets/img/integrator-guide/managing-flow-errors/Screenshot_1.png)
 
-You will see the list of errors by Flows, Flow authors, and time.
-
-
-## Component Failed to start
-
-Though there can be numerous reasons for this type of errors, but the approach to solving the problem is similar for all of them. It is hinted in the name of the error:
+This list allows you to address any error by Flows, Flow authors, and time. Let's take the first one and check it:
 
 ![](/assets/img/integrator-guide/managing-flow-errors/Screenshot_2.png)
 
@@ -39,4 +30,4 @@ Now open the *Logs* tab:
 
 ![](/assets/img/integrator-guide/managing-flow-errors/Screenshot_5.png)
 
-By analyzing the logs, you can
+By analyzing the logs, you can, most likely, find the cause of the error, and come up with a solution.
