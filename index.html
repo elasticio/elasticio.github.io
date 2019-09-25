@@ -48,7 +48,10 @@ layout: default
 
 {% assign releases = site.releases | sort: 'releaseDate' | reverse %}
 
+{% assign creleases = site.comp-releases | sort: 'releaseDate' | reverse %}
+
 {% assign releasesCount = releases.size%}
+{% assign creleasesCount = comp-releases.size%}
 
 <div class="link-box">
     <div class="wrap">
@@ -78,7 +81,7 @@ layout: default
             {% if releasesCount > 0 %}
             <ul class="link-box__column">
                 <li class="link-box__item">
-                    <div class="link-box__tit">Recent Releases
+                    <div class="link-box__tit">Recent Platform Releases
                         <div class="counter">
                             {% if releasesCount < pagesLimit %}
                                 {{ releasesCount | minus: 1 }}
@@ -90,7 +93,29 @@ layout: default
                     <div class="link-box__holder">
                         {% for release in releases limit:pagesLimit %}
                             {% if release.version%}
-                            <a class="link-box__link" href="{{release.url}}">v{{release.version}}</a>
+                              <a class="link-box__link" href="{{release.url}}">v{{release.version}}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
+            {% endif %}
+            {% if releasesCount > 0 %}
+            <ul class="link-box__column">
+                <li class="link-box__item">
+                    <div class="link-box__tit">Component Releases
+                        <div class="counter">
+                            {% if creleasesCount < pagesLimit %}
+                                {{ creleasesCount | minus: 1 }}
+                            {% else %}
+                                {{pagesLimit}}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="link-box__holder">
+                        {% for crelease in creleases limit:pagesLimit %}
+                            {% if crelease.version%}
+                            <a class="link-box__link" href="{{crelease.url}}">#{{crelease.version}} - <time>{{ crelease.releaseDate | date: '%B %d, %Y' }}</time></a>
                             {% endif %}
                         {% endfor %}
                     </div>

@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+{% assign releases = site.comp-releases | sort: 'releaseDate' | reverse %}
+
+<div class="wrap">
+    <div class="breadcrumbs">
+        <a href="/" class="breadcrumbs__item">Home</a>
+        <span class="breadcrumbs__item">Component Releases</span>
+    </div>
+</div>
+
+<div class="welcomer welcomer_icon">
+    <div class="wrap">
+        <div class="welcomer__icon welcomer__icon_release_notes"><i class="fa fa-tag"></i></div>
+        <div class="welcomer__tit">Component Release Notes</div>
+        <div class="welcomer__text">These are the releases of the {{site.data.tenant.name}} components</div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="description">
+        Here is the list of the past releases:
+    </div>
+</div>
+<div class="file-box file-box_release_notes">
+    <div class="wrap">
+        <div class="file-box__list">
+            {% for release in releases %}
+                {% if release.version%}
+                <a class="file-box__item" href="{{release.url}}">
+                        <span class="file-box__inner">
+                            <i class="fa fa-tag"></i>
+                            <span class="file-box__tit">#{{release.version}}</span>
+                            <time>{{ release.releaseDate | date: '%B %d, %Y' }}</time>
+                        </span>
+                </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
