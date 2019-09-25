@@ -1,16 +1,59 @@
 ---
-title: Soap component
+title: soap-component
 layout: article
-section: Protocol components
+section: PLACEHOLDER
+---
 ---
 
+[![CircleCI](https://circleci.com/gh/elasticio/soap-component.svg?style=svg)](https://circleci.com/gh/elasticio/soap-component)
+# SOAP Component
+## Table of Contents
+* [Description](#description)
+   * [Purpose](#purpose)
+   * [Completeness Matrix](#completeness-matrix)
+   * [How it works](#how-it-works)
+        * [Step 1](#step-1)
+        * [Step 2](#step-2)
+        * [Step 3](#step-3)
+        * [Step 4](#step-4)
+        * [Step 5](#step-5)
+        * [Step 6](#step-6)
+   * [Requirements](#requirements)
+   * [Environment variables](#environment-variables)
+* [Credentials](#credentials)
+    * [Type](#type)
+    * [Username](#username-basic-auth-type)
+    * [Password](#password-basic-auth-type)
+* [Triggers](#actions)
+   * [Receive SOAP Request](#receive-soap-request)
+     * [Input fields description](#input-fields-description)
+     * [Example of usage](#example-of-usage)
+     * [Known Limitations](#known-limitations)
+* [Actions](#actions)
+   * [Call](#call)
+     * [Input fields description](#input-fields-description)
+     * [SOAP Fault](#soap-fault)
+     * [Input Json Schema](#input-json-schema)
+     * [Output Json Schema](#output-json-schema)
+     * [Additional info](#additional-info)
+   * [Soap Reply](#soap-reply)
+     * [Input fields description](#input-fields-description)
+     * [Input json schema](#input-json-schema)
+     * [Output json schema](#output-json-schema)
+     * [Current limitations](#current-limitations))
+* [API and Documentation links](#api-and-documentation-links)
+* [License](#license)
 
 ## Description
-The SOAP Component provides the SOAP Web Services work opportunity within a {{site.data.tenant.name}} flow.
+The SOAP Component provides the SOAP Web Services work opportunity within a open integration hub flow.
 
 ### Purpose
+As an integration platform, open integration hub should has an opportunity to invoke SOAP Web services over HTTP.
 
-As an integration platform, {{site.data.tenant.name}} should has an opportunity to invoke SOAP Web services over HTTP.
+### Completeness Matrix
+![image](https://user-images.githubusercontent.com/36419533/65602890-eddfab80-dfa4-11e9-8d76-bd758aafa403.png)
+
+[SOAP component completeness matrix](https://docs.google.com/spreadsheets/d/1bNDN_E9kBgeKrSu-NWDp3Zsrf6V7ud8hi2HPKlPCmcQ)
 
 ### How it works
 #### Step 1
@@ -43,7 +86,8 @@ Component supports next wsdl styles:
 * Document/Literal
 
 #### Environment variables
-``` EIO_REQUIRED_RAM_MB - recommended value of allocated memory is 2048MB ```
+``` OIH_REQUIRED_RAM_MB - recommended value of allocated memory is 2048MB ```
+
 ## Credentials
 
 ### Type
@@ -55,6 +99,44 @@ You can select next authorization type:
 Username for Basic authorization header in the SOAP request
 ### Password (Basic auth type)
 Password for Basic authorization header in the SOAP request
+## Triggers
+### Receive SOAP Request
+Webhook that validates input body over WSDL.
+#### Input fields description
+* **WSDL URI** - Public URL address of the WSDL
+* **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
+* **Operation** - One of the operations available for the binding you have selected above.
+* **Validation** - If `Enabled` validate the SOAP Body over wsdl, if `Disabled` does not validate a SOAP Input Body
+#### Example of usage
+##### Configuration:
+* **WSDL URI** - `http://www.dneonline.com/calculator.asmx?wsdl`
+* **Binding** - `CalculatorSoap12`
+* **Operation** - `Add`
+* **Validation** - `Enabled`
+##### Request Body:
+```xml
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <Add xmlns="http://tempuri.org/">
+      <intA>1</intA>
+      <intB>1</intB>
+    </Add>
+  </soap:Body>
+</soap:Envelope>
+```
+##### Output:
+```JSON
+{
+  "Add": {
+    "intA": "1",
+    "intB": "1"
+  }
+}
+```
+#### Known Limitations
+1. Namespaces ignored and SOAP Body with 2 tags that have same name but in different namespaces would be invalid
+2. SOAP Headers not supported yet
+3. Retrieve Sample does not represent actual behaviour of component 
 
 ## Actions
 ### Call
@@ -83,6 +165,43 @@ Output json schema is generated dynamically the same as for the input (see above
 2. Binding
 3. Operation
 
+### Soap Reply
+Wraps and returns input data as SOAP response by provided SOAP metadata
+
+#### Input fields description
+* **WSDL URI** - Public URL address of the WSDL
+* **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
+* **Operation** - One of the operations available for the binding you have selected above.
+
+#### Input json schema
+The component does not have static input json schema as it is dynamically generated for every wsdl/binding/operation specified in the process of configuration the component input fields.
+[Apache Axis2](http://axis.apache.org/axis2/java/core/) and [FasterXML JsonSchemaGenerator](https://github.com/FasterXML/jackson-module-jsonSchema) tools are used by the component internally to generate an input metadata.
+You can refer these tools documentation in order to get deeper understanding about the product.
+
+#### Output json schema
+Output json schema is generated dynamically the same as for the input (see above).
+
+#### Input data example:
+```json
+{
+  "AddResponse": {
+    "AddResult": 3
+  }
+}
+```
+
+#### Output data example:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <AddResponse xmlns="http://example.org/">
+            <AddResult>3</AddResult>
+        </AddResponse>
+    </soap:Body>
+</soap:Envelope>
+```
+
 ### Current limitations
 The following are limitations of this connector:
 
@@ -103,3 +222,6 @@ This is so, because the SOAP encoding specification does not guarantee 100% inte
 ## API and Documentation links
 * [Apache Axis2](http://axis.apache.org/axis2/java/core/)
 * [FasterXML JsonSchemaGenerator](https://github.com/FasterXML/jackson-module-jsonSchema)
+
+## License
+ © [Elastic.io GmbH](https://elastic.io)
