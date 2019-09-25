@@ -1,11 +1,15 @@
 ---
 title: sugar-crm
 layout: article
-section: CRM components
+section: PLACEHOLDER
 ---
 ---
 
 # Sugar CRM Component
+[![NPM version][npm-image]][npm-url]
+[![Travis Build Status][travis-image]][travis-url]
+[![DependencyStatus][daviddm-image]][daviddm-url]
+[![Circle CI Build Status][circle-image]][circle-url]
 
 [SugarCRM](https://www.sugarcrm.com) is a CRM system with a  a simple user
 interface, industry-leading customer experience, and an intuitive customization
@@ -149,3 +153,12 @@ Enterprise, Version 8.0.0 (Build 211) (Spring '18)``.
 ## License
 
 Apache-2.0 © [elastic.io GmbH](http://elastic.io)
+
+[npm-image]: https://badge.fury.io/js/sugarcrm-component.svg
+[npm-url]: https://npmjs.org/package/sugarcrm-component
+[travis-image]: https://travis-ci.org/elasticio/sugarcrm-component.svg?branch=master
+[travis-url]: https://travis-ci.org/elasticio/sugarcrm-component
+[daviddm-image]: https://david-dm.org/elasticio/sugarcrm-component.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/elasticio/sugarcrm-component
+[circle-image]: https://circleci.com/gh/elasticio/sugarcrm-component.svg?style=svg&circle-token=b1275f44aed2c3448bee5dccf7cb0a8970a1a0d1
+[circle-url]: https://circleci.com/gh/elasticio/sugarcrm-component
