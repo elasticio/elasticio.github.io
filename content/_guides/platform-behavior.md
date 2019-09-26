@@ -1,32 +1,12 @@
 ---
-title: Managing Flow Errors
+title: Platform Behavior
 layout: article
 section: Building integration flows
-order: 2
+order: 1
 since: 20190924
 ---
 
-This document describes the way to find errors that occur in your Flows, and deal with them.
+This document provides information on the peculiarities of the Platform behavior, including [Flow suspension and stopping](#flow-suspended-vs-stopped), known timeouts, thresholds and errors.
 
-## Flow Errors
-Let's start with the fact, that no errors on the Platform are fatal. There is never a reason to panic - everything has a solution. Maybe you won't even need any assistance with it. All the errors are gathered in one convenient list that you can access from the Dashboard. To see the list of errors, navigate to the Dashboard and click *Errors* tab:
-
-![](/assets/img/integrator-guide/flow-errors/Screenshot_1.png)
-
-This list allows you to address any error by Error type, Flow, Flow author, and time of occurrence. Let's take the first one we see in our list and check it:
-
-![](/assets/img/integrator-guide/flow-errors/Screenshot_2.png)
-
-As you can see, the error type hints us to go look for answers in the logs. Many other errors give you some sort of a hint, for example a number that refers to a specific problem. To access Component logs from the Error list, click Flow name to open the required Flow:
-
-![](/assets/img/integrator-guide/flow-errors/Screenshot_3.png)
-
-In the Flow, open the Component that causes the error. In our case it failed to start:
-
-![](/assets/img/integrator-guide/flow-errors/Screenshot_4.png)
-
-Now open the *Logs* tab:
-
-![](/assets/img/integrator-guide/flow-errors/Screenshot_5.png)
-
-By analyzing the logs, you can, most likely, find the cause of the error, and come up with a solution. Also, you apply to our Support for assistance.  
+## Flow Suspended vs. Stopped
+If a Flow gets `5` errors in `5` minutes, it is going to be suspended. Suspension is more of a pause, than a stop. All non-processed messages in a suspended Flow are saved in RabbitMQ queue for 14 days. Then they get dropped if the user did not fix the issues and did not resume the Flow. In [limited workspaces](/getting-started/contracts-and-workspaces.html), Flows are stopped instead of being suspended. A stopped Flow doesn't save any non-processed messages - everything is dropped. You can stop a Flow manually by pressing the *Stop* button.   
