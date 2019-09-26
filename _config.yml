@@ -11,6 +11,8 @@ collections:
      output: true
   releases:
      output: true
+  comp-releases:
+    output: true
 
 algolia:
   application_id: 'OIJ2XNEVHZ'

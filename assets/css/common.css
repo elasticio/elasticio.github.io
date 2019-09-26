@@ -469,7 +469,7 @@ h2 {
   transition: all 0.4s ease; }
 
 .search__input:focus {
-  width: 850px; }
+  width: 100%; }
 
 .search__input::-webkit-input-placeholder {
   color: #a1b0c5; }
