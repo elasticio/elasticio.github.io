@@ -33,15 +33,13 @@ In general, the Platform is not error-prone, but there are a few issues you may 
 The error text here prompts you to check Component logs for details and see what caused the error. You can see how it is done [here](managing-flow-errors).   
 
 ### Component Run Out of Memory
-This error appears if the Component exceeds the set memory limit, which is 185 MB by default:
+This error appears if the Component exceeds the set memory limit, which is `256 MB` by default:
 
 ![](/assets/img/integrator-guide/behavior/Screenshot_1.png)
 
-You can check Component logs to see the exit code for details:
+You can check Component logs the same way as shown [here](managing-flow-errors), to see the exit code for details:
 
 ![](/assets/img/integrator-guide/behavior/Screenshot_2.png)  
 
-
-
 ### Syntax Errors
-This is not a Platform error per se, but it happens quite a lot. Just be sure to enter all the data correctly, and your Flows won't suffer from this issue.
+This is not a Platform error per se, but it happens quite a lot. Just be sure to enter all the data correctly, and your Flows won't suffer from this issue. Most likely, you will still see the problem in Component logs and be able to fix it.
