@@ -28,7 +28,7 @@ One of the most common troubles here is system downtime. Some of the integrated 
 Now, the last thing you can do before writing to support is a manual go-through. Basically, you can just follow the Flow step by step and see where it fails to work properly.
 
 ## Component Runtime
-When it comes to Component problems, everything is quite simple. You can check what is wrong in Component logs. See how it is done [here](managing-flow-errors). There you will find all the information required to debug the code and fix the issue, or contact Component developer for assistance, depending on your Component development process.
+When it comes to Component problems, everything is quite simple. You can check what is wrong in Component logs. See how it is done [here](managing-flow-errors). There you will find all the information required to debug the code and fix the issue, or contact Component developer for assistance, depending on your Component source code ownership.
 
 ## Platform Issues
 While the Platform itself is not error-prone, we surely can not predict every possible issue with custom Components and complex Flows. Check [this document](platform-behavior) for some details on the common Platform troubles and the general way to fix them.
