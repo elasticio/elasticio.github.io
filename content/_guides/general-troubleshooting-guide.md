@@ -18,13 +18,12 @@ For your convenience, we divided the issues into three levels:
 
 Also, we came up with a few [examples](#examples).
 
-
 ## Integration Logic
 The first thing you might want to do when encountering errors is checking the *Errors* tab on the Dashboard:
 
 ![](/assets/img/integrator-guide/troubleshoot/Screenshot_1.png)
 
-One of the most common troubles here is system downtime. Some of the integrated systems may just be down, obviously causing an error. Also, you should double check the credentials, because they will cause integration logic failure too. Having checked that, try systems answer structure and mapping.
+One of the most common troubles here is system downtime. Some of the integrated systems may just be down, obviously causing an error. Also, you should double check the credentials, because they will cause integration logic failure too. Having checked that, try systems answer structure and [mapping](mapping-data).
 
 Now, the last thing you can do before writing to support is a manual go-through. Basically, you can just follow the Flow step by step and see where it fails to work properly.
 
@@ -44,13 +43,22 @@ A support chat will appear for you to state your issue and get assistance:
 
 Here is the info the team requires to provide support:
 
--
+1\. **The title of the issue** - This is not the description of the problem you are facing.
 
--
+2\. **Description of the issue** - Please provide as much information as possible. This description must include the minimum required steps to reproduce the issue on our side independently:
+- Provide a screenshot where one can easily see the error
+- Provide the log file in the text format - not a screenshot of the logs
+- Provide the error text - not a screenshot of the text
+- Date and time when the error was first observed
+- Indicate if you have already checked the provided documentation and the solution was not found or was not clear.
 
--
+3\. If the issue is not easy to reproduce, please include the **exact timeline** of the events you have observed. In particular include:
+- Incident time - first observed
+- Error report from the UI or email - please include that as well.
 
--
+4\. Indicate the **priority of the event** - how soon you need a solution.
+
+5\. Indicate if this is a blocker for your work and the deadline for the solution or the workaround to be in the place.
 
 
 ## Examples
