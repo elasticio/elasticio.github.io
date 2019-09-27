@@ -16,7 +16,7 @@ The table below contains configurable Platform limits and their default values:
 
 | **Limit**      | **Default value** | **Description**                                                                  |
 |--------------------|--------------|----------------------------------------------------------------------------------|
-| `Sample retrieval timeout`                 | `1 minute `        | If debug sample is not received within this time limit, it will be terminated. |
+| Sample retrieval timeout                 | `1 minute `        | If debug sample is not received within this time limit, it will be terminated. |
 | Message quantity in RabitMQ queue               | `75000`         |  Component gets suspended if RabbitMQ queue stacks more than the set number of messages.                                                      |
 | RabitMQ queue size limit | `200 MB`         | Component gets suspended if RabbitMQ queue exceeds the set size.                            |
 
