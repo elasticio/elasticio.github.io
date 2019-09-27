@@ -16,7 +16,7 @@ For your convenience, we divided the issues into three levels:
 
 - [Platform issues](#platform-issues)
 
-Also, we came up with a few [examples](#examples).
+Also, we will provide a few [examples](#examples).
 
 ## Integration Logic
 The first thing you might want to do when encountering errors is checking the *Errors* tab on the Dashboard:
@@ -28,7 +28,7 @@ One of the most common troubles here is system downtime. Some of the integrated 
 Now, the last thing you can do before writing to support is a manual go-through. Basically, you can just follow the Flow step by step and see where it fails to work properly.
 
 ## Component Runtime
-When it comes to Component problems, everything is quite simple. You can check what is wrong in Component logs. See how it is done [here](managing-flow-errors). There you will find all the information required to debug the code and fix the issue. If the logs are inconclusive or bugged somehow, you should contact Component developer for assistance.
+When it comes to Component problems, everything is quite simple. You can check what is wrong in Component logs. See how it is done [here](managing-flow-errors). There you will find all the information required to debug the code and fix the issue, or contact Component developer for assistance, depending on your Component development process.
 
 ## Platform Issues
 While the Platform itself is not error-prone, we surely can not predict every possible issue with custom Components and complex Flows. Check [this document](platform-behavior) for some details on the common Platform troubles and the general way to fix them.
@@ -45,7 +45,7 @@ Here is the info the team requires to provide support:
 
 1\. **The title of the issue** - this is not the description of the problem you are facing, but just a title.
 
-2\. **Description of the issue** - please provide as much information as possible. This description must include the minimum required steps to reproduce the issue on our side:
+2\. **Description of the issue** - please provide as much information as possible. This description **must include the Contract, Workspace and Flow, where the issue happened**, and, optionally, the minimum required steps to reproduce the issue on our side:
 - Provide a screenshot where one can easily see the error
 - Provide the log file in the text format - not a screenshot of the logs
 - Provide the error text - not a screenshot of the text
@@ -61,3 +61,4 @@ Here is the info the team requires to provide support:
 5\. Indicate if this is a blocker for your work and the deadline for the solution or the workaround to be in the place.
 
 ## Examples
+Stay tuned, we will come up with some beneficial examples soon!
