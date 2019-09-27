@@ -24,12 +24,12 @@ The first thing you might want to do when encountering errors is checking the *E
 
 ![](/assets/img/integrator-guide/troubleshoot/Screenshot_1.png)
 
+One of the most common troubles here is system downtime. Some of the integrated systems may just be down, obviously causing an error. Also, you should double check the credentials, because they will cause integration logic failure too. Having checked that, try systems answer structure and mapping.
 
-
-Now, the last thing you can do before writing to support is a manual go-through. Basically, you can just follow the Flow step by step and see where it fails to work properly. 
+Now, the last thing you can do before writing to support is a manual go-through. Basically, you can just follow the Flow step by step and see where it fails to work properly.
 
 ## Component Runtime
-When it comes to Component problems, everything is quite simple. You can check what is wrong in Component logs. See how it is done [here](managing-flow-errors). There you will find all the information required to fix the issue. If the logs are inconclusive or bugged somehow, you should contact Component developer for assistance.
+When it comes to Component problems, everything is quite simple. You can check what is wrong in Component logs. See how it is done [here](managing-flow-errors). There you will find all the information required to debug the code and fix the issue. If the logs are inconclusive or bugged somehow, you should contact Component developer for assistance.
 
 ## Platform Issues
 While the Platform itself is not error-prone, we surely can not predict every possible issue with custom Components and complex Flows. Check [this document](platform-behavior) for some details on the common Platform troubles and the general way to fix them.
