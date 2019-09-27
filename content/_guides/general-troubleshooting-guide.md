@@ -60,5 +60,4 @@ Here is the info the team requires to provide support:
 
 5\. Indicate if this is a blocker for your work and the deadline for the solution or the workaround to be in the place.
 
-
 ## Examples
