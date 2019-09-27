@@ -43,9 +43,9 @@ A support chat will appear for you to state your issue and get assistance:
 
 Here is the info the team requires to provide support:
 
-1\. **The title of the issue** - This is not the description of the problem you are facing.
+1\. **The title of the issue** - this is not the description of the problem you are facing, but just a title.
 
-2\. **Description of the issue** - Please provide as much information as possible. This description must include the minimum required steps to reproduce the issue on our side independently:
+2\. **Description of the issue** - please provide as much information as possible. This description must include the minimum required steps to reproduce the issue on our side:
 - Provide a screenshot where one can easily see the error
 - Provide the log file in the text format - not a screenshot of the logs
 - Provide the error text - not a screenshot of the text
