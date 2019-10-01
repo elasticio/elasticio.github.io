@@ -11,7 +11,7 @@ This document provides a step-by-step instruction on creating a basic [Integrati
 
 ## Configuring Trigger
 
-The first step of an Integration Flow is called an initial trigger. Its job is to trigger the running Flow execution. Some [components](/integration-component) can be used for a trigger, for example: Node.js, Webhook Component, Simple Trigger, etc.
+The first step of an Integration Flow is called an initial trigger. Its job is to trigger the running Flow execution. Some [components](/getting-started/integration-component) can be used for a trigger, for example: Node.js, Webhook Component, Simple Trigger, etc.
 
 For the first step, the list of available Components is limited to those that can be a trigger, so you can't go wrong. In this instruction we will use Simple Trigger as an example of the first step.  
 
@@ -31,7 +31,7 @@ The platform prompts you to setup the first step. First you may give the step a 
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_2.png)
 
-The next step is data sample retrieval. You can read about [data samples here](/data-sample-overview). Click "Retrieve sample from Simple trigger" **(1)**, then "Continue" **(2)** will become active on success.
+The next step is data sample retrieval. You can read about [data samples here](/getting-started/data-sample-overview). Click "Retrieve sample from Simple trigger" **(1)**, then "Continue" **(2)** will become active on success.
 
 ![](/assets/img/getting-started/creating-basic-flow/Screenshot_7.png)
 
