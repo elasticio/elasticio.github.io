@@ -19,7 +19,7 @@ The components within a flow can be classified into two groups: *triggers* and *
 
 ![Flow structure](/assets/img/getting-started/integration-flow/flow-trigger-actions.png "Flow structure")
 
-In the diagram above you can you can see that the first component of the flow is always as *trigger*.
+In the diagram above you can see that the first component of the flow is always as *trigger*.
 A flow can have a single trigger only. All the other components of the flow are *actions*.
 
 ## Flow triggers
