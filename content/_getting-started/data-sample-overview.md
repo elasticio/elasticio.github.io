@@ -57,4 +57,4 @@ Let’s observe the following process example:
     makes the necessary changes into Baboon output, so that the data fits *Toucan*
     input standard.
 
-![](/assets/img/getting-started/what-is-a-sample/Screenshot_1.png)
+![](/assets/img/getting-started/what-is-a-sample/screenshot1.png)
