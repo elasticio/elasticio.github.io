@@ -17,7 +17,7 @@ team. The team members may collaborate on common integration component in integr
 
 ### Creating a developer team
 
-**Note**: you must have appropriate [permissions](managing-user-roles).
+**Note**: you must have appropriate [permissions](/guides/managing-user-roles-in-a-tenant).
 
 To create a new developer team, navigate to *Developer Teams* and click *Add New Team* button. Then give the team a unique name and click *Save*. Your team has been added to the list:
 
@@ -45,7 +45,7 @@ As soon as you click *Send Invites*, the selected users become team members.
 ### Delete the developers team
 
 If you need to delete a developer team:
-*   You should have the appropriate [permissions](managing-user-roles) and
+*   You should have the appropriate [permissions](/guides/managing-user-roles-in-a-tenant) and
 *   The developer team must contain no integration component.
 
 If the above conditions are true, you can proceed and delete the developer team using [an API call]({{site.data.tenant.apiBaseUri}}/v2/docs/#delete-a-team).
@@ -67,7 +67,7 @@ As mentioned above, each repository represents a component. That's why we use
 repository and component terms interchangeably here. Every component resides in
 a particular repository.
 
-**Note**: you must have appropriate [permissions](managing-user-roles) to create repositories.
+**Note**: you must have appropriate [permissions](/guides/managing-user-roles-in-a-tenant) to create repositories.
 
 To create a new repository for your custom Components, click *New Repo* button **(1)**, enter repository name **(2)**, and then click *Save* **(3)**:
 
