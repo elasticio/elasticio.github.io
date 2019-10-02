@@ -44,4 +44,4 @@ You can check Component logs the same way as shown [here](managing-flow-errors),
 In this case, the message can be lost. If you are aware that this scenario is possible in your case then you can set the memory limit to a custom value. Or ask to do this someone who owns components repository.
 
 ### Syntax Errors
-This is not a Platform error per se, but it happens quite a lot. Just be sure to enter all the data correctly, and your Flows won't suffer from this issue. Most likely, you will still see the problem in Component logs and be able to fix it. Otherwise, escalate the issue to the platform vendor via support. You can find info on applying for support [here](general-troubleshooting-guide).
+This is not a Platform error per se, but it happens quite a lot if data is not handled correctly. And your Flows won't suffer from this issue. Most likely, you will still see the problem in Component logs and be able to fix it. Otherwise, escalate the issue to the platform vendor via support. You can find info on applying for support [here](general-troubleshooting-guide).
