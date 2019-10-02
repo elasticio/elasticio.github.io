@@ -51,23 +51,11 @@ Once a credential is saved, it will be linked with the current step of
 the flow. It can be also reused in other steps of the same flow or other
 flows using same component.
 
-Credentials are structured by
-components. The
-green number on a component icon tells you how many credentials exist for that
-component.
+Credentials are structured by components. The green number on a component icon tells you how many credentials exist for that component.
 
-> **Note** Before saving a credential, the {{site.data.tenant.name}} platform performs a verification by sending a "dry" request to the particular API. This allows us to avoid saving invalid credentials caused by typos, invalidated API keys, etc.
+**NOTE** Before saving a credential, the {{site.data.tenant.name}} platform performs a verification by sending a "dry" request to the particular API. This allows us to avoid saving invalid credentials caused by typos, invalidated API keys, etc.
 
+A new credential can be added by pressing the `Add New Credential` button that you can see at the end of the video above. An existing credential can also be edited or deleted. This is accomplished by clicking the `Edit` or `Delete` button on an existing credential.
 
 
-In the screenshot above you can see all available credentials for the
-`Petstore` component belonging to a user. A new credential can be added by
-pressing the `Add New Account` button. An existing credential can also be
-edited or deleted. This is accomplished by clicking the `Edit` or `Delete`
-button on an existing credential. The following screenshot shows how a credential
-is edited.
-
-![Editing a credential](/assets/img/getting-started/credential/credentials-edit.png "Editing a credential")
-
-
-> **Note** Please note that it is not possible to delete a credential used by an active integration flow as the flow would become broken. If you try to delete such a credential, a corresponding error message will be displays. Please delete these flow first or reconfigure them to use another credentials.
+**NOTE** Please note that it is not possible to delete a credential used by an active integration flow as the flow would become broken. If you try to delete such a credential, a corresponding error message will be displayed. Please delete these flow first or reconfigure them to use another credentials.
