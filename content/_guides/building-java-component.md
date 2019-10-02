@@ -57,7 +57,7 @@ Java components are always built with [Gradle Wrapper](https://docs.gradle.org/4
 in order to make sure that we build your component with the same version of Gradle as you did. That's why you are required
 to add Gradle wrapper (3), (4) and (5) to your project and commit it to Git.
 
-If you have a logo for the component, you can place the file called `logo.png` (5) in the root directory of the component.
+If you have a logo for the component, you can place the file called `logo.png` (6) in the root directory of the component.
 Typically the logo of the API vendor gets used as component logo. If you did not provide any logo, the component will
 show a generic logo for your component.
 

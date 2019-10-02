@@ -5,12 +5,12 @@ section: Basic Concepts
 order: 1
 ---
 
-This document provides basic information on [data samples](#data-samples) and how they are useful when [building integration flows](#samples-in-integraton-flows).
+This document provides basic information on [data samples](#data-sample) and how they are useful when [building integration flows](#samples-in-integration-flows).
 
 ## Data Sample
 
 
-A data sample is an example of [component](/integration-component) output data.
+A data sample is an example of [component](/getting-started/integration-component) output data.
 It is essential in building integration flows, because it allows you to see what
 sort of data the next component in the flow will receive from the previous one.
 With this information you can configure the next component to act properly on
@@ -52,7 +52,7 @@ Let’s observe the following process example:
     ignoring some of the output fields, switching field places, etc.
 
 5.  On the example scheme we can see, that *Baboon* sends out the following data:
-    `Name`, `Surname`, `Address`, `Phone Number` and `Email`. Component *Toucan* doesn’t
+    `Name`, `Surname`, `Address`, `Phone Number` and `Email`. Component *Toucan* doesn't
     need `Email`. Also, it has `Name and Surname` together in one field. Data mapper
     makes the necessary changes into Baboon output, so that the data fits *Toucan*
     input standard.

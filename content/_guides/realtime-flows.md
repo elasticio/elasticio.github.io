@@ -87,7 +87,7 @@ of the flow's name.
 ## Updating real-time flows
 
 In order to make changes to your real-time flows, you need to create a
-new [Draft](/integrator-guide/managing-flow-history). None of the changes
+new [Draft](/guides/managing-flow-history). None of the changes
 made to the draft will affect the currently running flow containers, be
 it a mapping adjustment, a component version change or anything else. In
 order to apply the changes you need to publish the draft as a new version.
