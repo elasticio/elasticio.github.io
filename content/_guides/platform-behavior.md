@@ -30,7 +30,7 @@ In general, the Platform is not error-prone, but there are a few issues you may 
 - [Syntax errors, human factor](#syntax-errors)
 
 ### Component Failed to Start
-Reasons for this error may differ. Altho messages still stay safe in intermidiate queue it is better to rise a ticket to the platform support as described [here] [here](general-troubleshooting-guide).   
+The reasons for this error may differ. Though the messages still stay safe in intermediate queue, it is better to create a ticket to the platform support as described [here] [here](general-troubleshooting-guide).   
 
 ### Component Run Out of Memory
 This error appears if the Component exceeds the set memory limit, which is `256 MB` by default:
