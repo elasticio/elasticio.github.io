@@ -13,22 +13,22 @@ An integration component for the Office 365 Outlook REST API
 
 This component uses OAuth 2.0 authentication, so when deploying it to
 your team you need to supply OAuth App Client ID and Client Secret.
-You can register your app to obtain a client ID and secret via
-https://apps.dev.microsoft.com, for that you would need to sign in with
+You can register your app to get a client ID and secret via
+[https://apps.dev.microsoft.com](https://apps.dev.microsoft.com), for that you would need to sign in with
 either your Microsoft account (Outlook.com), or your work or school account (Office 365).
 
 Client ID and Secret need to be configured in the environment variables
-```MSAPP_CLIENT_ID``` and ```MSAPP_CLIENT_SECRET```. When specifying
+`MSAPP_CLIENT_ID` and `MSAPP_CLIENT_SECRET`. When specifying
 callback URI  please use your callback URL in a form
 
 ```
 https://your-tenant.address/callback/oauth2
 ```
 
-for public cloud default tenant just use ``https://your-tenant.address/callback/oauth2``
+for public cloud default tenant use `https://your-tenant.address/callback/oauth2`
 
 Apart from the OAuth 2.0 button you would need to specify the __AD tenant ID__
- if you not sure about that just use ``common``.
+ if you not sure about that use `common`.
 
 ## Scope and Consent
 
@@ -45,7 +45,7 @@ Second version of AD protocol has [some advantages](https://azure.microsoft.com/
 
 ### OData output for lastModifiedDateTime has a precision issue
 
-Apparently the ``lastModifiedDateTime`` returned by MS Graph has no milliseconds
+Apparently the `lastModifiedDateTime` returned by MS Graph has no milliseconds
 in it is obvious that filter query accept and treat millisecond values correctly
 there is a workaround for that issue implemented in the code, however you need to
 keep an eye on it.

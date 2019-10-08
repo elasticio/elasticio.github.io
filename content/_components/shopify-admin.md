@@ -8,20 +8,20 @@ section: E-Commerce components
 {{site.data.tenant.name}} iPaaS integration component for the Shopify Admin API
 
 
-### Credentials
+## Credentials
  - shopName
  - apiKey
  - password
 
-### Environment variables
+## Environment variables
 not required
 
-### Actions
+## Actions
 
-#### List products
+### List products
 in/out metadata can be found at `/lib/schemas/listProducts.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -133,10 +133,10 @@ output message:
 }
 ```
 
-#### Upsert product
+### Upsert product
 in/out metadata can be found at `/lib/schemas/upsertProduct.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -279,10 +279,10 @@ output message:
 }
 ```
 
-#### Delete product
+### Delete product
 in/out metadata can be found at `/lib/schemas/deleteProduct.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -297,10 +297,10 @@ output message:
 }
 ```
 
-#### Get product
+### Get product
 in/out metadata can be found at `/lib/schemas/getProduct.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -323,10 +323,10 @@ output message:
 }
 ```
 
-#### Count products
+### Count products
 in/out metadata can be found at `/lib/schemas/countProducts.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -349,10 +349,10 @@ output message:
 }
 ```
 
-#### Create product image
+### Create product image
 in/out metadata can be found at `/lib/schemas/createProductImage.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -395,10 +395,10 @@ output message:
 }
 ```
 
-#### Update product image
+### Update product image
 in/out metadata can be found at `/lib/schemas/updateProductImage.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -444,10 +444,10 @@ output message:
 }
 ```
 
-#### Delete product image
+### Delete product image
 in/out metadata can be found at `/lib/schemas/deleteProductImage.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -466,10 +466,10 @@ output message:
 }
 ```
 
-#### List inventory items
+### List inventory items
 in/out metadata can be found at `/lib/schemas/listInventoryItems.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -503,10 +503,10 @@ output message:
 }
 ```
 
-#### Get inventory item
+### Get inventory item
 in/out metadata can be found at `/lib/schemas/getInventoryItem.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -526,10 +526,10 @@ output message:
 }
 ```
 
-#### Update inventory item
+### Update inventory item
 in/out metadata can be found at `/lib/schemas/updateInventoryItem.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -551,10 +551,10 @@ output message:
 }
 ```
 
-#### Create product variant
+### Create product variant
 in/out metadata can be found at `/lib/schemas/createProductVariant.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -623,10 +623,10 @@ output message:
 }
 ```
 
-#### Update product variant
+### Update product variant
 in/out metadata can be found at `/lib/schemas/updateProductVariant.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -696,10 +696,10 @@ output message:
 }
 ```
 
-#### Delete product variant
+### Delete product variant
 in/out metadata can be found at `/lib/schemas/deleteProductVariant.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -718,10 +718,8 @@ output message:
 }
 ```
 
-<!---PLACE_FOR_NEXT_ACTION--->
+## Links
 
-### Links
+[Shopify Admin API documentation](https://help.shopify.com/api/reference)
 
-Shopify Admin API documentation https://help.shopify.com/api/reference
-
-How to generate creds https://help.shopify.com/api/getting-started#generate-api-credentials-from-the-shopify-admin
+[How to generate creds](https://help.shopify.com/api/getting-started#generate-api-credentials-from-the-shopify-admin)
