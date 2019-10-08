@@ -12,7 +12,7 @@ as shown below. It describes the component structure and tells the platform what
 are available, what credentials are necessary to run your component on
 the {{site.data.tenant.name}} platform, etc.
 
-````
+```
 ├── component.json                                          (1)
 ├── lib
 │   ├── actions
@@ -21,14 +21,14 @@ the {{site.data.tenant.name}} platform, etc.
 ├── logo.png
 ├── package.json
 └── verifyCredentials.js
-````
+```
 
 The example above shows the structure of a Node.js component. The components
 written in Java programming language have a different structure but the location
 of the component descriptor is the same: it must be located in the
 root folder of the component (1). You are welcome to read our introductory
-guides about building components in [Java](/developer-guide/building-java-component)
-or [Node.js](/developer-guide/building-nodejs-component) for the
+guides about building components in [Java](/guides/building-java-component)
+or [Node.js](/guides/building-nodejs-component) for the
 {{site.data.tenant.name}} platform. Here we will concentrate on
 providing an in-depth reference about the structure and the objects which you can
 use to describe different parts of any component.
@@ -375,7 +375,7 @@ You can use [JSONSchema references](https://json-schema.org) in Component metada
             "type": "string",
             "required": false
           },
-```  
+```
 
 The thing about them is that they are basically the same element. So what you can do is add a definition for address fields, and just refer to it every time you need one. Here is how it will look like:
 
@@ -410,8 +410,8 @@ So if we go back to our initial Email Component, with a set reference it will lo
       "in": {
         "type": "object",
         "properties": {
-    "$ref": "#/definitions/addressfields"    
+    "$ref": "#/definitions/addressfields"
           },
-```  
+```
 
-**IMPORTANT:** We do not support referencing by `$id` and referencing external schemas at the moment. 
+**IMPORTANT:** We do not support referencing by `$id` and referencing external schemas at the moment.

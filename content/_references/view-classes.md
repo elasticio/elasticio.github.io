@@ -12,7 +12,7 @@ parameter in the [Fields Object](/references/component-descriptor-structure#fiel
 of every component descriptor file.
 
 Here are the general view classes which are used to render the input fields in
-[integration components](/getting-started/integration-components).
+[integration components](/getting-started/integration-component).
 
 | View Class        | Description  |
 | :---------------- | :----------- |

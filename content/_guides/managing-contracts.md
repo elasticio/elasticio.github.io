@@ -1,9 +1,9 @@
 ---
 title: Managing Contracts
-layout: article  
-section: Tenant Management  
-order: 1  
-since: 20190411  
+layout: article
+section: Tenant Management
+order: 1
+since: 20190411
 ---
 
 This document provides information on Contract management, namely the following
@@ -56,7 +56,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/contracts \
 
 ## Getting Contract Data
 
-With the right [permissions](/managing-user-roles-in-a-tenant)
+With the right [permissions](/guides/managing-user-roles-in-a-tenant)
 a Contract member can get Contract data via the API. Namely, the following actions are available:
 
 1\. Get Contract by ID via the following request:
@@ -207,7 +207,7 @@ Below are request parameters:
 |----------------------------------|--------------|---------------------------------------------------|
 | `type`                  | yes          | Allowed value: `contract-member`             |
 | `id`   | yes          |  	ID of a registered user. Must match the `USER_ID` URL parameter.            |
-| `attributes.roles[]`   | yes          | To get all available roles, please execute the “Get the Contract’s roles” endpoint.                
+| `attributes.roles[]`   | yes          | To get all available roles, please execute the “Get the Contract’s roles” endpoint.
                  |
 
 **EXAMPLE:**

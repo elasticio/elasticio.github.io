@@ -1,9 +1,9 @@
 ---
 title: Managing Flows
-layout: article  
-section: Tenant Management  
-order: 1  
-since: 20190719  
+layout: article
+section: Tenant Management
+order: 1
+since: 20190719
 ---
 
 This document provides information on Flow management, namely the following
@@ -19,9 +19,9 @@ actions:
 
 - [Flow versioning](#flow-versioning)
 
-- [Reset Snaphot](#reset-snapshot)
+- [Reset Snapshot](#reset-snapshot)
 
-All actions are available to users with the corresponding [permissions](/managing-user-roles-in-a-tenant).
+All actions are available to users with the corresponding [permissions](/guides/managing-user-roles-in-a-tenant).
 
 ## Start, Stop, Edit, Delete
 
@@ -111,19 +111,19 @@ Below are request parameters:
 
 To copy a Flow within the same Workspace, navigate to see your Flows. Then click on the corresponding icon to open the settings menu of the selected Flow:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_7.png)  
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_7.png)
 
 Alternatively, you can navigate to the Flow itself by clicking on its name:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_3.png)
 
-Then switch to *Implement* tab **(1)** and click the command **(2)** to copy it to clipboard, and [create a copy of the Flow via the API](/managing-workspaces):
+Then switch to *Implement* tab **(1)** and click the command **(2)** to copy it to clipboard, and [create a copy of the Flow via the API](/guides/managing-workspaces):
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_8.png)  
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_8.png)
 
 As a result, you get a copy of your Flow:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_9.png)  
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_9.png)
 
 To switch between real-time and ordinary types, navigate to see your Flows. Then click on the corresponding icon to open the settings menu of the selected Flow:
 
@@ -137,7 +137,7 @@ Note, that you can only switch Flow type if there's at least one published Flow 
 
 ## Subscribe to Errors
 
-You can order the platform to send you emails in case of any errors in your running Flow. However, it will not just mindlessly spam you with messages if an error repeats. With some errors, messaging interval is one email per hour, while with others its one per 24 hours. This interval is hardcoded and cannot be configured.
+You can order the platform to send you emails in case of any errors in your running Flow. However, it will not just mindlessly spam you with messages if an error repeats. With some errors, messaging interval is one email per hour, while with others its one per 24 hours. This interval is hard-coded and cannot be configured.
 
 To subscribe to errors, use the settings menu **(1)** of the corresponding Flow and click *Subscribe to Errors* **(2)**:
 
@@ -180,7 +180,7 @@ Also, the following special characters are in use:
 
 Feel free to use the hint below the CRON expression field for reference. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
 
-If the CRON expression was written properly, you'll see your schedule in the Next Occurrences:  
+If the CRON expression was written properly, you'll see your schedule in the Next Occurrences:
 
 ![](/assets/img/tenant-management-guide/managing-flows/Screenshot_17.png)
 
@@ -212,6 +212,6 @@ You can work on one draft of a given Flow at a time. If you try to create anothe
 
 A Snapshot is the data saved by a Component during its execution. When the Component is run next time, it will read the Snapshot to continue the process from the point it finished last time. You can manually reset this Snapshot, so the Component starts from scratch next time. Note that you can only reset Snapshot for a stopped Flow. To do this, click the settings button on the Flow **(1)**, and select Reset Snapshot **(2)**:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_18.png)  
+![](/assets/img/tenant-management-guide/managing-flows/Screenshot_18.png)
 
 This is the only way to delete an existing snapshot.

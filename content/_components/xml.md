@@ -24,24 +24,15 @@ No environment variables need to be set.
 ### XML to JSON
 Takes XML string and converts it to generic JSON object.
 
-#### Schemas
-[input schema](lib/schemas/xmlToJson.in.json) \
-[output schema](lib/schemas/xmlToJson.out.json)
 
 ### JSON to XML
 Takes the body of message passed into the component and converts to generic XML string
-
-#### Schemas
-[output schema](lib/schemas/jsonToXml.out.json)
 
 ### XML Attachment to Json
 Looks at the json array of attachments passed in to component and converts all XML found to generic JSON object
 
 #### Input field
 **Pattern to Match Files** - enter pattern for filtering files by name or leave this field empty for processing all incoming *.xml files.
-
-#### Schemas
-[output schema](lib/schemas/xmlToJson.out.json)
 
 #### Known limitations
  - The maximum size of incoming file for processing is 5 MiB. If the size of incoming file will be more than 5 MiB, action will throw error `Attachment *.xml is to large to be processed my XML component. File limit is: 5242880 byte, file given was: * byte.`.

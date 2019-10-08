@@ -16,7 +16,7 @@ created branches in integration flows.
 
 We will assume that you already know how to create an [integration flow](/getting-started/integration-flow)
 on {{site.data.tenant.name}} platform. You have followed the steps in [creating your first integration flow](/getting-started/first-flow)
-and [creating webhook flow](/getting-started/webhook-flow) tutorials.
+and [creating webhook flow](/getting-started/webhooks-flow) tutorials.
 
 ## Creating recipient list
 
@@ -31,7 +31,7 @@ the information about a pet in this JSON:
 }
 ```
 
-This scenario is almost identical to the [creating a webhook flow](/getting-started/webhook-flow)
+This scenario is almost identical to the [creating a webhook flow](/getting-started/webhooks-flow)
 tutorial with a slight addition of the `department` parameter. Here we will
 use the webhook flow as a basis and develop further.
 

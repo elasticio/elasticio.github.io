@@ -4,16 +4,17 @@ layout: article
 section: Service components
 ---
 
-### Description
+## Description
 Lionbridge translation component for the {{site.data.tenant.name}} platform.
 
-### Credentials
+## Credentials
+
  - username
  - password
  - apiURI
  - providerId
 
-### Actions information
+## Actions information
 
 To translate some text from one language to another, Lionbridge uses delayed jobs. That means that you will not be able to receive a translated text immediately in response to a request for translation. Therefore, you need to make a request to create a translation job, then get the code of your request and periodically poll Lionbridge to find out the status of your request. Once you get the status `REVIEW_TRANSLATION`, you can make a request to receive translation.
 
@@ -33,9 +34,9 @@ To retrieve translated phrase(s) use `Retrieve translation` action.
 
 Actions's `in/out` schemas can be found at `/lib/schemas`
 
-### Examples of actions data flows
+## Examples of actions data flows
 
-#### Request translation job (Simple)
+### Request translation job (Simple)
 
 input message:
 ```
@@ -52,7 +53,7 @@ output message:
 }
 ```
 
-#### Request translation job (Batch)
+### Request translation job (Batch)
 
 input message:
 ```
@@ -79,7 +80,7 @@ output message:
 }
 ```
 
-#### Request translation job (Object properties)
+### Request translation job (Object properties)
 
 input message:
 ```
@@ -99,7 +100,7 @@ output message:
 }
 ```
 
-#### Request translation job (Array of objects)
+### Request translation job (Array of objects)
 
 input message:
 ```
@@ -125,7 +126,7 @@ output message:
 }
 ```
 
-#### Retrieve job status
+### Retrieve job status
 
 input message:
 ```
@@ -142,7 +143,7 @@ output message:
 }
 ```
 
-#### Retrieve translation
+### Retrieve translation
 
 input message:
 ```
@@ -151,7 +152,7 @@ input message:
 }
 ```
 
-##### for `Request translation job (Simple)` and `Request translation job (Batch)` actions:
+#### for `Request translation job (Simple)` and `Request translation job (Batch)` actions:
 
 output message (Simple):
 ```
@@ -204,7 +205,7 @@ output message (Batch):
 }
 ```
 
-##### for `Request translation job (Object properties)` action:
+#### for `Request translation job (Object properties)` action:
 
 output message:
 ```
@@ -214,7 +215,7 @@ output message:
 }
 ```
 
-##### for `Request translation job (Array of objects)` action:
+#### for `Request translation job (Array of objects)` action:
 
 output message:
 ```
@@ -231,7 +232,7 @@ output message:
 }
 ```
 
-### Usage example in flows:
+## Usage example in flows:
 
 To conveniently use this component, you should create two flows with such structures:
 
@@ -280,5 +281,6 @@ second flow:
 
 [translated data comes to this step as message and you can use it as you wish]
 ```
-### Links
-http://developers.lionbridge.com/content/docs/key-concepts.html
+## Links
+
+[Key concepts](http://developers.lionbridge.com/content/docs/key-concepts.html)

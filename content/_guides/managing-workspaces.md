@@ -1,9 +1,9 @@
 ---
-title: Managing Workspaces  
-layout: article  
-section: Tenant Management  
-order: 1  
-since: 20190411  
+title: Managing Workspaces
+layout: article
+section: Tenant Management
+order: 1
+since: 20190411
 ---
 
 This document provides information on workspace management, namely the following
@@ -88,13 +88,12 @@ curl {{site.data.tenant.apiBaseUri}}/v2/workspaces \
 ## Editing the Workspace
 
 With the right
-[permissions](/managing-user-roles-in-a-tenant)
+[permissions](/guides/managing-user-roles-in-a-tenant)
 a workspace member can perform workspace management via the
 [UI](#1-workspace-management-via-the-ui) or the [API](#2-workspace-management-via-the-api).
 
 ##### 1\. Workspace management via the UI
-includes adding or inviting new members, managing their workspace [user
-roles](/managing-user-roles-in-a-tenant), removing members, renaming and deleting the
+includes adding or inviting new members, managing their workspace [user roles](/guides/managing-user-roles-in-a-tenant), removing members, renaming and deleting the
 workspace. All these actions are done in **Workspace** tab
 of the navigational menu:
 
@@ -117,7 +116,7 @@ workspace role, and click **Send Invite**:
 
 Note that only contract members with the corresponding contract
 permission will have the option to invite new members to the workspace. You can learn how to assign member roles
-[here](/managing-user-roles-in-a-tenant).
+[here](/guides/managing-user-roles-in-a-tenant).
 
 To remove members from a workspace, click the corresponding icon on the user
 list:
@@ -151,6 +150,7 @@ Below are request parameters:
 
 To add a user with the ID *Elvis* with *King* and *Immortal* roles we will use the following
 request:
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/ \
     -X POST \
@@ -191,6 +191,7 @@ Below are request parameters:
 **EXAMPLE:**
 
 To change user roles we will use the following request:
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
     -X PATCH  \
@@ -274,7 +275,7 @@ curl -i {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
  ```
 
 
-## Creating Flows  
+## Creating Flows
 
 An integration [flow](/getting-started/integration-flow) is a set
 of components used to synchronize data between multiple applications or
@@ -318,36 +319,36 @@ curl -X POST {{site.data.tenant.apiBaseUri}}/v2/flows \
   -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json' \
    -H 'Content-Type: application/json' -d '
-   {  
-  "data":{  
-    "attributes":{  
+   {
+  "data":{
+    "attributes":{
       "default_mapper_type":"jsonata",
       "type":"ordinary",
       "name":"Timer to E-Mail",
       "description":null,
       "cron":null,
-      "graph":{  
-        "nodes":[  
-          {  
+      "graph":{
+        "nodes":[
+          {
             "id":"step_1",
             "command":"devTeam1/timer:timer@latest",
-            "fields":{  
+            "fields":{
               "interval":"minute"
             }
           },
-          {  
+          {
             "command":"devTeam1/email:send@latest",
-            "fields":{  
+            "fields":{
 
             },
             "id":"step_2"
           }
         ],
-        "edges":[  
-          {  
-            "config":{  
+        "edges":[
+          {
+            "config":{
               "mapper_type":"jsonata",
-              "mapper":{  
+              "mapper":{
                 "to":"info@acme.org",
                 "subject":"Subject",
                 "textBody":"fireTime"
@@ -360,9 +361,9 @@ curl -X POST {{site.data.tenant.apiBaseUri}}/v2/flows \
       }
     },
     "type":"flow",
-    "relationships":{  
-      "workspace":{  
-        "data":{  
+    "relationships":{
+      "workspace":{
+        "data":{
           "id":"59d341e9037f7200184a408b",
           "type":"workspace"
         }
@@ -376,7 +377,7 @@ curl -X POST {{site.data.tenant.apiBaseUri}}/v2/flows \
 ## Editing Flows
 
 With the right
-[permissions](/managing-user-roles-in-a-tenant)
+[permissions](/guides/managing-user-roles-in-a-tenant)
 a workspace member can perform flow management via the [UI](#1-flow-management-via-the-ui) or
 the [API](#2-flow-management-via-the-api).
 
@@ -400,7 +401,7 @@ Click **Settings** to access the settings tab where you can toggle flow type:
 ![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_16.png)
 
 Flows can be **Realtime** and **Ordinary**. You can find more info about these
-types [here](/realtime-flows). You can toggle flow type with the corresponding
+types [here](/guides/realtime-flows). You can toggle flow type with the corresponding
 switch:
 
 ![](/assets/img/tenant-management-guide/managing-workspaces/screenshot_13.png)
@@ -524,7 +525,7 @@ Workspace members with corresponding permissions can create credentials via the
 
 6\. Search for your component in the list and click it:
 
-![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_32.png)  
+![](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_32.png)
 
 7\. Click **connect new credentials**:
 
@@ -641,9 +642,9 @@ curl {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
             "type": "credential",
             "attributes": {
                 "keys": {
-                    "key1": "updated value"  
+                    "key1": "updated value"
                 }
-            },                     
+            },
             "relationships": {
                "agent": {
                    "data": {
@@ -776,7 +777,7 @@ Below are request parameters:
 
 6\. To retrieve all credentials:
 
-GET {{site.data.tenant.apiBaseUri}}/v2/credentials?workspace_id={WORKSPACE_ID}/
+`GET {{site.data.tenant.apiBaseUri}}/v2/credentials?workspace_id={WORKSPACE_ID}/`
 
 Below are request parameters:
 
