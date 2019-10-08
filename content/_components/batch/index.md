@@ -53,12 +53,6 @@ Stores a message in a batch and emits a created/updated batch with a processed i
 
 **Important: Use the same configuration in trigger for correct batch processing**
 
-#### Input json schema
-[addMsgToBatch.in.json](./resources/addMsgToBatch.in.json)
-
-#### Output json schema
-[addMsgToBatch.out.json](./resources/addMsgToBatch.out.json)
-
 
 ## Triggers
 
@@ -75,9 +69,6 @@ Emits all batches that are ready to be processed.
 | Correlation Id | true | Correlation Id between action and trigger. Correlation Id helps identify what collection of batches should be used | Flow1 |
 
 **Important: Use the same configuration in action for correct batch processing**
-
-#### Output json schema
-[getReadyBatches.out.json](./resources/getReadyBatches.out.json)
 
 
 ## Additional info

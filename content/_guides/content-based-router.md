@@ -32,7 +32,7 @@ are used to decide whether the product is routed to Amazon API or Magento API.
 
 We assume that you know how to create an integration flow on {{site.data.tenant.name}}
 platform since you have followed the steps in [creating your first integration flow](/getting-started/first-flow)
-and [creating webhook flow](/getting-started/webhook-flow) tutorials.
+and [creating webhook flow](/getting-started/webhooks-flow) tutorials.
 
 
 The *Webhook* receives an incoming data in the following structure:
