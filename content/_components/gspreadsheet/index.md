@@ -1,17 +1,12 @@
 ---
-title: gspreadsheets
+title: Google Spreadsheets component
 layout: article
-section: PLACEHOLDER
+section: Office components
 ---
----
-
-[![CircleCI](https://circleci.com/gh/elasticio/gspreadsheets.svg?style=svg)](https://circleci.com/gh/elasticio/gspreadsheets)
-# Google Spreadsheets component
 
 ## Description
 
-[elastic.io](http://www.elastic.io) iPaaS component to read and write to Google Spreadsheets
-Component Completeness [Matrix](https://docs.google.com/spreadsheets/d/1usD_k7NxyiplSEXgttAT9dmpgDNADCED7z4UCoRaAfs)
+A Google Spreadsheets component to read and write to the Google Spreadsheet
 
 ## Requirements
 
@@ -25,6 +20,7 @@ Following environment are required:
  - `GOOGLE_APP_ID` - oauth App ID
  - `GOOGLE_APP_SECRET` - oauth App Secret
  
+
  To get these please use the [Google Developers Console](https://console.developers.google.com). As a callback please use `https://your-tenant.address/callback/oauth2`.
  
  Recommended environment variable:
@@ -60,13 +56,14 @@ Spreadsheet whenever flow processes the message.
 
 
 #### Input fields description
-|Input field|Required|Description|Example|
+
+| Input field | Required | Description | Example |
 |---------------------|--------|---------|---------|
-|Spreadsheet                   |true|Spreadsheet which will be used for data reading|`MyTestSpreadsheet`|
-|Worksheet                     |true|Worksheet of spreadsheet which will be used for data reading|`Sheet1`|
-|Dimension                     |true|The major dimension of the values|`ROWS`, `COLUMNS`|
-|Use first row/column as header|true|You should specify Yes if your data has a header in the first row/column and you want to use these values as json key in the output message. If you specify No, json key will be taken from row/column index according to A1 notation. Se example below |`Yes`|
-|Select All Data               |true|You should specify Yes if you want to fetch all spreadsheet data whenever step starts. If you specify No, a step will be emitting only delta changes (lines which were added after last step runs) |`No`|
+| Spreadsheet                    | true | Spreadsheet which will be used for data reading | `MyTestSpreadsheet` |
+| Worksheet                      | true | Worksheet of spreadsheet which will be used for data reading | `Sheet1` |
+| Dimension                      | true | The major dimension of the values | `ROWS`, `COLUMNS` |
+| Use first row/column as header | true | You should specify Yes if your data has a header in the first row/column and you want to use these values as json key in the output message. If you specify No, json key will be taken from row/column index according to A1 notation. Se example below | `Yes` |
+| Select All Data                | true | You should specify Yes if you want to fetch all spreadsheet data whenever step starts. If you specify No, a step will be emitting only delta changes (lines which were added after last step runs) | `No` |
 
 **IMPORTANT:** Using `Use first row/column as header` feature, you must be sure that header values are unique.
 
@@ -217,11 +214,11 @@ The action needs a JSON instance of a [Spreadsheet](https://developers.google.co
 All data structures and limitations are the same to Google API.
 
 #### Json schema locations
-Schema type|Json schema location
------------| -------------
-|Input   |[/schemas/createSpreadsheet.in.json](/schemas/createSpreadsheet.in.json)
-|Output   |[/schemas/createSpreadsheet.out.json](/schemas/createSpreadsheet.out.json)
 
+| Schema type | Json schema location |
+|----------|----------------------------------------------------------------------------|
+| Input    | [/schemas/createSpreadsheet.in.json](/schemas/createSpreadsheet.in.json)   |
+| Output   | [/schemas/createSpreadsheet.out.json](/schemas/createSpreadsheet.out.json) |
 
 ### Add Spreadsheet Row
 
@@ -236,10 +233,11 @@ A datatype of inserted values will be the same as for JSON type (string, numeric
  - **Worksheet** - Worksheet name of selected Spreadsheet to make changes. 
 
 #### Json schema locations
-Schema type|Json schema location
------------| -------------
-|Input   |[/schemas/createSpreadsheetRow.in.json](/schemas/createSpreadsheetRow.in.json)
-|Output   |[/schemas/createSpreadsheetRow.out.json](/schemas/createSpreadsheetRow.out.json)
+
+| Schema type | Json schema location |
+|----------|----------------------------------------------------------------------------------|
+| Input    | [/schemas/createSpreadsheetRow.in.json](/schemas/createSpreadsheetRow.in.json)   |
+| Output   | [/schemas/createSpreadsheetRow.out.json](/schemas/createSpreadsheetRow.out.json) |
 
 ### Add Row 
 **Deprecated** - please use [Add Spreadsheet Row](#add-spreadsheet-row) action.
@@ -319,4 +317,4 @@ since not only the newly inserted row will be regarded as a new record but
 
 ## License
 
-Apache-2.0 © [elastic.io GmbH](http://www.elastic.io)
+© [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
