@@ -2,6 +2,7 @@
 title: Magento2 component
 layout: article
 section: E-Commerce components
+category: magento2
 ---
 
 
