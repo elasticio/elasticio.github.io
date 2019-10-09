@@ -28,11 +28,11 @@ jobs:
       - checkout
       - run:
           name: Download Script
-          command: mkdir $HOME/script && curl -o $HOME/script/create_pr.bash https://https://raw.githubusercontent.com/elasticio/elasticio.github.io/master/scripts/create_pr.bash
+          command: mkdir $HOME/script && curl -o $HOME/script/create_pr.bash https://raw.githubusercontent.com/elasticio/elasticio.github.io/master/scripts/create_pr.bash
       - run:
           shell: /bin/bash
           name: Create PR
-          command: bash $HOME/script/create_pr.bash -p $PWD -n utility-component
+          command: bash $HOME/script/create_pr.bash -p $PWD -n {{COMPONENT_DOCS_NAME}}
 
 workflows:
   version: 2
