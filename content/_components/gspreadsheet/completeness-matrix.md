@@ -2,6 +2,7 @@
 title: Completeness Matrix
 layout: article
 category: gspreadsheet
+category: gspreadsheet
 ---
 
 Google Spreadsheet Component Completeness Matrix:
