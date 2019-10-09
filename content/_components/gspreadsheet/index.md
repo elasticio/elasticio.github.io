@@ -2,6 +2,7 @@
 title: Google Spreadsheets component
 layout: article
 section: Office components
+category: gspreadsheet
 ---
 
 ## Description
