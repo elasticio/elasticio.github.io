@@ -1,27 +1,61 @@
 ---
-title: Shopify-admin component
+title: shopify-admin
 layout: article
-section: E-Commerce components
+section: PLACEHOLDER
+---
 ---
 
+[![CircleCI](https://circleci.com/gh/elasticio/shopify-admin-component.svg?style=svg&circle-token=7c1a1dbf426517d0837f5e14484bcf3ccec43d36)](https://circleci.com/gh/elasticio/shopify-admin-component)
+# shopify-admin-component
+elastic.io iPaaS integration component for the Shopify Admin API
 
-{{site.data.tenant.name}} iPaaS integration component for the Shopify Admin API
 
-
-## Credentials
+### Credentials
  - shopName
  - apiKey
  - password
 
-## Environment variables
+### Environment variables
 not required
 
-## Actions
+### Actions
+#### List Objects
+##### Configuration options
+1. `Object Type` - type of object to be listed
+2. `Behavior` - `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message
+3. `Max Size` - default 250, maximum value is 250. Maximum number of objects to fetch.
+##### Input metadata
+1. `idField` - object types: `Article`, `Asset`, `Article`, `Customer Address`, `Discount Code`, `Inventory Item`, `Inventory Level`, `Fulfillment`, `Order Risk`, `Refund`, `Transaction`, `Fulfillment Event`, `Gift Card Adjustment`, `Payment`, `Product Image`, `Product Variant`, `Province`, `Usage Charge` require id of parent object to be passed in input metadata
+2. `order` - add ability to sort items.`fieldName`: name of field for sorting objects, only fields of type: `string`, `number`, `boolean` supported. `orderDirection`: asc or desc defines direction of sorting.
+3. `filter` - add ability filter item from result. `searchTerm`: `fieldName` - name of field to apply filter. `condition` - `eq` equal, `ne` not equal, `gt` greater, `ge` greater or equal, `lt` less, `le` less or equal apply provided condition to field. `fieldValue` - value to be used by condition in comparing with `value` in object field. It is possible to chain few conditions via: `criteriaLink` - `and`, `or` chain with previous condition by provided operator.
+##### Example of usage
+1. Object Type - `Country`,
+2. Behaviour - `Fetch All`,
+3. Max Size - `20`
+````json
+{
+  "order": {
+    "fieldName": "code",
+    "orderDirection": "desc"
+  },
+  "filter": [
+    {
+      "searchTerm": {
+        "fieldName": "tax",
+        "condition": "gt",
+        "fieldValue": "0"
+      },
+      "criteriaLink": "and"
+    }
+  ]
+}
+````
+Will return maximum 20 objects of type Country ordered by their code and filtered where tax value greater then 0.
+#### List products(Deprecated use List Objects action instead)
 
-### List products
 in/out metadata can be found at `/lib/schemas/listProducts.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -133,10 +167,10 @@ output message:
 }
 ```
 
-### Upsert product
+#### Upsert product
 in/out metadata can be found at `/lib/schemas/upsertProduct.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -279,10 +313,10 @@ output message:
 }
 ```
 
-### Delete product
+#### Delete product
 in/out metadata can be found at `/lib/schemas/deleteProduct.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -297,10 +331,10 @@ output message:
 }
 ```
 
-### Get product
+#### Get product
 in/out metadata can be found at `/lib/schemas/getProduct.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -323,10 +357,10 @@ output message:
 }
 ```
 
-### Count products
+#### Count products
 in/out metadata can be found at `/lib/schemas/countProducts.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -349,10 +383,10 @@ output message:
 }
 ```
 
-### Create product image
+#### Create product image
 in/out metadata can be found at `/lib/schemas/createProductImage.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -395,10 +429,10 @@ output message:
 }
 ```
 
-### Update product image
+#### Update product image
 in/out metadata can be found at `/lib/schemas/updateProductImage.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -444,10 +478,10 @@ output message:
 }
 ```
 
-### Delete product image
+#### Delete product image
 in/out metadata can be found at `/lib/schemas/deleteProductImage.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -466,10 +500,10 @@ output message:
 }
 ```
 
-### List inventory items
+#### List inventory items(Deprecated use List Objects action instead)
 in/out metadata can be found at `/lib/schemas/listInventoryItems.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -503,10 +537,10 @@ output message:
 }
 ```
 
-### Get inventory item
+#### Get inventory item
 in/out metadata can be found at `/lib/schemas/getInventoryItem.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -526,10 +560,10 @@ output message:
 }
 ```
 
-### Update inventory item
+#### Update inventory item
 in/out metadata can be found at `/lib/schemas/updateInventoryItem.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -551,10 +585,10 @@ output message:
 }
 ```
 
-### Create product variant
+#### Create product variant
 in/out metadata can be found at `/lib/schemas/createProductVariant.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -623,10 +657,10 @@ output message:
 }
 ```
 
-### Update product variant
+#### Update product variant
 in/out metadata can be found at `/lib/schemas/updateProductVariant.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -696,10 +730,10 @@ output message:
 }
 ```
 
-### Delete product variant
+#### Delete product variant
 in/out metadata can be found at `/lib/schemas/deleteProductVariant.{in/out}.json`
 
-#### usage example
+##### usage example
 input message:
 ```
 {
@@ -718,8 +752,10 @@ output message:
 }
 ```
 
-## Links
+<!---PLACE_FOR_NEXT_ACTION--->
 
-[Shopify Admin API documentation](https://help.shopify.com/api/reference)
+### Links
 
-[How to generate creds](https://help.shopify.com/api/getting-started#generate-api-credentials-from-the-shopify-admin)
+Shopify Admin API documentation https://help.shopify.com/api/reference
+
+How to generate creds https://help.shopify.com/api/getting-started#generate-api-credentials-from-the-shopify-admin
