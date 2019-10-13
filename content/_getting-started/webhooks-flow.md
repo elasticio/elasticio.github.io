@@ -64,8 +64,8 @@ Paste the following `JSON` in the input field:
 
 ```js
 {
-  "petname": "Gromit",
-  "petstatus": "sold"
+  "petname": "Gromit",
+  "petstatus": "sold"
 }
 ```
 The sample gets evaluated for the correctness of the format. Click on *Save* button to continue.
@@ -146,8 +146,8 @@ Open the Postman and follow these steps:
 3.  Select the HTTP post *Body* tab, then select *raw* and choose the `JSON (application/json)` from a drop-down selector menu. Now paste an example `JSON` into the input field. We used this `JSON`:
 ```js
 {
-  "petname": "Gromit",
-  "petstatus": "sold"
+  "petname": "Gromit",
+  "petstatus": "sold"
 }
 ```
 4.  Click on *Send* button in the right upper corner to send the data to your webhook flow. In response, {{site.data.tenant.name}} platform will reply with a similar message shown on the screenshot.
@@ -162,7 +162,7 @@ Your flow is now active and working! Go ahead, make another one. Try using diffe
 
 ## Securing your webhooks
 
-As discussed above webhhoks can be secured with credentials. There are four
+As discussed above webhooks can be secured with credentials. There are four
 types of webhook credentials:
 
 *   `No Auth` - used to make the webhook URL accessible by anyone,

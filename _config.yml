@@ -1,5 +1,7 @@
 collections_dir: content
 
+highlighter: rouge
+
 collections:
   getting-started:
       output: true

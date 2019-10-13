@@ -19,12 +19,12 @@ following table shows the support of the platform features in Sailor versions:
 |  Shutdown Hook |  - |  - | Yes  |
 
 {{site.data.tenant.name}} follows the [Semver semantics](https://en.wikipedia.org/wiki/Software_versioning)
-for the Sailor releases. In order to keep the compatibility matrix manageable,
+for the Sailor releases. To keep the compatibility matrix manageable,
 we might skip patch releases here.
 
 ## Node.js - package.json
 
-All the available Node.js Sailor versions can be retrieved directly from the
+All the available `Node.js` Sailor versions can be retrieved directly from the
 [NPM](https://www.npmjs.com/package/elasticio-sailor-nodejs) or by executing the
 following command on your terminal:
 
@@ -36,12 +36,12 @@ If your component is written in Node.js then you must make the modification in
 your `package.json` configuration file found in the root directory of your component.
 Here is where to pay particular attention:
 
-````
+```js
 "dependencies": {
     "elasticio-sailor-nodejs": "2.1.0",
     "elasticio-node": "0.0.8",
 }
-````
+```
 
 ## Java - build.gradle
 
@@ -54,8 +54,8 @@ If your component is written in Java you must make the modification in your
 `build.gradle` configuration file found in the root directory of your component.
 Here is where to pay particular attention:
 
-````
+```java
 dependencies {
     compile "io.elastic:java-api:2.1.0"
 }
-````
+```

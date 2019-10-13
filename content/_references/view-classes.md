@@ -43,7 +43,7 @@ the API key. The possibilities are many but the implementation is similar.
 
 Here is an example implementation of `TextFieldView` view class:
 
-```
+```js
 "credentials": {
   "fields": {
     "company_domain": {
@@ -81,7 +81,7 @@ purposes.
 
 Here is an example implementation of `TextAreaView` view class:
 
-```
+```js
 "query": {
   "label": "SQL Query",
   "viewClass": "TextAreaView",
@@ -107,7 +107,7 @@ option during the integration flow design. This view class had only one option:
 
 Here is an example implementation of `CheckBoxView` view class:
 
-```
+```js
 "fields" : {
   "SomeOption" : {
     ......
@@ -138,7 +138,7 @@ in the component descriptor.
 Here is an example of `SelectView` view class where the `model` property is an
 `object` containing the values:
 
-```
+```js
 "fields": {
   "status": {
     "label": "Pet Status",
@@ -150,6 +150,7 @@ Here is an example of `SelectView` view class where the `model` property is an
       "sold": "Sold"
     },
     "prompt": "Select Pet Status"
+  }
 }
 ```
 
@@ -162,7 +163,7 @@ the name of a function exposed by a component that returns a JSON `object`. This
 is commonly implemented with the dynamic select models. For example the
 component descriptor of the [MailChimp component](https://github.com/elasticio/mailchimp-component/blob/master/component.json) has the following structure:
 
-```
+```js
 "fields": {
   "listId": {
     "viewClass": "SelectView",
@@ -176,7 +177,7 @@ component descriptor of the [MailChimp component](https://github.com/elasticio/m
 Here the `model` has a `getLists` which is exposed in the `lib/commons.js` as a
 [function `getLists`](https://github.com/elasticio/mailchimp-component/blob/master/lib/common.js#L14):
 
-```
+```js
 /**
  * Function that returns values for the list selection box
  *
@@ -218,24 +219,27 @@ anywhere in the component descriptor.
 | prompt   | `string` | No       | Used to give a short and descriptive text which is rendered in the select field. |
 
 **EXAMPLE:**
-```
+```js
 "triggers": {
-    "getPetsByStatusWithGenerators": {
-      "main": "./lib/triggers/getPetsByStatusWithGenerators.js",
-      "type": "polling",
-      "title": "Get Pets By Status With Generators",
-      "fields": {
-        "status": {
-          "label": "Pet Status",
-          "required": true,
-          "viewClass": "MultiSelectView",
-          "model": {
-            "available": "Available",
-            "pending": "Pending",
-            "sold": "Sold"
-          },
-          "prompt": "Select Pet Status"
-        }
+  "getPetsByStatusWithGenerators": {
+    "main": "./lib/triggers/getPetsByStatusWithGenerators.js",
+    "type": "polling",
+    "title": "Get Pets By Status With Generators",
+    "fields": {
+      "status": {
+        "label": "Pet Status",
+        "required": true,
+        "viewClass": "MultiSelectView",
+        "model": {
+          "available": "Available",
+          "pending": "Pending",
+          "sold": "Sold"
+        },
+        "prompt": "Select Pet Status"
+      }
+    }
+  }
+}
 ```
 
 Here is how it looks like in the UI:
@@ -257,7 +261,7 @@ properties:
 
 Here is an example of `PasswordFieldView` view class usage in the credentials:
 
-```
+```js
 "credentials" : {
   "fields": {
     "host":{
@@ -301,7 +305,7 @@ Since the main purpose of the `OAuthFieldView` view class is to facilitate the
 OAuth1/Oauth2 authentication then it is worth to present how to use it in
 conjunctions with the [OAuth object](/references/component-descriptor-structure#oauth2):
 
-```
+```js
 "credentials" : {
   "fields":{
     "oauth":{

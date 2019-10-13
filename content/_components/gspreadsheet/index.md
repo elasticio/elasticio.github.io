@@ -20,12 +20,12 @@ Following environment are required:
 
  - `GOOGLE_APP_ID` - oauth App ID
  - `GOOGLE_APP_SECRET` - oauth App Secret
- 
+
 
  To get these please use the [Google Developers Console](https://console.developers.google.com). As a callback please use `https://your-tenant.address/callback/oauth2`.
- 
+
  Recommended environment variable:
- 
+
  - `EIO_REQUIRED_RAM_MB` - recommended value of allocated memory is `512` MB
 
 ## Credentials
@@ -39,7 +39,7 @@ platform to access your Spreadsheets.
 
 
 ### Get Spreadsheet Row
-	
+
 The  **New Spreadsheet Row** *trigger* reads the data in each row of a given Google Spreadsheet
 and passes it to the next stage of your integration flow.
 
@@ -85,7 +85,7 @@ After a trigger execution, data will be extracted from the table above and the f
   {
     "FirstName": "Tom2",
     "LastName": "Smith2"
-  } 
+  }
   -----------------------
   {
     "FirstName": "Tom10",
@@ -122,7 +122,7 @@ After a trigger execution, data will be extracted from the table above and the f
 After a trigger execution, data will be extracted from the table above and the following message will be emitted:
 
 ##### 1) Dimension: `COLUMNS`, Use first row/column as header: `Yes`
-```js
+```javascript
   {
     "FirstName": "Tom1",
     "LastName": "Smith1"
@@ -130,7 +130,7 @@ After a trigger execution, data will be extracted from the table above and the f
   {
     "FirstName": "Tom2",
     "LastName": "Smith2"
-  } 
+  }
   -----------------------
   {
     "FirstName": "Tom10",
@@ -167,7 +167,7 @@ Trigger can emit maximum 1000 messages per one execution.
 Trigger uses version 4 of [Google Sheet API](https://developers.google.com/sheets/api/).
 You can find more information in the [Google Sheets API Documentation](https://developers.google.com/sheets/api/samples/reading).
 
-### Rows 
+### Rows
 **Deprecated** - please use [New Spreadsheet Row](#new-spreadsheet-row) trigger.
 
 The  **Rows** *trigger* reads the data in each row of a given Google Spreadsheet
@@ -229,9 +229,9 @@ Data will be inserted into the last empty line, starting from the first table co
 A datatype of inserted values will be the same as for JSON type (string, numeric or boolean). Use "" value to make cell empty.
 
 #### Input fields:
-    
- - **Spreadsheet** - Spreadsheet name to make changes. 
- - **Worksheet** - Worksheet name of selected Spreadsheet to make changes. 
+
+ - **Spreadsheet** - Spreadsheet name to make changes.
+ - **Worksheet** - Worksheet name of selected Spreadsheet to make changes.
 
 #### Json schema locations
 
@@ -240,7 +240,7 @@ A datatype of inserted values will be the same as for JSON type (string, numeric
 | Input    | [/schemas/createSpreadsheetRow.in.json](/schemas/createSpreadsheetRow.in.json)   |
 | Output   | [/schemas/createSpreadsheetRow.out.json](/schemas/createSpreadsheetRow.out.json) |
 
-### Add Row 
+### Add Row
 **Deprecated** - please use [Add Spreadsheet Row](#add-spreadsheet-row) action.
 
 Your integration flow can also *write* or **add a row** to the given Google
@@ -295,7 +295,7 @@ these steps:
 3.  **Go through the integration design stage again** to ensure that all columns in the modified spreadsheet are properly linked with required fields or values necessary to run your integration flow.
 4.  Activate the flow again.
 
-### Inserting a row 
+### Inserting a row
 
 **Do NOT insert a row between the records while your flow is active**
 
