@@ -24,9 +24,8 @@ the {{site.data.tenant.name}} platform, etc.
 ```
 
 The example above shows the structure of a Node.js component. The components
-written in Java programming language have a different structure but the location
-of the component descriptor is the same: it must be located in the
-root folder of the component (1). You are welcome to read our introductory
+written in Java programming language have a different structure but the components
+descriptor must again be located in the root folder of the component (1). Read our introductory
 guides about building components in [Java](/guides/building-java-component)
 or [Node.js](/guides/building-nodejs-component) for the
 {{site.data.tenant.name}} platform. Here we will concentrate on
@@ -42,8 +41,8 @@ nested objects.
 
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |
-| title       | `string` | Yes      | Component's title to be displayed in the UI |
-| description | `string` | Yes      | Component's description to be displayed in the UI  |
+| title       | `string` | Yes      | Component's title for displaying in the UI |
+| description | `string` | Yes      | Component's description for displaying in the UI  |
 | [envVars](#envvars-object) | `object` |  | Used to declare environment variables |
 | [credentials](#credentials-object) | `object` |  | Used to specify the details about the authentication with the given API |
 | [triggers](#triggers-object) | `object` | Yes | Used to expose component's triggers |
@@ -70,8 +69,8 @@ As we have presented the information in the table above, only `title` and
 
 ## envVars Object
 
-The **envVars object** is used to define the environment variables to be used
-for component configuration. Every environment variable defined in the `component.json`
+The **envVars object** defines the environment variables for the component
+configuration. Every environment variable defined in the `component.json`
 file must have the following properties:
 
 | Property Name | Type     | Required | Description |
@@ -86,7 +85,8 @@ Avoid using reserved words like (`if`, `else`, `elif`, `do`, `done` ...). Here i
 an example of `envVars` object implemented in the [Salesforce Component](https://github.com/elasticio/salesforce-component/blob/master/component.json):
 
 ```json
-"envVars": {
+{
+  "envVars": {
     "SALESFORCE_KEY": {
       "required": true,
       "description": "Your Salesforce OAuth client key"
@@ -96,6 +96,7 @@ an example of `envVars` object implemented in the [Salesforce Component](https:/
       "description": "Your Salesforce OAuth client secret"
     }
   }
+}
 ```
 
 ## Credentials Object
@@ -117,7 +118,8 @@ the `credentials` object a single field to gather the API key from the user,
 as shown below.
 
 ```json
-"credentials": {
+{
+  "credentials": {
     "fields": {
       "apiKey": {
         "label": "API key",
@@ -127,6 +129,7 @@ as shown below.
       }
     }
   }
+}
 ```
 
 In the example above the `apiKey` field is used to gather user's API key.
@@ -147,34 +150,34 @@ details about Authenticating with OAuth 1.0 refer to the
 | :------------ | :------: | :------: | :---------- |
 | consumer_key | `string` | Yes     | The Consumer Key |
 | consumer_secret | `string` | Yes  | The Consumer Secret |
-| request_token_uri | `string` | Yes | URI to obtain a Request Token |
-| auth_uri | `string` | Yes | URI to obtain User Authorization |
-| access_token_uri | `string` |Yes | URI to obtain an Access Token |
+| request_token_uri | `string` | Yes | URI to get a Request Token |
+| auth_uri | `string` | Yes | URI to get User Authorization |
+| access_token_uri | `string` |Yes | URI to get an Access Token |
 
 Here is an example implementation of OAuth1 in the Credentials Object:
 
 ```json
 {
-"credentials" : {
-   "fields": {
+  "credentials" : {
+    "fields": {
       "oauth": {
-         "viewClass":"OAuthFieldView",
-         "label":"Twitter Account",
-         "required" : true
+        "viewClass":"OAuthFieldView",
+        "label":"Twitter Account",
+        "required" : true
       }
-   },
-   "oauth1":{
+    },
+    "oauth1":{
       "consumer_key":"{{TWITTER_API_KEY}}",
       "consumer_secret":"{{TWITTER_API_SECRET}}",
       "request_token_uri":"https://api.twitter.com/oauth/request_token",
       "auth_uri":"https://api.twitter.com/oauth/authorize",
       "access_token_uri":"https://api.twitter.com/oauth/access_token"
-   }
+    }
   }
 }
 ```
 In case of OAuth1 Authentication we must use `fields` and `oauth1` objects together.
-The `fields` object defines the type of input field and the `oauth1` object provides
+The `fields` object defines the input field type and the `oauth1` object provides
 the configuration. Please note that the `viewClass` property of the field must be
 set to `OAuthFieldView`.
 
@@ -188,23 +191,25 @@ details about Authenticating with OAuth 2.0 please read the
 | :------------ | :------: | :------: | :---------- |
 | client_id   | `string` | Yes      | The Consumer Key |
 | client_secret | `string` | Yes      | The Consumer Secret |
-| auth_uri    | `string`   | Yes | URI to obtain User Authorization |
-| token_uri   | `string`   | Yes | URI to obtain a Access Token |
+| auth_uri    | `string`   | Yes | URI to get User Authorization |
+| token_uri   | `string`   | Yes | URI to get a Access Token |
 | scopes      | `array` of `strings` |   No | Scopes of the access request |
 
 Here is an example of `OAuth2` implementation in [Google Spreadsheets](https://github.com/elasticio/gspreadsheets/blob/master/component.json#L18) component:
 
 ```json
-"oauth2":{
-   "client_id":"{{GOOGLE_APP_ID}}",
-   "client_secret":"{{GOOGLE_APP_SECRET}}",
-   "auth_uri":"https://accounts.google.com/o/oauth2/v2/auth",
-   "token_uri":"https://www.googleapis.com/oauth2/v4/token",
-   "scopes": [
+{
+  "oauth2":{
+    "client_id":"{{GOOGLE_APP_ID}}",
+    "client_secret":"{{GOOGLE_APP_SECRET}}",
+    "auth_uri":"https://accounts.google.com/o/oauth2/v2/auth",
+    "token_uri":"https://www.googleapis.com/oauth2/v4/token",
+    "scopes": [
       "https://spreadsheets.google.com/feeds"
-   ],
-   "access_type": "offline",
-   "prompt": "consent"
+    ],
+    "access_type": "offline",
+    "prompt": "consent"
+  }
 }
 ```
 
@@ -212,33 +217,35 @@ Please note that the properties `access_type` and `prompt` above are specific to
 
 Sometimes you will need to access values in the `oauth2` properties you
 gathered from the user using fields, as for example is done in the [Salesforce component](https://github.com/elasticio/salesforce-component/blob/master/component.json).
-The following example demonstrates how to accomplish that.
+The following example demonstrates how to do that.
 
 ```json
-"credentials" : {
-   "fields":{
+{
+  "credentials" : {
+    "fields":{
       "prodEnv" : {
-         "label":"Environment",
-         "viewClass":"SelectView",
-         "required":true,
-         "model":{
-            "test":"Sandbox",
-            "login":"Production"
-         },
-         "prompt":"Select environment"
-       },
-       "oauth":{
-          "label":"Authentication",
-           "viewClass":"OAuthFieldView",
-           "required": true
-       }
+        "label":"Environment",
+        "viewClass":"SelectView",
+        "required":true,
+        "model":{
+          "test":"Sandbox",
+          "login":"Production"
+        },
+        "prompt":"Select environment"
+      },
+      "oauth":{
+        "label":"Authentication",
+        "viewClass":"OAuthFieldView",
+        "required": true
+      }
     },
-   "oauth2":{
+    "oauth2":{
       "client_id":"SALESFORCE_KEY",
       "client_secret":"SALESFORCE_SECRET",
       "auth_uri":"https://prodEnv.salesforce.com/services/oauth2/authorize",
       "token_uri":"https://prodEnv.salesforce.com/services/oauth2/token"
    }
+ }
 }
 ```
 
@@ -247,9 +254,11 @@ In the example above the value of the `prodEnv` field is used to define the `aut
 The `auth_url` property can take additional query parameters as shown below:
 
 ```json
-"oauth2": {
-   "auth_uri": "https://login.windows.net/common/oauth2/authorize?resource=RESOURCSE",
-   "token_uri": "https://login.windows.net/common/oauth2/token"
+{
+  "oauth2": {
+    "auth_uri": "https://login.windows.net/common/oauth2/authorize?resource=RESOURCSE",
+    "token_uri": "https://login.windows.net/common/oauth2/token"
+  }
 }
 ```
 
@@ -271,18 +280,20 @@ Here is an example of a trigger definition in the `component.json` where the
 `type` is included and specified as `polling`:
 
 ```json
-"queryTrigger": {
-  "title": "SOQL Query",
-  "main": "./lib/triggers/query.js",
-  "type":"polling",
-  "metadata": {
-    "out": {}
-  },
-  "fields": {
-    "query": {
-      "label": "SOQL Query",
-      "required": true,
-      "viewClass": "TextAreaView"
+{
+  "queryTrigger": {
+    "title": "SOQL Query",
+    "main": "./lib/triggers/query.js",
+    "type":"polling",
+    "metadata": {
+      "out": {}
+    },
+    "fields": {
+      "query": {
+        "label": "SOQL Query",
+        "required": true,
+        "viewClass": "TextAreaView"
+      }
     }
   }
 }
@@ -303,11 +314,12 @@ this object are used as unique action names.
 Here is an example of action object implementation in the `component.json`:
 
 ```json
-"queryAction": {
-  "title": "Query",
-  "main": "./lib/actions/query.js",
-  "metadata": {
-    "in": {
+{
+  "queryAction": {
+    "title": "Query",
+    "main": "./lib/actions/query.js",
+    "metadata": {
+      "in": {
       "type": "object",
       "properties": {
         "query": {
@@ -320,6 +332,7 @@ Here is an example of action object implementation in the `component.json`:
     },
     "out": {}
   }
+}
 }
 ```
 
@@ -351,35 +364,42 @@ definitions, therefore it is [advisable to check them as well](view-classes).
 
 You can use [JSONSchema references](https://json-schema.org) in Component metadata. Basically, it allows you to avoid repetitive coding by referencing certain keys called definitions. Let's take Email Component as an example. Here you can see three address fields `To`, `Cc` and `Bcc`:
 
-```
-"actions": {
-  "send": {
-    "main": "./send.js",
-    "title": "Send Mail",
-    "metadata": {
-      "in": {
-        "type": "object",
-        "properties": {
-          "to": {
-            "title": "To",
-            "type": "string",
-            "required": true
-          },
-          "cc": {
-            "title": "Cc",
-            "type": "string",
-            "required": false
-          },
-          "bcc": {
-            "title": "Bcc",
-            "type": "string",
-            "required": false
-          },
+```json
+{
+  "actions": {
+    "send": {
+      "main": "./send.js",
+      "title": "Send Mail",
+      "metadata": {
+        "in": {
+          "type": "object",
+          "properties": {
+            "to": {
+              "title": "To",
+              "type": "string",
+              "required": true
+            },
+            "cc": {
+              "title": "Cc",
+              "type": "string",
+              "required": false
+            },
+            "bcc": {
+              "title": "Bcc",
+              "type": "string",
+              "required": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 The thing about them is that they are basically the same element. So what you can do is add a definition for address fields, and just refer to it every time you need one. Here is how it will look like:
 
-```
+```json
 {
   "definitions": {
     "addressfields": {
@@ -401,17 +421,23 @@ When you need to refer to this definition from elsewhere using the `$ref` keywor
 
 So if we go back to our initial Email Component, with a set reference it will look like this:
 
-```
-"actions": {
-  "send": {
-    "main": "./send.js",
-    "title": "Send Mail",
-    "metadata": {
-      "in": {
-        "type": "object",
-        "properties": {
-    "$ref": "#/definitions/addressfields"
-          },
+```json
+{
+  "actions": {
+    "send": {
+      "main": "./send.js",
+      "title": "Send Mail",
+      "metadata": {
+        "in": {
+          "type": "object",
+          "properties": {
+            "$ref": "#/definitions/addressfields"
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 **IMPORTANT:** We do not support referencing by `$id` and referencing external schemas at the moment.
