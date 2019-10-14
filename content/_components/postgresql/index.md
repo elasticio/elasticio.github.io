@@ -17,7 +17,7 @@ With this component you will have the following trigger:
 
 *   `SELECT` - this trigger will execute an SQL query that returns multiple results, it has no limitations on the query but apparently best suited for SELECT type of queries
 
-Following acitons are also inside:
+Following actions are also inside:
 
 *   `SELECT` - same as above but as an action
 *   `INSERT`/`UPDATE`/`DELETE` - this action executes the SQL query that returns no data, for example insert, delete or update. After query is executed original message will be pushed to the next component.
@@ -57,9 +57,10 @@ is enabled you'll get a single message with array of 400 elements in it:
 ```json
 {
   "values" : [
-    {"id": 1...},
-    {"id": 2...}
-    ...
+    {"id": 1},
+    {"id": 2},
+    ....
+    {"id": 400}
   ]
 }
 ```
@@ -77,9 +78,13 @@ SELECT Action & Trigger does not support transactions.
 
 ## Actions
 
+### SELECT action
+
+Check the [SELECT Action description above](#select-trigger-and-action).
+
 ### INSERT/UPDATE/DELETE Action
 
-This action is useful if you want to insert, update or delete some data, returned
+Use this action to insert, update or delete some data, returned
 value is ignored, number of affected rows you can see in the log file.
 
 ![image](https://user-images.githubusercontent.com/16806832/53739075-8d1e4380-3e99-11e9-882d-fe26430f8729.png)
@@ -308,7 +313,7 @@ Same as above, concatenation and traversal in action.
 
 There are several limitations of the component:
 
-We are relying on standard type default js<->postgresql data-type coercion 
+We are relying on standard type default js<->postgresql data-type coercion
 [see here](https://github.com/brianc/node-postgres#features)
 
 If in doubt call support.
