@@ -10,11 +10,12 @@ The SOAP Component provides the SOAP Web Services work opportunity within a
 {{site.data.tenant.name}} flow.
 
 ### Purpose
+
 As an integration platform, {{site.data.tenant.name}} has an opportunity to
 invoke SOAP Web services over HTTP.
 
-
 ### How it works
+
 #### Step 1
 Find and select SOAP component in the component repository
 ![Step 1](https://user-images.githubusercontent.com/13310949/43515103-5de72b58-958a-11e8-88ce-5870003867a1.png)
@@ -35,14 +36,16 @@ Retrieve sample result
 ![Step 6: Retrieve sample result](https://user-images.githubusercontent.com/13310949/43515232-aca5be76-958a-11e8-95a0-c723f9323e4f.png)
 
 ### Requirements
-The platform supports next SOAP protocol versions:
-* SOAP 1.1
-* SOAP 1.2
+
+The platform supports the following SOAP protocol versions:
+*   SOAP 1.1
+*   SOAP 1.2
 
 Component supports the following WSDL styles:
-* RPC/Literal
-* Document/Encoded
-* Document/Literal
+
+*   RPC/Literal
+*   Document/Encoded
+*   Document/Literal
 
 #### Environment variables
 ``` OIH_REQUIRED_RAM_MB - recommended value of allocated memory is 2048MB ```
@@ -52,13 +55,11 @@ Component supports the following WSDL styles:
 ### Type
 
 You can select the following authorization type:
-* **No Auth**
-* **Basic Auth**
-* **API Key Auth** (*not supported yet*).
-### Username (Basic auth type)
-Username for Basic authorization header in the SOAP request
-### Password (Basic auth type)
-Password for Basic authorization header in the SOAP request
+*   **No Auth**
+*   **Basic Auth**
+    *   **Username** - Username for Basic authorization header in the SOAP request
+    *   **Password** - Password for Basic authorization header in the SOAP request
+*   **API Key Auth** (*not supported yet*).
 
 ## Triggers
 
@@ -68,18 +69,18 @@ Webhook that validates input body over WSDL.
 #### Input fields description
 
 *   **WSDL URI** - Public URL address of the WSDL
-*  **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
-*  **Operation** - One of the operations available for the binding you have selected above.
-*  **Validation** - If `Enabled` validate the SOAP Body over WSDL, if `Disabled` does not validate a SOAP Input Body
+*   **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
+*   **Operation** - One of the operations available for the binding you have selected above.
+*   **Validation** - If `Enabled` validate the SOAP Body over WSDL, if `Disabled` does not validate a SOAP Input Body
 
 #### Example of usage
 
 ##### Configuration:
 
-* **WSDL URI** - `http://www.dneonline.com/calculator.asmx?wsdl`
-* **Binding** - `CalculatorSoap12`
-* **Operation** - `Add`
-* **Validation** - `Enabled`
+*   **WSDL URI** - `http://www.dneonline.com/calculator.asmx?wsdl`
+*   **Binding** - `CalculatorSoap12`
+*   **Operation** - `Add`
+*   **Validation** - `Enabled`
 
 ##### Request Body:
 
@@ -106,9 +107,10 @@ Webhook that validates input body over WSDL.
 ```
 
 #### Known Limitations
-1. Namespaces ignored and SOAP Body with 2 tags that have same name but in different namespaces would be invalid
-2. SOAP Headers not supported yet
-3. Retrieve Sample does not represent actual behaviour of component
+
+1.  Namespaces ignored and SOAP Body with 2 tags that have same name but in different namespaces would be invalid
+2.  SOAP Headers not supported yet
+3.  Retrieve Sample does not represent actual behaviour of component
 
 ## Actions
 
@@ -118,9 +120,9 @@ Makes a call to SOAP service over HTTP using public WSDL URL
 
 #### Input fields description
 
-* **WSDL URI** - Public URL address of the WSDL
-* **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
-* **Operation** - One of the operations available for the binding you have selected above.
+*   **WSDL URI** - Public URL address of the WSDL
+*   **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
+*   **Operation** - One of the operations available for the binding you have selected above.
 
 #### SOAP Fault
 
@@ -138,7 +140,7 @@ You can refer these tools documentation to get deeper understanding about the pr
 #### Output json schema
 Output json schema is generated dynamically the same as for the input (see above).
 
-## Additional info
+## Additional information
 
 **You should specify input fields exactly in the order below. You'll get an error otherwise**.
 1. WSDL URI
@@ -150,9 +152,9 @@ Wraps and returns input data as SOAP response by provided SOAP metadata
 
 #### Input fields description
 
-* **WSDL URI** - Public URL address of the WSDL
-* **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
-* **Operation** - One of the operations available for the binding you have selected above.
+*   **WSDL URI** - Public URL address of the WSDL
+*   **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
+*   **Operation** - One of the operations available for the binding you have selected above.
 
 #### Input json schema
 
@@ -165,6 +167,7 @@ You can refer these tools documentation to get deeper understanding about the pr
 Output json schema is generated dynamically the same as for the input (see above).
 
 #### Input data example:
+
 ```json
 {
   "AddResponse": {
@@ -174,6 +177,7 @@ Output json schema is generated dynamically the same as for the input (see above
 ```
 
 #### Output data example:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -185,27 +189,23 @@ Output json schema is generated dynamically the same as for the input (see above
 </soap:Envelope>
 ```
 
-### Current limitations
+## Current limitations
 
-The following are limitations of this component:
+Here are the limitations of this component:
 
-* RPC/SOAP-Encoded styles are not supported.
-
->All major frameworks for web services support Document/literal messages. Most of the popular frameworks also have some support for rpc/encoded, so developers can still use it to create encoded-only services.
-As a result it is hard to estimate how many web services, in production use, work only with SOAP encoded messages.
-However there is a tendency to move away from RPC/encoded towards Document/literal.
-This is so, because the SOAP encoding specification does not guarantee 100% interoperability and there are vendor deviations in the implementation of RPC/encoded.
-
-* Only self-containing WSDLs are supported now. This means that WSDL containing external XSD schemas will not work in this version of the component.
-* WS-Security header isn't supported.
-* WS-Addressing isn't supported.
-* Custom SOAP headers can not be added.
-* The WSDL and associated schemas must be accessible via a publicly accessible URL. File upload of the WSDL and/or XSD schemas is not supported.
-* Component does not support multipart format of message in the SOAP request element. Only first part of request element will be processed in the current component version.
+*   RPC/SOAP-Encoded styles are not supported.
+    *   **All major frameworks for web services support Document/literal messages. Most of the popular frameworks also have some support for rpc/encoded, so developers can still use it to create encoded-only services.** As a result it is hard to estimate the number of web services, in production use, work only with SOAP encoded messages. However, there is a tendency to move away from RPC/encoded towards Document/literal. Since the SOAP encoding specification does not guarantee 100% inter-operability and there are vendor deviations in the implementation of RPC/encoded.
+*  Only self-containing WSDLs are supported now. This means that WSDL containing external XSD schemas will not work in this version of the component.
+*  WS-Security header is not supported.
+*  WS-Addressing is not supported.
+*  Custom SOAP headers can not be added.
+*  The WSDL and associated schemas must be accessible via a publicly accessible URL. File upload of the WSDL and/or XSD schemas is not supported.
+*  Component does not support multi-part format of message in the SOAP request element. Only first part of request element will be processed in the current component version.
 
 ## API and Documentation links
-* [Apache Axis2](http://axis.apache.org/axis2/java/core/)
-* [FasterXML JsonSchemaGenerator](https://github.com/FasterXML/jackson-module-jsonSchema)
+
+*   [Apache Axis2](http://axis.apache.org/axis2/java/core/)
+*   [FasterXML JsonSchemaGenerator](https://github.com/FasterXML/jackson-module-jsonSchema)
 
 ## License
  © [{{site.data.tenant.name}}](https://{{site.data.tenant.name}})
