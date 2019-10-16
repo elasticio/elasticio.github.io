@@ -81,6 +81,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll-algolia (~> 1.0)
+  rouge
 
 BUNDLED WITH
-   1.16.0
+   1.17.2
