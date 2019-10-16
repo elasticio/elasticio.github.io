@@ -39,8 +39,8 @@ followed to re-create it:
 1. Visit https://trials.dynamics.com/
 2. Select:
    * App type: `Sales` (for CRM)
-   * Work email: (for elastic.io `eiosales@eiosales.onmicrosoft.com`)
-   * Phone number: (for elastic.io `0228 53444221`)
+   * Work email: (give your work e-mail)
+   * Phone number: (give your phone number)
 
 3. Click `Get Started`.
 4. You should get a message saying that you already have an account.  Sign in if

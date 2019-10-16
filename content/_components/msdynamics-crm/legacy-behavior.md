@@ -60,7 +60,7 @@ Triggers are described under `triggers` part of the `component.json`, so just ad
   }
 }
 ```
-As trigger only have an output and no input you don't need an in metadata. See ``component.json`` [reference](http://docs.elastic.io/docs/component-descriptor) for samples and [available options here](http://docs.elastic.io/docs/component-descriptor).
+As trigger only have an output and no input you don't need an in metadata. See `component.json` [reference](component-descriptor-structure) for samples and [available options here](component-descriptor-structure).
 
 ## Create a new schema
 
