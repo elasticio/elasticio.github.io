@@ -22,6 +22,8 @@ That's where snapshots come in handy. A snapshot contains Component state at som
 
 It is important to understand, that taking snapshots and using them is an asynchronous process. This means that if a Component fails before another snapshot is taken, it will lose all the data between failure and the last snapshot. 
 
+Also, an important thing is that there can only be one snapshot per step in a Flow. A snapshot is limited to `5 KB`, so please refrain from trying to use it as an intermediate database and writing unnecessary data there.  
+
 ## Use Cases
 Obviously, there are many similar Components, so rather than mention their names, we will base the scenarios on Component functionality:
 
@@ -30,3 +32,5 @@ Obviously, there are many similar Components, so rather than mention their names
 - A Component queries particular data by ID. Snapshots allow such Components to know which IDs were already read, so next time they won't have to do the same job again.
 
 - A Component works by iterations on session basis, and every session has its own ID. Snapshots allow such Components to correlate sessions by ID, so every next iteration is consistent.
+
+So, basically, in each of these use cases the snapshot registers the last action by some marker, and allows the Component to proceed from the same point next time it runs.
