@@ -27,7 +27,7 @@ Like other members of the Dynamics product family, Business Central exposes
 [OData APIs](http://www.odata.org/documentation/) for editions published after
 approximately 2015.  These APIs have the following caveats:
 
-* Authentication is done with OAuth.  Both the [`Authorization Code Flow`](https://tools.ietf.org/html/rfc6749#section-1.3.1) and the [`Resource Owner Password Credentials Grant Flow`](https://tools.ietf.org/html/rfc6749#section-1.3.3).  There is a postman collection which demonstrates the Resource Owner Password Credentials Grant Flow case.  The corresponding environment variables are in BitWarden
+* Authentication is done with OAuth.  Both the [Authorization Code Flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) and the [Resource Owner Password Credentials Grant Flow](https://tools.ietf.org/html/rfc6749#section-1.3.3).  There is a postman collection which demonstrates the Resource Owner Password Credentials Grant Flow case.  The corresponding environment variables are in BitWarden
 * The URL of the OData root  is hard to find.  For CRM it is `/api/data/v8.2`.  For Finance and Operations it is `/data`.
 
 ## Test Instance Set Up - Using Cloud Trial Instance

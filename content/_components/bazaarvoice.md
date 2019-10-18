@@ -49,7 +49,6 @@ output message:
 			"ProductId": "data-gen-moppq9ekthfzbc6qff3bqokie",
 			"AuthorId": "58f478911803d",
 			"ContentLocale": "en_US",
-			...
 		},
 		{
 			"Id": "19452183",
@@ -69,7 +68,6 @@ output message:
 			],
 			"AuthorId": "58f478579d967",
 			"ContentLocale": "en_US",
-			...
 		}
 	],
 	"Includes": {}
@@ -346,7 +344,6 @@ output message:
 			"ContentLocale": "en_US",
 			"IsFeatured": false,
 			"TotalFeedbackCount": 9,
-      ...
 		}
 	],
 	"Includes": {
@@ -357,7 +354,6 @@ output message:
 				"Name": "GE Profile 7.5 Cu. Ft. Colossal Capacity Electric Dryer",
 				"Id": "data-gen-3jxhm78sfqfy8tg5qyinqioal",
 				"CategoryId": "data-gen-t3jxodbtmy8n9fzn1vm88yjec",
-        ...
 			}
 		},
 		"Categories": {
@@ -365,7 +361,6 @@ output message:
 				"Name": "Financial",
 				"Id": "data-gen-t3jxodbtmy8n9fzn1vm88yjec",
 				"ParentId": "data-gen-hv0nntimw0bvtn3czb4l0k5tn",
-        ...
 			}
 		},
 		"Authors": {
@@ -392,7 +387,6 @@ output message:
 				"LastModeratedTime": "2017-01-05T19:22:28.000+00:00",
 				"ModerationStatus": "APPROVED",
 				"SubmissionTime": "2016-01-06T11:52:00.000+00:00",
-        ...
 			}
 		},
 		"ProductsOrder": [

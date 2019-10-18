@@ -28,15 +28,15 @@ All Objects Programmatically Detectable Covered.  Time range options not
 supported, Standardized `isNew`,`createdOn` and `modifiedOn` not included in
 output.
 
-# Actions
-## Lookup Object by Field(s)
+## Actions
+### Lookup Object by Field(s)
 Given a set of criteria which matches exactly one record, find that matching record.
 
 All Objects Programmatically Detectable Covered. Requires a sample object to
 exist to infer schema. Shows all fields, not just unique fields.  Does not
 necessarily understand type for field.
 
-## Upsert Object By ID
+### Upsert Object By ID
 Update an existing entry if the id provided.  Otherwise create a new entry.
 
 All Objects Programmatically Detectable Covered. Requires a sample object to
