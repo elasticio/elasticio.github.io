@@ -5,13 +5,13 @@ section: Service components
 ---
 
 
-### Description
+## Description
 Google translate component for the {{site.data.tenant.name}} platform.
 
-### Credentials
+## Credentials
 In oprder to authenticate, you need to receive `apiKey` from your `Google cloud platform` account
 
-### Actions information
+## Actions information
 When specifying the language in a `Configure input` section, use two or three letter codes for that. For example,
 
     english -> en
@@ -23,18 +23,18 @@ When specifying the language in a `Configure input` section, use two or three le
     franch -> fra
 
 Such codes can be foud in a result of `Retrieve supported languages` action execution
-#### Translate phrase
+### Translate phrase
 `sourceLang` field is optional. Google will autodetect the source locale if not specified.
 
 in/out metadata can be found at `/lib/schemas/translatePhrase.{in/out}.json`
-#### Detect language
+### Detect language
 in/out metadata can be found at `/lib/schemas/detectLanguage.{in/out}.json`
-#### Retrieve supported languages
+### Retrieve supported languages
 out metadata can be found at `/lib/schemas/retrieveSupportedLanguages.out.json`
-#### Translate object properties
+### Translate object properties
 in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -53,10 +53,10 @@ output message:
     "capital": "London ist die Hauptstadt von Großbritannien"
 }
 ```
-#### Translate array of objects
+### Translate array of objects
 in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -90,8 +90,7 @@ output message:
 }
 ```
 
-### Links
+## Links
 You need to create new or use existing `GCP project` and enable `Google Cloud Translation API`
 
-How to create new project:
-https://cloud.google.com/resource-manager/docs/creating-managing-projects
+[How to create new project](https://cloud.google.com/resource-manager/docs/creating-managing-projects)

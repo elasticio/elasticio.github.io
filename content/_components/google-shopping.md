@@ -19,7 +19,7 @@ Set env variable `EIO_REQUIRED_RAM_MB` to `1024`.
 Component supports Service account as authentication mechanism.
 
 ## How to create credentials:
-1. Open https://www.google.ru/retail/solutions/merchant-center/
+1. [Open](https://www.google.com/retail/solutions/merchant-center/)
 2. Sign up
 3. Select your country
 4. Enter name of store

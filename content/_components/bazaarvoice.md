@@ -756,7 +756,7 @@ output message:
 }
 ```
 
-### Links
+## Links
 
 *   Bazaarvoice [Conversations API documentation](https://developer.bazaarvoice.com/conversations-api)
 *   How to retrieve [user's device fingerprint](https://developer.bazaarvoice.com/conversations-api/tutorials/authenticity#device-fingerprint)

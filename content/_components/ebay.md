@@ -52,7 +52,7 @@ Valid values:
 * **COMPACT** - This returns only the following fields, which let you quickly check if the availability or price of the item has changed, if the item has been revised by the seller, or if an item's top-rated plus status has changed for items you have stored.
 Restriction: Must be a top-level category
 
-More info about this action could be find here: https://developer.ebay.com/api-docs/buy/browse/resources/item/methods/getItem
+More info about this action could be find [here](https://developer.ebay.com/api-docs/buy/browse/resources/item/methods/getItem).
 #### Input json schema location
 Request JSON schema ./src/main/resources/schemas/json/Item.in.json
 
@@ -87,7 +87,7 @@ Maximum: 100 MB
 
 __xeBayCMarketplaceId__ - The ID for the eBay marketplace where the items are hosted. For example: X-EBAY-C-MARKETPLACE-ID = EBAY-US
 
-See the detailed info about this action here: https://developer.ebay.com/api-docs/buy/feed/resources/item/methods/getItemFeed
+See the detailed info about this action [here](https://developer.ebay.com/api-docs/buy/feed/resources/item/methods/getItemFeed).
 #### Input json schema location
 Request JSON schema ./src/main/resources/schemas/json/ItemFeed.in.json
 
@@ -100,7 +100,7 @@ The Description feed file contains only the itemId, itemGroupId and description 
 
 The other parameters and fields are the same like in GetItemFeed action.
 
-Documentation for this action could be found here: https://developer.ebay.com/api-docs/buy/feed/resources/item_description/methods/getItemDescriptionFeed
+Documentation for this action could be found [here](https://developer.ebay.com/api-docs/buy/feed/resources/item_description/methods/getItemDescriptionFeed).
 #### Input json schema location
 Request JSON schema ./src/main/resources/schemas/json/ItemFeed.in.json
 
@@ -119,7 +119,7 @@ The only difference is in the format of data:
 *eBay's sandbox environment does not provide correct response for this action. So the code could not be fully tested in development stage. Please be careful when testing this code in production environment. Please contact us if any error occurs.*
 E.g.: 2017-07-12T09:00:00.000Z
 
-Documentation for this action could be found here: https://developer.ebay.com/api-docs/buy/feed/resources/item_snapshot/methods/getItemSnapshotFeed
+Documentation for this action could be found [here](https://developer.ebay.com/api-docs/buy/feed/resources/item_snapshot/methods/getItemSnapshotFeed).
 
 ## Triggers (if any)
 No.
@@ -135,7 +135,7 @@ This is why data in actions
 
 is storing and transferred as an attachment.
 
-You can get an additional information about {{site.data.tenant.name}} from our doc page: https://support.{{site.data.tenant.name}}/support/solutions/articles/14000057806-working-with-binary-data-attachments-
+You can get an additional information about {{site.data.tenant.name}} from our [doc page](https://support.{{site.data.tenant.name}}/support/solutions/articles/14000057806-working-with-binary-data-attachments-).
 
 The data in that actions mentioned above has the next format:
 
