@@ -12,7 +12,7 @@ This document provides basic information on [Snapshot](#component-snapshots) fea
 ## Component Snapshots
 You may have heard of snapshots before, in terms of backup or other data-related topics. Basically, a snapshot is a saved state that you can revert to if needed. It can be an OS snapshot, an application snapshot, and in our case - a [Flow](integration-flow) step snapshot.
 
-Containers that house Flow steps often get started and stopped, for example, to conserve resources. When a container is stopped, the [Component](integration-component) loses all the data that was in processing. In case this Component has to start again, it will have to request and process the same data all over again.
+Containers that house the steps often get started and stopped, for example, to conserve resources. When a container is stopped, the [Component](integration-component) loses all the data that was in processing. In case this Component has to start again, it will have to request and process the same data all over again.
 
 That's where snapshots come in handy. A snapshot contains Component state at some particular time. The next time that Component has to start - it will start from the same point it ended the last time. Basically, a snapshot saves a step's last action. This way:
 
