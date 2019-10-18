@@ -5,21 +5,21 @@ section: Marketing-related components
 ---
 
 
-### Description
+## Description
 Twitter component for the {{site.data.tenant.name}} platform.
 
-### Credentials
+## Credentials
  - Consumer key
  - Consumer secret
  - Access token key
  - Access token secret
 
-### Actions
+## Actions
 
-#### Post tweet
+### Post tweet
 in/out metadata can be found at `/lib/schemas/postTweet.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -34,10 +34,10 @@ output message:
     "createdAt": "Fri Mar 30 09:46:30 +0000 2018"
 }
 ```
-#### Search tweets
+### Search tweets
 in/out metadata can be found at `/lib/schemas/searchTweets.{in/out}.json`
 
-##### usage example
+#### usage example
 input message:
 ```
 {
@@ -67,6 +67,6 @@ output message:
 }
 ```
 
-### Links
+## Links
 
-To retrieve credentials you need to create Twitter App here https://apps.twitter.com/ and generate token in that app.
+To retrieve credentials you need to create Twitter App [here](https://apps.twitter.com/) and generate token in that app.

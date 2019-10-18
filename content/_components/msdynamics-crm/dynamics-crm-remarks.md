@@ -32,11 +32,11 @@ approximately 2015.  These APIs have the following caveats:
 
 ## Test Instance Set Up - Using Cloud Trial Instance
 A trial instance of Business Central can be requested from
-https://trials.dynamics.com/ and selecting `Business Central`.  Sometimes this
+[https://trials.dynamics.com/](https://trials.dynamics.com/) and selecting `Business Central`.  Sometimes this
 trial expires or otherwise shuts down.  If this occurs, the below steps can be
 followed to re-create it:
 
-1. Visit https://trials.dynamics.com/
+1. Visit [https://trials.dynamics.com/](https://trials.dynamics.com/)
 2. Select:
    * App type: `Sales` (for CRM)
    * Work email: (give your work e-mail)
@@ -46,11 +46,11 @@ followed to re-create it:
 4. You should get a message saying that you already have an account.  Sign in if
 necessary.
 5. You will get a message saying you already have a Dynamics 365 license.
-8. You should now be able to visit https://eiosales.crm4.dynamics.com/ and
-interact with our test instance.  Sometimes this URL will be https://eiosales0.crm4.dynamics.com/ for no good reason.
+8. You should now be able to visit [https://eiosales.crm4.dynamics.com/](https://eiosales.crm4.dynamics.com/) and
+interact with our test instance.  Sometimes this URL will be [https://eiosales0.crm4.dynamics.com/](https://eiosales0.crm4.dynamics.com/) for no good reason.
 
 ## Support
-A ticket can be filled with support through https://admin.dynamics.com/
+A ticket can be filled with support through [https://admin.dynamics.com/](https://admin.dynamics.com/)
 
 One previous issue was resolved by using incognito mode.  A screenshot of that error is below.
 

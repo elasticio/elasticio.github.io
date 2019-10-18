@@ -12,7 +12,7 @@ SFTP component for the {{site.data.tenant.name}} platform
 Essentially this component has only one trigger that will regularly pull SFTP
 location of your choice.
 
-### Authentication
+## Authentication
 
 Credentials of SFTP component looks like this:
 
@@ -21,12 +21,12 @@ Credentials of SFTP component looks like this:
 
 fields above are self-explaining
 
-### Configuration
+## Configuration
 
 After configuring (and verifying) the credentials you should configure incoming
 folder (mandatory). Optionally
 
-### How it works
+## How it works
 
 After file is found on SFTP it does following:
 
@@ -54,7 +54,7 @@ Please note that if multiple files are found, SFTP component will generate one m
 
 > NOTE: you may need to consider cleaning up the ``.platform_processed`` directory manually
 
-### Limitations
+## Limitations
 
 Currently the maximum file size that is accepted by SFTP component is limited to
 100 MB.
