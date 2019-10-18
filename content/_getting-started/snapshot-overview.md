@@ -14,15 +14,15 @@ You may have heard of snapshots before, in terms of backup or other data-related
 
 Containers that house the steps often get started and stopped, for example, to conserve resources. When a container is stopped, the [Component](integration-component) loses all the data that was in processing. In case this Component has to start again, it will have to request and process the same data all over again.
 
-That's where snapshots come in handy. A snapshot contains Component state at some particular time. The next time that Component has to start - it will start from the same point it ended the last time. Basically, a snapshot saves a step's last action. This way:
+That's where snapshots come in handy. A snapshot contains information about Component state when it was run last. The next time that Component runs, it will start from the same point it ended the last time. Basically, a snapshot saves a step's last action. This way:
 
 - The Component avoids possible data duplication caused by overwriting the same data every time it starts.
 
-- Save time and resources by keeping the data the Component already processed.
+- The Platform saves time and resources by keeping the data the Component already processed.
 
-It is important to understand, that taking snapshots and using them is an asynchronous process. This means that if a Component fails before another snapshot is taken, it will lose all the data between failure and the last snapshot. 
+It is important to understand, that taking snapshots and using them is an asynchronous process. This means that if a Component fails before another snapshot is taken, it will lose all the data between failure and the last snapshot.
 
-Also, an important thing is that there can only be one snapshot per step in a Flow. A snapshot is limited to `5 KB`, so please refrain from trying to use it as an intermediate database and writing unnecessary data there.  
+Also, an important thing is that there can only be one snapshot per step in a Flow. A snapshot is limited to `5 KB`, so **please refrain from trying to use it as an intermediate database and writing unnecessary data there**.  
 
 ## Use Cases
 Obviously, there are many similar Components, so rather than mention their names, we will base the scenarios on Component functionality:
@@ -33,4 +33,4 @@ Obviously, there are many similar Components, so rather than mention their names
 
 - A Component works by iterations on session basis, and every session has its own ID. Snapshots allow such Components to correlate sessions by ID, so every next iteration is consistent.
 
-So, basically, in each of these use cases the snapshot registers the last action by some marker, and allows the Component to proceed from the same point next time it runs.
+So, basically, in each of these use cases the snapshot registers **the last action** by some marker, and allows the Component to proceed from the same point next time it runs.
