@@ -46,8 +46,7 @@ followed to re-create it:
 4. You should get a message saying that you already have an account.  Sign in if
 necessary.
 5. You will get a message saying you already have a Dynamics 365 license.
-8. You should now be able to visit [https://eiosales.crm4.dynamics.com/](https://eiosales.crm4.dynamics.com/) and
-interact with our test instance.  Sometimes this URL will be [https://eiosales0.crm4.dynamics.com/](https://eiosales0.crm4.dynamics.com/) for no good reason.
+8. You should now be able to visit your CRM installation.
 
 ## Support
 A ticket can be filled with support through [https://admin.dynamics.com/](https://admin.dynamics.com/)
