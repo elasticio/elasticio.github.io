@@ -7,39 +7,43 @@ section: Protocol components
 
 SFTP component for the {{site.data.tenant.name}} platform
 
-## How to use it
+## General Information
 
-Essentially this component has only one trigger that will regularly pull SFTP
-location of your choice.
+### Description and Purpose
 
-## Authentication
+This component creates a connection to an SFTP server to read and upload files.
 
-Credentials of SFTP component looks like this:
+## Credentials
+### User Name
+Username for SFTP server
+### Password
+Password for SFTP server
+### Host
+Host name of SFTP server
+### Port
+Optional, port of SFTP server. Defaults to 22 if not set.
 
-![image](https://cloud.githubusercontent.com/assets/56208/22926055/58c8d924-f2ab-11e6-8c79-434ba8db9a36.png)
+![image](https://user-images.githubusercontent.com/35310862/65412296-3a818600-ddef-11e9-9064-8b9db7a650d5.png)
 
+## Triggers
 
-fields above are self-explaining
+### Read
 
-## Configuration
+The following configuration fields are available:
+* **Directory**: The directory of the files to read from.
+* **Pattern**: Optional regex pattern for file names. If no pattern is given, no matching is done.
 
-After configuring (and verifying) the credentials you should configure incoming
-folder (mandatory). Optionally
-
-## How it works
-
-After file is found on SFTP it does following:
-
- * It moves the file to the (hidden) `.platform_processed` directory
- * It pulls it and upload (stream) the file to the attachment storage (aka. steward)
- * After upload is completed, READ-URL of the file will be used to generate one message with the content like below:
+After a file is found:
+ * It is moved to the (hidden) directory `.elasticio_processed`
+ * It is pulled and uploaded (streamed) to the attachment storage (a.k.a. steward)
+ * After the upload, the READ-URL of the file will be used to generate a message with content like below:
 
 ```json
 {
   "id": "5e00ca80-f2a3-11e6-9fdd-e7b75b43e28b",
   "attachments": {
     "large.xml": {
-      "url": "https://steward.address"
+      "url": "https://steward.eio.cloud/foo&Signature=5%2FsrvmbGGfVoYpKeMH3ugaEL"
     }
   },
   "body": {
@@ -49,12 +53,24 @@ After file is found on SFTP it does following:
 }
 ```
 
-next component may just read from the URL in attachment in order to get the memory efficient way to read/parse data.
-Please note that if multiple files are found, SFTP component will generate one message per file.
+The next component may read from `url` in `attachments` for a memory-efficient way to read/parse data. Please note that if multiple files are found, SFTP component will generate one message per file.
 
-> NOTE: you may need to consider cleaning up the ``.platform_processed`` directory manually
+* Note: you may need to consider cleaning up the `.elasticio_processed` directory manually
 
-## Limitations
+## Actions
 
-Currently the maximum file size that is accepted by SFTP component is limited to
-100 MB.
+### Upload
+
+The following configuration fields are available:
+|* **Directory**: The directory where the file will be uploaded to.
+
+* Note: if the directory does not exist, it will create it at the risk of possibly overwriting any files that may have the same name.
+
+## Known limitations
+
+* The maximum file size accepted by the SFTP component is limited to 100 MiB (Mebibytes)
+* The attachments mechanism does not work with [Local Agent Installation](https://support.elastic.io/support/solutions/articles/14000076461-announcing-the-local-agent-)
+
+## SSH2 SFTP Client API and Documentation links
+
+The SFTP component uses [ssh2-sftp-client](https://www.npmjs.com/package/ssh2-sftp-client).
