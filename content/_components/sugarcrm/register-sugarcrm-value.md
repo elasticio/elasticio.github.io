@@ -1,7 +1,6 @@
 ---
 title: Registering a Platform Value through the UI
 layout: article
-section: CRM components
 category: sugarcrm-component
 ---
 

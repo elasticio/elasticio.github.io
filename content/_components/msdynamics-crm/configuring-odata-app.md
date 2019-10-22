@@ -1,7 +1,6 @@
 ---
 title: Configuring ODATA APP
 layout: article
-section: CRM components
 category: msdynamics-crm-component
 ---
 
