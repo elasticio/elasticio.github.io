@@ -1,7 +1,6 @@
 ---
 title: Dynamics 365 Remarks
 layout: article
-section: CRM components
 category: msdynamics-crm-component
 ---
 

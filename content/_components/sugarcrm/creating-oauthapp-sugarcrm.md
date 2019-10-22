@@ -1,7 +1,6 @@
 ---
 title: Creating an app on a SugarCRM instance
 layout: article
-section: CRM components
 category: sugarcrm-component
 ---
 

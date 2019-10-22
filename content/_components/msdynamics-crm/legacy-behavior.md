@@ -1,7 +1,6 @@
 ---
 title: Documentation On Legacy Behavior
 layout: article
-section: CRM components
 category: msdynamics-crm-component
 ---
 
