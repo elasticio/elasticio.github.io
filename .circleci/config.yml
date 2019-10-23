@@ -5,9 +5,10 @@ jobs:
       only:
         - master
     docker:
-       - image: circleci/ruby:2.6.0-node-browsers
+       - image: circleci/ruby:2.6.0-stretch-node
          environment:
            BUNDLER_VERSION: 2.0.2
+           gem install bundler
 
     working_directory: ~/repo
 
