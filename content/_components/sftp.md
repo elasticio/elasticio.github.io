@@ -3,9 +3,6 @@ title: SFTP component
 layout: article
 section: Protocol components
 ---
----
-
-# SFTP Component 
 
 ## General Information
 
