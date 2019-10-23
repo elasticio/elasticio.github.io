@@ -10,3 +10,4 @@ coverage
 _site
 vendor
 .jekyll-cache
+.bundle
