@@ -8,7 +8,7 @@ jobs:
        - image: circleci/ruby:2.6.0-stretch-node
          environment:
            BUNDLER_VERSION: 2.0.2
-           gem install bundler
+
 
     working_directory: ~/repo
 
@@ -21,6 +21,10 @@ jobs:
           - v1-dependencies-
 
       - run:
+          name: bundler install
+          command: |
+            gem install bundler
+
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
