@@ -7,21 +7,6 @@ section: Protocol components
 
 # SFTP Component 
 
-## Table of Contents
-* [General information](#general-information)
-   * [Description and Purpose](#description-and-purpose)
-* [Credentials](#credentials)
-     * [User Name](#user-name)
-     * [Password](#password)
-     * [Host](#host)
-     * [Port](#port)
-* [Triggers](#triggers)
-   * [Read](#read)
-* [Actions](#actions)
-   * [Upload](#upload)
-* [Known limitations](#known-limitations)
-* [SSH2 SFTP Client API and Documentation links](#ssh2-sftp-client-api-and-documentation-links)
-
 ## General Information
 
 ### Description and Purpose
