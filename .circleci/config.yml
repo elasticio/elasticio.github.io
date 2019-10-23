@@ -9,7 +9,6 @@ jobs:
          environment:
            BUNDLER_VERSION: 2.0.2
 
-
     working_directory: ~/repo
 
     steps:
@@ -21,12 +20,10 @@ jobs:
           - v1-dependencies-
 
       - run:
-          name: bundler install
-          command: |
-            gem install bundler
-
           name: install dependencies
           command: |
+            gem update --system
+            gem install bundler
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
