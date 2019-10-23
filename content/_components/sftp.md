@@ -1,7 +1,7 @@
 ---
-title: sftp
+title: SFTP component
 layout: article
-section: PLACEHOLDER
+section: Protocol components
 ---
 ---
 
