@@ -5,7 +5,7 @@ section: Protocol components
 ---
 ---
 
-# SFTP Component [![CircleCI](https://circleci.com/gh/elasticio/sftp-component.svg?style=svg)](https://circleci.com/gh/elasticio/sftp-component)
+# SFTP Component 
 
 ## Table of Contents
 * [General information](#general-information)
