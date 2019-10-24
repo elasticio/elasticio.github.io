@@ -46,6 +46,8 @@ emitSnapshot(newSnapshot);
 
 ## Using Snapshots
 
+
+
 **EXAMPLE, using Outlook Component - don't forget to check comments:**
 
 ```
