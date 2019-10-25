@@ -6,7 +6,7 @@ order: 2
 since: 20191023
 ---
 
-This document provides a quick guide on [creating and using Snapshots](#creating-a-snapshot) for Components in your Flows.
+This document provides a quick guide on [creating and using Snapshots](#creating-a-snapshot) for Components in your Flows via the UI and [via the API](#snapshots-via-the-api).
 
 ## Creating and Using a Snapshot
 To create a [Snapshot](/getting-started/snapshot-overview.html), you need to emit it from your Component function:
