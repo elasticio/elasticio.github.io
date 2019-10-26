@@ -1,53 +1,113 @@
 ---
-title: Passthrough Feature Overview
+title: Passthrough Feature
 layout: article
 section: Basic Concepts
 order: 3
 since: 20190903
 ---
 
-This document provides basic information on [passthrough feature](#passthrough-feature), explains [why it is necessary](#), and gives an [example](#example) of its use.
+This document introduces the [passthrough feature](#what-is-passthrough),
+explains [why would you use it](#passthrough-usage), and gives a
+[real-life example](#real-life-example) on how to use it.
 
-## Passthrough Feature
+## What is passthrough
 
-Most components in an integration [Flow](integration-flow) receive, process and send data. Incoming data is typically different from the outgoing one, so the last step may receive a message without even a small trace of the initial data. If you want a component to map data other than what it receives from the previous step, you can use passthrough.
+Most components in an [integration flow](integration-flow) receive, process and
+send data. Incoming data typically differs from the outgoing one, so the
+last step may receive a message without even a small trace of the initial data.
+If you want a component to map data other than what it receives from the previous
+step, you can use the passthrough feature.
 
-Basically, passthrough maintains copies of all messages per step in the Flow, and adds them to each following message. This way, data received by *Step 4* will contain the message sent by *Step 3*, and a special section with the messages received by *Step 1*, *Step 2* and *Step 3*. Normally, *Step 4* would only read and process the data sent by *Step 3*, but you can configure it to choose a message from any other previous step, if required.  
+> Passthrough enables the data re-usability along the integration flow; meaning we
+> can re-use and re-mapp again - **nothing is lost**. This feature enables mapping
+> of the data from non-adjacent steps. Thanks to this, you can use the passthrough
+> feature for a content enrichment purposes.
 
-![](/assets/img/getting-started/passthrough/Pic_1.png)
+With this feature enabled you can *pass-it-through* the data from the
+component not only to the next step but to the step after that and thereafter. This
+means you can use and reuse the data of any particular step along with the
+integration flow several times.
+
+Basically, passthrough maintains copies of all messages per step in the flow, and
+adds them to each following message. This way, data received by *Step 4* will
+contain the message sent by *Step 3*, and a special section with the messages
+received by *Step 1*, *Step 2* and *Step 3*. Here is how it looks schematically:
+
+![Passthrough schematics](/assets/img/getting-started/passthrough/passthrough-schematics.png)
+
+The schematics above shows the passthrough feature in the flow. Without this
+feature the *Step 4* reads and processes the data sent by *Step 3*, but you can
+configure it to choose a messages from any other previous steps, if required.
 
 ## Passthrough Usage
 
-To begin with, it would have been strange not to allow a component in the Flow to access data other than what the previous step sends it. Use cases are numerous, because even similar applications often work with slightly different data. The most common use case is customer data processing, when a Flow has to retrieve different pieces of this data from different sources, and then merge them into a full profile.
+An ability to access the data on different steps of the integration flow and
+combine them into one outgoing message is an important advantage for many
+integration use-cases. Here are some scenarious when the passthrough feature makes
+a significant difference.
 
-**EXAMPLE:**
+*   As an integrator you want to retrieve the data from more than one external resource and combine it into one outgoing message to store it in your desired storage. Without the passthrough feature you would need to retrive the data separately from different resources, synchronize them and store in the storage. For this you would definetly need to use more than one integration flow and make sure not overwrite it every time.
+*   As an integrator you would like to retrive the data at least two times from the third party resource due to limitations of the third party API abilities. Without the passthrough you would need to use two different initegration flows and somehow syncronize the information between them.
 
-Here is a detailed example of an actual real-life Flow. It involves Amazon orders being managed by Salesforce. The problem here is that while `listOrders` query to Amazon MWS provides beneficial order data, it can not get a list of the items in the order. To get the item list, we need to query Amazon MWS with `listOrderItems` using a specific order ID. However, without having the order IDs, we obviously can not use `listOrderItems`.
+Let us have a look into an example on how the passthrough feature can help to solve
+a real-life integration dilemma.
 
-In the imaginary unlucky case when we didn't have passthrough, we would have to create an additional Flow for second query. There may be problems of synchronization between the two Flows, which we usually solve with Rebounds. The system tries to get the external IDs of those orders before asking for items. If the IDs are still not there it will try again later and later. However, there is always a limit on how many times the system can try and that many connections can fail if one end of integration reports a timeout.
+## Real-life Example
 
-However, we do have passthrough, so we can just use `listOrders` and `listOrderItems` in two separate steps. Let's take a look at our Flow:
+In this use case, we want to transfer Amazon MWS Orders into Salesforce Orders.
+We aim to have all information about the orders found in Amazon MWS synchrnized in
+the Salesforce.
 
-![](/assets/img/getting-started/passthrough/Passthrough_flow.gif)
+This case is interesting since Amazon MWS API gives answers in some certain ways:
 
-1\. Step 1 gets a list of orders:
+*   When we query the list of orders (`listOrders`) from Amazon MWS we get information about orders such as IDs, the total amount of orders, shipping information, etc. But this answer does not include information about specific items included in those orders (`listOrderItems`).
+*   To get items (`listOrderItems`) we need to store the order IDs and then use them to query the items belonging to those orders.
+*   Then we need to combine both: orders (`listOrders`) and items (`listOrderItems`) together to store this information into Salesforce. But, without having the order IDs, we can not get item IDs.
 
-![](/assets/img/getting-started/passthrough/Screenshot_1.png)
+We can address the above-presented scenario in two ways:
+1.  We use mutliple flows (the sequential mechanism) and external ID to pass the information gradually or
+2.  Use the passthrough feature to merge all the information on-the-fly.
 
-2\. Step 2 splits the list by order:
+### Sequential mechanism
 
-![](/assets/img/getting-started/passthrough/Screenshot_2.png)
+In the imaginary unlucky case when we didn't have passthrough, we would have to
+create a second flow for second query. There may be problems of synchronization
+between the two flows, which we can try to solve with rebounds. The system tries to
+get the external IDs of those orders before asking for items. If the IDs are still
+not there it will try again later and later. However, there is always a limit on
+how many times the system can try and that many connections can fail if one end
+of integration reports a timeout.
 
-3\. Step 3 gets items in the orders:
+**We need a solution which would not fail and would do it in one go!**
+Solution to this dilemma is provided by the passthrough feature.
 
-![](/assets/img/getting-started/passthrough/Screenshot_3.png)
+### Using the passthrough
 
-4\. Step 4 retrieves orders from Step 2 via passthrough by update date:
+Using the passthrough features we can get the `listOrders` and `listOrderItems` in two
+separate steps. Let's take a look at our flow:
 
-![](/assets/img/getting-started/passthrough/Screenshot_4.png)
+![Passthrough flow](/assets/img/getting-started/passthrough/Passthrough_flow.gif)
 
-5\. Step 5 retrieves order items from Step 3 via passthrough, adding data on scheduled delivery date, shipping date, item price and quantity of ordered items:
+**Step 1** gets a list of orders:
 
-![](/assets/img/getting-started/passthrough/Screenshot_5.png)
+![Step 1: Get list of orders](/assets/img/getting-started/passthrough/Passthrough-flow-step1.png)
 
-That's how instead of separating order item handling to a second Flow, we reduce overall complexity by using passthrough.
+**Step 2** splits the list by order:
+
+![Step 2: Split the list by order](/assets/img/getting-started/passthrough/Passthrough-flow-step2.png)
+
+**Step 3** gets items in the orders:
+
+![Step 3: Get items in the orders](/assets/img/getting-started/passthrough/Passthrough-flow-step3.png)
+
+**Step 4** retrieves orders from Step 2 via passthrough by update date:
+
+![Step 4: Retrieves orders from Step 2](/assets/img/getting-started/passthrough/Passthrough-flow-step4.png)
+
+**Step 5** retrieves order items from Step 3 via passthrough, adding data on
+scheduled delivery date, shipping date, item price and quantity of ordered items:
+
+![Step 5: Retrieves order items from Step 3](/assets/img/getting-started/passthrough/Passthrough-flow-step5.png)
+
+**In summary**: Instead of separating order and item handling to a second flow, we
+reduce the complexity by using the passthrough feature of the platform.
