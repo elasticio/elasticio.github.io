@@ -99,7 +99,7 @@ $(function() {
     });
 
     $search.on('blur', function() {
-        $header.removeClass('header_search');
+        return this.focus();
     });
 
     $(document).on('mousemove', function(e) {

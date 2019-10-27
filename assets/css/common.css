@@ -341,18 +341,26 @@ h1 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-backface-visibility: hidden;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  display: block;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
   color: #282828; }
 
 h2 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-backface-visibility: hidden;
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 12px;
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
   color: #282828; }
 
 .articles h2 {
@@ -428,7 +436,7 @@ h2 {
   border-radius: 5px; }
 
 .header_search .search {
-  width: 890px;
+  width: 178px;
   border-color: #cfd2d6;
   border-radius: 5px 5px 0 0; }
 
@@ -470,7 +478,7 @@ h2 {
   transition: all 0.4s ease; }
 
 .search__input:focus {
-  width: 100%; }
+  width: 150px; }
 
 .search__input::-webkit-input-placeholder {
   color: #a1b0c5; }
@@ -1063,9 +1071,13 @@ div[class*=' language'].highlighter-rouge,
   line-height: 1.7; }
 .article h2,
 .description h2 {
-  font-size: 19px;
-  font-weight: 700;
-  margin: 0;
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
   color: #495362;
 }
 
@@ -1076,14 +1088,24 @@ div[class*=' language'].highlighter-rouge,
 
 .article h3,
 .description h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0; }
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
 .article h4,
 .description h4 {
-  font-size: inherit;
-  font-weight: 700;
-  margin: 0; }
+  display: block;
+  font-size: 1em;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+ }
 .article time,
 .description time {
   font-size: 15px;
@@ -1111,14 +1133,16 @@ div[class*=' language'].highlighter-rouge,
   width: 7px;
   height: 7px;
   content: '';
-  background: #4e9ff0;
+  background: #445265;
   border-radius: 50%;
 }
 
 .article ol,
 .description ol {
   margin: 0 0 17px 30px;
-  list-style: decimal outside; }
+  padding-left:5px;
+  list-style: decimal outside;
+}
 .article li,
 .description li {
   margin-bottom: 10px; }
