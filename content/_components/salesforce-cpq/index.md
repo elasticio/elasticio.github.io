@@ -18,8 +18,8 @@ You need to create two variables:
 * SALESFORCE_KEY - your OAuth client key
 * SALESFORCE_SECRET - your OAuth client secret
 
-### Credentials
-  #### Environment
+## Credentials
+#### Environment
 Choose one of 2 available options:
 * Production
 * Sandbox
@@ -62,13 +62,13 @@ Use the Lookup object action to search your organization’s Salesforce data for
 * **Lookup by field** - Input field where you should choose the lookup field which you want to use for result filtering. E.g. `Id`.
 * **Optional batch size** - A positive integer specifying batch size. If no batch size is specified then results of the query will be emitted one-by-one, otherwise query results will be emitted in array of maximum batch size.
 
-```For now, you can specify all unique, lookup, externalId/Id fields. ```
+`For now, you can specify all unique, lookup, externalId/Id fields.`
+
 ##### Execution result handling
-|Condition | Execution result |
-|----------|------------------|
-|Lookup failed - we were not able to find any parent object. |Lookup action emits a single message with empty body if `Allow zero results` is set to `Yes` or an error otherwise.|
-|Lookup found a single object, e.g. we were able to identify an parent Account to the Contact|A single message will be emitted, found object will be a body of the message|
-|Lookup found multiple objects (that may happen when lookup is made by non-unique field) | Each found object will be emitted with the separate message|
+
+| Condition | Execution result |
+|-----------|------------------|
+| Lookup failed - we were not able to find any parent object. | Lookup action emits a single message with empty body if `Allow zero results` is set to `Yes` or an error otherwise. | | Lookup found a single object, e.g. we were able to identify an parent Account to the Contact. | A single message will be emitted, found object will be a body of the message | | Lookup found multiple objects (that may happen when lookup is made by non-unique field). | Each found object will be emitted with the separate message |
 
 ### Upsert object
 Use the Upsert object action create a new object if it does not exist or update an existing one if it exists.

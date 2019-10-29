@@ -14,7 +14,7 @@ SAP byDesign API integration with {{site.data.tenant.name}}
 As an iPaaS platform {{site.data.tenant.name}} must have an opportunity to interact with SAP Business byDesign API.
 
 ### Requirements
-#### Environment variables 
+#### Environment variables
 
 | Name | Mandatory | Description | Values |
 |---------------------|-------|-----------------------------------|-----------------------------------------------|
@@ -33,7 +33,7 @@ As an iPaaS platform {{site.data.tenant.name}} must have an opportunity to inter
 
 ## Triggers
 ### Get New And Updated Objects Polling
-#### Get New And Updated Objects Polling. Config Fields
+#### Config Fields
 1. Polling Object - objects that going to be polled by the trigger.
 2. Emit Behaviour - `Fetch All` emit all polled objects in one message, `Emit Individually` creates separate message for each object.
 3. Polling Type - `Created` poll for created objects, `Updated` poll for updated objects.
@@ -98,7 +98,7 @@ Example in metadata:
     }
 }
 ```
-3.  Query Sales Orders ![Query Sales Orders](img/action-query-salesorders.png). 
+3.  Query Sales Orders ![Query Sales Orders](img/action-query-salesorders.png).
 Example in metadata:
 ```json
  {
@@ -162,10 +162,10 @@ Example in metadata:
 ```
 
 
-## Limitations 
+## Limitations
 version: 2.1.1
 
-1. Currently, the component documentation does not contain JSON schemas for each object types. The documentation contains only request examples and links to SOAP service documentation. 
+1. Currently, the component documentation does not contain JSON schemas for each object types. The documentation contains only request examples and links to SOAP service documentation.
 2. The component does not comply with OIH standards.
 3. Polling trigger only supports `Query Materials`, `Query Accounts`, `Query Sales Orders` objects.
 4. Due to a platform feature 'retrieving sample' timeout a sample may not be retrieved during the component setup process. It is not a bug as it is caused by a heavy-weight Java process for serialization/deserialization of JAXB structure for SAP's WSDL. Which is normally of huge size. We are hardly working on this issue and it will likely be fixed in the nearest releases. But for now please be patient. As this issue is only for UI retrieve sample functionality it will NOT affect you in runtime.
