@@ -5,23 +5,26 @@ section: ERP components
 category: sap-byDesign
 ---
 
-## General Information
-### Description
+## Description
+
 An iPaaS component that provides an opportunity to interact with SAP byDesign API.
 SAP byDesign API integration with {{site.data.tenant.name}}
 
-#### Purpose
-As an iPaaS platform {{site.data.tenant.name}} must have an opportunity to interact with SAP Business byDesign API.
+### Purpose
 
-### Requirements
-#### Environment variables 
+As an iPaaS platform {{site.data.tenant.name}} must have an opportunity to interact
+with SAP Business byDesign API.
+
+## Requirements
+
+### Environment variables
 
 | Name | Mandatory | Description | Values |
 |---------------------|-------|-----------------------------------|-----------------------------------------------|
 | LOG_LEVEL           | false | Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
 | EIO_REQUIRED_RAM_MB | false | Value of allocated memory         | `2048` recommended                            |
 
-## Credentials
+### Credentials
 
 | Property name | Required | Description | Example|
 |-------------|--------|-------------------------------------|--------------|
@@ -32,25 +35,31 @@ As an iPaaS platform {{site.data.tenant.name}} must have an opportunity to inter
 **Important:** User should have access rights to get WSIL service descriptor and rights to call a service operation which was specified during the `Call Service` configuration.
 
 ## Triggers
+
 ### Get New And Updated Objects Polling
-#### Get New And Updated Objects Polling. Config Fields
-1. Polling Object - objects that going to be polled by the trigger.
-2. Emit Behaviour - `Fetch All` emit all polled objects in one message, `Emit Individually` creates separate message for each object.
-3. Polling Type - `Created` poll for created objects, `Updated` poll for updated objects.
-4. Size Of Polling Page - the maximum number of objects retrieved by one poll call.
-5. Start Datetime Of Polling - the start datetime of polling in the iso format.
+
+The configuration fields are:
+
+1.  `Polling Object` - objects that going to be polled by the trigger.
+2.  `Emit Behaviour` - `Fetch All` emit all polled objects in one message, `Emit Individually` creates separate message for each object.
+3.  `Polling Type` - `Created` poll for created objects, `Updated` poll for updated objects.
+4.  `Size Of Polling Page` - the maximum number of objects retrieved by one poll call.
+5.  `Start Datetime Of Polling` - the start datetime of polling in the iso format.
 
 #### Supported Objects
+
 At the moment only few object types are supported:
-1. Query Materials
-2. Query Sales Orders
-3. Query Accounts
+
+1.  Query Materials
+2.  Query Sales Orders
+3.  Query Accounts
 
 ## Actions
-### Call Service
-Calls SAP byDesign service for specified binding and operation.
 
-#### Call Service. Config Fields
+### Call Service
+
+Calls SAP byDesign service for specified binding and operation. The configuration
+fields are:
 
 | Input field | Required | Description | Example|
 |--------------|------|----------------------------------|------------------|
@@ -64,6 +73,7 @@ Calls SAP byDesign service for specified binding and operation.
 1.  Query Accounts ![Query Accounts](img/action-query-accounts.png)
 
 Example in metadata:
+
 ```json
 {
     "CustomerByElementsQuery_sync": {
@@ -98,7 +108,7 @@ Example in metadata:
     }
 }
 ```
-3.  Query Sales Orders ![Query Sales Orders](img/action-query-salesorders.png). 
+3.  Query Sales Orders ![Query Sales Orders](img/action-query-salesorders.png).
 Example in metadata:
 ```json
  {
@@ -162,13 +172,12 @@ Example in metadata:
 ```
 
 
-## Limitations 
+## Limitations
+
 version: 2.1.1
 
-1. Currently, the component documentation does not contain JSON schemas for each object types. The documentation contains only request examples and links to SOAP service documentation. 
-2. The component does not comply with OIH standards.
-3. Polling trigger only supports `Query Materials`, `Query Accounts`, `Query Sales Orders` objects.
-4. Due to a platform feature 'retrieving sample' timeout a sample may not be retrieved during the component setup process. It is not a bug as it is caused by a heavy-weight Java process for serialization/deserialization of JAXB structure for SAP's WSDL. Which is normally of huge size. We are hardly working on this issue and it will likely be fixed in the nearest releases. But for now please be patient. As this issue is only for UI retrieve sample functionality it will NOT affect you in runtime.
+1.  Polling trigger only supports `Query Materials`, `Query Accounts`, `Query Sales Orders` objects.
+2.  Due to a platform feature `retrieving sample` timeout a sample may not be retrieved during the component setup process. It is not a bug as it is caused by a heavy-weight Java process for serialization/deserialization of JAXB structure for SAP's WSDL. Which is normally of huge size. We are hardly working on this issue and it will likely be fixed in the nearest releases. But for now please be patient. As this issue is only for UI retrieve sample functionality it will NOT affect you in runtime.
 
 ## License
 
