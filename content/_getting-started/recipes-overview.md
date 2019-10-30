@@ -7,7 +7,7 @@ category: integration-flow
 since: 20191030
 ---
 
-This document provides basic information on Recipes and some details of their usage.
+This document provides basic information on [Recipes](#recipes) and some [details](#details) of their usage.
 
 ## Recipes
 
@@ -23,6 +23,6 @@ There may be a few configurables that you'll need to deal with manually after ac
 
 - **[Credentials](credential)**. Obviously, Credentials are Workspace-bound, so they will not work in another Workspace. The user will need his own Credentials to activate a Recipe.
 
-- **Fields**.  
+- **Fields**. Certain fields in Components require manual configuration just because you can not use another user's data, and need to enter your own.
 
 - **Flow Variables**. Flow variables are special variables used in Flow metadata to hardcode certain data. They will need to be configured, if used in a Recipe.
