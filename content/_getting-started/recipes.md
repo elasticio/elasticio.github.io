@@ -1,5 +1,5 @@
 ---
-title: Recipes Overview
+title: Recipes Feature
 layout: article
 section: Advanced Concepts
 order: 1
