@@ -18,28 +18,31 @@ Authentication is managed via HTTP authentication. There are several clusters wh
 There are two clusters which your app can be installed on. During the installation we send you the `cluster_id`. Please make sure you send API requests to the correct cluster.
 
 **CLUSTERS**
-```
-eu1 https://api.webshopapp.com/
-us1 https://api.shoplightspeed.com/
-```
+* eu1: `https://api.webshopapp.com/`
+* us1: `https://api.shoplightspeed.com/`
+
 
 ## Credentials
 
 ![image](https://user-images.githubusercontent.com/40201204/50343143-833da300-052e-11e9-84be-ccb19eb4f7d1.png)
 
 ### Environment URL
+
 Url of the Lightspeed eCom cluster.
 Fro example,
 - for EU: `api.webshopapp.com`
 - for US: `api.shoplightspeed.com`
 
 ### Environment language
+
 Lightspeed eCom shop language.
 
 ### Client ID
+
 API Key which you received from support during configuration a shop.
 
 ### Client Secret
+
 API Secret which you received from support during configuration a shop.
 
 ## Triggers
@@ -51,6 +54,7 @@ This trigger polls for existing and updated objects where you can select object 
 ![image](https://user-images.githubusercontent.com/40201204/50344276-04973480-0533-11e9-9ac5-c0aa38a7f2ab.png)
 
 #### Input fields description
+
 * **Object Type** - you should select the type of object which updates you want to get.
 * **Polling Field** - you can use any field existing at current object, which has datatype like DATE, DATETIME or TIMESTAMP.
 * **Batch Size for request pagination** - count of entries which you will get by one request ().
@@ -100,6 +104,7 @@ Supported entities:
 ![image](https://user-images.githubusercontent.com/40201204/50344997-19c19280-0536-11e9-8c40-f7060ee84cec.png)
 
 #### Input fields description
+
 * **Object Type** - you should select the type of object to make a subscription.
 
 Supported entities:
@@ -126,6 +131,7 @@ Action creates a new record/object. This action is supported by limited list of 
 ![image](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
@@ -162,6 +168,7 @@ Action creates a new object or updates object which already exists by provided I
 ![image](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
@@ -230,6 +237,7 @@ Supported entities:
 * variants
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
@@ -242,6 +250,7 @@ Action gets a list of objects by filters or specific object by provided ID.
 ![image](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
@@ -291,6 +300,7 @@ Action removes object which already exists by provided ID.
 ![image](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
