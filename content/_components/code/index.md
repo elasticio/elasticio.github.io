@@ -62,9 +62,9 @@ async function run(msg) {
   console.log('Execution finished');
 }
 ```
-transform
-Please note if you have a simple one-in-one-out function you can simply return a
-JSON object as a result of your function, it will be automatically emitted as data.
+
+> **Please note:** if you have a simple one-in-one-out function you can simply return a
+> JSON object as a result of your function, it will be automatically emitted as data.
 
 ## Common usage scenarios
 
