@@ -4,13 +4,17 @@ layout: article
 section: E-Commerce components
 ---
 
-### Purpose
+## Purpose
 The goal of the component is to provide possibility to interact with eBay API from the {{site.data.tenant.name}} platform.
 
-*_Note:_ Currently only Buying Feed API is accessible.
+> **Note:** Currently only Buying Feed API is accessible.
+
 ### How works
+
 The component uses API provided by eBay. Under the hood it works with REST requests to that API.
-### Requirements
+
+## Requirements
+
 You need the following values in your request for an Application token:
 
 * Your application's OAuth credentials (the client_id and client_secret).
@@ -22,24 +26,43 @@ For details, see [Getting your OAuth credentials](https://developer.ebay.com/api
 
 For details, see  [Specifying OAuth scopes](https://developer.ebay.com/api-docs/static/oauth-details.html#scopes).
 
-*_Note_: While Buying Feed API is the only possible option, the next value will be automatically pointed as a scope: ```https://api.ebay.com/oauth/api_scope/buy.item.feed```.
+> **Note:** While Buying Feed API is the only possible option, the next value will be automatically pointed as a scope: ```https://api.ebay.com/oauth/api_scope/buy.item.feed```.
 
 These values should be saved before the credentials verification process.
+
 ## Credentials
+
 ##### Environment.
+
 The type of the environment. Should be chosen between Sandbox and Production.
+
 ##### Redirect URI
+
 It is the RuName parameter. See above.
+
 ##### Client ID
+
 OAuth credentials
+
 ##### Client Secret
+
 OAuth credentials
+
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
 ## Actions
+
 ### GetItem
+
 This call retrieves the details of a specific item, such as description, price, category, all item aspects, condition, return policies, seller feedback and score, shipping options, shipping costs, estimated delivery, and other information the buyer needs to make a purchasing decision.
 
 *eBay's sandbox environment does not provide correct response for this action. So the code could not be fully tested in development stage. Please be careful when testing this code in production environment. Please contact us if any error occurs.*
-#### Input fields description (if there is any)
+
+#### Input fields description
+
 __itemId__ - The eBay RESTful identifier of an item. This ID is returned by the Browse and Feed API calls.
 
 Format: RESTful item ID
@@ -53,13 +76,18 @@ Valid values:
 Restriction: Must be a top-level category
 
 More info about this action could be find [here](https://developer.ebay.com/api-docs/buy/browse/resources/item/methods/getItem).
+
 #### Input json schema location
+
 Request JSON schema ./src/main/resources/schemas/json/Item.in.json
 
 ### GetItemFeed
+
 The Item feed file is generated each day. This call lets you download a daily TSV_GZIP (tab separated value gzip) Item feed file of all the items that were listed on a specific day in a specific category.
 Details about the TSV_GZIP file could be found here: [Retrieve a daily Item feed file](https://developer.ebay.com/api-docs/buy/static/api-feed.html)
+
 #### Input fields description (if there is any)
+
 __date__ - The date of the feed file you want. The Item feed files are generated every day and there are always 7 daily feed files available.
 
 Format: yyyyMMdd
@@ -88,12 +116,14 @@ Maximum: 100 MB
 __xeBayCMarketplaceId__ - The ID for the eBay marketplace where the items are hosted. For example: X-EBAY-C-MARKETPLACE-ID = EBAY-US
 
 See the detailed info about this action [here](https://developer.ebay.com/api-docs/buy/feed/resources/item/methods/getItemFeed).
-#### Input json schema location
-Request JSON schema ./src/main/resources/schemas/json/ItemFeed.in.json
 
+#### Input json schema location
+
+Request JSON schema ./src/main/resources/schemas/json/ItemFeed.in.json
 Response JSON schema ./src/main/resources/schemas/json/ItemFeed.out.json
-Response JSON schema ./src/main/resources/schemas/json/ItemFeed.out.json
+
 ### GetItemDescriptionFeed
+
 The Description feed file is generated each day. This call lets you download a daily TSV_GZIP (tab separated value gzip) Description feed file containing the descriptions of all the items that were listed on a specific day in a specific category.
 
 The Description feed file contains only the itemId, itemGroupId and description columns. The value of the description column is BASE64 encoded. For each row, there will be values in either itemId or itemGroupId. The description column will always contain a value.
@@ -101,11 +131,15 @@ The Description feed file contains only the itemId, itemGroupId and description 
 The other parameters and fields are the same like in GetItemFeed action.
 
 Documentation for this action could be found [here](https://developer.ebay.com/api-docs/buy/feed/resources/item_description/methods/getItemDescriptionFeed).
+
 #### Input json schema location
+
 Request JSON schema ./src/main/resources/schemas/json/ItemFeed.in.json
 
 Response JSON schema ./src/main/resources/schemas/json/ItemFeed.out.json
+
 ### GetItemSnapshotFeed
+
 The Hourly feed file is generated each hour every day for all categories. This call lets you download an Hourly TSV_GZIP (tab separated value gzip) feed file containing all the items that have changed within the specified day and hour for a specific category. This means to generate the 8AM file of items that have changed from 8AM and 8:59AM, the service starts at 9AM. You can retrieve the 8AM snapshot file at 10AM.
 
 You can use the response from this call to update the item details of items stored in your database. By comparing the value of itemSnapshotDate for the same item you will be able to tell which information is the latest.
@@ -121,9 +155,7 @@ E.g.: 2017-07-12T09:00:00.000Z
 
 Documentation for this action could be found [here](https://developer.ebay.com/api-docs/buy/feed/resources/item_snapshot/methods/getItemSnapshotFeed).
 
-## Triggers (if any)
-No.
-## Additional info (if any)
+## Additional info
 
 ### Attachments
 
