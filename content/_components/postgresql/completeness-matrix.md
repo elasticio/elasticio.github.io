@@ -1,7 +1,6 @@
 ---
 title: PostgreSQL Component completeness matrix
 layout: article
-section: Database components
 category: postgresql-component
 ---
 
