@@ -20,7 +20,7 @@ Following actions are inside:
 
 ``SELECT`` - this action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that returns multiple results, it has limitations on the query and suited only for SELECT type of queries.
 
-``LOOKUP BY PRIMARY KEY`` - this action will execute select query from specified table, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns only one result (a primary key is unique). 
+``LOOKUP BY PRIMARY KEY`` - this action will execute select query from specified table, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns only one result (a primary key is unique).
 
 ``UPSERT BY PRIMARY KEY`` - this action will execute select command from specified table, as search criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"), and execute insert command by PRIMARY KEY with specified field, if result does not found, else - action will execute update command by PRIMARY KEY with specified field. The action returns only one result row (a primary key is unique).
 
@@ -56,6 +56,7 @@ For integration-testing is needed to specify following environment variables:
  - ``CONN_PORT_POSTGRESQL`` - DataBase port
 
 #### Others
+
 ## Credentials
 You need to use following properties to configure credentials:
 
@@ -80,9 +81,10 @@ Provide a password of the user that has permissions to interact with the Databas
 ### Configuration properties
 Optional field. Provide a configuration properties for connections to the Database, e.g. ``useUnicode=true&serverTimezone=UTC``
 
-**Limitation:** `Configuration properties` value may not be checked during Credentials Verification, so in case of using this field make sure that it contains correct input. 
+**Limitation:** `Configuration properties` value may not be checked during Credentials Verification, so in case of using this field make sure that it contains correct input.
 
 ## Triggers
+
 ### Select trigger
 You are able to provide SELECT query with last execution timestamp as WHERE clause criteria.
 ![image](https://user-images.githubusercontent.com/40201204/43591075-2a032dcc-967b-11e8-968d-851355c2646e.png)
@@ -153,7 +155,7 @@ Select:
 SELECT name, size FROM stars
 ```
 
-Update: 
+Update:
 ```sql
 INSERT INTO stars values (1,'Taurus', '2015-02-19 10:10:10.0', 123, 5, 'true', '2015-02-19')
 ```
@@ -167,12 +169,12 @@ UPDATE stars SET radius = 5 WHERE id = 2;
 ### Select action
 ![image](https://user-images.githubusercontent.com/40201204/43592439-39ec5738-967e-11e8-8632-3655b08982d3.png)
 The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
-In SQL query you can use clause variables with specific data types. 
+In SQL query you can use clause variables with specific data types.
 Internally we use prepared statements, so all incoming data is
 validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types
 therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
 
-**Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`). 
+**Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
 
 For example if you have a following SQL statement:
 
@@ -201,7 +203,7 @@ Following types are supported:
 ![image](https://user-images.githubusercontent.com/40201204/43644974-332f2aa4-9739-11e8-8483-f7395e5d195d.png)
 
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
- 
+
 #### Input fields description
 Component supports dynamic incoming metadata - as soon as your query is in place it will be parsed and incoming metadata will be generated accordingly.
 
@@ -229,7 +231,7 @@ Action contains only one configuration field `Table` - dropdown list with availa
 
 #### Expected input metadata
 
-As input metadata, you will get all fields of the selected table except for fields with `auto-increment` or `auto-calculated` property. 
+As input metadata, you will get all fields of the selected table except for fields with `auto-increment` or `auto-calculated` property.
 
 #### Expected output metadata
 
@@ -266,8 +268,8 @@ The result for this type of fields would be returned as an array of JSON objects
 
 This action DOES NOT processing MSSql @RETURN_VALUE.
 
-- For MySQL component same to DATABASE is same to SCHEMA by it's 
-[definition](https://dev.mysql.com/doc/refman/8.0/en/getting-information.html), so DB Schema dropdown is empty for MySQL. 
+- For MySQL component same to DATABASE is same to SCHEMA by it's
+[definition](https://dev.mysql.com/doc/refman/8.0/en/getting-information.html), so DB Schema dropdown is empty for MySQL.
 
 - [MSSQL DB](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-procedure-transact-sql?view=sql-server-2017) stored procedures has only IN and INOUT fields.
 
@@ -330,7 +332,7 @@ As an input metadata you will get all fields of selected table. [PRIMARY KEY](ht
 
 
 ### Create or update record action (Deprecated)
-This action exists in JDBC component only for backward compatibility. 
+This action exists in JDBC component only for backward compatibility.
 Please use [**Upsert row by primary key**](#upsert-row-by-primary-key-action) instead.
 
 ## Current limitations
@@ -342,12 +344,12 @@ Please use [**Upsert row by primary key**](#upsert-row-by-primary-key-action) in
 - ``PostgreSQL`` - compatible with PostgreSQL 8.2 and higher
 - ``Oracle`` - compatible with Oracle Database 8.1.7 - 12.1.0.2
 - ``MSSQL`` - compatible with Microsoft SQL Server 2008 R2 and higher
-3. The current implementation of the action ``Upsert By Primary Key`` doesn't mark non-nullable fields as required fields at a dynamic metadata. In case of updating such fields with an empty value you will get SQL Exception ``Cannot insert the value NULL into...``. You should manually fill in all non-nullable fields with previous data, if you want to update part of columns in a row, even if data in that fields doesn't change. 
+3. The current implementation of the action ``Upsert By Primary Key`` doesn't mark non-nullable fields as required fields at a dynamic metadata. In case of updating such fields with an empty value you will get SQL Exception ``Cannot insert the value NULL into...``. You should manually fill in all non-nullable fields with previous data, if you want to update part of columns in a row, even if data in that fields doesn't change.
 4. The current implementation of the action ``Execute stored procedure`` doesn't support ResultSet MSSQL output.
 5. The current implementation of the action ``Execute stored procedure`` doesn't support any array types parameters.
-6. The current implementation of the action ``Execute stored procedure`` doesn't support MySQL schemas dropdown list. 
+6. The current implementation of the action ``Execute stored procedure`` doesn't support MySQL schemas dropdown list.
 (MySQL does not have schemas by definition)
-6. Rebound mechanism only works for this SQL State: 
+6. Rebound mechanism only works for this SQL State:
  - ``MySQL``: 40001, XA102
  - ``Oracle``: 61000
  - ``MSSQL``: 40001

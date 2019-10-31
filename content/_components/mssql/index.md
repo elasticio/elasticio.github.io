@@ -16,6 +16,8 @@ You may use following properties to configure a connection:
 
 other types of configuration parameters are also supported, more information and samples you can find [here](https://www.npmjs.com/package/mssql#formats)
 
+## Triggers
+
 ### SELECT Trigger and Action
 
 With this action you may fetch data out of the database, e.g. using ``SELECT`` statement.
@@ -34,6 +36,12 @@ select * from Leads where Created >= '%%EIO_LAST_POLL%%'
 ```
 
 where just before executing the statement the ``%%EIO_LAST_POLL%%`` will be replaced with ISO Date of the last execution, for example ``2017-08-25T07:43:48.127Z``. During the first execution, date will be equal to [the bigging of time](http://www.onthisday.com/date/1970/january/1) - ``1970-01-01T00:00:00.000Z``.
+
+## Actions
+
+### SELECT action
+
+Check the [SELECT Action description above](#select-trigger-and-action).
 
 ### INSERT/DELETE/UPDATE Action
 

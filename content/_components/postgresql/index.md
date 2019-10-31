@@ -59,7 +59,7 @@ is enabled you'll get a single message with array of 400 elements in it:
   "values" : [
     {"id": 1},
     {"id": 2},
-    ....
+    
     {"id": 400}
   ]
 }
