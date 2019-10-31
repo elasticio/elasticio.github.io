@@ -42,14 +42,3 @@ article including information about the articles variants.
 The Shopware API has many shortcomings which limit the ability to use Shopware
 out of the box.  [Shopware allows for features to be requested in their issue
 tracker](http://en.community.shopware.com/_detail_1282.html#Ticket_overview).
-Here are some of the feature requests which would allow additional functionality
-to be built into the component for out of the box functionality.
-
-* [Allow {{site.data.tenant.name}} to detect changes to product
- variants](https://issues.shopware.com/issues/SW-19617)
-* [Allow {{site.data.tenant.name}} to differentiate between new and updated
- objects](https://issues.shopware.com/issues/SW-19619)
-* [Allow {{site.data.tenant.name}} to detect changes to
- customers](https://issues.shopware.com/issues/SW-19618)
-* [Allow {{site.data.tenant.name}} to detect changes to
- orders](https://issues.shopware.com/issues/SW-17467)
