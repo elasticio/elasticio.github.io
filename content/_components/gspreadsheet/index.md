@@ -37,7 +37,6 @@ platform to access your Spreadsheets.
 
 ## Triggers
 
-
 ### Get Spreadsheet Row
 
 The  **New Spreadsheet Row** *trigger* reads the data in each row of a given Google Spreadsheet
@@ -214,13 +213,6 @@ Action to create a new Google spreadsheet. This action is based on [Google Sprea
 The action needs a JSON instance of a [Spreadsheet](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets#Spreadsheet) object in order to create a new spreadsheet.
 All data structures and limitations are the same to Google API.
 
-#### Json schema locations
-
-| Schema type | Json schema location |
-|----------|----------------------------------------------------------------------------|
-| Input    | [/schemas/createSpreadsheet.in.json](/schemas/createSpreadsheet.in.json)   |
-| Output   | [/schemas/createSpreadsheet.out.json](/schemas/createSpreadsheet.out.json) |
-
 ### Add Spreadsheet Row
 
 Action to create a new Google spreadsheet row. This action based on [Google Spreadsheets API v4](https://developers.google.com/sheets/api/reference/rest/).
@@ -233,12 +225,6 @@ A datatype of inserted values will be the same as for JSON type (string, numeric
  - **Spreadsheet** - Spreadsheet name to make changes.
  - **Worksheet** - Worksheet name of selected Spreadsheet to make changes.
 
-#### Json schema locations
-
-| Schema type | Json schema location |
-|----------|----------------------------------------------------------------------------------|
-| Input    | [/schemas/createSpreadsheetRow.in.json](/schemas/createSpreadsheetRow.in.json)   |
-| Output   | [/schemas/createSpreadsheetRow.out.json](/schemas/createSpreadsheetRow.out.json) |
 
 ### Add Row
 **Deprecated** - please use [Add Spreadsheet Row](#add-spreadsheet-row) action.
