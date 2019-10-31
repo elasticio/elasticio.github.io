@@ -9,6 +9,7 @@ section: E-Commerce components
 Lightspeed Retail API component for {{site.data.tenant.name}} iPaaS.
 
 ## Authentication
+
 Lightspeed uses the OAuth2 protocol to authenticate integrations and grant access to the API. See the section on [Authentication](https://developers.lightspeedhq.com/retail/authentication/authentication-overview 'Authentication') for more details.
 
 ## Credentials
@@ -16,17 +17,20 @@ Lightspeed uses the OAuth2 protocol to authenticate integrations and grant acces
 ![image](https://user-images.githubusercontent.com/40201204/50007735-85e24a80-ffba-11e8-8933-63f05d4c53d3.png)
 
 ### Environment URL
+
 Url of the Lightspeed Retail environment. Optional.
 By default: `api.lightspeedapp.com`
 
 ### Account ID
+
 Lightspeed Retail account ID.
 
-
 ### Client ID
+
 Consumer Key which you received during API client configuration step.
 
 ### Client Secret
+
 Consumer Secret which you received during API client configuration step.
 
 ## Triggers
@@ -38,6 +42,7 @@ This trigger polls for existing and updated objects where you can select object 
 ![image](https://user-images.githubusercontent.com/40201204/50015199-9dc3c980-ffce-11e8-904c-4852c0c2f4f8.png)
 
 #### Input fields description
+
 * **Object Type** - you should select the type of object which updates you want to get.
 * **Polling Field** - you can use any field existing at current object, which has datatype like DATE, DATETIME or TIMESTAMP.
 * **Batch Size for request pagination** - count of entries which you will get by one request ().
@@ -51,6 +56,7 @@ Action creates a new record/object. This action is supported by limited list of 
 ![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
@@ -92,6 +98,7 @@ Action creates a new object or updates object which already exists by provided I
 ![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
@@ -138,6 +145,7 @@ Action updates object which already exists by provided ID. This action is suppor
 ![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
@@ -180,6 +188,7 @@ Action gets a list of objects by filters or specific object by provided ID.
 ![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
@@ -245,6 +254,7 @@ Action removes object which already exists by provided ID.
 ![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
+
 * **Object type** - you should select the type of object which updates you want to get.
 
 Supported entities:
