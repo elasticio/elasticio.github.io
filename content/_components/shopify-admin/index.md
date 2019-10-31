@@ -11,17 +11,29 @@ section: E-Commerce components
  - apiKey
  - password
 
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
 ## Actions
+
 ### List Objects
+
 #### Configuration options
+
 1. `Object Type` - type of object to be listed
 2. `Behavior` - `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message
 3. `Max Size` - default 250, maximum value is 250. Maximum number of objects to fetch.
+
 #### Input metadata
+
 1. `idField` - object types: `Article`, `Asset`, `Article`, `Customer Address`, `Discount Code`, `Inventory Item`, `Inventory Level`, `Fulfillment`, `Order Risk`, `Refund`, `Transaction`, `Fulfillment Event`, `Gift Card Adjustment`, `Payment`, `Product Image`, `Product Variant`, `Province`, `Usage Charge` require id of parent object to be passed in input metadata
 2. `order` - add ability to sort items.`fieldName`: name of field for sorting objects, only fields of type: `string`, `number`, `boolean` supported. `orderDirection`: asc or desc defines direction of sorting.
 3. `filter` - add ability filter item from result. `searchTerm`: `fieldName` - name of field to apply filter. `condition` - `eq` equal, `ne` not equal, `gt` greater, `ge` greater or equal, `lt` less, `le` less or equal apply provided condition to field. `fieldValue` - value to be used by condition in comparing with `value` in object field. It is possible to chain few conditions via: `criteriaLink` - `and`, `or` chain with previous condition by provided operator.
+
 #### Example of usage
+
 1. Object Type - `Country`,
 2. Behaviour - `Fetch All`,
 3. Max Size - `20`
@@ -46,9 +58,11 @@ section: E-Commerce components
 Will return maximum 20 objects of type Country ordered by their code and filtered where tax value greater then 0.
 
 ### List products(Deprecated use List Objects action instead)
+
 in/out metadata can be found at `/lib/schemas/listProducts.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -139,7 +153,7 @@ output message:
 					"alt": null,
 					"width": 1919,
 					"height": 983,
-					"src": "https://cdn.shopify.com/s/files/1/0024/0628/5356/products/Selection_177.png?v=1524144972",
+					"src": "Example.jpg",
 					"variant_ids": []
 				}
 			],
@@ -152,7 +166,7 @@ output message:
 				"alt": null,
 				"width": 1919,
 				"height": 983,
-				"src": "https://cdn.shopify.com/s/files/1/0024/0628/5356/products/Selection_177.png?v=1524144972",
+				"src": "Example.jpg",
 				"variant_ids": []
 			}
 		}
@@ -161,9 +175,11 @@ output message:
 ```
 
 ### Upsert product
+
 in/out metadata can be found at `/lib/schemas/upsertProduct.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -175,7 +191,7 @@ input message:
 			"position": 1,
 			"width": 100,
 			"height": 100,
-			"src": "https://fastcode.space/wp-content/uploads/2017/03/a-abstract-logo-design_1043-4-1.jpg",
+			"src": "Example.jpg",
 			"variant_ids": [
 				"808950810"
 			]
@@ -286,7 +302,7 @@ output message:
 				"alt": null,
 				"width": 626,
 				"height": 626,
-				"src": "https://cdn.shopify.com/s/files/1/0024/0628/5356/products/a-abstract-logo-design_1043-4-1_f1f65d87-0dab-40da-95a0-71546a4b4ff2.jpg?v=1524737523",
+				"src": "Example.jpg",
 				"variant_ids": []
 			}
 		],
@@ -299,7 +315,7 @@ output message:
 			"alt": null,
 			"width": 626,
 			"height": 626,
-			"src": "https://cdn.shopify.com/s/files/1/0024/0628/5356/products/a-abstract-logo-design_1043-4-1_f1f65d87-0dab-40da-95a0-71546a4b4ff2.jpg?v=1524737523",
+			"src": "Example.jpg",
 			"variant_ids": []
 		}
 	}
@@ -307,9 +323,11 @@ output message:
 ```
 
 ### Delete product
+
 in/out metadata can be found at `/lib/schemas/deleteProduct.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -325,9 +343,11 @@ output message:
 ```
 
 ### Get product
+
 in/out metadata can be found at `/lib/schemas/getProduct.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -351,9 +371,11 @@ output message:
 ```
 
 ### Count products
+
 in/out metadata can be found at `/lib/schemas/countProducts.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -377,9 +399,11 @@ output message:
 ```
 
 ### Create product image
+
 in/out metadata can be found at `/lib/schemas/createProductImage.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -388,7 +412,7 @@ input message:
 	"variant_ids": [
 		"8932338991148"
 	],
-	"src": "https://cnet3.cbsistatic.com/img/IAN-lCz3ZhpINi8edorKDpaLCBA=/770x433/2014/02/24/694b0dd2-d40d-4a87-8970-b5a59ec6fe6d/apple-ipod-nano-2nd-generation-digital-player-flash-8-gb-display-1-5-black.jpg",
+	"src": "Example.jpg",
 	"attachment": "",
 	"filename": "",
 	"alt": "image alt",
@@ -416,16 +440,18 @@ output message:
 		"alt": "image alt",
 		"width": 770,
 		"height": 433,
-		"src": "https://cdn.shopify.com/s/files/1/0024/0628/5356/products/apple-ipod-nano-2nd-generation-digital-player-flash-8-gb-display-1-5-black_81d42a70-0396-42a7-8171-fbd1a6c28370.jpg?v=1525082527",
+		"src": "Example.jpg",
 		"variant_ids": []
 	}
 }
 ```
 
 ### Update product image
+
 in/out metadata can be found at `/lib/schemas/updateProductImage.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -435,7 +461,7 @@ input message:
 	"variant_ids": [
 		"8932338991148"
 	],
-	"src": "https://cnet3.cbsistatic.com/img/IAN-lCz3ZhpINi8edorKDpaLCBA=/770x433/2014/02/24/694b0dd2-d40d-4a87-8970-b5a59ec6fe6d/apple-ipod-nano-2nd-generation-digital-player-flash-8-gb-display-1-5-black.jpg",
+	"src": "Example.jpg",
 	"attachment": "",
 	"filename": "",
 	"alt": "image alt 2",
@@ -463,7 +489,7 @@ output message:
 		"alt": "image alt 2",
 		"width": 770,
 		"height": 433,
-		"src": "https://cdn.shopify.com/s/files/1/0024/0628/5356/products/apple-ipod-nano-2nd-generation-digital-player-flash-8-gb-display-1-5-black_218e13cc-0fc5-402d-bbbc-fae01e1f0dbc.jpg?v=1525082871",
+		"src": "Example.jpg",
 		"variant_ids": [
 			8932338991148
 		]
@@ -472,9 +498,11 @@ output message:
 ```
 
 ### Delete product image
+
 in/out metadata can be found at `/lib/schemas/deleteProductImage.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -494,9 +522,11 @@ output message:
 ```
 
 ### List inventory items(Deprecated use List Objects action instead)
+
 in/out metadata can be found at `/lib/schemas/listInventoryItems.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -531,9 +561,11 @@ output message:
 ```
 
 ### Get inventory item
+
 in/out metadata can be found at `/lib/schemas/getInventoryItem.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -554,9 +586,11 @@ output message:
 ```
 
 ### Update inventory item
+
 in/out metadata can be found at `/lib/schemas/updateInventoryItem.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -579,9 +613,11 @@ output message:
 ```
 
 ### Create product variant
+
 in/out metadata can be found at `/lib/schemas/createProductVariant.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -651,9 +687,11 @@ output message:
 ```
 
 ### Update product variant
+
 in/out metadata can be found at `/lib/schemas/updateProductVariant.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -724,9 +762,11 @@ output message:
 ```
 
 ### Delete product variant
+
 in/out metadata can be found at `/lib/schemas/deleteProductVariant.{in/out}.json`
 
 #### Usage example
+
 input message:
 ```
 {
@@ -745,8 +785,8 @@ output message:
 }
 ```
 
-### Links
+## Links
 
-Shopify Admin API documentation https://help.shopify.com/api/reference
+[Shopify Admin API documentation](https://help.shopify.com/api/reference)
 
-How to generate creds https://help.shopify.com/api/getting-started#generate-api-credentials-from-the-shopify-admin
+[How to generate creds](https://help.shopify.com/api/getting-started#generate-api-credentials-from-the-shopify-admin)
