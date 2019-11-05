@@ -15,12 +15,12 @@ attachment. It can also write a CSV file from the incoming events.
 
 ## Requirements
 
-## Environment variables
+### Environment variables
 
 Component is not using any environment variables.
 
 
-## Credentials
+### Credentials
 
 The component does not require credentials to function.
 
