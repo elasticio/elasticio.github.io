@@ -17,6 +17,10 @@ Quotas can be set per Contract, per Workspace and per Flow, depending on the req
 Note, that you can set the Workspace quota higher than Contract quota, but there is no practical sense in doing so. Workspace quota will just become redundant.
 
 ## Resource Usage
-You can see the actual resource usage on the dedicated page. The usage is shown per Contract, per Workspace and per Flow. Also, you don't really need to keep an eye on the usage page all the time, because the quota service will notify you on different steps of approach to the limit. 
+You can see the actual resource usage on the dedicated page. The usage is shown per Contract, per Workspace and per Flow. Also, you don't really need to keep an eye on the usage page all the time, because the quota service will notify you via email on different steps of approach to the limit.
 
 ![Quota page](/assets/img/getting-startes/quota/quota.png)
+
+As seen on the page above, only approximately 1% of the memory quota has been used this month. If you click **View Report**, you will see a resource usage chart:
+
+![Report](/assets/img/getting-startes/quota/report.png)
