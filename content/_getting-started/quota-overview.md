@@ -18,3 +18,5 @@ Note, that you can set the Workspace quota higher than Contract quota, but there
 
 ## Resource Usage
 You can see the actual resource usage on the dedicated page. The usage is shown per Contract, per Workspace and per Flow. Also, you don't really need to keep an eye on the usage page all the time, because the quota service will notify you on different steps of approach to the limit. 
+
+![Quota page](/assets/img/getting-startes/quota/quota.png)
