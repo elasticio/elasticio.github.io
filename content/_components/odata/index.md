@@ -21,6 +21,7 @@ Supports the following forms:
 ## Triggers
 
 ### Get Objects Polling
+
 Get objects which have recently been modified or created.
 
 All types of objects programmatically detectable are covered.  When selecting this trigger, the first input that must be configured is **Object type to fetch**.  This drop-down when opened will produce a list of all object types on the system.
@@ -42,6 +43,7 @@ output.
 ## Actions
 
 ### Lookup Object by Field
+
 Given a field and a field value that matches exactly one record, find that matching record.
 
 There are three configuration drop downs:
@@ -132,8 +134,10 @@ END
 ## Configuration Info
 
 ### Required environment variables
+
 No environment variables are required for deployment.
 
 ### Version and compatibility information
+
 This component interacts with OData version 4.  It has been
 tested with the [OData TripPin Reference Service](http://www.odata.org/odata-services/).

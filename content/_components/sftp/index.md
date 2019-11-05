@@ -11,13 +11,21 @@ section: Protocol components
 This component creates a connection to an SFTP server to read and upload files.
 
 ## Credentials
+
 ### User Name
+
 Username for SFTP server
+
 ### Password
+
 Password for SFTP server
+
 ### Host
+
 Host name of SFTP server
+
 ### Port
+
 Optional, port of SFTP server. Defaults to 22 if not set.
 
 ![image](https://user-images.githubusercontent.com/35310862/65412296-3a818600-ddef-11e9-9064-8b9db7a650d5.png)
@@ -52,7 +60,7 @@ After a file is found:
 
 The next component may read from `url` in `attachments` for a memory-efficient way to read/parse data. Please note that if multiple files are found, SFTP component will generate one message per file.
 
-* Note: you may need to consider cleaning up the `.elasticio_processed` directory manually
+> **Note:** you may need to consider cleaning up the `.elasticio_processed` directory manually
 
 ## Actions
 
@@ -61,7 +69,7 @@ The next component may read from `url` in `attachments` for a memory-efficient w
 The following configuration fields are available:
 |* **Directory**: The directory where the file will be uploaded to.
 
-* Note: if the directory does not exist, it will create it at the risk of possibly overwriting any files that may have the same name.
+> **Note:** if the directory does not exist, it will create it at the risk of possibly overwriting any files that may have the same name.
 
 ## Known limitations
 

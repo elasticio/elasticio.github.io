@@ -4,8 +4,6 @@ layout: article
 section: Protocol components
 ---
 
-> Integration component for {{site.data.tenant.name}} that parses EDIFACT files
-
 # edifact-parser-component
 EDIFACT Parser component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}). It reads incoming attachments and
 parses them using EDI parser.
@@ -14,6 +12,15 @@ parses them using EDI parser.
 ## Authentication
 
 This component requires no authentication.
+
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
+## Actions
+
+* *Parse* - Parses an incoming EDIFACT attachment.
 
 ## How it works
 

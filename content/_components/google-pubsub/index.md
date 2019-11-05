@@ -8,6 +8,20 @@ section: Protocol components
 
 Interact with Google Pub-Sub API.
 
+### Credentials
+
+*   **Project ID**
+*   **Client E-Mail**
+*   **Private Key**
+
+## Triggers
+
+* *Subscribe*
+
+## Actions
+
+* *Pub*
+
 ## How authentication works
 
 PubSub component authentication works with
