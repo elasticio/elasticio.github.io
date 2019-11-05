@@ -17,7 +17,12 @@ attachment. It can also write a CSV file from the incoming events.
 
 ### Environment variables
 
-Component is not using any environment variables.
+1. `EIO_REQUIRED_RAM_MB` - recommended value of allocated memory is 512 MB
+2. `REQUEST_TIMEOUT - HTTP` request timeout in milliseconds, default value 10000
+3. `REQUEST_RETRY_DELAY` - delay between retry attempts in milliseconds, default value 7000
+4. `REQUEST_MAX_RETRY` - number of HTTP request retry attempts, default value 7
+5. `REQUEST_MAX_CONTENT_LENGTH` - max size of http request in bytes, default value: 10485760
+6. `TIMEOUT_BETWEEN_EVENTS` - number of milliseconds write action wait before creating separate attachments, default value: 10000
 
 
 ### Credentials
@@ -33,9 +38,20 @@ This trigger will fetch the CSV file from a given URL. The address must be acces
 to the component. The fetched CSV file will be placed in the attachment part of the
 outgoing message.
 
+![Read CVS file from URL](img/read-CVS-file-from-URL.png)
+
+*   `CSV URL` - the full URL to the file for retrieving data.
+*   `Emit all messages` - this checkbox configures output behavior of the component. If the option is checked - the component emits an array of messages, otherwise - the component emits a message per row.
+*   `CSV Header` - this is a required field. Input the names of headers separated with a comma.
+*   `Separators` - Specify the separator type. Usually it is a comma (,) but values like Semicolon (;), Space ( ), Tab (\t) and Hash (#) are also supported.
+*   `Skip rows` - if you know that the incoming CSV file has certain number of headers you can indicate to skip them. The supported values are None, First row, First two, First three and First four.
+*   `Data columns` - here the values will be added dynamically based on the values in the CSV Header field. Here each data column will be listed with the name, Data Type and the Format to enable further configuration.
+
 ## Actions
 
 ### Read CSV attachment
+
+![Read CVS attachments](img/read-CSV-attachment.png)
 
 This action will read the CSV attachment of the incoming message and output
 a `JSON` object. To configure this action the following fields can be used:
@@ -76,8 +92,15 @@ When columns are added in the UI, you will be presented with an opportunity to
 provide a JSONata expression per column. If you require number formatting that
 is specific to a locale, the JSONata expression should handle that concern.
 
-![screenshot from 2017-10-17 09-28-04](https://user-images.githubusercontent.com/5710732/31651871-926b4530-b31d-11e7-936f-bcf3ff05f8e2.png)
+![Configure Input](img/configure-input.png)
 
 The output of the CSV Write component will be a message with an attachment.  In
 order to access this attachment, the component following the CSV Write must be
 able to handle file attachments.
+
+## Limitations
+
+  1. You may get `Component run out of memory and terminated.` error during run-time, that means that component needs more memory, please add `EIO_REQUIRED_RAM_MB` environment variable with an appropriate value (e.g. value `512` means that 512 MB will be allocated) for the component in this case.
+  2. You may get `Error: write after end` error, as a current workaround try increase value of environment variable: `TIMEOUT_BETWEEN_EVENTS`.
+  3. Maximal possible size for an attachment is 10 MB.
+  4. Attachments mechanism does not work with [Local Agent Installation](https://support.elastic.io/support/solutions/articles/14000076461-announcing-the-local-agent-).

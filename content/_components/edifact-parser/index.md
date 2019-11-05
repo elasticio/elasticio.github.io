@@ -4,7 +4,6 @@ layout: article
 section: Protocol components
 ---
 
-# edifact-parser-component
 EDIFACT Parser component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}). It reads incoming attachments and
 parses them using EDI parser.
 
