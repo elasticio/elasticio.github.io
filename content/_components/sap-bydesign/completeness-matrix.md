@@ -1,8 +1,15 @@
 ---
-title: Completeness Matrix
-layout: article
+title: Component Completeness Matrix
+layout: component
 category: sap-byDesign
+description: SAP Business byDesign Component Completeness Matrix.
+icon: sapbydesign.png
+icontext: SAP ByDesign component
+createdDate: 2019-06-06
+updatedDate: 2019-11-06
 ---
+
+
 
 SAP Business byDesign Component Completeness Matrix:
 
