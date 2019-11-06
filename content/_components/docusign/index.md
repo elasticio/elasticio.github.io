@@ -4,7 +4,7 @@ layout: article
 section: Office components
 ---
 
-{{site.data.tenant.name}} iPaaS integration component / connector for speaking with DocuSign API
+[{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) iPaaS integration component / connector for speaking with DocuSign API
 
 ## Environment Variables & OAuth Callback Values
 This component requires the following environment variables:
@@ -58,3 +58,7 @@ To interact with DocuSign platform, this component is interact with DocuSign [RE
   * POST /v2/accounts/{accountId}/envelopes
   * GET /v2/accounts/{accountId}/envelopes/{envelopeId}
   * GET /v2/accounts/{accountId}/templates
+
+## License
+
+Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})
