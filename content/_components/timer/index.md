@@ -4,6 +4,12 @@ layout: article
 section: Utility components
 ---
 
-Timer component for the {{site.data.tenant.name}} platform
+> **Note:** The Timer component is deprecated. Please use [Simple Trigger](https://docs.elastic.io/components/simple-trigger/index.html) instead of this component.
 
-DEPRECATED: Please use the following [link](https://github.com/elasticio/simple-trigger-component)
+## Description
+
+Timer component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
+
+## License
+
+ © [{{site.data.tenant.name}}](https://{{site.data.tenant.name}})
