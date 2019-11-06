@@ -1772,7 +1772,16 @@ nav:hover .nav__text {
 
 .side__list {
   padding-left: 16px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f2f4f5;
+}
+
+.side__time {
+  position: relative;
+  display: block;
+  color: #879DB5;
+  font-size: 12px;
+}
 
 .side__item {
   position: relative;
