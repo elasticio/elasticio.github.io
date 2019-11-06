@@ -1,8 +1,13 @@
 ---
 title: Magento2 component
-layout: article
+layout: component
 section: E-Commerce components
+description: A component to work with Magento 2.
+icon: magento.png
+icontext: Magento 2 Component
 category: magento2
+createdDate: 2018-03-16
+updatedDate: 2019-11-06
 ---
 
 Magento v2 component for the {{site.data.tenant.name}} platform.
@@ -13,14 +18,9 @@ Every form of actions is generated from appropriate Magento2 API endpoint JSONsc
 
 `sku` - stock keeping unit is product identifier.
 
-### Completeness Matrix
-![image](https://user-images.githubusercontent.com/36419533/65947494-b9527080-e438-11e9-993b-744250e4354a.png)
-
-[Magento v2 Completeness Matrix](https://docs.google.com/spreadsheets/d/1dysRw0FrJxF6FJr6syvk74ajBxfQRSYE8LFkvuaB5j4/edit?usp=sharing)
-
 ### Purpose
 
-The main purpose of the component is integration some external system with e-commerce platform Magento version 2 
+The main purpose of the component is integration some external system with e-commerce platform Magento version 2
 
 ### API links
 
@@ -30,13 +30,13 @@ https://devdocs.magento.com/swagger/
 
 There is implemented [token-based authentication](https://devdocs.magento.com/guides/v2.0/get-started/authentication/gs-authentication-token.html) in component.
 
-1. **Admin Token authorization**: for this option `username` and `password` fields are required, `Integration Token` field should be empty. 
+1. **Admin Token authorization**: for this option `username` and `password` fields are required, `Integration Token` field should be empty.
 A token is generated for each request.
 2. **Integration Token authorization**: for this option `Integration Token` field is required, `username` and `password` fields should be empty.
 
 ### Minor Version of Magento
 
-Dropdown list with a minor version of Magento 2. It is possible to select 2.2 or 2.3 version. Required field. 
+Dropdown list with a minor version of Magento 2. It is possible to select 2.2 or 2.3 version. Required field.
 
 ### Magento Edition
 
@@ -57,6 +57,33 @@ It is needed to specify password. Required in pair with `username` for `Admin To
 ### Integration Token
 
 It is needed to specify integration token. Required for `Integration Token authorization`
+
+## Triggers
+
+### Get New and Updated Objects Polling
+
+Lookup objects polling trigger.
+
+#### Component's configuration:
+
+**Object Type** - required, choose entity type for polling data. Possible options: Customers, Orders, Products.
+
+**Start Time** - optional, indicates the beginning time to start polling from (defaults to the beginning of time).
+
+**End Time** - optional, if provided, don’t fetch records modified after this time (defaults to never).
+
+**Size of Polling Page** - optional, positive integer, indicates the size of pages to be fetched. Defaults to 1000 objects.
+
+**Store View Code** - optional, the dropdown list with all store view codes, is useful for object type `Products`. With this option is possible to retrieve products for defined store view.
+
+![image](https://user-images.githubusercontent.com/16806832/59746223-186fe900-927f-11e9-8847-957082c0ab1a.png)
+
+#### Input Metadata
+N/A
+
+#### Output Data
+Each object emitted individually.
+
 
 ## Actions
 
@@ -79,31 +106,31 @@ Input metadata contains 3 fields:
    'username': 'dummy_user',
    'password': 'password 1'
 }
-```  
+```
 ![image](https://user-images.githubusercontent.com/16806832/58162968-d194d080-7c8b-11e9-9037-9e359e225c5c.png)
 
 #### Expected output metadata
 
-Output metadata contains object with property `response`, which contains response data. 
+Output metadata contains object with property `response`, which contains response data.
 For example:
 
 ```
 {
    'response': 'token'
 }
-```  
+```
 ### Set Inventory Action
 
 This action allows you to set the quantity for an already existing product.
 
 #### Expected input metadata
-   
+
 Input metadata contains 3 fields:
-   
+
 **sku** - required, specify what product to set.
-   
+
 **qty** - required, specify what quantity to set.
-   
+
 **is_in_stock** - required, specify if product is in stock.
 
 ### Upsert Product Action
@@ -146,11 +173,11 @@ Input metadata for simple product:
 **Custom Attributes** - object with global custom attributes and custom attributes for each store view
 
 **Child skus** - an array of child SKUs that should be associated with the configurable product. Is present, if configuration field `Product Type` equals to `Configurable (Associate with existing child product, single configurable variant)`
-                  
+
 #### Expected output metadata
 
-Output metadata contains created or updated product: [/lib/schemas/upsertProductNew.out.json](/lib/schemas/upsertProductNew.out.json) 
-   
+Output metadata contains created or updated product: [/lib/schemas/upsertProductNew.out.json](/lib/schemas/upsertProductNew.out.json)
+
 
 
 ### Set order as shipped Action
@@ -166,7 +193,7 @@ Input metadata contains 2 fields:
 **skuQtyPairs** - required, array of objects with properties:
 
 **sku** - product sku, than needs to be shipped
-   
+
 **qty** - quantity of products, than needs to be shipped
 
 ```json
@@ -184,14 +211,14 @@ Input metadata contains 2 fields:
 
 #### Expected output metadata
 
-Output metadata contains object with property `response` with shipment ID. 
+Output metadata contains object with property `response` with shipment ID.
 For example:
 
 ```json
 {
    "response": "3"
 }
-```  
+```
 
 ### Set Sales Order External ID
 
@@ -200,7 +227,7 @@ This action allows to set or update Sales Order external ID for existing Order
 #### Expected input metadata
 
 **magento_order_id** - required, primary id of Sales Order entity for Magento 2 API.
-   
+
 **ext_order_id** - required, specify Sales Order an PID for external system.
 
 ```
@@ -208,7 +235,7 @@ This action allows to set or update Sales Order external ID for existing Order
    'magento_order_id': 1,
    'ext_order_id': 'some_external_id'
 }
-``` 
+```
 
 
 #### Expected output metadata
@@ -220,15 +247,15 @@ Type|Json schema location
 |SalesOrder  |[/lib/schemas/setSalesOrderExternalId.out.json](/lib/schemas/setSalesOrderExternalId.out.json)
 
 ### Create Invoice Action
-   
+
 This action allows you to create an invoice for an already existing order using the order's `entity id`.
-      
+
 #### Expected input metadata
-   
+
 Input metadata contains 2 fields:
-   
+
 **capture** - optional, indicate if payment was received for order. If true, payment was received.
-   
+
 **orderEntityID** - required, specify the order's `entity id`.
 
 ### Lookup Object by ID
@@ -253,18 +280,19 @@ This action takes an array as input, and therefore can only be used in **develop
 
 #### Input Metadata
 The input metadata is a nested array that takes the following format:
+
 ```
    {
    "tieredPrices": [
    {
       "sku": string,                              # SKU for one product
-      "prices": [                                 # sets tiered prices for SKU to this array of prices                          
+      "prices": [                                 # sets tiered prices for SKU to this array of prices
          {
          "price": 100,                           # price (in currency)
          "price_type": "discount",               # either "discount" or "fixed"
          "website_id": "other_website",          # website ID can be given as either a string or an int
          "customer_group": "Retailer",           # Customer group must be given as a string
-         "quantity": 45                          
+         "quantity": 45
          }
       ]
    }, {
@@ -310,36 +338,10 @@ To delete a customer, input either their customer ID or their email. To delete a
 #### Expected output metadata
 For customers, the output is their customer ID. For products, the output is its SKU.
 
-## Triggers
-
-### Get New and Updated Objects Polling
-
-Lookup objects polling trigger.
-
-#### Component's configuration:
-
-**Object Type** - required, choose entity type for polling data. Possible options: Customers, Orders, Products.
-
-**Start Time** - optional, indicates the beginning time to start polling from (defaults to the beginning of time).
-
-**End Time** - optional, if provided, don’t fetch records modified after this time (defaults to never).
-
-**Size of Polling Page** - optional, positive integer, indicates the size of pages to be fetched. Defaults to 1000 objects.
-
-**Store View Code** - optional, the dropdown list with all store view codes, is useful for object type `Products`. With this option is possible to retrieve products for defined store view.
-
-![image](https://user-images.githubusercontent.com/16806832/59746223-186fe900-927f-11e9-8847-957082c0ab1a.png)
-
-#### Input Metadata
-N/A
-
-#### Output Data
-Each object emitted individually.
-  
 ## Known limitations
 
 1. Current component version was tested with Magento2 v2.3.3. Correct component behavior is not guaranteed for other Magento2 versions.
 2. Deprecated triggers and actions don't support `Integration Token authorization`, only `Admin Token authorization`.
-3. Currently Magento2 has a bug where encoded URI's are not recognised and will throw errors. For example if you have `some/sku`, it 
+3. Currently Magento2 has a bug where encoded URI's are not recognised and will throw errors. For example if you have `some/sku`, it
 will be encoded to `some%2Fsku`. However, due to the bug this will throw errors. Refrain from using URI's that have special characters which
 are meant to be encoded.
