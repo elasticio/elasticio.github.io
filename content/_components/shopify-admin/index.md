@@ -1,15 +1,31 @@
 ---
 title: Shopify Admin component
-layout: article
+layout: component
 section: E-Commerce components
+description: A component to work with the Shopify Admin API.
+icon: shopify-admin.png
+icontext: Shopify Admin component
+category: shopify-component
+createdDate: 2017-04-30
+updatedDate: 2019-11-06
 ---
 
-{{site.data.tenant.name}} iPaaS integration component for the Shopify Admin API
+## Description
 
-## Credentials
- - shopName
- - apiKey
- - password
+{{site.data.tenant.name}} iPaaS integration component for the Shopify Admin API.
+
+
+## Requirements
+
+### Credentials
+
+*   `shopName`
+*   `apiKey`
+*   `password`
+
+### Environment variables
+
+not required
 
 ## Triggers
 
@@ -18,26 +34,45 @@ select as a first component during the integration flow design.
 
 ## Actions
 
+Use this list to navigate to the action you seek.
+
+*   [List Objects](#list-objects)
+*   [List Products](#list-products)
+*   [Upsert Product](#upsert-product)
+*   [Delete Product](#delete-product)
+*   [Get Product](#get-product)
+*   [Count Products](#count-products)
+*   [Create Product Image](#create-product-image)
+*   [Update Product Image](#update-product-image)
+*   [Delete Product Image](#delete-product-image)
+*   [List Inventory Items](#list-inventory-items)
+*   [Get Inventory Item](#get-inventory-item)
+*   [Update Inventory Item](#update-inventory-item)
+*   [Create Product Variant](#create-product-variant)
+*   [Update Product Variant](#update-product-variant)
+*   [Delete Product Variant](#delete-product-variant)
+
 ### List Objects
 
-#### Configuration options
+Here are the configuration options:
 
-1. `Object Type` - type of object to be listed
-2. `Behavior` - `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message
-3. `Max Size` - default 250, maximum value is 250. Maximum number of objects to fetch.
+1.  `Object Type` - type of object to be listed
+2.  `Behavior` - `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message
+3.  `Max Size` - default 250, maximum value is 250. Maximum number of objects to fetch.
 
 #### Input metadata
 
-1. `idField` - object types: `Article`, `Asset`, `Article`, `Customer Address`, `Discount Code`, `Inventory Item`, `Inventory Level`, `Fulfillment`, `Order Risk`, `Refund`, `Transaction`, `Fulfillment Event`, `Gift Card Adjustment`, `Payment`, `Product Image`, `Product Variant`, `Province`, `Usage Charge` require id of parent object to be passed in input metadata
-2. `order` - add ability to sort items.`fieldName`: name of field for sorting objects, only fields of type: `string`, `number`, `boolean` supported. `orderDirection`: asc or desc defines direction of sorting.
-3. `filter` - add ability filter item from result. `searchTerm`: `fieldName` - name of field to apply filter. `condition` - `eq` equal, `ne` not equal, `gt` greater, `ge` greater or equal, `lt` less, `le` less or equal apply provided condition to field. `fieldValue` - value to be used by condition in comparing with `value` in object field. It is possible to chain few conditions via: `criteriaLink` - `and`, `or` chain with previous condition by provided operator.
+1.  `idField` - object types: `Article`, `Asset`, `Article`, `Customer Address`, `Discount Code`, `Inventory Item`, `Inventory Level`, `Fulfillment`, `Order Risk`, `Refund`, `Transaction`, `Fulfillment Event`, `Gift Card Adjustment`, `Payment`, `Product Image`, `Product Variant`, `Province`, `Usage Charge` require id of parent object to be passed in input metadata
+2.  `order` - add ability to sort items.`fieldName`: name of field for sorting objects, only fields of type: `string`, `number`, `boolean` supported. `orderDirection`: asc or desc defines direction of sorting.
+3.  `filter` - add ability filter item from result. `searchTerm`: `fieldName` - name of field to apply filter. `condition` - `eq` equal, `ne` not equal, `gt` greater, `ge` greater or equal, `lt` less, `le` less or equal apply provided condition to field. `fieldValue` - value to be used by condition in comparing with `value` in object field. It is possible to chain few conditions via: `criteriaLink` - `and`, `or` chain with previous condition by provided operator.
 
 #### Example of usage
 
-1. Object Type - `Country`,
-2. Behaviour - `Fetch All`,
-3. Max Size - `20`
-````json
+1.  Object Type - `Country`,
+2.  Behaviour - `Fetch All`,
+3.  Max Size - `20`
+
+```json
 {
   "order": {
     "fieldName": "code",
@@ -54,17 +89,20 @@ select as a first component during the integration flow design.
     }
   ]
 }
-````
-Will return maximum 20 objects of type Country ordered by their code and filtered where tax value greater then 0.
+```
 
-### List products(Deprecated use List Objects action instead)
+Will return maximum 20 objects of type Country ordered by their code and filtered
+where tax value greater then 0.
 
-in/out metadata can be found at `/lib/schemas/listProducts.{in/out}.json`
+### List Products
+
+> **(Deprecated use [List Objects](#list-objects) action instead)**
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"ids": [
 		"814083178540"
@@ -86,8 +124,10 @@ input message:
 	"published_status": "any"
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": [
 		{
@@ -174,14 +214,14 @@ output message:
 }
 ```
 
-### Upsert product
+### Upsert Product
 
-in/out metadata can be found at `/lib/schemas/upsertProduct.{in/out}.json`
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"id": "814083178540",
 	"body_html": "It's the small iPod with a big idea: Video.",
@@ -236,8 +276,10 @@ input message:
 	"vendor": "Apple"
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": {
 		"id": 814083178540,
@@ -322,34 +364,35 @@ output message:
 }
 ```
 
-### Delete product
-
-in/out metadata can be found at `/lib/schemas/deleteProduct.{in/out}.json`
+### Delete Product
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"id": "814083178540"
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"deleted": true,
 	"productId": "814083178540"
 }
 ```
 
-### Get product
+### Get Product
 
-in/out metadata can be found at `/lib/schemas/getProduct.{in/out}.json`
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"id": "833638662188",
 	"fields": [
@@ -360,7 +403,8 @@ input message:
 }
 ```
 output message:
-```
+
+```json
 {
 	"result": {
 		"id": 833638662188,
@@ -370,14 +414,13 @@ output message:
 }
 ```
 
-### Count products
-
-in/out metadata can be found at `/lib/schemas/countProducts.{in/out}.json`
+### Count Products
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"vendor": null,
 	"product_type": null,
@@ -392,20 +435,20 @@ input message:
 }
 ```
 output message:
-```
+
+```json
 {
 	"result": 15
 }
 ```
 
-### Create product image
-
-in/out metadata can be found at `/lib/schemas/createProductImage.{in/out}.json`
+### Create Product Image
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"productId": "814083178540",
 	"position": 2,
@@ -428,8 +471,10 @@ input message:
 	"height": 480
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": {
 		"id": 3004333031468,
@@ -446,14 +491,13 @@ output message:
 }
 ```
 
-### Update product image
-
-in/out metadata can be found at `/lib/schemas/updateProductImage.{in/out}.json`
+### Update Product Image
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"productId": "814083178540",
 	"imageId": "2978401321004",
@@ -477,8 +521,10 @@ input message:
 	"height": 480
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": {
 		"id": 2978401321004,
@@ -497,21 +543,22 @@ output message:
 }
 ```
 
-### Delete product image
-
-in/out metadata can be found at `/lib/schemas/deleteProductImage.{in/out}.json`
+### Delete Product Image
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"productId": "814083178540",
 	"imageId": "3004381331500"
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": {
 		"deleted": true,
@@ -521,14 +568,15 @@ output message:
 }
 ```
 
-### List inventory items(Deprecated use List Objects action instead)
+### List Inventory Items
 
-in/out metadata can be found at `/lib/schemas/listInventoryItems.{in/out}.json`
+> **Deprecated use [List Objects](#list-objects) action instead**
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"ids": [
 		"8994203271212",
@@ -539,7 +587,8 @@ input message:
 }
 ```
 output message:
-```
+
+```json
 {
 	"result": [
 		{
@@ -560,20 +609,21 @@ output message:
 }
 ```
 
-### Get inventory item
-
-in/out metadata can be found at `/lib/schemas/getInventoryItem.{in/out}.json`
+### Get Inventory Item
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"id": "8994203271212"
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": {
 		"id": 8994203271212,
@@ -585,22 +635,24 @@ output message:
 }
 ```
 
-### Update inventory item
+### Update Inventory Item
 
-in/out metadata can be found at `/lib/schemas/updateInventoryItem.{in/out}.json`
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"id": "8994203271212",
 	"sku": "new sku",
 	"tracked": false
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": {
 		"id": 8994203271212,
@@ -612,14 +664,13 @@ output message:
 }
 ```
 
-### Create product variant
-
-in/out metadata can be found at `/lib/schemas/createProductVariant.{in/out}.json`
+### Create Product Variant
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"productId": "814083178540",
 	"barcode": "1234_pink",
@@ -653,8 +704,10 @@ input message:
 	"weight_unit": "oz"
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": {
 		"id": 9010709037100,
@@ -686,14 +739,13 @@ output message:
 }
 ```
 
-### Update product variant
-
-in/out metadata can be found at `/lib/schemas/updateProductVariant.{in/out}.json`
+### Update Product Variant
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"id": "9010709037100",
 	"productId": "814083178540",
@@ -728,8 +780,10 @@ input message:
 	"weight_unit": "oz"
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": {
 		"id": 9010709037100,
@@ -761,21 +815,22 @@ output message:
 }
 ```
 
-### Delete product variant
-
-in/out metadata can be found at `/lib/schemas/deleteProductVariant.{in/out}.json`
+### Delete Product Variant
 
 #### Usage example
 
 input message:
-```
+
+```json
 {
 	"id": "9010709037100",
 	"productId": "814083178540"
 }
 ```
+
 output message:
-```
+
+```json
 {
 	"result": {
 		"deleted": true,
