@@ -1,15 +1,20 @@
 ---
 title: JDBC Component
-layout: article
+layout: component
 section: Database components
+description: A component to work with object-relational database management systems.
+icon: jdbc.png
+icontext: JDBC component
 category: jdbc
+createdDate: 2019-06-11
+updatedDate: 2019-11-01
 ---
-### Description
+## Description
 
 This a component for working with object-relational database management systems.
 It works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
 
-### Purpose
+## Purpose
 
 With this component you will have following triggers:
 
@@ -29,7 +34,8 @@ Following actions are inside:
 
 ``INSERT`` - this action will execute insert query into the specified table. The action returns boolean value is execution insert successful or not.
 
-#### Environment variables
+
+## Environment variables
 
 For integration-testing is needed to specify following environment variables:
 
@@ -67,8 +73,12 @@ You need to use following properties to configure credentials:
 
 ### DB Engine
 
-Choose one of existing database types:
-![image](https://user-images.githubusercontent.com/40201204/43577772-6f85bdea-9655-11e8-96e1-368493a36c9d.png)
+Choose one of supported database types:
+
+*   MySQL
+*   PostgreSQL
+*   Oracle
+*   MSSQL
 
 ### Connection URI
 
