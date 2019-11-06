@@ -1,8 +1,13 @@
 ---
 title: SAP ByDesign component
-layout: article
+layout: component
 section: ERP components
 category: sap-byDesign
+description: A component to work with the SAP byDesign API.
+icon: sapbydesign.png
+icontext: SAP ByDesign component
+createdDate: 2019-06-06
+updatedDate: 2019-11-06
 ---
 
 ## Description
@@ -23,6 +28,7 @@ with SAP Business byDesign API.
 |---------------------|-------|-----------------------------------|-----------------------------------------------|
 | LOG_LEVEL           | false | Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
 | EIO_REQUIRED_RAM_MB | false | Value of allocated memory         | `2048` recommended                            |
+| ELASTICIO_REBOUND_LIMIT | false | Number of rebounds            | Default 5                                     |
 
 ### Credentials
 
@@ -66,6 +72,13 @@ fields are:
 | Service Name | true | Service of SAP By Design to call | `Query Accounts` |
 | Binding      | true | SOAP Service binding             | `binding_SOAP12` |
 | Operation    | true | SOAP Service operation           | `FindByElements` |
+| Enable Rebound For SOAP Fault |false | Default: No. If Yes enables rebound for SOAP Fault | `Yes` or `No` |
+
+### Rebound
+
+1.  Rebound for the SOAP Fault can be enabled with configuration parameter `Enable Rebound For SOAP Fault`: `Yes`.
+2.  Rebound enabled only for SOAP Fault code: `SOAP-ENV:Server`.
+3.  Number of rebounds can be controlled with the environment variable : `ELASTICIO_REBOUND_LIMIT`. In case when user set `Enable Rebound For SOAP Fault`: `Yes` but did not specify `ELASTICIO_REBOUND_LIMIT`, component will act accordingly to `rebound` feature default behavior.
 
 
 ## Request examples

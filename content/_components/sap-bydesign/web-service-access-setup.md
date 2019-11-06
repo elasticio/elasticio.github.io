@@ -1,7 +1,12 @@
 ---
 title: Web service access setup
-layout: article
+layout: component
 category: sap-byDesign
+description: Web Service consuming from SAP Business ByDesign
+icon: sapbydesign.png
+icontext: SAP ByDesign component
+createdDate: 2019-06-06
+updatedDate: 2019-11-06
 ---
 
 This document will guide you to get access to Web Service consuming from SAP Business ByDesign.
