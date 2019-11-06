@@ -10,6 +10,7 @@ This a component for working with object-relational database management systems.
 It works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
 
 ### Purpose
+
 With this component you will have following triggers:
 
 ``SELECT`` - this trigger will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that returns multiple results, it has limitations on the query and suited only for SELECT type of queries. The trigger will remember last execution timestamp and let you build queries on it.
@@ -29,25 +30,30 @@ Following actions are inside:
 ``INSERT`` - this action will execute insert query into the specified table. The action returns boolean value is execution insert successful or not.
 
 #### Environment variables
+
 For integration-testing is needed to specify following environment variables:
+
 1. Connection to MSSQL:
  - ``CONN_USER_MSSQL`` - user login
  - ``CONN_PASSWORD_MSSQL`` - user password
  - ``CONN_DBNAME_MSSQL`` - DataBase name
  - ``CONN_HOST_MSSQL`` - DataBase host
  - ``CONN_PORT_MSSQL`` - DataBase port
+
 2. Connection to MySQL:
  - ``CONN_USER_MYSQL`` - user login
  - ``CONN_PASSWORD_MYSQL`` - user password
  - ``CONN_DBNAME_MYSQL`` - DataBase name
  - ``CONN_HOST_MYSQL`` - DataBase host
  - ``CONN_PORT_MYSQL`` - DataBase port
+
 3. Connection to Oracle:
  - ``CONN_USER_ORACLE`` - user login
  - ``CONN_PASSWORD_ORACLE`` - user password
  - ``CONN_DBNAME_ORACLE`` - DataBase name
  - ``CONN_HOST_ORACLE`` - DataBase host
  - ``CONN_PORT_ORACLE`` - DataBase port
+
 4. Connection to PostgreSQL:
  - ``CONN_USER_POSTGRESQL`` - user login
  - ``CONN_PASSWORD_POSTGRESQL`` - user password
@@ -55,30 +61,41 @@ For integration-testing is needed to specify following environment variables:
  - ``CONN_HOST_POSTGRESQL`` - DataBase host
  - ``CONN_PORT_POSTGRESQL`` - DataBase port
 
-#### Others
-
 ## Credentials
+
 You need to use following properties to configure credentials:
 
 ### DB Engine
+
 Choose one of existing database types:
 ![image](https://user-images.githubusercontent.com/40201204/43577772-6f85bdea-9655-11e8-96e1-368493a36c9d.png)
 
 ### Connection URI
+
 Provide hostname of the server, e.g. ``acme.com``
+
 ### Connection port
+
 Optional field. Provide port of the server instance, as by default:
 - ``3306`` - MySQL
 - ``5432`` - PostgreSQL
 - ``1521`` - Oracle
 - ``1433`` - MSSQL
+
 ### Database Name
+
 Provide name of database at the instance that you want to interact with.
+
 ### User
+
 Provide a username that has permissions to interact with the Database.
+
 ### Password
+
 Provide a password of the user that has permissions to interact with the Database.
+
 ### Configuration properties
+
 Optional field. Provide a configuration properties for connections to the Database, e.g. ``useUnicode=true&serverTimezone=UTC``
 
 **Limitation:** `Configuration properties` value may not be checked during Credentials Verification, so in case of using this field make sure that it contains correct input.
@@ -86,6 +103,7 @@ Optional field. Provide a configuration properties for connections to the Databa
 ## Triggers
 
 ### Select trigger
+
 You are able to provide SELECT query with last execution timestamp as WHERE clause criteria.
 ![image](https://user-images.githubusercontent.com/40201204/43591075-2a032dcc-967b-11e8-968d-851355c2646e.png)
 Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
@@ -99,7 +117,9 @@ The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-d
 - ``mi`` - minute
 - ``ss`` - second
 - ``sss`` - millisecond (optional)
+
 ### Get Rows Polling trigger
+
 This trigger can polling data from provided table. As WHERE clause you can use column, which has datatype like DATE or TIMESTAMP.
 ![image](https://user-images.githubusercontent.com/40201204/43591332-c99f6b3e-967b-11e8-8a77-bf8386e83d51.png)
 Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
@@ -114,32 +134,35 @@ The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-d
 - ``ss`` - second
 - ``sss`` - millisecond (optional)
 
-*Please Note: Component Snapshot will not be overwritten in Real-Time flows due to platform behaviour, so we strongly recommend to use Get Rows Polling trigger in Keen Flows only*
+> **Please Note:** Component Snapshot will not be overwritten in Real-Time flows due to platform behaviour, so we strongly recommend to use Get Rows Polling trigger in Keen Flows only*
 
 #### Input fields description
+
 ![image](https://user-images.githubusercontent.com/16806832/67293348-f5836900-f4ec-11e9-8e6a-e91b9417ff9d.png)
 
-##### Tables List
+  * Tables List
 
 Dropdown list with available table names, required field
 
-##### Timestamp (or similar) Column
+  * Timestamp (or similar) Column
 
 Dropdown list with available Column names, that have a type like `java.sql.Date` or `java.sql.Timestamp`, required field
 
-##### Start Polling From (optional)
+  * Start Polling From (optional)
 
 Optional field, indicates the beginning time to start polling from (defaults to the current time)
 
 ### SELECT trigger (Deprecated)
+
 This action exists in JDBC component only for backward compatibility. New [**Select trigger**](#select-trigger) is recommended to use.
 
 ## Actions
 
 ### Execute custom query action
+
 Action to execute custom SQL query from provided request string.
 
-**Note:** SQL request will be executed according to chosen database JDBC specification.
+> **Note:** SQL request will be executed according to chosen database JDBC specification.
 
 Execution result returns as array of objects. If request contains multiple sql statements - them will execute inside one transaction.
 If one of statements fails, transaction will be rollbacked.
@@ -167,6 +190,7 @@ UPDATE stars SET radius = 5 WHERE id = 2;
 ```
 
 ### Select action
+
 ![image](https://user-images.githubusercontent.com/40201204/43592439-39ec5738-967e-11e8-8632-3655b08982d3.png)
 The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
 In SQL query you can use clause variables with specific data types.
@@ -174,7 +198,7 @@ Internally we use prepared statements, so all incoming data is
 validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types
 therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
 
-**Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
+> **Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
 
 For example if you have a following SQL statement:
 
@@ -205,18 +229,23 @@ Following types are supported:
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
 
 #### Input fields description
+
 Component supports dynamic incoming metadata - as soon as your query is in place it will be parsed and incoming metadata will be generated accordingly.
 
 ### Lookup Row By Primary Key
+
 ![image](https://user-images.githubusercontent.com/40201204/43592505-5b6bbfe8-967e-11e8-845e-2ce8ac707357.png)
 
 The action will execute select query from a ``Table`` dropdown field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns only one result (a primary key is unique).
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
+
 #### Input fields description
+
 ![image](https://user-images.githubusercontent.com/40201204/43644579-f593d1c8-9737-11e8-9b97-ee9e575a19f7.png)
 As an input metadata you will get a Primary Key field to provide the data inside as a clause value.
 
 ### Insert action
+
 The action will execute ``INSERT`` command into the table from ``Table`` dropdown list the values specified in the body.
 
 #### List of Expected Config fields
@@ -224,6 +253,7 @@ The action will execute ``INSERT`` command into the table from ``Table`` dropdow
    * `Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3
 
 #### Input fields description
+
 ##### Table
 
 Action contains only one configuration field `Table` - dropdown list with available table names.
@@ -243,6 +273,7 @@ As output metadata, you will get execution insert result like:
 ```
 
 ### Delete Row By Primary Key action
+
 ![image](https://user-images.githubusercontent.com/40201204/43592505-5b6bbfe8-967e-11e8-845e-2ce8ac707357.png)
 The action will execute delete query from a ``Table`` dropdown field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns count of affected rows.
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
@@ -250,12 +281,16 @@ Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty respon
 `Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3
 
 #### Input fields description
+
 ![image](https://user-images.githubusercontent.com/40201204/43644579-f593d1c8-9737-11e8-9b97-ee9e575a19f7.png)
 As an input metadata you will get a Primary Key field to provide the data inside as a clause value.
 
 ### Execute stored procedure
+
 This action calls stored procedure from selected `DB Schema` and `Stored procedure` name
+
 #### Input fields description
+
 - **DB Schema** - a schema that contains a procedure to call. Must be selected from the dropdown list before `Stored procedure` name
 - **Stored procedure** - a name of a procedure to call, can be selected from the dropdown list
 
@@ -294,7 +329,9 @@ Component generates next metadata:
 ![image](https://user-images.githubusercontent.com/22715422/62056735-edd26200-b226-11e9-871e-0efc305d70b2.png)
 
 ### Upsert Row By Primary Key action
+
 The action will execute ``SELECT`` command from a ``Tables`` dropdown field, as search criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"), and execute ``INSERT`` command by PRIMARY KEY with specified field, if result does not found, else - action will execute ``UPDATE`` command by PRIMARY KEY with specified field. The action returns only one result row (a primary key is unique).
+
 1. Find and select jdbc-component in the component repository
 ![image](https://user-images.githubusercontent.com/16806832/44981615-c70a9d80-af7b-11e8-8055-3b553abe8212.png)
 
@@ -325,6 +362,7 @@ The action will execute ``SELECT`` command from a ``Tables`` dropdown field, as 
 ![image](https://user-images.githubusercontent.com/16806832/44983365-90378600-af81-11e8-9be4-4dbb39af0fdc.png)
 
 #### Input fields description
+
 * `Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3
 
 As an input metadata you will get all fields of selected table. [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY") is required field (will mark as asterisk) and other input fields are optional.
@@ -332,10 +370,12 @@ As an input metadata you will get all fields of selected table. [PRIMARY KEY](ht
 
 
 ### Create or update record action (Deprecated)
+
 This action exists in JDBC component only for backward compatibility.
 Please use [**Upsert row by primary key**](#upsert-row-by-primary-key-action) instead.
 
 ## Current limitations
+
 1. Only tables with one [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY") is supported. You will see the message ``Table has not Primary Key. Should be one Primary Key
 ``, if the selected table doesn't have a primary key. Also, you will see the message ``Composite Primary Key is not supported
 ``, if the selected table has composite primary key.
@@ -356,4 +396,5 @@ Please use [**Upsert row by primary key**](#upsert-row-by-primary-key-action) in
  - ``PostgreSQL``:  40P01
 
 ## License
+
 Apache-2.0
