@@ -6,7 +6,7 @@ section: E-Commerce components
 
 ## Description
 
-[commercetools](http://www.commercetools.com/en/), also known as sphere.io, is a
+[commercetools](https://commercetools.com/), also known as sphere.io, is a
 cloud-based e-commerce software which is often praised for its focus on APIs and
 extensive API documentation. It provides an advanced and automatically scaling
 technology that allows shop owners to fully focus on their customers.

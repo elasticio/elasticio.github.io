@@ -6,6 +6,7 @@ category: soap-component
 ---
 
 ## Description
+
 The SOAP Component provides the SOAP Web Services work opportunity within a
 {{site.data.tenant.name}} flow.
 
@@ -17,21 +18,32 @@ invoke SOAP Web services over HTTP.
 ### How it works
 
 #### Step 1
+
 Find and select SOAP component in the component repository
 ![Step 1](https://user-images.githubusercontent.com/13310949/43515103-5de72b58-958a-11e8-88ce-5870003867a1.png)
+
 #### Step 2
+
 Create new or select existing credentials
 ![Step 2](https://user-images.githubusercontent.com/13310949/43514620-3c2b9efa-9589-11e8-9d9e-c82b1d66e5eb.png)
+
 #### Step 3
+
 Specify WSDL URL, then choose binding and operation consecutively. **The order matters!**
 ![Step 3](https://user-images.githubusercontent.com/13310949/43522182-365e9fbe-95a1-11e8-8226-3e3679afbe17.png)
+
 #### Step 4
+
 Configure an input data and click "Continue"
 ![Step 4](https://user-images.githubusercontent.com/13310949/43514773-9036472a-9589-11e8-83d6-95759f1a2cc9.png)
+
 #### Step 5
+
 Retrieve sample or add sample manually
 ![Step 5: Retrieve sample](https://user-images.githubusercontent.com/13310949/43514839-bace8e16-9589-11e8-92d2-e54890472dbb.png)
+
 #### Step 6
+
 Retrieve sample result
 ![Step 6: Retrieve sample result](https://user-images.githubusercontent.com/13310949/43515232-aca5be76-958a-11e8-95a0-c723f9323e4f.png)
 
@@ -48,6 +60,7 @@ Component supports the following WSDL styles:
 *   Document/Literal
 
 #### Environment variables
+
 ``` OIH_REQUIRED_RAM_MB - recommended value of allocated memory is 2048MB ```
 
 ## Credentials
@@ -138,6 +151,7 @@ for every wsdl/binding/operation specified during the configuration of the compo
 You can refer these tools documentation to get deeper understanding about the product.
 
 #### Output json schema
+
 Output json schema is generated dynamically the same as for the input (see above).
 
 ## Additional information
@@ -148,6 +162,7 @@ Output json schema is generated dynamically the same as for the input (see above
 3. Operation
 
 ### Soap Reply
+
 Wraps and returns input data as SOAP response by provided SOAP metadata
 
 #### Input fields description
@@ -208,4 +223,5 @@ Here are the limitations of this component:
 *   [FasterXML JsonSchemaGenerator](https://github.com/FasterXML/jackson-module-jsonSchema)
 
 ## License
+
  © [{{site.data.tenant.name}}](https://{{site.data.tenant.name}})

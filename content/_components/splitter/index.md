@@ -5,16 +5,21 @@ section: Utility components
 ---
 
 # splitter-component
+
 Splitter is the basic component for the [elastic.io platform](http://www.elastic.io).
 
 ## Description
+
 The Splitter processes income messages containing multiple elements that might have to be processed in different ways. The Splitter emits out the composite message into individual messages, each containing data related to one item.
 
 #### Environment variables
+
 Component does not have any required environment variables, but we suggest to use `EIO_REQUIRED_RAM_MB` in order to avoid `Component run out of memory and terminated` error, recommended value of allocated memory is `512` MB.
 
 ## Actions
+
 ### Split Message By Array
+
 **This action is deprecated, please use Split on JSONata Expression instead.**
 
 Splits a message into multiple messages using a given separator. The separator is treated as a path to a property inside the message. A message is split when a property is an array and emitted are multiple messages. Otherwise the original message is emitted.
@@ -95,6 +100,7 @@ and the JSONata expression `Phone.{type: number}`, an object constructor, the ac
 - *If the evaluated array contains primitive values like ```users:["John", "Mike", "Anna"]```, the splitter emits error.*
 
 #### List of Expected Config fields
+
 ```Split Property``` - use this field to choose a separator.
 
 ## Documentation links

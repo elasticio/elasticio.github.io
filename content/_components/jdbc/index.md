@@ -34,6 +34,7 @@ Following actions are inside:
 
 ``INSERT`` - this action will execute insert query into the specified table. The action returns boolean value is execution insert successful or not.
 
+
 ## Environment variables
 
 For integration-testing is needed to specify following environment variables:
