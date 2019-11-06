@@ -58,6 +58,6 @@ No environment variables need to be configured.
 
 This component interacts with LDAP v3.
 
-### License
+## License
 
 Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})

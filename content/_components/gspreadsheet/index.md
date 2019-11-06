@@ -65,9 +65,9 @@ Spreadsheet whenever flow processes the message.
 | Use first row/column as header | true | You should specify Yes if your data has a header in the first row/column and you want to use these values as json key in the output message. If you specify No, json key will be taken from row/column index according to A1 notation. Se example below | `Yes` |
 | Select All Data                | true | You should specify Yes if you want to fetch all spreadsheet data whenever step starts. If you specify No, a step will be emitting only delta changes (lines which were added after last step runs) | `No` |
 
-**IMPORTANT:** Using `Use first row/column as header` feature, you must be sure that header values are unique.
+> **IMPORTANT:** Using `Use first row/column as header` feature, you must be sure that header values are unique.
 
-Values from spreadsheets return as 'UNFORMATTED_VALUE' [type](https://developers.google.com/sheets/api/reference/rest/v4/ValueRenderOption)
+Values from spreadsheets return as `UNFORMATTED_VALUE` [type](https://developers.google.com/sheets/api/reference/rest/v4/ValueRenderOption)
 
 #### Cases with ROWS dimension:
 
@@ -304,4 +304,4 @@ since not only the newly inserted row will be regarded as a new record but
 
 ## License
 
-© [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
+Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})

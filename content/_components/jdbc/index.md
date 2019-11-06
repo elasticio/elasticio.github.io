@@ -407,4 +407,4 @@ Please use [**Upsert row by primary key**](#upsert-row-by-primary-key-action) in
 
 ## License
 
-Apache-2.0
+Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})
