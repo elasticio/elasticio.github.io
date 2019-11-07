@@ -69,3 +69,7 @@ output message:
 ## Links
 
 To retrieve credentials you need to create Twitter App [here](https://apps.twitter.com/) and generate token in that app.
+
+## License
+
+Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
