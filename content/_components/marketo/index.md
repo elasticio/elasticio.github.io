@@ -2,7 +2,7 @@
 title: Marketo component
 layout: component
 section: Marketing-related components
-description: A marketing automation platform focused on account-based marketing.
+description: A marketing automation component focused on account-based marketing.
 icon: marketo.png
 icontext: Marketo component
 category: marketo
@@ -15,10 +15,6 @@ updatedDate: 2019-11-07
 [Marketo](https://www.marketo.com/) is a marketing automation platform focused
 on account-based marketing, including email, mobile, social, digital ads, web
 management and analytics.
-
-This is an open source component template for
-[Marketo](https://www.marketo.com/) which is developed specifically to run on
-[elastic.io platform](https://www.elastic.io). You can clone it and change it as you wish.
 
 ## Authentication
 
