@@ -1,14 +1,14 @@
 ---
 title: Salesforce-cpq component
-layout: article
+layout: component
 section: CRM components
+description: The component gives sales teams and channel partners the necessary tools to configure price and quote complex solutions.
+icon: salesforce-cpq.png
+icontext: salesforce-cpq
+category: Salesforce-cpq
+createdDate: 2018-10-09
+updatedDate: 2019-06-05
 ---
-
-## Description
-
-The component gives sales teams and channel partners the necessary tools to
-configure price and quote complex solutions. Automate discounts, pricing, and
-approvals to maximize revenue and margins.
 
 ### How works.  API version / SDK version
 
