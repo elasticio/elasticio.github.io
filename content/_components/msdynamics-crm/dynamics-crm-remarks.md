@@ -1,19 +1,21 @@
 ---
-title: Dynamics 365 Remarks
-layout: article
-category: msdynamics-crm-component
+title: Dynamics 365
+layout: component
+section: CRM components
+description: Remarks to Dynamics 365.
+icon: msdynamics-crm.png
+icontext: Dynamics 365
+category: Microsoft Dynamics CRM
+createdDate: 2018-03-18
+updatedDate: 2018-09-07
 ---
 
-![](img/DynamicsCrm1.png)
-
-![](img/DynamicsCrm2.png)
+![Dynamics 365](img/DynamicsCrm1.png)
 
 Microsoft Dynamics CRM is a product in the Microsoft Dynamics family.  It is a
 CRM within that product family.
 
-![](img/DynamicsOps1.png)
-
-![](img/DynamicsOps2.png)
+![Microsoft Dynamics Finance and Operations](img/DynamicsOps1.png)
 
 Microsoft Dynamics Finance and Operations is a product in the Microsoft Dynamics family.  It is a
 ERP within that product family.
@@ -30,6 +32,7 @@ approximately 2015.  These APIs have the following caveats:
 * The URL of the OData root  is hard to find.  For CRM it is `/api/data/v8.2`.  For Finance and Operations it is `/data`.
 
 ## Test Instance Set Up - Using Cloud Trial Instance
+
 A trial instance of Business Central can be requested from
 [https://trials.dynamics.com/](https://trials.dynamics.com/) and selecting `Business Central`.  Sometimes this
 trial expires or otherwise shuts down.  If this occurs, the below steps can be
@@ -48,11 +51,17 @@ necessary.
 8. You should now be able to visit your CRM installation.
 
 ## Support
+
 A ticket can be filled with support through [https://admin.dynamics.com/](https://admin.dynamics.com/)
 
 One previous issue was resolved by using incognito mode.  A screenshot of that error is below.
 
-![](img/DynamicsError.png)
+![Dynamics 365 Error](img/DynamicsError.png)
 
 ## Integration Tests
+
 An `.env` file for integration tests can be found in BitWarden.  It requires a valid access token for authentication to be manually provided first.  One can be obtained using the provided postman collection.
+
+## License
+
+Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})

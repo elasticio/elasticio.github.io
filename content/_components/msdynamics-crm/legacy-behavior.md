@@ -1,9 +1,14 @@
 ---
-title: Documentation On Legacy Behavior
-layout: article
-category: msdynamics-crm-component
+title: Legacy Behavior
+layout: component
+section: CRM components
+description: Documentation On Legacy Behavior
+icon: msdynamics-crm.png
+icontext: Legacy Behavior
+category: Microsoft Dynamics CRM
+createdDate: 2018-03-18
+updatedDate: 2018-09-07
 ---
-
 
 ## Basic structure
 
@@ -177,3 +182,7 @@ The component is:
 Adding the details one by one implies a risk: incomplete data in case an error is thrown while iterating through the details.
 Adding details in bulk would be a desirable option, however, this does not seem possible in CRM.
 [Example for quote details:](https://msdn.microsoft.com/en-us/library/gg328283.aspx) (RetrieveMultiple exists, but there is no CreateMultiple).
+
+## License
+
+Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})
