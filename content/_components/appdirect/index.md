@@ -1,15 +1,19 @@
 ---
 title: AppDirect Component
-layout: article
+layout: component
 section: Marketing-related components
+description: AppDirect component is designed for AppMarket API integration.
+icon:  appdirect.png
+icontext: AppDirect Component
+category: AppDirect Component
+createdDate: 2018-09-05
+updatedDate: 2019-06-19
 ---
 
-## Description
+This component uses v2 version of API which described at [AppMarket API Reference](https://help.appdirect.com/api/appmarket.html)
 
-AppDirect component is designed for AppMarket API integration. This component
-uses v2 version of API which described at [AppMarket API Reference](https://help.appdirect.com/api/appmarket.html)
+## Authentication
 
-### Authentication
 Authentication occurs via OAuth 2.0. In order to make OAuth work, you need a new App in your Environment.
 
 ## Configuring your environment
@@ -51,6 +55,47 @@ You can use [Create API clients](https://help.appdirect.com/appmarket/Default.ht
 -   Click "Authenticate"
 -   Specify your **Email** and **Password** and click **"Log In"**
 -   After getting a **"Success"** notification save your credentials.
+
+## Triggers
+
+### Webhook subscription
+
+Webhooks are notifications that the AppDirect platform can send to Integration
+Flow when certain events occur in the system. For example, you can receive
+notifications when users are created, when products are modified, when
+subscriptions are canceled, and so on. The AppDirect platform sends notifications
+to the component in real time.
+
+When flow starts, the component tries to create a new subscription using trigger
+configuration. The component can not create a new subscription if the same
+subscription already exists in AppDirect platform. Before flow stop, component
+tries to remove a subscription to Webhook URL with specified in configuration
+**entity type** value.
+
+You can use [documentation](https://help.appdirect.com/appmarket/Default.htm#MarketplaceManager/mm-set-integ-webhook.htm) for more detail information.
+
+#### Webhook subscription. Input fields
+
+-   **Entity group** - group of entity types
+-   **Entity type** - type of entity which you want to create.
+-   **Event type** - type of event which you want to subscribe
+
+You can see a table of available configuration cases below:
+
+| Entity group | Entity type | Event type |
+| ------------|-----------|---------- |
+| Billing     | User       | All, Added, Removed, Changed |
+| Billing     | Company    | All, Added, Removed, Changed |
+| Billing     | Membership | All, Added, Removed, Changed |
+| Billing     | Sales lead | All, Added,  Changed |
+| Billing     | Sales opportunity | All, Added, Changed |
+| Product     | App assignment | All, Added, Removed, Changed |
+| Product     | Catalog product | All, Added, Removed, Changed |
+| Product     | Staging product | All, Added, Changed |
+| Account     | Subscription | All, Added, Removed, Changed |
+| Account     | Invoice | All, Added, Removed, Changed |
+| Account     | Order | All, Added, Removed, Changed |
+| Account     | Payment instrument | All, Added, Changed |
 
 ## Actions
 
@@ -94,6 +139,7 @@ Get an object by its type and id from AppDirect Environment
 Get objects by criteria
 
 #### Lookup Objects. Input fields
+
 -   **Entity type** - type of entity which you want to lookup. You can use only the following list of types for this action:
     -   **[Buyable product](https://help.appdirect.com/api/appmarket.html#retrieve-buyable-products)**
     -   **[Company](https://help.appdirect.com/api/appmarket.html#list-all-companies)**
@@ -155,52 +201,8 @@ email address (and also depending on channel configuration), a user may be creat
 This causes an invitation to be sent to the user.
 
 
-## Triggers
-
-### Webhook subscription
-
-Webhooks are notifications that the AppDirect platform can send to Integration
-Flow when certain events occur in the system. For example, you can receive
-notifications when users are created, when products are modified, when
-subscriptions are canceled, and so on. The AppDirect platform sends notifications
-to the component in real time.
-
-When flow starts, the component tries to create a new subscription using trigger
-configuration. The component can not create a new subscription if the same
-subscription already exists in AppDirect platform. Before flow stop, component
-tries to remove a subscription to Webhook URL with specified in configuration
-**entity type** value.
-
-You can use [documentation](https://help.appdirect.com/appmarket/Default.htm#MarketplaceManager/mm-set-integ-webhook.htm) for more detail information.
-
-#### Webhook subscription. Input fields
-
--   **Entity group** - group of entity types
--   **Entity type** - type of entity which you want to create.
--   **Event type** - type of event which you want to subscribe
-
-You can see a table of available configuration cases below:
-
-| Entity group | Entity type | Event type |
-| ------------|-----------|---------- |
-| Billing     | User       | All, Added, Removed, Changed |
-| Billing     | Company    | All, Added, Removed, Changed |
-| Billing     | Membership | All, Added, Removed, Changed |
-| Billing     | Sales lead | All, Added,  Changed |
-| Billing     | Sales opportunity | All, Added, Changed |
-| Product     | App assignment | All, Added, Removed, Changed |
-| Product     | Catalog product | All, Added, Removed, Changed |
-| Product     | Staging product | All, Added, Changed |
-| Account     | Subscription | All, Added, Removed, Changed |
-| Account     | Invoice | All, Added, Removed, Changed |
-| Account     | Order | All, Added, Removed, Changed |
-| Account     | Payment instrument | All, Added, Changed |
-
 ## Links
 
 -   [API Reference](https://help.appdirect.com/api/appmarket.html)
 -   [Creating API client](https://help.appdirect.com/appmarket/Default.htm#MarketplaceManager/api-client-create.html)
 -   [Webhook integration documentation](https://help.appdirect.com/appmarket/Default.htm#MarketplaceManager/mm-set-integ-webhook.htm)
-
-## License
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](http://www.{{site.data.tenant.name}})

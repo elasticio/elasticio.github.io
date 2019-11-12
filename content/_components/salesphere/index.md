@@ -5,7 +5,7 @@ section: CRM components
 description: A component to work with SaleSphere CRM by mVISE.
 icon: salesphere.png
 icontext: SaleSphere Component
-category: salesphere-component
+category: SaleSphere Component
 createdDate: 2018-06-14
 updatedDate: 2019-05-29
 ---

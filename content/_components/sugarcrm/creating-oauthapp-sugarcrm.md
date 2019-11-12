@@ -4,7 +4,7 @@ layout: component
 description: These are the instructions to how to create an OAuth APP on a SugarCRM instance.
 icon:  sugarcrm.png
 icontext: Creating an app on a SugarCRM instance
-category: sugarcrm-component
+category: SugarCRM component
 createdDate: 2016-12-03
 updatedDate: 2019-09-25
 ---
