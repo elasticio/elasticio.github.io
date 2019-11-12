@@ -1,7 +1,6 @@
 ---
 title: Completeness Matrix
 layout: component
-section: CRM components
 description: Salesforce component completness Matrix.
 icon: salesforce.png
 icontext: Salesforce component
