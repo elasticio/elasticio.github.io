@@ -1,15 +1,14 @@
 ---
 title: SugarCRM component
-layout: article
+layout: component
 section: CRM components
+description: A user interface, industry-leading customer experience, and an intuitive customization platform.
+icon:  sugarcrm.png
+icontext: SugarCRM component
 category: sugarcrm-component
+createdDate: 2016-12-03
+updatedDate: 2019-09-25
 ---
-
-## Description
-
-[SugarCRM](https://www.sugarcrm.com) is a CRM system with a  a simple user
-interface, industry-leading customer experience, and an intuitive customization
-platform.
 
 This is an open source component template for [SugarCRM](https://www.sugarcrm.com)
 which is developed specifically to run on
@@ -107,7 +106,3 @@ This component interacts with version 10 of the SugarCRM REST API.  It has been
 tested with:
 *   `SugarCRM Enterprise, Version 7.9.1.0 (Build 1074)` and
 *   `SugarCRM Enterprise, Version 8.0.0 (Build 211) (Spring '18)`.
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}}](http://{{site.data.tenant.name}})

@@ -1,7 +1,6 @@
 ---
 title: Configuring ODATA APP
 layout: component
-section: CRM components
 description: How to register and configure guide.
 icon: msdynamics-crm.png
 icontext: Configuring ODATA APP

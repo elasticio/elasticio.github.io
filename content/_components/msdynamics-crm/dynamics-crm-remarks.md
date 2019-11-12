@@ -1,7 +1,6 @@
 ---
 title: Dynamics 365
 layout: component
-section: CRM components
 description: Remarks to Dynamics 365.
 icon: msdynamics-crm.png
 icontext: Dynamics 365

@@ -1,13 +1,15 @@
 ---
 title: Registering a Platform Value through the UI
-layout: article
+layout: component
+description: These are the instructions register a platform on your SugarCRM instance.
+icon:  sugarcrm.png
+icontext: Registering a Platform Value through the UI
 category: sugarcrm-component
+createdDate: 2016-12-03
+updatedDate: 2019-09-25
 ---
 
-## Description
-
-These are the instructions register a platform on your SugarCRM instance. This step
-is necessary to platform to your SugarCRM instance. This is one of the steps in
+This step is necessary to platform to your SugarCRM instance. This is one of the steps in
 the [authentication process of SugarCRM component](index#authentication).
 
 ## Purpose
