@@ -7,7 +7,7 @@ category: integration-flow
 since: 20190406
 ---
 
-This document provides basic information on [Webhooks](#webhooks), their [usage on the platform](#webhook-component), and [Webhook integration flows](#webhook-flows).
+This document provides basic information on [Webhooks](#webhooks), their [usage on the platform](/components/webhook/), and [Webhook integration flows](#webhook-flows).
 
 ## Webhooks
 
@@ -40,7 +40,7 @@ A Webhook [integration flow](integration-flow) is a flow that uses a Webhook Com
 
 The following scheme shows how our platform uses Webhooks for integration flows.
 
-![](/assets/img/getting-started/webhooks-overview/scheme_1.png)
+![Webhook scheme](/assets/img/getting-started/webhooks-overview/scheme_1.png)
 
 We have Webhook component and Webhooks Service. An external HTTP request in JSON or XML format, a list of properties, or a file reaches a Webhook component's URL exposed by Webhooks Service. The Webhooks Service differentiates the requests by flow ID, and sends them to the platform for queueing. The queue of requests is then processed and sent to the corresponding Webhook flows. As a running flow gets its request, it initiates execution of steps.   
 
