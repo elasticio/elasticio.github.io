@@ -1,7 +1,13 @@
 ---
-title: Salesforce Component Completeness Matrix
-layout: article
-category: salesforce-component
+title: Completeness Matrix
+layout: component
+section: CRM components
+description: Salesforce component completness Matrix.
+icon: salesforce.png
+icontext: Salesforce component
+category: salesforce
+createdDate: 2019-06-27
+updatedDate: 2019-10-28
 ---
 
 ## Description
