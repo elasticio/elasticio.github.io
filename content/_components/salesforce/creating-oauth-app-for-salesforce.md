@@ -1,7 +1,6 @@
 ---
 title: Creating OAuth App for Salesforce
 layout: component
-section: CRM components
 description: How to create OAuth App for Salesforce.
 icon: salesforce.png
 icontext: Salesforce component
