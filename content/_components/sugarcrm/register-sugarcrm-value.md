@@ -4,7 +4,7 @@ layout: component
 description: These are the instructions register a platform on your SugarCRM instance.
 icon:  sugarcrm.png
 icontext: Registering a Platform Value through the UI
-category: sugarcrm-component
+category: SugarCRM component
 createdDate: 2016-12-03
 updatedDate: 2019-09-25
 ---
