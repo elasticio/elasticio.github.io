@@ -1,14 +1,18 @@
 ---
 title: Salesforce Component
-layout: article
+layout: component
 section: CRM components
-category: salesforce-component
+description: A component enables you to manage your organization’s sales, marketing and customer support assets, far beyond email addresses and phone numbers.
+icon: salesforce.png
+icontext: Salesforce component
+category: salesforce
+createdDate: 2019-06-27
+updatedDate: 2019-10-28
 ---
 
 ## Description
 
-Integration component to connect the Salesforce for the {{site.data.tenant.name}}
-platform.
+Integration component to connect the Salesforce for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
 
 > **Note**: The component works with the Salesforce API. This means you must
 > make sure your Salesforce edition has API Access enabled. To check which editions
