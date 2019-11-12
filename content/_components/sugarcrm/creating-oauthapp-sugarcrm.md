@@ -1,13 +1,15 @@
 ---
 title: Creating an app on a SugarCRM instance
-layout: article
+layout: component
+description: These are the instructions to how to create an OAuth APP on a SugarCRM instance.
+icon:  sugarcrm.png
+icontext: Creating an app on a SugarCRM instance
 category: sugarcrm-component
+createdDate: 2016-12-03
+updatedDate: 2019-09-25
 ---
 
-## Description
-
-These are the instructions to how to create an OAuth APP on a SugarCRM instance. This step
-is necessary to platform to your SugarCRM instance. This is one of the steps in
+This step is necessary to platform to your SugarCRM instance. This is one of the steps in
 the [authentication process of SugarCRM component](index#authentication).
 
 ## Purpose

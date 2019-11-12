@@ -1,7 +1,6 @@
 ---
 title: Legacy Behavior
 layout: component
-section: CRM components
 description: Documentation On Legacy Behavior
 icon: msdynamics-crm.png
 icontext: Legacy Behavior
