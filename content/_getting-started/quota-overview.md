@@ -18,11 +18,11 @@ Note, that you can set the Workspace quota higher than Contract quota, but there
 
 You can see the actual resource usage on the dedicated page. The usage is shown per Contract, per Workspace and per Flow. Also, you don't really need to keep an eye on the usage page all the time, because the quota service will notify you via email on different steps of approach to the limit.
 
-![Quota page](/assets/img/getting-startes/quota/quota.png)
+![Quota page](/assets/img/getting-started/quota/quota.png)
 
 As seen on the page above, only approximately 1% of the memory quota has been used this month. If you click **View Report**, you will see a resource usage chart:
 
-![Report](/assets/img/getting-startes/quota/report.png)
+![Report](/assets/img/getting-started/quota/report.png)
 
 ## Quota Limit Calculation
 A quota limit is the amount of resources multiplied by time. So if we have `2GB` quota and we want to know our monthly quota limit in `Mb*s` (a composite unit of memory usage that means 1 Megabyte of data transfer sustained for 1 second), we have to:
