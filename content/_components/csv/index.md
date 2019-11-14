@@ -1,12 +1,15 @@
 ---
 title: CSV component
-layout: article
+layout: component
 section: Protocol components
+description: A simple file format used to store tabular data, for example from a spreadsheet or a database.
+icon: csv.png
+icontext: CSV component
+category: CSV component
+createdDate: 2015-11-15
+updatedDate: 2019-10-10
 ---
 
-## Description
-
-A component to read and write Comma Separated Values (CSV) files.
 
 ## How works
 

@@ -1,17 +1,18 @@
 ---
 title: AWS SNS component
-layout: article
+layout: component
 section: Protocol components
+description: A push messaging service that provides a low-cost infrastructure for the mass delivery of messages.
+icon: aws-sns.png
+icontext: AWS SNS component
+category: AWS SNS component
+createdDate: 2016-03-09
+updatedDate: 2019-03-14
 ---
-
-## Description
-
-AWS Simple Notification Service integration component.
 
 ## How works
 
-The component publishes a message to the SNS topic in a specific Amazon SNS
-service access point.
+The component publishes a message to the SNS topic in a specific Amazon SNS service access point.
 
 ## Requirements
 
@@ -69,9 +70,4 @@ Here are the regions the component supports:
 *   `ap-southeast-2` - Asia Pacific (Sydney)
 *   `sa-east-1` - South America (Sao Paulo)
 
-More information about the regions is available at the
-[AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#sns_region) document.
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmBH](https://www.{{site.data.tenant.name}})
+More information about the regions is available at the [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#sns_region) document.
