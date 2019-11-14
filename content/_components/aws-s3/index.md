@@ -1,12 +1,14 @@
 ---
 title: AWS S3 component
-layout: article
+layout: component
 section: Protocol components
+description: A object storage that can store and retrieve e.g. files, documents or images from any place on the Internet.
+icon:  aws-s3.png
+icontext: AWS S3 component
+category: AWS S3 component
+createdDate: 2016-04-16
+updatedDate: 2019-09-25
 ---
-
-## Description
-
-This is the component for working with AWS S3 object storage service on {{site.data.tenant.name}} platform.
 
 ### Purpose
 
@@ -116,11 +118,7 @@ This action removes file from S3 by provided name in selected bucket. The action
 
 Action is deprecated. Use `Write file` action instead.
 
-### Limitations
+## Limitations
 
-1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with the Local Agent Installation.
-
-## License
-
-Apache-2.0 © {{site.data.tenant.name}}.
+1. **Maximal** possible size for an attachment is **10** MB.
+2. Attachments mechanism **does not** work with the Local Agent Installation.
