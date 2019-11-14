@@ -1,24 +1,35 @@
 ---
 title: Twitter component
-layout: article
+layout: component
 section: Marketing-related components
+description: Twitter is a channel where you can connect with your prospects, customers, and journalists.
+icon:  twitter.png
+icontext: Twitter component
+category: Twitter component
+createdDate: 2016-04-19
+updatedDate: 2016-04-27
 ---
 
-## Description
-Twitter component for the {{site.data.tenant.name}} platform.
-
 ## Credentials
- - Consumer key
- - Consumer secret
- - Access token key
- - Access token secret
+
+ - **Consumer key**
+ - **Consumer secret**
+ - **Access token key**
+ - **Access token secret**
+
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
 ### Post tweet
+
 in/out metadata can be found at `/lib/schemas/postTweet.{in/out}.json`
 
-#### usage example
+#### Usage example
+
 input message:
 ```
 {
@@ -34,9 +45,11 @@ output message:
 }
 ```
 ### Search tweets
+
 in/out metadata can be found at `/lib/schemas/searchTweets.{in/out}.json`
 
-#### usage example
+#### Usage example
+
 input message:
 ```
 {
@@ -69,7 +82,3 @@ output message:
 ## Links
 
 To retrieve credentials you need to create Twitter App [here](https://apps.twitter.com/) and generate token in that app.
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
