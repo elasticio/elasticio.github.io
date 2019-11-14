@@ -1,7 +1,13 @@
 ---
 title: AMQP component
-layout: article
+layout: component
 section: Protocol components
+description: A open standard application layer protocol for passing business messages between applications or organizations.
+icon:  amqp.png
+icontext: AMQP component
+category: AMQP component
+createdDate: 2017-03-08
+updatedDate: 2018-01-25
 ---
 
 ## Description
@@ -64,8 +70,3 @@ start if it doesn't exists.
 Following limitations of the component are known:
 *   You can not publish to the default exchange.
 *   All published exchanges are `topic` exchanges by default. However, with the `topic` exchanges one can emulate `direct` and `fanout` exchanges.
-
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
