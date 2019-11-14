@@ -1,18 +1,23 @@
 ---
 title: Sdl-translate component
-layout: article
+layout: component
 section: Marketing-related components
+description: A intelligent platform designed for teams involved in the localization supply chain.
+icon: sdl-translate.png
+icontext: Sdl-translate component
+category: Sdl-translate component
+createdDate: 2018-03-13
+updatedDate: 2018-03-30
 ---
 
-## Description
-SDL translate component for the {{site.data.tenant.name}} platform.
-
 ## Credentials
+
 In oprder to authenticate, you need to retrieve an `apiKey` from your `SDL languagecloud` account
 
 Guide of how to retrieve an [apiKey](https://languagecloud.sdl.com/translation-toolkit/api-documentation) (Getting started -> Generate API Key)
 
 ## Actions information
+
 When specifying the language in a `Configure input` section, use two or three letter codes for that. For example,
 
     english -> en
@@ -26,20 +31,27 @@ When specifying the language in a `Configure input` section, use two or three le
 Such codes can be foud in a result of `Retrieve supported language pairs` action execution
 
 ### Retrieve supported languages
+
 > will return a list of supported language pairs with specified three letters codes for every language
 
 out metadata can be found at `/lib/schemas/retrieveSupportedLanguages.out.json`
+
 ### Translate phrase
+
 > if source language is not specified, action will use `detect language` feature and choose most probable option as source language
 
 in/out metadata can be found at `/lib/schemas/translatePhrase.{in/out}.json`
+
 ### Detect language
+
 in/out metadata can be found at `/lib/schemas/detectLanguage.{in/out}.json`
 
 ### Translate object properties
+
 in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
 
-#### usage example
+#### Usage example
+
 input message:
 ```
 {
@@ -59,9 +71,11 @@ output message:
 }
 ```
 ### Translate array of objects
+
 in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
 
-#### usage example
+#### Usage example
+
 input message:
 ```
 {
@@ -96,4 +110,5 @@ output message:
 ```
 
 ## Links
+
 [Guide of how to retrieve an apiKey](https://languagecloud.sdl.com/translation-toolkit/api-documentation)
