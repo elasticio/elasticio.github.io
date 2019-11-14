@@ -2,12 +2,12 @@
 title: Mailchimp component
 layout: component
 section: Marketing-related components
-description: Online email marketing solution to manage contacts, send emails and track results.
-icon:  mailchimp.png
+description: A open standard application layer protocol for passing business messages between applications or organizations.
+icon: mailchimp.png
 icontext: Mailchimp component
 category: Mailchimp component
-createdDate: 2017-03-08
-updatedDate: 2018-01-25
+createdDate: 2016-12-15
+updatedDate: 2019-03-13
 ---
 
 ## Credentials
