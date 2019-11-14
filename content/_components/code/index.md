@@ -1,7 +1,13 @@
 ---
 title: Code component
-layout: article
+layout: component
 section: Utility components
+description: A component to run a pice of JavaScript code inside the integration.
+icon: code.png
+icontext: Code component
+category: Code component
+createdDate: 2015-09-25
+updatedDate: 2019-11-13
 ---
 
 ## Description
@@ -14,13 +20,12 @@ integration flow.
 Pretty much the same way that you would use any other component in our system.
 It is deployed by default to production, so no need to deploy it yourself
 (although you could if you have extended it yourself). In our Dashboard start
-building your integration and include the Code component as well. You will see a
-picture similar to the one below:
+building your integration and include the Code component as well.
 
-![image](https://user-images.githubusercontent.com/56208/52571227-71cd9480-2e15-11e9-9c62-17e5085d7ada.png)
+![Node.js interface](https://user-images.githubusercontent.com/2523461/68778086-f3678280-0632-11ea-9e9c-d2a888fd5788.png)
 
 However, don't let the simple look fool you - it has a full-fledged interface
-with many very useful features like the ones you would expect from your
+with useful features like the ones you would expect from your
 favourite desktop developing tool:
 
 *   Syntax highlighting - a standard for any online real-time coding interface
@@ -31,27 +36,31 @@ favourite desktop developing tool:
 
 ## Available Variables and Libraries
 
-Here are the available variables and libraries that can be used within the context of execution. The most up-to-date list
-can always be found in be used within the context of execution. The most up-to-date list can always be found in code.js
-of the component. Below is a sample for the reference:
+Here are the available variables and libraries that you can use within the context
+of execution. The most up-to-date list is found within the context of execution.
+The most up-to-date list can always be found in code.js of the component. Below
+is a sample for the reference:
 
--   `console`: - more on [Node.js console](https://nodejs.org/dist/latest-v5.x/docs/api/console.html),
--   `process`: - Current Node.js process,
--   `require`: - Module require,
--   `setTimeout`: - more on [setTimeout](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html),
--   `clearTimeout`: - more on [clearTimeout](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html),
--   `setInterval`: - more on [setInterval](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html),
--   `clearInterval`: - more on [clearInterval](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html),
--   `msg`: - Incoming message containing the payload from the previous step,
--   `exports`: {},
--   `messages`: - Utility for convenient message creation,
--   `request`: - Http Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request)),
--   `wait`: - wait,
--   `emitter`: user to emit messages and errors
+-   `console` - more on [Node.js console](https://nodejs.org/dist/latest-v5.x/docs/api/console.html)
+-   `process` - current Node.js process
+-   `require` - module require
+-   `setTimeout` - more on [setTimeout](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html)
+-   `clearTimeout` - more on [clearTimeout](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html)
+-   `setInterval` - more on setInterval
+-   `clearInterval` - more on clearInterval
+-   `msg` - incoming message containing the payload from the previous step
+-   `cfg` - step's configuration. At the moment contains one property: `code` (the executed code)
+-   `snapshot` - step's snapshot
+-   `exports` - a plain object `{}`
+-   `messages` - utility for convenient message creation
+-   `request` - Http Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request))
+-   `wait` - wait
+-   `emitter` user to emit messages and errors
 
 ## Code component usage Examples
 
-Use code is very simple, just do following:
+To use the code you can follow these examples:
+
 
 ```javascript
 async function run(msg) {
@@ -63,16 +72,23 @@ async function run(msg) {
 }
 ```
 
-> **Please note:** if you have a simple one-in-one-out function you can simply return a
+```javascript
+async function run(msg, cfg, snapshot) {
+  return {
+      addition: 'You can use code',
+      keys: Object.keys(msg)
+  };
+}
+```
+
+> **Please note:** if you have a simple one-in-one-out function you can return a
 > JSON object as a result of your function, it will be automatically emitted as data.
 
 ## Common usage scenarios
 
 ### Doing complex data transformation
 
-[JSONata](http://jsonata.org/) is great however sometimes it's easier to do
-things in JavaScript, if you want to transform an incoming message with code,
-just use following sample:
+If you prefer to transform an incoming message with code then use following sample:
 
 ```javascript
 async function run(msg) => {
@@ -83,7 +99,7 @@ async function run(msg) => {
 
 ### Calling an external REST API
 
-It's very simple to code a small REST API call out of the Code component, see
+You can code a small REST API call out of the Code component, see
 following example:
 
 ```javascript
@@ -106,6 +122,4 @@ async function run(msg) {
 
 ## Known issues and limitations
 
--   Snapshots are not supported
 -   Credentials are not supported
--   No `async` is supported
