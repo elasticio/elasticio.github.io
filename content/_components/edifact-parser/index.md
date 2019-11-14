@@ -1,25 +1,19 @@
 ---
 title: Edifact-parser component
-layout: article
+layout: component
 section: Protocol components
+description: A international standard for electronic data interchange (EDI).
+icon: edifact.png
+icontext: Edifact-parser component
+category: Edifact-parser component
+createdDate: 2017-08-16
+updatedDate: 2017-08-25
 ---
-
-EDIFACT Parser component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}). It reads incoming attachments and
-parses them using EDI parser.
 
 
 ## Authentication
 
 This component requires no authentication.
-
-## Triggers
-
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
-
-## Actions
-
-* *Parse* - Parses an incoming EDIFACT attachment.
 
 ## How it works
 
@@ -29,6 +23,12 @@ EDIFACT Parser component expects an incoming message(es) with EDI attachment(s) 
 
 Sample EDI file you can find [here](https://raw.githubusercontent.com/elasticio/edifact-parser-component/master/samples/INVOICE.edi), and [here](https://github.com/elasticio/edifact-parser-component/blob/master/samples/INVOICE.edi.json) you will see resulting JSON message body after parsing.
 
-## License
 
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](http://{{site.data.tenant.name}})
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
+## Actions
+
+* *Parse* - Parses an incoming EDIFACT attachment.
