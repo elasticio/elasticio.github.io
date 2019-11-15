@@ -1,14 +1,14 @@
 ---
 title: SFTP component
-layout: article
+layout: component
 section: Protocol components
+description: A method of transferring files between two remote systems.
+icon: sftp.png
+icontext: SFTP component
+category: SFTP component
+createdDate: 2015-11-20
+updatedDate: 2019-10-23
 ---
-
-## General Information
-
-### Description and Purpose
-
-This component creates a connection to an SFTP server to read and upload files.
 
 ## Credentials
 

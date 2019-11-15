@@ -1,8 +1,13 @@
 ---
 title: SOAP component
-layout: article
+layout: component
 section: Protocol components
-category: soap-component
+description: A messaging protocol for exchanging information between applications running on different OS.
+icon: soap.png
+icontext: SOAP component
+category: SOAP component
+createdDate: 2018-07-17
+updatedDate: 2019-09-25
 ---
 
 ## Description
@@ -221,7 +226,3 @@ Here are the limitations of this component:
 
 *   [Apache Axis2](http://axis.apache.org/axis2/java/core/)
 *   [FasterXML JsonSchemaGenerator](https://github.com/FasterXML/jackson-module-jsonSchema)
-
-## License
-
- © [{{site.data.tenant.name}}](https://{{site.data.tenant.name}})
