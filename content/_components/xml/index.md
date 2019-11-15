@@ -1,12 +1,14 @@
 ---
 title: XML component
-layout: article
+layout: component
 section: Protocol components
+description: XML is used to describe the transportation, structure, and storage of data.
+icon: xml.png
+icontext: XML component
+category: XML component
+createdDate: 2016-12-29
+updatedDate: 2019-09-25
 ---
-
-## Description
-
-{{site.data.tenant.name}} iPaaS component to convert between XML and JSON data.
 
 ### Purpose
 
@@ -57,7 +59,3 @@ File limit is: 5242880 byte, file given was: * byte
 ## Additional Info
 
 Icon made by Freepik from [www.flaticon.com](https://www.flaticon.com)
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://{{site.data.tenant.name}})
