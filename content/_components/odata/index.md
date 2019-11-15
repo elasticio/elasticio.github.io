@@ -1,15 +1,16 @@
 ---
 title: ODATA component
-layout: article
+layout: component
 section: Protocol components
+description: OData stands for Open Data Protocol and it is used to querying and updating data.
+icon: odata.png
+icontext: ODATA component
+category: ODATA component
+createdDate: 2018-01-17
+updatedDate: 2019-06-10
 ---
 
-## Description
-
-ODATA with OAuth component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
-
-A component designed to work with generic APIs which implement the [OData v4
-specification](http://www.odata.org).
+A component designed to work with generic APIs which implement the [OData v4 specification](http://www.odata.org).
 
 ## Authentication
 
