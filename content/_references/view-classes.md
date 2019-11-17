@@ -2,7 +2,7 @@
 title: View Classes
 layout: article
 section: Component Descriptor
-order: 1
+order: 2
 category: component descriptor
 ---
 

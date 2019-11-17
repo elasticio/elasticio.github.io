@@ -2,7 +2,7 @@
 title: Component Descriptor Structure
 layout: article
 section: Component Descriptor
-order: 0
+order: 1
 category: component descriptor
 ---
 
