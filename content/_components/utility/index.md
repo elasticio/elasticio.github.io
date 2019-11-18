@@ -1,15 +1,16 @@
 ---
 title: Utility Component
-layout: article
+layout: component
 section: Utility components
-category: utility-component
+description: A component that is designed for utility operations.
+icon: utility.png
+icontext: Utility Component
+category: Utility Component
+createdDate: 2019-07-29
+updatedDate: 2019-07-31
 ---
 
-## Description
-
-iPaaS component that is designed for utility operations
-
-#### Environment variables
+## Environment variables
 
 * [optional] **EIO_REQUIRED_RAM_MB** - Number of MB allocated to container. Recommended value of allocated memory is `512` MB. 256 by default
 * [optional] **REQUEST_TIMEOUT** - HTTP request timeout in milliseconds. 10000 by default
