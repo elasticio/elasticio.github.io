@@ -1,11 +1,14 @@
 ---
 title: Jsonata component
-layout: article
+layout: component
 section: Utility components
+description: Dedicated data transformation component
+icon: jsonata.png
+icontext: Jsonata component
+category: Jsonata component
+createdDate: 2017-08-15
+updatedDate: 2019-04-05
 ---
-
-
-> Dedicated data transformation component for {{site.data.tenant.name}} platform based on JSONata
 
 ## Authentication
 
@@ -114,6 +117,11 @@ resulting in ([jsonata link](http://try.jsonata.org/B1ctn36ub)):
 }
 ```
 
-## License
+## Triggers
 
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](http://{{site.data.tenant.name}})
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
+## Actions
+
+  * **Transform**

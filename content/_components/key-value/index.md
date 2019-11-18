@@ -1,35 +1,62 @@
 ---
-title: Key-value-component component
-layout: article
+title: Simple Storage component
+layout: component
 section: Utility components
+description: A component to store and retrieve value from key:value storage.
+icon: simple-storage.png
+icontext: Simple Storage component
+category: Simple Storage component
+createdDate: 2018-06-05
+updatedDate: 2018-06-05
 ---
 
-## Purpose
-Main goal of this component is to provide simple possibility to store and retrieve Key:Value pairs.
 ## How works
-Under the hood used MongoDB.
-During Action configuration collection need to be specified.
-## Requirements
+
+Under the hood used MongoDB. During Action configuration collection need to be specified.
+
+### Purpose
+
+Main goal of this component is to provide simple possibility to store and retrieve Key:Value pairs.
+
+### Requirements
+
 Instance of MongoDB with possibility to connect from component.
+
 ### Environment variables
-No.
-# Credentials
+
+There is no environment variables.
+
+## Credentials
+
 **hostname -**
+
 Hostname or IP address of MongoDB server.
 
 **port -**
+
 Port which is used by your MongoDB server to accept connection. (Default is 27017)
 
 **db -**
+
 Database name that is used to store collections with Key:Values
 
 **user -**
+
 MongoDB username with access to read and write from/to corresponding DB and collection.
 
 **pass -**
+
 Password for specified user.
-# Actions
-## Store
+
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
+## Actions
+
+### Store
+
 Inserts Key:Value pair.
 
 ### Input fields:
@@ -66,31 +93,38 @@ If another valueName will be stored with the same keyName:key it will be added t
 Result will be:
 
 * If there where no such keyName:key yet:
+
 ```
 {
   "response": "inserted"
 }
 ```
 * If keyName:key already exists but doesn't have valueName provided:
+
 ```
 {
   "response": "updated"
 }
 ```
+
  * If such keyName:key and valueName combination already exists and checkbox **"Update if exists?"** checked:
+
  ```
 {
   "response": "updated"
 }
 ```
+
 * If such keyName:key and valueName combination already exists and checkbox **"Update if exists?"** not checked:
+
  ```
 {
   "response": "skipped"
 }
 ```
 
-## Store Batch
+### Store Batch
+
 Inserts Key:Value pair array.
 
 ### Input fields:
@@ -136,7 +170,8 @@ Response:
 }
 ```
 
-## Retrieve
+### Retrieve
+
 Returns value by provided key and Value name if found or provided default value.
 
 ### Input fields:
@@ -155,7 +190,8 @@ In response document from MongoDB collection will be provided, e.g.:
 }
 ```
 
-## Retrieve Batch
+### Retrieve Batch
+
 Returns  array of values by provided key array.
 
 ### Input fields:
@@ -181,7 +217,8 @@ Response format is following:
 }
 ```
 
-## Remove
+### Remove
+
 Removes Value provided in valueName or all values for specified key if **"Delete all values for this key?"** checkbox checked.
 
 
@@ -196,6 +233,7 @@ Key:Value pair
 **valueName -** Name of a field that should be deleted
 
 Response format is following:
+
 ```
 {
   "result": "done"

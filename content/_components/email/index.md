@@ -1,13 +1,14 @@
 ---
 title: Email component
-layout: article
+layout: component
 section: Utility components
+description: In this case it is not about a particular application but the email function in general.
+icon: email.png
+icontext: Email component
+category: Email component
+createdDate: 2016-01-07
+updatedDate: 2019-08-30
 ---
-
-## Description
-
-An Email component for the integration platform which send e-mail to one or more
-recipients using [Mandrill](http://mandrillapp.com/) REST API.
 
 ## How works
 
@@ -15,7 +16,7 @@ The component sends a new transaction through Mandrill using the [Send](https://
 
 ## Requirements
 
-## Environment variables
+### Environment variables
 
 The component can be configured using the following environment variables:
 
