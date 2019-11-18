@@ -1,15 +1,16 @@
 ---
 title: ZIP/UnZIP component
-layout: article
+layout: component
 section: Utility components
+description: This component is designed to operate with zip files.
+icon: zip-unzip.png
+icontext: ZIP/UnZIP component
+category: ZIP/UnZIP component
+createdDate: 2019-05-21
+updatedDate: 2019-06-26
 ---
 
-## Description
-
-This component is designed to operate with zip files
-
-
-#### Environment variables
+## Environment variables
 
 This component has non-mandatory environment variable:
 
@@ -17,6 +18,11 @@ This component has non-mandatory environment variable:
 Number of millisecond of time to live for zip files, unZip action downloads zip files into filesystem.
 ZIP action launch scheduler that will deleted files older than allowed ttl(time to live).
 * `REQUEST_MAX_CONTENT_LENGTH` - default 1GB. Number of bytes, max content length for uploading attachments.
+
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
@@ -27,14 +33,14 @@ configured `regex` download file from provided `url`, and append them to zip usi
 provided `path` as location and name of the file. Output contains attachment with
 url to archive.
 
-#### Configuration fields description
+### Configuration fields description
 
 * `regex` - default match all `'[^]*'`. Regex for filename with extension, only files that matches regex will be add to ZIP.
 * `httpTimeout` - default 60000 milliseconds(60 sec), number of milliseconds for http request timeouts
 * `httpRetry` - default 3, number of retry for http request
 * `zipName` - by default generate uuid name with `.zip` extension. Output zip filename with extension.
 
-#### Input and output schema description
+### Input and output schema description
 
 [Input schema](lib/schemas/zip.in.json)
 Contains array of items with properties:
@@ -47,14 +53,14 @@ Contains property size in body, and url to created archive in attachments.
 
 Unzip provided zip file. Only files that match `regex` and with uncompressed size less than  `maxFileSize` will be unzipped.
 
-#### Configuration fields description
+### Configuration fields description
 
 * `regex` - default match all `'[^]*'`. Regex for filename with extension, only files that matches regex will be unzipped.
 * `maxFileSize` - default 104857600 bytes(100mb), number of bytes. Maximum file size, files with uncompressed size bigger than provided value will not be unzipped
 * `httpTimeout` - default 60000 milliseconds(60 sec), number of milliseconds for http request timeouts
 * `httpRetry` - default 3, number of retry for http request
 
-#### Input and output schema description
+### Input and output schema description
 
 [Input schema](lib/schemas/unzip.in.json):
 Contains property `url` that provided url to zip, that will be downloaded and unzipped.
@@ -63,11 +69,7 @@ Contains array of items with properties:
 * `filename`- name of file with extension
 * `size` - uncompressed file size
 
-### Limitations
+## Limitations
 
 1. Maximal possible size for an attachment is 10 MB.
 2. Attachments mechanism does not work with the Local Agent Installation
-
-## License
-
- © {{site.data.tenant.name}}
