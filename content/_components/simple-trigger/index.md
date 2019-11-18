@@ -1,15 +1,16 @@
 ---
 title: Simple-trigger component
-layout: article
+layout: component
 section: Utility components
+description: A component used to trigger integration flows without requesting data from any services.
+icon: simple-trigger.png
+icontext: Simple-trigger component
+category: Simple-trigger component
+createdDate: 2019-01-16
+updatedDate: 2019-08-30
 ---
 
-## Description
-
-A component used to trigger integration flows without requesting data from any
-services.
-
-### How works
+## How works
 
 This component should be used as a first step in your flow to trigger integration flows.
 

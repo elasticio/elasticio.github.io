@@ -1,12 +1,26 @@
 ---
 title: Router component
-layout: article
+layout: component
 section: Utility components
+description: Examines the message content and routes the message onto a different flow branch based on data contained in the message.
+icon: router.png
+icontext: Router component
+category: Router component
+createdDate: 2017-05-23
+updatedDate: 2019-05-14
 ---
 
-Examines the message content and routes the message onto a different flow branch
-based on data contained in the message.
 This component implements the The [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
+
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
+## Actions
+
+  * **Route** - this action is responsible for performing the only function of the component, which is described in the header.
+
 
 ## How it works?
 
