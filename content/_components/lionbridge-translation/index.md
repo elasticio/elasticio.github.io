@@ -1,11 +1,14 @@
 ---
 title: Lionbridge-translation component
-layout: article
+layout: component
 section: Service components
+description: Lionbridge translation component for the platform.
+icon: lionbridge.png
+icontext: Lionbridge-translation component
+category: Lionbridge-translation component
+createdDate: 2018-03-20
+updatedDate: 2018-03-28
 ---
-
-## Description
-Lionbridge translation component for the {{site.data.tenant.name}} platform.
 
 ## Credentials
 
@@ -14,7 +17,12 @@ Lionbridge translation component for the {{site.data.tenant.name}} platform.
  - apiURI
  - providerId
 
-## Actions information
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
+## Actions
 
 To translate some text from one language to another, Lionbridge uses delayed jobs. That means that you will not be able to receive a translated text immediately in response to a request for translation. Therefore, you need to make a request to create a translation job, then get the code of your request and periodically poll Lionbridge to find out the status of your request. Once you get the status `REVIEW_TRANSLATION`, you can make a request to receive translation.
 
@@ -152,7 +160,7 @@ input message:
 }
 ```
 
-#### for `Request translation job (Simple)` and `Request translation job (Batch)` actions:
+#### For `Request translation job (Simple)` and `Request translation job (Batch)` actions:
 
 output message (Simple):
 ```
@@ -205,7 +213,7 @@ output message (Batch):
 }
 ```
 
-#### for `Request translation job (Object properties)` action:
+#### For `Request translation job (Object properties)` action:
 
 output message:
 ```
@@ -215,7 +223,7 @@ output message:
 }
 ```
 
-#### for `Request translation job (Array of objects)` action:
+#### For `Request translation job (Array of objects)` action:
 
 output message:
 ```
