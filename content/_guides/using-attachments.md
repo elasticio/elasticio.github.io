@@ -13,7 +13,7 @@ Sometimes it's required to send binary data as part of integration [Flow](/getti
 
 - Transferring product images together with the product description.
 
-- Transferring custom-encoded files before they could be parsed and transformed to JSON messages, for example, SFTP Component may read CSV file without parsing it, while CSV component later will parse it and transform to JSON messages.
+- Transferring custom-encoded files before they could be parsed and transformed to JSON messages, for example, SFTP Component may read `CSV` file without parsing it, while CSV component later will parse it and transform to `JSON` messages.
 
 - Preserving native data format while working with it in components, for example, sometimes it's required to work natively on `XML` without `XML-JSON-XML` transformation.
 
