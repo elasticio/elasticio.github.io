@@ -1,12 +1,14 @@
 ---
 title: AWS Lambda component
-layout: article
+layout: component
 section: Service components
+description: An integration component that calls out to Amazon AWS Lambda API.
+icon: aws-lambda.png
+icontext: AWS Lambda component
+category: AWS Lambda component
+createdDate: 2017-09-19
+updatedDate: 2019-03-14
 ---
-
-## Description
-
-An integration component that calls out to Amazon AWS Lambda API.
 
 ## Requirements
 
@@ -35,7 +37,7 @@ select as a first component during the integration flow design.
 
 This action will invoke a AWS Lambda function. It has following configuration parameters:
 
-![image](https://user-images.githubusercontent.com/56208/30986933-79239550-a495-11e7-968e-c17b49036385.png)
+![AWS Lambda - configur input](https://user-images.githubusercontent.com/56208/30986933-79239550-a495-11e7-968e-c17b49036385.png)
 
 Please refer to the [AWS Lambda documentation](http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html) for
 more information about the parameters.
@@ -66,7 +68,3 @@ visible in the platform log)
 ## Known issues
 
 *   Invocation Type ``DryRun`` is not supported - make no sense in the context
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmBH](https://www.{{site.data.tenant.name}})
