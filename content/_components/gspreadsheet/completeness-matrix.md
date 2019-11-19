@@ -1,8 +1,12 @@
 ---
 title: Completeness Matrix
-layout: article
+layout: component
+description: A Google Spreadsheet Component Completeness Matrix.
+icon: gspreadsheet.png
+icontext: Completeness Matrix
 category: gspreadsheet
-category: gspreadsheet
+createdDate: 2015-09-24
+updatedDate: 2019-10-09
 ---
 
 Google Spreadsheet Component Completeness Matrix:

@@ -1,12 +1,17 @@
 ---
 title: Docusign component
-layout: article
+layout: component
 section: Office components
+description: DocuSign is a service that provides secure way to sign documents electronically.
+icon: docusign.png
+icontext: Docusign component
+category: Docusign component
+createdDate: 2018-05-07
+updatedDate: 2019-11-07
 ---
 
-[{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) iPaaS integration component / connector for speaking with DocuSign API
-
 ## Environment Variables & OAuth Callback Values
+
 This component requires the following environment variables:
 * `OAUTH_KEY`
 * `OAUTH_SECRET`
@@ -39,8 +44,6 @@ For example, your application can be notified whenever an individual recipient s
 
 Allows to create envelope for signing using template in your account. Templates help streamline the sending process when you frequently send the same or similar documents, or send different documents to the same group of people.
 
-#### This action has dynamic metadata
-
 ## Current Limitations
 
 Currently component does not support local agents.
@@ -48,17 +51,16 @@ Currently component does not support local agents.
 ## Additional info
 
 ### DocuSign API and Documentation links
+
 To interact with DocuSign platform, this component is interact with DocuSign [REST API (v2)](https://developers.docusign.com/esign-rest-api/reference)
 
 ### For trigger Get [Envelope Signing Events Webhook](https://developers.docusign.com/esign-rest-api/reference/Connect/ConnectConfigurations)
+
   * GET, POST /v2/accounts/{accountId}/connect
   * DELETE /v2/accounts/{accountId}/connect/{connectId}
 
 ### For action Create [Envelope From Template](https://developers.docusign.com/esign-rest-api/reference/Envelopes/Envelopes)
+
   * POST /v2/accounts/{accountId}/envelopes
   * GET /v2/accounts/{accountId}/envelopes/{envelopeId}
   * GET /v2/accounts/{accountId}/templates
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})
