@@ -1,11 +1,15 @@
 ---
 title: Quickbooks component
-layout: article
+layout: component
 section: Finance-related components
+description: QuickBooks is a software to manage sales and expenses, and keep track of daily transactions.
+icon: quickbooks.png
+icontext: Quickbooks component
+category: Quickbooks
+createdDate: 2018-10-11
+updatedDate: 2019-07-04
 ---
 
-
-{{site.data.tenant.name}} iPaaS integration component / connector for speaking with QuickBooks API.
 
 ## OAuth keys and credentials
 
@@ -16,7 +20,7 @@ The keys could be found by appending the `application_id` in the following way:
 https://developer.intuit.com/v2/ui#/app/appdetail/{{application_id}}/{{application_id}}/keys
 ```
 
-![image](https://user-images.githubusercontent.com/22715422/47281476-f638a500-d5e3-11e8-8b42-cb8a06d6f886.png)
+![OAuth keys and credentials](https://user-images.githubusercontent.com/22715422/47281476-f638a500-d5e3-11e8-8b42-cb8a06d6f886.png)
 
 #### Minor api version
 
@@ -29,11 +33,11 @@ To create custom fields on the *Configure input* step, you should first choose a
 entity (object) type you want to work with. Click on the *Object type to...* and wait for data uploading.
 Then you'll see a list of entities which are available for this action or trigger. You should choose one.
 
-![image](https://user-images.githubusercontent.com/22715422/47281969-0c476500-d5e6-11e8-999e-88911274e413.png)
+![Configure input - object type to upsert](https://user-images.githubusercontent.com/22715422/47281969-0c476500-d5e6-11e8-999e-88911274e413.png)
 
 Then you wait for uploading metadata (input object structure). After metadata uploaded you can complete input object to retrieve response sample.
 
-![image](https://user-images.githubusercontent.com/22715422/47282038-5d575900-d5e6-11e8-87b7-cde488e80be4.png)
+![Configure input - integrator mode](https://user-images.githubusercontent.com/22715422/47282038-5d575900-d5e6-11e8-87b7-cde488e80be4.png)
 
 Structure of the input object will be based on entityType field content.
 
