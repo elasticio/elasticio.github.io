@@ -37,7 +37,3 @@ Follow the Documentation link above to find what you need to do to set it up.
 Like with all other elastic.io connectors that are under the Apache license, you can clone it and enhance it yourself to include more functionalities out of the box. Alternatively, you can contact our pre-sales team at ps[at]elastic.io if you prefer our developers to extend the Stripe integration connector for you.
 
 ![Stripe Elasticio Connector](img/stripe-elasticio-connector.png)
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})

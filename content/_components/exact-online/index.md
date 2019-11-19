@@ -1,12 +1,18 @@
 ---
 title: Exact Online component
-layout: article
+layout: component
 section: Finance-related components
+description: A component to work with Exact Online ERP.
+icon: exact-online.png
+icontext: Exact Online component
+category: Exact Online
+createdDate: 2018-09-06
+updatedDate: 2019-07-04
 ---
 
 ## Description
 
-An integration component for Exact Online ERP. It interacts withe [Exact Online API](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-restrefdocs).
+It interacts withe [Exact Online API](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-restrefdocs).
 
 ## Requirements
 
