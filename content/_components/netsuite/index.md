@@ -1,12 +1,14 @@
 ---
 title: NetSuite component
-layout: article
+layout: component
 section: ERP components
+description: A component which interacts with the NetSuite ERP system.
+icon: netsuite.png
+icontext: NetSuite component
+category: NetSuite component
+createdDate: 2018-09-10
+updatedDate: 2019-08-07
 ---
-
-## Description
-
-A component which interacts with the NetSuite ERP system.
 
 ## How works
 

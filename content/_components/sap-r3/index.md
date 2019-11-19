@@ -1,16 +1,16 @@
 ---
 title: SAP ECC (R/3, ERP) Component
-layout: article
+layout: component
 section: ERP components
+description: A component that communicates with provided SAP ECC (R/3, ERP) system.
+icon: sap-r3.png
+icontext: SAP ECC Component
 category: sap-r3
+createdDate: 2019-08-19
+updatedDate: 2019-11-05
 ---
 
 ## General Information
-
-### Description
-
-[{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) component that
-communicates with provided SAP ECC (R/3, ERP) system.
 
 ### How works
 
