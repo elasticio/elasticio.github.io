@@ -2,7 +2,7 @@
 title: Using Attachments
 layout: article
 section: Building integration flows
-order: 2
+order: 1
 since: 20191119
 ---
 
@@ -21,9 +21,9 @@ Sometimes it's required to send binary data as part of integration [Flow](/getti
 
 
 ## How Attachments Work
-As you know, {{site.data.tenant.name}} uses an asynchronous message-oriented middleware (MOM) between the integration Flow steps, it ensures Flow reliability and scalability. MOM is multi-tenant (in the multi-tenant plans) hence fairness, quality of service and internal load balancing have to be ensured - and it's much simpler to implement if messages on the queues are roughly the same size so that broker don't spend too much time on transferring a single multi-gigabyte message while thousands of smaller messages are waiting for their turn. As a summary - it is impractical to stream large payloads though MOM broker, therefore, binary attachments have to be offloaded to the external storage and linked by reference within the {{site.data.tenant.name}} message.
+As you know, {{site.data.tenant.name}} uses an asynchronous message-oriented middleware (MOM) between the integration Flow steps, it ensures Flow reliability and scalability. MOM is multi-tenant (in the multi-tenant plans) hence quality of service and internal load balancing have to be ensured. It's much simpler to implement if messages in the queues are roughly the same size so that broker don't spend too much time on transferring a single multi-gigabyte message while thousands of smaller messages are waiting for their turn.
 
-We are using a reserved place in the message structure called (unsurprisingly) attachments to store attachment references.
+It is simply impractical to stream large payloads through MOM broker, therefore, binary attachments have to be offloaded to the external storage and linked by reference within the {{site.data.tenant.name}} message. We are using a reserved place in the message structure called (obviously) *attachments* to store attachment references.
 
 **EXAMPLE:**
 ```
@@ -56,7 +56,21 @@ As you can see, attachments are stored as a map, where keys are attachment names
 **NOTE 2:** attachment URLs are internal {{site.data.tenant.name}} cluster specific URLs and currently can not be accessed from outside of the cluster.     |
 
 ## How to Create Attachments
+We have established that a Component may access attachments so that you could work with binary data in your Component. However, what if you would like to receive/pull binary data and make it available as an attachment to the next component? It's also easy to do via {{site.data.tenant.name}} API.
 
-In the previous section, you saw your component may access attachments so that you could work with binary data in your component, however, what if you would like to receive/pull binary data and let is available as an attachment to the next component? It's also easy to do - elastic.io API will help you with that.
+To create a new attachment you would need to do an `HTTP POST` to the following URL:
+```
+curl {{site.data.tenant.apiBaseUri}}/v2/resources/storage/signed-url \
+   -X POST \
+   -u {EMAIL}:{APIKEY}
+```
 
-To create a new attachment you would need to do an HTTP POST to the following URL:
+Please make sure you are using authentication credentials that can be found in your container's environment variables. It will return something like this:
+```
+{
+  "get_url": "http://steward.marathon.slave.mesos:8200/files/ea941d07-3ff5-4df1-b812-1bae2f0b9c36",
+  "put_url": "http://steward.marathon.slave.mesos:8200/files/ea941d07-3ff5-4df1-b812-1bae2f0b9c36"
+}
+```
+
+Now you can use `put_url` to store your binary data and `get_url` you should place into the attachment section (as shown above) so that the next Component can read your binary data.
