@@ -79,4 +79,4 @@ System.getenv("SALESFORCE_SECRET")
 > How much resources RAM/CPU is available at build time?
 
 RAM: 256MB RAM
-CPU: 0.1points*
+CPU: 0.1points
