@@ -1,12 +1,14 @@
 ---
 title: Lightspeed-retail component
-layout: article
+layout: component
 section: E-Commerce components
+description: Lightspeed-retail API component for iPaaS platform.
+icon: lightspeed-retail.png
+icontext: Lightspeed-retail component
+category: lightspeed-retail
+createdDate: 2018-12-07
+updatedDate: 2018-12-17
 ---
-
-## Description
-
-Lightspeed Retail API component for {{site.data.tenant.name}} iPaaS.
 
 ## Authentication
 
@@ -14,7 +16,7 @@ Lightspeed uses the OAuth2 protocol to authenticate integrations and grant acces
 
 ## Credentials
 
-![image](https://user-images.githubusercontent.com/40201204/50007735-85e24a80-ffba-11e8-8933-63f05d4c53d3.png)
+![Lightspeed-retail - credentials](https://user-images.githubusercontent.com/40201204/50007735-85e24a80-ffba-11e8-8933-63f05d4c53d3.png)
 
 ### Environment URL
 
@@ -39,7 +41,7 @@ Consumer Secret which you received during API client configuration step.
 
 This trigger polls for existing and updated objects where you can select object type.
 
-![image](https://user-images.githubusercontent.com/40201204/50015199-9dc3c980-ffce-11e8-904c-4852c0c2f4f8.png)
+![Trigger - Polling entity](https://user-images.githubusercontent.com/40201204/50015199-9dc3c980-ffce-11e8-904c-4852c0c2f4f8.png)
 
 #### Input fields description
 
@@ -53,7 +55,7 @@ This trigger polls for existing and updated objects where you can select object 
 
 Action creates a new record/object. This action is supported by limited list of entities.
 
-![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
+![Create Object action](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
 
@@ -95,7 +97,7 @@ Supported entities:
 
 Action creates a new object or updates object which already exists by provided ID. This action is supported by limited list of entities.
 
-![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
+![Upsert Object action](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
 
@@ -142,7 +144,7 @@ Supported entities:
 
 Action updates object which already exists by provided ID. This action is supported by limited list of entities.
 
-![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
+![Update Object action](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
 
@@ -185,7 +187,7 @@ Supported entities:
 
 Action gets a list of objects by filters or specific object by provided ID.
 
-![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
+![Lookup Object By ID action](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
 
@@ -251,7 +253,7 @@ Supported entities:
 
 Action removes object which already exists by provided ID.
 
-![image](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
+![Delete Object By ID action](https://user-images.githubusercontent.com/40201204/50018566-6d812880-ffd8-11e8-87ae-6ab7870f402e.png)
 
 #### Input fields description
 
@@ -304,7 +306,7 @@ If you notice that 429s are coming back, you should reduce the limit until you s
 
 ## Known limitations
 
-The current version of the component doesn't support next list of entities:
+The current version of the component doesn't support the following entities:
 -   [Customer CustomField CustomFieldChoice](https://developers.lightspeedhq.com/retail/endpoints/Customer-CustomField-CustomFieldChoice/)
 -   [Customer CustomField](https://developers.lightspeedhq.com/retail/endpoints/Customer-CustomField/)
 -   [DisplayTemplate Employee](https://developers.lightspeedhq.com/retail/endpoints/DisplayTemplate-Employee/)
