@@ -29,11 +29,13 @@ Now open the *Logs* tab:
 
 ![Logs tab](/assets/img/integrator-guide/flow-errors/Screenshot_5.png)
 
-By analyzing the logs, you can, most likely, find the cause of the error, and come up with a solution. Also, you apply to our Support for assistance.  
+By analyzing the logs, you can, most likely, find the cause of the error, and come up with a solution. Also, you apply to our Support for assistance.
+
+## Downloading the Logs
 
 You can also download logs by clicking the corresponding button for:
 
-- Flow  
+- Flow
 ![Download Flow logs](/assets/img/integrator-guide/flow-errors/download_logs.png)
 
 - Step
