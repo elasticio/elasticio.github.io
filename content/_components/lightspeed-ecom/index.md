@@ -2,7 +2,7 @@
 title: Lightspeed-ecom component
 layout: component
 section: E-Commerce components
-description: Lightspeed ECom API component for platform's iPaaS.
+description: Lightspeed ECom API component for iPaaS platform.
 icon: lightspeed-ecom.png
 icontext: Lightspeed-ecom component
 category: lightspeed-ecom
@@ -350,7 +350,7 @@ If you notice that 429s are coming back, you should reduce the limit until you s
 
 ## Known limitations
 
-The current version of the component doesn't support next list of entities:
+The current version of the component doesn't support the following list of entities:
 -   [Account Metafields](https://developers.lightspeedhq.com/ecom/endpoints/accountmetafield/)
 -   [Account Permissions](https://developers.lightspeedhq.com/ecom/endpoints/accountpermissions/)
 -   [Account Rate limits](https://developers.lightspeedhq.com/ecom/endpoints/accountratelimit/)
