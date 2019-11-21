@@ -1,14 +1,14 @@
 ---
 title: Demandware component
-layout: article
+layout: component
 section: E-Commerce components
+description: A cloud-based commerce platform for fast-growing businesses.
+icon: demandware.png
+icontext: Demandware component
+category: demandware
+createdDate: 2018-03-13
+updatedDate: 2018-03-15
 ---
-
-## Description
-
-Salesforce Commerce Cloud, formerly known as Demandware, is a cloud-based commerce
-platform for fast-growing businesses. The platform has a strong focus on APIs and
-microservices for omnichannel customer experiences.
 
 ## Requirements
 

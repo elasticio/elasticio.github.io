@@ -1,12 +1,18 @@
 ---
 title: ChannelAdvisor component
-layout: article
+layout: component
 section: E-Commerce components
+description: The ChannelAdvisor component for the platform.
+icon: channeladvisor.png
+icontext: ChannelAdvisor component
+category: channeladvisor
+createdDate: 2018-11-19
+updatedDate: 2019-03-14
 ---
 
 ## Description
 
-The ChannelAdvisor component for the platform. Is is designed to work with ChannelAdvisor platform which implement the [OData v4 specification](http://www.odata.org).
+Component is designed to work with ChannelAdvisor platform which implement the [OData v4 specification](http://www.odata.org).
 
 ## Requirements
 
@@ -15,6 +21,7 @@ The ChannelAdvisor component for the platform. Is is designed to work with Chann
 No environment variables are required for deployment.
 
 ### Version and compatibility information
+
 This component interacts with OData version 4.
 
 ## Credentials
@@ -58,11 +65,15 @@ services support this.
 Given a field and a field value that matches exactly one record, find that matching record.
 
 There are three configuration drop-downs:
+
 *   **Object Type to Lookup**: All types of objects programmatically detectable are covered.  This drop down when opened will produce a list of all object types on the system.
+
 *   **Name of Field to Match**: Select a field to compare against.  Currently, this will return a list of all fields on the object selected in the `Object Type to Lookup` drop-down.
+
 *   **Allow Empty Criteria**: Should the lookup operation be skipped (i.e. this component becomes a No-op which emits the empty message) if all criteria are empty?
 
 ### Technical Notes
+
 *   All Objects Programmatically Detectable Covered.
 *   Shows all fields, not just unique fields.
 *   In metadata is dynamic where based on
@@ -77,7 +88,7 @@ There are three configuration drop-downs:
   "fieldName": "Value selected from Name of Field to Match",
   "objectType": "Value selected from Object Type to Lookup",
   "operationType": "lookupObject",
-  "wrapFieldInQuotes": true/false
+  "wrapFieldInQuotes": true
 }
 ```
 
@@ -96,6 +107,7 @@ ELSE
 *   One API call per invocation
 
 ### Upsert Object By ID
+
 Update an existing entry with the id provided.  Otherwise create a new entry.
 
 All types of objects programmatically detectable are covered.  When selecting
@@ -103,6 +115,7 @@ this trigger, the first input that must be configured is **Object type to fetch*
 This drop-down when opened will produce a list of all object types on the system.
 
 ### Technical Notes
+
 *   All Objects Programmatically Detectable Covered.
 *   Adds an `isNew` flag to show update vs create
 *   Metadata is dynamic. The object structure is learned from OData metadata.  The ID field(s) are flagged with `(Primary Key)`
@@ -114,7 +127,7 @@ This drop-down when opened will produce a list of all object types on the system
   "version": 1,
   "objectType": "Value selected from Object Type to Lookup",
   "operationType": "upsert",
-  "wrapFieldInQuotes": true/false
+  "wrapFieldInQuotes": false
 }
 ```
 

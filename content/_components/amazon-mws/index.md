@@ -1,15 +1,17 @@
 ---
 title: Amazon MWS component
-layout: article
+layout: component
 section: E-Commerce components
+description: A API that helps Amazon sellers to programmatically exchange data on listings, orders and more.
+icon: amazon-mws.png
+icontext: Amazon MWS component
+category: amazon-mws
+createdDate: 2014-09-12
+updatedDate: 2019-03-14
 ---
 
 ## Description
-
-[Amazon Marketplace Web Service](https://services.amazon.com/) (Amazon MWS) is
-an integrated web service API that helps Amazon sellers to exchange
-data on listings, orders, payments, reports and more. Data integration with
-Amazon enables high levels of selling automation, which can help sellers grow
+Data integration with Amazon enables high levels of selling automation, which can help sellers grow
 their business. Please visit [Amazon Marketplace Web Service (Amazon MWS) Documentation](http://docs.developer.amazonservices.com/en_UK/dev_guide/index.html) for more information.
 
 ## How works
@@ -77,7 +79,7 @@ given the Amazon `Order Id`. The output has the following structure:
             "type": "array",
             "title": " Order Items",
             "required": true,
-            "properties": { ... }
+            "properties": {}
         }
     }
 }
