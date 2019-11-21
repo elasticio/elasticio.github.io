@@ -10,11 +10,6 @@ createdDate: 2017-04-30
 updatedDate: 2019-11-06
 ---
 
-## Description
-
-{{site.data.tenant.name}} iPaaS integration component for the Shopify Admin API.
-
-
 ## Requirements
 
 ### Credentials

@@ -1,8 +1,13 @@
 ---
 title: Magento1 component
-layout: article
+layout: component
 section: E-Commerce components
-category: Magento1
+description: A component to work with Magento 1.
+icon: magento.png
+icontext: Magento1 component
+category: magento1
+createdDate: 2015-07-29
+updatedDate: 2018-06-25
 ---
 
 ## Description
