@@ -1,12 +1,14 @@
 ---
 title: Lightspeed-ecom component
-layout: article
+layout: component
 section: E-Commerce components
+description: Lightspeed ECom API component for platform's iPaaS.
+icon: lightspeed-ecom.png
+icontext: Lightspeed-ecom component
+category: lightspeed-ecom
+createdDate: 2018-12-07
+updatedDate: 2018-12-28
 ---
-
-## Description
-
-Lightspeed ECom API component for {{site.data.tenant.name}} iPaaS.
 
 ## Authentication
 
@@ -24,7 +26,7 @@ There are two clusters which your app can be installed on. During the installati
 
 ## Credentials
 
-![image](https://user-images.githubusercontent.com/40201204/50343143-833da300-052e-11e9-84be-ccb19eb4f7d1.png)
+![Lightspeed-ecom - Credentials](https://user-images.githubusercontent.com/40201204/50343143-833da300-052e-11e9-84be-ccb19eb4f7d1.png)
 
 ### Environment URL
 
@@ -51,7 +53,7 @@ API Secret which you received from support during configuration a shop.
 
 This trigger polls for existing and updated objects where you can select object type.
 
-![image](https://user-images.githubusercontent.com/40201204/50344276-04973480-0533-11e9-9ac5-c0aa38a7f2ab.png)
+![Trigger - Polling entity](https://user-images.githubusercontent.com/40201204/50344276-04973480-0533-11e9-9ac5-c0aa38a7f2ab.png)
 
 #### Input fields description
 
@@ -101,7 +103,7 @@ Supported entities:
 
 ### Webhook subscription
 
-![image](https://user-images.githubusercontent.com/40201204/50344997-19c19280-0536-11e9-8c40-f7060ee84cec.png)
+![Webhook subscription trigger](https://user-images.githubusercontent.com/40201204/50344997-19c19280-0536-11e9-8c40-f7060ee84cec.png)
 
 #### Input fields description
 
@@ -128,7 +130,7 @@ Supported entities:
 
 Action creates a new record/object. This action is supported by limited list of entities.
 
-![image](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
+![Create Object action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
 
 #### Input fields description
 
@@ -165,7 +167,7 @@ Supported entities:
 
 Action creates a new object or updates object which already exists by provided ID. This action is supported by limited list of entities.
 
-![image](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
+![Upsert Object action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
 
 #### Input fields description
 
@@ -205,7 +207,7 @@ Supported entities:
 
 Action updates object which already exists by provided ID. This action is supported by limited list of entities.
 
-![image](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
+![Update Object action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
 
 Supported entities:
 * attributes
@@ -247,7 +249,7 @@ Supported entities:
 
 Action gets a list of objects by filters or specific object by provided ID.
 
-![image](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
+![Lookup Object By ID action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
 
 #### Input fields description
 
@@ -297,7 +299,7 @@ Supported entities:
 
 Action removes object which already exists by provided ID.
 
-![image](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
+![Delete Object By ID action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
 
 #### Input fields description
 
