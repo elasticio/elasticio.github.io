@@ -1,15 +1,14 @@
 ---
 title: Commercetools component
-layout: article
+layout: component
 section: E-Commerce components
+description: A software which is often praised for its focus on APIs and extensive API documentation.
+icon: sphereio.png
+icontext: Commercetools component
+category: commercetools
+createdDate: 2015-06-23
+updatedDate: 2018-03-01
 ---
-
-## Description
-
-[commercetools](https://commercetools.com/), also known as sphere.io, is a
-cloud-based e-commerce software which is often praised for its focus on APIs and
-extensive API documentation. It provides an advanced and automatically scaling
-technology that allows shop owners to fully focus on their customers.
 
 ## Requirements
 
@@ -135,8 +134,3 @@ delivery back to your system.
 You can use this particular action component to track different types of Order IDs
 which is a required field. To select use the drop-down menu near the component
 section to choose.
-
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})

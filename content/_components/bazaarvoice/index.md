@@ -1,11 +1,14 @@
 ---
 title: Bazaarvoice component
-layout: article
+layout: component
 section: E-Commerce components
+description: A SaaS software for retailers that allows them to add product reviews, ratings, and more.
+icon: bazaarvoice.png
+icontext: Bazaarvoice component
+category: bazaarvoice
+createdDate: 2018-04-10
+updatedDate: 2018-04-20
 ---
-
-## Description
-Bazaarvoice component for the {{site.data.tenant.name}} platform.
 
 ## Credentials
 
@@ -16,6 +19,11 @@ Here are the credentials necessary to authenticate with the Bazaarvoice:
 *   `curationsApiUri` - for Curations API
 *   `curationsApiKey` - for Curations API
 
+
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
