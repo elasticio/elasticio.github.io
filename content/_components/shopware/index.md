@@ -10,8 +10,6 @@ createdDate: 2019-06-11
 updatedDate: 2019-11-07
 ---
 
-Shopware component for the {{site.data.tenant.name}} platform.
-
 ## Description
 
 This is component for [Shopware](https://shopware.com/) eCommerce software which
@@ -52,6 +50,12 @@ be obtained by having the ``Query Articles`` trigger followed by the ``Get
 Article Details By Id`` action.  This action will return all the details for an
 article including information about the articles variants.
 
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
+
 ## Actions
 
 ### Upsert Object
@@ -60,7 +64,7 @@ Action creates a new object or updates object which already exists by provided I
 This action makes POST request when get message body without ID to create new entity
 and PUT request when get message body includes ID or Number to update existing object.
 
-![image](https://user-images.githubusercontent.com/40201204/68288341-e378fd00-008c-11ea-8df7-dd2e5696287c.png)
+![Upsert Object action](https://user-images.githubusercontent.com/40201204/68288341-e378fd00-008c-11ea-8df7-dd2e5696287c.png)
 
 
 ## Shopware API Limitations/Improvements

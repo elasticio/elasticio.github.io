@@ -11,6 +11,6 @@ updatedDate: 2019-11-07
 
 ## Description
 
-Here is the Shopware completness matrix. 
+Here is the Shopware completness matrix:
 
-![image](https://user-images.githubusercontent.com/22715422/63582807-6d431f00-c5a2-11e9-8505-97d312f32de5.png)
+![Completeness Matrix](https://user-images.githubusercontent.com/22715422/63582807-6d431f00-c5a2-11e9-8505-97d312f32de5.png)
