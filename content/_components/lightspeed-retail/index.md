@@ -2,7 +2,7 @@
 title: Lightspeed-retail component
 layout: component
 section: E-Commerce components
-description: Lightspeed-retail API component for platform's iPaaS.
+description: Lightspeed-retail API component for iPaaS platform.
 icon: lightspeed-retail.png
 icontext: Lightspeed-retail component
 category: lightspeed-retail
@@ -306,7 +306,7 @@ If you notice that 429s are coming back, you should reduce the limit until you s
 
 ## Known limitations
 
-The current version of the component doesn't support next list of entities:
+The current version of the component doesn't support the following entities:
 -   [Customer CustomField CustomFieldChoice](https://developers.lightspeedhq.com/retail/endpoints/Customer-CustomField-CustomFieldChoice/)
 -   [Customer CustomField](https://developers.lightspeedhq.com/retail/endpoints/Customer-CustomField/)
 -   [DisplayTemplate Employee](https://developers.lightspeedhq.com/retail/endpoints/DisplayTemplate-Employee/)
