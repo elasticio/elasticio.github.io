@@ -1,15 +1,19 @@
 ---
 title: PostgreSQL Component
-layout: article
+layout: component
 section: Database components
+description: PostgreSQL is a general purpose and open source object-relational database management system.
+icon: postgresql.png
+icontext: PostgreSQL Component
 category: postgresql-component
+createdDate: 2019-03-19
+updatedDate: 2019-09-23
 ---
 
 ## Description
 
 This is an open source component for working with [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)
-object-relational database management system on {{site.data.tenant.name}} platform.
-The component also works well with [AWS Redshift](https://aws.amazon.com/redshift/).
+object-relational database management system on {{site.data.tenant.name}} platform.The component also works well with [AWS Redshift](https://aws.amazon.com/redshift/).
 
 ## Overview
 
@@ -44,7 +48,7 @@ See more in [documentation](https://www.postgresql.org/docs/current/static/libpq
 This trigger and action are actually the same but can be used in two different
 scenarios - trigger as a first step and action in between other steps.
 
-![image](https://user-images.githubusercontent.com/16806832/53738983-5e07d200-3e99-11e9-9b19-c56cb8579b3a.png)
+![PostgreSQL - first step](https://user-images.githubusercontent.com/16806832/53738983-5e07d200-3e99-11e9-9b19-c56cb8579b3a.png)
 
 Following configuration options are available:
 
@@ -59,7 +63,7 @@ is enabled you'll get a single message with array of 400 elements in it:
   "values" : [
     {"id": 1},
     {"id": 2},
-    
+
     {"id": 400}
   ]
 }
@@ -87,7 +91,7 @@ Check the [SELECT Action description above](#select-trigger-and-action).
 Use this action to insert, update or delete some data, returned
 value is ignored, number of affected rows you can see in the log file.
 
-![image](https://user-images.githubusercontent.com/16806832/53739075-8d1e4380-3e99-11e9-882d-fe26430f8729.png)
+![PostgreSQL - INSERT/UPDATE/DELETE Action](https://user-images.githubusercontent.com/16806832/53739075-8d1e4380-3e99-11e9-882d-fe26430f8729.png)
 
 Following configuration options are available:
 
@@ -104,7 +108,7 @@ incoming message needs to contain a body with an array of objects.
 
 #### Configuration field
 
-![image](https://user-images.githubusercontent.com/16806832/53736488-8c35e380-3e92-11e9-8975-7bf41742c160.png)
+![Configuration field](https://user-images.githubusercontent.com/16806832/53736488-8c35e380-3e92-11e9-8975-7bf41742c160.png)
 
 ##### Table Name
 
@@ -162,7 +166,7 @@ statement variables like this way `sqlVariableName = @MetadataVariableName:type`
 For example, for SQL expression `SELECT * FROM tableName WHERE column1 = 'text' AND column2 = 15`
 you need to use following template: `SELECT * FROM tableName WHERE column1 = @column1:string AND column2 = @column2:number` and put values into generated metadata.
 
-![image](https://user-images.githubusercontent.com/16806832/53731432-635a2200-3e83-11e9-9a4e-0fc26aeeb001.png)
+![SQL Query](https://user-images.githubusercontent.com/16806832/53731432-635a2200-3e83-11e9-9a4e-0fc26aeeb001.png)
 
 #### Input metadata
 
@@ -228,7 +232,7 @@ which can read this file on the previous step and return value like this:
 ```
 and in this action you need put `query_string` (or some JSONata expression) to `Sql Injection string`:
 
-![image](https://user-images.githubusercontent.com/40201204/62026183-f3a65400-b1e2-11e9-988a-db689dd33a95.png)
+![Integrator mode](https://user-images.githubusercontent.com/40201204/62026183-f3a65400-b1e2-11e9-988a-db689dd33a95.png)
 
 ##### Number of retries in case of deadlock transaction
 
@@ -317,7 +321,3 @@ We are relying on standard type default js<->postgresql data-type coercion
 [see here](https://github.com/brianc/node-postgres#features)
 
 If in doubt call support.
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://{{site.data.tenant.name}})

@@ -1,18 +1,20 @@
 ---
 title: MsSQL component
-layout: article
+layout: component
 section: Database components
+description: MsSQL designed for use in corporate applications, both on-premises and in the cloud.
+icon: mssql.png
+icontext: MsSQL component
+category: MsSQL component
+createdDate: 2017-02-09
+updatedDate: 2018-06-14
 ---
-
-## Description
-
-{{site.data.tenant.name}} integration component for Microsoft SQL Server
 
 ## Authentication
 
 You may use following properties to configure a connection:
 
-![image](https://user-images.githubusercontent.com/40201204/41356042-97e26406-6f2b-11e8-88fb-11cba846d143.png)
+![Properties to configure a connection](https://user-images.githubusercontent.com/40201204/41356042-97e26406-6f2b-11e8-88fb-11cba846d143.png)
 
 other types of configuration parameters are also supported, more information and samples you can find [here](https://www.npmjs.com/package/mssql#formats)
 
@@ -22,7 +24,7 @@ other types of configuration parameters are also supported, more information and
 
 With this action you may fetch data out of the database, e.g. using ``SELECT`` statement.
 
-![image](https://user-images.githubusercontent.com/56208/29715706-b4930bdc-89a8-11e7-8a0d-969959d26dd6.png)
+![SELECT Trigger and Action - configure input](https://user-images.githubusercontent.com/56208/29715706-b4930bdc-89a8-11e7-8a0d-969959d26dd6.png)
 
 This trigger & action has no limitations on the number of rows so you may expect to get all of these
 via sequential fetching that is implemented within the node.js ``mssql`` driver.
@@ -45,7 +47,7 @@ Check the [SELECT Action description above](#select-trigger-and-action).
 
 ### INSERT/DELETE/UPDATE Action
 
-![image](https://user-images.githubusercontent.com/56208/29715914-9c369ee0-89a9-11e7-89cb-a559f4a8861f.png)
+![INSERT/DELETE/UPDATE Action - configure input](https://user-images.githubusercontent.com/56208/29715914-9c369ee0-89a9-11e7-89cb-a559f4a8861f.png)
 
 You may use this action to do the operations that are not producing output rows but do the database manipulations,
 e.g. ``INSERT``, ``UPDATE`` or ``DELETE`` statements. Internally we use prepared statements, so all incoming data is
@@ -88,7 +90,3 @@ Component supports dynamic incoming metadata - as soon as your query is in place
 ## Known issues
 
 No known issues are there yet.
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
