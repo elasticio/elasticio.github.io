@@ -33,12 +33,28 @@ By analyzing the logs, you can, most likely, find the cause of the error, and co
 
 ## Downloading the Logs
 
+Logs of a particular component or integration flow may contain some important
+information that is useful when investigating issues. With the Download Logs
+feature, an integration administrator or integration developer can download
+complete logs of a single connector or even a whole flow. This allows to analyze
+them without having to page through them via elastic.io UI.
+
 You can also download logs by clicking the corresponding button for:
 
-- Flow
+### Integration Flow Logs
+
+You can download logs of the one execution for whole integration flow as shown
+below:
+
 ![Download Flow logs](/assets/img/integrator-guide/flow-errors/download_logs.png)
 
-- Step
+The downloaded logs are in `.log` format and contain logs of all steps in one
+execution sorted according to the time-stamp.
+
+### Integration Step Logs
+
+You can download logs of the one step during the same execution the following way:
+
 ![Download Step Logs](/assets/img/integrator-guide/flow-errors/download_logs_step.png)
 
-This will get you a copy of the required logs in *.log* format.
+This will get you a copy of the required logs in `.log` format.
