@@ -3,6 +3,7 @@ title: Sailor compatibility matrix
 layout: article
 section: Sailor
 since: 20180430
+category: sailor
 ---
 
 Starting from version 2.0.0, sailors for Java and Node.js programming languages
