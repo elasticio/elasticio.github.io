@@ -11,6 +11,7 @@ updatedDate: 2019-03-14
 ---
 
 ## Description
+
 Data integration with Amazon enables high levels of selling automation, which can help sellers grow
 their business. Please visit [Amazon Marketplace Web Service (Amazon MWS) Documentation](http://docs.developer.amazonservices.com/en_UK/dev_guide/index.html) for more information.
 
