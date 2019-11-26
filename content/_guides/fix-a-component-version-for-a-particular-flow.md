@@ -28,6 +28,6 @@ Here is what to do:
 
   * Click on the Version tab and select the desired version to use as it is shown below in the picture:
 
-![Choose Nodejs code version](/assets/img/integrator-guide/fix-a-component-version/choose-nodejs-code-version.png)
+![Choose version](/assets/img/integrator-guide/fix-a-component-version/choose-version.png)
 
 > **Please note:** When you select any particular version for your flow it WILL STAY on that version and would NOT CHANGE even when you deploy new versions of your component.
