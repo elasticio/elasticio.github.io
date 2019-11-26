@@ -19,28 +19,31 @@ For your convenience, we divided the issues into three levels:
 Also, we will provide a few [examples](#examples).
 
 ## Integration Logic
+
 The first thing you might want to do when encountering errors is checking the *Errors* tab on the Dashboard:
 
-![](/assets/img/integrator-guide/troubleshoot/Screenshot_1.png)
+![Dashboard](/assets/img/integrator-guide/troubleshoot/Screenshot_1.png)
 
 One of the most common troubles here is system downtime. Some of the integrated systems may just be down, obviously causing an error. Also, you should double check the credentials, because they will cause integration logic failure too. Having checked that, try systems answer structure and [mapping](mapping-data).
 
 Now, the last thing you can do before writing to support is a manual go-through. Basically, you can just follow the Flow step by step and see where it fails to work properly.
 
 ## Component Runtime
+
 When it comes to Component problems, everything is quite simple. You can check what is wrong in Component logs. See how it is done [here](managing-flow-errors). There you will find all the information required to debug the code and fix the issue, or contact Component developer for assistance, depending on your Component source code ownership.
 
 ## Platform Issues
+
 While the Platform itself is not error-prone, we surely can not predict every possible issue with custom Components and complex Flows. Check [this document](platform-behavior) for some details on the common Platform troubles and the general way to fix them.
 Most of platform errors won't lead to message loss, unless the messaging subsystem itself fails. Platform uses RabbitMQ to handle message transport between integration steps.
 
 If you encounter a Platform issue that you can not deal with, feel free to contact our support service. You can reach them by [email](mailto:support@elastic.io): support@elastic.io or via the UI. First, click the *Quick Help* (*?*) icon of the Navigational Menu **(1)**, then click *Help Center* **(2)**:
 
-![](/assets/img/integrator-guide/troubleshoot/Screenshot_2.png)
+![Help Center](/assets/img/integrator-guide/troubleshoot/Screenshot_2.png)
 
 A support chat will appear for you to state your issue and get assistance:
 
-![](/assets/img/integrator-guide/troubleshoot/Screenshot_3.png)
+![Help Center](/assets/img/integrator-guide/troubleshoot/Screenshot_3.png)
 
 Here is the info the team requires to provide support:
 
@@ -62,4 +65,5 @@ Here is the info the team requires to provide support:
 5\. Indicate if this is a blocker for your work and the deadline for the solution or the workaround to be in the place.
 
 ## Examples
+
 Stay tuned, we will come up with some beneficial examples soon!
