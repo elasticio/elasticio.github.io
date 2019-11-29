@@ -7,8 +7,16 @@ icon: shopify-admin.png
 icontext: Shopify Admin component
 category: shopify-component
 createdDate: 2017-04-30
-updatedDate: 2019-11-06
+updatedDate: 2019-11-15
 ---
+
+## How works. API version
+
+Component was tested on `2019-10` API version.
+
+You can find more information about API versioning at Shopify [here](https://help.shopify.com/en/api/versioning).
+
+[Shopify Admin API documentation](https://help.shopify.com/api/reference).
 
 ## Requirements
 
@@ -18,47 +26,120 @@ updatedDate: 2019-11-06
 *   `apiKey`
 *   `password`
 
+> **Note:** [How to generate creds](https://help.shopify.com/api/getting-started#generate-api-credentials-from-the-shopify-admin)
+
 ### Environment variables
 
-not required
+| Name | Mandatory | Description | Values |
+|---------------------|-------|------------------------------------------|--------------------|
+| SHOPIFY_API_VERSION | false | Determines API version of Shopify to use | Default: `2019-10` |
+
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+### Polling Trigger
+
+Polls Shopify API for new and updated objects.
+
+#### List of Expected Config fields
+
+  * **Object Type**
+
+  Type of object for polling.
+
+  * **Emit Behaviour**
+
+  Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message and `Fetch Page` emits object in messages size of `Size Of Polling Page`
+
+  * **Start Time**
+
+Start datetime of polling. Default min date:`-271821-04-20T00:00:00.000Z`
+
+  * **End Time**
+
+End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`
+
+  * **Size Of Polling Page**
+
+Size of polling page, used in Fetch Page behaviour to determine size of emitted message. Default: `1000`
+
+  * **Single Page Per Interval**
+
+If `Yes` polls for one page each execution, if `No` polls for all pages in one execution. Default: `Yes`
+
+### Webhook subscription
+
+Creates webhook subscriptions on the Shopify side and receives events to the flow.
+
+#### List of Expected Config fields
+
+* **Object Type**
+
+Type of object for polling.
+
+#### Links to documentation
+
+You can find more information in the [Webhook Documentation](https://help.shopify.com/en/api/reference/events/webhook).
+
 
 ## Actions
 
 Use this list to navigate to the action you seek.
 
-*   [List Objects](#list-objects)
-*   [List Products](#list-products)
-*   [Upsert Product](#upsert-product)
-*   [Delete Product](#delete-product)
-*   [Get Product](#get-product)
-*   [Count Products](#count-products)
-*   [Create Product Image](#create-product-image)
-*   [Update Product Image](#update-product-image)
-*   [Delete Product Image](#delete-product-image)
-*   [List Inventory Items](#list-inventory-items)
-*   [Get Inventory Item](#get-inventory-item)
-*   [Update Inventory Item](#update-inventory-item)
-*   [Create Product Variant](#create-product-variant)
-*   [Update Product Variant](#update-product-variant)
-*   [Delete Product Variant](#delete-product-variant)
+*   [Lookup Object](#lookup-object)
+*   [Lookup Objects](#lookup-objects)
+*   [Create Object](#create-object)
+*   [Upsert Object](#upsert-object)
+*   [Delete Object](#delete-object)
 
-### List Objects
+### Lookup Object
 
-Here are the configuration options:
+Finds object by id.
 
-1.  `Object Type` - type of object to be listed
-2.  `Behavior` - `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message
-3.  `Max Size` - default 250, maximum value is 250. Maximum number of objects to fetch.
+#### List of Expected Config fields
 
-#### Input metadata
+  * **Object Type**
 
-1.  `idField` - object types: `Article`, `Asset`, `Article`, `Customer Address`, `Discount Code`, `Inventory Item`, `Inventory Level`, `Fulfillment`, `Order Risk`, `Refund`, `Transaction`, `Fulfillment Event`, `Gift Card Adjustment`, `Payment`, `Product Image`, `Product Variant`, `Province`, `Usage Charge` require id of parent object to be passed in input metadata
+  Type of object for polling.
+
+  * **Allow Empty Result**
+
+  Default `No`. In case `No` is selected - an error will be thrown when no objects were found, If `Yes` is selected - an empty object will be returned instead of throwing an error.
+
+  * **Allow ID to be Omitted**
+
+  Default `No`. In case `No` is selected - an error will be thrown when object id is missing in metadata, if `Yes` is selected - an empty object will be returned instead of throwing an error.
+
+  * **Expected input metadata**
+
+  Input metadata contains `id` or several `ids` fields (some object types have complex id):
+
+  1. Object type `Shop` - does not have `id` empty input expected in message.
+
+  2. Type Objects with complex id: `Article`, `Asset`, `Checkout`, `Customer Address`, `Discount Code`, `Fulfillment`, `Fulfillment Event`, `Gift Card Adjustment`, `Inventory Level`,  `Order Risk`,  `Payment`,  `Product Image`,  `Product Listing`,  `Product Variant`, `Province`, `Refund`, `Shop`, `Usage Charge`
+
+### Lookup Objects
+
+#### List of Expected Config fields
+
+  * **Object Type**
+
+  Type of object for polling.
+
+  * **Behavior**
+
+  `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message.
+
+  * **Max Size**
+
+  Maximum number of objects to fetch. Default `250`, maximum value is `250`.
+
+#### Expected Input metadata
+
+1.  `idField` - object types: `Article`, `Asset`, `Article`, `Customer Address`, `Discount Code`, `Inventory Item`, `Inventory Level`, `Fulfillment`, `Order Risk`, `Refund`, `Transaction`, `Fulfillment Event`, `Gift Card Adjustment`, `Payment`, `Product Image`, `Product Variant`, `Province`, `Usage Charge` require id of parent object to be passed in input metadata.
+
 2.  `order` - add ability to sort items.`fieldName`: name of field for sorting objects, only fields of type: `string`, `number`, `boolean` supported. `orderDirection`: asc or desc defines direction of sorting.
+
 3.  `filter` - add ability filter item from result. `searchTerm`: `fieldName` - name of field to apply filter. `condition` - `eq` equal, `ne` not equal, `gt` greater, `ge` greater or equal, `lt` less, `le` less or equal apply provided condition to field. `fieldValue` - value to be used by condition in comparing with `value` in object field. It is possible to chain few conditions via: `criteriaLink` - `and`, `or` chain with previous condition by provided operator.
 
 #### Example of usage
@@ -88,6 +169,178 @@ Here are the configuration options:
 
 Will return maximum 20 objects of type Country ordered by their code and filtered
 where tax value greater then 0.
+
+### Create Object
+
+Action to create new object instance. Only for object that can't be updated.
+
+#### List of Expected Config fields
+
+* **Object Type**
+
+Type of object for polling.
+
+#### Example of usage
+
+Object Type: `Order`
+
+Input message:
+
+```json
+{
+    "title": "Apple main blog second",
+}
+```
+
+Output message:
+
+```json
+{
+  "id": 49341497426,
+  "handle": "apple-main-blog-second-9",
+  "title": "Apple main blog second",
+  "updated_at": "2019-11-14T04:54:30-05:00",
+  "commentable": "no",
+  "feedburner": null,
+  "feedburner_location": null,
+  "created_at": "2019-11-14T04:54:30-05:00",
+  "template_suffix": null,
+  "tags": "",
+  "admin_graphql_api_id": "gid://shopify/OnlineStoreBlog/49341497426"
+}
+```
+
+
+### Upsert Object
+
+Upsert Object action is useful if it isn't known if there is already an object in the system. Action determines if the data needs to be matched to an existing object or added to a new one.
+Only for objects that can be created and updated.
+
+#### List of Expected Config fields
+
+* **Object Type**
+
+Type of object for polling.
+
+#### Example of usage
+
+Object Type: `Article`
+
+Input message:
+
+```json
+{
+    "id": 383343525970,
+    "blog_id": 47884042322,
+    "title": "My new title",
+}
+```
+
+Output message:
+
+```json
+{
+  "id": 383343525970,
+  "title": "My new Title",
+  "created_at": "2019-11-12T08:27:49-05:00",
+  "body_html": "Hello, it's a test blog",
+  "blog_id": 47884042322,
+  "author": "test Admin",
+  "user_id": 38430933074,
+  "published_at": "2019-11-12T08:27:00-05:00",
+  "updated_at": "2019-11-19T10:21:40-05:00",
+  "summary_html": "",
+  "template_suffix": null,
+  "handle": "test-blog-post",
+  "tags": "",
+  "admin_graphql_api_id": "gid://shopify/OnlineStoreArticle/383343525970"
+}
+```
+
+### Delete Object
+
+#### List of Expected Config fields
+
+* **Object Type**
+
+Type of object for polling.
+
+#### Expected input metadata
+
+For most type of objects: `{ "id" : "object id" }`
+
+Special cases:
+
+1. Api Permission - this type of object does not have `id`. Empty object expected as input for this type.
+
+2. Article -  `{ "id" : "object id",  "blodId" : "Blog Id" }`.
+
+3. Asset - `{ "key" : "object id",  "themeId" : "Theme Id" }`.
+
+4. Customer Address - `{ "id" : "object id",  "customerId" : "Customer Id" }`.
+
+5. Discount Code - `{ "id" : "object id",  "priceRuleId" : "Price Rule Id" }`.
+
+6. Fulfillment Event - `{ "id" : "object id",  "orderId" : "Order Id", "fulfillmentId" : "Fulfillment Id" }`.
+
+7. Inventory Level - `{ "params" : { "inventory_item_id" : "Inventory Item Id", "location_id" : "Location Id" }}`.
+
+8. Order Risk - `{ "id" : "object id",  "orderId" : "Order Id" }`.
+
+9. Product Image - `{ "id" : "object id",  "productId" : "Product Id" }`.
+
+10. Product Variant - `{ "id" : "object id",  "productId" : "Product Id" }`.
+
+
+#### Expected output metadata
+
+Output: `{ "id" : "object id" }` means that object was successfully deleted. Output: `{}` means that object hasn`t been deleted.`
+
+Special cases:
+
+1. Api Permission - this type of object does not have `id`, in case of successful deletion of this object type: `{ "id" : "Successfully deleted API Permission object"}` returned.
+
+2. Inventory Level - this type of object does not have `id`, in case of successful deletion of this object type: `{ "id" : { "inventory_item_id" : "Inventory item id", "location_id": "Location id" }}`
+
+#### Example of usage
+
+Object Type: `Order`
+
+Input message:
+
+```json
+{
+    "id" : "1213"
+}
+```
+
+Output message:
+
+```json
+{
+    "id" : "1213"
+}
+```
+
+
+## Deprecated Actions
+
+Use this list to navigate to the action you seek.
+
+*   [List Products](#list-products)
+*   [Upsert Product](#upsert-product)
+*   [Delete Product](#delete-product)
+*   [Get Product](#get-product)
+*   [Count Products](#count-products)
+*   [Create Product Image](#create-product-image)
+*   [Update Product Image](#update-product-image)
+*   [Delete Product Image](#delete-product-image)
+*   [List Inventory Items](#list-inventory-items)
+*   [Get Inventory Item](#get-inventory-item)
+*   [Update Inventory Item](#update-inventory-item)
+*   [Create Product Variant](#create-product-variant)
+*   [Update Product Variant](#update-product-variant)
+*   [Delete Product Variant](#delete-product-variant)
 
 ### List Products
 
