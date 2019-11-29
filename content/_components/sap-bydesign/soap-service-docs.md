@@ -6,7 +6,7 @@ description: SAP Business byDesign Component metadata documentation links
 icon: sapbydesign.png
 icontext: SAP ByDesign component
 createdDate: 2019-06-06
-updatedDate: 2019-11-06
+updatedDate: 2019-11-21
 ---
 
 You can find metadata documentation links bellow
