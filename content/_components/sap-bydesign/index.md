@@ -7,7 +7,7 @@ description: A component to work with the SAP byDesign API.
 icon: sapbydesign.png
 icontext: SAP ByDesign component
 createdDate: 2019-06-06
-updatedDate: 2019-11-06
+updatedDate: 2019-11-21
 ---
 
 ## Description
@@ -42,23 +42,31 @@ with SAP Business byDesign API.
 
 ## Triggers
 
-### Get New And Updated Objects Polling
+### Get New And Updated Objects Polling. Config Fields
 
-The configuration fields are:
+1. Polling Object - objects that going to be polled by the trigger.
 
-1.  `Polling Object` - objects that going to be polled by the trigger.
-2.  `Emit Behaviour` - `Fetch All` emit all polled objects in one message, `Emit Individually` creates separate message for each object.
-3.  `Polling Type` - `Created` poll for created objects, `Updated` poll for updated objects.
-4.  `Size Of Polling Page` - the maximum number of objects retrieved by one poll call.
-5.  `Start Datetime Of Polling` - the start datetime of polling in the iso format.
+2. Emit Behaviour - `Fetch All` emit all polled objects in one message, `Emit Individually` creates separate message for each object.
 
-#### Supported Objects
+3. Polling Type - `Created` poll for created objects, `Updated` poll for updated objects
+.
+*Some objects have only `Created` or `Updated` Polling Type, e.g. `Query Customer Contracts`.*
+
+4. Size Of Polling Page - the maximum number of objects retrieved by one poll call.
+
+5. Start Datetime Of Polling - the start datetime of polling in the iso format.
+
+### Supported Objects
 
 At the moment only few object types are supported:
 
-1.  Query Materials
-2.  Query Sales Orders
-3.  Query Accounts
+1. Query Materials
+
+2. Query Sales Orders
+
+3. Query Accounts
+
+4. Query Customer Contracts
 
 ## Actions
 
@@ -74,16 +82,20 @@ fields are:
 | Operation    | true | SOAP Service operation           | `FindByElements` |
 | Enable Rebound For SOAP Fault |false | Default: No. If Yes enables rebound for SOAP Fault | `Yes` or `No` |
 
+## Additional info
+
 ### Rebound
 
-1.  Rebound for the SOAP Fault can be enabled with configuration parameter `Enable Rebound For SOAP Fault`: `Yes`.
-2.  Rebound enabled only for SOAP Fault code: `SOAP-ENV:Server`.
-3.  Number of rebounds can be controlled with the environment variable : `ELASTICIO_REBOUND_LIMIT`. In case when user set `Enable Rebound For SOAP Fault`: `Yes` but did not specify `ELASTICIO_REBOUND_LIMIT`, component will act accordingly to `rebound` feature default behavior.
+1. Rebound for the SOAP Fault can be enabled with configuration parameter `Enable Rebound For SOAP Fault`: `Yes`.
 
+2. Rebound enabled only for SOAP Fault code: `SOAP-ENV:Server`.
+
+3. Number of rebounds can be controlled with the environment variable : `ELASTICIO_REBOUND_LIMIT`.
+In case when user set `Enable Rebound For SOAP Fault`: `Yes` but did not specify `ELASTICIO_REBOUND_LIMIT`, component will act accordingly to `rebound` feature default behavior
 
 ## Request examples
 
-1.  Query Accounts ![Query Accounts](img/action-query-accounts.png)
+  **1.** uery Accounts ![Query Accounts](img/action-query-accounts.png)
 
 Example in metadata:
 
@@ -106,9 +118,10 @@ Example in metadata:
     }
 }
 ```
-2.  Query Price Lists ![Query Price Lists](img/action-query-pricelists.png)
+  **2.** Query Price Lists ![Query Price Lists](img/action-query-pricelists.png)
 
 Example in metadata:
+
 ```json
 {
     "SalesPriceListFindByTypeCodeAndPropertyIDAndPropertyValueQuery_sync": {
@@ -121,8 +134,11 @@ Example in metadata:
     }
 }
 ```
-3.  Query Sales Orders ![Query Sales Orders](img/action-query-salesorders.png).
+
+  **3.** Query Sales Orders ![Query Sales Orders](img/action-query-salesorders.png).
+
 Example in metadata:
+
 ```json
  {
     "SalesOrderByElementsQuery_sync": {
@@ -142,9 +158,10 @@ Example in metadata:
     }
  }
 ```
-4.  Query Materials ![Query Materials](img/action-query-materials.png)
+   **4.** Query Materials ![Query Materials](img/action-query-materials.png)
 
 Example in metadata:
+
 ```json
 {
     "MaterialByElementsQuery_sync": {
@@ -159,9 +176,10 @@ Example in metadata:
 }
 ```
 
-5.  Product Availability (Available To Promise Check) ![Determine availability of products](img/action-determine-availability.png)
+  **5.** Product Availability (Available To Promise Check) ![Determine availability of products](img/action-determine-availability.png)
 
 Example in metadata:
+
 ```json
 {
     "ProductAvailabilityDeterminationQuery_sync": {
@@ -187,11 +205,10 @@ Example in metadata:
 
 ## Limitations
 
-version: 2.1.1
+1. Currently, the component documentation does not contain JSON schemas for each object types. The documentation contains only request examples and links to SOAP service documentation.
 
-1.  Polling trigger only supports `Query Materials`, `Query Accounts`, `Query Sales Orders` objects.
-2.  Due to a platform feature `retrieving sample` timeout a sample may not be retrieved during the component setup process. It is not a bug as it is caused by a heavy-weight Java process for serialization/deserialization of JAXB structure for SAP's WSDL. Which is normally of huge size. We are hardly working on this issue and it will likely be fixed in the nearest releases. But for now please be patient. As this issue is only for UI retrieve sample functionality it will NOT affect you in runtime.
+2. The component does not comply with OIH standards.
 
-## License
+3. `Get New And Updated Objects Polling` trigger currently supports only few objects, please see [full list](#supported-objects).
 
-© [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
+4. Due to a platform feature 'retrieving sample' timeout a sample may not be retrieved during the component setup process. It is not a bug as it is caused by a heavy-weight Java process for serialization/deserialization of JAXB structure for SAP's WSDL. Which is normally of huge size. We are hardly working on this issue and it will likely be fixed in the nearest releases. But for now please be patient. As this issue is only for UI retrieve sample functionality it will NOT affect you in runtime.
