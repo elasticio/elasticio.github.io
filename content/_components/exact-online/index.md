@@ -41,14 +41,14 @@ type you want to work with. Click on the **Object type to...** and wait for data
 uploading. Then you'll see a list of entities which are available for this action
 or trigger. You should choose one.
 
-![image](https://user-images.githubusercontent.com/22715422/45947428-df129180-bffc-11e8-8639-af545ad681ef.png)
+![Exact Online  - configuration input](https://user-images.githubusercontent.com/22715422/45947428-df129180-bffc-11e8-8639-af545ad681ef.png)
 
 
 Then you wait for uploading metadata (input object structure). After metadata
 uploaded you can complete input object to retrieve response sample. Be careful of
 required fields with a red mark.
 
-![image](https://user-images.githubusercontent.com/22715422/45947440-e89bf980-bffc-11e8-8081-7e33d08f1ffa.png)
+![Exact Online  - configuration input - integrator mode](https://user-images.githubusercontent.com/22715422/45947440-e89bf980-bffc-11e8-8081-7e33d08f1ffa.png)
 
 Structure of the input object will be based on `objectType` field content.
 
@@ -87,18 +87,18 @@ If `Number of search terms` = 1, metadata has only one search term.
 If `Number of search terms` > 1, metadata has a number of search term equal `Number of search terms` and a number of criteria link equal '`Number of search terms` - 1'.
 
 Each search term has 3 fields:
-![image](https://user-images.githubusercontent.com/16806832/49370809-06bd5e80-f6fe-11e8-8c77-34cae66dcbae.png)
+![Field Name](https://user-images.githubusercontent.com/16806832/49370809-06bd5e80-f6fe-11e8-8c77-34cae66dcbae.png)
 -   **Field Name** - chosen entity's field name. You need to select the one field from `Value` section:
- ![image](https://user-images.githubusercontent.com/16806832/49369982-7e3dbe80-f6fb-11e8-803f-6815d2bb3cd6.png)
+ ![Condition](https://user-images.githubusercontent.com/16806832/49369982-7e3dbe80-f6fb-11e8-803f-6815d2bb3cd6.png)
 -   **Condition** - You need to select the one condition from `Value` section:
- ![image](https://user-images.githubusercontent.com/16806832/49370391-ad086480-f6fc-11e8-8ac7-6f8034a25a7b.png)
+ ![Field Value](https://user-images.githubusercontent.com/16806832/49370391-ad086480-f6fc-11e8-8ac7-6f8034a25a7b.png)
 -   **Field Value** - the value that the field must match with the specified condition.
 
 Between search terms, there is **Criteria Link**. You need to select the one criteria from `Value` section:
-![image](https://user-images.githubusercontent.com/16806832/49371411-0aea7b80-f700-11e8-8ddf-9d74f8e98449.png)
+![Criteria Link](https://user-images.githubusercontent.com/16806832/49371411-0aea7b80-f700-11e8-8ddf-9d74f8e98449.png)
 
 For example, if you want to find all entities with types `Contacts` with field `ID` greater than `1` and field `IsMainContact` equal `true`:
-![image](https://user-images.githubusercontent.com/16806832/49372537-a9c4a700-f703-11e8-98d1-83d11754b303.png)
+![Exapple](https://user-images.githubusercontent.com/16806832/49372537-a9c4a700-f703-11e8-98d1-83d11754b303.png)
 
 #### Output metadata
 

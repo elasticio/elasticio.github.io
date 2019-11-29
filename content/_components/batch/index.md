@@ -73,6 +73,7 @@ Stores a message in a batch and emits a created/updated batch with a processed i
 > **Important: Use the same configuration in trigger for correct batch processing**
 
 ## Additional info
+
 Please be aware that the component is not responsible for maintaining batch data in the database.
 
 # Limitations
