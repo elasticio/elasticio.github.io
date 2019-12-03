@@ -15,4 +15,15 @@ Let's put it this way - you can't instantly solve solid problems like being out 
 
 What you can do is click *Retry* just where your Flow's logs are shown. The Platform will then try to run the Flow again with the same parameters. Note that this only works with a started Flow. Obviously, if it was a network error and it's gone now, retrying will help. This works for any non-permanent problem, which saves you quite a lot of time and effort spent on troubleshooting.   
 
-(NEED ACME FLOW ERROR)
+(NEED ACME FLOW WITH RUNTIME ERROR)
+
+## Example
+Let's start a generic integration Flow and cause a network problem. It will be seen here in the logs:
+
+SCREENSHOT OR GIF
+
+It is obviously the error we wanted for our demonstration, so we are sure that in a few moments it is going to fix itself. It happens to network problems all the time. Now let's click *Retry* and see what happens:
+
+SCREENSHOT OR GIF
+
+As you can see, the Flow works perfectly now. 
