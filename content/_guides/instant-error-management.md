@@ -26,4 +26,4 @@ It is obviously the error we wanted for our demonstration, so we are sure that i
 
 SCREENSHOT OR GIF
 
-As you can see, the Flow works perfectly now. 
+As you can see, the Flow works perfectly now:
