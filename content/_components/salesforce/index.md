@@ -54,8 +54,10 @@ on your behalf.
 In the component repository you need to specify OAuth Client credentials as
 environment variables:
 
--   `SALESFORCE_KEY` - your OAuth client key
--   `SALESFORCE_SECRET` - your OAuth client secret
+-   `OAUTH_CLIENT_ID` - your OAuth client key
+-   `OAUTH_CLIENT_SECRET` - your OAuth client secret
+
+> **Note**: We renamed the environment variables `SALESFORCE_KEY` and `SALESFORCE_SECRET` to standardize the OAuth workflow.
 
 To get these values you can check the
 [creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
