@@ -66,3 +66,5 @@ references:
       description: References on our SDKs
     - title: Component Descriptor
       description: References on Component Structure
+    - title: Platform Behaviour
+      description: References on limits and expected behaviour
