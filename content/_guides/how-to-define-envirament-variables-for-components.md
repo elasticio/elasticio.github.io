@@ -24,7 +24,7 @@ Here are a couple of examples where the environment variables are implemented.
 
 Connecting an external service with {{site.data.tenant.name}} platform is usually handled through the security credentials which are used to establish a communication between our platform and the external service.
 
-In the cases when a system-wide deployed component is used on our main tenant (https://app.elastic.io) then login/password pair or API Keys are usually enough. The establishment of a secure connection with the external servers is handled by our system using our own OAuth Client keys and OAuth Apps created by us. For this case no further configuration is necessary.
+When a system-wide deployed component is used, the login/password pair or API Keys are usually enough. The establishment of a secure connection with the external servers is handled by our system using our own OAuth Client keys and OAuth Apps created by us. For this case no further configuration is necessary.
 
 When the component is deployed separately into your repository on the main tenant or on your own dedicated tenant, then it is necessary to establish custom OAuth keys and create separate OAuth Apps in addition to supplying the usual login/password information.
 
@@ -32,17 +32,17 @@ For example, here is how you can [create your own OAuth App for Salesforce](/com
 
 ### Exposing envVars in the Node.js code
 
-When you define any environment variables in your code {{site.data.tenant.name}} platform has no knowledge of them unless they are properly exposed. To expose all the environment variables they must be declared in the component descriptor file component.json, as shown below. This is required to inform the {{site.data.tenant.name}} platform that these environmental variables are required for the component to operate properly. The platform will display warnings if the declared variables are not defined (see below).
+When you define any environment variables in your code {{site.data.tenant.name}} platform has no knowledge of them unless they are properly exposed. To expose all the environment variables they must be declared in the component descriptor file component.json, as shown below. This is required to inform the {{site.data.tenant.name}} platform that these environmental variables are required for the component to operate properly.
 
 In the most cases `envVars` are defined in the `component.json` as it is done in the case of Salesforce:
 
 ```js
 "envVars": {
-  "SALESFORCE_KEY": {
+  "OAUTH_CLIENT_ID": {
     "required": true,
     "description": "Your Salesforce OAuth client key"
     },
-  "SALESFORCE_SECRET": {
+"OAUTH_CLIENT_SECRET": {
     "required": true,
     "description": "Your Salesforce OAuth client secret"
    }
@@ -53,8 +53,8 @@ Following the above definition it is then used further down like this:
 
 ```js
 "oauth2": {
-  "client_id": "{{SALESFORCE_KEY}}",
-  "client_secret": "{{SALESFORCE_SECRET}}",
+  "client_id": "{{OAUTH_CLIENT_ID}}",
+  "client_secret": "{{OAUTH_CLIENT_SECRET}}",
   "auth_uri": "https://{{prodEnv}}.salesforce.com/services/oauth2/authorize",
   "token_uri": "https://{{prodEnv}}.salesforce.com/services/oauth2/token"
 }
