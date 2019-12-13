@@ -28,6 +28,8 @@ guides:
       description: Articles on component development and SDKs
     - title: Tenant Management
       description: Articles on tenant management
+    - title: Environment Variables
+      description: Articles on environment variables
 components:
   title: Components
   description: Extensive documentation of the integration components
