@@ -5,7 +5,7 @@ section: Protocol components
 description: XML is used to describe the transportation, structure, and storage of data.
 icon: xml.png
 icontext: XML component
-category: XML component
+category: XML
 createdDate: 2016-12-29
 updatedDate: 2019-09-25
 ---
