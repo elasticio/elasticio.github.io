@@ -1,7 +1,7 @@
 ---
 title: Environment variables available during component execution
 layout: article
-section: Component Descriptor
+section: Environment Variables
 order: 1
 category: environment-variables
 ---

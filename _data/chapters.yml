@@ -28,8 +28,8 @@ guides:
       description: Articles on component development and SDKs
     - title: Tenant Management
       description: Articles on tenant management
-    - title: Environment Variables
-      description: Articles on environment variables
+    - title: Paging
+      description: Articles on how to implement the Paging in components
 components:
   title: Components
   description: Extensive documentation of the integration components
@@ -70,3 +70,5 @@ references:
       description: References on Component Structure
     - title: Platform Behaviour
       description: References on limits and expected behaviour
+    - title: Environment Variables
+      description: Articles on environment variables
