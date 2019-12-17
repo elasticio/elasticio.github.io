@@ -14,10 +14,7 @@ GEM
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
-    eventmachine (1.2.7)
-    eventmachine (1.2.7-x64-mingw32)
     ffi (1.11.3)
-    ffi (1.11.3-x64-mingw32)
     filesize (0.2.0)
     forwardable-extended (2.6.0)
     http_parser.rb (0.6.0)
@@ -64,8 +61,6 @@ GEM
     mini_portile2 (2.4.0)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
-    nokogiri (1.10.7-x64-mingw32)
-      mini_portile2 (~> 2.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     progressbar (1.10.1)
@@ -77,8 +72,6 @@ GEM
     safe_yaml (1.0.5)
     sassc (2.2.1)
       ffi (~> 1.9)
-    sassc (2.2.1-x64-mingw32)
-      ffi (~> 1.9)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     unicode-display_width (1.6.0)
@@ -86,11 +79,10 @@ GEM
 
 PLATFORMS
   ruby
-  x64-mingw32
 
 DEPENDENCIES
   jekyll-algolia
   rouge
 
 BUNDLED WITH
-   1.17.3
+   2.0.2
