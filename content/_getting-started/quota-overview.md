@@ -20,9 +20,10 @@ You can see the actual resource usage on the dedicated page. The usage is shown 
 
 ![Quota page](/assets/img/getting-started/quota/quota.png)
 
-As seen on the page above, only approximately 1% of the memory quota has been used this month. If you click **View Report**, you will see a resource usage chart:
+As seen on the page above, only approximately 1% of the memory quota has been used this month. If you click **View Report**, you will see a resource usage chart and quota usage per each Workspace you have, and by clicking on the Workspace from the list, you can see quota usage per Flow:
 
-![Report](/assets/img/getting-started/quota/report.png)
+![Report](/assets/img/getting-started/quota/quotadetail.gif)
+
 
 ## Quota Limit Calculation
 A quota limit is the amount of resources multiplied by time. So if we have `2GB` quota and we want to know our monthly quota limit in `Mb*s` (a composite unit of memory usage that means 1 Megabyte of data transfer sustained for 1 second), we have to:

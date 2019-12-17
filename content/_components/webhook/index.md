@@ -1,12 +1,16 @@
 ---
 title: Webhook component
-layout: article
+layout: component
 section: Utility components
+description: A webhook is simply a way for an app to provide other applications with real-time information.
+icon: webhook.png
+icontext: Webhook component
+category: Webhook component
+createdDate: 2015-07-29
+updatedDate: 2019-09-02
 ---
 
-## Description
-
-### Purpose
+## Purpose
 An open source component for sending and receiving [WebHooks](https://en.wikipedia.org/wiki/Webhook) on {{site.data.tenant.name}}.
 
 

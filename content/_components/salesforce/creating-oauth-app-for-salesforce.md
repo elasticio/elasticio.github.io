@@ -6,7 +6,7 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2019-06-27
-updatedDate: 2019-10-28
+updatedDate: 2019-12-02
 ---
 
 ## Purpose
@@ -75,5 +75,7 @@ for this specific component.
 
 You would need to create two variables here:
 
-*   `SALESFORCE_KEY` - your OAuth client key, meaning the **Consumer Key**.
-*   `SALESFORCE_SECRET` - your OAuth client secret, meaning the **Consumer Secret**.
+*   `OAUTH_CLIENT_ID` - your OAuth client key, meaning the **Consumer Key**.
+*   `OAUTH_CLIENT_SECRET` - your OAuth client secret, meaning the **Consumer Secret**.
+
+> **Note**: We renamed the environment variables `SALESFORCE_KEY` and `SALESFORCE_SECRET` to standardize the OAuth workflow.

@@ -1,7 +1,12 @@
 ---
-title: Setting up Magento 1 API login and password
-layout: article
-category: Magento1
+title: Setting up API login and password
+layout: component
+description: Setting up Magento 1 API login and password
+icon: magento.png
+icontext: Magento 1 Component
+category: magento1
+createdDate: 2015-07-29
+updatedDate: 2018-06-25
 ---
 
 ## Description

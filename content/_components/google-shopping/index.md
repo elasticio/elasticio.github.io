@@ -1,15 +1,22 @@
 ---
 title: Google-shopping component
-layout: article
+layout: component
 section: E-Commerce components
+description: Component exposes Google shopping API.
+icon: google-shopping.png
+icontext: Google-shopping component
+category: google-shopping
+createdDate: 2018-02-14
+updatedDate: 2018-06-12
 ---
 
 ## Description
-Component exposes Google shopping API.
+
+A Google service that allows users to search for products on online shopping websites and compare prices between different vendors.
 
 productId - unique product identifier. Consist of:
-`channel:contentLanguage:targetCountry:offerId`.
 
+`channel:contentLanguage:targetCountry:offerId`.
 
 Component requires at least 1GB of RAM to work correct:
 
@@ -19,7 +26,7 @@ Set env variable `EIO_REQUIRED_RAM_MB` to `1024`.
 
 Component supports Service account as authentication mechanism.
 
-## How to create credentials:
+## How to create credentials
 
 1. [Open](https://www.google.com/retail/solutions/merchant-center/)
 2. Sign up
@@ -42,7 +49,7 @@ Component supports Service account as authentication mechanism.
 19. File content-api-key.json file has been downloaded.
 
 
-## How to insert credentials into {{site.data.tenant.name}} platform:
+## How to insert credentials into {{site.data.tenant.name}} platform
 
 1. Settings -> Security credentials -> Google Shopping component -> Add New Account
 2. Enter Name of account.

@@ -1,10 +1,17 @@
 ---
 title: Ebay component
-layout: article
+layout: component
 section: E-Commerce components
+description: A Ebay component for the platform.
+icon: ebay.png
+icontext: Ebay component
+category: ebay
+createdDate: 2018-05-07
+updatedDate: 2019-06-26
 ---
 
 ## Purpose
+
 The goal of the component is to provide possibility to interact with eBay API from the {{site.data.tenant.name}} platform.
 
 > **Note:** Currently only Buying Feed API is accessible.
@@ -185,6 +192,7 @@ The data in that actions mentioned above has the next format:
    }
 }
 ~~~~
+
 Where `responseCode` is a code of the processing result:
 * 0 - success
 * 1 - failure

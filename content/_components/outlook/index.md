@@ -1,13 +1,14 @@
 ---
 title: Outlook component
-layout: article
+layout: component
 section: Office components
+description: An integration component for the Office 365 Outlook REST API.
+icon: outlook.png
+icontext: Outlook component
+category: Outlook
+createdDate: 2016-10-20
+updatedDate: 2017-07-10
 ---
-
-## Description
-
-An integration component for the Office 365 Outlook REST API
-
 
 ## Authentication
 
@@ -30,6 +31,16 @@ for public cloud default tenant use `https://your-tenant.address/callback/oauth2
 Apart from the OAuth 2.0 button you would need to specify the __AD tenant ID__
  if you not sure about that use `common`.
 
+## Triggers
+
+  * **Get Contracts**
+
+## Actions
+
+  * **Check Availability**
+  * **Find Next Available Time**
+  * **Create Event**
+
 ## Scope and Consent
 
 Before using this component certain Microsoft Graph scopes need to be defined for your application.
@@ -49,7 +60,3 @@ Apparently the `lastModifiedDateTime` returned by MS Graph has no milliseconds
 in it is obvious that filter query accept and treat millisecond values correctly
 there is a workaround for that issue implemented in the code, however you need to
 keep an eye on it.
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](http://{{site.data.tenant.name}})

@@ -1,13 +1,14 @@
 ---
 title: Google Spreadsheets component
-layout: article
+layout: component
 section: Office components
+description: A Google Spreadsheets component to read and write to the Google Spreadsheet.
+icon: gspreadsheet.png
+icontext: Google Spreadsheets component
 category: gspreadsheet
+createdDate: 2015-09-24
+updatedDate: 2019-10-09
 ---
-
-## Description
-
-A Google Spreadsheets component to read and write to the Google Spreadsheet
 
 ## Requirements
 
@@ -227,6 +228,7 @@ A datatype of inserted values will be the same as for JSON type (string, numeric
 
 
 ### Add Row
+
 **Deprecated** - please use [Add Spreadsheet Row](#add-spreadsheet-row) action.
 
 Your integration flow can also *write* or **add a row** to the given Google
@@ -301,7 +303,3 @@ Avoid inserting a row in between the records during the integration since it
 would look different for the system. This **would trigger an additional data transfer**
 since not only the newly inserted row will be regarded as a new record but
 **everything after the inserted row would be considered a new data**.
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})

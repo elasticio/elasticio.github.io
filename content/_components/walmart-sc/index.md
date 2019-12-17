@@ -1,12 +1,18 @@
 ---
 title: Walmart SC component
-layout: article
+layout: component
 section: E-Commerce components
+description: A component to work with Walmart SC.
+icon: walmart-sc.png
+icontext: Walmart SC component
+category: walmart-sc
+createdDate: 2018-02-06
+updatedDate: 2018-02-20
 ---
 
 ## Description
 
-The component implements use cases:
+The component implements following use cases:
 
 #### Item Maintenance
 
@@ -40,7 +46,6 @@ select as a first component during the integration flow design.
 1. Submit Item
 2. Submit Inventory
 3. Retire Item
-Request JSON schema: `schemas/retireItem.in.json`
 4. Update price
 5. Get Feed and Item Status
 

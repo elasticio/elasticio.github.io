@@ -1,7 +1,11 @@
 ---
-title: PostgreSQL Component completeness matrix
-layout: article
+title: Completeness matrix
+layout: component
+description: PostgreSQL Component completeness matrix
+icon: postgresql.png
 category: postgresql-component
+createdDate: 2019-03-19
+updatedDate: 2019-09-23
 ---
 
 ## Description

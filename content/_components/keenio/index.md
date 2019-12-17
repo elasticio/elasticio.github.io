@@ -1,7 +1,13 @@
 ---
 title: Keenio component
-layout: article
+layout: component
 section: Service components
+description: Keenio component for the platform.
+icon: keenio.png
+icontext: Keenio component
+category: Keenio component
+createdDate: 2016-03-03
+updatedDate: 2018-09-13
 ---
 
 ## Description
@@ -21,7 +27,3 @@ select as a first component during the integration flow design.
 ## Actions
 
   * **Send Event**
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})

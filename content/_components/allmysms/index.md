@@ -1,13 +1,14 @@
 ---
 title: Allmysms component
-layout: article
+layout: component
 section: Service components
+description: This component provides a possibility to send SMS to one or multiple receivers using the AllMySMS API.
+icon: allmysms.png
+icontext: Allmysms component
+category: Allmysms component
+createdDate: 2018-04-16
+updatedDate: 2019-03-13
 ---
-
-## Description
-
-This component provides a simple possibility to send SMS to one or multiple
-receivers using the [AllMySMS](https://www.allmysms.com/en/) API.
 
 ## How works
 

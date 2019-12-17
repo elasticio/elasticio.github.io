@@ -4,6 +4,7 @@ layout: article
 section: Building integration flows
 order: 1
 since: 20190924
+category: platform-limits
 ---
 
 This document provides information on the peculiarities of the Platform behavior, including [Flow suspension and stopping](#flow-suspended-vs-stopped), different [Platform limits](#default-limits) and common errors.
@@ -21,6 +22,10 @@ The table below contains configurable Platform limits and their default values:
 | Sample retrieval timeout | `1 minute ` | If debug sample is not received within this time limit, it will be terminated. |
 | Message quantity in RabbitMQ queue   | `75000` |  Component gets suspended if RabbitMQ queue stacks more than the set number of messages. |
 | RabbitMQ queue size limit | `200 MB` | Component gets suspended if RabbitMQ queue exceeds the set size. |
+
+Platform has set limitations on accepting, processing and exporting attachments.
+Please check the [attachment limitations page](/references/attachments-limitations) for more details.
+
 
 ## Common Errors
 
