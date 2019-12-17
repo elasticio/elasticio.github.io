@@ -1,5 +1,5 @@
 ---
-title: Why to use paging with rest API requests?
+title: How to implement the pagination?
 layout: article
 section: Paging
 category: paging
