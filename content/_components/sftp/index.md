@@ -57,7 +57,7 @@ The following configuration fields are available:
 
 After a file is found:
 
- * It is moved to the (hidden) directory `.elasticio_processed` ???
+ * It is moved to the (hidden) directory `.elasticio_processed`
  * It is pulled and uploaded (streamed) to the attachment storage (a.k.a. steward)
  * After the upload, the READ-URL of the file will be used to generate a message with content like below:
 
@@ -66,7 +66,7 @@ After a file is found:
   "id": "5e00ca80-f2a3-11e6-9fdd-e7b75b43e28b",
   "attachments": {
     "large.xml": {
-      "url": "https://steward.eio.cloud/foo&Signature=5%2FsrvmbGGfVoYpKeMH3ugaEL"
+      "url": "https://adress/foo&Signature=5%2FsrvmbGGfVoYpKeMH3ugaEL"
     }
   },
   "body": {

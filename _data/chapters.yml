@@ -74,3 +74,5 @@ references:
       description: References on limits and expected behaviour
     - title: Environment Variables
       description: Articles on environment variables
+    - title: Tokens in OAuth2 components
+      description: Collection of articles about different tokens used in OAuth2 components
