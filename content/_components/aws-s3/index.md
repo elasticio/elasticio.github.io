@@ -16,15 +16,17 @@ updatedDate: 2019-09-25
 The component provides ability to connect to Amazon Simple Storage Service (Amazon S3) object storage service.
 
 Following actions are inside:
+
 - Write file
 - Read file
 - Get filenames
 - Delete file
 - Stream to CSV
+- Rename file
 
 ### Description  
 
-This is the component for working with AWS S3 object storage service on elastic.io platform.
+This is the component for working with AWS S3 object storage service on {{site.data.tenant.name}} platform.
 
 ### How works. SDK version  
 
@@ -57,6 +59,11 @@ A secret access key (for example, `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`).
 ### Region
 
 Example: `ca-central-1`.
+
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
