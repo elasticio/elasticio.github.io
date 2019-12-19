@@ -21,7 +21,7 @@ Let us consider a simple scenario when we have an incoming data through the *Web
 
 ```js
 {
-  "name": "Gromit",
+  "name": "Goose",
   "status": "sold"
 }
 ```
@@ -34,7 +34,7 @@ The screenshot above shows the stage in integration flow designer where the actu
 
 ![Mapping: Selecting drop-down](/assets/img/integrator-guide/data-mapper/mapper-02.png "Mapping: Selecting drop-down")
 
-To map the *Name* field click on a drop-down menu on the right side and select the matching value from the provided values in the *Data* tab. For example, our incoming data has a field `name` which we match with the *Name* field from *Petstore API* component.
+To map the *Name* field click on a drop-down menu on the right side **(1)** and select the matching value from the provided values **(2)** in the *Data* tab. For example, our incoming data has a field `name` which we match with the *Name* field from *Petstore API* component.
 
 ![Mapping result of the field](/assets/img/integrator-guide/data-mapper/mapper-03.png "Mapping result of the field")
 
@@ -42,7 +42,7 @@ The screenshot above shows the successful mapping result which is `Gromit`. Noti
 
 ![Expressions tab](/assets/img/integrator-guide/data-mapper/mapper-04.png "Expressions tab")
 
-Before going further we can check the *Expressions* tab here. Here you can look under the hood of the [JSONata](http://jsonata.org/) powered mapper and see the list of expression and functions that is possible to use. We have already used them in the [how to create your first integration flow](/getting-started/first-flow) tutorial.
+Before going further we can check the *Expressions* tab here **(1)**. Here you can look under the hood of the [JSONata](http://jsonata.org/) powered mapper and see the list **(2)** of expressions and functions that is possible to use. We have already used them in the [how to create your first integration flow](/getting-started/first-flow) tutorial.
 
 We can match the *Status* field with the incoming `status` value as well to complete the mapping and go forward.
 
@@ -66,13 +66,17 @@ Therefore, when you switch from *Integrator mode* to *Developer mode*, the mappe
 
 ![Developer mode edited values](/assets/img/integrator-guide/data-mapper/mapper-06.png "Developer mode edited values")
 
-The above screenshot shows how the property values is replaced by the variables `name` and `status`. These variables get their values from the incoming payload of the Webhook component.
+The above screenshot shows how the property values is replaced by the variables `name` and `status` **(1)**. These variables get their values from the incoming payload of the Webhook component. To get a mapping result **(3)**, you should evaluate the expression by clicking the corresponding button **(3)**. 
 
 > **Please note** your expression is evaluated as you are typing it. The result is shown at once below the mapper input field, in the *Mapping result* section. If you give an invalid expression, an error message is displayed.
 
 ![Error in mapping](/assets/img/integrator-guide/data-mapper/mapper-07.png "Error in mapping")
 
 The screenshot above shows the incomplete `JSON` structure which is not accepted by {{site.data.tenant.name}} and the error is shown in the *Mapping result* section.
+
+There is a way to filter mapping view to see mandatory fields only by hiding optional fields:
+
+![Hiding optional fields](/assets/img/RN/323/hide-optional-fields.gif)
 
 > **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new [draft version of a flow](managing-flow-history) must be created.
 
