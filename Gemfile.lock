@@ -83,7 +83,7 @@ GEM
       unicode-display_width (~> 1.1, >= 1.1.1)
     unicode-display_width (1.6.0)
     verbal_expressions (0.1.5)
-
+    
 PLATFORMS
   ruby
   x64-mingw32
