@@ -33,3 +33,18 @@ So for example, if in the `component.json` it is named like `oauth` then it will
 >It is entierly up to the component developer how to name that particular section in the `component.json`. It can be `myOauth` or something else. **The system will use that exact name (`myOauth`) to store the structure in the database.**
 
 To access, and modify values they would need to be addressed accordingly like `credentials.oauth.access_token` or through any other name the structure was called. For example in case if it was called `myOauth` then using something like this `credentials.myOauth.access_token`.
+
+## Credentials field name
+
+The name of the credentials field inside the `component.json` is used to access OAuth data during the component execution. If for example the field was set to be **myOAuth** inside the component.json then the credentials would be like:
+
+```js
+{
+     "myOAuth":  {
+       "access_token":"2YotnFZFEjr1zCsicMWpAA",
+       "token_type":"bearer",
+       "expires_in":3600,
+       "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA"
+     }
+}
+```
