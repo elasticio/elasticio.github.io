@@ -12,7 +12,7 @@ Before we would delve into the process of obtaining and refreshing the actual `a
 
   1. [Here is how the OAuth2 authorization process works](/references/how-the-oauth2-process-works) at {{site.data.tenant.name}}.
   2. Prepare and check your `component.json`. Here are the [instructions and suggestions](/references/oauth2-setup-preparation-in-component-json).
-  3. Prepare the `verifyCredentials.js`. Here is what can be done for that.
+  3. Prepare the `verifyCredentials.js`. Here is [what can be done](/references/preparing-the-verifyCredentials-js-for-oauth-process) for that.
   4. The stored `credentials` can be accessed [following this example](/references/how-to-access-access_token-during-component-execution).
 
 ## Refreshing the tokens
