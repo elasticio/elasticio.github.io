@@ -9,6 +9,20 @@ category: AWS S3 component
 createdDate: 2016-04-16
 updatedDate: 2019-09-25
 ---
+
+## Latest changelog
+
+**1.2.0 (December,2019)**
+
+* Add `Rename file` action
+* Rename field `Bucket Name` to `Bucket Name and Folder`
+* Make `Bucket Name and Folder` field non required
+* Use one Client for all actions
+* Update Sailor version
+
+> To see the full **changelog** please use the following [link](/components/aws-s3/changelog).
+
+
 ## General information
 
 ### Purpose
