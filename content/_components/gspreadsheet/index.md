@@ -10,6 +10,14 @@ createdDate: 2015-09-24
 updatedDate: 2019-10-09
 ---
 
+## Latest changelog
+
+**1.1.1 (October 1, 2019)**
+
+* Change `New Spreadsheet Row` trigger response types to `UNFORMATTED_VALUE`
+
+> To see the full **changelog** please use the following [link](/components/gspreadsheet/changelog).
+
 ## Requirements
 
 ### Environment variables
