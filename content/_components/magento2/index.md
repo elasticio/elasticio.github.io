@@ -10,7 +10,18 @@ createdDate: 2018-03-16
 updatedDate: 2019-11-06
 ---
 
-Magento v2 component for the {{site.data.tenant.name}} platform.
+## Latest changelog
+
+**1.3.0 (November 6, 2019)**
+
+* Update Magento version from 2.3.1 to 2.3.3
+* Add `Upsert Customer` action
+* Add `Delete Object` action
+* Add `Lookup Object by ID` action
+* Add `Set Tiered Prices` action
+* Add custom error handler
+
+> To see the full **changelog** please use the following [link](/components/magento2/changelog).
 
 ## Description
 
