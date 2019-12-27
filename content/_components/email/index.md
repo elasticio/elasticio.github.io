@@ -10,6 +10,14 @@ createdDate: 2016-01-07
 updatedDate: 2019-08-30
 ---
 
+## Latest changelog
+
+**1.0.3 (December 06, 2019)**
+
+* Update sailor version to 2.5.1
+
+> To see the full **changelog** please use the following [link](/components/email/changelog).
+
 ## How works
 
 The component sends a new transaction through Mandrill using the [Send](https://mandrillapp.com/api/docs/messages.JSON.html#method=send) API resource for each incoming message.
