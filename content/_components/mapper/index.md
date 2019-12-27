@@ -10,6 +10,14 @@ createdDate: 2015-05-26
 updatedDate: 2019-09-09
 ---
 
+## Latest changelog
+
+**0.0.4 (December 07, 2019)**
+
+* Update jsonata-moment to 1.1.4
+
+> To see the full **changelog** please use the following [link](/components/mapper/changelog).
+
 ## Used languages
 
 At the moment there are two different languages used to define transformation between input data and result
@@ -47,5 +55,5 @@ select as a first component during the integration flow design.
 ## Actions
 
   * **Mapper**
-  
+
   * **Jsonata mapper**
