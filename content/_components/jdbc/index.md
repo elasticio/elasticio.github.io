@@ -10,6 +10,14 @@ createdDate: 2019-06-11
 updatedDate: 2019-11-01
 ---
 
+## Latest changelog
+
+**2.3.2 (October 21, 2019)**
+
+* Add rebound mechanism in case of deadlocks for actions: Insert, UpsertByPK, DeleteByPK
+
+> To see the full **changelog** please use the following [link](/components/jdbc/changelog).
+
 ## Description
 
 This a component for working with object-relational database management systems.
