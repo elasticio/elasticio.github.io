@@ -126,4 +126,4 @@ able to handle file attachments.
   1. You may get `Component run out of memory and terminated.` error during run-time, that means that component needs more memory, please add `EIO_REQUIRED_RAM_MB` environment variable with an appropriate value (e.g. value `512` means that 512 MB will be allocated) for the component in this case.
   2. You may get `Error: write after end` error, as a current workaround try increase value of environment variable: `TIMEOUT_BETWEEN_EVENTS`.
   3. Maximal possible size for an attachment is 10 MB.
-  4. Attachments mechanism does not work with [Local Agent Installation](https://support.elastic.io/support/solutions/articles/14000076461-announcing-the-local-agent-).
+  4. Attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent).
