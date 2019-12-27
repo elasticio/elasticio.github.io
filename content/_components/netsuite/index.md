@@ -10,6 +10,14 @@ createdDate: 2018-09-10
 updatedDate: 2019-08-07
 ---
 
+## Latest changelog
+
+**2.1.1 - 2019-08-02**
+
+- Modify Error Handling in component with custom ComponentException
+
+> To see the full **changelog** please use the following [link](/components/netsuite/changelog).
+
 ## How works
 
 Communication with NetSuite API established using NetSuite's native SDK. **2017.2**
