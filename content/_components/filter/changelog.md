@@ -5,8 +5,8 @@ description: Changelog for Filter component
 icon: filter.png
 icontext: Filter component
 category: filter-component
-createdDate: 2017-01-12
-updatedDate: 2019-07-22
+createdDate: 2019-12-27
+updatedDate: 2019-12-27
 ---
 
 ## 1.0.0 (November 11, 2019)
