@@ -7,7 +7,7 @@ icon: shopware.png
 icontext: Shopware component
 category: shopware-component
 createdDate: 2019-06-11
-updatedDate: 2019-11-07
+updatedDate: 2019-12-16
 ---
 
 ## Description
@@ -20,7 +20,6 @@ is developed specifically to run on {{site.data.tenant.name}} platform.
 
 > **PLEASE NOTE:** This component depends on [Shopware REST API extenstions](https://github.com/elasticio/elasticio-shopware-api-extension),
 > please install it first before proceeding further.	please install it first before proceeding further.
-
 
 
 **This component was tested with the Shopware version 5 (5.6).**
@@ -63,6 +62,9 @@ select as a first component during the integration flow design.
 Action creates a new object or updates object which already exists by provided ID (by default) or Number (MainDetail.Number).
 This action makes POST request when get message body without ID to create new entity
 and PUT request when get message body includes ID or Number to update existing object.
+The request will be repeated ([rebound](/getting-started/rebound)) in case of
+retrieving following error codes from the remoute server:
+`408`, `423`, `429`, `500`, `502`, `503`, `504`.
 
 ![Upsert Object action](https://user-images.githubusercontent.com/40201204/68288341-e378fd00-008c-11ea-8df7-dd2e5696287c.png)
 

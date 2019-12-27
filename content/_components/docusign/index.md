@@ -10,6 +10,14 @@ createdDate: 2018-05-07
 updatedDate: 2019-11-07
 ---
 
+## Latest changelog
+
+**1.0.1 (October 28, 2019)**
+
+* Change Oauth values naming
+
+> To see the full **changelog** please use the following [link](/components/docusign/changelog).
+
 ## Environment Variables & OAuth Callback Values
 
 This component requires the following environment variables:

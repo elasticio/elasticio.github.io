@@ -10,6 +10,15 @@ createdDate: 2015-09-25
 updatedDate: 2019-11-13
 ---
 
+## Latest changelog
+
+**1.0.1 (November 13, 2019)**
+
+* Added snapshots support by passing 2 more arguments to `run` function: `cfg` and `snapshot`.
+* All log statements changed from `info` level to `debug`.
+
+> To see the full **changelog** please use the following [link](/components/code/changelog).
+
 ## Description
 
 A code component for the platform, runs a piece of a JavaScript code inside your

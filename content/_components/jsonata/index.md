@@ -2,13 +2,23 @@
 title: Jsonata component
 layout: component
 section: Utility components
-description: Dedicated data transformation component
+description: Dedicated data transformation component.
 icon: jsonata.png
 icontext: Jsonata component
 category: Jsonata component
 createdDate: 2017-08-15
 updatedDate: 2019-04-05
 ---
+
+## Latest changelog
+
+**1.0.1 (December 06, 2019)**
+
+* Update sailor version to 2.5.1
+* Update jsonata-moment to 1.1.4
+* Change build type to docker
+
+> To see the full **changelog** please use the following [link](/components/jsonata/changelog).
 
 ## Authentication
 

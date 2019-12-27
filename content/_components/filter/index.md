@@ -10,6 +10,15 @@ createdDate: 2017-01-12
 updatedDate: 2019-07-22
 ---
 
+## Latest changelog
+
+**1.0.0 (November 11, 2019)**
+
+* Use `@elastic.io/component-commons-library` instead of `@elastic.io/jsonata-moment` for JSONata transform
+* Update to use JSONata version 1.7.0
+
+> To see the full **changelog** please use the following [link](/components/filter/changelog).
+
 ## Description
 
 A component to filter the incoming data based on an arbitrary JSONata expression.
