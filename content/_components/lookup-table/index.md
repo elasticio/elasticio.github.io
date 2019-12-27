@@ -10,6 +10,14 @@ createdDate: 2019-12-16
 updatedDate: 2019-12-16
 ---
 
+## Latest changelog
+
+**1.1.0 (December 16, 2019)**
+
+Rename component `Dictionary Component` -> `Lookup Table Component`
+
+> To see the full **changelog** please use the following [link](/components/lookup-table/changelog).
+
 ## Description
 The Lookup From Table Component can be used to convert from different tables that
 parsed as a CSV.
