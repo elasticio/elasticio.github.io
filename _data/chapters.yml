@@ -28,6 +28,8 @@ guides:
       description: Articles on component development and SDKs
     - title: Tenant Management
       description: Articles on tenant management
+    - title: Working with XML
+      description: Articles on how to work with XML
     - title: Paging
       description: Articles on how to implement the Paging in components
 components:
