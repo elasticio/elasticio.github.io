@@ -10,6 +10,14 @@ createdDate: 2017-12-06
 updatedDate: 2017-12-06
 ---
 
+## Latest changelog
+
+**1.0.0 - Dec 5, 2016**
+
+* Initial release of component
+
+> To see the full **changelog** please use the following [link](/components/ldap/changelog).
+
 ## Triggers
 
 This component has no trigger functions. This means it will not be accessible to
