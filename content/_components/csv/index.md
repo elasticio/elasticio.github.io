@@ -7,9 +7,22 @@ icon: csv.png
 icontext: CSV component
 category: CSV component
 createdDate: 2015-11-15
-updatedDate: 2019-10-10
+updatedDate: 2019-12-24
 ---
 
+## Latest changelog
+
+**2.0.2 (December 24, 2019)**
+
+* Update sailor version to 2.5.4
+
+* Update component to use logger
+
+* Update buildType to docker
+
+* Fixed bug with invalid path to read action
+
+> To see the full **changelog** please use the following [link](/components/csv/changelog).
 
 ## How works
 
@@ -20,12 +33,15 @@ attachment. It can also write a CSV file from the incoming events.
 
 ### Environment variables
 
-1. `EIO_REQUIRED_RAM_MB` - recommended value of allocated memory is 512 MB
-2. `REQUEST_TIMEOUT - HTTP` request timeout in milliseconds, default value 10000
-3. `REQUEST_RETRY_DELAY` - delay between retry attempts in milliseconds, default value 7000
-4. `REQUEST_MAX_RETRY` - number of HTTP request retry attempts, default value 7
-5. `REQUEST_MAX_CONTENT_LENGTH` - max size of http request in bytes, default value: 10485760
-6. `TIMEOUT_BETWEEN_EVENTS` - number of milliseconds write action wait before creating separate attachments, default value: 10000
+|Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|EIO_REQUIRED_RAM_MB| false | Value of allocated memory to component | Recommended: 512 |
+|REQUEST_TIMEOUT| false |  HTTP request timeout in milliseconds | Default value: 10000 |
+|REQUEST_RETRY_DELAY| false | Delay between retry attempts in milliseconds | Default value: 7000 |
+|REQUEST_MAX_RETRY| false | Number of HTTP request retry attempts |  Default value: 7 |
+|REQUEST_MAX_CONTENT_LENGTH| false | Max size of http request in bytes | Default value: 10485760 |
+|TIMEOUT_BETWEEN_EVENTS| false | Number of milliseconds write action wait before creating separate attachments | Default value: 10000 |
+|LOG_LEVEL| false | Level of logger verbosity | trace, debug, info, warning, error Default: info |
 
 
 ### Credentials
@@ -46,26 +62,29 @@ outgoing message.
 *   `CSV URL` - the full URL to the file for retrieving data.
 *   `Emit all messages` - this checkbox configures output behavior of the component. If the option is checked - the component emits an array of messages, otherwise - the component emits a message per row.
 *   `CSV Header` - this is a required field. Input the names of headers separated with a comma.
-*   `Separators` - Specify the separator type. Usually it is a comma (,) but values like Semicolon (;), Space ( ), Tab (\t) and Hash (#) are also supported.
-*   `Skip rows` - if you know that the incoming CSV file has certain number of headers you can indicate to skip them. The supported values are None, First row, First two, First three and First four.
-*   `Data columns` - here the values will be added dynamically based on the values in the CSV Header field. Here each data column will be listed with the name, Data Type and the Format to enable further configuration.
+*   `Separators` - Specify the separator type. Usually it is a comma (`,`) but values like Semicolon (`;`), Space (` `), Tab (`\t`) and Hash (`#`) are also supported.
+*   `Skip rows` - if you know that the incoming CSV file has certain number of headers you can indicate to skip them. The supported values are `None`, `First row`, `First two`, `First three` and `First four`.
+*   `Data columns` - here the values will be added dynamically based on the values in the `CSV Header` field. Here each data column will be listed with the name, Data Type and the Format to enable further configuration.
 
 ## Actions
 
 ### Read CSV attachment
 
-![Read CVS attachments](img/read-CSV-attachment.png)
-
 This action will read the CSV attachment of the incoming message and output
 a `JSON` object. To configure this action the following fields can be used:
 
+![Read CVS attachments](img/read-CSV-attachment.png)
+
+*   `Emit all messages` - this checkbox configures output behavior of the component. If the option is checked - the component emits an array of messages, otherwise - the component emits a message per row.
 *   `CSV Header` - this is a required field. Input the names of headers separated with a comma.
 *   `Separators` - Specify the separator type. Usually it is a comma (`,`) but values like Semicolon (`;`), Space (` `), Tab (`\t`) and Hash (`#`) are also supported.
-*   `Skip rows` - if you know that the incoming CSV file has certain number of headers you can indicate to skip them. The supported values are `None`, `First row`, `First two`, `Dirst three` and `First four`.
+*   `Skip rows` - if you know that the incoming CSV file has certain number of headers you can indicate to skip them. The supported values are `None`, `First row`, `First two`, `First three` and `First four`.
 *   `Data columns` - here the values will be added dynamically based on the values in the `CSV Header` field. Here each data column will be listed with the name, Data Type and the Format to enable further configuration.
 
 
 ### Write CSV attachment
+
+* `Include Header` - this select configures output behavior of the component. If option is `Yes` or no value chosen than header of csv file will be written to attachment, this is default behavior. If value `No` selected than csv header will be omitted from attachment.
 
 This action will combine multiple incoming events into a CSV file until there is a gap
 of more than 10 seconds between events. Afterwards, the CSV file will be closed
@@ -84,6 +103,7 @@ for that cell. All other properties will be ignored. For example, headers
 ```
 
 will produce the following `.csv` file:
+
 ```
 foo,bar
 myfoo,mybar
