@@ -13,6 +13,14 @@ updatedDate: 2018-09-07
 Connects to Products in the Microsoft Dynamics/NAV Family Via the OData API
 which use Authorization grant.
 
+## Latest changelog
+
+**1.1.0 - March 18, 2018**
+
+* Initial release of OIH standardized component
+
+> To see the full **changelog** please use the following [link](/components/msdynamics-crm/changelog).
+
 ## Dynamics Remarks
 
 See [Dynamics Crm Remarks](dynamics-crm-remarks).
