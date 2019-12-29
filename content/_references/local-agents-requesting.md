@@ -18,10 +18,10 @@ processes on it.
 
 The local agent can run on the following OS/Virtualization combination:
 
-*   Any OS where VirtualBox can run in 64 bit mode. [Installation instructions here](local-agents-VirtualBox)
-*   Windows Server 2016 with running Hyper-V.
-*   Windows 10 build 1803 with running Hyper-V.
-*   Amazon AWS Linux Ubuntu (experimental).
+*   Any OS where VirtualBox can run in 64 bit mode. [Installation instructions here.](local-agents-VirtualBox)
+*   Windows Server 2016 with running Hyper-V. [Installation instructions here.](local-agents-VirtualBox)
+*   Windows 10 build 1803 with running Hyper-V. [Installation instructions here.](local-agents-VirtualBox)
+*   Amazon AWS Linux Ubuntu (experimental). Instructions will be available soon.
 
 
 ## System Requirements

@@ -14,6 +14,12 @@ If you can not use VirtualBox please check the alternative solutions in
 the [requesting local agents](local-agents-requesting) page for more. Hereford, we
 assume you have no technical impediments to install and use the VirtualBox VM.
 
+> **Please Note** - without `agent-gateway` and `agent-boatswain` you can't
+> connect to the platform run-time and use the local agents in your integration
+> flows. These two configuration parameters are given to you personally when you
+> [request a local agent](local-agents-requesting).
+
+
 ## Virtual Machine setup
 
 To start setting up the Virtual Machine you need the following files and setups:
@@ -90,9 +96,9 @@ terminal like this:
 
 ![Linux terminal](/assets/img/references/local-agents/local-agents-vbox05.png "Linux terminal")
 
-You can log into a newly started VM using the pre-configured credentials:
-*   Agent login: `root` - the main system administrator
-*   Agent password: `changeme` - **Please change the password after the first login**.
+You can log into a newly started VM using a pre-configured credentials which we
+will supply to you during the [local agent request](local-agents-requesting) process.
+**Please change the password after the first login**.
 
 Now let us check if we can login to the VM using a command line on your OS:
 
