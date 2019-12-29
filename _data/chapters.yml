@@ -74,6 +74,8 @@ references:
       description: How to use Java on the platform
     - title: Platform Behaviour
       description: References on limits and expected behaviour
+    - title: Local Agents
+      description: Articles on Local Agent installation and running
     - title: Environment Variables
       description: Articles on environment variables
     - title: Tokens in OAuth2 components

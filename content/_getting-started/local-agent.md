@@ -4,6 +4,7 @@ layout: article
 section: Advanced Concepts
 order: 2
 since: 20191218
+category: local agents
 ---
 
 This document provides the basic information on [Local Agent](#local-agent) and the [way to get it](#how-to-request-a-local-agent) in case you require one. Additionally, it contains some [technical details](#architecture) for those interested.
