@@ -10,6 +10,15 @@ createdDate: 2019-03-19
 updatedDate: 2019-09-23
 ---
 
+## Latest changelog
+
+**1.3.1 (July 19, 2019)**
+
+* Added retry in case of a deadlock transaction in `SQL Injection` action
+
+> To see the full **changelog** please use the following [link](/components/postgresql/changelog).
+
+
 ## Description
 
 This is an open source component for working with [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)
