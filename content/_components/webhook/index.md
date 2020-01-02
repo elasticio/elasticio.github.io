@@ -10,6 +10,14 @@ createdDate: 2015-07-29
 updatedDate: 2019-09-02
 ---
 
+## Latest changelog
+
+**1.1.1 (December 07, 2019)**
+
+* Update sailor version to 2.5.1
+
+> To see the full **changelog** please use the following [link](/components/webhook/changelog).
+
 ## Purpose
 An open source component for sending and receiving [WebHooks](https://en.wikipedia.org/wiki/Webhook) on {{site.data.tenant.name}}.
 
