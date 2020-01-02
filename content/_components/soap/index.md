@@ -10,6 +10,20 @@ createdDate: 2018-07-17
 updatedDate: 2019-09-25
 ---
 
+## Latest changelog
+
+**1.2.0 (September 25, 2019)**
+
+### Actions
+
+* Add Soap Reply action
+
+### Triggers
+
+* Add Receive SOAP Request trigger
+
+> To see the full **changelog** please use the following [link](/components/soap/changelog).
+
 ## Description
 
 The SOAP Component provides the SOAP Web Services work opportunity within a
