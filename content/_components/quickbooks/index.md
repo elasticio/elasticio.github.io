@@ -10,6 +10,13 @@ createdDate: 2018-10-11
 updatedDate: 2019-07-04
 ---
 
+## Latest changelog
+
+**1.0.1 (November 27, 2019)**
+
+* Fix bug when connecting to production systems.
+
+> To see the full **changelog** please use the following [link](/components/quickbooks/changelog).
 
 ## OAuth keys and credentials
 
