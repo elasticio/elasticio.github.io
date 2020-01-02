@@ -12,6 +12,18 @@ updatedDate: 2019-05-14
 
 This component implements the The [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
 
+
+## Latest changelog
+
+**0.0.2 (December 07, 2019)**
+
+* Update sailor version to 2.5.1
+* Update jsonata-moment to 1.1.4
+* Change build type to docker
+
+
+> To see the full **changelog** please use the following [link](/components/router/changelog).
+
 ## Triggers
 
 This component has no trigger functions. This means it will not be accessible to
