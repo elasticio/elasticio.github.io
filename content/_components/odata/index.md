@@ -12,6 +12,14 @@ updatedDate: 2019-06-10
 
 A component designed to work with generic APIs which implement the [OData v4 specification](http://www.odata.org).
 
+## Latest changelog
+
+**3.0.0 (July 5, 2019)**
+
+* Migrate OData component to OData client library
+
+> To see the full **changelog** please use the following [link](/components/odata/changelog).
+
 ## Authentication
 
 Supports the following forms:
