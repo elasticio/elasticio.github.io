@@ -10,6 +10,15 @@ createdDate: 2018-07-17
 updatedDate: 2019-09-12
 ---
 
+## Latest changelog
+
+**1.1.3 (December 07, 2019)**
+
+* Update sailor version to 2.5.1
+* Update jsonata-moment to 1.1.4
+
+> To see the full **changelog** please use the following [link](/components/rest-api/changelog).
+
 ## Introduction
 
 The example below shows the development team creation using the REST API component with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
