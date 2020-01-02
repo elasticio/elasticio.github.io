@@ -8,8 +8,14 @@ icontext: Request-reply component
 category: request-reply
 createdDate: 2016-04-08
 updatedDate: 2019-09-02
-
 ---
+## Latest changelog
+
+**1.0.2 (December 07, 2019)**
+
+* Update sailor version to 2.5.1
+
+> To see the full **changelog** please use the following [link](/components/request-reply/changelog).
 
 ## Description
 
