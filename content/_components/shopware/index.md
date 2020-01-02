@@ -10,6 +10,14 @@ createdDate: 2019-06-11
 updatedDate: 2019-12-16
 ---
 
+## Latest changelog
+
+**1.1.2 (December 16, 2019)**
+
+* Add rebound feature to `Upsert Object By ID` OIH action
+
+> To see the full **changelog** please use the following [link](/components/shopware/changelog).
+
 ## Description
 
 This is component for [Shopware](https://shopware.com/) eCommerce software which
