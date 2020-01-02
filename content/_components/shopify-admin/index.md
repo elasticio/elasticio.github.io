@@ -10,6 +10,18 @@ createdDate: 2017-04-30
 updatedDate: 2019-11-15
 ---
 
+## Latest changelog
+
+**1.3.0 (November 15, 2019)**
+
+**Triggers**
+
+* Add Webhook Subscription trigger
+
+* Add Polling trigger
+
+> To see the full **changelog** please use the following [link](/components/shopify-admin/changelog).
+
 ## How works. API version
 
 Component was tested on `2019-10` API version.
