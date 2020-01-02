@@ -10,6 +10,15 @@ createdDate: 2017-03-31
 updatedDate: 2019-09-19
 ---
 
+## Latest changelog
+
+**1.0.1 (December 07, 2019)**
+
+* Update sailor version to 2.5.1
+* Change build type to docker
+
+> To see the full **changelog** please use the following [link](/components/splitter/changelog).
+
 ## Description
 
 The Splitter processes income messages containing multiple elements that might have to be processed in different ways. The Splitter emits out the composite message into individual messages, each containing data related to one item.
