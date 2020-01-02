@@ -10,6 +10,15 @@ createdDate: 2019-08-19
 updatedDate: 2019-11-05
 ---
 
+## Latest changelog
+
+**1.1.0 (December 2, 2019)**
+
+* Fix Null Pointer Exception for custom function
+* Fix metadata generation for simple type arrays
+
+> To see the full **changelog** please use the following [link](/components/sap-r3/changelog).
+
 ## General Information
 
 ### How works
