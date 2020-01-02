@@ -10,6 +10,16 @@ createdDate: 2019-06-06
 updatedDate: 2019-11-21
 ---
 
+## Latest changelog
+
+**2.1.3 (November 21, 2019)**
+
+- Fix `Query Materials` processing in `Get New And Updated Objects Polling` trigger
+- Add `Query Customer Contracts` Object Type for `Get New And Updated Objects Polling` trigger
+
+
+> To see the full **changelog** please use the following [link](/components/sap-bydesign/changelog).
+
 ## Description
 
 An iPaaS component that provides an opportunity to interact with SAP byDesign API.
