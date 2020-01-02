@@ -422,4 +422,4 @@ Action is deprecated. Use `Write file` action instead.
 ## Known Limitations
 
 1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with [Local Agent Installation](https://support.elastic.io/support/solutions/articles/14000076461-announcing-the-local-agent-)
+2. Attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent)
