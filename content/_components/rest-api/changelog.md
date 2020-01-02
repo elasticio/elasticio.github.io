@@ -5,8 +5,8 @@ description: Changelog for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: REST API component
-createdDate: 2018-07-17
-updatedDate: 2019-09-12
+createdDate: 2020-01-02
+updatedDate: 2020-01-02
 ---
 
 ## 1.1.3 (December 07, 2019)
