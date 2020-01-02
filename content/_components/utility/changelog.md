@@ -1,7 +1,6 @@
 ---
 title: Changelog
 layout: component
-section: Utility components
 description: Changelog for Utility Component.
 icon: utility.png
 icontext: Utility Component
