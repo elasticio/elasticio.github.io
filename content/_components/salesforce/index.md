@@ -10,6 +10,20 @@ createdDate: 2019-06-27
 updatedDate: 2019-12-02
 ---
 
+## Latest changelog
+
+**1.2.0 (December 2, 2019)**
+
+* Add support for `Bulk operations` feature (Create/Update/Delete and Query)
+* Add `Delete Object` action
+* Add `Lookup Objects` action
+* `Create object` action: add ability to utilize binary data attachment from previous step
+* `Upsert object` action: add ability to utilize binary data attachment from previous step
+* `Lookup Object (at most 1)` action: add ability to pass binary data (if found object has it) to the next component as a binary attachment
+* `Query` action: add ability to query deleted objects
+
+> To see the full **changelog** please use the following [link](/components/salesforce/changelog).
+
 ## Description
 
 Integration component to connect the Salesforce for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
