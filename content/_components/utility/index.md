@@ -10,6 +10,21 @@ createdDate: 2019-07-29
 updatedDate: 2019-07-31
 ---
 
+## Latest changelog
+
+**1.0.0 (July 25, 2019)**
+
+* Initial release
+
+* New actions:
+
+  - String to  Attachment
+  - Attachment to String
+  - Base64 Decode
+  - Base64 Encode
+
+> To see the full **changelog** please use the following [link](/components/utility/changelog).
+
 ## Environment variables
 
 * [optional] **EIO_REQUIRED_RAM_MB** - Number of MB allocated to container. Recommended value of allocated memory is `512` MB. 256 by default
