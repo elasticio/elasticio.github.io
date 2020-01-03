@@ -10,6 +10,14 @@ createdDate: 2016-12-29
 updatedDate: 2019-09-25
 ---
 
+## Latest changelog
+
+**1.1.1 (September 25, 2019)**
+
+* Upload attachments with component commons library
+
+> To see the full **changelog** please use the following [link](/components/xml/changelog).
+
 ### Purpose
 
 Allows users to convert XML attachments and strings to and from JSON This component
