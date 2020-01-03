@@ -32,10 +32,20 @@ The page is, basically, a list of all the Executions, which can be filtered by:
 
 - Flows. The filter allows you to see Executions per selected Flow. You can select multiple Flows simultaneously if, for example, you need to debug related Flows.  
 
-All filters are added to the URL code, so you can send a link to the filtered Executions list to your colleague. If new executions are added to the list while you are browsing it, you will get a message at the top of the list, and a prompt to load them.
+All filters are added to the URL code, so you can send a link to the filtered Executions list to your colleague.
+
+If new Executions are added to the list while you are browsing it, you will get a message at the top of the list, and a prompt to load them or dismiss the prompt by clicking ``X``. The idea is to not let new Executions interfere with your browsing by messing up the list.  
 
 ![Executions page filters](/assets/img/getting-started/exec-page/exec-filters.gif)
 
-Since most of the errors inside components are related to data processed, Executions are beneficial for debugging integration flows. On the Executions page you can select a single Execution and, for example, check the errors that occurred. It is possible to use [Retry feature](/guides/error-retry.html) for errors:
+Since most of the errors inside components are related to data processed, Executions are beneficial for debugging integration Flows. On the Executions page you can select a single Execution:
 
-![Executions error retry](/assets/img/getting-started/exec-page/exec-retry.gif)
+![Execution](/assets/img/getting-started/exec-page/exec-retry1.png)
+
+Then, for example, you can check the errors that occurred:
+
+![Executions error](/assets/img/getting-started/exec-page/exec-retry2.png)
+
+It is possible to use [Retry feature](/guides/error-retry.html) for errors:
+
+![Executions error retry](/assets/img/getting-started/exec-page/exec-retry3.png)
