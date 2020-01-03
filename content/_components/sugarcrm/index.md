@@ -15,6 +15,14 @@ which is developed specifically to run on
 [{{site.data.tenant.name}} platform](https://www.{{site.data.tenant.name}} "{{site.data.tenant.name}} platform").
 You can clone it and change it as you wish.
 
+## Latest changelog
+
+**1.0.0 - Nov 3, 2016**
+
+- Initial release of guideline compliant component
+
+> To see the full **changelog** please use the following [link](/components/sugarcrm/changelog).
+
 ## Authentication
 
 In order for the {{site.data.tenant.name}} platform to authenticate with SugarCRM, the
