@@ -10,6 +10,14 @@ createdDate: 2019-01-16
 updatedDate: 2019-08-30
 ---
 
+## Latest changelog
+
+**1.0.3 (December 07, 2019)**
+
+* Update sailor version to 2.5.1
+
+> To see the full **changelog** please use the following [link](/components/simple-trigger/changelog).
+
 ## How works
 
 This component should be used as a first step in your flow to trigger integration flows.
