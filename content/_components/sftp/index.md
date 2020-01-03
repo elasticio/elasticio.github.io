@@ -672,7 +672,7 @@ Action does not support `Fetch Page` mode (according to OIH standards)
 ## Known limitations
 
 * The maximum file size accepted by the SFTP component is limited to 100 MB.
-* The attachments mechanism does not work with [Local Agent Installation](https://support.elastic.io/support/solutions/articles/14000076461-announcing-the-local-agent-)
+* The attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent)
 * `Get new and updated files` trigger mechanism is based on SFTP file `modifyTime` metadata field. For correct processing the trigger requires correct time configuration on the SFTP server.
 * `Get new and updated files` trigger does not support empty files processing.
 * `Get new and updated files` trigger does not support `fetch page` Emit Behaviour

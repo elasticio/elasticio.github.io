@@ -513,4 +513,4 @@ This action will automatically retrieve all existing fields of `Task` object typ
 Action is `deprecated`. You can use [Create Object](#create-object) action instead.
 
 ## Known limitations
-Attachments mechanism does not work with [Local Agent Installation](https://support.elastic.io/support/solutions/articles/14000076461-announcing-the-local-agent-)
+Attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent)
