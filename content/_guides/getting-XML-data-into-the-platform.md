@@ -31,18 +31,18 @@ have the following properties:
 
 Here how you can post your XML data using curl
 
-```
-xml
-curl -X POST -H "Content-Type: application/xml" -d '<foo>Hello XML!</foo>' https://in.platform.address/hooks/your-hook
+```xml
+curl -X POST -H "Content-Type: application/xml" \
+  -d '<foo>Hello XML!</foo>' \
+  https://in.platform.address/hooks/your-hook
 ```
 
 In this case, your XML document will be parsed and transformed into JSON document
-automatically. Resulting JSON Document will be used as placed in a body of your
-message and message will be sent to the next component in the flow. Here is how
-such message will look like:
+automatically ([learn how to prevent automatic parsing](#i-want-to-prevent-body-transformation)).
+Resulting JSON Document will be used as placed in a body of your message and message
+will be sent to the next component in the flow. Here is how such message will look like:
 
-```
-js
+```js
 {
   "id": "2b90def0-d250-11e6-a2f1-5b2841bfd572",
   "attachments": {},
@@ -63,12 +63,20 @@ js
   }
 }
 ```
-**NOTE:** your XML payload will be automatically parsed and transformed to JSON and if it is an invalid XML document the platform will return
-`HTTP 400 "Bad Request"` error (e.g. close tag is missing). If you want to avoid body transformation to JSON, use `raw` query parameter:
 
-```
-xml
-curl -X POST -H "Content-Type: application/xml" -d '<foo>Hello XML!</foo>' https://in.platform.address/hooks/your-hook?raw=true
+> **NOTE:** your XML payload will be automatically parsed and transformed to JSON
+> and if it is an invalid XML document the platform will return `HTTP 400 "Bad Request"`
+> error (e.g. close tag is missing).
+
+### I want to prevent body transformation
+
+In case you want avoid body transformation to JSON, use `raw` query parameter
+(`?raw=true`) like below:
+
+```xml
+curl -X POST -H "Content-Type: application/xml" \
+  -d '<foo>Hello XML!</foo>' \
+  https://in.platform.address/hooks/your-hook?raw=true
 ```
 
 This works for any payload, including XML.
@@ -89,8 +97,7 @@ After receiving such HTTP request WebHook component will upload your file to the
 platform attachments storage and place a reference to it inside the attachments
 part of the generate message:
 
-```
-js
+```js
 {
   "id": "2b90def0-d250-11e6-a2f1-6b2841bfd574",
   "attachments": {
@@ -116,10 +123,10 @@ js
 }
 ```
 
-**NOTE:** The platform will not parse your XML file. It will be
-temporarily stored for the next steps in the integration flow to pick and process
-this file. It is the responsibility of the following components to handle
-parsing/validation/transformation later.
+> **NOTE:** The platform will not parse your XML file. It will be
+> temporarily stored for the next steps in the integration flow to pick and process
+> this file. It is the responsibility of the following components to handle
+> parsing/validation/transformation later.
 
 ## Reading XML files from external location
 
