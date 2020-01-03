@@ -34,7 +34,7 @@ The page is, basically, a list of all the Executions, which can be filtered by:
 
 All filters are added to the URL code, so you can send a link to the filtered Executions list to your colleague. If new executions are added to the list while you are browsing it, you will get a message at the top of the list, and a prompt to load them.
 
-![Executions page filters](/assets/img/getting-started/exec-page/exec.gif)
+![Executions page filters](/assets/img/getting-started/exec-page/exec-filters.gif)
 
 Since most of the errors inside components are related to data processed, Executions are beneficial for debugging integration flows. On the Executions page you can select a single Execution and, for example, check the errors that occurred. It is possible to use [Retry feature](/guides/error-retry.html) for errors:
 
