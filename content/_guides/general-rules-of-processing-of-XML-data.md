@@ -8,25 +8,35 @@ order: 1
 
 ## Description
 
-As you know {{site.data.tenant.name}} iPaaS uses common data format for messages that are transferred between components and it is JSON. Common format allows reusability of the components due to standardisation, however, you have following possibilities to represent XML data in {{site.data.tenant.name}}:
+As you know {{site.data.tenant.name}} iPaaS uses common data format for messages
+that are transferred between components and it is JSON. Common format allows
+re-usability of the components due to standardisation, however, you have following
+possibilities to represent XML data in {{site.data.tenant.name}}:
 
 
 ## XML converted to and from JSON
 
-When XML data is coming into the system you can JSON. JSON has some advantages and disadvantages compared to XML, however, JSON vs. XML discussion is out of the scope of that article, more information can be found [here](https://stackoverflow.com/questions/4862310/json-and-xml-comparison).
+When XML data is coming into the system it will be parsed into a JSON. JSON has
+some advantages and disadvantages compared to XML, however, JSON vs. XML discussion i
+s out of the scope of that article, more information can be found
+[here](https://stackoverflow.com/questions/4862310/json-and-xml-comparison).
 
-Internally we use [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js) library to transform the XML to JSON (if the transformation is required, see this [article](https://docs.elastic.io/guides/getting-XML-data-into-the-platform.html) for more information) with following settings:
+Internally we use [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
+library to transform the XML to JSON (if the transformation is required, see this
+[article](https://docs.elastic.io/guides/getting-XML-data-into-the-platform.html)
+for more information) with following settings:
 
-
+| Setting Name | Value |
 |---------------------|-------|
-| **trim** | false |
-| **normalize** | false |
-| **explicitArray** | false |
-| **normalizeTags** | false |
-| **attrkey** | "_attr" |
-| **tagNameProcessors** | Here we replace all ':' with '-' to enable mapper (handlebars) processing |
+| **trim** | `false` |
+| **normalize** | `false` |
+| **explicitArray** | `false` |
+| **normalizeTags** | `false` |
+| **attrkey** | `"_attr"` |
+| **tagNameProcessors** | Here we replace all `:` with `-` to avoid conflicts in mapper processing |
 
-More information on configuration options and their semantics you can find [here](https://github.com/Leonidas-from-XIV/node-xml2js#options).
+More information on configuration options and their semantics you can find
+[here](https://github.com/Leonidas-from-XIV/node-xml2js#options).
 
 Here you can see some of the examples of such transformation:
 
@@ -195,4 +205,25 @@ Here you can see some of the examples of such transformation:
 
 ## XML transferred as attachment
 
-You can accept, process and send XML data as a message attachment. Attachment is an external data that is stored externally (inside the e.io cluster) and referenced in {{site.data.tenant.name}} message under the attachments node. When processing XML as attachment, it will be stored as it is, won't be validated or parsed and available to every component that would like to read/parse/validate/transform it, however default data transformation components (e.g. [mapper](https://docs.elastic.io/components/mapper/index.html)) will not understand it and won't be able to work with it out-of-the-box.
+You can accept, process and send XML data as a message attachment. Attachment
+is an external data that is stored externally (inside the e.io cluster) and
+referenced in {{site.data.tenant.name}} message under the attachments node.
+
+When processing XML as attachment, it will be stored as it is, won't be validated
+or parsed and available to every component that would like to
+read/parse/validate/transform it, however default data transformation components
+(e.g. [mapper](https://docs.elastic.io/components/mapper)) will not understand
+it and won't be able to work with it out-of-the-box.
+
+## XML accepted as RAW in the body
+
+In case you need the XML in the body to stay intact and passed along to the next
+step you can use the use `raw` query parameter (`?raw=true`) like below:
+
+```xml
+curl -X POST -H "Content-Type: application/xml" \
+  -d '<foo>Hello XML!</foo>' \
+  https://in.platform.address/hooks/your-hook?raw=true
+```
+
+**This scenario only would work in case when XML is being posted to the webhook.**
