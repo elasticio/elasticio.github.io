@@ -30,34 +30,6 @@
 
                 <div id="hits"></div>
             </div>
-
-            <div class="burger">
-                <div class="burger__control"></div>
-                <div class="big-menu">
-                    <div class="big-menu__list">
-                        {% for collection in site.data.chapters%}
-                            {% assign collectionName = collection[0] %}
-                            {% assign chapter = site.data.chapters[collectionName] %}
-                            <a class="big-menu__tit" href="/{{collectionName}}">
-                                <i class="fa {{collection[1].fa-icon}}"></i>{{collection[1].title}}
-                            </a>
-
-                            {% for section in chapter.sections %}
-                                <div class="big-menu__item">{{section.title}}</div>
-                                {% assign items = site[collectionName]| where: 'section', section.title | sort: 'order' %}
-                                <div class="big-menu__sub">
-                                    {% for item in items %}
-                                    <a class="big-menu__item" href="{{item.url}}">{{item.title}}</a>
-                                    {% endfor %}
-                                </div>
-                            {% endfor %}
-
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="big-overlay"></div>
-            </div>
-
             <a href="/" class="logo"></a>
         </div>
     </header>
@@ -71,6 +43,7 @@
         <div class="footer__bar">
             <div class="footer__copy">
                 &copy; Copyright {{ 'now' | date: "%Y" }} {{site.data.tenant.companyName}}
+                &nbsp; | &nbsp; <a href="/toc.html" title="Table of Contents">TOC</a> &nbsp; | 
             </div>
         </div>
     </div>

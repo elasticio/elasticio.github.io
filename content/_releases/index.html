@@ -20,13 +20,19 @@ layout: default
 </div>
 <div class="wrap">
     <div class="description">
-        {{site.data.tenant.name}} follows the <a href="https://semver.org/" target="_blank">Semver</a> semantics releases.
-        Given a version number MAJOR.MINOR.PATCH, increment the:
+      <p>
+      <strong>NOTE:</strong> From <strong>19.51</strong> release we have adopted new
+      release numbering format based on year and week of the release - <strong>YY.WW</strong>.
+      <strong>YY</strong> are the last two digits of the year, and <strong>WW</strong> is
+      the number of the week in that year.
+      </p>
+      <p>Previously {{site.data.tenant.name}} followed the <a href="https://semver.org/" target="_blank">Semver</a> semantics releases. Given a version number MAJOR.MINOR.PATCH, increment the:
         <ul>
             <li>MAJOR version when incompatible changes are made in the platform,</li>
             <li>MINOR version for each monthly release, and</li>
             <li>PATCH version for bug fix releases.</li>
         </ul>
+      </p>
         Here is the list of the past releases:
     </div>
 </div>
