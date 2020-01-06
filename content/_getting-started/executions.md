@@ -32,10 +32,10 @@ As for a polling flow, everything works as shown on the diagram:
 ![Executions polling Flow](/assets/img/getting-started/exec-page/exec2.png)
 
 A polling flow is triggered by a platform internal scheduling request. As a result
-of this request, the flow's trigger is executed eventually. The message emitted
+of this request, the flow's trigger is executed. The message emitted
 by the trigger is creating a large number of messages that all belong to the same
 execution. In the example above 101 messages belong to the same execution as they
-were caused by the same trigger message. A new execution is created only in the
+were caused by the same trigger message. A new execution is created in the
 next scheduling interval.
 
 The action receiving the data is processing it in parallel or serially, and emits
@@ -45,23 +45,76 @@ messages totally. All the 110 messages belong to the same execution.
 
 ## Executions Page
 
-This page shows the list of all executions, which can be filtered by:
+This page shows the list of all executions. You can filter the executions
+by [flow names](#filtering-by-flow-name), [flow statuses](#filtering-by-status)
+and the [time interval](#filtering-by-time-interval).
 
-*   **Date** - This filter offers a calendar view where you can select the required time interval to view the executions. Additionally, there are predefined options like `last 15 minutes`, `last hour`, `today`, etc.
--    **All**, **Successful** and **Erroneous** - All executions are shown by default. Successful executions are the ones without errors. Erroneous lists executions with errors.
--    **Flows** - This filter allows you to select executions per selected flow. You can select more than one flows simultaneously if, for example, you need to debug related flows. Note, by deselecting all (*Clear*) you will return to the default view where all executions of every flow are shown.
+![Executions page filters](/assets/img/getting-started/exec-page/exec-filters.gif)
 
 All filters are added to the URL code, so you can send a link to the filtered
 executions list to your colleague.
 
+```
+https://address-to-your-platform/c/5b62c919fd98ea00112d53ad#/w/57977bd3be64438036000003/executions?flow_ids=5dd0838225f7b3b4e8280b5c&time_from=2020-01-06T21%3A54%3A00.000Z&time_to=2020-01-06T22%3A54%3A59.999Z&thread_type=successful
+```
+
 If new executions are added to the list while you are browsing it, you will get a
 message at the top of the list, and a prompt to load them or dismiss the prompt
 by clicking `X`. The idea is to not let new executions interfere with your browsing
-by messing up the list.
+by messing up the list. The screenshot below shows a typical view with a message:
 
-![Executions page filters](/assets/img/getting-started/exec-page/exec-filters.gif)
+![Load new executions](/assets/img/getting-started/exec-page/executions-loadnew.png)
 
-Since most of the errors inside components are related to data processed, executions
+> **A Technical Note** - to benefit from this page, all your custom components
+> must use the latest Sailor (above 2.5.4). It is advisable to restart all the
+> realtime flows after updating your components.
+
+## Filtering by flow name
+
+This filter allows you to concentrate on executions of one or more flows by deselecting
+their names in the drop-down menu.
+
+![Flow Name filter with two selected flows](/assets/img/getting-started/exec-page/executions-filter-flowname.png)
+
+You can select more than one flow if you need to debug related flows.
+Here you can search for the flow names to find the relevant flows faster.
+
+> **Note**, by deselecting all (*Clear*) you will return to the default view
+> where all executions of every flow are shown.
+
+## Filtering by Status
+
+This filter allows you to list executions based on their statuses:
+**Successful** or **Erroneous**. By default all executions are shown.
+
+![Flow statuses](/assets/img/getting-started/exec-page/executions-filter-statuses.png)
+
+## Filtering by time interval
+
+This filter allows you to list executions based on their time. A drop-down menu
+offers a calendar view where you can customise and concentrate on the time interval
+when the execution was started.
+
+![Time interval default view](/assets/img/getting-started/exec-page/executions-filter-timeinterval01.png)
+
+Picture above shows the default view of the time interval where time is set to shown
+today's executions. You can select any of the pre-defined options like
+`last 15 minutes`, `last hour`, `today`, etc. Or you can customise it further using
+the callendar view by selecting the starting date and end date. You can also select
+the starting and ending hour of the interval.
+
+![Time interval Custom Range](/assets/img/getting-started/exec-page/executions-filter-timeinterval02.png)
+
+> **Note** - you must press **Apply** for it to take effect. You will know it worked
+> when the check-mark shows the **Custom Range** and the name interval is clearly
+> shown on the selecter manu instead of Today.
+
+
+## Debugging the executions
+
+
+
+Since most of the errors inside components are related to the processed data, executions
 are beneficial for debugging integration flows. On the executions page you can
 select a single execution:
 
@@ -71,6 +124,6 @@ Then, for example, you can check the errors that occurred:
 
 ![Executions error](/assets/img/getting-started/exec-page/exec-retry2.png)
 
-You can use [Retry feature](/guides/error-retry.html) for errors:
+You can use [Retry feature](/guides/error-retry) for errors:
 
 ![Executions error retry](/assets/img/getting-started/exec-page/exec-retry3.png)
