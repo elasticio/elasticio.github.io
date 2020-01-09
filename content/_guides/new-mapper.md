@@ -40,13 +40,13 @@ In this tab you select the Component for this step.
 Here you can select the required Component version.
 
 ### Functions
-
+Some Components have more than one way of operation, so you are prompted to select one.
 
 ### Agents
-
+(ARE THESE LOCAL AGENTS?)
 
 ### Credentials
-Credentials hold authentication data for Components. In this tab you can select from the available credentials, add new ones, verify them, save or delete existing ones.
+Credentials hold authentication data for Components. In this tab you can select from the available credentials, add new ones, verify and save them. Also you can edit and delete existing credentials.
 
 ### Input
 The actual mapping tab. Here you provide data input for fields required by the Ccomponent.
