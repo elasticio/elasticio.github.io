@@ -55,4 +55,4 @@ The actual mapping tab. Here you provide data input for fields required by the C
 This is where you retrieve a [data sample](/guides/data-sample-overview.html). A data sample is an example of [component](/getting-started/integration-component) output data. It is essential in building integration flows, because it allows you to see what sort of data the next component in the flow will receive from the previous one. With this information you can configure the next component to act properly on the input it receives.
 
 ### Summary
-Tab for Step description. This is optional, but consider adding detailed descriptions so that people that will use this Flow won't have to nag you with questions.  
+Tab for Step description. This is optional, but consider adding detailed descriptions to your Steps. This way Flow users won't have to nag you with questions.  
