@@ -3,7 +3,7 @@ title: Executions Page
 layout: article
 section: Basic Concepts
 order: 3
-since: 20200107
+since: 20200116
 ---
 
 This document provides basic information on [executions](#executions) and
@@ -62,13 +62,14 @@ https://address-to-your-platform/c/5b62c919fd98ea00112d53ad#/w/57977bd3be6443803
 
 If new executions happened while you are browsing the list of executions, the platform
 will show a notification at the top of the list, and a prompt to load them. You can dismiss
-the it by clicking `X`. The idea is to not let new executions interfere with
+it by clicking `X`. The idea is to not let new executions interfere with
 your current selection. The screenshot below shows a typical view with a notification:
 
 ![Load new executions](/assets/img/getting-started/exec-page/executions-load-new.png)
 
 When you dismiss the notification above the new executions are not lost, you will
-get the same notification with an updated number of new executions again.
+get the same notification with an updated number of new executions again when new
+executions happen.
 
 > **A Technical Note** - to benefit from this page, all your custom components
 > must use the latest Nodejs Sailor (above 2.5.4). Restart all the
@@ -76,8 +77,8 @@ get the same notification with an updated number of new executions again.
 
 ## Filtering by flow name
 
-This filter allows you to concentrate on executions of one or more flows by deselecting
-their names in the drop-down menu.
+This filter allows you to concentrate on executions of one or more flows by selecting
+the check-boxes in front of their names in the drop-down menu.
 
 ![Flow Name filter with two selected flows](/assets/img/getting-started/exec-page/executions-filter-flow-name.png)
 
@@ -127,6 +128,6 @@ Then, for example, you can check the errors that occurred:
 
 ![Executions error](/assets/img/getting-started/exec-page/exec-retry2.png)
 
-You can use [Retry feature](/guides/error-retry) for errors:
+You can use the [retry feature](/guides/error-retry) to re-submit or retry.
 
 ![Executions error retry](/assets/img/getting-started/exec-page/exec-retry3.png)
