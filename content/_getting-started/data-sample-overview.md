@@ -2,6 +2,7 @@
 title: Data Sample Overview
 layout: article
 section: Basic Concepts
+description: This document provides basic information on data samples and how they are useful when building integration flows.
 order: 1
 ---
 

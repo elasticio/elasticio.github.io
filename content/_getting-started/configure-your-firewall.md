@@ -2,6 +2,7 @@
 title: Configure your firewall
 layout: article
 section: Basic Concepts
+description: Information about the IP addresses to white-list for your firewall.
 order: 1
 ---
 

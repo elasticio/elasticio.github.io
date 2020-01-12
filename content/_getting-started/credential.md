@@ -2,6 +2,7 @@
 title: Understanding credentials
 layout: article
 section: Basic Concepts
+description: What is a credential in general. How to create and use the credential in your integration components.
 order: 3
 category: integration-flow
 ---
