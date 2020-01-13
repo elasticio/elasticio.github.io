@@ -3,7 +3,7 @@ title: Understanding credentials
 layout: article
 section: Basic Concepts
 description: What is a credential in general. How to create and use the credential in your integration components.
-order: 3
+order: 4
 category: integration-flow
 ---
 
@@ -40,7 +40,7 @@ component.
 
 To create a credential, open the Navigational Menu and go to *Credentials*. Then click *Create New Credential* button:
 
-![](/assets/img/getting-started/credential/creds.gif)
+![Petstore API - Creating a credential for a flow](/assets/img/getting-started/credential/creds.gif)
 
 You will need to fill in data for two input fields:
 -   **Account name** - an optional name for this credential
@@ -54,9 +54,15 @@ flows using same component.
 
 Credentials are structured by components. The green number on a component icon tells you how many credentials exist for that component.
 
-**NOTE** Before saving a credential, the {{site.data.tenant.name}} platform performs a verification by sending a "dry" request to the particular API. This allows us to avoid saving invalid credentials caused by typos, invalidated API keys, etc.
+>**Please note** that before saving a credential, the {{site.data.tenant.name}} platform performs a verification by sending a "dry" request to the particular API. This allows us to avoid saving invalid credentials caused by typos, invalidated API keys, etc.
 
 A new credential can be added by pressing the `Add New Credential` button that you can see at the end of the video above. An existing credential can also be edited or deleted. This is accomplished by clicking the `Edit` or `Delete` button on an existing credential.
 
 
-**NOTE** Please note that it is not possible to delete a credential used by an active integration flow as the flow would become broken. If you try to delete such a credential, a corresponding error message will be displayed. Please delete these flow first or reconfigure them to use another credentials.
+>**Please note** that it is not possible to delete a credential used by an active integration flow as the flow would become broken. If you try to delete such a credential, a corresponding error message will be displayed. Please delete these flow first or reconfigure them to use another credentials.
+
+## Related links
+
+- [Integration flows](integration-flow)
+- [Creating a flow](first-flow)
+- [Petstore API](https://petstore.elastic.io/docs/)

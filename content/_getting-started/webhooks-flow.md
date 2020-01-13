@@ -2,6 +2,7 @@
 title: Creating a webhook flow
 layout: article
 section: Tutorials
+description: In this article we will cover how to create an integration flow which gets triggered by the changes in an external system.
 order: 2
 category: integration-flow
 since: 20180111
@@ -77,7 +78,6 @@ We have now the sample data for our webhook. Please click on *Continue* button t
 ![Webhook step summary](/assets/img/getting-started/webhook-flow/webhook-flow-11.png "Webhook step summary")
 
 Screenshot above shows the Webhook step summary page where you can add a note to describe the step and change the step name. Click on *Add another step* button to finish the Webhook step and load the component chooser again.
-
 
 ## Choosing the data target
 
@@ -194,3 +194,11 @@ In the example above `{FLOW_ID}` is the ID of your flow shown on the
 [flow summary screen](#running-and-monitoring-the-flow). The variables
 `{USERNAME}` and `{PASSWORD}` are the ones you entered when creating a
 credential for your webhook.
+
+## Related links
+
+- [integration components](integration-component](integration-flow)
+- [Petstore API](https://petstore.elastic.io/docs/)
+- [Postman](https://www.getpostman.com/)
+- [Integration Component Overview](integration-component)
+- [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)

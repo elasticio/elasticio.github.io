@@ -2,6 +2,7 @@
 title: Integration Component Overview
 layout: article
 section: Basic Concepts
+description: This document provides basic information on integration components and how to use them.
 order: 1
 category: component
 ---
@@ -27,11 +28,13 @@ up with a component as shown in the following diagram.
 
 ![Petstore Component](/assets/img/getting-started/integration-component/petstore-component-diagram.png "Petstore Component")
 
-The diagram above demonstrates a Petstore component consisting of 5 operations.
+The **diagram above** demonstrates a Petstore component consisting of 5 operations.
 The 3 operations in blue boxes are called `triggers` and the 2 operations
 in green boxes are called `actions`. Please note that the color of the
 operations in the  diagram above reflect the color of the resources in
 the screenshot showing Petstore API documentation.
+
+## Trigger
 
 A `trigger` is used to start an [integration flow](integration-flow)
 by exporting data for processing. For that purpose a trigger is monitoring
@@ -40,6 +43,8 @@ Once changes has been detected the trigger starts the integration flow.
 As a rule of thumb any `GET` resource in a REST API is implemented as `trigger`
 in an integration component.
 
+## Action
+
 An `action` is used to consume data produced by a `trigger` or another action.
 Typically an action inserts objects into target application. That's why
 any writing resource (`POST`, `PUT`, etc.) in a REST API will be implemented
@@ -47,8 +52,7 @@ as `actions` in an integration component. For example the
 `Add a new pet to the store` is an action as the corresponding
 resource in the Petstore API is accessible through `POST` method.
 
-
-> **Note** A component developer is not required to cover 100% of the API in his/her component. Typically a developer would implement only those API resources that are required in the current integration project. Indeed the coverage of the APIs in the built-in {{site.data.tenant.name}} platform components varies from component to component.
+>**Please note** that a component developer is not required to cover 100% of the API in his/her component. Typically a developer would implement only those API resources that are required in the current integration project. Indeed the coverage of the APIs in the built-in {{site.data.tenant.name}} platform components varies from component to component.
 
 ## Understanding component's interaction
 
@@ -88,7 +92,6 @@ the Mapper transforms a `Payload` object into a `Pet` object before it is
 being passed to `Petstore` component. Mode details on Mapper can be found
 [here](/guides/mapping-data).
 
-
 ## Implementing own integration components
 
 The {{site.data.tenant.name}} platform provides a set of built-in components
@@ -96,3 +99,12 @@ to be used right away. Furthermore the platform is open for contributions
 of custom components. Please read how to build integration components using
 [Node.js](/guides/building-nodejs-component) or
 [Java programming](/guides/building-java-component) languages.
+
+## Related links
+
+- [Understanding credentials](credential)
+- [Integration Flow Overview](integration-flow)
+- [Petstore](https://petstore.elastic.io/docs/)
+- [Mapping data](/guides/mapping-data)
+- [Building a component in Node.js](/guides/building-nodejs-component)
+- [Building a component in Java](/guides/building-java-component)

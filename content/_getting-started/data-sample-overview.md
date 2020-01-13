@@ -3,13 +3,12 @@ title: Data Sample Overview
 layout: article
 section: Basic Concepts
 description: This document provides basic information on data samples and how they are useful when building integration flows.
-order: 1
+order: 4
 ---
 
 This document provides basic information on [data samples](#data-sample) and how they are useful when [building integration flows](#samples-in-integration-flows).
 
 ## Data Sample
-
 
 A data sample is an example of [component](/getting-started/integration-component) output data.
 It is essential in building integration flows, because it allows you to see what
@@ -20,7 +19,6 @@ the input it receives.
 You can generate more than one sample from a component. By default, the first one in the list will be used. Also, you can manually select the proper sample from the list. All unused samples will be deleted once you make a choice.
 
 ## Samples in Integration Flows
-
 
 Each component in a flow has its own input/output data standards. For proper
 flow operation, the components need [data mapping](/guides/mapping-data). It is a process of
@@ -36,7 +34,7 @@ or may require it in completely different order. That’s when you configure
 proper mapping so that the receiving component gets input in accordance with its
 standard.
 
-**NOTE:** Samples exist for flow building and testing purposes. Retrieving a sample for an action creates new objects in the target system. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards.
+>**Please note** that samples exist for flow building and testing purposes. Retrieving a sample for an action creates new objects in the target system. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards.
 
 Let’s observe the following process example:
 
@@ -58,4 +56,9 @@ Let’s observe the following process example:
     makes the necessary changes into Baboon output, so that the data fits *Toucan*
     input standard.
 
-![](/assets/img/getting-started/what-is-a-sample/screenshot1.png)
+![Example scheme](/assets/img/getting-started/what-is-a-sample/screenshot1.png)
+
+## Related links
+
+- [Integration Component Overview](/getting-started/integration-component)
+- [Data mapping](/guides/mapping-data)

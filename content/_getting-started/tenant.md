@@ -2,6 +2,7 @@
 title: What is a tenant?
 layout: article
 section: Advanced Concepts
+description: This document provides basic information on Tenant and why the platform is based on multi-tenant architecture.
 since: 20190110
 ---
 
