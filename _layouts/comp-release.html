@@ -8,7 +8,7 @@ layout: default
         <div class="breadcrumbs">
             <a href="/" class="breadcrumbs__item">Home</a>
             <a href="/{{page.collection}}" class="breadcrumbs__item">Component Releases</a>
-            <span class="breadcrumbs__item">#{{page.title}}</span>
+            <span class="breadcrumbs__item">#{{page.version}}</span>
         </div>
 
         <div class="layout__content">
@@ -35,7 +35,7 @@ layout: default
                 </div>
             </div>
             <div class="article">
-                <h1>Component Release Notes #{{page.title}} </h1>
+                <h1>Component Release Notes #{{page.version}} </h1>
                 <strong>#{{page.version}}</strong> released on {{ page.releaseDate | date: '%B %d, %Y' }}
                 <hr>
 

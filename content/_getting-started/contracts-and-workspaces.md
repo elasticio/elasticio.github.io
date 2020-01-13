@@ -2,13 +2,14 @@
 title: Contracts and Workspaces
 layout: article
 section: Basic Concepts
+description: Explanation of the hierarchy of contracts and workspaces.
 order: 1
 since: 20190401
 ---
 
 This document provides information on [contracts](#contracts), [contract management](#contract-management), [workspaces](#workspaces) and [workspace management](#workspace-management). Additionally, it explains the basic application of this
 approach in [solution life cycle](#workspaces-and-life-cycles), and what [limited workspaces](#limited-workspaces) are. The following
-scheme shows how contracts and workspaces stand in solution hierarchy.  
+scheme shows how contracts and workspaces stand in solution hierarchy.
 
 
 
