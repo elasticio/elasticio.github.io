@@ -16,7 +16,7 @@ guides:
   description: Everything you need to know to master creation of integration flows
   class: categories__item_guides
   welcommer-class: welcomer__icon_guides
-  fa-icon: fa-puzzle-piece
+  fa-icon: fa-graduation-cap
   sections:
     - title: Building integration flows
       description: Articles on how to build integration flows effectively
@@ -37,7 +37,7 @@ components:
   description: Extensive documentation of the integration components
   class: categories__item_components
   welcommer-class: welcomer__icon_components
-  fa-icon: fa-archive
+  fa-icon: fa-puzzle-piece
   sections:
     - title: CRM components
       description: Components for managing all your company’s relationships and interactions with customers
