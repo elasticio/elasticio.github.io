@@ -12,10 +12,10 @@ updatedDate: 2019-09-19
 
 ## Latest changelog
 
-**1.0.1 (December 07, 2019)**
+**1.0.2 (January 13, 2020)**
 
-* Update sailor version to 2.5.1
-* Change build type to docker
+* Using Sailor logger
+* Improved few logs
 
 > To see the full **changelog** please use the following [link](/components/splitter/changelog).
 
@@ -65,8 +65,7 @@ The splitting expression is "users", action will return output:
     "name": "Mike"
 }
 ```
-*Notes:*
-
+>**Notes:**
 - *When splitting expression refers to an object splitter returns this object;*
 - *When splitting expression contains primitive value like ```users:"John"``` or array of primitives like ```users:["John", "Mike", "Anna"]``` splitter emits error.*
 
@@ -111,8 +110,7 @@ and the JSONata expression `Phone.{type: number}`, an object constructor, the ac
     "mobile": "077 7700 1234"
 }
 ```
-*Notes:*
-
+>**Notes:**
 - *If the evaluated array contains primitive values like ```users:["John", "Mike", "Anna"]```, the splitter emits error.*
 
 ### List of Expected Config fields
