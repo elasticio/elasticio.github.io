@@ -59,17 +59,31 @@ Some Components allow you to configure [Local Agent](/getting-started/local-agen
 ![New Mapper Credentials](/assets/img/integrator-guide/new-mapper/Creds.png)
 
 ### Input
-The actual mapping tab. Here you provide data input for fields required by the Component.
+The actual mapping tab. Here you provide data input for fields required by the Component. There are three methods of mapping: Integrator view, JSONata view, and Developer Mode.
+
+Integrator view is the standard mapping view, where you can see all the data fields:
 
 ![New Mapper Input](/assets/img/integrator-guide/new-mapper/Input.png)
 
-You can switch to Integrator Mode:
+JSONata view is intended for JSONata expressions in fields. You can switch to this view like this:
 
-![New Mapper Switch to Integrator](/assets/img/integrator-guide/new-mapper/Switch-integrator.png)
+![New Mapper Switch to JSONata](/assets/img/integrator-guide/new-mapper/Switch-Jsonata.png)
 
-Then, in the Integrator Mode you can switch back:
+In both views you can evaluate the expressions and see which data will be seen as the result. As you can see, our "First Name" and "Last Name" in the field resulted in the complete name:
 
-![New Mapper Switch Back](/assets/img/integrator-guide/new-mapper/Switch-basic.png)
+![Evaluate Data](/assets/img/integrator-guide/new-mapper/Evaluate.png)
+
+If you want to code your mapping manually, you can use the Developer Mode:
+
+![New Mapper Switch to Developer Mode](/assets/img/integrator-guide/new-mapper/Switch-Developer.png)
+
+Data is evaluated the same way in Developer Mode, with green light showing that everything works, and red, if not:
+
+![New Mapper Switch to Developer Mode](/assets/img/integrator-guide/new-mapper/Evaluate-Developer.png)
+
+Then, you can switch back to Integrator view:
+
+![New Mapper Switch to Developer Mode](/assets/img/integrator-guide/new-mapper/Switch-Integrator.png)
 
 ### Sample
 This is where you retrieve a [data sample](data-sample-overview). A data sample is an example of Component output data. It is essential in building integration flows, because it allows you to see what sort of data the next component in the flow will receive from the previous one. With this information you can configure the next component to act properly on the input it receives.
