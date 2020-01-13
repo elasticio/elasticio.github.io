@@ -3,7 +3,7 @@ title: Configure your firewall
 layout: article
 section: Basic Concepts
 description: Information about the IP addresses to white-list for your firewall.
-order: 1
+order: 6
 ---
 
 Sometimes you would like to access resources behind the firewall from {{site.data.tenant.name}} tasks, and most of the times your firewall configured to whitelist IP addresses that may have access to resources behind it, for example on AWS you may enter a specific IP address so that only connections from this IP address would be allowed to let in (see more [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html)). This frequently used for limiting access to the database, or any other systems.
@@ -21,3 +21,7 @@ If you have a dedicated or private cluster running {{site.data.tenant.name}} ins
 ## VPN connection
 
 You also have an option to establish a VPN tunnel to {{site.data.tenant.name}} environment, please consult the support for more details.
+
+## Related links
+
+- [Authorizing Inbound Traffic for Your Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html)

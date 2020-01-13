@@ -2,7 +2,8 @@
 title: Quota
 layout: article
 section: Basic Concepts
-order: 2
+description: This document provides basic information on Platform resource quota and how the limit is calculated.
+order: 7
 category: integration-flow
 since: 20191101
 ---
@@ -10,6 +11,7 @@ since: 20191101
 This document provides basic information on Platform [resource quota](#quota) and how the [limit is calculated](#quota-limit-calculation).
 
 ## Quota
+
 A quota defines the limit of usable resources in your Contract, Workspace or Flow. It was designed to allow the user to maintain a better resource balance, and minimize the possibility of failure due to overuse. The resources that you can limit are RAM and CPU.
 
 Quotas can be set per Contract, per Workspace and per Flow, depending on the requirements. If a quota is enabled, but not defined, a default value in  will be set. To set a quota, a user needs a corresponding Service Account.
@@ -24,8 +26,8 @@ As seen on the page above, only approximately 1% of the memory quota has been us
 
 ![Report](/assets/img/getting-started/quota/quotadetail.gif)
 
-
 ## Quota Limit Calculation
+
 A quota limit is the amount of resources multiplied by time. So if we have `2GB` quota and we want to know our monthly quota limit in `Mb*s` (a composite unit of memory usage that means 1 Megabyte of data transfer sustained for 1 second), we have to:
 
 1\. Take `2GB` and convert them into `Mb`, so `2*1024=2048`

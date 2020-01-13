@@ -2,8 +2,9 @@
 title: Rebound
 layout: article
 section: Basic Concepts
+description: This document provides basic information on Rebound feature and which possibility it adds to bounce back and reprocess the incoming messages when the system is not ready to process them at that particular instance.
 category: rebound
-order: 2
+order: 8
 ---
 
 ## Description
@@ -36,7 +37,6 @@ Here is how the problem can happen in practice. We have a task to synchronise `o
 
   * Each order contains a reference to a customer, so that no order could be created in ERP before customer is created.
 
-
 Two separately running parallel integration processes are created:
 
   1. Process A synchronises customers and
@@ -59,8 +59,16 @@ In all its glory, eventual consistency is not a flawless solution partly because
 
 Coming back to the example above, when we try to synchronise an order in ERP while the customer data for that order is not yet in place, we’ll simply postpone the processing of that order for a while. By doing that we give the parallel process more time to synchronise customers, and hope that the corresponding customer information would eventually be synched with the ERP. **This is a clear example of eventual consistency application in the integration processes.** To reach the eventual consistency we use one of the built-in features of elastic.io integration platform - **the Rebound.**
 
-> **Note:** Rebound is a feature that adds a possibility to bounce back and reprocess the incoming messages when the system is not ready to process them at that particular instance.
+> **Please note** that Rebound is a feature that adds a possibility to bounce back and reprocess the incoming messages when the system is not ready to process them at that particular instance.
 
 When the message can not be processed by the component due to insufficient information, it is sent back or rebounded. This means that the message is sent to a special queue where it waits for a minute and then re-queued for a repeated processing by the component. In case that the message is rebounded again, then the waiting period is consequently increased with each iteration. This process can happen several times (currently it’s set to repeat 10 times in our system), after which the message is rejected completely and an error is reported.
 
 This simple yet powerful solution **ensures eventual consistency in integration processes** which does not require a central coordinator (e.g. XA transaction manager, or distributed locking). It is highly available, but at the same time, one needs to understand its drawbacks, e.g. in our sample the data synchronisation may happen out-of-order and get delayed.
+
+## Related links
+
+- [Rebound: Practical application of eventual consistency](https://www.elastic.io/rebound-practical-application-of-eventual-consistency/)
+- [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
+- [Eventually Consistent - Revisited](https://www.allthingsdistributed.com/2008/12/eventually_consistent.html)
+- [Eventual Consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
+- [Liveness](https://en.wikipedia.org/wiki/Liveness)

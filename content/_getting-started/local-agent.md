@@ -2,6 +2,7 @@
 title: Local Agent
 layout: article
 section: Advanced Concepts
+description: This document provides the basic information on Local Agent and the way to get it in case you require one.
 order: 2
 since: 20191218
 category: local agents
@@ -10,6 +11,7 @@ category: local agents
 This document provides the basic information on [Local Agent](#local-agent) and the [way to get it](#how-to-request-a-local-agent) in case you require one. Additionally, it contains some [technical details](#architecture) for those interested.
 
 ## Local Agent
+
 A Local Agent is VM-based application that allows you to create a secure connection between your on-premise database and the Platform, restricting any external access to it. It is intended for companies that work with clients' personal data, or just have strict data security policies. For example:
 
 - Government institutions, military, law enforcement
@@ -22,9 +24,8 @@ Basically, a Local Agent adds another virtualization layer that emulates your ow
 
 ![Local Agent](/assets/img/getting-started/local-agent/scheme.png)
 
-
-
 ## How to Request a Local Agent
+
 Local Agents require extensive on-premise compute and storage resources. Before requesting a Local Agent, please ensure that your task requires it, and that your setup meets its hardware/software requirements.
 
 To request a Local agent, go to navigational menu and click *Agents*:
@@ -38,6 +39,7 @@ Then click "*+ Request an agent*" button:
 Our support will process your request and provide you with everything required to install and run a Local Agent.
 
 ## Architecture
+
 Local Agent is a Virtual Machine (VM) that implements a Kubernetes cluster. It contains a set of Pods that implement different parts of service:
 
 1\. Gateway – OpenVPN client;

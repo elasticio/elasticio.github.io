@@ -2,6 +2,7 @@
 title: Integration Flow Overview
 layout: article
 section: Basic Concepts
+description: This document provides basic information on integration flow and their parts.
 order: 2
 category: integration-flow
 since: 20180102
@@ -30,8 +31,8 @@ once a change is detected.
 
 There are two types of triggers:
 
-* polling: actively monitoring the source service in predefined intervals
-* webhook: waiting for the source system to send notification about changes
+* polling: **actively** monitoring the source service in predefined intervals
+* webhook: **waiting** for the source system to send notification about changes
 
 
 The difference between *polling* and *webhook* triggers is how the changes are detected. A *polling* trigger is actively
@@ -61,3 +62,10 @@ Using a messaging queues between flow steps has following advantages:
 * data are never lost if any of the containers crashed
 * containers can be scaled if we need to parallelise the work, e.g. in the diagram above we have 2 instances of Step 2 running
 * reliable message delivery between containers, e.g. when the target API is unavailable the platform can easily retry later as the messages remain on the queues
+
+## Related links
+
+- [Integration Component Overview](integration-component)
+- [Creating a Basic Integration Flow](first-flow)
+- [Creating a webhook flow](webhooks-flow)
+- [Docker](https://www.docker.com/)

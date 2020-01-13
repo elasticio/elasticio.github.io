@@ -2,7 +2,8 @@
 title: Recipes Feature
 layout: article
 section: Advanced Concepts
-order: 1
+description: This document provides basic information on Recipes and some details of their usage.
+order: 9
 category: integration-flow
 since: 20191030
 ---
@@ -26,3 +27,9 @@ There may be a few configurables that you'll need to deal with manually after ac
 - **Fields**. Certain fields in Components require manual configuration just because you can not use another user's data, and need to enter your own.
 
 - **Flow Variables**. Flow variables are special variables used in Flow metadata to hardcode certain data. They will need to be configured, if used in a Recipe.
+
+## Related links
+
+- [Integration Flow Overview](integration-flow)
+- [Create a recipe from existing flow]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-recipe-from-existing-flow)
+- [Create a recipe from scratch]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-recipe)

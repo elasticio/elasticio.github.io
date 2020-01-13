@@ -2,7 +2,10 @@
 title: Passthrough Feature
 layout: article
 section: Basic Concepts
-order: 3
+description: This document introduces the passthrough feature,
+ explains why would you use it,
+ and gives a real-life example on how to use it.
+order: 9
 since: 20190903
 ---
 
@@ -111,3 +114,7 @@ scheduled delivery date, shipping date, item price and quantity of ordered items
 
 **In summary**: Instead of separating order and item handling to a second flow, we
 reduce the complexity by using the passthrough feature of the platform.
+
+## Related links
+
+- [Integration Flow Overview](integration-flow)
