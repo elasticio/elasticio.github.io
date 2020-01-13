@@ -83,7 +83,7 @@ Data is evaluated the same way in Developer Mode, with green light showing that 
 
 Then, you can switch back to Integrator view:
 
-![New Mapper Switch to Developer Mode](/assets/img/integrator-guide/new-mapper/Switch-Integrator.png)
+![New Mapper Switch to Integrator Mode](/assets/img/integrator-guide/new-mapper/Switch-Integrator.png)
 
 ### Sample
 This is where you retrieve a [data sample](data-sample-overview). A data sample is an example of Component output data. It is essential in building integration flows, because it allows you to see what sort of data the next component in the flow will receive from the previous one. With this information you can configure the next component to act properly on the input it receives.
