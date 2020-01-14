@@ -2,8 +2,8 @@
 title: Executions Page
 layout: article
 section: Basic Concepts
+description: This document provides basic information on executions page and how to filter executions based on flow names, flow statuses and the time interval.
 order: 3
-since: 20200116
 ---
 
 This document provides basic information on [executions](#executions) and
@@ -46,6 +46,9 @@ messages totally. All the 110 messages belong to the same execution.
 
 
 ## Executions Page
+
+Navigate to the new executions page from the left-side menu, under the *Analyze* selection.
+Select the new **Executions** menu item to navigate to this new page.
 
 This page shows the list of all executions. You can filter the executions
 by [flow names](#filtering-by-flow-name), [flow statuses](#filtering-by-status)
