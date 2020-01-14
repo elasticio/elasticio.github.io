@@ -1,11 +1,10 @@
 ---
 title: New Mapper UI
 layout: article
-section: Data Transformation
+section: Data transformation
 category: UI
 description: This document presents data mapping on our Platform and provides a detailed description of the new mapper UI.
-order: 0
-since: 20200109
+order: 3
 ---
 
 This document presents data mapping on our Platform and provides a detailed description of the new mapper UI.
@@ -41,21 +40,21 @@ Some Components allow you to configure [Local Agent](/getting-started/local-agen
 ![New Mapper Credentials](/assets/img/integrator-guide/new-mapper/Creds.png)
 
 ## Input
-The actual mapping tab. Here you provide data input for fields required by the Component. There are three methods of mapping: Integrator view, JSONata view, and Developer Mode.
+The actual mapping tab. Here you provide data input for fields required by the Component. There are three methods of mapping: **Integrator view**, **JSONata view**, and **Developer Mode**.
 
-Integrator view is the standard mapping view, where you can see all the data fields:
+**Integrator view** is the standard mapping view, where you can see all the data fields:
 
 ![New Mapper Input](/assets/img/integrator-guide/new-mapper/Input.png)
 
-JSONata view is intended for JSONata expressions in fields. You can switch to this view like this:
+**JSONata view** is intended for JSONata expressions in fields. You can switch to this view like this:
 
 ![New Mapper Switch to JSONata](/assets/img/integrator-guide/new-mapper/Switch-Jsonata.png)
 
-In both views you can evaluate the expressions and see which data will be seen as the result. As you can see, our "First Name" and "Last Name" in the field resulted in the complete name:
+In both views you can evaluate the expressions and see which data will be seen as the result. As you can see, our `First Name` and `Last Name` in the field resulted in the complete name:
 
 ![Evaluate Data](/assets/img/integrator-guide/new-mapper/Evaluate.png)
 
-If you want to code your mapping manually, you can use the Developer Mode:
+If you want to code your mapping manually, you can use the **Developer Mode**:
 
 ![New Mapper Switch to Developer Mode](/assets/img/integrator-guide/new-mapper/Switch-Developer.png)
 
@@ -73,6 +72,6 @@ This is where you retrieve a [data sample](data-sample-overview). A data sample 
 ![New Mapper Sample](/assets/img/integrator-guide/new-mapper/Sample.png)
 
 ## Summary
-Tab for Step description. This is optional, but consider adding detailed descriptions to your Steps. This way Flow users won't have to nag you with questions. Additionally, there may be Credentials here, and a [passthrough](/getting-started/passthrough-feature.html) switch to turn passthrough on and off for this step.  
+Tab for Step description. This is optional, but consider adding detailed descriptions to your Steps. This way Flow users won't have to nag you with questions. Additionally, there may be Credentials here, and a [passthrough](/getting-started/passthrough-feature.html) switch to turn passthrough on and off for this step.
 
 ![New Mapper Summary](/assets/img/integrator-guide/new-mapper/Summary.png)
