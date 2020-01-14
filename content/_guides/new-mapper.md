@@ -73,6 +73,6 @@ This is where you retrieve a [data sample](data-sample-overview). A data sample 
 ![New Mapper Sample](/assets/img/integrator-guide/new-mapper/Sample.png)
 
 ## Summary
-Tab for Step description. This is optional, but consider adding detailed descriptions to your Steps. This way Flow users won't have to nag you with questions.  
+Tab for Step description. This is optional, but consider adding detailed descriptions to your Steps. This way Flow users won't have to nag you with questions. Additionally, there may be Credentials here, and a [passthrough](/getting-started/passthrough-feature.html) switch to turn passthrough on and off for this step.  
 
 ![New Mapper Summary](/assets/img/integrator-guide/new-mapper/Summary.png)
