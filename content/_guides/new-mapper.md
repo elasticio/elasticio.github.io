@@ -3,6 +3,7 @@ title: New Mapper UI
 layout: article
 section: Integrator Guide
 category: UI
+description: This document presents data mapping on our Platform and provides a detailed description of the new mapper UI.
 order: 0
 since: 20200109
 ---
@@ -39,7 +40,7 @@ In this tab you select the Component for this step.
 ![New Mapper Components](/assets/img/integrator-guide/new-mapper/Components.png)
 
 ### Versions
-Here you can select the required Component version.
+Here you can select the required Component version. As versions may differ by functionality, sometimes it is essential to use the most recent or a bit older one, depending on the task requirements.
 
 ![New Mapper Versions](/assets/img/integrator-guide/new-mapper/Versions.png)
 
