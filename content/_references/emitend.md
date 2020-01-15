@@ -15,7 +15,7 @@ It is a source of many controversial error reports where without emit `end` even
 
 ```js
 function emitEnd() {
-   console.log('Finished execution');
+   this.logger.info('Finished execution');
    self.emit('end');
  }
 ```
