@@ -7,15 +7,15 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2019-09-12
+updatedDate: 2020-01-15
 ---
 
 ## Latest changelog
 
-**1.1.3 (December 07, 2019)**
+**1.1.4 (December 23, 2019)**
 
-* Update sailor version to 2.5.1
-* Update jsonata-moment to 1.1.4
+* Update sailor version to 2.5.4
+* Remove Enable debugging checkbox
 
 > To see the full **changelog** please use the following [link](/components/rest-api/changelog).
 
@@ -35,10 +35,12 @@ The example below shows the development team creation using the REST API compone
 3. Configuration options
  * ``Don`t throw Error on Failed Calls`` - if enabled return error, error code and stacktrace in message body otherwise throw error in flow.
  * ``Split Result if it is an Array`` - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.
+  * ``Split Result if it is an Array`` - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.
  * ``Enable debug logging`` - The component supports extended logging. `Enable debug logging` checkbox should be enabled for it. After that you may check your logs in the logs console.
 
-    *Note:* in case of using **ordinary flows**, adding of `DEBUG` environment variable in component repository will override disabled `Enable debug logging` checkbox during flow run, so all logs will be extended until an environment variable is removed.
+    >**Please note** that in case of using **ordinary flows**, adding of `DEBUG` environment variable in component repository will override disabled `Enable debug logging` checkbox during flow run, so all logs will be extended until an environment variable is removed.
  * ``Retry on failure`` - enabling [rebound](https://support.{{site.data.tenant.name}}/support/solutions/articles/14000044750-why-and-where-we-use-the-rebound-) feature for following HTTP status codes:
+
     - 408: Request Timeout
     - 423: Locked
     - 429: Too Many Requests
@@ -47,6 +49,7 @@ The example below shows the development team creation using the REST API compone
     - 503: Service Unavailable
     - 504: Gateway Timeout
     - DNS lookup timeout
+
 4. ``Follow redirect mode`` - If you want disable Follow Redirect functionality, you can use option ``Follow redirect mode``.By default ``Follow redirect mode`` option has value ``Follow redirects``.
 
 ## Triggers
@@ -108,7 +111,7 @@ Here is the list of all supported **content types**:
 
 The **body input field** changes according to the chosen content type.
 
-*Notes:*
+>**Notes:**
 1. **Response body** will be stored in msg.body
 2. Request body that causes empty response body will return `{}`
 
@@ -133,6 +136,7 @@ To send an `XML` data set the content type to `application/xml` or `text/xml` an
 </note>
 "
 ```
+
 Use a JSONata expression to include and map any values coming from the previous steps. It will replace the variable with a real value in the final mapping. Note that the rest of `XML` gets passed as a `string`.
 
 ### Sending Form data
@@ -210,6 +214,7 @@ In this case output structure of component will be:
 Rest API component has opportunity of binary data sending. You just need choose ``multipart/form-data`` Content type and attachments from input message will be included to the request payload automatically.
 
 Rest-api component automatically load binary data to attachments with next content types in response headers:
+
 * image/*
 * text/csv
 * application/msword
@@ -218,6 +223,7 @@ Rest-api component automatically load binary data to attachments with next conte
 * application/octet-stream
 
 ## Exception handling
+
 Rest API component uses exception handling logic below:
 ![Exception handling logic](https://user-images.githubusercontent.com/13310949/41960520-9bd468ca-79f8-11e8-83f4-d9b2096deb6d.png)
 

@@ -6,8 +6,14 @@ icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
 createdDate: 2019-12-27
-updatedDate: 2019-12-27
+updatedDate: 2019-01-15
 ---
+
+## 1.1.2 (December 30, 2019)
+
+* Update sailor version to 2.5.4
+* Refactor console log to built in sailor logger
+* Change build type to `docker`
 
 ## 1.1.1 (October 1, 2019)
 

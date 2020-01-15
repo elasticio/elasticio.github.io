@@ -7,14 +7,16 @@ icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
 createdDate: 2015-09-24
-updatedDate: 2019-10-09
+updatedDate: 2020-01-15
 ---
 
 ## Latest changelog
 
-**1.1.1 (October 1, 2019)**
+**1.1.2 (December 30, 2019)**
 
-* Change `New Spreadsheet Row` trigger response types to `UNFORMATTED_VALUE`
+* Update sailor version to 2.5.4
+* Refactor console log to built in sailor logger
+* Change build type to `docker`
 
 > To see the full **changelog** please use the following [link](/components/gspreadsheet/changelog).
 
@@ -29,6 +31,7 @@ Following environment are required:
 
  - `GOOGLE_APP_ID` - oauth App ID
  - `GOOGLE_APP_SECRET` - oauth App Secret
+ - `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
 
 
  To get these please use the [Google Developers Console](https://console.developers.google.com). As a callback please use `https://your-tenant.address/callback/oauth2`.
