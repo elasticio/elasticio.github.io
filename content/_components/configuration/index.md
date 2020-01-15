@@ -7,8 +7,18 @@ icon: configuration.png
 icontext: Configuration component
 category: Configuration component
 createdDate: 2018-11-20
-updatedDate: 2018-11-20
+updatedDate: 2020-01-15
 ---
+
+## Latest changelog
+
+**0.0.2 (December 24, 2019)**
+
+* Update sailor version to 2.5.4
+* Update component to use component logger
+* Change build type to docker
+
+> To see the full **changelog** please use the following [link](/components/configuration/changelog).
 
 ## How works.  API version / SDK version
 
@@ -31,7 +41,7 @@ where it is needed.
 
 ### Environment variables
 
-No environment variables are necessary to configure the component.
+`LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
 
 ## Credentials
 

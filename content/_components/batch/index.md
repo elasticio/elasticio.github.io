@@ -10,6 +10,16 @@ createdDate: 2019-05-07
 updatedDate: 2019-05-22
 ---
 
+## Latest changelog
+
+**0.0.2 (December 25, 2019)**
+
+* Change build type to docker
+* Update sailor version to 2.5.4
+* Update to use builtin sailor logger
+
+> To see the full **changelog** please use the following [link](/components/batch/changelog).
+
 ## Purpose
 
 In some cases, integrator needs a mechanism for collection batches by special criteria. The main purpose is to provide a user with a simple collection and an opportunity to process messages in batches.

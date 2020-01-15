@@ -9,6 +9,10 @@ createdDate: 2019-12-27
 updatedDate: 2019-12-27
 ---
 
+## 1.0.2 (December 24, 2019)
+
+* Update sailor version to 2.5.4
+
 ## 1.0.1 (December 06, 2019)
 
 * Update sailor version to 2.5.1

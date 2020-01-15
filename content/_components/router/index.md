@@ -12,15 +12,11 @@ updatedDate: 2019-05-14
 
 This component implements the The [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
 
-
 ## Latest changelog
 
-**0.0.2 (December 07, 2019)**
+**0.0.3 (December 24, 2019)**
 
-* Update sailor version to 2.5.1
-* Update jsonata-moment to 1.1.4
-* Change build type to docker
-
+* Update sailor version to 2.5.4
 
 > To see the full **changelog** please use the following [link](/components/router/changelog).
 
@@ -33,6 +29,9 @@ select as a first component during the integration flow design.
 
   * **Route** - this action is responsible for performing the only function of the component, which is described in the header.
 
+## Environment Variables
+
+  `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
 
 ## How it works?
 
@@ -60,21 +59,21 @@ Here is the sample integration flow with CBR inside it:
                     {
                         "command": "platform/code:execute@latest",
                         "fields": {
-                            "code": "console.log('one');emitter.emit('data',msg)"
+                            "code": "this.logger.info('one');emitter.emit('data',msg)"
                         },
                         "id": "one"
                     },
                     {
                         "command": "platform/code:execute@latest",
                         "fields": {
-                            "code": "console.log('two');emitter.emit('data',msg)"
+                            "code": "this.logger.info('two');emitter.emit('data',msg)"
                         },
                         "id": "two"
                     },
                     {
                         "command": "platform/code:execute@latest",
                         "fields": {
-                            "code": "console.log('default');emitter.emit('data',msg)"
+                            "code": "this.logger.info('default');emitter.emit('data',msg)"
                         },
                         "id": "default"
                     }
@@ -121,11 +120,13 @@ Multiple default edges will fail validation of {{site.data.tenant.name}} API.
 
 Now let us examine our sample from above:
  - Incoming webhook has a message like
+
  ```json
     {
         "test":"12345"
     }
  ```
+
  - As you can see CBR component has 3 outgoing edges, conditions are
   - ``$number(test) > 10`` for edge that is connected to step ID ``one``
   - ``$number(test) > 30`` for edge that is connected to step ID ``two``
