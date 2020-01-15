@@ -50,7 +50,7 @@ integration use-cases. Here are some scenarious when the passthrough feature mak
 a significant difference.
 
 *   As an integrator you want to retrieve the data from more than one external resource and combine it into one outgoing message to store it in your desired storage. Without the passthrough feature you would need to retrive the data separately from different resources, synchronize them and store in the storage. For this you would definetly need to use more than one integration flow and make sure not overwrite it every time.
-*   As an integrator you would like to retrive the data at least two times from the third party resource due to limitations of the third party API abilities. Without the passthrough you would need to use two different initegration flows and somehow syncronize the information between them.
+*   As an integrator you would like to retrive the data at least two times from the third party resource due to limitations of the third party API abilities. Without the passthrough you would need to use two different initegration flows and somehow synchronize the information between them.
 
 Let us have a look into an example on how the passthrough feature can help to solve
 a real-life integration dilemma.
@@ -58,7 +58,7 @@ a real-life integration dilemma.
 ## Real-life Example
 
 In this use case, we want to transfer Amazon MWS Orders into Salesforce Orders.
-We aim to have all information about the orders found in Amazon MWS synchrnized in
+We aim to have all information about the orders found in Amazon MWS synchronized in
 the Salesforce.
 
 This case is interesting since Amazon MWS API gives answers in some certain ways:
