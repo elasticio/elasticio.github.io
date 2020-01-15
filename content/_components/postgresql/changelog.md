@@ -6,8 +6,12 @@ icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
 createdDate: 2020-01-02
-updatedDate: 2020-01-02
+updatedDate: 2020-01-15
 ---
+
+## 1.3.2 (December 27, 2019)
+
+* Update sailor version to 2.5.4
 
 ## 1.3.1 (July 19, 2019)
 

@@ -7,14 +7,14 @@ icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
 createdDate: 2019-03-19
-updatedDate: 2019-09-23
+updatedDate: 2020-01-15
 ---
 
 ## Latest changelog
 
-**1.3.1 (July 19, 2019)**
+**1.3.2 (December 27, 2019)**
 
-* Added retry in case of a deadlock transaction in `SQL Injection` action
+* Update sailor version to 2.5.4
 
 > To see the full **changelog** please use the following [link](/components/postgresql/changelog).
 
@@ -37,6 +37,10 @@ Following actions are also inside:
 *   `INSERT Bulk` - this action executes the bulk INSERT SQL query and returns execution result.
 *   `SQL Injection` - **Expert mode.** This action executes the SQL query or SQL script without prepared statements and returns an array of results of execution each query.
 *   `SQL Query` - **Expert mode.** This action executes the SQL query or SQL script with prepared statements and returns an array of results of execution each query. **JSONata expression can be used as a source of SQL query.**
+
+## Environment Variables
+
+`LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
 
 The component completeness matrix is also [available separately](completeness-matrix).
 

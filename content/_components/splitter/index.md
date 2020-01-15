@@ -7,15 +7,14 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2017-03-31
-updatedDate: 2019-09-19
+updatedDate: 2020-01-15
 ---
 
 ## Latest changelog
 
-**1.0.2 (January 13, 2020)**
+**1.0.3 (December 24, 2019)**
 
-* Using Sailor logger
-* Improved few logs
+* Update sailor version
 
 > To see the full **changelog** please use the following [link](/components/splitter/changelog).
 
@@ -26,6 +25,8 @@ The Splitter processes income messages containing multiple elements that might h
 ### Environment variables
 
 Component does not have any required environment variables, but we suggest to use `EIO_REQUIRED_RAM_MB` in order to avoid `Component run out of memory and terminated` error, recommended value of allocated memory is `512` MB.
+
+For debugging purposes there is: `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` that controls logger level.
 
 ## Triggers
 

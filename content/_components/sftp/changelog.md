@@ -6,8 +6,14 @@ icon: sftp.png
 icontext: SFTP component
 category: SFTP component
 createdDate: 2020-01-02
-updatedDate: 2020-01-02
+updatedDate: 2020-01-15
 ---
+
+## 1.2.1 (December 30, 2019)
+
+### General Changes
+
+* Update component to new sailor version 2.5.4
 
 ## 1.2.0 (December 18, 2019)
 
