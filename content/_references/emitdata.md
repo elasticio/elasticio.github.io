@@ -15,7 +15,7 @@ Here an example how it can be used:
 
 ```js
 function emitData() {
-    console.log('About to say hello to ' + name + ' again');
+    this.logger.info('About to say hello to ' + name + ' again');
 
     var body = {
       greeting: name + ' How are you today?',
@@ -34,10 +34,10 @@ Here is anouther example of usage:
 
 ```js
 function emitData(result) {
-        console.log("Emitting data");
+        this.logger.info("Emitting data");
         var body = result.body;
 
-        console.log(_.pick(body, ['sku', 'quantityOnStock']));
+        this.logger.info(_.pick(body, ['sku', 'quantityOnStock']));
 
         var msg = messages.newMessageWithBody(body);
 
