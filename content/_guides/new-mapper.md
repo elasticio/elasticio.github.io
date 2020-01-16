@@ -10,7 +10,7 @@ order: 3
 This document presents data mapping on our Platform and provides a detailed description of the new mapper UI.
 
 ## Mapping
-[Components](/getting-started/integration-component) that receive data from previous steps must be mapped to those steps for proper data processing. Data mapper matches the data from trigger Component to the corresponding fields in the action Component, and that's what we call mapping. You can read all about our current way of data mapping [here](mapping-data). The process remains basically the same, but there is a different UI for it.
+[Components](/getting-started/integration-component.html) that receive data from previous steps must be mapped to those steps for proper data processing. Data mapper matches the data from trigger Component to the corresponding fields in the action Component, and that's what we call mapping. You can read all about our current way of data mapping [here](mapping-data). The process remains basically the same, but there is a different UI for it.
 
 You will arrive at Step Configuration, which presents some of the following settings in tabs, depending on the Component. You may be familiar with them, but to be sure, let's go over each one.
 
@@ -35,7 +35,7 @@ Some Components allow you to configure [Local Agent](/getting-started/local-agen
 ![New Mapper Agents](/assets/img/integrator-guide/new-mapper/Agents.png)
 
 ## Credentials
-[Credentials](/getting-started/understanding-credentials) hold authentication data for Components. In this tab you can select from the available credentials, add new ones, verify and save them. Also you can edit and delete existing credentials.
+[Credentials](/getting-started/understanding-credentials.html) hold authentication data for Components. In this tab you can select from the available credentials, add new ones, verify and save them. Also you can edit and delete existing credentials.
 
 ![New Mapper Credentials](/assets/img/integrator-guide/new-mapper/Creds.png)
 
