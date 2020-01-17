@@ -2,6 +2,7 @@
 title: Building a component in Java
 layout: article
 section: Developing Components
+description: Here is how to build a component in Java.
 category: component
 order: 3
 since: 20171201
