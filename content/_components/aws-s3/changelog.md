@@ -6,10 +6,14 @@ icon: aws-s3.png
 icontext: AWS S3 component
 category: AWS S3 component
 createdDate: 2019-12-27
-updatedDate: 2019-12-27
+updatedDate: 2020-01-17
 ---
 
-## 1.2.0 (December , 2019)
+# 1.2.1 (December 26, 2019)
+
+* Update sailor version to 2.5.4
+
+## 1.2.0 (December 19, 2019)
 
 * Add `Rename file` action
 * Rename field `Bucket Name` to `Bucket Name and Folder`

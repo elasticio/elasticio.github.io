@@ -1,8 +1,22 @@
 ---
 title: Petstore-nodejs component
-layout: article
+layout: component
 section: Utility components
+description: A first step component to deploy into our platform.
+category: petstore
+icon: petstore.png
+icontext: Petstore-nodejs componentt
+createdDate: 2016-11-02
+updatedDate: 2020-01-15
 ---
+
+## Latest changelog
+
+**1.0.1 (December 26, 2019)**
+
+* Update sailor version to 2.5.4
+
+> To see the full **changelog** please use the following [link](/components/petstore-nodejs/changelog).
 
 ## Description
 
