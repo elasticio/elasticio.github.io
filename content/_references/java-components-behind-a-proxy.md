@@ -1,5 +1,6 @@
 ---
 title: Java components behind a proxy
+description: Deails on how to push the code in cases you are sitting behind the proxy.
 layout: article
 section: Working with Java
 order: 3
@@ -8,11 +9,11 @@ category: component descriptor
 
 ## Description
 
-When the elastic.io platform is installed on a premise with a HTTP or HTTPS proxy server, all the communication with external services goes via that proxy. Using the proxy has two implications on how you deploy and develop your Java components. In this article you will learn how to use proxy in your component for deployment and runtime execution.
+When the {{site.data.tenant.name}} platform is installed on a premise with a HTTP or HTTPS proxy server, all the communication with external services goes via that proxy. Using the proxy has two implications on how you deploy and develop your Java components. In this article you will learn how to use proxy in your component for deployment and runtime execution.
 
 ## Deployment of components behind a proxy
 
-By default, all Java components for the elastic.io platform are built with the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html). The Gradle Wrapper is downloaded during the component deployment from a URL such as [https://services.gradle.org/distributions/gradle-2.8-all.zip](https://services.gradle.org/distributions/gradle-2.8-all.zip). Furthermore during the build Gradle will download all the required dependencies from the [Maven Central](https://search.maven.org/).
+By default, all Java components for the {{site.data.tenant.name}} platform are built with the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html). The Gradle Wrapper is downloaded during the component deployment from a URL such as [https://services.gradle.org/distributions/gradle-2.8-all.zip](https://services.gradle.org/distributions/gradle-2.8-all.zip). Furthermore during the build Gradle will download all the required dependencies from the [Maven Central](https://search.maven.org/).
 
 In order to successfully download the Gradle Wrapper and the dependencies you need to configure Gradle to use your proxy. This is accomplished by configuring the proxy system properties in the Gradle configuration file **gradle.properties**, as shown in the following example:
 
@@ -43,7 +44,7 @@ if (httpProxy != null) {
 
 A live working example can be seen in the Java component for Salesforce API.
 
-Please note that the proxy configuration is done by your administrator of the elastic.io platform. If configured, the proxy is exposed to your Java component during runtime as one of the environmental variables:
+Please note that the proxy configuration is done by your administrator of the {{site.data.tenant.name}} platform. If configured, the proxy is exposed to your Java component during runtime as one of the environmental variables:
 
   * `HTTP_PROXY`
   * `HTTPS_PROXY`

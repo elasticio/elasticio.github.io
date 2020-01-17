@@ -8,7 +8,7 @@ category: integration-flow
 since: 20180111
 ---
 
-In this article we will cover how to create an [integration flow](integration-flow) which gets triggered by the changes in an external system. We will create an integration flow that exposes an externally-reachable URL to accept HTTP requests in JSON format. The received payload gets interpreted as a pet and gets stored into the [Petstore API](https://petstore.elastic.io/docs/).
+In this article we will cover how to create an [integration flow](integration-flow) which gets triggered by the changes in an external system. We will create an integration flow that exposes an externally-reachable URL to accept HTTP requests in JSON format. The received payload gets interpreted as a pet and gets stored into the [Petstore API]({{site.data.tenant.petStoreDocs}}).
 
 If this is your first experience with the {{site.data.tenant.name}} platform, then please follow every step to create your first integration flow. If you have already followed the steps in [Creating your first integration flow?](first-flow) tutorial, then some steps would be the same to you and you are welcome to skip them.
 
@@ -198,7 +198,7 @@ credential for your webhook.
 ## Related links
 
 - [integration components](integration-component](integration-flow)
-- [Petstore API](https://petstore.elastic.io/docs/)
+- [Petstore API]({{site.data.tenant.petStoreDocs}})
 - [Postman](https://www.getpostman.com/)
 - [Integration Component Overview](integration-component)
 - [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)

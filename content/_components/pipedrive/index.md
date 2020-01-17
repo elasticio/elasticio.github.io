@@ -12,10 +12,6 @@ updatedDate: 2017-09-12
 
 Pipedrive Component component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
 
-## Before you Begin
-
-Before you can deploy any code into elastic.io you must be a registered [elastic.io](http://www.elastic.io) platform user. Please see our home page at [elastic.io](http://www.elastic.io) to learn how.
-
 ## Getting started
 
 ### Authentication

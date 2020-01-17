@@ -23,12 +23,6 @@ When the message can not be processed by the component due to the insufficient i
 
 ![Rebound-schematics](/assets/img/rebound/rebound-schematics.png)
 
-## Practical application of eventual consistency
-
-> This is a partial repost of [our blog post](https://www.elastic.io/rebound-practical-application-of-eventual-consistency/) with the same title.
-
-In this article we will reveal one of those features called **Rebound**. Rebound ensures an eventual consistency for integration processes run on elastic.io platform.
-
 ## The practical need for eventual consistency
 
 Here is how the problem can happen in practice. We have a task to synchronise `orders` and `customers` between two complex systems like ERP and online shop.
@@ -53,11 +47,11 @@ Here we will talk about one of the widely accepted and used solutions in the dis
 
 >Eventual consistency is a consistency model used in distributed computing to achieve high availability that informally guarantees that, if no new updates are made to a given data item, eventually all accesses to that item will return the last updated value.                                                                - Wikipedia, [Eventual Consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
 
-In all its glory, eventual consistency is not a flawless solution partly because eventual consistency is a [liveness guarantee](https://en.wikipedia.org/wiki/Liveness). This means it can keep the system alive (free from deadlock) and progress further despite the errors. What we would need to do for safeguarding is use sets of concurrent systems to reschedule or send messages back for reprocessing. This kind of safeguarding is called the [bounded bypass](https://en.wikipedia.org/wiki/Liveness) which is implemented at elastic.io to reach the eventual consistency for integration processes.
+In all its glory, eventual consistency is not a flawless solution partly because eventual consistency is a [liveness guarantee](https://en.wikipedia.org/wiki/Liveness). This means it can keep the system alive (free from deadlock) and progress further despite the errors. What we would need to do for safeguarding is use sets of concurrent systems to reschedule or send messages back for reprocessing. This kind of safeguarding is called the [bounded bypass](https://en.wikipedia.org/wiki/Liveness) which is implemented at {{site.data.tenant.name}} to reach the eventual consistency for integration processes.
 
 ## Reaching eventual consistency through Rebound at {{site.data.tenant.name}}
 
-Coming back to the example above, when we try to synchronise an order in ERP while the customer data for that order is not yet in place, we’ll simply postpone the processing of that order for a while. By doing that we give the parallel process more time to synchronise customers, and hope that the corresponding customer information would eventually be synched with the ERP. **This is a clear example of eventual consistency application in the integration processes.** To reach the eventual consistency we use one of the built-in features of elastic.io integration platform - **the Rebound.**
+Coming back to the example above, when we try to synchronise an order in ERP while the customer data for that order is not yet in place, we’ll simply postpone the processing of that order for a while. By doing that we give the parallel process more time to synchronise customers, and hope that the corresponding customer information would eventually be synched with the ERP. **This is a clear example of eventual consistency application in the integration processes.** To reach the eventual consistency we use one of the built-in features of {{site.data.tenant.name}} integration platform - **the Rebound.**
 
 > **Please note** that Rebound is a feature that adds a possibility to bounce back and reprocess the incoming messages when the system is not ready to process them at that particular instance.
 
@@ -67,7 +61,6 @@ This simple yet powerful solution **ensures eventual consistency in integration 
 
 ## Related links
 
-- [Rebound: Practical application of eventual consistency](https://www.elastic.io/rebound-practical-application-of-eventual-consistency/)
 - [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 - [Eventually Consistent - Revisited](https://www.allthingsdistributed.com/2008/12/eventually_consistent.html)
 - [Eventual Consistency](https://en.wikipedia.org/wiki/Eventual_consistency)

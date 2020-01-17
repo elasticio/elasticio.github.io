@@ -12,7 +12,9 @@ updatedDate: 2019-11-07
 
 ## Description
 
-This is an open source component template for [Stripe](https://stripe.com/) Online Payment System. It focuses among other things on providing the technical, fraud prevention, and banking infrastructure required to operate on-line payment systems.
+This is an open source component for [Stripe](https://stripe.com/) Online Payment
+System. It focuses among other things on providing the technical, fraud prevention,
+and banking infrastructure required to operate on-line payment systems.
 
 ## Credentials
 
@@ -28,12 +30,19 @@ This component has no action functions.
 
 ## Stripe integration connector
 
-This is an open source connector to work with Stripe in your integration flows and it was developed specifically to run on elastic.io platform
+This is an open source component to work with Stripe in your integration flows
+and it was developed specifically to run on {{site.data.tenant.name}} platform
 
-This is the first release of the connector and it is still under development. Therefore, it currently supports only the trigger functionality, which means that you can use it to execute a certain event. In the case of this particular connector, you can get succeeded invoices.
+This is the first release of the component and it is still under development.
+Therefore, it currently supports only the trigger functionality, which means
+that you can use it to execute a certain event. In the case of this particular
+component, you can get succeeded invoices.
 
 Follow the Documentation link above to find what you need to do to set it up.
 
-Like with all other elastic.io connectors that are under the Apache license, you can clone it and enhance it yourself to include more functionalities out of the box. Alternatively, you can contact our pre-sales team at ps[at]elastic.io if you prefer our developers to extend the Stripe integration connector for you.
+Like with all other {{site.data.tenant.name}} components that are under the
+Apache license, you can clone it and enhance it yourself to include more
+functionalities out of the box. Alternatively, you can contact our pre-sales team
+if you prefer our developers to extend the Stripe integration connector for you.
 
-![Stripe Elasticio Connector](img/stripe-elasticio-connector.png)
+![Stripe Component](img/stripe-component.png)

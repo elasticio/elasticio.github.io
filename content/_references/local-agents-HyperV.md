@@ -50,7 +50,7 @@ Here is what you will get apon the successful import:
 
 ```sh
 Virtual Machine: elasticio-local-agent-1.0.4
-Import file: C:\Users\elasticio\Downloads\elasticio-local-agent-1.0.4\elasticio-local-agent-1.0.4\Virtual Machines\E6C6F.....
+Import file: C:\Users\bob\Downloads\elasticio-local-agent-1.0.4\elasticio-local-agent-1.0.4\Virtual Machines\E6C6F.....
 Import Type: Register (keep ID)
 ```
 

@@ -21,7 +21,7 @@ Component is structured in the following parts:
 
 You would need a node.js and npm. Node.js version > 0.11.
 
-Check it out from github and install dependencies
+Check it out from GitHub and install dependencies
 
 ```sh
 git clone git@github.com:elasticio/microsoft-dynamics-crm.git
@@ -169,7 +169,7 @@ Some performance problems may be observed especially for Quotes, Invoices and Or
 In practice, a few out of memory errors were observed.
 If this happens, try the following:
 1. Reduce number of messages processed per flow iteration
-2. Allocate additional memory to CRM containers, using elastic.io Repo Environment Variables
+2. Allocate additional memory to CRM containers, using {{site.data.tenant.name}} Repo Environment Variables
 
 ### Actions: Quotes, Invoices, Orders
 
@@ -181,7 +181,3 @@ The component is:
 Adding the details one by one implies a risk: incomplete data in case an error is thrown while iterating through the details.
 Adding details in bulk would be a desirable option, however, this does not seem possible in CRM.
 [Example for quote details:](https://msdn.microsoft.com/en-us/library/gg328283.aspx) (RetrieveMultiple exists, but there is no CreateMultiple).
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})

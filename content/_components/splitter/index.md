@@ -43,7 +43,7 @@ Splits a message into multiple messages using a given separator. The separator i
 
 For example, we have a message:
 
-```
+```json
 {
     "users": [
         {
@@ -57,7 +57,8 @@ For example, we have a message:
 ```
 
 The splitting expression is "users", action will return output:
-```
+
+```json
 {
     "name": "John"
 }
@@ -76,7 +77,7 @@ This component takes the incoming message body and applies the configured JSONat
 
 For example, given the following message:
 
-```
+```json
 {
     "FirstName": "Fred",
     "Surname": "Smith",
@@ -97,8 +98,10 @@ For example, given the following message:
 }
 ```
 
-and the JSONata expression `Phone.{type: number}`, an object constructor, the action will return output:
-```
+and the JSONata expression `Phone.{type: number}`, an object constructor, the
+action will return output:
+
+```json
 {
     "home": "0203 544 1234"
 }
@@ -112,13 +115,9 @@ and the JSONata expression `Phone.{type: number}`, an object constructor, the ac
 }
 ```
 >**Notes:**
+
 - *If the evaluated array contains primitive values like ```users:["John", "Mike", "Anna"]```, the splitter emits error.*
 
 ### List of Expected Config fields
 
 ```Split Property``` - use this field to choose a separator.
-
-## Documentation links
-
-More information and some examples can be found here: [Splitter documentation](https://www.elastic.io/connectors/splitter-integration/)
-and here: [Array splitting and JSONata mapper](https://support.elastic.io/support/solutions/articles/14000069604-array-splitting-and-jsonata-mapper)
