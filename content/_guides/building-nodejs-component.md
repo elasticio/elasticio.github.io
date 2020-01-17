@@ -1,5 +1,6 @@
 ---
 title: Building a component in Node.js
+description: Here is how to build a component in Node.js
 layout: article
 section: Developing Components
 category: component
@@ -168,3 +169,9 @@ module.exports = function verifyCredentials(credentials, cb) {
 ```
 
 The use of any specific verification method is dependant on the project and the third party API that gets communicated the credentials with. We will not dive into details of every possible solution for your chosen third party API here.
+
+## Related links
+
+- [Petstore component in Node.js]({{site.data.tenant.petStoreSourceNodeJS}} "Petstore Component in Node.js")
+- [Petstore API]({{site.data.tenant.petStoreDocs}} "Petstore API")
+- [Modules/1.1](http://wiki.commonjs.org/wiki/Modules/1.1)

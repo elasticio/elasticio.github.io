@@ -1,5 +1,6 @@
 ---
 title: Managing Flows
+description: This document provides information on Flow management.
 layout: article
 section: Tenant Management
 order: 1
@@ -25,33 +26,33 @@ All actions are available to users with the corresponding [permissions](/guides/
 
 ## Start, Stop, Edit, Delete
 
-These basic actions may be done via the [UI](#start-stop-edit-delete-via-the-ui), and via the [API](#start-stop-edit-delete-via-the-api). Note that when you start a Flow, the latest [Flow version](#flow-versioning) is used.
+These basic actions may be done via the [UI](#start-stop-edit-delete-via-the-ui), and via the [API](#start-stop-edit-sdelete-via-the-api). Note that when you start a Flow, the latest [Flow version](#flow-versioning) is used.
 
 #### Start, Stop, Edit, Delete via the UI
 
 To start, stop, edit and delete a Flow via the UI, navigate to Flows. Here you can see all your Flows, identify the required stopped Flow by name **(1)** and start **(2)** it:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_1.png)
+![Start flow](/assets/img/tenant-management-guide/managing-flows/Screenshot_1.png)
 
 Also you can run Flow on demand **(1)** or stop **(2)** a started Flow:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_2.png)
+![Run or stop](/assets/img/tenant-management-guide/managing-flows/Screenshot_2.png)
 
 Edit or delete the Flow by opening the settings menu **(1)** of the selected Flow, and clicking *Edit Flow* **(2)** or *Delete Flow* **(3)**:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_6.png)
+![Settings menu](/assets/img/tenant-management-guide/managing-flows/Screenshot_6.png)
 
 Alternatively, you can navigate to the Flow itself by clicking on its name:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_3.png)
+![Click on flows name](/assets/img/tenant-management-guide/managing-flows/Screenshot_3.png)
 
 Then click the corresponding buttons to start **(1)**, edit **(2)** or delete **(3)** Flow.
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_4.png)
+![Corresponding buttons](/assets/img/tenant-management-guide/managing-flows/Screenshot_4.png)
 
 In case you need to stop a running Flow, click the stop button:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_5.png)
+![Stop a running Flow](/assets/img/tenant-management-guide/managing-flows/Screenshot_5.png)
 
 
 #### Start, Stop, Edit, Delete via the API
@@ -111,27 +112,27 @@ Below are request parameters:
 
 To copy a Flow within the same Workspace, navigate to see your Flows. Then click on the corresponding icon to open the settings menu of the selected Flow:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_7.png)
+![Delete flow](/assets/img/tenant-management-guide/managing-flows/Screenshot_7.png)
 
 Alternatively, you can navigate to the Flow itself by clicking on its name:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_3.png)
+![Navigate to the flow](/assets/img/tenant-management-guide/managing-flows/Screenshot_3.png)
 
 Then switch to *Implement* tab **(1)** and click the command **(2)** to copy it to clipboard, and [create a copy of the Flow via the API](/guides/managing-workspaces):
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_8.png)
+![Implement tab](/assets/img/tenant-management-guide/managing-flows/Screenshot_8.png)
 
 As a result, you get a copy of your Flow:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_9.png)
+![Flow copy](/assets/img/tenant-management-guide/managing-flows/Screenshot_9.png)
 
 To switch between real-time and ordinary types, navigate to see your Flows. Then click on the corresponding icon to open the settings menu of the selected Flow:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_10.png)
+![Switch to real-time](/assets/img/tenant-management-guide/managing-flows/Screenshot_10.png)
 
 Switching back works the same way. Alternatively, you can navigate to the Flow itself by clicking on its name, switch to *Settings* tab **(1)**, scroll down and toggle the corresponding switch **(2)**:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_11.png)
+![Settings - Switch to real-time](/assets/img/tenant-management-guide/managing-flows/Screenshot_11.png)
 
 Note, that you can only switch Flow type if there's at least one published Flow version, and it is not running.
 
@@ -141,7 +142,7 @@ You can order the platform to send you emails in case of any errors in your runn
 
 To subscribe to errors, use the settings menu **(1)** of the corresponding Flow and click *Subscribe to Errors* **(2)**:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_12.png)
+![Subscribe to Errors](/assets/img/tenant-management-guide/managing-flows/Screenshot_12.png)
 
 Unsubscribing works the same way.
 
@@ -149,7 +150,7 @@ Unsubscribing works the same way.
 
 To schedule your Flow via [CRON expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression), you need to be in drafting mode. You can turn it on by [editing the Flow](#start-stop-edit-delete-via-the-ui). While editing the Flow, switch to *Settings* tab **(1)**, use CRON expression to schedule the Flow, and click *Save*:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_13.png)
+![Settings - Scheduling](/assets/img/tenant-management-guide/managing-flows/Screenshot_13.png)
 
 The default CRON expression is `*/3 * * * *`, meaning "every 3 minutes". The positions in the expression from left to right represent:
 
@@ -182,7 +183,7 @@ Feel free to use the hint below the CRON expression field for reference. Otherwi
 
 If the CRON expression was written properly, you'll see your schedule in the Next Occurrences:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_17.png)
+![Next Occurrences](/assets/img/tenant-management-guide/managing-flows/Screenshot_17.png)
 
 
 ## Flow Versioning
@@ -191,17 +192,17 @@ The Platform allows you to create different versions of a Flow and switch betwee
 
 In the draft state you can edit or add steps, verify credentials, retrieve data samples and configure CRON expressions. When everything is ready, you should publish the draft before you can run the Flow. A new draft is created when you create a new Flow, or edit an existing one. If a draft is created for an existing Flow, it does not affect the Flow until it is published. To publish a draft, use the corresponding button:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_15.png)
+![Publish draft](/assets/img/tenant-management-guide/managing-flows/Screenshot_15.png)
 
 Note, that you need to finish all the steps for the button to become active.
 
 Each published **(1)** draft is, basically, a separate version of the Flow. All the versions are listed in History tab **(2)**. Once you publish the Flow, you can then revert to the any other published version **(3)**.
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_14.png)
+![Published draft - History](/assets/img/tenant-management-guide/managing-flows/Screenshot_14.png)
 
 To achieve that, you should select the required version:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_16.png)
+![Select the required version](/assets/img/tenant-management-guide/managing-flows/Screenshot_16.png)
 
 Then [edit](#start-stop-edit-delete) it to create a draft, and publish this draft so it becomes the latest Flow version.
 
@@ -212,6 +213,12 @@ You can work on one draft of a given Flow at a time. If you try to create anothe
 
 A Snapshot is the data saved by a Component during its execution. When the Component is run next time, it will read the Snapshot to continue the process from the point it finished last time. You can manually reset this Snapshot, so the Component starts from scratch next time. Note that you can only reset Snapshot for a stopped Flow. To do this, click the settings button on the Flow **(1)**, and select Reset Snapshot **(2)**:
 
-![](/assets/img/tenant-management-guide/managing-flows/Screenshot_18.png)
+![Reset Snapshot](/assets/img/tenant-management-guide/managing-flows/Screenshot_18.png)
 
 This is the only way to delete an existing snapshot.
+
+## Related links
+
+- [Managing user roles in a tenant](/guides/managing-user-roles-in-a-tenant)
+- [Managing Workspaces](/guides/managing-workspaces)
+- [CRON expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression)

@@ -223,3 +223,13 @@ yet, the response is wrapped into an instance of `JsonObject` (7).
 Finally a `Message` is created (8) and emitted to the platform (9). Please note that you can't emit pure JSON objects to
 the platform but always must create a platform message from you payload and emit this message. The emitted message will
 be passed by the platform to the next step of the integration flow.
+
+## Related links
+
+- [JavaDocs]({{site.data.tenant.javaAPIDocs}} "Java API documentation")
+- [GitHub]({{site.data.tenant.javaAPISource}} "Java API")
+- [Petstore component in Java]({{site.data.tenant.petStoreSourceJava}} "Petstore Component in Java")
+- [Petstore API]({{site.data.tenant.petStoreDocs}} "Petstore API")
+- [Gradle](https://gradle.org/)
+- [Gradle Wrapper](https://docs.gradle.org/4.3.1/userguide/gradle_wrapper.html)
+- [Integration Flow Overview](/getting-started/integration-flow)

@@ -1,5 +1,6 @@
 ---
 title: Managing Contracts
+description: This document provides information on Contract management.
 layout: article
 section: Tenant Management
 order: 1
@@ -71,6 +72,7 @@ Below are request parameters:
 | `include`               | no         | Parameter for getting more detailed information regarding the Contract's entities. Allowed values: `members` and/or `invites`.                                                      |
 
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}?include=members,invites \
    -u {EMAIL}:{APIKEY}
@@ -81,6 +83,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}?include=members,
 `GET {{site.data.tenant.apiBaseUri}}/v2/contracts/`
 
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/contracts/
   -u {EMAIL}:{APIKEY}
@@ -97,6 +100,7 @@ Below are request parameters:
 | `CONTRACT_ID`                | yes          | Contract ID |
 
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/ \
   -u {EMAIL}:{APIKEY}
@@ -137,6 +141,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/roles/ \
 
 
 ## Editing Contract Memberships
+
 A Contract member with the corresponding permissions can:
 
 1\. Invite a user to the Contract via the following request:
@@ -353,3 +358,8 @@ curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID} \
        }
      }'
 ```
+
+## Related links
+
+- [Contracts and Workspaces](/getting-started/contracts-and-workspaces)
+- [Managing user roles in a tenant](/guides/managing-user-roles-in-a-tenant)

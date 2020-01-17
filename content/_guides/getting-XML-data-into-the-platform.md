@@ -1,5 +1,6 @@
 ---
 title: Getting XML data into the platform
+description: Here we will describe some common patterns on getting XML data into your integration flow.
 layout: article
 section: Working with XML
 category: XML
@@ -134,3 +135,8 @@ You can read XML files from the external location, e.g. URI or FTP or any other
 file storage service. For example, you can take the SFTP component, every file
 SFTP component will find on your server will be sent as an attachment, similar
 to the sample above. If you would like to parse the attachments.
+
+## Related links
+
+- [WebHook component](/components/webhook/)
+- [Limitations on Attachments](/references/attachments-limitations)

@@ -1,5 +1,6 @@
 ---
 title: Content-Based Routing
+description: Here is how implement Content-Based Routing on the platform.
 layout: article
 section: Integration patterns
 order: 1
@@ -137,3 +138,9 @@ Content-Based Router pattern.
 The screenshot above shows the execution result after 6 entries of the product
 information. From those 6 the 4 contained *sport* shoes and 2 had
 *high-heeled* shoes. The messages were routed accordingly.
+
+## Related links
+
+- [Enterprise Integration Patterns](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html)
+- [Creating a Basic Integration Flow](/getting-started/first-flow)
+- [Creating a webhook flow](/getting-started/webhooks-flow)
