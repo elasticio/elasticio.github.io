@@ -1,5 +1,6 @@
 ---
 title: Mapping data
+description: In this article we will explain how to map the data between integration components to keep them in sync.
 layout: article
 section: Data transformation
 category: data-transformation
@@ -66,7 +67,7 @@ Therefore, when you switch from *Integrator mode* to *Developer mode*, the mappe
 
 ![Developer mode edited values](/assets/img/integrator-guide/data-mapper/mapper-06.png "Developer mode edited values")
 
-The above screenshot shows how the property values is replaced by the variables `name` and `status` **(1)**. These variables get their values from the incoming payload of the Webhook component. To get a mapping result **(3)**, you should evaluate the expression by clicking the corresponding button **(3)**. 
+The above screenshot shows how the property values is replaced by the variables `name` and `status` **(1)**. These variables get their values from the incoming payload of the Webhook component. To get a mapping result **(3)**, you should evaluate the expression by clicking the corresponding button **(3)**.
 
 > **Please note** your expression is evaluated as you are typing it. The result is shown at once below the mapper input field, in the *Mapping result* section. If you give an invalid expression, an error message is displayed.
 
@@ -79,3 +80,8 @@ There is a way to filter mapping view to see mandatory fields only by hiding opt
 ![Hiding optional fields](/assets/img/RN/323/hide-optional-fields.gif)
 
 > **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new [draft version of a flow](managing-flow-history) must be created.
+
+## Related links
+
+- [Creating a Basic Integration Flow](/getting-started/first-flow)
+- [Creating a webhook flow](/getting-started/webhooks-flow)

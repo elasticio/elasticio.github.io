@@ -76,3 +76,9 @@ If you need to check for the missing dependencies for any program included (for 
   3. Load Node.js by typing `node` on command line and take the file in question and run: `require('./path/to/code.js')`
 
 If all goes well without errors then your file `code.js` has no missing dependencies. Otherwise, you will get errors for missing dependencies which needs to be added inside the package.json as a required package so it would be fetched and included during the deployment.
+
+## Related links
+
+- [Petstore component]({{site.data.tenant.petStoreSourceNodeJS}})
+- [Creating a package.json file](https://docs.npmjs.com/creating-a-package-json-file)
+- [Downloading and installing packages locally](https://docs.npmjs.com/downloading-and-installing-packages-locally)
