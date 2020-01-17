@@ -219,21 +219,22 @@ Steps to deploy the component:
 3.  Build a local docker image using a docker file from the component repository.
 
 ```sh
-docker build . --no-cache -t 10.25.0.54:31001/elasticio/5d5a7ffa8cd40800110e37e3:test19
+docker build . --no-cache -t 10.25.0.54:31001/docker_dir/5d5a7ffa8cd40800110e37e3:test19
 ```
 where
 *   `10.25.0.54` - IP address one of platform nodes
+*   `docker_dir` - the name of the docker directory
 *   `31001` - port of docker registry
 *   `test19` - tag of the docker image which you will use for new component version
 
 4.  Push docker image to the docker registry (you need VPN access to the platform subnet):
 
 ```sh
-docker push 10.25.0.54:31001/elasticio/5d5a7ffa8cd40800110e37e3:test19
+docker push 10.25.0.54:31001/docker_dir/5d5a7ffa8cd40800110e37e3:test19
 ```
 
 5.  Find document in the collection `repobuilds` which connected with your last `git push` and update version of docker image to `test19`
 
 ```
-"dockerImage" : "elasticio/5d5a7ffa8cd40800110e37e3:test20",
+"dockerImage" : "docker_dir/5d5a7ffa8cd40800110e37e3:test20",
 ```
