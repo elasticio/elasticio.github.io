@@ -20,7 +20,7 @@ following table shows the support of the platform features in Sailor versions:
 | Passthrough         | -      | Yes    | Yes    | Yes   | Yes   |
 | Shutdown Hook       | -      | -      | Yes    | Yes   | Yes   |
 | Bunyan Logger       | -      | -      | -      | Yes   | Yes   |
-| Message Size        | -      | -      | -      | Yes   | Yes   |
+| Message Size        | -      | -      | -      | -     | Yes   |
 | Disable Passthrough | -      | -      | -      | -     | Yes   |
 
 {{site.data.tenant.name}} follows the [Semver semantics](https://en.wikipedia.org/wiki/Software_versioning)
