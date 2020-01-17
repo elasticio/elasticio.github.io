@@ -12,13 +12,9 @@ updatedDate: 2019-09-25
 
 ## Latest changelog
 
-**1.2.0 (December,2019)**
+**1.2.1 (December 26, 2019)**
 
-* Add `Rename file` action
-* Rename field `Bucket Name` to `Bucket Name and Folder`
-* Make `Bucket Name and Folder` field non required
-* Use one Client for all actions
-* Update Sailor version
+* Update sailor version to 2.5.4
 
 > To see the full **changelog** please use the following [link](/components/aws-s3/changelog).
 
@@ -55,6 +51,11 @@ For integration-tests is required to specify following environment variables:
 `ACCESS_KEY_ID` - access key ID;
 `ACCESS_KEY_SECRET` - secret access key.
 `REGION` - region.
+
+For debugging purposes there is: 
+
+`LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` that controls logger level.
+
 
 ## Credentials
 

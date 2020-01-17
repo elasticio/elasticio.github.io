@@ -10,6 +10,14 @@ createdDate: 2015-06-23
 updatedDate: 2018-03-01
 ---
 
+## Latest changelog
+
+**1.0.1 (December 30, 2019)**
+
+* Update component to new sailor version 2.5.4
+
+> To see the full **changelog** please use the following [link](/components/commercetools/changelog).
+
 ## Requirements
 
 ### Credentials

@@ -10,15 +10,26 @@ createdDate: 2018-09-06
 updatedDate: 2019-07-04
 ---
 
+## Latest changelog
+
+**1.0.1 (January 3, 2020)**
+
+* Refactor to use built in logger
+* Change build type to docker
+* Update Sailor to version 2.5.4
+* Remove `^` from dependencies
+
+> To see the full **changelog** please use the following [link](/components/exact-online/changelog).
+
 ## Description
 
 It interacts withe [Exact Online API](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-restrefdocs).
 
 ## Requirements
 
-### Environment variables
+### Environment Variables
 
-None required.
+LOG_LEVEL - `trace`, `debug`, `info`, `warn`, `error` controls level of logger verbosity
 
 ## Credentials
 

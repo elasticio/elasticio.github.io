@@ -10,6 +10,14 @@ createdDate: 2016-12-15
 updatedDate: 2019-03-13
 ---
 
+## Latest changelog
+
+**1.0.1 (December 30, 2019)**
+
+* Update component to new sailor version 2.5.4
+
+> To see the full **changelog** please use the following [link](/components/mailchimp/changelog).
+
 ## Credentials
 
   * **API Key**
