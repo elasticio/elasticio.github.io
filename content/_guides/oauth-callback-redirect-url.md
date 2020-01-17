@@ -1,5 +1,6 @@
 ---
 title: OAuth Callback redirect URL
+description: This document gives the guidelines on configuring your own OAuth App in case when platform is run on different/dedicated tenant.
 layout: article
 section: Tenant Management
 order: 1
@@ -17,3 +18,8 @@ Any component which runs the authentication through the OAuth is set by default 
 
 > Care must be made to create and configure your own OAuth app and to provide the specifically created OAuth keys as `env vars`.
 For more information please read our [articles about environment variables](/references/how-to-define-envirament-variables-for-components).
+
+## Related links
+
+- [(IETF) The OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749)
+- [How to define environment variables for components](/references/how-to-define-envirament-variables-for-components)
