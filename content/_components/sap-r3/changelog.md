@@ -6,8 +6,12 @@ icon: sap-r3.png
 icontext: SAP ECC Component
 category: sap-r3
 createdDate: 2020-01-02
-updatedDate: 2020-01-02
+updatedDate: 2020-01-17
 ---
+
+## 1.2.0 (January 14, 2019)
+
+* Implement RFC Server Trigger
 
 ## 1.1.0 (December 2, 2019)
 
