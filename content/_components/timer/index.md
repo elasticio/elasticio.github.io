@@ -10,7 +10,8 @@ createdDate: 2015-07-29
 updatedDate: 2019-08-30
 ---
 
-> **Note:** The Timer component is deprecated. Please use [Simple Trigger](https://docs.elastic.io/components/simple-trigger/index.html) instead of this component.
+> **Note:** The Timer component is deprecated. Please use
+[Simple Trigger](/components/simple-trigger/) instead of this component.
 
 ## Description
 

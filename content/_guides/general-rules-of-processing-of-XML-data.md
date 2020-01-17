@@ -23,7 +23,7 @@ s out of the scope of that article, more information can be found
 
 Internally we use [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
 library to transform the XML to JSON (if the transformation is required, see this
-[article](https://docs.elastic.io/guides/getting-XML-data-into-the-platform.html)
+[article](/guides/getting-XML-data-into-the-platform)
 for more information) with following settings:
 
 | Setting Name | Value |
@@ -212,7 +212,7 @@ referenced in {{site.data.tenant.name}} message under the attachments node.
 When processing XML as attachment, it will be stored as it is, won't be validated
 or parsed and available to every component that would like to
 read/parse/validate/transform it, however default data transformation components
-(e.g. [mapper](https://docs.elastic.io/components/mapper)) will not understand
+(e.g. [mapper](/components/mapper)) will not understand
 it and won't be able to work with it out-of-the-box.
 
 ## XML accepted as RAW in the body

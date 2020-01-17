@@ -33,7 +33,7 @@ In the Access Right edit session assign all the needed rights under the 'Work Ce
 
 ![Work Center and View Assignment tab](img/communication-setup6.png)
 
-This user's login and password should be used for authentication in the Elastic SAP ByD component.
+This user's login and password should be used for authentication in the {{site.data.tenant.name}} SAP ByD component.
 
 ## Setting up communication system for WS interactions
 

@@ -2,6 +2,7 @@
 title: How to cause or emit a Rebound?
 layout: article
 section: Integration patterns
+description: In order to cause a rebound you need to emit rebound event with a cause as a second argument. The cause may be an Error or a String with a description of the cause.
 category: rebound
 order: 1
 ---
@@ -28,7 +29,7 @@ function processTrigger(msg, cfg){
 }
 ```
 
-Here is an example of Rebound feature usage in [Commercetools component](https://docs.elastic.io/components/commercetools/index.html) component action called addVariants:
+Here is an example of Rebound feature usage in [Commercetools component](/components/commercetools/) component action called addVariants:
 
 ```js
 function addVariant(productId, payload) {
@@ -68,7 +69,7 @@ public class ReboundingComponent extends Component {
 
     @Override
     public void execute(ExecutionParameters parameters) {
-        this.getEventEmitter().emitRebound("Rebound for a reason!");       
+        this.getEventEmitter().emitRebound("Rebound for a reason!");
     }
 
 }

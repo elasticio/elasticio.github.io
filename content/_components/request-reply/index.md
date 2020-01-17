@@ -19,12 +19,25 @@ updatedDate: 2019-09-02
 
 ## Description
 
-The HTTP Reply integration connector makes webhooks reply with the data produced inside integration workflows, with the result of massively speeding up the data processing.
+The HTTP Reply integration connector makes webhooks reply with the data produced
+inside integration workflows, with the result of massively speeding up the data processing.
 
-### Purpose
+## Asynchronous vs. Synchronous messaging
 
-When two applications communicate via Messaging, the communication is one-way. The applications may want a two-way conversation. Messages travel on a Message Channel in one direction; they travel from the sender to the receiver. This asynchronous transmission makes the delivery more reliable and decouples the sender from the receiver.
-These two approaches are called: Asynchronous (one-way) and Synchronous (two-way) messaging transmission types. At elastic.io all integration flows are asynchronous in nature unless HTTP Reply or Request-reply component is added. It enables the two-way messaging conversation through the request-reply pattern transforming the flow into a synchronous one.
+For some integration flow cases, a simple acknowledgement of the messaging receipt
+is sufficient, since this kind of transmission makes the message delivery more
+reliable and decouples the sender from the receiver (e.g., G. Hohpe & B. Woolf, 2009).
+
+However, in many other cases, a two-way messaging conversation is a requirement.
+In this scenario, sender-receiver pair transforms into a requester and replier
+pair. Firstly the requestor sends a request message and waits for a reply message
+and then the replier receives the request message and responds with a reply message.
+
+These two approaches are called: **Asynchronous** (one-way) and **Synchronous**
+(two-way) messaging transmission types. At {{site.data.tenant.name}} all
+integration flows are asynchronous in nature unless **HTTP Reply** or
+**Request-reply** component is added. It enables the two-way messaging conversation
+through the request-reply pattern transforming the flow into a synchronous one.
 
 ## Triggers
 
@@ -37,19 +50,14 @@ select as a first component during the integration flow design.
 
 ## Use cases for HTTP Reply
 
-The use-cases of HTTP Reply component are numerous. It can be used for simple cases of getting an answer from the flow upon the completion of the process till complex cases like:
+The use-cases of HTTP Reply component are numerous. It can be used for simple
+cases of getting an answer from the flow upon the completion of the process till
+complex cases like:
 
   * Checking the status of information from a Data Base on the availability of a record.
   * Chatbots as a separate application.
-  * Communicator between elastic.io as backend and a third party mobile application as frontend.
+  * Communicator between {{site.data.tenant.name}} as backend and a third party mobile application as frontend.
 
-## Asynchronous vs. Synchronous messaging
-
-  For some integration flow cases, a simple acknowledgement of the messaging receipt is sufficient, since this kind of transmission makes the message delivery more reliable and decouples the sender from the receiver (e.g., G. Hohpe & B. Woolf, 2009).
-
-  However, in many other cases, a two-way messaging conversation is a requirement. In this scenario, sender-receiver pair transforms into a requester and replier pair. Firstly the requestor sends a request message and waits for a reply message and then the replier receives the request message and responds with a reply message.
-
-  These two approaches are called: **Asynchronous** (one-way) and **Synchronous** (two-way) messaging transmission types. At elastic.io all integration flows are asynchronous in nature unless **HTTP Reply** or **Request-reply** component is added. It enables the two-way messaging conversation through the request-reply pattern transforming the flow into a synchronous one.
 
 ### Example: Advantage of Synchronous messaging
 
@@ -91,10 +99,9 @@ In all of the use cases described above, the basic principle is the same: there 
 
 ## Pre-requirements to use HTTP-reply
 
-There are several specific requirements that need to be fulfilled before the request-response mechanism can be used. There are:
+There are several specific requirements that need to be fulfilled before the
+request-response mechanism can be used. There are:
 
-* If a custom Node.js component is to be used in the flow with request-reply then then [sailor-node.js](/references/sailor-compatibility-matrix) version should be 1.3.0 or above to support the messaging in the flow. We recommend to use the most recent sailor version.
-
-* If a custom Java component is to be used then please use sailor-jvm 2.0.0 or above.
-
-* Care must be met to have all the steps tested in advance so the proper fields are mapped.
+*   If a custom Node.js component is to be used in the flow with request-reply then then [sailor-node.js](/references/sailor-compatibility-matrix) version should be 1.3.0 or above to support the messaging in the flow. We recommend to use the most recent sailor version.
+*   If a custom Java component is to be used then please use `sailor-jvm` version 2.0.0 or above.
+*   Care must be met to have all the steps tested in advance so the proper fields are mapped.

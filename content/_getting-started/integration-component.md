@@ -17,7 +17,7 @@ or store data.
 A component can expose multiple operations to be used in [integration flows](integration-flow).
 As a rule of thumb a component talking to an application through its REST
 API will expose operations that reflect the endpoints of that API. Let's
-explore the integration component for the [Petstore](https://petstore.elastic.io/docs/)
+explore the integration component for the [Petstore]({{site.data.tenant.petStoreDocs}})
 as an example. The following screenshot demonstrates an extract from the
 Petstore API documentation.
 
@@ -104,7 +104,7 @@ of custom components. Please read how to build integration components using
 
 - [Understanding credentials](credential)
 - [Integration Flow Overview](integration-flow)
-- [Petstore](https://petstore.elastic.io/docs/)
+- [Petstore]({{site.data.tenant.petStoreDocs}})
 - [Mapping data](/guides/mapping-data)
 - [Building a component in Node.js](/guides/building-nodejs-component)
 - [Building a component in Java](/guides/building-java-component)

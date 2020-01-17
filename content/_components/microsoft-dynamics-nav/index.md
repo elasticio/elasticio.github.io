@@ -13,7 +13,7 @@ updatedDate: 2019-11-07
 ## Description
 
 Microsoft Dynamics NAV is a global enterprise resource planning (ERP) solution
-that provides small and midsize businesses greater control over their financials
+that provides small and midsize businesses greater control over their finances
 and can simplify their supply chain, manufacturing, and operations.
 
 ## Credentials
@@ -41,16 +41,18 @@ and can simplify their supply chain, manufacturing, and operations.
 1.  Create/Update Contact
 2.  Create/Update Customer
 
-## Microsoft Dynamics NAV integration connector
+## Microsoft Dynamics NAV integration component
 
-This is a private connector to work with the Microsoft Dynamics NAV software in your integration flows, developed specifically to run on elastic.io platform.
+This is a private component to work with the Microsoft Dynamics NAV software in
+your integration flows, developed specifically to run on {{site.data.tenant.name}} platform.
 
-The Microsoft Dynamics NAV integration connector supports both triggers and actions, which means you can use it either to execute or to act upon a certain event. For example, you can create and update contacts or push new products and new customers to other applications for further data processing. It is available in Java as well as in Javascript.
+The component supports both triggers and actions, which means you can use it
+either to execute or to act upon a certain event. For example, you can create
+and update contacts or push new products and new customers to other applications
+for further data processing.
 
-Due to the fact that it is under the proprietary license, you cannot change or extend this connector yourself. If you need some specific additional triggers and / or actions, please contact our pre-sales team at ps[at]elastic.io first to discuss the details.
+Due to the fact that it is under the proprietary license, you cannot change or
+extend this connector yourself. If you need some specific additional triggers
+and / or actions, please contact our pre-sales team first to discuss the details.
 
-![microsoft-dynamics-nav-elasticio-connector](img/microsoft-dynamics-nav-elasticio-connector.png)
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})
+![Microsoft dynamics NAV component](img/microsoft-dynamics-nav-component.png)

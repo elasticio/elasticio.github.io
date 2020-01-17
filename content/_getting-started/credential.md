@@ -35,7 +35,7 @@ component or any other API.
 
 When [creating a flow](first-flow) an credential must be chosen. You can
 either chose an existing one or create a new one. The following screenshot
-demonstrates how the credential is created for the [Petstore API](https://petstore.elastic.io/docs/)
+demonstrates how the credential is created for the [Petstore API]({{site.data.tenant.petStoreDocs}})
 component.
 
 To create a credential, open the Navigational Menu and go to *Credentials*. Then click *Create New Credential* button:
@@ -65,4 +65,4 @@ A new credential can be added by pressing the `Add New Credential` button that y
 
 - [Integration flows](integration-flow)
 - [Creating a flow](first-flow)
-- [Petstore API](https://petstore.elastic.io/docs/)
+- [Petstore API]({{site.data.tenant.petStoreDocs}})

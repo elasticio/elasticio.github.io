@@ -37,7 +37,7 @@ Logs of a particular component or integration flow may contain some important
 information that is useful when investigating issues. With the Download Logs
 feature, an integration administrator or integration developer can download
 complete logs of a single connector or even a whole flow. This allows to analyze
-them without having to page through them via elastic.io UI.
+them without having to page through them via {{site.data.tenant.name}} UI.
 
 You can also download logs by clicking the corresponding button for:
 
