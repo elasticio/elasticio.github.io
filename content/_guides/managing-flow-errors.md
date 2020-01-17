@@ -1,5 +1,6 @@
 ---
 title: Managing Flow Errors
+description: This document describes the way to find errors that occur in your Flows, and deal with them.
 layout: article
 section: Building integration flows
 order: 2
@@ -9,6 +10,7 @@ since: 20190924
 This document describes the way to find errors that occur in your Flows, and deal with them.
 
 ## Flow Errors
+
 Let's start with the fact, that no errors on the Platform are fatal. There is never a reason to panic - everything has a solution. Maybe you won't even need any assistance with it. All the errors are gathered in one convenient list that you can access from the Dashboard. To see the list of errors, navigate to the Dashboard and click *Errors* tab:
 
 ![Dashboard](/assets/img/integrator-guide/flow-errors/Screenshot_1.png)

@@ -1,5 +1,6 @@
 ---
 title: How to implement the pagination?
+description: Before we can proceed any further one should clearly examine the API provider's documentation to get familiarised with the accepted method of pagination usage.
 layout: article
 section: Paging
 category: paging
@@ -25,3 +26,8 @@ First, we would need to setup the snapshot object which would only have 2 proper
   4. After iterating through all the pages, the `nextPage` parameter is removed from the snapshot. However, the timestamp property must stay in the snapshot.
 
   5. It is important to define max `timestamp` through all the pages. This is accomplished either by filtering or by comparing all the `timestamp` values in all pages with the `timestamp` in the snapshot.
+
+
+## Related links
+
+- [Snapshot overview](/getting-started/snapshot-overview)

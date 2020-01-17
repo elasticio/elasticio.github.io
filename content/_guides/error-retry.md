@@ -1,5 +1,6 @@
 ---
 title: Error Retry
+description: Error retry is a feature which gives a possibility to try to process the failed messages in the integration flows.
 layout: article
 section: Building integration flows
 order: 1
@@ -61,4 +62,9 @@ Before you proceed to press Retry button try to assess the situation:
 *   Are you sure a simple retry would solve the problem?
 
 If answer to any of these questions is no then it is highly possible you would get
-an error again after the Retry. 
+an error again after the Retry.
+
+## Related links
+
+- [Using Snapshots](using-snapshots)
+- [Rebound](/getting-started/rebound)

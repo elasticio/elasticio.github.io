@@ -1,5 +1,6 @@
 ---
 title: Customizing HTML Meta Tags
+description: This document provides an introduction and a step-by-step instruction on changing your Platform page metadata from the defaults.
 layout: article
 section: Tenant Management
 order: 1
@@ -26,7 +27,7 @@ Follow these steps:
 
 1\. Go to your Platform page, right click for the context menu and select "View Page Source".
 
-![](/assets/img/integrator-guide/customizing-metadata/Screenshot_1.png)
+![Platform Page](/assets/img/integrator-guide/customizing-metadata/Screenshot_1.png)
 
 2\. Check the following part, which is in `<head>`:
 
@@ -38,7 +39,7 @@ Follow these steps:
 
 These is the default metadata.
 
-![](/assets/img/integrator-guide/customizing-metadata/Screenshot_2.png)
+![Default metadata](/assets/img/integrator-guide/customizing-metadata/Screenshot_2.png)
 
 3\. Make the API request:
 
@@ -66,8 +67,8 @@ curl {{apiBaseUri}}/v2/tenants/{TENANT_ID}\
 ```                 
 Here you can fill in your own `description`, `keywords` and `author`.
 
-![](/assets/img/integrator-guide/customizing-metadata/Screenshot_3.png)
+![Description - Keywords - Author](/assets/img/integrator-guide/customizing-metadata/Screenshot_3.png)
 
 4\. Go to your Platform page. Right click for the context menu and select "View Page Source" and see the result.
 
-![](/assets/img/integrator-guide/customizing-metadata/Screenshot_4.png)
+![Metadata - view page source](/assets/img/integrator-guide/customizing-metadata/Screenshot_4.png)

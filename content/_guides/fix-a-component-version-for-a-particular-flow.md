@@ -1,5 +1,6 @@
 ---
 title: Fix a component version for a particular flow
+description: Here is how to fix a component version for a particular flow.
 layout: article
 section: Building integration flows
 order: 1

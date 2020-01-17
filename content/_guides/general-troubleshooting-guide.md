@@ -1,5 +1,6 @@
 ---
 title: General Troubleshooting Guide
+description: This document describes common problems that you can encounter and the ways to solve them.
 layout: article
 section: Building integration flows
 order: 1
@@ -68,3 +69,9 @@ Here is the info the team requires to provide support:
 ## Examples
 
 Stay tuned, we will come up with some beneficial examples soon!
+
+## Related links
+
+- [Mapping data](mapping-data)
+- [Managing Flow Errors](managing-flow-errors)
+- [Platform Behavior](platform-behavior)

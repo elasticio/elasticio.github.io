@@ -1,5 +1,6 @@
 ---
 title: Managing user roles in a tenant
+description: This document explains what roles and permissions are, how roles are set in the UI and how custom roles are configured.
 layout: article
 section: Tenant Management
 order: 1
@@ -11,7 +12,6 @@ how [roles are set in the UI](#setting-user-roles) and how [custom roles are
 configured](#configuring-custom-user-roles). Additionally, it provides a list of [non-deletable roles](#essential-roles), and a [permissions reference](#permissions-reference-table) table.
 
 ## Roles and permissions
-
 
 A [tenant](/getting-started/tenant) admin can
 control user rights in his tenant by configuring user roles. A role is a user
@@ -60,57 +60,54 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 1\.  Open **Workspace** in navigation menu:
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_2.png)
+![Workspace - navigation menu](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_2.png)
 
+2\.  Edit member’s roles:
 
-2\.  Edit members’ roles:
-
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_1.png)
-
+![Edit member’s roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_1.png)
 
 3\.  Either add or invite a new member:
 
   a)  Click **Add new member**, select an existing user and use the **Role** dropdown menu.
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_18.jpg)
+![Add new member - role](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_18.jpg)
 
   b)  Click **Invite new member**, enter user email and use **Contract Role** and **Workspace Role** dropdown menus.
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_19.jpg)
+![Invite new member](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_19.jpg)
 
 4\.  In the corresponding menu, select the required role. If your tenant has an extensive list of roles, use the **Find role** field to optimize search. Start typing to gradually filter out unwanted roles.
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_3.png)
+![Invite new member - roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_3.png)
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_4.png)
+![Contract and Workspace roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_4.png)
 
 
 5\.  Click **Add** or **Send Invite**, depending on your previous actions.
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_24.jpg)
+![Add new member - add](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_24.jpg)
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_20.jpg)
+![Invite new member - send invite](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_20.jpg)
 
 To set a role for a user when adding or inviting new users to a workspace:
 
 1\.  Open profile **Settings** in the navigation menu:
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_5.png)
+![Settings](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_5.png)
 
 2\.  Select your contract:
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_6.png)
+![Select your contract](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_6.png)
 
-3\.  Edit members’ roles In the **Members** tab:
+3\.  Edit member’s roles In the **Members** tab:
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_7.png)
+![Edit member’s roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_7.png)
 
 4\.  Alternatively, invite a new member and set the roles. Initially, only **Contract Role** dropdown menu is visible. To assign the new member’s workspace and workspace role, click **Specify invitee’s workspace**, and use the **Workspace Role** dropdown menu. Then click **Send Invite**.
 
-![](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_29.png)
+![Members - invite new member](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_29.png)
 
 ## Configuring custom user roles
-
 
 A tenant admin can configure custom roles if required. To do that, the admin
 needs a special set of credentials called *service account*. It can be acquired
@@ -148,6 +145,7 @@ Below are request parameters:
 To add a new role called *Godzilla*, with permissions to see and delete
 workspaces in the contract, and edit a workspace, we will use the following
 request:
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/roles
    -X PATCH
@@ -185,7 +183,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/roles
     }'
 ```
 
- **NOTE:** these endpoints are still in development and are subject to change.
+ >**NOTE:** these endpoints are still in development and are subject to change.
 
 ## Essential roles
 
@@ -212,3 +210,10 @@ These roles have exclusive permissions, which are essential for contract and wor
 | `workspaces.flow.toggleStatus`   | Toggle flow status between **active** and **inactive**    |
 | `workspaces.flow.toggleRealtime` | Toggle flow status between **ordinary** and **real-time** |
 | `workspaces.credential.edit `    | Edit credentials                                            |
+
+## Related links
+
+- [What is a tenant?](/getting-started/tenant)
+- [Integration Flow Overview](/getting-started/integration-flow)
+- [Building real-time flows](realtime-flows)
+- [Understanding credentials](/getting-started/credential)

@@ -1,5 +1,6 @@
 ---
 title: Managing OAuth Clients
+description: This document contains brief information on OAuth, reveals the new approach to OAuth utilizationwithin the platform and explains how touse OAuth clients for components in a tenant.
 layout: article
 section: Tenant Management
 order: 1
@@ -270,7 +271,7 @@ To delete an OAuth client, we will use the following API request:
 
 Below are request payload parameters:
 
-| ** URL Parameter**   | **Description**            |
+| **URL Parameter**   | **Description**            |
 |-----------------|----------------------------|
 | TENANT_ID       | Tenant ID      |
 | OAUTH-CLIENT_ID | The ID of the OAuth client |
@@ -286,3 +287,9 @@ used when at least one integration flow in the tenant includes the component wit
 this OAuth client. In case you delete a component with a defined OAuth client,
 this client will remain on the platform. However, it will not be usable. A user
 with corresponding permissions can remove this OAuth client, if required.
+
+## Related links
+
+- [OAuth (Open Authorization)](https://en.wikipedia.org/wiki/OAuth)
+- [Integration Component Overview](/getting-started/integration-component)
+- [What is a tenant?](/getting-started/tenant)

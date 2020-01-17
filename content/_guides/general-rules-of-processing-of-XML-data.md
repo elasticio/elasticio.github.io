@@ -1,5 +1,6 @@
 ---
 title: General rules of processing of XML data
+description: Article about your possibilities to represent XML data on platform.
 layout: article
 section: Working with XML
 category: XML
@@ -12,7 +13,6 @@ As you know {{site.data.tenant.name}} iPaaS uses common data format for messages
 that are transferred between components and it is JSON. Common format allows
 re-usability of the components due to standardisation, however, you have following
 possibilities to represent XML data in {{site.data.tenant.name}}:
-
 
 ## XML converted to and from JSON
 
@@ -227,3 +227,11 @@ curl -X POST -H "Content-Type: application/xml" \
 ```
 
 **This scenario only would work in case when XML is being posted to the webhook.**
+
+
+## Related links
+
+- [JSON and XML comparison](https://stackoverflow.com/questions/4862310/json-and-xml-comparison)
+- [Node-xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
+- [Getting XML data into the platform](/guides/getting-XML-data-into-the-platform)
+- [Mapper component](/components/mapper)

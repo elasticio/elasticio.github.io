@@ -1,5 +1,6 @@
 ---
 title: Deploying a component
+description: Here is a step-by-step guide to help you understand how our system works and the steps necessary to get a simple component pushed and ready for a successful integration.
 layout: article
 section: Developing Components
 category: component
@@ -32,6 +33,7 @@ Resolving deltas: 100% (60/60), done.
 ```
 
 Checking the directory where you have cloned the component:
+
 ```sh
 $ cd  petstore-component-nodejs/
 $ ls -ga
@@ -52,6 +54,7 @@ More information is available in [Building a component in Node.js](building-node
 ## Prepare the remote repository
 
 At this stage, we want to know which repositories we have access to:
+
 ```sh
 $ git remote -v
 origin {{site.data.tenant.petStoreSourceNodeJS}} (fetch)
@@ -74,6 +77,7 @@ Our repository is ready to receive the **petstore-component-nodejs** component.
 ## Push your component
 
 After performing all the task described above we are ready to push our code to the newly created repository. To do that we will type:
+
 ```sh
 $ git push ipaas master
 ```
@@ -87,3 +91,12 @@ The newly added component is in the list of components when you start creating y
 If your component has **only Action function** then your component would show only when selecting an Action function while building the integration flow.
 
 If your component has **only Trigger function** then your component would show only when selecting a Trigger component.
+
+## Related links
+
+- [Managing SSH Keys](ssh-keys)
+- [Petstore Component for Node.js]({{site.data.tenant.petStoreSourceNodeJS}} "Petstore components for Node.js")
+- [Petstore Component for Java]({{site.data.tenant.petStoreSourceJava}} "Petstore Component for Java")
+- [Building a component in Node.js](building-nodejs-component)
+- [Managing your Teams/Components](teams-and-repos)
+- [Integration Flow Overview](/getting-started/integration-flow)
