@@ -4,6 +4,7 @@ layout: article
 section: Data transformation
 category: UI
 description: This document presents data mapping on our Platform and provides a detailed description of the new mapper UI.
+since: 20200116
 order: 3
 ---
 
