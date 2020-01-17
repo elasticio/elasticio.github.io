@@ -15,10 +15,10 @@ following table shows the support of the platform features in Sailor versions:
 | Features            | v2.0.x | v2.1.x | v2.2.x | 2.5.x | *2.6.x* |
 | :---                | :---   | :---   | :---   | : --- | : --- |
 | Request-reply       | Yes    | Yes    | Yes    | Yes   | Yes   |
-| Startup Hook        | Yes    | Yes    | Yes    | -     |       |
-| Init Hook           | Yes    | Yes    | Yes    | -     |       |
+| Startup Hook        | Yes    | Yes    | Yes    | Yes   | Yes   |
+| Init Hook           | Yes    | Yes    | Yes    | Yes   | Yes   |
 | Passthrough         | -      | Yes    | Yes    | Yes   | Yes   |
-| Shutdown Hook       | -      | -      | Yes    | -     |       |
+| Shutdown Hook       | -      | -      | Yes    | Yes   | Yes   |
 | Bunyan Logger       | -      | -      | -      | Yes   | Yes   |
 | Message Size        | -      | -      | -      | Yes   | Yes   |
 | Disable Passthrough | -      | -      | -      | -     | Yes   |
