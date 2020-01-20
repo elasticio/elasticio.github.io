@@ -1,6 +1,6 @@
 ---
 title: Why to use paging with rest API requests?
-description: Here we will describe what Paging is and why to use paging with rest API requests?
+description: This article describes what Paging is and why to use paging with rest API requests?
 layout: article
 section: Paging
 category: paging
