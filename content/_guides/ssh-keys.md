@@ -1,5 +1,6 @@
 ---
 title: Managing SSH Keys
+description: Here we will describe what is SSH keys, how to create your SSH keys and how to manage them.
 layout: article
 section: Developing Components
 category: component
@@ -15,6 +16,7 @@ GitHub has an informative page on SSH Key generation and what you see here is pr
 ### Check for Existing SSH keys
 
 To see all existing SSH Keys open a terminal and type:
+
 ```sh
 $ ls -al ~/.ssh
 # Lists the files in your .ssh directory, if they exist
@@ -31,6 +33,7 @@ This shows that this user called username has already GitHub created SSH key whi
 ### Creating a new SSH key
 
 To create an SSH Key open a terminal and type:
+
 ```sh
 $ ssh-keygen -t rsa -b 4096
 ...
@@ -43,12 +46,17 @@ Your public key has been saved in /Users/username/.ssh/id_rsa.pub.
 The key fingerprint is:
 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db username@yourcomputer.local
 ```
+
 The example above ties your SSH key with your computer.
-**Please note:** if you want your SSH key to be connected with your e-mail address then use
+
+>**Please note:** if you want your SSH key to be connected with your e-mail address then use
+
 ```sh
 $ ssh-keygen -t rsa -b 4096 -C username@youraddress.com
 ```
+
 After generating the SSH Key if we check our SSH directory we will get two more entries:
+
 ```sh
 $ ls -al ~/.ssh
 total 40
@@ -60,10 +68,13 @@ drwxr-xr-x+ 33 username  staff  1122 Jul 24 09:06 ..
 -rw-r--r--   1 username  staff   755 Aug  3 14:08 id_rsa.pub
 -rw-r--r--   1 username  staff  1595 Jul 28 16:14 known_hosts
 ```
+
 Use the newly generated `id_rsa.pub` key to work with the platform. For the simplicity type:
+
 ```sh
 $ less ~/.ssh/id_rsa.pub | pbcopy
 ```
+
 This command copies the newly created SSH Key into your clipboard, so that you
 can paste it into the SSH entry form on the {{site.data.tenant.name}} platform.
 
@@ -71,8 +82,12 @@ can paste it into the SSH entry form on the {{site.data.tenant.name}} platform.
 
 To add a newly generated SSH Keys, click your "avatar" and navigate to *Identity Keys* section. There you can define key name, enter the SSH key and save it:
 
-![](/assets/img/developer-guide/ssh-keys/SSH.gif)
+![Identity Keys section](/assets/img/developer-guide/ssh-keys/SSH.gif)
 
 If you already have some SSH keys, just click *Add New SSH Key*:
 
-![](/assets/img/developer-guide/ssh-keys/SSH_1.png)
+![Add New SSH Key](/assets/img/developer-guide/ssh-keys/SSH_1.png)
+
+## Related links
+
+- [Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/)

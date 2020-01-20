@@ -1,5 +1,6 @@
 ---
 title: Building real-time flows
+description: Here we will describe what is a Real-time flow, how to switch to Real-time flow and how to update it.
 layout: article
 section: Building integration flows
 order: 0
@@ -87,7 +88,7 @@ of the flow's name.
 ## Updating real-time flows
 
 In order to make changes to your real-time flows, you need to create a
-new [Draft](/guides/managing-flow-history). None of the changes
+new [Draft](/guides/managing-flows). None of the changes
 made to the draft will affect the currently running flow containers, be
 it a mapping adjustment, a component version change or anything else. In
 order to apply the changes you need to publish the draft as a new version.
@@ -97,3 +98,9 @@ of the flow will be stopped by shutting down all the running flow
 containers. The new version will be deployed by starting new step containers.
 Please note that in this case the flow goes through the warm-up period
 again.
+
+## Related links
+
+- [Integration Flow Overview](/getting-started/integration-flow)
+- [Docker](https://www.docker.com/)
+- [Managing Flows](/guides/managing-flows)

@@ -1,5 +1,6 @@
 ---
 title: Why to use paging with rest API requests?
+description: Here we will describe what Paging is and why to use paging with rest API requests?
 layout: article
 section: Paging
 category: paging
@@ -15,6 +16,7 @@ Paging in rest API requests is regarded a good practice for accessing a large am
 Many API providers have standardised approach and include quite an extensive support for pagination, however, there are still sizable amount who do not have that support. These two cases will be presented separately:
 
   * [How to proceed when API provider has in-built pagination system?](/guides/how-to-implement-the-pagination)
+
   * [What to do when API provider does not support pagination](/guides/what-to-do-when-api-provider-does-not-support-paging) from out of the box, yet?
 
 ## Giving user control over paging
@@ -68,3 +70,12 @@ Obviously, the `limit` parameter is defined elsewhere and is available as a glob
 >Word of caution: Not all API providers would let you choose the batch sizes so this implementation would not be applicable. Normally, you can only control the page number and request only the next page incrementally.
 
 When the pagination is tied directly with page number then we suggest using a [snapshot](/getting-started/snapshot-overview) feature to save the last requested page number. More information is given in the [how to implement pagination](/guides/how-to-implement-the-pagination) help article.
+
+
+## Related links
+
+- [How to implement the pagination?](/guides/how-to-implement-the-pagination)
+- [What to do when API provider does not support paging?](/guides/what-to-do-when-api-provider-does-not-support-paging)
+- [Shopware component](/components/shopware/index)
+- [Snapshot Overview](/getting-started/snapshot-overview)
+- [How to implement pagination](/guides/how-to-implement-the-pagination)

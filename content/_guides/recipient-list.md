@@ -1,5 +1,6 @@
 ---
 title: Sending data to a list of recipients
+description: In this article we will discuss how this pattern can be implemented in the platform in integration flows. You will learn how to created branches in integration flows.
 layout: article
 section: Integration patterns
 order: 0
@@ -91,3 +92,10 @@ following screenshot shows the details of a flow execution.
 In the screenshot above you see the details an execution of our flow after 3
 requests were sent to the flow's URL. As you can see the *Webhook* component passed
 its messages to both branches. This is what a recipient list is for.
+
+## Related links
+
+- [Enterprise Integration Patterns](http://www.enterpriseintegrationpatterns.com/patterns/messaging/RecipientList.html)
+- [Integration Flow Overview](/getting-started/integration-flow)
+- [Creating a Basic Integration Flow](/getting-started/first-flow)
+- [Creating a webhook flow](/getting-started/webhooks-flow)

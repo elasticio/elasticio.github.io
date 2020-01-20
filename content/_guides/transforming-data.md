@@ -1,5 +1,6 @@
 ---
 title: Transforming data
+description: In this document we will discuss some JSONata basics so that you can start transforming your data.
 layout: article
 section: Data transformation
 category: data-transformation
@@ -44,6 +45,7 @@ Now we want to write the same sentence in all caps since it is the title of a bo
 ```js
 $uppercase("The Adventures of " & fname & " " & lname)
 ```
+
 The result is: `THE ADVENTURES OF TOM SAWYER`.
 
 How about adding a new line and adding the name of the author?
@@ -54,6 +56,7 @@ $uppercase("The Adventures of " & fname & " " & lname)
 ```
 
 And the outcome is:
+
 ```
 THE ADVENTURES OF TOM SAWYER
 BY MARK TWAIN
@@ -103,12 +106,15 @@ Let us consider the following incoming data sample:
   }
 }
 ```
+
 The value of the `itemPrice.amount` parameter is not a number but a `"25.44"`,
 which is a `string`. As it stands we would not be able to use it in any numeric
 calculations. To address this we could write:
+
 ```js
 $number(itemPrice.amount)
 ```
+
 This would result in `25.44`, which is a number. A related issue can be when the
 incoming data contains a number in German accounting format.
 
@@ -120,6 +126,7 @@ incoming data contains a number in German accounting format.
   }
 }
 ```
+
 Before we pass the value `itemPrice.amount` to `$number(arg)` function we need
 to replace the comma with a point. Here we will use a string transformation
 function `$replace(str, pattern, replacement [, limit])`:
@@ -160,6 +167,7 @@ Consider the following data was produced by a source system:
   ]
 }
 ```
+
 As an exercise, we could get the price of the whole order but only the part
 which was shipped. We would also like to get the output as a JSON:
 
@@ -183,7 +191,6 @@ Here is the outgoing JSON:
 }
 ```
 
-
 ## Using numeric aggregation functions
 
 Now let us slightly change the requirement from above example. We want to apply
@@ -195,6 +202,7 @@ the `promotionDiscount.amount` to each item in the order.
   "shipment price" : orderItems.(quantityShipped*$sum([itemPrice.amount, shippingPrice.amount, -promotionDiscount.amount]))
 }
 ```
+
 Here is the outgoing JSON:
 
 ```js
@@ -411,6 +419,7 @@ Let us consider the following input array:
 ```
 
 To select the first embedded array elements (`[1,2,3]`) use:
+
 ```js
 Order[0].ids
 ```
@@ -484,30 +493,42 @@ Let us use a nested array example from the [JSONata Exerciser page](http://try.j
   }
 }
 ```
+
 To create a custom JSON document on output follow these guidelines:
 
 *   Include the output in curly brackets `{ }`
 *   JSON property names can be declared:
+
 ```js
 {"parameter": Account.Order[0].OrderID}
 ```
+
 which returns:
+
 ```js
 {"parameter":"order103"}
 ```
+
 *   To access the properties with space in the name use brackets:
+
 ```js
 {"name": Account.Order[0].Product[0]."Product Name"}
 ```
+
  returns:
+
 ```js
 {"name": "Bowler Hat"}
 ```
+
 *   To refer the value of `"Product Name"` property in an embedded array structure use `$` to reference the current array level:
+
 ```js
 {"product": Account.Order.Product.({"name" : $."Product Name"})}
 ```
+
 which would return
+
 ```js
 {
   "product": [
@@ -518,6 +539,7 @@ which would return
   ]
 }
 ```
+
 JSON document with an array including the names of the products.
 > **Note** without `$` the value of `"Product Name"` would not have been propagated.
 
@@ -533,6 +555,7 @@ Following the above guidelines, here is the final JSONata expression:
   })
 }
 ```
+
 It returns the following JSON document:
 
 ```js
@@ -554,3 +577,14 @@ It returns the following JSON document:
 
 We defined our custom structure of the resulting JSON, performed calculations
 and flattened the nested arrays.
+
+
+## Related links
+
+- [JSONata](http://jsonata.org/)
+- [Moment.js](https://momentjs.com).
+- [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601)
+- [Moment.js Guides](http://momentjs.com/guides)
+- [JavaScript Date parsing behavior](http://dygraphs.com/date-formats.html)
+- [Time Zones](https://stackoverflow.com/tags/timezone/info)
+- [JSONata Exerciser page](http://try.jsonata.org/).
