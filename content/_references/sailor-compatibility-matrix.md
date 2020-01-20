@@ -1,5 +1,6 @@
 ---
 title: Sailor compatibility matrix
+description: This document provides information on Sailor compatibility matrix
 layout: article
 section: Sailor
 since: 20180430
@@ -28,7 +29,6 @@ for the Sailor releases. To keep the compatibility matrix manageable,
 we might skip patch releases here.
 
 > **Please Note** Sailor versions `2.5.x` and `2.6.x` are not available for `Java` yet.
-
 
 ## Node.js - package.json
 

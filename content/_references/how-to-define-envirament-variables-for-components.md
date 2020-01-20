@@ -1,5 +1,6 @@
 ---
 title: How to define environment variables for components
+description: This article explane why and how to define environment variables for components on examples.
 layout: article
 section: Environment Variables
 order: 1
@@ -15,8 +16,6 @@ Environment variables are an essential part of the {{site.data.tenant.name}} pla
 Let us consider the following use case when a component is developed for a CRM, Shop or ERP. If this particular component is intended to be used only for one specific client then many values can be hard-coded inside the component.
 
 What if the component is developed to work for different clients? All the hard-coded values for the different clients need to be rewritten again and again. This will introduce an unnecessary amount of overhead work and be the potential source of errors.
-
-
 
 Here are a couple of examples where the environment variables are implemented.
 
@@ -86,3 +85,11 @@ Depending on the used programming language and libraries some of the implementat
 In some cases, this type of definition might not be sufficient. For example `curl` and `wget` respect the `HTTP_PROXY` and `HTTPS_PROXY` environment variables. Most Node.js libraries do it the same way while Java rather expects `http.proxyHost` and `http.proxyPort` system properties defined in the **gradle.properties** file as it already explained in the Java components behind a proxy guide.
 
 Some Node.js libraries have their own different way to use proxy setups. For example, when [Microsoft SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript) is used then the necessary setup needs to follow a specific approach used in superagent to send HTTP requests. The problem is that **superagent** does not respect `HTTP_PROXY` and `HTTPS_PROXY` variables as most Node.js libraries do, but wants these configurations to be passed [directly to the constructor](https://github.com/visionmedia/superagent).
+
+## Related links
+
+- [Environment variables available during component execution](/references/envirament-variables-available-during-component-execution)
+- [Creating OAuth App for Salesforce](/components/salesforce/creating-oauth-app-for-salesforce)
+- [Salesforce-component GitHub repository](https://github.com/elasticio/salesforce-component)
+- [Microsoft SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript)
+- [Superagent](https://github.com/visionmedia/superagent)

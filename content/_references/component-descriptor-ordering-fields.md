@@ -1,5 +1,6 @@
 ---
 title: Ordering fields in component.json
+description: This article describes ordering parameters, metadata, triggers, actions and credentials in component.json.
 layout: article
 section: Component Descriptor
 order: 3
@@ -205,3 +206,7 @@ Same for credentials ordering:
     }
   }
 ```
+
+## Related links
+
+- [The JavaScript Object Notation (JSON) Data Interchange Format](https://tools.ietf.org/html/rfc7159)

@@ -1,5 +1,6 @@
 ---
 title: EmitError
+description: Emit `error` event is used to return an error which occurs during the execution of the component.
 layout: article
 section: Sailor
 since: 20180430

@@ -1,5 +1,6 @@
 ---
 title: Here is how the OAuth2 process works
+description: This document provides information on OAuth2 process.
 layout: article
 section: Tokens in OAuth2 components
 order: 2
@@ -120,3 +121,10 @@ What follows is similar in nature. **Service** validates the supplied parameters
   * `refresh_token` - some OAuth API providers might issue a new refresh_token during this procedure. It is the responsibility of the developer to encounter for this.
 
 After the tokens are refreshed **Application** can resume accessing the protected data stored at **Service** side.
+
+## Related links
+
+- [The OAuth Bible](http://oauthbible.com/)
+- [OAuth Callback redirect URL](/guides/oauth-callback-redirect-url)
+- [Salesforce component](/components/salesforce/index)
+- [Google Spreadsheets component](/components/gspreadsheet/index)s

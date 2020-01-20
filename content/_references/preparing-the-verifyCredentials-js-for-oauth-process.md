@@ -1,5 +1,6 @@
 ---
 title: Preparing the verifyCredentials.js for oauth
+description: This article describes verifyCredentials.js which would initiate the actual verification process.
 layout: article
 section: Tokens in OAuth2 components
 order: 4
@@ -68,3 +69,7 @@ We would like to highlight how the access_token is referenced here: `credentials
 ```
 
 >**Please note:** this component is using an OAuth2 authorization method. For obvious reasons, we do not include the actual tokens here. And, the actual tokens are highly encrypted. In fact, this whole structure presented above is saved in an encrypted form within the `credentials` structure of our database.
+
+## Related links
+
+- [OAuth2 setup preparation in component.json](/references/oauth2-setup-preparation-in-component-json)

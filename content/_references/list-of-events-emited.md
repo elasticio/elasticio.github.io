@@ -1,5 +1,6 @@
 ---
 title: List of events emitted by the components
+description: Here is a growing list of events emitted by the components.
 layout: article
 section: Sailor
 since: 20180430

@@ -115,3 +115,9 @@ or do
 Currently, the Java Sailor does not expose a logger that is capable of recording
 log statements on the new executions page. For flows which use components that
 are written in Java, it is advised to continue using the old executions interface.
+
+## Related links
+
+- [Executions Page](/getting-started/executions)
+- [Bunyan](https://github.com/trentm/node-bunyan)
+- [A function's `this` keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)

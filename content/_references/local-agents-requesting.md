@@ -1,5 +1,6 @@
 ---
 title: Requesting a Local Agent
+description: This article describes how to request a local agent for running it in your own resource using a Virtualization Machine (VM).
 layout: article
 section: Local Agents
 order: 1
@@ -64,6 +65,7 @@ local agent.
 ![local agents filling info](/assets/img/references/local-agents/request-local-agent-information.png)
 
 The illustration above shows the local agent requesting steps:
+
 1.  Name your local agent,
 2.  Provide the description of your agent,
 3.  Wait for the activation.
@@ -83,3 +85,9 @@ Local Agents can have 3 different statuses:
 The screenshot below shows these different statuses in one page.
 
 ![Agents with different statuses](/assets/img/references/local-agents/local-agent-statuses.png "Agents with different statuses")
+
+## Related links
+
+- [Local Agent](/getting-started/local-agent)
+- [Installation using VirtualBox](local-agents-VirtualBox)
+- [Installation using Hyper-V](local-agents-HyperV)

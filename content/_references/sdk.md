@@ -1,5 +1,6 @@
 ---
 title: Software Development Kit - SDK
+description: SDK provides developers with APIs and tools necessary to build, test, and debug integration component for the integration platform.
 layout: article
 section: Component Descriptor
 order: 0
@@ -58,3 +59,7 @@ The jar is also available on Maven Central. For Apache Maven (XML) please use:
     <version>2.0.1</version>
 </dependency>
 ```
+## Related links
+
+- [Java API]({{site.data.tenant.javaAPISource}})
+- [Java API description]({{site.data.tenant.javaAPIDocs}})
