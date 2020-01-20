@@ -14,7 +14,9 @@ updatedDate: 2020-01-15
 
 **1.0.3 (December 24, 2019)**
 
-* Update sailor version
+* Update sailor version to 2.5.4
+* New Sailor logger
+* Improved few logs
 
 > To see the full **changelog** please use the following [link](/components/splitter/changelog).
 
