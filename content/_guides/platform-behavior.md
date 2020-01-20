@@ -1,5 +1,6 @@
 ---
 title: Platform Behavior
+description: This document provides information on the peculiarities of the Platform behavior, including Flow suspension and stopping, different Platform limits and common errors.
 layout: article
 section: Building integration flows
 order: 1
@@ -45,14 +46,21 @@ The reasons for this error may differ. Though the messages still stay safe in in
 
 This error appears if the Component exceeds the set memory limit, which is `256 MB` by default:
 
-![](/assets/img/integrator-guide/behavior/Screenshot_1.png)
+![Component Run Out of Memory](/assets/img/integrator-guide/behavior/Screenshot_1.png)
 
 You can check Component logs the same way as shown [here](managing-flow-errors), to see the exit code for details:
 
-![](/assets/img/integrator-guide/behavior/Screenshot_2.png)
+![Exit code](/assets/img/integrator-guide/behavior/Screenshot_2.png)
 
 In this case, the message can be lost. If you are aware that this scenario is possible in your case, then you can set memory limit to a custom value, more suitable for you. You can also ask Components repository owner to do this.
 
 ### Syntax Errors
 
 This is not a Platform error per se, but it happens frequently if data is not handled correctly. And your Flows won't suffer from this issue. Most likely, you will still see the problem in Component logs and be able to fix it. Otherwise, escalate the issue to the platform vendor via support. You can find info on applying for support [here](general-troubleshooting-guide).
+
+## Related links
+
+- [Contracts and Workspaces](/getting-started/contracts-and-workspaces.html)
+- [Limitations on Attachments](/references/attachments-limitations)
+- [General Troubleshooting Guide](general-troubleshooting-guide)
+- [Managing Flow Errors](managing-flow-errors)

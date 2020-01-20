@@ -1,5 +1,6 @@
 ---
 title: Managing your Teams/Components
+description: This article discribes how to structure your work into Git repositories and manage your Teams and Components.
 layout: article
 section: Developing Components
 category: component
@@ -17,29 +18,29 @@ team. The team members may collaborate on common integration component in integr
 
 ### Creating a developer team
 
-**Note**: you must have appropriate [permissions](/guides/managing-user-roles-in-a-tenant).
+>**Note**: you must have appropriate [permissions](/guides/managing-user-roles-in-a-tenant).
 
 To create a new developer team, navigate to *Developer Teams* and click *Add New Team* button. Then give the team a unique name and click *Save*. Your team has been added to the list:
 
-![](/assets/img/developer-guide/team-repo/devteam.gif)
+![Developer Teams - Add New Team button](/assets/img/developer-guide/team-repo/devteam.gif)
 
-**Note**: you can only use letters, digits, `-` and `_` to name your team.
+>**Note**: you can only use letters, digits, `-` and `_` to name your team.
 
 To access your new team, click *See Details*:
 
-![](/assets/img/developer-guide/team-repo/Screenshot_1.png)
+![See Details](/assets/img/developer-guide/team-repo/Screenshot_1.png)
 
 As you can see, you're the only member of the team. To add more developers, click *Invite Developer*:
 
-![](/assets/img/developer-guide/team-repo/Screenshot_2.png)
+![Invite Developer](/assets/img/developer-guide/team-repo/Screenshot_2.png)
 
 You will see a list of members **(1)**, which you can choose from. Select the required members and click *Send Invites* **(2)** to invite developers:
 
-![](/assets/img/developer-guide/team-repo/Screenshot_3.png)
+![List of members - Send Invites](/assets/img/developer-guide/team-repo/Screenshot_3.png)
 
 As soon as you click *Send Invites*, the selected users become team members.
 
-**Note,** only members of the same Contract can be invited into this developer team. The list shows all the possible members that can be invited to this current team.
+>**Note,** only members of the same Contract can be invited into this developer team. The list shows all the possible members that can be invited to this current team.
 
 
 ### Delete the developers team
@@ -58,7 +59,7 @@ management. GitHub, one of the most famous code developing and collaborating pla
 is the most famous for its use of repository practice. We use the same tactics which
 give developers complete autonomy to manage their code.
 
-**Note**: Remind your fellow developers to follow the same procedure and upload
+>**Note**: Remind your fellow developers to follow the same procedure and upload
 their own unique SSH Key before proceeding further.
 
 ### Create a component repository
@@ -67,30 +68,30 @@ As mentioned above, each repository represents a component. That's why we use
 repository and component terms interchangeably here. Every component resides in
 a particular repository.
 
-**Note**: you must have appropriate [permissions](/guides/managing-user-roles-in-a-tenant) to create repositories.
+>**Note**: you must have appropriate [permissions](/guides/managing-user-roles-in-a-tenant) to create repositories.
 
 To create a new repository for your custom Components, click *New Repo* button **(1)**, enter repository name **(2)**, and then click *Save* **(3)**:
 
-![](/assets/img/developer-guide/team-repo/Screenshot_4.png)
+![New Repo](/assets/img/developer-guide/team-repo/Screenshot_4.png)
 
 You can now see it in the list of repositories:
 
-![](/assets/img/developer-guide/team-repo/Screenshot_5.png)
+![List of repositories](/assets/img/developer-guide/team-repo/Screenshot_5.png)
 
-**Note:** As with the naming of the teams use letters, digits, `-` and `_` to name your repository.
+>**Note:** As with the naming of the teams use letters, digits, `-` and `_` to name your repository.
 
 
 ### Manage the component repository
 
 To manage your repository click on the name to see the following page with details:
 
-![](/assets/img/developer-guide/team-repo/Screenshot_6.png)
+![Manage your repository](/assets/img/developer-guide/team-repo/Screenshot_6.png)
 
 #### Repository URL:
 
 This is the URL that you can push the code for deploying the updates.
 
-**Note:** the cloning of your repositories is not supported. To update the code
+>**Note:** the cloning of your repositories is not supported. To update the code
 push it again to create the next version of it. Please contact our support if
 you need the copy of your repository.
 
@@ -115,3 +116,9 @@ Here is the deployment history of the repository containing:
 *   Status of the build - green check mark means success. If the deployment failed it will show a red cross.
 *   State of the build - showing which build is the default.
 *   Log of the deployment - clicking the "View" button will open a pop-out window showing the log of that particular deployment.
+
+## Related links
+
+- [Integration Component Overview](/getting-started/integration-component)
+- [Managing user roles in a tenant](/guides/managing-user-roles-in-a-tenant)
+- [Delete the developer team]({{site.data.tenant.apiBaseUri}}/v2/docs/#delete-a-team)

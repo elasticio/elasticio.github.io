@@ -1,5 +1,6 @@
 ---
 title: Using Snapshots
+description: This document provides a quick guide on creating and using Snapshots for Components in your Flows via the UI and via the API.
 layout: article
 section: Building integration flows
 order: 2
@@ -9,6 +10,7 @@ since: 20191023
 This document provides a quick guide on [creating and using Snapshots](#creating-a-snapshot) for Components in your Flows via the UI and [via the API](#snapshots-via-the-api).
 
 ## Creating and Using a Snapshot
+
 To create a [Snapshot](/getting-started/snapshot-overview.html), you need to emit it from your Component function:
 
 `emit('snapshot',snapshot)`
@@ -41,7 +43,7 @@ if (!params.snapshot || typeof params.snapshot !== "string" || params.snapshot =
 emitSnapshot(newSnapshot);
 ```
 
-**IMPORTANT:** Please remember that there can be only one snapshot per step in a Flow. Each time another snapshot is made, the last one is overwritten.
+>**IMPORTANT:** Please remember that there can be only one snapshot per step in a Flow. Each time another snapshot is made, the last one is overwritten.
 
 **EXAMPLE:**
 
@@ -75,6 +77,7 @@ Additionally, there is a way to reset snapshot for a Flow via the UI. Here is ho
 ![Resetting snapshots via UI](/assets/img/integrator-guide/using-snapshots/reset-snapshot.gif)
 
 ## Snapshots via the API
+
 There is a number of API endpoints for creating and using snapshots. They allow you to (follow the links for details):
 
 1\. [Retrieve snapshots for all steps in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-snapshots-for-all-steps-in-flow)
@@ -86,3 +89,7 @@ There is a number of API endpoints for creating and using snapshots. They allow 
 4\. [Create snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-snapshot-for-one-step-in-flow)
 
 5\. [Remove snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#remove-snapshot-for-one-step-in-flow)
+
+## Related links
+
+- [Snapshot Overview](/getting-started/snapshot-overview.html)

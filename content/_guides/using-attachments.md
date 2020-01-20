@@ -1,5 +1,6 @@
 ---
 title: Using Attachments
+description: This document describes attachments. It also explains how attachments work and how to create them.
 layout: article
 section: Building integration flows
 order: 1
@@ -19,8 +20,11 @@ Sometimes it's required to send binary data as part of integration
 [Flow](/getting-started/integration-flow.html). Typical examples are:
 
 -   Transferring product images together with the product description.
+
 -   Transferring custom-encoded files before they could be parsed and transformed to JSON messages, for example, SFTP Component may read `CSV` file without parsing it, while CSV component later will parse it and transform to `JSON` messages.
+
 -   Preserving native data format while working with it in components, for example, sometimes it's required to work natively on `XML` without `XML-JSON-XML` transformation.
+
 -   Handle large amounts of data as a single batch/bulk - as you know memory is an expensive resource and your components should be aware of it, but sometimes it's required to batch a large number of messages - attachment storage could be a good accumulator where you can safely and efficiently stream to and stream from.
 
 
@@ -67,10 +71,10 @@ and values are defined as:
 | `size`         | **(Optional)** Size of the attachment in bytes. |
 | `url`          | HTTP URL where your component may download the attachment, you can be sure that URL contains all information you need to download it, no additional authentication should be required. |
 
-**NOTE 1:** You shouldn't assume or expect anything about the format or host/port
+>**NOTE 1:** You shouldn't assume or expect anything about the format or host/port
 part of that URL, as it could be changed without the prior notice.
 
-**NOTE 2:** attachment URLs are internal {{site.data.tenant.name}} cluster specific
+>**NOTE 2:** attachment URLs are internal {{site.data.tenant.name}} cluster specific
 URLs and can not be accessed from outside of the cluster.
 
 ## How to Create Attachments
@@ -102,3 +106,7 @@ your container's environment variables. It will return something like this:
 Now you can use `put_url` to store your binary data and `get_url` you should
 place into the attachment section (as shown above) so that the next Component
 can read your binary data.
+
+## Related links
+
+- [Integration Flow Overview](/getting-started/integration-flow.html)

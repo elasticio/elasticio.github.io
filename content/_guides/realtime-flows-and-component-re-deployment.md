@@ -1,5 +1,6 @@
 ---
 title: Real-time Flows and component re-deployment
+description: This article describes what is a Real-time flow and how to update component code.s
 layout: article
 section: Developing Components
 order: 1
@@ -38,14 +39,14 @@ if you have added a new Action or Trigger that you would like to use. It will on
 be available after you restart the active flow. No matter even if you have deployed
 your changes already. The reason for that is:
 
-> **When the container containing your code is up and running it has no way of knowing that the code in your repository has changed**.
+>**When the container containing your code is up and running it has no way of knowing that the code in your repository has changed**.
 
 ### 4. Publish your draft
 
 Publish your draft. This would stop the active integration flow and replace
 it with a new version of the flow and start it again.
 
-> **Note**: It would take some time until the new version of your flow is active again. We call it a **warm-up time**.
+>**Note**: It would take some time until the new version of your flow is active again. We call it a **warm-up time**.
 
 The warm-up time is affected by the number of integration steps you have in your flow.
 If you see 3 steps in UI then it is usually 5 steps in reality since there are 2 additional
@@ -90,3 +91,7 @@ module.exports.process = function processTrigger() {
 
 In this case, we will get only one listener created and the trigger will work as
 expected: single listener for a single event.
+
+## Related links
+
+- [Building real-time flows](/guides/realtime-flows)
