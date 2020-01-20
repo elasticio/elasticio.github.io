@@ -1,6 +1,6 @@
 ---
 title: Managing SSH Keys
-description: Here we will describe what is SSH keys, how to create your SSH keys and how to manage them.
+description: This document describes what is SSH keys, how to create your SSH keys and how to manage them.
 layout: article
 section: Developing Components
 category: component
