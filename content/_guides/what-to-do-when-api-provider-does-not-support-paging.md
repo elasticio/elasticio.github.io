@@ -1,6 +1,6 @@
 ---
 title: What to do when API provider does not support paging?
-description:  Here we will describe what to do when API provider does not support paging?
+description: This article describes what to do when API provider does not support paging?
 layout: article
 section: Paging
 category: paging
