@@ -1,5 +1,6 @@
 ---
 title: Approach to send requests to OAuth2 APIs
+description: This document provides information on the process of obtaining and refreshing the tokens.
 layout: article
 section: Tokens in OAuth2 components
 order: 1
@@ -158,3 +159,12 @@ public static final void refreshTokens(final JsonObject configuration) {
           configuration.add(Constants.CONFIGURATION_OAUTH, newOauth);
       }
 ```
+
+## Related links
+
+- [How the OAuth2 process works](/references/how-the-oauth2-process-works)
+- [OAuth2 setup preparation in component.json](/references/oauth2-setup-preparation-in-component-json)
+- [Preparing the verifyCredentials.js for oauth](/references/preparing-the-verifyCredentials-js-for-oauth-process)
+- [How to access access_token during component execution?](/references/how-to-access-access_token-during-component-execution)
+- [Microsoft Outlook component](https://github.com/elasticio/outlook/blob/master/lib/triggers/contacts.js)
+- [Salesforce Java component](https://github.com/elasticio/salesforce-component-java)

@@ -1,5 +1,6 @@
 ---
 title: Local Agent installation using Hyper-V
+description: This article describes the local agent installation on Microsoft Server 2016 and Windows 10 using the Hyper-V visualisation.
 layout: article
 section: Local Agents
 order: 2
@@ -25,7 +26,9 @@ Hereford, we assume you have no technical impediments to install and use the Hyp
 To start setting up the Virtual Machine you need the following files and setups:
 
 *   Make sure you have Hyper-V
+
 *   Download the VM image from here for Windows 10 build 1803 : [elasticio-local-agent-hyperv-1.0.4.zip](https://cdn.elastic.io/localagent/hyperv/elasticio-local-agent-hyperv-1.0.4.zip)
+
 *   Download the VM image from here for Windows server 2016 : [elasticio-local-agent-hyperv-srv-1.0.4.zip](https://cdn.elastic.io/localagent/hyperv/elasticio-local-agent-hyperv-srv-1.0.4.zip)
 
 VM image contains the necessary environment for running the Agent and used as a
@@ -33,6 +36,7 @@ template for a new VM. Proceed further and unpack the downloaded archive to find
 two folders containing:
 
 1.  Virtual Machine description – `Virtual Machines`
+
 2.  Virtual Disk image – `Virtual Hard Disks`
 
 Import the image to create a new Virtual Machine (VM) then launch the `Hyper-V Manager`
@@ -200,7 +204,7 @@ Time to check your agent on {{site.data.tenant.name}} UI.
 
 ## Check the agent is operational
 
-Navigate to *Settings > Agents* page of the {{site.data.tenant.name}} platform to
+Navigate to *Settings -> Agents* page of the {{site.data.tenant.name}} platform to
 check if the agent is `online` and operational.
 
 Once [`agent-gateway`](#deploy-agent-gateway) and [`agent-boatswain`](#deploy-agent-boatswain)
@@ -209,3 +213,10 @@ are on, the agent should appear as `online`
 
 > **Note** You can also access the Kubernetes dashboard to see the pods running
 > inside your local agent. Please visit the url [http://172.17.0.1:30080/](http://172.17.0.1:30080/) in your browser.
+
+## Related links
+
+- [Local Agent](/getting-started/local-agent)
+- [Requesting a Local Agent](local-agents-requesting)
+- [elasticio-local-agent-hyperv-1.0.4.zip](https://cdn.elastic.io/localagent/hyperv/elasticio-local-agent-hyperv-1.0.4.zip)
+- [elasticio-local-agent-hyperv-srv-1.0.4.zip](https://cdn.elastic.io/localagent/hyperv/elasticio-local-agent-hyperv-srv-1.0.4.zip)

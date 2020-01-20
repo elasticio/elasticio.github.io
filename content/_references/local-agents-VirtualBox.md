@@ -1,5 +1,6 @@
 ---
 title: Local Agent installation using VirtualBox
+description: This article describes the local agent installation on VirtualBox.
 layout: article
 section: Local Agents
 order: 2
@@ -25,7 +26,9 @@ assume you have no technical impediments to install and use the VirtualBox VM.
 To start setting up the Virtual Machine you need the following files and setups:
 
 *   **Virtual Machine Manager** - you can use the Oracle VM VirtualBox Manager. If you don't have it, visit the [VirtualBox Download page](https://www.virtualbox.org/wiki/Downloads) to get the version for your OS and install it.
+
 *   **Virtual Machine Image** - download the [elasticio-local-agent-1.0.3.tar.gz](https://cdn.elastic.io/localagent/elasticio-local-agent-1.0.3.tar.gz) compressed archive (about 1.6 GB).
+
 *   **Virtual Machine Descriptor files** - `agent-gateway` and `agent-boatswain` files specifically created for your agent. These files are provided by {{site.data.tenant.name}} directly.
 
 To start with the setup unpack the downloaded **Virtual Machine Image** file to find
@@ -233,7 +236,7 @@ Time to check your agent on {{site.data.tenant.name}} UI.
 
 ## Check the agent is operational
 
-Navigate to *Settings > Agents* page of the {{site.data.tenant.name}} platform to
+Navigate to *Settings -> Agents* page of the {{site.data.tenant.name}} platform to
 check if the agent is `online` and operational.
 
 Once [`agent-gateway`](#deploy-agent-gateway) and [`agent-boatswain`](#deploy-agent-boatswain)
@@ -242,3 +245,10 @@ are on, the agent should appear as `online`
 
 > **Note** You can also access the Kubernetes dashboard to see the pods running
 > inside your local agent. Please visit the url [http://127.0.0.1:30080/](http://127.0.0.1:30080/) in your browser.
+
+## Related links
+
+- [Local Agent](/getting-started/local-agent)
+- [Requesting a Local Agent](local-agents-requesting)
+- [VirtualBox Download page](https://www.virtualbox.org/wiki/Downloads)
+- [elasticio-local-agent-1.0.3.tar.gz](https://cdn.elastic.io/localagent/)

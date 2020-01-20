@@ -1,5 +1,6 @@
 ---
 title: Component Descriptor Structure
+description: This article describes the component structure and tells the platform what functions are available, what credentials are necessary to run your component on the platform.
 layout: article
 section: Component Descriptor
 order: 1
@@ -61,6 +62,7 @@ Let's explore an example of a component descriptor:
   "actions": { }
 }
 ```
+
 As we have presented the information in the table above, only `title` and
 `description` are required properties here.
 
@@ -176,6 +178,7 @@ Here is an example implementation of OAuth1 in the Credentials Object:
   }
 }
 ```
+
 In case of OAuth1 Authentication we must use `fields` and `oauth1` objects together.
 The `fields` object defines the input field type and the `oauth1` object provides
 the configuration. Please note that the `viewClass` property of the field must be
@@ -440,4 +443,13 @@ So if we go back to our initial Email Component, with a set reference it will lo
 }
 ```
 
-**IMPORTANT:** We do not support referencing by `$id` and referencing external schemas at the moment.
+>**IMPORTANT:** We do not support referencing by `$id` and referencing external schemas at the moment.
+
+## Related links
+
+- [Building a component in Java](/guides/building-java-component)
+- [Building a component in Node.js](/guides/building-nodejs-component)
+- [OAuth 1.0 specification](http://oauth.net/core/1.0/)
+- [OAuth 2.0 specification](http://tools.ietf.org/html/rfc6749)
+- [View Classes](view-classes)
+- [JSONSchema references](https://json-schema.org)

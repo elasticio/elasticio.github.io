@@ -1,5 +1,6 @@
 ---
 title: EmitData
+description: Emit `data` event is used to return the results of the component execution.
 layout: article
 section: Sailor
 since: 20180430

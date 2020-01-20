@@ -1,5 +1,6 @@
 ---
 title: Java Build proces
+description: This article describes what build tools are supported and/or expected, maven, ant or gradle.
 layout: article
 section: Working with Java
 order: 2
@@ -18,6 +19,7 @@ We require you to define the Java Sailor dependency like:
 ```
 compile "io.elastic:sailor-jvm:2.1.1"
 ```
+
 You can always find the latest Sailor version from the [Maven repository](https://mvnrepository.com/artifact/io.elastic/sailor-jvm).
 
 Sailor is the Java SDK for the {{site.data.tenant.name}} platform. It makes your
@@ -28,6 +30,7 @@ for components and ensuring a smooth communication with the platform.
 > your component with the same version of Gradle as you did.
 > **You must add Gradle wrapper to your project and commit it to Git**.
 You can initialize gradle wrapper with command:
+
 ```
 wrapper {
     distributionType = Wrapper.DistributionType.ALL
@@ -79,3 +82,9 @@ System.getenv("OAUTH_CLIENT_SECRET")
 
 RAM: 512MB RAM
 CPU: 0.1points
+
+## Related links
+
+- [Maven repository](https://mvnrepository.com/artifact/io.elastic/sailor-jvm)
+- [How to define environment variables for components](/references/how-to-define-envirament-variables-for-components)
+- [Component Descriptor Structure - envVars Object](component-descriptor-structure#envvars-object)

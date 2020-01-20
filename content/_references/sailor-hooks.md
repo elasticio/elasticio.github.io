@@ -1,5 +1,6 @@
 ---
 title: Sailor Hooks
+description: This document provides information on Sailor Hooks.
 layout: article
 section: Sailor
 since: 20180430
@@ -108,6 +109,5 @@ exports.shutdown = function(cfg, startData) {
   * If shutdown hook won't complete within 60 seconds then container will be killed
 
   * As soon as user pressed stop, task is marked as inactive and 'webhooks gateway' will start responding with the error (Task either does not exist or is inactive) to possible data
-
 
 TBD - log for shutdown hooks?

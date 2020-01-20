@@ -1,5 +1,6 @@
 ---
 title: Environment variables available during component execution
+description: We export a number of environment variables during each task step execution. You can use these variables in your component.
 layout: article
 section: Environment Variables
 order: 1

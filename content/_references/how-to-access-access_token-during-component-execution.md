@@ -1,5 +1,6 @@
 ---
 title: How to access access_token during component execution?
+description: This article describes credentials structure and how to access access_token during component execution?
 layout: article
 section: Tokens in OAuth2 components
 order: 5

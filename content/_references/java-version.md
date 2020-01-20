@@ -1,5 +1,6 @@
 ---
 title: Supported Java version
+description: Deails on supported Java version.
 layout: article
 section: Working with Java
 order: 1

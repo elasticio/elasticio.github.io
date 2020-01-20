@@ -1,5 +1,6 @@
 ---
 title: View Classes
+description: Here are the general view classes which are used to render the input fields in integration components.
 layout: article
 section: Component Descriptor
 order: 2
@@ -24,15 +25,12 @@ Here are the general view classes which are used to render the input fields in
 | [PasswordFieldView](#passwordfieldview) | Renders a standard password entry text field where the input values are replaced by symbols such as the asterisk (`*`) or a dot (`•`) |
 | [OAuthFieldView](#oauthfieldview)    | Renders button for initiating the OAuth process |
 
-
-
 ## TextFieldView
 
 `TextFieldView` has many purposes. Use it to draw a one-liner text
 field form to input the information. For example, you can use it in the case of
 [Basic Authorization](component-descriptor-structure#credentials-object) to input
 the API key. The possibilities are many but the implementation is similar.
-
 
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |
@@ -118,13 +116,13 @@ Here is an example implementation of `CheckBoxView` view class:
   }
 }
 ```
+
 When the checkbox is selected it will transmit to the next stage `"CheckSomething": on`
 (following our example above). Alternatively, if the checkbox is not selected it
 will transmit nothing.
 
 If multiple check-boxes are necessary then they have to be implemented one-by-one
 in the component descriptor.
-
 
 ## SelectView
 
@@ -174,6 +172,7 @@ component descriptor of the [MailChimp component](https://github.com/elasticio/m
   }
 }
 ```
+
 Here the `model` has a `getLists` which is exposed in the `lib/commons.js` as a
 [function `getLists`](https://github.com/elasticio/mailchimp-component/blob/master/lib/common.js#L14):
 
@@ -203,6 +202,7 @@ function getLists(conf, cb) {
   });
 }
 ```
+
 This function itself uses the `mailchimp-v3` libraries to query the MailChimp API
 for the names of the lists in your connected account, which is not predetermined
 anywhere in the component descriptor.
@@ -219,6 +219,7 @@ anywhere in the component descriptor.
 | prompt   | `string` | No       | Used to give a short and descriptive text which is rendered in the select field. |
 
 **EXAMPLE:**
+
 ```js
 "triggers": {
   "getPetsByStatusWithGenerators": {
@@ -244,7 +245,7 @@ anywhere in the component descriptor.
 
 Here is how it looks like in the UI:
 
-![](/assets/img/references/view-classes/Screenshot_1.png)
+![MultiSelectView in the UI](/assets/img/references/view-classes/Screenshot_1.png)
 
 
 ## PasswordFieldView
@@ -285,6 +286,7 @@ Here is an example of `PasswordFieldView` view class usage in the credentials:
   }
 }
 ```
+
 This is rendered in the following way:
 
 ![Rendering of the PasswordFieldView view class](/assets/img/references/view-classes/view-class-password-field-view.png "Rendering of the PasswordFieldView view class")
@@ -324,6 +326,7 @@ conjunctions with the [OAuth object](/references/component-descriptor-structure#
   }
 }
 ```
+
 This will render in the following way:
 
 ![Rendering of the OAuthFieldView view class](/assets/img/references/view-classes/view-class-oauth-field-view.png "Rendering of the OAuthFieldView view class")

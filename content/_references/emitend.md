@@ -1,5 +1,6 @@
 ---
 title: EmitEnd
+description: Emit `end` event is used to inform the flow that the component has finished the execution.
 layout: article
 section: Sailor
 since: 20180430

@@ -1,5 +1,6 @@
 ---
 title: OAuth2 setup preparation in component.json
+description: It is important to make sure that this setup is prepared and provided during the design of the integration component.
 layout: article
 section: Tokens in OAuth2 components
 order: 3
