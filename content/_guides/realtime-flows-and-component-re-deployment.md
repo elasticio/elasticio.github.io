@@ -1,6 +1,6 @@
 ---
 title: Real-time Flows and component re-deployment
-description: Here we will describe what is a Real-time flow and how to update component code.s
+description: This article describes what is a Real-time flow and how to update component code.s
 layout: article
 section: Developing Components
 order: 1
