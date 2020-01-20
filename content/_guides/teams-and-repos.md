@@ -1,6 +1,6 @@
 ---
 title: Managing your Teams/Components
-description: In this article we will discuss how to structure your work into Git repositories and manage your Teams and Components.
+description: This article discribes how to structure your work into Git repositories and manage your Teams and Components.
 layout: article
 section: Developing Components
 category: component
