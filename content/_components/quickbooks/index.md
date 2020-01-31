@@ -7,14 +7,14 @@ icon: quickbooks.png
 icontext: Quickbooks component
 category: Quickbooks
 createdDate: 2018-10-11
-updatedDate: 2019-07-04
+updatedDate: 2019-01-30
 ---
 
 ## Latest changelog
 
-**1.0.1 (November 27, 2019)**
+**1.1.0 (January 30, 2020)**
 
-* Fix bug when connecting to production systems.
+* Update sailor version to 2.6.1
 
 > To see the full **changelog** please use the following [link](/components/quickbooks/changelog).
 

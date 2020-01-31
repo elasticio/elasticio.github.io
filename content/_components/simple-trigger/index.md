@@ -7,14 +7,16 @@ icon: simple-trigger.png
 icontext: Simple-trigger component
 category: Simple-trigger component
 createdDate: 2019-01-16
-updatedDate: 2019-08-30
+updatedDate: 2020-01-30
 ---
 
 ## Latest changelog
 
-**1.0.3 (December 07, 2019)**
+**1.1.0 (January 30, 2020)**
 
-* Update sailor version to 2.5.1
+* Update sailor version to 2.6.1 from 2.5.1
+
+* Update node engine to version 12
 
 > To see the full **changelog** please use the following [link](/components/simple-trigger/changelog).
 
@@ -36,8 +38,7 @@ Environment variables are not required for this component.
 
 This component does not require credentials to work.
 
-## Triggers
-
+## Triggersa
 
 ### Timer
 

@@ -10,6 +10,16 @@ createdDate: 2017-02-09
 updatedDate: 2018-06-14
 ---
 
+## Latest changelog
+
+**1.1.0 (January 30, 2020)**
+
+* Update sailor version to 2.6.1
+* Refactor console.log to built in sailor logger
+* Change build type to `docker`
+
+> To see the full **changelog** please use the following [link](/components/mssql/changelog).
+
 ## Authentication
 
 You may use following properties to configure a connection:
@@ -17,6 +27,10 @@ You may use following properties to configure a connection:
 ![Properties to configure a connection](https://user-images.githubusercontent.com/40201204/41356042-97e26406-6f2b-11e8-88fb-11cba846d143.png)
 
 other types of configuration parameters are also supported, more information and samples you can find [here](https://www.npmjs.com/package/mssql#formats)
+
+## Environment Variables
+
+LOG_LEVEL - controls verbosity of logger. Possible values: `trace`, `debug` `info`, `warn`, `error`. Default: `info`
 
 ## Triggers
 

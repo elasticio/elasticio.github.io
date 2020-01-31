@@ -7,14 +7,16 @@ icon: xml.png
 icontext: XML component
 category: XML
 createdDate: 2016-12-29
-updatedDate: 2019-09-25
+updatedDate: 2020-01-30
 ---
 
 ## Latest changelog
 
-**1.1.1 (September 25, 2019)**
+**1.2.0 (January 30, 2020)**
 
-* Upload attachments with component commons library
+* Update sailor version to 2.6.1
+* Refactor console.log to built in sailor logger
+* Change build type to docker
 
 > To see the full **changelog** please use the following [link](/components/xml/changelog).
 

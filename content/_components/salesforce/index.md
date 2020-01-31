@@ -7,16 +7,14 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2019-06-27
-updatedDate: 2019-12-02
+updatedDate: 2019-12-25
 ---
 
 ## Latest changelog
 
-**1.2.1 (December 27, 2019)**
+**1.2.2 (January 25, 2020)**
 
-* Update sailor version to 2.5.4
-* Refactor console.log to built in sailor logger
-* Change build type to `docker`
+* Add request caching for lookup actions
 
 > To see the full **changelog** please use the following [link](/components/salesforce/changelog).
 
@@ -298,6 +296,8 @@ Action creates a single object. Input metadata is fetched dynamically from your 
 
 * **Pass binary data to the next component (if found object has it)** - a checkbox, if it is checked and found object has a binary field (type of base64) then its data will be passed to the next component as a binary attachment.
 
+* **Enable Cache Usage** - Flag to enable cache usage.
+
 #### Metadata description
 
 Metadata contains one field whose name, type and mandatoriness are generated according to the value of the configuration fields *Lookup by field* and *Allow criteria to be omitted*.
@@ -305,6 +305,12 @@ Metadata contains one field whose name, type and mandatoriness are generated acc
 #### Limitations
 
 When **Pass binary data to the next component (if found object has it)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'
+
+>**NOTE**
+Action has caching mechanism. By default action stores last 10 request-response pairs for 10 min duration.
+This parameters can be changed by setting environment variables:
+* **HASH_LIMIT_TIME** - Hash expiration time in milis
+* **HASH_LIMIT_ELEMENTS** - Hash size number limit
 
 ### Lookup Objects
 
@@ -319,6 +325,14 @@ Lookup a list of objects satisfying specified criteria.
 * **Output method** - dropdown list with following values: "Emit all", "Emit page", "Emit individually".
 
 * **Number of search terms** - text field to specify a number of search terms (positive integer number [1-99] or 0).
+
+* **Enable Cache Usage** - Flag to enable cache usage.
+
+>**NOTE**
+Action has caching mechanism. By default action stores last 10 request-response pairs for 10 min duration.
+This parameters can be changed by setting environment variables:
+* **HASH_LIMIT_TIME** - Hash expiration time in milis
+* **HASH_LIMIT_ELEMENTS** - Hash size number limit
 
 #### Metadata description
 
