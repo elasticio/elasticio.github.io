@@ -113,7 +113,7 @@ Lookup a list of objects satisfying specified criteria.
 
 * **SugarCRM module to lookup** - dropdown list where you should choose the module, which you want to lookup. E.g. `Accounts`.
 
-* **Output method** - dropdown list with following values: "Emit all", "Emit page", "Emit individually".
+* **Output method** - dropdown list with following values: `Emit all`, `Emit page`, `Emit individually`.
 
 * **Number of search terms** - text field where you can specify a number of search terms (not less than 0 and not greater than 99). Default value is 0 (if provided value is not allowed).
 
@@ -121,36 +121,36 @@ Lookup a list of objects satisfying specified criteria.
 
 Depending on the configuration field *Output method* the input metadata can contain different fields:
 
-*Output method* - "Emit page":
+*Output method* - `Emit page`:
 
-Field "Page size" - required positive integer that defaults to 1000;
+Field `Page size` - required positive integer that defaults to 1000;
 
-Field "Page number" - required non-negative integer (starts with 0, default value 0);
+Field `Page number` - required non-negative integer (starts with 0, default value 0);
 
-*Output method* - "Emit all":
+*Output method* - `Emit all`:
 Field "Maximum number of records" - optional positive integer (default value 1000);
 
-*Output method* - "Emit individually":
-Field "Maximum number of records" - optional positive integer (default value 10000);
+*Output method* - `Emit individually`:
+Field `Maximum number of records` - optional positive integer (default value 10000);
 
 >**Note** that the number of records the component emits may affect the performance of the platform/component.
 
 Groups of fields for each search term go next:
 
-Field "Field name" - string represents module's field (a list of allowed values is available);
+Field `Field name` - string represents module's field (a list of allowed values is available);
 
-Field "Field value" - string represents value for selected field;
+Field `Field value` - string represents value for selected field;
 
-Field "Condition" - one of the following: "=", "!=", "<", "<=", ">", ">=", "STARTS WITH", "ENDS WITH", "CONTAINS", "IS NULL", "NOT NULL", "IN", "NOT IN";
+Field `Condition` - one of the following: `=`, `!=`, `<`, `<=`, `>`, `>=`, `STARTS WITH`, `ENDS WITH`, `CONTAINS`, `IS NULL`, `NOT NULL`, `IN`, `NOT IN`;
 
 Between each two term's group of fields:
 
-Field "Logical operator" - one of the following: "AND", "OR";
+Field `Logical operator` - one of the following: `AND`, `OR`;
 
 Output data depends on the configuration field *Output method*:
 
-* "Emit page", "Emit all" - an array of records;
-* "Emit individually" - a record;
+* `Emit page`, `Emit all` - an array of records;
+* `Emit individually` - a record;
 
 ### Delete Object By ID
 
