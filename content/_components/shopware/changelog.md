@@ -6,8 +6,12 @@ icon: shopware.png
 icontext: Shopware component
 category: shopware-component
 createdDate: 2020-01-02
-updatedDate: 2020-01-02
+updatedDate: 2020-01-30
 ---
+
+## 1.1.2 (January 30, 2020)
+
+* Upgrade sailor to v2.5.4
 
 ## 1.1.2 (December 16, 2019)
 

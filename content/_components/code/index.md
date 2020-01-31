@@ -7,15 +7,14 @@ icon: code.png
 icontext: Code component
 category: Code component
 createdDate: 2015-09-25
-updatedDate: 2019-11-13
+updatedDate: 2020-01-30
 ---
 
 ## Latest changelog
 
-**1.0.1 (November 13, 2019)**
+**1.1.1 (January 30, 2020)**
 
-* Added snapshots support by passing 2 more arguments to `run` function: `cfg` and `snapshot`.
-* All log statements changed from `info` level to `debug`.
+* Update sailor version to 2.6.1
 
 > To see the full **changelog** please use the following [link](/components/code/changelog).
 

@@ -7,14 +7,14 @@ icon: shopware.png
 icontext: Shopware component
 category: shopware-component
 createdDate: 2019-06-11
-updatedDate: 2019-12-16
+updatedDate: 2020-01-30
 ---
 
 ## Latest changelog
 
-**1.1.2 (December 16, 2019)**
+**1.1.2 (January 30, 2020)**
 
-* Add rebound feature to `Upsert Object By ID` OIH action
+* Upgrade sailor to v2.5.4
 
 > To see the full **changelog** please use the following [link](/components/shopware/changelog).
 

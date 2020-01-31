@@ -6,8 +6,12 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-01-02
-updatedDate: 2020-01-17
+updatedDate: 2020-01-31
 ---
+
+## 1.2.2 (January 25, 2020)
+
+* Add request caching for lookup actions
 
 ## 1.2.1 (December 27, 2019)
 
