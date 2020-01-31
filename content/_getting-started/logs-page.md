@@ -7,10 +7,10 @@ since: 20200130
 order: 1
 ---
 
-This document describes the new Logs Page of the Platform.
+This document provides basic information on [logs page](#logs-page-vs-executions-page) and how to filter logs based on [flow names](#flow-name), [logs levels](#log-level) and [time interval](#time-interval).
 
 ## Logs Page vs. Executions Page
-To avoid confusion by tons of different logs in your Executions, we have decided to keep only the most important logs on the Executions Page. You will still be able to access the list of all the available logs on the dedicated Logs Page.
+To avoid confusion by tons of different logs in your [Executions](executions), we have decided to keep only the most important logs on the Executions Page. You will still be able to access the list of all the available logs on the dedicated Logs Page.
 
 The new page lists all the logs for all the Flows. You can use search to find specific logs:
 
