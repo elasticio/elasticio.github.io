@@ -10,15 +10,22 @@ order: 1
 This document provides basic information on [logs page](#logs-page-vs-executions-page) and how to filter logs based on [flow names](#flow-name), [logs levels](#log-level) and [time interval](#time-interval).
 
 ## Logs Page vs. Executions Page
-To avoid confusion by tons of different logs in your [Executions](executions), we have decided to keep only the most important logs on the Executions Page. You will still be able to access the list of all the available logs on the dedicated Logs Page.
 
-The new page lists all the logs for all the Flows. You can use search to find specific logs:
+To avoid confusion by tons of different logs in your [Executions](executions),
+we have decided to keep only the most important logs on the Executions Page.
+You will still be able to access the list of all the available logs on the dedicated
+Logs Page.
 
-![Time interval default view](/assets/img/getting-started/logs-page/search-logs.png)  
+The new page lists all the logs for all the Flows in the given workspace.
+You can use search to find specific logs:
 
-Additionally, the list can be filtered by:
+![Time interval default view](/assets/img/getting-started/logs-page/search-logs.png)
 
-### Flow Name
+Additionally, the list can be filtered by a [flow name](#filter-by-flow-name),
+[time interval](#filter-by-time-interval) and the [log level](#filter-by-log-level).
+
+## Filter by Flow Name
+
 This filter allows you to concentrate on logs of one or more Flows by selecting
 the check-boxes in front of their names in the drop-down menu.
 
@@ -31,7 +38,8 @@ Here you can search for the flow names to find the relevant flows faster.
 > view of all executions from all the active flows.
 
 
-## Time Interval
+## Filter by Time Interval
+
 This filter allows you to list logs based on their time. A drop-down menu
 offers a calendar view where you can customize and concentrate on the required time interval.
 
@@ -49,7 +57,8 @@ of the interval:
 > when the check-mark shows the **Custom Range** and the name interval menu shows
 > the selected interval instead of Today.
 
-## Log Level
+## Filter by Log Level
+
 This filter allows you to list logs of the same type (level), like `Error`, `Debug`, `Info`, etc.:
 
 ![Level log filtering](/assets/img/getting-started/logs-page/filter-by-level.png)
