@@ -12,11 +12,9 @@ updatedDate: 2020-01-15
 
 ## Latest changelog
 
-**1.0.3 (December 24, 2019)**
+**1.0.4 (February 03, 2020)**
 
-* Update sailor version to 2.5.4
-* New Sailor logger
-* Improved few logs
+* Fixed bug with incorrect await while emitting data
 
 > To see the full **changelog** please use the following [link](/components/splitter/changelog).
 
