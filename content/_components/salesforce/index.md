@@ -12,9 +12,9 @@ updatedDate: 2019-12-25
 
 ## Latest changelog
 
-**1.2.2 (January 25, 2020)**
+**1.2.3 (February 4, 2020)**
 
-* Add request caching for lookup actions
+* Fix query action
 
 > To see the full **changelog** please use the following [link](/components/salesforce/changelog).
 
