@@ -12,9 +12,15 @@ updatedDate: 2019-09-25
 
 ## Latest changelog
 
-**1.2.1 (December 26, 2019)**
+**1.3.0 (February 13, 2020)**
 
-* Update sailor version to 2.5.4
+* Add Get New and Updated S3 Objects trigger
+* Fix `Error! Cannot convert undefined or null to object` error on no attachments object in message in Write file action
+* Add attachment size limitation
+* Add empty response to Delete file action when file already not exists
+* Add possibility to retrieve more than 1,000 files for 'Get filenames' action
+* Improved error handling for Get filenames action
+* Removed invalid docs job from circle ci
 
 > To see the full **changelog** please use the following [link](/components/aws-s3/changelog).
 
@@ -44,17 +50,15 @@ The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ '
 
 ## Requirements
 
-#### Environment variables
+### Environment variables
 
-For integration-tests is required to specify following environment variables:
-
-`ACCESS_KEY_ID` - access key ID;
-`ACCESS_KEY_SECRET` - secret access key.
-`REGION` - region.
-
-For debugging purposes there is: 
-
-`LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` that controls logger level.
+|Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warning`, `error` |
+|`ATTACHMENT_MAX_SIZE`| false | For `elastic.io` attachments configuration. Maximal possible attachment size in bytes. By default set to 1000000 and according to platform limitations CAN'T be bigger than that. | Up to `1000000` bytes|
+|`ACCESS_KEY_ID`| false | For integration-tests is required to specify this variable |  |
+|`ACCESS_KEY_SECRET`| false | For integration-tests is required to specify this variable |  |
+|`REGION`  | false | For integration-tests is required to specify this variable |  |
 
 
 ## Credentials
@@ -77,8 +81,58 @@ Example: `ca-central-1`.
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+### Get New and Updated S3 Objects
+
+Triggers to get all new and updated s3 objects since last polling.
+
+#### List of Expected Config fields
+
+ - **Bucket Name and folder** - name of S3 bucket to read files from
+ - **Emit Behaviour**: Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message
+ - **Start Time**: Start datetime of polling. Default min date:`-271821-04-20T00:00:00.000Z`
+ - **End Time**: End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`
+ - **Enable File Attachments**: End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`
+
+<details>
+<summary>Output metadata</summary>
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "Key": {
+      "type": "string",
+      "required": true
+    },
+    "LastModified": {
+      "type": "string",
+      "required": true
+    },
+    "ETag": {
+      "type": "string",
+      "required": true
+    },
+    "Size": {
+      "type": "number",
+      "required": true
+    },
+    "StorageClass": {
+      "type": "string",
+      "required": true
+    },
+    "Owner": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  }
+}
+```
+</details>
 
 ## Actions
 

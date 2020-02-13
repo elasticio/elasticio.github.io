@@ -9,6 +9,18 @@ createdDate: 2019-12-27
 updatedDate: 2020-01-17
 ---
 
+# 1.3.0 (February 13, 2020)
+
+## General Changes
+
+* Add Get New and Updated S3 Objects trigger
+* Fix `Error! Cannot convert undefined or null to object` error on no attachments object in message in Write file action
+* Add attachment size limitation
+* Add empty response to Delete file action when file already not exists
+* Add possibility to retrieve more than 1,000 files for 'Get filenames' action
+* Improved error handling for Get filenames action
+* Removed invalid docs job from circle ci
+
 # 1.2.1 (December 26, 2019)
 
 * Update sailor version to 2.5.4
