@@ -9,6 +9,10 @@ createdDate: 2020-01-02
 updatedDate: 2020-01-31
 ---
 
+## 1.2.3 (February 4, 2020)
+
+* Fix query action
+
 ## 1.2.2 (January 25, 2020)
 
 * Add request caching for lookup actions
