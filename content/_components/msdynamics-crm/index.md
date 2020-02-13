@@ -87,7 +87,3 @@ Server version: 9.0.1.569 (DB 9.0.1.569)
 Client version (Last Commit Version): 1.2.24-180302-013059
 Build Timestamp: 3/1/2018 5:41:10 PM
 ```
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})
