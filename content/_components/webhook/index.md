@@ -12,9 +12,11 @@ updatedDate: 2020-01-30
 
 ## Latest changelog
 
-**1.1.2 (January 30, 2020)**
+**1.2.0 (February 13, 2020)**
 
-* Update sailor version to 2.6.1
+* "Receive" trigger awaits the result of emit
+* Update sailor version to 2.6.3
+* Remove "q" dependency
 
 > To see the full **changelog** please use the following [link](/components/webhook/changelog).
 
