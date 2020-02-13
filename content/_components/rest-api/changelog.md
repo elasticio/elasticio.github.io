@@ -9,6 +9,10 @@ createdDate: 2020-01-02
 updatedDate: 2020-01-02
 ---
 
+## 1.2.0(February 13, 2020)
+
+* Added new authentication strategy `OAuth2`
+
 ## 1.1.4 (December 23, 2019)
 
 * Update sailor version to 2.5.4

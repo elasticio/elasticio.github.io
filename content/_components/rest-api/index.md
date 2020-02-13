@@ -12,10 +12,9 @@ updatedDate: 2020-01-15
 
 ## Latest changelog
 
-**1.1.4 (December 23, 2019)**
+**1.2.0(February 13, 2020)**
 
-* Update sailor version to 2.5.4
-* Remove Enable debugging checkbox
+* Added new authentication strategy `OAuth2`
 
 > To see the full **changelog** please use the following [link](/components/rest-api/changelog).
 
@@ -77,11 +76,12 @@ To use the REST API component with any restricted access API provide the authori
 
 You can add the authorisation methods during the integration flow design or by going to your `Settings > Security credentials > REST client` and adding there.
 
-REST API component supports 3 authorisation types:
+REST API component supports 4 authorisation types:
 
 *   `No Auth` - use this method to work with any open REST API
 *   `Basic Auth` - use it to provide login credentials like **username/password**
 *   `API Key Auth` - use it to provide `API Key` to access the resource
+*   `OAuth2` - use it to provide `Oauth2` credentials to access the resource. Currently it is implemented `Authorization code` OAuth2 flow.
 
 Please note that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the headers section directly.
 
