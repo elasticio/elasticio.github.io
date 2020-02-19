@@ -1,11 +1,11 @@
 ---
 title: Local Agent
 layout: article
-section: Advanced Concepts
+section: Platform Features
 description: This document provides the basic information on Local Agent and the way to get it in case you require one.
-order: 2
+order: 10
 since: 20191218
-category: local agents
+category: platform features
 ---
 
 This document provides the basic information on [Local Agent](#local-agent) and the [way to get it](#how-to-request-a-local-agent) in case you require one. Additionally, it contains some [technical details](#architecture) for those interested.
@@ -58,3 +58,10 @@ The communication with source and target systems are implemented directly from T
 Here is a more detailed scheme:
 
 ![Local Agent Architecture](/assets/img/getting-started/local-agent/architecture.png)
+
+
+## Related links
+
+- [Requesting a Local Agent](/references/local-agents-requesting)
+- [Local Agent installation using Hyper-V](/references/local-agents-HyperV)
+- [Local Agent installation using VirtualBox](/references/local-agents-VirtualBox)

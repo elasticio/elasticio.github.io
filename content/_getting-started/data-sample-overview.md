@@ -1,9 +1,10 @@
 ---
-title: Data Sample Overview
+title: Data Sample
 layout: article
-section: Basic Concepts
+section: Platform Features
 description: This document provides basic information on data samples and how they are useful when building integration flows.
-order: 4
+order: 0
+category: platform features
 ---
 
 This document provides basic information on [data samples](#data-sample) and how they are useful when [building integration flows](#samples-in-integration-flows).

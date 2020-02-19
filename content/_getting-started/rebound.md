@@ -1,9 +1,9 @@
 ---
-title: Rebound
+title: Rebound Feature
 layout: article
-section: Basic Concepts
+section: Platform Features
 description: This document provides basic information on Rebound feature and which possibility it adds to bounce back and reprocess the incoming messages when the system is not ready to process them at that particular instance.
-category: rebound
+category: platform features
 order: 8
 ---
 
@@ -61,6 +61,7 @@ This simple yet powerful solution **ensures eventual consistency in integration 
 
 ## Related links
 
+- [How to cause or emit a Rebound?](/guides/how-to-cause-or-emit-a-rebound)
 - [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 - [Eventually Consistent - Revisited](https://www.allthingsdistributed.com/2008/12/eventually_consistent.html)
 - [Eventual Consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
