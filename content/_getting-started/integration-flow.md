@@ -1,10 +1,10 @@
 ---
 title: Integration Flow Overview
 layout: article
-section: Basic Concepts
+section: Platform Features
 description: This document provides basic information on integration flow and their parts.
 order: 2
-category: integration-flow
+category: platform features
 since: 20180102
 ---
 

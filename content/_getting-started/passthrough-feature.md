@@ -1,12 +1,13 @@
 ---
 title: Passthrough Feature
 layout: article
-section: Basic Concepts
+section: Platform Features
 description: This document introduces the passthrough feature,
  explains why would you use it,
  and gives a real-life example on how to use it.
 order: 9
 since: 20190903
+category: platform features
 ---
 
 This document introduces the [passthrough feature](#what-is-passthrough),

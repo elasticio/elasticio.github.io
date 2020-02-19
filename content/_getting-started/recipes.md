@@ -1,10 +1,10 @@
 ---
 title: Recipes Feature
 layout: article
-section: Advanced Concepts
+section: Platform Features
 description: This document provides basic information on Recipes and some details of their usage.
 order: 9
-category: integration-flow
+category: platform features
 since: 20191030
 ---
 

@@ -1,10 +1,10 @@
 ---
-title: Understanding credentials
+title: Credentials
 layout: article
-section: Basic Concepts
+section: Platform Features
 description: What is a credential in general. How to create and use the credential in your integration components.
 order: 4
-category: integration-flow
+category: platform features
 ---
 
 An [integration flow](integration-flow) runs on behalf of a person or an

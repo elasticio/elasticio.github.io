@@ -1,10 +1,10 @@
 ---
-title: Webhook Flow Overview
+title: Webhook Overview
 layout: article
-section: Basic Concepts
+section: Platform Features
 description: This document provides basic information on Webhooks, their usage on the platform, and Webhook integration flows.
 order: 3
-category: integration-flow
+category: platform features
 since: 20190406
 ---
 

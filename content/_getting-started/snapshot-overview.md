@@ -1,10 +1,10 @@
 ---
-title: Snapshot Overview
+title: Snapshot Feature
 layout: article
-section: Advanced Concepts
+section: Platform Features
 description: This document provides basic information on Snapshot feature and a few real-life use case.
 order: 9
-category: integration-flow
+category: platform features
 since: 20180102
 ---
 

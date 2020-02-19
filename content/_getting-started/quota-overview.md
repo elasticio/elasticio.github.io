@@ -1,10 +1,10 @@
 ---
 title: Quota
 layout: article
-section: Basic Concepts
+section: Platform Features
 description: This document provides basic information on Platform resource quota and how the limit is calculated.
 order: 7
-category: integration-flow
+category: platform features
 since: 20191101
 ---
 
