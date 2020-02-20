@@ -7,14 +7,14 @@ icon: mapper.png
 icontext: Mapper component
 category: Mapper component
 createdDate: 2015-05-26
-updatedDate: 2019-09-09
+updatedDate: 2020-02-20
 ---
 
 ## Latest changelog
 
-**0.0.4 (December 07, 2019)**
+**0.0.5 (February 20, 2020)**
 
-* Update jsonata-moment to 1.1.4
+* Update sailor-nodejs to 2.6.4
 
 > To see the full **changelog** please use the following [link](/components/mapper/changelog).
 
