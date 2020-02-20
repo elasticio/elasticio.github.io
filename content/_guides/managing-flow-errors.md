@@ -2,9 +2,9 @@
 title: Managing Flow Errors
 description: This document describes the way to find errors that occur in your Flows, and deal with them.
 layout: article
-section: Building integration flows
+section: Troubleshooting
 order: 2
-since: 20190924
+category: troubleshooting
 ---
 
 This document describes the way to find errors that occur in your Flows, and deal with them.

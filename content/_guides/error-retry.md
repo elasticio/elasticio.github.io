@@ -2,9 +2,9 @@
 title: Error Retry
 description: Error retry is a feature which gives a possibility to try to process the failed messages in the integration flows.
 layout: article
-section: Building integration flows
+section: Troubleshooting
 order: 1
-since: 20191202
+category: troubleshooting
 ---
 
 ## Description

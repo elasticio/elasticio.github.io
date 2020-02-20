@@ -2,10 +2,9 @@
 title: Platform Behavior
 description: This document provides information on the peculiarities of the Platform behavior, including Flow suspension and stopping, different Platform limits and common errors.
 layout: article
-section: Building integration flows
+section: Troubleshooting
 order: 1
-since: 20190924
-category: platform-limits
+category: troubleshooting
 ---
 
 This document provides information on the peculiarities of the Platform behavior, including [Flow suspension and stopping](#flow-suspended-vs-stopped), different [Platform limits](#default-limits) and common errors.

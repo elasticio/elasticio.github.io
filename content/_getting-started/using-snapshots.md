@@ -2,9 +2,9 @@
 title: Using Snapshots
 description: This document provides a quick guide on creating and using Snapshots for Components in your Flows via the UI and via the API.
 layout: article
-section: Rest
+section: Platform Features
 order: 2
-since: 20191023
+category: platform features
 ---
 
 This document provides a quick guide on [creating and using Snapshots](#creating-a-snapshot) for Components in your Flows via the UI and [via the API](#snapshots-via-the-api).

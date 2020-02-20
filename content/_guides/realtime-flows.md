@@ -3,6 +3,7 @@ title: Building real-time flows
 description: This article describes what is a Real-time flow, how to switch to Real-time flow and how to update it.
 layout: article
 section: Building integration flows
+category: building integration flows
 order: 0
 ---
 

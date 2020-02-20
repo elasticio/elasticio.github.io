@@ -2,9 +2,9 @@
 title: General Troubleshooting Guide
 description: This document describes common problems that you can encounter and the ways to solve them.
 layout: article
-section: Building integration flows
+section: Troubleshooting
 order: 1
-since: 20190924
+category: troubleshooting
 ---
 
 This document describes common problems that you can encounter and the ways to solve them.

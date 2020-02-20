@@ -14,7 +14,7 @@ getting-started:
     - title: Advanced Concepts
       description: Learn some advanced concepts of our integration platform
 guides:
-  title: How-to Guides
+  title: Building and Managin flows
   description: Everything you need to know to master creation of integration flows
   class: categories__item_guides
   welcommer-class: welcomer__icon_guides
@@ -22,18 +22,22 @@ guides:
   sections:
     - title: Building integration flows
       description: Articles on how to build integration flows effectively
-    - title: Data transformation
-      description: Articles on how to query, transform and map data between steps of an integration flow
     - title: Integration patterns
       description: Articles on how to create complex non-linear integration flows
-    - title: Developing Components
-      description: Articles on component development and SDKs
+    - title: Data transformation
+      description: Articles on how to query, transform and map data between steps of an integration flow
+    - title: Troubleshooting
+      description: Articles on Troubleshooting
     - title: Tenant Management
       description: Articles on tenant management
+    - title: Developing Components
+      description: Articles on component development and SDKs
     - title: Working with XML
       description: Articles on how to work with XML
     - title: Paging
       description: Articles on how to implement the Paging in components
+    - title: Rest
+      description: Articles we need to organize
 components:
   title: Components
   description: Extensive documentation of the integration components
