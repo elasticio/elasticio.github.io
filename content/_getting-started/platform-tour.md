@@ -10,7 +10,7 @@ order: 1
 This document provides an insight into the basics of Platform UI. It describes all the items of the Navigational Menu in the following sections:
 - [Menu Header](#menu-header)
 - [Analyze](#analyze)
-- Integrate
+- [Integrate](#integrate)
 - Organize
 - Contract Settings
 - Documentation
@@ -40,3 +40,25 @@ The Executions **(1)** item opens our [Executions Page](executions). Here you ca
 
 
 ### Logs
+The Logs **(1)** item opens our [Logs Page](logs-page). Here you can find a list of logs **(2)** that you can sort with filters **(3)**.
+
+![Logs](/assets/img/getting-started/tour/logs.png)
+
+
+## Integrate
+This menu section includes the following items:
+- [Flows](#flows)
+- [Credentials](#credentials)
+- [Agents](#agents)
+
+### Flows
+You can manage your integration Flows here **(1)**. Navigation through your Flow list is simplified with search and filters **(2)**. You can open **(3)** each Flow for details and management, and see Flow status **(4)**. Also, part of the management is done here, for example: starting **(5)**, deleting **(6)**, running **(7)** or stopping **(8)**.
+
+![Logs](/assets/img/getting-started/tour/flows.png)
+
+### Credentials
+This page **(1)** contains a list of Components that may require [Credentials](credential) to work. In order to manage Credentials, select one of the Components **(2)**. The green circle with a number **(3)** represents the number of valid Credentials you have for a certain Component.
+
+![Credentials](/assets/img/getting-started/tour/creds.png)   
+
+### Agents
