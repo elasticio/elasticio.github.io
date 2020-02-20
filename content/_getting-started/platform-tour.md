@@ -22,6 +22,7 @@ At the top of our Navigational Menu you can find Contract name **(1)** and statu
 
 ![Navigational Menu Header](/assets/img/getting-started/tour/menu-header.png)
 
+
 ## Analyze
 This menu section includes the following items:
 - [Dashboard](#dashboard)
@@ -52,12 +53,12 @@ This menu section includes the following items:
 - [Agents](#agents)
 
 ### Flows
-You can manage your integration Flows here **(1)**. Navigation through your Flow list is simplified with search and filters **(2)**. You can open **(3)** each Flow for details and management, and see Flow status **(4)**. Also, part of the management is done here, for example: starting **(5)**, deleting **(6)**, running **(7)** or stopping **(8)**.
+You can manage your integration [Flows](integration-flow) here **(1)**. Navigation through your Flow list is simplified with search and filters **(2)**. You can open **(3)** each Flow for details and management, and see Flow status **(4)**. Also, part of the management is done here, for example: starting **(5)**, deleting **(6)**, running **(7)** or stopping **(8)**.
 
 ![Logs](/assets/img/getting-started/tour/flows.png)
 
 ### Credentials
-This page **(1)** contains a list of Components that may require [Credentials](credential) to work. In order to manage Credentials, select one of the Components **(2)**. The green circle with a number **(3)** represents the number of valid Credentials you have for a certain Component.
+This page **(1)** contains a list of [Components](integration-components) that may require [Credentials](credential) to work. In order to manage Credentials, select one of the Components **(2)**. The green circle with a number **(3)** represents the number of valid Credentials you have for a certain Component.
 
 ![Credentials](/assets/img/getting-started/tour/creds.png)   
 
@@ -77,3 +78,45 @@ This menu section includes the following items:
 - [Quota Usages](#quota-usages)
 - [Developer Teams](#developer-teams)
 - [Members](#members)
+
+### Quota Usages
+This item opens the Quota page **(1)** that contains all the information on the used and available resources, and a detailed report **(2)**. It is beneficial for limited [Workspaces](contracts-and-workspaces).
+
+![Quota page](/assets/img/getting-started/tour/quota.png)  
+
+### Developer Teams
+Here you can manage your Developer Teams **(1)**. Each team's details **(2)** can be opened on this page. Also, you can add new teams via the corresponding button **(3)**.
+
+![Developer Teams](/assets/img/getting-started/tour/devteams.png)  
+
+### Members
+This item brings you to the Members page **(1)**, where you can manage Contract Members **(2)**.
+
+![Members](/assets/img/getting-started/tour/members.png)  
+
+
+## Documentation
+Documentation presents two links: to docs and to API docs.
+
+![Documentation](/assets/img/getting-started/tour/documentation.png)  
+
+## Support
+Support presents links to support helpdesk or built-in intercom.
+
+![Support](/assets/img/getting-started/tour/support.png)  
+
+## Profile Management
+This menu section includes the following items:
+- [Profile Information](#profile-information)
+- [Identity Keys](#identity-keys)
+- [Sign Out](#sign-out)
+
+### Profile Information
+If you open the section **(1)** and click this item **(2)**, you will reach your Profile Information page where basic profile infor is located. Here you can edit profile and change password **(3)**, or delete your account **(4)**.
+
+![Profile Information](/assets/img/getting-started/tour/profile.png)  
+
+### Identity Keys
+
+
+### Sign Out
