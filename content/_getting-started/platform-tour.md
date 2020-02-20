@@ -62,3 +62,18 @@ This page **(1)** contains a list of Components that may require [Credentials](c
 ![Credentials](/assets/img/getting-started/tour/creds.png)   
 
 ### Agents
+This is the [Local Agent](local-agent) management page **(1)**. Here you can manage your Local Agents, and request them.
+
+![Agents](/assets/img/getting-started/tour/agents.png)   
+
+
+## Organize - Workspace
+This is the page where you can manage your Workspace **(1)**. This includes changing Workspace name **(2)**, adding members **(3)**, and checking member list where you can edit or delete **(5)** members. Additionally, here you can delete **(6)** the Workspace itself.
+
+![Organize Workspace](/assets/img/getting-started/tour/workspace.png)   
+
+## Contract Settings
+This menu section includes the following items:
+- [Quota Usages](#quota-usages)
+- [Developer Teams](#developer-teams)
+- [Members](#members)
