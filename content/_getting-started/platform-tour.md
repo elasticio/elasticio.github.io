@@ -117,6 +117,11 @@ If you open the section **(1)** and click this item **(2)**, you will reach your
 ![Profile Information](/assets/img/getting-started/tour/profile.png)  
 
 ### Identity Keys
+If you open the section **(1)** and click this item **(2)**, you will reach your SSH keys list, which you can manage from here.
 
+![SSH Keys](/assets/img/getting-started/tour/ssh.png)  
 
 ### Sign Out
+This item signs you out of the profile.
+
+![Sign Out](/assets/img/getting-started/tour/signout.png)  
