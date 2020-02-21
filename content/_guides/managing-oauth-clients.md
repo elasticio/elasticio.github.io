@@ -292,4 +292,3 @@ with corresponding permissions can remove this OAuth client, if required.
 
 - [OAuth (Open Authorization)](https://en.wikipedia.org/wiki/OAuth)
 - [Integration Component Overview](/getting-started/integration-component)
-- [What is a tenant?](/getting-started/tenant)

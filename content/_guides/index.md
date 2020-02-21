@@ -1,5 +1,5 @@
 ---
 layout: chapter
-title: Building and Managing flows
-description: Everything you need to know to master creation of integration flows.
+title: Integrator guide
+description: Everything you need to know to build and manage integration flows.
 ---

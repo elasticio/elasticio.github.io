@@ -2,8 +2,8 @@
 title: Using Attachments
 description: This document describes attachments. It also explains how attachments work and how to create them.
 layout: article
-section: Rest
-order: 1
+section: Building integration flows
+order: 3
 since: 20191119
 category: platform-limits
 ---

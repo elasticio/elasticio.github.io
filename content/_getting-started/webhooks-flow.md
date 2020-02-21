@@ -197,7 +197,7 @@ credential for your webhook.
 
 ## Related links
 
-- [integration components](integration-component](integration-flow)
+- [integration components](integration-component)
 - [Petstore API]({{site.data.tenant.petStoreDocs}})
 - [Postman](https://www.getpostman.com/)
 - [Integration Component Overview](integration-component)

@@ -4,7 +4,7 @@ description: Here is how to fix a component version for a particular flow.
 layout: article
 section: Building integration flows
 category: building integration flows
-order: 1
+order: 4
 ---
 
 ## Build history

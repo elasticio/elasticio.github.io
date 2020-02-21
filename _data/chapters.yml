@@ -11,11 +11,9 @@ getting-started:
       description: Comprehensive tutorials to guide you through various scenarios
     - title: Platform Features
       description: Learn some platform features of our integration platform
-    - title: Advanced Concepts
-      description: Learn some advanced concepts of our integration platform
 guides:
-  title: Building and Managin flows
-  description: Everything you need to know to master creation of integration flows
+  title: Integrator guide
+  description: Everything you need to know to building and managing integration flows
   class: categories__item_guides
   welcommer-class: welcomer__icon_guides
   fa-icon: fa-graduation-cap
@@ -36,8 +34,6 @@ guides:
       description: Articles on how to work with XML
     - title: Paging
       description: Articles on how to implement the Paging in components
-    - title: Rest
-      description: Articles we need to organize
 components:
   title: Components
   description: Extensive documentation of the integration components

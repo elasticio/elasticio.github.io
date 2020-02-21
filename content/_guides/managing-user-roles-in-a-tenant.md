@@ -213,7 +213,6 @@ These roles have exclusive permissions, which are essential for contract and wor
 
 ## Related links
 
-- [What is a tenant?](/getting-started/tenant)
 - [Integration Flow Overview](/getting-started/integration-flow)
 - [Building real-time flows](realtime-flows)
 - [Understanding credentials](/getting-started/credential)

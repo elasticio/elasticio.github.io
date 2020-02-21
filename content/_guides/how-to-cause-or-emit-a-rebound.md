@@ -4,7 +4,7 @@ layout: article
 section: Integration patterns
 description: In order to cause a rebound you need to emit rebound event with a cause as a second argument. The cause may be an Error or a String with a description of the cause.
 category: rebound
-order: 1
+order: 3
 ---
 
 ## Description
