@@ -112,7 +112,7 @@ This menu section includes the following items:
 - [Sign Out](#sign-out)
 
 ### Profile Information
-If you open the section **(1)** and click this item **(2)**, you will reach your Profile Information page where basic profile infor is located. Here you can edit profile and change password **(3)**, or delete your account **(4)**.
+If you open the section **(1)** and click this item **(2)**, you will reach your Profile Information page where basic profile info is located. Here you can edit profile and change password **(3)**, or delete your account **(4)**.
 
 ![Profile Information](/assets/img/getting-started/tour/profile.png)  
 
