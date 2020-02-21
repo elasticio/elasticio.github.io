@@ -1,13 +1,11 @@
 ---
-title: Creating a webhook flow
+title: Building a basic webhook flow
 layout: article
-section: Tutorials
+section: Building integration flows
 description: In this article we will cover how to create an integration flow which gets triggered by the changes in an external system.
-order: 2
-category: integration-flow
-since: 20180111
+order: 1
+category: building integration flows
 ---
-
 In this article we will cover how to create an [integration flow](integration-flow) which gets triggered by the changes in an external system. We will create an integration flow that exposes an externally-reachable URL to accept HTTP requests in JSON format. The received payload gets interpreted as a pet and gets stored into the [Petstore API]({{site.data.tenant.petStoreDocs}}).
 
 If this is your first experience with the {{site.data.tenant.name}} platform, then please follow every step to create your first integration flow. If you have already followed the steps in [Creating your first integration flow?](first-flow) tutorial, then some steps would be the same to you and you are welcome to skip them.

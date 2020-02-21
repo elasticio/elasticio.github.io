@@ -3,7 +3,8 @@ title: Building real-time flows
 description: This article describes what is a Real-time flow, how to switch to Real-time flow and how to update it.
 layout: article
 section: Building integration flows
-order: 0
+category: building integration flows
+order: 2
 ---
 
 As already discussed in the [Containers and Queues section](/getting-started/integration-flow)
@@ -104,3 +105,4 @@ again.
 - [Integration Flow Overview](/getting-started/integration-flow)
 - [Docker](https://www.docker.com/)
 - [Managing Flows](/guides/managing-flows)
+- [Real-time Flows and component re-deployment](/guides/realtime-flows-and-component-re-deployment)

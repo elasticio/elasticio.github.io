@@ -3,8 +3,8 @@ title: Content-Based Routing
 description: Here is how implement Content-Based Routing on the platform.
 layout: article
 section: Integration patterns
-order: 1
-since: 20180228
+order: 0
+category: Integration patterns
 ---
 
 The **Content-Based Router** (CBR) is *a message processing pattern* described in

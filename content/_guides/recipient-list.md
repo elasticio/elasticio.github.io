@@ -3,7 +3,7 @@ title: Sending data to a list of recipients
 description: This article describes how this pattern can be implemented in the platform in integration flows. You will learn how to created branches in integration flows.
 layout: article
 section: Integration patterns
-order: 0
+order: 2
 since: 20180220
 ---
 

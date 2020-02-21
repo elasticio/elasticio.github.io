@@ -3,7 +3,7 @@ title: New Mapper UI
 description: This document presents data mapping on our Platform and provides a detailed description of the new mapper UI.
 layout: article
 section: Data transformation
-category: UI
+category: data-transformation
 since: 20200116
 order: 3
 ---

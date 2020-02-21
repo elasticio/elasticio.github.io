@@ -40,5 +40,6 @@ So, basically, in each of these use cases the snapshot registers **the last acti
 
 ## Related links
 
+- [Using Snapshots](/guides/using-snapshots)
 - [Integration Flow Overview](integration-flow)
 - [Integration Component Overview](integration-component)
