@@ -1,9 +1,9 @@
 ---
 title: Credentials
 layout: article
-section: Platform Features
+section: Introduction
 description: What is a credential in general. How to create and use the credential in your integration components.
-order: 1
+order: 6
 category: platform features
 ---
 

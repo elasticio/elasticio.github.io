@@ -1,9 +1,9 @@
 ---
 title: Contracts and Workspaces
 layout: article
-section: Basic Concepts
+section: Introduction
 description: Explanation of the hierarchy of contracts and workspaces.
-order: 5
+order: 2
 since: 20190401
 ---
 
