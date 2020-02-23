@@ -1,9 +1,9 @@
 ---
 title: Local Agent
 layout: article
-section: Platform Features
+section: Introduction
 description: This document provides the basic information on Local Agent and the way to get it in case you require one.
-order: 10
+order: 7
 since: 20191218
 category: platform features
 ---

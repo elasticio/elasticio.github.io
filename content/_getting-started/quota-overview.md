@@ -1,9 +1,9 @@
 ---
 title: Quota
 layout: article
-section: Platform Features
+section: Introduction
 description: This document provides basic information on Platform resource quota and how the limit is calculated.
-order: 7
+order: 8
 category: platform features
 since: 20191101
 ---
@@ -32,6 +32,6 @@ A quota limit is the amount of resources multiplied by time. So if we have `2GB`
 
 1\. Take `2GB` and convert them into `Mb`, so `2*1024=2048`
 
-2\. Multiply our quota by the amount of seconds in a month (60 seconds per minute, 60 minutes per hour, 24 hours per day, 31 days per month), `2048*60*60*24*31=5485363200`      
+2\. Multiply our quota by the amount of seconds in a month (60 seconds per minute, 60 minutes per hour, 24 hours per day, 31 days per month), `2048*60*60*24*31=5485363200`
 
 3\. Our quota limit is `5485363200 Mb*s`. This is, basically, how many seconds of 1 Mb data processing/transfer you get.

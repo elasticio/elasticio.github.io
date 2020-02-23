@@ -1,7 +1,7 @@
 ---
 title: Executions Page
 layout: article
-section: Basic Concepts
+section: Introduction
 description: This document provides basic information on executions page and how to filter executions based on flow names, flow statuses and the time interval.
 since: 20200116
 order: 3
