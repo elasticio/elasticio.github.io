@@ -4,7 +4,7 @@ layout: article
 section: Platform Features
 description: This document provides basic information on Recipes and some details of their usage.
 order: 9
-category: platform features
+category: platform-features
 since: 20191030
 ---
 

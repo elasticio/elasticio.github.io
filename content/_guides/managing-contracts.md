@@ -2,7 +2,7 @@
 title: Managing Contracts
 description: This document provides information on Contract management.
 layout: article
-section: Tenant Management
+section: Contract Management
 order: 1
 category: integrator-management
 ---

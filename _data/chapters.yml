@@ -26,8 +26,8 @@ guides:
       description: Articles on how to query, transform and map data between steps of an integration flow
     - title: Troubleshooting
       description: Articles on Troubleshooting
-    - title: Tenant Management
-      description: Articles on tenant management
+    - title: Contract Management
+      description: Articles on contract management
     - title: Developing Components
       description: Articles on component development and SDKs
     - title: Working with XML

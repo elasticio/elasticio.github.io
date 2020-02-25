@@ -4,7 +4,7 @@ layout: article
 section: Platform Features
 description: This document provides basic information on Webhooks, their usage on the platform, and Webhook integration flows.
 order: 3
-category: platform features
+category: platform-features
 since: 20190406
 ---
 

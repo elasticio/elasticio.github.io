@@ -2,7 +2,7 @@
 title: Managing Flows
 description: This document provides information on Flow management.
 layout: article
-section: Tenant Management
+section: Contract Management
 order: 1
 category: integrator-management
 ---
@@ -211,7 +211,7 @@ You can work on one draft of a given Flow at a time. If you try to create anothe
 
 ## Reset Snapshot
 
-A Snapshot is the data saved by a Component during its execution. When the Component is run next time, it will read the Snapshot to continue the process from the point it finished last time. You can manually reset this Snapshot, so the Component starts from scratch next time. Note that you can only reset Snapshot for a stopped Flow. To do this, click the settings button on the Flow **(1)**, and select Reset Snapshot **(2)**:
+A [Snapshot](/getting-started/snapshot-overview) is the data saved by a Component during its execution. When the Component is run next time, it will read the Snapshot to continue the process from the point it finished last time. You can manually reset this Snapshot, so the Component starts from scratch next time. Note that you can only reset Snapshot for a stopped Flow. To do this, click the settings button on the Flow **(1)**, and select Reset Snapshot **(2)**:
 
 ![Reset Snapshot](/assets/img/tenant-management-guide/managing-flows/Screenshot_18.png)
 

@@ -7,7 +7,7 @@ description: This document introduces the passthrough feature,
  and gives a real-life example on how to use it.
 order: 9
 since: 20190903
-category: platform features
+category: platform-features
 ---
 
 This document introduces the [passthrough feature](#what-is-passthrough),

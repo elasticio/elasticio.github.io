@@ -2,7 +2,7 @@
 title: Managing Workspaces
 description: This document provides information on workspace management.
 layout: article
-section: Tenant Management
+section: Contract Management
 order: 1
 since: 20190411
 category: integrator-management
@@ -10,7 +10,7 @@ category: integrator-management
 
 This document provides information on workspace management, namely the following
 actions: [creating workspaces](#creating-workspaces), [editing the
-workspace](#editing-the-workspace), [creating flows](#creating-flows), [editing flows](#editing-flows) in the workspace, [creating credentials](#creating-credentials) and [editing  credentials](#editing_credentials). Additionally, you will find all workspace-related [retrieval API requests](#retrieval-requests).
+workspace](#editing-the-workspace), [creating flows](#creating-flows), [editing flows](#editing-flows) in the workspace, [creating credentials](#creating-credentials) and [editing  credentials](#editing-credentials). Additionally, you will find all workspace-related [retrieval API requests](#retrieval-requests).
 
 ## Creating Workspaces
 
@@ -21,7 +21,7 @@ You can find the basic information about workspaces
 A contract member can create workspaces in his contract via the [UI](#to-create-a-new-workspace-in-the-ui) or the
 [API](#to-create-a-workspace-via-the-api-use-the-following-request).
 
-##### To create a new workspace in the UI:
+### To create a new workspace in the UI:
 
 1\.  On the sidebar, click **Add**:
 
@@ -45,7 +45,7 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 6\. In **Workspaces tab**, click **Create New Workspace**:
 ![Workspaces tab - Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_28.png)
 
-##### To create a workspace via the API, use the following request:
+### To create a workspace via the API, use the following request:
 
 `POST {{site.data.tenant.apiBaseUri}}/v2/workspaces`
 
@@ -94,7 +94,7 @@ With the right
 a workspace member can perform workspace management via the
 [UI](#1-workspace-management-via-the-ui) or the [API](#2-workspace-management-via-the-api).
 
-##### 1. Workspace management via the UI
+### 1. Workspace management via the UI
 
 includes adding or inviting new members, managing their workspace [user roles](/guides/managing-user-roles-in-a-tenant), removing members, renaming and deleting the
 workspace. All these actions are done in **Workspace** tab
@@ -134,7 +134,7 @@ To delete a workspace, click **Delete workspace**:
 
 ![Delete workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_5.png)
 
-##### 2. Workspace management via the API
+### 2. Workspace management via the API
 
 includes adding new members, managing their workspace user roles, removing members, renaming the workspace, and deleting the workspace.
 
@@ -286,7 +286,7 @@ of components used to synchronize data between multiple applications or
 services. A workspace member with corresponding permissions can create flows in
 his contract via the [UI](#to-create-a-new-flow-in-the-ui) or the [API](#to-create-a-flow-via-the-api-use-the-following-request).
 
-##### To create a new flow in the UI:
+### To create a new flow in the UI:
 
 1\.  On the dashboard, click **Add new flow**:
 
@@ -300,7 +300,7 @@ Alternatively, you can click **Add New Flow** in **Flows**:
 
 ![Name and description](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_12.png)
 
-##### To create a flow via the API, use the following request:
+### To create a flow via the API, use the following request:
 
 `POST {{site.data.tenant.apiBaseUri}}/v2/flows/`
 
@@ -385,7 +385,7 @@ With the right
 a workspace member can perform flow management via the [UI](#1-flow-management-via-the-ui) or
 the [API](#2-flow-management-via-the-api).
 
-##### 1. Flow management via the UI.
+### 1. Flow management via the UI.
 
 Includes the following actions:
 toggling type between **Realtime** and
@@ -411,7 +411,7 @@ switch:
 
 ![Realtime and ordinary](/assets/img/tenant-management-guide/managing-workspaces/screenshot_13.png)
 
-##### 2\.  Flow management via the API
+### 2\.  Flow management via the API
 includes the following actions:
  [toggling type](#update_flow_api)
     between **Realtime** and **Ordinary**, [starting and
@@ -502,7 +502,7 @@ Credentials contain authorization information that is required by components.
 Workspace members with corresponding permissions can create credentials via the
 [UI](#to-create-new-credentials-via-the-ui) and the [API](#to-create-new-credential-via-the-api-we-will-use-the-following-api-request).
 
-##### To create new credentials via the UI:
+### To create new credentials via the UI:
 
 1\.  In the navigational menu, click **Credentials**. Then choose the required
     component from the list and click it. For example, let’s use SFTP:
@@ -538,7 +538,7 @@ Workspace members with corresponding permissions can create credentials via the
 
 
 
-##### To create new credential via the API, we will use the following API request:
+### To create new credential via the API, we will use the following API request:
 
 `POST {{site.data.tenant.apiBaseUri}}/v2/credentials/`
 
@@ -600,7 +600,7 @@ A member with the right permissions can manage credentials – update or delete
 them via the [UI](#editing-credentials-via-the-ui-includes-updating-and-deleting-credentials) or the
 [API](#editing-credentials-via-the-api-includes-updating-and-deleting-credentials):
 
-##### 1\.  Editing credentials via the UI includes updating and deleting credentials.
+### 1\.  Editing credentials via the UI includes updating and deleting credentials.
 
 To edit credentials, choose the required credential from the list in
 **Credentials**:
@@ -616,7 +616,7 @@ click **Delete**:
 
 ![Credentials - Delete](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_21.png)
 
-##### 2\.  Editing credentials via the API includes updating and deleting credentials.
+### 2\.  Editing credentials via the API includes updating and deleting credentials.
 
 To update credentials, we will use the following request:
 
@@ -679,6 +679,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
    -u {EMAIL}:{APIKEY}
 ```
 ## Retrieval Requests
+
 The UI automatically shows you lists of entities (workspaces, users, flows, etc.) in corresponding tabs if you have the corresponding permissions. To see these entities via the API, we will use the following requests. Note, that they will only work for members with the corresponding permissions.
 
 1\. To get workspace by ID:

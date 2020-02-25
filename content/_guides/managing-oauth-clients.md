@@ -2,7 +2,7 @@
 title: Managing OAuth Clients
 description: This document contains brief information on OAuth, reveals the new approach to OAuth utilizationwithin the platform and explains how touse OAuth clients for components in a tenant.
 layout: article
-section: Tenant Management
+section: Contract Management
 order: 1
 since: 20190403
 category: integrator-management
