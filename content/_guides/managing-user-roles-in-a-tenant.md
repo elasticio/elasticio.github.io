@@ -5,6 +5,7 @@ layout: article
 section: Tenant Management
 order: 1
 since: 20190321
+category: integrator-management
 ---
 
 This document explains [what roles and permissions are](#roles-and-permissions),

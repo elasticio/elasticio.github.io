@@ -4,7 +4,7 @@ description: Here is how implement Content-Based Routing on the platform.
 layout: article
 section: Integration patterns
 order: 0
-category: Integration patterns
+category: integration-patterns
 ---
 
 The **Content-Based Router** (CBR) is *a message processing pattern* described in
@@ -57,7 +57,7 @@ The JSON object above demonstrates an example of a *Webhook* payload sent by
 your ERP system.
 
 Let us add the main ingredient of this workflow - the **Content-Based Router**
-component.
+[component](/components/router/index).
 
 As you can see below, to find the Content-Based Router component type
 the word `content` in the component search field. Once found, choose it and click
@@ -144,3 +144,4 @@ information. From those 6 the 4 contained *sport* shoes and 2 had
 - [Enterprise Integration Patterns](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html)
 - [Creating a Basic Integration Flow](/getting-started/first-flow)
 - [Creating a webhook flow](/getting-started/webhooks-flow)
+- [Router component](/components/router/index)

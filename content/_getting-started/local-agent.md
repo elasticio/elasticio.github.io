@@ -5,7 +5,7 @@ section: Introduction
 description: This document provides the basic information on Local Agent and the way to get it in case you require one.
 order: 7
 since: 20191218
-category: platform features
+category: intro
 ---
 
 This document provides the basic information on [Local Agent](#local-agent) and the [way to get it](#how-to-request-a-local-agent) in case you require one. Additionally, it contains some [technical details](#architecture) for those interested.

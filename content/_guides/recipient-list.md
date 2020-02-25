@@ -4,7 +4,7 @@ description: This article describes how this pattern can be implemented in the p
 layout: article
 section: Integration patterns
 order: 2
-since: 20180220
+category: integration-patterns
 ---
 
 A **Recipient List** is a *message processing pattern* described in the [Enterprise Integration Patterns](http://www.enterpriseintegrationpatterns.com/patterns/messaging/RecipientList.html)

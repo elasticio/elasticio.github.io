@@ -4,7 +4,7 @@ layout: article
 section: Introduction
 description: This document provides basic information on Platform resource quota and how the limit is calculated.
 order: 8
-category: platform features
+category: intro
 since: 20191101
 ---
 
