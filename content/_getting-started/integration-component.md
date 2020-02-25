@@ -4,7 +4,7 @@ layout: article
 section: Platform Features
 description: This document provides basic information on integration components and how to use them.
 order: 0
-category: platform features
+category: platform-features
 ---
 
 An integration component is a small application specialized on

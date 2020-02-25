@@ -1,8 +1,8 @@
 ---
-title: Managing user roles in a tenant
+title: Managing user roles in a contract
 description: This document explains what roles and permissions are, how roles are set in the UI and how custom roles are configured.
 layout: article
-section: Tenant Management
+section: Contract Management
 order: 1
 since: 20190321
 category: integrator-management
@@ -14,7 +14,7 @@ configured](#configuring-custom-user-roles). Additionally, it provides a list of
 
 ## Roles and permissions
 
-A [tenant](/getting-started/tenant) admin can
+A tenant admin can
 control user rights in his tenant by configuring user roles. A role is a user
 attribute that defines a set of permissions for the user. Contract roles define
 permissions for contract management, and workspace roles define permissions for

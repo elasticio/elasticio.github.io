@@ -67,11 +67,15 @@ You can manage your integration [Flows](integration-flow) here **(1)**. Navigati
 
 ![Logs](/assets/img/getting-started/tour/flows.png)
 
+For more information please visite our [Managing Flows](/guides/managing-flows) page.
+
 ### Credentials
 
 This page **(1)** contains a list of [Components](integration-component) that may require [Credentials](credential) to work. In order to manage Credentials, select one of the Components **(2)**. The green circle with a number **(3)** represents the number of valid Credentials you have for a certain Component.
 
 ![Credentials](/assets/img/getting-started/tour/creds.png)
+
+For more information please visite our [Managing Workspaces](/guides/managing-workspaces.html#creating-credentials) page.
 
 ### Agents
 
@@ -85,6 +89,8 @@ This is the [Local Agent](local-agent) management page **(1)**. Here you can man
 This is the page where you can manage your Workspace **(1)**. This includes changing Workspace name **(2)**, adding members **(3)**, and checking member list where you can edit or delete **(5)** members. Additionally, here you can delete **(6)** the Workspace itself.
 
 ![Organize Workspace](/assets/img/getting-started/tour/workspace.png)
+
+For more information please visite our [Managing Workspaces](/guides/managing-workspaces) page.
 
 ## Contract Settings
 
@@ -111,6 +117,7 @@ This item brings you to the Members page **(1)**, where you can manage Contract 
 
 ![Members](/assets/img/getting-started/tour/members.png)
 
+For more information please visite our [Managing user roles](/guides/managing-user-roles-in-a-tenant) page.
 
 ## Documentation
 

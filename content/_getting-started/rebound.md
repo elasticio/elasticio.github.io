@@ -3,7 +3,7 @@ title: Rebound Feature
 layout: article
 section: Platform Features
 description: This document provides basic information on Rebound feature and which possibility it adds to bounce back and reprocess the incoming messages when the system is not ready to process them at that particular instance.
-category: platform features
+category: platform-features
 order: 8
 ---
 

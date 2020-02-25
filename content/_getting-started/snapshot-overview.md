@@ -4,7 +4,7 @@ layout: article
 section: Platform Features
 description: This document provides basic information on Snapshot feature and a few real-life use case.
 order: 9
-category: platform features
+category: platform-features
 since: 20180102
 ---
 

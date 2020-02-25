@@ -12,7 +12,7 @@ In this article we will explain how to map the data between integration componen
 
 An integration flow on {{site.data.tenant.name}} platform must have at least two components, one trigger and one action. Trigger emits a data for the action component to receive and process it. Between these two components seats the {{site.data.tenant.name}} **data mapper**, which maps or matches the incoming data to the specific fields where the next component expects them to receive.
 
-To understand how the data-mapping works in practice visit our tutorials section. We recommend starting from steps-by-step instructions in [how to create your first integration flow](/getting-started/first-flow) followed by the [creating a webhook flow](/getting-started/webhooks-flow) articles as an introduction to the data-mapping.
+To understand how the data-mapping works in practice visit our tutorials and platform feature sections. We recommend starting from steps-by-step instructions in [how to create your first integration flow](/getting-started/first-flow) and [creating a webhook flow](/getting-started/webhooks-flow) followed by the [data samples](/getting-started/data-sample-overview) articles as an introduction to the data-mapping.
 
 If you have already followed the tutorials you realise that the data-mapping on {{site.data.tenant.name}} platform is an important part of the integration process which warrants detailed explanation in its own.
 
@@ -79,9 +79,10 @@ There is a way to filter mapping view to see mandatory fields only by hiding opt
 
 ![Hiding optional fields](/assets/img/RN/323/hide-optional-fields.gif)
 
-> **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new [draft version of a flow](managing-flow-history) must be created.
+> **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new draft version of a flow must be created.
 
 ## Related links
 
+- [Data Sample](/getting-started/data-sample-overview)
 - [Creating a Basic Integration Flow](/getting-started/first-flow)
 - [Creating a webhook flow](/getting-started/webhooks-flow)

@@ -17,7 +17,7 @@ scheme shows how contracts and workspaces stand in solution hierarchy.
 ## Contracts
 
 A client’s enclosed environment within a
-[tenant](tenant) is called a
+tenant is called a
 contract. It is usually backed by a formal contract, hence the name. Each
 client can have multiple contracts. A contract includes members, developer
 teams, and workspaces:
