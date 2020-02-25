@@ -4,7 +4,7 @@ layout: article
 section: Introduction
 description: This document provides basic information on integration flow and their parts.
 order: 5
-category: platform features
+category: intro
 since: 20180102
 ---
 

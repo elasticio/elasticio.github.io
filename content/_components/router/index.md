@@ -131,3 +131,5 @@ Now let us examine our sample from above:
   - ``$number(test) > 10`` for edge that is connected to step ID ``one``
   - ``$number(test) > 30`` for edge that is connected to step ID ``two``
   - Last edge has no condition, therefore a default edge connected to step ``default``
+
+> For more information please visit our [Content-Based Routing](/guides/content-based-router) page.

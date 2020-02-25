@@ -5,6 +5,7 @@ layout: article
 section: Tenant Management
 order: 1
 since: 20190403
+category: integrator-management
 ---
 
 ## Description

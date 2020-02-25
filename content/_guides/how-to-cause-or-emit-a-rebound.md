@@ -3,7 +3,7 @@ title: How to cause or emit a Rebound?
 layout: article
 section: Integration patterns
 description: In order to cause a rebound you need to emit rebound event with a cause as a second argument. The cause may be an Error or a String with a description of the cause.
-category: rebound
+category: integration-patterns
 order: 3
 ---
 

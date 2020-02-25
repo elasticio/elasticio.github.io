@@ -5,6 +5,7 @@ section: Introduction
 description: This document provides basic information on logs page and how to filter logs based on flow names, logs levels and time interval.
 since: 20200130
 order: 4
+category: intro
 ---
 
 This document provides basic information on [logs page](#logs-page-vs-executions-page) and how to filter logs based on [flow names](#flow-name), [logs levels](#log-level) and [time interval](#time-interval).

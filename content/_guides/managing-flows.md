@@ -4,7 +4,7 @@ description: This document provides information on Flow management.
 layout: article
 section: Tenant Management
 order: 1
-since: 20190719
+category: integrator-management
 ---
 
 This document provides information on Flow management, namely the following
