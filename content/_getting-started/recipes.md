@@ -14,7 +14,7 @@ This document provides basic information on [Recipes](#recipes) and some [detail
 
 A Recipe is, basically, a template for an integration [Flow](integration-flow). It allows users to share popular flow patterns without exposing any details. Recipes will be available in a sort of Recipe store, provided they are visible to the user.
 
-Recipes can be created [from existing integration Flows](/guides/creating-recipes.html#creating-recipes-from-existing-flows), or [from scratch](http://localhost:4000/guides/creating-recipes.html#creating-recipes-from-scratch). If created from a Flow, the Recipe will contain everything another user needs to recreate the same Flow, except for the [non-shareable data](#details). Having configured them, a user can activate the Recipe and recreate a Flow.
+Recipes can be created [from existing integration Flows](/guides/creating-recipes.html#creating-recipes-from-existing-flows), or [from scratch](/guides/creating-recipes.html#creating-recipes-from-scratch). If created from a Flow, the Recipe will contain everything another user needs to recreate the same Flow, except for the [non-shareable data](#details). Having configured them, a user can activate the Recipe and recreate a Flow.
 
 Visibility level is set by the Recipe author, and can be **Workspace, Contract, Tenant or Global**, values that define the space where a Recipe is shared. Setting a certain visibility level requires corresponding permissions.
 
