@@ -34,6 +34,8 @@ guides:
       description: Articles on how to work with XML
     - title: Paging
       description: Articles on how to implement the Paging in components
+    - title: Recipes
+      description: Articles on Recipes and how to create and use them
 components:
   title: Components
   description: Extensive documentation of the integration components
