@@ -7,25 +7,24 @@ icon: magento.png
 icontext: Magento 2 Component
 category: magento2
 createdDate: 2018-03-16
-updatedDate: 2019-11-06
+updatedDate: 2020-02-26
 ---
 
 ## Latest changelog
 
-**1.3.0 (November 6, 2019)**
+**1.4.0 (February 26, 2020)**
 
-* Update Magento version from 2.3.1 to 2.3.3
-* Add `Upsert Customer` action
-* Add `Delete Object` action
-* Add `Lookup Object by ID` action
-* Add `Set Tiered Prices` action
-* Add custom error handler
+* Add `Read Store Config` action
+* Add `status` field to output metadata, option to turn off throwing errors for `Custom Request` action
+* Add `Don't throw error on 4XX/5XX HTTP response codes` configuration field for `Custom Request` action
+* Remove support for all Magento versions from 2.3.0 and below
+* Add support for Magento versions 2.3.2 and 2.3.4 so that currently supported instances are 2.3.1, 2.3.2, 2.3.3, 2.3.4
 
 > To see the full **changelog** please use the following [link](/components/magento2/changelog).
 
 ## Description
 
-Every form of actions is generated from appropriate Magento2 API endpoint JSONschema. The component is currently compatible with v2.2 and v2.3 of the API, which are the two versions currently supported by Magento.
+Every form of actions is generated from appropriate Magento2 API endpoint JSONschema. The component is currently compatible with only v2.3 of the API, since v2.2 was [deprecated by Magento in December 2019](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf?_ga=2.223327577.313663481.1582195591-1899578326.1570182293). We only support Magento minor versions that have been released in the last year, i.e. Magento v2.3.1 - 2.3.4.
 
 `sku` - stock keeping unit is product identifier.
 
@@ -43,11 +42,12 @@ There is implemented [token-based authentication](https://devdocs.magento.com/gu
 
 1. **Admin Token authorization**: for this option `username` and `password` fields are required, `Integration Token` field should be empty.
 A token is generated for each request.
+
 2. **Integration Token authorization**: for this option `Integration Token` field is required, `username` and `password` fields should be empty.
 
 ### Minor Version of Magento
 
-Dropdown list with a minor version of Magento 2. It is possible to select 2.2 or 2.3 version. Required field.
+Dropdown list with a minor version of Magento 2. It is currently only possible to select version 2.3. Required field.
 
 ### Magento Edition
 
@@ -90,17 +90,24 @@ Lookup objects polling trigger.
 ![image](https://user-images.githubusercontent.com/16806832/59746223-186fe900-927f-11e9-8847-957082c0ab1a.png)
 
 #### Input Metadata
+
 N/A
 
 #### Output Data
-Each object emitted individually.
 
+Each object emitted individually.
 
 ## Actions
 
 ### Custom Request Action
 
 You can do custom request using this action. You should manually specify `method`, `url` and `body`.
+
+#### Configuration Fields
+
+There is one configuration field:
+
+**Don't throw error on 4XX/5XX HTTP response codes** - optional, if checked, the action will return the Magento response as an object, regardless of whether there is an error. However, authentication errors will still be thrown.
 
 #### Expected input metadata
 
@@ -122,14 +129,17 @@ Input metadata contains 3 fields:
 
 #### Expected output metadata
 
-Output metadata contains object with property `response`, which contains response data.
+Output metadata is an object with the property `response`, which contains the response data, and the property `status`, which contains the response status code.
+
 For example:
 
 ```
 {
    'response': 'token'
+   'status': 200
 }
 ```
+
 ### Set Inventory Action
 
 This action allows you to set the quantity for an already existing product.
@@ -187,9 +197,7 @@ Input metadata for simple product:
 
 #### Expected output metadata
 
-Output metadata contains created or updated product: [/lib/schemas/upsertProductNew.out.json](/lib/schemas/upsertProductNew.out.json)
-
-
+Output metadata contains created or updated product: `/lib/schemas/upsertProductNew.out.json`
 
 ### Set order as shipped Action
 
@@ -223,6 +231,7 @@ Input metadata contains 2 fields:
 #### Expected output metadata
 
 Output metadata contains object with property `response` with shipment ID.
+
 For example:
 
 ```json
@@ -248,14 +257,13 @@ This action allows to set or update Sales Order external ID for existing Order
 }
 ```
 
-
 #### Expected output metadata
 
 Sales Order entity structure
 
-Type|Json schema location
------------| -------------
-|SalesOrder  |[/lib/schemas/setSalesOrderExternalId.out.json](/lib/schemas/setSalesOrderExternalId.out.json)
+| Type | Json schema location |
+|-----------|------------- |
+| SalesOrder  | `/lib/schemas/setSalesOrderExternalId.out.json` |
 
 ### Create Invoice Action
 
@@ -270,7 +278,9 @@ Input metadata contains 2 fields:
 **orderEntityID** - required, specify the order's `entity id`.
 
 ### Lookup Object by ID
-This action allows you to search up one of the object types
+
+This action allows you to search up one of the object types:
+
 - customer
 - product
 - sales order
@@ -278,18 +288,22 @@ This action allows you to search up one of the object types
 by unique criteria.
 
 #### Expected input metadata
+
 Input metadata will take the unique ID and an optional store view code. The store view will be set to `all` by default.
 
 #### Expected output metadata
+
 The expected output will be the given object.
 
 If `allow zero results?` is selected, the component will always return an empty object rather than an error if zero results are found.
 If `allow ID to be ommitted` is selected, the ID field will not be required to run the action, but the item emitted by 'zero results found' will still be dependent on the other config field.
 
 ### Set Tiered Prices
+
 This action takes an array as input, and therefore can only be used in **developer mode**.
 
 #### Input Metadata
+
 The input metadata is a nested array that takes the following format:
 
 ```
@@ -315,6 +329,7 @@ The input metadata is a nested array that takes the following format:
 ```
 
 #### Output Metadata
+
 The output will return an array of all the tiered prices for every SKU where they were changes.
 If all tiered prices were removed, the output metadata will be `[]`.
 
@@ -322,8 +337,9 @@ If all tiered prices were removed, the output metadata will be `[]`.
 
 Updates a customer, or creates it if it doesn't exist. To update, you must provide the customer ID and website ID (Associate to Website). To create, do not enter a customer ID; the system will generate one.
 
-* Note: the customer's addresses will be completely overwritten by the provided array of addresses
-* Note: custom customer attributes can not be set
+> **Note**:
+* The customer's addresses will be completely overwritten by the provided array of addresses
+* Custom customer attributes can not be set
 
 #### Expected input metadata
 
@@ -334,25 +350,91 @@ Updates a customer, or creates it if it doesn't exist. To update, you must provi
 **lastname** - required
 
 #### Expected output metadata
+
 The output metadata is the created or updated product.
 
 ### Delete Object
+
 This action allows you to delete the following object types:
+
 - customer
 - product
 
 by unique criteria.
 
 #### Expected input metadata
+
 To delete a customer, input either their customer ID or their email. To delete a product, input the product SKU.
 
 #### Expected output metadata
+
 For customers, the output is their customer ID. For products, the output is its SKU.
+
+### Read Store Config Action
+
+You can read all the configured stores on a Magento instance (like [GET /V1/store/storeConfigs](https://devdocs.magento.com/swagger/#/storeStoreConfigManagerV1/storeStoreConfigManagerV1GetStoreConfigsGet))
+
+> **Note**: As this information is very static, it is cached between calls within the same container life cycle.
+
+#### Expected output metadata
+
+Output metadata contains object with property `storeConfigs`, which contains array of store configs.
+For example:
+
+<details>
+
+<summary>Output metadata</summary>
+
+```
+{
+  "storeConfigs": [
+    {
+      "id": 1,
+      "code": "default",
+      "website_id": 1,
+      "locale": "en_US",
+      "base_currency_code": "USD",
+      "default_display_currency_code": "USD",
+      "timezone": "UTC",
+      "weight_unit": "lbs",
+      "base_url": "http://magento_2_3_1/",
+      "base_link_url": "http://magento_2_3_1/",
+      "base_static_url": "http://magento_2_3_1/pub/static/version1554996639/",
+      "base_media_url": "http://magento_2_3_1/pub/media/",
+      "secure_base_url": "https://magento_2_3_1/",
+      "secure_base_link_url": "https://magento_2_3_1/",
+      "secure_base_static_url": "https://magento_2_3_1/pub/static/version1554996639/",
+      "secure_base_media_url": "https://magento_2_3_1/pub/media/"
+    },
+    {
+      "id": 2,
+      "code": "other_store_view",
+      "website_id": 2,
+      "locale": "en_US",
+      "base_currency_code": "USD",
+      "default_display_currency_code": "USD",
+      "timezone": "UTC",
+      "weight_unit": "lbs",
+      "base_url": "http://magento_2_3_1/",
+      "base_link_url": "http://magento_2_3_1/",
+      "base_static_url": "http://magento_2_3_1/pub/static/version1554996639/",
+      "base_media_url": "http://magento_2_3_1/pub/media/",
+      "secure_base_url": "https://magento_2_3_1/",
+      "secure_base_link_url": "https://magento_2_3_1/",
+      "secure_base_static_url": "https://magento_2_3_1/pub/static/version1554996639/",
+      "secure_base_media_url": "https://magento_2_3_1/pub/media/"
+    }
+  ]
+}
+```  
+</details>
 
 ## Known limitations
 
 1. Current component version was tested with Magento2 v2.3.3. Correct component behavior is not guaranteed for other Magento2 versions.
+
 2. Deprecated triggers and actions don't support `Integration Token authorization`, only `Admin Token authorization`.
+
 3. Currently Magento2 has a bug where encoded URI's are not recognised and will throw errors. For example if you have `some/sku`, it
 will be encoded to `some%2Fsku`. However, due to the bug this will throw errors. Refrain from using URI's that have special characters which
 are meant to be encoded.
