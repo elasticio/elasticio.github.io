@@ -8,27 +8,14 @@ order: 1
 category: sailor
 ---
 
-Starting from version 2.0.0, sailors for Java and Node.js programming languages
-are feature-compatible. If a feature is available in a given version, you can be
-sure that Sailors for both programming languages are supporting this feature. The
-following table shows the support of the platform features in Sailor versions:
+The following tables shows the support of the platform features in Sailor versions:
 
-| Features            | v2.0.x | v2.1.x | v2.2.x | 2.5.x | *2.6.x* |
-| :---                | :---   | :---   | :---   | : --- | : --- |
-| Request-reply       | Yes    | Yes    | Yes    | Yes   | Yes   |
-| Startup Hook        | Yes    | Yes    | Yes    | Yes   | Yes   |
-| Init Hook           | Yes    | Yes    | Yes    | Yes   | Yes   |
-| Passthrough         | -      | Yes    | Yes    | Yes   | Yes   |
-| Shutdown Hook       | -      | -      | Yes    | Yes   | Yes   |
-| Bunyan Logger       | -      | -      | -      | Yes   | Yes   |
-| Message Size        | -      | -      | -      | -     | Yes   |
-| Disable Passthrough | -      | -      | -      | -     | Yes   |
+ * [Node.js Sailor compatibility matrix](#nodejs-sailor-compatibility-matrix)
+ * [Java Sailor compatibility matrix](#java-sailor-compatibility-matrix)
 
 {{site.data.tenant.name}} follows the [Semver semantics](https://en.wikipedia.org/wiki/Software_versioning)
 for the Sailor releases. To keep the compatibility matrix manageable,
 we might skip patch releases here.
-
-> **Please Note** Sailor versions `2.5.x` and `2.6.x` are not available for `Java` yet.
 
 ## Node.js - package.json
 
@@ -51,9 +38,20 @@ Here is where to pay particular attention:
 }
 ```
 
-## Java - build.gradle
+### Node.js Sailor compatibility matrix
 
-> **Please Note** Sailor versions `2.5.x` and `2.6.x` are not available for `Java` yet.
+| Features            | v2.0.x | v2.1.x | v2.2.x | 2.5.x | 2.6.x |
+| :---                | :---   | :---   | :---   | : --- | : --- |
+| Request-reply       | Yes    | Yes    | Yes    | Yes   | Yes   |
+| Startup Hook        | Yes    | Yes    | Yes    | Yes   | Yes   |
+| Init Hook           | Yes    | Yes    | Yes    | Yes   | Yes   |
+| Passthrough         | -      | Yes    | Yes    | Yes   | Yes   |
+| Shutdown Hook       | -      | -      | Yes    | Yes   | Yes   |
+| Bunyan Logger       | -      | -      | -      | Yes   | Yes   |
+| Message Size        | -      | -      | -      | -     | Yes   |
+| Disable Passthrough | -      | -      | -      | -     | Yes   |
+
+## Java - build.gradle
 
 All the available Java Sailor versions can be retrieved from the
 [Maven Central Repository](https://search.maven.org/#search%7Cga%7C1%7Cio.elastic).
@@ -67,3 +65,18 @@ dependencies {
     compile "io.elastic:java-api:2.1.0"
 }
 ```
+
+### Java Sailor compatibility matrix
+
+| Features            | v2.0.0 | v2.1.0 | v2.1.2 | v2.1.3 |
+| :---                | :---   | :---   | :---   | :---   |
+| Request-reply       | Yes    | Yes    | Yes    | Yes    |
+| Startup Hook        | Yes    | Yes    | Yes    | Yes    |
+| Init Hook           | Yes    | Yes    | Yes    | Yes    |
+| Passthrough         | -      | Yes    | Yes    | Yes    |
+| Shutdown Hook(`*`)  | -      | -      | -      | -      |
+| Bunyan Logger       | -      | -      | Yes    | Yes    |
+| Message Size        | -      | -      | -      | -      |
+| Disable Passthrough | -      | -      | -      | Yes    |
+
+`*` *Shutdown Hook* will be available in v3.0.0 soon
