@@ -1,73 +1,93 @@
 ---
-title: Component Descriptor Structure
-description: This article describes the component structure and tells the platform what functions are available, what credentials are necessary to run your component on the platform.
+title: component.json Technical Reference - Overview
+description: This technical reference describes the structure of the component.json manifest file/component descriptor file
 layout: article
 section: Component Descriptor
 order: 1
 category: component descriptor
 ---
 
-Each integration component developed for {{site.data.tenant.name}} platform must
-have a **component descriptor** file called `component.json` in its root folder,
-as shown below. It describes the component structure and tells the platform what functions
-are available, what credentials are necessary to run your component on
-the {{site.data.tenant.name}} platform, etc.
+{{site.data.tenant.name}} components are code libraries that are accompanied by a manifest file/**component descriptor** file which contains metadata about the component.  The metadata in this file includes:
+* the name and description of the component
+* information about the actions and triggers of the component including
+  * the location of the action/trigger code
+  * name & description of the action/trigger
+  * the fields that must be configured to use the action/trigger
+  * the inputs and outputs of the action/trigger
 
-```
-├── component.json                                          (1)
-├── lib
-│   ├── actions
-│   ├── schemas
-│   └── triggers
-├── logo.png
-├── package.json
-└── verifyCredentials.js
-```
+## component.json Structure
+This metadata is stored in a [JSON](https://tools.ietf.org/html/rfc7159) file which must be named `component.json` and must sit in the root folder of the component. 
+The file needs to be valid JSON.  It should be a single JSON object with the following fields:
 
-The example above shows the structure of a Node.js component. The components
-written in Java programming language have a different structure but the components
-descriptor must again be located in the root folder of the component (1). Read our introductory
-guides about building components in [Java](/guides/building-java-component)
-or [Node.js](/guides/building-nodejs-component) for the
-{{site.data.tenant.name}} platform. Here we will concentrate on
-providing an in-depth reference about the structure and the objects which you can
-use to describe different parts of any component.
+| Property Name | Description |
+| :------------ | :---------- |
+| [title](#title)       | Component's title to be displayed in the UI |
+| [description](#description) | Component's description to be displayed in the UI  |
+| [buildType](#buildtype) | Determines how the component should be built and run on the platform |
+| [deprecated](#deprecated) | Used to flag the component as deprecated |
+| [credentials](component-json-technical-reference-credentials.html) | Used to expose the fields needed to connect to and authenticate against a system  |
+| [actions](component-json-technical-reference-actions-triggers.html) | Used to expose component's actions |
+| [triggers](#triggers-object) | Used to expose component's triggers |
+| [envVars](#envvars-object) | Used to declare environment variables |
 
-## Descriptor Structure
+> **Note** All components must implement at least one action or at least one trigger. 
 
-Let's explore the structure of the `component.json` in the following table.
-As you can see there are simple properties such as `title` and nested objects
-such as `credentials`. You can follow the links to see details about of the
-nested objects.
+## `title`
+Component's title to be displayed in the UI
+![Example Title in the UI](/assets/img/references/component.json/title.png)
 
-| Property Name | Type     | Required | Description |
-| :------------ | :------: | :------: | :---------- |
-| title       | `string` | Yes      | Component's title for displaying in the UI |
-| description | `string` | Yes      | Component's description for displaying in the UI  |
-| [envVars](#envvars-object) | `object` |  | Used to declare environment variables |
-| [credentials](#credentials-object) | `object` |  | Used to specify the details about the authentication with the given API |
-| [triggers](#triggers-object) | `object` | Yes | Used to expose component's triggers |
-| [actions](#actions-object) | `object` | Yes | Used to expose component's actions |
-| [fields](#fields-object) | `object` | | A nested object which is used to collect input from a user that is required for a component to work properly |
+**Type:** string
 
-Let's explore an example of a component descriptor:
+**Example:** `Salesforce`
 
-```json
-{
-  "title": "Title of the component",
-  "description": "The description of the component",
-  "envVars": { },
-  "credentials": { },
-  "triggers": { },
-  "actions": { }
-}
-```
+## `description`
+Component's description to be displayed in the UI
+![Example Description in the UI](/assets/img/references/component.json/description.png)
 
-As we have presented the information in the table above, only `title` and
-`description` are required properties here.
+**Type:** string
 
-> **Note** You must declare at least one function, either in `triggers` or
-> `actions` for the component to function properly.
+**Example:** `Customer relationship management (CRM) software & cloud computing from the leader in CRM solutions for businesses large & small.`
+
+## `buildType`
+Determines how the component should be built and run on the platform
+
+- Setting the value to `docker` will cause the platform to build a docker image based on the pushed code.  This docker image will be run when the component is invoked. The build will be longer but the component will start faster and more reliably.  This is the recommended option.
+- Setting the value to `slug` or otherwise omitting it will cause the platform to build a `.tar.gz` slug file. This file will be downloaded and extracted by a generic docker image when the component is run.  The build will be quicker but each component execution will take longer. Some older components may encounter compatiblity problems when they are built with `docker`  mode.  Otherwise, `docker` mode is encouraged.
+
+**Type:** string enum of `docker` or `slug`
+
+**Example:** `docker`
+
+**Default Value:** `slug`
+
+## `deprecated`
+Used to signal that this action/trigger should not be used in new flows and that existing flows should migrate to a different action/trigger.
+
+![Example of Action/Trigger Deprecation in the UI](/assets/img/references/component.json/deprecated-component.png)
+
+**Type:** boolean
+
+**Default Value:** `false`
+
+## `credentials` Object
+This identifies the information that the platform needs to collect from the integrator in order to be able to connect to their instance/account.  Information that is collected in this section typically include:
+* URL to the integrator's instance (if there is not a shared cloud url)
+* Username or other account identifier
+* Password or other API keys/tokens required to authenticate
+
+> **Note:** [See what happens when the credentials object is omitted](component-json-technical-reference-credentials.html#omitting-credentials)
+
+[See the dedicated article on the credentials object for more information.](component-json-technical-reference-credentials.html)
+
+## `actions` Object
+
+The `actions` object describes the actions that exist within the component. 
+
+Actions are operations exposed to the flow builder that can be placed in any step except the first step.  
+
+If the component has no actions, then the component.json file should not have an actions field.
+
+[See the dedicated article on the action object for more information.](component-json-technical-reference-actions-triggers.html)
 
 ## envVars Object
 
@@ -101,46 +121,7 @@ an example of `envVars` object implemented in the [Salesforce Component](https:/
 }
 ```
 
-## Credentials Object
 
-The **Credentials Object** specifies how a user can grant a component the access
-to his protected resources using API. This is accomplished by defining fields
-used to gather authentication related data from the user.
-
-| Property Name | Type     | Required | Description |
-| :------------ | :------: | :------: | :---------- |
-| [fields](#fields-object)      | `object` | Yes | Object used to define input fields to gather authentication related data from the user. The keys of this object define field names, which must be unique. The values are definitions of the fields. |
-| [oauth1](#oauth1) | `object` |  | Specifies the details about OAuth v1.0 resources. Only used if a `OAuthFieldView` field is defined. |
-| [oauth2](#oauth2) | `object` |  | Specifies the details about OAuth v2.0 resources. Only used if a `OAuthFieldView` field is defined. |
-
-Let's explore an example from the [Petstore API (Node.js)](https://github.com/elasticio/petstore-component-nodejs/blob/master/component.json)
-component. The client authenticated with the Petstore API using an API key
-which is sent via an HTTP header. That's why it is sufficient to define in
-the `credentials` object a single field to gather the API key from the user,
-as shown below.
-
-```json
-{
-  "credentials": {
-    "fields": {
-      "apiKey": {
-        "label": "API key",
-        "required": true,
-        "viewClass": "TextFieldView",
-        "note": "Please use <b>{{site.data.tenant.petStoreApiKey}}</b> as API key"
-      }
-    }
-  }
-}
-```
-
-In the example above the `apiKey` field is used to gather user's API key.
-
-The view of the field is defined as `TextFieldView` which tells the platform
-to present it in the UI as a simple input field where a user must enter his API key.
-Please read more details on field types [here](#fields-object).
-
-The value of this field will be provided to the component at the runtime.
 
 ## OAuth1
 
@@ -302,42 +283,7 @@ Here is an example of a trigger definition in the `component.json` where the
 }
 ```
 
-## Actions Object
 
-The **Actions Object** is used to expose component's actions. The properties of
-this object are used as unique action names.
-
-| Property Name | Type     | Required | Description |
-| :------------ | :------: | :------: | :---------- |
-| title       | `string` | Yes      | Human readable title of the action |
-| main        | `string` | Yes      | Relative path to a Node.js module or a fully qualified name of a Java class |
-| metadata    | `object` | Yes      | Can contain two properties `in` and `out` whose values are JSON Schemas describing the metadata of the message's body consumed and produced by the action. The `in` metadata define the input data required by the action. These metadata are rendered as input fields in user interface during the mapping. The `out` metadata define the out data produced by the action. |
-| [fields](#fields-object)      | `object` | No       | Action specific input fields used to provide configuration for the action |
-
-Here is an example of action object implementation in the `component.json`:
-
-```json
-{
-  "queryAction": {
-    "title": "Query",
-    "main": "./lib/actions/query.js",
-    "metadata": {
-      "in": {
-      "type": "object",
-      "properties": {
-        "query": {
-          "maxLength": "20000",
-          "title": "SOQL Query",
-          "type": "string",
-          "required": "true"
-        }
-      }
-    },
-    "out": {}
-  }
-}
-}
-```
 
 ## Fields Object
 
