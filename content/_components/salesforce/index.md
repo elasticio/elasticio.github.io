@@ -7,14 +7,15 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2019-06-27
-updatedDate: 2019-12-25
+updatedDate: 2020-02-27
 ---
 
 ## Latest changelog
 
-**1.2.3 (February 4, 2020)**
+**1.3.0 (February 27, 2020)**
 
-* Fix query action
+* Add Delete Object (at most 1) Action
+* Add new optional field in the Lookup Object Action
 
 > To see the full **changelog** please use the following [link](/components/salesforce/changelog).
 
@@ -150,7 +151,6 @@ You can find more detail information in the [Platform Events Intro Documentation
 
 At the moment this trigger can be used only for **"Realtime"** flows.
 
-
 ## Deprecated Triggers
 
 Use this list to navigate to the action you seek.
@@ -165,31 +165,31 @@ Use this list to navigate to the action you seek.
 
 Polls existing and updated Cases (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) action instead.
+Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) trigger instead.
 
 ### New Lead trigger
 
 Polls existing and updated Leads (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) action instead.
+Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) trigger instead.
 
 ### New Contact trigger
 
 Polls existing and updated Contacts (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) action instead.
+Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) trigger instead.
 
 ### New Account trigger
 
 Polls existing and updated Accounts (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) action instead.
+Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) trigger instead.
 
 ### New Task trigger
 
 Polls existing and updated Tasks (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) action instead.
+Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) trigger instead.
 
 ## Actions
 
@@ -197,7 +197,7 @@ Use this list to navigate to the action you seek.
 
 *   [Query](#query-action)
 *   [Create Object](#create-object)
-*   [Delete Object](#delete-object)
+*   [Delete Object](#delete-object-at-most-1)
 *   [Upsert Object](#upsert-object)
 *   [Lookup Object](#lookup-object-at-most-1)
 *   [Lookup Objects](#lookup-objects)
@@ -239,25 +239,27 @@ This action will automatically retrieve all existing fields of chosen object typ
 
 When **Utilize data attachment from previous step (for objects with a binary field)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'
 
-### Delete Object
+### Delete Object (at most 1)
 
-Deletes a Selected Object.
+Deletes an object by a selected field. One can filter by either unique fields or all fields of that sobject. Input metadata is fetched dynamically from your Salesforce account.
 
 #### Input field description
 
-* **Object** - Input field where you should choose the object type, which you want to delete. E.g. `Account`
+* **Object** - dropdown list where you should choose the object type, which you want to find. E.g. `Account`.
 
-#### Metadata description
+* **Type Of Search** -  dropdown list with two values: `Unique Fields` and `All Fields`.
 
-* **id** - `string`, salesforce object id
-
-Result is an object with 3 fields.
+* **Lookup by field** - dropdown list with all fields on the selected object, if on *Type Of Search* is chosen `All Fields`, or with all fields on the selected object where `type` is `id` or `unique` is `true` , if on *Type Of Search* is chosen `Unique Fields` then all searchable fields both custom and standard will be available for selection.
 
 * **id** - `string`, salesforce object id
 
 * **success** - `boolean`, if operation was successful `true`
 
 * **errors** - `array`, if operation fails, it will contain description of errors
+
+#### Metadata description
+
+Metadata for each particular `Object type` + `Lookup by field` is generating dynamically.
 
 ### Upsert Object
 
@@ -284,19 +286,17 @@ Action creates a single object. Input metadata is fetched dynamically from your 
 
 #### Input field description
 
-* **Object** - dropdown list where you should choose the object type, which you want to find. E.g. `Account`.
+* **Object** - Dropdown list displaying all searchable object types. Select one type to query, e.g. `Account`.
 
-* **Type Of Search** -  dropdown list with two values: `Unique Fields` and `All Fields`.
+* **Type Of Search** - Dropdown list with two values: `Unique Fields` and `All Fields`.
 
-* **Lookup by field** - dropdown list with all fields on the selected object, if on *Type Of Search* is chosen `All Fields`, or with all fields on the selected object where `type` is `id` or `unique` is `true` , if on *Type Of Search* is chosen `Unique Fields`.
+* **Lookup by field** - Dropdown list with all fields on the selected object if the *Type Of Search* is `All Fields`. If the *Type Of Search* is `Unique Fields`, the dropdown lists instead all fields on the selected object where `type` is `id` or `unique` is `true`.
 
-* **Allow criteria to be omitted** - checkbox, if checked - search criteria can be omitted and the empty object will be returned, else - search criteria are required.
+* **Include linked objects** - Multiselect dropdown list with all the related child and parent objects of the selected object type. List entries are given as `Object Name/Reference To (Relationship Name)`. Select one or more related objects, which will be join queried and included in the response from your Salesforce Organization. Please see the **Limitations** section below for use case advisories.
 
-* **Allow zero results** - checkbox, if checked and nothing is found - empty object will be returned, else - action throw an error.
+* **Allow zero results** - Checkbox. If checked and nothing is found in your Salesforce Organization, an empty object will be returned. If not checked and nothing is found, the action will throw an error.
 
-* **Pass binary data to the next component (if found object has it)** - a checkbox, if it is checked and found object has a binary field (type of base64) then its data will be passed to the next component as a binary attachment.
-
-* **Enable Cache Usage** - Flag to enable cache usage.
+* **Pass binary data to the next component (if found object has it)** - Checkbox. If it is checked and the found object record has a binary field (primitive type `base64`), then its data will be passed to the next component as a binary attachment.
 
 #### Metadata description
 
@@ -309,6 +309,7 @@ When **Pass binary data to the next component (if found object has it)** is chec
 >**NOTE**
 Action has caching mechanism. By default action stores last 10 request-response pairs for 10 min duration.
 This parameters can be changed by setting environment variables:
+
 * **HASH_LIMIT_TIME** - Hash expiration time in milis
 * **HASH_LIMIT_ELEMENTS** - Hash size number limit
 
@@ -331,6 +332,7 @@ Lookup a list of objects satisfying specified criteria.
 >**NOTE**
 Action has caching mechanism. By default action stores last 10 request-response pairs for 10 min duration.
 This parameters can be changed by setting environment variables:
+
 * **HASH_LIMIT_TIME** - Hash expiration time in milis
 * **HASH_LIMIT_ELEMENTS** - Hash size number limit
 
@@ -394,7 +396,6 @@ Result is an object with a property **result**: `array`. It contains objects wit
 * Object ID is needed for Update and Delete.
 * Salesforce processes up to 10'000 records from the input CSV file.
 
-
 ### Bulk Query
 
 Fetches records to a CSV file.
@@ -404,7 +405,6 @@ Fetches records to a CSV file.
 * **SOQL Query** - Input field where you should type the SOQL query. E.g. `"SELECT ID, Name from Contact where Name like 'John Smi%'"`
 
 Result is a CSV file in the attachment.
-
 
 ## Deprecated Actions
 
@@ -525,4 +525,5 @@ This action will automatically retrieve all existing fields of `Task` object typ
 Action is `deprecated`. You can use [Create Object](#create-object) action instead.
 
 ## Known limitations
+
 Attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent)

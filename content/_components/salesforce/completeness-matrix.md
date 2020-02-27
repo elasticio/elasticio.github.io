@@ -13,4 +13,4 @@ updatedDate: 2019-12-02
 
 Here is the Completeness Matrix for the Salesforce component.
 
-![Salesforce component completness Matrix](img/completeness-matrix.png)
+![Salesforce component completness Matrix](https://user-images.githubusercontent.com/36419533/75436046-9a5ef880-595c-11ea-838f-32660c119972.png)
