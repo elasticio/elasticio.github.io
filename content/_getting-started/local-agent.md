@@ -38,6 +38,8 @@ Then click "*+ Request an agent*" button:
 
 Our support will process your request and provide you with everything required to install and run a Local Agent.
 
+For more information please visit our [Requesting a Local Agent](/references/local-agents-requesting) page.
+
 ## Architecture
 
 Local Agent is a Virtual Machine (VM) that implements a Kubernetes cluster. It contains a set of Pods that implement different parts of service:

@@ -6,8 +6,13 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-01-02
-updatedDate: 2020-01-31
+updatedDate: 2020-02-27
 ---
+
+## 1.3.0 (February 27, 2020)
+
+* Add Delete Object (at most 1) Action
+* Add new optional field in the Lookup Object Action
 
 ## 1.2.3 (February 4, 2020)
 
