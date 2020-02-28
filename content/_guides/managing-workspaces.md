@@ -22,27 +22,13 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 
 ##### To create a new workspace in the UI:
 
-1\.  On the sidebar, click **Add**:
+**Option 1.**  Open the Navigational Menu, expand the list of Workspaces, and click **Create Workspace**. Enter new workspace name and click **Create**:
 
-![Sidebar - add](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_1.png)
+![Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/create-workspace-1.png)
 
-2\.  Enter new workspace name and click **Create**:
+**Option 2.** You can also create a new workspace in Workspace list. Open the Navigational Menu, expand the list of Workspaces, and click **View All Workspaces**. Alternatively, you can use **Members** or **Developer Teams** menu items, and just switch to **Workspaces** tab. Then click **Create Workspace**:
 
-![Enter wor name - create](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_2.png)
-
-3\.  Your new workspace is ready:
-![Workspace is ready](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_3.png)
-
-4\. Alternatively, you can create a new workspace in contracts settings. Click your avatar at the bottom of the navigational menu, and choose **Settings**:
-
-![Choose settings](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_26.png)
-
-5\. Choose your contract:
-
-![Choose your contract](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_27.png)
-
-6\. In **Workspaces tab**, click **Create New Workspace**:
-![Workspaces tab - Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_28.png)
+![Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/create-workspace-2.png)
 
 ##### To create a workspace via the API, use the following request:
 
@@ -95,16 +81,14 @@ a workspace member can perform workspace management via the
 
 ##### 1. Workspace management via the UI
 
-includes adding or inviting new members, managing their workspace [user roles](/guides/managing-user-roles-in-a-tenant), removing members, renaming and deleting the
-workspace. All these actions are done in **Workspace** tab
-of the navigational menu:
+includes adding or inviting new members, managing their Workspace [user roles](/guides/managing-user-roles-in-a-tenant), removing members, renaming and deleting the
+workspace. All these actions are done in **Workspace** page, accessed via the Navigational Menu. First, choose a Workspace you want to manage **(1)**, then click **Workspace** in the **Organize** section of the menu  **(2)**:
 
-![Organize - Workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_6.png)
+![Organize - Workspace](/assets/img/tenant-management-guide/managing-workspaces/add-new-member-1.png)
 
-To add or invite new members to the workspace, click **Add new member** or
-**Invite new member**:
+To add new members to the workspace, click **Add new member** button **(1)**, select the member **(2)**, define workspace role **(3)**, and click **Add** **(4)**:
 
-![Add new member or Invite new member](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_7.png)
+![Add new member](/assets/img/tenant-management-guide/managing-workspaces/add-new-member-2.png)
 
 For adding new member, select a contract member from the list, assign a user
 role in the corresponding menu, and click **Add**:
