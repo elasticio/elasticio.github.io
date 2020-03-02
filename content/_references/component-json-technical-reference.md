@@ -58,7 +58,7 @@ Component's description to be displayed in the UI
 Determines how the component should be built and run on the platform
 
 - Setting the value to `docker` will cause the platform to build a docker image based on the pushed code.  This docker image will be run when the component is invoked. The build will be longer but the component will start faster and more reliably.  This is the recommended option.
-- Setting the value to `slug` or otherwise omitting it will cause the platform to build a `.tar.gz` slug file. This file will be downloaded and extracted by a generic docker image when the component is run.  The build will be quicker but each component execution will take longer. Some older components may encounter compatiblity problems when they are built with `docker`  mode.  Otherwise, `docker` mode is encouraged.
+- Setting the value to `slug` or otherwise omitting it will cause the platform to build a `.tar.gz` slug file. This file will be downloaded and extracted by a generic docker image when the component is run.  The build will be quicker but each component execution will take longer. Some older components may encounter compatibility problems when they are built with `docker`  mode.  Otherwise, `docker` mode is encouraged.
 
 **Type:** string enum of `docker` or `slug`
 
