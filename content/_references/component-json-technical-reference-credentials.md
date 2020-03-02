@@ -8,7 +8,7 @@ category: component descriptor
 ---
 
 The `credentials` object in the [`component.json`](component-json-technical-reference.html) is used to expose the information that the platform needs to collect from the integrator in order to be able to connect to their instance/account.  Information that is collected in this section typically include:
-* URL to the integrator's instance (if there is not a shared cloud url)
+* URL to the integrator's instance (if there is not a shared cloud URL)
 * Username or other account identifier
 * Password or other API keys/tokens required to authenticate
 
@@ -38,11 +38,12 @@ The `credentials` should be an object with the following properties:
 | Property Name | Description |
 | :------------ | :---------- |
 | [fields](component-json-fields.html) | An object which describes the fields in the credential. [See the article on fields for more information.](component-json-fields.html) |
-| [oauth1](#oauth1) | Specifies the details about OAuth v1.0 resources. Only used if a `OAuthFieldView` field is defined. |
-| [oauth2](#oauth2) | Specifies the details about OAuth v2.0 resources. Only used if a `OAuthFieldView` field is defined. |
+| verifier | *Java components only* Identifies the Java class to be invoked by specifying the fully qualified name of a Java class which inherits the `io.elastic.api.CredentialsVerifier` class. |
+| [oauth1](component-json-oauth.html#oauth1) | Specifies the details about OAuth v1.0 resources. Only used if a `OAuthFieldView` field is defined. |
+| [oauth2](component-json-oauth.html#oauth2) | Specifies the details about OAuth v2.0 resources. Only used if a `OAuthFieldView` field is defined. |
 
 ## Example
-*(from the Magento 2 component.json)*
+*(Example credentials from the Magento 2 component.json)*
 
 ```json
 {

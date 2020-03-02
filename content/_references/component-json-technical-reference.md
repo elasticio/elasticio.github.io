@@ -23,7 +23,7 @@ The file needs to be valid JSON.  It should be a single JSON object with the fol
 
 | Property Name | Description |
 | :------------ | :---------- |
-| [title](#title)       | Component's title to be displayed in the UI |
+| [title](#title) | Component's title to be displayed in the UI |
 | [description](#description) | Component's description to be displayed in the UI  |
 | [buildType](#buildtype) | Determines how the component should be built and run on the platform |
 | [credentials](#credentials-object) | Used to expose the fields needed to connect to and authenticate against a system  |
@@ -35,7 +35,7 @@ The file needs to be valid JSON.  It should be a single JSON object with the fol
 | Property Name | Description |
 | :------------ | :---------- |
 | [deprecated](#deprecated) | Used to flag the component as deprecated |
-| [consumesRawData](#consumesRawData) | Turns off all automatic parsing of incoming requests for all webhooks in the component |
+| [consumesRawData](#consumesrawdata) | Turns off all automatic parsing of incoming requests for all webhooks in the component |
 | [envVars](#envvars-object) | Used to declare environment variables |
 
 # `title`
@@ -62,7 +62,7 @@ Determines how the component should be built and run on the platform
 
 **Type:** string enum of `docker` or `slug`
 
-**Example:** `docker`
+**Recommended Value:** `docker`
 
 **Default Value:** `slug`
 

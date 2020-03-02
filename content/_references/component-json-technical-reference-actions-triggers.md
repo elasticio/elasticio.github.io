@@ -80,15 +80,11 @@ Identifies the type of trigger. There are two options: `polling` and `webhook`.
 
 **Default Value:** `webhook`
 ## `fields` Object
-> *To understand the difference between config fields and metadata, [see this article that explains the difference](fields-vs-metadata.html).*
-
 The `fields` object describes the flow specific config fields that need to be configured for the action/trigger.
 
 To learn more about the required structure for this object, [see the dedicated article on the `fields` object for more information.](component-json-fields.html)
 
 ## Metadata: `metadata` & `dynamicMetadata` fields
-> *To understand the difference between config fields and metadata, [see this article that explains the difference](fields-vs-metadata.html).*
-
 > *More information on the metadata schema structure [can be found in this article](component-json-fields.html).*
 
 These two properties indicate how the component will communicate to the platform the expected structure of incoming and outgoing messages.
@@ -111,36 +107,36 @@ When dynamic metadata is used, once all required configuration fields for an act
 * **JavaScript:** When using dynamic metadata with JavaScript components, the `dynamicMetadata` field should be set to boolean `true`. The file containing the action/trigger with dynamic metadata needs to export a function `getMetaModel()` which accepts the credential & config field information and then returns the metadata as an object with two keys `in` and `out` which describe the expected structure of incoming and outgoing messages. 
 * **Java:** When using dynamic metadata with Java components, the `dynamicMetadata` field should be set to a string that is the fully qualified name of a Java class which inherits the `io.elastic.api.DynamicMetadataProvider` class.
 
-Whenever a config field is edited, the metadata will be refreshed.
+Whenever a config field is edited, the metadata will be refreshed. 
 
 ![Example of Dynamic Metadata Loading](/assets/img/references/component.json/dynamic-metadata-load.png)
 
 ## Static Metadata
 If the action/trigger uses static metadata, then 
 * the `dynamicMetadata` value should be omitted
-* the `metadata` property should be set
+* the `metadata` property should be set and at least the `in` property should be set.
 
 Some examples when static metadata is used include:
 * There is an action that is modifying an object whose structure can never be customized.  (E.g. Updating Credit Card Data.)
 
 There are two possible formats for static metadata:
-* Metadata is inline in the `component.json` file.  In this case, `metadata` is an object with two properties `in` and `out`.  Each property de
+* Metadata is inline in the `component.json` file. In this case, `metadata` is an object with two properties `in` and `out`. Each property is an object that describes the expected structure of the incoming or outgoing messages.
+* Metadata is stored in external JSON files. In this case, `metadata` is an object with two properties `in` and `out`. Each property is a string which contains a path (relative to the component's root directory) to a JSON file which contains an object that describes the expected structure of the incoming or outgoing messages.
 
-## No Metadata
+## No In Metadata
+If the action does not expect incoming messages to be transformed by the platform's built in mapper, then 
+* the `dynamicMetadata` value should be omitted
+* the `metadata` property should not have a value for the `in` property or be omitted completely
 
+Some examples when no in metadata is used include:
+* The action contains mapping logic hardcoded (e.g. code component)
+* The action applies JSONata or similar transformations itself (e.g. splitter component)
+* The action has no inputs (e.g. configuration component)
 
+When *No In Metadata* mode is selected, then there will not be a mapping step between this component and the previous component.
 
-
-
-
-| Property Name | Type     | Required | Description |
-| :------------ | :------: | :------: | :---------- |
-| title       | `string` | Yes      | Human readable title of the action |
-| main        | `string` | Yes      | Relative path to a Node.js module or a fully qualified name of a Java class |
-| metadata    | `object` | Yes      | Can contain two properties `in` and `out` whose values are JSON Schemas describing the metadata of the message's body consumed and produced by the action. The `in` metadata define the input data required by the action. These metadata are rendered as input fields in user interface during the mapping. The `out` metadata define the out data produced by the action. |
-| [fields](#fields-object)      | `object` | No       | Action specific input fields used to provide configuration for the action |
-
-Here is an example of action object implementation in the `component.json`:
+## Example
+*(Example of action object implementation in the `component.json`)*
 
 ```json
 {
@@ -149,18 +145,18 @@ Here is an example of action object implementation in the `component.json`:
     "main": "./lib/actions/query.js",
     "metadata": {
       "in": {
-      "type": "object",
-      "properties": {
-        "query": {
-          "maxLength": "20000",
-          "title": "SOQL Query",
-          "type": "string",
-          "required": "true"
+        "type": "object",
+        "properties": {
+          "query": {
+            "maxLength": "20000",
+            "title": "SOQL Query",
+            "type": "string",
+            "required": "true"
+          }
         }
-      }
-    },
-    "out": {}
+      },
+      "out": {}
+    }
   }
-}
 }
 ```
