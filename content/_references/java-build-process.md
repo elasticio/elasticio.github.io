@@ -4,7 +4,7 @@ description: This article describes what build tools are supported and/or expect
 layout: article
 section: Working with Java
 order: 2
-category: component descriptor
+category: working-with-java
 ---
 
 ## Supported build tools
@@ -54,7 +54,7 @@ during the execution that you can use in the component. And here some more:
 | `ELASTICIO_TENANT_ID` | ID of the tenant |
 
 If you need the integration component to use and expose an environment variables
-then you should [define them in your component descriptor file](component-descriptor-structure#envvars-object) (`component.json`) following way:
+then you should [define them in your component descriptor file](/references/component-json-technical-reference#envvars-object) (`component.json`) following way:
 
 ```json
 "envVars": {
@@ -87,4 +87,4 @@ CPU: 0.1points
 
 - [Maven repository](https://mvnrepository.com/artifact/io.elastic/sailor-jvm)
 - [How to define environment variables for components](/references/how-to-define-envirament-variables-for-components)
-- [Component Descriptor Structure - envVars Object](component-descriptor-structure#envvars-object)
+- [Component.json Overview - envVars Object](/references/component-json-technical-reference#envvars-object)

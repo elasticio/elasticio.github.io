@@ -2,9 +2,9 @@
 title: Ordering fields in component.json
 description: This article describes ordering parameters, metadata, triggers, actions and credentials in component.json.
 layout: article
-section: Component Descriptor
+section: Component.json
 order: 3
-category: component descriptor
+category: component-descriptor
 since: 20191219
 ---
 
@@ -21,7 +21,7 @@ which sequence parameter fields are rendered during the mapping on UI.
 > parameter called `order` in your `component.json` to explicitly tell the platform
 > to render the input fields in a specific sequence.
 
-## `Order` parameter
+## Order parameter
 
 You can configure the order of fields in `component.json` using a numeric key
 order for the following sections:
