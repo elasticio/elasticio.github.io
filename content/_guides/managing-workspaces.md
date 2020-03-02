@@ -581,16 +581,15 @@ them via the [UI](#editing-credentials-via-the-ui-includes-updating-and-deleting
 To edit credentials, choose the required credential from the list in
 **Credentials**:
 
-![Credentials](/assets/img/tenant-management-guide/managing-workspaces/screenshot_x.png)
+![Credentials](/assets/img/tenant-management-guide/managing-workspaces/edit-creds.png)
 
-Click **Edit** and fill in all the required fields. Then click **Verify**, and **Save** after verification:
+Here you can edit or delete Credentials:
 
-![Edit - Verify](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_23.png)
+![Edit - Delete](/assets/img/tenant-management-guide/managing-workspaces/edit-delete-creds.png)
 
-To delete credentials, choose the required credential in **Credentials**, and
-click **Delete**:
+To edit Credentials, make the required changes **(1)**, then verify **(2)**, and save **(3)** after verification:
 
-![Credentials - Delete](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_21.png)
+![Credentials - Edit](/assets/img/tenant-management-guide/managing-workspaces/edit-creds-1.png)
 
 ##### 2\.  Editing credentials via the API includes updating and deleting credentials.
 
