@@ -4,7 +4,7 @@ description: This technical reference describes the structure of the various fie
 layout: article
 section: Component.json Technical Reference
 order: 5
-category: component descriptor
+category: component-descriptor
 ---
 
 Each key-value pair in the object represents a field that is exposed. The string key acts as the identifier for the field.  The structure of the field object is described below.

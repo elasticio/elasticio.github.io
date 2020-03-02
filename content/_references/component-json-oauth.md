@@ -4,7 +4,7 @@ description: This technical reference describes the changes required in componen
 layout: article
 section: Component.json Technical Reference
 order: 8
-category: component descriptor
+category: component-descriptor
 ---
 
 ## OAuth1

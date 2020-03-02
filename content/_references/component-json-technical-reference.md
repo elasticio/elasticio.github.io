@@ -4,7 +4,7 @@ description: This technical reference describes the structure of the component.j
 layout: article
 section: Component.json Technical Reference
 order: 1
-category: component descriptor
+category: component-descriptor
 ---
 
 {{site.data.tenant.name}} components are code libraries that are accompanied by a manifest file/**component descriptor** file which contains metadata about the component.  The metadata in this file includes:
@@ -16,7 +16,7 @@ category: component descriptor
   * the inputs and outputs of the action/trigger
 
 ## `component.json` Structure
-This metadata is stored in a [JSON](https://tools.ietf.org/html/rfc7159) file which must be named `component.json` and must sit in the root folder of the component. 
+This metadata is stored in a [JSON](https://tools.ietf.org/html/rfc7159) file which must be named `component.json` and must sit in the root folder of the component.
 The file needs to be valid JSON.  It should be a single JSON object with the following fields:
 
 ### Common Fields
@@ -78,7 +78,7 @@ This identifies the information that the platform needs to collect from the inte
 
 ## `actions` & `triggers` Objects
 
-The `actions` object describes the actions that exist within the component. The `triggers` object describes the triggers that exist within the component. 
+The `actions` object describes the actions that exist within the component. The `triggers` object describes the triggers that exist within the component.
 
 Actions are operations exposed to the flow builder that can be placed in any step except the first step.  
 
@@ -88,7 +88,7 @@ If the component has no actions, then the component.json file should not have an
 
 [See the dedicated article on the action/trigger object for more information.](component-json-technical-reference-actions-triggers.html)
 
-> **Note** All components must implement at least one action or at least one trigger. 
+> **Note** All components must implement at least one action or at least one trigger.
 
 ## `deprecated`
 Used to signal that this action/trigger should not be used in new flows and that existing flows should migrate to a different action/trigger.
@@ -101,11 +101,11 @@ Used to signal that this action/trigger should not be used in new flows and that
 ## `consumesRawData`
 Normally for webhook triggers, the platform will attempt to parse incoming data to the JSON equivalent before handing it to the component code.  
 
-When this value is set to `true`, then the HTTP body of the incoming request will be passed to your component as an unparsed string in the `msg.body.rawData` field. 
+When this value is set to `true`, then the HTTP body of the incoming request will be passed to your component as an unparsed string in the `msg.body.rawData` field.
 
-This is particularly useful when receiving XML data. 
+This is particularly useful when receiving XML data.
 
-This flag will affect the behavior of all webhooks in the component.  It is not possible to combine "normal" webhooks with "raw" webhooks in the same component. 
+This flag will affect the behavior of all webhooks in the component.  It is not possible to combine "normal" webhooks with "raw" webhooks in the same component.
 
 **Type:** boolean
 

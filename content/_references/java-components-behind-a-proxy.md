@@ -4,7 +4,7 @@ description: Deails on how to push the code in cases you are sitting behind the 
 layout: article
 section: Working with Java
 order: 3
-category: component descriptor
+category: working-with-java
 ---
 
 ## Description

@@ -4,12 +4,12 @@ description: Here are the general view classes which are used to render the inpu
 layout: article
 section: Component.json Technical Reference
 order: 6
-category: component descriptor
+category: component-descriptor
 ---
 
 A view class specifies how to render an input field of any integration component
 on the {{site.data.tenant.name}} UI. The view class (`viewClass`) is a required
-parameter in the [Fields Object](/references/component-descriptor-structure#fields-object)
+parameter in the [Fields Object](/references/component-json-fields#fields-object)
 of every component descriptor file.
 
 Here are the general view classes which are used to render the input fields in
@@ -29,7 +29,7 @@ Here are the general view classes which are used to render the input fields in
 
 `TextFieldView` has many purposes. Use it to draw a one-liner text
 field form to input the information. For example, you can use it in the case of
-[Basic Authorization](component-descriptor-structure#credentials-object) to input
+[Basic Authorization](/references/component-json-technical-reference-credentials#credentials-object-structure) to input
 the API key. The possibilities are many but the implementation is similar.
 
 | Property Name | Type     | Required | Description |
@@ -305,7 +305,7 @@ has only one parameter:
 
 Since the main purpose of the `OAuthFieldView` view class is to facilitate the
 OAuth1/Oauth2 authentication then it is worth to present how to use it in
-conjunctions with the [OAuth object](/references/component-descriptor-structure#oauth2):
+conjunctions with the [OAuth object](/references/component-json-oauth#oauth2):
 
 ```js
 "credentials" : {
@@ -333,3 +333,11 @@ This will render in the following way:
 
 In the above presented method the OAuth2 authentication will be initiated when the
 button *Authenticate* is pressed.
+
+
+## Related links
+
+- [Integration Component Overview](/getting-started/integration-component)
+- [Credentials object structure in Component.json](/references/component-json-technical-reference-credentials#credentials-object-structure)
+- [Fields in Component.json](/references/component-json-fields)
+- [OAuth in Component.json](/references/component-json-oauth)

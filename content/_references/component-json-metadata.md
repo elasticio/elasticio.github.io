@@ -4,7 +4,7 @@ description: This technical reference describes the schema rules for in and out 
 layout: article
 section: Component.json Technical Reference
 order: 7
-category: component descriptor
+category: component-descriptor
 ---
 
 ## JSONSchema References
@@ -88,4 +88,3 @@ So if we go back to our initial Email Component, with a set reference it will lo
 ```
 
 >**IMPORTANT:** We do not support referencing by `$id` and referencing external schemas at the moment.
-

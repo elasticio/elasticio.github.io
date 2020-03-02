@@ -4,22 +4,22 @@ description: This technical reference describes the structure of the actions sec
 layout: article
 section: Component.json Technical Reference
 order: 3
-category: component descriptor
+category: component-descriptor
 ---
 
 ## `actions` & `triggers` Object
 
 The `actions` & `triggers` objects in the [`component.json`](component-json-technical-reference.html) describe the actions & triggers that exist within the component.  
 
-Actions are operations exposed to the flow builder that can be placed in any step except the first step of a flow. 
+Actions are operations exposed to the flow builder that can be placed in any step except the first step of a flow.
 
 Triggers are operations exposed to the flow builder that can only be placed in the first step of a flow.
 
 Both action and trigger objects in `component.json` have similar structures however there are small differences between them which are described in this article.
 
-Each key-value pair in the object represents an action or trigger that is exposed.  The string key acts as the identifier for the action/trigger. 
+Each key-value pair in the object represents an action or trigger that is exposed.  The string key acts as the identifier for the action/trigger.
 
-The structure used to describe each action or trigger is described below. 
+The structure used to describe each action or trigger is described below.
 
 If the component has no actions, then the `component.json` file should not have an `actions` field.  If the component has no triggers, then the `component.json` file should not have a `triggers` field.  All components must implement at least one action or at least one trigger.
 
@@ -41,7 +41,7 @@ The title and description of the action/trigger to be displayed in the UI
 
 **Type:** string
 
-**Examples:** 
+**Examples:**
 * **`title`:** `Upsert Object`
 * **`description`:** `Given criteria that matches at most one object, update that object or create it if it does not exist`
 
@@ -62,11 +62,11 @@ In the case of Java components, the code entry point is identified as a fully qu
 
 **Type:** string
 
-**Examples:** 
+**Examples:**
 * **JavaScript:** `./lib/actions/upsertFile.js`
 * **Java:** `io.elastic.soap.actions.CallAction`
 
-## `type` 
+## `type`
 **Triggers Only**
 
 Identifies the type of trigger. There are two options: `polling` and `webhook`.
@@ -95,7 +95,7 @@ There are three options for how the message structure is communicated:
 * Incoming messages should not be mapped.
 
 ## Dynamic Metadata
-If the action/trigger uses dynamic metadata, then 
+If the action/trigger uses dynamic metadata, then
 * the `dynamicMetadata` value should be set
 * the `metadata` property should be omitted
 
@@ -104,15 +104,15 @@ Some examples when dynamic metadata is used include:
 * The required fields change based on the config fields. (E.g. Looking up a page of objects requires different inputs to looking up all objects.)
 
 When dynamic metadata is used, once all required configuration fields for an action/trigger have been submitted, then the platform will call component code to learn the metadata.
-* **JavaScript:** When using dynamic metadata with JavaScript components, the `dynamicMetadata` field should be set to boolean `true`. The file containing the action/trigger with dynamic metadata needs to export a function `getMetaModel()` which accepts the credential & config field information and then returns the metadata as an object with two keys `in` and `out` which describe the expected structure of incoming and outgoing messages. 
+* **JavaScript:** When using dynamic metadata with JavaScript components, the `dynamicMetadata` field should be set to boolean `true`. The file containing the action/trigger with dynamic metadata needs to export a function `getMetaModel()` which accepts the credential & config field information and then returns the metadata as an object with two keys `in` and `out` which describe the expected structure of incoming and outgoing messages.
 * **Java:** When using dynamic metadata with Java components, the `dynamicMetadata` field should be set to a string that is the fully qualified name of a Java class which inherits the `io.elastic.api.DynamicMetadataProvider` class.
 
-Whenever a config field is edited, the metadata will be refreshed. 
+Whenever a config field is edited, the metadata will be refreshed.
 
 ![Example of Dynamic Metadata Loading](/assets/img/references/component.json/dynamic-metadata-load.png)
 
 ## Static Metadata
-If the action/trigger uses static metadata, then 
+If the action/trigger uses static metadata, then
 * the `dynamicMetadata` value should be omitted
 * the `metadata` property should be set and at least the `in` property should be set.
 
@@ -124,7 +124,7 @@ There are two possible formats for static metadata:
 * Metadata is stored in external JSON files. In this case, `metadata` is an object with two properties `in` and `out`. Each property is a string which contains a path (relative to the component's root directory) to a JSON file which contains an object that describes the expected structure of the incoming or outgoing messages.
 
 ## No In Metadata
-If the action does not expect incoming messages to be transformed by the platform's built in mapper, then 
+If the action does not expect incoming messages to be transformed by the platform's built in mapper, then
 * the `dynamicMetadata` value should be omitted
 * the `metadata` property should not have a value for the `in` property or be omitted completely
 
@@ -160,3 +160,7 @@ When *No In Metadata* mode is selected, then there will not be a mapping step be
   }
 }
 ```
+
+## Related links
+
+- [Fields in Component.json](/references/component-json-fields)

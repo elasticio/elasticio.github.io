@@ -4,7 +4,7 @@ description: Deails on supported Java version.
 layout: article
 section: Working with Java
 order: 1
-category: component descriptor
+category: working-with-java
 ---
 
 ## Use Java 8

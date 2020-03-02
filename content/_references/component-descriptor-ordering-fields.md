@@ -2,9 +2,9 @@
 title: Ordering fields in component.json
 description: This article describes ordering parameters, metadata, triggers, actions and credentials in component.json.
 layout: article
-section: Component Descriptor
+section: Component.json Technical Reference
 order: 3
-category: component descriptor
+category: component-descriptor
 since: 20191219
 ---
 
