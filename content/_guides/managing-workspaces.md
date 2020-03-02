@@ -790,7 +790,7 @@ Below are request parameters:
 
 ## Related links
 
-- [Contracts and Workspaces](/getting-started/contracts-and-workspaces)
-- [Managing user roles in a tenant](/guides/managing-user-roles-in-a-tenant)
-- [Integration Flow Overview](/getting-started/integration-flow)
-- [Building real-time flows](/guides/realtime-flows)
+- [Contracts and Workspaces](/getting-started/contracts-and-workspaces.html)
+- [Managing user roles in a tenant](managing-user-roles-in-a-tenant)
+- [Integration Flow Overview](/getting-started/integration-flow.html)
+- [Building real-time flows](realtime-flows)
