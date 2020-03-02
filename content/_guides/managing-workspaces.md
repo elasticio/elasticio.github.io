@@ -25,11 +25,11 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 
 **Option 1.**  Open the Navigational Menu, expand the list of Workspaces, and click **Create Workspace**. Enter new workspace name and click **Create**:
 
-![Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/create-workspace-1.png)
+![Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/create-workspace-1.gif)
 
 **Option 2.** You can also create a new workspace in Workspace list. Open the Navigational Menu, expand the list of Workspaces, and click **View All Workspaces**. Alternatively, you can use **Members** or **Developer Teams** menu items, and just switch to **Workspaces** tab. Then click **Create Workspace**:
 
-![Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/create-workspace-2.png)
+![Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/create-workspace-2.gif)
 
 ### To create a workspace via the API, use the following request:
 
@@ -44,10 +44,12 @@ Below are request parameters:
 | `relationships.contract.data.id`   | yes          | ID of the contract                                |
 | `relationships.contract.data.type` | yes          | Allowed value: `contract`  |
 
+
 **EXAMPLE:**
 
 To create a new workspace called *Integrator 2: Judgement Day*, we will use the
 following request:
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/workspaces \
   -X POST \
@@ -71,7 +73,8 @@ curl {{site.data.tenant.apiBaseUri}}/v2/workspaces \
     }
   }'
 ```
-**NOTE:** Workspace name is limited by usable characters and length. It may contain only letters, digits, whitespaces, `-` and `_` symbols, and be from 3 up to 40 symbols long.
+
+>**Please note** that Workspace name is limited by usable characters and length. It may contain only letters, digits, whitespaces, `-` and `_` symbols, and be from 3 up to 40 symbols long.
 
 ## Editing the Workspace
 
@@ -128,6 +131,7 @@ Below are request parameters:
 | `type`               | yes          | Allowed value: `member`.                                                      |
 | `attributes.roles[]` | yes          | New member roles.                                                                |
 
+
 **EXAMPLE:**
 
 To add a user with the ID *Elvis* with *King* and *Immortal* roles we will use the following
@@ -152,6 +156,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/ \
        }
     }'
 ```
+
 To update user roles via the API, use the following request:
 
 `PATCH {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/`
@@ -169,6 +174,7 @@ Below are request parameters:
 | `id`                 | yes          | ID of an already registered user, match URL parameter `{USER_ID}` |
 | `type`               | yes          | Allowed value: `member`.                                     |
 | `attributes.roles[]` | yes          | Roles.                                                          |
+
 
 **EXAMPLE:**
 
@@ -192,6 +198,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_
        }
     }'
 ```
+
 To remove a member from the workspace via the API we will use the following
 request:
 
@@ -204,7 +211,9 @@ Below are request parameters:
 | `WORKSPACE_ID`  | The ID of the Workspace.                     |
 | `USER_ID `      | The ID of the user, which requires deletion. |
 
+
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/ \
     -X DELETE    \
@@ -222,7 +231,9 @@ Below are request parameters:
 | `type`  | The value must be `workspace`.                    |
 | `attributes.name`      | Name of the workspace. |
 
+
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
   -X PATCH \
@@ -249,13 +260,14 @@ Below are request parameters:
 |---------------|--------------------------|
 | `WORKSPACE_ID`  | The ID of the Workspace. |
 
+
 **EXAMPLE:**
+
 ```
 curl -i {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID} \
  -X DELETE \
  -u {EMAIL}:{APIKEY}
  ```
-
 
 ## Creating Flows
 
@@ -294,8 +306,8 @@ Below are request parameters:
 | `relationships.workspace.data.type` | yes          | The value must be `workspace`.               |
 
 
-
 **EXAMPLE:**
+
 ```
 curl -X POST {{site.data.tenant.apiBaseUri}}/v2/flows \
   -u {EMAIL}:{APIKEY} \
@@ -355,7 +367,6 @@ curl -X POST {{site.data.tenant.apiBaseUri}}/v2/flows \
 }'
 ```
 
-
 ## Editing Flows
 
 With the right
@@ -377,7 +388,7 @@ toggling type between **Realtime** and
 You will see your flow control page, where you can start, stop, edit,
 and delete the flow:
 
-![Control page](/assets/img/tenant-management-guide/managing-workspaces/start-stop-edit-flow.png)
+![Control page](/assets/img/tenant-management-guide/managing-workspaces/start-edit-delete-flow.png)
 
 Click **Settings** **(1)** to access the settings tab where you can toggle Flow type **(2)**:
 
@@ -389,8 +400,7 @@ types [here](/guides/realtime-flows).
 ### 2\.  Flow management via the API
 includes the following actions:
  [toggling type](#update_flow_api)
-    between **Realtime** and **Ordinary**, [starting and
-    stopping](#start_stop_api) flows, and deleting flows.
+    between **Realtime** and **Ordinary**, [starting and stopping](#start_stop_api) flows, and deleting flows.
 
 To update flow type or name, we will use the following API request:
 
@@ -413,6 +423,7 @@ Below are request parameters:
 
 
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID} \
    -X PATCH \
@@ -444,7 +455,9 @@ Below are request parameters:
 |---------------|--------------|-----------------|
 | `FLOW_ID `      | yes          | Flow ID.        |
 
+
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/start \
    -X POST \
@@ -463,17 +476,18 @@ Below are request parameters:
 |---------------|--------------|-----------------|
 | `FLOW_ID `      | yes          | Flow ID.        |
 
+
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID} \
    -X DELETE \
    -u {EMAIL}:{APIKEY}
 ```
 
-
 ## Creating Credentials
 
-Credentials contain authorization information that is required by components.
+[Credentials](/getting-started/credential) contain authorization information that is required by [components](/getting-started/integration-component).
 Workspace members with corresponding permissions can create credentials via the
 [UI](#to-create-new-credentials-via-the-ui) and the [API](#to-create-new-credential-via-the-api-we-will-use-the-following-api-request).
 
@@ -482,15 +496,15 @@ Workspace members with corresponding permissions can create credentials via the
 1\.  In the navigational menu, click **Credentials** **(1)**. Then choose the required
     component from the list and click it. For example, let’s use All My SMS **(2)**:
 
-![Credentials](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds1.png)
+![Credentials](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-1.png)
 
 2\.  Click **Add New Credential**:
 
-![Add New Credential](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds2.png)
+![Add New Credential](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-2.png)
 
 3\. Choose Local Agent if required **(1)**, fill in the appearing fields **(2)**. When done, verify **(3)** and save **(4)** the new Credentials:
 
-![Add New Credential - Verify and Save](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds3.png)
+![Add New Credential - Verify and Save](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-3.png)
 
 4\. Alternatively, you can create credentials when adding components to a flow. In **Flows** **(1)**, choose the required Flow **(2)**:
 
@@ -534,7 +548,9 @@ Below are request parameters:
 | `relationships.agent.data.type`     | no           | The value must be `agent`                                                        |
 | `attributes.keys`                   | no           | An object which represents component’s configuration (OAuth keys, etc.)            |
 
+
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/credentials/ \
     -X POST \
@@ -569,7 +585,6 @@ curl {{site.data.tenant.apiBaseUri}}/v2/credentials/ \
      }
    }'
 ```
-
 
 ## Editing Credentials
 
@@ -611,6 +626,7 @@ Below are request parameters:
 | `relationships.agent.data.type` | no           | The value must be `agent`.                                                                                                                                             |
 
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
    -u {EMAIL}:{APIKEY} \
@@ -648,17 +664,20 @@ Below are request parameters:
 |-------------------|--------------|-----------------|
 | `CREDENTIAL_ID` | yes          | Credential ID.  |
 
+
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/ \
    -X DELETE \
    -u {EMAIL}:{APIKEY}
 ```
+
 ## Retrieval Requests
 
 The UI automatically shows you lists of entities (workspaces, users, flows, etc.) in corresponding tabs if you have the corresponding permissions. To see these entities via the API, we will use the following requests. Note, that they will only work for members with the corresponding permissions.
 
-1\. To get workspace by ID:
+**1\. To get workspace by ID:**
 
 `GET {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/`
 
@@ -669,13 +688,16 @@ Below are request parameters:
 | `FLOW_ID `      | yes          | Flow ID.        |
 | `include `      | no          | Include or full resource objects in response for related entities, or not. Allowed values: `members` and/or `invites`.        |
 
+
 **EXAMPLE:**
+
 ```
 curl {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}?include=members,invites \
   -u {EMAIL}:{APIKEY} \
   -H 'Accept: application/json'
   ```
-2\. To get user's workspaces:
+
+**2\. To get user's workspaces:**
 
 `GET {{site.data.tenant.apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID}`
 
@@ -685,6 +707,7 @@ Below are request parameters:
 |---------------|--------------|-----------------|
 | `CONTRACT_ID`      | yes          | Contract ID.        |
 
+
 **EXAMPLE:**
 
 ```
@@ -692,7 +715,8 @@ curl {{site.data.tenant.apiBaseUri}}/v2/workspaces?contract_id={CONTRACT_ID} \
    -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json'
 ```
-3\. To get workspace member list:
+
+**3\. To get workspace member list:**
 
 `GET {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/`
 
@@ -702,7 +726,8 @@ Below are request parameters:
 |---------------|--------------|-----------------|
 | `WORKSPACE_ID`      | yes          | Workspace ID.        |
 
-4\. To retrieve all flows in the workspace:
+
+**4\. To retrieve all flows in the workspace:**
 
 `GET {{site.data.tenant.apiBaseUri}}/v2/flows/`
 
@@ -720,29 +745,30 @@ Below are request parameters:
 | `sort`       | no           | Sort flows list by certain field. Value may be `created_at`, `updated_at` or `name`. Prefix field name with `-` for reversed order (example: `sort=-updated_at`) . Default sort is by ID.                                                                          |
 | `search`     | no           | Search flows by a word or a phrase contained in the `description` or in the `name`. Behavior is similar to operator `LIKE` in SQL. Case insensitive. Leading/following spaces are trimmed.     |
 
+
 **EXAMPLES:**
 
-Custom paging:
+* Custom paging:
 
 `curl '{{site.data.tenant.apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&page[size]=20&page[number]=1' \
    -g -u {EMAIL}:{APIKEY}`
 
-Filter:
+* Filter:
 
 `curl '{{site.data.tenant.apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&filter[status]=active' \
    -g -u {EMAIL}:{APIKEY}`
 
-Search:
+* Search:
 
 `curl '{{site.data.tenant.apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&search=webhook' \
    -g -u {EMAIL}:{APIKEY} `
 
-Custom sorting:
+* Custom sorting:
 
 `curl '{{site.data.tenant.apiBaseUri}}/v2/flows?workspace_id=59d341e9037f7200184a408b&sort=-updated_at' \
    -g -u {EMAIL}:{APIKEY}`
 
-5\. To retrieve a flow by ID:
+**5\. To retrieve a flow by ID:**
 
 `GET {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}`
 
@@ -752,12 +778,13 @@ Below are request parameters:
 |---------------|--------------|-----------------|
 | `FLOW_ID`      | yes          | Flow ID.        |
 
+
 **EXAMPLE:**
 
 `curl {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID} \
    -u {EMAIL}:{APIKEY}`
 
-6\. To retrieve all credentials:
+**6\. To retrieve all credentials:**
 
 `GET {{site.data.tenant.apiBaseUri}}/v2/credentials?workspace_id={WORKSPACE_ID}/`
 
@@ -768,13 +795,14 @@ Below are request parameters:
 | `WORKSPACE_ID`      | yes          | Workspace ID.        |
 | `filter[component]`      | no          | Retrieve credentials that belong only to the given component ID.        |
 
+
 **EXAMPLE:**
 
 `curl {{site.data.tenant.apiBaseUri}}/v2/credentials/?filter[component]={COMPONENT_ID}&workspace_id={WORKSPACE_ID} \
    -u {EMAIL}:{APIKEY} \
    -H 'Accept: application/json'`
 
-7\. Retrieve a credential by ID:
+**7\. Retrieve a credential by ID:**
 
 `GET {{site.data.tenant.apiBaseUri}}/v2/credentials/{CREDENTIAL_ID}/`
 
@@ -783,6 +811,7 @@ Below are request parameters:
 | **URL Parameter** | **Required** | **Description** |
 |---------------|--------------|-----------------|
 | `CREDENTIAL_ID`      | yes          | Credential ID.        |
+
 
 **EXAMPLE:**
 
@@ -793,6 +822,6 @@ Below are request parameters:
 ## Related links
 
 - [Contracts and Workspaces](/getting-started/contracts-and-workspaces.html)
-- [Managing user roles in a tenant](managing-user-roles-in-a-tenant)
+- [Managing user roles in a contract](managing-user-roles-in-a-tenant)
 - [Integration Flow Overview](/getting-started/integration-flow.html)
 - [Building real-time flows](realtime-flows)
