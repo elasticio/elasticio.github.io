@@ -399,8 +399,8 @@ types [here](/guides/realtime-flows).
 
 ### 2\.  Flow management via the API
 includes the following actions:
- [toggling type](#update_flow_api)
-    between **Realtime** and **Ordinary**, [starting and stopping](#start_stop_api) flows, and deleting flows.
+ toggling type
+    between **Realtime** and **Ordinary**, starting and stopping flows, and deleting flows.
 
 To update flow type or name, we will use the following API request:
 
