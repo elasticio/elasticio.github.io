@@ -90,15 +90,9 @@ To add new members to the workspace, click **Add new member** button **(1)**, se
 
 ![Add new member](/assets/img/tenant-management-guide/managing-workspaces/add-new-member-2.png)
 
-For adding new member, select a contract member from the list, assign a user
-role in the corresponding menu, and click **Add**:
+To invite a new member into the Contract, go to **Members** in the Navigational Menu **(1)**, and click **Invite new member** **(2)**. Then fill in user email  address **(3)** and define Contract role **(4)**. Optionally **(5)**, you can specify invitee's Workspace **(6)** and workspace role **(7)**, and click **Send Invite** **(8)**:
 
-![For adding new member](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_8.png)
-
-For inviting a new member, fill in user email address, define contract role and
-workspace role, and click **Send Invite**:
-
-![For inviting a new member](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_9.png)
+![For inviting a new member](/assets/img/tenant-management-guide/managing-workspaces/invite-new-member-1.png)
 
 Note that only contract members with the corresponding contract
 permission will have the option to invite new members to the workspace. You can learn how to assign member roles
@@ -107,15 +101,15 @@ permission will have the option to invite new members to the workspace. You can 
 To remove members from a workspace, click the corresponding icon on the user
 list:
 
-![Remove members from a workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_10.png)
+![Remove members from a workspace](/assets/img/tenant-management-guide/managing-workspaces/remove-member-1.png)
 
-To rename a workspace, click on the corresponding icon or its name:
+To rename a workspace, click **Workspace** in the menu **(1)**, and then click Workspace name **(2)**:
 
-![Rename a workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_35.png)
+![Rename a workspace](/assets/img/tenant-management-guide/managing-workspaces/rename-workspace.png)
 
-To delete a workspace, click **Delete workspace**:
+To delete a workspace, click **Delete workspace** on the same page:
 
-![Delete workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_5.png)
+![Delete workspace](/assets/img/tenant-management-guide/managing-workspaces/delete-workspace.png)
 
 ##### 2. Workspace management via the API
 
@@ -273,11 +267,11 @@ his contract via the [UI](#to-create-a-new-flow-in-the-ui) or the [API](#to-crea
 
 1\.  On the dashboard, click **Add new flow**:
 
-![Dashboard - Add new flow](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_11.png)
+![Dashboard - Add new flow](/assets/img/tenant-management-guide/managing-workspaces/create-flow-1.png)
 
-Alternatively, you can click **Add New Flow** in **Flows**:
+Alternatively, you can click **Add New Flow** **(2)** in **Flows** **(1)**:
 
-![Add New Flow in Flows](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_17.png)
+![Add New Flow in Flows](/assets/img/tenant-management-guide/managing-workspaces/create-flow-2.png)
 
 2\.  Your new flow is ready. Be sure to name it and write a description, which is optional:
 
