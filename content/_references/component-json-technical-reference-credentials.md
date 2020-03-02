@@ -2,7 +2,7 @@
 title: Credentials in Component.json
 description: This technical reference describes the structure of the credentials section of the component.json manifest file/component descriptor file
 layout: article
-section: Component.json Technical Reference
+section: Component.json
 order: 2
 category: component-descriptor
 ---
@@ -32,7 +32,8 @@ If the `credentials` object is provided and is `{}` or is `{"fields": {}}` then 
 
 ![Example of Empty Credentials](/assets/img/references/component.json/credentials-empty.png)
 
-## `credentials` Object Structure
+## Credentials Object Structure
+
 The `credentials` should be an object with the following properties:
 
 | Property Name | Description |
@@ -43,6 +44,7 @@ The `credentials` should be an object with the following properties:
 | [oauth2](component-json-oauth.html#oauth2) | Specifies the details about OAuth v2.0 resources. Only used if a `OAuthFieldView` field is defined. |
 
 ## Example
+
 *(Example credentials from the Magento 2 component.json)*
 
 ```json

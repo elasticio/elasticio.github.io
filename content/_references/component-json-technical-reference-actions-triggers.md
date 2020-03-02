@@ -2,12 +2,12 @@
 title: Actions & Triggers in Component.json
 description: This technical reference describes the structure of the actions section of the component.json manifest file/component descriptor file
 layout: article
-section: Component.json Technical Reference
+section: Component.json
 order: 3
 category: component-descriptor
 ---
 
-## `actions` & `triggers` Object
+## Actions & Triggers Object
 
 The `actions` & `triggers` objects in the [`component.json`](component-json-technical-reference.html) describe the actions & triggers that exist within the component.  
 
@@ -35,7 +35,8 @@ If the component has no actions, then the `component.json` file should not have 
 | [metadata](#metadata-metadata--dynamicmetadata-fields) | Both | Statically defines the expected structure of incoming and outgoing messages of the action/trigger  |
 
 
-## `title` & `description`
+## Title & Description
+
 The title and description of the action/trigger to be displayed in the UI
 ![Example of Action/Trigger Title & Description in the UI](/assets/img/references/component.json/action-title-description.png)
 
@@ -45,7 +46,8 @@ The title and description of the action/trigger to be displayed in the UI
 * **`title`:** `Upsert Object`
 * **`description`:** `Given criteria that matches at most one object, update that object or create it if it does not exist`
 
-## `deprecated`
+## Deprecated
+
 Used to signal that this action/trigger should not be used in new flows and that existing flows should migrate to a different action/trigger.
 
 ![Example of Action/Trigger Deprecation in the UI](/assets/img/references/component.json/deprecated-action.png)
@@ -53,7 +55,9 @@ Used to signal that this action/trigger should not be used in new flows and that
 **Type:** boolean
 
 **Default Value:** `false`
-## `main`
+
+## Main
+
 Identifies the code entry point for the action/trigger.
 
 In the case of JavaScript components, the code entry point is identified as a path to a `.js` file which contains the code for the action/trigger. This path should be relative to the root of the component.
@@ -66,7 +70,8 @@ In the case of Java components, the code entry point is identified as a fully qu
 * **JavaScript:** `./lib/actions/upsertFile.js`
 * **Java:** `io.elastic.soap.actions.CallAction`
 
-## `type`
+## Type
+
 **Triggers Only**
 
 Identifies the type of trigger. There are two options: `polling` and `webhook`.
@@ -79,12 +84,15 @@ Identifies the type of trigger. There are two options: `polling` and `webhook`.
 **Example:** `polling`
 
 **Default Value:** `webhook`
-## `fields` Object
+
+## Fields Object
+
 The `fields` object describes the flow specific config fields that need to be configured for the action/trigger.
 
 To learn more about the required structure for this object, [see the dedicated article on the `fields` object for more information.](component-json-fields.html)
 
-## Metadata: `metadata` & `dynamicMetadata` fields
+## Metadata: metadata & dynamicMetadata fields
+
 > *More information on the metadata schema structure [can be found in this article](component-json-fields.html).*
 
 These two properties indicate how the component will communicate to the platform the expected structure of incoming and outgoing messages.
@@ -95,6 +103,7 @@ There are three options for how the message structure is communicated:
 * Incoming messages should not be mapped.
 
 ## Dynamic Metadata
+
 If the action/trigger uses dynamic metadata, then
 * the `dynamicMetadata` value should be set
 * the `metadata` property should be omitted
@@ -112,6 +121,7 @@ Whenever a config field is edited, the metadata will be refreshed.
 ![Example of Dynamic Metadata Loading](/assets/img/references/component.json/dynamic-metadata-load.png)
 
 ## Static Metadata
+
 If the action/trigger uses static metadata, then
 * the `dynamicMetadata` value should be omitted
 * the `metadata` property should be set and at least the `in` property should be set.
@@ -124,6 +134,7 @@ There are two possible formats for static metadata:
 * Metadata is stored in external JSON files. In this case, `metadata` is an object with two properties `in` and `out`. Each property is a string which contains a path (relative to the component's root directory) to a JSON file which contains an object that describes the expected structure of the incoming or outgoing messages.
 
 ## No In Metadata
+
 If the action does not expect incoming messages to be transformed by the platform's built in mapper, then
 * the `dynamicMetadata` value should be omitted
 * the `metadata` property should not have a value for the `in` property or be omitted completely
@@ -136,6 +147,7 @@ Some examples when no in metadata is used include:
 When *No In Metadata* mode is selected, then there will not be a mapping step between this component and the previous component.
 
 ## Example
+
 *(Example of action object implementation in the `component.json`)*
 
 ```json

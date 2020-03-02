@@ -2,7 +2,7 @@
 title: Fields in Component.json
 description: This technical reference describes the structure of the various fields sections of the component.json manifest file/component descriptor file
 layout: article
-section: Component.json Technical Reference
+section: Component.json
 order: 5
 category: component-descriptor
 ---

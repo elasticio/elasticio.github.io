@@ -2,7 +2,7 @@
 title: Metadata Schemas for Components
 description: This technical reference describes the schema rules for in and out metadata for components
 layout: article
-section: Component.json Technical Reference
+section: Component.json
 order: 7
 category: component-descriptor
 ---
