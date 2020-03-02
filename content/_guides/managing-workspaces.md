@@ -23,27 +23,13 @@ A contract member can create workspaces in his contract via the [UI](#to-create-
 
 ### To create a new workspace in the UI:
 
-1\.  On the sidebar, click **Add**:
+**Option 1.**  Open the Navigational Menu, expand the list of Workspaces, and click **Create Workspace**. Enter new workspace name and click **Create**:
 
-![Sidebar - add](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_1.png)
+![Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/create-workspace-1.png)
 
-2\.  Enter new workspace name and click **Create**:
+**Option 2.** You can also create a new workspace in Workspace list. Open the Navigational Menu, expand the list of Workspaces, and click **View All Workspaces**. Alternatively, you can use **Members** or **Developer Teams** menu items, and just switch to **Workspaces** tab. Then click **Create Workspace**:
 
-![Enter wor name - create](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_2.png)
-
-3\.  Your new workspace is ready:
-![Workspace is ready](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_3.png)
-
-4\. Alternatively, you can create a new workspace in contracts settings. Click your avatar at the bottom of the navigational menu, and choose **Settings**:
-
-![Choose settings](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_26.png)
-
-5\. Choose your contract:
-
-![Choose your contract](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_27.png)
-
-6\. In **Workspaces tab**, click **Create New Workspace**:
-![Workspaces tab - Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_28.png)
+![Create New Workspace](/assets/img/tenant-management-guide/managing-workspaces/create-workspace-2.png)
 
 ### To create a workspace via the API, use the following request:
 
@@ -96,26 +82,18 @@ a workspace member can perform workspace management via the
 
 ### 1. Workspace management via the UI
 
-includes adding or inviting new members, managing their workspace [user roles](/guides/managing-user-roles-in-a-tenant), removing members, renaming and deleting the
-workspace. All these actions are done in **Workspace** tab
-of the navigational menu:
+includes adding or inviting new members, managing their Workspace [user roles](/guides/managing-user-roles-in-a-tenant), removing members, renaming and deleting the
+workspace. All these actions are done in **Workspace** page, accessed via the Navigational Menu. First, choose a Workspace you want to manage **(1)**, then click **Workspace** in the **Organize** section of the menu  **(2)**:
 
-![Organize - Workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_6.png)
+![Organize - Workspace](/assets/img/tenant-management-guide/managing-workspaces/add-new-member-1.png)
 
-To add or invite new members to the workspace, click **Add new member** or
-**Invite new member**:
+To add new members to the workspace, click **Add new member** button **(1)**, select the member **(2)**, define workspace role **(3)**, and click **Add** **(4)**:
 
-![Add new member or Invite new member](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_7.png)
+![Add new member](/assets/img/tenant-management-guide/managing-workspaces/add-new-member-2.png)
 
-For adding new member, select a contract member from the list, assign a user
-role in the corresponding menu, and click **Add**:
+To invite a new member into the Contract, go to **Members** in the Navigational Menu **(1)**, and click **Invite new member** **(2)**. Then fill in user email  address **(3)** and define Contract role **(4)**. Optionally **(5)**, you can specify invitee's Workspace **(6)** and workspace role **(7)**, and click **Send Invite** **(8)**:
 
-![For adding new member](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_8.png)
-
-For inviting a new member, fill in user email address, define contract role and
-workspace role, and click **Send Invite**:
-
-![For inviting a new member](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_9.png)
+![For inviting a new member](/assets/img/tenant-management-guide/managing-workspaces/invite-new-member-1.png)
 
 Note that only contract members with the corresponding contract
 permission will have the option to invite new members to the workspace. You can learn how to assign member roles
@@ -124,15 +102,15 @@ permission will have the option to invite new members to the workspace. You can 
 To remove members from a workspace, click the corresponding icon on the user
 list:
 
-![Remove members from a workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_10.png)
+![Remove members from a workspace](/assets/img/tenant-management-guide/managing-workspaces/remove-member-1.png)
 
-To rename a workspace, click on the corresponding icon or its name:
+To rename a workspace, click **Workspace** in the menu **(1)**, and then click Workspace name **(2)**:
 
-![Rename a workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_35.png)
+![Rename a workspace](/assets/img/tenant-management-guide/managing-workspaces/rename-workspace.png)
 
-To delete a workspace, click **Delete workspace**:
+To delete a workspace, click **Delete workspace** on the same page:
 
-![Delete workspace](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_5.png)
+![Delete workspace](/assets/img/tenant-management-guide/managing-workspaces/delete-workspace.png)
 
 ### 2. Workspace management via the API
 
@@ -290,15 +268,15 @@ his contract via the [UI](#to-create-a-new-flow-in-the-ui) or the [API](#to-crea
 
 1\.  On the dashboard, click **Add new flow**:
 
-![Dashboard - Add new flow](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_11.png)
+![Dashboard - Add new flow](/assets/img/tenant-management-guide/managing-workspaces/create-flow-1.png)
 
-Alternatively, you can click **Add New Flow** in **Flows**:
+Alternatively, you can click **Add New Flow** **(2)** in **Flows** **(1)**:
 
-![Add New Flow in Flows](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_17.png)
+![Add New Flow in Flows](/assets/img/tenant-management-guide/managing-workspaces/create-flow-2.png)
 
-2\.  Your new flow is ready. Be sure to name it and write a description, which is optional:
+2\.  Your new flow is ready. Be sure to name it **(1)** and write a description **(2)**, which is optional. Then you can start your work by adding initial trigger **(3)** and publishing the Flow **(4)**:
 
-![Name and description](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_12.png)
+![Name and description](/assets/img/tenant-management-guide/managing-workspaces/create-flow-3.png)
 
 ### To create a flow via the API, use the following request:
 
@@ -389,27 +367,24 @@ the [API](#2-flow-management-via-the-api).
 
 Includes the following actions:
 toggling type between **Realtime** and
-    **Ordinary**, starting and stopping flows, and deleting flows. All your
+    **Ordinary**, starting and stopping Flows, and deleting flows. All your
     flows can be found in **Flows** inside the navigational menu. You can use
-    search and filters to find the required flow. To manage the flow, click on
-    the flow’s name, in our case – “**Test flow**”:
+    search and filters to find the required Flow. To manage the Flow, click on
+    the flow’s name:
 
-![Management via the UI](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_14.png)
+![Management via the UI](/assets/img/tenant-management-guide/managing-workspaces/select-flow.png)
 
-You will see your flow control page, where you can rename, start, stop, edit,
+You will see your flow control page, where you can start, stop, edit,
 and delete the flow:
 
-![Control page](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_15.png)
+![Control page](/assets/img/tenant-management-guide/managing-workspaces/start-stop-edit-flow.png)
 
-Click **Settings** to access the settings tab where you can toggle flow type:
+Click **Settings** **(1)** to access the settings tab where you can toggle Flow type **(2)**:
 
-![Settings tab](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_16.png)
+![Settings tab](/assets/img/tenant-management-guide/managing-workspaces/toggle-realtime-flow.png)
 
 Flows can be **Realtime** and **Ordinary**. You can find more info about these
-types [here](/guides/realtime-flows). You can toggle flow type with the corresponding
-switch:
-
-![Realtime and ordinary](/assets/img/tenant-management-guide/managing-workspaces/screenshot_13.png)
+types [here](/guides/realtime-flows).
 
 ### 2\.  Flow management via the API
 includes the following actions:
@@ -504,38 +479,40 @@ Workspace members with corresponding permissions can create credentials via the
 
 ### To create new credentials via the UI:
 
-1\.  In the navigational menu, click **Credentials**. Then choose the required
-    component from the list and click it. For example, let’s use SFTP:
+1\.  In the navigational menu, click **Credentials** **(1)**. Then choose the required
+    component from the list and click it. For example, let’s use All My SMS **(2)**:
 
-![Credentials](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_22.png)
+![Credentials](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds1.png)
 
-2\.  Click **Add New Credential** and fill in the appearing fields. When done,
-    click **Verify**:
+2\.  Click **Add New Credential**:
 
-![Add New Credential](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_19.png)
+![Add New Credential](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds2.png)
 
-![Add New Credential - Verify](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_20.png)
+3\. Choose Local Agent if required **(1)**, fill in the appearing fields **(2)**. When done, verify **(3)** and save **(4)** the new Credentials:
 
-3\. After the credential gets verified, click **Save**, which will appear in the place of **Verify**.
+![Add New Credential - Verify and Save](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds3.png)
 
-4\. Alternatively, you can create credentials when adding components to a flow. In **Flows**, choose the required flow:
+4\. Alternatively, you can create credentials when adding components to a flow. In **Flows** **(1)**, choose the required Flow **(2)**:
 
-![Flows - choose the required flow](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_29.png)
+![Flows - choose the required flow](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-4.png)
 
-5\. Click **Add the initial step** or **edit flow** button, depending on the existence of flow steps:
+5\. Click **Add the initial step** or **edit flow** button, depending on the existence of flow steps. In our case, we choose an existing one:
 
-![Add the initial step](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_30.png)
+![Edit flow](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-5.png)
 
-![Edit flow](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_31.png)
+6\. Click **Credentials** **(1)** and add new credential **(2)**:
 
-6\. Search for your component in the list and click it:
+![Search for your component](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-6.png)
 
-![Search for your component](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_32.png)
+7\. Then you get the same menu, as in item 3 of this list. Choose Local Agent if required **(1)**, fill in the appearing fields **(2)**. When done, verify **(3)** and save **(4)** the new Credentials:
 
-7\. Click **connect new credentials**:
+![Connect new credentials](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-7.png)
 
-![Connect new credentials](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_34.png)
+8\. The same can be done in the old mapper. Click credentials tab **(1)** and add new credential **(2)**:
 
+![New credentials](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-8.png)
+
+Then you go through item 7 of this list again.
 
 
 ### To create new credential via the API, we will use the following API request:
@@ -605,16 +582,15 @@ them via the [UI](#editing-credentials-via-the-ui-includes-updating-and-deleting
 To edit credentials, choose the required credential from the list in
 **Credentials**:
 
-![Credentials](/assets/img/tenant-management-guide/managing-workspaces/screenshot_x.png)
+![Credentials](/assets/img/tenant-management-guide/managing-workspaces/edit-creds.png)
 
-Click **Edit** and fill in all the required fields. Then click **Verify**, and **Save** after verification:
+Here you can edit or delete Credentials:
 
-![Edit - Verify](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_23.png)
+![Edit - Delete](/assets/img/tenant-management-guide/managing-workspaces/edit-delete-creds.png)
 
-To delete credentials, choose the required credential in **Credentials**, and
-click **Delete**:
+To edit Credentials, make the required changes **(1)**, then verify **(2)**, and save **(3)** after verification:
 
-![Credentials - Delete](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_21.png)
+![Credentials - Edit](/assets/img/tenant-management-guide/managing-workspaces/edit-creds-1.png)
 
 ### 2\.  Editing credentials via the API includes updating and deleting credentials.
 
@@ -816,7 +792,7 @@ Below are request parameters:
 
 ## Related links
 
-- [Contracts and Workspaces](/getting-started/contracts-and-workspaces)
-- [Managing user roles in a tenant](/guides/managing-user-roles-in-a-tenant)
-- [Integration Flow Overview](/getting-started/integration-flow)
-- [Building real-time flows](/guides/realtime-flows)
+- [Contracts and Workspaces](/getting-started/contracts-and-workspaces.html)
+- [Managing user roles in a tenant](managing-user-roles-in-a-tenant)
+- [Integration Flow Overview](/getting-started/integration-flow.html)
+- [Building real-time flows](realtime-flows)
