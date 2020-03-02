@@ -378,15 +378,12 @@ and delete the flow:
 
 ![Control page](/assets/img/tenant-management-guide/managing-workspaces/start-stop-edit-flow.png)
 
-Click **Settings** to access the settings tab where you can toggle flow type:
+Click **Settings** **(1)** to access the settings tab where you can toggle Flow type **(2)**:
 
-![Settings tab](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_16.png)
+![Settings tab](/assets/img/tenant-management-guide/managing-workspaces/toggle-realtime-flow.png)
 
 Flows can be **Realtime** and **Ordinary**. You can find more info about these
-types [here](/guides/realtime-flows). You can toggle flow type with the corresponding
-switch:
-
-![Realtime and ordinary](/assets/img/tenant-management-guide/managing-workspaces/screenshot_13.png)
+types [here](/guides/realtime-flows).
 
 ##### 2\.  Flow management via the API
 includes the following actions:
@@ -481,38 +478,40 @@ Workspace members with corresponding permissions can create credentials via the
 
 ##### To create new credentials via the UI:
 
-1\.  In the navigational menu, click **Credentials**. Then choose the required
-    component from the list and click it. For example, let’s use SFTP:
+1\.  In the navigational menu, click **Credentials** **(1)**. Then choose the required
+    component from the list and click it. For example, let’s use All My SMS **(2)**:
 
-![Credentials](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_22.png)
+![Credentials](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds1.png)
 
-2\.  Click **Add New Credential** and fill in the appearing fields. When done,
-    click **Verify**:
+2\.  Click **Add New Credential**:
 
-![Add New Credential](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_19.png)
+![Add New Credential](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds2.png)
 
-![Add New Credential - Verify](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_20.png)
+3\. Choose Local Agent if required **(1)**, fill in the appearing fields **(2)**. When done, verify **(3)** and save **(4)** the new Credentials:
 
-3\. After the credential gets verified, click **Save**, which will appear in the place of **Verify**.
+![Add New Credential - Verify and Save](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds3.png)
 
-4\. Alternatively, you can create credentials when adding components to a flow. In **Flows**, choose the required flow:
+4\. Alternatively, you can create credentials when adding components to a flow. In **Flows** **(1)**, choose the required Flow **(2)**:
 
-![Flows - choose the required flow](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_29.png)
+![Flows - choose the required flow](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-4.png)
 
-5\. Click **Add the initial step** or **edit flow** button, depending on the existence of flow steps:
+5\. Click **Add the initial step** or **edit flow** button, depending on the existence of flow steps. In our case, we choose an existing one:
 
-![Add the initial step](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_30.png)
+![Edit flow](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-5.png)
 
-![Edit flow](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_31.png)
+6\. Click **Credentials** **(1)** and add new credential **(2)**:
 
-6\. Search for your component in the list and click it:
+![Search for your component](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-6.png)
 
-![Search for your component](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_32.png)
+7\. Then you get the same menu, as in item 3 of this list. Choose Local Agent if required **(1)**, fill in the appearing fields **(2)**. When done, verify **(3)** and save **(4)** the new Credentials:
 
-7\. Click **connect new credentials**:
+![Connect new credentials](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-7.png)
 
-![Connect new credentials](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_34.png)
+8\. The same can be done in the old mapper. Click credentials tab **(1)** and add new credential **(2)**:
 
+![New credentials](/assets/img/tenant-management-guide/managing-workspaces/add-new-creds-8.png)
+
+Then you go through item 7 of this list again.
 
 
 ##### To create new credential via the API, we will use the following API request:
