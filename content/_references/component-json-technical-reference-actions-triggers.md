@@ -1,8 +1,8 @@
 ---
-title: component.json Technical Reference - Actions & Triggers
+title: Actions & Triggers in Component.json
 description: This technical reference describes the structure of the actions section of the component.json manifest file/component descriptor file
 layout: article
-section: Component Descriptor
+section: Component.json Technical Reference
 order: 3
 category: component descriptor
 ---
@@ -30,9 +30,9 @@ If the component has no actions, then the `component.json` file should not have 
 | [deprecated](#deprecated) | Both | Used to flag the action/trigger as deprecated |
 | [main](#main) | Both | Identifies the code entry point for the action/trigger |
 | [type](#type) | Triggers Only | Identifies if the trigger should be a `polling` or `webhook` trigger |
-| [fields](#fields-object) | Both |Identifies input fields used to provide flow-level configuration for the action/trigger |
-| [dynamicMetadata](#metadata-metadata--dynamicmetadata) | Both | Signals that the component will dynamically communicate the expected structure of incoming and outgoing messages of the action/trigger  |
-| [metadata](#metadata-metadata--dynamicmetadata) | Both | Statically defines the expected structure of incoming and outgoing messages of the action/trigger  |
+| [fields](#fields-object) | Both | Identifies config fields which provide flow-level configuration for the action/trigger |
+| [dynamicMetadata](#metadata-metadata--dynamicmetadata-fields) | Both | Signals that the component will dynamically communicate the expected structure of incoming and outgoing messages of the action/trigger  |
+| [metadata](#metadata-metadata--dynamicmetadata-fields) | Both | Statically defines the expected structure of incoming and outgoing messages of the action/trigger  |
 
 
 ## `title` & `description`
@@ -78,10 +78,60 @@ Identifies the type of trigger. There are two options: `polling` and `webhook`.
 
 **Example:** `polling`
 
-**Default Value:** `polling`
+**Default Value:** `webhook`
 ## `fields` Object
+> *To understand the difference between config fields and metadata, [see this article that explains the difference](fields-vs-metadata.html).*
 
-## Metadata: `metadata` & `dynamicMetadata`
+The `fields` object describes the flow specific config fields that need to be configured for the action/trigger.
+
+To learn more about the required structure for this object, [see the dedicated article on the `fields` object for more information.](component-json-fields.html)
+
+## Metadata: `metadata` & `dynamicMetadata` fields
+> *To understand the difference between config fields and metadata, [see this article that explains the difference](fields-vs-metadata.html).*
+
+> *More information on the metadata schema structure [can be found in this article](component-json-fields.html).*
+
+These two properties indicate how the component will communicate to the platform the expected structure of incoming and outgoing messages.
+
+There are three options for how the message structure is communicated:
+* Incoming messages should be mapped to a static structure. The structure of the incoming and outgoing messages are stored in the component repository along with the code.
+* Incoming messages should be mapped to a dynamic structure. Once the platform has the credential and config field information, the platform will call a code entry point in the component to learn the metadata.
+* Incoming messages should not be mapped.
+
+## Dynamic Metadata
+If the action/trigger uses dynamic metadata, then 
+* the `dynamicMetadata` value should be set
+* the `metadata` property should be omitted
+
+Some examples when dynamic metadata is used include:
+* There is an action that is modifying an object whose structure can be customized.  (E.g. Salesforce allows users to add new object types and tweak the properties/fields stored on existing objects.)
+* The required fields change based on the config fields. (E.g. Looking up a page of objects requires different inputs to looking up all objects.)
+
+When dynamic metadata is used, once all required configuration fields for an action/trigger have been submitted, then the platform will call component code to learn the metadata.
+* **JavaScript:** When using dynamic metadata with JavaScript components, the `dynamicMetadata` field should be set to boolean `true`. The file containing the action/trigger with dynamic metadata needs to export a function `getMetaModel()` which accepts the credential & config field information and then returns the metadata as an object with two keys `in` and `out` which describe the expected structure of incoming and outgoing messages. 
+* **Java:** When using dynamic metadata with Java components, the `dynamicMetadata` field should be set to a string that is the fully qualified name of a Java class which inherits the `io.elastic.api.DynamicMetadataProvider` class.
+
+Whenever a config field is edited, the metadata will be refreshed.
+
+![Example of Dynamic Metadata Loading](/assets/img/references/component.json/dynamic-metadata-load.png)
+
+## Static Metadata
+If the action/trigger uses static metadata, then 
+* the `dynamicMetadata` value should be omitted
+* the `metadata` property should be set
+
+Some examples when static metadata is used include:
+* There is an action that is modifying an object whose structure can never be customized.  (E.g. Updating Credit Card Data.)
+
+There are two possible formats for static metadata:
+* Metadata is inline in the `component.json` file.  In this case, `metadata` is an object with two properties `in` and `out`.  Each property de
+
+## No Metadata
+
+
+
+
+
 
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |

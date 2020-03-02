@@ -1,8 +1,8 @@
 ---
-title: component.json Technical Reference - Credentials
+title: Credentials in Component.json
 description: This technical reference describes the structure of the credentials section of the component.json manifest file/component descriptor file
 layout: article
-section: Component Descriptor
+section: Component.json Technical Reference
 order: 2
 category: component descriptor
 ---
@@ -37,7 +37,7 @@ The `credentials` should be an object with the following properties:
 
 | Property Name | Description |
 | :------------ | :---------- |
-| [fields](#fields-object) | An object which describes the fields in the credential. Each key-value pair in the object represents a field that is exposed. The string key acts as the identifier for the field.  The structure of the field object is described below. |
+| [fields](component-json-fields.html) | An object which describes the fields in the credential. [See the article on fields for more information.](component-json-fields.html) |
 | [oauth1](#oauth1) | Specifies the details about OAuth v1.0 resources. Only used if a `OAuthFieldView` field is defined. |
 | [oauth2](#oauth2) | Specifies the details about OAuth v2.0 resources. Only used if a `OAuthFieldView` field is defined. |
 

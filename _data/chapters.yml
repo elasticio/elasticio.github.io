@@ -72,8 +72,8 @@ references:
   sections:
     - title: Sailor
       description: References on our SDKs
-    - title: Component Descriptor
-      description: References on Component Structure
+    - title: Component.json Technical Reference
+      description: Technical reference to describe the structure of the component.json file
     - title: Working with Java
       description: How to use Java on the platform
     - title: Platform Behaviour
