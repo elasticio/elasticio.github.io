@@ -273,9 +273,9 @@ Alternatively, you can click **Add New Flow** **(2)** in **Flows** **(1)**:
 
 ![Add New Flow in Flows](/assets/img/tenant-management-guide/managing-workspaces/create-flow-2.png)
 
-2\.  Your new flow is ready. Be sure to name it and write a description, which is optional:
+2\.  Your new flow is ready. Be sure to name it **(1)** and write a description **(2)**, which is optional. Then you can start your work by adding initial trigger **(3)** and publishing the Flow **(4)**:
 
-![Name and description](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_12.png)
+![Name and description](/assets/img/tenant-management-guide/managing-workspaces/create-flow-3.png)
 
 ##### To create a flow via the API, use the following request:
 
@@ -366,17 +366,17 @@ the [API](#2-flow-management-via-the-api).
 
 Includes the following actions:
 toggling type between **Realtime** and
-    **Ordinary**, starting and stopping flows, and deleting flows. All your
+    **Ordinary**, starting and stopping Flows, and deleting flows. All your
     flows can be found in **Flows** inside the navigational menu. You can use
-    search and filters to find the required flow. To manage the flow, click on
-    the flow’s name, in our case – “**Test flow**”:
+    search and filters to find the required Flow. To manage the Flow, click on
+    the flow’s name:
 
-![Management via the UI](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_14.png)
+![Management via the UI](/assets/img/tenant-management-guide/managing-workspaces/select-flow.png)
 
-You will see your flow control page, where you can rename, start, stop, edit,
+You will see your flow control page, where you can start, stop, edit,
 and delete the flow:
 
-![Control page](/assets/img/tenant-management-guide/managing-workspaces/Screenshot_15.png)
+![Control page](/assets/img/tenant-management-guide/managing-workspaces/start-stop-edit-flow.png)
 
 Click **Settings** to access the settings tab where you can toggle flow type:
 
