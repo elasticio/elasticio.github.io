@@ -7,14 +7,14 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2017-03-31
-updatedDate: 2020-01-15
+updatedDate: 2020-03-03
 ---
 
 ## Latest changelog
 
-**1.0.4 (February 03, 2020)**
+**1.0.5 (March 3, 2020)**
 
-* Fixed bug with incorrect await while emitting data
+* Fixed bug when emitting to much data
 
 > To see the full **changelog** please use the following [link](/components/splitter/changelog).
 

@@ -7,16 +7,16 @@ icon: batch.png
 icontext: Batch component
 category: Batch component
 createdDate: 2019-05-07
-updatedDate: 2019-05-22
+updatedDate: 2020-03-03
 ---
 
 ## Latest changelog
 
-**0.0.2 (December 25, 2019)**
+**0.0.3 (March 3, 2020)**
 
-* Change build type to docker
-* Update sailor version to 2.5.4
-* Update to use builtin sailor logger
+* Fix bug with verify credentials
+* Update node to v 12
+* Update sailor to v 2.6.5
 
 > To see the full **changelog** please use the following [link](/components/batch/changelog).
 
