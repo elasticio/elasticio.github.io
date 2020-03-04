@@ -48,10 +48,15 @@ the new Magento account.
 ![Magento 1 Credentials](img/magento1-credentials.png)
 
 *   **Name your account** (required) - Give any name that you can easily recognise afterwards.
+
 *   **Magento domain** (required) - This is your site domain name excluding `http://` and special symbols (e.g. slashes). For example, if your Magento domain on your browser window is something like `http://magento.yoursite.com/ID` then you must input only `magento.yoursite.com` part in this field.
+
 *   **API Login** (required) - Your Magento API Login. **This is NOT your admin or username that you use to login into your Magento installation.** This is a separate API login that you have to create (read further for more).
+
 *   **API Password** (required) - Your Magento API login password. Again **this is NOT your admin or user password that you use to login into the Magento installation**. This API password is created separately along with the API login name (read further for more).
+
 *   **Port** - Automatically set to `80`.
+
 *   **Secured** - configuration for Secured connection in credentials. Can be `enabled` or
 `disabled`.
 
