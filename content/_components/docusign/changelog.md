@@ -1,7 +1,6 @@
 ---
 title: Changelog
 layout: component
-section: Office components
 description: Changelog for Docusign component.
 icon: docusign.png
 icontext: Docusign component

@@ -7,8 +7,16 @@ icon: magento.png
 icontext: Magento1 component
 category: magento1
 createdDate: 2015-07-29
-updatedDate: 2018-06-25
+updatedDate: 2020-03-03
 ---
+
+## Latest changelog
+
+**1.3.1 (March 3, 2020)**
+
+* Add configuration for Secured connection in credentials
+
+> To see the full **changelog** please use the following [link](/components/magento1/changelog).
 
 ## Description
 
@@ -44,6 +52,8 @@ the new Magento account.
 *   **API Login** (required) - Your Magento API Login. **This is NOT your admin or username that you use to login into your Magento installation.** This is a separate API login that you have to create (read further for more).
 *   **API Password** (required) - Your Magento API login password. Again **this is NOT your admin or user password that you use to login into the Magento installation**. This API password is created separately along with the API login name (read further for more).
 *   **Port** - Automatically set to `80`.
+*   **Secured** - configuration for Secured connection in credentials. Can be `enabled` and
+`disabled`.
 
 To set your API login and API password follow instructions presented in a
 [dedicated page](set-api-login-password).
