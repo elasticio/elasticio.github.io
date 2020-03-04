@@ -52,7 +52,7 @@ the new Magento account.
 *   **API Login** (required) - Your Magento API Login. **This is NOT your admin or username that you use to login into your Magento installation.** This is a separate API login that you have to create (read further for more).
 *   **API Password** (required) - Your Magento API login password. Again **this is NOT your admin or user password that you use to login into the Magento installation**. This API password is created separately along with the API login name (read further for more).
 *   **Port** - Automatically set to `80`.
-*   **Secured** - configuration for Secured connection in credentials. Can be `enabled` and
+*   **Secured** - configuration for Secured connection in credentials. Can be `enabled` or
 `disabled`.
 
 To set your API login and API password follow instructions presented in a
