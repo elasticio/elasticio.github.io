@@ -1,7 +1,6 @@
 ---
 title: Changelog
 layout: component
-section: Utility components
 description: Changelog for Router component.
 icon: router.png
 icontext: Router component
