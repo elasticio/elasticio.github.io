@@ -7,7 +7,7 @@ order: 1
 category: recipes
 ---
 
-This document provides information on how to [create Recipes](#create-recipes), [manage Recipes](#manage-recipes), and how to [use them to create Flows](#using-recipes). Additionally, it gives a small glimpse into the new [Recipes UI](#coming-soon-recipes-ui) that is in development.
+This document provides information on how to [create Recipes](#creating-recipes), [manage Recipes](#managing-recipes), and how to [use them to create Flows](#activate-a-recipe---create-a-flow). Additionally, it gives a small glimpse into the new [Recipes UI](#coming-soon-recipes-ui) that is in development.
 
 [Recipes](/getting-started/recipes) allow users to share [Flow](/getting-started/integration-flow) templates with others without disclosing their non-shareable data ([Credentials](/getting-started/credential), Fields, Variables).
 
@@ -172,7 +172,7 @@ The following actions with Recipes are available:
 - [Retrieve all Recipes](#retrieve-all-recipes)
 - [Update a Recipe](#update-a-recipe)
 - [Update a Recipe visibility](#update-a-recipe-visibility)
-- [Activate a Recipe - create a Flow](#activate-a-recipe-create-a-flow)
+- [Activate a Recipe - create a Flow](#activate-a-recipe---create-a-flow)
 - [Delete a Recipe](#delete-a-recipe)
 
 ### Retrieve a Recipe by ID
@@ -325,7 +325,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID} \
 ```
 
 
-### Update Recipe visibility
+### Update a Recipe visibility
 
 This resource allows you to update attribute visibility of the given Recipe.
 
