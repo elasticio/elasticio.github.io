@@ -67,8 +67,7 @@ button to go forward.
 ![Saving the recipient list](/assets/img/integrator-guide/recipient-list/recipient-list-4.png "Saving the recipient list")
 
 We are done with the recipient list creation. Let's publish the flow to see it
-in action. Please notice that you could also add more branches to the flow. Now
-click on the *I'm done!* button, then give a name to this integration flow and publish it.
+in action. Please notice that you could also add more branches to the flow. Now give a name to this integration flow and publish it.
 
 ![Start the flow](/assets/img/integrator-guide/recipient-list/recipient-list-5.png "Start the flow")
 
