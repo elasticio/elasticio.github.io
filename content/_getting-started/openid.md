@@ -3,11 +3,11 @@ title: OpenID
 layout: article
 section: Basic Concepts
 description: This document provides basic information on OpenID and how it is used to perform user login to the Platform.
-since: 20200130
+since: 20200206
 order: 1
 ---
 
-This document describes OpenID Connect and how we use it on the Platform, including some real use-cases.
+This document describes [OpenID Connect](#openid-connect), why [it is great](#why-use-openid), and how we [use it on the Platform](#openid-on-the-platform).
 
 ## OpenID Connect
 OpenID Connect (OIDC) lets developers authenticate users without taking on the responsibility of storing and managing passwords. OIDC creates a universal user ID, which includes the selected user data, and never shares this data, even for authentication purposes. Basically, it integrates with the site or application, and just safely approves login requests instead of sending usernames and passwords through the Internet.
