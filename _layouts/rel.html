@@ -1,0 +1,84 @@
+---
+layout: default
+---
+<div class="layout">
+    <div class="wrap">
+        <div class="breadcrumbs">
+          <!-- Breadcrumbs: -->
+              {% unless page.no_breadcrumbs %}
+                <div id="breadcrumbs" class="no-print">
+                  {% capture url_parts %} {{ page.url | replace:'/'," " }}{% endcapture %}
+                  {% capture maybe_index_html %}{{ page.url | split: '/' | last }}{% endcapture %}
+                  {% if page.breadcrumb_limit %}
+                    {% assign num_parts = page.breadcrumb_limit %}
+                  {% else %}
+                    {% capture num_parts %}{{ url_parts | number_of_words | minus: 1 }}{% endcapture %}
+                  {% endif %}
+                  {% assign previous="" %}
+                  <a href="/" class="breadcrumbs__item">Home</a>
+                  <!-- Comment to ensure there's no whitespace between the parts of this "path"-->
+                  {% for unused in (1..num_parts) %}
+                    {% capture first_word %}{{ url_parts | truncatewords:1 | remove:"..."}}{% endcapture %}
+                    {% capture previous %}{{ previous }}/{{ first_word }}{% endcapture %}
+                    <a href="{{previous}}" class="breadcrumbs__item">{{ first_word | capitalize}}</a><!--
+                  -->{% unless forloop.last %} {% endunless %}
+                    {% capture url_parts %}{{ url_parts |remove_first:first_word }}{% endcapture %}
+                  {% endfor %}
+                  <span class="breadcrumbs__item">{{page.title}}</span>
+                </div>
+              {% endunless %}
+
+
+          <!--
+            <a href="/" class="breadcrumbs__item">Home</a>
+            <a href="/{{page.collection}}" class="breadcrumbs__item">{{site.data.chapters[page.collection].title}}</a>
+            <span class="breadcrumbs__item">{{page.title}}</span>
+            -->
+        </div>
+
+        <div class="layout__side">
+            <div class="contents">
+                <div class="side">
+                    <div class="side__title">Jump to</div>
+                    <div id="article_toc" class="side__list">
+                    </div>
+                    <div class="side__title">{{page.category | capitalize}} Related Links</div>
+                    <div class="side__list">
+                            {% assign collectionName = collection[0] %}
+                            {% assign related = site[collectionName] | where:'category', page.category%}
+                            {% if related.size > 0 %}
+                                {% for item in related %}
+
+                                    <a class="side__item" href="{{item.url}}">{{item.title}}</a>
+
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+                    <div class="side__list">
+                      <span class="side__time">Updated on <time>{{ page.updatedDate | date: '%B %d, %Y' }}</time></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout__content">
+            <div class="article">
+                  <div>
+                      <h1>{{page.title}}</h1>
+                      <div class="welcomer__text">{{page.description}}</div>
+                  </div>
+                  <hr />
+                {{content}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery('.article h2')
+            .each(function(e, x){
+                var item = $( "<div></div>" );
+                item.addClass('side__item').attr('data-href', x.id).text(x.innerText);
+                jQuery('#article_toc').append(item);
+            });
+</script>
