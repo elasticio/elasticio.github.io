@@ -44,15 +44,17 @@ layout: default
                     </div>
                     <div class="side__title">{{page.category | capitalize}} Related Links</div>
                     <div class="side__list">
-                            {% assign collectionName = collection[0] %}
-                            {% assign related = site[collectionName] | where:'category', page.category%}
-                            {% if related.size > 0 %}
-                                {% for item in related %}
-
-                                    <a class="side__item" href="{{item.url}}">{{item.title}}</a>
-
-                                {% endfor %}
-                            {% endif %}
+                      {% for collection in site.data.chapters%}
+                          {% assign collectionName = collection[0] %}
+                          {% assign related = site[collectionName] | where:'category', page.category%}
+                          {% if related.size > 0 %}
+                              {% for item in related %}
+                                  {% if item.url != page.url %}
+                                  <a class="side__item" href="{{item.url}}">{{item.title}}</a>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endif %}
+                      {% endfor %}
                     </div>
                     <div class="side__list">
                       <span class="side__time">Updated on <time>{{ page.updatedDate | date: '%B %d, %Y' }}</time></span>
