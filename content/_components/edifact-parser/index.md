@@ -10,7 +10,6 @@ createdDate: 2017-08-16
 updatedDate: 2017-08-25
 ---
 
-
 ## Authentication
 
 This component requires no authentication.
@@ -19,9 +18,28 @@ This component requires no authentication.
 
 EDIFACT Parser component expects an incoming message(es) with EDI attachment(s) in it. You can test it using SFTP component like this:
 
-![image](https://user-images.githubusercontent.com/56208/29717917-46ad444e-89b1-11e7-8d84-1059f3959472.png)
+![Edifact Sample](img/edifact-sample.png)
 
-Sample EDI file you can find [here](https://raw.githubusercontent.com/elasticio/edifact-parser-component/master/samples/INVOICE.edi), and [here](https://github.com/elasticio/edifact-parser-component/blob/master/samples/INVOICE.edi.json) you will see resulting JSON message body after parsing.
+Sample example:
+
+```json
+{
+  "result": [
+    {
+      "elements": [
+        ["UNOA", "1"],
+        ["005435656", "1"],
+        ["006415160", "1"],
+        ["060515", "1434"],
+        ["00000000000778"]
+       ],
+      "name": "UNB"
+    }
+  ]
+}
+```
+
+> Sample EDI files you can find [here](https://raw.githubusercontent.com/elasticio/edifact-parser-component/master/samples/INVOICE.edi), and [here](https://github.com/elasticio/edifact-parser-component/blob/master/samples/INVOICE.edi.json) you will see resulting JSON message body after parsing.
 
 
 ## Triggers
