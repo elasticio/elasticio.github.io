@@ -124,7 +124,9 @@ Optional field. Provide a configuration properties for connections to the Databa
 ### Select trigger
 
 You are able to provide SELECT query with last execution timestamp as WHERE clause criteria.
-![image](https://user-images.githubusercontent.com/40201204/43591075-2a032dcc-967b-11e8-968d-851355c2646e.png)
+
+![Select trigger](img/select-trigger.png)
+
 Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
 During the first execution, date will be equal to ["start" of Unix Time](https://en.wikipedia.org/wiki/Unix_time) - ``1970-01-01 00:00:00.000``.
 Precision of the polling clause can be till milliseconds.
@@ -140,11 +142,14 @@ The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-d
 ### Get Rows Polling trigger
 
 This trigger can polling data from provided table. As WHERE clause you can use column, which has datatype like DATE or TIMESTAMP.
-![image](https://user-images.githubusercontent.com/40201204/43591332-c99f6b3e-967b-11e8-8a77-bf8386e83d51.png)
+
+![Get Rows Polling trigger](img/get-rows-polling-trigger.png)
+
 Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
 During the first execution, date will be equal to ["start" of Unix Time](https://en.wikipedia.org/wiki/Unix_time) - ``1970-01-01 00:00:00.000``.
 Precision of the polling clause can be till milliseconds.
 The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-dd hh:mi:ss[.sss]``, where
+
 - ``yyyy`` - year
 - ``mm`` - month
 - ``dd`` - day
@@ -153,11 +158,11 @@ The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-d
 - ``ss`` - second
 - ``sss`` - millisecond (optional)
 
-> **Please Note:** Component Snapshot will not be overwritten in Real-Time flows due to platform behaviour, so we strongly recommend to use Get Rows Polling trigger in Keen Flows only*
+> **Please note** that Component Snapshot will not be overwritten in Real-Time flows due to platform behaviour, so we strongly recommend to use Get Rows Polling trigger in Keen Flows only*
 
 #### Input fields description
 
-![image](https://user-images.githubusercontent.com/16806832/67293348-f5836900-f4ec-11e9-8e6a-e91b9417ff9d.png)
+![Get Rows Polling trigger - Input fields description](img\get-rows-polling-trigger-input-fields.png)
 
   * Tables List
 
@@ -186,6 +191,8 @@ Action to execute custom SQL query from provided request string.
 Execution result returns as array of objects. If request contains multiple sql statements - them will execute inside one transaction.
 If one of statements fails, transaction will be rollbacked.
 
+![Execute custom query action](img/execute-custom-query-action.png)
+
 #### Input fields description
 
 As input metadata, you will get one field named `query` to provide request string
@@ -210,7 +217,8 @@ UPDATE stars SET radius = 5 WHERE id = 2;
 
 ### Select action
 
-![image](https://user-images.githubusercontent.com/40201204/43592439-39ec5738-967e-11e8-8632-3655b08982d3.png)
+![Select action](img/select-action.png)
+
 The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
 In SQL query you can use clause variables with specific data types.
 Internally we use prepared statements, so all incoming data is
@@ -243,7 +251,7 @@ Following types are supported:
  * ``float``
  * ``date``
 
-![image](https://user-images.githubusercontent.com/40201204/43644974-332f2aa4-9739-11e8-8483-f7395e5d195d.png)
+![Select Action - SQL Query](img\select-action-sql-query.png)
 
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
 
@@ -253,19 +261,21 @@ Component supports dynamic incoming metadata - as soon as your query is in place
 
 ### Lookup Row By Primary Key
 
-![image](https://user-images.githubusercontent.com/40201204/43592505-5b6bbfe8-967e-11e8-845e-2ce8ac707357.png)
+![Look up Row by Primary key](img\look-up-row-by-primary-key.png)
 
 The action will execute select query from a ``Table`` dropdown field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns only one result (a primary key is unique).
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
 
 #### Input fields description
 
-![image](https://user-images.githubusercontent.com/40201204/43644579-f593d1c8-9737-11e8-9b97-ee9e575a19f7.png)
+![Look up Row by Primary key - Input fields description](img\look-up-row-by-primary-key-input-field.png)
 As an input metadata you will get a Primary Key field to provide the data inside as a clause value.
 
 ### Insert action
 
 The action will execute ``INSERT`` command into the table from ``Table`` dropdown list the values specified in the body.
+
+![Insert Action](img\insert-action.png)
 
 #### List of Expected Config fields
 
@@ -273,10 +283,9 @@ The action will execute ``INSERT`` command into the table from ``Table`` dropdow
 
 #### Input fields description
 
-##### Table
-
 Action contains only one configuration field `Table` - dropdown list with available table names.
-![image](https://user-images.githubusercontent.com/16806832/65327293-3f122880-dbbc-11e9-8a07-a10131900962.png)
+
+![Insert Action - Input fields description](img/insert-action-input-fields.png)
 
 #### Expected input metadata
 
@@ -293,7 +302,8 @@ As output metadata, you will get execution insert result like:
 
 ### Delete Row By Primary Key action
 
-![image](https://user-images.githubusercontent.com/40201204/43592505-5b6bbfe8-967e-11e8-845e-2ce8ac707357.png)
+![Delete Row By Primary Key](img/delete-row-by-primary-key.png)
+
 The action will execute delete query from a ``Table`` dropdown field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns count of affected rows.
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
 
@@ -301,7 +311,7 @@ Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty respon
 
 #### Input fields description
 
-![image](https://user-images.githubusercontent.com/40201204/43644579-f593d1c8-9737-11e8-9b97-ee9e575a19f7.png)
+![Delete Row By Primary Key - Input fields description](img/delete-row-by-primary-key-input-fields.png)
 As an input metadata you will get a Primary Key field to provide the data inside as a clause value.
 
 ### Execute stored procedure
@@ -351,41 +361,29 @@ Component generates next metadata:
 
 The action will execute ``SELECT`` command from a ``Tables`` dropdown field, as search criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"), and execute ``INSERT`` command by PRIMARY KEY with specified field, if result does not found, else - action will execute ``UPDATE`` command by PRIMARY KEY with specified field. The action returns only one result row (a primary key is unique).
 
-1. Find and select jdbc-component in the component repository
-![image](https://user-images.githubusercontent.com/16806832/44981615-c70a9d80-af7b-11e8-8055-3b553abe8212.png)
+Select table from `Table` dropdown list,
 
-2. Create new or select existing credentials
-![image](https://user-images.githubusercontent.com/16806832/44981652-e86b8980-af7b-11e8-897e-04d1fc9a93cf.png)
+![Upsert Row By Primary Key](img/upsert-row-by-primary-key.png)
 
-3. Select action "Upsert Row By Primary Key" from list
-![image](https://user-images.githubusercontent.com/16806832/44981700-0d5ffc80-af7c-11e8-9ac3-aedb16e1d788.png)
+specify input(`userid` field is in our case a Primary key) data and click "Continue". You can also enable rebound mechanism if needed.
 
-4. Select table from ``Table`` dropdown list
-![image](https://user-images.githubusercontent.com/16806832/44981754-38e2e700-af7c-11e8-87d3-f029a7fec8fa.png)
+![Upsert Row By Primary Key - Input](img/upsert-row-by-primary-key-input.png)
 
-5. Specify input data (field with red asterisk is Primary key), and click "Continue"
-![image](https://user-images.githubusercontent.com/16806832/44981854-83fcfa00-af7c-11e8-9ef2-8c06e77fed1e.png)
+Retrieving sample
 
-6.  Enable rebound mechanism if needed
-![image](https://user-images.githubusercontent.com/18464641/67211608-b76e4280-f423-11e9-85f6-f7ec58cc24f1.png)
+![Upsert Row By Primary Key - Retrieving sample](img/upsert-row-by-primary-key-sample.png)
 
-7. Retrieving sample
-![image](https://user-images.githubusercontent.com/16806832/44982952-2ec2e780-af80-11e8-98b1-58c3adbc15b9.png)
+Retrieve sample result, click "Continue" and finish component configuration.
 
-8. Retrieve sample result
-
-9. Click "Continue"
-![image](https://user-images.githubusercontent.com/16806832/44983101-b0b31080-af80-11e8-82d8-0e70e4b4ff97.png)
-
-10. Finish component configuration
-![image](https://user-images.githubusercontent.com/16806832/44983365-90378600-af81-11e8-9be4-4dbb39af0fdc.png)
+![Upsert Row By Primary Key - finish](img/upsert-row-by-primary-key-finish.png)
 
 #### Input fields description
 
 * `Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3
 
-As an input metadata you will get all fields of selected table. [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY") is required field (will mark as asterisk) and other input fields are optional.
-![image](https://user-images.githubusercontent.com/16806832/44397461-1a76f780-a549-11e8-8247-9a6f9aa3f3b4.png)
+As an input metadata you will get all fields of selected table. [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY") is required field and other input fields are optional.
+
+![Upsert Row By Primary Key - Input fields](img/upsert-row-by-primary-key-input-fields.png)
 
 
 ### Create or update record action (Deprecated)
@@ -398,16 +396,22 @@ Please use [**Upsert row by primary key**](#upsert-row-by-primary-key-action) in
 1. Only tables with one [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY") is supported. You will see the message ``Table has not Primary Key. Should be one Primary Key
 ``, if the selected table doesn't have a primary key. Also, you will see the message ``Composite Primary Key is not supported
 ``, if the selected table has composite primary key.
+
 2. Only following versions of database types are supported:
 - ``MySQL`` - compatible with MySQL Server 5.5, 5.6, 5.7 and 8.0.
 - ``PostgreSQL`` - compatible with PostgreSQL 8.2 and higher
 - ``Oracle`` - compatible with Oracle Database 8.1.7 - 12.1.0.2
 - ``MSSQL`` - compatible with Microsoft SQL Server 2008 R2 and higher
+
 3. The current implementation of the action ``Upsert By Primary Key`` doesn't mark non-nullable fields as required fields at a dynamic metadata. In case of updating such fields with an empty value you will get SQL Exception ``Cannot insert the value NULL into...``. You should manually fill in all non-nullable fields with previous data, if you want to update part of columns in a row, even if data in that fields doesn't change.
+
 4. The current implementation of the action ``Execute stored procedure`` doesn't support ResultSet MSSQL output.
+
 5. The current implementation of the action ``Execute stored procedure`` doesn't support any array types parameters.
+
 6. The current implementation of the action ``Execute stored procedure`` doesn't support MySQL schemas dropdown list.
 (MySQL does not have schemas by definition)
+
 6. Rebound mechanism only works for this SQL State:
  - ``MySQL``: 40001, XA102
  - ``Oracle``: 61000
