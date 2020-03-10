@@ -69,7 +69,6 @@ Note that the subfields for each address are the same. This means you can assign
 {
   "definitions": {
     "addressfields": {
-      "$id": "#addressfields",
       "type": "object",
       "required": true,
       "properties": {
@@ -94,11 +93,50 @@ Note that the subfields for each address are the same. This means you can assign
 }
 ```
 
-This definition can be referred to by replacing the object definition with just the `$ref` keyword and the value of the definition's `$id` field:
+This definition can be referred to by replacing the object definition with just the `$ref` keyword and the path to the definition field (where `#` represents the JSONSchema's outermost property space):
 
-`{ "$ref": "#addressfields" }`
+`{ "$ref": "#/definitions/addressfields" }`
 
 Now, your `order.in.json` file will look like this:
+
+```json
+{
+  "definitions": {
+    "addressfields": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "street_address": {
+          "type": "string",
+          "required": true
+        },
+        "city": {
+          "type": "string",
+          "required": true
+        },
+        "state": {
+          "type": "string",
+          "required": true
+        },
+        "telephone": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "billing_address": {
+      "$ref": "#/definitions/addressfields"
+    },
+    "shipping_address": {
+      "$ref": "#/definitions/addressfields"
+    }
+  }
+}
+```
+
+Another way to implement a definition is by adding an `$id` field to the definition object and reference that id's value in the place of the path to the definition as so:
 
 ```json
 {
@@ -138,4 +176,5 @@ Now, your `order.in.json` file will look like this:
 }
 ```
 
->**IMPORTANT:** We do not support referencing with paths and referencing external schemas at the moment.
+
+>**IMPORTANT:** We do not support referencing external schemas at the moment.
