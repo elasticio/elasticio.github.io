@@ -7,15 +7,14 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2019-06-27
-updatedDate: 2020-02-27
+updatedDate: 2020-03-11
 ---
 
 ## Latest changelog
 
-**1.3.0 (February 27, 2020)**
+**1.3.1 (March 11, 2020)**
 
-* Add Delete Object (at most 1) Action
-* Add new optional field in the Lookup Object Action
+* Add new optional field `Output method` in triggers: `Query` and `Get New and Updated Objects Polling`
 
 > To see the full **changelog** please use the following [link](/components/salesforce/changelog).
 
@@ -84,6 +83,9 @@ Use the Salesforce Object Query Language (SOQL) to search your organization’s 
 
 * **SOQL Query** - Input field for your SOQL Query
 
+* **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
+
+
 ### Get New and Updated Objects Polling
 
 Polls existing and updated objects. You can select any custom or built-in object for your Salesforce instance.
@@ -103,6 +105,8 @@ Polls existing and updated objects. You can select any custom or built-in object
    1. `yes` - if the number of changed records exceeds the maximum number of results in a page, wait until the next flow start to fetch the next page;
 
    2. `no` - if the number of changed records exceeds the maximum number of results in a page, the next pages will fetching in the same execution.
+
+* **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
 
 For example, you have 234 “Contact” objects, 213 of them were changed from 2019-01-01.
 You want to select all “Contacts” that were changed from 2019-01-01, set the page size to 100 and process single page per execution.
