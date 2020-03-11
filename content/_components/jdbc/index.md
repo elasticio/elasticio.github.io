@@ -355,7 +355,7 @@ END;
 
 Component generates next metadata:
 
-![image](https://user-images.githubusercontent.com/22715422/62056735-edd26200-b226-11e9-871e-0efc305d70b2.png)
+![Execute stored procedure - Input fields description](img/execute-store-procedure-input-fields.png)
 
 ### Upsert Row By Primary Key action
 
