@@ -109,8 +109,6 @@ Polls existing and updated objects. You can select any custom or built-in object
 * **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
 
 For example, you have 234 “Contact” objects, 213 of them were changed from 2019-01-01.
-
-For example, you have 234 “Contact” objects, 213 of them were changed from 2019-01-01.
 You want to select all “Contacts” that were changed from 2019-01-01, set the page size to 100 and process single page per execution.
 
 For you purpose you need to specify following fields:
