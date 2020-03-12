@@ -12,9 +12,10 @@ updatedDate: 2020-01-15
 
 ## Latest changelog
 
-**1.2.0(February 13, 2020)**
+**1.2.1(March 12, 2020)**
 
-* Added new authentication strategy `OAuth2`
+* Added validity check of `refresh_token` in keys for `OAuth2` authentication strategy
+
 
 > To see the full **changelog** please use the following [link](/components/rest-api/changelog).
 
@@ -30,7 +31,7 @@ The example below shows the development team creation using the REST API compone
  * The URL of the REST API resources. Accepts JSONata expressions, meaning the URL address evaluates [JSONata](http://jsonata.org/) expressions.
 2. Request Headers and Body
  * Definition of request [headers](#defining-http-headers)
- * Definition of request [body](#defining-http-body), if the HTTP method is not `GET`
+ * Definition of request [body](#defining-request-body), if the HTTP method is not `GET`
 3. Configuration options
  * ``Don`t throw Error on Failed Calls`` - if enabled return error, error code and stacktrace in message body otherwise throw error in flow.
  * ``Split Result if it is an Array`` - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.
@@ -38,7 +39,8 @@ The example below shows the development team creation using the REST API compone
  * ``Enable debug logging`` - The component supports extended logging. `Enable debug logging` checkbox should be enabled for it. After that you may check your logs in the logs console.
 
     >**Please note** that in case of using **ordinary flows**, adding of `DEBUG` environment variable in component repository will override disabled `Enable debug logging` checkbox during flow run, so all logs will be extended until an environment variable is removed.
- * ``Retry on failure`` - enabling [rebound](https://support.{{site.data.tenant.name}}/support/solutions/articles/14000044750-why-and-where-we-use-the-rebound-) feature for following HTTP status codes:
+
+ * ``Retry on failure`` - enabling [rebound](/getting-started/rebound) feature for following HTTP status codes:
 
     - 408: Request Timeout
     - 423: Locked
@@ -72,6 +74,7 @@ The example below shows the development team creation using the REST API compone
 To use the REST API component with any restricted access API provide the authorisation information.
 
 ![Choose credentials](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-auth.png "REST API component Basic authorisation")
+
 *Example above shows how to add the username/password to access the API during the integration flow design.*
 
 You can add the authorisation methods during the integration flow design or by going to your `Settings > Security credentials > REST client` and adding there.
@@ -83,7 +86,7 @@ REST API component supports 4 authorisation types:
 *   `API Key Auth` - use it to provide `API Key` to access the resource
 *   `OAuth2` - use it to provide `Oauth2` credentials to access the resource. Currently it is implemented `Authorization code` OAuth2 flow.
 
-Please note that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the headers section directly.
+> **Please note** that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the headers section directly.
 
 ## Defining HTTP headers
 
@@ -93,7 +96,7 @@ Use this section to add the request headers.
 
 Each header has a name and a value. Header name should be colon-separated name-value pairs in clear-text `string` format. The header value can use [JSONata](http://jsonata.org/) expressions.
 
-*Note:* **HTTP Response headers** will not be stored, the components stores body and attachment only.
+> **Note: HTTP Response headers** will not be stored, the components stores body and attachment only.
 
 ## Defining request body
 
@@ -119,7 +122,8 @@ The **body input field** changes according to the chosen content type.
 
 Here is how to send a JSON data in the body. Change the **content type** to `application/json` and the **body input part** would change accordingly to accept JSON object. Please note that this field supports [JSONata](http://jsonata.org) expressions.
 
-![[Configure Input - Body](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-body-json-var.png "REST API component Body sending JSON data")
+![Configure Input - Body](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-body-json-var.png "REST API component Body sending JSON data")
+
 *Example shows the JSON in the body where the `name` parameter value gets mapped using the value of `project_name` from the previous step of integration.*
 
 ### Sending XML data
@@ -201,6 +205,7 @@ for more information please see the
 
 You can to get HTTP response header only if ``Don`t throw Error on Failed Calls`` option is checked.
 In this case output structure of component will be:
+
 ```js
     {
       headers:<HTTP headers>,
@@ -229,7 +234,7 @@ Rest API component uses exception handling logic below:
 
 ## Known Limitations
 
-The component can parse any of json and xml content types.
+**1.** The component can parse any of json and xml content types.
 There are:
 * application/json
 * application/xml
@@ -238,7 +243,11 @@ There are:
 
 > If content type is not  exists  in response header, component will try parse response as json. If it get parse exception, it return response as is.
 
-Attachments limitations:
+**2.** Attachments limitations:
 
-1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with the Local Agents
+  1. Maximal possible size for an attachment is 10 MB.
+
+  2. Attachments mechanism does not work with [Local Agent Installation](/references/local-agents-requesting#compatible-operating-systems)
+
+  3. OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) contains `refresh_token` optional property, but due to EIO platform limitation it is required.
+Possible solution - use access_type:offline in additional parameters (may not work in some cases).
