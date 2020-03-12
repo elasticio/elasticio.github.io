@@ -1,7 +1,7 @@
 ---
 title: OpenID
 layout: article
-section: Basic Concepts
+section: Introduction
 description: This document provides basic information on OpenID and how it is used to perform user login to the Platform.
 since: 20200206
 order: 1
