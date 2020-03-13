@@ -84,3 +84,9 @@ references:
       description: Articles on environment variables
     - title: Tokens in OAuth2 components
       description: Collection of articles about different tokens used in OAuth2 components
+releases:
+  title: Releases
+  description: Product Updates
+  class: categories__item_release_notes
+  welcomer-class: welcomer__icon_release_notes
+  fa-icon: fa-newspaper-o
