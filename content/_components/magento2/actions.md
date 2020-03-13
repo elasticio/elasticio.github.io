@@ -47,12 +47,12 @@ If `Check if you'd like to make a series of calls (Developer Mode Only)` is chec
     "requests": [
       {
         "url" : "this/is/a/url",
-        "method" : "{{ supported method }}",
+        "method" : "supported method",
         "body" : "optional body..."
       },
       {
         "url" : "this/is/a/url",
-        "method" : "{{ supported method }}",
+        "method" : "supported method",
         "body" : "optional body..."
       },
       ...

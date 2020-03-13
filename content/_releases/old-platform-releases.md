@@ -1,8 +1,9 @@
 ---
-title: Archived Release Notes
+title: Archived Platform Release Notes
 layout: rel
+section: Platform Releases
 description: Platform release notes, archived into one big page after 6 month and kept around for the reference.
-category: releases
+category: platform-releases
 version: (3.17.0 - 3.9.0)
 updatedDate: 2020-03-07
 redirect_from:
