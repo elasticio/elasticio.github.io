@@ -12,13 +12,14 @@ updatedDate: 2020-02-26
 
 ## Latest changelog
 
-**1.4.0 (February 26, 2020)**
+**1.5.0 (March 11, 2020)**
 
-* Add `Read Store Config` action
-* Add `status` field to output metadata, option to turn off throwing errors for `Custom Request` action
-* Add `Don't throw error on 4XX/5XX HTTP response codes` configuration field for `Custom Request` action
-* Remove support for all Magento versions from 2.3.0 and below
-* Add support for Magento versions 2.3.2 and 2.3.4 so that currently supported instances are 2.3.1, 2.3.2, 2.3.3, 2.3.4
+* Created `Add Update To Sales Order` Action
+* Created `Create Order` action
+* Add new type of unique ID for Sales Order `ext_order_id` to action `Retrieve Object by ID`
+* Add `Check if you'd like to make a series of calls ( Developer mode only )` configuration field for `Custom Request` action
+* Improve error message for `Custom Request` action
+* Add `Time stamp field to poll on` configuration field for `Get New and Updated Objects Polling` trigger
 
 > To see the full **changelog** please use the following [link](/components/magento2/changelog).
 
@@ -71,367 +72,57 @@ It is needed to specify integration token. Required for `Integration Token autho
 
 ## Triggers
 
-### Get New and Updated Objects Polling
+Magento2 component includes the following triggers:
 
+  1. [Get New and Updated Objects Polling](/components/magento2/triggers#get-new-and-updated-objects-polling)                                                                          
 Lookup objects polling trigger.
-
-#### Component's configuration:
-
-**Object Type** - required, choose entity type for polling data. Possible options: Customers, Orders, Products.
-
-**Start Time** - optional, indicates the beginning time to start polling from (defaults to the beginning of time).
-
-**End Time** - optional, if provided, don’t fetch records modified after this time (defaults to never).
-
-**Size of Polling Page** - optional, positive integer, indicates the size of pages to be fetched. Defaults to 1000 objects.
-
-**Store View Code** - optional, the dropdown list with all store view codes, is useful for object type `Products`. With this option is possible to retrieve products for defined store view.
-
-![image](https://user-images.githubusercontent.com/16806832/59746223-186fe900-927f-11e9-8847-957082c0ab1a.png)
-
-#### Input Metadata
-
-N/A
-
-#### Output Data
-
-Each object emitted individually.
 
 ## Actions
 
-### Custom Request Action
+Magento2 component includes the following actions:
 
-You can do custom request using this action. You should manually specify `method`, `url` and `body`.
+  1. [Custom Request Action](/components/magento2/actions#custom-request-action)                
+Using this actions you can do custom request. You should manually specify `method`, `url` and `body`.
 
-#### Configuration Fields
-
-There is one configuration field:
-
-**Don't throw error on 4XX/5XX HTTP response codes** - optional, if checked, the action will return the Magento response as an object, regardless of whether there is an error. However, authentication errors will still be thrown.
-
-#### Expected input metadata
-
-Input metadata contains 3 fields:
-
-**Method** - required, specify request method, you can choose one from currently supported by Magento 2 : `GET`, `POST`, `PUT`, `DELETE`. You also may choose any other new available method is case of Magento 2 API update.
-
-**URL** - required, specify an endpoint for request, for example `V1/products/SKU-1`.
-
-**Body** - object, specify body for request if it needed. For example:
-
-```
-{
-   'username': 'dummy_user',
-   'password': 'password 1'
-}
-```
-![image](https://user-images.githubusercontent.com/16806832/58162968-d194d080-7c8b-11e9-9037-9e359e225c5c.png)
-
-#### Expected output metadata
-
-Output metadata is an object with the property `response`, which contains the response data, and the property `status`, which contains the response status code.
-
-For example:
-
-```
-{
-   'response': 'token'
-   'status': 200
-}
-```
-
-### Set Inventory Action
-
+  2. [Set Inventory Action](/components/magento2/actions#set-inventory-action)                 
 This action allows you to set the quantity for an already existing product.
 
-#### Expected input metadata
+  3. [Upsert Product Action](/components/magento2/actions#upsert-product-action)                
+You can create new or update existing simple or configurable product and associate with existing child product (for configurable products) using this action.
 
-Input metadata contains 3 fields:
+  4. [Set order as shipped Action](/components/magento2/actions#set-order-as-shipped-action)     
+Using this action you can set your order as shipped.
 
-**sku** - required, specify what product to set.
+  5. [Set Sales Order External ID](/components/magento2/actions#set-sales-order-external-id)   
+This action allows to set or update Sales Order external ID for existing Order.
 
-**qty** - required, specify what quantity to set.
+  6. [Create Invoice Action](/components/magento2/actions#create-invoice-action)               
+This action allows you to create an invoice for an already existing order using the order’s `entity id`.
 
-**is_in_stock** - required, specify if product is in stock.
+  7. [Add Update To Sales Order](/components/magento2/actions#add-update-to-sales-order)       
+This action allows to set or update Sales Order status.
 
-### Upsert Product Action
+  8. [Lookup Object by ID](/components/magento2/actions#lookup-object-by-id)                   
+This action allows you to search up one of the object types: `customer`, `product` or `sales order` by unique criteria.
 
-You can create new or update existing simple or configurable product and associate with existing child product (for configurable products).
+  9. [Set Tiered Prices](/components/magento2/actions#set-tiered-prices)                       
+This action takes an array as input, and therefore can only be used in developer mode.
 
-#### List of Expected Config fields
+  10. [Upsert Customer](/components/magento2/actions#upsert-customer)                        
+Updates a customer, or creates it if it doesn’t exist. To update, you must provide the `customer ID` and `website ID` (Associate to Website). To create, do not enter a customer ID; the system will generate one.
 
-**Product Type** - dropdown list with product type options:
+  11. [Delete Object](/components/magento2/actions#delete-object)                               
+This action allows you to delete the following object types: `customer` or `product` by unique criteria.
 
-- Simple
-- Configurable (Associate with existing child product, single configurable variant)
-
-**Attribute Set** - dropdown list with all existing product attribute sets labels plus an options `Specify attribute set id from incoming message` and `Specify attribute set name from incoming message` to allow this to be populated from incoming message via attribute set id or name.
-
-![image](https://user-images.githubusercontent.com/16806832/58963896-a8f5f600-87b6-11e9-98c0-47d00ecb220f.png)
-
-#### Expected input metadata
-
-Input metadata for simple product:
-
-**SKU** - required, product sku that needs to be created or updated
-
-**Status** - required, products status
-
-**Name** - required, products name
-
-**Weight** - required, products weight
-
-**Visibility** - required, products visibility, enum of visibility labels
-
-**Price** - required, products price
-
-**Attribute Set id** - is present, if configuration field `Attribute Set` equals to `Specify attribute set id from incoming message`
-
-**Attribute Set name** - is present, if configuration field `Attribute Set` equals to `Specify attribute set name from incoming message`
-
-**Attribute** - dropdown list with all attributes labels, is present, if configuration field `Product Type` equals to `Configurable (Associate with existing child product, single configurable variant)`
-
-**Custom Attributes** - object with global custom attributes and custom attributes for each store view
-
-**Child skus** - an array of child SKUs that should be associated with the configurable product. Is present, if configuration field `Product Type` equals to `Configurable (Associate with existing child product, single configurable variant)`
-
-#### Expected output metadata
-
-Output metadata contains created or updated product: `/lib/schemas/upsertProductNew.out.json`
-
-### Set order as shipped Action
-
-You can set order as shipped in this action.
-
-#### Expected input metadata
-
-Input metadata contains 2 fields:
-
-**Order Id** - required, specify order id, that needs to be set as shipped.
-
-**skuQtyPairs** - required, array of objects with properties:
-
-**sku** - product sku, than needs to be shipped
-
-**qty** - quantity of products, than needs to be shipped
-
-```json
-[
-   {
-         "sku": "testSku",
-         "qty": 1
-   },
-   {
-         "sku": "testSku2",
-         "qty": 3
-   }
-]
-```
-
-#### Expected output metadata
-
-Output metadata contains object with property `response` with shipment ID.
-
-For example:
-
-```json
-{
-   "response": "3"
-}
-```
-
-### Set Sales Order External ID
-
-This action allows to set or update Sales Order external ID for existing Order
-
-#### Expected input metadata
-
-**magento_order_id** - required, primary id of Sales Order entity for Magento 2 API.
-
-**ext_order_id** - required, specify Sales Order an PID for external system.
-
-```
-{
-   'magento_order_id': 1,
-   'ext_order_id': 'some_external_id'
-}
-```
-
-#### Expected output metadata
-
-Sales Order entity structure
-
-| Type | Json schema location |
-|-----------|------------- |
-| SalesOrder  | `/lib/schemas/setSalesOrderExternalId.out.json` |
-
-### Create Invoice Action
-
-This action allows you to create an invoice for an already existing order using the order's `entity id`.
-
-#### Expected input metadata
-
-Input metadata contains 2 fields:
-
-**capture** - optional, indicate if payment was received for order. If true, payment was received.
-
-**orderEntityID** - required, specify the order's `entity id`.
-
-### Lookup Object by ID
-
-This action allows you to search up one of the object types:
-
-- customer
-- product
-- sales order
-
-by unique criteria.
-
-#### Expected input metadata
-
-Input metadata will take the unique ID and an optional store view code. The store view will be set to `all` by default.
-
-#### Expected output metadata
-
-The expected output will be the given object.
-
-If `allow zero results?` is selected, the component will always return an empty object rather than an error if zero results are found.
-If `allow ID to be ommitted` is selected, the ID field will not be required to run the action, but the item emitted by 'zero results found' will still be dependent on the other config field.
-
-### Set Tiered Prices
-
-This action takes an array as input, and therefore can only be used in **developer mode**.
-
-#### Input Metadata
-
-The input metadata is a nested array that takes the following format:
-
-```
-   {
-   "tieredPrices": [
-   {
-      "sku": string,                              # SKU for one product
-      "prices": [                                 # sets tiered prices for SKU to this array of prices
-         {
-         "price": 100,                           # price (in currency)
-         "price_type": "discount",               # either "discount" or "fixed"
-         "website_id": "other_website",          # website ID can be given as either a string or an int
-         "customer_group": "Retailer",           # Customer group must be given as a string
-         "quantity": 45
-         }
-      ]
-   }, {
-      "sku": string,                              # SKU for one product
-      "prices": []                                # providing an empty array will remove all existing tiered prices for this product
-   }
-   ]
-}
-```
-
-#### Output Metadata
-
-The output will return an array of all the tiered prices for every SKU where they were changes.
-If all tiered prices were removed, the output metadata will be `[]`.
-
-### Upsert Customer
-
-Updates a customer, or creates it if it doesn't exist. To update, you must provide the customer ID and website ID (Associate to Website). To create, do not enter a customer ID; the system will generate one.
-
-> **Note**:
-* The customer's addresses will be completely overwritten by the provided array of addresses
-* Custom customer attributes can not be set
-
-#### Expected input metadata
-
-**email** - required, unique email of the customer
-
-**firstname** - required
-
-**lastname** - required
-
-#### Expected output metadata
-
-The output metadata is the created or updated product.
-
-### Delete Object
-
-This action allows you to delete the following object types:
-
-- customer
-- product
-
-by unique criteria.
-
-#### Expected input metadata
-
-To delete a customer, input either their customer ID or their email. To delete a product, input the product SKU.
-
-#### Expected output metadata
-
-For customers, the output is their customer ID. For products, the output is its SKU.
-
-### Read Store Config Action
-
+  12. [Read Store Config Action](/components/magento2/actions#read-store-config-action)          
 You can read all the configured stores on a Magento instance (like [GET /V1/store/storeConfigs](https://devdocs.magento.com/swagger/#/storeStoreConfigManagerV1/storeStoreConfigManagerV1GetStoreConfigsGet))
 
-> **Note**: As this information is very static, it is cached between calls within the same container life cycle.
-
-#### Expected output metadata
-
-Output metadata contains object with property `storeConfigs`, which contains array of store configs.
-For example:
-
-<details>
-
-<summary>Output metadata</summary>
-
-```
-{
-  "storeConfigs": [
-    {
-      "id": 1,
-      "code": "default",
-      "website_id": 1,
-      "locale": "en_US",
-      "base_currency_code": "USD",
-      "default_display_currency_code": "USD",
-      "timezone": "UTC",
-      "weight_unit": "lbs",
-      "base_url": "http://magento_2_3_1/",
-      "base_link_url": "http://magento_2_3_1/",
-      "base_static_url": "http://magento_2_3_1/pub/static/version1554996639/",
-      "base_media_url": "http://magento_2_3_1/pub/media/",
-      "secure_base_url": "https://magento_2_3_1/",
-      "secure_base_link_url": "https://magento_2_3_1/",
-      "secure_base_static_url": "https://magento_2_3_1/pub/static/version1554996639/",
-      "secure_base_media_url": "https://magento_2_3_1/pub/media/"
-    },
-    {
-      "id": 2,
-      "code": "other_store_view",
-      "website_id": 2,
-      "locale": "en_US",
-      "base_currency_code": "USD",
-      "default_display_currency_code": "USD",
-      "timezone": "UTC",
-      "weight_unit": "lbs",
-      "base_url": "http://magento_2_3_1/",
-      "base_link_url": "http://magento_2_3_1/",
-      "base_static_url": "http://magento_2_3_1/pub/static/version1554996639/",
-      "base_media_url": "http://magento_2_3_1/pub/media/",
-      "secure_base_url": "https://magento_2_3_1/",
-      "secure_base_link_url": "https://magento_2_3_1/",
-      "secure_base_static_url": "https://magento_2_3_1/pub/static/version1554996639/",
-      "secure_base_media_url": "https://magento_2_3_1/pub/media/"
-    }
-  ]
-}
-```  
-</details>
+  13. [Create order](/components/magento2/actions#create-order)                              
+Creates an order on behalf of a customer given an existing customer id, or creates an order for a guest user.
 
 ## Known limitations
 
-1. Current component version was tested with Magento2 v2.3.3. Correct component behavior is not guaranteed for other Magento2 versions.
+1. Current component version was tested with Magento2 v2.3.4. Correct component behavior is not guaranteed for other Magento2 versions.
 
 2. Deprecated triggers and actions don't support `Integration Token authorization`, only `Admin Token authorization`.
 

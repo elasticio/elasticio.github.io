@@ -9,6 +9,10 @@ createdDate: 2020-01-02
 updatedDate: 2020-01-02
 ---
 
+## 1.2.1(March 12, 2020)
+
+* Added validity check of `refresh_token` in keys for `OAuth2` authentication strategy
+
 ## 1.2.0(February 13, 2020)
 
 * Added new authentication strategy `OAuth2`
@@ -29,7 +33,6 @@ updatedDate: 2020-01-02
 
 ## 1.1.0 (August 28, 2019)
 
-### Added
 * Added feature `Retry on failure`
 
 ## 1.0.1 (June 26, 2019)

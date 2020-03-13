@@ -9,6 +9,15 @@ createdDate: 2019-12-27
 updatedDate: 2020-02-26
 ---
 
+## 1.5.0 (March 11, 2020)
+
+* Created `Add Update To Sales Order` Action
+* Created `Create Order` action
+* Add new type of unique ID for Sales Order `ext_order_id` to action `Retrieve Object by ID`
+* Add `Check if you'd like to make a series of calls ( Developer mode only )` configuration field for `Custom Request` action
+* Improve error message for `Custom Request` action
+* Add `Time stamp field to poll on` configuration field for `Get New and Updated Objects Polling` trigger
+
 ## 1.4.0 (February 26, 2020)
 
 * Add `Read Store Config` action
