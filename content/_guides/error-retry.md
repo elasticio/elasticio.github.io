@@ -1,6 +1,6 @@
 ---
-title: Error Retry
-description: Error retry is a feature which gives a possibility to try to process the failed messages in the integration flows.
+title: Error Retry and Retention Policy
+description: Error retry is a feature which gives a possibility to try to process the failed messages in the integration Flows.
 layout: article
 section: Troubleshooting
 order: 1
@@ -9,8 +9,7 @@ category: troubleshooting
 
 ## Description
 
-Error retry is a feature which gives a possibility to try to process the failed messages
-in the integration flows.
+This document describes Error Retry, a feature which gives a possibility to try to process the failed messages in the integration Flows. Additionally, the document provides information on the Platform [Error Retention policy](#error-retention-policy).
 
 ## Use case of Retry
 
@@ -63,6 +62,12 @@ Before you proceed to press Retry button try to assess the situation:
 
 If answer to any of these questions is no then it is highly possible you would get
 an error again after the Retry.
+
+## Error Retention policy
+There is a limit that defines the maximum number of errors we list for a Flow. If the limit is reached, no new errors are listed for the given Flow anymore. This limit will protect you from the "chatterbox" Flows that tend to spam too much.
+
+The default limit is `1000` records per Flow, and is set by `MAX_ERROR_RECORDS_COUNT` environment variable. If the amount of errors per Flow gets higher then `MAX_ERROR_RECORDS_COUNT` value, the Platform removes old error records and shows a corresponding notification in the UI.
+
 
 ## Related links
 
