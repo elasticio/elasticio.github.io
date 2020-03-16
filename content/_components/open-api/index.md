@@ -27,7 +27,7 @@ OpenAPI (Swagger) document needs to be hosted online and should be reached witho
 
 ### Purpose
 
-Using OpenAPI Specification make request to REST API on elastic.io platform.
+Using OpenAPI Specification make request to REST API on {{site.data.tenant.name}} platform.
 
 ### How works. API version / SDK version
 
