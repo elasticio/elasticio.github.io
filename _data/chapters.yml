@@ -88,7 +88,7 @@ releases:
   title: Releases
   description: Product Updates
   class: categories__item_release_notes
-  welcomer-class: welcomer__icon_release_notes
+  welcommer-class: welcomer__icon_release_notes
   fa-icon: fa-newspaper-o
   sections:
     - title: Platform Releases
