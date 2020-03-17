@@ -74,8 +74,8 @@ It is needed to specify integration token. Required for `Integration Token autho
 
 Magento2 component includes the following triggers:
 
-  1. [Get New and Updated Objects Polling](/components/magento2/triggers#get-new-and-updated-objects-polling)                                                                          
-Lookup objects polling trigger.
+  1. [Get New and Updated Objects Polling](/components/magento2/triggers#get-new-and-updated-objects-polling)                                               
+  Lookup objects polling trigger.
 
 ## Actions
 
