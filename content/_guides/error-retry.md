@@ -66,7 +66,7 @@ an error again after the Retry.
 ## Error Retention policy
 There is a limit that defines the maximum number of errors we list for a Flow. If the limit is reached, no new errors are listed for the given Flow anymore. This limit will protect you from the "chatterbox" Flows that tend to spam too much.
 
-The default limit is `1000` records per Flow, and is set by `MAX_ERROR_RECORDS_COUNT` environment variable. If the amount of errors per Flow gets higher then `MAX_ERROR_RECORDS_COUNT` value, the Platform removes old error records and shows a corresponding notification in the UI.
+The default limit is `1000` records per Flow. If the amount of errors per Flow gets higher then `1000` value, the Platform removes old error records and shows a corresponding notification in the UI.
 
 
 ## Related links
