@@ -76,260 +76,59 @@ to connect to NetSuite via native SuiteTalk API Can be found here:
 
 ## Triggers
 
-### Search Entity
+NetSuite component includes the following triggers:
 
-Find an object or a set of objects using filter criteria (field, operator, value).
-To start select the NetSuite component and follow the configuration option below:
+  1. [Get New and Updated Objects Polling](/components/netsuite/triggers#get-new-and-updated-objects-polling)                            
+  Generic trigger that polls NetSuite instance for new and/or updated objects (of any type available in the NetSuite).
 
-*   `Entity types list` - Currently **Vendor payments** and **Customer payments** types are supported.
-*   `Filter by field` - Drop-down has only two options: `dateCreated` or `lastModifiedDate`.
-*   `Filter operator` - This drop-down enables the following parameter values: **after**, **before**, **notAfter**, **notBefore**, **notEmpty**, **on**, **notOn**, **notOnOrBefore**, **notOnOrAfter**, **onOrAfter** and **onOrBefore**.
-*   `Filter value` - this is date and time in format `2018-01-01T00:00:00.000 -07:00`. At the end of trigger execution "Filter value" field change value to "Last trigger execution date" value. It is opportunity to load only new updated/created records from the NetSuite.
+  2. [Polling objects](/components/netsuite/triggers#polling-objects)  
+  Find an object or a set of objects was updated since last polling of time.
+
+The following NetSuite triggers are deprecated:
+
+  1. [Search Entity(deprecated)](/components/netsuite/triggers#search-entitydeprecated)                                                  
+  Deprecated. Use [Get New and Updated Objects Polling](/components/netsuite/triggers#get-new-and-updated-objects-polling) trigger instead. Find an object or a set of objects using filter criteria (field, operator, value).
 
 ## Actions
 
-### Lookup Customer
+NetSuite component includes the following actions:
 
-This action enables to find the customer by provided ID. It is possible to provide
-**internal**, **external** id or **all** of them in input message.
+  1. [Delete Object By Id](/components/netsuite/actions#delete-object-by-id)       
+  Deletes an object by the ID provided.
 
-If entity doesn't have `externalId` You must specify only `internalId` in
-input message. If You specify incorrect internal or external id, You will get
-error **That record does not exist.**
+  2. [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id)       
+  Lookup an object by the ID provided.
 
-For example when the `externalId` exists the answer would be:
+  3. [Lookup Objects](/components/netsuite/actions#lookup-objects)       
+  Looks for objects available in NetSuite which meet given criteria.
 
-```javascript
-{
-  "internalId":"1234",
-  "externalId":"4567"
-}
-```
-When the `externalId` does not exist:
+  4. [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id)       
+  Either update an object in NetSuite by an ID provided or inserts as a new object if it does not exist.
 
-```javascript
-{
-  "internalId":"1234"
-}
-```
+The following Salesforce actions are deprecated:
 
-### Lookup Invoice
+  1. [Lookup Customer(deprecated)](/components/netsuite/actions#lookup-customerdeprecated)       
+  Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead. This action enables to find the customer by provided ID.
 
-This action can be used to find invoices by provided ID.
+  2. [Lookup Invoice(deprecated)](/components/netsuite/actions#lookup-invoicedeprecated)       
+  Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead. This action can be used to find invoices by provided ID.
 
-You can provide **internal**, **external** id or **all** of them in input message.
-If entity doesn't have `externalId` You must specify only `internalId` in input message.
+  3. [Upsert Customer(deprecated)](/components/netsuite/actions#upsert-customerdeprecated)       
+  Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead. Create new or update existing customer by provided external ID.
 
-If You specify incorrect internal or external id, You will get error "**That record does not exist.**"
+  4. [Upsert Contact(deprecated)](/components/netsuite/actions#upsert-contactdeprecated)       
+  Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead. Create new or update existing contact by provided external ID.
 
-For example if the `externalId` exists:
+  5. [Upsert Invoice(deprecated)](/components/netsuite/actions#upsert-invoicedeprecated)       
+  Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead. Create new or update existing invoice by provided external ID.
 
-```javascript
-{
-  "internalId":"1234",
-  "externalId":"4567"
-}
-```
-If the `externalId` does not exist:
+  6. [Upsert Sales Order(deprecated)](/components/netsuite/actions#upsert-sales-orderdeprecated)       
+  Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead. Create new or update existing sales order by provided external ID.
 
-```javascript
-{
-  "internalId":"1234"
-}
-```
+  7. [Upsert Vendor(deprecated)](/components/netsuite/actions#upsert-vendordeprecated)       
+  Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead. Create new or update existing vendor by provided external ID.
 
-### Upsert Customer
-
-Create new or update existing customer by provided external ID. The request
-sample could look like:
-
-```javascript
-{
-  "externalId": "external order ID",
-  "customerId": "internal customer ID",
-  "currency": "USA",
-  "exchangeRate": 1.0,
-  "orderItems": [
-		{
-			"itemInternalId": "387",
-			"quantity": 10![Step 1](https://some-url-address)
-
-		}
-	]
-}
-```
-
-### Upsert Contact
-
-Create new or update existing contact by provided external ID.
-
-Request sample:
-```javascript
-{
-  "externalId": "entity164",
-  "customForm": {
-    "internalId": "-40",
-    "name": "Standard Contact Form"
-  },
-  "entityId": "Olha Grogan",
-  "salutation": "Mrs.",
-  "firstName": "Olha",
-  "lastName": "Grogan",
-  "subsidiary": {
-    "internalId": "1",
-    "name": "Honeycomb Mfg."
-  }
-}
-```
-
-### Upsert Invoice
-
-Create new or update existing invoice by provided external ID.
-
-Request sample:
-```javascript
-{
-  "externalId": "23213000001",
-  "customForm": {
-    "name": "HM Product Invoice",
-    "internalId": "102"
-  },
-  "entity": {
-    "name": "Jennings Financial",
-    "internalId": "81"
-  },
-  "terms": {
-    "name": "Net 30",
-    "internalId": "2"
-  },
-  "subsidiary": {
-    "name": "Honeycomb Mfg.",
-    "internalId": "1"
-  },
-  "currency": {
-    "name": "USA",
-    "internalId": "1"
-  },
-  "location": {
-    "name": "02: Boston",
-    "internalId": "1"
-  },
-  "isTaxable": true,
-  "taxItem": {
-    "name": "CA-SAN MATEO",
-    "internalId": "-112"
-  },
-  "taxRate": 8.25,
-  "fax": "916-555-0806",
-  "message": "We appreciate your prompt payment",
-  "shipMethod": {
-    "name": "Truck",
-    "internalId": "3"
-  },
-  "itemList": {
-    "item": [
-      {
-        "job": null,
-        "item": {
-          "name": "CHA00002®",
-          "internalId": "707",
-          "externalId": null,
-          "type": null
-        },
-        "line": 1,
-        "description": "Assembly Item - Historical",
-        "amount": 7020,
-        "isTaxable": null,
-        "quantity": 36,
-        "price": {
-          "name": "List Price",
-          "internalId": "1"
-        },
-        "rate": "195.00",
-        "taxCode": {
-          "name": "-Not Taxable-",
-          "internalId": "-7"
-        }
-      }
-    ],
-    "replaceAll": false
-  },
-  "shippingCost": 704.25,
-  "customFieldList": {
-    "customField": [
-      {
-        "type": "BooleanCustomFieldRef",
-        "internalId": "167",
-        "scriptId": "custbody_fmt_senior_exec_declined",
-        "value": false
-      }
-    ]
-  }
-}
-```
-
-## Upsert Sales Order
-
-Create new or update existing sales order by provided external ID.
-
-Request sample:
-
-```javascript
-{
-  "externalId": "80144000000B5wqAAC",
-  "orderStatus": "_pendingFulfillment",
-  "currency": {
-    "name": "USA",
-    "internalId": "1"
-  },
-  "customForm": {
-    "internalId": "174",
-    "name": "Z - HM Sales Order Form"
-  },
-  "entity": {
-    "internalId": "2053"
-  },
-  "exchangeRate": "1.0",
-  "toBePrinted":"false"
-}
-```
-
-### Upsert Vendor
-
-Create new or update existing vendor by provided external ID.
-
-Request sample:
-
-```javascript
-{
-  "externalId": "9999",
-  "entityId": "Nick",
-  "isPerson": "false",
-  "companyName": "Nick2",
-  "phone": "937 99 92",
-  "fax": "937 99 92",
-  "email": "nick2@nickthebest.com",
-  "url": "http://www.nickthebest2.com",
-  "customFieldList": {
-    "customField": [
-      {
-        "internalId": "3992",
-        "scriptId": "custentity_2663_payment_method",
-        "type": "BooleanCustomFieldRef",
-        "value": "false"
-      },
-      {
-        "internalId": "3993",
-        "scriptId": "custentity_2663_payment_method",
-        "type": "BooleanCustomFieldRef",
-        "value": "false"
-      }
-    ]
-  }
-}
-```
-
-# Upsert custom fields:
+## Upsert custom fields
 
 Currently, You can upsert custom fields only from developer mode.
 You should to use property **type**, which can accept next values:
@@ -344,7 +143,7 @@ You should to use property **type**, which can accept next values:
 
  You can find example of custom field structures bellow.
 
-**`BooleanCustomFieldRef`**
+- **`BooleanCustomFieldRef`**
 
 ```javascript
 {
@@ -355,7 +154,7 @@ You should to use property **type**, which can accept next values:
 }
 ```
 
-**`DateCustomFieldRef`**
+- **`DateCustomFieldRef`**
 
 ```javascript
 {
@@ -366,7 +165,7 @@ You should to use property **type**, which can accept next values:
 }
 ```
 
-**`DoubleCustomFieldRef`**
+- **`DoubleCustomFieldRef`**
 
 ```javascript
 {
@@ -376,6 +175,7 @@ You should to use property **type**, which can accept next values:
   "type": "DoubleCustomFieldRef"
 }
 ```
+
 - **`LongCustomFieldRef`**
 
 ```javascript
@@ -387,7 +187,7 @@ You should to use property **type**, which can accept next values:
 }
 ```
 
-**`MultiSelectCustomFieldRef`**
+- **`MultiSelectCustomFieldRef`**
 
 ```javascript
 {
@@ -411,7 +211,7 @@ You should to use property **type**, which can accept next values:
 }
 ```
 
-**`SelectCustomFieldRef`**
+- **`SelectCustomFieldRef`**
 
 ```javascript
 {
@@ -426,7 +226,8 @@ You should to use property **type**, which can accept next values:
   "type": "SelectCustomFieldRef"
 }
 ```
-**`StringCustomFieldRef`**
+
+- **`StringCustomFieldRef`**
 
 ```javascript
 {
