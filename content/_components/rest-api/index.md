@@ -22,7 +22,7 @@ updatedDate: 2020-01-15
 
 The example below shows the development team creation using the REST API component with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
 
-![Configure Input - Rest API](https://user-images.githubusercontent.com/16806832/63769383-591d5b80-c8db-11e9-8b57-5890d4d4f21f.png)
+![Configure Input - Rest API](img/configure-input.png)
 *Numbers show: (1) The URL and method of the REST API resource, (2) the HTTP call headers. (3) configuration options and (4) follow redirect mode.*
 
 1.  HTTP methods and URL
@@ -58,7 +58,29 @@ The example below shows the development team creation using the REST API compone
 
 Trigger will send a GET/POST/PUT/DELETE HTTP request and parse the response back to the flow.
 
+### Fields
+
+  * Don't throw Error on Failed Calls
+
+  * Split Result if it is an Array
+  > **Note:** After making the request, and applying the above JSONata expression, if the result is an array and this box is checked, we will emit one message for each element of the array.
+
+  * Retry on failure
+
+  * Follow redirect mode
+
 ## Actions
+
+### Fields
+
+* Don't throw Error on Failed Calls
+
+* Split Result if it is an Array
+> **Note:** After making the request, and applying the above JSONata expression, if the result is an array and this box is checked, we will emit one message for each element of the array.
+
+* Retry on failure
+
+* Follow redirect mode
 
 ### HTTP request
 
@@ -68,7 +90,7 @@ Action will send a GET/POST/PUT/DELETE HTTP request and parse the response back 
 
 To use the REST API component with any restricted access API provide the authorisation information.
 
-![Choose credentials](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-auth.png "REST API component Basic authorisation")
+![Choose credentials](img/choose-credentials.png)
 
 *Example above shows how to add the username/password to access the API during the integration flow design.*
 
@@ -87,7 +109,7 @@ REST API component supports 4 authorisation types:
 
 Use this section to add the request headers.
 
-![HTTP Headers](https://cdn.{{site.data.tenant.name}}/documentation/rest-api-component-headers-get.png "REST API component Headers field")
+![HTTP Headers](img/http-headers.png "REST API component Headers field")
 
 Each header has a name and a value. Header name should be colon-separated name-value pairs in clear-text `string` format. The header value can use [JSONata](http://jsonata.org/) expressions.
 
