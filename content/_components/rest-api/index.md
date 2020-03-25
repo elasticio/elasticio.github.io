@@ -12,10 +12,9 @@ updatedDate: 2020-01-15
 
 ## Latest changelog
 
-**1.2.1(March 12, 2020)**
+**1.2.2 (March 19, 2020)**
 
-* Added validity check of `refresh_token` in keys for `OAuth2` authentication strategy
-
+* Add binary message types to list for processing them as attachments
 
 > To see the full **changelog** please use the following [link](/components/rest-api/changelog).
 
@@ -55,19 +54,15 @@ The example below shows the development team creation using the REST API compone
 
 ## Triggers
 
-  * **Don`t throw Error on Failed Calls**
-  * **Split Result if it is an Array**
-  * **Enable debug logging**
-  * **Enable rebound**
-  * **Follow redirect mode**
+### HTTP request
+
+Trigger will send a GET/POST/PUT/DELETE HTTP request and parse the response back to the flow.
 
 ## Actions
 
-  * **Don`t throw Error on Failed Calls**
-  * **Split Result if it is an Array**
-  * **Enable debug logging**
-  * **Enable rebound**
-  * **Follow redirect mode**
+### HTTP request
+
+Action will send a GET/POST/PUT/DELETE HTTP request and parse the response back to the flow.
 
 ## Authorisation methods
 
@@ -226,6 +221,9 @@ Rest-api component automatically load binary data to attachments with next conte
 * application/msexcgel
 * application/pdf
 * application/octet-stream
+* application/x-binary
+* application/binary
+* application/macbinary
 
 ## Exception handling
 

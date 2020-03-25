@@ -9,6 +9,10 @@ createdDate: 2020-01-02
 updatedDate: 2020-01-02
 ---
 
+## 1.2.2 (March 19, 2020)
+
+* Add binary message types to list for processing them as attachments
+
 ## 1.2.1(March 12, 2020)
 
 * Added validity check of `refresh_token` in keys for `OAuth2` authentication strategy
