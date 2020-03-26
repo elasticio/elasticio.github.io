@@ -7,14 +7,14 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2019-06-27
-updatedDate: 2020-03-11
+updatedDate: 2020-03-26
 ---
 
 ## Latest changelog
 
-**1.3.1 (March 11, 2020)**
+**1.3.2 (March 26, 2020)**
 
-* Add new optional field `Output method` in triggers: `Query` and `Get New and Updated Objects Polling`
+* Add new optional field `Include linked objects` in trigger: `Get New and Updated Objects Polling`
 
 > To see the full **changelog** please use the following [link](/components/salesforce/changelog).
 

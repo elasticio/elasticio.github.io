@@ -6,7 +6,7 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-03-17
-updatedDate: 2020-03-17
+updatedDate: 2020-03-26
 ---
 
 ## Query trigger
@@ -41,6 +41,8 @@ Polls existing and updated objects. You can select any custom or built-in object
 
    2. `no` - if the number of changed records exceeds the maximum number of results in a page, the next pages will fetching in the same execution.
 
+* **Include linked objects** - Multiselect dropdown list with all the related child and parent objects of the selected object type. List entries are given as `Object Name/Reference To (Relationship Name)`. Select one or more related objects, which will be join queried and included in the response from your Salesforce Organization. Please see the **Limitations** section below for use case advisories.
+
 * **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
 
 For example, you have 234 “Contact” objects, 213 of them were changed from 2019-01-01.
@@ -60,6 +62,11 @@ For you purpose you need to specify following fields:
 
 As a result, all contacts will be fetched in three calls of the trigger: two of them by 100 items, and the last one by 13.
 If you select `no` in **Process single page per execution**, all 213 contacts will be fetched in one call of the trigger.
+
+### Limitations
+
+When a binary field (primitive type `base64`, e.g. Documents, Attachments, etc) is selected on **Include linked objects**, an error will be thrown: 'MALFORMED_QUERY: Binary fields cannot be selected in join queries. Instead of querying objects with binary fields as linked objects (such as children Attachments), try querying them directly.' There is also a limit to the number of linked objects that you can query at once - beyond two or three, depending on the number of fields in the linked objects, Salesforce could potentially return a Status Code 431 or 414 error, meaning the query is too long. Finally, due to a bug with multiselect dropdowns, it is recommended to deselect all of the elements in this field before you change your selection in the *Object* dropdown list.
+
 
 ## Subscribe to platform events trigger
 
