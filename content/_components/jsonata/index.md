@@ -7,14 +7,14 @@ icon: jsonata.png
 icontext: Jsonata component
 category: Jsonata component
 createdDate: 2017-08-15
-updatedDate: 2019-04-05
+updatedDate: 2020-03-26
 ---
 
 ## Latest changelog
 
-**1.0.2 (December 24, 2019)**
+**1.0.3 (March 26, 2020)**
 
-* Update sailor version to 2.5.4
+* Add new jsonata functions getPassthrough and getFlowVarriable
 
 > To see the full **changelog** please use the following [link](/components/jsonata/changelog).
 
