@@ -7,14 +7,14 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2017-03-31
-updatedDate: 2020-03-03
+updatedDate: 2020-03-26
 ---
 
 ## Latest changelog
 
-**1.0.5 (March 3, 2020)**
+**1.0.6 (March 26, 2020)**
 
-* Fixed bug when emitting to much data
+* Add support for new getFlowVariables and handlePathrough jsonata functions
 
 > To see the full **changelog** please use the following [link](/components/splitter/changelog).
 

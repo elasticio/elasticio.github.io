@@ -6,8 +6,12 @@ icon: router.png
 icontext: Router component
 category: Router component
 createdDate: 2020-01-02
-updatedDate: 2020-01-02
+updatedDate: 2020-03-26
 ---
+
+## 0.0.4 (March 24, 2020)
+
+* New Jsonata expressions getFlowVariables and getPathrough
 
 ## 0.0.3 (December 24, 2019)
 

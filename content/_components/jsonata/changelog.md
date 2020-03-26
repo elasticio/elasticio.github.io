@@ -6,8 +6,12 @@ icon: jsonata.png
 icontext: Jsonata component
 category: Jsonata component
 createdDate: 2019-12-27
-updatedDate: 2019-12-27
+updatedDate: 2020-03-26
 ---
+
+## 1.0.3 (March 26, 2020)
+
+* Add new jsonata functions getPassthrough and getFlowVarriables
 
 ## 1.0.2 (December 24, 2019)
 

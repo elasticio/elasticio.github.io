@@ -7,14 +7,14 @@ icon: filter.png
 icontext: Filter component
 category: filter-component
 createdDate: 2017-01-12
-updatedDate: 2019-07-22
+updatedDate: 2020-03-26
 ---
 
 ## Latest changelog
 
-**1.0.1 (December 23, 2019)**
+**1.0.2 (March 23, 2019)**
 
-* Update sailor to version 2.5.4
+* Add support for new Jsonata expressions getFlowVariables and getPathrough
 
 > To see the full **changelog** please use the following [link](/components/filter/changelog).
 
