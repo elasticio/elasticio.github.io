@@ -139,7 +139,7 @@ The **body input field** changes according to the chosen content type.
 
 Here is how to send a JSON data in the body. Change the **content type** to `application/json` and the **body input part** would change accordingly to accept JSON object. Please note that this field supports [JSONata](http://jsonata.org) expressions.
 
-![Configure Input - Body](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-body-json-var.png "REST API component Body sending JSON data")
+![Configure Input - Body](img/body-sending-json-data.png "REST API component Body sending JSON data")
 
 *Example shows the JSON in the body where the `name` parameter value gets mapped using the value of `project_name` from the previous step of integration.*
 
@@ -171,14 +171,14 @@ In both cases the payload gets transmitted in the message body.
 
 In case of `application/x-www-form-urlencoded` content type add the necessary parameters by giving the name and the values like:
 
-![c](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-body-form-simple.png "REST API component Body sending a simple form")
+![Sending form data](img/sending-form-data.png "REST API component Body sending a simple form")
 *Please note that parameter value fields support [JSONata](http://jsonata.org) expressions.*
 
 This HTTP request would submit `key1=value1&key2=value2` in the message body.
 
 In case of `multipart/form-data` content type add the parameters similarly.
 
-![Sending Form data](https://cdn.{{site.data.tenant.name}}/documentation/restapi-component-body-form-complex.png "REST API component Body sending a complex form")
+![Sending multipart form data](img/sending-multipart-form-data.png "REST API component Body sending a complex form")
 
 The transmitted HTTP request body would be:
 
