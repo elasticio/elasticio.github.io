@@ -1,7 +1,7 @@
 ---
 title: Microsoft OneDrive component
 layout: component
-section: CRM components
+section: Office components
 description: This is the component for working with Microsoft OneDrive storage service on platform.
 icon: onedrive.png
 icontext: Microsoft OneDrive component
