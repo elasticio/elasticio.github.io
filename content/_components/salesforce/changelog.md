@@ -6,8 +6,12 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-01-02
-updatedDate: 2020-03-11
+updatedDate: 2020-03-26
 ---
+
+## 1.3.2 (March 26, 2020)
+
+* Add new optional field `Include linked objects` in trigger: `Get New and Updated Objects Polling`
 
 ## 1.3.1 (March 11, 2020)
 
