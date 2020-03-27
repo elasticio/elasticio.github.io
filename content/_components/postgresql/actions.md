@@ -18,7 +18,7 @@ Check the [SELECT Action and Trigger](/components/postgresql/triggers#select-tri
 Use this action to insert, update or delete some data, returned
 value is ignored, number of affected rows you can see in the log file.
 
-![PostgreSQL - INSERT/UPDATE/DELETE Action](https://user-images.githubusercontent.com/16806832/53739075-8d1e4380-3e99-11e9-882d-fe26430f8729.png)
+![PostgreSQL - INSERT/UPDATE/DELETE Action](img/postgresql-insert-update-delete.png)
 
 Following configuration options are available:
 
@@ -35,7 +35,7 @@ incoming message needs to contain a body with an array of objects.
 
 ### Configuration field
 
-![Configuration field](https://user-images.githubusercontent.com/16806832/53736488-8c35e380-3e92-11e9-8975-7bf41742c160.png)
+![INSERT Bulk action](img/insert-bulk-action.png)
 
 #### Table Name
 
@@ -93,7 +93,7 @@ statement variables like this way `sqlVariableName = @MetadataVariableName:type`
 For example, for SQL expression `SELECT * FROM tableName WHERE column1 = 'text' AND column2 = 15`
 you need to use following template: `SELECT * FROM tableName WHERE column1 = @column1:string AND column2 = @column2:number` and put values into generated metadata.
 
-![SQL Query](https://user-images.githubusercontent.com/16806832/53731432-635a2200-3e83-11e9-9a4e-0fc26aeeb001.png)
+![SQL Query](img/sql-query.png)
 
 #### Input metadata
 
@@ -159,7 +159,7 @@ which can read this file on the previous step and return value like this:
 ```
 and in this action you need put `query_string` (or some JSONata expression) to `Sql Injection string`:
 
-![Integrator mode](https://user-images.githubusercontent.com/40201204/62026183-f3a65400-b1e2-11e9-988a-db689dd33a95.png)
+![Integrator mode](img/sql-expression.png)
 
 ### Number of retries in case of deadlock transaction
 
