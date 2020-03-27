@@ -5,7 +5,6 @@ description: List of the release notes listing the product updates.
 ---
 
 {% assign releases = site.releases | sort: 'releaseDate' | reverse %}
-{% assign releases = site.releases | sort: 'releaseDate' | reverse %}
 
 <div class="wrap">
     <div class="breadcrumbs">
