@@ -28,7 +28,7 @@ In some cases, integrator needs a mechanism for collection batches by special cr
 
 You need to split an integration logic into 2 parts. The first one should use the action `Add message to batch` which starts to collect messages. The second one should start with the trigger `Get ready batches`.
 
-![Flow parts](https://user-images.githubusercontent.com/13310949/57698996-97aa4580-765f-11e9-8ab8-205b7927d33a.png)
+![Flow parts](img/flow-parts.png)
 
 ## Environment variables
 
@@ -47,11 +47,12 @@ You need to split an integration logic into 2 parts. The first one should use th
 | login        | true   | Username for authentication | `admin` |
 | password     | true   | Password for authentication | `adminPassw` |
 
-![Screenshot from 2019-05-14 17-05-03](https://user-images.githubusercontent.com/13310949/57704412-80bd2080-766a-11e9-977f-86f96820d30d.png)
+![Batch credentials](img/batch-credentials.png)
 
 ## Triggers
 
 ### Get ready batches
+
 Emits all batches that are ready to be processed.
 
 #### Input fields description
@@ -68,6 +69,7 @@ Emits all batches that are ready to be processed.
 ## Actions
 
 ### Add message to batch
+
 Stores a message in a batch and emits a created/updated batch with a processed item only.
 
 #### Input fields description
