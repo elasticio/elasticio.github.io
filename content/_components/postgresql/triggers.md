@@ -14,7 +14,7 @@ updatedDate: 2020-03-20
 This trigger and action are actually the same but can be used in two different
 scenarios - trigger as a first step and action in between other steps.
 
-![PostgreSQL - first step](https://user-images.githubusercontent.com/16806832/53738983-5e07d200-3e99-11e9-9b19-c56cb8579b3a.png)
+![PostgreSQL - first step](img/postgresql-first-step.png)
 
 Following configuration options are available:
 
