@@ -23,7 +23,6 @@ There are two clusters which your app can be installed on. During the installati
 * eu1: `https://api.webshopapp.com/`
 * us1: `https://api.shoplightspeed.com/`
 
-
 ## Credentials
 
 ![Lightspeed-ecom - Credentials](https://user-images.githubusercontent.com/40201204/50343143-833da300-052e-11e9-84be-ccb19eb4f7d1.png)
@@ -49,287 +48,33 @@ API Secret which you received from support during configuration a shop.
 
 ## Triggers
 
-### Polling entity
+Lightspeed-ecom component includes the following triggers:
 
-This trigger polls for existing and updated objects where you can select object type.
+  1. [Polling entity](/components/lightspeed-ecom/triggers#polling-entity)  
+  This trigger polls for existing and updated objects where you can select object type.
 
-![Trigger - Polling entity](https://user-images.githubusercontent.com/40201204/50344276-04973480-0533-11e9-9ac5-c0aa38a7f2ab.png)
-
-#### Input fields description
-
-* **Object Type** - you should select the type of object which updates you want to get.
-* **Polling Field** - you can use any field existing at current object, which has datatype like DATE, DATETIME or TIMESTAMP.
-* **Batch Size for request pagination** - count of entries which you will get by one request ().
-
-Supported entities:
-* attributes
-* blogs
-* brands
-* catalog
-* categories
-* contacts
-* countries
-* customers
-* dashboard
-* deliverydates
-* discounts
-* events
-* external_services
-* filters
-* groups
-* invoices
-* languages
-* metafields
-* orders
-* paymentmethods
-* products
-* quotes
-* redirects
-* returns
-* reviews
-* sets
-* shipments
-* shippingmethods
-* shop
-* subscriptions
-* suppliers
-* tags
-* taxes
-* textpages
-* tickets
-* time
-* types
-* variants
-
-### Webhook subscription
-
-![Webhook subscription trigger](https://user-images.githubusercontent.com/40201204/50344997-19c19280-0536-11e9-8c40-f7060ee84cec.png)
-
-#### Input fields description
-
-* **Object Type** - you should select the type of object to make a subscription.
-
-Supported entities:
-* contacts
-* customers
-* invoices
-* orders
-* products
-* quotes
-* returns
-* reviews
-* shipments
-* shop
-* subscriptions
-* tickets
-* variants
+  2. [Webhook subscription](/components/lightspeed-ecom/triggers#webhook-subscription)  
+  This trigger can create webhook to receive any changes for chosen type of entities.
 
 ## Actions
 
-### Create Object
+Lightspeed-ecom component includes the following actions:
 
-Action creates a new record/object. This action is supported by limited list of entities.
+  1. [Create Object](/components/lightspeed-ecom/actions#create-object)   
+  Action creates a new record/object. This action is supported by limited list of entities.
 
-![Create Object action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
+  2. [Upsert Object](/components/lightspeed-ecom/actions#upsert-object)   
+  Action creates a new object or updates object which already exists by provided ID. This action is supported by limited list of entities.
 
-#### Input fields description
+  3. [Update Object](/components/lightspeed-ecom/actions#update-object)   
+  Action updates object which already exists by provided ID. This action is supported by limited list of entities.
 
-* **Object type** - you should select the type of object which updates you want to get.
+  4. [Lookup Object By ID](/components/lightspeed-ecom/actions#lookup-object-by-id)                                                                     
+  Action gets a list of objects by filters or specific object by provided ID.
 
-Supported entities:
-* attributes
-* blogs
-* brands
-* categories
-* customers
-* deliverydates
-* discounts
-* external_services
-* filters
-* groups
-* metafields
-* products
-* quotes
-* redirects
-* returns
-* reviews
-* sets
-* subscriptions
-* suppliers
-* tags
-* taxes
-* textpages
-* tickets
-* types
-* variants
+  5. [Delete Object By ID](/components/lightspeed-ecom/actions#delete-object-by-id)                                                                     
+  Action removes object which already exists by provided ID.
 
-### Upsert Object
-
-Action creates a new object or updates object which already exists by provided ID. This action is supported by limited list of entities.
-
-![Upsert Object action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
-
-#### Input fields description
-
-* **Object type** - you should select the type of object which updates you want to get.
-
-Supported entities:
-* attributes
-* blogs
-* brands
-* categories
-* customers
-* deliverydates
-* discounts
-* external_services
-* filters
-* groups
-* invoices
-* metafields
-* orders
-* products
-* quotes
-* redirects
-* returns
-* reviews
-* sets
-* shipments
-* subscriptions
-* suppliers
-* tags
-* taxes
-* textpages
-* tickets
-* types
-* variants
-
-### Update Object
-
-Action updates object which already exists by provided ID. This action is supported by limited list of entities.
-
-![Update Object action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
-
-Supported entities:
-* attributes
-* blogs
-* brands
-* categories
-* customers
-* deliverydates
-* discounts
-* external_services
-* filters
-* groups
-* invoices
-* metafields
-* orders
-* products
-* quotes
-* redirects
-* returns
-* reviews
-* sets
-* shipments
-* subscriptions
-* suppliers
-* tags
-* textpages
-* tickets
-* types
-* variants
-
-#### Input fields description
-
-* **Object type** - you should select the type of object which updates you want to get.
-
-Supported entities:
-
-
-### Lookup Object By ID
-
-Action gets a list of objects by filters or specific object by provided ID.
-
-![Lookup Object By ID action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
-
-#### Input fields description
-
-* **Object type** - you should select the type of object which updates you want to get.
-
-Supported entities:
-* attributes
-* blogs
-* brands
-* catalog
-* categories
-* contacts
-* countries
-* customers
-* dashboard
-* deliverydates
-* discounts
-* events
-* external_services
-* filters
-* groups
-* invoices
-* languages
-* metafields
-* orders
-* paymentmethods
-* products
-* quotes
-* redirects
-* returns
-* reviews
-* sets
-* shipments
-* shippingmethods
-* shop
-* subscriptions
-* suppliers
-* tags
-* taxes
-* textpages
-* tickets
-* time
-* types
-* variants
-
-### Delete Object By ID
-
-Action removes object which already exists by provided ID.
-
-![Delete Object By ID action](https://user-images.githubusercontent.com/40201204/50345067-5bead400-0536-11e9-91b6-d04615a376d2.png)
-
-#### Input fields description
-
-* **Object type** - you should select the type of object which updates you want to get.
-
-Supported entities:
-* attributes
-* blogs
-* brands
-* categories
-* customers
-* deliverydates
-* discounts
-* external_services
-* filters
-* groups
-* metafields
-* products
-* redirects
-* reviews
-* sets
-* subscriptions
-* suppliers
-* tags
-* taxes
-* textpages
-* tickets
-* types
-* variants
-* webhooks
 
 ## Additional info
 

@@ -6,8 +6,12 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2020-01-02
-updatedDate: 2020-03-03s
+updatedDate: 2020-03-26
 ---
+
+## 1.0.6 (March 26, 2020)
+
+* Add support for new getFlowVariables and handlePathrough jsonata functions
 
 ## 1.0.5 (March 3, 2020)
 
