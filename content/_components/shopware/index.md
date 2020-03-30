@@ -32,6 +32,14 @@ is developed specifically to run on {{site.data.tenant.name}} platform.
 
 **This component was tested with the Shopware version 5 (5.6).**
 
+### Credentials
+
+| Property name | Required |
+|--------------|--------|
+| BaseURL     | true   |
+| User     | true   |
+| Password      | true   |
+
 ### Query Articles/Products
 
 Shopware has a concept of ``Artikel`` in German which their UI translates to
@@ -53,17 +61,99 @@ the mapper as they proceed to the next step.
 
 The output of this method includes only information about the product.  It does
 not include information about the variants of the article.  This information can
-be obtained by having the ``Query Articles`` trigger followed by the ``Get
-Article Details By Id`` action.  This action will return all the details for an
+be obtained by having the `Query Articles` trigger followed by the `Get
+Article Details By Id` action.  This action will return all the details for an
 article including information about the articles variants.
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+### Query Articles
 
+Get new and updated article information through the /articles API.
+
+#### Sample Example
+
+```json
+{
+  "products": [
+    {
+      "taxId": 52277893,
+      "name": "exercitation nostrud voluptate in",
+      "description": "culpa ea",
+      "descriptionLong": "quis sunt exercitation",
+      "added": "velit minim aute",
+      "pseudoSales": 38771027,
+      "highlight": true,
+      "keywords": "eu Ut ad",
+      "metaTitle": "sint aliquip Excepteur nostrud",
+      "changed": "Lorem ex",
+      "lastStock": false,
+      "availableFrom": "amet nisi ut cupidatat",
+      "availableTo": "ad",
+      "supplierId": -81844813,
+      "active": -6545272
+    }
+  ]
+}
+```
+
+#### Limitations
+
+Orders per request: `20`, `50`, `100`, `200`, `500`, `1000`:
+
+![Query Articles - Limitations](img/query-articles-limitations.png)
+
+### Query Customers
+
+![Query Customers - Input](img/query-customers-input.png)
+
+#### Limitations
+
+Orders per request: `20`, `50`, `100`, `200`, `500`, `1000`.
+
+![Query Customers - Limitations](img/query-customers-limitations.png)
+
+### Query Newsletter Subscribers
+
+#### Sample Example
+
+```json
+{
+  "id": -12202511,
+  "email": "ullamco adipisicing sit consequat",
+  "firstname": "est dolor",
+  "lastname": "nostrud",
+  "salutation": "aute ea velit Ut dolor",
+  "isCustomer": false,
+  "groupId": 8020795,
+  "lastNewsletterId": 29310366,
+  "lastReadId": 87374529
+}
+```
+
+### Query Orders
+
+![Query Orders - Input](img/query-orders-input.png)
+
+#### Limitations
+
+Orders per request: `20`, `50`, `100`, `200`, `500`, `1000`.
+
+![Query Orders - Limitations](img/query-orders-limitations.png)
 
 ## Actions
+
+### Add price
+
+This action adds price to the selected article:
+
+![Add Price - input](img/add-price-input.png)
+
+### Get Article Details By Id
+
+Get article information through the /articles API:
+
+![Get Article Details By Id - input](img/get-article-details-by-id-input.png)
 
 ### Upsert Object
 
@@ -74,8 +164,25 @@ The request will be repeated ([rebound](/getting-started/rebound)) in case of
 retrieving following error codes from the remoute server:
 `408`, `423`, `429`, `500`, `502`, `503`, `504`.
 
-![Upsert Object action](https://user-images.githubusercontent.com/40201204/68288341-e378fd00-008c-11ea-8df7-dd2e5696287c.png)
+![Upsert Object - input](img/upsert-object-input.png)
 
+## Deprecated Actions
+
+### Update Customer
+
+This action is deprecated, please use [Upsert Object By ID](/components/shopware/index.html#upsert-object) Action instead.
+
+### Create or Update Product
+
+This action is deprecated, please use [Upsert Object By ID](/components/shopware/index.html#upsert-object) Action instead.
+
+### Create or Update Customer Group
+
+This action is deprecated, please use [Upsert Object By ID](/components/shopware/index.html#upsert-object) Action instead.
+
+### Update order
+
+This action is deprecated, please use [Upsert Object By ID](/components/shopware/index.html#upsert-object) Action instead.
 
 ## Shopware API Limitations/Improvements
 
