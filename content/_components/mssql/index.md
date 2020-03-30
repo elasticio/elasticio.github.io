@@ -24,7 +24,7 @@ updatedDate: 2018-06-14
 
 You may use following properties to configure a connection:
 
-![Properties to configure a connection](https://user-images.githubusercontent.com/40201204/41356042-97e26406-6f2b-11e8-88fb-11cba846d143.png)
+![Properties to configure a connection](img/mssql-credentials.png)
 
 other types of configuration parameters are also supported, more information and samples you can find [here](https://www.npmjs.com/package/mssql#formats)
 
