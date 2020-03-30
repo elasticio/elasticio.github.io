@@ -35,14 +35,13 @@ layout: default
             <span class="breadcrumbs__item">{{page.title}}</span>
             -->
         </div>
-
-        <div class="layout__side">
+          <div class="layout__side">
             <div class="contents">
                 <div class="side">
                     <div class="side__title">Jump to</div>
                     <div id="article_toc" class="side__list">
                     </div>
-                    <div class="side__title">{{page.category | capitalize}} Related Links</div>
+                    <div class="side__title">Product Updates for</div>
                     <div class="side__list">
                       {% for collection in site.data.chapters%}
                           {% assign collectionName = collection[0] %}
@@ -50,7 +49,7 @@ layout: default
                           {% if related.size > 0 %}
                               {% for item in related %}
                                   {% if item.url != page.url %}
-                                  <a class="side__item" href="{{item.url}}">{{item.title}}</a>
+                                  <a class="side__item" href="{{item.url}}">{{item.releaseDate | date: '%B %d, %Y'}}</a>
                                   {% endif %}
                               {% endfor %}
                           {% endif %}

@@ -39,11 +39,11 @@ description: List of the release notes listing the product updates.
             </ul>
             <ul class="link-box__column">
                 <li class="link-box__item">
-                    <div class="link-box__tit">Archives</div>
+                    <div class="link-box__tit">Archives for</div>
                     <div class="link-box__holder">
                         {% for rel in releases %}
                             {% if rel.archive%}
-                            <a class="link-box__link" href="{{rel.url}}">{{rel.archive}} Product Updates</a>
+                            <a class="link-box__link" href="{{rel.url}}">{{rel.archive}} updates</a>
                             {% endif %}
                         {% endfor %}
                     </div>

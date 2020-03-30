@@ -91,7 +91,7 @@ releases:
   welcommer-class: welcomer__icon_release_notes
   fa-icon: fa-newspaper-o
   sections:
-    - title: Platform Releases
-      description: The release notes for the releases of the platform
-    - title: Component Releases
-      description: The component release notes for the releases of the platform
+    - title: Product Updates
+      description: Product updates for the platform and the integration components
+    - title: Archives
+      description: Archives of the product updates joined per quarter
