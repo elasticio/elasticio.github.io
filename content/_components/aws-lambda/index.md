@@ -37,7 +37,7 @@ select as a first component during the integration flow design.
 
 This action will invoke a AWS Lambda function. It has following configuration parameters:
 
-![AWS Lambda - configur input](https://user-images.githubusercontent.com/56208/30986933-79239550-a495-11e7-968e-c17b49036385.png)
+![AWS Lambda - configur input](img/invole-lambda-function-input.png)
 
 Please refer to the [AWS Lambda documentation](http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html) for
 more information about the parameters.
