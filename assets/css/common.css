@@ -513,7 +513,7 @@ h2 {
 .categories__item:visited {
   font-size: 14px;
   display: inline-block;
-  width: 25%;
+  width: 33%;
   vertical-align: top;
   text-decoration: none;
   text-align: center; }
@@ -524,7 +524,8 @@ h2 {
   height: 50px;
   margin: 0 auto 16px auto;
   line-height: 50px;
-  color: #fff; }
+  color: #fff;
+ }
 
 .categories__item:nth-child(1) .categories__icon .fa {
   color: #fb5b97; }
@@ -537,6 +538,10 @@ h2 {
 
 .categories__item:nth-child(4) .categories__icon .fa {
   color: #d74aff; }
+
+.categories__item:nth-child(5) .categories__icon .fa {
+  color: #26a052;
+}
 
 .categories__item:hover .categories__icon .fa {
   color: #fff !important; }

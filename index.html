@@ -36,94 +36,9 @@ description: Everything you need to know to build integrations with the most inn
 
 <hr>
 
-
-{% assign recentlyAddedPagesCount = 0%}
-
-{% for currentPage in allPages%}
-    {% if currentPage.since > 0 %}
-        {% assign recentlyAddedPagesCount = recentlyAddedPagesCount | plus: 1 %}
-    {% endif %}
-{% endfor %}
-
-{% assign recentlyAddedPages = allPages | sort: 'since' | reverse %}
-{% assign pagesLimit = 5%}
-
-{% assign releases = site.releases | sort: 'releaseDate' | reverse %}
-
-{% assign creleases = site.comp-releases | sort: 'releaseDate' | reverse %}
-
-{% assign releasesCount = releases.size%}
-{% assign creleasesCount = comp-releases.size%}
-
 <div class="link-box">
     <div class="wrap">
         <div class="link-box__list">
-            {% if recentlyAddedPagesCount > 0 %}
-            <ul class="link-box__column">
-                <li class="link-box__item">
-                    <div class="link-box__tit">Recently Added Pages
-                        <div class="counter">
-                            {% if recentlyAddedPagesCount < pagesLimit %}
-                                {{recentlyAddedPagesCount}}
-                            {% else %}
-                                {{pagesLimit}}
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="link-box__holder">
-                        {% for currentPage in recentlyAddedPages limit:pagesLimit %}
-                            {% if currentPage.since > 0 %}
-                                <a class="link-box__link" href="{{currentPage.url}}">{{currentPage.title}}</a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
-            {% endif %}
-            {% if releasesCount > 0 %}
-            <ul class="link-box__column">
-                <li class="link-box__item">
-                    <div class="link-box__tit">Recent Platform Releases
-                        <div class="counter">
-                            {% if releasesCount < pagesLimit %}
-                                {{ releasesCount | minus: 1 }}
-                            {% else %}
-                                {{pagesLimit}}
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="link-box__holder">
-                        {% for release in releases limit:pagesLimit %}
-                            {% if release.version%}
-                              <a class="link-box__link" href="{{release.url}}">v{{release.version}}</a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
-            {% endif %}
-            {% if releasesCount > 0 %}
-            <ul class="link-box__column">
-                <li class="link-box__item">
-                    <div class="link-box__tit">Component Releases
-                        <div class="counter">
-                            {% if creleasesCount < pagesLimit %}
-                                {{ creleasesCount | minus: 1 }}
-                            {% else %}
-                                {{pagesLimit}}
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="link-box__holder">
-                        {% for crelease in creleases limit:pagesLimit %}
-                            {% if crelease.version%}
-                            <a class="link-box__link" href="{{crelease.url}}">#{{crelease.version}} - <time>{{ crelease.releaseDate | date: '%B %d, %Y' }}</time></a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
-            {% endif %}
             <ul class="link-box__column">
                 <li class="link-box__item">
                     <div class="link-box__tit">Useful Links</div>

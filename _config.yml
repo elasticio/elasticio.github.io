@@ -1,6 +1,15 @@
 collections_dir: content
 
 highlighter: rouge
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
 
 collections:
   getting-started:
@@ -15,6 +24,9 @@ collections:
      output: true
   comp-releases:
     output: true
+
+plugins:
+  - jekyll-redirect-from
 
 algolia:
   application_id: 'OIJ2XNEVHZ'
