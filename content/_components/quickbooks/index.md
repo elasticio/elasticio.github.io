@@ -27,7 +27,7 @@ The keys could be found by appending the `application_id` in the following way:
 https://developer.intuit.com/v2/ui#/app/appdetail/{{application_id}}/{{application_id}}/keys
 ```
 
-![OAuth keys and credentials](https://user-images.githubusercontent.com/22715422/47281476-f638a500-d5e3-11e8-8b42-cb8a06d6f886.png)
+![OAuth keys and credentials](img/quickbooks-credentials.png)
 
 #### Minor api version
 
