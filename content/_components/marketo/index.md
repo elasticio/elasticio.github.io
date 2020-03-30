@@ -61,7 +61,3 @@ This component has no action functions.
 ## Required environment variables
 
 No environment variables are required.
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH](https://www.{{site.data.tenant.name}})
