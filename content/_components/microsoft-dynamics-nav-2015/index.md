@@ -3,7 +3,7 @@ title: Microsoft Dynamics NAV 2015 component
 layout: component
 section: ERP components
 description: A enterprise resource planning (ERP) software.
-icon: microsoft-dynamic-nav-2015.png
+icon: microsoft-dynamic-nav.png
 icontext: Microsoft-Dynamics-NAV-2015 component
 category: Microsoft Dynamics NAV 2015
 createdDate: 2015-09-10
