@@ -8,20 +8,32 @@ category: intro
 since: 20180102
 ---
 
-An integration flow is an automated workflow used to synchronize data between multiple applications or services.
+An integration Flow is an automated workflow used to synchronize data between multiple applications or services.
 Typically a flow consists of following steps:
 
 1. exporting data from a *source* application
 2. transforming the data according to a set of predefined rules
 3. sending data to one or multiple *target* applications.
 
-A flow is constructed from a set [integration components](integration-component) that are invoked in a predefined order.
-The components within a flow can be classified into two groups: *triggers* and *actions*, as shown in the following diagram.
+A Flow is constructed from a set [integration components](integration-component) that are invoked in a predefined order.
+The components within a Flow can be classified into two groups: *triggers* and *actions*, as shown in the following diagram.
 
 ![Flow structure](/assets/img/getting-started/integration-flow/flow-trigger-actions.png "Flow structure")
 
 In the diagram above you can see that the first component of the flow is always as *trigger*.
 A flow can have a single trigger only. All the other components of the flow are *actions*.
+
+The Platform can be configured to show handy help links to the corresponding documentation in the process of creating an integration Flow:
+
+- When creating and verifying new [Credentials](credential)
+
+- When selecting trigger or action of the Component
+
+- When receiving Credentials errors
+
+- When configuring Component fields and mapping
+
+- Etc.
 
 ## Flow triggers
 
