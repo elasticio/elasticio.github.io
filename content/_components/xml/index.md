@@ -12,15 +12,13 @@ updatedDate: 2020-01-30
 
 ## Latest changelog
 
-**1.2.0 (January 30, 2020)**
+**1.2.1 (March 30, 2020)**
 
-* Update sailor version to 2.6.1
-* Refactor console.log to built in sailor logger
-* Change build type to docker
+* Minor logs impovements in "XML to JSON" action
 
 > To see the full **changelog** please use the following [link](/components/xml/changelog).
 
-### Purpose
+## Purpose
 
 Allows users to convert XML attachments and strings to and from JSON This component
 has 3 actions allowing users to pass in either generic but well format XML/JSON

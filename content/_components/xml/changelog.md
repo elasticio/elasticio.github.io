@@ -9,6 +9,10 @@ createdDate: 2020-01-02
 updatedDate: 2020-01-30
 ---
 
+## 1.2.1 (March 30, 2020)
+
+* Minor logs impovements in "XML to JSON" action
+
 ## 1.2.0 (January 30, 2020)
 
 * Update sailor version to 2.6.1
