@@ -105,7 +105,7 @@ In case when user set `Enable Rebound For SOAP Fault`: `Yes` but did not specify
 
 ## Request examples
 
-  **1.** uery Accounts ![Query Accounts](img/action-query-accounts.png)
+  **1.** Query Accounts ![Query Accounts](img/action-query-accounts.png)
 
 Example in metadata:
 
