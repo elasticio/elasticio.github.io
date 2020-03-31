@@ -23,7 +23,7 @@ The components within a Flow can be classified into two groups: *triggers* and *
 In the diagram above you can see that the first component of the flow is always as *trigger*.
 A flow can have a single trigger only. All the other components of the flow are *actions*.
 
-When creating an integration Flow, you will see handy help links to the corresponding documentation:
+The Platform can be configured to show handy help links to the corresponding documentation in the process of creating an integration Flow:
 
 - When creating and verifying new [Credentials](credential)
 
