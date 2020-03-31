@@ -49,7 +49,7 @@ layout: default
                           {% if related.size > 0 %}
                               {% for item in related %}
                                   {% if item.url != page.url %}
-                                  <a class="side__item" href="{{item.url}}">{{item.releaseDate | date: '%B %d, %Y'}}</a>
+                                  <a class="side__item" href="{{item.url}}">{{item.title}}</a>
                                   {% endif %}
                               {% endfor %}
                           {% endif %}

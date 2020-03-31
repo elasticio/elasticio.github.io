@@ -21,34 +21,61 @@ description: List of the release notes listing the product updates.
     </div>
 </div>
 
+<div class="wrap">
+    <div class="description">
+      <p>
+      {{site.data.tenant.companyName}} product updates are released every 4th week.
+      The release numbering format is based on year and week of the release - <strong>YY.WW</strong>.
+      <ul>
+        <li><strong>YY</strong> are the last two digits of the year.</li>
+        <li><strong>WW</strong> is the number of the week in that year.</li>
+        </ul>
+      </p>
+      {% assign week = releases[0].version | split: "." %}
+      <p>
+        The latest release is <strong>v{{releases[0].version}}</strong> and the
+        next release would be <strong>v{{week[0]}}.{{week[1] | plus: 4}}</strong>.
+      </p>
+    </div>
+</div>
 
-<div class="link-box">
+<div class="file-box file-box_release_notes">
     <div class="wrap">
-        <div class="link-box__list">
-            <ul class="link-box__column">
-                <li class="link-box__item">
-                    <div class="link-box__tit">Product Updates</div>
-                    <div class="link-box__holder">
-                        {% for rel in releases %}
-                            {% if rel.version%}
-                              <a class="link-box__link" href="{{rel.url}}">{{rel.releaseDate }} -  v{{rel.version}}</a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
-            <ul class="link-box__column">
-                <li class="link-box__item">
-                    <div class="link-box__tit">Archives for</div>
-                    <div class="link-box__holder">
-                        {% for rel in releases %}
-                            {% if rel.archive%}
-                            <a class="link-box__link" href="{{rel.url}}">{{rel.archive}} updates</a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
+        <div class="file-box__list">
+            {% for rel in releases %}
+                {% if rel.version%}
+                <a class="file-box__item" href="{{rel.url}}">
+                        <span class="file-box__inner">
+                            <i class="fa fa-newspaper-o"></i>
+                            <span class="file-box__tit">v{{rel.version}}</span>
+                            <time>{{ rel.releaseDate | date: '%B %d, %Y' }}</time>
+                        </span>
+                </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="wrap">
+    <div class="description">
+    <h2>Archives</h2>
+      <p>
+      Here we present the list of past product updates grouped into the quarters.
+      </p>
+    </div>
+    </div>
+    <div class="wrap">
+        <div class="file-box__list">
+            {% for rel in releases %}
+                {% if rel.archive %}
+                <a class="file-box__item" href="{{rel.url}}">
+                        <span class="file-box__inner">
+                            <i class="fa fa-archive"></i>
+                            <span class="file-box__tit">v{{rel.archive}}</span>
+                            <time>{{ rel.releaseDate | date: '%B %d, %Y' }}</time>
+                        </span>
+                </a>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 </div>
