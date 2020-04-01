@@ -1,9 +1,9 @@
 ---
 title: Configuring Help Links
 layout: article
-section: UI
+section: Contract Management
 order: 1
-since: 20200330
+category: integrator-management
 ---
 
 This document explains how to configure [help links](#help-links) for Platform UI and provides [examples](examples).
@@ -33,7 +33,7 @@ Help links are configured per Component via `help` property in a *component.json
 
 - `help.description` is used to provide a short (1-2 sentences) description for the user as a quick help.
 
-- `help.link` property is to provide a URL of a more details documentation. This URL is configured by Platform administrator. Additionally `help.link` property may be defined in Credentials object and in all triggers and actions. 
+- `help.link` property is to provide a URL of a more details documentation. This URL is configured by Platform administrator. Additionally `help.link` property may be defined in Credentials object and in all triggers and actions.
 
 ## Example
 
