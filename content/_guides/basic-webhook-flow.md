@@ -6,6 +6,7 @@ description: In this article we will cover how to create an integration flow whi
 order: 1
 category: building integration flows
 ---
+
 In this article we will cover how to create an [integration flow](integration-flow) which gets triggered by the changes in an external system. We will create an integration flow that exposes an externally-reachable URL to accept HTTP requests in JSON format. The received payload gets interpreted as a pet and gets stored into the [Petstore API]({{site.data.tenant.petStoreDocs}}).
 
 If this is your first experience with the {{site.data.tenant.name}} platform, then please follow every step to create your first integration flow. If you have already followed the steps in [Creating your first integration flow?](first-flow) tutorial, then some steps would be the same to you and you are welcome to skip them.
@@ -45,19 +46,11 @@ Now click on *Save* to continue to with webhook creation.
 
 ![Add sample manually](/assets/img/getting-started/webhook-flow/webhook-flow-07.png "Add sample manually")
 
-Next we need to give the sample data structure which the webhook expects to receive from the external system. Click on *Add sample manually* button to add your sample.
+Next we need to give the sample data structure which the webhook expects to receive from the external system. Click on *Add sample manually* or *Send sample request* button to add your sample. To *Send sample request* you can use [Postman](https://www.postman.com).
 
-![Select the format](/assets/img/getting-started/webhook-flow/webhook-flow-08.png "Select the format")
+The only supported format for the input sample is `JSON`, so your sample must be a valid JSON object.
 
-Next we need to choose the format you want to provide your input sample. Please choose your favourite format in the *Format type*. The supported types are:
-
-*   `JSON`: your sample must be a valid JSON object
-*   `XML`: your sample must be a valid XML structure
-*   `List of properties`: must be a comma-separated list of property names.
-
-Let's choose `JSON` type to provide a sample as a JSON object.
-
-![Paste the JSON](/assets/img/getting-started/webhook-flow/webhook-flow-09.png "Paste the JSON")
+![Paste the JSON](/assets/img/getting-started/webhook-flow/webhook-flow-08.png "Paste the JSON")
 
 Paste the following `JSON` in the input field:
 
@@ -67,6 +60,11 @@ Paste the following `JSON` in the input field:
   "petstatus": "sold"
 }
 ```
+
+You can also generate a sample automatically:
+
+![Generate sample](/assets/img/getting-started/webhook-flow/webhook-flow-09.png)
+
 The sample gets evaluated for the correctness of the format. Click on *Save* button to continue.
 
 ![Finish webhook configuration](/assets/img/getting-started/webhook-flow/webhook-flow-10.png "Finish webhook configuration")
@@ -83,30 +81,31 @@ We have the data source, now we need to choose the data target. After completing
 
 ![Choose Petstore component](/assets/img/getting-started/webhook-flow/webhook-flow-12.png "Choose Petstore component")
 
-For that purpose type `petstore` in the search bar and you will find it. Next click on *Choose Petstore API (Node.js)* button.
+For that purpose type `petstore` in the search bar and you will find it. Next click on *Choose Petstore API (Node.js)* button. Upon completion you will see the page to choose one of the 2 available actions in the Petstore component.
 
-![Create the credentials to access](/assets/img/getting-started/webhook-flow/webhook-flow-13.png "Create the credentials to access")
+![Select action](/assets/img/getting-started/webhook-flow/webhook-flow-13.png "Select action")
+
+A typical {{site.data.tenant.name}} platform component can have more than one action to change or add the records at the target API. Here we use the Petstore component to learn the {{site.data.tenant.name}} platform. It provides 2 different actions to create pets with their statuses. These two actions differ by the implemented code style. Let's select *Create a Pet With Generators* and continue.
 
 Next you will see the page *Choose Credentials* where you can either use an existing credential or click on *+connect new credentials* link to create new credentials.
 
-![Credential creation process](/assets/img/getting-started/webhook-flow/webhook-flow-14.png "Credential creation process")
+![Create credentials to access](/assets/img/getting-started/webhook-flow/webhook-flow-14.png "Create credentials to access")
 
 Let us fill-in an input form for these two fields:
+
+![Credential creation process](/assets/img/getting-started/webhook-flow/webhook-flow-15.png "Credential creation process")
+
 *   **Account name**: allows you to give your credential a meaningful name. You can leave this unchanged or give your own name.
+
 *   **API key**: used to authenticate with the [Petstore API]({{site.data.tenant.petStoreDocs}}). Please use the API key `{{site.data.tenant.petStoreApiKey}}`.
 
-Click on *Save* to verify the credentials. The verification can take no more than 30 seconds. Upon completion you will see the page to choose one of the 2 available actions in the Petstore component.
-
-![Select action](/assets/img/getting-started/webhook-flow/webhook-flow-15.png "Select action")
-
-A typical {{site.data.tenant.name}} platform component can have more than one action to change or add the records at the target API. Here we use the Petstore component to learn the {{site.data.tenant.name}} platform. It provides 2 different actions to create pets with their statuses. These two actions differ by the implemented code style. Let's select *Create a Pet With Promise* and continue.
+Click on *Save* to verify the credentials. The verification can take no more than 30 seconds.
 
 ![Mapping the values](/assets/img/getting-started/webhook-flow/webhook-flow-16.png "Mapping the values")
 
 The screenshot above demonstrates the mapping of data between the data from webhook and the Petstore action two fields. Please select these properties by pressing the drop-down menu on the right of each input field as shown.
 
 The `petname` gets mapped with the *Name* field and the `petstatus` with the *Status* field respectively. Click on *Continue* button after you have done with the mapping.
-
 
 ![Retrieve the sample](/assets/img/getting-started/webhook-flow/webhook-flow-17.png "Retrieve the sample")
 
