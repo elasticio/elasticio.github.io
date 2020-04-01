@@ -20,7 +20,7 @@ actions:
 
 - [Flow versioning](#flow-versioning)
 
-- [Configure Prefetch](#configure-prefetch)
+- [Parallel Processing](#parallel-processing)
 
 - [Reset Snapshot](#reset-snapshot)
 
@@ -210,18 +210,18 @@ Then [edit](#start-stop-edit-delete) it to create a draft, and publish this draf
 
 You can work on one draft of a given Flow at a time. If you try to create another one, the Platform will ask you if you want to overwrite the existing one.  Remember that a draft can only become a new version of a Flow if you publish it. It is possible to publish drafts of active and stopped Flows. In case you publish a draft of an active Flow, it will stop immediately, and then restart from scratch as a new version.
 
-## Configure Prefetch
+## Parallel Processing
 
-You can configure Step message prefetch count via the UI and the API.
+Parallel processing, also called "Step message prefetch count", can be configured via the UI and the API.
 
-1\. To configure prefetch via the UI, use *Advanced Settings* section in *Step Summary* tab:
+1\. To configure parallel processing via the UI, use *Advanced Settings* section in *Step Summary* tab:
 
 ![Advanced Settings](/assets/img/RN/20.11/advanced-settings.png)
 
 > **Note:** the changes will be applied after clicking the *Finish Step* button.
 
 
-2\. To configure prefetch via the API, use `prefetch` field as a parameter to `nodeConfig` section of the `/v2/flows` endpoint. The Mapper-Step gets the same prefetch as the previous Step.
+2\. To configure parallel processing via the API, use `prefetch` field as a parameter to `nodeConfig` section of the `/v2/flows` endpoint. The Mapper-Step gets the same prefetch as the previous Step.
 
 **EXAMPLE:**
 
