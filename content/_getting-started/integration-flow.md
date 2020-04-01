@@ -72,7 +72,7 @@ All the containers a connected through a messaging queue, as shown in the follow
 Using a messaging queues between flow steps has following advantages:
 
 * data are never lost if any of the containers crashed
-* containers can be scaled if we need to parallelise the work, e.g. in the diagram above we have 2 instances of Step 2 running
+* containers can be scaled if we need to [parallelize the work](/guides/managing-flows.html#parallel-processing), e.g. in the diagram above we have 2 instances of Step 2 running. This means that a Step will process more than one message simultaneously, so keep track of the available resources for processing. 
 * reliable message delivery between containers, e.g. when the target API is unavailable the platform can easily retry later as the messages remain on the queues
 
 ## Related links
