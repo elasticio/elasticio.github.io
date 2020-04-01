@@ -218,10 +218,10 @@ You can configure Step message prefetch count via the UI and the API.
 
 ![Advanced Settings](/assets/img/RN/20.11/advanced-settings.png)
 
-> **Note:** the changes will be applied after clicking the *Finish step* button.
+> **Note:** the changes will be applied after clicking the *Finish Step* button.
 
 
-2\. To configure prefetch via the API, use `prefetch` field as a parameter to `nodeConfig` section of the `/v2/flows` endpoint. The mapper-step gets the same prefetch as the previous step.
+2\. To configure prefetch via the API, use `prefetch` field as a parameter to `nodeConfig` section of the `/v2/flows` endpoint. The Mapper-Step gets the same prefetch as the previous Step.
 
 **EXAMPLE:**
 
