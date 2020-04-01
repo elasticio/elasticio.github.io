@@ -20,6 +20,8 @@ actions:
 
 - [Flow versioning](#flow-versioning)
 
+- [Configure Prefetch](#configure-prefetch)
+
 - [Reset Snapshot](#reset-snapshot)
 
 All actions are available to users with the corresponding [permissions](/guides/managing-user-roles-in-a-tenant).
@@ -207,6 +209,32 @@ To achieve that, you should select the required version:
 Then [edit](#start-stop-edit-delete) it to create a draft, and publish this draft so it becomes the latest Flow version.
 
 You can work on one draft of a given Flow at a time. If you try to create another one, the Platform will ask you if you want to overwrite the existing one.  Remember that a draft can only become a new version of a Flow if you publish it. It is possible to publish drafts of active and stopped Flows. In case you publish a draft of an active Flow, it will stop immediately, and then restart from scratch as a new version.
+
+## Configure Prefetch
+
+You can configure Step message prefetch count via the UI and the API.
+
+1\. To configure prefetch via the UI, use *Advanced Settings* section in *Step Summary* tab:
+
+![Advanced Settings](/assets/img/RN/20.11/advanced-settings.png)
+
+> **Note:** the changes will be applied after clicking the *Finish step* button.
+
+
+2\. To configure prefetch via the API, use `prefetch` field as a parameter to `nodeConfig` section of the `/v2/flows` endpoint. The mapper-step gets the same prefetch as the previous step.
+
+**EXAMPLE:**
+
+```
+"attributes": {
+        "nodes_config": {
+            "step_1": {
+                "prefetch": 4
+            }
+        }
+    }
+}
+```
 
 
 ## Reset Snapshot
