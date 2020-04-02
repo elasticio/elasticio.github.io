@@ -54,7 +54,7 @@ To access a secure SFTP servers that is configured with a key-based authenticati
 
 Also please pay attention that the field `Password` should be empty in this case.
 
-![My new SFTP credential](https://user-images.githubusercontent.com/16806832/71006042-5db98a00-20ed-11ea-8e75-5a58b4207330.png)
+![My new SFTP credential](img/sftp-credentials.png)
 
 ## Triggers
 
