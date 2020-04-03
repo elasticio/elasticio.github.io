@@ -61,7 +61,9 @@ Before you proceed to press Retry button try to assess the situation:
 *   Are you sure a simple retry would solve the problem?
 
 If answer to any of these questions is no then it is highly possible you would get
-an error again after the Retry. You may have noticed the *Edit* button that allows you to edit the message, which resulted in the error. This is the quick way to fix the error, if the message really caused it.
+an error again after the Retry. You may have noticed the *Edit* button that allows you to edit the message, which resulted in the error. This is the quick way to fix the error, if the message really caused it:
+
+![Edit message before retry](/assets/img/integrator-guide/instant-error-management/edit-error.gif)
 
 
 ## Error Retention policy
