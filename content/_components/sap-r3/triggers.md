@@ -24,7 +24,7 @@ RFC Server provides an opportunity to expose any function, which exists on the r
 For this purpose, credentials for the connection to the remote repository and RFC Server connection should be provided.
 See example bellow:
 
-![credentials](https://user-images.githubusercontent.com/13310949/71813522-7d0b5d80-3082-11ea-9bfd-2fd546480f28.png)
+![credentials](img/sap-r3-credentials.png)
 
 Additionally, to this, the server supports `FTP_R3_TO_CLIENT` function can receive binary data from the remote sap system and upload this data to [attachments](guides/using-attachments).
 
