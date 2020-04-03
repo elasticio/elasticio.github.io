@@ -14,7 +14,7 @@ updatedDate: 2020-03-26
 
 **1.0.6 (March 26, 2020)**
 
-* Add support for new getFlowVariables and handlePathrough jsonata functions
+* Add support for new getFlowVariables and handlePassthrough jsonata functions
 
 > To see the full **changelog** please use the following [link](/components/splitter/changelog).
 

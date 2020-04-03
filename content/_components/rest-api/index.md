@@ -7,14 +7,14 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2020-01-15
+updatedDate: 2020-04-01
 ---
 
 ## Latest changelog
 
-**1.2.2 (March 19, 2020)**
+**1.2.3 (April 1, 2020)**
 
-* Add binary message types to list for processing them as attachments
+* New Jsonata expressions support: `$getFlowVariables` and `$getPassthrough`
 
 > To see the full **changelog** please use the following [link](/components/rest-api/changelog).
 
