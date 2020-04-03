@@ -46,7 +46,7 @@ Let's start a generic integration Flow and cause an error. It will
 be seen here in the logs. Then we run it, see errors, and go to check the runlog
 to click *Retry* and see what happens:
 
-![Retry feature in action](/assets/img/integrator-guide/instant-error-management/retry.gif)
+![Retry feature in action](/assets/img/integrator-guide/instant-error-management/edit-retry-error.gif)
 
 When you press Retry the platform will then try to run the erroneous process again.
 The error will be removed from the execution page.
@@ -61,7 +61,8 @@ Before you proceed to press Retry button try to assess the situation:
 *   Are you sure a simple retry would solve the problem?
 
 If answer to any of these questions is no then it is highly possible you would get
-an error again after the Retry.
+an error again after the Retry. You may have noticed the *Edit* button that allows you to edit the message, which resulted in the error. This is the quick way to fix the error, if the message really caused it.
+
 
 ## Error Retention policy
 There is a limit that defines the maximum number of errors we list for a Flow. If the limit is reached, no new errors are listed for the given Flow anymore. This limit will protect you from the "chatterbox" Flows that tend to spam too much.
