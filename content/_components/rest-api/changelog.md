@@ -6,8 +6,12 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2020-01-02
-updatedDate: 2020-01-02
+updatedDate: 2020-04-01
 ---
+
+## 1.2.3 (April 1, 2020)
+
+* New Jsonata expressions support: `$getFlowVariables` and `$getPassthrough`
 
 ## 1.2.2 (March 19, 2020)
 

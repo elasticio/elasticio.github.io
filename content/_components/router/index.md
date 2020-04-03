@@ -16,7 +16,7 @@ This component implements the [Content-Based Router](http://www.enterpriseintegr
 
 **0.0.4 (March 24, 2020)**
 
-* New Jsonata expressions getFlowVariables and getPathrough
+* New Jsonata expressions support: `$getFlowVariables` and `$getPassthrough`
 
 > To see the full **changelog** please use the following [link](/components/router/changelog).
 

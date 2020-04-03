@@ -11,7 +11,7 @@ updatedDate: 2020-03-26
 
 ## 0.0.4 (March 24, 2020)
 
-* New Jsonata expressions getFlowVariables and getPathrough
+* New Jsonata expressions support: `$getFlowVariables` and `$getPassthrough`
 
 ## 0.0.3 (December 24, 2019)
 

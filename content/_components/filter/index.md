@@ -14,7 +14,7 @@ updatedDate: 2020-03-26
 
 **1.0.2 (March 23, 2019)**
 
-* Add support for new Jsonata expressions getFlowVariables and getPathrough
+* New Jsonata expressions support: `$getFlowVariables` and `$getPassthrough`
 
 > To see the full **changelog** please use the following [link](/components/filter/changelog).
 
