@@ -22,10 +22,12 @@ For authentication you would need a Mandrill API key. You can find it (or genera
 
 Intbound e-mail trigger can receive e-mails that are sent to mandrill inbox(es), it uses [Webhooks API](https://mandrill.zendesk.com/hc/en-us/articles/205583217-Introduction-to-Webhooks).
 
-![Inbound e-mail trigger](https://user-images.githubusercontent.com/56208/29976062-08b3b23a-8f39-11e7-9ca5-67ce4e1e55bc.png)
+![Inbound e-mail trigger](img/mandrillapp-trigger.png)
 
 You have following configuration parameters.
 
 ## Actions
 
-This component has no actions functions. Therefore, this component must be used only as a fist steep in your integration flow.
+### Send Template
+
+![Mandrillapp action](img/mandrillapp-action.png)
