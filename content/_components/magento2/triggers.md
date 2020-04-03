@@ -27,7 +27,7 @@ Lookup objects polling trigger.
 
 **pollConfig** - optional, a dropdown list allowing an integrator to specify polling based on updated_at or created_at timestamp
 
-![image](https://user-images.githubusercontent.com/16806832/59746223-186fe900-927f-11e9-8847-957082c0ab1a.png)
+![image](img/trigger-configuration.png)
 
 ### Input Metadata
 
