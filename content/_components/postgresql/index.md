@@ -7,14 +7,14 @@ icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
 createdDate: 2019-03-19
-updatedDate: 2020-01-15
+updatedDate: 2020-04-06
 ---
 
 ## Latest changelog
 
-**1.3.2 (December 27, 2019)**
+**1.3.3 (April 9, 2020)**
 
-* Update sailor version to 2.5.4
+* Split Connection String credential into multiple fields
 
 > To see the full **changelog** please use the following [link](/components/postgresql/changelog).
 
@@ -46,11 +46,16 @@ The component completeness matrix is also [available separately](completeness-ma
 
 ## Authentication
 
-You would need a full PostgreSQL connection URL to connect to your database, it should looks like this:
+There are two options for authentication:
 
-```sh
-postgress://username:pa$$word@your.postgresql.host:5432/dbname
+1. Filling out the Connection URI (host), Connection port, Database Name, User, and Password fields. This is the recommended method.
+2. Adding a full PostgreSQL connection URL in the Connection String field to connect to your database, as follows:
+
 ```
+postgresql://user:password@your.postgresql.host:5432/dbname
+```
+
+>**Note:** if you fill out both the Connection String and all the other connection data fields, the platform will use the connection string to connect to the database.
 
 See more in [documentation](https://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING).
 
@@ -62,7 +67,6 @@ PostgreSQL component includes the following triggers:
   This trigger and action are actually the same but can be used in two different scenarios - trigger as a first step and action in between other steps.
 
 ## Actions
-
 
 
 1. [SELECT trigger and action](/components/postgresql/actions#select-action)                                                                         
