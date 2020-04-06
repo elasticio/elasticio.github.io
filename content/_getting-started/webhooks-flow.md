@@ -16,24 +16,32 @@ If this is your first experience with the {{site.data.tenant.name}} platform, t
 
 When you login you will have a similar view of the {{site.data.tenant.name}} platform.
 
-![Start creating your flow](/assets/img/getting-started/webhook-flow/webhook-flow-01.png "Start creating your first flow")
+{% include img.html
+url="/assets/img/getting-started/webhook-flow/webhook-flow-01.png"
+title="Start creating your first flow" %}
 
 To start click on *+Add new flow* button to load the integration flow designer.
 
 The designer helps building the flows from the reusable integration components such as `triggers` and `actions`. Every integration flow starts with a `trigger` component to retrieve or receive data from the source. In this case we will start with setting up the webhook to receive the data. Let us find the *webhook component* in the list of integration components.
 
-![Selecting the webhook component](/assets/img/getting-started/webhook-flow/webhook-flow-02.png "Selecting the webhook component")
+{% include img.html
+url="/assets/img/getting-started/webhook-flow/webhook-flow-02.png"
+title="Selecting the webhook component" %}
 
 Type `webhook` in the search bar to find it and click on *Choose Webhook* afterwards to select it.
 In the next step, you can create or choose an existing [credential](credential),
 as shown in the screenshot below.
 
-![Add credentials](/assets/img/getting-started/webhook-flow/webhook-flow-03.png "Add credentials")
+{% include img.html
+url="/assets/img/getting-started/webhook-flow/webhook-flow-03.png"
+title="Add credentials" %}
 
 If you already have a credential for a webhook, select it to proceed.
 Otherwise click on *Connect new credentials* link as shown on the screenshot above.
 
-![Types of credentials](/assets/img/getting-started/webhook-flow/webhook-flow-05.png "Types of credentials")
+{% include img.html
+url="/assets/img/getting-started/webhook-flow/webhook-flow-04.png"
+title="Types of credentials" %}
 
 As you can see in the screenshot above there are multiple types of credentials
 available to choose in the *Type* drop-down. We will cover the Webhook credential
@@ -41,7 +49,9 @@ available to choose in the *Type* drop-down. We will cover the Webhook credentia
 continue with webhook creation. The result should look like in the following
 screenshot.
 
-![Create credentials](/assets/img/getting-started/webhook-flow/webhook-flow-04.png "Create credentials")
+{% include img.html
+url="/assets/img/getting-started/webhook-flow/webhook-flow-05.png"
+title="Create credentials" %}
 
 Now click on *Save* to continue to with webhook creation.
 
