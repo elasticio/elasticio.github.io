@@ -32,7 +32,7 @@ The screenshot below shows the configuration component *Choose Credential* stage
 during the integration flow design. The text field will be evaluated to check if
 the above conditions are met.
 
-![Configuration component credential](/assets/img/components/configuration-component/configuration-component01.png)
+![Configuration component credential](img/configuration-component01.png)
 
 Afterwards, it emits a message with an object equivalent to the JSON in the configuration.
 So any data which is used in the flow and is repeated in multiple places can be
