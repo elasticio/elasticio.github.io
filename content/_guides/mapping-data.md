@@ -22,28 +22,28 @@ Let us consider a simple scenario when we have an incoming data through the *Web
 
 ```js
 {
-  "name": "Goose",
+  "name": "Gromit",
   "status": "sold"
 }
 ```
 
 We intend to map these values into outgoing fields in *Petstore API* component. Let us jump into the integration flow design right at the mapping stage.
 
-![Mapping: Configure input](/assets/img/integrator-guide/data-mapper/mapper-01.png "Mapping: Configure input")
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-01.png" title="Mapping: Configure input" %}
 
 The screenshot above shows the stage in integration flow designer where the actual mapping or matching of the values is done. The *Petstore API* operation for creating a Pet requires a name and a status for the new pet. That's why the component asks the user to provide input in two fields: `Name` and `Status`. These two fields are required (red exclamation marks), which means without providing the values for them we won't be able to proceed further and click on *Continue* button. Let us proceed with the mapping.
 
-![Mapping: Selecting drop-down](/assets/img/integrator-guide/data-mapper/mapper-02.png "Mapping: Selecting drop-down")
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-02.png" title="Mapping: Selecting drop-down" %}
 
-To map the *Name* field click on a drop-down menu on the right side **(1)** and select the matching value from the provided values **(2)** in the *Data* tab. For example, our incoming data has a field `name` which we match with the *Name* field from *Petstore API* component.
+To map the *Name* field click on a drop-down menu **(1)**, choose the step you need **(2)** and select the matching value from the provided values **(3)** . For example, our incoming data has a field `name` which we match with the *Name* field from *Petstore API* component.
 
-![Mapping result of the field](/assets/img/integrator-guide/data-mapper/mapper-03.png "Mapping result of the field")
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-03.png" title="Mapping result of the field" %}
 
-The screenshot above shows the successful mapping result which is `Gromit`. Notice that you have jumped to the *Mapping results* tab here which shows the successful evaluation result. Note also the green check-mark appeared besides the mapping field. This means the mapping of this field is valid.
+The screenshot above shows the successful mapping result which is `Gromit`. Notice that you have to click to the *Eye* button here which shows the successful evaluation result.
 
-![Expressions tab](/assets/img/integrator-guide/data-mapper/mapper-04.png "Expressions tab")
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-04.png" title="Expressions tab" %}
 
-Before going further we can check the *Expressions* tab here **(1)**. Here you can look under the hood of the [JSONata](http://jsonata.org/) powered mapper and see the list **(2)** of expressions and functions that is possible to use. We have already used them in the [how to create your first integration flow](/getting-started/first-flow) tutorial.
+Before going further we can check the *JSONata* mode here **(1)**. Here you can look under the hood of the [JSONata](http://jsonata.org/) powered mapper and see the list **(2)** of expressions and functions that is possible to use. We have already used them in the [how to create your first integration flow](/getting-started/first-flow) tutorial.
 
 We can match the *Status* field with the incoming `status` value as well to complete the mapping and go forward.
 
@@ -57,7 +57,7 @@ In the previous section you learned how to map data between two steps of an inte
 
 The following screenshot demonstrates the *Developer mode*.
 
-![Developer mode](/assets/img/integrator-guide/data-mapper/mapper-05.png "Developer mode")
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-05.png" title="Developer mode" %}
 
 In the *Developer mode* you can write a single JSONata expressions for the entire input object instead of defining expressions for each individual field as in case of the *Integrator mode*.
 
@@ -65,13 +65,13 @@ To use the *Developer mode*, you need to know the meta-model of input data: the 
 
 Therefore, when you switch from *Integrator mode* to *Developer mode*, the mapper input field is pre-populated with a required JSON expression. {{site.data.tenant.name}} generates it from the incoming meta-model parameter values and random property values. You can write your mapping by overriding the property values.
 
-![Developer mode edited values](/assets/img/integrator-guide/data-mapper/mapper-06.png "Developer mode edited values")
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-06.png" title="Developer mode edited values" %}
 
-The above screenshot shows how the property values is replaced by the variables `name` and `status` **(1)**. These variables get their values from the incoming payload of the Webhook component. To get a mapping result **(3)**, you should evaluate the expression by clicking the corresponding button **(3)**.
+The above screenshot shows how the property values is replaced by the variables `name` and `status`. These variables get their values from the incoming payload of the Webhook component. To get a mapping result, you should evaluate the expression by clicking the corresponding button.
 
 > **Please note** your expression is evaluated as you are typing it. The result is shown at once below the mapper input field, in the *Mapping result* section. If you give an invalid expression, an error message is displayed.
 
-![Error in mapping](/assets/img/integrator-guide/data-mapper/mapper-07.png "Error in mapping")
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-07.png" title="Error in mapping" %}
 
 The screenshot above shows the incomplete `JSON` structure which is not accepted by {{site.data.tenant.name}} and the error is shown in the *Mapping result* section.
 
