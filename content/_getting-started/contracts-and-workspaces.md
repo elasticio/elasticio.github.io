@@ -118,9 +118,7 @@ Workspaces can have the `limited` or `full` type. `Limited` is intended for plat
 
 Though not forbidden, **it is highly unrecommended to use `limited` workspaces for any production purposes**. `Limited` workspaces are indicated in the UI:
 
-![Workspace - Limited_1](/assets/img/getting-started/contracts-and-workspaces/Screenshot_2.png)
-
-![Workspace - Limited_2](/assets/img/getting-started/contracts-and-workspaces/Screenshot_3.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/contracts-and-workspaces/limited-workspace.png" title="Workspace - Limited" %}
 
 To change workspace type from `limited` to `full`, contact support.
 
