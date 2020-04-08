@@ -59,54 +59,33 @@ the contract or workspace.
 
 To set a role for a user when adding or inviting new users to a workspace:
 
-1\.  Open **Workspace** in navigation menu:
+1\.  Open **Workspace** in navigation menu  and click **Edit member’s role**:
 
-![Workspace - navigation menu](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_2.png)
+![Workspace - navigation menu](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-01.png)
 
-2\.  Edit member’s roles:
-
-![Edit member’s roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_1.png)
-
-3\.  Either add or invite a new member:
+2\.  Either add or invite a new member:
 
   a)  Click **Add new member**, select an existing user and use the **Role** dropdown menu.
 
-![Add new member - role](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_18.jpg)
+![Add new member - role](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-02.png)
 
-  b)  Click **Invite new member**, enter user email and use **Contract Role** and **Workspace Role** dropdown menus.
+  b)  You can invite new member in your workspace only if your **Contract Role** is **Owner**. Click **Invite new member**, enter user email and use **Contract Role** and **Workspace Role** dropdown menus. In the corresponding menu, select the required role. If your tenant has an extensive list of roles, use the **Find role** field to optimize search. Start typing to gradually filter out unwanted roles.
 
-![Invite new member](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_19.jpg)
+![Invite new member](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-03.png)
 
-4\.  In the corresponding menu, select the required role. If your tenant has an extensive list of roles, use the **Find role** field to optimize search. Start typing to gradually filter out unwanted roles.
+5\.  Click **Send Invite** to finish.
 
-![Invite new member - roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_3.png)
-
-![Contract and Workspace roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_4.png)
-
-
-5\.  Click **Add** or **Send Invite**, depending on your previous actions.
-
-![Add new member - add](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_24.jpg)
-
-![Invite new member - send invite](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_20.jpg)
+![Invite new member - send invite](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-04.png)
 
 To set a role for a user when adding or inviting new users to a workspace:
 
-1\.  Open profile **Settings** in the navigation menu:
+1\.  Edit member’s roles In the **Members** tab:
 
-![Settings](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_5.png)
-
-2\.  Select your contract:
-
-![Select your contract](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_6.png)
-
-3\.  Edit member’s roles In the **Members** tab:
-
-![Edit member’s roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_7.png)
+![Edit member’s roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-05.png)
 
 4\.  Alternatively, invite a new member and set the roles. Initially, only **Contract Role** dropdown menu is visible. To assign the new member’s workspace and workspace role, click **Specify invitee’s workspace**, and use the **Workspace Role** dropdown menu. Then click **Send Invite**.
 
-![Members - invite new member](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Screenshot_29.png)
+![Members - invite new member](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-06.png)
 
 ## Configuring custom user roles
 
