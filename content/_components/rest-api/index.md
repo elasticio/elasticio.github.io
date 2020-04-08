@@ -7,14 +7,14 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2020-04-01
+updatedDate: 2020-04-09
 ---
 
 ## Latest changelog
 
-**1.2.3 (April 1, 2020)**
+**1.2.4 (April 9, 2020)**
 
-* New Jsonata expressions support: `$getFlowVariables` and `$getPassthrough`
+* Fix `No refresh tokens were returned by the OAuth2 provider` error for credentials with non-expiring refresh_token
 
 > To see the full **changelog** please use the following [link](/components/rest-api/changelog).
 
