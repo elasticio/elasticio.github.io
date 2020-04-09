@@ -38,33 +38,33 @@ invoke SOAP Web services over HTTP.
 
 #### Step 1
 
-Find and select SOAP component in the component repository
-![Step 1](https://user-images.githubusercontent.com/13310949/43515103-5de72b58-958a-11e8-88ce-5870003867a1.png)
+Find and select SOAP component in the component repository:
+
+![Step 1](img/step_1.png)
 
 #### Step 2
 
-Create new or select existing credentials
-![Step 2](https://user-images.githubusercontent.com/13310949/43514620-3c2b9efa-9589-11e8-9d9e-c82b1d66e5eb.png)
+Create new or select existing credentials:
+
+![Step 2](img/step_2.png)
 
 #### Step 3
 
-Specify WSDL URL, then choose binding and operation consecutively. **The order matters!**
-![Step 3](https://user-images.githubusercontent.com/13310949/43522182-365e9fbe-95a1-11e8-8226-3e3679afbe17.png)
+Specify WSDL URL, then choose binding and operation consecutively. **The order matters!** Then configure an input data and click "Continue":
+
+![Step 3](img/step_3.png)
 
 #### Step 4
 
-Configure an input data and click "Continue"
-![Step 4](https://user-images.githubusercontent.com/13310949/43514773-9036472a-9589-11e8-83d6-95759f1a2cc9.png)
+Retrieve sample or add sample manually:
+
+![Step 4: Retrieve sample](img/step_4.png)
 
 #### Step 5
 
-Retrieve sample or add sample manually
-![Step 5: Retrieve sample](https://user-images.githubusercontent.com/13310949/43514839-bace8e16-9589-11e8-92d2-e54890472dbb.png)
+Retrieve sample result:
 
-#### Step 6
-
-Retrieve sample result
-![Step 6: Retrieve sample result](https://user-images.githubusercontent.com/13310949/43515232-aca5be76-958a-11e8-95a0-c723f9323e4f.png)
+![Step 5: Retrieve sample result](img/step_5.png)
 
 ### Requirements
 
@@ -80,13 +80,14 @@ Component supports the following WSDL styles:
 
 #### Environment variables
 
-``` OIH_REQUIRED_RAM_MB - recommended value of allocated memory is 2048MB ```
+`OIH_REQUIRED_RAM_MB - recommended value of allocated memory is 2048MB `
 
 ## Credentials
 
 ### Type
 
 You can select the following authorization type:
+
 *   **No Auth**
 *   **Basic Auth**
     *   **Username** - Username for Basic authorization header in the SOAP request
@@ -96,6 +97,7 @@ You can select the following authorization type:
 ## Triggers
 
 ### Receive SOAP Request
+
 Webhook that validates input body over WSDL.
 
 #### Input fields description
