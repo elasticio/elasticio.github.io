@@ -11,9 +11,9 @@ since: 20180102
 An integration Flow is an automated workflow used to synchronize data between multiple applications or services.
 Typically a flow consists of following steps:
 
-1. exporting data from a *source* application
-2. transforming the data according to a set of predefined rules
-3. sending data to one or multiple *target* applications.
+1. Exporting data from a *source* application
+2. Transforming the data according to a set of predefined rules
+3. Sending data to one or multiple *target* applications.
 
 A Flow is constructed from a set [integration components](integration-component) that are invoked in a predefined order.
 The components within a Flow can be classified into two groups: *triggers* and *actions*, as shown in the following diagram.
@@ -43,8 +43,8 @@ once a change is detected.
 
 There are two types of triggers:
 
-* polling: **actively** monitoring the source service in predefined intervals
-* webhook: **waiting** for the source system to send notification about changes
+* Polling: **actively** monitoring the source service in predefined intervals
+* Webhook: **waiting** for the source system to send notification about changes
 
 
 The difference between *polling* and *webhook* triggers is how the changes are detected. A *polling* trigger is actively
@@ -71,9 +71,31 @@ All the containers a connected through a messaging queue, as shown in the follow
 
 Using a messaging queues between flow steps has following advantages:
 
-* data are never lost if any of the containers crashed
-* containers can be scaled if we need to [parallelize the work](/guides/managing-flows.html#parallel-processing), e.g. in the diagram above we have 2 instances of Step 2 running. This means that a Step will process more than one message simultaneously, so keep track of the available resources for processing. 
-* reliable message delivery between containers, e.g. when the target API is unavailable the platform can easily retry later as the messages remain on the queues
+* Data is never lost if any of the containers crashed
+* Containers can be scaled if we need to [parallelize the work](/guides/managing-flows.html#parallel-processing), e.g. in the diagram above we have 2 instances of Step 2 running. This means that a Step will process more than one message simultaneously, so keep track of the available resources for processing.
+* Message delivery between containers is reliable, e.g. when the target API is unavailable the platform can easily retry later as the messages remain on the queues.
+
+
+## Flow States
+
+The main Flow states are:
+
+- `Stopped` (`Inactive`)
+- `Running`
+- `Sleeping`
+- `Suspended`  
+
+Additionally, there are two intermediate states, which cannot be changed manually, and will go to the next state after some time:
+
+- `Starting`. This state is followed by `Running` automatically.
+- `Stopping`. This state is followed by `Stopped` automatically.
+- `Suspending`. This state is followed by `Suspended` automatically.
+
+A Flow in `Inactive` state is not working. No messages are sent, no triggers or actions performed, no containers running. From this state, a Flow can only be run, going from  `Starting` to `Running`.
+
+A `Running` Flow is operating as designed. Containers are running, triggers and actions are performed. From this state, a Flow can be `Stopped` or `Suspended`, going through corresponding intermediate states. Additionally, a `Running` Flow can go into `Sleeping` state.
+
+A `Sleeping` Flow resembles a `Stopped` Flow, but it is actually just paused, because the Flow has done all the work. In this state, a Flow is waiting for a trigger from a Webhook or Scheduler to resume work.      
 
 ## Related links
 
