@@ -95,7 +95,9 @@ A Flow in `Inactive` state is not working. No messages are sent, no triggers or 
 
 A `Running` Flow is operating as designed. Containers are running, triggers and actions are performed. From this state, a Flow can be `Stopped` or `Suspended`, going through corresponding intermediate states. Additionally, a `Running` Flow can go into `Sleeping` state.
 
-A `Sleeping` Flow resembles a `Stopped` Flow, but it is actually just paused, because the Flow has done all the work. In this state, a Flow is waiting for a trigger from a Webhook or Scheduler to resume work.      
+A `Sleeping` Flow resembles a `Stopped` Flow in terms of activity, but it is actually just paused, because the Flow has done all the work. In this state, the Flow is waiting for a trigger from a Webhook or Scheduler to resume work. `Sleeping` Flows go to `Running` state without the intermediate. Also, they can be `Suspended` in rare cases. `Sleeping` state only works for *ordinary* Flows.  
+
+`Suspended` is a state caused by Flow exceeding its message number or size limit in RabbitMQ queue. Suspension is more of a pause, than a stop. All non-processed messages in a suspended Flow are saved in RabbitMQ queue for a limited time. Then they get dropped if the user did not fix the issues and did not resume the Flow. In limited workspaces, Flows are stopped instead of being suspended. A stopped Flow doesn’t save any non-processed messages - everything is dropped. You can stop a Flow manually by pressing the Stop button. Please, keep in mind that stopping a Flow drops all unprocessed messages at the moment of stopping.      
 
 ## Related links
 
