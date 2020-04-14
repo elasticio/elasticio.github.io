@@ -77,7 +77,7 @@ The screenshot above shows the incomplete `JSON` structure which is not accepted
 
 There is a way to filter mapping view to see mandatory fields only by hiding optional fields:
 
-![Hiding optional fields](/assets/img/RN/323/hide-optional-fields.gif)
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/hide-optional-fields.gif" title="Hiding optional fields" %}
 
 > **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new draft version of a flow must be created.
 
