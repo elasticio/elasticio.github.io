@@ -1015,11 +1015,11 @@ div[class*=' language'].highlighter-rouge,
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-backface-visibility: hidden;
-  font-size: 20px;
+  font-size: 18px;
   position: absolute;
-  top: 89px;
+  top: 20px;
   right: 0;
-  bottom: 67px;
+  bottom: 20px;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -1031,8 +1031,9 @@ div[class*=' language'].highlighter-rouge,
   color: #445265; }
 
 .error__code {
-  font-size: 115px;
-  font-weight: 800;
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 700;
   line-height: 1; }
 
 .error__message {
