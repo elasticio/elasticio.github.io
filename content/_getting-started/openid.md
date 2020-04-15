@@ -1,10 +1,10 @@
 ---
 title: OpenID
 layout: article
-section: Introduction
+section: Platform Features
 description: This document provides basic information on OpenID and how it is used to perform user login to the Platform.
 since: 20200206
-order: 1
+order: 8
 ---
 
 This document describes [OpenID Connect](#openid-connect), why [it is great](#why-use-openid), and how we [use it on the Platform](#openid-on-the-platform).
