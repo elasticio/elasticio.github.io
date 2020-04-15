@@ -348,23 +348,23 @@ If `Number of search terms` > 1, metadata has a number of search term equal `Num
 
 Each search term has 3 fields:
 
- ![Search Term](https://user-images.githubusercontent.com/13310949/70321165-54980580-182f-11ea-9442-e6234163deb6.png)
+{% include img.html max-width="100%" url="img/search-term.png" title="Search Term" %}
 
- - **Field Name** - chosen entity's field name. You need to select the one field from `Value` section:
+ - **Field Name** - chosen entity's field name. You need to select the one field from `Allowed Values` section:
 
- ![Field Name - Values](https://user-images.githubusercontent.com/13310949/70224021-31992300-1755-11ea-83e0-6023a2d67503.png)
+{% include img.html max-width="100%" url="img/field-name.png" title="Field Name - Values" %}
 
- - **Condition** - You need to select the one condition from `Value` section:
+ - **Condition** - You need to select the one condition from `Allowed Values` section:
 
- ![Condition - Values](https://user-images.githubusercontent.com/13310949/70224020-31992300-1755-11ea-8f5d-375a77acf1c6.png)
+ {% include img.html max-width="100%" url="img/condition.png" title="Condition - Values" %}
 
  - **Field Value** - the value that the field must match with the specified condition.
 
   You can use wildcard in the condition value for the `like` operator. See [micromatch documentation.](https://www.npmjs.com/package/micromatch)
 
-Between search terms, there is **Criteria Link**. You need to select the one criteria from `Value` section:
+Between search terms, there is **Criteria Link**. You need to select the one criteria from `Allowed Values` section:
 
-![Criteria link - Values](https://user-images.githubusercontent.com/13310949/70224278-ae2c0180-1755-11ea-9445-441a0e2c8f87.png)
+{% include img.html max-width="100%" url="img/criteria-link.png" title="Criteria link - Values" %}
 
 `And` Criteria Link has precedence over `Or`. If you configure 3 search Terms:
 
@@ -380,7 +380,7 @@ Between search terms, there is **Criteria Link**. You need to select the one cri
 
 For example, if you want to find all files where field `name` starts from `123` or field `size` grater than `10000`:
 
-![Integrator mode](https://user-images.githubusercontent.com/13310949/70224450-f6e3ba80-1755-11ea-9a9c-de573f74d370.png)
+![Integrator mode](img/example.png)
 
 ### Output metadata
 
