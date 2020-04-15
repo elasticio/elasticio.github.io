@@ -14,11 +14,11 @@ updatedDate: 2019-09-25
 
 **1.2.0 (September 25, 2019)**
 
-### Actions
+ **Actions:**
 
 * Add Soap Reply action
 
-### Triggers
+**Triggers:**
 
 * Add Receive SOAP Request trigger
 
@@ -27,46 +27,10 @@ updatedDate: 2019-09-25
 ## Description
 
 The SOAP Component provides the SOAP Web Services work opportunity within a
-{{site.data.tenant.name}} flow.
-
-### Purpose
-
-As an integration platform, {{site.data.tenant.name}} has an opportunity to
+{{site.data.tenant.name}} flow. As an integration platform, {{site.data.tenant.name}} has an opportunity to
 invoke SOAP Web services over HTTP.
 
-### How it works
-
-#### Step 1
-
-Find and select SOAP component in the component repository:
-
-![Step 1](img/step_1.png)
-
-#### Step 2
-
-Create new or select existing credentials:
-
-![Step 2](img/step_2.png)
-
-#### Step 3
-
-Specify WSDL URL, then choose binding and operation consecutively. **The order matters!** Then configure an input data and click "Continue":
-
-![Step 3](img/step_3.png)
-
-#### Step 4
-
-Retrieve sample or add sample manually:
-
-![Step 4: Retrieve sample](img/step_4.png)
-
-#### Step 5
-
-Retrieve sample result:
-
-![Step 5: Retrieve sample result](img/step_5.png)
-
-### Requirements
+## Requirements
 
 The platform supports the following SOAP protocol versions:
 *   SOAP 1.1
@@ -78,13 +42,13 @@ Component supports the following WSDL styles:
 *   Document/Encoded
 *   Document/Literal
 
-#### Environment variables
+### Environment variables
 
 `OIH_REQUIRED_RAM_MB - recommended value of allocated memory is 2048MB `
 
-## Credentials
+### Credentials
 
-### Type
+#### Type
 
 You can select the following authorization type:
 
@@ -94,136 +58,50 @@ You can select the following authorization type:
     *   **Password** - Password for Basic authorization header in the SOAP request
 *   **API Key Auth** (*not supported yet*).
 
+## How it works
+
+### Step 1
+
+Find and select SOAP component in the component repository:
+
+![Step 1](img/step_1.png)
+
+### Step 2
+
+Create new or select existing credentials:
+
+![Step 2](img/step_2.png)
+
+### Step 3
+
+Specify WSDL URL, then choose binding and operation consecutively. **The order matters!** Then configure an input data and click "Continue":
+
+![Step 3](img/step_3.png)
+
+### Step 4
+
+Retrieve sample or add sample manually:
+
+![Step 4: Retrieve sample](img/step_4.png)
+
+### Step 5
+
+Retrieve sample result:
+
+![Step 5: Retrieve sample result](img/step_5.png)
+
 ## Triggers
 
-### Receive SOAP Request
-
-Webhook that validates input body over WSDL.
-
-#### Input fields description
-
-*   **WSDL URI** - Public URL address of the WSDL
-*   **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
-*   **Operation** - One of the operations available for the binding you have selected above.
-*   **Validation** - If `Enabled` validate the SOAP Body over WSDL, if `Disabled` does not validate a SOAP Input Body
-
-#### Example of usage
-
-##### Configuration:
-
-*   **WSDL URI** - `http://www.dneonline.com/calculator.asmx?wsdl`
-*   **Binding** - `CalculatorSoap12`
-*   **Operation** - `Add`
-*   **Validation** - `Enabled`
-
-##### Request Body:
-
-```xml
-<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <soap:Body>
-    <Add xmlns="http://tempuri.org/">
-      <intA>1</intA>
-      <intB>1</intB>
-    </Add>
-  </soap:Body>
-</soap:Envelope>
-```
-
-##### Output:
-
-```json
-{
-  "Add": {
-    "intA": "1",
-    "intB": "1"
-  }
-}
-```
-
-#### Known Limitations
-
-1.  Namespaces ignored and SOAP Body with 2 tags that have same name but in different namespaces would be invalid
-2.  SOAP Headers not supported yet
-3.  Retrieve Sample does not represent actual behaviour of component
+  1. [Receive SOAP Request](/components/soap/triggers#receive-soap-request)                                                 
+  Webhook that validates input body over WSDL.
 
 ## Actions
 
-### Call
+  1. [Call](/components/soap/actions#call)                                                                                    
+  Makes a call to SOAP service over HTTP using public WSDL URL.
 
-Makes a call to SOAP service over HTTP using public WSDL URL
-
-#### Input fields description
-
-*   **WSDL URI** - Public URL address of the WSDL
-*   **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
-*   **Operation** - One of the operations available for the binding you have selected above.
-
-#### SOAP Fault
-
-A SOAP fault is used to carry error information within a SOAP message. The component
-handles SOAP faults and emits platform exception in this case. SOAP Fault should
-comply with the [W3C SOAP Fault standard](https://www.w3.org/TR/soap12-part1/#soapfault).
-
-#### Input json schema
-
-The component does not have static input json schema as it is dynamically generated
-for every wsdl/binding/operation specified during the configuration of the component input fields.
-[Apache Axis2](http://axis.apache.org/axis2/java/core/) and [FasterXML JsonSchemaGenerator](https://github.com/FasterXML/jackson-module-jsonSchema) tools are used by the component internally to generate an input metadata.
-You can refer these tools documentation to get deeper understanding about the product.
-
-#### Output json schema
-
-Output json schema is generated dynamically the same as for the input (see above).
-
-## Additional information
-
-**You should specify input fields exactly in the order below. You'll get an error otherwise**.
-1. WSDL URI
-2. Binding
-3. Operation
-
-### Soap Reply
-
-Wraps and returns input data as SOAP response by provided SOAP metadata
-
-#### Input fields description
-
-*   **WSDL URI** - Public URL address of the WSDL
-*   **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
-*   **Operation** - One of the operations available for the binding you have selected above.
-
-#### Input json schema
-
-The component does not have static input json schema as it is dynamically generated for every wsdl/binding/operation specified during the configuration of the component input fields.
-[Apache Axis2](http://axis.apache.org/axis2/java/core/) and [FasterXML JsonSchemaGenerator](https://github.com/FasterXML/jackson-module-jsonSchema) tools are used by the component internally to generate an input metadata.
-You can refer these tools documentation to get deeper understanding about the product.
-
-#### Output json schema
-
-Output json schema is generated dynamically the same as for the input (see above).
-
-#### Input data example:
-
-```json
-{
-  "AddResponse": {
-    "AddResult": 3
-  }
-}
-```
-
-#### Output data example:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <soap:Body>
-        <AddResponse xmlns="http://example.org/">
-            <AddResult>3</AddResult>
-        </AddResponse>
-    </soap:Body>
-</soap:Envelope>
-```
+  2. [Soap Reply](/components/soap/actions#soap-reply)                                                                        
+  Wraps and returns input data as SOAP response by provided SOAP metadata.
 
 ## Current limitations
 
