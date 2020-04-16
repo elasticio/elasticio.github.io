@@ -38,7 +38,11 @@ LOG_LEVEL - controls verbosity of logger. Possible values: `trace`, `debug` `inf
 
 With this action you may fetch data out of the database, e.g. using ``SELECT`` statement.
 
-![SELECT Trigger and Action - configure input](https://user-images.githubusercontent.com/56208/29715706-b4930bdc-89a8-11e7-8a0d-969959d26dd6.png)
+![SELECT Trigger and Action - configure input](img/select-configure-input-00.png)
+
+You can also see the mapping result immediately:
+
+![SELECT Trigger and Action - configure input](img/select-configure-input-01.png)
 
 This trigger & action has no limitations on the number of rows so you may expect to get all of these
 via sequential fetching that is implemented within the node.js ``mssql`` driver.
@@ -61,7 +65,11 @@ Check the [SELECT Action description above](#select-trigger-and-action).
 
 ### INSERT/DELETE/UPDATE Action
 
-![INSERT/DELETE/UPDATE Action - configure input](https://user-images.githubusercontent.com/56208/29715914-9c369ee0-89a9-11e7-89cb-a559f4a8861f.png)
+![INSERT/DELETE/UPDATE Action - configure input](img/insert-update-delete-configure-input-00.png)
+
+You can also see the mapping result immediately:
+
+![INSERT/DELETE/UPDATE Action - configure input](img/insert-update-delete-configure-input-01.png)
 
 You may use this action to do the operations that are not producing output rows but do the database manipulations,
 e.g. ``INSERT``, ``UPDATE`` or ``DELETE`` statements. Internally we use prepared statements, so all incoming data is
