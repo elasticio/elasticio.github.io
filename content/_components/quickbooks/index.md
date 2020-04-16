@@ -23,13 +23,14 @@ updatedDate: 2019-01-30
 Here is the information about [how to retrieve OAuth keys](https://developer.intuit.com/docs/00_quickbooks_online/1_get_started/40_get_development_keys).
 
 The keys could be found by appending the `application_id` in the following way:
+
 ```
 https://developer.intuit.com/v2/ui#/app/appdetail/{{application_id}}/{{application_id}}/keys
 ```
 
 ![OAuth keys and credentials](img/quickbooks-credentials.png)
 
-#### Minor api version
+### Minor api version
 
 This field represents current API [minor version](https://developer.intuit.com/app/developer/qbo/docs/develop/explore-the-quickbooks-online-api/minor-versions#minor-version-summary).
 For default it's 26.
@@ -70,20 +71,25 @@ Allows to add a new entity to your company. To Insert entity you must provide
 mandatory fields and fields which you want to update. This action is available
 ONLY for entities which can't be updated with API. **This action contains dynamic metadata.**
 
-## Upsert Object
+### Upsert Object
 
 Allows to add a new object or update one of the existing objects in your company.
 To add a new object you should provide business required fields in the request body.
 To update entity you should provide primary key and fields which you want to update.
 **This action contains dynamic metadata.**
 
-## Delete Object
+### Delete Object
 
 Allows to remove existing entity in your division. To remove contact you need to
 provide a primary key in the request body. **This action contains dynamic metadata.**
 
+### General Update & Upsert Actions
 
-# Current Limitations
+To prevent problems with concurrent access QuickBooks API entities have SyncToken
+field. This field is required for update API request.
+If you provide wrong SyncToken your request will be rejected with 400 code.
+
+## Current Limitations
 
 For now, API [XSD description](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions) doesn't have any information
 about required fields, so be careful while creating insert, update or upsert requests.
@@ -97,14 +103,6 @@ Be careful, metadata was created once from the XSD, and now is stored in the com
 *   Production servers: Throttled to 500 requests per minute, per realm ID.
 
 Here is [more information about the request limitations](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions).
-
-## Actions
-
-### General Update & Upsert Actions
-
-To prevent problems with concurrent access QuickBooks API entities have SyncToken
-field. This field is required for update API request.
-If you provide wrong SyncToken your request will be rejected with 400 code.
 
 ## Additional info
 
