@@ -38,7 +38,7 @@ Input metadata contains 3 fields:
 }
 ```
 
-![image](https://user-images.githubusercontent.com/16806832/58162968-d194d080-7c8b-11e9-9037-9e359e225c5c.png)
+![Custom Request Action](img/custom-request-action.png)
 
 If `Check if you'd like to make a series of calls (Developer Mode Only)` is checked, you will able to specify an array of requests to make. The fields available per request are the same as a single request. The JSON format is as following:
 
@@ -118,7 +118,7 @@ You can create new or update existing simple or configurable product and associa
 
 **Attribute Set** - dropdown list with all existing product attribute sets labels plus an options `Specify attribute set id from incoming message` and `Specify attribute set name from incoming message` to allow this to be populated from incoming message via attribute set id or name.
 
-![image](https://user-images.githubusercontent.com/16806832/58963896-a8f5f600-87b6-11e9-98c0-47d00ecb220f.png)
+![Upsert Product Action](img/upsert-product-action.png)
 
 ### Expected input metadata
 
