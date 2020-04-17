@@ -6,17 +6,21 @@ icon: csv.png
 icontext: CSV component
 category: CSV component
 createdDate: 2019-12-24
-updatedDate: 2019-12-24
+updatedDate: 2020-05-07
 ---
+
+## 2.1.0 (May 7, 2020)
+
+* Add "Write CSV attachment from Array" action
+* Add "Write CSV attachment from JSON" action
+* Update sailor version to 2.6.5
+
 
 ## 2.0.2 (December 24, 2019)
 
 * Update sailor version to 2.5.4
-
 * Update component to use logger
-
 * Update buildType to docker
-
 * Fixed bug with invalid path to read action
 
 ## 2.0.1 (October 10, 2019)
