@@ -7,16 +7,26 @@ icon:  appdirect.png
 icontext: AppDirect Component
 category: AppDirect Component
 createdDate: 2018-09-05
-updatedDate: 2019-06-19
+updatedDate: 2020-05-07
 ---
+
+## Latest changelog
+
+**1.0.1 (May 7, 2020)**
+
+* Improve credentials verification
+
+> To see the full **changelog** please use the following [link](/components/appdirect/changelog).
+
+## Description
 
 This component uses v2 version of API which described at [AppMarket API Reference](https://help.appdirect.com/api/appmarket.html)
 
-## Authentication
+### Authentication
 
 Authentication occurs via OAuth 2.0. In order to make OAuth work, you need a new App in your Environment.
 
-## Configuring your environment
+### Configuring your environment
 
 Here is how to configure your environment:
 
@@ -33,6 +43,10 @@ Your callback URL should be
 ```
 https://your-tenant.address/callback/oauth2
 ```
+
+Check that `Require API client to request scopes` option is disabled in your API Client:
+
+![API Client Settings](https://user-images.githubusercontent.com/22715422/78552759-be8ddf00-7810-11ea-8e60-498b2c4e6038.png)
 
 Click **Save Settings**. The new API client is created, along with a Consumer
 Secret and Consumer Key. A message appears that includes the Consumer Secret
@@ -100,6 +114,7 @@ You can see a table of available configuration cases below:
 ## Actions
 
 ### Create Entity
+
 Create Entity in AppDirect Environment
 
 #### Create Entity. Input fields
