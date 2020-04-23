@@ -49,6 +49,11 @@ You need to use following properties to configure credentials:
 | Oracle     | `1521` | compatible with Oracle Database 8.1.7 - 12.1.0.2 |
 | MSSQL     | `1433` | compatible with Microsoft SQL Server 2008 R2 and higher |
 
+## Completeness Matrix
+
+The [component completeness](completeness-matrix) matrix gives the technical
+details about Salesforce objects this component covers.
+
 ### Connection URI
 
 Provide hostname of the server, e.g. ``acme.com``
