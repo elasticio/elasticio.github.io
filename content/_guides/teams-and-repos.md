@@ -99,13 +99,13 @@ you need the copy of your repository.
 
 You can set all environment variables for this particular repository by following the link. Consult our documentation on How to define environment variables for integration components.
 
-#### Access:
+#### Access and visibility:
 
-This feature gives a possibility to set the component as Team, Tenant and Global:
+This feature gives a possibility to set the Component as `Team`, `Tenant` and `Global`:
 
-*   `Team` means accessible to the current Contract members.
-*   `Tenant` means accessible for entire Tenant.
-*   `Global` means accessible for all Tenants - **can be set only by support**.
+*   `Team` means the Component is visible and accessible to the current Contract members.
+*   `Tenant` means the Component is visible and accessible for entire Tenant.
+*   `Global` means the Component is visible and accessible for all Tenants - **can be set only by support**.
 
 #### Build history:
 
