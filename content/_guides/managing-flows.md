@@ -216,7 +216,7 @@ Parallel processing, also called "Step message prefetch count", can be configure
 
 1\. To configure parallel processing via the UI, use *Advanced Settings* section in *Step Summary* tab:
 
-![Advanced Settings](/assets/img/RN/20.11/advanced-settings.png)
+![Advanced Settings](/assets/img/tenant-management-guide/managing-flows/advanced-settings.png)
 
 > **Note:** the changes will be applied after clicking the *Finish Step* button.
 
