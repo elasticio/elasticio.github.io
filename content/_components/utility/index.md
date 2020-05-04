@@ -7,21 +7,15 @@ icon: utility.png
 icontext: Utility Component
 category: Utility Component
 createdDate: 2019-07-29
-updatedDate: 2019-07-31
+updatedDate: 2020-04-30
 ---
 
 ## Latest changelog
 
-**1.0.0 (July 25, 2019)**
+**1.1.0 (May 6, 2020)**
 
-* Initial release
-
-* New actions:
-
-  - String to  Attachment
-  - Attachment to String
-  - Base64 Decode
-  - Base64 Encode
+* Add action for converting timezones
+* Bump dependencies
 
 > To see the full **changelog** please use the following [link](/components/utility/changelog).
 
@@ -64,7 +58,29 @@ Decodes input `value` using Base64 decoding to regular string. If malformed inpu
 
 Encodes input `value` using Base64 encoding.
 
+### Convert Between Timezones
+
+Given two timezones and an array of timestamps (without any timezone info) converts the timestamps to the output timezone.  The output is a dictionary of oldTimezone -> newTimezone values.
+
+E.g. If converting from UTC to German time then
+
+`{timesToConvert: ['2020-01-01T12:00:00', '2020-07-01T12:00:00']}`
+
+produces
+
+```
+{
+  '2020-01-01T12:00:00': '2020-01-01T13:00:00+01:00',
+  '2020-07-01T12:00:00': '2020-07-01T14:00:00+02:00',
+}
+```
+
+This component takes into account that Germany is ahead of UTC 1 hour in Winter and 2 hours in the Summer.
+The possible format of incoming strings is deliberately broad to account for as large a range of possible timestamps.
+Epoch time conversion is not supported.
+
+
 ## Limitations
 
 1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with Local Agent Installation
+2. Attachments mechanism does not work with [Local Agent](/getting-started/local-agent) Installation.
