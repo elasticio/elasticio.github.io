@@ -20,6 +20,7 @@ Use the Salesforce Object Query Language (SOQL) to search your organization’s 
 
 * **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
 
+![Query trigger - configure input](img/configure-input_1.png)
 
 ## Get New and Updated Objects Polling trigger
 
@@ -58,7 +59,7 @@ For you purpose you need to specify following fields:
 
    * Process single page per execution: `yes` (or leave this empty)
 
-![Get New and Updated Objects Polling - configure input](img/configure-input.png)
+![Get New and Updated Objects Polling - configure input](img/configure-input_2.png)
 
 As a result, all contacts will be fetched in three calls of the trigger: two of them by 100 items, and the last one by 13.
 If you select `no` in **Process single page per execution**, all 213 contacts will be fetched in one call of the trigger.
