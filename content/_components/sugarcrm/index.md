@@ -45,7 +45,7 @@ following tasks need to be completed:
 
 ## Authentication on platform
 
-![screenshot from 2018-05-04 13-45-46](https://user-images.githubusercontent.com/5710732/39626260-7a34e34c-4fa1-11e8-8cb2-de57183cd403.png)
+![Authentication on platform](img/auth.png)
 
 Fill in the following for your account:
 
