@@ -30,7 +30,7 @@ It is deployed by default to production, so no need to deploy it yourself
 (although you could if you have extended it yourself). In our Dashboard start
 building your integration and include the Code component as well.
 
-![Node.js interface](https://user-images.githubusercontent.com/2523461/68778086-f3678280-0632-11ea-9e9c-d2a888fd5788.png)
+![Node.js interface](img/code-input.png)
 
 However, don't let the simple look fool you - it has a full-fledged interface
 with useful features like the ones you would expect from your

@@ -74,7 +74,7 @@ select as a first component during the integration flow design.
 
 ### Make Request
 
-![image](https://user-images.githubusercontent.com/16806832/73259337-467fb900-41d0-11ea-86af-e18f373a29ec.png)
+![Make Request](img/make-request.png)
 
 #### List of Expected Config fields
 
