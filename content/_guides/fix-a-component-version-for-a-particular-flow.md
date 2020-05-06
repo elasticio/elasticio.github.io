@@ -1,11 +1,17 @@
 ---
-title: Fix a component version for a particular flow
-description: Here is how to fix a component version for a particular flow.
+title: Component version
+description: This document provides information on a component versions, build history and how to fix a component version for a particular flow.
 layout: article
 section: Building integration flows
 category: building integration flows
 order: 4
 ---
+
+## Lates component version
+
+ The exact latest version of a component is set by default instead of "latest" for existing integration flows and while creating the new ones:
+
+ ![Lates component version](/assets/img/integrator-guide/fix-a-component-version/latest.png)
 
 ## Build history
 
