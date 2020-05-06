@@ -12,11 +12,10 @@ updatedDate: 2020-05-07
 
 ## Latest changelog
 
-**2.1.0 (May 7, 2020)**
+**2.1.1 (May 7, 2020)**
 
-* Add "[Write CSV attachment from JSON Array](/components/csv/actions#write-csv-attachment-from-json-array)" action
-* Add "[Write CSV attachment from JSON Object](/components/csv/actions#write-csv-attachment-from-json-object)" action
-* Update sailor version to 2.6.5
+* Add input metadata for objects processing
+* Add the steward URL to the body of the outgoing message
 
 > To see the full **changelog** please use the following [link](/components/csv/changelog).
 

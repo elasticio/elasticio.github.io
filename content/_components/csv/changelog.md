@@ -9,7 +9,12 @@ createdDate: 2019-12-24
 updatedDate: 2020-05-07
 ---
 
-## 2.1.0 (May 7, 2020)
+## 2.1.1 (May 7, 2020)
+
+* Add input metadata for objects processing
+* Add the steward URL to the body of the outgoing message 
+
+## 2.1.0 (April 22, 2020)
 
 * Add "Write CSV attachment from Array" action
 * Add "Write CSV attachment from JSON" action

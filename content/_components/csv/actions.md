@@ -80,7 +80,7 @@ This action will convert an incoming array into a CSV file by following approach
 
 ### Requirements:
 
-* The inbound message is an JSON Object;
+* The inbound message is an JSON Object, wrapped by 'inputObject' object;
 * This JSON object has plain structure without nested levels (structured types `objects` and `arrays` are not supported as values). Only primitive types are supported: `strings`, `numbers`, `booleans` and `null`. Otherwise, the error message will be thrown: `Inbound message should be a plain Object. At least one of entries is not a primitive type`.
 
 The keys of an input JSON will be published as the header in the first row. For each incoming
@@ -89,9 +89,9 @@ for that cell. All other properties will be ignored. For example, headers
 `foo,bar` along with the following JSON events:
 
 ```
-{"foo":"myfoo", "bar":"mybar"}
-{"foo":"myfoo", "bar":[1,2]}
-{"bar":"mybar", "baz":"mybaz"}
+{"inputObject": {"foo":"myfoo", "bar":"mybar"}}
+{"inputObject": {"foo":"myfoo", "bar":[1,2]}}
+{"inputObject": {"bar":"mybar", "baz":"mybaz"}}
 ```
 
 will produce the following `.csv` file:
@@ -121,7 +121,7 @@ This action will convert an incoming array into a CSV file by following approach
 
 ### Requirements:
 
-* The inbound message is an JSON Array of Objects with identical structure;
+* The inbound message is an JSON Array of Objects with identical structure, wrapped by 'inputArray' object;
 * Each JSON object has plain structure without nested levels (structured types `objects` and `arrays` are not supported as values). Only primitive types are supported: `strings`, `numbers`, `booleans` and `null`. Otherwise, the error message will be thrown: `Inbound message should be a plain Object. At least one of entries is not a primitive type`.
 
 The keys of an input JSON will be published as the header in the first row. For each incoming
@@ -130,11 +130,13 @@ for that cell. All other properties will be ignored. For example, headers
 `foo,bar` along with the following JSON events:
 
 ```
-[
-    {"foo":"myfoo", "bar":"mybar"}
-    {"foo":"myfoo", "bar":[1,2]}
-    {"bar":"mybar", "baz":"mybaz"}
-]
+{
+    "inputArray": [
+        {"foo":"myfoo", "bar":"mybar"}
+        {"foo":"myfoo", "bar":[1,2]}
+        {"bar":"mybar", "baz":"mybaz"}
+    ]
+}
 ```
 
 will produce the following `.csv` file:
