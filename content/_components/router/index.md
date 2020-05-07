@@ -27,7 +27,23 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-  * **Route** - this action is responsible for performing the only function of the component, which is described in the header.
+### Route
+
+This action is responsible for performing the only function of the component, which is described in the header.
+
+Here is how to use Route action:
+
+First you have to define a new flow branch,
+
+![Route action 1](img/step_1.png)
+
+then you have to define a routing criteria
+
+![Route action 2](img/step_2.png)
+
+and setup your next steps:
+
+![Route action 3](img/step_3.png)
 
 ## Environment Variables
 
