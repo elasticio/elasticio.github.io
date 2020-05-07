@@ -6,8 +6,15 @@ icon: soap.png
 icontext: SOAP component
 category: SOAP component
 createdDate: 2020-01-02
-updatedDate: 2020-01-02
+updatedDate: 2020-05-07
 ---
+
+## 1.2.1 (May 7, 2020)
+
+* Fix component.json field order
+* Fix component.json descriptions and links
+* Add basic authorization support to Call action
+* Improved SOAP Body parsing
 
 ## 1.2.0 (September 25, 2019)
 
