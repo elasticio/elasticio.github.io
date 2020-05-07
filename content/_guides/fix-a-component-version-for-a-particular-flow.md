@@ -7,13 +7,13 @@ category: building integration flows
 order: 4
 ---
 
-## Lates component version
+## Latest Component Version
 
  The exact latest version of a component is set by default instead of "latest" for existing integration flows and while creating the new ones:
 
  ![Lates component version](/assets/img/integrator-guide/fix-a-component-version/latest.png)
 
-## Build history
+## Build History
 
 During the component development, every new deployment or code commit is given a distinct version which every developer can examine in the **Build history** table presented on each repository page.
 
@@ -27,11 +27,11 @@ However, what if you want to use say v10 from these deployments because there is
 
 The answer is simple, fix the component version during the flow creation!
 
-## Fix the component version
+## Fix the Component Version
 
 Here is what to do:
 
-  * Start designing an integration flow. The designer would automatically choose the Latest version by skipping to the configuration stage.
+  * Start designing an integration flow. The designer will automatically choose the Latest version by skipping to the configuration stage.
 
   * Click on the Version tab and select the desired version to use as it is shown below in the picture:
 
