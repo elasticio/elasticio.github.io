@@ -7,20 +7,17 @@ icon: soap.png
 icontext: SOAP component
 category: SOAP component
 createdDate: 2018-07-17
-updatedDate: 2019-09-25
+updatedDate: 2020-05-07
 ---
 
 ## Latest changelog
 
-**1.2.0 (September 25, 2019)**
+**1.2.1 (May 7, 2020)**
 
- **Actions:**
-
-* Add Soap Reply action
-
-**Triggers:**
-
-* Add Receive SOAP Request trigger
+* Fix component.json field order
+* Fix component.json descriptions and links
+* Add basic authorization support to Call action
+* Improved SOAP Body parsing
 
 > To see the full **changelog** please use the following [link](/components/soap/changelog).
 
@@ -57,6 +54,10 @@ You can select the following authorization type:
     *   **Username** - Username for Basic authorization header in the SOAP request
     *   **Password** - Password for Basic authorization header in the SOAP request
 *   **API Key Auth** (*not supported yet*).
+
+
+>**Please note:** Error would not be thrown on invalid credentials, as credenteals does not contain WSDL url.
+In case of invalid credentials error expected on sample retrieve step: Unexprected reponse from server satus code: 401 Anunthorized
 
 ## How it works
 

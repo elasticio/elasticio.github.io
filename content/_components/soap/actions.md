@@ -6,7 +6,7 @@ icon: soap.png
 icontext: SOAP component
 category: SOAP component
 createdDate: 2020-01-02
-updatedDate: 2020-01-02
+updatedDate: 2020-05-07
 ---
 
 ## Call
@@ -14,6 +14,8 @@ updatedDate: 2020-01-02
 Makes a call to SOAP service over HTTP using public WSDL URL:
 
 ![Soap actions - call](img/step_3.png)
+
+Call action supports Basic Authorization, chose Basic Authorization type in credentials and provide credentials for WSDL
 
 ### Input fields description
 
