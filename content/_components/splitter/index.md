@@ -103,19 +103,7 @@ For example, given the following message:
 and the JSONata expression `Phone.{type: number}`, an object constructor, the
 action will return output:
 
-```json
-{
-    "home": "0203 544 1234"
-}
-
-{
-    "office": "01962 001234"
-}
-
-{
-    "mobile": "077 7700 1234"
-}
-```
+![Split on JSONata Expression](img/split-json.png)
 
 >**Please note:** If the evaluated array contains primitive values like ```users:["John", "Mike", "Anna"]```, the splitter emits error.
 
@@ -125,11 +113,11 @@ action will return output:
 
 ### Re-assemble Messages
 
-#### Beta
-
 Inverse of the split action: Given a stream of incoming messages that which have
 been split apart by a split action (or similar), produce one message once all
-message parts have arrived.
+message parts have arrived:
+
+![Re-assemble Messages](img/re-assemble.png)
 
 #### Supported
 
