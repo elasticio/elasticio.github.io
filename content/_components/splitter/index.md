@@ -7,14 +7,15 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2017-03-31
-updatedDate: 2020-03-26
+updatedDate: 2020-05-07
 ---
 
 ## Latest changelog
 
-**1.0.6 (March 26, 2020)**
+**1.1.0 (May 7, 2020)**
 
-* Add support for new getFlowVariables and handlePassthrough jsonata functions
+* Add [re-assemble action](/components/splitter/index#re-assemble-messages).
+* Update dependenciesons
 
 > To see the full **changelog** please use the following [link](/components/splitter/changelog).
 
@@ -67,6 +68,7 @@ The splitting expression is "users", action will return output:
     "name": "Mike"
 }
 ```
+
 >**Notes:**
 - *When splitting expression refers to an object splitter returns this object;*
 - *When splitting expression contains primitive value like ```users:"John"``` or array of primitives like ```users:["John", "Mike", "Anna"]``` splitter emits error.*
@@ -114,10 +116,47 @@ action will return output:
     "mobile": "077 7700 1234"
 }
 ```
->**Notes:**
 
-- *If the evaluated array contains primitive values like ```users:["John", "Mike", "Anna"]```, the splitter emits error.*
+>**Please note:** If the evaluated array contains primitive values like ```users:["John", "Mike", "Anna"]```, the splitter emits error.
 
 ### List of Expected Config fields
 
-```Split Property``` - use this field to choose a separator.
+`Split Property` - use this field to choose a separator.
+
+### Re-assemble Messages
+
+#### Beta
+
+Inverse of the split action: Given a stream of incoming messages that which have
+been split apart by a split action (or similar), produce one message once all
+message parts have arrived.
+
+#### Supported
+
+* Messages can be re-ordered in the flow
+* If messages are re-delivered as a result of the platform's at once delivery guarantee, does not trigger false positives
+* Messages from one original message can be interleaved with messages from another original message
+(e.g. Two overlapping webhook calls arrive and the flow has components where parallel processing > 1.)
+
+#### Limitations
+
+* All groups must have one or more messages. (i.e. No groups of size 0).
+Can't do re-grouping when a split is done on an empty array. (i.e. No empty for each pattern supported)
+* If all messages in a group fail to arrive at the re-assemble action (because one message suffered an error earlier in the flow)
+then this component will silently discard the group.
+* All messages must arrive within the same container lifetime.  
+If at any point there is more than a 15 second gap in messages, then the group will be silently discarded.  
+* The group is dropped if there are any unexpected restarts to the container.
+* Size of the group must be known by all group members.
+* Messages are only emitter when all parts arrive. Emitting a message only when the first part arrives isn't supported.
+* The contents of data that are picked up by the sub-messages aren't passed forward to future steps.
+
+#### List of Expected Config fields
+
+`groupSize` - Number of messages in the group
+
+`groupId` - Globally unique id for the group to distinguish it from other groups. This value needs to be the same for all messages in a group.
+
+`messageId` - Id for a message to distinguish it from other messages in the group.
+
+Must be unique per group but does not have to be globally unique. This value needs to be different for all messages in a group.
