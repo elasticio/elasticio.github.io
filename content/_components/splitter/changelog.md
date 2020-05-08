@@ -6,8 +6,13 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2020-01-02
-updatedDate: 2020-03-26
+updatedDate: 2020-05-07
 ---
+
+## 1.1.0 (May 7, 2020)
+
+* Add re-assemble action
+* Update dependencies
 
 ## 1.0.6 (March 26, 2020)
 
