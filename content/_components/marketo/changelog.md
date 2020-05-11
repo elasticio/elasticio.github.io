@@ -6,8 +6,18 @@ icon: marketo.png
 icontext: Marketo component
 category: marketo
 createdDate: 2018-03-02
-updatedDate: 2020-04-23
+updatedDate: 2020-05-08
 ---
+
+## 2.1.0 (May 8, 2020)
+
+* Add `Get New Activities Polling` trigger
+* Add `Get New Leads Polling` trigger
+* Add `Upsert Objects` action
+* Fix `Lookup Activities` bug in case of empty response
+* Add `Bulk Import` action
+* Add `Bulk Extract` action
+* Add `Poll Bulk Extract Results` trigger
 
 ## 2.0.0 (April 23, 2020)
 
