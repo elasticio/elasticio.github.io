@@ -12,7 +12,7 @@ updatedDate: 2020-03-26
 ## Query trigger
 
 Continuously runs the same SOQL Query and emits results one-by-one.
-Use the Salesforce Object Query Language (SOQL) to search your organization’s Salesforce data for specific information. SOQL is similar to the SELECT statement in the widely used Structured Query Language (SQL) but is designed specifically for Salesforce data. This action allows you to interact with your data using SOQL.
+Use the Salesforce Object Query Language (SOQL) to search your organization’s Salesforce data for specific information. SOQL is similar to the SELECT statement in the widely used Structured Query Language (SQL) but is designed specifically for Salesforce data. This trigger allows you to interact with your data using SOQL.
 
 ### List of Expected Config fields trigger
 
@@ -20,7 +20,9 @@ Use the Salesforce Object Query Language (SOQL) to search your organization’s 
 
 * **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
 
-![Query trigger - configure input](img/configure-input_1.png)
+![Query trigger - configure input](img/query-trigger.png)
+
+>**Please Note:** Max possible fetch size is 2000 objects per execution.
 
 ## Get New and Updated Objects Polling trigger
 
@@ -46,6 +48,8 @@ Polls existing and updated objects. You can select any custom or built-in object
 
 * **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
 
+* **Max Fetch Count** - limit for a number of messages that can be fetched. 1,000 is the default value when the variable is not set.
+
 For example, you have 234 “Contact” objects, 213 of them were changed from 2019-01-01.
 You want to select all “Contacts” that were changed from 2019-01-01, set the page size to 100 and process single page per execution.
 
@@ -59,7 +63,7 @@ For you purpose you need to specify following fields:
 
    * Process single page per execution: `yes` (or leave this empty)
 
-![Get New and Updated Objects Polling - configure input](img/configure-input_2.png)
+![Get New and Updated Objects Polling - configure input](img/get-update-object-trigger.png)
 
 As a result, all contacts will be fetched in three calls of the trigger: two of them by 100 items, and the last one by 13.
 If you select `no` in **Process single page per execution**, all 213 contacts will be fetched in one call of the trigger.

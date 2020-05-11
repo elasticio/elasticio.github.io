@@ -12,9 +12,17 @@ updatedDate: 2020-03-26
 
 ## Latest changelog
 
-**1.3.2 (March 26, 2020)**
+**1.3.3 (May 8, 2020)**
 
-* Add new optional field `Include linked objects` in trigger: `Get New and Updated Objects Polling`
+* Fix bug with 1,000 objects limit in actions:
+  - Query
+  - Lookup Object
+  - Lookup Objects
+
+  and trigger:
+  - Get New and Updated Objects Polling.
+
+  New configuration field Max Fetch Count added to configure the limit.
 
 > To see the full **changelog** please use the following [link](/components/salesforce/changelog).
 
