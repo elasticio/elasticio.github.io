@@ -23,6 +23,7 @@ Empty object will be returned, if query doesn't find any data.
 * **Optional batch size** - A positive integer specifying batch size. If no batch size is specified then results of the query will be emitted one-by-one, otherwise, query results will be emitted in an array of maximum batch size.
 * **Allow all results to be returned in a set** - checkbox which allows emitting query results in a single array. `Optional batch size` option is ignored in this case.
 * **SOQL Query** - Input field where you should type the SOQL query. E.g. `"SELECT ID, Name from Contact where Name like 'John Smi%'"`
+* **Max Fetch Count** - limit for a number of messages that can be fetched. 1,000 is the default value when the variable is not set.
 
 ## Create Object action
 
@@ -134,6 +135,8 @@ Lookup a list of objects satisfying specified criteria.
 
 * **Enable Cache Usage** - Flag to enable cache usage.
 
+* **Max Fetch Count** - limit for a number of messages that can be fetched. 1,000 is the default value when the variable is not set.
+
 >**NOTE**
 Action has caching mechanism. By default action stores last 10 request-response pairs for 10 min duration.
 This parameters can be changed by setting environment variables:
@@ -222,6 +225,7 @@ Action creates a single object. Input metadata is fetched dynamically from your 
 * **Optional batch size** - A positive integer specifying batch size. If no batch size is specified then results of the query will be emitted one-by-one, otherwise, query results will be emitted in an array of maximum batch size.
 * **Object** - Input field where you should choose the object type, which you want to find. E.g. `Account`
 * **Lookup field** - Input field where you should choose the lookup field which you want to use for result filtering. E.g. `Id`.
+* **Max Fetch Count** - limit for a number of messages that can be fetched. 1,000 is the default value when the variable is not set.
 
 `For now, you can specify all unique, lookup, ExternalID/Id fields.`
 
