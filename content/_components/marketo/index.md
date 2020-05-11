@@ -7,17 +7,20 @@ icon: marketo.png
 icontext: Marketo component
 category: marketo
 createdDate: 2018-03-02
-updatedDate: 2020-04-23
+updatedDate: 2020-05-08
 ---
 
 ## Latest changelog
 
-**2.0.0 (April 23, 2020)**
+**2.1.0 (May 8, 2020)**
 
-* Add `Lookup Objects` action
-* Add `Lookup Activities` action
-* Add `Describe Object` action
-* Add `List Custom Objects` action
+* Add `Get New Activities Polling` trigger
+* Add `Get New Leads Polling` trigger
+* Add `Upsert Objects` action
+* Fix `Lookup Activities` bug in case of empty response
+* Add `Bulk Import` action
+* Add `Bulk Extract` action
+* Add `Poll Bulk Extract Results` trigger
 
 > To see the full **changelog** please use the following [link](/components/marketo/changelog).
 
@@ -40,6 +43,8 @@ Marketo [provides instructions to grant API access](http://developers.marketo.co
 |Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
 |`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warning`, `error` |
+|`SWAGGER_URL`| false | Define url to Marketo swagger document for generation correct metadata  | https://developers.marketo.com/swagger/swagger-mapi.json |
+|`BULK_IMPORT_POLLING_TIMEOUT`| false | Timeout for polling bulk import job status in ms | 60000 |
 
 ###  Credentials
 
@@ -49,7 +54,7 @@ Marketo [provides instructions to grant API access](http://developers.marketo.co
 
  * Endpoint URL
    Url of your endpoint. For example `https://example.com/rest`
-   
+
  * Identity URL
    Url of your identity. For example `https://example.com/identity`
 
@@ -70,141 +75,41 @@ details about Salesforce objects this component covers.
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+  1. [Get New Activities Polling](/components/marketo/triggers#get-new-activities-polling)                                  
+  Trigger to get all new and updated activities since last polling.
+
+  2. [Get New Leads Polling](/components/marketo/triggers#get-new-leads-polling)                                            
+  Trigger to get all leads updates. Only [updated](https://developers.marketo.com/rest-api/lead-database/activities/#data_value_changes) leads fields wold be retrieved.
+
+  3. [Poll Bulk Extract Results](/components/marketo/triggers#poll-bulk-extract-results)                                       
+  Poll Bulk Extract Results and download file with extracted data to attachments.
+
 
 ## Actions
 
-### Describe Object
+ 1. [Describe Object](/components/marketo/actions#describe-object)                                                              
+ Get describe Object metadata.
 
-#### List of Expected Config fields
+ 2. [List Custom Objects](/components/marketo/actions#list-custom-objects)                                                   
+ Action will return a list of custom objects available in the destination instance, along with additional metadata about the objects.
 
-List contains default object types and custom object types.
+ 3. [Lookup Objects](/components/marketo/actions#lookup-objects)                                                             
+ Lookup objects by criteria.
 
-|Supported default object types|
-|-----------|
-|Companies|
-|Leads|
-|Named Accounts|
-|Opportunities|
-|Opportunity Roles|
-|Sales Persons|
+ 4. [Lookup Activities](/components/marketo/actions#lookup-activities)                                                       
+ Lookup Activities by criteria.
 
+ 5. [Bulk Import](/components/marketo/actions#bulk-import)                                                                   
+ Action for insertion of large sets of person and person related data.
 
-#### Expected output metadata
+ 6. [Upsert Objects](/components/marketo/actions#upsert-objects)                                                             
+ Action upsert objects by unique criteria.
+ 
+ 7. [Bulk Extract](/components/marketo/actions#bulk-extract)                                                                
+ Extract file with Requested data to attachments.
 
-[/src/schemas/describeObject.out.json](/src/schemas/describeObject.out.json)
+## Known limitations
 
-
-### List Custom Objects
-
-Action will return a list of custom objects available in the destination instance, along with additional metadata about the objects.
-
-#### Expected output metadata
-
-[/src/schemas/listCustomObjects.out.json](/src/schemas/listCustomObjects.out.json)
-
-### Lookup Objects
-
-#### List of Expected Config fields
-
-List contains default object types and custom object types.
-
-|Supported default object types|
-|-----------|
-|Companies|
-|Leads|
-|Named Accounts|
-|Opportunities|
-|Opportunity Roles|
-|Sales Persons|
-
-##### Emit Behaviour
-
-Options are: `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message
-
-#### Expected input metadata
-
-<details>
-<summary>Input json Schema</summary>
-
-```json
-{
-  "type": "object",
-  "properties": {
-    "searchTerm0": {
-      "title": "Search term",
-      "type": "object",
-      "properties": {
-        "filterType": {
-          "title": "Field Name",
-          "type": "string",
-          "required": true
-        },
-        "filterValues": {
-          "title": "List of values",
-          "description": "List of values to filter on in the specified fields.",
-          "type": "array",
-          "required": true,
-          "items": {
-            "value": {
-              "type": "string"
-            }
-          }
-        }
-      }
-    },
-    "maxResultSize": {
-      "description": "Positive integer that defaults to 1000",
-      "required": false,
-      "title": "Max result size",
-      "type": "number"
-    }
-  }
-}
-```
-
-</details>
-
-#### Expected output metadata
-
-Output metadata will be calculated dynamically according to Marketo documentation
-
-#### Example of input message
-
-```json
-{
-  "searchTerm0": {
-    "filterType": "id",
-    "filterValues": ["210","211","339","344","214","215","216"]
-  }
-}
-```
-
-### Lookup Activities
-
-#### List of Expected Config fields
-
-##### Emit Behaviour
-
-Options are: `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message
-
-#### Expected input metadata
-
-[/src/schemas/lookupActivities.in.json](/src/schemas/lookupActivities.in.json)
-
-#### Expected output metadata
-
-[/src/schemas/lookupActivities.out.json](/src/schemas/lookupActivities.out.json)
-
-#### Example of input message
-
-```json
-{
-  "activityTypeIds": [1],
-  "sinceDatetime": "2015-04-21T20:51:56.790Z"
-}
-```
-
->**NOTES:** If you want to generate the sample for Fetch All behavior, use a small period time in your filter criteria.
-In other cases, you will receive a retrieve sample timeout error.
+1. See [REST API limitations](https://developers.marketo.com/rest-api/marketo-integration-best-practices/)
+2. We recommend to set flow to realtime if total execution time is greater than 60 seconds.
+3. The attachments mechanism does not work with Local Agent Installation.
