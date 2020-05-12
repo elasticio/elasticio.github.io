@@ -63,13 +63,13 @@ See more in [documentation](https://www.postgresql.org/docs/current/static/libpq
 
 PostgreSQL component includes the following triggers:
 
-  1. [SELECT trigger and action](/components/postgresql/triggers#select-trigger-and-action)                                                                         
+  1. [SELECT trigger](/components/postgresql/triggers#select-trigger-and-action)                                                                         
   This trigger and action are actually the same but can be used in two different scenarios - trigger as a first step and action in between other steps.
 
 ## Actions
 
 
-1. [SELECT trigger and action](/components/postgresql/actions#select-action)                                                                         
+1. [SELECT action](/components/postgresql/actions#select-action)                                                                         
 This trigger and action are actually the same but can be used in two different scenarios - trigger as a first step and action in between other steps.
 
 2. [INSERT/UPDATE/DELETE action](/components/postgresql/actions#insertupdatedelete-action)                                                                         
@@ -81,7 +81,7 @@ This action is useful to execute a bulk insert query in one transaction. An inco
 4. [SQL Query action](/components/postgresql/actions#sql-query-action)                                                                         
 **Expert mode**. You can execute SQL query or SQL script in this action.
 
-5. [SELECT trigger and action](/components/postgresql/actions#sql-injection-action)                                                                         
+5. [SQL Injection action](/components/postgresql/actions#sql-injection-action)                                                                         
 **Expert mode**. You can execute SQL Injection in this action. You can not use prepare statement there, for this purpose use [SQL Query Action](/components/postgresql/actions#sql-query-action).
 
 ## How SQL templates work
