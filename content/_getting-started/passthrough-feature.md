@@ -47,7 +47,7 @@ configure it to choose a messages from any other previous steps, if required.
 
 An ability to access the data on different steps of the integration flow and
 combine them into one outgoing message is an important advantage for many
-integration use-cases. Here are some scenarious when the passthrough feature makes
+integration use-cases. Here are some sceIn this example, we want to update the status of a pet named Gromit in the pet store. Information that the status has been updated must be sent using the component to the boss’s mail. To send the information we need, we use components and a component to send the results to the mail.narious when the passthrough feature makes
 a significant difference.
 
 *   As an integrator you want to retrieve the data from more than one external resource and combine it into one outgoing message to store it in your desired storage. Without the passthrough feature you would need to retrive the data separately from different resources, synchronize them and store in the storage. For this you would definetly need to use more than one integration flow and make sure not overwrite it every time.
@@ -56,65 +56,33 @@ a significant difference.
 Let us have a look into an example on how the passthrough feature can help to solve
 a real-life integration dilemma.
 
-## Real-life Example
+## Example
 
-In this use case, we want to transfer Amazon MWS Orders into Salesforce Orders.
-We aim to have all information about the orders found in Amazon MWS synchronized in
-the Salesforce.
+In this example, we want to update the status of a pet named Gromit in the pet store. Information that the status has been updated must be sent using the E-Mail component to the boss’s mail. To accomplish the task, we created this flow:
 
-This case is interesting since Amazon MWS API gives answers in some certain ways:
+![Passthrough flow](/assets/img/getting-started/passthrough/passthrough-flow.png)
 
-*   When we query the list of orders (`listOrders`) from Amazon MWS we get information about orders such as IDs, the total amount of orders, shipping information, etc. But this answer does not include information about specific items included in those orders (`listOrderItems`).
-*   To get items (`listOrderItems`) we need to store the order IDs and then use them to query the items belonging to those orders.
-*   Then we need to combine both: orders (`listOrders`) and items (`listOrderItems`) together to store this information into Salesforce. But, without having the order IDs, we can not get item IDs.
+We use the Webhook component in order to send data to the Petstore component.
 
-We can address the above-presented scenario in two ways:
-1.  We use mutliple flows (the sequential mechanism) and external ID to pass the information gradually or
-2.  Use the passthrough feature to merge all the information on-the-fly.
+![Webhook step](/assets/img/getting-started/passthrough/webhook_step.png)
 
-### Sequential mechanism
+Paste the following `JSON` in the input field:
 
-In the imaginary unlucky case when we didn't have passthrough, we would have to
-create a second flow for second query. There may be problems of synchronization
-between the two flows, which we can try to solve with rebounds. The system tries to
-get the external IDs of those orders before asking for items. If the IDs are still
-not there it will try again later and later. However, there is always a limit on
-how many times the system can try and that many connections can fail if one end
-of integration reports a timeout.
+```
+{
+  "petname": "Gromit",
+  "petstatus": "sold",
+  "email": "boss.mail@mail.com"
+}
+```
 
-**We need a solution which would not fail and would do it in one go!**
-Solution to this dilemma is provided by the passthrough feature.
+Then we have to configure Petstore input using data from Webhook component:
 
-### Using the passthrough
+![Petstore step](/assets/img/getting-started/passthrough/petstore_step.png)
 
-Using the passthrough features we can get the `listOrders` and `listOrderItems` in two
-separate steps. Let's take a look at our flow:
+Finaly we move on to the E-Mail component where we need to use the passthrough function. While configuring E-Mail component input we must fill in the "To" field using data from the Webhook component. At this moment we use the passthrough that allows us to use data not only from the previous, but also from earlier steps (Webhook in our case):
 
-![Passthrough flow](/assets/img/getting-started/passthrough/Passthrough_flow.gif)
-
-**Step 1** gets a list of orders:
-
-![Step 1: Get list of orders](/assets/img/getting-started/passthrough/Passthrough-flow-step1.png)
-
-**Step 2** splits the list by order:
-
-![Step 2: Split the list by order](/assets/img/getting-started/passthrough/Passthrough-flow-step2.png)
-
-**Step 3** gets items in the orders:
-
-![Step 3: Get items in the orders](/assets/img/getting-started/passthrough/Passthrough-flow-step3.png)
-
-**Step 4** retrieves orders from Step 2 via passthrough by update date:
-
-![Step 4: Retrieves orders from Step 2](/assets/img/getting-started/passthrough/Passthrough-flow-step4.png)
-
-**Step 5** retrieves order items from Step 3 via passthrough, adding data on
-scheduled delivery date, shipping date, item price and quantity of ordered items:
-
-![Step 5: Retrieves order items from Step 3](/assets/img/getting-started/passthrough/Passthrough-flow-step5.png)
-
-**In summary**: Instead of separating order and item handling to a second flow, we
-reduce the complexity by using the passthrough feature of the platform.
+![E-mail step](/assets/img/getting-started/passthrough/email_step.png)
 
 ## Related links
 
