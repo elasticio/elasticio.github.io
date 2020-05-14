@@ -56,6 +56,34 @@ a significant difference.
 Let us have a look into an example on how the passthrough feature can help to solve
 a real-life integration dilemma.
 
+## Beginner's Example
+
+In this example, we want to update the status of a pet named Gromit in the pet store. We need to send information about changing the status of the pet to the boss’s mail using the E-mail component. To accomplish the task, we created this flow:
+
+![Passthrough flow](/assets/img/getting-started/passthrough/passthrough-flow.png)
+
+We use the Webhook component in order to send data to the Petstore component.
+
+![Webhook step](/assets/img/getting-started/passthrough/webhook_step.png)
+
+Paste the following `JSON` in the input field:
+
+```
+{
+"petname": "Gromit",
+"petstatus": "sold",
+"email": "boss.mail@mail.com"
+}
+```
+
+Then we have to configure Petstore input using data from Webhook component:
+
+![Petstore step](/assets/img/getting-started/passthrough/petstore_step.png)
+
+Finaly we move on to the E-Mail component where we need to use the passthrough function. While configuring E-Mail component input we must fill in the "To" field using data from the Webhook component. At this moment we use the passthrough that allows us to use data not only from the previous, but also from earlier steps (Webhook in our case):
+
+![E-mail step](/assets/img/getting-started/passthrough/email_step.png)
+
 ## Real-life Example
 
 In this use case, we want to transfer Amazon MWS Orders into Salesforce Orders.
