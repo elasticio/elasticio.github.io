@@ -7,6 +7,8 @@ order: 9
 category: integrator-management
 ---
 
+> Our Callback URL: `{{site.data.tenant.appURL}}/callback/oauth2`
+
 This document gives the guidelines on configuring your own OAuth App in case when {{site.data.tenant.name}} platform is run on different/dedicated tenant. Why would one need to do this?
 
 When your created app needs to use a Callback URL for the authentication purposes then the URL structure should be of the following structure:

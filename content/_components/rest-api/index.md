@@ -20,71 +20,64 @@ updatedDate: 2020-04-09
 
 ## Introduction
 
-The example below shows the development team creation using the REST API component with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
+The example below shows the development team creation using the REST API component
+with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
 
 ![Configure Input - Rest API](img/configure-input.png)
 *Numbers show: (1) The URL and method of the REST API resource, (2) the HTTP call headers. (3) configuration options and (4) follow redirect mode.*
 
 1.  HTTP methods and URL
- * REST API component supports the following HTTP methods: `GET`, `PUT`, `POST`, `DELETE` and `PATCH`.
- * The URL of the REST API resources. Accepts JSONata expressions, meaning the URL address evaluates [JSONata](http://jsonata.org/) expressions.
-2. Request Headers and Body
- * Definition of request [headers](#defining-http-headers)
- * Definition of request [body](#defining-request-body), if the HTTP method is not `GET`
-3. Configuration options
- * ``Don`t throw Error on Failed Calls`` - if enabled return error, error code and stacktrace in message body otherwise throw error in flow.
- * ``Split Result if it is an Array`` - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.
-  * ``Split Result if it is an Array`` - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.
- * ``Enable debug logging`` - The component supports extended logging. `Enable debug logging` checkbox should be enabled for it. After that you may check your logs in the logs console.
-
-    >**Please note** that in case of using **ordinary flows**, adding of `DEBUG` environment variable in component repository will override disabled `Enable debug logging` checkbox during flow run, so all logs will be extended until an environment variable is removed.
-
- * ``Retry on failure`` - enabling [rebound](/getting-started/rebound) feature for following HTTP status codes:
-
-    - 408: Request Timeout
-    - 423: Locked
-    - 429: Too Many Requests
-    - 500: Internal Server Error
-    - 502: Bad Gateway
-    - 503: Service Unavailable
-    - 504: Gateway Timeout
-    - DNS lookup timeout
-
-4. ``Follow redirect mode`` - If you want disable Follow Redirect functionality, you can use option ``Follow redirect mode``.By default ``Follow redirect mode`` option has value ``Follow redirects``.
+    *   REST API component supports the following HTTP methods: `GET`, `PUT`, `POST`, `DELETE` and `PATCH`.
+    *   The URL of the REST API resources. Accepts JSONata expressions, meaning the URL address evaluates [JSONata](http://jsonata.org/) expressions.
+2.  Request Headers and Body
+    *   Definition of request [headers](#defining-http-headers)
+    *   Definition of request [body](#defining-request-body), if the HTTP method is not `GET`
+3.  Configuration options
+    *   **Don't throw Error on Failed Calls** - if enabled return error, error code and stacktrace in message body otherwise throw error in flow.
+    *   **Split Result if it is an Arra** - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.
+    *   **Split Result if it is an Array** - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.
+    *   **Enable debug logging** - The component supports extended logging. The checkbox should be enabled for it. After that you may check your logs in the logs console.
+    > **Please note** that in case of using **ordinary flows**, adding of `DEBUG` environment variable in component repository will override disabled Enable debug logging checkbox during flow run, so all logs will be extended until an environment variable is removed.
+    *   **Retry on failure** - enables the [rebound](/getting-started/rebound) feature for following HTTP status codes:
+        *   `408`: Request Timeout
+        *   `423`: Locked
+        *   `429`: Too Many Requests
+        *   `500`: Internal Server Error
+        *   `502`: Bad Gateway
+        *   `503`: Service Unavailable
+        *   `504`: Gateway Timeout
+        *   DNS lookup timeout
+4.  **Follow redirect mode** - The component will follow the redirects by default. If you want disable it open the drop-down meanu and select **Do not follow redirects** option.
 
 ## Triggers
 
 ### HTTP request
 
-Trigger will send a GET/POST/PUT/DELETE HTTP request and parse the response back to the flow.
+Trigger will send a `GET`/`POST`/`PUT`/`DELETE` HTTP requests and parse the
+response back to the flow.
 
 ### Fields
 
-  * Don't throw Error on Failed Calls
-
-  * Split Result if it is an Array
+*   Don't throw Error on Failed Calls
+*   Split Result if it is an Array
   > **Note:** After making the request, and applying the above JSONata expression, if the result is an array and this box is checked, we will emit one message for each element of the array.
-
-  * Retry on failure
-
-  * Follow redirect mode
+*   Retry on failure
+*   Follow redirect mode
 
 ## Actions
 
 ### Fields
 
-* Don't throw Error on Failed Calls
-
-* Split Result if it is an Array
-> **Note:** After making the request, and applying the above JSONata expression, if the result is an array and this box is checked, we will emit one message for each element of the array.
-
-* Retry on failure
-
-* Follow redirect mode
+*   Don't throw Error on Failed Calls
+*   Split Result if it is an Array
+    > **Note:** After making the request, and applying the above JSONata expression, if the result is an array and this box is checked, we will emit one message for each element of the array.
+*   Retry on failure
+*   Follow redirect mode
 
 ### HTTP request
 
-Action will send a GET/POST/PUT/DELETE HTTP request and parse the response back to the flow.
+Action will send a `GET`/`POST`/`PUT`/`DELETE` HTTP request and parse the
+response back to the flow.
 
 ## Authorisation methods
 
@@ -94,16 +87,50 @@ To use the REST API component with any restricted access API provide the authori
 
 *Example above shows how to add the username/password to access the API during the integration flow design.*
 
-You can add the authorisation methods during the integration flow design or by going to your `Settings > Security credentials > REST client` and adding there.
+You must the authorisation methods during the integration flow design or by
+navigating to your `Integrate > Credentials > REST API` from the main menu and
+adding there. REST API component supports 4 authorisation types.
 
-REST API component supports 4 authorisation types:
+> **Please note** that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the [headers section directly](#defining-http-headers).
 
-*   `No Auth` - use this method to work with any open REST API
-*   `Basic Auth` - use it to provide login credentials like **username/password**
-*   `API Key Auth` - use it to provide `API Key` to access the resource
-*   `OAuth2` - use it to provide `Oauth2` credentials to access the resource. Currently it is implemented `Authorization code` OAuth2 flow.
+### No Auth
 
-> **Please note** that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the headers section directly.
+Use **No Auth** method to work with any open REST API. You don't need
+to Verify it, just Save it and proceed further.
+
+### Basic Auth
+
+Use **Basic Auth** to provide login credentials like **username/password**.
+
+> Please note: If you intend to make calls to our own API then you MUST use this method. Use your email address as username and your API-Key as a password.
+
+### API Key Auth
+
+Use **API Key Auth** method for systems where an `API Key` is required to access
+the resource. You need the **Header Name** (like `api-key`) and **Header Value**
+(the value of API-KEY).
+
+### OAuth2
+
+Use **OAuth2** method when the external resource dictates an `Oauth2` authorisation to
+access their resources.
+
+> Before you can fill-in the configuration fields, we strongly suggest creating
+> the OAuth2 app at service side. Here is an example how you could create an
+> [OAuth2 app for Salesforce](/components/salesforce/creating-oauth-app-for-salesforce).
+
+To help you get started here is our Callback URL (`{{site.data.tenant.appURL}}/callback/oauth2`)
+to use during OAuth2 App creation at the third party service side.
+
+There are six configuration fields here from which four are mandatory:
+
+*   **Client Id** - This is the standard Client ID of your OAuth2 app.
+*   **Client Secret** - The Client Secret of your OAuth2 app.
+*   **Auth URI** - This is the authorisation URL which you should get from the service to which you are connecting. As an example Salesforce uses `https://login.salesforce.com/services/oauth2/authorize` address. Other services have similar addresses.
+*   **Token URI** - This would be the URL where you make a call to obtain your access token. Using the Salesforce as an example, here is their `https://login.salesforce.com/services/oauth2/token` address to obtain tokens.
+*   Scopes - A comma-separated list of special scopes your case needs. Something like `users:write, teams:write`
+*   Additional parameters - A comma-separated list of any additional parameters that your case requires. For example `prompt:consent, access_type:offline` could be given.
+
 
 ## Defining HTTP headers
 
@@ -111,13 +138,16 @@ Use this section to add the request headers.
 
 ![HTTP Headers](img/http-headers.png "REST API component Headers field")
 
-Each header has a name and a value. Header name should be colon-separated name-value pairs in clear-text `string` format. The header value can use [JSONata](http://jsonata.org/) expressions.
+Each header has a name and a value. Header name should be colon-separated
+name-value pairs in clear-text `string` format. The header value can use
+[JSONata](http://jsonata.org/) expressions.
 
 > **Note: HTTP Response headers** will not be stored, the components stores body and attachment only.
 
 ## Defining request body
 
-The body may be defined if the HTTP method is not `GET`. The **body** tab enables configuration options such as the **content type** drop-down menu and the **body input field**.
+The body may be defined if the HTTP method is not `GET`. The **body** tab enables
+configuration options such as the **content type** drop-down menu and the **body input field**.
 
 Here is the list of all supported **content types**:
 
@@ -132,12 +162,15 @@ Here is the list of all supported **content types**:
 The **body input field** changes according to the chosen content type.
 
 >**Notes:**
-1. **Response body** will be stored in msg.body
-2. Request body that causes empty response body will return `{}`
+
+1.  **Response body** will be stored in `msg.body`
+2.  Request body that causes empty response body will return `{}`
 
 ### Sending JSON data
 
-Here is how to send a JSON data in the body. Change the **content type** to `application/json` and the **body input part** would change accordingly to accept JSON object. Please note that this field supports [JSONata](http://jsonata.org) expressions.
+Here is how to send a JSON data in the body. Change the **content type** to
+`application/json` and the **body input part** would change accordingly to accept
+JSON object. Please note that this field supports [JSONata](http://jsonata.org) expressions.
 
 ![Configure Input - Body](img/body-sending-json-data.png "REST API component Body sending JSON data")
 
@@ -233,19 +266,23 @@ In this case output structure of component will be:
 ```
 
 ## Attachments
-Rest API component has opportunity of binary data sending. You just need choose ``multipart/form-data`` Content type and attachments from input message will be included to the request payload automatically.
 
-Rest-api component automatically load binary data to attachments with next content types in response headers:
+Rest API component has opportunity of binary data sending. You just need choose
+`multipart/form-data` Content type and attachments from input message will be
+included to the request payload automatically.
 
-* image/*
-* text/csv
-* application/msword
-* application/msexcgel
-* application/pdf
-* application/octet-stream
-* application/x-binary
-* application/binary
-* application/macbinary
+Rest-api component automatically load binary data to attachments with next content
+types in response headers:
+
+*   `image/*`
+*   `text/csv`
+*   `application/msword`
+*   `application/msexcgel`
+*   `application/pdf`
+*   `application/octet-stream`
+*   `application/x-binary`
+*   `application/binary`
+*   `application/macbinary`
 
 ## Exception handling
 
@@ -261,7 +298,7 @@ There are:
 * text/xml
 * etc.
 
-> If content type is not  exists  in response header, component will try parse response as json. If it get parse exception, it return response as is.
+> If content type is not indicated in response header, component will try parse response as json. If it get parse exception, it return response as is.
 
 **2.** Attachments limitations:
 
@@ -269,5 +306,5 @@ There are:
 
   2. Attachments mechanism does not work with [Local Agent Installation](/references/local-agents-requesting#compatible-operating-systems)
 
-  3. OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) contains `refresh_token` optional property, but due to EIO platform limitation it is required.
-Possible solution - use access_type:offline in additional parameters (may not work in some cases).
+  3. OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) contains `refresh_token` optional property, but due to the platform limitation it is required.
+Possible solution - use `access_type:offline` in additional parameters (may not work in some cases).
