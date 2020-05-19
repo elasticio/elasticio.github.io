@@ -7,14 +7,14 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2020-04-09
+updatedDate: 2020-05-19
 ---
 
 ## Latest changelog
 
-**1.2.4 (April 9, 2020)**
+**1.2.5 (May 19, 2020)**
 
-* Fix `No refresh tokens were returned by the OAuth2 provider` error for credentials with non-expiring refresh_token
+* Update sailor version to 2.6.7
 
 > To see the full **changelog** please use the following [link](/components/rest-api/changelog).
 

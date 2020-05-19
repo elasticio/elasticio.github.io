@@ -6,8 +6,12 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2020-01-02
-updatedDate: 2020-04-09
+updatedDate: 2020-05-19
 ---
+
+## 1.2.5 (May 19, 2020)
+
+* Update sailor version to 2.6.7
 
 ## 1.2.4 (April 9, 2020)
 
