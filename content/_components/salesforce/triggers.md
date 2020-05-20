@@ -22,6 +22,15 @@ Use the Salesforce Object Query Language (SOQL) to search your organization’s 
 
 ![Query trigger - configure input](img/query-trigger.png)
 
+### SOQL Query Input example
+
+```
+SELECT id, Name, Phone, Birthdate, Likes_Ice_Cream
+FROM Contract
+WHERE Phone != null
+LIMIT 5
+```
+
 >**Please Note:** Max possible fetch size is 2000 objects per execution.
 
 ## Get New and Updated Objects Polling trigger
@@ -71,7 +80,6 @@ If you select `no` in **Process single page per execution**, all 213 contacts wi
 ### Limitations
 
 When a binary field (primitive type `base64`, e.g. Documents, Attachments, etc) is selected on **Include linked objects**, an error will be thrown: 'MALFORMED_QUERY: Binary fields cannot be selected in join queries. Instead of querying objects with binary fields as linked objects (such as children Attachments), try querying them directly.' There is also a limit to the number of linked objects that you can query at once - beyond two or three, depending on the number of fields in the linked objects, Salesforce could potentially return a Status Code 431 or 414 error, meaning the query is too long. Finally, due to a bug with multiselect dropdowns, it is recommended to deselect all of the elements in this field before you change your selection in the *Object* dropdown list.
-
 
 ## Subscribe to platform events trigger
 
