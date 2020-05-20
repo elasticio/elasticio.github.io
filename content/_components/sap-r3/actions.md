@@ -11,7 +11,9 @@ updatedDate: 2020-03-19
 
 ## Call RFC Service
 
-Generic action which gives possibility to call an RFC function on the SAP ECC platform.
+Generic action which gives possibility to call an RFC function on the SAP ECC platform:
+
+![Call RFC Service](img/call-rfc-service.png)
 
 ### Call RFC Service. Configuration fields
 

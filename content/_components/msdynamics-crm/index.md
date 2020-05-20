@@ -32,7 +32,7 @@ Active Directory for details on this process.
 
 ## Triggers
 
-### Get Objects Polling
+### Fetch new and updated objects
 
 Get objects which have recently been modified or created.
 

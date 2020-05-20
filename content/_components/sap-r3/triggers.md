@@ -11,7 +11,9 @@ updatedDate: 2020-03-19
 
 ## RFC Server (Only for Realtime flows)
 
-Generic trigger which gives possibility to receive RFC calls from the SAP ECC platform.
+Generic trigger which gives possibility to receive RFC calls from the SAP ECC platform:
+
+![RFC Server (Only for Realtime flows)](img/rfc-server.png)
 
 ### RFC Server. Config fields
 
