@@ -88,7 +88,7 @@ Obviously, the mapping result will also be an array. The mapper will take object
 
 - It is only possible to map data from objects inside arrays
 - It is impossible to map properties from objects located in multiple arrays
-- It works only in *Integrator mode*
+- If you map an array in *Integrator mode*, the mapping will not be saved if you switch to *Developer mode*, and vice-versa.  
 
 Here is an example of array mapping:
 
