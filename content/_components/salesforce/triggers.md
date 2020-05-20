@@ -85,7 +85,9 @@ When a binary field (primitive type `base64`, e.g. Documents, Attachments, etc) 
 
 >**NOTE:** REALTIME FLOWS ONLY
 
-This trigger will subscribe for any platform Event using Salesforce streaming API.
+This trigger will subscribe for any platform Event using Salesforce streaming API:
+
+![Subscribe to platform events trigger](img/subscribe-trigger.png)
 
 ### Input field description
 
