@@ -25,22 +25,6 @@ and can simplify their supply chain, manufacturing, and operations.
 | User Domain  | true   |
 | Service URL  | true   |
 
-## Triggers
-
-1.  New Products
-2.  New Contacts
-3.  New Units
-4.  New Prices
-5.  New Customers
-6.  New Quotes
-7.  New Orders
-8.  New Invoices
-
-## Actions
-
-1.  Create/Update Contact
-2.  Create/Update Customer
-
 ## Microsoft Dynamics NAV integration component
 
 This is a private component to work with the Microsoft Dynamics NAV software in
@@ -56,3 +40,35 @@ extend this connector yourself. If you need some specific additional triggers
 and / or actions, please contact our pre-sales team first to discuss the details.
 
 ![Microsoft dynamics NAV component](img/microsoft-dynamics-nav-component.png)
+
+## Triggers
+
+**1.**  New Contacts
+
+![New Contacts](img/new-contracts.png)
+
+**2.**  New Customers
+
+![New Customers](img/new-customers.png)
+
+**3.**  New Products
+
+**4.**  New Units
+
+**5.**  New Prices
+
+**6.**  New Quotes
+
+**7.**  New Orders
+
+**8.**  New Invoices
+
+## Actions
+
+**1.**  Create/Update Contact
+
+![Create/Update Contact](img/create-update-contract.png)
+
+**2.**  Create/Update Customer
+
+![Create/Update Customer](img/create-update-customer.png)
