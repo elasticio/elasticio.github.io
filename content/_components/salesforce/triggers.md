@@ -72,12 +72,13 @@ If you select `no` in **Process single page per execution**, all 213 contacts wi
 
 When a binary field (primitive type `base64`, e.g. Documents, Attachments, etc) is selected on **Include linked objects**, an error will be thrown: 'MALFORMED_QUERY: Binary fields cannot be selected in join queries. Instead of querying objects with binary fields as linked objects (such as children Attachments), try querying them directly.' There is also a limit to the number of linked objects that you can query at once - beyond two or three, depending on the number of fields in the linked objects, Salesforce could potentially return a Status Code 431 or 414 error, meaning the query is too long. Finally, due to a bug with multiselect dropdowns, it is recommended to deselect all of the elements in this field before you change your selection in the *Object* dropdown list.
 
-
 ## Subscribe to platform events trigger
 
 >**NOTE:** REALTIME FLOWS ONLY
 
-This trigger will subscribe for any platform Event using Salesforce streaming API.
+This trigger will subscribe for any platform Event using Salesforce streaming API:
+
+![Subscribe to platform events trigger](img/subscribe-trigger.png)
 
 ### Input field description
 

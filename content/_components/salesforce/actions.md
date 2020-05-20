@@ -14,6 +14,8 @@ updatedDate: 2020-03-17
 Executing a SOQL Query that may return many objects. Each resulting object is emitted one-by-one. Use the Salesforce Object Query Language (SOQL) to search your organization’s Salesforce data for specific information. SOQL is similar to the SELECT statement in the widely used Structured Query Language (SQL) but is designed specifically for Salesforce data. This action allows you to interact with your data using SOQL.
 Empty object will be returned, if query doesn't find any data.
 
+![Query action](img/query-action.png)
+
 ### Input fields description
 
 * **Include deleted** - checkbox, if checked - deleted records will be included into the result list.
@@ -29,6 +31,8 @@ Empty object will be returned, if query doesn't find any data.
 
 Creates a new Selected Object.
 Action creates a single object. Input metadata is fetched dynamically from your Salesforce account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
+
+![Create Object action](img/create-object-action.png)
 
 > **NOTE**:
 In case of an **Attachment** object type you should specify `Body` in base64 encoding. `ParentId` is a Salesforce ID of an object (Account, Lead, Contact) which an attachment is going to be attached to.
@@ -48,6 +52,8 @@ When **Utilize data attachment from previous step (for objects with a binary fie
 ## Delete Object action (at most 1)
 
 Deletes an object by a selected field. One can filter by either unique fields or all fields of that sobject. Input metadata is fetched dynamically from your Salesforce account.
+
+![Delete Object action (at most 1)](img/delete-object-action.png)
 
 ### Input field description
 
@@ -72,6 +78,8 @@ Metadata for each particular `Object type` + `Lookup by field` is generating dyn
 Creates or Updates Selected Object.
 Action creates a single object. Input metadata is fetched dynamically from your Salesforce account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
 
+![Upsert Object action](img/upsert-object-action.png)
+
 ### Input field description
 
 * **Object** - Input field where you should choose the object type, which you want to find. E.g. `Account`
@@ -89,6 +97,8 @@ When **Utilize data attachment from previous step (for objects with a binary fie
 
 Lookup an object by a selected field.
 Action creates a single object. Input metadata is fetched dynamically from your Salesforce account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
+
+![Lookup Object action (at most 1)](img/lookup-object-action.png)
 
 ### Input field description
 
@@ -122,6 +132,8 @@ This parameters can be changed by setting environment variables:
 ## Lookup Objects action
 
 Lookup a list of objects satisfying specified criteria.
+
+![Lookup Object actions](img/lookup-object-actions.png)
 
 ### Input field description
 
@@ -181,6 +193,8 @@ Bulk API provides a simple interface for quickly loading large amounts of data f
 
 Action takes a CSV file from the attachment as an input. CSV file format is described in the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.api_bulk_v2.meta/api_bulk_v2/datafiles.htm)
 
+![Bulk Create/Update/Delete action](img/bulk-create-update-delete.png)
+
 ### Input field description
 
 * **Operation** - dropdown list with 3 supported operations: `Create`, `Update` and `Delete`.
@@ -188,7 +202,6 @@ Action takes a CSV file from the attachment as an input. CSV file format is desc
 * **Object** - dropdown list where you should choose the object type to perform bulk operation. E.g. `Case`.
 
 * **Timeout** - maximum time to wait until the server completes a bulk operation (default: `600` sec).
-
 
 Result is an object with a property **result**: `array`. It contains objects with 3 fields.
 
@@ -207,6 +220,8 @@ Result is an object with a property **result**: `array`. It contains objects wit
 ## Bulk Query action
 
 Fetches records to a CSV file.
+
+![Bulk Query action](img/bulk-query-action.png)
 
 ### Input field description
 
