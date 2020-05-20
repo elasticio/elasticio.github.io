@@ -22,6 +22,15 @@ Use the Salesforce Object Query Language (SOQL) to search your organization’s 
 
 ![Query trigger - configure input](img/query-trigger.png)
 
+### SOQL Query Input example
+
+```
+SELECT id, Name, Phone, Birthdate, Likes_Ice_Cream
+FROM Contract
+WHERE Phone != null
+LIMIT 5
+```
+
 >**Please Note:** Max possible fetch size is 2000 objects per execution.
 
 ## Get New and Updated Objects Polling trigger
