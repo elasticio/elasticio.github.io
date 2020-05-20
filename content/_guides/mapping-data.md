@@ -51,9 +51,7 @@ We can match the *Status* field with the incoming `status` value as well to comp
 
 ## Using advanced mapping mode
 
-In the previous section you learned how to map data between two steps of an integration flow using a JSONata expression. This is a convenient approach, however, the graphical mapping in the *Integrator mode* has certain limitations. For example, the array-to-array mapping is only possible in the *Developer mode*. For that purpose we recommend switching to the *Developer mode* to continue.
-
-> **Note** Array-to-array mappings is only possible in the *Developer mode*.
+In the previous section you learned how to map data between two steps of an integration flow using a JSONata expression. This is a convenient approach, however, the graphical mapping in the *Integrator mode* has certain limitations.
 
 The following screenshot demonstrates the *Developer mode*.
 
@@ -80,6 +78,22 @@ There is a way to filter mapping view to see mandatory fields only by hiding opt
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/hide-optional-fields.gif" title="Hiding optional fields" %}
 
 > **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new draft version of a flow must be created.
+
+## Array-to-array Mapping
+Now you can map not just individual objects, but entire arrays in the *Integrator mode*. [Array-to-array mapping](#array-to-array-mapping) was only possible in the *Developer mode* before. If you saw arrays in *Integrator mode*, you would get the following message:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/old-array-to-array.png" title="No array mapping" %}
+
+Obviously, the mapping result will also be an array. The mapper will take objects from the original array, and map them to the resulting array. Note that mapping of arrays has following limitations:
+
+- It is only possible to map data from objects inside arrays
+- It is impossible to map properties from objects located in multiple arrays
+- It works only in *Integrator mode*
+
+Here is an example of array mapping:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-08.png" title="No array mapping" %}
+
 
 ## Related links
 
