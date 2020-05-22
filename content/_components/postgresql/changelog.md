@@ -6,12 +6,12 @@ icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
 createdDate: 2020-01-02
-updatedDate: 2020-04-06
+updatedDate: 2020-05-22
 ---
 
-## 1.3.3 (April 9, 2020)
+## 1.3.4 (May 22, 2020)
 
-* Split Connection String credential into multiple fields
+* Update sailor version to 2.6.7
 
 ## 1.3.2 (December 27, 2019)
 
