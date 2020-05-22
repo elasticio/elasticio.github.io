@@ -7,14 +7,16 @@ icon: code.png
 icontext: Code component
 category: Code component
 createdDate: 2015-09-25
-updatedDate: 2020-01-30
+updatedDate: 2020-05-19
 ---
 
 ## Latest changelog
 
-**1.1.1 (January 30, 2020)**
+**1.2.0 (May 19, 2020)**
 
-* Update sailor version to 2.6.1
+* Update sailor version to 2.6.7
+
+* Add support for more node global objects
 
 > To see the full **changelog** please use the following [link](/components/code/changelog).
 
@@ -45,30 +47,26 @@ favourite desktop developing tool:
 ## Available Variables and Libraries
 
 Here are the available variables and libraries that you can use within the context
-of execution. The most up-to-date list is found within the context of execution.
-The most up-to-date list can always be found in code.js of the component. Below
-is a sample for the reference:
+of execution. The most up-to-date list can always be found in be used within the context of execution or in `code.js` of the component. Below is a sample for the reference.
+Built-in Node.js global objects are also supported.
 
--   `console` - more on [Node.js console](https://nodejs.org/dist/latest-v5.x/docs/api/console.html)
--   `process` - current Node.js process
--   `require` - module require
--   `setTimeout` - more on [setTimeout](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html)
--   `clearTimeout` - more on [clearTimeout](https://nodejs.org/dist/latest-v5.x/docs/api/timers.html)
--   `setInterval` - more on setInterval
--   `clearInterval` - more on clearInterval
--   `msg` - incoming message containing the payload from the previous step
--   `cfg` - step's configuration. At the moment contains one property: `code` (the executed code)
--   `snapshot` - step's snapshot
--   `exports` - a plain object `{}`
--   `messages` - utility for convenient message creation
--   `request` - Http Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request))
--   `wait` - wait
--   `emitter` user to emit messages and errors
+### {{site.data.tenant.name}} Specific Functionality
+
+- `msg` - incoming message containing the payload from the previous step
+- `cfg` - step's configuration. At the moment contains only one property: `code` (the code, being executed)
+- `snapshot` - step's snapshot
+- `messages` - utility for convenient message creation
+- `emitter` user to emit messages and errors
+
+### Other Libraries/functions
+
+- `wait(numberOfMilliscondsToSleep)` - Utility function for sleeping
+- [`request`](https://github.com/request/request) - Http Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request) so that it is pre-promisified)
+- `_` - [Lodash](https://lodash.com/)
 
 ## Code component usage Examples
 
 To use the code you can follow these examples:
-
 
 ```javascript
 async function run(msg) {

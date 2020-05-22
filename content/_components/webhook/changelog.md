@@ -6,8 +6,17 @@ icon: webhook.png
 icontext: Webhook component
 category: Webhook component
 createdDate: 2020-01-02
-updatedDate: 2020-01-30
+updatedDate: 2020-05-19
 ---
+
+## 1.2.2 (May 19, 2020)
+
+* Update sailor version to 2.6.7
+* "Send data" Action become deprecated
+
+## 1.2.1 (March 26, 2020)
+
+* Add help messages to the trigger and action
 
 ## 1.2.0 (February 13, 2020)
 

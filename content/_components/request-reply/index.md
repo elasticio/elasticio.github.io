@@ -11,9 +11,9 @@ updatedDate: 2020-01-30
 ---
 ## Latest changelog
 
-**1.0.3 (January 30, 2020)**
+**1.0.4 (May 19, 2020)**
 
-* Update sailor version to 2.6.1
+* Update sailor version to 2.6.7
 
 > To see the full **changelog** please use the following [link](/components/request-reply/changelog).
 
@@ -21,6 +21,14 @@ updatedDate: 2020-01-30
 
 The HTTP Reply integration connector makes webhooks reply with the data produced
 inside integration workflows, with the result of massively speeding up the data processing.
+
+### Authentication
+
+This component requires no authentication.
+
+### Environment variables
+
+For debugging purposes there is: `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` that controls logger level.
 
 ## Asynchronous vs. Synchronous messaging
 
@@ -46,9 +54,17 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-  * Reply
+### Reply
 
-## Use cases for HTTP Reply
+List of Expected Config fields:
+
+- Custom HTTP Headers - the `non-required` header names separated by comma (e.g `Content-Type`, `Content-Language`)
+- Content Type (default `application/json`) - the `non-required` header value tells the client what the content type of the returned content actually is. The component supports only types with `text/...` or `application/...` in the beginning of the header name.
+- Response Body - the `required` field supports JSONata expressions. Max length of a JSONata expression is 1000 symbols.
+
+![image](https://user-images.githubusercontent.com/40201204/81501098-1cfe1f80-92df-11ea-8d99-76211d83fc85.png)
+
+### Use cases for HTTP Reply
 
 The use-cases of HTTP Reply component are numerous. It can be used for simple
 cases of getting an answer from the flow upon the completion of the process till
@@ -58,8 +74,7 @@ complex cases like:
   * Chatbots as a separate application.
   * Communicator between {{site.data.tenant.name}} as backend and a third party mobile application as frontend.
 
-
-### Example: Advantage of Synchronous messaging
+#### Example: Advantage of Synchronous messaging
 
 Here is a typical scenario: Integration flow is set to expect an incoming message via [WebHook](/components/webhook/) which is then processed further. The only acknowledgement that is given in this case is a simple Thank You from the [WebHook](/components/webhook/), nothing more.
 

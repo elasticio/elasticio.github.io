@@ -7,16 +7,14 @@ icon: mssql.png
 icontext: MsSQL component
 category: MsSQL component
 createdDate: 2017-02-09
-updatedDate: 2018-06-14
+updatedDate: 2020-05-11
 ---
 
 ## Latest changelog
 
-**1.1.0 (January 30, 2020)**
+**1.1.1 (May 11, 2020)**
 
-* Update sailor version to 2.6.1
-* Refactor console.log to built in sailor logger
-* Change build type to `docker`
+* Update sailor version to 2.6.7
 
 > To see the full **changelog** please use the following [link](/components/mssql/changelog).
 
@@ -73,7 +71,7 @@ You can also see the mapping result immediately:
 
 You may use this action to do the operations that are not producing output rows but do the database manipulations,
 e.g. ``INSERT``, ``UPDATE`` or ``DELETE`` statements. Internally we use prepared statements, so all incoming data is
-validated against SQL injection, however we had to build a connection from JavaScript types to the MSSQL data types
+validated against SQL injetion, however we had to build a connection from JavaScript types to the MSSQL data types
 therefore when doing a prepared statements you would need to add ``:type`` to **each prepared statement variable**.
 
 For example if you have a following SQL statement:

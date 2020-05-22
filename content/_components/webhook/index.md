@@ -7,22 +7,21 @@ icon: webhook.png
 icontext: Webhook component
 category: Webhook component
 createdDate: 2015-07-29
-updatedDate: 2020-01-30
+updatedDate: 2020-05-19
 ---
 
 ## Latest changelog
 
-**1.2.0 (February 13, 2020)**
+**1.2.2 (May 19, 2020)**
 
-* "Receive" trigger awaits the result of emit
-* Update sailor version to 2.6.3
-* Remove "q" dependency
+* Update sailor version to 2.6.7
+* "Send data" Action become deprecated
 
 > To see the full **changelog** please use the following [link](/components/webhook/changelog).
 
 ## Purpose
-An open source component for sending and receiving [WebHooks](https://en.wikipedia.org/wiki/Webhook) on {{site.data.tenant.name}}.
 
+An open source component for sending and receiving [WebHooks](https://en.wikipedia.org/wiki/Webhook) on {{site.data.tenant.name}}.
 
 ## Credentials
 
@@ -34,7 +33,6 @@ Webhook component supports the following authorisation types:
 * **HMAC verification shared secret** - use it to verify via a shared secret. Note: only SHA512 encryption algorithm is supported.
 
 ![creds](img/credentials.png)
-
 
 ## Triggers
 
