@@ -7,14 +7,14 @@ icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
 createdDate: 2019-03-19
-updatedDate: 2020-04-06
+updatedDate: 2020-05-22
 ---
 
 ## Latest changelog
 
-**1.3.3 (April 9, 2020)**
+**1.3.4 (May 22, 2020)**
 
-* Split Connection String credential into multiple fields
+* Update sailor version to 2.6.7
 
 > To see the full **changelog** please use the following [link](/components/postgresql/changelog).
 

@@ -6,15 +6,21 @@ icon: xml.png
 icontext: XML component
 category: XML
 createdDate: 2020-01-02
-updatedDate: 2020-04-22
+updatedDate: 2020-05-22
 ---
+
+## 1.3.1 (May 22, 2020)
+
+* Update sailor version to 2.6.7
+* Correctly handle incoming attachments that are empty.
+* Update dependencies.
+* Add debug log statements.
 
 ## 1.3.0 (April 23, 2020)
 
 * Update dependencies
 * Create new JSON to XML action
 * Add help links
-
 
 ## 1.2.1 (March 30, 2020)
 

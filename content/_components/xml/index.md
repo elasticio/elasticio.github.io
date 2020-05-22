@@ -7,16 +7,17 @@ icon: xml.png
 icontext: XML component
 category: XML
 createdDate: 2016-12-29
-updatedDate: 2020-04-22
+updatedDate: 2020-05-22
 ---
 
 ## Latest changelog
 
-**1.3.0 (April 23, 2020)**
+**1.3.1 (May 22, 2020)**
 
-* Update dependencies
-* Create new JSON to XML action
-* Add help links
+* Update sailor version to 2.6.7
+* Correctly handle incoming attachments that are empty.
+* Update dependencies.
+* Add debug log statements.
 
 > To see the full **changelog** please use the following [link](/components/xml/changelog).
 
@@ -29,7 +30,6 @@ iPaaS component to convert between XML and JSON data.
 Allows users to convert XML attachments and strings to and from JSON.
 This component has 3 actions allowing users to pass in either generic but well formatted XML/JSON strings or XML attachments
 and produces a generic string or attachment of the other file type. The output then can be mapped and used in other components.
-
 
 ### Requirements and Conversion Behavior
 
@@ -64,7 +64,7 @@ is equivalent to
 <someTag id="my id">my inner text</someTag>
 ```
 
-#### Environment variables
+### Environment variables
 
 * `MAX_FILE_SIZE`: *optional* - Controls the maximum size of an attachment to be written in MB.
 Defaults to 10 MB where 1 MB = 1024 * 1024 bytes.
@@ -79,6 +79,36 @@ component during the integration flow design.
 ### XML to JSON
 
 Takes XML string and converts it to generic JSON object.
+
+### Limitation
+
+Value inside xml tags will be converting into string only, e.g.:   
+
+given xml
+
+```xml
+<note>
+  <date>2015-09-01</date>
+  <hour>08:30</hour>
+  <to>Tove</to>
+  <from>Jani</from>
+  <body>Don't forget me this weekend!</body>
+</note>
+```
+
+will be converted into:
+
+```json
+{
+  "note": {
+    "id": "322",
+    "to": "Tove",
+    "from": "Jani",
+    "heading": "Reminder",
+    "body": "Don't forget me this weekend!"
+  }
+}
+```
 
 ### XML Attachment to JSON
 
@@ -120,7 +150,7 @@ The incoming message should have a single field `input`. When using integrator m
 ## Known limitations
 
  *   The maximum size of incoming file for processing is 5 MB. If the size of incoming file will be more than 5 MB, action will throw an error:
- 
+
 ```sh
 Attachment *.xml is to large to be processed my XML component.
 File limit is: 5242880 byte, file given was: * byte
