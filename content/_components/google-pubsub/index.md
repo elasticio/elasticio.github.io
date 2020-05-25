@@ -7,7 +7,7 @@ icon: google-pubsub.png
 icontext: Google PubSub component
 category: Google PubSub component
 createdDate: 2016-09-30
-updatedDate: 2019-03-15
+updatedDate: 2020-05-22
 ---
 
 ## Latest changelog
