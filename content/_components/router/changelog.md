@@ -9,6 +9,10 @@ createdDate: 2020-01-02
 updatedDate: 2020-03-26
 ---
 
+## 0.0.5 (May 19, 2020)
+
+* Update sailor version to 2.6.7
+
 ## 0.0.4 (March 24, 2020)
 
 * New Jsonata expressions support: `$getFlowVariables` and `$getPassthrough`

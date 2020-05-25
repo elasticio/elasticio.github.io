@@ -14,9 +14,9 @@ This component implements the [Content-Based Router](http://www.enterpriseintegr
 
 ## Latest changelog
 
-**0.0.4 (March 24, 2020)**
+**0.0.5 (May 19, 2020)**
 
-* New Jsonata expressions support: `$getFlowVariables` and `$getPassthrough`
+* Update sailor version to 2.6.7
 
 > To see the full **changelog** please use the following [link](/components/router/changelog).
 

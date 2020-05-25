@@ -7,15 +7,14 @@ icon: utility.png
 icontext: Utility Component
 category: Utility Component
 createdDate: 2019-07-29
-updatedDate: 2020-04-30
+updatedDate: 2020-05-19
 ---
 
 ## Latest changelog
 
-**1.1.0 (May 6, 2020)**
+**1.1.1 (May 19, 2020)**
 
-* Add action for converting timezones
-* Bump dependencies
+* Update sailor version to 2.6.7
 
 > To see the full **changelog** please use the following [link](/components/utility/changelog).
 
