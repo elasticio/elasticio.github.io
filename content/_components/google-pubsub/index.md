@@ -10,19 +10,34 @@ createdDate: 2016-09-30
 updatedDate: 2019-03-15
 ---
 
+## Latest changelog
+
+**1.7.0 (May 22, 2020)**
+
+* Update Sailor version to 2.6.7
+* Migrate to the latest @google-cloud/pubsub library
+* Fix code style
+
+> To see the full **changelog** please use the following [link](/components/google-pubsub/changelog).
+
+## Description
+
+The component interacts with Google Pub-Sub API. The API is an asynchronous messaging service that decouples services that produce events from services that process events.
+
+Pub/Sub offers durable message storage and real-time message delivery with high availability and consistent performance at scale. Pub/Sub servers run in all Google Cloud regions around the world.
+
+### Core concepts
+
+- **Topic:** A named resource to which messages are sent by publishers.
+- **Subscription:** A named resource representing the stream of messages from a single, specific topic, to be delivered to the subscribing application. For more details about subscriptions and message delivery semantics, see the [Subscriber Guide](https://cloud.google.com/pubsub/subscriber).
+- **Message:** The combination of data and (optional) attributes that a publisher sends to a topic and is eventually delivered to subscribers.
+- **Message attribute:** A key-value pair that a publisher can define for a message. For example, key `iana.org/language_tag` and value `en` could be added to messages to mark them as readable by an English-speaking subscriber.
+
 ### Credentials
 
 *   **Project ID**
 *   **Client E-Mail**
 *   **Private Key**
-
-## Triggers
-
-* *Subscribe*
-
-## Actions
-
-* *Pub*
 
 ## How authentication works
 
@@ -34,6 +49,27 @@ need to create a new Service Account on [Service Accounts Page](https://console.
  You would need ``client_email`` and ``private_key`` values
  on component authentication page (see [here](https://github.com/google/google-api-nodejs-client#using-jwt-service-tokens)
  for more information).
+
+
+## Triggers
+
+### Pull
+
+The Pull trigger receives a message from a Topic, emits it, and sends an acknowledgment to Pub/Sub.
+
+#### Configuration
+
+- Topic Name - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
+
+## Actions
+
+### Publish
+
+The Publish action retrieves message body from a previous step and sends a message to a Topic while remaining unaware of any existing subscriptions.
+
+#### Configuration
+
+- Topic Name - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
 
 ## Warning
 

@@ -6,9 +6,17 @@ description: A component to store and retrieve value from key:value storage.
 icon: simple-storage.png
 icontext: Simple Storage component
 category: Simple Storage component
-createdDate: 2018-06-05
-updatedDate: 2018-06-05
+createdDate: 2016-11-02
+updatedDate: 2020-05-22
 ---
+
+## Latest changelog
+
+**1.1.0 (May 22, 2020)**
+
+* Update Sailor version to 2.6.7
+
+> To see the full **changelog** please use the following [link](/components/key-value/changelog).
 
 ## How works
 

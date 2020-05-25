@@ -7,14 +7,17 @@ icon: filter.png
 icontext: Filter component
 category: filter-component
 createdDate: 2017-01-12
-updatedDate: 2020-03-26
+updatedDate: 2020-05-22
 ---
 
 ## Latest changelog
 
-**1.0.2 (March 23, 2019)**
+**1.0.3 (May 22, 2020)**
 
-* New Jsonata expressions support: `$getFlowVariables` and `$getPassthrough`
+* Add JSONata expression when error thrown by assertion
+* Pass incoming message when filter condition is true
+* Update EIO Sailor version to 2.6.7
+* Update eslint codestyle check properties
 
 > To see the full **changelog** please use the following [link](/components/filter/changelog).
 

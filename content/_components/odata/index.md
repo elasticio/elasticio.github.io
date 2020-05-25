@@ -7,16 +7,16 @@ icon: odata.png
 icontext: ODATA component
 category: ODATA component
 createdDate: 2018-01-17
-updatedDate: 2019-06-10
+updatedDate: 2020-05-22
 ---
 
 A component designed to work with generic APIs which implement the [OData v4 specification](http://www.odata.org).
 
 ## Latest changelog
 
-**3.0.0 (July 5, 2019)**
+**3.0.1 (May 22, 2020)**
 
-* Migrate OData component to OData client library
+* Update Sailor version to 2.6.7
 
 > To see the full **changelog** please use the following [link](/components/odata/changelog).
 

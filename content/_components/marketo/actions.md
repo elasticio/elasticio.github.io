@@ -139,7 +139,7 @@ Action for insertion of large sets of person and person related data.
 
 #### Object Type
 
-Drop-down list, contains default object types and custom object types.
+List contains default object types and custom object types.
 
 |Supported default object types|
 |-----------|
@@ -314,7 +314,7 @@ both flows: with action `Bulk Extract` and with trigger `Poll Bulk Extract Resul
 
 #### Object Type
 
-Drop-down list, contains object types that can be used for `Bulk extract` interface.
+List contains object types that can be used for `Bulk extract` interface.
 
 |Supported object types|
 |-----------|
@@ -324,7 +324,7 @@ Drop-down list, contains object types that can be used for `Bulk extract` interf
 
 ### Expected input/output metadata
 
-   Input/output metadata depend on object type and generated from [Marketo swagger document](https://developers.marketo.com/swagger/swagger-mapi.json) for the corresponding object type, or you can specify another URL in environment variable `SWAGGER_URL`
+Input/output metadata depend on object type and generated from [Marketo swagger document](https://developers.marketo.com/swagger/swagger-mapi.json) for the corresponding object type, or you can specify another URL in environment variable `SWAGGER_URL`
 
 ### Example of Usage
 
@@ -342,3 +342,126 @@ Drop-down list, contains object types that can be used for `Bulk extract` interf
 
  1. Mandatory fields are not marked in the input metadata for Activities and Program Members entities.  You can find this information in the [API documentation](https://developers.marketo.com/rest-api/bulk-extract)
  2. The action uses the attachment mechanism, so due to platform limitation doesn't work with Local Agent Installation.
+
+## Delete Object By Unique Criteria
+
+Delete Object By Unique Criteria.
+
+### List Config fields
+
+#### Object Type
+
+List contains default object types and custom object types.
+
+|Supported default object types|
+|-----------|
+|Companies|
+|Leads|
+|Named Accounts|
+|Opportunities|
+|Opportunity Roles|
+|Sales Persons|
+
+#### Unique Criteria
+
+Drop-down list, it is needed to choose kind of field(s) for unique criteria.
+All object types support following lookup criteria:
+
+|Unique Criteria|
+|-----------|
+|Marketo ID|
+|Dedupe Fields|
+
+Except for `Leads` - only `Marketo ID` is supported.
+
+### Expected input metadata
+
+Input metadata depend on object type and unique criteria.
+
+### Expected output metadata
+
+Output metadata will be calculated for defined object type dynamically according to Marketo documentation. If an object was not found action returns empty object.
+For instance for object type `Companies` it is:
+
+<details>
+<summary>Output metadata schema</summary>
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "required": true
+          },
+          "id": {
+            "type": "string",
+            "required": true
+          },
+          "seq": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}
+
+```
+
+</details>
+
+## Lookup Object (at most 1)
+
+Lookup Object By Unique Criteria.
+
+### List Config fields
+
+#### Object Type
+
+List contains default object types and custom object types.
+
+|Supported default object types|
+|-----------|
+|Companies|
+|Leads|
+|Named Accounts|
+|Opportunities|
+|Opportunity Roles|
+|Sales Persons|
+
+#### Lookup Criteria
+
+List needed to choose kind of field(s) for lookup criteria.
+
+All object types support following lookup criteria:
+
+|Lookup Criteria|
+|-----------|
+|Marketo ID|
+|Dedupe Fields|
+
+Except for `Leads` - only `Marketo ID` is supported.
+
+#### Allow Empty Result
+
+Default `No`. In case `No` is selected - an error will be thrown when no objects were found,
+If `Yes` is selected -  an empty object will be returned instead of throwing an error.
+
+#### Allow Criteria to be Omitted
+
+Default `No`. In case `No` is selected - an error will be thrown when criteria are missing in metadata, if `Yes` is selected - an empty object will be returned instead of throwing an error.
+
+### Expected input metadata
+
+Input metadata depend on object type and lookup criteria.
+
+### Expected output metadata
+
+Output metadata will be calculated for defined object type dynamically according to Marketo documentation.

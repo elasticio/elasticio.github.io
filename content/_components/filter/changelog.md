@@ -6,8 +6,15 @@ icon: filter.png
 icontext: Filter component
 category: filter-component
 createdDate: 2019-12-27
-updatedDate: 2020-03-26
+updatedDate: 2020-05-22
 ---
+
+## 1.0.3 (May 22, 2020)
+
+* Add JSONata expression when error thrown by assertion
+* Pass incoming message when filter condition is true
+* Update EIO Sailor version to 2.6.7
+* Update eslint codestyle check properties
 
 ## 1.0.2 (March 23, 2019)
 

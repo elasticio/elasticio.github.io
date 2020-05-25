@@ -6,9 +6,17 @@ description: A open standard application layer protocol for passing business mes
 icon:  amqp.png
 icontext: AMQP component
 category: AMQP component
-createdDate: 2017-03-08
-updatedDate: 2018-01-25
+createdDate: 2016-12-15
+updatedDate: 2020-05-22
 ---
+
+## Latest changelog
+
+**1.3.1 (May 22, 2020)**
+
+* Update sailor version to 2.6.7
+
+> To see the full **changelog** please use the following [link](/components/awqp/changelog).
 
 ## Description
 

@@ -13,4 +13,4 @@ updatedDate: 2020-04-23
 
 Here is the Marketo Component Completeness Matrix.
 
-![Marketo Component Completeness Matrix](https://user-images.githubusercontent.com/13310949/81381896-28521f00-9116-11ea-927e-d2ff875fe31f.png)
+![Marketo Component Completeness Matrix](https://user-images.githubusercontent.com/16806832/82535315-5fc9be00-9b4f-11ea-8cb4-5c786d0c3f6d.png)
