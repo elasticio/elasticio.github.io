@@ -71,7 +71,7 @@ You can also see the mapping result immediately:
 
 You may use this action to do the operations that are not producing output rows but do the database manipulations,
 e.g. ``INSERT``, ``UPDATE`` or ``DELETE`` statements. Internally we use prepared statements, so all incoming data is
-validated against SQL injetion, however we had to build a connection from JavaScript types to the MSSQL data types
+validated against SQL injection, however we had to build a connection from JavaScript types to the MSSQL data types
 therefore when doing a prepared statements you would need to add ``:type`` to **each prepared statement variable**.
 
 For example if you have a following SQL statement:
