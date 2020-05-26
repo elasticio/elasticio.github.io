@@ -76,7 +76,16 @@ For example, here is the topic that contains information about some person:
 Trigger, which receives data of a certain type from a Topic as an input and starts the Flow execution after this.
 When you create a Subscriber Flow you must choose a Topic on which your flow will be listening for messages.
 You can create as many Subscriber Flows as you want, and they will process messages from the Publisher independently.
+
+![Trigger input](img/trigger-input.png)
+
+>**Please Note:** Topics can only be accessed if they are already in your workspace.Topic can be created via UI or [API-call](https://api.elastic.io/docs/v2/#pub/sub-topics).
+
 Using the Topic schema provided in the `Topics` section and after step configuration your Subscriber flow can automatically generate this incoming data sample:
+
+![Trigger sample](img/trigger-sample.png)
+
+This sample can be used later in your Flows as usual.
 
 ```
     {
@@ -86,14 +95,18 @@ Using the Topic schema provided in the `Topics` section and after step configura
     }
 ```
 
-This sample can be used later in your Flows as usual.
-
 ## Actions
 
 ### Publish
 
 Action that publishes a message of a certain type to the topic to be later received by loosely coupled Subscribers.
-During the creation of a Publisher Flow you must choose a `topic` created earlier, by which your Publisher Flow will communicate with
-it's Subscribers.
+During the creation of a Publisher Flow you must choose a `topic` created earlier, by which your Publisher Flow will communicate with it's Subscribers:
+
+![Action input](img/action-input.png)
+
+After you have chosen the topic you need, you can enter new data:
+
+![Action configure input](img/action-configure-input.png)
+
 Connection between the Publisher and the Subscriber is loosely coupled. This means that your Publisher will never
 know if there any subscribers at all, and if they processed incoming message.
