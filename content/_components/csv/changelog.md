@@ -6,13 +6,17 @@ icon: csv.png
 icontext: CSV component
 category: CSV component
 createdDate: 2019-12-24
-updatedDate: 2020-05-07
+updatedDate: 2020-05-22
 ---
+
+## 2.1.2 (May 22, 2020)
+
+* Update sailor version to 2.6.7
 
 ## 2.1.1 (May 7, 2020)
 
 * Add input metadata for objects processing
-* Add the steward URL to the body of the outgoing message 
+* Add the steward URL to the body of the outgoing message
 
 ## 2.1.0 (April 22, 2020)
 

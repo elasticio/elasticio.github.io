@@ -5,9 +5,22 @@ description: Changelog for Emali component
 icon: email.png
 icontext: Email component
 category: Email component
-createdDate: 2019-12-27
-updatedDate: 2019-12-27
+createdDate: 2016-01-07
+updatedDate: 2020-05-22
 ---
+
+## 1.0.6 (May 22, 2020)
+
+* Update sailor version to 2.6.7
+
+## 1.0.5 (March 26, 2020)
+
+* Add help text to the action and description to the metatdata fields
+
+## 1.0.4 (Januar 13, 2020)
+
+* Using Sailor logger
+* Improved few logs
 
 ## 1.0.3 (December 06, 2019)
 

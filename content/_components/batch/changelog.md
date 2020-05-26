@@ -6,10 +6,14 @@ icon: batch.png
 icontext: Batch component
 category: Batch component
 createdDate: 2020-01-15
-updatedDate: 2020-03-03
+updatedDate: 2020-05-22
 ---
 
-# 0.0.3 (March 3, 2020)
+## 0.0.4 (May 22, 2020)
+
+* Update Sailor to 2.6.7
+
+## 0.0.3 (March 3, 2020)
 
 * Fix bug with verify credentials
 * Update node to v 12

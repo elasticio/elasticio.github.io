@@ -6,8 +6,12 @@ icon: zip-unzip.png
 icontext: ZIP/UnZIP component
 category: ZIP/UnZIP component
 createdDate: 2020-01-30
-updatedDate: 2020-01-30
+updatedDate: 2020-05-22
 ---
+
+## 1.1.1 (May 22, 2020)
+
+* Update Sailor version to 2.6.7
 
 ## 1.1.0 (January 30, 2020)
 

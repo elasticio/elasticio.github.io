@@ -6,9 +6,17 @@ description: A push messaging service that provides a low-cost infrastructure fo
 icon: aws-sns.png
 icontext: AWS SNS component
 category: AWS SNS component
-createdDate: 2016-03-09
-updatedDate: 2019-03-14
+createdDate: 2015-07-29
+updatedDate: 2020-05-22
 ---
+
+## Latest changelog
+
+**1.3.1 (May 22, 2020)**
+
+* Update sailor version to 2.6.7
+
+> To see the full **changelog** please use the following [link](/components/aws-sns/changelog).
 
 ## How works
 

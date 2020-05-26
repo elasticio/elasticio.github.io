@@ -7,20 +7,15 @@ icon: marketo.png
 icontext: Marketo component
 category: marketo
 createdDate: 2018-03-02
-updatedDate: 2020-05-08
+updatedDate: 2020-05-21
 ---
 
 ## Latest changelog
 
-**2.1.0 (May 8, 2020)**
+**2.2.0 (May 21, 2020)**
 
-* Add `Get New Activities Polling` trigger
-* Add `Get New Leads Polling` trigger
-* Add `Upsert Objects` action
-* Fix `Lookup Activities` bug in case of empty response
-* Add `Bulk Import` action
-* Add `Bulk Extract` action
-* Add `Poll Bulk Extract Results` trigger
+* Add `Lookup Object (at most 1)` action
+* Add `Delete Object By Unique Criteria` action
 
 > To see the full **changelog** please use the following [link](/components/marketo/changelog).
 
@@ -104,9 +99,15 @@ details about Salesforce objects this component covers.
 
  6. [Upsert Objects](/components/marketo/actions#upsert-objects)                                                             
  Action upsert objects by unique criteria.
- 
+
  7. [Bulk Extract](/components/marketo/actions#bulk-extract)                                                                
  Extract file with Requested data to attachments.
+
+ 8. [Delete Object by Unique Criteria](/components/marketo/actions#delete-object-by-unique-criteria)                         
+ Delete Object By Unique Criteria.
+
+ 9. [Lookup Object (at most 1)](/components/marketo/actions#lookup-object-at-most-1)                                         
+ Lookup Object By Unique Criteria.
 
 ## Known limitations
 
