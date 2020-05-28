@@ -56,6 +56,7 @@ action functions, each linked to the section where more explanation is given.
 *   **[Aggregate](actions#aggregate)** - Calculates aggregate values for the data in a collection or a view.
 *   **[Bulk Write](actions#bulk-write)** - Bulk Write takes an array of write operations and executes each of them. Operations executed in provided order.
 *   **[Delete By ID](actions#delete-by-id)** - Delete document by ID.
+*   **[Delete By Unique Criteria](actions#delete-by-unique-criteria)** - Delete document by Unique Criteria.
 *   **[Lookup By ID](actions#lookup-by-id)** -  Lookup document by ID.
 *   **[Lookup By Unique Criteria](actions#lookup-by-unique-criteria)** - Lookup (at most 1) Document By Unique Criteria.
 *   **[Lookup Plural](actions#lookup-plural)** - Lookup many documents by criteria.
