@@ -13,7 +13,7 @@ A Topic is a named JSON schema you can use to communicate in a [publish–subscr
 * a unique name within the Workspace
 * JSON schema describing the objects to be exchanged
 
-## How to create and manage Topics
+## Creating Topics
 
 Topic can be created via UI or API-call:
 
@@ -29,6 +29,8 @@ Topic can be created via UI or API-call:
 
   ![New topic](/assets/img/getting-started/topics/new-topic.png)
 
+## Editing Topics
+
 To make changes to an existing topic, select the topic you need and then click "Edit". You can also delete this topic by clicking "Delete":
 
   ![Edit topic](/assets/img/getting-started/topics/edit-topic.png)
@@ -36,6 +38,20 @@ To make changes to an existing topic, select the topic you need and then click "
 Here you can change the Topic name and JSON-schema and then save your changes:
 
   ![Editing topic](/assets/img/getting-started/topics/editing-topic.png)
+
+## Generating schema for JSON sample
+
+You can also generate a JSON schema from an existing JSON sample by clicking the corresponding button:
+
+  ![Generate Schema](/assets/img/getting-started/topics/generate-schema.png)
+
+Then you can insert a JSON sample and generate a new schema:
+
+  ![Insert JSON sample](/assets/img/getting-started/topics/insert-sample.png)
+
+After that you can edit the new generated schema with all the necessary information:
+
+  ![Editing schema](/assets/img/getting-started/topics/editing-schema.png)
 
 ## Usage Example
 
