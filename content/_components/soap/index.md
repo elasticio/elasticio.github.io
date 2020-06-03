@@ -7,17 +7,14 @@ icon: soap.png
 icontext: SOAP component
 category: SOAP component
 createdDate: 2018-07-17
-updatedDate: 2020-05-07
+updatedDate: 2020-05-29
 ---
 
 ## Latest changelog
 
-**1.2.1 (May 7, 2020)**
+**1.2.2 (May 29, 2020)**
 
-* Fix component.json field order
-* Fix component.json descriptions and links
-* Add basic authorization support to Call action
-* Improved SOAP Body parsing
+* Replace weight in component.json with order
 
 > To see the full **changelog** please use the following [link](/components/soap/changelog).
 

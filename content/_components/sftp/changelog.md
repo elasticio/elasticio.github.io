@@ -6,8 +6,12 @@ icon: sftp.png
 icontext: SFTP component
 category: SFTP component
 createdDate: 2020-01-02
-updatedDate: 2020-05-19
+updatedDate: 2020-06-05
 ---
+
+## 1.2.3 (June 5, 2020)
+
+* Fix performance problem when trying to download large number of files
 
 ## 1.2.2 (May 19, 2020)
 

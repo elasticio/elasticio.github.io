@@ -6,8 +6,12 @@ icon: soap.png
 icontext: SOAP component
 category: SOAP component
 createdDate: 2020-01-02
-updatedDate: 2020-05-07
+updatedDate: 2020-05-29
 ---
+
+## 1.2.2 (May 29, 2020)
+
+* Replace weight in component.json with order
 
 ## 1.2.1 (May 7, 2020)
 
