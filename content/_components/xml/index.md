@@ -96,6 +96,8 @@ given xml
 </note>
 ```
 
+![XML string](img/xml-to-json-1.png)
+
 will be converted into:
 
 ```json
@@ -110,12 +112,16 @@ will be converted into:
 }
 ```
 
+![Convert into JSON](img/xml-to-json-2.png)
+
 ### XML Attachment to JSON
 
 Looks at the JSON array of attachments passed in to component and converts all
 XML that it finds to generic JSON objects and produces one outbound message per
 matching attachment. As input, the user can enter a patter pattern for filtering
 files by name or leave this field empty for processing all incoming `*.xml` files.
+
+![XML Attachment to JSON](img/xml-attachment-to-json.png)
 
 ### JSON to XML
 
@@ -146,6 +152,8 @@ The incoming message should have a single field `input`. When using integrator m
            }
 }
 ```
+
+![JSON to XML](img/json-to-xml.png)
 
 ## Known limitations
 
