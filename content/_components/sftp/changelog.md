@@ -9,8 +9,9 @@ createdDate: 2020-01-02
 updatedDate: 2020-06-05
 ---
 
-## 1.2.3 (June 5, 2020)
+## 1.3.0 (June 5, 2020)
 
+* Add new 'Move File' action
 * Fix performance problem when trying to download large number of files
 
 ## 1.2.2 (May 19, 2020)

@@ -12,8 +12,9 @@ updatedDate: 2020-06-05
 
 ## Latest changelog
 
-**1.2.3 (June 5, 2020)**
+**1.3.0 (June 5, 2020)**
 
+* Add new 'Move File' action
 * Fix performance problem when trying to download large number of files
 
 > To see the full **changelog** please use the following [link](/components/sftp/changelog).
@@ -82,6 +83,9 @@ SFTP component includes the following actions:
 
   5. [Download files](/components/sftp/actions#download-files)                           
   Finds a file by criterias in the provided directory and uploads (streams) to the attachment storage (a.k.a. steward).
+
+  6. [Move File](/components/sftp/actions#move-file)                           
+  Action to move file on SFTP already exists in one location on an sftp server to be moved to another location on the same SFTP server. Target location MUST exist.
 
 ## Known limitations
 

@@ -514,6 +514,52 @@ Schema of output metadata depends on Behaviour configuration:
 
 `type` field represents type of the file. You can find additional information about Unix file types [below](#ssh2-sftp-client-api-and-documentation-links);
 
+## Move File
+
+Action to move file on SFTP already exists in one location on an sftp server to be moved to another location on the same SFTP server. Target location MUST exist.
+
+### Expected input metadata
+
+```json
+{
+  "type": "object",
+  "required": true,
+  "properties": {
+    "filename": {
+      "title": "Current file Name and Path",
+      "type": "string",
+      "required": true
+    },
+    "newFilename": {
+      "title": "New file Name and Path (location must exist)",
+      "type": "string",
+      "required": true
+    }
+  }
+}
+```
+
+### Expected output metadata
+
+```json
+{
+  "type": "object",
+  "required": true,
+  "properties": {
+    "filename": {
+      "title": "Current file Name and Path",
+      "type": "string",
+      "required": true
+    },
+    "newFilename": {
+      "title": "New file Name and Path",
+      "type": "string",
+      "required": true
+    }
+  }
+}
+```
+
 ### Known limitations
 
 Action does not support `Fetch Page` mode (according to OIH standards)
