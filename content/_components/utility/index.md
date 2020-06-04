@@ -35,7 +35,9 @@ select as a first component during the integration flow design.
 
 ### String To Attachment
 
-Creates attachment from input `value`. Output is `attachmentId` in `message.body` and attachment object in `message.attachments`.
+Creates attachment from input `value`. Output is `attachmentId` in `message.body` and attachment object in `message.attachments`:
+
+![String To Attachment](img/string-to-attachment.png)
 
 #### Configuration fields description
 
@@ -43,7 +45,9 @@ Creates attachment from input `value`. Output is `attachmentId` in `message.body
 
 ### String From Attachment
 
-Creates string from attachment with provided input `attachmentId`.
+Creates string from attachment with provided input `attachmentId`:
+
+![String From Attachment](img/string-from-attachment.png)
 
 #### Configuration fields description
 
@@ -51,15 +55,21 @@ Creates string from attachment with provided input `attachmentId`.
 
 ### Base64 Decode
 
-Decodes input `value` using Base64 decoding to regular string. If malformed input provided or not Base64 encoded string, result will be malformed.
+Decodes input `value` using Base64 decoding to regular string. If malformed input provided or not Base64 encoded string, result will be malformed:
+
+![Base64 Decode](img/decode.png)
 
 ### Base64 Encode
 
-Encodes input `value` using Base64 encoding.
+Encodes input `value` using Base64 encoding:
+
+![Base64 Encode](img/encode.png)
 
 ### Convert Between Timezones
 
-Given two timezones and an array of timestamps (without any timezone info) converts the timestamps to the output timezone.  The output is a dictionary of oldTimezone -> newTimezone values.
+Given two timezones and an array of timestamps (without any timezone info) converts the timestamps to the output timezone. The output is a dictionary of oldTimezone -> newTimezone values:
+
+![Convert Between Timezones](img/convert-between-timezones.png)
 
 E.g. If converting from UTC to German time then
 
