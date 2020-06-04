@@ -39,7 +39,9 @@ select as a first component during the integration flow design.
 ZIP provided files. Iterate over body `files`, for each member if `path` match
 configured `regex` download file from provided `url`, and append them to zip using
 provided `path` as location and name of the file. Output contains attachment with
-url to archive.
+url to archive:
+
+![ZIP action](img/zip.png)
 
 ### Configuration fields description
 
@@ -67,7 +69,9 @@ Contains property size in body, and url to created archive in attachments.
 
 ### UnZIP action
 
-Unzip provided zip file. Only files that match `regex` and with uncompressed size less than  `maxFileSize` will be unzipped.
+Unzip provided zip file. Only files that match `regex` and with uncompressed size less than  `maxFileSize` will be unzipped:
+
+![UnZIP action](img/unzip.png)
 
 ### Configuration fields description
 
