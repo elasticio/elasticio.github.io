@@ -36,3 +36,21 @@ N/A
 ### Output Data
 
 Each object emitted individually.
+
+## Bulk Extract
+
+Trigger for retrieval of large sets of person and person related data, using bulk Marketo API.
+
+### Component's configuration:
+
+**Object Type** - required, choose entity type for polling data. Possible options: Customers, Orders, Products.
+
+**Store View Code** - optional, the dropdown list with all store view codes, is useful for object type `Products`. With this option is possible to retrieve products for defined store view.
+
+### Input Metadata
+
+N/A
+
+### Output Data
+
+Each object emitted individually.
