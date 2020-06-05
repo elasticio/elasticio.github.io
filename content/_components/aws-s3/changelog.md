@@ -6,15 +6,22 @@ icon: aws-s3.png
 icontext: AWS S3 component
 category: AWS S3 component
 createdDate: 2019-12-27
-updatedDate: 2020-05-22
+updatedDate: 2020-06-05
 ---
+
+## 1.4.0 (June 5, 2020)
+
+* Add Upsert File Action
+* Update dependencies
+* Verify Credentials now checks for access to buckets.
+* Update to Node v 14
+* Replace Component completeness matrix to version 2.3
 
 ## 1.3.1 (May 22, 2020)
 
 * Update sailor version to 2.6.7
 
 ## 1.3.0 (February 13, 2020)
-
 
 * Add Get New and Updated S3 Objects trigger
 * Fix `Error! Cannot convert undefined or null to object` error on no attachments object in message in Write file action
