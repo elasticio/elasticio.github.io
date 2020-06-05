@@ -7,16 +7,16 @@ icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
 createdDate: 2015-09-24
-updatedDate: 2020-01-15
+updatedDate: 2020-06-05
 ---
 
 ## Latest changelog
 
-**1.1.2 (December 30, 2019)**
+**1.2.0 (June 5, 2020)**
 
-* Update sailor version to 2.5.4
-* Refactor console log to built in sailor logger
-* Change build type to `docker`
+* Update sailor to 2.6.9
+* Update metadata for add row action
+* Remove update docs on deploy script
 
 > To see the full **changelog** please use the following [link](/components/gspreadsheet/changelog).
 
