@@ -6,8 +6,18 @@ icon: magento.png
 icontext: Magento 2 Component
 category: magento2
 createdDate: 2019-12-27
-updatedDate: 2020-02-26
+updatedDate: 2020-06-05
 ---
+
+## 1.6.0 (June 5, 2020)
+
+* Add `Bulk Extract` trigger
+* Add `Lookup Objects` action
+* Add `Lookup Set of Objects` action
+* Logging tweaks:
+  * Have Magento client use logger from sailor
+  * Replace parameters in error messages when parameters are an object, not an array
+* Update sailor version to 2.6.7
 
 ## 1.5.0 (March 11, 2020)
 

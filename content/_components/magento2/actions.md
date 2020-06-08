@@ -261,9 +261,9 @@ The Component will not show an error if the **status** value is invalid, but Mag
 
  Sales Order entity structure
 
- Type|Json schema location
- -----------| -------------
-|SalesOrder  |[/lib/schemas/addUpdateToSalesOrder.out.json](/lib/schemas/setSalesOrderExternalId.out.json)
+|Type|Json schema location|
+|-----------| -------------|
+| SalesOrder  | [/lib/schemas/addUpdateToSalesOrder.out.json](/lib/schemas/setSalesOrderExternalId.out.json) |
 
 
 ## Lookup Object by ID
@@ -286,6 +286,111 @@ The expected output will be the given object.
 
 If `allow zero results?` is selected, the component will always return an empty object rather than an error if zero results are found.
 If `allow ID to be ommitted` is selected, the ID field will not be required to run the action, but the item emitted by 'zero results found' will still be dependent on the other config field.
+
+## Lookup Objects
+
+Given a field-value return all matching records.
+
+### List of Expected Config fields
+
+#### Object Type
+
+List contains default object types and custom object types.
+
+|Supported default object types|
+|-----------|
+|Order|
+|Product|
+|Customer|
+
+#### Emit Behaviour
+
+Options are: `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message,
+`Fetch Page` emits all objects form selected paging iteration in one message
+
+#### Number of search terms
+
+- not required field, number of search terms.
+
+Determines the number of search terms that the entity must match. Need to be an integer value from 1 to 99, default to 1.
+
+### Expected input metadata
+
+<details>
+<summary>Input json Schema</summary>
+
+```json
+
+  {
+    "type": "object",
+    "properties": {
+      "searchTerm0": {
+        "title": "Search term",
+        "type": "object",
+        "properties": {
+          "filterType": {
+            "title": "Field Name",
+            "type": "string",
+            "required": true
+          },
+          "filterValues": {
+            "title": "List of values",
+            "description": "List of values to filter on in the specified fields.",
+            "type": "array",
+            "required": true,
+            "items": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "maxResultSize": {
+        "description": "Positive integer that defaults to 1000",
+        "required": false,
+        "title": "Max result size",
+        "type": "number"
+      }
+    }
+  }
+
+  ```
+
+</details>
+
+### Expected output metadata
+
+Output metadata will be calculated dynamically according to Magento2 documentation
+
+## Lookup Set Of Objects
+
+Given an array of identities, this action allows you to find the corresponding objects. Currently, the following lookups are supported:
+  - Customer
+    - Email
+    - Magento ID
+  - Product
+    - SKU
+  - Sales Order
+    - Magento ID
+    - External Order ID
+
+### Expected input metadata
+
+Input metadata will take an array of string values (numbers for magento IDs) for the search field. For product lookups, there will be an optional store view code. If no store view code is provided, then data will be returned from the default magento store.
+
+### Expected output metadata
+
+The expected output is an object with a `resultsDictionary` property. The value of this `resultsDictionary` will be a dictionary where the keys are the lookup identity, and the key is the corresponding object.
+
+### Configuration
+
+If `Wait for objects to exist if they are not found.` is selected, the component will emit a rebound if not all identities are immediately found.  If this is not selected, then the component will immediately throw an error if any of the provided identities can not be matched to objects.
+
+### Limitations
+
+  * A maximum of 100 distinct ids can be provided.
+  * `extenstion_attributes` of objects are not returned.
 
 ## Set Tiered Prices
 

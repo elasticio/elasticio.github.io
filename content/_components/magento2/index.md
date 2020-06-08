@@ -12,14 +12,15 @@ updatedDate: 2020-02-26
 
 ## Latest changelog
 
-**1.5.0 (March 11, 2020)**
+**1.6.0 (June 5, 2020)**
 
-* Created `Add Update To Sales Order` Action
-* Created `Create Order` action
-* Add new type of unique ID for Sales Order `ext_order_id` to action `Retrieve Object by ID`
-* Add `Check if you'd like to make a series of calls ( Developer mode only )` configuration field for `Custom Request` action
-* Improve error message for `Custom Request` action
-* Add `Time stamp field to poll on` configuration field for `Get New and Updated Objects Polling` trigger
+* Add `Bulk Extract` trigger
+* Add `Lookup Objects` action
+* Add `Lookup Set of Objects` action
+* Logging tweaks:
+  * Have Magento client use logger from sailor
+  * Replace parameters in error messages when parameters are an object, not an array
+* Update sailor version to 2.6.7
 
 > To see the full **changelog** please use the following [link](/components/magento2/changelog).
 
@@ -70,12 +71,22 @@ It is needed to specify password. Required in pair with `username` for `Admin To
 
 It is needed to specify integration token. Required for `Integration Token authorization`
 
+## Environment variables
+
+|Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warning`, `error` |
+|`BULK_EXTRACT_PAGE_SIZE`| false | Define max page for one call in Bulk Extract trigger | Integer, default is 1000 |
+
 ## Triggers
 
 Magento2 component includes the following triggers:
 
   1. [Get New and Updated Objects Polling](/components/magento2/triggers#get-new-and-updated-objects-polling)                                               
   Lookup objects polling trigger.
+
+  2. [Bulk Extract](/components/magento2/triggers#bulk-extract)                                               
+  Trigger for retrieval of large sets of person and person related data, using bulk Marketo API.
 
 ## Actions
 
@@ -105,19 +116,25 @@ This action allows to set or update Sales Order status.
   8. [Lookup Object by ID](/components/magento2/actions#lookup-object-by-id)                   
 This action allows you to search up one of the object types: `customer`, `product` or `sales order` by unique criteria.
 
-  9. [Set Tiered Prices](/components/magento2/actions#set-tiered-prices)                       
+  9. [Lookup Objects](/components/magento2/actions#lookup-objects)                   
+  Given a field-value return all matching records.
+
+  10. [Lookup Set Of Objects](/components/magento2/actions#lookup-set-of-objects)                   
+  Given an array of information where each item in the array uniquely describes exactly one object, lookup each object.
+
+  11. [Set Tiered Prices](/components/magento2/actions#set-tiered-prices)                       
 This action takes an array as input, and therefore can only be used in developer mode.
 
-  10. [Upsert Customer](/components/magento2/actions#upsert-customer)                        
+  12. [Upsert Customer](/components/magento2/actions#upsert-customer)                        
 Updates a customer, or creates it if it doesn’t exist. To update, you must provide the `customer ID` and `website ID` (Associate to Website). To create, do not enter a customer ID; the system will generate one.
 
-  11. [Delete Object](/components/magento2/actions#delete-object)                               
+  13. [Delete Object](/components/magento2/actions#delete-object)                               
 This action allows you to delete the following object types: `customer` or `product` by unique criteria.
 
-  12. [Read Store Config Action](/components/magento2/actions#read-store-config-action)          
+  14. [Read Store Config Action](/components/magento2/actions#read-store-config-action)          
 You can read all the configured stores on a Magento instance (like [GET /V1/store/storeConfigs](https://devdocs.magento.com/swagger/#/storeStoreConfigManagerV1/storeStoreConfigManagerV1GetStoreConfigsGet))
 
-  13. [Create order](/components/magento2/actions#create-order)                              
+  15. [Create order](/components/magento2/actions#create-order)                              
 Creates an order on behalf of a customer given an existing customer id, or creates an order for a guest user.
 
 ## Known limitations
