@@ -6,8 +6,14 @@ icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
 createdDate: 2019-12-27
-updatedDate: 2019-01-15
+updatedDate: 2020-06-05
 ---
+
+## 1.2.0 (June 5, 2020)
+
+* Update sailor to 2.6.9
+* Update metadata for add row action
+* Remove update docs on deploy script
 
 ## 1.1.2 (December 30, 2019)
 

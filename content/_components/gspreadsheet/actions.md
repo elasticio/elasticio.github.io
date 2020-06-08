@@ -24,8 +24,23 @@ A datatype of inserted values will be the same as for JSON type (string, numeric
 
 ### Input fields:
 
- - **Spreadsheet** - Spreadsheet name to make changes.
- - **Worksheet** - Worksheet name of selected Spreadsheet to make changes.
+1. **Spreadsheet** - Spreadsheet name to make changes.
+2. **Worksheet** - Worksheet name of selected Spreadsheet to make changes.
+3. **Input Mode** - Options: First Row As Headers, Array Based. Default is First Row As Headers
+    * First Row As Headers (Default): generates input metadata based on values in first row cells.
+    This method has few limitations:
+        * There should be at least one value in first row;
+        * Values in first row cells must be distinct;
+        * There should be no empty cells in first row;
+    * Array Based: generates input for array of `values`. Array mapped to `values` is going to be inserted as first row. [schema](/schemas/createSpreadsheetRow.in.json)
+
+#### Common Errors
+
+1. Input Mode: "First Row As Headers" requires first row to have at least one cell with value. - check there are at least one non-empty cell in first row.
+
+2. Input Mode: "First Row As Headers" requires cells in first row to be not empty. - check there are no empty cells in between in first row.
+
+3. Input Mode: "First Row As Headers" requires cells in first row to be unique. - check values in first row are distinct.
 
 ## Add Row(deprecated)
 
