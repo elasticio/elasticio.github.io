@@ -16,8 +16,7 @@ This is an open source component template for [Keen.io](https://keen.io/) Online
 
 ## Credentials
 
-  * **Project ID**
-  * **Write Key**
+![Credentials](img/credentials.png)
 
 ## Triggers
 
@@ -26,4 +25,6 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-  * **Send Event**
+### Send Event
+
+![Send Event](img/send-event.png)
