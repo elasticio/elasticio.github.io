@@ -12,6 +12,8 @@ updatedDate: 2017-04-21
 
 ## Credentials
 
+![Credentials](img/credentials.png)
+
   * **Organizer Key**
 
 ## Environment Variables
@@ -28,7 +30,9 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-  * **Add Participant**
+### Add Participant
+
+![Add Participant](img/add-participant.png)
 
 ## Known issues
 
