@@ -47,6 +47,8 @@ None required.
 This trigger function will list the orders in your seller account based on the
 `Status` which can be selected from the drop-down menu with the following available values:
 
+![List Orders](img/list-orders.png)
+
 *   `Pending` - all the pending orders
 *   `Shipped` - all the shipped orders
 *   `Unshipped` - all unshipped orders
@@ -61,7 +63,9 @@ This trigger function will list the orders in your seller account based on the
 ### List Order Items
 
 This action would fetch and give the Order Items on output. This action only
-needs the Amazon `Order Id` on input.
+needs the Amazon `Order Id` on input:
+
+![List Order Items](img/list-order-items.png)
 
 The output object contains an array of values listing the `order Items` of the
 given the Amazon `Order Id`. The output has the following structure:
@@ -90,6 +94,8 @@ given the Amazon `Order Id`. The output has the following structure:
 
 This action can be configured using two parameters: `Operation` and `Category`.
 
+![Submit Product](img/submit-product.png)
+
 **Operation** defines the action type you wish to do:
 
 *   `Upsert` - upsert the records
@@ -106,7 +112,11 @@ following types:
 ### Submit Product (Category from payload)
 
 This action can be configured to submit the product information based on
-dynamically selectable products from the payload and perform the following operations:
+dynamically selectable products from the payload.
+
+![Submit Product (Category from payload)](img/submit-product-payload.png)
+
+Action perform the following operations:
 
 *   `Upsert` - upsert the records
 *   `Delete` - delete the records
@@ -115,34 +125,44 @@ dynamically selectable products from the payload and perform the following opera
 ### Submit Inventory
 
 This action can be configured to submit the inventory based on the dynamically
-selectable values of the Inventory catalogue.
+selectable values of the Inventory catalogue:
+
+![Submit Inventory](img/submit-inventory.png)
 
 ### Change Product Image
 
 This action can be configured to change the product image based on the dynamically
-selectable values of the Inventory catalogue.
+selectable values of the Inventory catalogue:
+
+![Change Product Image](img/change-image.png)
 
 ### Change Product Price
 
 This action can be configured to change the product price based on the dynamically
-selectable values of the Inventory catalogue.
+selectable values of the Inventory catalogue:
+
+![Change Product Price](img/change-price.png)
 
 ### Establish Product Relationships
 
 This action can be configured to establish the product relationships based on the dynamically
-selectable values of the Inventory catalogue.
+selectable values of the Inventory catalogue:
+
+![Establish Product Relationships](img/establish.png)
 
 ### Get Feed Submission Status
 
 This action is for submitting the status to the feed. It accepts the `Submission ID`
-and the `type` as a `string` value on input and outputs the values of the same parameters.
+and the `type` as a `string` value on input and outputs the values of the same parameters:
 
+![Get Feed Submission Status](img/get-feed-status.png)
 
 ### Get Feed Submission Result
 
 This action is for submitting the result to the feed. It accepts the `Submission ID`
-and the `type` as a `string` value on input and outputs the values of the same parameters.
+and the `type` as a `string` value on input and outputs the values of the same parameters:
 
+![Get Feed Submission Result](img/get-feed-result.png)
 
 ## Additional Information
 
