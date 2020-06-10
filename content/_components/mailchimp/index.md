@@ -20,7 +20,7 @@ updatedDate: 2019-03-13
 
 ## Credentials
 
-  * **API Key**
+![Credentials](img/credentials.png)
 
 ## Triggers
 
@@ -29,12 +29,14 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-### Subscribe
+### Add new Subscriber
 
 Upserts information about the subscriber in the list,
 if subscriber with given e-mail already exists then information will be updated. If not will be added.
 
- This method uses:
+![Add new Subscriber](img/add-new-subscriber.png)
+
+This method uses:
 
 ``PUT /lists/{list_id}/members/{subscriber_hash}``
 
@@ -43,7 +45,11 @@ for more information
 
 ### Unsubscribe
 
-This action unsubscribes user from the given list, it uses following HTTP method:
+This action unsubscribes user from the given list:
+
+![Unsubscribe](img/unsubscribe.png)
+
+Actions uses following HTTP method:
 
 ``DELETE /lists/${listId}/members/${hash}``
 
@@ -54,6 +60,8 @@ for more information.
 
 Upserts information about the customer in the list,
 if cubscriber already exists then information will be updated. If not will be added.
+
+![Upsert Customer](img/upsert-customer.png)
 
 See [here](http://developer.mailchimp.com/documentation/mailchimp/reference/lists/members/#delete-delete_lists_list_id_members_subscriber_hash)
 for more information.
