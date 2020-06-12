@@ -27,6 +27,7 @@ between applications or organisations (see [amqp.org](https://www.amqp.org) for 
 AMQP component establishes an asynchronous communications with queues and topics
 to publish or consume records.
 
+
 ## How works
 
 The consumer will register a non-exclusive non-durable queue with `autodelete=true` and
@@ -48,13 +49,14 @@ environment variables are set:
 These variables are by default available in the platform environment.
 Data will be encrypted using symmetric `AES-256` encryption.
 
-
 ## Credentials
 
 This component expects user to provide a AMQP URL, username and password should
 be embedded as part of the URL, for example `amqp://foo:bar@server`. You can
 also use URL syntax to provide further parameters and any other options
 (e.g. `vHost` or port).
+
+![Credentials](img/credentials.png)
 
 ## Triggers
 
@@ -66,12 +68,16 @@ If the exchange doesn't exist it will be created on start.
 Optionally you can use `#` or `*` to wildcard. For more information check the
 tutorial provided at the [RabbitMQ site](http://www.rabbitmq.com/tutorials/tutorial-five-javascript.html).
 
+![Consume](img/consume.png)
+
 ## Actions
 
 ### Publish
 
 Will publish the messages into an exchange. This exchange will be created on
 start if it doesn't exists.
+
+![Publish](img/publish.png)
 
 ## Known limitations
 
