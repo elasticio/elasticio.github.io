@@ -56,6 +56,8 @@ In the component repository you need to specify OAuth Client credentials as envi
 To get these values you can check the
 [creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
 
+### Completeness Matrix
+
 The [component completeness](completeness-matrix) matrix gives the technical
 details about Salesforce objects this component covers.
 
