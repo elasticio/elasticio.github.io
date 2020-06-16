@@ -7,20 +7,32 @@ icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
 createdDate: 2015-09-24
-updatedDate: 2020-06-05
+updatedDate: 2020-06-16
 ---
 
 ## Latest changelog
 
-**1.2.0 (June 5, 2020)**
+**1.2.1 (June 16, 2020)**
 
-* Update sailor to 2.6.9
-* Update metadata for add row action
-* Remove update docs on deploy script
+* Change OAuth variables naming
+* Improve documentation
 
 > To see the full **changelog** please use the following [link](/components/gspreadsheet/changelog).
 
 ## Requirements
+
+### Google preparations
+
+Before building any integration flow you must at first configure the app from inside the Google Developers Console.
+1. In order to do this you, go to the `API & Service` page and enable the following:
+- Google Drive API
+- Google Sheets API
+2. Go to the `Credentials` section and create a new credential of type  `OAuth client ID`.
+- Set Application type to `Web application`
+- Add Authorized redirect URI as: `https://{your-tenant-address}/callback/oauth2`
+
+In case of new domain you may get message like `This app isn't verified`. Please refer to this doc to check how to proceed:
+https://support.google.com/cloud/answer/7454865?hl=en
 
 ### Environment variables
 
@@ -29,8 +41,9 @@ the Google API:
 
 Following environment are required:
 
- - `GOOGLE_APP_ID` - oauth App ID
- - `GOOGLE_APP_SECRET` - oauth App Secret
+ - `OAUTH_CLIENT_ID` - oauth App ID
+ - `OAUTH_CLIENT_SECRET` - oauth App Secret
+ - `TENANT_DOMAIN` - your Google API tenant domain
  - `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
 
 
