@@ -7,55 +7,112 @@ icon:  msdynamics-crm.png
 icontext: Microsoft Dynamics CRM component
 category: Microsoft Dynamics CRM
 createdDate: 2018-03-18
-updatedDate: 2018-09-07
+updatedDate: 2020-06-18
 ---
+
+## Latest changelog
+
+**1.2.0 (June 18, 2020)**
+
+* Add support for `Bulk operations` (Create/Update/Delete)
+* Add `Delete Object By ID` action
+* Add `Query` action
+* Add new implementation `Upsert` action with image attachment support
+* Add new implementation `Lookup Object` action with image attachment support
+* Add `Lookup Objects` action
+
+> To see the full **changelog** please use the following [link](/components/msdynamics-crm/changelog).
+
+## Description
 
 Connects to Products in the Microsoft Dynamics/NAV Family Via the OData API
 which use Authorization grant.
 
-## Latest changelog
-
-**1.1.0 - March 18, 2018**
-
-* Initial release of OIH standardized component
-
-> To see the full **changelog** please use the following [link](/components/msdynamics-crm/changelog).
-
-## Dynamics Remarks
+### Dynamics Remarks
 
 See [Dynamics Crm Remarks](dynamics-crm-remarks).
 
-## Authentication
+### Authentication
 
 See how to [configure an OData App](configuring-odata-app) for Dynamics On Azure
 Active Directory for details on this process.
 
+### Completeness Matrix
+
+The [component completeness](completeness-matrix) matrix gives the technical
+details about Salesforce objects this component covers.
+
 ## Triggers
 
-### Fetch new and updated objects
+  1. [Fetch new and updated objects](/components/msdynamics-crm/triggers#fetch-new-and-updated-objects)                         
+  Get objects which have recently been modified or created.
 
-Get objects which have recently been modified or created.
+  2. [Query Accounts](/components/msdynamics-crm/triggers#query-accounts)                                                     
+  Query Objects: Accounts
 
-All Objects Programmatically Detectable Covered.  Time range options not
-supported, Standardized `isNew`,`createdOn` and `modifiedOn` not included in
-output.
+  3. [Query Contacts](/components/msdynamics-crm/triggers#query-contacts)                                                     
+  Query Objects: Contacts
+
+  4. [Query Quotes](/components/msdynamics-crm/triggers#query-quotes)                                                         
+  Query Objects: Quotes
 
 ## Actions
 
-### Lookup Object by Field(s)
+  1. [Bulk Create Objects](/components/msdynamics-crm/actions#bulk-create-objects)                                         
+  Provides a simple interface for quickly creating large amounts of objects.
 
-Given a set of criteria which matches exactly one record, find that matching record.
+  2. [Bulk Update Objects](/components/msdynamics-crm/actions#bulk-update-objects)                                         
+  Provides a simple interface for quickly updating large amounts of objects.
 
-All Objects Programmatically Detectable Covered. Requires a sample object to
-exist to infer schema. Shows all fields, not just unique fields.  Does not
-necessarily understand type for field.
+  3. [Bulk Delete Objects](/components/msdynamics-crm/actions#bulk-delete-objects)                                         
+  Provides a simple interface for quickly deleting large amounts of objects.
 
-### Upsert Object By ID
+  4. [Delete Object By ID](/components/msdynamics-crm/actions#delete-object-by-id)                                          
+  Deletes a Selected Object.
 
-Update an existing entry if the id provided.  Otherwise create a new entry.
+  5. [Lookup Object by Field(s)](/components/msdynamics-crm/actions#lookup-object-by-fields)                                            
+  Given a set of criteria which matches exactly one record, find that matching record.
 
-All Objects Programmatically Detectable Covered. Requires a sample object to
-exist to infer schema.  Does not inform following components if new.
+  6. [Upsert Object](/components/msdynamics-crm/actions#upsert-object)                                                
+  Creates or Updates Selected Object.
+
+## Deprecated Actions
+
+  1. [Lookup Object by Field(deprecated)](/components/msdynamics-crm/actions#lookup-object-by-fielddeprecated)                  
+  Use [Lookup Object by Field(s)](/components/msdynamics-crm/actions#lookup-object-by-fields)  action instead
+
+  2. [Upsert Object(deprecated)](/components/msdynamics-crm/actions#upsert-objectdeprecated)                                    
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  3. [Sync Accounts(deprecated)](/components/msdynamics-crm/actions#sync-accountsdeprecated)                                    
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  4. [Sync Contacts(deprecated)](/components/msdynamics-crm/actions#sync-contactsdeprecated)                                    
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  5. [Sync Invoices(deprecated)](/components/msdynamics-crm/actions#sync-invoicesdeprecated)                                    
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  6. [Sync Orders(deprecated)](/components/msdynamics-crm/actions#sync-ordersdeprecated)                                        
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  7. [Sync Price Levels(deprecated)](/components/msdynamics-crm/actions#sync-price-levelsdeprecated)                            
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  8. [Sync Product Price Levels(deprecated)](/components/msdynamics-crm/actions#sync-price-levelsdeprecated)                    
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  9. [Sync Products(deprecated)](/components/msdynamics-crm/actions#sync-productsdeprecated)                                    
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  10. [Sync Quotes(deprecated)](/components/msdynamics-crm/actions#sync-quotesdeprecated)                                       
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  11. [Sync Unit Groups(deprecated)](/components/msdynamics-crm/actions#sync-unit-groupsdeprecated)                             
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+
+  12. [Sync Units(deprecated)](/components/msdynamics-crm/actions#sync-unitsdeprecated)                                         
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
 
 ## Legacy Behavior
 
@@ -78,12 +135,11 @@ For the local testing (e.g. spec-integration) the following environment variable
 
 ### Version and compatibility information
 
-This component interacts with OData version 4.  It has been
-tested with:
+This component interacts with OData version 4. It has been tested with:
 
 ```
 Microsoft Dynamics 365
-Server version: 9.0.1.569 (DB 9.0.1.569)
-Client version (Last Commit Version): 1.2.24-180302-013059
-Build Timestamp: 3/1/2018 5:41:10 PM
+2020 release wave 1 enabled
+Server version: 9.1.0000.18042
+Client version: 1.4.831-2005.2
 ```
