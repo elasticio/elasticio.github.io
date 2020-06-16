@@ -6,8 +6,13 @@ icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
 createdDate: 2019-12-27
-updatedDate: 2020-06-05
+updatedDate: 2020-06-16
 ---
+
+## 1.2.1 (June 16, 2020)
+
+* Change OAuth variables naming
+* Improve documentation
 
 ## 1.2.0 (June 5, 2020)
 
