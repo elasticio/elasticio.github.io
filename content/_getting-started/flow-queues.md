@@ -13,6 +13,8 @@ The feature Flow Message Queue allows you to see number of messages in the queue
 
 ![Flow Queues](/assets/img/getting-started/flow-queues/flow-queues.png)
 
+> **Please Note:**  The Flow Queues are only available for actively running flows.
+
 ## Access to flow queues
 
 ### Executions
