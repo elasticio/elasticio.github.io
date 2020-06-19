@@ -25,6 +25,10 @@ You can use search to find specific logs:
 Additionally, the list can be filtered by a [flow name](#filter-by-flow-name),
 [time interval](#filter-by-time-interval) and the [log level](#filter-by-log-level).
 
+You can also go to the [Executions page](executions) simply by clicking on the *"Thread's details"*:
+
+![Thread's details](/assets/img/getting-started/logs-page/threads-details.png)
+
 ## Filter by Flow Name
 
 This filter allows you to concentrate on logs of one or more Flows by selecting
