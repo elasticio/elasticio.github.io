@@ -38,7 +38,7 @@ The Executions **(1)** item opens our [Executions Page](executions). Here you ca
 
 ### Logs
 
-The Logs **(1)** item opens our [Logs Page](logs-page). Here you can find a list of logs **(2)** that you can sort with filters **(3)**.
+The Logs **(1)** item opens our [Logs Page](logs-page). Here you can find a list of logs **(2)** that you can sort with filters **(3)**. You can also go to [Executions Page](executions) by clicking on *"Thread's detais"* **(4)**.
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/logs.png" title="Logs" %}
 
@@ -48,6 +48,7 @@ This menu section includes the following items:
 - [Flows](#flows)
 - [Credentials](#credentials)
 - [Agents](#agents)
+- [Topics](#topics)
 
 ### Flows
 
@@ -68,9 +69,15 @@ For more information please visite our [Managing Workspaces](/guides/managing-wo
 
 ### Agents
 
-This is the [Local Agent](local-agent) management page **(1)**. Here you can manage your Local Agents, and request them.
+This is the [Local Agent](local-agent) management page **(1)**. Here you can manage your Local Agents **(2)**, and request them **(3)**.
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/agents.png" title="Agents" %}
+
+### Topics
+
+This is the [Topics](topics) management page **(1)**. Here you can manage your Topics **(2)** or create a new one **(3)**.
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/tour/topics.png" title="Topics" %}
 
 ## Organize
 
