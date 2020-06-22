@@ -71,6 +71,8 @@ This action will combine multiple incoming events into a CSV file until there is
 of more than 10 seconds between events. Afterwards, the CSV file will be closed
 and attached to the outgoing message.
 
+![Write CSV attachment from JSON Object](img/inputObject.png)
+
 This action will convert an incoming array into a CSV file by following approach:
 
 * Header inherits names of keys from the input message;
@@ -89,9 +91,7 @@ for that cell. All other properties will be ignored. For example, headers
 `foo,bar` along with the following JSON events:
 
 ```
-{"inputObject": {"foo":"myfoo", "bar":"mybar"}}
-{"inputObject": {"foo":"myfoo", "bar":[1,2]}}
-{"inputObject": {"bar":"mybar", "baz":"mybaz"}}
+{"foo":"myfoo", "bar":"mybar"}
 ```
 
 will produce the following `.csv` file:
@@ -99,8 +99,6 @@ will produce the following `.csv` file:
 ```
 foo,bar
 myfoo,mybar
-myfoo,"[1,2]"
-,mybar
 ```
 
 The output of the CSV Write component will be a message with an attachment.  In
@@ -111,6 +109,8 @@ able to handle file attachments.
 
 * `Include Header` - this select configures output behavior of the component. If option is `Yes` or no value chosen than header of csv file will be written to attachment, this is default behavior. If value `No` selected than csv header will be omitted from attachment.
 * `Separator` - this select configures type of CSV delimiter in an output file. There are next options: `Comma (,)`, `Semicolon (;)`, `Space ( )`, `Tab (\t)`.
+
+![Write CSV attachment from JSON Array](img/inputArray.png)
 
 This action will convert an incoming array into a CSV file by following approach:
 
@@ -130,13 +130,11 @@ for that cell. All other properties will be ignored. For example, headers
 `foo,bar` along with the following JSON events:
 
 ```
-{
-    "inputArray": [
-        {"foo":"myfoo", "bar":"mybar"}
-        {"foo":"myfoo", "bar":[1,2]}
+[
+        {"foo":"myfoo", "bar":"mybar"},
+        {"foo":"myfoo2", "bar":"1"},
         {"bar":"mybar", "baz":"mybaz"}
-    ]
-}
+]
 ```
 
 will produce the following `.csv` file:
@@ -144,8 +142,8 @@ will produce the following `.csv` file:
 ```
 foo,bar
 myfoo,mybar
-myfoo2,[1,2]"
-,mybar
+myfoo2, 1
+mybar
 ```
 
 The output of the CSV Write component will be a message with an attachment.  In
