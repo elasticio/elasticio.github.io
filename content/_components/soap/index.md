@@ -7,14 +7,14 @@ icon: soap.png
 icontext: SOAP component
 category: SOAP component
 createdDate: 2018-07-17
-updatedDate: 2020-05-29
+updatedDate: 2020-06-22
 ---
 
 ## Latest changelog
 
-**1.2.2 (May 29, 2020)**
+**1.2.3 (June 22, 2020)**
 
-* Replace weight in component.json with order
+* Remove the job which updates docs on code changes
 
 > To see the full **changelog** please use the following [link](/components/soap/changelog).
 
