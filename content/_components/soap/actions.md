@@ -11,7 +11,8 @@ updatedDate: 2020-05-07
 
 ## Call
 
-Makes a call to SOAP service over HTTP using public WSDL URL:
+Makes a call to SOAP service over HTTP using public WSDL URL.
+Call action supports Basic Authorization, choose Basic Authorization type in credentials and provide credentials for WSDL.
 
 ![Soap actions - call](img/step_3.png)
 

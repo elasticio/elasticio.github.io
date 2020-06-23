@@ -6,8 +6,13 @@ icon: soap.png
 icontext: SOAP component
 category: SOAP component
 createdDate: 2020-01-02
-updatedDate: 2020-05-29
+updatedDate: 2020-06-22
 ---
+
+
+## 1.2.3 (June 22, 2020)
+
+* Remove the job which updates docs on code changes
 
 ## 1.2.2 (May 29, 2020)
 
