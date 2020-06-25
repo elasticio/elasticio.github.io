@@ -53,6 +53,8 @@ in input:
 *   `TopicArn` - this is the specific topic name. More about the topic format below.
 *   `AWS Region` - set this to the specific Amazon SNS service access point in the required region.
 
+![Publish](img/publish-action.png)
+
 **Topic ARN**
 
 Amazon SNS assigns a unique ARN (Amazon Resource Name) to the each topic. It

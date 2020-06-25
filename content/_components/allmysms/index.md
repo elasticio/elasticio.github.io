@@ -43,7 +43,11 @@ component during the integration flow design.
 ### Send
 
 This action will send SMS to one or multiple numbers provided all the input
-fields are filled are filled correctly. Here are the input fields:
+fields are filled are filled correctly.
+
+![Send](img/send-action.png)
+
+Here are the input fields:
 
 *   **Mobile numbers** - List of receivers mobile numbers separated with comma. E.g. `"3xxxxxxxx,3xxxxxxxxx"`. Recommended to limit number of receivers to 2000. **N.B. Specific number validation is not performed by the platform.**
 *   **Sender Name** - Sender name that will be displayed on receiver side. Requirements: 3 to 11 characters, only alpha-numeric (`A-Z/0-9`) and must start with a letter.
