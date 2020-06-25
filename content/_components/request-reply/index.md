@@ -62,7 +62,7 @@ List of Expected Config fields:
 - Content Type (default `application/json`) - the `non-required` header value tells the client what the content type of the returned content actually is. The component supports only types with `text/...` or `application/...` in the beginning of the header name.
 - Response Body - the `required` field supports JSONata expressions. Max length of a JSONata expression is 1000 symbols.
 
-![image](https://user-images.githubusercontent.com/40201204/81501098-1cfe1f80-92df-11ea-8d99-76211d83fc85.png)
+![Reply](img/reply.png)
 
 ### Use cases for HTTP Reply
 
