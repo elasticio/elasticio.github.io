@@ -13,6 +13,8 @@ updatedDate: 2019-06-26
 
 This call retrieves the details of a specific item, such as description, price, category, all item aspects, condition, return policies, seller feedback and score, shipping options, shipping costs, estimated delivery, and other information the buyer needs to make a purchasing decision.
 
+![Get Item](img/get-item.png)
+
 *eBay's sandbox environment does not provide correct response for this action. So the code could not be fully tested in development stage. Please be careful when testing this code in production environment. Please contact us if any error occurs.*
 
 ### Input fields description
@@ -38,6 +40,9 @@ Request JSON schema ./src/main/resources/schemas/json/Item.in.json
 ## Get Item Feed
 
 The Item feed file is generated each day. This call lets you download a daily TSV_GZIP (tab separated value gzip) Item feed file of all the items that were listed on a specific day in a specific category.
+
+![Get Item Feed](img/get-item-feed.png)
+
 Details about the TSV_GZIP file could be found here: [Retrieve a daily Item feed file](https://developer.ebay.com/api-docs/buy/static/api-feed.html)
 
 ### Input fields description (if there is any)
@@ -80,6 +85,8 @@ Response JSON schema ./src/main/resources/schemas/json/ItemFeed.out.json
 
 The Description feed file is generated each day. This call lets you download a daily TSV_GZIP (tab separated value gzip) Description feed file containing the descriptions of all the items that were listed on a specific day in a specific category.
 
+![Get Item Description Feed](img/get-item-description-feed.png)
+
 The Description feed file contains only the itemId, itemGroupId and description columns. The value of the description column is BASE64 encoded. For each row, there will be values in either itemId or itemGroupId. The description column will always contain a value.
 
 The other parameters and fields are the same like in GetItemFeed action.
@@ -96,8 +103,11 @@ Response JSON schema ./src/main/resources/schemas/json/ItemFeed.out.json
 
 The Hourly feed file is generated each hour every day for all categories. This call lets you download an Hourly TSV_GZIP (tab separated value gzip) feed file containing all the items that have changed within the specified day and hour for a specific category. This means to generate the 8AM file of items that have changed from 8AM and 8:59AM, the service starts at 9AM. You can retrieve the 8AM snapshot file at 10AM.
 
+![Get Item Snapshot Feed](img/get-item-snapshot-feed.png)
+
 You can use the response from this call to update the item details of items stored in your database. By comparing the value of itemSnapshotDate for the same item you will be able to tell which information is the latest.
-Note: Currently, hourly updates for descriptions are not supported.
+
+> **Note:** Currently, hourly updates for descriptions are not supported.
 
 All the parameters and fields are the same like in GetItemFeed and GetItemDescriptionFeed action.
 The only difference is in the format of data:
