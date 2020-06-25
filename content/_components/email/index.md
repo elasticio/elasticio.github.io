@@ -44,7 +44,9 @@ select as a first component during the integration flow design.
 ### Send
 
 This action would send your message. There are several parameters which can be
-configures for this function.
+configures for this function:
+
+![Send](img/email-action.png)
 
 ### Error handling types
 
