@@ -7,16 +7,14 @@ icon: code.png
 icontext: Code component
 category: Code component
 createdDate: 2015-09-25
-updatedDate: 2020-05-19
+updatedDate: 2020-07-01
 ---
 
 ## Latest changelog
 
-**1.2.0 (May 19, 2020)**
+**1.2.1 (July 1, 2020)**
 
-* Update sailor version to 2.6.7
-
-* Add support for more node global objects
+* Update sailor version to 2.6.13
 
 > To see the full **changelog** please use the following [link](/components/code/changelog).
 
