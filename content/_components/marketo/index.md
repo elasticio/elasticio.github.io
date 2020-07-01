@@ -12,10 +12,12 @@ updatedDate: 2020-05-21
 
 ## Latest changelog
 
-**2.2.0 (May 21, 2020)**
+**2.2.1 (June 19, 2020)**
 
-* Add `Lookup Object (at most 1)` action
-* Add `Delete Object By Unique Criteria` action
+* Fix bug when query string exceeds 8K characters
+* More clearly report HTTP level failures
+* Component updated to use Node v14 and the dependencies are updated
+* The component logo was updated.
 
 > To see the full **changelog** please use the following [link](/components/marketo/changelog).
 

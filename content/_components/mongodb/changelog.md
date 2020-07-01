@@ -6,8 +6,19 @@ icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
 createdDate: 2020-04-13
-updatedDate: 2020-05-22
+updatedDate: 2020-06-23
 ---
+
+## 1.5.0 (June 23, 2020)
+
+* Add Emit Batch Behavior to **Lookup Plural** action
+* Update to Sailor `2.6.10`
+
+## 1.4.2 (June 5, 2020)
+
+* Add Emit Behavior to **Aggregate** and **Lookup Plural** actions
+* Update to Sailor `2.6.9`
+* Component updated to use Node v14 and the dependencies are updated 
 
 ## 1.4.1 (May 19, 2020)
 

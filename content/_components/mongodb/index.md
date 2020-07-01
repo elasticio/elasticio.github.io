@@ -7,17 +7,15 @@ icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
 createdDate: 2020-04-13
-updatedDate: 2020-05-22
+updatedDate: 2020-06-23
 ---
 
 ## Latest changelog
 
-**1.4.1 (May 19, 2020)**
+**1.5.0 (June 23, 2020)**
 
-*   Update Sailor to 2.6.7
-*   Update documentation
-*   Add dynamic metadata for `upsertById`, `upsertByCriteria` and `updateMany` actions
-
+* Add Emit Batch Behavior to **Lookup Plural** action
+* Update to Sailor `2.6.10`
 > To see the full **changelog** please use the following [link](changelog).
 
 ## Description

@@ -9,11 +9,17 @@ createdDate: 2018-03-02
 updatedDate: 2020-05-21
 ---
 
+## 2.2.1 (June 19, 2020)
+
+* Fix bug when query string exceeds 8K characters
+* More clearly report HTTP level failures
+* Component updated to use Node v14 and the dependencies are updated 
+* The component logo was updated.
+
 ## 2.2.0 (May 21, 2020)
 
 * Add `Lookup Object (at most 1)` action
 * Add `Delete Object By Unique Criteria` action
-
 
 ## 2.1.0 (May 8, 2020)
 
