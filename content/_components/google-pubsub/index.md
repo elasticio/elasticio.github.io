@@ -57,6 +57,8 @@ need to create a new Service Account on [Service Accounts Page](https://console.
 
 The Pull trigger receives a message from a Topic, emits it, and sends an acknowledgment to Pub/Sub.
 
+![Pull](img/google-pubsub-pull.png)
+
 #### Configuration
 
 - Topic Name - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
@@ -66,6 +68,8 @@ The Pull trigger receives a message from a Topic, emits it, and sends an acknowl
 ### Publish
 
 The Publish action retrieves message body from a previous step and sends a message to a Topic while remaining unaware of any existing subscriptions.
+
+![Publish](img/google-pubsub-publish.png)
 
 #### Configuration
 
