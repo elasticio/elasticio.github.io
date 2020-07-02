@@ -21,13 +21,16 @@ Calculates aggregate values for the data in a collection or a view
 
 1.  Select a DB - Database to be found in.
 2. Select a Collection - Collection to be found in.
+3. Select an Emit Behavior: **Emit Individually**, **Emit Batch** or **Fetch All** - Determines how many messages to emit when the number of results is not one.  **Emit Individually** attaches a `groupInfo` to the message (outside the body) which allows the message to be rebuilt.
 
 ### Body
 
 `pipeline` - a sequence of data aggregation operations or stages. See the
 aggregation pipeline operators for details. **Required field**.
 
-Must be an array of pipeline stages.
+> **Note:** Must be an array of pipeline stages.
+
+`batchSize` - size of pages. Rendered only if `Emit Batch` strategy is chosen. Default: 10.
 
 Examples:
 
@@ -46,6 +49,18 @@ Examples:
     { $match: { value: 64 } },
     { $addFields: { newField: 88 } },
   ]
+}
+```
+
+Emit batch strategy:
+
+```
+{
+  "pipeline": [
+    { $match: { value: 64 } },
+    { $addFields: { newField: 88 } },
+  ],
+  "batchSize": 10
 }
 ```
 
@@ -332,19 +347,23 @@ Lookup many documents by criteria.
 
 1. Select a DB - Database to be found in.
 2. Select a Collection - Collection to be found in.
+3. Select an Emit Behavior: **Emit Individually**, **Emit Batch** or **Fetch All** - Determines how many messages to emit when the number of results is not one.  **Emit Individually** attaches a `groupInfo` to the message (outside the body) which allows the message to be rebuilt.
 
 ### Body
 
-'criteria' of the document to search. **Required field**.
+`criteria` of the document to search. **Required field**.
 
-'limit' - specifies the maximum number of documents the action will return. 0 is equivalent to setting no limit. **Optional field**.
+`limit` - specifies the maximum number of documents the action will return. 0 is equivalent to setting no limit. **Optional field**.
 
-'project' - specifies which fields, including embedded objects, the action should return. Please refer [Project Fields to Return from Query](https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/) for the details. **Optional field**.
+`project` - specifies which fields, including embedded objects, the action should return. Please refer [Project Fields to Return from Query](https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/) for the details. **Optional field**.
+
+`batchSize` - size of pages. Rendered only if `Emit Batch` strategy is chosen. Default: 10.
 
 Examples:
 
 1. This will find all the documents (plural) according to th given criteria. In this case this will retrieve all the objects with the root value equals 4:
-```json5
+
+```
 {
   "criteria": {
     "value": 4
@@ -355,7 +374,8 @@ Examples:
 ### Result
 
 Will return an array of documents inside the `result` property:
-```json5
+
+```
 {
   "result": [
     {
@@ -372,7 +392,8 @@ Will return an array of documents inside the `result` property:
 
 2. Complex queries are also supported. E.g. the next query will return all the objects that have a property `otherValue` equals 4 inside of a property `nestedObj`.
 You will get a 'Projection cannot have a mix of inclusion and exclusion' error otherwise.
-```json5
+
+```
 {
   "criteria": {
     "nestedObj.otherValue": 4
@@ -382,10 +403,23 @@ You will get a 'Projection cannot have a mix of inclusion and exclusion' error o
 
 3. Using project object you can specify which fields to return (set to 1) or not to return (set to 0).
 The following sample returns all the objects (as the 'criteria' object is empty), with fields 'fieldFoo' and 'fieldBar' only. Also note that with the exception of the \_id field, you cannot combine inclusion and exclusion statements in projection documents.
-```json5
+
+```
 {
   "criteria": {},
   "project": { 'fieldFoo': 1, 'fieldBar': 1, '_id': 0}
+}
+```
+
+4. Emit batch strategy:
+
+```
+{
+  "criteria": {
+    "value": 4
+  },
+  "limit": 100,
+  "batchSize": 10
 }
 ```
 
