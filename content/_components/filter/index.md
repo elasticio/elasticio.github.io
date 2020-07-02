@@ -53,6 +53,8 @@ the first component in an integration flow.
 
 ### Simple JSONata Filter
 
+![Simple JSONata Filter](img/simple-jsonata-filter.png)
+
 This action has two parameters and a checkbox:
 
 #### Parameters:
