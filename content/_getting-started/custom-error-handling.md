@@ -27,8 +27,8 @@ It is still not able to handle:
 Custom error handler support in Flow Designer:
 
 Only 1 error handling is supported for now, icon is located at the right bottom corner and is visible at all times except if user is in version mode of designer and that version does not have any custom error handling
-Custom error handing step configuration has an icon of the chosen node in the step summary and in the header, instead of the general icon (BUT, on the graph the icon never changes)
-The incoming hardcoded sample:
+Custom error handling step configuration has an icon of the chosen node in the step summary and in the header, instead of the general icon (BUT, on the graph the icon never changes)
+The incoming hard-coded sample:
 
 ```json
 {
