@@ -13,6 +13,8 @@ updatedDate: 2020-05-11
 
 Trigger to get all new and updated activities since last polling.
 
+![Get New Activities Polling](img/get-new-activities-polling.png)
+
 Trigger uses {endpointUrl}/v1/activities.json [url](https://developers.marketo.com/rest-api/endpoint-reference/lead-database-endpoint-reference/#/Activities/getLeadActivitiesUsingGET)
 
 ### List of Expected Config fields
@@ -25,6 +27,8 @@ Trigger uses {endpointUrl}/v1/activities.json [url](https://developers.marketo.c
 ## Get New Leads Polling
 
 Trigger to get all leads updates. Only [updated](https://developers.marketo.com/rest-api/lead-database/activities/#data_value_changes) leads fields wold be retrieved.
+
+![Get New Leads Polling](img/get-new-leads-polling.png)
 
 ### List of Expected Config fields
 
@@ -42,6 +46,8 @@ These jobs are executed asynchronously, and can be polled to retrieve the status
 Action [Bulk Extract](#bulk-extract) creates a job with a defined set of data to retrieve.
 This trigger `Poll Bulk Extract Results` is used for polling status of the export and retrieving file.
 The bulk extract job result file is placed in the attachment and can be processed in the next flow step.
+
+![Poll Bulk Extract Results](img/poll-bulk-extract-results.png)
 
 >**Please Note:** action `Bulk Extract` and trigger `Poll Bulk Extract Results` should be used in different flows,
  both flows: with action `Bulk Extract` and with trigger `Poll Bulk Extract Results`, should be created in the same workspace.
