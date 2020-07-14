@@ -31,11 +31,35 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-* Create Activity
-* Create Deals
-* Create Note
-* Create Organisation
-* Create Person
+### Create Activity
+
+Create a new activity in pipedrive:
+
+![Create Activity](img/create-a-new-activity.png)
+
+### Create Deals
+
+Create a new deal in pipedrive:
+
+![Create Deals](img/create-a-new-deal.png)
+
+### Create Note
+
+Create a new note in pipedrive:
+
+![Create Note](img/create-a-new-note.png)
+
+### Create Organisation
+
+Create a new organisation in pipedrive:
+
+![Create Organisation](img/create-a-new-organisation.png)
+
+### Create Person
+
+Create a new person in pipedrive:
+
+![Create Person](img/create-a-new-person.png)
 
 ## Known issues
 
