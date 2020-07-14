@@ -7,14 +7,14 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2020-05-19
+updatedDate: 2020-07-10
 ---
 
 ## Latest changelog
 
-**1.2.5 (May 19, 2020)**
+**1.2.9 (July 10, 2020)**
 
-* Update sailor version to 2.6.7
+* Timeout configuration field
 
 > To see the full **changelog** please use the following [link](/components/rest-api/changelog).
 
@@ -24,30 +24,42 @@ The example below shows the development team creation using the REST API compone
 with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
 
 ![Configure Input - Rest API](img/configure-input.png)
-*Numbers show: (1) The URL and method of the REST API resource, (2) the HTTP call headers. (3) configuration options and (4) follow redirect mode.*
+
+*Numbers show: (1) The URL and method of the REST API resource, (2) the HTTP call headers, (3) configuration options (4) follow redirect mode, (5) delay, (6) call count and (7) request timeout.*
 
 1.  HTTP methods and URL
-    *   REST API component supports the following HTTP methods: `GET`, `PUT`, `POST`, `DELETE` and `PATCH`.
-    *   The URL of the REST API resources. Accepts JSONata expressions, meaning the URL address evaluates [JSONata](http://jsonata.org/) expressions.
-2.  Request Headers and Body
-    *   Definition of request [headers](#defining-http-headers)
-    *   Definition of request [body](#defining-request-body), if the HTTP method is not `GET`
-3.  Configuration options
-    *   **Don't throw Error on Failed Calls** - if enabled return error, error code and stacktrace in message body otherwise throw error in flow.
-    *   **Split Result if it is an Arra** - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.
-    *   **Split Result if it is an Array** - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.
-    *   **Enable debug logging** - The component supports extended logging. The checkbox should be enabled for it. After that you may check your logs in the logs console.
-    > **Please note** that in case of using **ordinary flows**, adding of `DEBUG` environment variable in component repository will override disabled Enable debug logging checkbox during flow run, so all logs will be extended until an environment variable is removed.
-    *   **Retry on failure** - enables the [rebound](/getting-started/rebound) feature for following HTTP status codes:
-        *   `408`: Request Timeout
-        *   `423`: Locked
-        *   `429`: Too Many Requests
-        *   `500`: Internal Server Error
-        *   `502`: Bad Gateway
-        *   `503`: Service Unavailable
-        *   `504`: Gateway Timeout
-        *   DNS lookup timeout
-4.  **Follow redirect mode** - The component will follow the redirects by default. If you want disable it open the drop-down meanu and select **Do not follow redirects** option.
+ * REST API component supports the following HTTP methods: `GET`, `PUT`, `POST`, `DELETE` and `PATCH`.
+ * The URL of the REST API resources. Accepts JSONata expressions, meaning the URL address evaluates [JSONata](http://jsonata.org/) expressions.
+
+2. Request Headers and Body
+ * Definition of request [headers](#defining-http-headers)
+ * Definition of request [body](#defining-http-body), if the HTTP method is not `GET`
+
+3. Configuration options
+ * ``Don`t throw Error on Failed Calls`` - if enabled return error, error code and stacktrace in message body otherwise throw error in flow.
+ * ``Split Result if it is an Array`` - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.  
+ * ``Retry on failure`` - enabling [rebound](https://support.elastic.io/support/solutions/articles/14000044750-why-and-where-we-use-the-rebound-) feature for following HTTP status codes:
+    - 408: Request Timeout
+    - 423: Locked
+    - 429: Too Many Requests
+    - 500: Internal Server Error
+    - 502: Bad Gateway
+    - 503: Service Unavailable
+    - 504: Gateway Timeout
+    - DNS lookup timeout
+ * ``Do not verify SSL certificate (unsafe)`` - disable verifying the server certificate - **unsafe**.
+
+4. ``Follow redirect mode`` - If you want disable Follow Redirect functionality, you can use option ``Follow redirect mode``.By default ``Follow redirect mode`` option has value ``Follow redirects``.
+
+5. ``Delay`` - If you want to slow down requests to your API you can set delay value (in seconds) and the component will delay calling the next request after the previous request.
+Time for the delay is calculated as `Delay`/ `Call Count` and shouldn't be more than 1140 seconds (19 minutes due to platform limitation).
+The `Call Count` value by default is 1. If you want to use another value, please set the `Call Count` field.
+Notice: See [Known Limitations](#known-limitations) about `Delay` value.
+
+6. ``Call Count`` - the field should be used only in pair with `Delay`, default to 1.
+
+7. ``Request timeout`` - Timeout period in milliseconds (1-1140000) while component waiting for server response, also can be configured with REQUEST_TIMEOUT environment variable if configuration field is not provided. Defaults to 100000 (100 sec).
+Notice: Specified for component REQUEST_TIMEOUT enviroment variable would be overwritten by specified value of Request timeout, default value would be also overwritten
 
 ## Triggers
 
@@ -61,8 +73,13 @@ response back to the flow.
 *   Don't throw Error on Failed Calls
 *   Split Result if it is an Array
   > **Note:** After making the request, and applying the above JSONata expression, if the result is an array and this box is checked, we will emit one message for each element of the array.
+
 *   Retry on failure
-*   Follow redirect mode
+
+* Do not verify SSL certificate(unsafe)
+  > **Note:** Unsafe option! Check it if you want to disable SSL certificate verification on the server.
+
+For more information please see [Introduction](#introduction).
 
 ## Actions
 
@@ -71,8 +88,13 @@ response back to the flow.
 *   Don't throw Error on Failed Calls
 *   Split Result if it is an Array
     > **Note:** After making the request, and applying the above JSONata expression, if the result is an array and this box is checked, we will emit one message for each element of the array.
+
 *   Retry on failure
-*   Follow redirect mode
+
+* Do not verify SSL certificate(unsafe)
+  > **Note:** Unsafe option! Check it if you want to disable SSL certificate verification on the server.
+
+For more information please see [Introduction](#introduction).
 
 ### HTTP request
 
@@ -306,5 +328,9 @@ There are:
 
   2. Attachments mechanism does not work with [Local Agent Installation](/references/local-agents-requesting#compatible-operating-systems)
 
-  3. OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) contains `refresh_token` optional property, but due to the platform limitation it is required.
+**3.** OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) contains `refresh_token` optional property, but due to the platform limitation it is required.
 Possible solution - use `access_type:offline` in additional parameters (may not work in some cases).
+
+**4.** We suggest not to set Delay value more then time period between two executions of the flow.
+Please keep in mind that delay can influence on time of next execution.
+For example, the flow has type `Ordinary` and scheduled to execution for every 1 minute, but the delay is set to 120 sec, so the next execution will be started only after 120 sec, instead of 1 minute.
