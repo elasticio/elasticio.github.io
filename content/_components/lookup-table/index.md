@@ -83,7 +83,8 @@ will provide a failed result.
 
 ## Triggers
 
-None yet.
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
@@ -92,6 +93,8 @@ None yet.
 The lookup from table action takes a table to lookup from, a table to translate
 to, and an input value to translate. It returns an object in the form `{result: value}`
 where the value is the result of the table lookup, if it exists:
+
+![Lookup From Table](img/lookup-from-table.png)
 
 **Input Configuration**
 
