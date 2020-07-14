@@ -13,6 +13,8 @@ updatedDate: 2020-05-11
 
 Get describe Object metadata.
 
+![Describe Object](img/describe-object.png)
+
 ### List of Expected Config fields
 
 List contains default object types and custom object types.
@@ -33,6 +35,8 @@ Action will return a list of custom objects available in the destination instanc
 ## Lookup Objects
 
 Lookup objects by criteria.
+
+![Lookup Objects](img/lookup-objects.png)
 
 ### List of Expected Config fields
 
@@ -113,6 +117,8 @@ Output metadata will be calculated dynamically according to Marketo documentatio
 
 Lookup Activities by criteria.
 
+![Lookup Activities](img/lookup-activities.png)
+
 ### List of Expected Config fields
 
 #### Emit Behaviour
@@ -134,6 +140,8 @@ In other cases, you will receive a retrieve sample timeout error.
 ## Bulk Import
 
 Action for insertion of large sets of person and person related data.
+
+![Bulk Import](img/bulk-import.png)
 
 ### List of Expected Config fields
 
@@ -244,6 +252,8 @@ The action uses the attachment mechanism, so due to platform limitation doesn't 
 
 Action upsert objects by unique criteria.
 
+![Upsert Objects](img/upsert-object-by-unique-criteria.png)
+
 ### List Config fields
 
 #### Object Type
@@ -307,6 +317,8 @@ These jobs are executed asynchronously, and can be polled to retrieve the status
 Action `Bulk Extract` creates a job with a defined set of data to retrieve. For polling status of the export
 and retrieving file you should use trigger [Poll Bulk Extract Results](#poll-bulk-extract-results).
 
+![Bulk Extract](img/bulk-extract.png)
+
 >**Please Note** action `Bulk Extract` and trigger `Poll Bulk Extract Results` should be used in different flows,
 both flows: with action `Bulk Extract` and with trigger `Poll Bulk Extract Results`, should be created in the same workspace.
 
@@ -346,6 +358,8 @@ Input/output metadata depend on object type and generated from [Marketo swagger 
 ## Delete Object By Unique Criteria
 
 Delete Object By Unique Criteria.
+
+![Delete Object By Unique Criteria](img/delete-object-by-unique-criteria.png)
 
 ### List Config fields
 
@@ -420,6 +434,8 @@ For instance for object type `Companies` it is:
 ## Lookup Object (at most 1)
 
 Lookup Object By Unique Criteria.
+
+![Lookup Object (at most 1)](img/lookup-object-at-most.png)
 
 ### List Config fields
 
