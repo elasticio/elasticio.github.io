@@ -6,8 +6,21 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2020-01-02
-updatedDate: 2020-05-19
+updatedDate: 2020-07-10
 ---
+
+## 1.2.9 (July 10, 2020)
+
+* Timeout configuration field
+
+## 1.2.8 (July 6, 2020)
+
+* Add configuration fields: `Delay` and `Call Count` for rate limit
+* Update sailor version to 2.6.13
+
+## 1.2.7 (June 24, 2020)
+
+* Add checkBox to not verify servers certificate
 
 ## 1.2.5 (May 19, 2020)
 
