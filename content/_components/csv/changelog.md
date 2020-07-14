@@ -6,8 +6,12 @@ icon: csv.png
 icontext: CSV component
 category: CSV component
 createdDate: 2019-12-24
-updatedDate: 2020-05-22
+updatedDate: 2020-07-05
 ---
+
+## 2.1.3 (June 5, 2020)
+
+* Fix `timeout is not a function` bug
 
 ## 2.1.2 (May 22, 2020)
 

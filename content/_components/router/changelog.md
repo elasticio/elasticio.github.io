@@ -6,8 +6,13 @@ icon: router.png
 icontext: Router component
 category: Router component
 createdDate: 2020-01-02
-updatedDate: 2020-03-26
+updatedDate: 2020-07-03
 ---
+
+## 0.0.6 (July 3, 2020)
+
+* Update sailor version to 2.6.13
+* Fix problems with flow control
 
 ## 0.0.5 (May 19, 2020)
 

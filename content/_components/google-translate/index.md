@@ -43,9 +43,13 @@ Such codes can be foud in a result of `Retrieve supported languages` action exec
 
 `sourceLang` field is optional. Google will autodetect the source locale if not specified.
 
+![Translate phrase](img/translate-phrase.png)
+
 in/out metadata can be found at `/lib/schemas/translatePhrase.{in/out}.json`
 
 ### Detect language
+
+![Detect language](img/detect-language.png)
 
 in/out metadata can be found at `/lib/schemas/detectLanguage.{in/out}.json`
 
@@ -54,6 +58,8 @@ in/out metadata can be found at `/lib/schemas/detectLanguage.{in/out}.json`
 out metadata can be found at `/lib/schemas/retrieveSupportedLanguages.out.json`
 
 ### Translate object properties
+
+![Translate object properties](img/translate-object-properties.png)
 
 in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
 
@@ -77,6 +83,8 @@ output message:
 }
 ```
 ### Translate array of objects
+
+![Translate array of objects](img/translate-array-of-objects.png)
 
 in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
 
