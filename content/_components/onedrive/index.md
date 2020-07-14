@@ -60,6 +60,8 @@ To create new credentials you need to authorize in Microsoft system using OAuth2
 
 Triggers to get all new and updated files since last polling. Polling is provided by `lastModifiedDateTime` file's property.
 
+![Get New And Updated Files Polling](img/get-new-and-update.png)
+
 #### List of Expected Config fields
 
 * **Drive Identity** - OneDrive instance to work with. Selects by owner
@@ -76,6 +78,8 @@ Triggers to get all new and updated files since last polling. Polling is provide
 ### Get File
 
 Action to get item from OneDrive by provided path in selected disc.
+
+![Get File](img/get-file.png)
 
 #### Input fields description
 
@@ -98,6 +102,8 @@ Action to get item from OneDrive by provided path in selected disc.
 
 Action upserts (create or replace) with first file from attachment by provided path in Microsoft One Drive
 
+![Upsert File](img/upsert-file.png)
+
 #### Input fields description
 
 * **Drive Identity** - OneDrive instance to work with. Selects by owner
@@ -119,6 +125,8 @@ Action upserts (create or replace) with first file from attachment by provided p
 Action to delete item from OneDrive by provided path in selected disc.
 Returns filename if file was deleted and empty message if already wasn't exist
 
+![Delete File](img/delete-file.png)
+
 #### Input fields description
 
 * **Drive Identity** - OneDrive instance to work with. Selects by owner
@@ -138,6 +146,8 @@ Returns filename if file was deleted and empty message if already wasn't exist
 ### Create Folder
 
 Create new folder in provided `path`. If `path` not exist component will fail.
+
+![Create Folder](img/create-folder.png)
 
 #### Input fields description
 
