@@ -7,14 +7,14 @@ icon: csv.png
 icontext: CSV component
 category: CSV component
 createdDate: 2015-11-15
-updatedDate: 2020-05-22
+updatedDate: 2020-07-05
 ---
 
 ## Latest changelog
 
-**2.1.2 (May 22, 2020)**
+**2.1.3 (June 5, 2020)**
 
-* Update sailor version to 2.6.7
+* Fix `timeout is not a function` bug
 
 > To see the full **changelog** please use the following [link](/components/csv/changelog).
 
