@@ -44,11 +44,15 @@ your Salesforce credentials and grant access for the component.
 Will continuously run the same SOQL Query and emit results one-by-one. You can
 use the **Object** input field to type an SOQL query like `"SELECT ID, Name from Contact where Name like 'John Smi%'"`.
 
+![SOQL Query](img/soql-query-trigger.png)
+
 ### Get New and Updated Objects Polling
 
 Will poll for existing and updated objects where you can select any custom or
 build-in object for your Salesforce CPQ instance. Use the **Object** input
 field to select the type of object from which you need to get updates, like `Account`.
+
+![Get New and Updated Objects Polling](img/get-new-and-update.png)
 
 ## Actions
 
@@ -64,6 +68,8 @@ statement in the widely used Structured Query Language (`SQL`) but is designed
 specifically for Salesforce data. This action allows you to interact with your
 data using the SOQL.
 
+![SOQL Query](img/soql-query-action.png)
+
 Here are the input fields and the descriptions for them:
 
 *   **Optional batch size** - A positive integer specifying batch size. If no batch size is specified then results of the query will be emitted one-by-one, otherwise query results will be emitted in array of maximum batch size.
@@ -71,6 +77,8 @@ Here are the input fields and the descriptions for them:
 *   **SOQL Query** - Input field where you should type the SOQL query. E.g. `"SELECT ID, Name from Contact where Name like 'John Smi%'"`
 
 ### Lookup object
+
+![Lookup object](img/lookup-object.png)
 
 Use the Lookup object action to search your organization’s Salesforce data for a
 specific information. Here are the input fields and the descriptions for them:
@@ -80,7 +88,7 @@ specific information. Here are the input fields and the descriptions for them:
 *   **Lookup by field** - Input field where you should choose the lookup field which you want to use for result filtering. E.g. `Id`.
 *   **Optional batch size** - A positive integer specifying batch size. If no batch size is specified then results of the query will be emitted one-by-one, otherwise query results will be emitted in array of maximum batch size.
 
-```For now, you can specify all unique, lookup, externalId/Id fields. ```
+> For now, you can specify all unique, lookup, externalId/Id fields.
 
 ##### Execution result handling
 
@@ -90,7 +98,20 @@ specific information. Here are the input fields and the descriptions for them:
 | Lookup found a single object, e.g. we were able to identify an parent Account to the Contact | A single message will be emitted, found object will be a body of the message |
 | Lookup found multiple objects (that may happen when lookup is made by non-unique field) | Each found object will be emitted with the separate message |
 
-### Upsert object
+### Delete Object
+
+Delete a record or records by ID.
+
+![Delete Object](img/delete-object.png)
+
+#### Input field description
+
+* **Object** - Input field where you should choose the object type, which you want to find. E.g. `Account`. Only Salesforce CPQ custom objects (which start with `SBQQ__` prefix) are retrieved here.
+
+
+### Upsert object by ID
+
+![Upsert object by ID](img/upsert-object-by-id.png)
 
 Use the Upsert object action create a new object if it does not exist or update
 an existing one if it exists. Here are the input fields and the descriptions for them:
