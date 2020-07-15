@@ -36,25 +36,17 @@ There is no environment variables.
 
 ## Credentials
 
-**hostname -**
+![Credentials](img/credentials.png)
 
-Hostname or IP address of MongoDB server.
+  * **hostname -** Hostname or IP address of MongoDB server.
 
-**port -**
+  * **port -** Port which is used by your MongoDB server to accept connection. (Default is 27017)
 
-Port which is used by your MongoDB server to accept connection. (Default is 27017)
+  * **db -** Database name that is used to store collections with Key:Values
 
-**db -**
+  * **user -** MongoDB username with access to read and write from/to corresponding DB and collection.
 
-Database name that is used to store collections with Key:Values
-
-**user -**
-
-MongoDB username with access to read and write from/to corresponding DB and collection.
-
-**pass -**
-
-Password for specified user.
+  * **pass -** Password for specified user.
 
 ## Triggers
 
@@ -63,11 +55,13 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-### Store
+### Store Key
 
-Inserts Key:Value pair.
+Insert new or update existing Key:Value pair
 
-### Input fields:
+![Store Key](img/store-key.png)
+
+#### Input fields:
 
 **keyName -** Name of a field where key will be stored
 
@@ -131,11 +125,13 @@ Result will be:
 }
 ```
 
-### Store Batch
+### Store Key Batch
 
-Inserts Key:Value pair array.
+Insert new or replace existing Key:Value pair from Batch.
 
-### Input fields:
+![Store Key Batch](img/store-key-batch.png)
+
+#### Input fields:
 
 **keyName -** Name of a field where key will be stored
 
@@ -178,11 +174,13 @@ Response:
 }
 ```
 
-### Retrieve
+### Retrieve Key
 
 Returns value by provided key and Value name if found or provided default value.
 
-### Input fields:
+![Retrieve Key](img/retrieve-key.png)
+
+#### Input fields:
 
 **keyName -** Name of a field where key is stored
 
@@ -198,11 +196,13 @@ In response document from MongoDB collection will be provided, e.g.:
 }
 ```
 
-### Retrieve Batch
+### Retrieve Key Batch
 
 Returns  array of values by provided key array.
 
-### Input fields:
+![Retrieve Key Batch](img/retrieve-key-batch.png)
+
+#### Input fields:
 
 **keyName -** Name of a field where key stored
 
@@ -225,13 +225,13 @@ Response format is following:
 }
 ```
 
-### Remove
+### Remove Key
 
 Removes Value provided in valueName or all values for specified key if **"Delete all values for this key?"** checkbox checked.
 
+![Remove Key](img/remove-key.png)
 
-
-### Input fields:
+#### Input fields:
 
 **keyName -** Name of a field where key stored
 
