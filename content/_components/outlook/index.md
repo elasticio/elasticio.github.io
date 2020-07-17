@@ -33,13 +33,21 @@ Apart from the OAuth 2.0 button you would need to specify the __AD tenant ID__
 
 ## Triggers
 
-  * **Get Contracts**
+### Get Contracts
 
 ## Actions
 
-  * **Check Availability**
-  * **Find Next Available Time**
-  * **Create Event**
+### Check Availability
+
+![Check Availability](img/check-availability.png)
+
+### Find Next Available Time
+
+![Find Next Available Time](img/find-next.png)
+
+### Create Event
+
+![Create Event](img/create-event.png)
 
 ## Scope and Consent
 

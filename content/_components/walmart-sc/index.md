@@ -43,11 +43,21 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-1. Submit Item
-2. Submit Inventory
-3. Retire Item
-4. Update price
-5. Get Feed and Item Status
+**1.** Submit Item
+
+![Submit Item](img/submit-item.png)
+
+**2.** Submit Inventory
+
+**3.** Retire Item
+
+![Retire Item](img/retire-item.png)
+
+**4.** Update price
+
+**5.** Get Feed and Item Status
+
+![Get Feed and Item Status](img/get-feed-and-item-status.png)
 
 ## Walmart API references
 

@@ -41,6 +41,8 @@ Each object emitted individually.
 
 Trigger for retrieval of large sets of person and person related data, using bulk Marketo API.
 
+![Bulk Extract](img/bulk-extract.png)
+
 ### Component's configuration:
 
 **Object Type** - required, choose entity type for polling data. Possible options: Customers, Orders, Products.
