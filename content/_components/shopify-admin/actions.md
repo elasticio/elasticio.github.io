@@ -13,23 +13,17 @@ updatedDate: 2020-03-19
 
 Finds object by id.
 
+![Lookup Object](img/lookup-object.png)
+
 ### List of Expected Config fields
 
-  * **Object Type**
+  * **Object Type -** Type of object for polling.
 
-  Type of object for polling.
+  * **Allow Empty Result -** Default `No`. In case `No` is selected - an error will be thrown when no objects were found, If `Yes` is selected - an empty object will be returned instead of throwing an error.
 
-  * **Allow Empty Result**
+  * **Allow ID to be Omitted -** Default `No`. In case `No` is selected - an error will be thrown when object id is missing in metadata, if `Yes` is selected - an empty object will be returned instead of throwing an error.
 
-  Default `No`. In case `No` is selected - an error will be thrown when no objects were found, If `Yes` is selected - an empty object will be returned instead of throwing an error.
-
-  * **Allow ID to be Omitted**
-
-  Default `No`. In case `No` is selected - an error will be thrown when object id is missing in metadata, if `Yes` is selected - an empty object will be returned instead of throwing an error.
-
-  * **Expected input metadata**
-
-  Input metadata contains `id` or several `ids` fields (some object types have complex id):
+  * **Expected input metadata -** Input metadata contains `id` or several `ids` fields (some object types have complex id):
 
   1. Object type `Shop` - does not have `id` empty input expected in message.
 
@@ -37,19 +31,15 @@ Finds object by id.
 
 ## Lookup Objects
 
+![Lookup Objects](img/lookup-objects.png)
+
 ### List of Expected Config fields
 
-  * **Object Type**
+  * **Object Type -** Type of object for polling.
 
-  Type of object for polling.
+  * **Behavior -** `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message.
 
-  * **Behavior**
-
-  `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message.
-
-  * **Max Size**
-
-  Maximum number of objects to fetch. Default `250`, maximum value is `250`.
+  * **Max Size -** Maximum number of objects to fetch. Default `250`, maximum value is `250`.
 
 ### Expected Input metadata
 
@@ -91,11 +81,11 @@ where tax value greater then 0.
 
 Action to create new object instance. Only for object that can't be updated.
 
+![Create Object](img/create-object.png)
+
 ### List of Expected Config fields
 
-* **Object Type**
-
-Type of object for polling.
+* **Object Type -** Type of object for polling.
 
 ### Example of usage
 
@@ -132,11 +122,11 @@ Output message:
 Upsert Object action is useful if it isn't known if there is already an object in the system. Action determines if the data needs to be matched to an existing object or added to a new one.
 Only for objects that can be created and updated.
 
+![Upsert Object](img/upsert-object.png)
+
 ### List of Expected Config fields
 
-* **Object Type**
-
-Type of object for polling.
+* **Object Type -** Type of object for polling.
 
 ### Example of usage
 
@@ -175,11 +165,11 @@ Output message:
 
 ## Delete Object
 
+![Delete Object](img/delete-object.png)
+
 ### List of Expected Config fields
 
-* **Object Type**
-
-Type of object for polling.
+* **Object Type -** Type of object for polling.
 
 ### Expected input metadata
 

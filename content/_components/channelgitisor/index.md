@@ -40,7 +40,10 @@ with permission to grant API access. Here is the list of values:
 ## Triggers
 
 ### Get Objects Polling
+
 Get objects which have recently been modified or created.
+
+![Get Objects Polling](img/fetch-new-and-update.png)
 
 All types of objects programmatically detectable are covered.  When selecting
 this trigger, the first input that must be configured is **Object type to fetch**.
@@ -62,7 +65,10 @@ services support this.
 ## Actions
 
 ### Lookup Object by Field
+
 Given a field and a field value that matches exactly one record, find that matching record.
+
+![Lookup Object by Field](img/lookup-object.png)
 
 There are three configuration drop-downs:
 
@@ -109,6 +115,8 @@ ELSE
 ### Upsert Object By ID
 
 Update an existing entry with the id provided.  Otherwise create a new entry.
+
+![Upsert Object By ID](img/upsert-object.png)
 
 All types of objects programmatically detectable are covered.  When selecting
 this trigger, the first input that must be configured is **Object type to fetch**.

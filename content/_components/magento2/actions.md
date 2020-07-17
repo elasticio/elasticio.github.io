@@ -95,6 +95,8 @@ If `Check if you'd like to make a series of calls (Developer Mode Only)` is chec
 
 This action allows you to set the quantity for an already existing product.
 
+![Set Inventory](img/set-inventory.png)
+
 ### Expected input metadata
 
 Input metadata contains 3 fields:
@@ -154,6 +156,8 @@ Output metadata contains created or updated product: `/lib/schemas/upsertProduct
 
 You can set order as shipped in this action.
 
+![Set order as shipped](img/set-order-as-shipped.png)
+
 ### Expected input metadata
 
 Input metadata contains 2 fields:
@@ -195,6 +199,8 @@ For example:
 
 This action allows to set or update Sales Order external ID for existing Order.
 
+![Set Sales Order External ID](img/set-sales-order-external-id.png)
+
 ### Expected input metadata
 
 **magento_order_id** - required, primary id of Sales Order entity for Magento 2 API.
@@ -220,6 +226,8 @@ Sales Order entity structure
 
 This action allows you to create an invoice for an already existing order using the order's `entity id`.
 
+![Create Invoice Action](img/create-invoice.png)
+
 ### Expected input metadata
 
 Input metadata contains 2 fields:
@@ -231,6 +239,8 @@ Input metadata contains 2 fields:
 ## Add Update To Sales Order
 
 This action allows to set or update Sales Order status.
+
+![Add Update To Sales Order](img/add-update-to-sales-order.png)
 
 ### Expected input metadata
 
@@ -280,6 +290,8 @@ by unique criteria.
 
 Input metadata will take the unique ID and an optional store view code. The store view will be set to `all` by default.
 
+![Lookup Object by ID](img/lookup-object-by-id.png)
+
 ### Expected output metadata
 
 The expected output will be the given object.
@@ -290,6 +302,8 @@ If `allow ID to be ommitted` is selected, the ID field will not be required to r
 ## Lookup Objects
 
 Given a field-value return all matching records.
+
+![Lookup Objects](img/lookup-objects.png)
 
 ### List of Expected Config fields
 
@@ -378,6 +392,8 @@ Given an array of identities, this action allows you to find the corresponding o
 ### Expected input metadata
 
 Input metadata will take an array of string values (numbers for magento IDs) for the search field. For product lookups, there will be an optional store view code. If no store view code is provided, then data will be returned from the default magento store.
+
+![Lookup Set od Objects](img/lookup-set-of-objects.png)
 
 ### Expected output metadata
 
