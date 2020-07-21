@@ -84,6 +84,8 @@ Triggers to get all new and updated s3 objects since last polling.
 
 #### List of Expected Config fields
 
+![Get New and Updated S3 Objects](img/get-new-and-update.png)
+
  - **Bucket Name and folder** - name of S3 bucket to read files from
  - **Emit Behaviour**: Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message
  - **Start Time**: Start datetime of polling. Default min date:`-271821-04-20T00:00:00.000Z`
@@ -165,10 +167,11 @@ File type resolves by it's extension. The name of attachment would be same to fi
 
 #### Expected input metadata
 
+![Read file](img/read-file.png)
+
  - **filename** - name of file at S3 bucket to read;
  - **bucketName** - name of S3 bucket to read file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
-![Read file - default bucket name](https://user-images.githubusercontent.com/40201204/59688635-ced3bf80-91e6-11e9-8c17-a172a1dadce2.png)
 
 <details>
 <summary>Input metadata</summary>
@@ -214,7 +217,7 @@ Emit individually all filenames from S3 bucket.
 This action gets all names of files which are storing in S3 bucket with provided name.
 The filenames emits individually.
 
-**Notice**: if you provide bucket and folder (as example `eio-dev/inbound`), not only all names of files will  return but name of root folder (`inbound/`) as well.
+> **Please Note:** if you provide bucket and folder (as example `eio-dev/inbound`), not only all names of files will  return but name of root folder (`inbound/`) as well.
 
 #### List of Expected Config fields
 
@@ -222,9 +225,9 @@ The filenames emits individually.
 
 #### Expected input metadata
 
- - **bucketName** - name of S3 bucket to write file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
+![Get filenames](img/get-filename.png)
 
-![Get filenames - default bucket name](https://user-images.githubusercontent.com/40201204/59688813-1fe3b380-91e7-11e9-8f54-a90b2b601eea.png)
+ - **bucketName** - name of S3 bucket to write file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
 <details>
 <summary>Input metadata</summary>
@@ -288,10 +291,10 @@ This action removes file from S3 by provided name in selected bucket. The action
 
 #### Expected input metadata
 
+![Delete file](img/delete-file.png)
+
  - **filename** - name of file at S3 bucket to delete;
  - **bucketName** - name of S3 bucket and folder to delete file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
-
-![Delete file - default bucket name](https://user-images.githubusercontent.com/40201204/59688635-ced3bf80-91e6-11e9-8c17-a172a1dadce2.png)
 
 <details>
 <summary>Input metadata</summary>
@@ -340,6 +343,8 @@ This action renames file by provided name in selected bucket and folder.
 The action will emit properties of renamed file.
 
 #### Expected input metadata
+
+![Rename file](img/rename-file.png)
 
  - **bucketName** - name of S3 bucket where file is placed
  - **folder** - name of folder where file is placed (can be omitted)
@@ -435,8 +440,6 @@ Be careful: this action can process only one attachment - if it would be more or
 
  - **filename** - name of resulted file at S3 bucket (optional);
  - **bucketName** - name of S3 bucket to write file in (will replace `Default Bucket Name and folder` if provided, the field is optional).
-
-![image](https://user-images.githubusercontent.com/40201204/59688384-448b5b80-91e6-11e9-8dd0-e007983055c8.png)
 
 <details>
 <summary>Input metadata</summary>
