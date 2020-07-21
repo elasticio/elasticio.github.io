@@ -34,13 +34,13 @@ This component should be the first step in your flow.
 
 Environment variables are not required for this component.
 
-## Credentials
+### Credentials
 
 This component does not require credentials to work.
 
-## Triggersa
+## Triggers
 
-### Timer
+### Simple trigger
 
 This component can have a cronjob so you can choose when exactly and how often
 you want this component to work.
@@ -55,7 +55,7 @@ This component has no action functions.
 
 Here is how generated sample looks. You also can edit it.
 
-![generated sample](img/sample.png)
+![generated sample](img/simple-trigger-sample.png)
 
 ## Known limitations
 

@@ -12,10 +12,7 @@ updatedDate: 2016-04-27
 
 ## Credentials
 
- - **Consumer key**
- - **Consumer secret**
- - **Access token key**
- - **Access token secret**
+![Credentials](img/credentials.png)
 
 ## Triggers
 
@@ -27,6 +24,8 @@ select as a first component during the integration flow design.
 ### Post tweet
 
 in/out metadata can be found at `/lib/schemas/postTweet.{in/out}.json`
+
+![Post tweet](img/post-tweet.png)
 
 #### Usage example
 
@@ -47,6 +46,8 @@ output message:
 ### Search tweets
 
 in/out metadata can be found at `/lib/schemas/searchTweets.{in/out}.json`
+
+![Search tweets](img/search-tweets.png)
 
 #### Usage example
 
