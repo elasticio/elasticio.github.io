@@ -7,14 +7,14 @@ icon: soap.png
 icontext: SOAP component
 category: SOAP component
 createdDate: 2018-07-17
-updatedDate: 2020-06-22
+updatedDate: 2020-07-24
 ---
 
 ## Latest changelog
 
-**1.2.3 (June 22, 2020)**
+**1.2.4 (July 24, 2020)**
 
-* Remove the job which updates docs on code changes
+* Fix bug for some cases with WSDL behind basic auth  
 
 > To see the full **changelog** please use the following [link](/components/soap/changelog).
 
