@@ -7,14 +7,14 @@ icon: mssql.png
 icontext: MsSQL component
 category: MsSQL component
 createdDate: 2017-02-09
-updatedDate: 2020-05-11
+updatedDate: 2020-07-24
 ---
 
 ## Latest changelog
 
-**1.1.1 (May 11, 2020)**
+**1.1.2 (July 24, 2020)**
 
-* Update sailor version to 2.6.7
+ * Update sailor version to 2.6.14
 
 > To see the full **changelog** please use the following [link](/components/mssql/changelog).
 

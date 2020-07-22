@@ -6,9 +6,12 @@ icon: soap.png
 icontext: SOAP component
 category: SOAP component
 createdDate: 2020-01-02
-updatedDate: 2020-06-22
+updatedDate: 2020-07-24
 ---
 
+## 1.2.4 (July 24, 2020)
+
+* Fix bug for some cases with WSDL behind basic auth  
 
 ## 1.2.3 (June 22, 2020)
 
