@@ -69,9 +69,9 @@ For more information please visite our [Managing Workspaces](/guides/managing-wo
 
 ### Agents
 
-This is the [Local Agent](local-agent) management page **(1)**. Here you can manage your Local Agents **(2)**, and request them **(3)**.
+This is the [VPN Agent](vpn-agent) management page **(1)**. Here you can manage your Local Agents **(2)**, and request them **(3)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/agents.png" title="Agents" %}
+{% include img.html max-width="100%" url="/assets/img/getting-started/tour/vpn-agents.png" title="Agents" %}
 
 ### Topics
 
