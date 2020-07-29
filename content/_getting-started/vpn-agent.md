@@ -48,7 +48,7 @@ by selecting **Create New Endpoint**.
 Let us fill in the needed values:
 
 1.  Give a proper name to remember what is it for. We will use `MongoDB_local_com`.
-2.  Select from drop-down menu the connection protocol type `TCP` or `UDP`. We use `TCP` becuase of our configured database interface has TCP protocol.
+2.  Select from drop-down menu the connection protocol type `TCP` or `UDP`. We use `TCP` because we use MongoDB and it uses TCP protocol.
 3.  Enter the IP address and the port. In our case we will add `192.168.1.7` and `27017`.
 
 {% include img.html max-width="60%" url="/assets/img/getting-started/vpn-agent/vpn-agent-form-filled.png" title="VPN Agent request form filled" %}
