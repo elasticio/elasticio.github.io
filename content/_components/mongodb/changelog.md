@@ -6,8 +6,16 @@ icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
 createdDate: 2020-04-13
-updatedDate: 2020-06-23
+updatedDate: 2020-07-17
 ---
+
+## 1.5.1 (July 17, 2020)
+
+* Add Authentication DB information to documentation
+* Update dependencies
+* Update sailor to version `2.6.14`
+* Log errors in verify credentials.
+* Fix test suite.
 
 ## 1.5.0 (June 23, 2020)
 
@@ -18,7 +26,7 @@ updatedDate: 2020-06-23
 
 * Add Emit Behavior to **Aggregate** and **Lookup Plural** actions
 * Update to Sailor `2.6.9`
-* Component updated to use Node v14 and the dependencies are updated 
+* Component updated to use Node v14 and the dependencies are updated
 
 ## 1.4.1 (May 19, 2020)
 

@@ -6,7 +6,7 @@ icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
 createdDate: 2020-04-13
-updatedDate: 2020-05-22
+updatedDate: 2020-07-17
 ---
 
 ## Description
@@ -19,7 +19,7 @@ Calculates aggregate values for the data in a collection or a view
 
 ### Configuration
 
-1.  Select a DB - Database to be found in.
+1. Select a DB - Database to be found in.
 2. Select a Collection - Collection to be found in.
 3. Select an Emit Behavior: **Emit Individually**, **Emit Batch** or **Fetch All** - Determines how many messages to emit when the number of results is not one.  **Emit Individually** attaches a `groupInfo` to the message (outside the body) which allows the message to be rebuilt.
 

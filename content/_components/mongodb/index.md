@@ -7,15 +7,19 @@ icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
 createdDate: 2020-04-13
-updatedDate: 2020-06-23
+updatedDate: 2020-07-17
 ---
 
 ## Latest changelog
 
-**1.5.0 (June 23, 2020)**
+**1.5.1 (July 17, 2020)**
 
-* Add Emit Batch Behavior to **Lookup Plural** action
-* Update to Sailor `2.6.10`
+* Add Authentication DB information to documentation
+* Update dependencies
+* Update sailor to version `2.6.14`
+* Log errors in verify credentials.
+* Fix test suite.
+
 > To see the full **changelog** please use the following [link](changelog).
 
 ## Description
@@ -32,6 +36,14 @@ following entries:
 *   **User** - user for connection to MongoDB.
 *   **Password** - password for user to connect with MongoDB.
 *   **Authentication Database** - database that used for authentication user. By default it is `admin`, but your case can be different. Please check your records.
+
+## Credentials
+
+1. `URL` - URL used to connect with Mongo DB.
+Example: mongodb://example.com:2017, mongodb+srv://server.example.com:2017 .
+2. `User` - user for connection to Mongo DB.
+3. `Password` - password for user to connect with Mongo DB.
+4. `Authentication Database` - database that used for authentication user. Default: admin. If you connect to your database via the mongo shell with a command of the form `mongo mongodb://example.com/myDatabase -u myUser -p myPassword` then you should place `myDatabase` in this field.  If you connect to your database via the mongo shell with a command of the form  `mongo mongodb://example.com/ -u myUser -p myPassword` then you should leave this field blank.
 
 ## Environment Variables
 
