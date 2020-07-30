@@ -1,11 +1,15 @@
 ---
 title: Local Agent installation using VirtualBox
-description: This article describes the local agent installation on VirtualBox.
+description: This article describes the local agent installation on VirtualBox (Deprecated).
 layout: article
 section: Local Agents
 order: 2
 category: local agents
 ---
+
+> This document is about the deprecated (from [20.31 release](/releases/2020-07-30)) local agents.
+> Please use our [new VPN agents](/getting-started/vpn-agent) instead.
+
 
 ## Description
 

@@ -1,12 +1,15 @@
 ---
-title: Local Agent
+title: Local Agent (Deprecated)
 layout: article
 section: Introduction
-description: This document provides the basic information on Local Agent and the way to get it in case you require one.
-order: 7
+description: This document provides the basic information on Local Agent and the way to get it in case you require one. Deprecated started from the platform release 20.31.
+order: 11
 since: 20191218
 category: intro
 ---
+
+> This document is about the deprecated (from [20.31 release](/releases/2020-07-30)) local agents.
+> Please use our [new VPN agents](vpn-agent) instead.
 
 This document provides the basic information on [Local Agent](#local-agent) and the [way to get it](#how-to-request-a-local-agent) in case you require one. Additionally, it contains some [technical details](#architecture) for those interested.
 

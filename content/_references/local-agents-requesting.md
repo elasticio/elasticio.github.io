@@ -1,11 +1,15 @@
 ---
 title: Requesting a Local Agent
-description: This article describes how to request a local agent for running it in your own resource using a Virtualization Machine (VM).
+description: This article describes how to request a local agent for running it in your own resource using a Virtualization Machine (VM) (Deprecated).
 layout: article
 section: Local Agents
 order: 1
 category: local agents
 ---
+
+> This document is about the deprecated (from [20.31 release](/releases/2020-07-30)) local agents.
+> Please use our [new VPN agents](/getting-started/vpn-agent) instead.
+
 
 This article describes how to request a [local agent](/getting-started/local-agent)
 for running it in your own resource using a Virtualization Machine (VM). Before
