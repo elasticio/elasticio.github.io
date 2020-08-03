@@ -7,14 +7,16 @@ icon: batch.png
 icontext: Batch component
 category: Batch component
 createdDate: 2019-05-07
-updatedDate: 2020-05-22
+updatedDate: 2020-07-31
 ---
 
 ## Latest changelog
 
-**0.0.4 (May 22, 2020)**
+**0.0.5 (July 31, 2020)**
 
-* Update Sailor to 2.6.7
+* Update Sailor to 2.6.14
+* Update node to v 14.5.0
+* Add option `Delete Batch After Retrieval` for trigger `Get ready batches`
 
 > To see the full **changelog** please use the following [link](/components/batch/changelog).
 
@@ -53,6 +55,8 @@ You need to split an integration logic into 2 parts. The first one should use th
 
 Emits all batches that are ready to be processed.
 
+![Get ready batches](img/get-ready-batches.png)
+
 #### Input fields description
 
 | Input field | Required | Description | Example |
@@ -61,6 +65,7 @@ Emits all batches that are ready to be processed.
 | Max records number in Batch | false | Maximum count of items in batch which makes batch ready for processing. Defaults to `100` | 10 |
 | Max size of Batch in bytes | false | Maximum bytes size of items in batch which makes batch ready for processing `1000000(1 MB)` | 500000 |
 | Correlation Id | true | Correlation Id between action and trigger. Correlation Id helps identify what collection of batches should be used | Flow1 |
+| Delete Batch After Retrieval | false | If checked, the batch will be deleted after emit | false |
 
 > **Important: Use the same configuration in action for correct batch processing**
 
@@ -69,6 +74,8 @@ Emits all batches that are ready to be processed.
 ### Add message to batch
 
 Stores a message in a batch and emits a created/updated batch with a processed item only.
+
+![Add message to batch](img/add-message-to-batch.png)
 
 #### Input fields description
 
@@ -86,7 +93,7 @@ Stores a message in a batch and emits a created/updated batch with a processed i
 
 Please be aware that the component is not responsible for maintaining batch data in the database.
 
-# Limitations
+## Limitations
 
 Version: 1.0.0
 
