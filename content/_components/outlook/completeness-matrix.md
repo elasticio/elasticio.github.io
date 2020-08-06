@@ -1,5 +1,5 @@
 ---
-title: Outlook component
+title: Component Completness Matrix
 layout: component
 description: Outlook component completness Matrix.
 icon: outlook.png
