@@ -75,6 +75,9 @@ Per one execution it is possible to poll 900 contacts.
 ### Poll for New Mail
 
 Triggers to poll all new mails from specified folder since last polling. Polling is provided by `lastModifiedDateTime` mail's property.
+
+![Poll for New Mail](img/poll-for-new-mail.png)
+
 Per one execution it is possible to poll 1000 mails by defaults, this can be changed by using environment variable `MAIL_RETRIEVE_MAX_COUNT`.
 
 #### List of Expected Config fields
@@ -118,6 +121,8 @@ The action creates event in specified calendar with specified options.
 ### Move Mail
 
 The action moves message with specified id from the original mail folder to a specified destination mail folder or soft-deletes message if the destination folder isn't specified.
+
+![Move Mail](img/move-mail.png)
 
 #### List of Expected Config fields
 
