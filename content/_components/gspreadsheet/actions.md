@@ -15,12 +15,35 @@ Action to create a new Google spreadsheet. This action is based on [Google Sprea
 The action needs a JSON instance of a [Spreadsheet](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets#Spreadsheet) object in order to create a new spreadsheet.
 All data structures and limitations are the same to Google API.
 
+![Create new Spreadsheet](img/create-new-spreadsheet.png)
+
+### Input fields:
+
+1. **Properties** - A group of fields used to describe a specific object. These fields are grouped together so that it is possible to map data into them while having an overview over the structure of the object.
+
+2. **namedRanges** - Group of fields used to describe a collection of objects of the same type. Mapping of collections has following limitations:
+  * It is only possible to map data from objects inside collections
+  * It is impossible to map properties from objects located in multiple collections
+  * Integrator mode is available only
+
+3. **developerMetadata** - Group of fields used to describe a collection of objects of the same type. Mapping of collections has following limitations:
+  * It is only possible to map data from objects inside collections
+  * It is impossible to map properties from objects located in multiple collections
+  * Integrator mode is available only
+
+4. **sheets** - Group of fields used to describe a collection of objects of the same type. Mapping of collections has following limitations:
+  * It is only possible to map data from objects inside collections
+  * It is impossible to map properties from objects located in multiple collections
+  * Integrator mode is available only
+
 ## Add Spreadsheet Row
 
 Action to create a new Google spreadsheet row. This action based on [Google Spreadsheets API v4](https://developers.google.com/sheets/api/reference/rest/).
 Adds an array of given values to a spreadsheet as a new row. Data would be inserted in the same order as provided in the input array.
 Data will be inserted into the last empty line, starting from the first table column.
 A datatype of inserted values will be the same as for JSON type (string, numeric or boolean). Use "" value to make cell empty.
+
+![Add Spreadsheet Row](img/add-spreadsheet-row.png)
 
 ### Input fields:
 

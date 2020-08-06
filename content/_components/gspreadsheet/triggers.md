@@ -14,18 +14,7 @@ updatedDate: 2020-03-20
 The  **New Spreadsheet Row** *trigger* reads the data in each row of a given Google Spreadsheet
 and passes it to the next stage of your integration flow.
 
-### The process
-
-First, the system reads all the rows from a given Google
-Spreadsheet and processes it further along with your designed integration flow. It will
-also create an initial state of your spreadsheet, we call it a ***snapshot***,
-in order to have something to compare with after your data is updated.
-
-After the initial read, any further requests for an update will be compared to this
-snapshot and in case any changes are detected they will be passed along with the integration
-flow as well. If `Select All Data` configuration property has value `Yes`, the system will read all the rows from a given Google
-Spreadsheet whenever flow processes the message.
-
+![Get Spreadsheet Row](img/get-spreadsheet-row.png)
 
 ### Input fields description
 
@@ -40,6 +29,18 @@ Spreadsheet whenever flow processes the message.
 > **IMPORTANT:** Using `Use first row/column as header` feature, you must be sure that header values are unique.
 
 Values from spreadsheets return as `UNFORMATTED_VALUE` [type](https://developers.google.com/sheets/api/reference/rest/v4/ValueRenderOption)
+
+### The process
+
+First, the system reads all the rows from a given Google
+Spreadsheet and processes it further along with your designed integration flow. It will
+also create an initial state of your spreadsheet, we call it a ***snapshot***,
+in order to have something to compare with after your data is updated.
+
+After the initial read, any further requests for an update will be compared to this
+snapshot and in case any changes are detected they will be passed along with the integration
+flow as well. If `Select All Data` configuration property has value `Yes`, the system will read all the rows from a given Google
+Spreadsheet whenever flow processes the message.
 
 ### Cases with ROWS dimension:
 
