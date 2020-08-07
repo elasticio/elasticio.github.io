@@ -1,7 +1,7 @@
 ---
-title: Changelog
+title: Outlook Changelog
 layout: component
-description: Changelog for Outlook Component.
+description: Changelog for Microsoft Outlook Component.
 icon: outlook.png
 icontext: Outlook component
 category: Outlook
