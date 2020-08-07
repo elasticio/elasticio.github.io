@@ -16,7 +16,12 @@ In oprder to authenticate, you need to retrieve an `apiKey` from your `SDL langu
 
 Guide of how to retrieve an [apiKey](https://languagecloud.sdl.com/translation-toolkit/api-documentation) (Getting started -> Generate API Key)
 
-## Actions information
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
+## Actions
 
 When specifying the language in a `Configure input` section, use two or three letter codes for that. For example,
 
@@ -32,27 +37,26 @@ Such codes can be foud in a result of `Retrieve supported language pairs` action
 
 ### Retrieve supported languages
 
-> will return a list of supported language pairs with specified three letters codes for every language
-
-out metadata can be found at `/lib/schemas/retrieveSupportedLanguages.out.json`
+Action will return a list of supported language pairs with specified three letters codes for every language
 
 ### Translate phrase
 
-> if source language is not specified, action will use `detect language` feature and choose most probable option as source language
+If source language is not specified, action will use `detect language` feature and choose most probable option as source language
 
-in/out metadata can be found at `/lib/schemas/translatePhrase.{in/out}.json`
+![Translate phrase](img/translate-phrase.png)
 
 ### Detect language
 
-in/out metadata can be found at `/lib/schemas/detectLanguage.{in/out}.json`
+![Detect language](img/detect-language.png)
 
 ### Translate object properties
 
-in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
+![Translate object properties](img/translate-object-properties.png)
 
 #### Usage example
 
 input message:
+
 ```
 {
     "sourceObject": {
@@ -63,20 +67,24 @@ input message:
     "targetLang": "de"
 }
 ```
+
 output message:
+
 ```
 {
     "hello": "Hallo Welt",
     "capital": "London ist die Hauptstadt von Großbritannien"
 }
 ```
+
 ### Translate array of objects
 
-in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
+![Translate array of objects](img/translate-array-of-objects.png)
 
 #### Usage example
 
 input message:
+
 ```
 {
 	"sourceArray": [
@@ -93,7 +101,9 @@ input message:
 	"targetLang": "de"
 }
 ```
+
 output message:
+
 ```
 {
     "translatedArray": [
