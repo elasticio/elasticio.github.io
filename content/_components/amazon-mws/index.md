@@ -7,27 +7,43 @@ icon: amazon-mws.png
 icontext: Amazon MWS component
 category: amazon-mws
 createdDate: 2014-09-12
-updatedDate: 2019-03-14
+updatedDate: 2020-08-11
 ---
+
+## Latest changelog
+
+**2.1.0 (August 10, 2020)**
+
+* Revitalize component
+* Add Get order action
+* Add Update Item action
+* Add Update order action
+
+> To see the full **changelog** please use the following [link](/components/amazon-mws/changelog).
 
 ## Description
 
 Data integration with Amazon enables high levels of selling automation, which can help sellers grow
 their business. Please visit [Amazon Marketplace Web Service (Amazon MWS) Documentation](http://docs.developer.amazonservices.com/en_UK/dev_guide/index.html) for more information.
 
-## How works
+### How works
 
 This Amazon MWS component can be used to connect your Amazon Seller account with
 other services.
 
-> If you intend to use the Amazon MWS API you must have an Amazon MWS-eligible seller account and you must register to use Amazon MWS. Please [visit Registering to use Amazon MWS](http://docs.developer.amazonservices.com/en_US/dev_guide/DG_Registering.html) page to choose your country applicable developers' page.
+> If you intend to use the Amazon MWS API you must have an Amazon MWS-eligible seller account and you must register to use Amazon MWS. Please [visit Registering to use Amazon MWS](http://docs.developer.amazonservices.com/en_US/dev_guide/DG_Registering.html) page to choose your country applicable developer's page.
+
+### Completeness Matrix
+
+The [component completeness](completeness-matrix) matrix gives the technical
+details about Salesforce objects this component covers.
 
 ## Credentials
 
 Here are the credentials necessary to authenticate with the Amazon MWS:
 
 *   `Seller ID` - your seller ID. Check [connecting the Amazon Seller account](#connecting-the-amazon-seller-account) for more.
-*   `MWS Auth Token` - a token associated with the ID. Check [connecting the Amazon Seller account](#connecting-the-amazon-seller-account) for more.
+*   `MWS Auth Token` - a token associated with the ID. Check [connecting the Amazon Seller account](#connecting-the-amazon-seller-account) for more. It is required but in some cases (e.g. when the seller and the developer are the same) it may not be needed. You can input any dummy value in this case (e.g. `test`).
 *   `Amazon MWS Secret Access Key` - your developer account **AWS Access Key ID**. Check [locating your developer keys](#locating-your-developer-keys) for more.
 *   `Amazon MWS Access Key` - your developer account **Secret Key**. Check [locating your developer keys](#locating-your-developer-keys) for more.
 *   `Amazon Marketplace ID` (Country specific) - the marketplace ID where you are connecting. To find the specific marketplace ID check the [Amazon MWS endpoints and Marketplace Id values](http://docs.developer.amazonservices.com/en_US/dev_guide/DG_Endpoints.html) documentation.
@@ -38,14 +54,16 @@ Please refer to the document [how to provide us access to your Amazon seller acc
 
 ### Environment variables
 
-None required.
+|Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|RESPONSE_CHECK_DELAY| false | Determines delay for requesting submit feed result | Default: `30000` |
 
 ## Triggers
 
 ### List Orders
 
 This trigger function will list the orders in your seller account based on the
-`Status` which can be selected from the drop-down menu with the following available values:
+**Status** - which can be selected from the drop-down menu with the following available values:
 
 ![List Orders](img/list-orders.png)
 
@@ -59,6 +77,21 @@ This trigger function will list the orders in your seller account based on the
 *   `InvoiceUnconfirmed (China only)` - all orders with status `invoice unconfirmed`, only specific to Chinese store
 
 ## Actions
+
+### Get Order
+
+Takes an array of Amazon Order IDs as an input and returns an array of orders for each order.
+
+![Get Order](img/get-order.png)
+
+Input sample:
+
+```json
+{
+  "amazonOrderIds": ["114-3808039-1650643", "114-3665772-3967461"]
+}
+```
+
 
 ### List Order Items
 
@@ -121,6 +154,86 @@ Action perform the following operations:
 *   `Upsert` - upsert the records
 *   `Delete` - delete the records
 *   `PartialUpdate` - update only one part of the records
+
+### Update Order
+
+This action is for updating 'Order' entities using submitting feed mechanism.
+The action includes mechanism for polling submit feed result.
+
+![Update Order](img/update-order.png)
+
+#### Input metadata
+
+Action requires an array with items description as input data
+
+```
+{
+    "type": "object",
+    "required": true,
+    "properties": {
+        "messages": {
+            "type": "array",
+            "required": true,
+            "items": {
+                "amazonOrderID": {
+                    "type": "string",
+                    "required": true
+                },
+                "merchantOrderID": {
+                    "type": "number",
+                    "required": true
+                },
+                "statusCode": {
+                    "type": "string",
+                    "required": true
+                },
+                "amazonOrderItemCode": {
+                    "type": "string",
+                    "required": true
+                },
+                "merchantOrderItemID": {
+                    "type": "number",
+                    "required": true
+                }
+            }
+        }
+    }
+}
+```
+
+### Update Item
+
+This action is for updating 'Item' entities en using submitting feed mechanism.
+The action includes mechanism for polling submit feed result.
+
+![Update Item](img/update-item.png)
+
+#### Input metadata
+
+Action requires an array with items description as input data
+
+```
+{
+    "type": "object",
+    "required": true,
+    "properties": {
+        "messages": {
+            "type": "array",
+            "required": true,
+            "items": {
+                "SKU": {
+                    "type": "string",
+                    "required": true
+                },
+                "Quantity": {
+                    "type": "number",
+                    "required": true
+                }
+            }
+        }
+    }
+}
+```
 
 ### Submit Inventory
 
