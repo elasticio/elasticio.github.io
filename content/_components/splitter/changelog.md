@@ -6,8 +6,13 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2020-01-02
-updatedDate: 2020-05-19
+updatedDate: 2020-08-11
 ---
+
+## 1.1.3 (August 11, 2020)
+
+* Update Sailor and dependencies.
+* Fix node version.
 
 ## 1.1.1 (May 19, 2020)
 
