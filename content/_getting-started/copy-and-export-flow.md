@@ -3,7 +3,7 @@ title: Copy and Export flow
 layout: article
 section: Platform Features
 description: This document provides basic information on how to copy and export flows.
-order: 6
+order: 10
 category: platform-features
 ---
 
@@ -36,14 +36,20 @@ You can export your flow from one workspace in to another the same contract. For
 
 ![Export flow](/assets/img/getting-started/copy-flow/export-flow.png)
 
-You need to select the destination workspace:
+You need to select the destination contract and workspace:
 
-![]()
+![Select Destination](/assets/img/getting-started/copy-flow/select-destination.png)
 
 You can choose a flow to **override** with this flow. If no flow to override is chosen, a new flow will be created:
 
 ![Override flow](/assets/img/getting-started/copy-flow/override-flow.png)
 
+> **Please Note:** When you override the flow, a draft will be created. The overridden flow will only be replaced with a exported flow when you publish a draft.
+
 A new flow with same name will be created in draft mode. You need to choose the credentials and publish the draft:
 
 ![Exported flow](/assets/img/getting-started/copy-flow/exported-flow.png)
+
+## API Endpoints
+
+You can use API endpoints with copy flow functionality. These endpoints are still in active development and should be regarded as experimental. Check our [API-docs documentation pages](https://api.elastic.io/docs/v2/#copy-flow-(experimental)) for more details.
