@@ -2,7 +2,7 @@
 title: Copy and Export flow
 layout: article
 section: Platform Features
-description: This document provides basic information on how to copy and export flows.
+description: This document explains how to copy and export your flows.
 order: 10
 category: platform-features
 ---
@@ -26,13 +26,13 @@ You need to enter the new flow name:
 
 ![Enter name](/assets/img/getting-started/copy-flow/enter-flow-name.png)
 
-A new flow with same name will be created in draft mode. You need to choose the credentials and publish the draft:
+An exact copy of the flow will be created in a draft mode. Then you can rename and publish the draft:
 
 ![Exported flow](/assets/img/getting-started/copy-flow/exported-flow.png)
 
 ## Export flows
 
-You can export your flow from one workspace in to another the same contract. For example you would like to export your flow from development to production workspace. Please note that the flow can be successfully exported only if the components used in it are visible in the target workspace.
+You can export your flow from one workspace in to another the same contract. For example you would like to export your flow from development to production workspace. Please note that the flow can be successfully exported only if the components used in it are accessible in the target workspace.
 
 ![Export flow](/assets/img/getting-started/copy-flow/export-flow.png)
 
@@ -44,7 +44,11 @@ You can choose a flow to **override** with this flow. If no flow to override is 
 
 ![Override flow](/assets/img/getting-started/copy-flow/override-flow.png)
 
-> **Please Note:** When you override the flow, a draft will be created. The overridden flow will only be replaced with a exported flow when you publish a draft.
+> **Please Note:** When you override the flow, a draft will be created. The overridden flow will only be replaced with a exported flow when you publish a draft. Your original flow is saved as a flow version and you can revert it back from a flow History section.
+
+If a flow you want to export contains components that use **topics** you have to choose a target topic to override which needs to be exported as well:
+
+![Choose topics](/assets/img/getting-started/copy-flow/choose-topics.png)
 
 A new flow with same name will be created in draft mode. You need to choose the credentials and publish the draft:
 
