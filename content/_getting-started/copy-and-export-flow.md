@@ -32,7 +32,7 @@ An exact copy of the flow will be created in a draft mode. Then you can rename a
 
 ## Export flows
 
-You can export your flow from one workspace in to another the same contract. For example you would like to export your flow from development to production workspace. Please note that the flow can be successfully exported only if the components used in it are accessible in the target workspace.
+You can export your flow from one workspace in to another. For example you would like to export your flow from development to production workspace. Please note that the flow can be successfully exported only if the components used in it are accessible in the target workspace.
 
 ![Export flow](/assets/img/getting-started/copy-flow/export-flow.png)
 
