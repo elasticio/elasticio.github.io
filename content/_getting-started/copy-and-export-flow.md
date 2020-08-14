@@ -11,12 +11,12 @@ category: platform-features
 
 We are introducing a new functionalities:
 
- * copy flows inside your workspace - [Copy flows](#copy-flows).
- * copy flows from one workspace to the another - [Export flows](#export-flows).
+ * Copy Flow inside your workspace - [Copy Flow](#copy-flows).
+ * Export Flow from one workspace to the another - [Export Flow](#export-flows).
 
 > **Please Note:** You must have at least Integrator level access in both workspaces for this to work.
 
-## Copy flows
+## Copy Flow
 
 You can copy your flow in the same workspace. For example you would like to create a new flow very similar to the existing one:
 
@@ -30,7 +30,7 @@ An exact copy of the flow will be created in a draft mode. Then you can rename a
 
 ![Exported flow](/assets/img/getting-started/copy-flow/exported-flow.png)
 
-## Export flows
+## Export Flow
 
 You can export your flow from one workspace in to another. For example you would like to export your flow from development to production workspace. Please note that the flow can be successfully exported only if the components used in it are accessible in the target workspace.
 
@@ -46,7 +46,7 @@ You can choose a flow to **override** with this flow. If no flow to override is 
 
 > **Please Note:** When you override the flow, a draft will be created. The overridden flow will only be replaced with a exported flow when you publish a draft. Your original flow is saved as a flow version and you can revert it back from a flow History section.
 
-If a flow you want to export contains components that use **topics** you have to choose a target topic to override which needs to be exported as well:
+If a flow you want to export contains components that use **Topics** you have to choose a target Topic to override which needs to be exported as well:
 
 ![Choose topics](/assets/img/getting-started/copy-flow/choose-topics.png)
 
