@@ -80,7 +80,6 @@ You can now see it in the list of repositories:
 
 >**Note:** As with the naming of the teams use letters, digits, `-` and `_` to name your repository.
 
-
 ### Manage the component repository
 
 To manage your repository click on the name to see the following page with details:
@@ -116,6 +115,32 @@ Here is the deployment history of the repository containing:
 *   Status of the build - green check mark means success. If the deployment failed it will show a red cross.
 *   State of the build - showing which build is the default.
 *   Log of the deployment - clicking the "View" button will open a pop-out window showing the log of that particular deployment.
+
+## Managing Environment variables
+
+To add these values as environment variables to the component repository on the platform please select **Developer Teams** on Navigation panel:
+
+![Navigate Developer Teams](/assets/img/developer-guide/team-repo/navigate-developer-teams.png)
+
+Then click on your Team:
+
+![Choose your Team](/assets/img/developer-guide/team-repo/choose-your-team.png)
+
+And find component you need:
+
+![Component you need](/assets/img/developer-guide/team-repo/component-you-need.png)
+
+In the component description you can see Environment variables field where you can configure them:
+
+![Configure here](/assets/img/developer-guide/team-repo/configure-here.png)
+
+Here you can create new Environment variables **(1)** or edit **(2)** and delete **(3)** existing one:
+
+![Manage env vars](/assets/img/developer-guide/team-repo/manage-env-vars.png)
+
+When you create Environment variables, please set name and value and click to **Add**:
+
+![Create env vars](/assets/img/developer-guide/team-repo/create-env-vars.png)
 
 ## Related links
 
