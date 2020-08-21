@@ -7,14 +7,14 @@ icon: csv.png
 icontext: CSV component
 category: CSV component
 createdDate: 2015-11-15
-updatedDate: 2020-07-05
+updatedDate: 2020-08-21
 ---
 
 ## Latest changelog
 
-**2.1.3 (June 5, 2020)**
+**2.1.4 (August 21, 2020)**
 
-* Fix `timeout is not a function` bug
+Minor asynchronicity improvement.
 
 > To see the full **changelog** please use the following [link](/components/csv/changelog).
 

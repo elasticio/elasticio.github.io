@@ -6,8 +6,12 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2020-01-02
-updatedDate: 2020-07-10
+updatedDate: 2020-08-25
 ---
+
+## 1.2.10 (August 25, 2020)
+
+* Fix `application/x-www-form-urlencoded` encoding bug
 
 ## 1.2.9 (July 10, 2020)
 
