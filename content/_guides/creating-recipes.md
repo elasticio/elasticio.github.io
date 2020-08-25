@@ -5,14 +5,34 @@ section: Recipes
 description: This document provides information on how to create a recipe, and how to use them.
 order: 1
 category: recipes
+redirect_from:
+  - /guides/creating-recipes.html#creating-recipes-from-existing-flows
 ---
 
-This document provides information on how to [create Recipes](#creating-recipes), [manage Recipes](#managing-recipes), and how to [use them to create Flows](#activate-a-recipe---create-a-flow). Additionally, it gives a small glimpse into the new [Recipes UI](#coming-soon-recipes-ui) that is in development.
+This document provides information on how to [create Recipes from UI](#creating-recipes-from-ui), [create recipes using API](#creating-recipes-using-api) and how to [manage Recipes using API](#managing-recipes-using-api).
 
 [Recipes](/getting-started/recipes) allow users to share [Flow](/getting-started/integration-flow) templates with others without disclosing their non-shareable data ([Credentials](/getting-started/credential), Fields, Variables).
 
 ​
-## Creating Recipes
+## Creating Recipes from UI
+
+Right now we are developing some stylish UI for Recipes functionality. At the moment, we are testing the way to create a Recipe via the UI:
+
+![Export Recipe](/assets/img/integrator-guide/creating-recipes/export-recipe.png)
+
+  **1.** This page shows the selected Recipe and its details. A dedicated button allows the user to activate it, opening the Recipe activation wizard:
+
+![Activate Recipe](/assets/img/integrator-guide/creating-recipes/activate-recipe.png)
+
+  **2.** Here you can setup your credentials for every step. You can verify(**1**), edit(**2**) or delete(**3**) credentials and choose credentials you need(**4**).:
+
+![Setup recipe](/assets/img/integrator-guide/creating-recipes/recipe-setup.png)
+
+  **3.**After that you have to click to "Finish" and new identical flow with the same name will be created:
+
+![New flow](/assets/img/integrator-guide/creating-recipes/new-flow.png)
+
+## Creating Recipes using API
 
 There are two ways to create a Recipe:
 ​
@@ -24,107 +44,10 @@ There are two ways to create a Recipe:
 
 To create a Recipe from a chosen Flow, use the following request, provided you have `workspaces.recipe.edit` permission:
 ​
-`POST {{site.data.tenant.apiBaseUri}}/v2/recipes/`     
-​
 
-Below are the request body parameters:
+`POST /v2/recipes/`
 
-| **Parameter** | **Required** | **Description** |
-|----------------------------------|--------------|---------------------------|
-| `type`                             | yes   | Allowed value: `recipe` |
-| `attributes.activation_config.variables` | no  | List of variables for steps|
-| `attributes.activation_config.credentials`   | no   | List of Credentials for steps  |
-| `attributes.marketplace_content.name` | yes    | Recipe name |
-| `attributes.marketplace_content.description` | yes   | Recipe description  |
-| `attributes.marketplace_content.short_description` | yes   | Recipe short description  |
-| `attributes.marketplace_content.help_text` | no   | Recipe help text  |
-| `attributes.flow_template.cron` | no   | CRON expression |
-| `attributes.flow_template.graph` | yes   | Recipe graph representing component connections  |
-| `relationships.workspace.data.id` | yes          | Workspace ID  |
-| `relationships.workspace.data.type` | yes          | Allowed value: `workspace`  |
-
-
-**EXAMPLE:**
-​
-```
-curl -X POST {{site.data.tenant.apiBaseUri}}/v2/recipes \
-  -u {EMAIL}:{APIKEY} \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/json' -d '
-  {
-    "data": {
-      "type": "recipe",
-      "attributes": {
-        "activation_config": {
-          "variables": [{
-            "title": "Email to fill a \"CC\" field",
-            "key": "cc"
-          }],
-          "credentials": [{
-            "description": "Credentials to access your Component",
-            "stepId": "step_1"
-          }]
-        },
-        "marketplace_content": {
-          "title": "My Recipe",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "help_text": "No setup required",
-          "tags": []
-        },
-        "flow_template": {
-          "cron": "*/3 * * * *",
-          "graph": {
-            "nodes": [
-              {
-                "name": "Step name",
-                "description": "Step description",
-                "command": "acmecore/petstore:getPetsByStatusWithGenerators@latest",
-                "fields": {
-                  "status": "pending"
-                },
-                "id": "step_1"
-              },
-              {
-                "name": "Step name",
-                "description": "Step description",
-                "command": "acmecore/email:send@latest",
-                "fields": {
-                  "dontThrowErrorFlg": true
-                },
-                "id": "step_2"
-              }
-            ],
-            "edges": [
-              {
-                "config": {
-                  "mapper_type": "jsonata",
-                  "mapper": {
-                    "to": "pets[0].name",
-                    "cc": "$getFlowVariables().cc",
-                    "subject": "pets[0].id",
-                    "textBody": "pets[0].status"
-                  },
-                  "condition": null
-                },
-                "source": "step_1",
-                "target": "step_2"
-              }
-            ]
-          }
-        }
-      },
-      "relationships": {
-        "workspace": {
-          "data": {
-            "type": "workspace",
-            "id": "{WORKSPACE_ID}"
-          }
-        }
-      }
-    }
-  }'
-```
+To see parameters and examples please visite [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-recipe-from-existing-flow).
 
 ### Creating Recipes from Scratch
 
@@ -221,7 +144,7 @@ curl '{{site.data.tenant.apiBaseUri}}/v2/recipes?workspace_id={WORKSPACE_ID}&pag
    -g -u {EMAIL}:{APIKEY}
 ```
 
-## Update a Recipe
+### Update a Recipe
 
 This resource allows you to update the given Recipe.
 
@@ -468,23 +391,3 @@ curl {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID} \
    -X DELETE \
    -u {EMAIL}:{APIKEY}
 ```
-
-## Coming Soon: Recipes UI
-
-Right now we are developing some stylish UI for Recipes functionality. At the moment, we are testing the way to activate a Recipe via the UI:
-
-1\. This page shows the selected Recipe and its details. A dedicated button allows the user to activate it, opening the Recipe activation wizard:
-
-![Recipe Activate UI](/assets/img/integrator-guide/creating-recipes/activate.png)
-
-2\. The wizard allows the user to enter all the data that is not contained in the Recipe itself. To start, we expand Global configuration **(1)**, fill in all the fields **(2)** and proceed with specific Component Credentials **(3)**. After each selection we press **Next** **(4)**:
-
-![Recipe Activate Wizard](/assets/img/integrator-guide/creating-recipes/enter-data.png)
-
-3\. After having entered all the data, the **Next** button becomes **Finish**. Click it to create the Flow:
-
-![Recipe Activate Finish](/assets/img/integrator-guide/creating-recipes/finish.png)
-
-4\. The Flow is ready:
-
-![Recipe to Flow](/assets/img/integrator-guide/creating-recipes/flow-ready.png)
