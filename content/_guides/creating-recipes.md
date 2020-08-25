@@ -55,37 +55,7 @@ To create a Recipe from a chosen Flow, use the following request, provided you h
 ​
 `POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/export-to-recipe`​
 
-
-Below are the request body parameters:
-​
-
-| **Parameter** | **Required** | **Description** |
-| `type`                              | yes          | Allowed value: `recipe`    |
-| `relationships.workspace.data.id`   | yes          | Workspace ID               |
-| `relationships.workspace.data.type` | yes          | Allowed value: `workspace` |
-
-
-**EXAMPLE:**
-​
-```
-curl -X POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/export-to-recipe \
-  -u {EMAIL}:{APIKEY} \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/json' -d '
-  {
-    "data": {
-      "type": "flow-export-to-recipe-config",
-      "relationships": {
-        "workspace": {
-          "data": {
-            "type": "workspace",
-            "id": "{WORKSPACE_ID}"
-          }
-        }
-      }
-    }
-  }'
-```
+To see parameters and examples please visite [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-recipe).
 
 ## Managing recipes
 
@@ -106,19 +76,7 @@ To retrieve a Recipe by its ID please use the following request, provided you ar
 
 `GET {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID}`
 
-
-Below are the request URL parameters:
-
-
-| **Parameter** | **Required** | **Description** |
-| `RECIPE_ID`                              | yes          | Recipe identifier    |
-
-**Example Request:**
-
-```
-curl {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID} \
-   -u {EMAIL}:{APIKEY}
-```
+To see parameters and examples please visite [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-a-recipe-by-id).
 
 ### Retrieve all Recipes
 
@@ -129,20 +87,7 @@ To retrieve all Recipes please use the following request:
 
 `GET {{site.data.tenant.apiBaseUri}}.io/v2/recipes/`
 
-
-Below are the request QUERY parameters:
-
-| **Parameter** | **Required** | **Description** |
-| `workspace_id` | yes          | An Id of the Workspace    |
-| `page[size]`    | no          | Amount of items per page. Default is `50`    |
-| `page[number]`   | no          | Number of page you want to display. Default is `1` |
-
-**Example Request:**
-
-```
-curl '{{site.data.tenant.apiBaseUri}}/v2/recipes?workspace_id={WORKSPACE_ID}&page[size]=2&page[number]=1' \
-   -g -u {EMAIL}:{APIKEY}
-```
+To see parameters and examples please visite [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-all-recipes).
 
 ### Update a Recipe
 
@@ -152,101 +97,7 @@ To update the given Recipe please use the following request, provided you have `
 
 `PATCH {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID}`
 
-Below are the request URL parameters:
-
-
-| **Parameter** | **Required** | **Description** |
-| `RECIPE_ID` | yes          | Recipe ID    |
-
-
-Below are the request BODY parameters:
-
-
-| **Parameter** | **Required** | **Description** |
-|----------------------------------|--------------|---------------------------|
-| `type`                             | yes   | Allowed value: `recipe` |
-| `attributes.activation_config.variables` | no  | List of variables for steps|
-| `attributes.activation_config.credentials`   | no   | List of Credentials for steps  |
-| `attributes.marketplace_content.name` | yes    | Recipe name |
-| `attributes.marketplace_content.description` | yes   | Recipe description  |
-| `attributes.marketplace_content.short_description` | yes   | Recipe short description  |
-| `attributes.marketplace_content.help_text` | no   | Recipe help text  |
-| `attributes.flow_template.cron` | no   | CRON expression |
-| `attributes.flow_template.graph` | yes   | Recipe graph representing component connections  |
-| `relationships.workspace.data.id` | yes          | Workspace ID  |
-| `relationships.workspace.data.type` | yes          | Allowed value: `workspace`  |
-
-
-**Example Request:**
-
-
-```
-curl {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID} \
-  -X PATCH \
-  -u {EMAIL}:{APIKEY} \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/json' -d '
-   {
-     "data": {
-       "id": "{RECIPE_ID}",
-       "type": "recipe",
-       "attributes": {
-         "activation_config": {
-           "variables": [{
-             "title": "Email to fill a \"CC\" field",
-             "key": "emailCc"
-           }]
-         },
-         "marketplace_content": {
-           "title": "My Recipe",
-           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-           "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-           "help_text": "No setup required",
-           "tags": []
-         },
-         "flow_template": {
-           "cron": "*/3 * * * *",
-           "graph": {
-             "nodes": [
-               {
-                 "name": "New name",
-                 "description": "New description",
-                 "command": "{{site.data.tenant.name}}/petstore:getPetsByStatusWithGenerators@latest",
-                 "id": "step_1"
-               },
-               {
-                 "name": "New name",
-                 "description": "New description",
-                 "command": "{{site.data.tenant.name}}/email:send@latest",
-                 "fields": {
-                   "dontThrowErrorFlg": true
-                 },
-                 "id": "step_2"
-               }
-             ],
-             "edges": [
-               {
-                 "config": {
-                   "mapper_type": "jsonata",
-                   "mapper": {
-                     "to": "pets[0].name",
-                     "cc": "$getFlowVariables().emailCc",
-                     "subject": "pets[0].id",
-                     "textBody": "pets[0].status"
-                   },
-                   "condition": null
-                 },
-                 "source": "step_1",
-                 "target": "step_2"
-               }
-             ]
-           }
-         }
-       }
-     }
-   }'
-```
-
+To see parameters and examples please visite [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#update-a-recipe).
 
 ### Update a Recipe visibility
 
@@ -266,34 +117,7 @@ This request is authorized depend on specified visibility level for a user that 
 
  * to `workspace` if user has permission `workspaces.recipe.edit`
 
-Below are the request URL parameters:
-
-
-| **Parameter** | **Required** | **Description** |
-| `RECIPE_ID` | yes          | Recipe ID    |
-
-
-Below are the request BODY parameters:
-
-
-| **Parameter** | **Required** | **Description** |
-| `visibility` | yes          | Recipe sharing mode. Value must be one of `workspace`, `contract`, `tenant` or `global`    |
-
-**Example Request:**
-
-```
-curl {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID}/visibility \
-  -X PATCH \
-  -u {EMAIL}:{APIKEY} \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/json' -d '
-   {
-     "data": {
-       "visibility": "contract"
-     }
-   }
-```
-
+To see parameters and examples please visite [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#update-a-recipe-visibility).
 
 ### Activate a Recipe - create a flow
 
@@ -303,68 +127,7 @@ To activate a Recipe please use the following request, provided you have `worksp
 
 `POST {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID}/activate`
 
-Below are the request URL parameters:
-
-
-| **Parameter** | **Required** | **Description** |
-| `RECIPE_ID` | yes          | Recipe ID    |
-
-Below are the request BODY parameters:
-
-
-| **Parameter** | **Required** | **Description** |
-|----------------------------------|--------------|---------------------------|
-| `type` | yes   |A value must be `recipe-activation-config` |
-| `attributes.name` | no  | Flow name|
-| `attributes.credentials`   | no   | Specify component credentials if needed  |
-| `attributes.variables` | yes    | Specify values for variables which were defined in Recipe for mapping |
-| `attributes.fields` | no   | Specify fields for Recipe steps |
-| `relationships.workspace.data.id` | yes          | Workspace ID  |
-| `relationships.workspace.data.type` | yes          | Allowed value: `workspace`  |
-
-
-**Example Request:**
-
-```
-curl {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID}/activate \
-   -X POST \
-   -u {EMAIL}:{APIKEY} \
-   -H 'Accept: application/json' \
-   -H 'Content-Type: application/json' -d '
-   {
-     "data": {
-       "type": "recipe-activation-config",
-       "attributes": {
-         "name": "Flow, created from Recipe",
-         "description": "Recipe description",
-         "credentials": {
-           "step_1": "{CREDENTIAL_ID}"
-         },
-         "variables": {
-           "TO_EMAIL": "goose@example.com",
-           "NAME_IN_SUBJECT": "Neochen Jubata"
-         },
-         "fields": {
-           "step_1": {
-             "code": "console.log(message)"
-           },
-           "step_3":  {
-             "email": "email@example.com"
-           }
-         }
-       },
-       "relationships": {
-         "workspace": {
-           "data": {
-             "type": "workspace",
-             "id": "{WORKSPACE_ID}"
-           }
-         }
-       }
-     }
-   }'
-```
-
+To see parameters and examples please visite [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#activate-a-recipe).
 
 ### Delete a Recipe
 
@@ -375,19 +138,4 @@ To delete a Recipe please use the following request:
 
 `DELETE {{site.data.tenant.apiBaseUri}}/v2/recipe/{RECIPE_ID}`
 
-
-Below are the request URL parameters:
-
-
-| **Parameter** | **Required** | **Description** |
-| `RECIPE_ID` | yes          | Recipe ID    |
-
-
-**Example Request:**
-
-
-```
-curl {{site.data.tenant.apiBaseUri}}/v2/recipes/{RECIPE_ID} \
-   -X DELETE \
-   -u {EMAIL}:{APIKEY}
-```
+To see parameters and examples please visite [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#delete-a-recipe).
