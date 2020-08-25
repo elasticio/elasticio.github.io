@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% if site.data.tenant.name == "elastic.io" %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-19509666-11"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-19509666-11');
+  </script>
+  {% endif %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{{site.data.tenant.name}} Documentation | {{page.title}}</title>
     <meta name="description" content="{{page.description}}"/>
