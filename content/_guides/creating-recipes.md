@@ -24,11 +24,19 @@ Right now we are developing some stylish UI for Recipes functionality. At the mo
 
 ![Activate Recipe](/assets/img/integrator-guide/creating-recipes/activate-recipe.png)
 
-  **2.** Here you can setup your credentials for every step. You can verify(**1**), edit(**2**) or delete(**3**) credentials and choose credentials you need(**4**).:
+  **2.** First you have to specify Contract and Workspace to which the Recipe will be activated:
+
+![Contract and Workspace](/assets/img/integrator-guide/creating-recipes/specify.png)  
+
+  The recipe visibility depends on your access level. If your access level is not high enough, you will be notified about this during recipe configuration:
+
+![Visibility](/assets/img/integrator-guide/creating-recipes/visibility.png)  
+
+  **3.** Here you can setup your credentials for every step. You can verify(**1**), edit(**2**) or delete(**3**) credentials and choose credentials you need(**4**):
 
 ![Setup recipe](/assets/img/integrator-guide/creating-recipes/recipe-setup.png)
 
-  **3.**After that you have to click to "Finish" and new identical flow with the same name will be created:
+  **4.**After that you have to click to "Finish" and new identical flow with the same name will be created:
 
 ![New flow](/assets/img/integrator-guide/creating-recipes/new-flow.png)
 
