@@ -6,7 +6,7 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-03-17
-updatedDate: 2020-03-17
+updatedDate: 2020-08-26
 ---
 
 ## Query action
@@ -187,7 +187,7 @@ Field "Logical operator" - one of the following: "AND", "OR";
 
 Output data is an object, with a field "results" that is an array of objects.
 
-## Bulk Create/Update/Delete action
+## Bulk Create/Update/Delete/Upsert action
 
 Bulk API provides a simple interface for quickly loading large amounts of data from CSV file into Salesforce (up to 10'000 records).
 
@@ -211,9 +211,14 @@ Result is an object with a property **result**: `array`. It contains objects wit
 
 * **errors** - `array`, if operation failed contains description of errors
 
+### Metadata description
+
+* **External ID Field** - a name of the External ID field for `Upsert` operation. E.g. `my_external_id__c`
+
 ### Limitations
 
-* No errors thrown in case of failed Object Create/Update/Delete (`"success": "false"`).
+* No errors thrown in case of failed Object Create/Update/Delete/Upsert (`"success": "false"`).
+* External ID is needed for Upsert.
 * Object ID is needed for Update and Delete.
 * Salesforce processes up to 10'000 records from the input CSV file.
 
