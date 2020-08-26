@@ -50,6 +50,8 @@ If a flow you want to export contains components that use **Topics** you have to
 
 ![Choose topics](/assets/img/getting-started/copy-flow/choose-topics.png)
 
+> **Please Note**: If the flow has more than one pub/sub Topic we will not copy topics into destination flow.
+
 A new flow with same name will be created in draft mode. You need to choose the credentials and publish the draft:
 
 ![Exported flow](/assets/img/getting-started/copy-flow/exported-flow.png)
