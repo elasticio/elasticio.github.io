@@ -7,22 +7,16 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2019-06-27
-updatedDate: 2020-03-26
+updatedDate: 2020-08-26
 ---
 
 ## Latest changelog
 
-**1.3.3 (May 8, 2020)**
+**1.3.5 (August 21, 2020)**
 
-* Fix bug with 1,000 objects limit in actions:
-  - Query
-  - Lookup Object
-  - Lookup Objects
-
-  and trigger:
-  - Get New and Updated Objects Polling.
-
-  New configuration field Max Fetch Count added to configure the limit.
+* Update `Bulk Create/Update/Delete` action:
+   - now it supports `Bulk Upsert` feature
+   - fix bug `404 - File's metadata is not found`
 
 > To see the full **changelog** please use the following [link](/components/salesforce/changelog).
 
@@ -133,7 +127,7 @@ Use this list to navigate to the action you seek.
   6. [Lookup Objects action](/components/salesforce/actions#lookup-objects-action)                                                                    
   Lookup a list of objects satisfying specified criteria.
 
-  7. [Bulk Create/Update/Delete action](/components/salesforce/actions#bulk-createupdatedelete-action)                                                         
+  7. [Bulk Create/Update/Delete/Upsert action](/components/salesforce/actions#bulk-createupdatedeleteupsert-action)                                                         
   Bulk API provides a simple interface for quickly loading large amounts of data from CSV file into Salesforce.
 
   8. [Bulk Query action](/components/salesforce/actions#bulk-query-action)        

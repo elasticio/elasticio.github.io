@@ -6,8 +6,18 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-01-02
-updatedDate: 2020-05-08
+updatedDate: 2020-08-26
 ---
+
+## 1.3.5 (August 21, 2020)
+
+* Update `Bulk Create/Update/Delete` action:
+   - now it supports `Bulk Upsert` feature
+   - fix bug `404 - File's metadata is not found`
+
+## 1.3.4 (May 8, 2020)
+
+* Hotfix: removed `Max Fetch Count` field from Query trigger, as it does not work
 
 ## 1.3.3 (May 8, 2020)
 
@@ -19,7 +29,7 @@ updatedDate: 2020-05-08
   and trigger:
   - Get New and Updated Objects Polling.
 
-New configuration field Max Fetch Count added to configure the limit.
+New configuration field `Max Fetch Count` added to configure the limit.
 
 ## 1.3.2 (March 26, 2020)
 
