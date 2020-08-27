@@ -73,11 +73,11 @@ You can even create a new credential using the plus sign if you need.
 
 There are two ways to create a Recipe:
 ​
-- [From an existing integration Flow](#creating-recipes-from-flows)
-​
-- [From scratch](#creating-recipes-from-scratch)
+*   [Creating Recipes from scratch](#creating-recipes-from-scratch)
+*   [Creating Recipes from an existing flow](#creating-recipes-from-existing-flow)
 
-### Creating Recipes
+
+### Creating Recipes from scratch
 
 You can create a Recipe from scratch provided you have `workspaces.recipe.edit` permission:
 
@@ -87,7 +87,7 @@ POST /v2/recipes/
 
 To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-recipe).
 
-### Creating Recipes from a flow
+### Creating Recipes from an existing flow
 
 To create a Recipe from a chosen Flow, use the following request, provided you have `workspaces.recipe.edit` permission:
 ​
