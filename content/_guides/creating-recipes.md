@@ -69,6 +69,12 @@ You can even create a new credential using the plus sign if you need.
 
 ![New flow](/assets/img/integrator-guide/creating-recipes/new-flow.png)
 
+## Recipe with Topics
+
+When you want to activate a Recipe based on the Flow with Topics you have to follow the steps described in [Creating And Activating Recipes from UI](#creating-and-activating-recipes-from-ui). However, there is one important difference from a recipe with topics from a recipe without topics - a recipe using topics can only be activated within one workspace. You can see this limitation in the example flow based on [PubSub component](/components/pub-sub/index):
+
+![Recipe with Topic](/assets/img/integrator-guide/creating-recipes/recipe-topic.png)
+
 ## Creating Recipes using API
 
 There are two ways to create a Recipe:
