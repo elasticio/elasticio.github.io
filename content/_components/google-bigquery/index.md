@@ -1,5 +1,5 @@
 ---
-title: Google BigQuery Changelog
+title: Google BigQuery Component
 layout: component
 section: Database components
 description: Integration component to interact with Google BigQuery.
