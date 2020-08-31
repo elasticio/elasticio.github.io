@@ -15,11 +15,11 @@ Custom Error Handler is a feature which gives you a possibility to send all impo
 
 ## How works
 
-To create an Custom Error Handler for your flow you have to switch to draft mode and click to **"Add Error handling"** button:
+To create an Custom Error Handler for your flow please switch to draft mode and click to **"Add Error handling"** button:
 
 ![Add Error handling](/assets/img/integrator-guide/custom-error-handler/add-error-handling.png)
 
-Then you have to choose a component you want to use to handle flow errors:
+Then choose a component you want to use to handle flow errors:
 
 ![Choose component](/assets/img/integrator-guide/custom-error-handler/choose-component.png)
 
