@@ -33,11 +33,11 @@ Local Agents require extensive on-premise compute and storage resources. Before 
 
 To request a Local agent, go to navigational menu and click *Agents*:
 
-![Local Agent Step 1](/assets/img/getting-started/local-agent/Screenshot_1.png)
+![Local Agent Step 1](/assets/img/getting-started/local-agent/agent-menu.png)
 
 Then click "*+ Request an agent*" button:
 
-![Local Agent Step 2](/assets/img/getting-started/local-agent/Screenshot_2.png)
+![Local Agent Step 2](/assets/img/getting-started/local-agent/create-an-agent.png)
 
 Our support will process your request and provide you with everything required to install and run a Local Agent.
 
