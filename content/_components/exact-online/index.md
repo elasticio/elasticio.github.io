@@ -7,19 +7,18 @@ icon: exact-online.png
 icontext: Exact Online component
 category: Exact Online
 createdDate: 2018-09-06
-updatedDate: 2019-07-04
+updatedDate: 2020-09-11
 ---
 
 ## Latest changelog
 
-**1.0.1 (January 3, 2020)**
+**1.1.0 (September 11, 2020)**
 
-* Refactor to use built in logger
-* Change build type to docker
-* Update Sailor to version 2.5.4
-* Remove `^` from dependencies
+* Bump dependencies
+* Add option to credentials to select country
+* Bump node version
 
-> To see the full **changelog** please use the following [link](/components/exact-online/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -43,7 +42,11 @@ Here are the credentials necessary to authenticate the component with the Exact 
 
 Information about how to retrieve OAuth keys is described in the [Register an app](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Process-appcenter-eol-appcenter-dev-registerapp-p) document.
 
-The `Application Client Id` and `Application Client Secret` keys could be found [here](https://apps.exactonline.com/be/nl-BE/V2/Manage) where you should choose API.
+The `Application Client Id` and `Application Client Secret` keys could be found here : https://apps.exactonline.com/be/nl-BE/V2/Manage.
+
+> **Please Note:** you should choose the appropriate country.
+
+For each country, the Exact Online solution is deployed on a separate site. Because of this, the Exact Online server URL is country dependent. When configuring your credentials, the OAuth keys need to be configured for the same country as your store.
 
 ## Working with dynamic metadata
 
