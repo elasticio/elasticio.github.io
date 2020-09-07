@@ -54,7 +54,8 @@ with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{si
 **5.** ``Delay`` - If you want to slow down requests to your API you can set delay value (in seconds) and the component will delay calling the next request after the previous request.
 Time for the delay is calculated as `Delay`/ `Call Count` and shouldn't be more than 1140 seconds (19 minutes due to platform limitation).
 The `Call Count` value by default is 1. If you want to use another value, please set the `Call Count` field.
->Notice: See [Known Limitations](/components/rest-api/index#known-limitations) about `Delay` value.
+
+>**Notice:** See [Known Limitations](/components/rest-api/index#known-limitations) about `Delay` value.
 
 **6.** ``Call Count`` - the field should be used only in pair with `Delay`, default to 1.
 
@@ -73,7 +74,7 @@ You must the authorisation methods during the integration flow design or by
 navigating to your `Integrate > Credentials > REST API` from the main menu and
 adding there. REST API component supports 4 authorisation types.
 
-> **Please note** that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the [headers section directly](#defining-http-headers).
+> **Please note:** The result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the [headers section directly](#defining-http-headers).
 
 ### No Auth
 
@@ -84,7 +85,7 @@ to Verify it, just Save it and proceed further.
 
 Use **Basic Auth** to provide login credentials like **username/password**.
 
-> Please note: If you intend to make calls to our own API then you MUST use this method. Use your email address as username and your API-Key as a password.
+> **Please note:** If you intend to make calls to our own API then you MUST use this method. Use your email address as username and your API-Key as a password.
 
 ### API Key Auth
 
@@ -118,6 +119,8 @@ There are six configuration fields here from which four are mandatory:
 
 In a REST API component the trigger and action perform the same function - HTTP request witch will send a `GET`/`POST`/`PUT`/`PATCH`/`DELETE` requests and parse the response back to the flow.
 
+> For more details you can see the [usage example](/components/rest-api/usage-example).
+
 ## Defining request body
 
 The body may be defined if the HTTP method is not `GET`. The **body** tab enables
@@ -136,7 +139,6 @@ Here is the list of all supported **content types**:
 The **body input field** changes according to the chosen content type.
 
 >**Notes:**
-
 1.  **Response body** will be stored in `msg.body`
 2.  Request body that causes empty response body will return `{}`
 
@@ -179,7 +181,8 @@ In both cases the payload gets transmitted in the message body.
 In case of `application/x-www-form-urlencoded` content type add the necessary parameters by giving the name and the values like:
 
 ![Sending form data](img/sending-form-data.png "REST API component Body sending a simple form")
-*Please note that parameter value fields support [JSONata](http://jsonata.org) expressions.*
+
+> **Please note:** the parameter value fields support [JSONata](http://jsonata.org) expressions.*
 
 This HTTP request would submit `key1=value1&key2=value2` in the message body.
 
@@ -249,7 +252,7 @@ Each header has a name and a value. Header name should be colon-separated
 name-value pairs in clear-text `string` format. The header value can use
 [JSONata](http://jsonata.org/) expressions.
 
-> **Note: HTTP Response headers** will not be stored, the components stores body and attachment only.
+> **Please note: HTTP Response headers** will not be stored, the components stores body and attachment only.
 
 ## Attachments
 
@@ -284,7 +287,7 @@ There are:
 * text/xml
 * etc.
 
-> If content type is not indicated in response header, component will try parse response as json. If it get parse exception, it return response as is.
+> **Please note:** if content type is not indicated in response header, component will try parse response as json. If it get parse exception, it return response as is.
 
 **2.** Attachments limitations:
 
