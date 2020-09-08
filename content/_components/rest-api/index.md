@@ -27,15 +27,15 @@ with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{si
 
 *Numbers show: (1) The URL and method of the REST API resource, (2) the HTTP call headers, (3) configuration options (4) follow redirect mode, (5) delay, (6) call count and (7) request timeout.*
 
-1.  HTTP methods and URL
+**1.**  HTTP methods and URL
  * REST API component supports the following HTTP methods: `GET`, `PUT`, `POST`, `DELETE` and `PATCH`.
  * The URL of the REST API resources. Accepts JSONata expressions, meaning the URL address evaluates [JSONata](http://jsonata.org/) expressions.
 
-2. Request Headers and Body
+**2.** Request Headers and Body
  * Definition of request [headers](#defining-http-headers)
  * Definition of request [body](#defining-http-body), if the HTTP method is not `GET`
 
-3. Configuration options
+**3.** Configuration options
  * ``Don`t throw Error on Failed Calls`` - if enabled return error, error code and stacktrace in message body otherwise throw error in flow.
  * ``Split Result if it is an Array`` - if enabled and response is array, creates message for each item of array. Otherwise create one message with response array.  
  * ``Retry on failure`` - enabling [rebound](https://support.elastic.io/support/solutions/articles/14000044750-why-and-where-we-use-the-rebound-) feature for following HTTP status codes:
@@ -49,57 +49,18 @@ with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{si
     - DNS lookup timeout
  * ``Do not verify SSL certificate (unsafe)`` - disable verifying the server certificate - **unsafe**.
 
-4. ``Follow redirect mode`` - If you want disable Follow Redirect functionality, you can use option ``Follow redirect mode``.By default ``Follow redirect mode`` option has value ``Follow redirects``.
+**4.** ``Follow redirect mode`` - If you want disable Follow Redirect functionality, you can use option ``Follow redirect mode``.By default ``Follow redirect mode`` option has value ``Follow redirects``.
 
-5. ``Delay`` - If you want to slow down requests to your API you can set delay value (in seconds) and the component will delay calling the next request after the previous request.
+**5.** ``Delay`` - If you want to slow down requests to your API you can set delay value (in seconds) and the component will delay calling the next request after the previous request.
 Time for the delay is calculated as `Delay`/ `Call Count` and shouldn't be more than 1140 seconds (19 minutes due to platform limitation).
 The `Call Count` value by default is 1. If you want to use another value, please set the `Call Count` field.
-Notice: See [Known Limitations](#known-limitations) about `Delay` value.
 
-6. ``Call Count`` - the field should be used only in pair with `Delay`, default to 1.
+>**Notice:** See [Known Limitations](/components/rest-api/index#known-limitations) about `Delay` value.
 
-7. ``Request timeout`` - Timeout period in milliseconds (1-1140000) while component waiting for server response, also can be configured with REQUEST_TIMEOUT environment variable if configuration field is not provided. Defaults to 100000 (100 sec).
-Notice: Specified for component REQUEST_TIMEOUT enviroment variable would be overwritten by specified value of Request timeout, default value would be also overwritten
+**6.** ``Call Count`` - the field should be used only in pair with `Delay`, default to 1.
 
-## Triggers
-
-### HTTP request
-
-Trigger will send a `GET`/`POST`/`PUT`/`DELETE` HTTP requests and parse the
-response back to the flow.
-
-### Fields
-
-*   Don't throw Error on Failed Calls
-*   Split Result if it is an Array
-  > **Note:** After making the request, and applying the above JSONata expression, if the result is an array and this box is checked, we will emit one message for each element of the array.
-
-*   Retry on failure
-
-* Do not verify SSL certificate(unsafe)
-  > **Note:** Unsafe option! Check it if you want to disable SSL certificate verification on the server.
-
-For more information please see [Introduction](#introduction).
-
-## Actions
-
-### Fields
-
-*   Don't throw Error on Failed Calls
-*   Split Result if it is an Array
-    > **Note:** After making the request, and applying the above JSONata expression, if the result is an array and this box is checked, we will emit one message for each element of the array.
-
-*   Retry on failure
-
-* Do not verify SSL certificate(unsafe)
-  > **Note:** Unsafe option! Check it if you want to disable SSL certificate verification on the server.
-
-For more information please see [Introduction](#introduction).
-
-### HTTP request
-
-Action will send a `GET`/`POST`/`PUT`/`DELETE` HTTP request and parse the
-response back to the flow.
+**7.** ``Request timeout`` - Timeout period in milliseconds (1-1140000) while component waiting for server response, also can be configured with REQUEST_TIMEOUT environment variable if configuration field is not provided. Defaults to 100000 (100 sec).
+Notice: Specified for component REQUEST_TIMEOUT environment variable would be overwritten by specified value of Request timeout, default value would be also overwritten.
 
 ## Authorisation methods
 
@@ -113,7 +74,7 @@ You must the authorisation methods during the integration flow design or by
 navigating to your `Integrate > Credentials > REST API` from the main menu and
 adding there. REST API component supports 4 authorisation types.
 
-> **Please note** that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the [headers section directly](#defining-http-headers).
+> **Please note:** The result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the [headers section directly](#defining-http-headers).
 
 ### No Auth
 
@@ -124,7 +85,7 @@ to Verify it, just Save it and proceed further.
 
 Use **Basic Auth** to provide login credentials like **username/password**.
 
-> Please note: If you intend to make calls to our own API then you MUST use this method. Use your email address as username and your API-Key as a password.
+> **Please note:** If you intend to make calls to our own API then you MUST use this method. Use your email address as username and your API-Key as a password.
 
 ### API Key Auth
 
@@ -154,17 +115,11 @@ There are six configuration fields here from which four are mandatory:
 *   Additional parameters - A comma-separated list of any additional parameters that your case requires. For example `prompt:consent, access_type:offline` could be given.
 
 
-## Defining HTTP headers
+## Trigger & Action
 
-Use this section to add the request headers.
+In a REST API component the trigger and action perform the same function - HTTP request witch will send a `GET`/`POST`/`PUT`/`PATCH`/`DELETE` requests and parse the response back to the flow.
 
-![HTTP Headers](img/http-headers.png "REST API component Headers field")
-
-Each header has a name and a value. Header name should be colon-separated
-name-value pairs in clear-text `string` format. The header value can use
-[JSONata](http://jsonata.org/) expressions.
-
-> **Note: HTTP Response headers** will not be stored, the components stores body and attachment only.
+> For more details you can see the [usage example](/components/rest-api/usage-example).
 
 ## Defining request body
 
@@ -184,7 +139,6 @@ Here is the list of all supported **content types**:
 The **body input field** changes according to the chosen content type.
 
 >**Notes:**
-
 1.  **Response body** will be stored in `msg.body`
 2.  Request body that causes empty response body will return `{}`
 
@@ -227,7 +181,8 @@ In both cases the payload gets transmitted in the message body.
 In case of `application/x-www-form-urlencoded` content type add the necessary parameters by giving the name and the values like:
 
 ![Sending form data](img/sending-form-data.png "REST API component Body sending a simple form")
-*Please note that parameter value fields support [JSONata](http://jsonata.org) expressions.*
+
+> **Please note:** the parameter value fields support [JSONata](http://jsonata.org) expressions.*
 
 This HTTP request would submit `key1=value1&key2=value2` in the message body.
 
@@ -287,6 +242,18 @@ In this case output structure of component will be:
     }
 ```
 
+### Defining HTTP headers
+
+Use this section to add the request headers.
+
+![HTTP Headers](img/http-headers.png "REST API component Headers field")
+
+Each header has a name and a value. Header name should be colon-separated
+name-value pairs in clear-text `string` format. The header value can use
+[JSONata](http://jsonata.org/) expressions.
+
+> **Please note: HTTP Response headers** will not be stored, the components stores body and attachment only.
+
 ## Attachments
 
 Rest API component has opportunity of binary data sending. You just need choose
@@ -320,7 +287,7 @@ There are:
 * text/xml
 * etc.
 
-> If content type is not indicated in response header, component will try parse response as json. If it get parse exception, it return response as is.
+> **Please note:** if content type is not indicated in response header, component will try parse response as json. If it get parse exception, it return response as is.
 
 **2.** Attachments limitations:
 
