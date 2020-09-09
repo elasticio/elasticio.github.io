@@ -55,15 +55,33 @@ A datatype of inserted values will be the same as for JSON type (string, numeric
         * There should be at least one value in first row;
         * Values in first row cells must be distinct;
         * There should be no empty cells in first row;
-    * Array Based: generates input for array of `values`. Array mapped to `values` is going to be inserted as first row. [schema](/schemas/createSpreadsheetRow.in.json)
+    * Array Based: generates input for array of `values`. Array mapped to `values` is going to be inserted as first row.
 
 #### Common Errors
 
-1. Input Mode: "First Row As Headers" requires first row to have at least one cell with value. - check there are at least one non-empty cell in first row.
+Input Mode: "First Row As Headers".
 
-2. Input Mode: "First Row As Headers" requires cells in first row to be not empty. - check there are no empty cells in between in first row.
+**1.** Requires first row to have at least one cell with value:
 
-3. Input Mode: "First Row As Headers" requires cells in first row to be unique. - check values in first row are distinct.
+![Error 1](img/error1.png)
+
+Please check there is at least one non-empty cell in first row.
+
+**2.**  Requires cells in first row to be not empty:
+
+![Error 2](img/error2.png)
+
+Please check there are no empty cells **in between** in first row:
+
+![Error 2 example](img/error2_example.png)
+
+**3.**  Requires cells in first row to be unique:
+
+![Error 3](img/error3.png)
+
+Please check values in first row are distinct:
+
+![Error 3 example](img/error3_example.png)
 
 ## Add Row(deprecated)
 
