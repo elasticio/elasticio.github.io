@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: Google Spreadsheets Changelog
 layout: component
 description: Changelog for Google Spreadsheets component
 icon: gspreadsheet.png

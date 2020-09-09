@@ -57,6 +57,10 @@ The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ '
 |`ACCESS_KEY_SECRET`| false | For integration-tests is required to specify this variable |  |
 |`REGION`  | false | For integration-tests is required to specify this variable |  |
 
+### Completeness Matrix
+
+The [component completeness](completeness-matrix) matrix gives the technical
+details about Salesforce objects this component covers.
 
 ## Credentials
 

@@ -17,7 +17,7 @@ updatedDate: 2020-06-16
 * Change OAuth variables naming
 * Improve documentation
 
-> To see the full **changelog** please use the following [link](/components/gspreadsheet/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Requirements
 
@@ -46,12 +46,15 @@ Following environment are required:
  - `TENANT_DOMAIN` - your Google API tenant domain
  - `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
 
-
  To get these please use the [Google Developers Console](https://console.developers.google.com). As a callback please use `https://your-tenant.address/callback/oauth2`.
 
  Recommended environment variable:
 
  - `EIO_REQUIRED_RAM_MB` - recommended value of allocated memory is `512` MB
+
+### Completeness Matrix
+
+The [component completeness](completeness-matrix) matrix gives the technical details about Salesforce objects this component covers.
 
 ## Credentials
 
@@ -64,16 +67,13 @@ platform to access your Spreadsheets.
 
 Google Spreadsheets component includes the following triggers:
 
-1. [Get Spreadsheet Row trigger](/components/gspreadsheet/triggers#get-spreadsheet-row)                                                                            
-The New Spreadsheet Row trigger reads the data in each row of a given Google Spreadsheet and passes it to the next stage of your integration flow.        
+ 1. [Get Spreadsheet Row trigger](/components/gspreadsheet/triggers#get-spreadsheet-row)                                                                                                                          The New Spreadsheet Row trigger reads the data in each row of a given Google Spreadsheet and passes it to the next stage of your integration flow.        
 
 
 The following Google Spreadsheets triggers are deprecated:
 
-  1. [Rows(deprecated)](/components/gspreadsheet/triggers#rowsdeprecated)   
-  Trigger is `deprecated` - please use [Get Spreadsheet Row](/components/gspreadsheet/triggers#get-spreadsheet-row) trigger.
-  The  **Rows** *trigger* reads the data in each row of a given Google Spreadsheet
-  and passes it to the next stage of your integration flow.
+1. [Rows(deprecated)](/components/gspreadsheet/triggers#rowsdeprecated)                                                    Trigger is `deprecated` - please use [Get Spreadsheet Row](/components/gspreadsheet/triggers#get-spreadsheet-row) trigger.
+The  **Rows** *trigger* reads the data in each row of a given Google Spreadsheet and passes it to the next stage of your integration flow.
 
 ## Actions
 
