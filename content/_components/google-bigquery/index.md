@@ -7,14 +7,14 @@ icon: google-bigquery.png
 icontext: Google BigQuery component
 category: Google BigQuery component
 createdDate: 2020-08-28
-updatedDate: 2020-08-28
+updatedDate: 2020-09-11
 ---
 
 ## Latest changelog
 
-**1.0.0 (August 28, 2020)**
+**1.0.1 (September 11, 2020)**
 
-*   Initial version release: Introducing new `Query` action
+* Extend `Query` action metadata with additional options
 
 > To see the full **changelog** please use the following [link](changelog).
 
@@ -68,6 +68,9 @@ Performs a query provided by user.
 
 #### Expected input metadata
 
+Input metadata include query options according to [documentations](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest).
+The `query` option is required.
+
 ```json
 {
   "type": "object",
@@ -95,6 +98,10 @@ Performs a query provided by user.
   }
 }
 ```
+
+#### Action Limitations
+
+The query [options](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest) are an experimental feature and correct behavior is not guaranteed. Only `query`, `location`, `dryRun`, `useQueryCache`, `useLegacySql`, `parameterMode`,`maximumBytesBilled` options were tested.
 
 ## BigQuery API and Documentation links
 

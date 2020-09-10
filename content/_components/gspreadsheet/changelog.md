@@ -6,8 +6,12 @@ icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
 createdDate: 2019-12-27
-updatedDate: 2020-06-16
+updatedDate: 2020-09-06
 ---
+
+## 1.2.2 (September 6, 2020)
+
+* Add request rate limits handling
 
 ## 1.2.1 (June 16, 2020)
 
