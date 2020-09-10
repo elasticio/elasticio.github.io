@@ -1,35 +1,86 @@
 ---
 title: Platform Behavior
-description: This document provides information on the peculiarities of the Platform behavior, including Flow suspension and stopping, different Platform limits and common errors.
+description: This document describes the current safeguards, imposed limits and what can happen when your integration flows reach these limits.
 layout: article
 section: Troubleshooting
 order: 1
 category: troubleshooting
 ---
 
-This document provides information on the peculiarities of the Platform behavior, including [Flow suspension and stopping](#flow-suspended-vs-stopped), different [Platform limits](#default-limits) and common errors.
+## Introduction
 
-## Flow Suspended vs. Stopped
+Every running system has limitation and safeguards in place to prevent abuse and
+ensure stability. Your own computer has it, your email service has it. Our platform
+is not an exception.
 
-If a Flow gets 5 errors in 5 minutes, it is going to be suspended. Suspension is more of a pause, than a stop. All non-processed messages in a suspended Flow are saved in RabbitMQ queue for 14 days. Then they get dropped if the user did not fix the issues and did not resume the Flow. In [limited workspaces](/getting-started/contracts-and-workspaces.html), Flows are stopped instead of being suspended. A stopped Flow doesn't save any non-processed messages - everything is dropped. You can stop a Flow manually by pressing the Stop button. Please, keep in mind that stopping a Flow drops all unprocessed messages at the moment of stopping.
+We have imposed limits and safeguards in place to ensure stability of the system
+for every company, every user and every integration flow. If one of your integration
+flows is misbehaving for any reason, it should not affect your other integration
+flows, your entire operations or other users in the system.
+
+In this document we provide information about the current safeguards, imposed limits
+and what can happen when your integration flows reach these limits. We describe
+common errors connected to these limits and the ways to prevent or address them.
+
 
 ## Default Limits
 
-The table below contains configurable Platform limits and their default values:
+The table below lists {{site.data.tenant.name}} platform parameters which you
+can configure to impose limits along with their default values.
 
-| **Limit**      | **Default value** | **Description**                                                                  |
-|--------------------|--------------|----------------------------------------------------------------------------------|
-| Sample retrieval timeout | `1 minute ` | If debug sample is not received within this time limit, it will be terminated. |
-| Message quantity in RabbitMQ queue   | `75000` |  Component gets suspended if RabbitMQ queue stacks more than the set number of messages. |
-| RabbitMQ queue size limit | `200 MB` | Component gets suspended if RabbitMQ queue exceeds the set size. |
+{% include table3col-30-55-15.html items="msgqueue, sizequeue, outgoingsize, errorret, sampleret, limitworkspace" file="limits" caption="Default limits imposed in the platform" headers="Limit Name, Description, Value" %}
 
 Platform has set limitations on accepting, processing and exporting attachments.
 Please check the [attachment limitations page](/references/attachments-limitations) for more details.
 
+## Messaging Queue Limits
+
+The messages in your integration flow steps go through the queues so that the
+platform can process them in their turns. Each step in your active integration
+flow has a dedicated messaging queue. The platform imposes both **Queue message number**
+and **Queue message size** limits to each of these queues.
+
+> **Please Note** : These limits ensure the stability of processing queue
+> engine - the RabbitMQ. We can increase these limits for the whole system (not recommended) or for
+> individual flows (recommended) if your use-case requires this. Please get in touch with us to
+> discuss your use-case.
+
+When the step queues in your integration flow reach to any of these two limits,
+platform will stop processing messages until the message number or combined queue
+size drops from the set limit according to Dynamic Flow Control mechanism. This
+ensures the stability of RabbitMQ from one side but it also ensures that no messages
+get lost.
+
+To take advantage of this mechanism your component must use the Sailor version
+supporting Dynamic Flow Control mechanism. In particular you must build your
+Node.js component with Sailor version `2.6.7+` or the Java component with Sailor
+version `3.1.0+`.
+
+In case when even one of your integration flow steps uses a component with
+older Sailor version, the following will happen:
+
+*   Any queue overflow will trigger the platform to [suspend your integration flow](#flow-suspension).
+*   Any new messages getting to already overflowing queues can get lost.
+
+## Flow Suspension
+
+In some rare cases platform can suspend your flow. This safeguard ensures the stability
+of the system in edge cases when all other safeguards fail. The suspension is more
+of a pause, than a stop. You will receive an email informing you about the flow suspension.
+You can then resume your flow or stop it for further investigation.
+
+## Flows Stopped in Limited Workspaces
+
+In [limited workspaces](/getting-started/contracts-and-workspaces.html), Flows
+are stopped instead of being suspended. A stopped Flow doesn't save any non-processed
+messages - everything is dropped. You can stop a Flow manually by pressing the Stop
+button. Please, keep in mind that stopping a Flow drops all unprocessed messages
+at the moment of stopping.
 
 ## Common Errors
 
-In general, the Platform is not error-prone, but there are a few issues you may encounter. The most common are:
+In general, the Platform is not error-prone, but there are a few issues you may
+encounter. The most common are:
 
 - [Component failed to start](#component-failed-to-start)
 

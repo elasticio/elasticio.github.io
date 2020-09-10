@@ -1,0 +1,37 @@
+msgqueue:
+  field: 'Queue message number'
+  description: >
+    <p>Processing queue message count limit. More information in <a href="#messaging-queue-limits">Messaging Queue Limits</a>.</p>
+  value: '<b>75000</b>'
+
+
+sizequeue:
+  field: 'Queue message size'
+  description: >
+   <p>Processing queue combined size limit <b>in megabytes</b> (MB). More information in <a href="#messaging-queue-limits">Messaging Queue Limits</a>.</p>
+  value: '<b>200MB</b>'
+
+
+outgoingsize:
+  field: 'Outgoing message size'
+  description: >
+   <p>Total size of outgoing message from any integration step <b>in megabytes</b> (MB).</p>
+  value: '<b>10MB</b>'
+
+errorret:
+  field: 'Error Retention'
+  description: >
+   <p>Error display limit in case your integration flow starts spamming the system. After this limit is reached errors will not be shown.</p>
+  value: '<b>1000</b>'
+
+sampleret:
+  field: 'Sample retrieval timeout'
+  description: >
+   <p>Time <b>in minutes</b> that the platform will wait during the data sample retrieval in the flow step design. After this the process will be stopped and timeout error will be given.</p>
+  value: '<b>1min</b>'
+
+limitworkspace:
+  field: 'Limited Workspaces'
+  description: >
+    <p>Time <b>in hours</b> until <a href="#flows-stopped-in-limited-workspaces">flows stopped in Limited Workspaces.</a></p>
+  value: '<b>8h</b>'
