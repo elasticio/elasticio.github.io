@@ -1,0 +1,30 @@
+{% assign tableItems = include.items | split: ", " %}
+{% assign tableHead = include.headers | split: ", " %}
+{% assign tableFileParam = {{include.file}} %}
+{% assign tableFile = site.data[tableFileParam] %}
+
+<table style="width: 100%">
+    <caption>{{include.caption}}</caption>
+    <colgroup>
+        <col width="30%" />
+        <col width="55%" />
+        <col width="15%" />
+    </colgroup>
+    <thead>
+        <tr>
+            <th>{{ tableHead[0] }}</th>
+            <th>{{ tableHead[1] }}</th>
+            <th>{{ tableHead[2] }}</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entry in tableItems %}
+        <tr>
+          <td>{{ tableFile[entry].field }}</td>
+          <td>{{tableFile[entry]description}}
+          {% if tableFile[entry].values != empty %}{{ tableFile[entry].values }}{% endif %}</td>
+          <td>{{ tableFile[entry].value }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
