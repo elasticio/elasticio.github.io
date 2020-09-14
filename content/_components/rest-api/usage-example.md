@@ -19,7 +19,7 @@ In this example, we want to create a table that shows the efficiency of using gr
 
 ![Flow example](img/entire-flow.png)
 
-Use the rest component to get the necessary information on green energy. To do this, select the `GET` function and define a `URL`. In our case, we use [Currently GrünstromIndex](https://gruenstromindex.de) website as a source of information:
+Use the REST API component to get the necessary information on green energy. To do this, select the `GET` function and define a `URL`. In our case, we use [Currently GrünstromIndex](https://gruenstromindex.de) website as a source of information:
 
 ![Rest api input](img/url-only.png)
 
