@@ -31,14 +31,20 @@ If you can correct the error, do it and repeat the verification. If everything i
 
 ## Getaway Timeout error
 
-One of the most common causes of a sample error is an invalid component input. This can lead to a lot of errors, one of which is "Getaway Timeout" error. Below we will consider the reasons why such an error may appear and how to fix it.
+One of the most common causes of a sample error is "Getaway Timeout" error. An error occurs if the third-party server did not respond during your request - the default timeout is 1 minute:
 
-In this example, we will look at the Rest API component input. We perform API call using this URL which will give us access to information about green energy in our city. The city is identified by the Postal code at the end of the URL:
+![Sample error](/assets/img/integrator-guide/sample-errors/rest-api-sample-error.png)
 
-![Rest api input](/assets/img/integrator-guide/sample-errors/postal-code.png)
+Below we will consider the reasons why such an error may appear and how to fix it.
 
-In our case, the zip code turned out to be invalid. Because of this, we were unable to get a response from the site. After requesting a sample, you will receive the following error message:
+### Invalid request
 
-![Rest api sample error](/assets/img/integrator-guide/sample-errors/rest-api-sample-error.png)
+In this example, we will look at the [Rest API component](/components/rest-api) input. We perform API call using this URL which will give us access to information about green energy in our city. The city is identified by the Postal code at the end of the URL:
 
-The most common reason for this error is a request for non-existent data. First, you should check your request for an error. If everything is correct, then the external source may no longer have the data that you are requesting. It also happens that third-party server can only accept connection from white-listed IP addresses.
+![Rest API input](/assets/img/integrator-guide/sample-errors/postal-code.png)
+
+In our case, the postal code is invalid. Because of this, we were unable to get a response from the site. To fix this you should first check your request for an error. If everything is correct, then the external source may no longer have the data that you are requesting.
+
+### White listing
+
+Another reason for the "Getaway Timeout" error is a white list of IP-addresses on the server. It means that third-party server can only accept connection from white-listed IP-addresses.
