@@ -53,7 +53,7 @@ When reading metafields data will be returned in this format. When writing metaf
 
 ```json
 {
-  "metafieldNamespaceOne:" {
+  "metafieldNamespaceOne" : {
     "metafieldKeyOne": "Metafield Value for metafieldNamespaceOne.metafieldKeyOne",
     "metafieldKeyTwo": "Metafield Value for metafieldNamespaceOne.metafieldKeyTwo"
   },
