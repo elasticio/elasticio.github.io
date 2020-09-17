@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: Simple Storage Changelog
 layout: component
 description: Changelog for Simple Storage component.
 icon: simple-storage.png

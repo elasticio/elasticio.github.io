@@ -16,7 +16,7 @@ updatedDate: 2020-05-22
 
 * Update Sailor version to 2.6.7
 
-> To see the full **changelog** please use the following [link](/components/key-value/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## How works
 
