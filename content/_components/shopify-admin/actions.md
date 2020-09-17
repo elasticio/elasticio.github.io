@@ -6,7 +6,7 @@ icon: shopify-admin.png
 icontext: Shopify Admin component
 category: shopify-component
 createdDate: 2020-03-19
-updatedDate: 2020-03-19
+updatedDate: 2020-09-11
 ---
 
 ## Lookup Object
@@ -29,6 +29,9 @@ Finds object by id.
 
   2. Type Objects with complex id: `Article`, `Asset`, `Checkout`, `Customer Address`, `Discount Code`, `Fulfillment`, `Fulfillment Event`, `Gift Card Adjustment`, `Inventory Level`,  `Order Risk`,  `Payment`,  `Product Image`,  `Product Listing`,  `Product Variant`, `Province`, `Refund`, `Shop`, `Usage Charge`
 
+  * **Fetch Metafields for Object -** If selected, in addition to returning the built-in fields associated with the object,
+  return the metafields.
+
 ## Lookup Objects
 
 ![Lookup Objects](img/lookup-objects.png)
@@ -40,6 +43,9 @@ Finds object by id.
   * **Behavior -** `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message.
 
   * **Max Size -** Maximum number of objects to fetch. Default `250`, maximum value is `250`.
+
+  * **Fetch Metafields for Objects -** If selected, in addition to returning the built-in fields associated with the objects,
+return the metafields.
 
 ### Expected Input metadata
 
@@ -86,6 +92,8 @@ Action to create new object instance. Only for object that can't be updated.
 ### List of Expected Config fields
 
 * **Object Type -** Type of object for polling.
+
+ See the section [Metafields Notes](/components/shopify-admin#metafield-notes) for information about setting metafield values.
 
 ### Example of usage
 

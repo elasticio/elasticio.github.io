@@ -6,7 +6,7 @@ icon: shopify-admin.png
 icontext: Shopify Admin component
 category: shopify-component
 createdDate: 2020-03-19
-updatedDate: 2020-03-19
+updatedDate: 2020-09-11
 ---
 
 ## Polling Trigger
@@ -28,6 +28,9 @@ Polls Shopify API for new and updated objects.
   * **Size Of Polling Page -** Size of polling page, used in Fetch Page behaviour to determine size of emitted message. Default: `1000`
 
   * **Single Page Per Interval -** If `Yes` polls for one page each execution, if `No` polls for all pages in one execution. Default: `Yes`
+
+  * **Fetch Metafields for Object -** If selected, in addition to returning the built-in fields associated with the object,
+  return the metafields.
 
 ## Webhook subscription
 
