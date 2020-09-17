@@ -7,20 +7,19 @@ icon: shopify-admin.png
 icontext: Shopify Admin component
 category: shopify-component
 createdDate: 2017-04-30
-updatedDate: 2019-11-15
+updatedDate: 2020-09-11
 ---
 
 ## Latest changelog
 
-**1.3.0 (November 15, 2019)**
+**1.4.0 (Sept 11, 2020)**
 
-**Triggers**
+* Add support for reading & writing metafields
+* Bump dependencies
+* Change API Key in credentials to password level
+* Remove sensitive info from logs
 
-* Add Webhook Subscription trigger
-
-* Add Polling trigger
-
-> To see the full **changelog** please use the following [link](/components/shopify-admin/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## How works. API version
 
@@ -38,7 +37,7 @@ You can find more information about API versioning at Shopify [here](https://hel
 *   `apiKey`
 *   `password`
 
-> **Note:** [How to generate creds](https://help.shopify.com/api/getting-started#generate-api-credentials-from-the-shopify-admin)
+> **Please Note:** [How to generate creds](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin)
 
 ### Environment variables
 
@@ -46,6 +45,40 @@ You can find more information about API versioning at Shopify [here](https://hel
 |---------------------|-------|------------------------------------------|--------------------|
 | SHOPIFY_API_VERSION | false | Determines API version of Shopify to use | Default: `2019-10` |
 
+### Metafield Notes
+
+Metafields for an object can be written when upserting/creating an object that supports metafields. When polling for objects, looking up an object or searching for objects, there is a checkbox that can be selected that will fetch the corresponding metafields for objects. Selecting this checkbox will cause more API calls to be consumed. (An additional API call per object read.)
+
+When reading metafields data will be returned in this format. When writing metafield data, the following format is also expected for the `metafields` object.
+
+```json
+{
+  "metafieldNamespaceOne:" {
+    "metafieldKeyOne": "Metafield Value for metafieldNamespaceOne.metafieldKeyOne",
+    "metafieldKeyTwo": "Metafield Value for metafieldNamespaceOne.metafieldKeyTwo"
+  },
+  "metafieldNamespaceTwo": {
+    "metafieldKeyThree": "Metafield Value for metafieldNamespaceTwo.metafieldKeyThree"
+  }
+}
+```
+
+Shopify metafields support the following three types:
+
+  * `integer` metafields will be created whenever the value provided for a metafield is a JSON number that is an integer. When reading Shopify `integer` metafields, they will result in JSON numbers.
+
+  * `string` metafields will be created whenever the value provided for a metafield is a JSON string or a JSON number that is not an integer. When reading any Shopify `string` metafields, they will result in JSON strings regardless of whether or not they could be parsed as numbers.
+
+  * `json_string` metafields will be created whenever the value provided for a metafield is a JSON object, array or boolean. The incoming value will be converted to a JSON string and stored. When reading Shopify metafields, they will be converted back to their JSON forms.
+
+Setting a metafield the value of JSON `null` will result in that metafield being deleted.
+
+Not setting a value for a metafield will result in that metafield being unchanged.
+
+## Completeness Matrix
+
+The [component completeness](completeness-matrix) matrix gives the technical
+details about Salesforce objects this component covers.
 
 ## Triggers
 
@@ -124,4 +157,4 @@ The following Shopify Admin actions are deprecated:
 
 [Shopify Admin API documentation](https://help.shopify.com/api/reference)
 
-[How to generate creds](https://help.shopify.com/api/getting-started#generate-api-credentials-from-the-shopify-admin)
+[How to generate creds](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin)

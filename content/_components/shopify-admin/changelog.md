@@ -1,22 +1,29 @@
 ---
-title: Changelog
+title: Shopify Admin Changelog
 layout: component
 description: Changelog for Shopify Admin component.
 icon: shopify-admin.png
 icontext: Shopify Admin component
 category: shopify-component
 createdDate: 2020-01-02
-updatedDate: 2020-01-02
+updatedDate: 2020-09-11
 ---
+
+## 1.4.0 (Sept 11, 2020)
+
+* Add support for reading & writing metafields
+* Bump dependencies
+* Change API Key in credentials to password level
+* Remove sensitive info from logs
 
 ## 1.3.0 (November 15, 2019)
 
-### Triggers
+**Triggers:**
 
 * Add Webhook Subscription trigger
 * Add Polling trigger
 
-### Actions
+**Actions:**
 
 * Add Create Object Action
 * Add Upsert Object Action
