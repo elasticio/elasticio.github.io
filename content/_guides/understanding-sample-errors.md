@@ -47,4 +47,4 @@ In our case, the postal code is invalid. Because of this, we were unable to get 
 
 ### White listing
 
-Another reason for the "Getaway Timeout" error is that third-party server can only accept connection from white-listed IP-addresses. Please contact support to get an IP-address.
+Another reason for the "Getaway Timeout" error is that third-party server can only accept connection from white-listed IP-addresses. Please contact support to get the external IP addres of the platform so that you can white-list it on your side.
