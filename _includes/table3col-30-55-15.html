@@ -1,7 +1,7 @@
 {% assign tableItems = include.items | split: ", " %}
 {% assign tableHead = include.headers | split: ", " %}
 {% assign tableFileParam = {{include.file}} %}
-{% assign tableFile = site.data[tableFileParam] %}
+{% assign tableFile = site.data.sources[tableFileParam] %}
 
 <table style="width: 100%">
     <caption>{{include.caption}}</caption>

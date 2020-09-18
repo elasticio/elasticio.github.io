@@ -47,11 +47,11 @@ configure it to choose a messages from any other previous steps, if required.
 
 An ability to access the data on different steps of the integration flow and
 combine them into one outgoing message is an important advantage for many
-integration use-cases. Here are some scenarious when the passthrough feature makes
+integration use-cases. Here are some scenarios when the passthrough feature makes
 a significant difference.
 
-*   As an integrator you want to retrieve the data from more than one external resource and combine it into one outgoing message to store it in your desired storage. Without the passthrough feature you would need to retrive the data separately from different resources, synchronize them and store in the storage. For this you would definetly need to use more than one integration flow and make sure not overwrite it every time.
-*   As an integrator you would like to retrive the data at least two times from the third party resource due to limitations of the third party API abilities. Without the passthrough you would need to use two different initegration flows and somehow synchronize the information between them.
+*   As an integrator you want to retrieve the data from more than one external resource and combine it into one outgoing message to store it in your desired storage. Without the passthrough feature you would need to retrieve the data separately from different resources, synchronize them and store in the storage. For this you would definitely need to use more than one integration flow and make sure not overwrite it every time.
+*   As an integrator you would like to retrieve the data at least two times from the third party resource due to limitations of the third party API abilities. Without the passthrough you would need to use two different integration flows and somehow synchronize the information between them.
 
 Let us have a look into an example on how the passthrough feature can help to solve
 a real-life integration dilemma.
@@ -80,7 +80,7 @@ Then we have to configure Petstore input using data from Webhook component:
 
 ![Petstore step](/assets/img/getting-started/passthrough/petstore_step.png)
 
-Finaly we move on to the E-Mail component where we need to use the passthrough function. While configuring E-Mail component input we must fill in the "To" field using data from the Webhook component. At this moment we use the passthrough that allows us to use data not only from the previous, but also from earlier steps (Webhook in our case):
+Finally, we move on to the E-Mail component where we need to use the passthrough function. While configuring E-Mail component input we must fill in the "To" field using data from the Webhook component. At this moment we use the passthrough that allows us to use data not only from the previous, but also from earlier steps (Webhook in our case):
 
 ![E-mail step](/assets/img/getting-started/passthrough/email_step.png)
 
@@ -97,7 +97,7 @@ This case is interesting since Amazon MWS API gives answers in some certain ways
 *   Then we need to combine both: orders (`listOrders`) and items (`listOrderItems`) together to store this information into Salesforce. But, without having the order IDs, we can not get item IDs.
 
 We can address the above-presented scenario in two ways:
-1.  We use mutliple flows (the sequential mechanism) and external ID to pass the information gradually or
+1.  We use multiple flows (the sequential mechanism) and external ID to pass the information gradually or
 2.  Use the passthrough feature to merge all the information on-the-fly.
 
 ### Sequential mechanism
@@ -143,6 +143,28 @@ scheduled delivery date, shipping date, item price and quantity of ordered items
 
 **In summary**: Instead of separating order and item handling to a second flow, we
 reduce the complexity by using the passthrough feature of the platform.
+
+
+## Disable passthrough
+
+In larger integration flows having large body of passthrough message can have
+an adverse affect. The accumulating passthrough message can quickly create a large
+overhead and cause out of memory by its own. To avoid this, you can disable the
+passthrough from any particular step. This would mean the passthrough message will
+be dropped from that point on and the subsequent steps would not have access to the
+data from previous steps.
+
+> **Please note**: The passthrough messages will start accumulating again after the particular
+> step where passthrough was disabled.
+
+For this to work the Node.js components must have sailor version `2.6.0+`, and Java
+component to have sailor version `3.0.0+`.
+
+You can disable passthrough during the flow creation/editing via the UI:
+
+![Disable Passthrough](/assets/img/RN/20.07/disable-passthrough.png).
+
+
 
 ## Related links
 
