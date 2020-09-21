@@ -69,3 +69,10 @@ After clicking on **+Add New Client** a form will showup to fillin the details f
 OAuth2 client:
 
 {% include img.html max-width="60%" url="/assets/img/getting-started/secrets/fillin-oauth2-form.png" title="Fill in the form to create the OAuth client." %}
+
+After this step you can create the `auth-secret` the same way as one would create
+a credential.
+
+For more advanced cases we recommend using an API call to create `auth-client`.
+Please consult the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client)
+section for more.
