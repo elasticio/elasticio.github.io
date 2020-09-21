@@ -94,4 +94,4 @@ You can create `auth-secret` on UI identically as you would create a credential
 for any component. You need to select the client type first. For example we
 select `basic` client type for the REST-API component:
 
-% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-basic-secret.png" title="Create Basic Secret." %}
+{% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-basic-secret.png" title="Create Basic Secret." %}
