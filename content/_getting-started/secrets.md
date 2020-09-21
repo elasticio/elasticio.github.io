@@ -23,9 +23,9 @@ in different integration flow steps.
 
 Secrets takes over all the functionalities of the Credentials and provides a
 unified service to manage the credentials and tokens independently. This removes
-the need to refreash credentials by the components.
+the need to refresh credentials by the components.
 
-> Please Note: Secrets runs as a micorservice in the platform cluster, constantly
+> Please Note: Secrets runs as a micro-service in the platform cluster, constantly
 > checking the expiration information for all credentials and updating them at
 > last 1 minutes before the expiration.
 
@@ -34,7 +34,7 @@ the need to refreash credentials by the components.
 There are two entities involved in the work of Secrets feature as a service: the
 Authentication Client (`auth-client`) and the Authentication Secret (`auth-secret`).
 
-The `auth-client` takes the responsibility of communication between the Applicatio (the platform)
+The `auth-client` takes the responsibility of communication between the Application (the platform)
 and the Service (3rd party service), while the `auth-secret` takes the role of the User
 (user of the platform) and communicates with the Client in the normal
 [3-leg OAuth2 authorisation process](/references/how-the-oauth2-process-works).
@@ -53,10 +53,10 @@ Before you can create your `auth-client` you must know that:
 *   The `auth-client` can have `workspace`, `contract` and `tenant` visibility levels. For each level you need to have a matching permission. For example only tenant administrator can create a Client with `tenant` visibility level.
 
 *   They divide into two distinct groups: `oauth2` and others:
-    *   For `oauth2` type you must supply `client_id`, `client_secret`, `auth_uri`, `token_uri` and `refresh_token_uri` values to create the Client. Since some services have their own flaivour of OAuth2, this is the right place to give them as well. Check the OAuth2 credential creation example.
+    *   For `oauth2` type you must supply `client_id`, `client_secret`, `auth_uri`, `token_uri` and `refresh_token_uri` values to create the Client. Since some services have their own flavour of OAuth2, this is the right place to give them as well. Check the [Creating OAuth2 Clients](#creating-oauth2-clients) section for more explanation.
     *   For other types you have relative freedom. However, our system already knows about `noauth` (use no authentication), `basic` (use username/password pair) and `api_key` (use header and API Key) types. Contact us if you need something more.
 
-### Creating OAuth2 Client
+### Creating OAuth2 Clients
 
 You can create OAuth2 `auth-client` using either the UI or an API call.
 
@@ -65,7 +65,7 @@ when selecting to add a credentials:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/choose-oauth2.png" title="Choose OAuth2 type credential in REST-API component." %}
 
-After clicking on **+Add New Client** a form will showup to fillin the details for
+After clicking on **+Add New Client** a form will show-up to fill-in the details for
 OAuth2 client:
 
 {% include img.html max-width="60%" url="/assets/img/getting-started/secrets/fillin-oauth2-form.png" title="Fill in the form to create the OAuth client." %}
@@ -76,3 +76,22 @@ a credential.
 For more advanced cases we recommend using an API call to create `auth-client`.
 Please consult the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client)
 section for more.
+
+### Creating other clients
+
+You can create other `auth-client` types using the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client) API documentation. However, for the REST-API component we have the
+following types already in place:
+
+*   `noauth` - to use for no authentication.
+*   `basic` - to use for regular `username`/`password` pair.
+*   `api_key` - to use for the `header`/`API Key` pair.
+
+## Auth Secret Creation
+
+> Please Note: Before you can create a secret for any component you must create a client first.
+
+You can create `auth-secret` on UI identically as you would create a credential
+for any component. You need to select the client type first. For example we
+select `basic` client type for the REST-API component:
+
+% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-basic-secret.png" title="Create Basic Secret." %}
