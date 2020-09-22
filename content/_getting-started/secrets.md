@@ -109,15 +109,20 @@ unless you add a new client:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-oauth2-secret-choose-client.png" title="Create OAuth2 Secret." %}
 
-## Components and Secret feature
+## Components and Secrets feature
 
 At the moment of writing this, not many components on our platform use the Secrets feature.
 We are migrating them gradually and only if it would improve the component usability for
-complex integration cases. The Secrets is introduced mainly for OAuth2 authorisation improvements,
+the complex integration cases. The Secrets is introduced mainly for OAuth2 authorisation improvements,
 therefore, mainly the component using OAuth2 authorisation will be converted at first.
 
 We will release a detailed guidelines on how to use Secrets feature in your custom
-components in due course. Right now the following components use the Secrets feature:
+components in due course.
 
-*   REST API component - We are introducing a new version.
-*   Salesforce component - New version is being introduced.
+Right now the following components use the Secrets feature:
+
+*   REST API component - introducing a new, separate component.
+*   Salesforce component - introducing a new, separate component.
+
+> Please Note: These components are not backwards compatible due to architectural
+> changes done while introducing the Secrets feature.
