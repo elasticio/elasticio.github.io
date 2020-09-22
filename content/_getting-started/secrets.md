@@ -121,8 +121,9 @@ components in due course.
 
 Right now the following components use the Secrets feature:
 
-*   REST API component - introducing a new, separate component.
-*   Salesforce component - introducing a new, separate component.
+*   REST API component - introducing a separate component.
+*   Salesforce component - introducing a separate component.
 
-> Please Note: These components are not backwards compatible due to architectural
-> changes done while introducing the Secrets feature.
+> **Please Note**: These **components are not backwards compatible** due to architectural
+> changes done while migrating them to the Secrets feature. Old component will still be available,
+> but they will get deprecated at some stage. 
