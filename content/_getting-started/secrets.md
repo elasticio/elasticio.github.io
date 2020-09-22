@@ -93,8 +93,8 @@ following types already in place:
 Before we can proceed with `auth-secret` creation, couple points needs to be considered:
 
 *   Before you can create a secret for any component you must create a client first.
-*   Your component might have only one authorisation type defined in the system. It will be autho selected by default.
-*   A drop-down window to select a client type will appear only when more than one type of clients are defined in the system.
+*   Your component might have only one defined `auth-client` in the system. It will be autho selected by default.
+*   In case you have more than one `auth-client` defined in the system, a drop-down window to select a clients will appear.
 *   In case of OAuth2 type authorisation a drop-down with defined OAuth clients will be available. If you have only one OAuth2 client defined, it will be selected by default. Here you have also chance to create a new OAuth client.
 
 ### Creating basic secret
