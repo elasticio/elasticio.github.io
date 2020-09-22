@@ -81,8 +81,7 @@ section for more.
 
 > Please Note: At the moment you can create other client types only via an API call.
 
-To create other `auth-client` types using the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client) API documentation. However, for the REST-API component we have the
-following types already in place:
+To create other `auth-client` types using the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client) API documentation. However, our platform knows already about the following types:
 
 *   `noauth` - to use for no authentication.
 *   `basic` - to use for regular `username`/`password` pair.
