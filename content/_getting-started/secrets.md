@@ -93,19 +93,12 @@ following types already in place:
 Before we can proceed with `auth-secret` creation, couple points needs to be considered:
 
 *   Before you can create a secret for any component you must create a client first.
-*   Your component might have only one defined `auth-client` in the system. It will be autho selected by default.
+*   Your component might have only one defined `auth-client` in the system. It will be auto-selected by default.
 *   In case you have more than one `auth-client` defined in the system, a drop-down window to select a clients will appear.
 *   In case of OAuth2 type authorisation a drop-down with defined OAuth clients will be available. If you have only one OAuth2 client defined, it will be selected by default. Here you have also chance to create a new OAuth client.
+*   You can create `auth-secret` on UI identically as you would create a credential
+for any component.
 
-### Creating basic secret
-
-You can create `auth-secret` on UI identically as you would create a credential
-for any component. You need to select the client type first. For example we
-select `basic` client type for the REST-API component:
-
-{% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-basic-secret.png" title="Create Basic Secret." %}
-
-### Creating OAuth2 secret
 
 OAuth2 secret creation has more options since the real power of Secrets feature
 becomes evident here. For example when we create a OAuth2 credential we can add
@@ -113,7 +106,7 @@ becomes evident here. For example when we create a OAuth2 credential we can add
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-oauth2-secret.png" title="Create OAuth2 Secret." %}
 
-If you have only one OAuth2 client here it will be selected as a default client,
+Here is an example when you have only one OAuth2 client. It will be selected as a default client,
 unless you add a new client:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-oauth2-secret-choose-client.png" title="Create OAuth2 Secret." %}
