@@ -60,8 +60,8 @@ Before you can create your `auth-client` you must know that:
 
 You can create OAuth2 `auth-client` using either the UI or an API call.
 
-To create via UI you can use the REST-API component as an example to create an OAuth2 `auth-client`
-when selecting to add a credentials:
+To create via UI you can use the [REST API component](/components/rest-api/) as
+an example to create an OAuth2 `auth-client` when selecting to add a credentials:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/choose-oauth2.png" title="Choose OAuth2 type credential in REST-API component." %}
 
@@ -79,7 +79,9 @@ section for more.
 
 ### Creating other clients
 
-You can create other `auth-client` types using the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client) API documentation. However, for the REST-API component we have the
+> Please Note: At the moment you can create other client types only via an API call.
+
+To create other `auth-client` types using the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client) API documentation. However, for the REST-API component we have the
 following types already in place:
 
 *   `noauth` - to use for no authentication.
@@ -95,3 +97,27 @@ for any component. You need to select the client type first. For example we
 select `basic` client type for the REST-API component:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-basic-secret.png" title="Create Basic Secret." %}
+
+OAuth2 secret creation has more options since the real power of Secrets feature
+becomes evident here. For example when we create a OAuth2 credential we can add
+`scopes` and Additional parameters here:
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-oauth2-secret.png" title="Create OAuth2 Secret." %}
+
+If you have only one OAuth2 client here it will be selected as a default client,
+unless you add a new client:
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-oauth2-secret-choose-client.png" title="Create OAuth2 Secret." %}
+
+## Components and Secret feature
+
+At the moment of writing this, not many components on our platform use the Secrets feature.
+We are migrating them gradually and only if it would improve the component usability for
+complex integration cases. The Secrets is introduced mainly for OAuth2 authorisation improvements,
+therefore, mainly the component using OAuth2 authorisation will be converted at first.
+
+We will release a detailed guidelines on how to use Secrets feature in your custom
+components in due course. Right now the following components use the Secrets feature:
+
+*   REST API component - We are introducing a new version.
+*   Salesforce component - New version is being introduced.
