@@ -60,7 +60,7 @@ Before you can create your `auth-client` you must know that:
 
 You can create OAuth2 `auth-client` using either the UI or an API call.
 
-To create via UI you can use the [REST API component](/components/rest-api/) as
+To create via UI you can use the REST API component as
 an example to create an OAuth2 `auth-client` when selecting to add a credentials:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/choose-oauth2.png" title="Choose OAuth2 type credential in REST-API component." %}
@@ -90,13 +90,22 @@ following types already in place:
 
 ## Auth Secret Creation
 
-> Please Note: Before you can create a secret for any component you must create a client first.
+Before we can proceed with `auth-secret` creation, couple points needs to be considered:
+
+*   Before you can create a secret for any component you must create a client first.
+*   Your component might have only one authorisation type defined in the system. It will be autho selected by default.
+*   A drop-down window to select a client type will appear only when more than one type of clients are defined in the system.
+*   In case of OAuth2 type authorisation a drop-down with defined OAuth clients will be available. If you have only one OAuth2 client defined, it will be selected by default. Here you have also chance to create a new OAuth client.
+
+### Creating basic secret
 
 You can create `auth-secret` on UI identically as you would create a credential
 for any component. You need to select the client type first. For example we
 select `basic` client type for the REST-API component:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-basic-secret.png" title="Create Basic Secret." %}
+
+### Creating OAuth2 secret
 
 OAuth2 secret creation has more options since the real power of Secrets feature
 becomes evident here. For example when we create a OAuth2 credential we can add
@@ -119,11 +128,11 @@ therefore, mainly the component using OAuth2 authorisation will be converted at 
 We will release a detailed guidelines on how to use Secrets feature in your custom
 components in due course.
 
-Right now the following components use the Secrets feature:
+Right now new version of the following components use the Secrets feature:
 
-*   REST API component - introducing a separate component.
-*   Salesforce component - introducing a separate component.
+*   REST API component - introducing as a separate component.
+*   Salesforce component - introducing as a separate component.
 
-> **Please Note**: These **components are not backwards compatible** due to architectural
+> **Please Note**: These **components are not strictly backwards compatible** due to architectural
 > changes done while migrating them to the Secrets feature. Old component will still be available,
-> but they will get deprecated at some stage. 
+> but they will get deprecated at some stage.
