@@ -7,14 +7,14 @@ icon: mapper.png
 icontext: Mapper component
 category: Mapper component
 createdDate: 2015-05-26
-updatedDate: 2020-07-01
+updatedDate: 2020-09-20
 ---
 
 ## Latest changelog
 
-**0.0.7 (July 1, 2020)**
+**0.0.8 (September 20, 2020)**
 
-* Update elasticio-sailor-nodejs to 2.6.13
+* Remove sensitive data from component logs
 
 > To see the full **changelog** please use the following [link](/components/mapper/changelog).
 
