@@ -6,8 +6,12 @@ icon: mapper.png
 icontext: Mapper component
 category: Mapper component
 createdDate: 2019-12-27
-updatedDate: 2020-07-01
+updatedDate: 2020-09-20
 ---
+
+## 0.0.8 (September 20, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
 ## 0.0.7 (July 1, 2020)
 
