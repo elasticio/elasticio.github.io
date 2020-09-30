@@ -27,6 +27,14 @@ If you can correct the error, do it and repeat the verification. If everything i
 
 ![Verified credentials](/assets/img/integrator-guide/sample-errors/verified-credentials.png)
 
+Quite often, you need additional authorization methods to perform some functions. If the data is incorrect, you can receive this message:
+
+![Forbidden Body](/assets/img/integrator-guide/sample-errors/forbidden-body.png)
+
+In our case, the method of posting to a given URL requires authorization headers. The basic header was not enough, so you need to add new ones to access the API you want:
+
+![Wrong header](/assets/img/integrator-guide/sample-errors/wrong-header.png)
+
 > Please note that not all errors can be fixed directly, for example, your credentials may be outdated. It also happens that third-party server can only accept connection from white-listed IP addresses. These errors cannot be seen in the [logs](/getting-started/logs-page). For more information see [White listing](#white-listing).
 
 ## Getaway Timeout error
