@@ -6,8 +6,12 @@ icon: jdbc.png
 icontext: JDBC component
 category: jdbc
 createdDate: 2019-12-27
-updatedDate: 2019-12-27
+updatedDate: 2020-09-25
 ---
+
+## 2.4.1 (September 25, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
 ## 2.3.2 (October 21, 2019)
 

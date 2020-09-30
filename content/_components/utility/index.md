@@ -7,17 +7,16 @@ icon: utility.png
 icontext: Utility Component
 category: Utility Component
 createdDate: 2019-07-29
-updatedDate: 2020-07-24
+updatedDate: 2020-09-25
 ---
 
 ## Latest changelog
 
-**1.1.2 (July 24, 2020)**
+**1.1.3 (September 25, 2020)**
 
-* Update sailor version to 2.6.14
-* Downgrade node: 14.5.0
+* Component code audit
 
-> To see the full **changelog** please use the following [link](/components/utility/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Environment variables
 

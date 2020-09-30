@@ -7,16 +7,16 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2017-03-31
-updatedDate: 2020-08-20
+updatedDate: 2020-09-25
 ---
 
 ## Latest changelog
 
-**1.1.4 (August 20, 2020)**
+**1.1.5 (September 25, 2020)**
 
-* `Split on JSONata Expression` action update: add possibility to emit non-array objects.
+* Component code audit
 
-> To see the full **changelog** please use the following [link](/components/splitter/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 

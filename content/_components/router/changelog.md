@@ -6,8 +6,12 @@ icon: router.png
 icontext: Router component
 category: Router component
 createdDate: 2020-01-02
-updatedDate: 2020-07-03
+updatedDate: 2020-09-25
 ---
+
+## 0.0.7 (September 25, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
 ## 0.0.6 (July 3, 2020)
 
