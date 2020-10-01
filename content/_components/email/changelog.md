@@ -6,8 +6,12 @@ icon: email.png
 icontext: Email component
 category: Email component
 createdDate: 2016-01-07
-updatedDate: 2020-05-22
+updatedDate: 2020-09-20
 ---
+
+## 1.0.7 (September 20, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs.
 
 ## 1.0.6 (May 22, 2020)
 

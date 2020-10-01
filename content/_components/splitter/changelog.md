@@ -6,8 +6,12 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2020-01-02
-updatedDate: 2020-08-20
+updatedDate: 2020-09-25
 ---
+
+## 1.1.5 (September 25, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
 ## 1.1.4 (August 20, 2020)
 

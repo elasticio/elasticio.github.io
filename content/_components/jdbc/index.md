@@ -7,16 +7,16 @@ icon: jdbc.png
 icontext: JDBC component
 category: jdbc
 createdDate: 2019-06-11
-updatedDate: 2019-11-01
+updatedDate: 2020-09-25
 ---
 
 ## Latest changelog
 
-**2.3.2 (October 21, 2019)**
+**2.4.1 (September 25, 2020)**
 
-* Add rebound mechanism in case of deadlocks for actions: Insert, UpsertByPK, DeleteByPK
+* Component code audit
 
-> To see the full **changelog** please use the following [link](/components/jdbc/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 

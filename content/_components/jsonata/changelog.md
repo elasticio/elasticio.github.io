@@ -6,8 +6,12 @@ icon: jsonata.png
 icontext: Jsonata component
 category: Jsonata component
 createdDate: 2019-12-27
-updatedDate: 2020-05-19
+updatedDate: 2020-09-20
 ---
+
+## 1.0.5 (September 20, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs.
 
 ## 1.0.4 (May 19, 2019)
 

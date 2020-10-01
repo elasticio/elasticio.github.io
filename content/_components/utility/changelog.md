@@ -6,8 +6,12 @@ icon: utility.png
 icontext: Utility Component
 category: Utility Component
 createdDate: 2020-01-02
-updatedDate: 2020-07-24
+updatedDate: 2020-09-25
 ---
+
+## 1.1.3 (September 25, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
 ## 1.1.2 (July 24, 2020)
 

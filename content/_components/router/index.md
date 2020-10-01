@@ -7,19 +7,18 @@ icon: router.png
 icontext: Router component
 category: Router component
 createdDate: 2017-05-23
-updatedDate: 2020-07-03
+updatedDate: 2020-09-25
 ---
 
 This component implements the [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
 
 ## Latest changelog
 
-**0.0.6 (July 3, 2020)**
+**0.0.7 (September 25, 2020)**
 
-* Update sailor version to 2.6.13
-* Fix problems with flow control
+* Component code audit
 
-> To see the full **changelog** please use the following [link](/components/router/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Triggers
 
