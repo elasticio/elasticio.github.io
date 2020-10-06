@@ -1,6 +1,6 @@
 ---
 title: Fields vs Metadata
-description: Article explains the difference between Input fields and input metadata.
+description: Article explains the difference between input fields and input metadata.
 layout: article
 section: Developing Components
 category: component
@@ -9,40 +9,42 @@ order: 7
 
 ## Prerequisites
 
-The article assumes that you familiar with such topics:
+The article assumes that you are familiar with the following topics:
 
-*   What is component and action in it.
-*   Flow creation and configuration.
-    *   Mapping.
-*   Basic understanding of component development.
+*   [What is component](/getting-started/integration-component) and action in it.
+*   [Flow creation](/getting-started/first-flow), configuration and data [Mapping](/guides/mapping-data).
+*   [Basic understanding of component development](/guides/building-nodejs-component).
 
 ## Introduction
 
-The component has some predefined entities that it consumes on execution start.
-Such entities are:
+The component has the following predefined entities that it consumes on execution
+start:
 
 *   Message:
     *   Body - a result of the mapping of the emitted message from the previous step into **input metadata**.
-    *   Attachments - an array of attachments provided by the previous step.
+    *   [Attachments](/guides/using-attachments) - an array of attachments provided by the previous step.
 *   Configuration:
-    *   Credentials - chosen during step configuration.
+    *   [Credentials](/getting-started/credential) - chosen during step configuration.
     *   **Input field** values.
-* Snapshot - 5KB storage shared between executions.
+*   [Snapshot](/guides/using-snapshots) - 5KB storage shared between executions.
 
 In this article, we will talk about the differences of **Input fields** and input
 **metadata** as it often confuses new Elastic.io platform users.
 
 ## Semantics
 
-Despite some technical and UX similarities that you will see later in this article there is a fundamental difference in the purpose of existence both **Input fields** and input **metadata**.
+> Despite some technical and UX similarities that you will see later in this article
+> there is a fundamental difference in the purpose of existence both **Input fields**
+> and input **metadata**.
 
 ### Input fields
 
 Exists to fine-tune component action behavior as a step in a particular flow.
 Some parameters can be configured for the step that is predefined by the platform
-as passthrough behavior, pre-fetch count, or custom RAM limit. But at the same time,
-each component solves its integration task (e.g. Salesforce API communication)
-and may require the ability to tune behavior to work best in a given use-case.
+as [passthrough behavior](/getting-started/passthrough-feature), pre-fetch count,
+or custom RAM limit. But at the same time, each component solves its integration
+task (e.g. Salesforce API communication) and may require the ability to tune
+behavior to work best in a given use-case.
 
 So, **Input fields** can be compared to buttons on any electrical device, let's
 say copy machine, **Input fields** for copy machine component would be:
@@ -130,11 +132,11 @@ structure or generation. But it works with values put into both. Here is the sam
 of typical action code (Node.js):
 
 ```js
-    module.exports.process = async function process(msg, cfg, snapshot) {
-            const body = msg.body;
-            const {field1, field2, field3, } = cfg;
-            ...
-    }
+module.exports.process = async function process(msg, cfg, snapshot) {
+        const body = msg.body;
+        const {field1, field2, field3, } = cfg;
+        ...
+}
 ```
 
 Where `cfg` containing credentials and input fields and `msg` contains mapping
@@ -168,16 +170,16 @@ drop-down list input field:
 Sample of such method implementation:
 
 ```js
-    module.exports.dynList = async function dynamicList(cfg) {
-            const {cred1, cred2, cred3, } = cfg;
-            let list = {
-				"FieldID1": "FieldName1",
-				"FieldID2": "FieldName2",
-				"FieldID3": "FieldName3"
-			};
-            ...
-			return list;
-    }
+module.exports.dynList = async function dynamicList(cfg) {
+        const {cred1, cred2, cred3, } = cfg;
+        let list = {
+		"FieldID1": "FieldName1",
+		"FieldID2": "FieldName2",
+		"FieldID3": "FieldName3"
+	};
+        ...
+	return list;
+}
 ```
 
 ### Dynamic metadata generation
@@ -187,29 +189,29 @@ name, for dynamic **metadata** generation method name is predefined, it is `getM
 In **component.json** instead of metadata parameter `dynamicMetadata` should be specified:
 
 ```json
-	"dynamicMetadata": true
+"dynamicMetadata": true
 ```
 
 `getMetaModel` implementation sample:
 
 ```js
-    module.exports.getMetaModel = async function getMeta(cfg) {
-            const {cred1, cred2, cred3, field1, field2, } = cfg;
-			const meta = {
-			    "in": {
-			        "type": "object",
-			        "properties": {}
-			    },
-			    "out": {
-			        "type": "object",
-			        "properties": {}
-			    },
-			};
-			...
-			meta.in.properties = getInMeta(cfg);
-			meta.in.properties = getOutMeta(cfg);
-			return meta;
-    }
+module.exports.getMetaModel = async function getMeta(cfg) {
+        const {cred1, cred2, cred3, field1, field2, } = cfg;
+	const meta = {
+	    "in": {
+	        "type": "object",
+	        "properties": {}
+	    },
+	    "out": {
+	        "type": "object",
+	        "properties": {}
+	    },
+	};
+	...
+	meta.in.properties = getInMeta(cfg);
+	meta.in.properties = getOutMeta(cfg);
+	return meta;
+}
 ```
 
 Where `getInMeta()` and `getOutMeta()` does not required, just as sample.
