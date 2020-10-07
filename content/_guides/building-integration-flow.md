@@ -61,7 +61,7 @@ Now we need to configure the 3 remaining steps:
 
 To learn more about Routing please read [Content-Based Routing](/guides/content-based-router) article.
 
-## E-mails
+## E-mail Configuration
 
 Now we just have to send emails to people from the database, which says how much renewable energy is in the next 3 days in their city. To do this, we will use a [Email component](/components/email):
 
