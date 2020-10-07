@@ -7,7 +7,7 @@ category: building integration flows
 order: 1
 ---
 
-This document provides a step-by-step instruction on building a Integration Flow. It is intended for platform users who have at least some experience in building Flow. The integration flow in this document was created using many platform features such as: [Transforming data](/guides/transforming-data), [Content-Based Routing](/guides/content-based-router) and [Passthrough Feature](/getting-started/passthrough-feature).
+This document provides a step-by-step instruction on building a Integration Flow. It is intended for platform users who have at least some experience in building Flow. For basic information on integration flows and how to create them, please read the [Creating a Basic Integration Flow](/getting-started/first-flow) article. The integration flow in this document was created using many platform features such as: [Transforming data](/guides/transforming-data), [Content-Based Routing](/guides/content-based-router) and [Passthrough Feature](/getting-started/passthrough-feature).
 
 In this example, we will create a flow that will send an email informing about the availability of sufficient renewable energy in the city in the next 3 days:
 
