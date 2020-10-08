@@ -7,18 +7,16 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2019-06-27
-updatedDate: 2020-08-26
+updatedDate: 2020-10-08
 ---
 
 ## Latest changelog
 
-**1.3.5 (August 21, 2020)**
+**2.0.0 (October 2, 2020)**
 
-* Update `Bulk Create/Update/Delete` action:
-   - now it supports `Bulk Upsert` feature
-   - fix bug `404 - File's metadata is not found`
+* First commit of v2 branch.
 
-> To see the full **changelog** please use the following [link](/components/salesforce/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -31,39 +29,53 @@ Integration component to connect the Salesforce for the [{{site.data.tenant.name
 
 ### API version
 
-The component uses Salesforce - API Version 45.0, except:
+The component uses Salesforce - API Version 46.0 by defaults but can be overwritten by the environment variable `SALESFORCE_API_VERSION`.
 
--   Deprecated Actions and Triggers - API Version 25.0
+>**Please note:** Deprecated Actions and Triggers - API Version 25.0
 
-### Authentication
+### Environment variables
 
-Authentication occurs via OAuth 2.0.
-
-In the component repository you need to specify OAuth Client credentials as environment variables:
-
-- ```OAUTH_CLIENT_ID``` - your OAuth client key
-
-- ```OAUTH_CLIENT_SECRET``` - your OAuth client secret
-
-> **Note**: We renamed the environment variables `SALESFORCE_KEY` and `SALESFORCE_SECRET` to standardize the OAuth workflow.
-
-To get these values you can check the
-[creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
+|Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|LOG_LEVEL| false | Controls logger level | `trace`, `debug`, `info`, `warn`, `error` |
+|SALESFORCE_API_VERSION| false | Determines API version of Salesforce to use | Default: `46.0` |
+|REFRESH_TOKEN_RETRIES| false | Determines how many retries to refresh token should be done before throwing an error | Default: `10` |
+|HASH_LIMIT_TIME| false | Hash expiration time in ms  | Default: `600000` |
+|HASH_LIMIT_ELEMENTS| false | Hash size number limit  | Default: `10` |
 
 ### Completeness Matrix
 
 The [component completeness](completeness-matrix) matrix gives the technical
 details about Salesforce objects this component covers.
 
-### Credentials
+## Credentials
+
+Authentication occurs via OAuth 2.0.
+
+In order to make OAuth work, you need a new App in your Salesforce. During app creation process you will be asked to specify
+the callback URL, to process OAuth authentication via elastic.io platform your callback URL should be ``https://your-tenant.elastic.io/callback/oauth2``.
+
+More information you can find [here](https://help.salesforce.com/apex/HTViewHelpDoc?id=connected_app_create.htm).
+
+### Credentials creation
 
 During credentials creation you would need to:
 
-*   Choose `Environment`
+- select existing Auth Client from drop-down list ``Choose Auth Client`` or create the new one.
+For creating Auth Client you should specify following fields:
 
-*   Enter ``Username`` and ``Password`` in a pop-up window after click on ``Authenticate`` button.
+|Field name|Mandatory|Description|
+|----|---------|-----------|
+|Name| true | your Auth Client's name |
+|Client ID| true | your OAuth client key |
+|Client Secret| true | your OAuth client secret |
+|Authorization Endpoint| true | your OAuth authorization endpoint. For production use `https://login.salesforce.com/services/oauth2/authorize`, for sandbox - `https://test.salesforce.com/services/oauth2/authorize`|
+|Token Endpoint| true | your OAuth Token endpoint for refreshing access token. For production use `https://login.salesforce.com/services/oauth2/token`, for sandbox - `https://test.salesforce.com/services/oauth2/token`|
 
-*   Verify and save your new credentials.
+- fill field ``Name Your Credential``
+- click on ``Authenticate`` button - if you have not logged in Salesforce before then log in by entering data in the login window that appears
+- click on ``Verify`` button for verifying your credentials
+- click on ``Save`` button for saving your credentials
 
 > **Note**: When you deploy the Salesforce component separately into a dedicated tenant or
 > into your developer team it can not use the OAuth App specifically created for
@@ -81,29 +93,9 @@ Continuously runs the same SOQL Query and emits results one-by-one. Use the Sale
 Polls existing and updated objects. You can select any custom or built-in object for your Salesforce instance.
 
   3. [Subscribe to platform events](/components/salesforce/triggers#subscribe-to-platform-events-trigger)                                                                          
-This trigger will subscribe for any platform Event using Salesforce streaming API.
+This trigger will subscribe for any platform Event using Salesforce streaming API. Realtime flows only.
 
-The following Salesforce triggers are deprecated:
-
-  1. [New Case trigger(deprecated)](/components/salesforce/triggers#new-case-triggerdeprecated)                                                                     
-Polls existing and updated Cases (fetches a maximum of 1000 objects per execution)   
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](/components/salesforce/triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
-
-  2. [New Lead trigger(deprecated)](/components/salesforce/triggers#new-lead-triggerdeprecated)                                                                     
-Polls existing and updated Leads (fetches a maximum of 1000 objects per execution)   
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](/components/salesforce/triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
-
-  3. [New Contact trigger(deprecated)](/components/salesforce/triggers#new-contact-triggerdeprecated)                                                                     
-Polls existing and updated Contacts (fetches a maximum of 1000 objects per execution)
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](/components/salesforce/triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
-
-  4. [New Account trigger(deprecated)](/components/salesforce/triggers#new-account-triggerdeprecated)                                                                     
-Polls existing and updated Accounts (fetches a maximum of 1000 objects per execution)
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](/components/salesforce/triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
-
-  5. [New Task trigger(deprecated)](/components/salesforce/triggers#new-task-triggerdeprecated)                                                                     
-Polls existing and updated Tasks (fetches a maximum of 1000 objects per execution)   
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](/components/salesforce/triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
+> You can find information on deprecated triggers [here](deprecated-functions#deprecated-actions).
 
 ## Actions
 
@@ -133,31 +125,8 @@ Use this list to navigate to the action you seek.
   8. [Bulk Query action](/components/salesforce/actions#bulk-query-action)        
   Fetches records to a CSV file.
 
-The following Salesforce actions are deprecated:
+> You can find information on deprecated actions [here](deprecated-functions#deprecated-triggers).
 
-  1. [Lookup Object (deprecated)](/components/salesforce/actions#lookup-object-actiondeprecated)                     
-  Lookup an object by a selected field.Action is `deprecated`. You can use [Lookup Object action](/components/salesforce/actions#lookup-objects-action) or [Lookup Object action (at most 1)](/components/salesforce/actions#lookup-object-action-at-most-1) instead.
-
-  2. [New Account (deprecated)](/components/salesforce/actions#new-account-actiondeprecated)                                                            
-  This action will automatically retrieve all existing fields of `Account` object type that available on your Salesforce organization. Action is `deprecated`. You can use [Create Object action](/components/salesforce/actions#create-object-action) instead.
-
-  3. [New Case (deprecated)](/components/salesforce/actions#new-case-actiondeprecated)                                                         
-  Creates a new Case. Action is `deprecated`. You can use [Create Object action](/components/salesforce/actions#create-object-action) instead.
-
-  4. [New Contact (deprecated)](/components/salesforce/actions#new-contact-actiondeprecated)                                                         
-  Creates a new Contact. Action is `deprecated`. You can use [Create Object action](/components/salesforce/actions#create-object-action) instead.
-
-  5. [New Event (deprecated)](/components/salesforce/actions#new-event-actiondeprecated)                                                         
-  Creates a new Event. Action is `deprecated`. You can use [Create Object action](/components/salesforce/actions#create-object-action) instead.
-
-  6. [New Lead (deprecated)](/components/salesforce/actions#new-lead-actiondeprecated)                                                         
-  Creates a new Lead. Action is `deprecated`. You can use [Create Object action](/components/salesforce/actions#create-object-action) instead.
-
-  7. [New Note (deprecated)](/components/salesforce/actions#new-note-actiondeprecated)                                                         
-  Creates a new Note. Action is `deprecated`. You can use [Create Object action](/components/salesforce/actions#create-object-action) instead.
-
-  8. [New Task (deprecated)](/components/salesforce/actions#new-task-actiondeprecated)                                                         
-  Creates a new Task. Action is `deprecated`. You can use [Create Object action](/components/salesforce/actions#create-object-action) instead.
 
 ## Known limitations
 
