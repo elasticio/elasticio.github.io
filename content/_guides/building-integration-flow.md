@@ -5,6 +5,9 @@ layout: article
 section: Building integration flows
 category: building integration flows
 order: 1
+redirect_from:
+  - /guides/basic-integration-flow.html
+  - /guides/basic-webhook-flow.html
 ---
 
 This document provides a step-by-step instruction on building a Integration Flow. It is intended for platform users who have at least some experience in building Flow. For basic information on integration flows and how to create them, please read the [Creating a Basic Integration Flow](/getting-started/first-flow) article. The integration flow in this document was created using many platform features such as: [Transforming data](/guides/transforming-data), [Content-Based Routing](/guides/content-based-router) and [Passthrough Feature](/getting-started/passthrough-feature).
