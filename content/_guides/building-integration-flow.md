@@ -1,6 +1,6 @@
 ---
 title: Building integration flow
-description: This article describes how to build an integration using platform features.
+description: This document provides a step-by-step instruction on building an advanced Integration Flow. It is intended for platform users who have at least some experience in building basic Flows.
 layout: article
 section: Building integration flows
 category: building integration flows
