@@ -9,13 +9,13 @@ createdDate: 2019-06-27
 updatedDate: 2020-10-08
 ---
 
-## Matrix from version 2
+## Matrix version 2.0.0
 
 Here is the Completeness Matrix for the Salesforce component from version 2.
 
 ![Salesforce component Completeness Matrix](https://user-images.githubusercontent.com/16806832/93742890-972ca200-fbf7-11ea-9b7c-4a0aeff1c0fb.png)
 
-## Matrix up to version 2
+## Matrix version 1.3.5
 
 Here is the Completeness Matrix for the Salesforce component up to version 2.
 

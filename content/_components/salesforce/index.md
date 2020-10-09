@@ -53,7 +53,7 @@ details about Salesforce objects this component covers.
 Authentication occurs via OAuth 2.0.
 
 In order to make OAuth work, you need a new App in your Salesforce. During app creation process you will be asked to specify
-the callback URL, to process OAuth authentication via elastic.io platform your callback URL should be ``https://your-tenant.elastic.io/callback/oauth2``.
+the callback URL, to process OAuth authentication via elastic.io platform your callback URL should be `{{site.data.tenant.appURL}}/callback/oauth2/callback/oauth2`.
 
 More information you can find [here](https://help.salesforce.com/apex/HTViewHelpDoc?id=connected_app_create.htm).
 
