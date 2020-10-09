@@ -7,14 +7,20 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2020-09-06
+updatedDate: 2020-10-09
 ---
 
 ## Latest changelog
 
-**1.2.11 (September 6, 2020)**
+**2.0.0 (October 8, 2020)**
 
-* Fix url encoding
+* Include status code, HTTP headers along with body in produced message
+* Update dependencies
+* Remove logging of sensitive data
+* Include attachment information in outbound message
+* Use node version 14
+* Make use of new OAuth mechanism
+* First commit of v2 branch
 
 > To see the full **changelog** please use the following [link](changelog).
 
@@ -66,58 +72,54 @@ Notice: Specified for component REQUEST_TIMEOUT environment variable would be ov
 
 To use the REST API component with any restricted access API provide the authorisation information.
 
-![Choose credentials](img/choose-credentials.png)
-
+![alt text](https://user-images.githubusercontent.com/8449044/95571339-ee70a600-0a30-11eb-972e-d512c1ef88d9.png "REST API component Basic authorization")
 *Example above shows how to add the username/password to access the API during the integration flow design.*
 
-You must the authorisation methods during the integration flow design or by
-navigating to your `Integrate > Credentials > REST API` from the main menu and
-adding there. REST API component supports 4 authorisation types.
+You can add the authorization methods during the integration flow design or by going to the left side-bar, choosing `Credentials > REST API V2`
+and adding there.
 
-> **Please note:** The result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the [headers section directly](#defining-http-headers).
+![alt text](https://user-images.githubusercontent.com/8449044/95571461-2f68ba80-0a31-11eb-9fff-c67b34506b00.png "REST API component OAuth2 authorization")
+*Example above shows how to add new credential to access the API from Credentials page.*
 
-### No Auth
+REST API component supports 4 authorisation types:
 
-Use **No Auth** method to work with any open REST API. You don't need
-to Verify it, just Save it and proceed further.
+*   `No Auth` - use this method to work with any open REST API
+*   `Basic Auth` - use it to provide login credentials like **username/password**
+*   `API Key Auth` - use it to provide `API Key` to access the resource
+*   `OAuth2` - use it to provide `Oauth2` credentials to access the resource. Currently it is implemented `Authorization code` OAuth2 flow.
 
-### Basic Auth
+To create `OAuth2` credential you have to choose Auth-client or create the new one. It must contains `Name`, `Client ID`, `Client Secret`, `Authorization Endpoint` and `Token Endpoint`.
+![alt text](https://user-images.githubusercontent.com/8449044/95571677-7e165480-0a31-11eb-9b45-915401d40e31.png "Creating auth client for REST API component")
+*Example above shows how to add new Auth-client to access the API.*
 
-Use **Basic Auth** to provide login credentials like **username/password**.
+Please note that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorisation in the headers section directly.
 
-> **Please note:** If you intend to make calls to our own API then you MUST use this method. Use your email address as username and your API-Key as a password.
+### Environment variables
 
-### API Key Auth
-
-Use **API Key Auth** method for systems where an `API Key` is required to access
-the resource. You need the **Header Name** (like `api-key`) and **Header Value**
-(the value of API-KEY).
-
-### OAuth2
-
-Use **OAuth2** method when the external resource dictates an `Oauth2` authorisation to
-access their resources.
-
-> Before you can fill-in the configuration fields, we strongly suggest creating
-> the OAuth2 app at service side. Here is an example how you could create an
-> [OAuth2 app for Salesforce](/components/salesforce/creating-oauth-app-for-salesforce).
-
-To help you get started here is our Callback URL (`{{site.data.tenant.appURL}}/callback/oauth2`)
-to use during OAuth2 App creation at the third party service side.
-
-There are six configuration fields here from which four are mandatory:
-
-*   **Client Id** - This is the standard Client ID of your OAuth2 app.
-*   **Client Secret** - The Client Secret of your OAuth2 app.
-*   **Auth URI** - This is the authorisation URL which you should get from the service to which you are connecting. As an example Salesforce uses `https://login.salesforce.com/services/oauth2/authorize` address. Other services have similar addresses.
-*   **Token URI** - This would be the URL where you make a call to obtain your access token. Using the Salesforce as an example, here is their `https://login.salesforce.com/services/oauth2/token` address to obtain tokens.
-*   Scopes - A comma-separated list of special scopes your case needs. Something like `users:write, teams:write`
-*   Additional parameters - A comma-separated list of any additional parameters that your case requires. For example `prompt:consent, access_type:offline` could be given.
-
+| NAME                       | DESCRIPTION    | DEFAULT   | OPTIONAL |
+|----------------------------|------------------------|-----------|----------|
+| REQUEST_TIMEOUT            | HTTP authorization request timeout in milliseconds.                                                   | 10000     | true     |
+| REQUEST_RETRY_DELAY        | Delay between authorization retry attempts in milliseconds                                            | 5000      | true     |
+| REQUEST_MAX_RETRY          | Number of HTTP authorization request retry attempts.                                                  | 3         | true     |
 
 ## Trigger & Action
 
 In a REST API component the trigger and action perform the same function - HTTP request witch will send a `GET`/`POST`/`PUT`/`PATCH`/`DELETE` requests and parse the response back to the flow.
+
+### Output
+
+The messages produced by the REST API component will have the following properties:
+
+* `headers`: Object containing the HTTP response headers
+* `statusCode`: HTTP Status Code of the Response. Number between `100` and `599`
+* `statusMessage`: Human readable equivalent to the response code
+* `body`: The contents of the HTTP response body:
+  * When the content type header includes `json`, then the result will be parsed into the corresponding object
+  * When the content type header includes `xml`, then the result will be converted into the JSON equivalent of the represented XML using the same rules as above
+  * When the content type header includes one of `image`, `msword`, `msexcel`, `pdf`, `csv`, `octet-stream` or `binary` the request body contents will be stored as an attachment and there will be no `body` property in the outgoing message
+  * When there is no body (because the content-length is 0), then there will be no `body` property in the outbound message.
+  * If there is another content type, then the response will be treated as text
+  * If the content type header is omitted, then an attempt to convert the result to JSON will be made. If that fails, then the result will be treated as if it were text.
 
 > For more details you can see the [usage example](/components/rest-api/usage-example).
 
@@ -253,6 +255,18 @@ name-value pairs in clear-text `string` format. The header value can use
 [JSONata](http://jsonata.org/) expressions.
 
 > **Please note: HTTP Response headers** will not be stored, the components stores body and attachment only.
+
+## Cookies
+
+Sometimes it's required to read and set cookies. To read cookies you should have gain access to the `Set-Cookie` headers of the _HTTP Response_,
+in this case you should check the ``Don`t throw Error on Failed Calls`` option. Please note that HTTP Response may have **multiple**
+`Set-Cookie` headers therefore you should expect to find an **array** of values in the HTTP Response
+
+![image](https://user-images.githubusercontent.com/56208/85700153-66160180-b6dc-11ea-8885-45f8c888dc8a.png)
+
+To _set_ Cookies you could simply use the HTTP header on your _Response_ called `Cookie` to a cookie value to a
+list of name-value pairs in the form of <cookie-name>=<cookie-value>. Pairs in the list are separated by a semicolon and a space ('; ')
+like `yummy_cookie=choco; tasty_cookie=strawberry`. More information on setting the cookies can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie).
 
 ## Attachments
 
