@@ -1,13 +1,17 @@
 ---
-title: Changelog
+title: Salesforce Changelog
 layout: component
 description: Changelog for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-01-02
-updatedDate: 2020-08-26
+updatedDate: 2020-10-08
 ---
+
+## 2.0.0 (October 2, 2020)
+
+* First commit of v2 branch.
 
 ## 1.3.5 (August 21, 2020)
 

@@ -6,7 +6,7 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-03-17
-updatedDate: 2020-03-26
+updatedDate: 2020-10-08
 ---
 
 ## Query trigger
@@ -83,11 +83,11 @@ When a binary field (primitive type `base64`, e.g. Documents, Attachments, etc) 
 
 ## Subscribe to platform events trigger
 
->**NOTE:** REALTIME FLOWS ONLY
-
 This trigger will subscribe for any platform Event using Salesforce streaming API:
 
 ![Subscribe to platform events trigger](img/subscribe-trigger.png)
+
+>**Please note:** REALTIME FLOWS ONLY
 
 ### Input field description
 
@@ -100,43 +100,3 @@ This trigger will subscribe for any platform Event using Salesforce streaming AP
 ![Platform Events](img/platform-events.png)
 
 You can find more detail information in the [Platform Events Intro Documentation](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_intro.htm).
-
-### Environment Variables
-
-1. `SALESFORCE_API_VERSION` - API version for not deprecated actions and triggers e.g(46.0), default value 45.0
-
-2. `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
-
-### Limitations:
-
-At the moment this trigger can be used only for **"Realtime"** flows.
-
-## New Case trigger(deprecated)
-
-Polls existing and updated Cases (fetches a maximum of 1000 objects per execution)
-
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling-trigger) trigger instead.
-
-## New Lead trigger(deprecated)
-
-Polls existing and updated Leads (fetches a maximum of 1000 objects per execution)
-
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling-trigger) trigger instead.
-
-## New Contact trigger(deprecated)
-
-Polls existing and updated Contacts (fetches a maximum of 1000 objects per execution)
-
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling-trigger) trigger instead.
-
-## New Account trigger(deprecated)
-
-Polls existing and updated Accounts (fetches a maximum of 1000 objects per execution)
-
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling-trigger) trigger instead.
-
-## New Task trigger(deprecated)
-
-Polls existing and updated Tasks (fetches a maximum of 1000 objects per execution)
-
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling-trigger) trigger instead.
