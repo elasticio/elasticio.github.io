@@ -7,7 +7,7 @@ icon:  sugarcrm.png
 icontext: SugarCRM component
 category: SugarCRM component
 createdDate: 2016-12-03
-updatedDate: 2019-09-25
+updatedDate: 2020-10-06
 ---
 
 This is an open source component template for [SugarCRM](https://www.sugarcrm.com)
@@ -17,15 +17,11 @@ You can clone it and change it as you wish.
 
 ## Latest changelog
 
-**1.1.0 (December 25, 2019)**
+**1.1.2 (October 6, 2020)**
 
-* Add support for `Bulk operations` (Create/Update/Delete)
-* Add `Lookup Objects` action
-* Add `Query` action
-* `Upsert Entry` action: add ability to utilize binary data attachment from previous step
-* `Lookup Object` action: add ability to pass binary data (if found object has it) to the next component as a binary attachment
+* Component code audit.
 
-> To see the full **changelog** please use the following [link](/components/sugarcrm/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Authentication
 
