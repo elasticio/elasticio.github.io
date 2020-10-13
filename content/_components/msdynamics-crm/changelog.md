@@ -1,13 +1,19 @@
 ---
-title: Changelog
+title: Microsoft Dynamics CRM Changelog
 layout: component
 description: Changelog for Microsoft Dynamics CRM component
 icon:  msdynamics-crm.png
 icontext: Microsoft Dynamics CRM component
 category: Microsoft Dynamics CRM
 createdDate: 2019-12-27
-updatedDate: 2020-06-18
+updatedDate: 2020-10-13
 ---
+
+## 1.2.1 (October 7, 2020)
+* Bump dependencies
+* Fix emit called without await
+* Fix node to version 14
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
 ## 1.2.0 (June 18, 2020)
 

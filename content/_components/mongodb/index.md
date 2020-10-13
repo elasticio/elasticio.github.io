@@ -7,18 +7,14 @@ icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
 createdDate: 2020-04-13
-updatedDate: 2020-07-17
+updatedDate: 2020-10-13
 ---
 
 ## Latest changelog
 
-**1.5.1 (July 17, 2020)**
+**1.5.2 (September 20, 2020)**
 
-* Add Authentication DB information to documentation
-* Update dependencies
-* Update sailor to version `2.6.14`
-* Log errors in verify credentials.
-* Fix test suite.
+* Component code audit
 
 > To see the full **changelog** please use the following [link](changelog).
 

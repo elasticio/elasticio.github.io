@@ -1,13 +1,26 @@
 ---
-title: Changelog
+title: Webhook Changelog
 layout: component
 description: Changelog for Webhook component.
 icon: webhook.png
 icontext: Webhook component
 category: Webhook component
 createdDate: 2020-01-02
-updatedDate: 2020-05-19
+updatedDate: 2020-10-13
 ---
+
+## 1.2.5 (October 12, 2020)
+
+* Update sailor version to 2.6.16
+
+## 1.2.4 (Sept 29, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs.
+
+## 1.2.3 (Sept 11, 2020)
+
+* Bump dependencies
+* Don't log entire incoming message at info level
 
 ## 1.2.2 (May 19, 2020)
 
