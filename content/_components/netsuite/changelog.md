@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: NetSuite Changelog
 layout: component
 description: Changelog for NetSuite component.
 icon: netsuite.png
@@ -9,11 +9,11 @@ createdDate: 2019-12-27
 updatedDate: 2019-12-27
 ---
 
-## 2.1.1 - 2019-08-02
+## 2.1.1 (August 8, 2019)
 
 - Modify Error Handling in component with custom ComponentException
 
-## 2.1.0 - 2019-07-26
+## 2.1.0 (July 26, 2019)
 
 ### Add actions according to OIH standards:
 

@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: SAP ECC (R/3, ERP) Changelog
 layout: component
 description: Changelog for SAP ECC (R/3, ERP) Component.
 icon: sap-r3.png

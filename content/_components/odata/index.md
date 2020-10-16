@@ -18,20 +18,19 @@ A component designed to work with generic APIs which implement the [OData v4 spe
 
 * Update Sailor version to 2.6.7
 
-> To see the full **changelog** please use the following [link](/components/odata/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Authentication
 
-Supports the following forms:
-* No Auth
-* Basic Auth
-* API key auth
+![Authentication](img/odata-cred.png)
 
 ## Triggers
 
 ### Get Objects Polling
 
 Get objects which have recently been modified or created.
+
+![Get Objects Polling](img/get-objects-polling.png)
 
 All types of objects programmatically detectable are covered.  When selecting this trigger, the first input that must be configured is **Object type to fetch**.  This drop-down when opened will produce a list of all object types on the system.
 
@@ -55,7 +54,10 @@ output.
 
 Given a field and a field value that matches exactly one record, find that matching record.
 
+![Lookup Object by Field](img/lookup-objects-by-filed.png)
+
 There are three configuration drop downs:
+
 * **Object Type to Lookup**: All types of objects programmatically detectable are covered.  This drop down when opened will produce a list of all object types on the system.
 * **Name of Field to Match**: Select a field to compare against.  Currently, this will return a list of all fields on the object selected in the `Object Type to Lookup` drop-down.
 * **Allow Empty Criteria**: Should the lookup operation be skipped (i.e. this component becomes a No-op which emits the empty message) if all criteria are empty?
@@ -79,6 +81,7 @@ There are three configuration drop downs:
   "wrapFieldInQuotes": true/false
 }
 ```
+
 * PseudoCode:
 
 ```
@@ -96,6 +99,8 @@ ELSE
 ### Upsert Object By ID
 
 Update an existing entry with the id provided.  Otherwise create a new entry.
+
+![Upsert Object By ID](img/upsert-object-by-id.png)
 
 All types of objects programmatically detectable are covered.  When selecting this trigger, the first input that must be configured is **Object type to fetch**.  This drop-down when opened will produce a list of all object types on the system.
 

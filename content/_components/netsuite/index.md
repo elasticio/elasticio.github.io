@@ -12,11 +12,11 @@ updatedDate: 2019-08-07
 
 ## Latest changelog
 
-**2.1.1 - 2019-08-02**
+**2.1.1 (August 8, 2019)**
 
 - Modify Error Handling in component with custom ComponentException
 
-> To see the full **changelog** please use the following [link](/components/netsuite/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## How works
 

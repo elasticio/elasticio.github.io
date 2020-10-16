@@ -16,7 +16,7 @@ updatedDate: 2020-01-17
 
 * Implement RFC [Server Trigger](/components/sap-r3/triggers#rfc-server-only-for-realtime-flows)
 
-> To see the full **changelog** please use the following [link](/components/sap-r3/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## General Information
 

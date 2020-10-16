@@ -13,11 +13,15 @@ updatedDate: 2020-03-18
 
 Deletes an object by the ID provided.
 
+![Delete Object By Id](img/delete-by-id.png)
+
 ### Delete Object By Id. Config fields
 
-* **Object Category** - a category of an object in NetSuite
+* **Object Category** - a category of an object in NetSuite:
+
   * Standard
   * Custom
+
 * **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
 
 ### Delete Object By Id. Input Metadata
@@ -69,6 +73,8 @@ Input metadata for other objects:
 
 Lookup an object by the ID provided.
 
+![Lookup Object By Id](img/lookup-by-id.png)
+
 ### Lookup Object By Id. Config fields
 
 * **Object Category** - a category of an object in NetSuite
@@ -81,6 +87,9 @@ Lookup an object by the ID provided.
 ## Lookup Objects
 
 Looks for objects available in NetSuite which meet given criteria.
+
+![Lookup Objects](img/lookup-objects.png)
+
 Use this action to execute the following types of searches:
 
 * [**Basic search**](#basic-search) — Execute a search on a record type based on search filter fields that are specific to that type. See Basic Searches in SOAP Web Services.
@@ -930,7 +939,9 @@ Response
 
 ## Upsert Object By Id
 
-Either update an object in NetSuite by an ID provided or inserts as a new object if it does not exist.  
+Either update an object in NetSuite by an ID provided or inserts as a new object if it does not exist.
+
+![Upsert Object By Id](img/upsert-object-by-id.png)
 
 ### Upsert Object By Id. Config Fields
 

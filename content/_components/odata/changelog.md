@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: ODATA Changelog
 layout: component
 description: Changelog for ODATA component.
 icon: odata.png
