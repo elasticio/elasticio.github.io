@@ -1,13 +1,17 @@
 ---
-title: MongoDB component changelog
+title: MongoDB changelog
 layout: component
 description: Changelog for MongoDB component.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
 createdDate: 2020-04-13
-updatedDate: 2020-07-17
+updatedDate: 2020-10-13
 ---
+
+## 1.5.2 (September 20, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
 ## 1.5.1 (July 17, 2020)
 

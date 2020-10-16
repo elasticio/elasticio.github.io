@@ -7,21 +7,19 @@ icon:  msdynamics-crm.png
 icontext: Microsoft Dynamics CRM component
 category: Microsoft Dynamics CRM
 createdDate: 2018-03-18
-updatedDate: 2020-06-18
+updatedDate: 2020-10-13
 ---
 
 ## Latest changelog
 
-**1.2.0 (June 18, 2020)**
+**1.2.1 (October 7, 2020)**
 
-* Add support for `Bulk operations` (Create/Update/Delete)
-* Add `Delete Object By ID` action
-* Add `Query` action
-* Add new implementation `Upsert` action with image attachment support
-* Add new implementation `Lookup Object` action with image attachment support
-* Add `Lookup Objects` action
+* Bump dependencies
+* Fix emit called without await
+* Fix node to version 14
+* Component code audit
 
-> To see the full **changelog** please use the following [link](/components/msdynamics-crm/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
