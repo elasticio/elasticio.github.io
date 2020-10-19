@@ -55,13 +55,12 @@ enabled in order to allow component make calls. To enable Web Service communicat
 
 **Password** - Password for NetSuite account.
 
-**Account**
-
-Account Number to access NetSuite API. This number is required for the component t
+**Account** - Account Number to access NetSuite API. This number is required for the component t
 o connect to NetSuite via native SuiteTalk API Can be found here:
 
 1.  Go to Setup -> Integration -> Web Services Preferences
 2.  Find ACCOUNT ID field there.
+
 ![Get Account Number](https://user-images.githubusercontent.com/8449044/44263739-c3abae00-a228-11e8-8de6-8e6b33c23be3.png)
 
 **Application ID**
@@ -86,7 +85,7 @@ NetSuite component includes the following triggers:
 
 The following NetSuite triggers are deprecated:
 
-  1. [Search Entity(deprecated)](/components/netsuite/triggers#search-entitydeprecated)                                                  
+  1. [Search Entity(deprecated)](/components/netsuite/deprecated-functions#search-entitydeprecated)                                                  
   Deprecated. Use [Get New and Updated Objects Polling](/components/netsuite/triggers#get-new-and-updated-objects-polling) trigger instead. Find an object or a set of objects using filter criteria (field, operator, value).
 
 ## Actions
@@ -107,25 +106,25 @@ NetSuite component includes the following actions:
 
 The following Salesforce actions are deprecated:
 
-  1. [Lookup Customer(deprecated)](/components/netsuite/actions#lookup-customerdeprecated)       
+  1. [Lookup Customer(deprecated)](/components/netsuite/deprecated-functions#lookup-customerdeprecated)       
   Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead. This action enables to find the customer by provided ID.
 
-  2. [Lookup Invoice(deprecated)](/components/netsuite/actions#lookup-invoicedeprecated)       
+  2. [Lookup Invoice(deprecated)](/components/netsuite/deprecated-functions#lookup-invoicedeprecated)       
   Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead. This action can be used to find invoices by provided ID.
 
-  3. [Upsert Customer(deprecated)](/components/netsuite/actions#upsert-customerdeprecated)       
+  3. [Upsert Customer(deprecated)](/components/netsuite/deprecated-functions#upsert-customerdeprecated)       
   Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead. Create new or update existing customer by provided external ID.
 
-  4. [Upsert Contact(deprecated)](/components/netsuite/actions#upsert-contactdeprecated)       
+  4. [Upsert Contact(deprecated)](/components/netsuite/deprecated-functions#upsert-contactdeprecated)       
   Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead. Create new or update existing contact by provided external ID.
 
-  5. [Upsert Invoice(deprecated)](/components/netsuite/actions#upsert-invoicedeprecated)       
+  5. [Upsert Invoice(deprecated)](/components/netsuite/deprecated-functions#upsert-invoicedeprecated)       
   Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead. Create new or update existing invoice by provided external ID.
 
-  6. [Upsert Sales Order(deprecated)](/components/netsuite/actions#upsert-sales-orderdeprecated)       
+  6. [Upsert Sales Order(deprecated)](/components/netsuite/deprecated-functions#upsert-sales-orderdeprecated)       
   Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead. Create new or update existing sales order by provided external ID.
 
-  7. [Upsert Vendor(deprecated)](/components/netsuite/actions#upsert-vendordeprecated)       
+  7. [Upsert Vendor(deprecated)](/components/netsuite/deprecated-functions#upsert-vendordeprecated)       
   Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead. Create new or update existing vendor by provided external ID.
 
 ## Upsert custom fields
