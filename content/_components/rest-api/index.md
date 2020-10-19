@@ -7,20 +7,14 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2020-10-09
+updatedDate: 2020-10-19
 ---
 
 ## Latest changelog
 
-**2.0.0 (October 8, 2020)**
+**2.0.1 (October 15, 2020)**
 
-* Include status code, HTTP headers along with body in produced message
-* Update dependencies
-* Remove logging of sensitive data
-* Include attachment information in outbound message
-* Use node version 14
-* Make use of new OAuth mechanism
-* First commit of v2 branch
+Update sailor version to 2.6.17
 
 > To see the full **changelog** please use the following [link](changelog).
 
