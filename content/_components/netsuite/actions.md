@@ -13,11 +13,15 @@ updatedDate: 2020-03-18
 
 Deletes an object by the ID provided.
 
+![Delete Object By Id](img/delete-by-id.png)
+
 ### Delete Object By Id. Config fields
 
-* **Object Category** - a category of an object in NetSuite
+* **Object Category** - a category of an object in NetSuite:
+
   * Standard
   * Custom
+
 * **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
 
 ### Delete Object By Id. Input Metadata
@@ -69,6 +73,8 @@ Input metadata for other objects:
 
 Lookup an object by the ID provided.
 
+![Lookup Object By Id](img/lookup-by-id.png)
+
 ### Lookup Object By Id. Config fields
 
 * **Object Category** - a category of an object in NetSuite
@@ -81,6 +87,9 @@ Lookup an object by the ID provided.
 ## Lookup Objects
 
 Looks for objects available in NetSuite which meet given criteria.
+
+![Lookup Objects](img/lookup-objects.png)
+
 Use this action to execute the following types of searches:
 
 * [**Basic search**](#basic-search) — Execute a search on a record type based on search filter fields that are specific to that type. See Basic Searches in SOAP Web Services.
@@ -778,7 +787,7 @@ Advanced searching provides users with the ability to:
 
 The SOAP web services API includes advanced search objects for all records that have an existing search interface.
 
-Please check your 'Advanced Search' Help center section in order to build a correct request. You can find it in the following way:
+> **Please check** your 'Advanced Search' Help center section in order to build a correct request. You can find it in the following way:
 
 Log in to your NetSuite account >  Suite Cloud (Customization, Scripting, and Web Services) > SuiteTalk Web Services > SuiteTalk SOAP Web Services Platform Guide > SOAP Web Services operations > search > Advanced Searches in SOAP Web Services.
 
@@ -930,7 +939,9 @@ Response
 
 ## Upsert Object By Id
 
-Either update an object in NetSuite by an ID provided or inserts as a new object if it does not exist.  
+Either update an object in NetSuite by an ID provided or inserts as a new object if it does not exist.
+
+![Upsert Object By Id](img/upsert-object-by-id.png)
 
 ### Upsert Object By Id. Config Fields
 
@@ -958,6 +969,7 @@ For example when the `externalId` exists the answer would be:
   "externalId":"4567"
 }
 ```
+
 When the `externalId` does not exist:
 
 ```javascript
@@ -985,212 +997,12 @@ For example if the `externalId` exists:
   "externalId":"4567"
 }
 ```
+
 If the `externalId` does not exist:
 
 ```javascript
 {
   "internalId":"1234"
-}
-```
-
-## Upsert Customer(deprecated)
-
-Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead
-
-Create new or update existing customer by provided external ID. The request
-sample could look like:
-
-```javascript
-{
-  "externalId": "external order ID",
-  "customerId": "internal customer ID",
-  "currency": "USA",
-  "exchangeRate": 1.0,
-  "orderItems": [
-		{
-			"itemInternalId": "387",
-			"quantity": 10![Step 1](https://some-url-address)
-
-		}
-	]
-}
-```
-
-## Upsert Contact(deprecated)
-
-Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead.
-
-Create new or update existing contact by provided external ID.
-
-Request sample:
-```javascript
-{
-  "externalId": "entity164",
-  "customForm": {
-    "internalId": "-40",
-    "name": "Standard Contact Form"
-  },
-  "entityId": "Olha Grogan",
-  "salutation": "Mrs.",
-  "firstName": "Olha",
-  "lastName": "Grogan",
-  "subsidiary": {
-    "internalId": "1",
-    "name": "Honeycomb Mfg."
-  }
-}
-```
-
-## Upsert Invoice(deprecated)
-
-Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead.
-
-Create new or update existing invoice by provided external ID.
-
-Request sample:
-```javascript
-{
-  "externalId": "23213000001",
-  "customForm": {
-    "name": "HM Product Invoice",
-    "internalId": "102"
-  },
-  "entity": {
-    "name": "Jennings Financial",
-    "internalId": "81"
-  },
-  "terms": {
-    "name": "Net 30",
-    "internalId": "2"
-  },
-  "subsidiary": {
-    "name": "Honeycomb Mfg.",
-    "internalId": "1"
-  },
-  "currency": {
-    "name": "USA",
-    "internalId": "1"
-  },
-  "location": {
-    "name": "02: Boston",
-    "internalId": "1"
-  },
-  "isTaxable": true,
-  "taxItem": {
-    "name": "CA-SAN MATEO",
-    "internalId": "-112"
-  },
-  "taxRate": 8.25,
-  "fax": "916-555-0806",
-  "message": "We appreciate your prompt payment",
-  "shipMethod": {
-    "name": "Truck",
-    "internalId": "3"
-  },
-  "itemList": {
-    "item": [
-      {
-        "job": null,
-        "item": {
-          "name": "CHA00002®",
-          "internalId": "707",
-          "externalId": null,
-          "type": null
-        },
-        "line": 1,
-        "description": "Assembly Item - Historical",
-        "amount": 7020,
-        "isTaxable": null,
-        "quantity": 36,
-        "price": {
-          "name": "List Price",
-          "internalId": "1"
-        },
-        "rate": "195.00",
-        "taxCode": {
-          "name": "-Not Taxable-",
-          "internalId": "-7"
-        }
-      }
-    ],
-    "replaceAll": false
-  },
-  "shippingCost": 704.25,
-  "customFieldList": {
-    "customField": [
-      {
-        "type": "BooleanCustomFieldRef",
-        "internalId": "167",
-        "scriptId": "custbody_fmt_senior_exec_declined",
-        "value": false
-      }
-    ]
-  }
-}
-```
-
-## Upsert Sales Order(deprecated)
-
-Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead.
-
-Create new or update existing sales order by provided external ID.
-
-Request sample:
-
-```javascript
-{
-  "externalId": "80144000000B5wqAAC",
-  "orderStatus": "_pendingFulfillment",
-  "currency": {
-    "name": "USA",
-    "internalId": "1"
-  },
-  "customForm": {
-    "internalId": "174",
-    "name": "Z - HM Sales Order Form"
-  },
-  "entity": {
-    "internalId": "2053"
-  },
-  "exchangeRate": "1.0",
-  "toBePrinted":"false"
-}
-```
-
-## Upsert Vendor(deprecated)
-
-Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead.
-
-Create new or update existing vendor by provided external ID.
-
-Request sample:
-
-```javascript
-{
-  "externalId": "9999",
-  "entityId": "Nick",
-  "isPerson": "false",
-  "companyName": "Nick2",
-  "phone": "937 99 92",
-  "fax": "937 99 92",
-  "email": "nick2@nickthebest.com",
-  "url": "http://www.nickthebest2.com",
-  "customFieldList": {
-    "customField": [
-      {
-        "internalId": "3992",
-        "scriptId": "custentity_2663_payment_method",
-        "type": "BooleanCustomFieldRef",
-        "value": "false"
-      },
-      {
-        "internalId": "3993",
-        "scriptId": "custentity_2663_payment_method",
-        "type": "BooleanCustomFieldRef",
-        "value": "false"
-      }
-    ]
-  }
 }
 ```
 

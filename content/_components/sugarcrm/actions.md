@@ -9,10 +9,12 @@ createdDate: 2020-03-17
 updatedDate: 2020-03-17
 ---
 
-## Lookup Object By ID action
+## Lookup Object By ID
 
 Given an object, looks up the object with that ID. You must select the type of
 object to lookup.
+
+![Lookup Object By ID](img/lookup-object.png)
 
 ### Input field description
 
@@ -20,9 +22,11 @@ object to lookup.
 
 * **Pass binary data to the next component (if found object has it)** - a checkbox, if it is checked and found object has a binary field (type of `file`) then its data will be passed to the next component as a binary attachment.
 
-## Lookup Objects action
+## Lookup Objects
 
 Lookup a list of objects satisfying specified criteria.
+
+![Lookup Objects](img/lookup-objects.png)
 
 ### Input field description
 
@@ -48,7 +52,7 @@ Field "Maximum number of records" - optional positive integer (default value 100
 *Output method* - `Emit individually`:
 Field `Maximum number of records` - optional positive integer (default value 10000);
 
->**Note** that the number of records the component emits may affect the performance of the platform/component.
+>**Please note** that the number of records the component emits may affect the performance of the platform/component.
 
 Groups of fields for each search term go next:
 
@@ -67,15 +71,19 @@ Output data depends on the configuration field *Output method*:
 * `Emit page`, `Emit all` - an array of records;
 * `Emit individually` - a record;
 
-## Delete Object By ID action
+## Delete Object By ID
 
 Given an object, deletes the object with that ID.  You must select the type of
 object to lookup.
 
-## Upsert Object By ID action
+![Delete Object By ID](img/delete-object.png)
+
+## Upsert Object By ID
 
 Update an existing entry if the id provided. Otherwise create a new entry. You must select the type of object to lookup.
 Input metadata is fetched dynamically from your SugarCRM account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
+
+![Upsert Object By ID](img/upsert-object.png)
 
 ### Input fields description
 
@@ -87,9 +95,11 @@ Input metadata is fetched dynamically from your SugarCRM account. Output metadat
 
 When **Utilize data attachment from previous step (for objects with a binary field)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'
 
-## Bulk Create Objects action
+## Bulk Create Objects
 
 Provides a simple interface for quickly creating large amounts of objects.
+
+![Bulk Create Objects](img/bulk-create-objects.png)
 
 ### Input field description
 
@@ -101,9 +111,11 @@ Provides a simple interface for quickly creating large amounts of objects.
 
 Result is an object with a property **result**: `array`. It contains the list of newly created objects.
 
-## Bulk Update Objects action
+## Bulk Update Objects
 
 Provides a simple interface for quickly updating large amounts of objects.
+
+![Bulk Update Objects](img/bulk-update-objects.png)
 
 ### Input field description
 
@@ -119,11 +131,13 @@ Result is an object with the 2 properties:
 
 * **status** - `string`, if operation were successful `status="done"`. Operation could consider successful even if `failed > 0`
 
-Note: SugarCRM server doesn't return errors in case of a wrong uid.
+> **Please note:** SugarCRM server doesn't return errors in case of a wrong uid.
 
-## Bulk Delete Objects action
+## Bulk Delete Objects
 
 Provides a simple interface for quickly deleting large amounts of objects.
+
+![Bulk Delete Objects](img/bulk-delete-objects.png)
 
 ### Input field description
 
@@ -139,9 +153,11 @@ Result is an object with the 2 properties:
 
 * **status** - `string`, if operation were successful `status="done"`. Operation could consider successful even if `failed > 0`
 
-## Query action
+## Query
 
 Retrieve a set of records filtered by an expression utilizing the SugarCRM REST API filter endpoint. [See for details](https://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_9.1/Integration/Web_Services/REST_API/Endpoints/modulefilter_POST/)
+
+![Query](img/query.png)
 
 ### Input field description
 
@@ -204,7 +220,7 @@ In the Developer mode a request can be built utilizing all features by providing
 }
 ```
 
->**Note** that the number of records the component emits may affect the performance of the platform/component.
+>**Please note** that the number of records the component emits may affect the performance of the platform/component.
 
 Output data depends on the configuration field **Output method**:
 

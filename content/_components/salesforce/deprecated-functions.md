@@ -1,7 +1,7 @@
 ---
 title: Deprecated Salesforce functions
 layout: component
-description: Information on deprecated Salesforce functions.
+description: Information on deprecated Salesforce functions
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
