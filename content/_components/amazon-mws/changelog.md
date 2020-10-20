@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: Amazon MWS Changelog
 layout: component
 description: Changelog for the Amazon MWS component
 icon: amazon-mws.png

@@ -19,7 +19,7 @@ updatedDate: 2020-08-11
 * Add Update Item action
 * Add Update order action
 
-> To see the full **changelog** please use the following [link](/components/amazon-mws/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
