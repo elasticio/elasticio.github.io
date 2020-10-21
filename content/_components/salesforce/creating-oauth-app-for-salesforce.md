@@ -6,7 +6,7 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2019-06-27
-updatedDate: 2019-12-02
+updatedDate: 2020-10-21
 ---
 
 ## Purpose
@@ -63,19 +63,19 @@ for use in your custom installation of Salesforce component.
 > These two keys would need to be defined as Environment Variables for your
 > custom deployed component.
 
-Here is where those two keys fit into the picture. After the deployment, your
-repository looks like this.
+You can create a Auth client directly in the credentials section:
 
-![Salesforce component repository](img/salesforce-repo-envvars.png)
+![Add new client](img/add-new-client.png)
 
-Click **You can configure environment variables here** link to configure variables
-for this specific component.
+You would need to define four variables here:
 
-![Input the environment variables](img/salesforce-input-envvars.png)
+![Define client](img/define-client.png)
 
-You would need to create two variables here:
+*   **Client ID** - your OAuth client key, meaning the **Consumer Key**.
+*   **Client Secret** - your OAuth client secret, meaning the **Consumer Secret**.
+*   **Authorization Endpoint** - The authorization endpoint is used to interact with the resource owner and obtain an authorization grant. For production use `https://login.salesforce.com/services/oauth2/authorize`, for sandbox - `https://test.salesforce.com/services/oauth2/authorize`.
+*   **Token Endpoint** - The token endpoint is used by the client to obtain or refresh an access token. For production use `https://login.salesforce.com/services/oauth2/token`, for sandbox - `https://test.salesforce.com/services/oauth2/token`.
 
-*   `OAUTH_CLIENT_ID` - your OAuth client key, meaning the **Consumer Key**.
-*   `OAUTH_CLIENT_SECRET` - your OAuth client secret, meaning the **Consumer Secret**.
+For more information pleas read our [Secrets feature](/getting-started/secrets) article.
 
-> **Note**: We renamed the environment variables `SALESFORCE_KEY` and `SALESFORCE_SECRET` to standardize the OAuth workflow.
+> **Please Note**: We renamed the environment variables `SALESFORCE_KEY` and `SALESFORCE_SECRET` to standardize the OAuth workflow.

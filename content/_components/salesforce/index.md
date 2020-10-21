@@ -7,7 +7,7 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2019-06-27
-updatedDate: 2020-10-08
+updatedDate: 2020-10-21
 ---
 
 ## Latest changelog
@@ -22,7 +22,7 @@ updatedDate: 2020-10-08
 
 Integration component to connect the Salesforce for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
 
-> **Note**: The component works with the Salesforce API. This means you must
+> **Please Note**: The component works with the Salesforce API. This means you must
 > make sure your Salesforce edition has API Access enabled. To check which editions
 > have API access see the [Salesforce editions with API Access](https://help.salesforce.com/articleView?id=000326486&type=1&mode=1) document.
 > **If your edition has no API Access by default this component _will not work for you_.**
@@ -62,7 +62,12 @@ More information you can find [here](https://help.salesforce.com/apex/HTViewHelp
 During credentials creation you would need to:
 
 - select existing Auth Client from drop-down list ``Choose Auth Client`` or create the new one.
+
+![Add new client](img/add-new-client.png)
+
 For creating Auth Client you should specify following fields:
+
+![Define client](img/define-client.png)
 
 |Field name|Mandatory|Description|
 |----|---------|-----------|
@@ -77,7 +82,9 @@ For creating Auth Client you should specify following fields:
 - click on ``Verify`` button for verifying your credentials
 - click on ``Save`` button for saving your credentials
 
-> **Note**: When you deploy the Salesforce component separately into a dedicated tenant or
+For more information pleas read our [Creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
+
+> **Please Note**: When you deploy the Salesforce component separately into a dedicated tenant or
 > into your developer team it can not use the OAuth App specifically created for
 > our main {{site.data.tenant.name}} tenant. For this purposes you must create a
 > different OAuth App and add the required environment variables to the component setup.
@@ -126,7 +133,6 @@ Use this list to navigate to the action you seek.
   Fetches records to a CSV file.
 
 > You can find information on deprecated actions [here](deprecated-functions#deprecated-triggers).
-
 
 ## Known limitations
 

@@ -25,7 +25,7 @@ Secrets takes over all the functionalities of the Credentials and provides a
 unified service to manage the credentials and tokens independently. This removes
 the need to refresh credentials by the components.
 
-> Please Note: Secrets runs as a micro-service in the platform cluster, constantly
+> **Please Note:** Secrets runs as a micro-service in the platform cluster, constantly
 > checking the expiration information for all credentials and updating them at
 > last 1 minutes before the expiration.
 
@@ -58,7 +58,7 @@ Before you can create your `auth-client` you must know that:
 
 ### Creating OAuth2 Clients
 
-You can create OAuth2 `auth-client` using either the UI or an API call.
+You can create OAuth2 `auth-client` using the UI. After creating a `auth-client`, its visibility level will be `workspace`. To create a client for the entire `contract` or `tenant`, use the [API call](#creating-oauth2-clients-using-api-call).
 
 To create via UI you can use the REST API component as
 an example to create an OAuth2 `auth-client` when selecting to add a credentials:
@@ -73,13 +73,11 @@ OAuth2 client:
 After this step you can create the `auth-secret` the same way as one would create
 a credential.
 
-For more advanced cases we recommend using an API call to create `auth-client`.
-Please consult the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client)
-section for more.
+For more advanced cases we recommend using an [API call](#creating-oauth2-clients-using-api-call) to create `auth-client`.
 
 ### Creating other clients
 
-> Please Note: At the moment you can create other client types only via an API call.
+> **Please Note:** At the moment you can create other client types only via an API call.
 
 To create other `auth-client` types using the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client) API documentation. However, our platform knows already about the following types:
 
@@ -128,3 +126,59 @@ Right now new version of the following components use the Secrets feature:
 > **Please Note**: These **components are not strictly backwards compatible** due to architectural
 > changes done while migrating them to the Secrets feature. Old component will still be available,
 > but they will get deprecated at some stage.
+
+## Creating OAuth2 Clients using API call
+
+As already mentioned in advance, you can create a `auth-client` for a `contract` only using a API call. This resource allows you to create an `auth-client`:
+
+```json
+{
+"data":{
+  "type":"auth-client",
+  "attributes":{
+     "type":"oauth2",
+     "name":"Auth client",
+     "credentials":{
+        "client_id":"{CLIENT_ID}",
+        "client_secret":"{CLIENT_SECRET}",
+        "refresh_token_uri":"http://example.com",
+        "token_expires_in":18000,
+        "token_uri":"{TOKEN_URI}",
+        "auth_uri":"{AUTH_URI}"
+     }
+  },
+  "relationships":{
+     "components":{
+        "data":[
+           {
+              "id":"{COMPONENT_ID}",
+              "type":"component"
+           }
+        ]
+     },
+     "contract":{
+        "data":{
+           "id":"{CONTRACT_ID}",
+           "type":"contract"
+        }
+      }
+    }
+  }
+}
+```
+
+Of course, you can create a `auth-client` for the `workspace` using a API call. You can select a visibility level for a `auth-client` in a relationship: `workspace`, `contract` or `tenant`. No relationship means that `auth-client` visibility level will be global.
+
+* `CLIENT_ID` - this is a unique identification of **Application**.
+* `CLIENT_SECRET` - this is also provided by the **Application**.
+* `TOKEN_URI` - this is the URL which the **Application** is going to use to get the **User** authenticated.
+* `AUTH_URI` - the is the URL which is going to be used by Application to request the `access_token` and `refresh_token`.
+
+As an example, you can see how these parameters are defined in the [Salesforce component](/components/salesforce/creating-oauth-app-for-salesforce).
+
+Below you can see where to find `CONTRACT_ID`(**1**) and `COMPONENT_ID`(**2**):
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/secrets/ids.png" title="Contact and Clients ID" %}
+
+Please consult the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client)
+section for more.
