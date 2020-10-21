@@ -6,7 +6,7 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-10-08
-updatedDate: 2020-10-08
+updatedDate: 2020-10-21
 ---
 
 ## Deprecated authentication method
@@ -39,6 +39,25 @@ In the component repository you need to specify OAuth Client credentials as envi
 > **Note**: We renamed the environment variables `SALESFORCE_KEY` and `SALESFORCE_SECRET` to standardize the OAuth workflow.
 To get these values you can check the
 [creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
+
+### Auth client creation
+
+Here is where those two keys fit into the picture. After the deployment, your
+repository looks like this.
+
+![Salesforce component repository](img/salesforce-repo-envvars.png)
+
+Click **You can configure environment variables here** link to configure variables
+for this specific component.
+
+![Input the environment variables](img/salesforce-input-envvars.png)
+
+You would need to create two variables here:
+
+*   `OAUTH_CLIENT_ID` - your OAuth client key, meaning the **Consumer Key**.
+*   `OAUTH_CLIENT_SECRET` - your OAuth client secret, meaning the **Consumer Secret**.
+
+> **Please Note**: We renamed the environment variables `SALESFORCE_KEY` and `SALESFORCE_SECRET` to standardize the OAuth workflow.
 
 ## Deprecated Triggers
 
