@@ -1,13 +1,17 @@
 ---
-title: Changelog
+title: Lookup Table Changelog
 layout: component
 description: Changelog for Lookup Table component.
 icon: lookup.png
 icontext: Lookup component
 category: Lookup component
 createdDate: 2019-12-27
-updatedDate: 2019-12-27
+updatedDate: 2020-10-20
 ---
+
+## 1.1.1 (October 20, 2020)
+
+* Update sailor version to 2.6.17
 
 ## 1.1.0 (December 16, 2019)
 

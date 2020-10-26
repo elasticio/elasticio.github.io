@@ -1,13 +1,18 @@
 ---
-title: Changelog
+title: Jsonata Changelog
 layout: component
 description: Changelog for Jsonata component.
 icon: jsonata.png
 icontext: Jsonata component
 category: Jsonata component
 createdDate: 2019-12-27
-updatedDate: 2020-09-20
+updatedDate: 2020-10-23
 ---
+
+## 1.0.6 (October 23, 2020)
+
+* Update sailor version to 2.6.17
+* Update internal libraries versions
 
 ## 1.0.5 (September 20, 2020)
 

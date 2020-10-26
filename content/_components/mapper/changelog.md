@@ -1,13 +1,17 @@
 ---
-title: Changelog
+title: Mapper Changelog
 layout: component
 description: Changelog for Mapper component.
 icon: mapper.png
 icontext: Mapper component
 category: Mapper component
 createdDate: 2019-12-27
-updatedDate: 2020-09-20
+updatedDate: 2020-10-20
 ---
+
+## 0.0.9 (October 20, 2020)
+
+* Update sailor to version 2.6.17
 
 ## 0.0.8 (September 20, 2020)
 

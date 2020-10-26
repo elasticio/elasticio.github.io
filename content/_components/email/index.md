@@ -7,14 +7,14 @@ icon: email.png
 icontext: Email component
 category: Email component
 createdDate: 2016-01-07
-updatedDate: 2020-09-20
+updatedDate: 2020-10-20
 ---
 
 ## Latest changelog
 
-**1.0.7 (September 20, 2020)**
+**1.0.8 (October 20, 2020)**
 
-* Component code audit
+* Update sailor version to 2.6.17
 
 > To see the full **changelog** please use the following [link](changelog).
 

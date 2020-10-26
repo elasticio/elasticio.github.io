@@ -12,17 +12,18 @@ updatedDate: 2019-12-16
 
 ## Latest changelog
 
-**1.1.0 (December 16, 2019)**
+**1.1.1 (October 20, 2020)**
 
-Rename component `Dictionary Component` -> `Lookup Table Component`
+* Update sailor version to 2.6.17
 
-> To see the full **changelog** please use the following [link](/components/lookup-table/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
+
 The Lookup From Table Component can be used to convert from different tables that
 parsed as a CSV.
 
-## Credentials
+### Credentials
 
 `CSV Table`: The CSV is entered on the Credentials page as a list of separated
 items. Any delimiter is supported. The CSV will be parsed using the first row as
@@ -76,6 +77,7 @@ F,weiblich
 other
 unknown,U,unbekannt
 ```
+
 will provide a failed result.
 
 > The CSV can only be a maximum of 5kB, and if it contains any duplicate values
@@ -96,13 +98,14 @@ where the value is the result of the table lookup, if it exists:
 
 ![Lookup From Table](img/lookup-from-table.png)
 
-**Input Configuration**
+#### Input Configuration
 
 -   `Emit empty object on unsuccessful lookup`: if selected, an empty object `{}` will be emitted given an unsuccessful lookup where nothing is found. If *not* selected, an error will be thrown on unsuccessful lookup
 -   `From this table`: the column to translate from
 -   `To this table`: the column to translate to
 
 #### Expected input metadata
+
 - `Input`: the value to translate. Should be selected from the list of available values under `Values`
 
 #### Expected output metadata
@@ -118,13 +121,14 @@ Any elements of the CSV that contain the delimiter in them should be wrapped in
 quotations should have the quotes backspaced.
 
 e.g.
+
 ```
 Full Name,First,Last
 "Bond,James",James,Bond
 "Johnson, Dwayne \"The Rock\"",Dwayne,Johnson
 ```
 
-## Known Limitations
+### Known Limitations
 
 -   the CSV has a max size of 5kB
 -   the CSV must be able to be parsed as a rectangle
