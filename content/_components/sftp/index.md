@@ -7,15 +7,15 @@ icon: sftp.png
 icontext: SFTP component
 category: SFTP component
 createdDate: 2015-11-20
-updatedDate: 2020-06-05
+updatedDate: 2020-10-19
 ---
 
 ## Latest changelog
 
-**1.3.0 (June 5, 2020)**
+**1.4.1 (October 19, 2020)**
 
-* Add new 'Move File' action
-* Fix performance problem when trying to download large number of files
+* Component code audit
+* Update sailor to 2.6.17
 
 > To see the full **changelog** please use the following [link](/components/sftp/changelog).
 
@@ -25,7 +25,7 @@ updatedDate: 2020-06-05
 
 This component creates a connection to an SFTP server to read and upload files.
 
-The optional environment variable `MAX_FILE_SIZE` should be set in settings to provide the maximum file size that can be uploaded in **megabytes (mb)**. The default value for `MAX_FILE_SIZE` is 10MB.
+The optional environment variable `MAX_FILE_SIZE` should be set in settings to provide the maximum file size that can be uploaded in **megabytes (mb)**. The default value for `MAX_FILE_SIZE` is 100MB.
 
 ## Credentials
 

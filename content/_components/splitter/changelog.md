@@ -1,13 +1,17 @@
 ---
-title: Changelog
+title: Splitter Changelog
 layout: component
 description: Changelog for Splitter component.
 icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2020-01-02
-updatedDate: 2020-09-25
+updatedDate: 2020-10-20
 ---
+
+## 1.1.6 (October 20, 2020)
+
+* Update sailor version to 2.6.17
 
 ## 1.1.5 (September 25, 2020)
 

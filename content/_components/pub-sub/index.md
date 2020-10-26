@@ -12,11 +12,11 @@ updatedDate: 2020-05-19
 
 ## Latest changelog
 
-**1.0.1 (May 19, 2020)**
+**1.0.2 (October 20, 2020)**
 
-* Add help messages to fields, triggers and actions
+* Update sailor version to 2.6.17
 
-> To see the full **changelog** please use the following [link](/components/pub-sub/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 

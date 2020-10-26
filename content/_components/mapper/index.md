@@ -12,9 +12,9 @@ updatedDate: 2020-09-20
 
 ## Latest changelog
 
-**0.0.8 (September 20, 2020)**
+**0.0.9 (October 20, 2020)**
 
-* Component code audit
+* Update sailor to version 2.6.17
 
 > To see the full **changelog** please use the following [link](changelog).
 

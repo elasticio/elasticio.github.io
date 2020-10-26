@@ -1,13 +1,17 @@
 ---
-title: Changelog
+title: Utility Changelog
 layout: component
 description: Changelog for Utility Component.
 icon: utility.png
 icontext: Utility Component
 category: Utility Component
 createdDate: 2020-01-02
-updatedDate: 2020-09-25
+updatedDate: 2020-10-21
 ---
+
+## 1.1.4 (October 21, 2020)
+
+* Update sailor version to 2.6.17
 
 ## 1.1.3 (September 25, 2020)
 

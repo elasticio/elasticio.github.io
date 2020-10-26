@@ -1,13 +1,17 @@
 ---
-title: Changelog
+title: Router Changelog
 layout: component
 description: Changelog for Router component.
 icon: router.png
 icontext: Router component
 category: Router component
 createdDate: 2020-01-02
-updatedDate: 2020-09-25
+updatedDate: 2020-10-21
 ---
+
+## 0.0.8 (October 21, 2020)
+
+* Update sailor version to 2.6.17
 
 ## 0.0.7 (September 25, 2020)
 

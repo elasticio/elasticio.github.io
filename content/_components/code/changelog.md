@@ -1,13 +1,17 @@
 ---
-title: Changelog
+title: Code Changelog
 layout: component
 description: Changelog for the Code component.
 icon: code.png
 icontext: Code component
 category: Code component
 createdDate: 2015-12-27
-updatedDate: 2020-07-01
+updatedDate: 2020-10-20
 ---
+
+## 1.2.2 (October 20, 2020)
+
+* Update sailor version to 2.6.17
 
 ## 1.2.1 (July 1, 2020)
 

@@ -7,14 +7,14 @@ icon: splitter.png
 icontext: Splitter component
 category: Splitter component
 createdDate: 2017-03-31
-updatedDate: 2020-09-25
+updatedDate: 2020-10-20
 ---
 
 ## Latest changelog
 
-**1.1.5 (September 25, 2020)**
+**1.1.6 (October 20, 2020)**
 
-* Component code audit
+* Update sailor version to 2.6.17
 
 > To see the full **changelog** please use the following [link](changelog).
 

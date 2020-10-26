@@ -6,8 +6,12 @@ icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
 createdDate: 2020-01-02
-updatedDate: 2020-10-08
+updatedDate: 2020-10-23
 ---
+
+## 2.0.1 (October 23, 2020)
+
+* Update sailor version to 2.6.17
 
 ## 2.0.0 (October 2, 2020)
 
