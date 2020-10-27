@@ -1,13 +1,18 @@
 ---
-title: Changelog
+title: Microsoft OneDrive Changelog
 layout: component
 description: Changelog for Microsoft OneDrive component
 icon: onedrive.png
 icontext: Microsoft OneDrive component
 category: onedrive
 createdDate: 2020-03-02
-updatedDate: 2020-08-04
+updatedDate: 2020-10-30
 ---
+
+## 1.0.2 (October 30, 2020)
+
+* Update sailor version to 2.6.18
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
 ## 1.0.1 (August 4, 2020)
 
