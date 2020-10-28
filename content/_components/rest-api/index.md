@@ -7,16 +7,14 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2020-10-22
+updatedDate: 2020-10-23
 ---
 
 ## Latest changelog
 
-**1.2.14 (October 22, 2020)**
+**2.0.2 (October 23, 2020)**
 
 * Annual audit of the component code to check if it exposes a sensitive data in the logs
-* Update sailor version to 2.6.17
-* Update internal libraries versions
 
 > To see the full **changelog** please use the following [link](changelog).
 
