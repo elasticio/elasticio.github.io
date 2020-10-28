@@ -7,16 +7,16 @@ icon: csv.png
 icontext: CSV component
 category: CSV component
 createdDate: 2015-11-15
-updatedDate: 2020-08-21
+updatedDate: 2020-10-30
 ---
 
 ## Latest changelog
 
-**2.1.4 (August 21, 2020)**
+**2.1.5 (October 30, 2020)**
 
-Minor asynchronicity improvement.
+Upgrade to sailor 2.6.18
 
-> To see the full **changelog** please use the following [link](/components/csv/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## How works
 

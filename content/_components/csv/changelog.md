@@ -1,13 +1,18 @@
 ---
-title: Changelog
+title: CSV Changelog
 layout: component
 description: Changelog for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: CSV component
 createdDate: 2019-12-24
-updatedDate: 2020-09-21
+updatedDate: 2020-10-30
+=======
 ---
+
+## 2.1.5 (October 30, 2020)
+
+Upgrade to sailor 2.6.18
 
 ## 2.1.4 (August 21, 2020)
 
