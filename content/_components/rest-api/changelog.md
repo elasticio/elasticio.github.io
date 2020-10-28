@@ -6,14 +6,16 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2020-01-02
-updatedDate: 2020-10-22
+updatedDate: 2020-10-23
 ---
 
-## 1.2.14 (October 22, 2020)
+## 2.0.2 (October 23, 2020)
 
 * Annual audit of the component code to check if it exposes a sensitive data in the logs
+
+## 2.0.1 (October 15, 2020)
+
 * Update sailor version to 2.6.17
-* Update internal libraries versions
 
 ## 2.0.0 (October 8, 2020)
 
@@ -24,6 +26,12 @@ updatedDate: 2020-10-22
 * Use node version 14
 * Make use of new OAuth mechanism
 * First commit of v2 branch.
+
+## 1.2.14 (October 22, 2020)
+
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Update sailor version to 2.6.17
+* Update internal libraries versions
 
 ## 1.2.11 (September 6, 2020)
 

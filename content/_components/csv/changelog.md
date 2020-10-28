@@ -6,7 +6,7 @@ icon: csv.png
 icontext: CSV component
 category: CSV component
 createdDate: 2019-12-24
-updatedDate: 2020-08-21
+updatedDate: 2020-09-21
 ---
 
 ## 2.1.4 (August 21, 2020)

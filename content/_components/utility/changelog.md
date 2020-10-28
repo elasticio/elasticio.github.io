@@ -6,8 +6,13 @@ icon: utility.png
 icontext: Utility Component
 category: Utility Component
 createdDate: 2020-01-02
-updatedDate: 2020-10-21
+updatedDate: 2020-10-27
 ---
+
+## 1.1.5 (October 27, 2020)
+
+* Update sailor version to 2.6.18
+* Fix unit tests
 
 ## 1.1.4 (October 21, 2020)
 

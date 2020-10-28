@@ -7,14 +7,15 @@ icon: webhook.png
 icontext: Webhook component
 category: Webhook component
 createdDate: 2015-07-29
-updatedDate: 2020-10-19
+updatedDate: 2020-10-27
 ---
 
 ## Latest changelog
 
-**1.2.6 (October 19, 2020)**
+**1.2.7 (October 27, 2020)**
 
-* Update sailor version to 2.6.17
+* Update sailor version to 2.6.18
+* Fix unit-tests
 
 > To see the full **changelog** please use the following [link](changelog).
 
