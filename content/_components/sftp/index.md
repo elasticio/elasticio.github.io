@@ -7,15 +7,15 @@ icon: sftp.png
 icontext: SFTP component
 category: SFTP component
 createdDate: 2015-11-20
-updatedDate: 2020-10-19
+updatedDate: 2020-10-30
 ---
 
 ## Latest changelog
 
-**1.4.1 (October 19, 2020)**
+**1.4.2 (October 30, 2020)**
 
-* Component code audit
-* Update sailor to 2.6.17
+* More logging improvements
+* Update sailor to 2.6.18
 
 > To see the full **changelog** please use the following [link](/components/sftp/changelog).
 
