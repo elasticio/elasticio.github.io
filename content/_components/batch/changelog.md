@@ -1,7 +1,7 @@
 ---
-title: Changelog
+title: Batch Changelog
 layout: component
-description: Cangelog for the Batch component
+description: Changelog for the Batch component
 icon: batch.png
 icontext: Batch component
 category: Batch component
