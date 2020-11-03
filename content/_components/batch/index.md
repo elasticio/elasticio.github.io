@@ -18,7 +18,7 @@ updatedDate: 2020-07-31
 * Update node to v 14.5.0
 * Add option `Delete Batch After Retrieval` for trigger `Get ready batches`
 
-> To see the full **changelog** please use the following [link](/components/batch/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Purpose
 
