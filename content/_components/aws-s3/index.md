@@ -10,18 +10,6 @@ createdDate: 2016-04-16
 updatedDate: 2020-06-05
 ---
 
-## Latest changelog
-
-**1.4.0 (June 5, 2020)**
-
-* Add Upsert File Action
-* Update dependencies
-* Verify Credentials now checks for access to buckets.
-* Update to Node v 14
-* Replace Component completeness matrix to version 2.3
-
-> To see the full **changelog** please use the following [link](/components/aws-s3/changelog).
-
 ## General information
 
 ### Purpose
@@ -57,10 +45,9 @@ The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ '
 |`ACCESS_KEY_SECRET`| false | For integration-tests is required to specify this variable |  |
 |`REGION`  | false | For integration-tests is required to specify this variable |  |
 
-### Completeness Matrix
+### Technical Notes
 
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like changelog and completeness matrix.
 
 ## Credentials
 
