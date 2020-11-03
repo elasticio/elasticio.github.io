@@ -47,7 +47,7 @@ The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ '
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like changelog and completeness matrix.
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/aws-s3/technical-notes#changelog) and [completeness matrix](/components/aws-s3/technical-notes#completeness-matrix).
 
 ## Credentials
 
