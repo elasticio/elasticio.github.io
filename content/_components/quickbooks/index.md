@@ -7,61 +7,55 @@ icon: quickbooks.png
 icontext: Quickbooks component
 category: Quickbooks
 createdDate: 2018-10-11
-updatedDate: 2019-01-30
+updatedDate: 2020-10-30
 ---
 
-## Latest changelog
+## General information
 
-**1.1.0 (January 30, 2020)**
+### API version / SDK version
 
-* Update sailor version to 2.6.1
+By default minor API version 26 is used, but it's also possible to specify a more suitable minor API version in the credentials field `Minor API version` in case you really need it.
 
-> To see the full **changelog** please use the following [link](/components/quickbooks/changelog).
+### Environment variables
 
-## OAuth keys and credentials
+|Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|LOG_LEVEL| false | Controls logger level | `trace`, `debug`, `info`, `warn`, `error` |
 
-Here is the information about [how to retrieve OAuth keys](https://developer.intuit.com/docs/00_quickbooks_online/1_get_started/40_get_development_keys).
+### Technical Notes
 
-The keys could be found by appending the `application_id` in the following way:
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/quickbooks/technical-notes#changelog) and [completeness matrix](/components/quickbooks/technical-notes#completeness-matrix).
 
-```
-https://developer.intuit.com/v2/ui#/app/appdetail/{{application_id}}/{{application_id}}/keys
-```
+## Credentials
 
-![OAuth keys and credentials](img/quickbooks-credentials.png)
+Quickbooks service uses OAuth 2.0 authorization.
+Information about how to retrieve OAuth keys you can find [here](https://developer.intuit.com/docs/00_quickbooks_online/1_get_started/40_get_development_keys).
 
-### Minor api version
+The keys could be found [here](https://developer.intuit.com/v2/ui#/app/appdetail/{{application_id}}/{{application_id}}/keys).
 
-This field represents current API [minor version](https://developer.intuit.com/app/developer/qbo/docs/develop/explore-the-quickbooks-online-api/minor-versions#minor-version-summary).
-For default it's 26.
+If you create an app that needs a Callback URL for authentication purposes then the URL structure should be the following:
 
-## Working with dynamic metadata
+`https://{YOUR_TENANT_ADDRESS}/callback/oauth2`
 
-To create custom fields on the *Configure input* step, you should first choose an
-entity (object) type you want to work with. Click on the *Object type to...* and wait for data uploading.
-Then you'll see a list of entities which are available for this action or trigger. You should choose one.
+![image](https://user-images.githubusercontent.com/16806832/97473962-3f026180-1954-11eb-9e5a-7288cab5fdbd.png)
 
-![Configure input - object type to upsert](https://user-images.githubusercontent.com/22715422/47281969-0c476500-d5e6-11e8-999e-88911274e413.png)
-
-Then you wait for uploading metadata (input object structure). After metadata uploaded you can complete input object to retrieve response sample.
-
-![Configure input - integrator mode](https://user-images.githubusercontent.com/22715422/47282038-5d575900-d5e6-11e8-87b7-cde488e80be4.png)
-
-Structure of the input object will be based on entityType field content.
+* Company ID - Set the id of the company you want to access.
+* Application Client Id - OAuth client id (client key)
+* Application Client Secret - OAuth client secret
+* Switching from production to sandbox environment - If `True` - sandbox environment will be used, if `False` - production one.
+* Minor API version - This field represents current API [minor version](https://developer.intuit.com/app/developer/qbo/docs/develop/explore-the-quickbooks-online-api/minor-versions#minor-version-summary). For default, it's 26.
 
 ## Triggers
 
 ### Polling Trigger
 
-Allows to get entries by chosen type. On the first request, trigger provides all
-existing objects by current type. On the next iterations, trigger will provide
-ONLY objects which were changed since a previous request.
-**This trigger supports all type of business entities.**
+Allows to get entries by chosen type. On first request, trigger will provide all existing objects by current type.
+On the next iterations, trigger will provide ONLY objects which were changed since a previous request. **This trigger supports all type of business entities and response pagination.** To set response size you should set/change 'Batch Size for request pagination' field in trigger settings.
 
-This trigger supports response pagination. The maximum number of entities that
-can be returned in a response is 1000. If the result size is not specified, the
-default number is 1000. If a query returns many entities, fetch the entities in chunks.
-To set response size you you should set/change 'Batch Size for request pagination' field in trigger settings.
+#### List of Expected Config fields
+
+ * Polling Object - dropdown with a list of objects available for polling
+ * Batch Size for request pagination - The maximum number of entities that can be returned is 1000. If the result size is not specified, the default number is 1000. If a query returns a big amount of entities, it is recommended to fetch the entities in chunks.
 
 ## Actions
 
@@ -103,6 +97,24 @@ Be careful, metadata was created once from the XSD, and now is stored in the com
 *   Production servers: Throttled to 500 requests per minute, per realm ID.
 
 Here is [more information about the request limitations](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions).
+
+## Known limitations
+
+1. For now, API [XSD description](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions) doesn't have any information about required fields, so be careful while creating insert, update or upsert requests.
+Entities metadata structure was created from ` v3_minor_version_26 ` XSD version.
+Be careful, metadata was created once from the XSD, and now is storing in the component.
+2. The QuickBooks API has some limitations for request number:
+- Sandbox servers: Throttled at 100 requests per minute, per individual app.
+- Production servers: Throttled to 500 requests per minute, per realm ID.
+[Here](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions) is more information about request limitations.
+
+3. To prevent problems with concurrent access QuickBooks API entities have SyncToken field. This field is required for update API request.
+If you provide wrong SyncToken your request will be rejected with 400 code.
+
+4. Metadata
+Most field of Quick Books entities are optionally required - they are NOT marked in EIO web so be careful and
+check the QB [docs](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account)
+before building a request.
 
 ## Additional info
 

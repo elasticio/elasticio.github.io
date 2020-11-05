@@ -6,8 +6,12 @@ icon: odata.png
 icontext: ODATA component
 category: ODATA component
 createdDate: 2020-01-02
-updatedDate: 2020-05-22
+updatedDate: 2020-10-30
 ---
+
+## 3.0.2 (October 30, 2020)
+
+* Update Sailor version to 2.6.18
 
 ## 3.0.1 (May 22, 2020)
 

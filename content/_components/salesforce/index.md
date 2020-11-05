@@ -10,14 +10,6 @@ createdDate: 2019-06-27
 updatedDate: 2020-10-30
 ---
 
-## Latest changelog
-
-**2.0.2 (October 30, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
-
 ## Description
 
 Integration component to connect the Salesforce for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
@@ -43,10 +35,9 @@ The component uses Salesforce - API Version 46.0 by defaults but can be overwrit
 |HASH_LIMIT_TIME| false | Hash expiration time in ms  | Default: `600000` |
 |HASH_LIMIT_ELEMENTS| false | Hash size number limit  | Default: `10` |
 
-### Completeness Matrix
+### Technical Notes
 
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/salesforce/technical-notes#changelog) and [completeness matrix](/components/salesforce/technical-notes#completeness-matrix).
 
 ## Credentials
 

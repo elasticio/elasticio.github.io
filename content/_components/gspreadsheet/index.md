@@ -7,16 +7,8 @@ icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
 createdDate: 2015-09-24
-updatedDate: 2020-09-06
+updatedDate: 2020-10-30
 ---
-
-## Latest changelog
-
-**1.2.2 (September 6, 2020)**
-
-* Add request rate limits handling
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Requirements
 
@@ -58,9 +50,9 @@ Following environment are required:
 
  - `EIO_REQUIRED_RAM_MB` - recommended value of allocated memory is `512` MB
 
-### Completeness Matrix
+### Technical Notes
 
-The [component completeness](completeness-matrix) matrix gives the technical details about Salesforce objects this component covers.
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/gspreadsheet/technical-notes#changelog) and [completeness matrix](/components/gspreadsheet/technical-notes#completeness-matrix).
 
 ## Credentials
 

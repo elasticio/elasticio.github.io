@@ -7,16 +7,17 @@ icon:  appdirect.png
 icontext: AppDirect Component
 category: AppDirect Component
 createdDate: 2018-09-05
-updatedDate: 2020-07-29
+updatedDate: 2020-11-06
 ---
 
 ## Latest changelog
 
-**1.0.3 (July 29, 2020)**
+**1.0.4 (November 06, 2020)**
 
-* Changed `Create Company` metadata according to the AppDirect requirement.
+* Update sailor version to 2.6.18
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
-> To see the full **changelog** please use the following [link](/components/appdirect/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
