@@ -108,8 +108,7 @@ Be careful, metadata was created once from the XSD, and now is storing in the co
 - Production servers: Throttled to 500 requests per minute, per realm ID.
 [Here](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions) is more information about request limitations.
 
-3. To prevent problems with concurrent access QuickBooks API entities have SyncToken field. This field is required for update API request.
-If you provide wrong SyncToken your request will be rejected with 400 code.
+3. To prevent problems with concurrent access QuickBooks API entities have SyncToken field. This field is required for update API request. If you provide wrong SyncToken your request will be rejected with 400 code.
 
 4. Metadata
 Most field of Quick Books entities are optionally required - they are NOT marked in EIO web so be careful and
