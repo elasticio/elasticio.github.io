@@ -7,19 +7,17 @@ icon: xml.png
 icontext: XML component
 category: XML
 createdDate: 2016-12-29
-updatedDate: 2020-05-22
+updatedDate: 2020-10-30
 ---
 
 ## Latest changelog
 
-**1.3.1 (May 22, 2020)**
+**1.3.3 (October 30, 2020)**
 
-* Update sailor version to 2.6.7
-* Correctly handle incoming attachments that are empty.
-* Update dependencies.
-* Add debug log statements.
+* Upgrade to sailor 2.6.18
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
-> To see the full **changelog** please use the following [link](/components/xml/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 

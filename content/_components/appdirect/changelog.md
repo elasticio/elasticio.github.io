@@ -1,13 +1,18 @@
 ---
-title: Changelog
+title: AppDirect Changelog
 layout: component
 description: Changelog for the AppDirect component.
 icon:  appdirect.png
 icontext: AppDirect Component
 category: AppDirect Component
 createdDate: 2018-09-05
-updatedDate: 2020-07-29
+updatedDate: 2020-11-06
 ---
+
+## 1.0.4 (November 06, 2020)
+
+* Update sailor version to 2.6.18
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
 
 ## 1.0.3 (July 29, 2020)
 

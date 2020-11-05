@@ -1,7 +1,7 @@
 ---
 title: AWS S3 Technical notes
 layout: component
-description: AWS S3 component's technical notes
+description: Technical Notes for  AWS S3 component.
 icon: aws-s3.png
 icontext: AWS S3 component
 category: AWS S3 component
