@@ -6,8 +6,12 @@ icon: pub-sub.png
 icontext: Pub-Sub component
 category: Pub-Sub component
 createdDate: 2020-05-07
-updatedDate: 2020-10-20
+updatedDate: 2020-11-10
 ---
+
+## 1.0.3 (November 6, 2020)
+
+* Update sailor to version 2.6.18
 
 ## 1.0.2 (October 20, 2020)
 

@@ -7,14 +7,14 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2020-10-23
+updatedDate: 2020-11-10
 ---
 
 ## Latest changelog
 
-**2.0.2 (October 23, 2020)**
+**2.0.3 (November 6, 2020)**
 
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Update sailor version to 2.6.18
 
 > To see the full **changelog** please use the following [link](changelog).
 
@@ -303,8 +303,7 @@ There are:
 
   2. Attachments mechanism does not work with [Local Agent Installation](/references/local-agents-requesting#compatible-operating-systems)
 
-**3.** OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) contains `refresh_token` optional property, but due to the platform limitation it is required.
-Possible solution - use `access_type:offline` in additional parameters (may not work in some cases).
+**3.** OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) should   always contain `refresh_token` property (optional in OAuth2 standard). Reason behind it - platform shoud be able to refresh access token after it's expiration.  Possible solution - use `access_type:offline` in additional parameter which is supported by many OAuth2 providers.
 
 **4.** We suggest not to set Delay value more then time period between two executions of the flow.
 Please keep in mind that delay can influence on time of next execution.

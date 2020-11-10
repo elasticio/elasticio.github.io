@@ -7,7 +7,7 @@ icon:  sugarcrm.png
 icontext: SugarCRM component
 category: SugarCRM component
 createdDate: 2016-12-03
-updatedDate: 2020-10-06
+updatedDate: 2020-11-10
 ---
 
 This is an open source component template for [SugarCRM](https://www.sugarcrm.com)
@@ -17,9 +17,13 @@ You can clone it and change it as you wish.
 
 ## Latest changelog
 
-**1.1.2 (October 6, 2020)**
+**1.1.3 (November 6, 2020)**
 
-* Component code audit.
+* Upgrade to sailor 2.6.18
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Annual npm vulnerabilities audit
+* Fix bug: `Verify` credentials button does not really verify credentials
+* Fix exception, emit called without await
 
 > To see the full **changelog** please use the following [link](changelog).
 

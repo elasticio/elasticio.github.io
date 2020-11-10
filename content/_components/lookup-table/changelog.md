@@ -6,8 +6,12 @@ icon: lookup.png
 icontext: Lookup component
 category: Lookup component
 createdDate: 2019-12-27
-updatedDate: 2020-10-20
+updatedDate: 2020-11-10
 ---
+
+## 1.1.2 (November 6, 2020)
+
+* Update sailor version to 2.6.18
 
 ## 1.1.1 (October 20, 2020)
 

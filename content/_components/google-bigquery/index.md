@@ -7,14 +7,14 @@ icon: google-bigquery.png
 icontext: Google BigQuery component
 category: Google BigQuery component
 createdDate: 2020-08-28
-updatedDate: 2020-10-20
+updatedDate: 2020-11-10
 ---
 
 ## Latest changelog
 
-**1.0.3 (October 20, 2020)**
+**1.0.4 (November 6, 2020)**
 
-* Update sailor version to 2.6.17
+* Update sailor version to 2.6.18
 
 > To see the full **changelog** please use the following [link](changelog).
 

@@ -7,14 +7,14 @@ icon: simple-trigger.png
 icontext: Simple-trigger component
 category: Simple-trigger component
 createdDate: 2019-01-16
-updatedDate: 2020-10-20
+updatedDate: 2020-11-10
 ---
 
 ## Latest changelog
 
-**1.1.1 (October 20, 2020)**
+**1.1.2 (November 6, 2020)**
 
-* Update sailor version to 2.6.17
+* Update sailor version to 2.6.18
 
 > To see the full **changelog** please use the following [link](changelog).
 

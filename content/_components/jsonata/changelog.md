@@ -6,8 +6,12 @@ icon: jsonata.png
 icontext: Jsonata component
 category: Jsonata component
 createdDate: 2019-12-27
-updatedDate: 2020-10-23
+updatedDate: 2020-11-10
 ---
+
+## 1.0.7 (November 6, 2020)
+
+* Update sailor version to 2.6.18
 
 ## 1.0.6 (October 23, 2020)
 

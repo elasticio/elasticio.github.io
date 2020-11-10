@@ -7,14 +7,14 @@ icon: mapper.png
 icontext: Mapper component
 category: Mapper component
 createdDate: 2015-05-26
-updatedDate: 2020-09-20
+updatedDate: 2020-11-10
 ---
 
 ## Latest changelog
 
-**0.0.9 (October 20, 2020)**
+**0.0.10 (November 6, 2020)**
 
-* Update sailor to version 2.6.17
+* Update sailor version to 2.6.18
 
 > To see the full **changelog** please use the following [link](changelog).
 

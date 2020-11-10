@@ -7,7 +7,7 @@ icon: allmysms.png
 icontext: Allmysms component
 category: Allmysms component
 createdDate: 2018-04-16
-updatedDate: 2020-11-02
+updatedDate: 2020-11-10
 ---
 
 ## Latest changelog
@@ -16,6 +16,7 @@ updatedDate: 2020-11-02
 
 * Upgrade to sailor 2.6.18
 * Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Annual npm vulnerabilities audit
 * Add eslint
 * Add CircleCI
 
