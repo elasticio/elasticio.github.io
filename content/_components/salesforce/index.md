@@ -73,6 +73,10 @@ For creating Auth Client you should specify following fields:
 - click on ``Verify`` button for verifying your credentials
 - click on ``Save`` button for saving your credentials
 
+Here you can see how to select an existing `client`:
+
+![Choose client](img/client-exist.png)
+
 For more information pleas read our [Creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
 
 > **Please Note**: When you deploy the Salesforce component separately into a dedicated tenant or
