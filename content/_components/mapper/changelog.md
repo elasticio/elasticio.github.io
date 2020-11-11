@@ -6,8 +6,12 @@ icon: mapper.png
 icontext: Mapper component
 category: Mapper component
 createdDate: 2019-12-27
-updatedDate: 2020-10-20
+updatedDate: 2020-11-10
 ---
+
+## 0.0.10 (November 6, 2020)
+
+* Update sailor version to 2.6.18
 
 ## 0.0.9 (October 20, 2020)
 

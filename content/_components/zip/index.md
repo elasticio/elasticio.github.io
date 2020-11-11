@@ -7,7 +7,7 @@ icon: zip-unzip.png
 icontext: ZIP/UnZIP component
 category: ZIP/UnZIP component
 createdDate: 2019-05-21
-updatedDate: 2020-11-03
+updatedDate: 2020-11-10
 ---
 
 ## Latest changelog
@@ -16,6 +16,7 @@ updatedDate: 2020-11-03
 
 * Upgrade to sailor 2.6.18
 * Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Annual npm vulnerabilities audit
 
 > To see the full **changelog** please use the following [link](changelog).
 

@@ -6,8 +6,16 @@ icon:  sugarcrm.png
 icontext: SugarCRM component
 category: SugarCRM component
 createdDate: 2020-01-02
-updatedDate: 2020-10-06
+updatedDate: 2020-11-10
 ---
+
+## 1.1.3 (November 6, 2020)
+
+* Upgrade to sailor 2.6.18
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Annual npm vulnerabilities audit
+* Fix bug: `Verify` credentials button does not really verify credentials
+* Fix exception, emit called without await
 
 ## 1.1.2 (October 6, 2020)
 

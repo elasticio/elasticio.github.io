@@ -7,14 +7,14 @@ icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
 createdDate: 2020-04-13
-updatedDate: 2020-10-23
+updatedDate: 2020-11-10
 ---
 
 ## Latest changelog
 
-**1.5.3 (October 23, 2020)**
+**1.5.4 (November 6, 2020)**
 
-* Update sailor to version `2.6.17`
+* Update sailor version to 2.6.18
 
 > To see the full **changelog** please use the following [link](changelog).
 

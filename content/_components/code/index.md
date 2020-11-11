@@ -2,19 +2,19 @@
 title: Code component
 layout: component
 section: Utility components
-description: A component to run a pice of JavaScript code inside the integration.
+description: A component to run a piece of JavaScript code inside the integration.
 icon: code.png
 icontext: Code component
 category: Code component
 createdDate: 2015-09-25
-updatedDate: 2020-10-20
+updatedDate: 2020-11-10
 ---
 
 ## Latest changelog
 
-**1.2.2 (October 20, 2020)**
+**1.2.3 (November 6, 2020)**
 
-* Update sailor version to 2.6.17
+* Update sailor version to 2.6.18
 
 > To see the full **changelog** please use the following [link](changelog).
 

@@ -7,14 +7,14 @@ icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
 createdDate: 2016-04-08
-updatedDate: 2020-10-21
+updatedDate: 2020-11-10
 ---
 
 ## Latest changelog
 
-**1.1.2 (October 21, 2020)**
+**1.1.3 (November 6, 2020)**
 
-* Update sailor version to 2.6.17
+* Update sailor version to 2.6.18
 
 > To see the full **changelog** please use the following [link](changelog).
 

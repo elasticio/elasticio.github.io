@@ -6,8 +6,12 @@ icon: simple-trigger.png
 icontext: Simple-trigger component
 category: Simple-trigger component
 createdDate: 2020-01-02
-updatedDate: 2020-10-20
+updatedDate: 2020-11-10
 ---
+
+## 1.1.2 (November 6, 2020)
+
+* Update sailor version to 2.6.18
 
 ## 1.1.1 (October 20, 2020)
 

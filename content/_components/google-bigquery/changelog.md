@@ -6,8 +6,12 @@ icon: google-bigquery.png
 icontext: Google BigQuery component
 category: Google BigQuery component
 createdDate: 2020-08-28
-updatedDate: 2020-10-20
+updatedDate: 2020-11-10
 ---
+
+## 1.0.4 (November 6, 2020)
+
+* Update sailor version to 2.6.18
 
 ## 1.0.3 (October 20, 2020)
 

@@ -10,17 +10,6 @@ createdDate: 2018-03-02
 updatedDate: 2020-05-21
 ---
 
-## Latest changelog
-
-**2.2.1 (June 19, 2020)**
-
-* Fix bug when query string exceeds 8K characters
-* More clearly report HTTP level failures
-* Component updated to use Node v14 and the dependencies are updated
-* The component logo was updated.
-
-> To see the full **changelog** please use the following [link](/components/marketo/changelog).
-
 ## Description
 
 [Marketo](https://www.marketo.com/) is a marketing automation platform focused
@@ -65,10 +54,9 @@ Other two here:
 
 Once these values have been collected, they can be entered in the account information [{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}).
 
-### Completeness Matrix
+### Technical Notes
 
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/marketo/technical-notes#changelog) and [completeness matrix](/components/marketo/technical-notes#completeness-matrix).
 
 ## Triggers
 
