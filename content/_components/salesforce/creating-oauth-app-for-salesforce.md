@@ -76,6 +76,8 @@ You would need to define four variables here:
 *   **Authorization Endpoint** - The authorization endpoint is used to interact with the resource owner and obtain an authorization grant. For production use `https://login.salesforce.com/services/oauth2/authorize`, for sandbox - `https://test.salesforce.com/services/oauth2/authorize`.
 *   **Token Endpoint** - The token endpoint is used by the client to obtain or refresh an access token. For production use `https://login.salesforce.com/services/oauth2/token`, for sandbox - `https://test.salesforce.com/services/oauth2/token`.
 
-For more information pleas read our [Secrets feature](/getting-started/secrets) article.
+Here you can see how to select an existing `client`:
 
-> **Please Note**: We renamed the environment variables `SALESFORCE_KEY` and `SALESFORCE_SECRET` to standardize the OAuth workflow.
+![Choose client](img/client-exist.png)
+
+For more information pleas read our [Secrets feature](/getting-started/secrets) article.
