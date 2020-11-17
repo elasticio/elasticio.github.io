@@ -7,14 +7,16 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2018-07-17
-updatedDate: 2020-11-10
+updatedDate: 2020-11-17
 ---
 
 ## Latest changelog
 
-**2.0.3 (November 6, 2020)**
+**2.0.4 (November 10, 2020)**
 
-* Update sailor version to 2.6.18
+* Bump dependencies
+* Automatically & immediately retry 5 times on network failure
+* All network failures trigger rebounds when the enable rebound option is set
 
 > To see the full **changelog** please use the following [link](changelog).
 
@@ -291,7 +293,7 @@ types in response headers:
 ## Exception handling
 
 Rest API component uses exception handling logic below:
-![Exception handling logic](https://user-images.githubusercontent.com/13310949/41960520-9bd468ca-79f8-11e8-83f4-d9b2096deb6d.png)
+![Exception handling logic](https://user-images.githubusercontent.com/5710732/99240680-1d7ef200-27fd-11eb-9b14-c9aaf7c23bb1.jpg)
 
 ## Known Limitations
 
