@@ -6,8 +6,14 @@ icon: rest-api.png
 icontext: REST API component
 category: REST API component
 createdDate: 2020-01-02
-updatedDate: 2020-11-10
+updatedDate: 2020-11-17
 ---
+
+## 2.0.4 (November 10, 2020)
+
+* Bump dependencies
+* Automatically & immediately retry 5 times on network failure
+* All network failures trigger rebounds when the enable rebound option is set
 
 ## 2.0.3 (November 6, 2020)
 
