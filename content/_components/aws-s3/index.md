@@ -7,7 +7,7 @@ icon:  aws-s3.png
 icontext: AWS S3 component
 category: AWS S3 component
 createdDate: 2016-04-16
-updatedDate: 2020-06-05
+updatedDate: 2020-11-12
 ---
 
 ## General information

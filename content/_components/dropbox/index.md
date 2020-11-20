@@ -7,19 +7,8 @@ icon: dropbox.png
 icontext: Dropbox component
 category: Dropbox component
 createdDate: 2020-04-09
-updatedDate: 2020-04-09
+updatedDate: 2020-11-20
 ---
-
-## Latest changelog
-
-**1.0.0 (April 9, 2020)**
-
-* Add `Upsert File` action
-* Add `Get File By Path` action
-* Add `Delete File By Path` action
-* Add `Create Folder` action
-
-> To see the full **changelog** please use the following [link](/components/dropbox/changelog).
 
 ## General information
 
@@ -27,10 +16,9 @@ updatedDate: 2020-04-09
 
 Component to interact with Dropbox. Dropbox is a cloud storage service, which allows copy files to the cloud and accesses them later from a different device.
 
-### Completeness Matrix
+### Technical Notes
 
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/dropbox/technical-notes#changelog) and [completeness matrix](/components/dropbox/technical-notes#completeness-matrix).
 
 ### SDK version
 

@@ -12,13 +12,13 @@ updatedDate: 2019-12-30
 
 ## Latest changelog
 
-**1.0.1 (December 30, 2019)**
+**1.0.2 (November 10, 2020)**
 
-* Update sailor version to 2.5.4
-* Refactor console log to built in sailor logger
-* Change build type to `docker`
+* Upgrade to sailor 2.6.18
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Annual npm vulnerabilities audit
 
-> To see the full **changelog** please use the following [link](/components/zoho/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 

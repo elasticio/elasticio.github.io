@@ -12,11 +12,13 @@ updatedDate: 2020-07-31
 
 ## Latest changelog
 
-**0.0.5 (July 31, 2020)**
+**0.0.6 (November 15, 2020)**
 
-* Update Sailor to 2.6.14
-* Update node to v 14.5.0
-* Add option `Delete Batch After Retrieval` for trigger `Get ready batches`
+* Fix MongoError: Authentication failed by authSource
+* Upgrade to sailor 2.6.18
+* Update batching-library version
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Annual npm vulnerabilities audit
 
 > To see the full **changelog** please use the following [link](changelog).
 
@@ -46,6 +48,7 @@ You need to split an integration logic into 2 parts. The first one should use th
 | dbName       | true   | Specifies which database to connect to | `batchDB` |
 | login        | true   | Username for authentication | `admin` |
 | password     | true   | Password for authentication | `adminPassw` |
+|Auth Source  | false  |Authentication DB          | `SomeDB`|
 
 ![Batch credentials](img/batch-credentials.png)
 

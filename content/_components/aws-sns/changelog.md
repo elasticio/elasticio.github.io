@@ -1,13 +1,19 @@
 ---
-title: Changelog
+title: AWS SNS Changelog
 layout: component
 description: Changelog for AWS SNS component.
 icon: aws-sns.png
 icontext: AWS SNS component
 category: AWS SNS component
 createdDate: 2015-07-29
-updatedDate: 2020-05-22
+updatedDate: 2020-11-20
 ---
+
+## 1.2.3 (November 12, 2020)
+
+* Upgrade to sailor 2.6.18
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Annual npm vulnerabilities audit
 
 ## 1.2.2 (May 22, 2020)
 
