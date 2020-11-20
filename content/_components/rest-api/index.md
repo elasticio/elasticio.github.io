@@ -10,16 +10,6 @@ createdDate: 2018-07-17
 updatedDate: 2020-11-17
 ---
 
-## Latest changelog
-
-**2.0.4 (November 10, 2020)**
-
-* Bump dependencies
-* Automatically & immediately retry 5 times on network failure
-* All network failures trigger rebounds when the enable rebound option is set
-
-> To see the full **changelog** please use the following [link](changelog).
-
 ## Introduction
 
 The example below shows the development team creation using the REST API component
@@ -51,9 +41,9 @@ with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{si
     - DNS lookup timeout
  * ``Do not verify SSL certificate (unsafe)`` - disable verifying the server certificate - **unsafe**.
 
-**4.** ``Follow redirect mode`` - If you want disable Follow Redirect functionality, you can use option ``Follow redirect mode``.By default ``Follow redirect mode`` option has value ``Follow redirects``.
+**4.** ``Follow redirect mode`` - If you want to disable Follow Redirect functionality, you can use option ``Follow redirect mode``.By default ``Follow redirect mode`` option has value ``Follow redirects``.
 
-**5.** ``Delay`` - If you want to slow down requests to your API you can set delay value (in seconds) and the component will delay calling the next request after the previous request.
+**5.** ``Delay`` - If you want to slow down requests to your API, you can set delay value (in seconds) and the component will delay calling the next request after the previous request.
 Time for the delay is calculated as `Delay`/ `Call Count` and shouldn't be more than 1140 seconds (19 minutes due to platform limitation).
 The `Call Count` value by default is 1. If you want to use another value, please set the `Call Count` field.
 
@@ -61,12 +51,12 @@ The `Call Count` value by default is 1. If you want to use another value, please
 
 **6.** ``Call Count`` - the field should be used only in pair with `Delay`, default to 1.
 
-**7.** ``Request timeout`` - Timeout period in milliseconds (1-1140000) while component waiting for server response, also can be configured with REQUEST_TIMEOUT environment variable if configuration field is not provided. Defaults to 100000 (100 sec).
+**7.** ``Request timeout`` - Timeout period in milliseconds (1-1140000) while component is waiting for server response. This can also be configured with REQUEST_TIMEOUT environment variable if configuration field is not provided. Defaults to 100000 (100 sec).
 Notice: Specified for component REQUEST_TIMEOUT environment variable would be overwritten by specified value of Request timeout, default value would be also overwritten.
 
 ## Authorisation methods
 
-To use the REST API component with any restricted access API provide the authorisation information.
+To use the REST API component with any restricted access API, you need provide the authorization information.
 
 ![alt text](https://user-images.githubusercontent.com/8449044/95571339-ee70a600-0a30-11eb-972e-d512c1ef88d9.png "REST API component Basic authorization")
 *Example above shows how to add the username/password to access the API during the integration flow design.*
@@ -85,7 +75,7 @@ REST API component supports 4 authorisation types:
 *   `API Key Auth` - use it to provide `API Key` to access the resource
 *   `OAuth2` - use it to provide `Oauth2` credentials to access the resource. Currently it is implemented `Authorization code` OAuth2 flow.
 
-To create `OAuth2` credential you have to choose Auth-client or create the new one. It must contains `Name`, `Client ID`, `Client Secret`, `Authorization Endpoint` and `Token Endpoint`.
+To create `OAuth2` credential you have to choose Auth-client or create the new one. It must contains `Name`, `Client ID`, `Client Secret`, `Authorization Endpoint` and `Token Endpoint`. For more information please check the documentation of the API you want to connect to.
 
 ![alt text](https://user-images.githubusercontent.com/8449044/95571677-7e165480-0a31-11eb-9b45-915401d40e31.png "Creating auth client for REST API component")
 
@@ -128,7 +118,7 @@ The messages produced by the REST API component will have the following properti
 
 ## Defining request body
 
-The body may be defined if the HTTP method is not `GET`. The **body** tab enables
+If the HTTP method is any other but `GET`, you will see a **Body** tab appear next to the Header tab. The **Body** tab enables
 configuration options such as the **content type** drop-down menu and the **body input field**.
 
 Here is the list of all supported **content types**:
@@ -159,7 +149,7 @@ JSON object. Please note that this field supports [JSONata](http://jsonata.org) 
 
 ### Sending XML data
 
-To send an `XML` data set the content type to `application/xml` or `text/xml` and place the `XML` in the body input field between double-quotes like:
+To send an `XML` data, set the content type to `application/xml` or `text/xml` and place the `XML` in the body input field between double-quotes like:
 
 ```
 "
@@ -176,14 +166,14 @@ Use a JSONata expression to include and map any values coming from the previous 
 
 ### Sending Form data
 
-To send a form data two content types are available:
+To send a form data, two content types are available:
 
 *   `application/x-www-form-urlencoded` - used to submit simple values to a form
 *   `multipart/form-data` - used to submit (non-alphanumeric) data or file attachment in payload
 
 In both cases the payload gets transmitted in the message body.
 
-In case of `application/x-www-form-urlencoded` content type add the necessary parameters by giving the name and the values like:
+In case of `application/x-www-form-urlencoded` content type, add the necessary parameters by giving the name and the values like:
 
 ![Sending form data](img/sending-form-data.png "REST API component Body sending a simple form")
 
@@ -191,7 +181,7 @@ In case of `application/x-www-form-urlencoded` content type add the necessary pa
 
 This HTTP request would submit `key1=value1&key2=value2` in the message body.
 
-In case of `multipart/form-data` content type add the parameters similarly.
+In case of `multipart/form-data` content type, add the parameters similarly.
 
 ![Sending multipart form data](img/sending-multipart-form-data.png "REST API component Body sending a complex form")
 
@@ -235,7 +225,7 @@ for more information please see the
 
 ## HTTP Headers
 
-You can to get HTTP response header only if ``Don`t throw Error on Failed Calls`` option is checked.
+You can get HTTP response header only if ``Don`t throw Error on Failed Calls`` option is checked.
 In this case output structure of component will be:
 
 ```js
@@ -273,11 +263,11 @@ like `yummy_cookie=choco; tasty_cookie=strawberry`. More information on setting 
 
 ## Attachments
 
-Rest API component has opportunity of binary data sending. You just need choose
-`multipart/form-data` Content type and attachments from input message will be
+With the REST API component, you can send binary data as attachment. You just need to choose
+`multipart/form-data` Content type and attachments from the input message will be
 included to the request payload automatically.
 
-Rest-api component automatically load binary data to attachments with next content
+REST API component automatically load binary data to attachments with next content
 types in response headers:
 
 *   `image/*`
@@ -298,13 +288,13 @@ Rest API component uses exception handling logic below:
 ## Known Limitations
 
 **1.** The component can parse any of json and xml content types.
-There are:
+They are:
 * application/json
 * application/xml
 * text/xml
 * etc.
 
-> **Please note:** if content type is not indicated in response header, component will try parse response as json. If it get parse exception, it return response as is.
+> **Please note:** if content type is not indicated in response header, component will try to parse response as json. If it gets parse exception, it returns response as is.
 
 **2.** Attachments limitations:
 
@@ -314,6 +304,4 @@ There are:
 
 **3.** OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) should   always contain `refresh_token` property (optional in OAuth2 standard). Reason behind it - platform shoud be able to refresh access token after it's expiration.  Possible solution - use `access_type:offline` in additional parameter which is supported by many OAuth2 providers.
 
-**4.** We suggest not to set Delay value more then time period between two executions of the flow.
-Please keep in mind that delay can influence on time of next execution.
-For example, the flow has type `Ordinary` and scheduled to execution for every 1 minute, but the delay is set to 120 sec, so the next execution will be started only after 120 sec, instead of 1 minute.
+**4.** We suggest not to set Delay value more than time period between two executions of the flow. Please keep in mind that delay can influence the time of next execution. For example, the flow has type `Ordinary` and scheduled for execution for every 60 sec, but the delay is set to 120 sec, so the next execution will be started only after 120 sec, instead of 60 seconds.
