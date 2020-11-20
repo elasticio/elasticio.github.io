@@ -7,19 +7,8 @@ icon: shopify-admin.png
 icontext: Shopify Admin component
 category: shopify-component
 createdDate: 2017-04-30
-updatedDate: 2020-09-11
+updatedDate: 2020-11-20
 ---
-
-## Latest changelog
-
-**1.4.0 (Sept 11, 2020)**
-
-* Add support for reading & writing metafields
-* Bump dependencies
-* Change API Key in credentials to password level
-* Remove sensitive info from logs
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## How works. API version
 
@@ -75,10 +64,9 @@ Setting a metafield the value of JSON `null` will result in that metafield being
 
 Not setting a value for a metafield will result in that metafield being unchanged.
 
-## Completeness Matrix
+### Technical Notes
 
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/shopify-admin/technical-notes#changelog) and [completeness matrix](/components/shopify-admin/technical-notes#completeness-matrix).
 
 ## Triggers
 

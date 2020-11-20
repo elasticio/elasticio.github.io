@@ -7,21 +7,17 @@ icon: jdbc.png
 icontext: JDBC component
 category: jdbc
 createdDate: 2019-06-11
-updatedDate: 2020-09-25
+updatedDate: 2020-11-20
 ---
-
-## Latest changelog
-
-**2.4.1 (September 25, 2020)**
-
-* Component code audit
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
 This a component for working with object-relational database management systems.
 It works with the works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/jdbc/technical-notes#changelog) and [completeness matrix](/components/jdbc/technical-notes#completeness-matrix).
 
 ## Environment variables
 
@@ -49,32 +45,19 @@ You need to use following properties to configure credentials:
 | Oracle     | `1521` | compatible with Oracle Database 8.1.7 - 12.1.0.2 |
 | MSSQL     | `1433` | compatible with Microsoft SQL Server 2008 R2 and higher |
 
-## Completeness Matrix
-
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
-
 ### Connection URI
 
 Provide hostname of the server, e.g. ``acme.com``
 
-### Database Name
+  * Database Name - Provide name of database at the instance that you want to interact with.
 
-Provide name of database at the instance that you want to interact with.
+  * User - Provide a username that has permissions to interact with the Database.
 
-### User
+  * Password - Provide a password of the user that has permissions to interact with the Database.
 
-Provide a username that has permissions to interact with the Database.
+  * Configuration properties - Optional field. Provide a configuration properties for connections to the Database, e.g. ``useUnicode=true&serverTimezone=UTC``
 
-### Password
-
-Provide a password of the user that has permissions to interact with the Database.
-
-### Configuration properties
-
-Optional field. Provide a configuration properties for connections to the Database, e.g. ``useUnicode=true&serverTimezone=UTC``
-
-**Limitation:** `Configuration properties` value may not be checked during Credentials Verification, so in case of using this field make sure that it contains correct input.
+>**Limitation:** `Configuration properties` value may not be checked during Credentials Verification, so in case of using this field make sure that it contains correct input.
 
 ## Triggers
 

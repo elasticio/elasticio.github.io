@@ -7,19 +7,8 @@ icon: amazon-mws.png
 icontext: Amazon MWS component
 category: amazon-mws
 createdDate: 2014-09-12
-updatedDate: 2020-08-11
+updatedDate: 2020-11-20
 ---
-
-## Latest changelog
-
-**2.1.0 (August 10, 2020)**
-
-* Revitalize component
-* Add Get order action
-* Add Update Item action
-* Add Update order action
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -33,10 +22,9 @@ other services.
 
 > If you intend to use the Amazon MWS API you must have an Amazon MWS-eligible seller account and you must register to use Amazon MWS. Please [visit Registering to use Amazon MWS](http://docs.developer.amazonservices.com/en_US/dev_guide/DG_Registering.html) page to choose your country applicable developer's page.
 
-### Completeness Matrix
+### Technical Notes
 
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/amazon-mws/technical-notes#changelog) and [completeness matrix](/components/amazon-mws/technical-notes#completeness-matrix).
 
 ## Credentials
 

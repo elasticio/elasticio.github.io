@@ -7,16 +7,8 @@ icon: simple-storage.png
 icontext: Simple Storage component
 category: Simple Storage component
 createdDate: 2016-11-02
-updatedDate: 2020-05-22
+updatedDate: 2020-11-20
 ---
-
-## Latest changelog
-
-**1.1.0 (May 22, 2020)**
-
-* Update Sailor version to 2.6.7
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## How works
 
@@ -32,7 +24,13 @@ Instance of MongoDB with possibility to connect from component.
 
 ### Environment variables
 
-There is no environment variables.
+|Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warn`, `error` |
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/key-value/technical-notes#changelog) and [completeness matrix](/components/key-value/technical-notes#completeness-matrix).
 
 ## Credentials
 

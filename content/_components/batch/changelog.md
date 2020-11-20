@@ -6,8 +6,20 @@ icon: batch.png
 icontext: Batch component
 category: Batch component
 createdDate: 2020-01-15
-updatedDate: 2020-07-31
+updatedDate: 2020-11-20
 ---
+
+## 1.0.0 (November 15, 2020)
+
+* Credentials verify minor fix
+
+## 0.0.6 (November 15, 2020)
+
+* Fix MongoError: Authentication failed by authSource
+* Upgrade to sailor 2.6.18
+* Update batching-library version
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Annual npm vulnerabilities audit
 
 ## 0.0.5 (July 31, 2020)
 
