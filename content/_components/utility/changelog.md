@@ -6,8 +6,13 @@ icon: utility.png
 icontext: Utility Component
 category: Utility Component
 createdDate: 2020-01-02
-updatedDate: 2020-10-27
+updatedDate: 2020-11-20
 ---
+
+## 1.2.0 (November 20, 2020)
+
+* Update all dependencies
+* Allow attachment information to be handled by the body
 
 ## 1.1.5 (October 27, 2020)
 

@@ -7,17 +7,8 @@ icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
 createdDate: 2019-03-19
-updatedDate: 2020-05-22
+updatedDate: 2020-11-20
 ---
-
-## Latest changelog
-
-**1.3.4 (May 22, 2020)**
-
-* Update sailor version to 2.6.7
-
-> To see the full **changelog** please use the following [link](/components/postgresql/changelog).
-
 
 ## Description
 
@@ -38,6 +29,10 @@ Following actions are also inside:
 *   `SQL Injection` - **Expert mode.** This action executes the SQL query or SQL script without prepared statements and returns an array of results of execution each query.
 *   `SQL Query` - **Expert mode.** This action executes the SQL query or SQL script with prepared statements and returns an array of results of execution each query. **JSONata expression can be used as a source of SQL query.**
 
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/postgresql/technical-notes#changelog) and [completeness matrix](/components/postgresql/technical-notes#completeness-matrix).
+
 ## Environment Variables
 
 `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
@@ -56,6 +51,16 @@ postgresql://user:password@your.postgresql.host:5432/dbname
 ```
 
 >**Note:** if you fill out both the Connection String and all the other connection data fields, the platform will use the connection string to connect to the database.
+
+The option `Allow self-signed certificates` add to connection options following:
+
+```
+ssl: {
+    rejectUnauthorized: false
+  }
+```
+
+It could be useful for instances that are is using self-signed SSL certificates (like [Heroku](https://help.heroku.com/MDM23G46/why-am-i-getting-an-error-when-i-upgrade-to-pg-8))
 
 See more in [documentation](https://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING).
 

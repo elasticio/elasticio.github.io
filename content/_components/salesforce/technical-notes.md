@@ -14,6 +14,10 @@ redirect_from:
 
 ## Changelog
 
+## 2.0.3 (November 18, 2020)
+
+* Fix fields dependencies from subject field in component.json
+
 ### 2.0.2 (October 30, 2020)
 
 * Update sailor version to 2.6.18

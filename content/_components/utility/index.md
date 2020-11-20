@@ -7,15 +7,15 @@ icon: utility.png
 icontext: Utility Component
 category: Utility Component
 createdDate: 2019-07-29
-updatedDate: 2020-10-27
+updatedDate: 2020-11-20
 ---
 
 ## Latest changelog
 
-**1.1.5 (October 27, 2020)**
+**1.2.0 (November 20, 2020)**
 
-* Update sailor version to 2.6.18
-* Fix unit tests
+* Update all dependencies
+* Allow attachment information to be handled by the body
 
 > To see the full **changelog** please use the following [link](changelog).
 
@@ -36,7 +36,7 @@ select as a first component during the integration flow design.
 
 ### String To Attachment
 
-Creates attachment from input `value`. Output is `attachmentId` in `message.body` and attachment object in `message.attachments`:
+Creates attachment from input `value`. Output is `attachmentId` and `attachmentUrl` in `message.body` and attachment object in `message.attachments`:
 
 ![String To Attachment](img/string-to-attachment.png)
 
@@ -46,7 +46,9 @@ Creates attachment from input `value`. Output is `attachmentId` in `message.body
 
 ### String From Attachment
 
-Creates string from attachment with provided input `attachmentId`:
+Creates string from attachment with provided input `attachmentId` which must be either:
+* A numeric ID of the attachment that can be referenced in the step immediately prior
+* A URL to an attachment produced by any component in the flow.
 
 ![String From Attachment](img/string-from-attachment.png)
 
