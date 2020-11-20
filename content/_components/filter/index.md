@@ -7,19 +7,19 @@ icon: filter.png
 icontext: Filter component
 category: filter-component
 createdDate: 2017-01-12
-updatedDate: 2020-05-22
+updatedDate: 2020-11-20
 ---
 
 ## Latest changelog
 
-**1.0.3 (May 22, 2020)**
+**1.1.0 (November 15, 2020)**
 
-* Add JSONata expression when error thrown by assertion
-* Pass incoming message when filter condition is true
-* Update EIO Sailor version to 2.6.7
-* Update eslint codestyle check properties
+* Add `Metadata To Response` configuration parameter
+* Upgrade to sailor 2.6.18
+* Annual audit of the component code to check if it exposes a sensitive data in the logs
+* Annual npm vulnerabilities audit
 
-> To see the full **changelog** please use the following [link](/components/filter/changelog).
+> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -67,8 +67,10 @@ The expression will be evaluated to a value of  `true` or `false`.
 
 #### Checkbox:
 
-If checked, the checkbox adds `Assertion` functionality. Instead of doing nothing,
+* If checked, the checkbox adds `Assertion` functionality. Instead of doing nothing,
 the component will throw an error when the condition is not met.
+
+* `Metadata To Response` Adding passthrough from a previous step to message body as `elasticioMeta` variable, if enabled.
 
 ## Additional Notes
 
