@@ -42,7 +42,7 @@ layout: default
                     <div class="side__title">Covered in this article</div>
                     <div id="article_toc" class="side__list">
                     </div>
-                    <div class="side__title">{{page.category | capitalize}} pages</div>
+                    <div class="side__title">Related pages</div>
                     <div class="side__list">
                         {% for collection in site.data.chapters%}
                             {% assign collectionName = collection[0] %}
@@ -56,9 +56,9 @@ layout: default
                             {% endif %}
                         {% endfor %}
                     </div>
+                    <div class="side__title">Latest Changelog</div>
                     <div class="side__list">
-                      <span class="side__time">Created on <time>{{ page.createdDate | date: '%B %d, %Y' }}</time></span>
-                      <span class="side__time">Updated on <time>{{ page.updatedDate | date: '%B %d, %Y' }}</time></span>
+                      <span class="side__time">Version <a href="technical-notes#changelog">{{ page.ComponentVersion }}</a> (<time>{{ page.updatedDate | date: '%B %d, %Y' }}</time>)</span>
                     </div>
                 </div>
             </div>
