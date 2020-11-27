@@ -1,23 +1,14 @@
 ---
 title: AppDirect Component
 layout: component
-section: Marketing-related components
+section: E-Commerce components
 description: AppDirect component is designed for AppMarket API integration.
 icon:  appdirect.png
 icontext: AppDirect Component
-category: AppDirect Component
-createdDate: 2018-09-05
+category: appdirect
+ComponentVersion: 1.0.4
 updatedDate: 2020-11-06
 ---
-
-## Latest changelog
-
-**1.0.4 (November 06, 2020)**
-
-* Update sailor version to 2.6.18
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -25,7 +16,7 @@ This component uses v2 version of API which described at [AppMarket API Referenc
 
 ### Authentication
 
-Authentication occurs via OAuth 2.0. In order to make OAuth work, you need a new App in your Environment.
+Authentication occurs via OAuth 2.0. To make OAuth work, you need a new App in your Environment.
 
 ### Configuring your environment
 
