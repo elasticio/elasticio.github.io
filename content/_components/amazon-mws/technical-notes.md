@@ -1,12 +1,12 @@
 ---
-title: Amazon MWS Technical Notes
 layout: component
+title: Amazon MWS Technical Notes
 description: Technical Notes for the Amazon MWS component
+category: amazon-mws
 icon: amazon-mws.png
 icontext: Amazon MWS component
-category: amazon-mws
-createdDate: 2014-09-12
-updatedDate: 2020-11-20
+ComponentVersion: 2.1.1
+updatedDate: 2020-11-15
 redirect_from:
   - /components/amazon-mws/completeness-matrix.html
   - /components/amazon-mws/changelog.html

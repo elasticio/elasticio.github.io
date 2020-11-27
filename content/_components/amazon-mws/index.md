@@ -1,13 +1,13 @@
 ---
-title: Amazon MWS component
 layout: component
+title: Amazon MWS component
 section: E-Commerce components
-description: A API that helps Amazon sellers to programmatically exchange data on listings, orders and more.
+description: An integration component which helps Amazon sellers to programmatically exchange data on listing, orders and more using the Amazon MWS API.
 icon: amazon-mws.png
 icontext: Amazon MWS component
 category: amazon-mws
-createdDate: 2014-09-12
-updatedDate: 2020-11-20
+ComponentVersion: 2.1.1
+updatedDate: 2020-11-15
 ---
 
 ## Description
