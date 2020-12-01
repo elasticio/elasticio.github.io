@@ -31,7 +31,7 @@ Following actions are also inside:
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/postgresql/technical-notes#changelog) and [completeness matrix](/components/postgresql/technical-notes#completeness-matrix).
+The [technical notes](technical-notes) page gives some technical details about PostgreSQL component like [changelog](/components/postgresql/technical-notes#changelog) and [completeness matrix](/components/postgresql/technical-notes#completeness-matrix).
 
 ## Environment Variables
 

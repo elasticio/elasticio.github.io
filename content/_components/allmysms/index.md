@@ -33,6 +33,10 @@ If one of the credential fields is blank then component will work in a trial mod
 ### Environment variables
 No.
 
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about AllMySMS component like [changelog](/components/allmysms/technical-notes#changelog).
+
 ## Triggers
 
 This component has no trigger functions. This means you can not select it as a first

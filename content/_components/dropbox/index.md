@@ -18,7 +18,7 @@ Component to interact with Dropbox. Dropbox is a cloud storage service, which al
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/dropbox/technical-notes#changelog) and [completeness matrix](/components/dropbox/technical-notes#completeness-matrix).
+The [technical notes](technical-notes) page gives some technical details about Dropbox component like [changelog](/components/dropbox/technical-notes#changelog) and [completeness matrix](/components/dropbox/technical-notes#completeness-matrix).
 
 ### SDK version
 

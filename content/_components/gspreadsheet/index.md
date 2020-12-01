@@ -52,7 +52,7 @@ Following environment are required:
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/gspreadsheet/technical-notes#changelog) and [completeness matrix](/components/gspreadsheet/technical-notes#completeness-matrix).
+The [technical notes](technical-notes) page gives some technical details about Gspreadsheet component like [changelog](/components/gspreadsheet/technical-notes#changelog) and [completeness matrix](/components/gspreadsheet/technical-notes#completeness-matrix).
 
 ## Credentials
 

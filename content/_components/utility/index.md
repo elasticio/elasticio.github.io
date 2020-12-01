@@ -1,23 +1,14 @@
 ---
-title: Utility Component
 layout: component
+title: Utility Component
 section: Utility components
 description: A component that is designed for utility operations.
 icon: utility.png
 icontext: Utility Component
-category: Utility Component
-createdDate: 2019-07-29
+category: utility
+ComponentVersion: 1.2.0
 updatedDate: 2020-11-20
 ---
-
-## Latest changelog
-
-**1.2.0 (November 20, 2020)**
-
-* Update all dependencies
-* Allow attachment information to be handled by the body
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Environment variables
 
@@ -26,6 +17,11 @@ updatedDate: 2020-11-20
 * [optional] **REQUEST_RETRY_DELAY** - Delay between retry attempts in milliseconds. 7000 by default
 * [optional] **REQUEST_MAX_RETRY** - Number of HTTP request retry attempts. 7 by default
 * [optional] **REQUEST_MAX_CONTENT_LENGTH** - Max size of HTTP request in bytes. 10485760 by default
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Utility component like [changelog](/components/utility/technical-notes#changelog).
+
 
 ## Triggers
 

@@ -66,7 +66,7 @@ Not setting a value for a metafield will result in that metafield being unchange
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/shopify-admin/technical-notes#changelog) and [completeness matrix](/components/shopify-admin/technical-notes#completeness-matrix).
+The [technical notes](technical-notes) page gives some technical details about Shopify-Admin component like [changelog](/components/shopify-admin/technical-notes#changelog) and [completeness matrix](/components/shopify-admin/technical-notes#completeness-matrix).
 
 ## Triggers
 

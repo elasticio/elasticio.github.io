@@ -1,32 +1,23 @@
 ---
-title: Docusign component
 layout: component
+title: Docusign component
 section: Office components
 description: DocuSign is a service that provides secure way to sign documents electronically.
 icon: docusign.png
 icontext: Docusign component
-category: Docusign component
-createdDate: 2018-05-07
-updatedDate: 2019-11-07
+category: docusign
+ComponentVersion: 1.3.2
+updatedDate: 2020-11-20
 ---
-
-## Latest changelog
-
-**1.0.1 (October 28, 2019)**
-
-* Change Oauth values naming
-
-> To see the full **changelog** please use the following [link](/components/docusign/changelog).
 
 ## Environment Variables & OAuth Callback Values
 
 This component requires the following environment variables:
 * `OAUTH_KEY`
 * `OAUTH_SECRET`
-* `PRINT_OAUTH_TOKEN` - Optional value.  If true, an OAuth token used for
- authentication of the linked account will be logged.
 
 The OAuth Key & Secret can be obtained by:
+
 1. Log in to DocuSign on [https://appdemo.docusign.com](https://appdemo.docusign.com)
 2. Click `Go to Admin` on the user picture in the top right
 3. Select `API and Keys` from the right hand menu.
@@ -36,6 +27,10 @@ The OAuth Key & Secret can be obtained by:
 7. There must be an entry of the form `https://<platform base
 url>/callback/oauth2` under the section `Redirect URIs` in order for OAuth to
 work.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about DocuSign component like [changelog](/components/docusign/technical-notes#changelog).
 
 ## Triggers
 

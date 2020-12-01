@@ -1,22 +1,14 @@
 ---
-title: MsSQL component
 layout: component
+title: MsSQL component
 section: Database components
 description: MsSQL designed for use in corporate applications, both on-premises and in the cloud.
 icon: mssql.png
 icontext: MsSQL component
-category: MsSQL component
-createdDate: 2017-02-09
-updatedDate: 2020-07-24
+category: mssql
+ComponentVersion: 1.1.3
+updatedDate: 2020-11-20
 ---
-
-## Latest changelog
-
-**1.1.2 (July 24, 2020)**
-
- * Update sailor version to 2.6.14
-
-> To see the full **changelog** please use the following [link](/components/mssql/changelog).
 
 ## Authentication
 
@@ -29,6 +21,10 @@ other types of configuration parameters are also supported, more information and
 ## Environment Variables
 
 LOG_LEVEL - controls verbosity of logger. Possible values: `trace`, `debug` `info`, `warn`, `error`. Default: `info`
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about MsSQL component like [changelog](/components/mssql/technical-notes#changelog).
 
 ## Triggers
 

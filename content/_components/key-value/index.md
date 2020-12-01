@@ -30,7 +30,7 @@ Instance of MongoDB with possibility to connect from component.
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/key-value/technical-notes#changelog) and [completeness matrix](/components/key-value/technical-notes#completeness-matrix).
+The [technical notes](technical-notes) page gives some technical details about Simple Storage component like [changelog](/components/key-value/technical-notes#changelog) and [completeness matrix](/components/key-value/technical-notes#completeness-matrix).
 
 ## Credentials
 
