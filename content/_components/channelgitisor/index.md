@@ -6,8 +6,8 @@ description: The ChannelAdvisor component for the platform.
 icon: channeladvisor.png
 icontext: ChannelAdvisor component
 category: channeladvisor
-createdDate: 2018-11-19
-updatedDate: 2019-03-14
+ComponentVersion: 2.1.1
+updatedDate: 2020-11-30
 ---
 
 ## Description
@@ -23,6 +23,10 @@ No environment variables are required for deployment.
 ### Version and compatibility information
 
 This component interacts with OData version 4.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about ChannelAdvisor component like [changelog](/components/channelgitisor/technical-notes#changelog).
 
 ## Credentials
 

@@ -5,19 +5,10 @@ section: ERP components
 description: Microsoft Dynamics NAV is a global enterprise resource planning (ERP) solution that provides small and midsize businesses greater control over their financials and can simplify their supply chain, manufacturing, and operations.
 icon: microsoft-dynamic-nav-odata.png
 icontext: Microsoft-Dynamics-NAV-Odata component
-category: Microsoft Dynamics NAV Odata
-createdDate: 2020-03-10
+category: microsoft-dynamics-nav-odata
 updatedDate: 2020-03-25
+ComponentVersion: 1.0.1
 ---
-
-## Latest changelog
-
-**1.0.0 (March 19, 2020)**
-
-* add deleteObjectsByCriteria action
-
-> To see the full **changelog** please use the following [link](/components/microsoft-dynamics-nav-odata/changelog).
-
 
 ## General information
 
@@ -31,10 +22,9 @@ This is the component for working with Microsoft Dynamics NAV OData API on [{{si
 
 The component provides ability to connect to Microsoft Dynamics NAV.
 
-### Completeness Matrix
+### Technical Notes
 
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
+The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/microsoft-dynamics-nav-odata/technical-notes#changelog) and [completeness matrix](/components/microsoft-dynamics-nav-odata/technical-notes#completeness-matrix).
 
 ## Requirements
 
