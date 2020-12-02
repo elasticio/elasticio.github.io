@@ -56,7 +56,7 @@ Once these values have been collected, they can be entered in the account inform
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/marketo/technical-notes#changelog) and [completeness matrix](/components/marketo/technical-notes#completeness-matrix).
+The [technical notes](technical-notes) page gives some technical details about Marketo component like [changelog](/components/marketo/technical-notes#changelog) and [completeness matrix](/components/marketo/technical-notes#completeness-matrix).
 
 ## Triggers
 

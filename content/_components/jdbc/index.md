@@ -6,7 +6,7 @@ description: A component to work with object-relational database management syst
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-createdDate: 2019-06-11
+ComponentVersion: 2.4.2
 updatedDate: 2020-11-20
 ---
 
@@ -17,7 +17,7 @@ It works with the works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/jdbc/technical-notes#changelog) and [completeness matrix](/components/jdbc/technical-notes#completeness-matrix).
+The [technical notes](technical-notes) page gives some technical details about JDBC component like [changelog](/components/jdbc/technical-notes#changelog) and [completeness matrix](/components/jdbc/technical-notes#completeness-matrix).
 
 ## Environment variables
 

@@ -5,18 +5,10 @@ section: Protocol components
 description: A open standard application layer protocol for passing business messages between applications or organizations.
 icon:  amqp.png
 icontext: AMQP component
-category: AMQP component
-createdDate: 2016-12-15
+category: amqp
+ComponentVersion: 1.3.2
 updatedDate: 2020-05-22
 ---
-
-## Latest changelog
-
-**1.3.1 (May 22, 2020)**
-
-* Update sailor version to 2.6.7
-
-> To see the full **changelog** please use the following [link](/components/amqp/changelog).
 
 ## Description
 
@@ -48,6 +40,10 @@ environment variables are set:
 
 These variables are by default available in the platform environment.
 Data will be encrypted using symmetric `AES-256` encryption.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about AMQP component like [changelog](/components/amqp/technical-notes#changelog).
 
 ## Credentials
 

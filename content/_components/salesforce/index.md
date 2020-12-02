@@ -37,7 +37,7 @@ The component uses Salesforce - API Version 46.0 by defaults but can be overwrit
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/salesforce/technical-notes#changelog) and [completeness matrix](/components/salesforce/technical-notes#completeness-matrix).
+The [technical notes](technical-notes) page gives some technical details about Salesforce component like [changelog](/components/salesforce/technical-notes#changelog) and [completeness matrix](/components/salesforce/technical-notes#completeness-matrix).
 
 ## Credentials
 
