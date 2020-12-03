@@ -5,13 +5,33 @@ description: Technical notes for the AppDirect component.
 icon:  appdirect.png
 icontext: AppDirect Component
 category: appdirect
-ComponentVersion: 1.0.4
-updatedDate: 2020-11-06
+ComponentVersion: 1.0.5
+updatedDate: 2020-11-27
 redirect_from:
   -/components/appdirect/changelog.html
+  -/components/appdirect/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.0.5 (November 27, 2020)
+
+* Update sailor version to 2.6.19
+* Add `Finalize Opportunity` action
+* Add `Request Opportunity Review` action
+* The following object types were added to `Create Object` action:
+  - `Opportunity`
+  - `Opportunity Item`
+  - `Lead`
+* The following object types were added to `Update Object` action:
+  - `Opportunity`
+  - `Opportunity Item`
+  - `Company`
+  - `Lead`
+* Change metadata for the following actions:
+  - `Update Object`. `Company` object type
+  - `Lookup Objects`. `Company` object type
+
 
 ### 1.0.4 (November 06, 2020)
 
@@ -41,3 +61,9 @@ redirect_from:
 #### New Triggers
 
 - Webhook subscription
+
+## Completeness Matrix
+
+Here is a Completeness Matrix for AppDirect component:
+
+![image](https://user-images.githubusercontent.com/36419533/89995162-d16a6180-dc91-11ea-9e27-08ba507d130e.png)
