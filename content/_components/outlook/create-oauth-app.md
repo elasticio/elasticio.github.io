@@ -4,9 +4,9 @@ layout: component
 description: Here is how to create an OAuth2 App in Microsoft Azure Portal.
 icon: outlook.png
 icontext: Outlook component
-category: Outlook
-createdDate: 2016-10-20
-updatedDate: 2020-07-29
+category: outlook
+updatedDate: 2020-11-27
+ComponentVersion: 1.0.2
 ---
 
 ## Introduction

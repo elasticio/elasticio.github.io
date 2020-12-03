@@ -5,9 +5,9 @@ section: Service components
 description: An integration component that calls out to Amazon AWS Lambda API.
 icon: aws-lambda.png
 icontext: AWS Lambda component
-category: AWS Lambda component
-createdDate: 2017-09-19
-updatedDate: 2019-03-14
+category: aws-lambda
+updatedDate: 2020-11-27
+ComponentVersion: 1.0.1
 ---
 
 ## Requirements
@@ -16,7 +16,7 @@ updatedDate: 2019-03-14
 
 None required.
 
-## Credentials
+### Credentials
 
 The component requires the following credentials to authenticate with the AWS services:
 
@@ -25,6 +25,10 @@ The component requires the following credentials to authenticate with the AWS se
 
 These keys are displayed only once, just after the creation of the credentials in AWS.
 To generate new ones follow the instructions given at [Getting Your Credentials](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html) page.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about AWS-Lambda component like [changelog](/components/aws-lambda/technical-notes#changelog).
 
 ## Triggers
 

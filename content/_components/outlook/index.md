@@ -5,35 +5,23 @@ section: Office components
 description: An integration component for the Office 365 Outlook REST API.
 icon: outlook.png
 icontext: Outlook component
-category: Outlook
-createdDate: 2016-10-20
-updatedDate: 2020-07-29
+category: outlook
+updatedDate: 2020-11-27
+ComponentVersion: 1.0.2
 ---
-
-## Latest changelog
-
-**1.0.0 (July 29, 2020)**
-
-* Use this.logger functionality instead of console.log
-* Update libs to latest versions
-* Update sailor to 2.6.14 version
-* Add `Poll for New Mail` trigger
-* Add `Move Mail` action
-
-> To see the full **changelog** please use the following [link](/components/outlook/changelog).
 
 ## Description
 
 [Outlook](https://outlook.live.com/) is a personal information manager web app from Microsoft consisting of webmail, calendaring, contacts, and tasks services.
 
-### Completeness Matrix
-
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
-
 ### API version
 
 It is used [Microsoft Graph REST API v1.0](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0).
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Outlook component like [changelog](/components/outlook/technical-notes#changelog) and [completeness matrix](/components/outlook/technical-notes#completeness-matrix).
+
 
 ## Requirements
 

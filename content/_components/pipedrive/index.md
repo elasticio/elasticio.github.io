@@ -6,8 +6,8 @@ description: An integration component for Pipedrive.
 icon: pipedrive.png
 icontext: Pipedrive component
 category: pipedrive
-createdDate: 2017-08-15
-updatedDate: 2017-09-12
+updatedDate: 2020-11-30
+ComponentVersion: 0.0.2
 ---
 
 Pipedrive Component component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
@@ -23,6 +23,10 @@ pipedrive component for pipedrive.
 
 You can create deals with the help of the `createDeal` action. It will
 automatically create an organisation, a contact, a deal and a notice for the deal for you.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Pipedrive component like [changelog](/components/pipedrive/technical-notes#changelog).
 
 ## Triggers
 
