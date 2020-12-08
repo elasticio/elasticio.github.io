@@ -4,9 +4,9 @@ layout: component
 description: How to register and configure guide.
 icon: msdynamics-crm.png
 icontext: Configuring ODATA APP
-category: Microsoft Dynamics CRM
-createdDate: 2018-03-18
-updatedDate: 2018-09-07
+category: msdynamics
+updatedDate: 2020-11-30
+ComponentVersion: 1.2.2
 ---
 
 Here is how to register and configure an app in Active Directory or Azure Active

@@ -6,8 +6,8 @@ description: Lightspeed ECom API component for iPaaS platform.
 icon: lightspeed-ecom.png
 icontext: Lightspeed-ecom component
 category: lightspeed-ecom
-createdDate: 2018-12-07
-updatedDate: 2018-12-28
+updatedDate: 2020-12-04
+ComponentVersion: 1.0.2
 ---
 
 ## Authentication
@@ -45,6 +45,10 @@ API Key which you received from support during configuration a shop.
 ### Client Secret
 
 API Secret which you received from support during configuration a shop.
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Lightspeed-ecom component like [changelog](/components/lightspeed-ecom/technical-notes#changelog).
 
 ## Triggers
 
@@ -95,7 +99,10 @@ If you notice that 429s are coming back, you should reduce the limit until you s
 
 ## Known limitations
 
-The current version of the component doesn't support the following list of entities:
+1. The component was not tested with the latest Lightspeed eCom version. Althouh it was fully tested with one the recent eCom releases, 100% compatibility can not be guaranteed
+
+2. The current version of the component doesn't support next list of entities:
+
 -   [Account Metafields](https://developers.lightspeedhq.com/ecom/endpoints/accountmetafield/)
 -   [Account Permissions](https://developers.lightspeedhq.com/ecom/endpoints/accountpermissions/)
 -   [Account Rate limits](https://developers.lightspeedhq.com/ecom/endpoints/accountratelimit/)

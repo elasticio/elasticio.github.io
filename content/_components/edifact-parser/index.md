@@ -5,9 +5,9 @@ section: Protocol components
 description: A international standard for electronic data interchange (EDI).
 icon: edifact.png
 icontext: Edifact-parser component
-category: Edifact-parser component
-createdDate: 2017-08-16
-updatedDate: 2017-08-25
+category: edifact-parser
+updatedDate: 2020-11-30
+ComponentVersion: 0.0.2
 ---
 
 ## Authentication
@@ -41,6 +41,9 @@ Sample example:
 
 > Sample EDI files you can find [here](https://raw.githubusercontent.com/elasticio/edifact-parser-component/master/samples/INVOICE.edi), and [here](https://github.com/elasticio/edifact-parser-component/blob/master/samples/INVOICE.edi.json) you will see resulting JSON message body after parsing.
 
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Edifact-parser component like [changelog](/components/edifact-parser/technical-notes#changelog).
 
 ## Triggers
 
