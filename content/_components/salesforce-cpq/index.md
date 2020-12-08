@@ -5,10 +5,19 @@ section: CRM components
 description: The component gives sales teams and channel partners the necessary tools to configure price and quote complex solutions.
 icon: salesforce-cpq.png
 icontext: salesforce-cpq
-category: Salesforce-cpq
-createdDate: 2018-10-09
-updatedDate: 2019-06-05
+category: salesforce-cpq
+updatedDate: 2020-12-03
+ComponentVersion: 1.0.1
 ---
+
+## Component Deprecated
+
+Component got deprecated. Please use [Salesforce component](/components/salesforce/index) instead.
+
+## Description
+
+The component gives sales teams and channel partners the necessary tools to quickly configure, price and quote complex solutions.
+Automate discounts, pricing, and approvals to maximize revenue and margins.
 
 ### How works.  API version / SDK version
 
@@ -21,10 +30,16 @@ to work with Salesforce objects (both native Salesforce and custom CPQ objects).
 
 ### Environment variables
 
-You need to create two variables:
+Authentication occurs via OAuth 2.0.
+In the component repository you need to specify OAuth Client credentials as environment variables:
 
 *   `SALESFORCE_KEY` - your OAuth client key
 *   `SALESFORCE_SECRET` - your OAuth client secret
+
+### Create a new App in Salesforce
+
+In order to make OAuth work, you need a new App in your Salesforce. During app creation process you will be asked to specify
+the callback URL, to process OAuth authentication via elastic.io platform your callback URL should be
 
 ### Credentials
 

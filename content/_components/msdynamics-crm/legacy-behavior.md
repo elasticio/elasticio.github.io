@@ -4,9 +4,9 @@ layout: component
 description: Documentation On Legacy Behavior
 icon: msdynamics-crm.png
 icontext: Legacy Behavior
-category: Microsoft Dynamics CRM
-createdDate: 2018-03-18
-updatedDate: 2018-09-07
+category: msdynamics
+updatedDate: 2020-11-30
+ComponentVersion: 1.2.2
 ---
 
 ## Basic structure

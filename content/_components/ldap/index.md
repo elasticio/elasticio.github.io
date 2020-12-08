@@ -5,18 +5,14 @@ section: Protocol components
 description: A protocol for accessing and maintaining distributed directory information services over an IP network.
 icon: ldap.png
 icontext: Ldap component
-category: Ldap component
-createdDate: 2017-12-06
+category: ldap
 updatedDate: 2017-12-06
+ComponentVersion: 1.0.1
 ---
 
-## Latest changelog
+## Technical Notes
 
-**1.0.0 - Dec 5, 2016**
-
-* Initial release of component
-
-> To see the full **changelog** please use the following [link](/components/ldap/changelog).
+The [technical notes](technical-notes) page gives some technical details about Ldap component like [changelog](/components/ldap/technical-notes#changelog).
 
 ## Triggers
 

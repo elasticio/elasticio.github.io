@@ -5,8 +5,8 @@ description: Lightspeed-retail API component triggers.
 icon: lightspeed-retail.png
 icontext: Lightspeed-retail component
 category: lightspeed-retail
-createdDate: 2020-03-19
-updatedDate: 2020-03-19
+updatedDate: 2020-12-04
+ComponentVersion: 1.0.2
 ---
 
 ## Polling entity

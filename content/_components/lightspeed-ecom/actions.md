@@ -5,8 +5,8 @@ description: Lightspeed ECom API component actions.
 icon: lightspeed-ecom.png
 icontext: Lightspeed-ecom component
 category: lightspeed-ecom
-createdDate: 2020-03-19
-updatedDate: 2020-03-19
+updatedDate: 2020-12-04
+ComponentVersion: 1.0.2
 ---
 
 ## Create Object

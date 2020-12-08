@@ -6,8 +6,8 @@ description: Lightspeed-retail API component for iPaaS platform.
 icon: lightspeed-retail.png
 icontext: Lightspeed-retail component
 category: lightspeed-retail
-createdDate: 2018-12-07
-updatedDate: 2018-12-17
+updatedDate: 2020-12-04
+ComponentVersion: 1.0.2
 ---
 
 ## Authentication
@@ -34,6 +34,11 @@ Consumer Key which you received during API client configuration step.
 ### Client Secret
 
 Consumer Secret which you received during API client configuration step.
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Lightspeed-retail component like [changelog](/components/lightspeed-retail/technical-notes#changelog).
+
 
 ## Triggers
 

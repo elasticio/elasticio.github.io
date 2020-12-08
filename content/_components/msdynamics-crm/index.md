@@ -5,21 +5,10 @@ section: CRM components
 description: A customer relations management tool developed by Microsoft.
 icon:  msdynamics-crm.png
 icontext: Microsoft Dynamics CRM component
-category: Microsoft Dynamics CRM
-createdDate: 2018-03-18
-updatedDate: 2020-10-13
+category: msdynamics
+updatedDate: 2020-11-30
+ComponentVersion: 1.2.2
 ---
-
-## Latest changelog
-
-**1.2.1 (October 7, 2020)**
-
-* Bump dependencies
-* Fix emit called without await
-* Fix node to version 14
-* Component code audit
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -35,10 +24,9 @@ See [Dynamics Crm Remarks](dynamics-crm-remarks).
 See how to [configure an OData App](configuring-odata-app) for Dynamics On Azure
 Active Directory for details on this process.
 
-### Completeness Matrix
+### Technical Notes
 
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
+The [technical notes](technical-notes) page gives some technical details about Microsoft Dynamics CRM component like [changelog](/components/msdynamics-crm/technical-notes#changelog) and [completeness matrix](/components/msdynamics-crm/technical-notes#completeness-matrix).
 
 ## Triggers
 
@@ -141,3 +129,7 @@ Microsoft Dynamics 365
 Server version: 9.1.0000.18042
 Client version: 1.4.831-2005.2
 ```
+
+## Known limitations
+
+The component was not tested with the latest Microsoft Dynamics CRM version. Althouh it was fully tested with one the recent Dynamics releases, 100% compatibility can not be guaranteed

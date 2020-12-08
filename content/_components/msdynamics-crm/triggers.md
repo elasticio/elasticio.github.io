@@ -4,9 +4,9 @@ layout: component
 description: Microsoft Dynamics CRM component triggers.
 icon:  msdynamics-crm.png
 icontext: Microsoft Dynamics CRM component
-category: Microsoft Dynamics CRM
-createdDate: 2018-03-18
-updatedDate: 2020-06-18
+category: msdynamics
+updatedDate: 2020-11-30
+ComponentVersion: 1.2.2
 ---
 
 ## Fetch new and updated objects

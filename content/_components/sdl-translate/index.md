@@ -5,9 +5,9 @@ section: Marketing-related components
 description: A intelligent platform designed for teams involved in the localization supply chain.
 icon: sdl-translate.png
 icontext: Sdl-translate component
-category: Sdl-translate component
-createdDate: 2018-03-13
-updatedDate: 2018-03-30
+category: sdl-translate
+updatedDate: 2020-12-04
+ComponentVersion: 0.0.2
 ---
 
 ## Credentials
@@ -15,6 +15,10 @@ updatedDate: 2018-03-30
 In oprder to authenticate, you need to retrieve an `apiKey` from your `SDL languagecloud` account
 
 Guide of how to retrieve an [apiKey](https://languagecloud.sdl.com/translation-toolkit/api-documentation) (Getting started -> Generate API Key)
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Sdl-translate component like [changelog](/components/sdl-translate/technical-notes#changelog).
 
 ## Triggers
 
@@ -118,6 +122,10 @@ output message:
     ]
 }
 ```
+
+## Known limitations
+
+The component was not tested with the latest SDL version. Althouh it was fully tested with one the recent SDL releases, 100% compatibility can not be guaranteed
 
 ## Links
 
