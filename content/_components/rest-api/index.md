@@ -5,9 +5,9 @@ section: Utility components
 description: A component allows you to connect to any REST API without programming your own components.
 icon: rest-api.png
 icontext: REST API component
-category: REST API component
-createdDate: 2018-07-17
-updatedDate: 2020-11-17
+category: rest-api
+updatedDate: 2020-12-07
+ComponentVersion: 2.0.5
 ---
 
 ## Introduction
