@@ -4,14 +4,18 @@ layout: component
 description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
-category: REST API component
-createdDate: 2020-01-02
-updatedDate: 2020-11-17
+category: rest-api
+updatedDate: 2020-12-07
+ComponentVersion: 2.0.5
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.5 (December 7, 2020)
+
+* Update sailor version to 2.6.21
 
 ### 2.0.4 (November 10, 2020)
 
@@ -40,6 +44,11 @@ redirect_from:
 * Use node version 14
 * Make use of new OAuth mechanism
 * First commit of v2 branch.
+
+
+### 1.2.17 (December 7, 2020)
+
+* Update sailor version to 2.6.21
 
 ### 1.2.15 (November 6, 2020)
 

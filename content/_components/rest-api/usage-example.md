@@ -4,9 +4,9 @@ layout: component
 description: REST API Usage Example.
 icon: rest-api.png
 icontext: REST API component
-category: REST API component
-createdDate: 2020-01-02
-updatedDate: 2020-09-06
+category: rest-api
+updatedDate: 2020-12-07
+ComponentVersion: 2.0.5
 ---
 
 ## Introduction
