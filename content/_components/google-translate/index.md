@@ -4,15 +4,19 @@ layout: component
 section: Service components
 description: Google translate component for the platform.
 icon: google-translate.png
-icontext: AWS Lambda component
-category: AWS Lambda component
-createdDate: 2017-09-19
-updatedDate: 2019-03-14
+icontext: Google-translate component
+category: google-translate
+updatedDate: 2020-12-10
+ComponentVersion: 0.0.2
 ---
 
 ## Credentials
 
 In oprder to authenticate, you need to receive `apiKey` from your `Google cloud platform` account
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Google-translate component like [changelog](/components/google-translate/technical-notes#changelog).
 
 ## Triggers
 

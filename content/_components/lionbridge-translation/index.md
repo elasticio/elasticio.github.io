@@ -5,9 +5,9 @@ section: Service components
 description: Lionbridge translation component for the platform.
 icon: lionbridge.png
 icontext: Lionbridge-translation component
-category: Lionbridge-translation component
-createdDate: 2018-03-20
+category: lionbridge
 updatedDate: 2018-03-28
+ComponentVersion: 0.0.2
 ---
 
 ## Credentials
@@ -16,6 +16,10 @@ updatedDate: 2018-03-28
  - Password
  - ApiURI
  - ProviderId
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Lionbridge-translation component like [changelog](/components/lionbridge-translation/technical-notes#changelog).
 
 ## Triggers
 

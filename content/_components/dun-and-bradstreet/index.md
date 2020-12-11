@@ -6,8 +6,8 @@ description: D&B is a corporation that provides information on commercial credit
 icon: dun-and-bradstreet.png
 icontext: Dun-and-bradstreet component
 category: dun-and-bradstreet
-createdDate: 2018-03-13
-updatedDate: 2018-03-30
+updatedDate: 2020-12-07
+ComponentVersion: 1.0.1
 ---
 
 ## Environment variables
@@ -41,6 +41,10 @@ Access to the D&B Direct web services are secured by a **Username** and **Passwo
 4. Click on "Verify".
 
 5. Click on "Save".
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Dun-and-bradstreet component like [changelog](/components/dun-and-bradstreet/technical-notes#changelog).
 
 ## Triggers
 

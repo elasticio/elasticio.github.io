@@ -4,9 +4,9 @@ layout: component
 description: Lionbridge translation component actions.
 icon: lionbridge.png
 icontext: Lionbridge-translation component
-category: Lionbridge-translation component
-createdDate: 2018-03-20
+category: lionbridge
 updatedDate: 2018-03-28
+ComponentVersion: 0.0.2
 ---
 
 ## Actions
