@@ -5,14 +5,18 @@ section: Service components
 description: Keenio component for the platform.
 icon: keenio.png
 icontext: Keenio component
-category: Keenio component
-createdDate: 2016-03-03
-updatedDate: 2018-09-13
+category: keenio
+updatedDate: 2020-12-10
+ComponentVersion: 0.0.2
 ---
 
 ## Description
 
 This is an open source component template for [Keen.io](https://keen.io/) Online Analytics System which is developed specifically to run on [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Keenio component like [changelog](/components/keenio/technical-notes#changelog).
 
 ## Credentials
 

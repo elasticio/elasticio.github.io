@@ -6,8 +6,8 @@ description: A SaaS software for retailers that allows them to add product revie
 icon: bazaarvoice.png
 icontext: Bazaarvoice component
 category: bazaarvoice
-createdDate: 2018-04-10
-updatedDate: 2018-04-20
+updatedDate: 2020-12-10
+ComponentVersion: 0.0.2
 ---
 
 ## Credentials
@@ -19,6 +19,9 @@ Here are the credentials necessary to authenticate with the Bazaarvoice:
 *   `curationsApiUri` - for Curations API
 *   `curationsApiKey` - for Curations API
 
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Bazaarvoice component like [changelog](/components/bazaarvoice/technical-notes#changelog).
 
 ## Triggers
 
