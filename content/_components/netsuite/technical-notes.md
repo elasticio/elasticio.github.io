@@ -11,18 +11,20 @@ redirect_from:
   - /components/netsuite/changelog.html
 ---
 
-## 2.2.0 (December 11, 2020)
+## Changelog
+
+### 2.2.0 (December 11, 2020)
 
 * Domain field in the credentials made required
 * Upgrade sailor to 3.3.1
 * Annual audit of the component code to check if it exposes sensitive data in the logs
 * Annual dependencies vulnerabilities audit
 
-## 2.1.1 (August 2, 2019)
+### 2.1.1 (August 2, 2019)
 
 * Modify Error Handling in component with custom ComponentException
 
-## 2.1.0 (July 26, 2019)
+### 2.1.0 (July 26, 2019)
 
 * Add actions according to OIH standards:
   - Lookup Objects
