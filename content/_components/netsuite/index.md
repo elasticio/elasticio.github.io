@@ -5,18 +5,12 @@ section: ERP components
 description: A component which interacts with the NetSuite ERP system.
 icon: netsuite.png
 icontext: NetSuite component
-category: NetSuite component
-createdDate: 2018-09-10
-updatedDate: 2019-08-07
+category: netsuite
+updatedDate: 2020-12-11
+ComponentVersion: 2.2.0
+redirect_from:
+  - /components/netsuite/changelog.html
 ---
-
-## Latest changelog
-
-**2.1.1 (August 8, 2019)**
-
-- Modify Error Handling in component with custom ComponentException
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## How works
 
@@ -47,9 +41,15 @@ enabled in order to allow component make calls. To enable Web Service communicat
 
 ![Enable Web Service](https://user-images.githubusercontent.com/8449044/44262942-9a3d5300-a225-11e8-840d-834528f68776.png)
 
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about NetSuite component like [changelog](/components/netsuite/technical-notes#changelog).
+
 ## Credentials
 
 ### Get credentials in NetSuite
+
+**Domain** - Required field. To find your domain endpoint go to Setup > Company > Setup Tasks > Company Information (Administrator) in the NetSuite UI. Your domains are listed on the Company URLs subtab. Should be something like `https://{accountId}.suitetalk.api.netsuite.com`
 
 **Email**  - Email as a login for NetSuite account.
 
