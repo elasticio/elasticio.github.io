@@ -7,6 +7,8 @@ icontext: NetSuite component
 category: netsuite
 updatedDate: 2020-12-11
 ComponentVersion: 2.2.0
+redirect_from:
+  - /components/netsuite/changelog.html
 ---
 
 ## 2.2.0 (December 11, 2020)

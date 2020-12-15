@@ -8,8 +8,6 @@ icontext: NetSuite component
 category: netsuite
 updatedDate: 2020-12-11
 ComponentVersion: 2.2.0
-redirect_from:
-  - /components/netsuite/changelog.html
 ---
 
 ## How works
