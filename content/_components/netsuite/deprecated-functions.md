@@ -4,9 +4,9 @@ layout: component
 description: Information on deprecated NetSuite functions
 icon: netsuite.png
 icontext: NetSuite component
-category: NetSuite component
-createdDate: 2019-12-27
-updatedDate: 2019-12-27
+category: netsuite
+updatedDate: 2020-12-11
+ComponentVersion: 2.2.0
 ---
 
 ## Deprecated Triggers

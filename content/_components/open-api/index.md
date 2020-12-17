@@ -6,17 +6,9 @@ description: A component that is designed for utility operations.
 icon: open-api.png
 icontext: Open API Component
 category: open-api
-createdDate: 2020-03-16
-updatedDate: 2020-03-16
+updatedDate: 2020-12-18
+ComponentVersion: 1.1.1
 ---
-
-## Latest changelog
-
-**1.1.0 (February 13, 2020)**
-
-* Support OAuth2 authentication type
-
-> To see the full **changelog** please use the following [link](/components/open-api/changelog)
 
 ## General information
 
@@ -35,22 +27,27 @@ Currently, it is supported OpenAPI version 2.0 documents.
 It is used [Swagger Client](https://github.com/swagger-api/swagger-js) version 3.10.0.
 [OpenAPI Specification](https://swagger.io/docs/specification/about/).
 
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Open API component like [changelog](/components/open-api/technical-notes#changelog) and [completeness matrix](/components/open-api/technical-notes#completeness-matrix).
+
 ## Credentials
 
 ![image](https://user-images.githubusercontent.com/16806832/74028730-bf8ec580-49b3-11ea-82ba-ff44ebde6c13.png)
 
 ### Type
+
 Authentication type field to define the authentication schema that would be used for making request.
   It is supported 4 auth type:
 
-   - `No Auth` - used by default, make request without authentication.
-   - `Basic Auth` - make request with basic authentication, `Username` and `Password` fields should be specified:
+  - `No Auth` - used by default, make request without authentication.
+  - `Basic Auth` - make request with basic authentication, `Username` and `Password` fields should be specified:
 
-   ![image](https://user-images.githubusercontent.com/16806832/73258339-2a7b1800-41ce-11ea-894a-98fa65e37b81.png)
+  ![image](https://user-images.githubusercontent.com/16806832/73258339-2a7b1800-41ce-11ea-894a-98fa65e37b81.png)
 
-   - `API Key Auth` - make request with API key in headers authentication, `Header Name` and `Header Value` fields should be specified:
+  - `API Key Auth` - make request with API key in headers authentication, `Header Name` and `Header Value` fields should be specified:
 
- ![image](https://user-images.githubusercontent.com/16806832/73258541-93629000-41ce-11ea-899d-6d1531df3fa1.png)
+  ![image](https://user-images.githubusercontent.com/16806832/73258541-93629000-41ce-11ea-899d-6d1531df3fa1.png)
 
    - `OAuth2` - it is supported `Authorization code` OAuth2 flow. Fields:
         - `Client Id` - is a public identifier for apps
@@ -59,7 +56,7 @@ Authentication type field to define the authentication schema that would be used
         - `Token URI` -  uri for getting an access token
         - `Scopes` -  is a scope of the access request
 
- ![image](https://user-images.githubusercontent.com/16806832/74029107-9a4e8700-49b4-11ea-996a-6b9a511f8fc3.png)
+  ![image](https://user-images.githubusercontent.com/16806832/74029107-9a4e8700-49b4-11ea-996a-6b9a511f8fc3.png)
 
 ### A URL to an OpenAPI/Swagger document
 
@@ -78,17 +75,13 @@ select as a first component during the integration flow design.
 
 #### List of Expected Config fields
 
-##### Path
+* Path - A dropdown for the paths than defined in the OpenAPI document.
 
-A dropdown for the paths than defined in the OpenAPI document.
+* Operation - A dropdown for the operations that are allowed for a previously defined path.
 
-##### Operation
+* Do not throw Error on Failed Calls - An option as to whether or not errors should be thrown for HTTP codes in the 4xx/5xx range.
 
-A dropdown for the operations that are allowed for a previously defined path.
-
-##### Do not throw Error on Failed Calls
-
-An option as to whether or not errors should be thrown for HTTP codes in the 4xx/5xx range.
+>**Please Note** an exception is the 401 HTTP status code - error would be thrown for this code regardless of field value (true/false)
 
 #### Expected input metadata
 
