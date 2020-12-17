@@ -66,6 +66,30 @@ an error again after the Retry. You may have noticed the *Edit* button that allo
 ![Edit message before retry](/assets/img/integrator-guide/instant-error-management/edit-error.gif)
 
 
+### Retry-all flow errors
+
+During some exceptional circumstances, you might get too many errors in your flow
+execution to [retry it one-by-one](/guides/error-retry#reprocess-and-retry). To help
+process these errors in one go we introduce a new option **Retry All Errors** which
+will appear if more than one error happens in the execution.
+
+![Retry all button](/assets/img/integrator-guide/instant-error-management/retry-all-errors.png)
+
+When clicked, our system will ask you to confirm your action by displaying you
+the following popup message:
+
+> Note: the error messages will be deleted from this Runlog Record. Retry results will arrive to this Runlog record.
+
+![Retry all confirmation](/assets/img/integrator-guide/instant-error-management/retry-all-errors-confirmation.png)
+
+You can cancel and return to your screen with errors or confirm and retry all
+errors, in which case our system will retry all retriable errors. This feature
+has a limitation: **you can't edit messages before retrying while using retry all errors**.
+
+> **Please Note**: Only messages in the single executions will be retried. It is
+> not possible to retry errors from all executions of the flow. For that you still
+> need to open each execution separately and press retry all button on them.
+
 ## Error Retention policy
 
 There is a limit that defines the maximum number of errors we list for a Flow.
