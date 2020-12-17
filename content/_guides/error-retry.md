@@ -86,6 +86,10 @@ You can cancel and return to your screen with errors or confirm and retry all
 errors, in which case our system will retry all retriable errors. This feature
 has a limitation: **you can't edit messages before retrying while using retry all errors**.
 
+> **Please Note**: Only messages in the single executions will be retried. It is
+> not possible to retry errors from all executions of the flow. For that you still
+> need to open each execution separately and press retry all button on them.
+
 ## Error Retention policy
 
 There is a limit that defines the maximum number of errors we list for a Flow.
