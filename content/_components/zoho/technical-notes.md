@@ -1,7 +1,7 @@
 ---
-title: Zoho Technical Notes
+title: Zoho Component Technical Notes
 layout: component
-description: Technical Notes for the Zoho component
+description: Technical Notes for the Zoho Subscriptions component.
 icon: zoho.png
 category: zoho
 icontext: Zoho component
