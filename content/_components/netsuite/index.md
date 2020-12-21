@@ -18,6 +18,10 @@ versions in most cases. But 100% compatibility could not be guaranteed.
 
 ## Requirements
 
+### API version
+
+**2019.1** NetSuite version is used and supported. The component will work with other NS versions in most cases. But 100% compatibility could not be guaranteed.
+
 ### Environment variables
 
 Component reuquires 1024 MB of RAM memory to properly function. It is recommended
@@ -43,33 +47,9 @@ enabled in order to allow component make calls. To enable Web Service communicat
 
 The [technical notes](technical-notes) page gives some technical details about NetSuite component like [changelog](/components/netsuite/technical-notes#changelog).
 
-## Credentials
+## Authentication on platform
 
-### Get credentials in NetSuite
-
-**Domain** - Required field. To find your domain endpoint go to Setup > Company > Setup Tasks > Company Information (Administrator) in the NetSuite UI. Your domains are listed on the Company URLs subtab. Should be something like `https://{accountId}.suitetalk.api.netsuite.com`
-
-**Email**  - Email as a login for NetSuite account.
-
-**Password** - Password for NetSuite account.
-
-**Account** - Account Number to access NetSuite API. This number is required for the component t
-o connect to NetSuite via native SuiteTalk API Can be found here:
-
-1.  Go to Setup -> Integration -> Web Services Preferences
-2.  Find ACCOUNT ID field there.
-
-![Get Account Number](https://user-images.githubusercontent.com/8449044/44263739-c3abae00-a228-11e8-8de6-8e6b33c23be3.png)
-
-**Application ID**
-
-Application ID to access NetSuite API. This number is required for the component
-to connect to NetSuite via native SuiteTalk API Can be found here:
-
-1.  Go to Setup -> Integration -> Manage Integrations -> New
-2.  Find APPLICATION ID field there.
-
-![Get Application ID](https://user-images.githubusercontent.com/8449044/44274840-e4392f80-a24b-11e8-9d1d-00676e0b9217.png)
+In order to use the functions of the NetSuite component, you need to go through the authentication process. Please follow the step by steps instruction on this [page](authentication).
 
 ## Triggers
 
