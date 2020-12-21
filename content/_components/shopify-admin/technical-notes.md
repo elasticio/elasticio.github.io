@@ -5,8 +5,8 @@ description: Changelog for Shopify Admin component.
 icon: shopify-admin.png
 icontext: Shopify Admin component
 category: shopify-component
-createdDate: 2020-01-02
 updatedDate: 2020-11-20
+ComponentVersion: 1.4.1
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html

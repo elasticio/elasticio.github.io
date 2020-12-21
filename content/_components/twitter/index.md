@@ -5,14 +5,18 @@ section: Marketing-related components
 description: Twitter is a channel where you can connect with your prospects, customers, and journalists.
 icon:  twitter.png
 icontext: Twitter component
-category: Twitter component
-createdDate: 2016-04-19
-updatedDate: 2016-04-27
+category: twitter
+updatedDate: 2020-12-18
+ComponentVersion: 1.4.0
 ---
 
 ## Credentials
 
 ![Credentials](img/credentials.png)
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about PostgreSQL component like [changelog](/components/twitter/technical-notes#changelog) and.
 
 ## Triggers
 
@@ -30,12 +34,15 @@ in/out metadata can be found at `/lib/schemas/postTweet.{in/out}.json`
 #### Usage example
 
 input message:
+
 ```
 {
     "text": "hi there"
 }
 ```
+
 output message:
+
 ```
 {
     "text": "hi there",
@@ -43,6 +50,7 @@ output message:
     "createdAt": "Fri Mar 30 09:46:30 +0000 2018"
 }
 ```
+
 ### Search tweets
 
 in/out metadata can be found at `/lib/schemas/searchTweets.{in/out}.json`
@@ -52,13 +60,16 @@ in/out metadata can be found at `/lib/schemas/searchTweets.{in/out}.json`
 #### Usage example
 
 input message:
+
 ```
 {
     "text": "hi there",
     "count": 2
 }
 ```
+
 output message:
+
 ```
 {
 	"tweets": [

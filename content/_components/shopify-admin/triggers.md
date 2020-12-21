@@ -5,8 +5,8 @@ description: Shopify Admin component triggers.
 icon: shopify-admin.png
 icontext: Shopify Admin component
 category: shopify-component
-createdDate: 2020-03-19
-updatedDate: 2020-09-11
+updatedDate: 2020-11-20
+ComponentVersion: 1.4.1
 ---
 
 ## Polling Trigger

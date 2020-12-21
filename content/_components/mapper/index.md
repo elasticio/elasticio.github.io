@@ -5,26 +5,18 @@ section: Utility components
 description: A component used to map source data to target data.
 icon: mapper.png
 icontext: Mapper component
-category: Mapper component
-createdDate: 2015-05-26
-updatedDate: 2020-11-10
+category: mapper
+updatedDate: 2020-12-15
+ComponentVersion: 0.0.11
 ---
-
-## Latest changelog
-
-**0.0.10 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Used languages
 
 At the moment there are two different languages used to define transformation between input data and result
 - [JSONata](http://jsonata.org)
 - Based on handlebars template engine (will be deprecated)
-> **Note**: Please do not use Handlebars expression language.
 
+> **Note**: Please do not use Handlebars expression language.
 
 ## JSONata expression language
 

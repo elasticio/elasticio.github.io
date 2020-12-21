@@ -5,20 +5,10 @@ section: Protocol components
 description: A service that makes it easier to pass messages between machines and to collect data from IoT-devices.
 icon: google-pubsub.png
 icontext: Google PubSub component
-category: Google PubSub component
-createdDate: 2016-09-30
-updatedDate: 2020-05-22
+category: google-pubsub
+updatedDate: 2020-12-18
+ComponentVersion: 1.7.1
 ---
-
-## Latest changelog
-
-**1.7.0 (May 22, 2020)**
-
-* Update Sailor version to 2.6.7
-* Migrate to the latest @google-cloud/pubsub library
-* Fix code style
-
-> To see the full **changelog** please use the following [link](/components/google-pubsub/changelog).
 
 ## Description
 
@@ -39,6 +29,10 @@ Pub/Sub offers durable message storage and real-time message delivery with high 
 *   **Client E-Mail**
 *   **Private Key**
 
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Google PubSub component like [changelog](/components/google-pubsub/technical-notes#changelog) and.
+
 ## How authentication works
 
 PubSub component authentication works with
@@ -49,7 +43,6 @@ need to create a new Service Account on [Service Accounts Page](https://console.
  You would need ``client_email`` and ``private_key`` values
  on component authentication page (see [here](https://github.com/google/google-api-nodejs-client#using-jwt-service-tokens)
  for more information).
-
 
 ## Triggers
 

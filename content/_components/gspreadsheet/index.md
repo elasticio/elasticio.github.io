@@ -6,8 +6,8 @@ description: A Google Spreadsheets component to read and write to the Google Spr
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
-createdDate: 2015-09-24
 updatedDate: 2020-10-30
+ComponentVersion: 2.0.0
 ---
 
 ## Requirements
