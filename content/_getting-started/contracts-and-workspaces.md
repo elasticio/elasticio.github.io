@@ -80,6 +80,13 @@ members with the corresponding permissions. Members can contribute to
 integration flows in their workspace in collaboration with other members, or
 individually.
 
+There are two types of workspaces: **limited** and **full**. We use full workspaces
+for the production purposes and limited workspaces for the platform trial periods
+or developer projects.
+
+> The **full** workspaces have no time restrictions on integration flows. Check the
+> separate section for restrictions on [limited workspaces](#limited-workspaces).
+
 ## Workspace Management
 
 Any contract member can create workspaces. Only workspace Owner or member with
@@ -110,16 +117,14 @@ client’s engineers, and production environment is customer-facing only.
 
 ## Limited Workspaces
 
-There are two types of workspaces: **limited** or **full**. We use limited
-workspaces for the platform trial periods or developer projects. These workspaces
-have certain restrictions for integration flows:
+The limited workspaces have certain restrictions for integration flows:
 
-*   Integration flows in the **limited** workspaces are restricted by work time. Meaning, the platform automatically stops all active flows after 8 hours in limited workspaces. You can restart the flows afterwards to continue your testing.
+*   Integration flows in the limited workspaces are restricted by work time. Meaning, the **platform automatically stops all active flows after 8 hours** in limited workspaces. You can restart the flows afterwards to continue your testing.
 *   If your integration flow contains messages in the processing queues, these messages will be removed when the time is up to stop the flow.
 
 > We recommend not to use **limited workspaces** for the production purposes. Use **full workspaces** instead.
 
-The **limited** workspaces are clearly marked in the platform UI:
+The limited workspaces are clearly marked in the platform UI:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/contracts-and-workspaces/limited-workspace.png" title="Workspace - Limited" %}
 
