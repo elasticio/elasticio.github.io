@@ -5,8 +5,8 @@ description: Technical Notes for PostgreSQL Component.
 icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
-createdDate: 2020-01-02
 updatedDate: 2020-11-20
+ComponentVersion: 1.4.0
 redirect_from:
   - /components/postgresql/completeness-matrix.html
   - /components/postgresql/changelog.html

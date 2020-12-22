@@ -5,20 +5,10 @@ section: Utility components
 description: A component allows separating the modification of configurable values from the modification of the flow.
 icon: configuration.png
 icontext: Configuration component
-category: Configuration component
-createdDate: 2018-11-20
+category: configuration
 updatedDate: 2020-10-30
+ComponentVersion: 0.0.4
 ---
-
-## Latest changelog
-
-**0.0.3 (October 30, 2020)**
-
-* Update sailor version to 2.6.18
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-* Add circle.ci automation build
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## How works.  API version / SDK version
 
@@ -82,6 +72,10 @@ for all the price import flows. Currency rates sample:
 Then the currency rate can be used in any number of flows, where it is needed
 and then changed form the single place. That changes will affect all the flows
 where it is used.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Configuration component like [changelog](/components/configuration/technical-notes#changelog) and.
 
 ## Triggers
 

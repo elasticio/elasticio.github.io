@@ -4,9 +4,9 @@ layout: component
 description: SOAP component actions.
 icon: soap.png
 icontext: SOAP component
-category: SOAP component
-createdDate: 2020-01-02
-updatedDate: 2020-05-07
+category: soap
+updatedDate: 2020-12-18
+ComponentVersion: 1.2.5
 ---
 
 ## Call

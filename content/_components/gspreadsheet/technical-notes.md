@@ -5,8 +5,8 @@ description: Technical Notes for Google Spreadsheets component.
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
-createdDate: 2019-12-27
 updatedDate: 2020-10-30
+ComponentVersion: 2.0.0
 redirect_from:
   - /components/gspreadsheet/completeness-matrix.html
   - /components/gspreadsheet/changelog.html

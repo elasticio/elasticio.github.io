@@ -6,8 +6,8 @@ description: PostgreSQL is a general purpose and open source object-relational d
 icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
-createdDate: 2019-03-19
 updatedDate: 2020-11-20
+ComponentVersion: 1.4.0
 ---
 
 ## Description

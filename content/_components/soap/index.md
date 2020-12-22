@@ -5,18 +5,10 @@ section: Protocol components
 description: A messaging protocol for exchanging information between applications running on different OS.
 icon: soap.png
 icontext: SOAP component
-category: SOAP component
-createdDate: 2018-07-17
-updatedDate: 2020-07-24
+category: soap
+updatedDate: 2020-12-18
+ComponentVersion: 1.2.5
 ---
-
-## Latest changelog
-
-**1.2.4 (July 24, 2020)**
-
-* Fix bug for some cases with WSDL behind basic auth  
-
-> To see the full **changelog** please use the following [link](/components/soap/changelog).
 
 ## Description
 
@@ -55,6 +47,10 @@ You can select the following authorization type:
 
 >**Please note:** Error would not be thrown on invalid credentials, as credenteals does not contain WSDL url.
 In case of invalid credentials error expected on sample retrieve step: Unexprected reponse from server satus code: 401 Anunthorized
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about SOAP component like [changelog](/components/soap/technical-notes#changelog) and [completeness matrix](/components/soap/technical-notes#completeness-matrix).
 
 ## How it works
 

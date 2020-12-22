@@ -5,20 +5,12 @@ section: Utility components
 description: Examines the message content and routes the message onto a different flow branch based on data contained in the message.
 icon: router.png
 icontext: Router component
-category: Router component
-createdDate: 2017-05-23
+category: router
 updatedDate: 2020-10-30
+ComponentVersion: 0.0.10
 ---
 
 This component implements the [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
-
-## Latest changelog
-
-**0.0.9 (October 30, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Triggers
 

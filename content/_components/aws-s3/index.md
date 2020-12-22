@@ -5,9 +5,9 @@ section: Protocol components
 description: A object storage that can store and retrieve e.g. files, documents or images from any place on the Internet.
 icon:  aws-s3.png
 icontext: AWS S3 component
-category: AWS S3 component
-createdDate: 2016-04-16
+category: aws-s3
 updatedDate: 2020-11-12
+ComponentVersion: 1.4.1
 ---
 
 ## General information

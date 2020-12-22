@@ -5,23 +5,19 @@ section: Protocol components
 description: An open-source Component for publish–subscribe messaging pattern on platform.
 icon: pub-sub.png
 icontext: Pub-Sub component
-category: Pub-Sub component
-createdDate: 2020-05-07
-updatedDate: 2020-11-10s
+category: pub-sub
+updatedDate: 2020-12-17
+ComponentVersion: 1.0.4
 ---
-
-## Latest changelog
-
-**1.0.3 (November 6, 2020)**
-
-* Update sailor to version 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
 An open-source Component for [publish–subscribe](https://en.wikipedia.org/wiki/Publish-subscribe_pattern) messaging pattern on {{site.data.tenant.name}} platform.
 This feature implements conditional logic for data flow in a loosely coupled way, using a "contract" between the Publisher and its Subscribers. Such a "contract" is called a `Topic`.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Pub-Sub component like [changelog](/components/pub-sub/technical-notes#changelog).
 
 ### Requirements
 

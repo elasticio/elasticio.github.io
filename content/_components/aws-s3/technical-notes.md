@@ -4,9 +4,9 @@ layout: component
 description: Technical Notes for  AWS S3 component.
 icon: aws-s3.png
 icontext: AWS S3 component
-category: AWS S3 component
-createdDate: 2019-12-27
+category: aws-s3
 updatedDate: 2020-11-12
+ComponentVersion: 1.4.1
 redirect_from:
   - /components/aws-s3/completeness-matrix.html
   - /components/aws-s3/changelog.html
@@ -14,7 +14,7 @@ redirect_from:
 
 ## Changelog
 
-# 1.4.1 (November 12, 2020)
+### 1.4.1 (November 12, 2020)
 
 * Upgrade to sailor 2.6.18
 * Annual audit of the component code to check if it exposes a sensitive data in the logs
