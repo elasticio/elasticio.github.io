@@ -80,6 +80,13 @@ members with the corresponding permissions. Members can contribute to
 integration flows in their workspace in collaboration with other members, or
 individually.
 
+There are two types of workspaces: **limited** and **full**. Use full workspaces
+for the production purposes and limited workspaces for the development purposes.
+
+> The **full** workspaces have no time restrictions on integration flows. Flows
+> in **limited** workspaces may only run for a limited amount of time before being
+> automatically stopped. Check the separate section for restrictions on [limited workspaces](#limited-workspaces).
+
 ## Workspace Management
 
 Any contract member can create workspaces. Only workspace Owner or member with
@@ -110,19 +117,20 @@ client’s engineers, and production environment is customer-facing only.
 
 ## Limited Workspaces
 
-Workspaces can have the `limited` or `full` type. `Limited` is intended for platform trial period. Workspaces with `limited` type have certain restrictions for integration flows:
+Limited workspaces have certain restrictions for integration flows:
 
-- Integration flows in `limited` workspaces are restricted by work time. This means that they are automatically stopped after a certain time. This time is defined for each installation with an environment variable.
+*   Integration flows in the limited workspaces are restricted by work time. The **platform automatically stops all active flows after 8 hours** in limited workspaces.
+*   If your integration flow contains messages in the processing queues, these messages will be removed when the time is up to stop the flow.
+*   You can restart the flows afterwards to continue your testing.
 
-- In `limited` workspaces, integration flows that contain errors will not be suspended. Instead, they will be stopped without saving any data.
+> We recommend not to use **limited workspaces** for the production purposes. Use **full workspaces** instead.
 
-Though not forbidden, **it is highly unrecommended to use `limited` workspaces for any production purposes**. `Limited` workspaces are indicated in the UI:
+The limited workspaces are marked in the platform UI:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/contracts-and-workspaces/limited-workspace.png" title="Workspace - Limited" %}
 
-To change workspace type from `limited` to `full`, contact support.
-
-The default type for workspaces created in a tenant can be changed. A user with corresponding permission can do that, using `"default_workspace_type"`, setting `limited` or `full` as a value.
+To change workspace type from **limited** to **full**, contact our support team or
+your tenant administration.
 
 ## Related links
 
