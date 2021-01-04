@@ -119,8 +119,9 @@ client’s engineers, and production environment is customer-facing only.
 
 Limited workspaces have certain restrictions for integration flows:
 
-*   Integration flows in the limited workspaces are restricted by work time. The **platform automatically stops all active flows after 8 hours** in limited workspaces. You can restart the flows afterwards to continue your testing.
+*   Integration flows in the limited workspaces are restricted by work time. The **platform automatically stops all active flows after 8 hours** in limited workspaces.
 *   If your integration flow contains messages in the processing queues, these messages will be removed when the time is up to stop the flow.
+*   You can restart the flows afterwards to continue your testing.
 
 > We recommend not to use **limited workspaces** for the production purposes. Use **full workspaces** instead.
 
