@@ -6,23 +6,9 @@ description: A component to work with Magento 2.
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-createdDate: 2018-03-16
-updatedDate: 2020-02-26
+updatedDate: 2021-01-04
+ComponentVersion: 1.6.1
 ---
-
-## Latest changelog
-
-**1.6.0 (June 5, 2020)**
-
-* Add `Bulk Extract` trigger
-* Add `Lookup Objects` action
-* Add `Lookup Set of Objects` action
-* Logging tweaks:
-  * Have Magento client use logger from sailor
-  * Replace parameters in error messages when parameters are an object, not an array
-* Update sailor version to 2.6.7
-
-> To see the full **changelog** please use the following [link](/components/magento2/changelog).
 
 ## Description
 
@@ -37,6 +23,10 @@ The main purpose of the component is integration some external system with e-com
 ### API links
 
 https://devdocs.magento.com/swagger/
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Magento2 component like [changelog](/components/magento2/technical-notes#changelog) and [completeness matrix](/components/magento2/technical-notes#completeness-matrix).
 
 ## Credentials
 

@@ -75,7 +75,7 @@ where it is used.
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about Configuration component like [changelog](/components/configuration/technical-notes#changelog) and.
+The [technical notes](technical-notes) page gives some technical details about Configuration component like [changelog](/components/configuration/technical-notes#changelog).
 
 ## Triggers
 
