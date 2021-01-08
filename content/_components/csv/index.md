@@ -5,23 +5,19 @@ section: Protocol components
 description: A simple file format used to store tabular data, for example from a spreadsheet or a database.
 icon: csv.png
 icontext: CSV component
-category: CSV component
-createdDate: 2015-11-15
-updatedDate: 2020-10-30
+category: csv
+updatedDate: 2021-01-04
+ComponentVersion: 2.1.6
 ---
-
-## Latest changelog
-
-**2.1.5 (October 30, 2020)**
-
-Upgrade to sailor 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## How works
 
 The component can read the CSV file from a remote URL or from the message
 attachment. It can also write a CSV file from the incoming events.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about CSV component like [changelog](/components/csv/technical-notes#changelog).
 
 ## Requirements
 
