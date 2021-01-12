@@ -20,8 +20,8 @@ other types of configuration parameters are also supported, more information and
 
 ## Environment Variables
 
-LOG_LEVEL - controls verbosity of logger. Possible values: `trace`, `debug` `info`, `warn`, `error`. Default: `info`
-
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 ## Technical Notes
 
 The [technical notes](technical-notes) page gives some technical details about MsSQL component like [changelog](/components/mssql/technical-notes#changelog).

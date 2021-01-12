@@ -34,10 +34,12 @@ The component is based on [REST API for JD Edwards EnterpriseOne AIS Server](htt
 
 ### Environment variables
 
-|Name|Mandatory|Description|Values|
+| Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warning`, `error` |
-|`NODE_TLS_REJECT_UNAUTHORIZED`| false | For ignoring server https certificate | `0`
+| `NODE_TLS_REJECT_UNAUTHORIZED`| false | For ignoring server https certificate | `0`
+
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ### Credentials
 

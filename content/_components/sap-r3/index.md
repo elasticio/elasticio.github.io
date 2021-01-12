@@ -34,8 +34,10 @@ SAP Java Connector 3.0.19 SDK is being used.
 
 | Name | Mandatory | Description | Values |
 |----|---------|-----------|------|
-| `LOG_LEVEL` | false | Log Level. Default value (`info`) | `fatal` `error` `warn` `info` `debug` `trace` |
 | `EIO_REQUIRED_RAM_MB` | false | Recommended value of allocated memory, MB | `512` |
+
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ## Credentials
 
@@ -65,14 +67,14 @@ The SAP Message Server manages communication between the application servers, pa
 
 SAP ECC (R/3, ERP) component includes the following triggers:
 
-  1. [RFC Server (Only for Realtime flows)](/components/sap-r3/triggers#rfc-server-only-for-realtime-flows)                                        
+  1. [RFC Server (Only for Realtime flows)](/components/sap-r3/triggers#rfc-server-only-for-realtime-flows)
   Generic trigger which gives possibility to receive RFC calls from the SAP ECC platform.
 
 ## Actions
 
 SAP ECC (R/3, ERP) component includes the following actions:
 
-  1. [Call RFC Service](/components/sap-r3/actions#call-rfc-service)                                        
+  1. [Call RFC Service](/components/sap-r3/actions#call-rfc-service)
   Generic action which gives possibility to call an RFC function on the SAP ECC platform.
 
 ## Known Limitations

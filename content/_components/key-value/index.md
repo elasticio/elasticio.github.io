@@ -24,9 +24,8 @@ Instance of MongoDB with possibility to connect from component.
 
 ### Environment variables
 
-|Name|Mandatory|Description|Values|
-|----|---------|-----------|------|
-|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warn`, `error` |
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Technical Notes
 

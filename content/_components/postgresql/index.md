@@ -35,7 +35,8 @@ The [technical notes](technical-notes) page gives some technical details about P
 
 ## Environment Variables
 
-`LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 The component completeness matrix is also [available separately](completeness-matrix).
 
@@ -68,25 +69,25 @@ See more in [documentation](https://www.postgresql.org/docs/current/static/libpq
 
 PostgreSQL component includes the following triggers:
 
-  1. [SELECT trigger](/components/postgresql/triggers#select-trigger-and-action)                                                                         
+  1. [SELECT trigger](/components/postgresql/triggers#select-trigger-and-action)
   This trigger and action are actually the same but can be used in two different scenarios - trigger as a first step and action in between other steps.
 
 ## Actions
 
 
-1. [SELECT action](/components/postgresql/actions#select-action)                                                                         
+1. [SELECT action](/components/postgresql/actions#select-action)
 This trigger and action are actually the same but can be used in two different scenarios - trigger as a first step and action in between other steps.
 
-2. [INSERT/UPDATE/DELETE action](/components/postgresql/actions#insertupdatedelete-action)                                                                         
+2. [INSERT/UPDATE/DELETE action](/components/postgresql/actions#insertupdatedelete-action)
 Use this action to insert, update or delete some data, returned value is ignored, number of affected rows you can see in the log file.
 
-3. [INSERT Bulk action](/components/postgresql/actions#insert-bulk-action)                                                                         
+3. [INSERT Bulk action](/components/postgresql/actions#insert-bulk-action)
 This action is useful to execute a bulk insert query in one transaction. An incoming message needs to contain a body with an array of objects.
 
-4. [SQL Query action](/components/postgresql/actions#sql-query-action)                                                                         
+4. [SQL Query action](/components/postgresql/actions#sql-query-action)
 **Expert mode**. You can execute SQL query or SQL script in this action.
 
-5. [SQL Injection action](/components/postgresql/actions#sql-injection-action)                                                                         
+5. [SQL Injection action](/components/postgresql/actions#sql-injection-action)
 **Expert mode**. You can execute SQL Injection in this action. You can not use prepare statement there, for this purpose use [SQL Query Action](/components/postgresql/actions#sql-query-action).
 
 ## How SQL templates work
