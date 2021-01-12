@@ -34,9 +34,8 @@ You need to split an integration logic into 2 parts. The first one should use th
 
 ## Environment variables
 
-| Name | Mandatory | Description | Values |
-| ---- |--------- |----------- |------ |
-| LOG_LEVEL | false | Log Level. Default value (`info`) | `fatal` `error` `warn` `info` `debug` `trace` |
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ## Credentials
 

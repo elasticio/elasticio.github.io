@@ -26,10 +26,12 @@ It is used [Dropbox JavaScript SDK](https://github.com/dropbox/dropbox-sdk-js).
 
 ### Environment variables
 
-|Name|Mandatory|Description|Values|
+| Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warning`, `error` |
-|`ATTACHMENT_MAX_SIZE`| false | For `{{site.data.tenant.name}}` attachments configuration. Maximal possible attachment size in bytes. By default set to 1000000 and according to platform limitations CAN'T be bigger than that. | Up to `1000000` bytes|
+| `ATTACHMENT_MAX_SIZE`| false | For `{{site.data.tenant.name}}` attachments configuration. Maximal possible attachment size in bytes. By default set to 1000000 and according to platform limitations CAN'T be bigger than that. | Up to `1000000` bytes|
+
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ## Credentials
 

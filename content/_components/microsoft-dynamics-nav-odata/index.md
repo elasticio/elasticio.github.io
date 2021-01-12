@@ -30,10 +30,8 @@ The [technical notes](technical-notes) page gives some technical details about A
 
 ### Environment variables
 
-|Name|Mandatory|Description|Values|
-|----|---------|-----------|------|
-|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warning`, `error` |
-
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ## Credentials
 

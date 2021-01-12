@@ -27,12 +27,14 @@ The [technical notes](technical-notes) page gives some technical details about O
 
 ### Environment variables
 
-|Name|Mandatory|Description|Values|
+| Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-|`OAUTH_CLIENT_ID`| true | Microsoft Graph Application OAuth2 Client ID | More on [dedicated OAuth2 App page](create-oauth-app). |
-|`OAUTH_CLIENT_SECRET`| true | Microsoft Graph Application OAuth2 Client Secret | More on [dedicated OAuth2 App page](create-oauth-app). |
-|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warn`, `error` |
-|`MAIL_RETRIEVE_MAX_COUNT`| false | Define max count mails could be retrieved per one `Poll for New Mail` trigger execution. Default to 1000| 1000 |
+| `OAUTH_CLIENT_ID`| true | Microsoft Graph Application OAuth2 Client ID | More on [dedicated OAuth2 App page](create-oauth-app). |
+| `OAUTH_CLIENT_SECRET`| true | Microsoft Graph Application OAuth2 Client Secret | More on [dedicated OAuth2 App page](create-oauth-app). |
+| `MAIL_RETRIEVE_MAX_COUNT`| false | Define max count mails could be retrieved per one `Poll for New Mail` trigger execution. Default to 1000| 1000 |
+
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ### Credentials
 

@@ -35,7 +35,6 @@ Following environment are required:
  - `OAUTH_CLIENT_ID` - oauth App ID
  - `OAUTH_CLIENT_SECRET` - oauth App Secret
  - `TENANT_DOMAIN` - your Google API tenant domain
- - `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` controls logger level
  - `REQUEST_TIMEOUT_PERIOD` - If you want to slow down requests to your API you can set delay value (in ms) and the component will delay calling the next request after the previous request.
  Time for the delay is calculated as `REQUEST_TIMEOUT_PERIOD`/ `REQUEST_TIMEOUT_QUOTA` and shouldn't be more than 1140 seconds (19 minutes due to platform limitation).
  The current values of this variables can be found in Google [documentation](https://developers.google.com/sheets/api/limits).
@@ -43,6 +42,9 @@ Following environment are required:
  - `REQUEST_TIMEOUT_QUOTA` - the field can be used in pair with `REQUEST_TIMEOUT_PERIOD`, default to 500.
 
 > **Please note:** if result quota restriction will be less than 1 request/min component `Retrieve Sample` task won't be complete
+
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
  To get these please use the [Google Developers Console](https://console.developers.google.com). As a callback please use `https://your-tenant.address/callback/oauth2`.
 
@@ -65,7 +67,7 @@ platform to access your Spreadsheets.
 
 Google Spreadsheets component includes the following triggers:
 
- 1. [Get Spreadsheet Row trigger](/components/gspreadsheet/triggers#get-spreadsheet-row)                                                                                                                          The New Spreadsheet Row trigger reads the data in each row of a given Google Spreadsheet and passes it to the next stage of your integration flow.        
+ 1. [Get Spreadsheet Row trigger](/components/gspreadsheet/triggers#get-spreadsheet-row)                                                                                                                          The New Spreadsheet Row trigger reads the data in each row of a given Google Spreadsheet and passes it to the next stage of your integration flow.
 
 
 The following Google Spreadsheets triggers are deprecated:
@@ -77,14 +79,14 @@ The  **Rows** *trigger* reads the data in each row of a given Google Spreadsheet
 
 Google Spreadsheets component includes the following actions:
 
-  1. [Create New Spreadsheet action](/components/gspreadsheet/actions#create-new-spreadsheet)                                                               
-  Action to create a new Google spreadsheet.     
+  1. [Create New Spreadsheet action](/components/gspreadsheet/actions#create-new-spreadsheet)
+  Action to create a new Google spreadsheet.
 
-  2. [Add Spreadsheet Row action](/components/gspreadsheet/actions#add-spreadsheet-row)                                                                       
+  2. [Add Spreadsheet Row action](/components/gspreadsheet/actions#add-spreadsheet-row)
   Action to create a new Google spreadsheet row.
 
-  3. [Add Row(deprecated) action](/components/gspreadsheet/actions#add-rowdeprecated)   
-  This action is `deprecated` - please use [Add Spreadsheet Row](/components/gspreadsheet/actions#add-spreadsheet-row) action.        
+  3. [Add Row(deprecated) action](/components/gspreadsheet/actions#add-rowdeprecated)
+  This action is `deprecated` - please use [Add Spreadsheet Row](/components/gspreadsheet/actions#add-spreadsheet-row) action.
 
 ## Recommendations
 

@@ -63,68 +63,70 @@ It is needed to specify integration token. Required for `Integration Token autho
 
 ## Environment variables
 
-|Name|Mandatory|Description|Values|
+| Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warning`, `error` |
-|`BULK_EXTRACT_PAGE_SIZE`| false | Define max page for one call in Bulk Extract trigger | Integer, default is 1000 |
+| `BULK_EXTRACT_PAGE_SIZE`| false | Define max page for one call in Bulk Extract trigger | Integer, default is 1000 |
+
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ## Triggers
 
 Magento2 component includes the following triggers:
 
-  1. [Get New and Updated Objects Polling](/components/magento2/triggers#get-new-and-updated-objects-polling)                                               
+  1. [Get New and Updated Objects Polling](/components/magento2/triggers#get-new-and-updated-objects-polling)
   Lookup objects polling trigger.
 
-  2. [Bulk Extract](/components/magento2/triggers#bulk-extract)                                               
+  2. [Bulk Extract](/components/magento2/triggers#bulk-extract)
   Trigger for retrieval of large sets of person and person related data, using bulk Marketo API.
 
 ## Actions
 
 Magento2 component includes the following actions:
 
-  1. [Custom Request Action](/components/magento2/actions#custom-request-action)                
+  1. [Custom Request Action](/components/magento2/actions#custom-request-action)
 Using this actions you can do custom request. You should manually specify `method`, `url` and `body`.
 
-  2. [Set Inventory Action](/components/magento2/actions#set-inventory-action)                 
+  2. [Set Inventory Action](/components/magento2/actions#set-inventory-action)
 This action allows you to set the quantity for an already existing product.
 
-  3. [Upsert Product Action](/components/magento2/actions#upsert-product-action)                
+  3. [Upsert Product Action](/components/magento2/actions#upsert-product-action)
 You can create new or update existing simple or configurable product and associate with existing child product (for configurable products) using this action.
 
-  4. [Set order as shipped Action](/components/magento2/actions#set-order-as-shipped-action)     
+  4. [Set order as shipped Action](/components/magento2/actions#set-order-as-shipped-action)
 Using this action you can set your order as shipped.
 
-  5. [Set Sales Order External ID](/components/magento2/actions#set-sales-order-external-id)   
+  5. [Set Sales Order External ID](/components/magento2/actions#set-sales-order-external-id)
 This action allows to set or update Sales Order external ID for existing Order.
 
-  6. [Create Invoice Action](/components/magento2/actions#create-invoice-action)               
+  6. [Create Invoice Action](/components/magento2/actions#create-invoice-action)
 This action allows you to create an invoice for an already existing order using the order’s `entity id`.
 
-  7. [Add Update To Sales Order](/components/magento2/actions#add-update-to-sales-order)       
+  7. [Add Update To Sales Order](/components/magento2/actions#add-update-to-sales-order)
 This action allows to set or update Sales Order status.
 
-  8. [Lookup Object by ID](/components/magento2/actions#lookup-object-by-id)                   
+  8. [Lookup Object by ID](/components/magento2/actions#lookup-object-by-id)
 This action allows you to search up one of the object types: `customer`, `product` or `sales order` by unique criteria.
 
-  9. [Lookup Objects](/components/magento2/actions#lookup-objects)                   
+  9. [Lookup Objects](/components/magento2/actions#lookup-objects)
   Given a field-value return all matching records.
 
-  10. [Lookup Set Of Objects](/components/magento2/actions#lookup-set-of-objects)                   
+  10. [Lookup Set Of Objects](/components/magento2/actions#lookup-set-of-objects)
   Given an array of information where each item in the array uniquely describes exactly one object, lookup each object.
 
-  11. [Set Tiered Prices](/components/magento2/actions#set-tiered-prices)                       
+  11. [Set Tiered Prices](/components/magento2/actions#set-tiered-prices)
 This action takes an array as input, and therefore can only be used in developer mode.
 
-  12. [Upsert Customer](/components/magento2/actions#upsert-customer)                        
+  12. [Upsert Customer](/components/magento2/actions#upsert-customer)
 Updates a customer, or creates it if it doesn’t exist. To update, you must provide the `customer ID` and `website ID` (Associate to Website). To create, do not enter a customer ID; the system will generate one.
 
-  13. [Delete Object](/components/magento2/actions#delete-object)                               
+  13. [Delete Object](/components/magento2/actions#delete-object)
 This action allows you to delete the following object types: `customer` or `product` by unique criteria.
 
-  14. [Read Store Config Action](/components/magento2/actions#read-store-config-action)          
+  14. [Read Store Config Action](/components/magento2/actions#read-store-config-action)
 You can read all the configured stores on a Magento instance (like [GET /V1/store/storeConfigs](https://devdocs.magento.com/swagger/#/storeStoreConfigManagerV1/storeStoreConfigManagerV1GetStoreConfigsGet))
 
-  15. [Create order](/components/magento2/actions#create-order)                              
+  15. [Create order](/components/magento2/actions#create-order)
 Creates an order on behalf of a customer given an existing customer id, or creates an order for a guest user.
 
 ## Known limitations

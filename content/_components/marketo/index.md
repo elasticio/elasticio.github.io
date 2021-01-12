@@ -26,11 +26,13 @@ Marketo [provides instructions to grant API access](http://developers.marketo.co
 
 ### Environment variables
 
-|Name|Mandatory|Description|Values|
+| Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warning`, `error` |
-|`SWAGGER_URL`| false | Define url to Marketo swagger document for generation correct metadata  | https://developers.marketo.com/swagger/swagger-mapi.json |
-|`BULK_IMPORT_POLLING_TIMEOUT`| false | Timeout for polling bulk import job status in ms | 60000 |
+| `SWAGGER_URL`| false | Define url to Marketo swagger document for generation correct metadata  | https://developers.marketo.com/swagger/swagger-mapi.json |
+| `BULK_IMPORT_POLLING_TIMEOUT`| false | Timeout for polling bulk import job status in ms | 60000 |
+
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ###  Credentials
 
@@ -60,43 +62,43 @@ The [technical notes](technical-notes) page gives some technical details about M
 
 ## Triggers
 
-  1. [Get New Activities Polling](/components/marketo/triggers#get-new-activities-polling)                                  
+  1. [Get New Activities Polling](/components/marketo/triggers#get-new-activities-polling)
   Trigger to get all new and updated activities since last polling.
 
-  2. [Get New Leads Polling](/components/marketo/triggers#get-new-leads-polling)                                            
+  2. [Get New Leads Polling](/components/marketo/triggers#get-new-leads-polling)
   Trigger to get all leads updates. Only [updated](https://developers.marketo.com/rest-api/lead-database/activities/#data_value_changes) leads fields wold be retrieved.
 
-  3. [Poll Bulk Extract Results](/components/marketo/triggers#poll-bulk-extract-results)                                       
+  3. [Poll Bulk Extract Results](/components/marketo/triggers#poll-bulk-extract-results)
   Poll Bulk Extract Results and download file with extracted data to attachments.
 
 
 ## Actions
 
- 1. [Describe Object](/components/marketo/actions#describe-object)                                                              
+ 1. [Describe Object](/components/marketo/actions#describe-object)
  Get describe Object metadata.
 
- 2. [List Custom Objects](/components/marketo/actions#list-custom-objects)                                                   
+ 2. [List Custom Objects](/components/marketo/actions#list-custom-objects)
  Action will return a list of custom objects available in the destination instance, along with additional metadata about the objects.
 
- 3. [Lookup Objects](/components/marketo/actions#lookup-objects)                                                             
+ 3. [Lookup Objects](/components/marketo/actions#lookup-objects)
  Lookup objects by criteria.
 
- 4. [Lookup Activities](/components/marketo/actions#lookup-activities)                                                       
+ 4. [Lookup Activities](/components/marketo/actions#lookup-activities)
  Lookup Activities by criteria.
 
- 5. [Bulk Import](/components/marketo/actions#bulk-import)                                                                   
+ 5. [Bulk Import](/components/marketo/actions#bulk-import)
  Action for insertion of large sets of person and person related data.
 
- 6. [Upsert Objects](/components/marketo/actions#upsert-objects)                                                             
+ 6. [Upsert Objects](/components/marketo/actions#upsert-objects)
  Action upsert objects by unique criteria.
 
- 7. [Bulk Extract](/components/marketo/actions#bulk-extract)                                                                
+ 7. [Bulk Extract](/components/marketo/actions#bulk-extract)
  Extract file with Requested data to attachments.
 
- 8. [Delete Object by Unique Criteria](/components/marketo/actions#delete-object-by-unique-criteria)                         
+ 8. [Delete Object by Unique Criteria](/components/marketo/actions#delete-object-by-unique-criteria)
  Delete Object By Unique Criteria.
 
- 9. [Lookup Object (at most 1)](/components/marketo/actions#lookup-object-at-most-1)                                         
+ 9. [Lookup Object (at most 1)](/components/marketo/actions#lookup-object-at-most-1)
  Lookup Object By Unique Criteria.
 
 ## Known limitations

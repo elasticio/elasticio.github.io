@@ -23,16 +23,17 @@ The [technical notes](technical-notes) page gives some technical details about C
 
 ### Environment variables
 
-|Name|Mandatory|Description|Values|
+| Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-|EIO_REQUIRED_RAM_MB| false | Value of allocated memory to component | Recommended: 512 |
-|REQUEST_TIMEOUT| false |  HTTP request timeout in milliseconds | Default value: 10000 |
-|REQUEST_RETRY_DELAY| false | Delay between retry attempts in milliseconds | Default value: 7000 |
-|REQUEST_MAX_RETRY| false | Number of HTTP request retry attempts |  Default value: 7 |
-|REQUEST_MAX_CONTENT_LENGTH| false | Max size of http request in bytes | Default value: 10485760 |
-|TIMEOUT_BETWEEN_EVENTS| false | Number of milliseconds write action wait before creating separate attachments | Default value: 10000 |
-|LOG_LEVEL| false | Level of logger verbosity | trace, debug, info, warning, error Default: info |
+| EIO_REQUIRED_RAM_MB| false | Value of allocated memory to component | Recommended: 512 |
+| REQUEST_TIMEOUT| false |  HTTP request timeout in milliseconds | Default value: 10000 |
+| REQUEST_RETRY_DELAY| false | Delay between retry attempts in milliseconds | Default value: 7000 |
+| REQUEST_MAX_RETRY| false | Number of HTTP request retry attempts |  Default value: 7 |
+| REQUEST_MAX_CONTENT_LENGTH| false | Max size of http request in bytes | Default value: 10485760 |
+| TIMEOUT_BETWEEN_EVENTS| false | Number of milliseconds write action wait before creating separate attachments | Default value: 10000 |
 
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Credentials
 
@@ -41,21 +42,21 @@ The component does not require credentials to function.
 
 ## Triggers
 
-  1. [Read CSV file from URL](/components/csv/triggers#read-csv-file-from-url)                                                 
+  1. [Read CSV file from URL](/components/csv/triggers#read-csv-file-from-url)
   This trigger will fetch the CSV file from a given URL.
 
 ## Actions
 
-  1. [Read CSV attachment](/components/csv/actions#read-csv-attachment)                                                         
+  1. [Read CSV attachment](/components/csv/actions#read-csv-attachment)
   Read a CSV attachment of an incoming message.
 
-  2. [Write CSV attachment](/components/csv/actions#write-csv-attachment)                                                   
+  2. [Write CSV attachment](/components/csv/actions#write-csv-attachment)
   Multiple incoming events can be combined into one CSV file with the write CSV action.
 
-  3. [Write CSV attachment from JSON Object](/components/csv/actions#write-csv-attachment-from-json-object)                 
+  3. [Write CSV attachment from JSON Object](/components/csv/actions#write-csv-attachment-from-json-object)
   Multiple incoming events can be combined into one CSV file with the write CSV action.
 
-  4. [Write CSV attachment from JSON Array](/components/csv/actions#write-csv-attachment-from-json-array)                   
+  4. [Write CSV attachment from JSON Array](/components/csv/actions#write-csv-attachment-from-json-array)
   Incoming array can be converted into one CSV file with the write CSV action.
 
 ## Limitations

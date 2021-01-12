@@ -26,7 +26,8 @@ The Splitter processes income messages containing multiple elements that might h
 
 Component does not have any required environment variables, but we suggest to use `EIO_REQUIRED_RAM_MB` in order to avoid `Component run out of memory and terminated` error, recommended value of allocated memory is `512` MB.
 
-For debugging purposes there is: `LOG_LEVEL` - `trace` | `debug` | `info` | `warning` | `error` that controls logger level.
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ## Triggers
 
@@ -131,8 +132,8 @@ message parts have arrived:
 Can't do re-grouping when a split is done on an empty array. (i.e. No empty for each pattern supported)
 * If all messages in a group fail to arrive at the re-assemble action (because one message suffered an error earlier in the flow)
 then this component will silently discard the group.
-* All messages must arrive within the same container lifetime.  
-If at any point there is more than a 15 second gap in messages, then the group will be silently discarded.  
+* All messages must arrive within the same container lifetime.
+If at any point there is more than a 15 second gap in messages, then the group will be silently discarded.
 * The group is dropped if there are any unexpected restarts to the container.
 * Size of the group must be known by all group members.
 * Messages are only emitter when all parts arrive. Emitting a message only when the first part arrives isn't supported.

@@ -36,9 +36,11 @@ with SAP Business byDesign API.
 
 | Name | Mandatory | Description | Values |
 |---------------------|-------|-----------------------------------|-----------------------------------------------|
-| LOG_LEVEL           | false | Log Level. Default value (`INFO`) | `FATAL` `ERROR` `WARN` `INFO` `DEBUG` `TRACE` |
 | EIO_REQUIRED_RAM_MB | false | Value of allocated memory         | `2048` recommended                            |
 | ELASTICIO_REBOUND_LIMIT | false | Number of rebounds            | Default 5                                     |
+
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ### Credentials
 

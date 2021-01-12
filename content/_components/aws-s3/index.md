@@ -25,11 +25,11 @@ Following actions are inside:
 - Stream to CSV
 - Rename file
 
-### Description  
+### Description
 
 This is the component for working with AWS S3 object storage service on {{site.data.tenant.name}} platform.
 
-### How works. SDK version  
+### How works. SDK version
 
 The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ 'SDK for NodeJS') version 2.683.0.
 
@@ -39,11 +39,13 @@ The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ '
 
 |Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-|`LOG_LEVEL`| false | Controls logger level | `trace`, `debug`, `info`, `warning`, `error` |
 |`ATTACHMENT_MAX_SIZE`| false | For `elastic.io` attachments configuration. Maximal possible attachment size in bytes. By default set to 1000000 and according to platform limitations CAN'T be bigger than that. | Up to `1000000` bytes|
 |`ACCESS_KEY_ID`| false | For integration-tests is required to specify this variable |  |
 |`ACCESS_KEY_SECRET`| false | For integration-tests is required to specify this variable |  |
 |`REGION`  | false | For integration-tests is required to specify this variable |  |
+
+> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
 
 ### Technical Notes
 
