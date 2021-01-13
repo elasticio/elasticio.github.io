@@ -68,7 +68,7 @@ Paste the following `JSON` in the input field:
 ```js
 {
   "petname": "Gromit",
-  "petstatus": "sold"
+  "petstatus": "Sold"
 }
 ```
 
@@ -155,7 +155,7 @@ Open the Postman and follow these steps:
 ```js
 {
   "petname": "Gromit",
-  "petstatus": "sold"
+  "petstatus": "Sold"
 }
 ```
 4.  Click on *Send* button in the right upper corner to send the data to your webhook flow. In response, {{site.data.tenant.name}} platform will reply with a similar message shown on the screenshot.
@@ -194,7 +194,7 @@ webhook URL using `curl` on a terminal.
 curl -X POST https://in.{{site.data.tenant.name}}/hook/{FLOW_ID} -u {USERNAME}:{PASSWORD} \
 -H 'Content-Type: application/json' -d '{
   "petname": "Gromit",
-  "petstatus": "sold"
+  "petstatus": "Sold"
 }'
 ```
 
