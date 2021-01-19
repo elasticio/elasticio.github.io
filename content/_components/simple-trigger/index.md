@@ -5,18 +5,10 @@ section: Utility components
 description: A component used to trigger integration flows without requesting data from any services.
 icon: simple-trigger.png
 icontext: Simple-trigger component
-category: Simple-trigger component
-createdDate: 2019-01-16
-updatedDate: 2020-11-10
+category: simple-trigger
+updatedDate: 2021-01-15
+ComponentVersion: 1.1.3
 ---
-
-## Latest changelog
-
-**1.1.2 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## How works
 
@@ -35,6 +27,10 @@ Environment variables are not required for this component.
 ### Credentials
 
 This component does not require credentials to work.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Simple-trigger component like [changelog](/components/simple-trigger/technical-notes#changelog).
 
 ## Triggers
 

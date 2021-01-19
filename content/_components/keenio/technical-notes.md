@@ -1,8 +1,8 @@
 ---
-title: Keenio component
+title: Keenio Technical Notes
 layout: component
 section: Service components
-description: Keenio component for the platform.
+description: Technical Notes for the Keenio component.
 icon: keenio.png
 icontext: Keenio component
 category: keenio

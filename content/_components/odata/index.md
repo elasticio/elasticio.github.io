@@ -54,7 +54,7 @@ output.
 
 Given a field and a field value that matches exactly one record, find that matching record.
 
-![Lookup Object by Field](img/lookup-objects-by-filed.png)
+![Lookup Object by Field](img/lookup-objects-by-field.png)
 
 There are three configuration drop downs:
 

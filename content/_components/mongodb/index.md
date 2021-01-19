@@ -6,22 +6,18 @@ description: Integration component to interact with MongoDB databases.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-createdDate: 2020-04-13
-updatedDate: 2020-11-10
+updatedDate: 2021-01-15
+ComponentVersion: 1.5.5
 ---
-
-## Latest changelog
-
-**1.5.4 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
 Integration component to interact with MongoDB databases. The component works with
 the MongoDB versions `2.6` and above.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about MongoDB component like [changelog](/components/mongodb/technical-notes#changelog).
 
 ## Authentication
 

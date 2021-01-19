@@ -1,7 +1,7 @@
 ---
-title: Twitter component
+title: Twitter Technical Notes
 layout: component
-description: Twitter is a channel where you can connect with your prospects, customers, and journalists.
+description: Technical Notes for the Twitter component.
 icon:  twitter.png
 icontext: Twitter component
 category: twitter
@@ -10,7 +10,6 @@ ComponentVersion: 1.4.0
 redirect_from:
   - /components/twitter/changelog.html
 ---
-
 
 ## Changelog
 

@@ -5,19 +5,10 @@ section: Utility components
 description: A webhook is simply a way for an app to provide other applications with real-time information.
 icon: webhook.png
 icontext: Webhook component
-category: Webhook component
-createdDate: 2015-07-29
-updatedDate: 2020-10-27
+category: webhook
+updatedDate: 2021-01-15
+ComponentVersion: 1.2.8
 ---
-
-## Latest changelog
-
-**1.2.7 (October 27, 2020)**
-
-* Update sailor version to 2.6.18
-* Fix unit-tests
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Purpose
 
@@ -33,6 +24,10 @@ Webhook component supports the following authorisation types:
 * **HMAC verification shared secret** - use it to verify via a shared secret. Note: only SHA512 encryption algorithm is supported.
 
 ![creds](img/credentials.png)
+
+## Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Webhook component like [changelog](/components/webhook/technical-notes#changelog).
 
 ## Triggers
 

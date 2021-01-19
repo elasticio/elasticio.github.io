@@ -5,19 +5,10 @@ section: Protocol components
 description: A component for connecting to an SFTP server to read/write files.
 icon: sftp.png
 icontext: SFTP component
-category: SFTP component
-createdDate: 2015-11-20
-updatedDate: 2020-10-30
+category: sftp
+updatedDate: 2021-01-15
+ComponentVersion: 1.4.3
 ---
-
-## Latest changelog
-
-**1.4.2 (October 30, 2020)**
-
-* More logging improvements
-* Update sailor to 2.6.18
-
-> To see the full **changelog** please use the following [link](/components/sftp/changelog).
 
 ## General Information
 
@@ -27,23 +18,19 @@ This component creates a connection to an SFTP server to read and upload files.
 
 The optional environment variable `MAX_FILE_SIZE` should be set in settings to provide the maximum file size that can be uploaded in **megabytes (mb)**. The default value for `MAX_FILE_SIZE` is 100MB.
 
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about SFTP component like [changelog](/components/sftp/technical-notes#changelog).
+
 ## Credentials
 
-### Host
+* **Host** - Host name of SFTP server
 
-Host name of SFTP server
+* **Port** - Optional, port of SFTP server. Defaults to 22 if not set.
 
-### Port
+* **User Name** - Username for SFTP server
 
-Optional, port of SFTP server. Defaults to 22 if not set.
-
-### User Name
-
-Username for SFTP server
-
-### Password
-
-Password for SFTP server.
+* **Password** - Password for SFTP server.
 
 >**Note**: field `Private Key` should stay empty in case you fill a password.
 

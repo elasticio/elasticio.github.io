@@ -5,18 +5,10 @@ section: Utility components
 description: The Splitter integration connector was designed to work together with the JSONata-powered Mapper.
 icon: splitter.png
 icontext: Splitter component
-category: Splitter component
-createdDate: 2017-03-31
-updatedDate: 2020-11-10
+category: splitter
+updatedDate: 2021-01-15
+ComponentVersion: 1.1.8
 ---
-
-## Latest changelog
-
-**1.1.7 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -27,7 +19,11 @@ The Splitter processes income messages containing multiple elements that might h
 Component does not have any required environment variables, but we suggest to use `EIO_REQUIRED_RAM_MB` in order to avoid `Component run out of memory and terminated` error, recommended value of allocated memory is `512` MB.
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Splitter component like [changelog](/components/splitter/technical-notes#changelog).
 
 ## Triggers
 
