@@ -5,13 +5,17 @@ description: Technical Notes for Mapper component.
 icon: mapper.png
 icontext: Mapper component
 category: mapper
-updatedDate: 2020-12-15
-ComponentVersion: 0.0.11
+updatedDate: 2021-01-15
+ComponentVersion: 0.0.12
 redirect_from:
   - /components/mapper/changelog.html
 ---
 
 ## Changelog
+
+## 0.0.12 (January 15, 2021)
+
+* Update sailor version to 2.6.23
 
 ### 0.0.11 (December 15, 2020)
 

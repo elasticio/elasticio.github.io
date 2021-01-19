@@ -5,18 +5,10 @@ section: Utility components
 description: A component to run a piece of JavaScript code inside the integration.
 icon: code.png
 icontext: Code component
-category: Code component
-createdDate: 2015-09-25
+category: code
 updatedDate: 2020-11-10
+ComponentVersion: 1.2.4
 ---
-
-## Latest changelog
-
-**1.2.3 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -41,6 +33,10 @@ favourite desktop developing tool:
 *   Support for number of variables and libraries within the context of the execution
 *   Support latest ECMAScript standard
 *   Run and troubleshoot within the designer interface.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Code component like [changelog](/components/code/technical-notes#changelog).
 
 ## Available Variables and Libraries
 

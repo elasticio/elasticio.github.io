@@ -6,8 +6,8 @@ description: A component used to map source data to target data.
 icon: mapper.png
 icontext: Mapper component
 category: mapper
-updatedDate: 2020-12-15
-ComponentVersion: 0.0.11
+updatedDate: 2021-01-15
+ComponentVersion: 0.0.12
 ---
 
 ## Used languages
@@ -31,6 +31,10 @@ complex data transformation. JSONata has many advantages for the use-case:
  - Ability to add custom functions, e.g. date parsing or output functions
 
 More information you will find on [JSONata website](http://jsonata.org).
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Mapper component like [changelog](/components/mapper/technical-notes#changelog).
 
 ## How expressions work
 

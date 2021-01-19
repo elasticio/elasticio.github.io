@@ -6,8 +6,8 @@ description: Examines the message content and routes the message onto a differen
 icon: router.png
 icontext: Router component
 category: router
-updatedDate: 2020-10-30
-ComponentVersion: 0.0.10
+updatedDate: 2022-01-15
+ComponentVersion: 0.0.11
 ---
 
 This component implements the [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
@@ -40,7 +40,7 @@ and setup your next steps:
 ## Environment Variables
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## How it works?
 

@@ -5,13 +5,17 @@ description: Technical Notes for Utility Component.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2020-11-20
-ComponentVersion: 1.2.0
+updatedDate: 2021-01-15
+ComponentVersion: 1.2.1
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.1 (January 15, 2021)
+
+* Update sailor version to 2.6.23
 
 ### 1.2.0 (November 20, 2020)
 

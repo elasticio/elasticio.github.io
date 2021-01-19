@@ -6,17 +6,9 @@ description: Request-Reply component for the platform.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-createdDate: 2016-04-08
-updatedDate: 2020-11-10
+updatedDate: 2021-01-15
+ComponentVersion: 1.1.4
 ---
-
-## Latest changelog
-
-**1.1.3 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -32,6 +24,9 @@ This component requires no authentication.
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Request-reply component like [changelog](/components/request-reply/technical-notes#changelog).
 
 ## Asynchronous vs. Synchronous messaging
 

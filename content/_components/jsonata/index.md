@@ -5,18 +5,10 @@ section: Utility components
 description: Dedicated data transformation component.
 icon: jsonata.png
 icontext: Jsonata component
-category: Jsonata component
-createdDate: 2017-08-15
-updatedDate: 2020-11-10
+category: jsonata
+updatedDate: 2021-01-15
+ComponentVersion: 1.0.8
 ---
-
-## Latest changelog
-
-**1.0.7 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Authentication
 
@@ -124,6 +116,11 @@ resulting in ([jsonata link](http://try.jsonata.org/B1ctn36ub)):
   ]
 }
 ```
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Jsonata component like [changelog](/components/jsonata/technical-notes#changelog).
+
 
 ## Triggers
 
