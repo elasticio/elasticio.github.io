@@ -6,8 +6,8 @@ description: A webhook is simply a way for an app to provide other applications 
 icon: webhook.png
 icontext: Webhook component
 category: webhook
-updatedDate: 2021-01-15
-ComponentVersion: 1.2.8
+updatedDate: 2021-01-28
+ComponentVersion: 1.2.9
 ---
 
 ## Purpose

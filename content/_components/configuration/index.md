@@ -6,8 +6,8 @@ description: A component allows separating the modification of configurable valu
 icon: configuration.png
 icontext: Configuration component
 category: configuration
-updatedDate: 2020-10-30
-ComponentVersion: 0.0.4
+updatedDate: 2021-01-29
+ComponentVersion: 0.0.5
 ---
 
 ## How works.  API version / SDK version
@@ -32,7 +32,7 @@ where it is needed.
 ### Environment variables
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Credentials
 
