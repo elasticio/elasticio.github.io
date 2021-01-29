@@ -5,18 +5,10 @@ section: Utility components
 description: In this case it is not about a particular application but the email function in general.
 icon: email.png
 icontext: Email component
-category: Email component
-createdDate: 2016-01-07
-updatedDate: 2020-11-10
+category: email
+ComponentVersion: 1.0.10
+updatedDate: 2021-01-29
 ---
-
-## Latest changelog
-
-**1.0.9 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## How works
 
@@ -33,6 +25,10 @@ The component can be configured using the following environment variables:
 *   `MANDRILL_FROM_NAME` - this will be the name of your company or service
 
 Please note that you must [verify your domain](https://mandrill.zendesk.com/hc/en-us/articles/205582247) before using this component and configuring it with your environment variables.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Email component like [changelog](/components/email/technical-notes#changelog).
 
 ## Triggers
 
@@ -118,5 +114,9 @@ entities of sending messages for each recipient:
 
 ### Attachments
 
-E-mail component can include attachment to email. More information about
-attachments functionality on the is provided elsewhere.
+E-mail component can include attachment to email. More information about attachments functionality on elastic.io platform You can find at [this resource](/guides/using-attachments#binary-data).
+
+## Limitations
+
+1. Attachment size limitations could be found [here](/references/attachments-limitations).
+2. Attachments mechanism does not work with [Deprecated Local Agent Installation](/getting-started/local-agent)

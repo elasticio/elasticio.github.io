@@ -5,28 +5,15 @@ section: Database components
 description: Integration component to interact with Google BigQuery.
 icon: google-bigquery.png
 icontext: Google BigQuery component
-category: Google BigQuery component
-createdDate: 2020-08-28
-updatedDate: 2020-11-10
+category: bigquery
+ComponentVersion: 1.0.5
+updatedDate: 2021-01-29
 ---
-
-## Latest changelog
-
-**1.0.4 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
 Integration component to interact with Google BigQuery using
 `@google-cloud/bigquery` client library version `5.2.0` (API).
-
-## Completeness Matrix
-
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
 
 ## Credentials
 
@@ -54,6 +41,10 @@ It should look like this:
 }
 
 ```
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Google BigQuery component like [changelog](/components/google-bigquery/technical-notes#changelog) and [completeness matrix](/components/google-bigquery/technical-notes#completeness-matrix).
 
 ## Triggers
 

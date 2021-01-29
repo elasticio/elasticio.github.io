@@ -5,8 +5,8 @@ description: MongoDB component action function details.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2021-01-15
-ComponentVersion: 1.5.5
+updatedDate: 2021-01-28
+ComponentVersion: 1.5.6
 ---
 
 ## Description

@@ -5,18 +5,10 @@ section: Utility components
 description: Component to convert or replace incoming values using a Lookup table
 icon: lookup.png
 icontext: Lookup component
-category: Lookup component
-createdDate: 2019-12-16
-updatedDate: 2020-11-10
+category: lookup
+ComponentVersion: 1.1.3
+updatedDate: 2021-01-29
 ---
-
-## Latest changelog
-
-**1.1.2 (November 6, 2020)**
-
-* Update sailor version to 2.6.18
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -82,6 +74,10 @@ will provide a failed result.
 
 > The CSV can only be a maximum of 5kB, and if it contains any duplicate values
 > in a given column, it will fail validation.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about Lookup Table component like [changelog](/components/lookup-table/technical-notes#changelog).
 
 ## Triggers
 

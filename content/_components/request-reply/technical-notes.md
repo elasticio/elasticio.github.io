@@ -5,13 +5,18 @@ description: Technical Notes for the Request-reply component.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2021-01-15
-ComponentVersion: 1.1.4
+updatedDate: 2021-01-28
+ComponentVersion: 1.1.5
 redirect_from:
   - /components/request-reply/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.5 (January 28, 2021)
+
+* Update sailor version to 2.6.24
+* Fix a bug with memory leakage in Sailor
 
 ### 1.1.4 (January 15, 2021)
 
