@@ -31,9 +31,9 @@ The answer is simple, fix the component version during the flow creation!
 
 Here is what to do:
 
-  * Start designing an integration flow. The designer will automatically choose the Latest version by skipping to the configuration stage.
+  * Start designing an integration flow. The designer will automatically choose the exact latest version of a component by skipping to the configuration stage.
 
-  * Click on the Version tab and select the desired version to use as it is shown below in the picture:
+  * Click on the Versions tab and select the desired version to use as it is shown below in the picture:
 
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/fix-a-component-version/choose-version.png" title="Choose version" %}
 
