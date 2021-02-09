@@ -12,6 +12,24 @@ ComponentVersion: 2.0.7
 
 ## Introduction
 
+The REST API is designed so that you can connect and request almost any REST API without having to create a separate component.
+
+There are countless APIs and not all have separate components. In this case, you can simply take the REST API component,  configure the request for your API and use it as if this component was made specifically for the API you selected.
+
+Triggers and actions are implemented in the component using the HTTP request. This component function is based on the API call.
+In a nutshell, an API call is a process that takes place when you send a request after setting up your API with the correct endpoints. Your information is transferred, processed, and feedback is returned back.
+
+## Quick Start
+
+
+
+
+
+
+
+
+
+
 The example below shows the development team creation using the REST API component
 with our own [REST API service](https://api.{{site.data.tenant.name}}/docs "{{site.data.tenant.name}} REST API service").
 
