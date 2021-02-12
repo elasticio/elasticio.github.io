@@ -6,8 +6,8 @@ description: In this case it is not about a particular application but the email
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.0.10
-updatedDate: 2021-01-29
+ComponentVersion: 1.0.11
+updatedDate: 2021-02-12
 ---
 
 ## How works

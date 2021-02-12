@@ -5,15 +5,19 @@ description: Technical Notes for the Router component.
 icon: router.png
 icontext: Router component
 category: router
-updatedDate: 2022-01-15
-ComponentVersion: 0.0.11
+updatedDate: 2021-02-12
+ComponentVersion: 0.0.12
 redirect_from:
   - /components/router/changelog.html
 ---
 
 ## Changelog
 
-## 0.0.11 (January 15, 2021)
+### 0.0.12 (February 12, 2021)
+
+* Update sailor version to 2.6.24
+
+### 0.0.11 (January 15, 2021)
 
 * Update sailor version to 2.6.23
 

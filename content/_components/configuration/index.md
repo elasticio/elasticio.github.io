@@ -6,8 +6,8 @@ description: A component allows separating the modification of configurable valu
 icon: configuration.png
 icontext: Configuration component
 category: configuration
-updatedDate: 2021-01-29
-ComponentVersion: 0.0.5
+updatedDate: 2021-02-12
+ComponentVersion: 0.0.6
 ---
 
 ## How works.  API version / SDK version

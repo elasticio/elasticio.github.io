@@ -5,14 +5,18 @@ description: Technical Notes for JDBC component
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2020-11-20
-ComponentVersion: 2.4.2
+updatedDate: 2021-02-12
+ComponentVersion: 2.4.3
 redirect_from:
   - /components/jdbc/completeness-matrix.html
   - /components/jdbc/changelog.html
 ---
 
 ## Changelog
+
+### 2.4.3 (February 12, 2021)
+
+* Update sailor version to 3.3.2
 
 ### 2.4.2 (November 20, 2020)
 
@@ -24,9 +28,10 @@ redirect_from:
 
 * Add rebound mechanism in case of deadlocks for actions: Insert, UpsertByPK, DeleteByPK
 
-### 2.4.0 (october 17, 2019)
+### 2.4.0 (October 17, 2019)
 
 * Add `Custom Query` action
+* Add rebound mechanism in case of deadlocks for actions: Insert, UpsertByPK, DeleteByPK
 
 ### 2.3.1 (September 30, 2019)
 

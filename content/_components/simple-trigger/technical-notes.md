@@ -5,13 +5,17 @@ description: Technical Notes for the Simple-trigger component.
 icon: simple-trigger.png
 icontext: Simple-trigger component
 category: simple-trigger
-updatedDate: 2021-01-15
-ComponentVersion: 1.1.3
+updatedDate: 2021-02-12
+ComponentVersion: 1.1.4
 redirect_from:
   - /components/simple-trigger/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.4 (February 12, 2021)
+
+* Update sailor version to 2.6.24
 
 ### 1.1.3 (January 15, 2021)
 

@@ -5,13 +5,17 @@ description: Technical Notes for the Code component.
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2020-11-10
-ComponentVersion: 1.2.4
+updatedDate: 2021-02-12
+ComponentVersion: 1.2.5
 redirect_from:
   - /components/code/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.5 (February 12, 2021)
+
+* Update sailor version to 2.6.24
 
 ### 1.2.4 (January 15, 2021)
 
