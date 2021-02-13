@@ -6,8 +6,8 @@ description: A component to run a piece of JavaScript code inside the integratio
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2020-11-10
-ComponentVersion: 1.2.4
+updatedDate: 2021-02-12
+ComponentVersion: 1.2.5
 ---
 
 ## Description

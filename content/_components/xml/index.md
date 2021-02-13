@@ -5,19 +5,10 @@ section: Protocol components
 description: XML is used to describe the transportation, structure, and storage of data.
 icon: xml.png
 icontext: XML component
-category: XML
-createdDate: 2016-12-29
-updatedDate: 2020-10-30
+category: xml
+ComponentVersion: 1.3.4
+createdDate: 2021-02-12
 ---
-
-## Latest changelog
-
-**1.3.3 (October 30, 2020)**
-
-* Upgrade to sailor 2.6.18
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 

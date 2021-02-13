@@ -5,8 +5,8 @@ description: SFTP component triggers.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2021-01-15
-ComponentVersion: 1.4.3
+updatedDate: 2021-02-12
+ComponentVersion: 1.4.4
 ---
 
 ## Read files

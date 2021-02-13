@@ -5,13 +5,17 @@ description: Technical Notes for the Splitter component.
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2021-01-15
-ComponentVersion: 1.1.8
+updatedDate: 2021-02-12
+ComponentVersion: 1.1.9
 redirect_from:
   - /components/splitter/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.9 (February 12, 2021)
+
+* Update sailor version to 2.6.24
 
 ### 1.1.8 (January 15, 2021)
 

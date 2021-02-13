@@ -5,15 +5,19 @@ description: Technical Notes for the Pub-Sub component
 icon: pub-sub.png
 icontext: Pub-Sub component
 category: pub-sub
-updatedDate: 2021-01-15
-ComponentVersion: 1.0.5
+updatedDate: 2021-02-12
+ComponentVersion: 1.0.6
 redirect_from:
   - /components/pub-sub/changelog.html
 ---
 
 ## Changelog
 
-## 1.0.5 (January 15, 2021)
+### 1.0.6 (February 12, 2021)
+
+* Update sailor version to 2.6.24
+
+### 1.0.5 (January 15, 2021)
 
 * Update sailor version to 2.6.23
 
