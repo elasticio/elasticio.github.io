@@ -6,8 +6,8 @@ description: An integration component which helps Amazon sellers to programmatic
 icon: amazon-mws.png
 icontext: Amazon MWS component
 category: amazon-mws
-ComponentVersion: 2.1.1
-updatedDate: 2020-11-15
+ComponentVersion: 2.1.2
+updatedDate: 2021-02-22
 ---
 
 ## Description
@@ -44,16 +44,22 @@ Please refer to the document [how to provide us access to your Amazon seller acc
 
 |Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-|RESPONSE_CHECK_DELAY| false | Determines delay for requesting submit feed result | Default: `30000` |
+|RESPONSE_CHECK_DELAY| false | Determines delay for requesting submit feed result (in milliseconds)| Default: `30000` |
 
 ## Triggers
 
-### List Orders
+### Get New And Updated Orders
 
-This trigger function will list the orders in your seller account based on the
-**Status** - which can be selected from the drop-down menu with the following available values:
+This trigger polls for the orders in your seller account based on the selected Order Status.
+All orders which are retrieved according to specified parameters are stored in component memory and will be emited in one message after the last order is retrieved.
 
-![List Orders](img/list-orders.png)
+User is able to use following input fields to configure the step:
+
+#### Order Status
+
+Is the only required field, it has the following available values:
+
+![Get New And Updated Orders](img/get-new-and-update.png)
 
 *   `Pending` - all the pending orders
 *   `Shipped` - all the shipped orders
@@ -63,6 +69,35 @@ This trigger function will list the orders in your seller account based on the
 *   `Unfulfillable` - not fulfillable orders
 *   `PendingAvailability (Japan only)` - all orders with status `pending availability`, only available in the Japan store
 *   `InvoiceUnconfirmed (China only)` - all orders with status `invoice unconfirmed`, only specific to Chinese store
+
+#### Maximum Orders per Page
+
+Number of maximum orders per request page, find more info about `MaxResultsPerPage` in [Amazon MWS documentation](https://docs.developer.amazonservices.com/en_US/orders-2013-09-01/Orders_ListOrders.html).
+
+>**Please Note:**
+1. Sample would be retrieved according to specified value.
+2. Trigger would retrieve all requested objects during runtime (each request to Amazon MWS would be sent according to specified value).
+
+#### Start Time
+
+Starting from this time trigger retrieves orders from Amazon MWS (`LastUpdatedAfter` in Amazon MWS).
+
+Use `1970-01-01T00:00:00.000 +0000` format for input data, it will be transformed under hood to [Amazon MWS date format](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_ISO8601.html)
+
+#### End Time
+
+Before this time trigger retrieves orders from Amazon MWS (`LastUpdatedBefore` in Amazon MWS).
+
+Use `1970-01-01T00:00:00.000 +0000` format for input data, it will be transformed under hood to [Amazon MWS date format](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_ISO8601.html)
+
+>**Please Note:**
+1. Trigger debug task (sample retrieve) makes ONLY one API request for throttling safe purposes. Component will throw an exception, if Amazon MWS returns a response with code 503 caused by throttling. In any other cases trigger will poll Amazon MWS API till correct response any 30 seconds (by default).
+2. Next flow steps after `Get New And Updated Orders` trigger may require additional memory in case when big number of orders emited by the trigger, or they could fail with error `Reason: OOMKilled Exit Code: 137`.
+3. We recommend to use real-time flow in cases when more than ~2000 orders are expected to be emitted by the trigger.
+
+#### Limitations
+
+1. Trigger throws an error in case when no more orders found for specified time range in case when `End Time` has been specified : `Caused by: com.amazonservices.mws.orders._2013_09_01.MarketplaceWebServiceOrdersException: LastUpdatedAfter date [2021-02-19T13:38:48.974Z] cannot be after LastUpdatedBefore date [2021-01-20T10:00:00.000Z]`
 
 ## Actions
 
