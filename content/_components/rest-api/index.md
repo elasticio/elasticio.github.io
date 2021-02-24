@@ -21,6 +21,15 @@ In a nutshell, an API call is a process that takes place when you send a request
 
 ## Quick Start
 
+The best way to understand a REST API component is to see it in action. We'll start with a simple example. First of all, you need to create a flow and find the component in the list:
+
+![Components Lists](img/comp-list.png)
+
+Since there is only one function in the component, this step is performed automatically. The next step is to configure the credentials. We'll use the Basic Auth type:
+
+![Configure Basic Auth](img/configure-basic-auth-type.png)
+
+>**Please Note:** Your Username is your E-mail, and your Password is your API key. 
 
 
 
