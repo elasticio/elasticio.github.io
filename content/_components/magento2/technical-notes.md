@@ -5,14 +5,19 @@ description: Technical Notes for the Magento2 component.
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2021-01-04
-ComponentVersion: 1.6.1
+updatedDate: 2021-02-25
+ComponentVersion: 1.6.2
 redirect_from:
   - /components/magento2/changelog.html
   - /components/magento2/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.6.2 (Feb 25, 2021)
+
+* Fixed a bug in `Bulk Extract` trigger with incorrect trigger behavior with a large number of retrieved objects.
+* Changed npm audit level=high to level=critical  
 
 ### 1.6.1 (Jan 4, 2021)
 

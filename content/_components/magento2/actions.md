@@ -5,8 +5,8 @@ description: Magento2 component actions page
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2021-01-04
-ComponentVersion: 1.6.1
+updatedDate: 2021-02-25
+ComponentVersion: 1.6.2
 ---
 
 ## Custom Request Action
