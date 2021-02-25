@@ -6,13 +6,15 @@ description: A component to work with Magento 2.
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2021-01-04
-ComponentVersion: 1.6.1
+updatedDate: 2021-02-25
+ComponentVersion: 1.6.2
 ---
 
 ## Description
 
-Every form of actions is generated from appropriate Magento2 API endpoint JSONschema. The component is currently compatible with only v2.3 of the API, since v2.2 was [deprecated by Magento in December 2019](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf?_ga=2.223327577.313663481.1582195591-1899578326.1570182293). We only support Magento minor versions that have been released in the last year, i.e. Magento v2.3.1 - 2.3.4.
+The main purpose of the component is to integrate an external system with the Magento version 2 e-commerce platform.
+
+Every form of actions is generated from appropriate Magento2 API endpoint JSONschema. The component is currently compatible with only v2.3 of the API, since v2.2 was [deprecated by Magento in December 2019](https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf?_ga=2.223327577.313663481.1582195591-1899578326.1570182293). We only support Magento minor versions that have been released in 2019, i.e. Magento v2.3.1 - 2.3.4.
 
 `sku` - stock keeping unit is product identifier.
 
@@ -68,7 +70,7 @@ It is needed to specify integration token. Required for `Integration Token autho
 | `BULK_EXTRACT_PAGE_SIZE`| false | Define max page for one call in Bulk Extract trigger | Integer, default is 1000 |
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Triggers
 
