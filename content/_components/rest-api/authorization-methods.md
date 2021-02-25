@@ -9,7 +9,7 @@ updatedDate: 2021-01-28
 ComponentVersion: 2.0.7
 ---
 
-## Authorisation methods
+## Authorization methods
 
 To use the REST API component with any restricted access API, you need provide the authorization information.
 
@@ -23,7 +23,7 @@ and adding there.
 
 *Example above shows how to add new credential to access the API from Credentials page.*
 
-REST API component supports 4 authorisation types:
+REST API component supports 4 authorization types:
 
 *   `No Auth` - use this method to work with any open REST API
 *   `Basic Auth` - use it to provide login credentials like **username/password**

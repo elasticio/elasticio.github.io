@@ -25,18 +25,45 @@ The best way to understand a REST API component is to see it in action. We'll st
 
 ![Components Lists](img/comp-list.png)
 
-Since there is only one function in the component, this step is performed automatically. The next step is to configure the credentials. We'll use the Basic Auth type:
+Since there is only one function in the component, this step is performed automatically. The next step is to configure the credentials. We'll use the Basic Auth type. In this case your Username is your `E-mail`, and your Password is your `API` key:
 
 ![Configure Basic Auth](img/configure-basic-auth-type.png)
 
->**Please Note:** Your Username is your `E-mail`, and your Password is your `API` key.
+>**Please Note:** For information on other methods of authorization please read the [Authorization methods](authorization-methods) page.
 
-Now we need to configure the input. In our case, we use the `GET` function, which returns information upon request using the URL. We use `{{site.data.tenant.apiBaseUri}}/v2/users/me` as URL. As a result, we should get information about us as a user of the platform.
+Now we need to configure the input. In our case, we use the `GET` request, which returns information upon request using the URL. We use `{{site.data.tenant.apiBaseUri}}/v2/users/me` as URL. As a result, we should get information about us as a user of the platform.
 
 ![Configure Input](img/user-me-input.png)
+
+>**Please Note:** For information on HTTP request function and all `GET`/`POST`/`PUT`/`PATCH`/`DELETE` requests please read the [HTTP request function](http-request) page.
 
 After retrieving a Sample, we will receive information about our own profile as expected.
 
 ![Retrieving Sample](img/sample-profile.png)
 
-We're done. Our simplest flow using the REST API component did its job. If you want to see more complex examples using other components in conjunction with REST API component please read our [Usage example](usage-example). 
+We're done. Our simplest flow using the REST API component did its job. If you want to see more complex examples using other components in conjunction with REST API component please read our [Usage example](usage-example).
+
+## Authorization methods
+
+REST API component supports 4 authorization types:
+
+*   `No Auth` - use this method to work with any open REST API
+*   `Basic Auth` - use it to provide login credentials like **username/password**
+*   `API Key Auth` - use it to provide `API Key` to access the resource
+*   `OAuth2` - use it to provide `Oauth2` credentials to access the resource. Currently it is implemented `Authorization code` OAuth2 flow.
+
+For information please read the [Authorization methods](authorization-methods) page.
+
+## HTTP request function
+
+In a REST API component the trigger and action perform the same function - HTTP request witch will send a `GET`/`POST`/`PUT`/`PATCH`/`DELETE` requests and parse the response back to the flow.
+
+For more information on HTTP request function and how to:
+
+* Define request body
+* Send XML data
+* Work with XML
+* Send JSON data
+* Send Form data
+
+please read the [HTTP request function](http-request) page.
