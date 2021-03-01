@@ -67,3 +67,7 @@ For more information on HTTP request function and how to:
 * Send Form data
 
 please read the [HTTP request function](http-request) page.
+
+## Technical Details
+
+Technical questions may arise while working with the component. You can find out about what changes have occurred with the component during its existence in [Technical Notes](technical-notes) page. If you need detailed information about deprecated functions of a component (for example, you are working with a long-established flow) please read [Deprecated functions](deprecated-functions) page. 
