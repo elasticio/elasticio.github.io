@@ -5,13 +5,18 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2021-01-28
-ComponentVersion: 2.0.7
+updatedDate: 2021-03-04
+ComponentVersion: 2.0.8
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.8 (March 3, 2021)
+
+* Fix bug with request Content-Type mutlipart/form-data header processing
+* Fix bug when component fails when the server provides a binary response without Content-Length
 
 ### 2.0.7 (January 28, 2021)
 
@@ -52,7 +57,6 @@ redirect_from:
 * Use node version 14
 * Make use of new OAuth mechanism
 * First commit of v2 branch.
-
 
 ### 1.2.17 (December 7, 2020)
 

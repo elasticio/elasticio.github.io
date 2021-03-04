@@ -5,8 +5,8 @@ description: Information on deprecated REST API functions.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2021-01-28
-ComponentVersion: 2.0.7
+updatedDate: 2021-03-04
+ComponentVersion: 2.0.8
 ---
 
 ## Deprecated authentication method
