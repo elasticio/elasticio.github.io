@@ -5,22 +5,10 @@ section: Utility components
 description: A component that provides an opportunity to collect messages to a batch.
 icon: batch.png
 icontext: Batch component
-category: Batch component
-createdDate: 2019-05-07
-updatedDate: 2020-07-31
+category: batch
+updatedDate: 2020-11-20
+ComponentVersion: 1.0.0
 ---
-
-## Latest changelog
-
-**0.0.6 (November 15, 2020)**
-
-* Fix MongoError: Authentication failed by authSource
-* Upgrade to sailor 2.6.18
-* Update batching-library version
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-* Annual npm vulnerabilities audit
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Purpose
 
@@ -35,7 +23,7 @@ You need to split an integration logic into 2 parts. The first one should use th
 ## Environment variables
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Credentials
 

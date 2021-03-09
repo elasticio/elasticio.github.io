@@ -5,18 +5,9 @@ section: E-Commerce components
 description: A component to work with Shopware API.
 icon: shopware.png
 icontext: Shopware component
-category: shopware-component
-createdDate: 2019-06-11
 updatedDate: 2020-01-30
+ComponentVersion: 1.1.2
 ---
-
-## Latest changelog
-
-**1.1.2 (January 30, 2020)**
-
-* Upgrade sailor to v2.5.4
-
-> To see the full **changelog** please use the following [link](/components/shopware/changelog).
 
 ## Description
 

@@ -5,20 +5,10 @@ section: Utility components
 description: This component is designed to operate with zip files.
 icon: zip-unzip.png
 icontext: ZIP/UnZIP component
-category: ZIP/UnZIP component
-createdDate: 2019-05-21
+category: zip
 updatedDate: 2020-11-10
+ComponentVersion: 1.1.3
 ---
-
-## Latest changelog
-
-**1.1.2 (November 6, 2020)**
-
-* Upgrade to sailor 2.6.18
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-* Annual npm vulnerabilities audit
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Environment variables
 

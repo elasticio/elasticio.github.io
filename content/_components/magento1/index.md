@@ -6,17 +6,9 @@ description: A component to work with Magento 1.
 icon: magento.png
 icontext: Magento1 component
 category: magento1
-createdDate: 2015-07-29
-updatedDate: 2020-03-03
+updatedDate: 2020-03-04
+ComponentVersion: 1.3.1
 ---
-
-## Latest changelog
-
-**1.3.1 (March 3, 2020)**
-
-* Add configuration for Secured connection in credentials
-
-> To see the full **changelog** please use the following [link](/components/magento1/changelog).
 
 ## Description
 

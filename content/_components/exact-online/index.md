@@ -5,20 +5,10 @@ section: Finance-related components
 description: A component to work with Exact Online ERP.
 icon: exact-online.png
 icontext: Exact Online component
-category: Exact Online
-createdDate: 2018-09-06
+category: exact-online
 updatedDate: 2020-09-11
+ComponentVersion: 1.1.0
 ---
-
-## Latest changelog
-
-**1.1.0 (September 11, 2020)**
-
-* Bump dependencies
-* Add option to credentials to select country
-* Bump node version
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -29,7 +19,7 @@ It interacts withe [Exact Online API](https://support.exactonline.com/community/
 ### Environment Variables
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Credentials
 

@@ -6,7 +6,7 @@ icon:  twitter.png
 icontext: Twitter component
 category: twitter
 updatedDate: 2020-12-18
-ComponentVersion: 1.4.0
+ComponentVersion: 0.0.2
 redirect_from:
   - /components/twitter/changelog.html
 ---

@@ -5,9 +5,9 @@ section: CRM components
 description: A user interface, industry-leading customer experience, and an intuitive customization platform.
 icon:  sugarcrm.png
 icontext: SugarCRM component
-category: SugarCRM component
-createdDate: 2016-12-03
+category: sugarcrm
 updatedDate: 2020-11-10
+ComponentVersion: 1.1.3
 ---
 
 This is an open source component template for [SugarCRM](https://www.sugarcrm.com)

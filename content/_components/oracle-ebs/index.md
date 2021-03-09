@@ -6,18 +6,9 @@ description: A component for working with Oracle E-Business Suite services on th
 icon: oracle-ebs.png
 icontext: Oracle E-Business Suite Component
 category: oracle-ebs
-createdDate: 2020-09-20
 updatedDate: 2020-09-20
+ComponentVersion: 1.0.0
 ---
-
-## Latest changelog
-
-**1.0.0 (October 19, 2020)**
-
-* Initial component version.
-* Add `Execute Method` action.
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 

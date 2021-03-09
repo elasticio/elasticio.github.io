@@ -4,9 +4,9 @@ layout: component
 description: SugarCRM component triggers.
 icon:  sugarcrm.png
 icontext: SugarCRM component
-category: SugarCRM component
-createdDate: 2020-03-17
-updatedDate: 2020-03-17
+category: sugarcrm
+updatedDate: 2020-11-10
+ComponentVersion: 1.1.3
 ---
 
 ## Fetching New and Updated Objects from SugarCRM - Polling

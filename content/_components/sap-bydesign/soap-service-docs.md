@@ -1,12 +1,12 @@
 ---
 title: SAP byDesign SOAP Service Documentation
 layout: component
-category: sap-byDesign
 description: SAP Business byDesign Component metadata documentation links
 icon: sapbydesign.png
 icontext: SAP ByDesign component
-createdDate: 2019-06-06
+category: sap-byDesign
 updatedDate: 2019-11-21
+ComponentVersion: 2.1.3
 ---
 
 You can find metadata documentation links bellow

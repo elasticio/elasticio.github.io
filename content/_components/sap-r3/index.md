@@ -6,17 +6,9 @@ description: A component that communicates with provided SAP ECC (R/3, ERP) syst
 icon: sap-r3.png
 icontext: SAP ECC Component
 category: sap-r3
-createdDate: 2019-08-19
 updatedDate: 2020-01-17
+ComponentVersion: 1.2.0
 ---
-
-## Latest changelog
-
-**1.2.0 (January 14, 2019)**
-
-* Implement RFC [Server Trigger](/components/sap-r3/triggers#rfc-server-only-for-realtime-flows)
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## General Information
 
@@ -37,7 +29,7 @@ SAP Java Connector 3.0.19 SDK is being used.
 | `EIO_REQUIRED_RAM_MB` | false | Recommended value of allocated memory, MB | `512` |
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Credentials
 
