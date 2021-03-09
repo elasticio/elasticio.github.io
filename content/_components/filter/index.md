@@ -5,21 +5,10 @@ section: Utility components
 description: A component to filter the incoming data based on an arbitrary JSONata expression.
 icon: filter.png
 icontext: Filter component
-category: filter-component
-createdDate: 2017-01-12
-updatedDate: 2020-11-20
+category: filter
+ComponentVersion: 1.1.1
+updatedDate: 2021-02-26
 ---
-
-## Latest changelog
-
-**1.1.0 (November 15, 2020)**
-
-* Add `Metadata To Response` configuration parameter
-* Upgrade to sailor 2.6.18
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-* Annual npm vulnerabilities audit
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 

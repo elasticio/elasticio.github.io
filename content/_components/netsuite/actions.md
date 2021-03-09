@@ -5,8 +5,8 @@ description: NetSuite component actions.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2020-12-11
-ComponentVersion: 2.2.0
+updatedDate: 2021-02-26
+ComponentVersion: 2.3.0
 ---
 
 ## Delete Object By Id
