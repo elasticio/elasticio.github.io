@@ -4,6 +4,7 @@ layout: component
 section: Protocol components
 description: OData stands for Open Data Protocol and it is used to querying and updating data.
 icon: odata.png
+category: odata
 icontext: ODATA component
 updatedDate: 2020-10-30
 ComponentVersion: 3.0.2
