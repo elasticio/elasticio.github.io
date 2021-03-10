@@ -4,9 +4,9 @@ layout: component
 description: Technical notes for Quickbooks component.
 icon: quickbooks.png
 icontext: Quickbooks component
-category: Quickbooks
-createdDate: 2020-01-02
+category: quickbooks
 updatedDate: 2020-10-30
+ComponentVersion: 1.1.1
 redirect_from:
   - /components/quickbooks/completeness-matrix.html
   - /components/quickbooks/changelog.html

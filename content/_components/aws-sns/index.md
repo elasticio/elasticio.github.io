@@ -5,20 +5,10 @@ section: Protocol components
 description: A push messaging service that provides a low-cost infrastructure for the mass delivery of messages.
 icon: aws-sns.png
 icontext: AWS SNS component
-category: AWS SNS component
-createdDate: 2015-07-29
+category: aws-sns
 updatedDate: 2020-11-20
+ComponentVersion: 1.2.3
 ---
-
-## Latest changelog
-
-**1.2.3 (November 12, 2020)**
-
-* Upgrade to sailor 2.6.18
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-* Annual npm vulnerabilities audit
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## How works
 

@@ -5,18 +5,10 @@ section: Marketing-related components
 description: A open standard application layer protocol for passing business messages between applications or organizations.
 icon: mailchimp.png
 icontext: Mailchimp component
-category: Mailchimp component
-createdDate: 2016-12-15
-updatedDate: 2019-03-13
+category: mailchimp
+updatedDate: 2020-11-10
+ComponentVersion: 1.0.2
 ---
-
-## Latest changelog
-
-**1.0.1 (December 30, 2019)**
-
-* Update component to new sailor version 2.5.4
-
-> To see the full **changelog** please use the following [link](/components/mailchimp/changelog).
 
 ## Credentials
 

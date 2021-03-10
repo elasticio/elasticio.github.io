@@ -5,8 +5,8 @@ description: SAP ECC (R/3, ERP) Component actions.
 icon: sap-r3.png
 icontext: SAP ECC Component
 category: sap-r3
-createdDate: 2020-03-19
-updatedDate: 2020-03-19
+updatedDate: 2020-01-17
+ComponentVersion: 1.2.0
 ---
 
 ## Call RFC Service

@@ -2,23 +2,13 @@
 title: SAP ByDesign component
 layout: component
 section: ERP components
-category: sap-byDesign
 description: A component to work with the SAP byDesign API.
 icon: sapbydesign.png
 icontext: SAP ByDesign component
-createdDate: 2019-06-06
+category: sap-byDesign
 updatedDate: 2019-11-21
+ComponentVersion: 2.1.3
 ---
-
-## Latest changelog
-
-**2.1.3 (November 21, 2019)**
-
-- Fix `Query Materials` processing in `Get New And Updated Objects Polling` trigger
-- Add `Query Customer Contracts` Object Type for `Get New And Updated Objects Polling` trigger
-
-
-> To see the full **changelog** please use the following [link](/components/sap-bydesign/changelog).
 
 ## Description
 
@@ -40,7 +30,7 @@ with SAP Business byDesign API.
 | ELASTICIO_REBOUND_LIMIT | false | Number of rebounds            | Default 5                                     |
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Credentials
 

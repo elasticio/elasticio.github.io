@@ -5,9 +5,9 @@ section: Finance-related components
 description: QuickBooks is a software to manage sales and expenses, and keep track of daily transactions.
 icon: quickbooks.png
 icontext: Quickbooks component
-category: Quickbooks
-createdDate: 2018-10-11
+category: quickbooks
 updatedDate: 2020-10-30
+ComponentVersion: 1.1.1
 ---
 
 ## General information

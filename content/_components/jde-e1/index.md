@@ -5,18 +5,10 @@ section: Service components
 description: This is the component for working with Oracle JDE Edwards EnterpriseOne Orchestrator service on platform.
 icon: jde-e1.png
 icontext: JDE E1 Orchestrator component
-category: JDE E1 Orchestrator component
-createdDate: 2020-09-09
-updatedDate: 2020-09-17
+category: jde-e1
+updatedDate: 2019-09-17
+ComponentVersion: 1.0.0
 ---
-
-## Latest changelog
-
-**1.0.0 (September 10, 2020)**
-
-* Add `Execute an Orchestration` action
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Description
 
@@ -39,7 +31,7 @@ The component is based on [REST API for JD Edwards EnterpriseOne AIS Server](htt
 | `NODE_TLS_REJECT_UNAUTHORIZED`| false | For ignoring server https certificate | `0`
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Credentials
 

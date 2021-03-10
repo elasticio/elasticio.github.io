@@ -1,7 +1,7 @@
 ---
-title: Changelog
+title: Filter Technical Notes
 layout: component
-description: Changelog for Filter component
+description: Technical Notes for the Filter component
 icon: filter.png
 icontext: Filter component
 category: filter

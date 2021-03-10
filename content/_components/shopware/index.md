@@ -4,31 +4,21 @@ layout: component
 section: E-Commerce components
 description: A component to work with Shopware API.
 icon: shopware.png
+category: shopware
 icontext: Shopware component
-category: shopware-component
-createdDate: 2019-06-11
 updatedDate: 2020-01-30
+ComponentVersion: 1.1.2
 ---
-
-## Latest changelog
-
-**1.1.2 (January 30, 2020)**
-
-* Upgrade sailor to v2.5.4
-
-> To see the full **changelog** please use the following [link](/components/shopware/changelog).
 
 ## Description
 
 This is component for [Shopware](https://shopware.com/) eCommerce software which
 is developed specifically to run on {{site.data.tenant.name}} platform.
 
-
 ## Requirements
 
 > **PLEASE NOTE:** This component depends on [Shopware REST API extenstions](https://github.com/elasticio/elasticio-shopware-api-extension),
 > please install it first before proceeding further.	please install it first before proceeding further.
-
 
 **This component was tested with the Shopware version 5 (5.6).**
 
