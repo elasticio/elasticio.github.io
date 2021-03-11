@@ -4,10 +4,9 @@ layout: component
 description: CSV component triggers.
 icon: csv.png
 icontext: CSV component
-category: CSV component
 category: csv
-updatedDate: 2021-01-04
-ComponentVersion: 2.1.6
+updatedDate: 2021-03-12
+ComponentVersion: 2.1.7
 ---
 
 ## Read CSV file from URL

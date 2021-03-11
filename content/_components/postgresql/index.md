@@ -6,8 +6,8 @@ description: PostgreSQL is a general purpose and open source object-relational d
 icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
-updatedDate: 2020-11-20
-ComponentVersion: 1.4.0
+updatedDate: 2021-03-12
+ComponentVersion: 1.4.1
 ---
 
 ## Description
@@ -36,7 +36,7 @@ The [technical notes](technical-notes) page gives some technical details about P
 ## Environment Variables
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 The component completeness matrix is also [available separately](completeness-matrix).
 

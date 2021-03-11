@@ -5,8 +5,8 @@ description: PostgreSQL Component actions.
 icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
-updatedDate: 2020-11-20
-ComponentVersion: 1.4.0
+updatedDate: 2021-03-12
+ComponentVersion: 1.4.1
 ---
 
 ## SELECT action

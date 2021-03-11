@@ -6,8 +6,8 @@ description: A international standard for electronic data interchange (EDI).
 icon: edifact.png
 icontext: Edifact-parser component
 category: edifact-parser
-updatedDate: 2020-11-30
-ComponentVersion: 0.0.2
+updatedDate: 2021-03-12
+ComponentVersion: 0.0.3
 ---
 
 ## Authentication
@@ -52,4 +52,4 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-* *Parse* - Parses an incoming EDIFACT attachment.
+EDIFACT Parse action expects an incoming message(es) with EDI attachment(s) in it.
