@@ -6,8 +6,8 @@ description: A simple file format used to store tabular data, for example from a
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2021-01-04
-ComponentVersion: 2.1.6
+updatedDate: 2021-03-12
+ComponentVersion: 2.1.7
 ---
 
 ## How works
@@ -25,12 +25,12 @@ The [technical notes](technical-notes) page gives some technical details about C
 
 | Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-| EIO_REQUIRED_RAM_MB| false | Value of allocated memory to component | Recommended: 512 |
-| REQUEST_TIMEOUT| false |  HTTP request timeout in milliseconds | Default value: 10000 |
-| REQUEST_RETRY_DELAY| false | Delay between retry attempts in milliseconds | Default value: 7000 |
-| REQUEST_MAX_RETRY| false | Number of HTTP request retry attempts |  Default value: 7 |
-| REQUEST_MAX_CONTENT_LENGTH| false | Max size of http request in bytes | Default value: 10485760 |
-| TIMEOUT_BETWEEN_EVENTS| false | Number of milliseconds write action wait before creating separate attachments | Default value: 10000 |
+|EIO_REQUIRED_RAM_MB| false | Value of allocated memory to component | Recommended: `512`/`1024` |
+|REQUEST_TIMEOUT| false |  HTTP request timeout in milliseconds | Default value: `10000` |
+|REQUEST_RETRY_DELAY| false | Delay between retry attempts in milliseconds | Default value: `7000` |
+|REQUEST_MAX_RETRY| false | Number of HTTP request retry attempts |  Default value: `7` |
+|REQUEST_MAX_CONTENT_LENGTH| false | Max size of http request in bytes | Default value: `10485760` |
+|TIMEOUT_BETWEEN_EVENTS| false | Number of milliseconds write action wait before creating separate attachments | Default value: `10000` |
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
@@ -61,7 +61,7 @@ The component does not require credentials to function.
 
 ## Limitations
 
-  1. You may get `Component run out of memory and terminated.` error during run-time, that means that component needs more memory, please add `EIO_REQUIRED_RAM_MB` environment variable with an appropriate value (e.g. value `512` means that 512 MB will be allocated) for the component in this case.
+  1. You may get `Component run out of memory and terminated.` error during run-time, that means that component needs more memory, please add  `EIO_REQUIRED_RAM_MB` environment variable with an appropriate value (e.g. value `1024` means that 1024 MB will be allocated) for the component in this case.
   2. You may get `Error: write after end` error, as a current workaround try increase value of environment variable: `TIMEOUT_BETWEEN_EVENTS`.
   3. Maximal possible size for an attachment is 10 MB.
   4. Attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent).

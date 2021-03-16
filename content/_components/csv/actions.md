@@ -5,17 +5,18 @@ description: CSV component actions.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2021-01-04
-ComponentVersion: 2.1.6
+updatedDate: 2021-03-12
+ComponentVersion: 2.1.7
 ---
 
 ## Read CSV attachment
 
-This action will read the CSV attachment of the incoming message and output
-a `JSON` object. To configure this action the following fields can be used:
+This action will read the CSV attachment of the incoming message or from the specified URL and output a JSON object.
+To configure this action the following fields can be used:
 
 ![Read CVS attachments](img/read-CSV-attachment.png)
 
+*   `CSV URL` - the full URL to the file for retrieving data. Leave the field blank and action will read CSV attachment of the incoming message (if any). Error will be thrown if URL of the CSV is missing and no CSV file in incoming message found
 *   `Emit all messages` - this checkbox configures output behavior of the component. If the option is checked - the component emits an array of messages, otherwise - the component emits a message per row.
 *   `CSV Header` - this is a required field. Input the names of headers separated with a comma.
 *   `Separators` - Specify the separator type. Usually it is a comma (`,`) but values like Semicolon (`;`), Space (` `), Tab (`\t`) and Hash (`#`) are also supported.

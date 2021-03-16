@@ -5,13 +5,18 @@ description: Technical Notes for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2021-01-04
-ComponentVersion: 2.1.6
+updatedDate: 2021-03-12
+ComponentVersion: 2.1.7
 redirect_from:
   - /components/csv/changelog.html
 ---
 
 ## Changelog
+
+### 2.1.7 (March 12, 2021)
+
+* Add support for reading a file from a remote URL in Read CSV attachment action
+* Update Sailor version to 2.6.24
 
 ### 2.1.6 (January 4, 2021)
 
