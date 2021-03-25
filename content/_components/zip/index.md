@@ -90,4 +90,4 @@ Contains array of items with properties:
 
 ## Limitations
 
-1. Attachments mechanism does not work with the Local Agent Installation
+1. Attachments mechanism does not work with the [Local Agent Installation](/getting-started/local-agent).

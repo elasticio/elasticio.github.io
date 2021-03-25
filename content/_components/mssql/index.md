@@ -6,8 +6,8 @@ description: MsSQL designed for use in corporate applications, both on-premises 
 icon: mssql.png
 icontext: MsSQL component
 category: mssql
-ComponentVersion: 1.1.3
-updatedDate: 2020-11-20
+ComponentVersion: 1.1.4
+updatedDate: 2021-03-12
 ---
 
 ## Authentication
@@ -22,6 +22,7 @@ other types of configuration parameters are also supported, more information and
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
+
 ## Technical Notes
 
 The [technical notes](technical-notes) page gives some technical details about MsSQL component like [changelog](/components/mssql/technical-notes#changelog).

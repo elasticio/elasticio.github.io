@@ -52,6 +52,7 @@ select as a first component during the integration flow design.
 
 ## Actions
 
+
 ### EDIFACT Parse
 
 EDIFACT Parse action expects an incoming message(es) with EDI attachment(s) in it.
