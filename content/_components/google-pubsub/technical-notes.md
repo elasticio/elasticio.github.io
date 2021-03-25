@@ -5,13 +5,17 @@ description: Technical Notes for the Google PubSub component.
 icon: google-pubsub.png
 icontext: Google PubSub component
 category: google-pubsub
-updatedDate: 2020-12-18
-ComponentVersion: 1.7.1
+updatedDate: 2021-03-25
+ComponentVersion: 1.7.2
 redirect_from:
   - /components/google-pubsub/changelog.html
 ---
 
 ## Changelog
+
+### 1.7.2 (March 25, 2021)
+
+* Update Sailor version to 2.6.24
 
 ### 1.7.1 (December 18, 2020)
 

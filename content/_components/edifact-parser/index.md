@@ -6,8 +6,8 @@ description: A international standard for electronic data interchange (EDI).
 icon: edifact.png
 icontext: Edifact-parser component
 category: edifact-parser
-updatedDate: 2020-11-30
-ComponentVersion: 0.0.2
+updatedDate: 2021-03-12
+ComponentVersion: 0.0.3
 ---
 
 ## Authentication
@@ -52,4 +52,8 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-* *Parse* - Parses an incoming EDIFACT attachment.
+### EDIFACT Parse
+
+EDIFACT Parse action expects an incoming message(es) with EDI attachment(s) in it.
+
+Sample EDI file you can find [here](https://raw.githubusercontent.com/elasticio/edifact-parser-component/master/samples/INVOICE.edi), and [here](https://github.com/elasticio/edifact-parser-component/blob/master/samples/INVOICE.edi.json) you will see resulting JSON message body after parsing.

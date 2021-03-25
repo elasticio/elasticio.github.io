@@ -1,17 +1,21 @@
 ---
-layout: component
 title: Docusign Technical Notes
+layout: component
 description: Changelog for Docusign component.
 icon: docusign.png
 icontext: Docusign component
 category: docusign
-ComponentVersion: 1.0.2
-updatedDate: 2020-11-20
+ComponentVersion: 1.0.3
+updatedDate: 2021-03-25
 redirect_from:
   - /components/docusign/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.3 (March 25, 2021)
+
+* Upgrade to sailor 2.6.24
 
 ### 1.0.2 (November 20, 2020)
 

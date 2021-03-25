@@ -5,16 +5,16 @@ section: Office components
 description: Component to interact with Dropbox.
 icon: dropbox.png
 icontext: Dropbox component
-category: Dropbox component
-createdDate: 2020-04-09
-updatedDate: 2020-11-20
+category: dropbox
+updatedDate: 2021-03-12
+ComponentVersion: 1.0.2
 ---
 
 ## General information
 
 ### Description
 
-Component to interact with Dropbox. Dropbox is a cloud storage service, which allows copy files to the cloud and accesses them later from a different device.
+Component to interact with [Dropbox](https://www.dropbox.com). Dropbox is a cloud storage service, which allows copy files to the cloud and accesses them later from a different device.
 
 ### Technical Notes
 
@@ -31,14 +31,16 @@ It is used [Dropbox JavaScript SDK](https://github.com/dropbox/dropbox-sdk-js).
 | `ATTACHMENT_MAX_SIZE`| false | For `{{site.data.tenant.name}}` attachments configuration. Maximal possible attachment size in bytes. By default set to 1000000 and according to platform limitations CAN'T be bigger than that. | Up to `1000000` bytes|
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Credentials
 
 The Dropbox SDK uses OAuth 2 for authorizing API requests. Dropbox requires an access token to make authenticated requests.
 You should create, set up your app, see [OAuth guide](https://www.dropbox.com/developers/reference/oauth-guide), and generate `access token`.
-  ### Access Token
-  please, provide there generated `access token`.
+
+### Access Token
+
+Use generated previously `access token`.
 
 ## Triggers
 
@@ -48,9 +50,7 @@ This component has no trigger functions. This means it will not be accessible to
 
 ### Get File By Path
 
-Action to get file from Dropbox by provided path:
-
-![Get File By Path](img/dropbox-create-folder.png)
+Action to get file from Dropbox by provided path
 
 #### List of Expected Config fields
 
@@ -69,14 +69,14 @@ Checkbox for attaching files content to action response
 
 #### Metadata fields description
 
-  * **path** - Full path to file
+* **path** - Full path to file
 
 #### Input example:
 
 ```json
-  {
-      "path": "/inner_folder/file.any"
-  }
+{
+    "path": "/inner_folder/file.any"
+}
 ```
 
 #### Output example:
@@ -85,17 +85,17 @@ Checkbox for attaching files content to action response
 
 ```json
 {
-  ".tag": "file",
-  "name": "file.any",
-  "path_lower": "/file.any",
-  "path_display": "/file.any",
-  "id": "id:Ua3SpE_E_CAAAAAAAAAACA",
-  "client_modified": "2020-03-31T11:25:40Z",
-  "server_modified": "2020-03-31T11:25:40Z",
-  "rev": "015a224d3e0147b00000001b724db90",
-  "size": 28,
-  "is_downloadable": true,
-  "content_hash": "10931f016454cbd4d852632b81f2e5ab2502dc120e2afb7efcd6b64fb9d27e7a"
+".tag": "file",
+"name": "file.any",
+"path_lower": "/file.any",
+"path_display": "/file.any",
+"id": "id:Ua3SpE_E_CAAAAAAAAAACA",
+"client_modified": "2020-03-31T11:25:40Z",
+"server_modified": "2020-03-31T11:25:40Z",
+"rev": "015a224d3e0147b00000001b724db90",
+"size": 28,
+"is_downloadable": true,
+"content_hash": "10931f016454cbd4d852632b81f2e5ab2502dc120e2afb7efcd6b64fb9d27e7a"
 }
 ```
 
@@ -145,7 +145,7 @@ Action to delete folder or file from Dropbox by provided path:
 
 #### List of Expected Config fields
 
-* **Throw an error in case if path not found** - select the behaviour in case when specified path not found.
+* **Throw an error in case if path not found** - select the behavior in case when specified path not found.
 
 #### Metadata fields description
 

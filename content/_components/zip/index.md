@@ -6,7 +6,7 @@ description: This component is designed to operate with zip files.
 icon: zip-unzip.png
 icontext: ZIP/UnZIP component
 category: zip
-updatedDate: 2020-11-10
+updatedDate: 2021-03-12
 ComponentVersion: 1.1.3
 ---
 
@@ -90,5 +90,4 @@ Contains array of items with properties:
 
 ## Limitations
 
-1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with the Local Agent Installation
+1. Attachments mechanism does not work with the Local Agent Installation

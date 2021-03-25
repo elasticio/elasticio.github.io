@@ -6,8 +6,8 @@ description: A component that is designed for utility operations.
 icon: open-api.png
 icontext: Open API Component
 category: open-api
-updatedDate: 2020-12-18
-ComponentVersion: 1.1.1
+updatedDate: 2021-03-25
+ComponentVersion: 1.1.2
 ---
 
 ## General information

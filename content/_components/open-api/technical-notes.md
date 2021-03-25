@@ -1,18 +1,22 @@
 ---
-title: Changelog
+title: Open API Technical Notes
 layout: component
-description: Changelog for Open API Component.
+description: Technical Notes for the Open API Component.
 icon: open-api.png
 icontext: Open API Component
 category: open-api
-updatedDate: 2020-12-18
-ComponentVersion: 1.1.1
+updatedDate: 2021-03-25
+ComponentVersion: 1.1.2
 redirect_from:
   - /components/open-api/completeness-matrix.html
   - /components/open-api/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.2 (March 25, 2021)
+
+* Update Sailor version to 2.6.24
 
 ### 1.1.1 (December 18, 2020)
 
