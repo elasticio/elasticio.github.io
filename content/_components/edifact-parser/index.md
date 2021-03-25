@@ -52,4 +52,9 @@ select as a first component during the integration flow design.
 
 ## Actions
 
+
+### EDIFACT Parse
+
 EDIFACT Parse action expects an incoming message(es) with EDI attachment(s) in it.
+
+Sample EDI file you can find [here](https://raw.githubusercontent.com/elasticio/edifact-parser-component/master/samples/INVOICE.edi), and [here](https://github.com/elasticio/edifact-parser-component/blob/master/samples/INVOICE.edi.json) you will see resulting JSON message body after parsing.

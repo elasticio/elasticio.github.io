@@ -6,8 +6,8 @@ description: A service that makes it easier to pass messages between machines an
 icon: google-pubsub.png
 icontext: Google PubSub component
 category: google-pubsub
-updatedDate: 2020-12-18
-ComponentVersion: 1.7.1
+updatedDate: 2021-03-25
+ComponentVersion: 1.7.2
 ---
 
 ## Description
@@ -15,6 +15,8 @@ ComponentVersion: 1.7.1
 The component interacts with Google Pub-Sub API. The API is an asynchronous messaging service that decouples services that produce events from services that process events.
 
 Pub/Sub offers durable message storage and real-time message delivery with high availability and consistent performance at scale. Pub/Sub servers run in all Google Cloud regions around the world.
+
+## Requirements
 
 ### Core concepts
 
@@ -46,15 +48,14 @@ need to create a new Service Account on [Service Accounts Page](https://console.
 
 ## Triggers
 
-### Pull
+### Subscribe
 
-The Pull trigger receives a message from a Topic, emits it, and sends an acknowledgment to Pub/Sub.
-
-![Pull](img/google-pubsub-pull.png)
+The Subscribe trigger receives a message from a Topic, emits it, and sends an acknowledgment to Pub/Sub.
 
 #### Configuration
 
-- Topic Name - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
+- `Topic Name` - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
+
 
 ## Actions
 
@@ -66,7 +67,7 @@ The Publish action retrieves message body from a previous step and sends a messa
 
 #### Configuration
 
-- Topic Name - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
+- `Topic Name` - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
 
 ## Warning
 

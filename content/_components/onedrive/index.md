@@ -6,8 +6,8 @@ description: This is the component for working with Microsoft OneDrive storage s
 icon: onedrive.png
 icontext: Microsoft OneDrive component
 category: onedrive
-ComponentVersion: 1.0.2
-updatedDate: 2020-10-30
+ComponentVersion: 1.0.3
+updatedDate: 2021-03-25
 ---
 
 ## General information
@@ -54,14 +54,14 @@ Triggers to get all new and updated files since last polling. Polling is provide
 
 #### List of Expected Config fields
 
-* **Drive Identity** - OneDrive instance to work with. Selects by owner
-* **Folder path** - Dropdown list with folder path where new and updated path should be polled
-* **Emit Behaviour** -  Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message
-* **Start Time** - Start datetime of polling. Default min date:-271821-04-20T00:00:00.000Z
-* **End Time** - End datetime of polling. Default max date: +275760-09-13T00:00:00.000Z
-* **Size Of Polling Page** - Indicates the size of pages to be fetched. Defaults to 1000
-* **Expand Children** - checkbox for polling files from child folders
-* **Enable File Attachments** - checkbox for attaching files content to action response
+* **Drive Identity** - OneDrive instance to work with.
+* **Folder path** - Dropdown with folders to poll files from.
+* **Emit Behavior** -  Available options: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message.
+* **Start Time** - Start datetime of polling. Default min date: `-271821-04-20T00:00:00.000Z`.
+* **End Time** - End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`.
+* **Size Of Polling Page** - Indicates the size of pages to be fetched. Defaults to `1000`.
+* **Expand Children** - Checkbox, trigger retrieves files from subfolders of chosen path, if enabled. Disabled by default.
+* **Enable File Attachments** - Checkbox for attaching files content to response. Disabled by default.
 
 ## Actions
 
@@ -154,5 +154,4 @@ Create new folder in provided `path`. If `path` not exist component will fail.
 
 ## Known Limitations
 
-1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with [Local Agent Installation](/references/local-agents-requesting#compatible-operating-systems)
+1. Attachments mechanism does not work with [Local Agent Installation](/references/local-agents-requesting#compatible-operating-systems)

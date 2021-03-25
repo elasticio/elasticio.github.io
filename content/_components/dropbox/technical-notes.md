@@ -1,18 +1,22 @@
 ---
-title: Dropbox Changelog
+title: Dropbox Technical Notes
 layout: component
-description: Changelog for Dropbox component
+description: Technical Notes for the Dropbox component
 icon: dropbox.png
 icontext: Dropbox component
-category: Dropbox component
-createdDate: 2020-04-09
-updatedDate: 2020-11-20
+category: dropbox
+updatedDate: 2021-03-12
+ComponentVersion: 1.0.2
 redirect_from:
   - /components/dropbox/completeness-matrix.html
   - /components/dropbox/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.2 (March 12, 2021)
+
+* Upgrade to sailor 2.6.24
 
 ### 1.0.1 (November 10, 2020)
 

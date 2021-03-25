@@ -23,4 +23,4 @@ ComponentVersion: 0.0.3
 
 ### 0.0.1 (August 25, 2017)
 
-* Initial release
+* Initial release.

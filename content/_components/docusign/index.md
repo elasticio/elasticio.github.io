@@ -1,13 +1,13 @@
 ---
-layout: component
 title: Docusign component
+layout: component
 section: Office components
 description: DocuSign is a service that provides secure way to sign documents electronically.
 icon: docusign.png
 icontext: Docusign component
 category: docusign
-ComponentVersion: 1.3.2
-updatedDate: 2020-11-20
+ComponentVersion: 1.0.3
+updatedDate: 2021-03-25
 ---
 
 ## Environment Variables & OAuth Callback Values
