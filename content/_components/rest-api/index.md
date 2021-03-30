@@ -52,7 +52,7 @@ REST API component supports 4 authorization types:
 *   `API Key Auth` - use it to provide `API Key` to access the resource
 *   `OAuth2` - use it to provide `Oauth2` credentials to access the resource. Currently it is implemented `Authorization code` OAuth2 flow.
 
-For information please read the [Authorization methods](authorization-methods) page.
+For more information please read the [Authorization methods](authorization-methods) page.
 
 ## HTTP request function
 
@@ -66,8 +66,29 @@ For more information on HTTP request function and how to:
 * Send JSON data
 * Send Form data
 
-please read the [HTTP request function](http-request) page.
+For more details please read the [HTTP request function](http-request) page.
 
 ## Technical Details
 
-Technical questions may arise while working with the component. You can find out about what changes have occurred with the component during its existence in [Technical Notes](technical-notes) page. If you need detailed information about deprecated functions of a component (for example, you are working with a long-established flow) please read [Deprecated functions](deprecated-functions) page. 
+Technical questions may arise while working with the component. You can find out about what changes have occurred with the component during its existence in [Technical Notes](technical-notes) page. If you need detailed information about deprecated functions of a component (for example, you are working with a long-established flow) please read [Deprecated functions](deprecated-functions) page.
+
+## Known Limitations
+
+**1.** The component can parse any of json and xml content types.
+They are:
+* application/json
+* application/xml
+* text/xml
+* etc.
+
+> **Please note:** if content type is not indicated in response header, component will try to parse response as json. If it gets parse exception, it returns response as is.
+
+**2.** Attachments limitations:
+
+  1. Maximal possible size for an attachment is 10 MB.
+
+  2. Attachments mechanism does not work with [Local Agent Installation](/references/local-agents-requesting#compatible-operating-systems)
+
+**3.** OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) should   always contain `refresh_token` property (optional in OAuth2 standard). Reason behind it - platform shoud be able to refresh access token after it's expiration.  Possible solution - use `access_type:offline` in additional parameter which is supported by many OAuth2 providers.
+
+**4.** We suggest not to set Delay value more than time period between two executions of the flow. Please keep in mind that delay can influence the time of next execution. For example, the flow has type `Ordinary` and scheduled for execution for every 60 sec, but the delay is set to 120 sec, so the next execution will be started only after 120 sec, instead of 60 seconds.
