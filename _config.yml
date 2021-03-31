@@ -24,6 +24,8 @@ collections:
      output: true
   comp-releases:
     output: true
+  admin:
+    output: true
 
 plugins:
   - jekyll-redirect-from

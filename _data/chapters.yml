@@ -95,3 +95,12 @@ releases:
       description: Product updates for the platform and the integration components
     - title: Archives
       description: Archives of the product updates joined per quarter
+admin:
+  title: Support
+  description: Support and Administration
+  class: categories__item_support
+  welcommer-class: welcomer__icon_support
+  fa-icon: fa-envelope
+  sections:
+    - title: Support
+      description: Everything about support activities
