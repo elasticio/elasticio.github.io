@@ -10,75 +10,15 @@ category: integrator-management
 This document provides information on Contract management, namely the following
 actions: [creating Contracts](#creating-contracts), [retrieving Contract data](#getting-contract-data), [editing Contract memberships](#editing-contract-memberships), [editing Contracts](#editing-contracts).
 
-## Creating Contracts
-
-A [Contract](/getting-started/contracts-and-workspaces) is an enclosed environment, which contains Workspaces and DevTeams.
-A Tenant member with the corresponding permissions can create Contracts in their Tenant via the following request:
-
-`POST {{site.data.tenant.apiBaseUri}}/v2/contracts`
-
-Below are request parameters:
-
-| **Payload Parameter**                    | **Required** | **Description**                                   |
-|----------------------------------|--------------|---------------------------------------------------|
-| `type`                             | yes          | Allowed value: `contract` |
-| `attributes.name`                  | yes          | Name of the new Contract                         |
-| `attributes.available_roles[]`   | no          | A subset of the Tenant's roles.                                |
-
-
-**EXAMPLE:**
-
-To create a new contract, we will use the following request:
-```
-curl {{site.data.tenant.apiBaseUri}}/v2/contracts \
-  -X POST \
-  -u {EMAIL}:{APIKEY} \
-  -H 'Content-Type: application/json' -d '
-      {
-       "data":{
-         "type":"contract",
-         "attributes":{
-           "name":"My Contract",
-           "available_roles":[
-             {
-               "scope":"contracts",
-               "role":"admin"
-             },
-             {
-               "scope":"workspaces",
-               "role":"admin"
-             }
-           ]
-         }
-       }
-     }'
-```
-**NOTE:** Contract name is limited by usable characters and length. It may contain only letters, digits, whitespaces, `-` and `_` symbols, and be from 3 to 40 symbols long.
+## Creating Contract
 
 ## Getting Contract Data
 
 With the right [permissions](/guides/managing-user-roles-in-a-tenant)
 a Contract member can get Contract data via the API. Namely, the following actions are available:
 
-1\. Get Contract by ID via the following request:
 
-`GET {{site.data.tenant.apiBaseUri}}/v2/contracts/CONTRACT_ID/`
-
-Below are request parameters:
-
-| **URL Parameter**      | **Required** | **Description**                                                                  |
-|--------------------|--------------|----------------------------------------------------------------------------------|
-| `CONTRACT_ID`                | yes          | Contract ID |
-| `include`               | no         | Parameter for getting more detailed information regarding the Contract's entities. Allowed values: `members` and/or `invites`.                                                      |
-
-**EXAMPLE:**
-
-```
-curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}?include=members,invites \
-   -u {EMAIL}:{APIKEY}
-```
-
-2\. Get Contracts via the following request:
+1\. Get Contracts via the following request:
 
 `GET {{site.data.tenant.apiBaseUri}}/v2/contracts/`
 
@@ -185,19 +125,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/invites/ \
     }'
 ```
 
-2\. Add a new member to the Contract via the following request:
-
-`POST {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members`
-
-Below are request parameters:
-
-| **Payload Parameter**                    | **Required** | **Description**                                   |
-|----------------------------------|--------------|---------------------------------------------------|
-| `ID`                | yes          | ID of a registered Tenant user. |
-| `type`                             | yes          | Allowed value: `contract-member` |
-| `attributes.roles[]`                  | yes          | Roles. To get all available roles, please execute the “Get the Contract’s roles” endpoint.                     |
-
-3\. Update membership in the contract via the following request:
+2\. Update membership in the contract via the following request:
 
 `PATCH {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/`
 
@@ -234,7 +162,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID
     }'
 ```
 
-4\. Remove a user from a contract via the following request:
+3\. Remove a user from a contract via the following request:
 
 `DELETE {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/members/{USER_ID}/`
 
@@ -296,27 +224,7 @@ curl {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}/unsuspend \
   -u {EMAIL}:{APIKEY}
 ```
 
-3\. Delete the Contract via the following request:
-
-`DELETE {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID} \`
-
-Below are request parameters:
-
-| **URL Parameter**                    | **Required** | **Description**                                   |
-|----------------------------------|--------------|---------------------------------------------------|
-| `CONTRACT_ID`                | yes          | Contract ID |
-
-**EXAMPLE:**
-```
-curl -i {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID} \
-  -X DELETE \
-  -u {EMAIL}:{APIKEY}
-```
-
-**IMPORTANT:**
-The actual data deletion will be performed after an API response, as it requires time for termination of all the Contract’s flows containers. A Contract cannot be deleted if any of its Components are being used in a flow in another Contract.
-
-4\. Update a Contract's name and available roles via the following request:
+3\. Update a Contract's name and available roles via the following request:
 
 `PATCH {{site.data.tenant.apiBaseUri}}/v2/contracts/{CONTRACT_ID}`
 
