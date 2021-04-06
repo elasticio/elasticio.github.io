@@ -59,56 +59,17 @@ In case you need to stop a running Flow, click the stop button:
 
 #### Start, Stop, Edit, Delete via the API
 
-1\. To start a Flow via the API, we will use the following request:
+By following the link below, you will learn how to perform the functions described above using API Calls:
 
-`POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/start`
+1\. [Start a Flow via the API](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#start-a-flow).
 
-Below are request parameters:
+2\. [Stop a Flow via the API](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#stop-a-flow).
 
-| **URL Parameter**                    | **Required** | **Description**                                   |
-|----------------------------------|--------------|---------------------------------------------------|
-| `FLOW_ID`                             | yes          | Flow ID |
+3\. [Delete a Flow via the API](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#delete-a-flow).
 
-2\. To stop a Flow via the API, we will use the following request:
+4\. [Edit a Flow to some extent via the API](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#update-a-flow).
 
-`POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/stop`
-
-Below are request parameters:
-
-| **URL Parameter**                    | **Required** | **Description**                                   |
-|----------------------------------|--------------|---------------------------------------------------|
-| `FLOW_ID`                             | yes          | Flow ID |
-
-3\. To delete a Flow via the API, we will use the following request:
-
-`DELETE {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}`
-
-Below are request parameters:
-
-| **URL Parameter**                    | **Required** | **Description**                                   |
-|----------------------------------|--------------|---------------------------------------------------|
-| `FLOW_ID`                             | yes          | Flow ID |
-
-4\. To edit a Flow to some extent via the API, we will use the following request:
-
-`PATCH {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}`
-
-Below are request parameters:
-
-| **URL Parameter**                    | **Required** | **Description**                                   |
-|----------------------------------|--------------|---------------------------------------------------|
-| `FLOW_ID`                             | yes          | Flow ID |
-
-
-| **Payload Parameter**                    | **Required** | **Description**                                   |
-|----------------------------------|--------------|---------------------------------------------------|
-| `type`                             | yes          | Allowed value: `flow` |
-| `id`                             | yes          | Flow ID |
-| `attributes.name`                             | no         | Flow name |
-| `attributes.type`                             | no          | Flow type. Allowed values: `ordinary`, `long_running `|
-| `attributes.graph`                             | no          |  	Flow graph representing component connections |
-| `attributes.cron`                             | no          | CRON expression representing Flow timing |
-
+5\. [Retrieve a flow by ID](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-a-flow-by-id).
 
 ## Copy Flow, Switch Flow Type
 
@@ -235,7 +196,6 @@ Parallel processing, also called "Step message prefetch count", can be configure
     }
 }
 ```
-
 
 ## Reset Snapshot
 
