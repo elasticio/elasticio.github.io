@@ -401,23 +401,30 @@ h2 {
   color: #fff; }
 
 .welcomer__icon_getting_started {
-  background: linear-gradient(52deg, #fb5b97 0%, #fb5b66 100%);
+  background: linear-gradient(52deg, #1c7abd 0%, #89b6e1 100%);
   color: #fff; }
 
 .welcomer__icon_guides {
-  background: linear-gradient(52deg, #ff8c4a 0%, #ff6338 100%);
+  background: linear-gradient(52deg, #dda127 0%, #fabe26 100%);
   color: #fff; }
 
 .welcomer__icon_components {
-  background: linear-gradient(52deg, #1e9aea 0%, #356dbf 100%);
-  color: #fff; }
-
-.welcomer__icon_release_notes {
-  background: linear-gradient(52deg, #26d464 0%, #26a052 100%);
+  background: linear-gradient(52deg, #0f6360 0%, #66a1a0 100%);
   color: #fff; }
 
 .welcomer__icon_references {
-  background: linear-gradient(52deg, #d74aff 0%, #8f18de 100%);
+  background: linear-gradient(52deg, #720e2e 0%, #d87c83 100%);
+  color: #fff; }
+
+
+.welcomer__icon_release_notes {
+  background: linear-gradient(52deg, #3ab54b 0%, #66a1a0 100%);
+  color: #fff; }
+
+
+
+.welcomer__icon_support {
+  background: linear-gradient(52deg, #e64e39 0%, #d87c83 100%);
   color: #fff; }
 
 .search {
@@ -528,19 +535,23 @@ h2 {
  }
 
 .categories__item:nth-child(1) .categories__icon .fa {
-  color: #fb5b97; }
+  color: #1c7abd; }
 
 .categories__item:nth-child(2) .categories__icon .fa {
-  color: #ff8c4a; }
+  color: #dda127; }
 
 .categories__item:nth-child(3) .categories__icon .fa {
-  color: #1e9aea; }
+  color: #0f6360; }
 
 .categories__item:nth-child(4) .categories__icon .fa {
-  color: #d74aff; }
+  color: #720e2e; }
 
 .categories__item:nth-child(5) .categories__icon .fa {
-  color: #26a052;
+  color: #3ab54b;
+}
+
+.categories__item:nth-child(6) .categories__icon .fa {
+  color: #e64e39;
 }
 
 .categories__item:hover .categories__icon .fa {
@@ -561,19 +572,23 @@ h2 {
   border-radius: 2px; }
 
 .categories__item_getting_started:hover .categories__inner {
-  background: linear-gradient(52deg, #fb5b97 0%, #fb5b66 100%); }
+  background: linear-gradient(52deg, #1c7abd 0%, #89b6e1 100%); }
 
 .categories__item_guides:hover .categories__inner {
-  background: linear-gradient(52deg, #ff8c4a 0%, #ff6338 100%); }
+  background: linear-gradient(52deg, #dda127 0%, #fabe26 100%); }
 
 .categories__item_components:hover .categories__inner {
-  background: linear-gradient(52deg, #1e9aea 0%, #356dbf 100%); }
-
-.categories__item_release_notes:hover .categories__inner {
-  background: linear-gradient(52deg, #26d464 0%, #26a052 100%); }
+  background: linear-gradient(52deg, #0f6360 0%, #66a1a0 100%); }
 
 .categories__item_references:hover .categories__inner {
-  background: linear-gradient(52deg, #d74aff 0%, #8f18de 100%); }
+  background: linear-gradient(52deg, #720e2e 0%, #d87c83 100%); }
+
+.categories__item_release_notes:hover .categories__inner {
+  background: linear-gradient(52deg, #3ab54b 0%, #66a1a0 100%); }
+
+.categories__item_support:hover .categories__inner {
+  background: linear-gradient(52deg, #e64e39 0%, #d87c83 100%); }
+
 
 .categories__name {
   font-size: 18px;
