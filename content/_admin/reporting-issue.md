@@ -46,10 +46,6 @@ If you have submitted an issue before you already have an account -
 > support email. Registration is for convenience to manage all your queries in one
 > place from a unified interface.
 
-You can also start a conversation with us from inside the platform by using the
-internal chat. Chat is convenient for quick questions, however our support team
-will answer within our working hours.
-
 {% endif %}
 
 ## What information to send
