@@ -6,11 +6,14 @@ section: Contract Management
 order: 1
 since: 20190321
 category: integrator-management
+redirect_from:
+  - /guides/managing-user-roles-in-a-tenant#setting-user-roles.html
+  - /guides/managing-user-roles-in-a-tenant#configuring-custom-user-roles.html
+  - /guides/managing-user-roles-in-a-tenant#essential-roles.html
+  - /guides/managing-user-roles-in-a-tenant#permissions-reference-table.html
 ---
 
-This document explains [what roles and permissions are](#roles-and-permissions),
-how [roles are set in the UI](#setting-user-roles) and how [custom roles are
-configured](#configuring-custom-user-roles). Additionally, it provides a list of [non-deletable roles](#essential-roles), and a [permissions reference](#permissions-reference-table) table.
+This document explains [what roles and permissions are](#roles-and-permissions) and how [roles are set in the UI](#setting-user-roles).
 
 ## Roles and permissions
 
@@ -73,7 +76,7 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 ![Invite new member](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-03.png)
 
-5\.  Click **Send Invite** to finish.
+3\.  Click **Send Invite** to finish.
 
 ![Invite new member - send invite](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-04.png)
 
@@ -83,113 +86,9 @@ To set a role for a user when adding or inviting new users to a workspace:
 
 ![Edit member’s roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-05.png)
 
-4\.  Alternatively, invite a new member and set the roles. Initially, only **Contract Role** dropdown menu is visible. To assign the new member’s workspace and workspace role, click **Specify invitee’s workspace**, and use the **Workspace Role** dropdown menu. Then click **Send Invite**.
+2\.  Alternatively, invite a new member and set the roles. Initially, only **Contract Role** dropdown menu is visible. To assign the new member’s workspace and workspace role, click **Specify invitee’s workspace**, and use the **Workspace Role** dropdown menu. Then click **Send Invite**.
 
 ![Members - invite new member](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-06.png)
-
-## Configuring custom user roles
-
-A tenant admin can configure custom roles if required. To do that, the admin
-needs a special set of credentials called *service account*. It can be acquired
-by an authorized client employee via support.
-
-There are a few restrictions for custom role creation and role deletion:
-
-- You cannot create multiple roles with identical names in one scope;
-- You cannot delete a role that is assigned to a member;
-- You cannot delete [essential roles](#essential-roles);
-- You cannot delete a role that is used in `contract.availableRoles` (learn more about it [here]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-contract)).
-
-
-When the tenant admin uses the *service account* privileges, he can [create
-custom roles]({{site.data.tenant.apiBaseUri}}/docs/v2/#update-tenant's-roles) via the
-following API request:
-
-`PATCH {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/roles` , where
-
-`{TENANT_ID}` parameter stands for the ID of the tenant.
-
-Below are request parameters:
-
-| **Payload Parameter**                            | **Required** | **Description**                                                                                                                                                                                                 |
-|------------------------------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`                                     | yes          | This parameter should have the value: `tenant-policy`                                                                                                                                                         |
-| `attributes.roles[]`                       | yes          | An array of Tenant’s roles. It can be empty.                                                                                                                                                                    |
-| `attributes.roles[].role`                  | no           | Custom role name                                                                                                                                                                                                |
-| `attributes.roles[].scope`                 | no           | The group of objects, which is affected by this role. Value can be: `contracts` or `workspaces`.                                                                                                            |
-| `attributes.roles[].permissions[]`         | yes          | An array of permissions. It can be empty. To get the list of available permissions execute the endpoint: `GET {{site.data.tenant.apiBaseUri}}/v2/permissions` or see [this reference table](#permissions-reference-table). |
-| `attributes.roles[].i18n.{{language_key}}` | no           | The name of a role in different languages. The value is only required for `en` key. For other languages value is optional.                                                                                  |
-
-**EXAMPLE:**
-
-To add a new role called *Godzilla*, with permissions to see and delete
-workspaces in the contract, and edit a workspace, we will use the following
-request:
-
-```
-curl {{site.data.tenant.apiBaseUri}}/v2/tenants/{TENANT_ID}/roles
-   -X PATCH
-   -u {EMAIL}:{APIKEY}
-   -H 'Content-Type: application/json' -d '
-    {
-      "data":{
-        "type":"tenant-policy",
-        "attributes":{
-          "roles":[
-            {
-              "role":"Godzilla",
-              "scope":"contracts",
-              "permissions":[
-                "contracts.workspace.listAll",
-                "contracts.workspace.delete"
-              ],
-              "i18n":{
-                "en":"Godzilla"
-              }
-            },
-            {
-              "role":"Godzilla",
-              "scope":"workspaces",
-              "permissions":[
-                "workspaces.workspace.edit",               
-              ],
-              "i18n":{
-                "en":"Godzilla"
-              }
-            }
-          ]
-        }
-      }
-    }'
-```
-
- >**NOTE:** these endpoints are still in development and are subject to change.
-
-## Essential roles
-
-A number of roles cannot be edited or deleted, because their functionality is unique. They are:
-
-- contract.owner - this role is assigned to the first member of the contract;
-- workspace.owner - this role is assigned to the user who created the workspace;
-
-These roles have exclusive permissions, which are essential for contract and workspace management.    
-
-## Permissions reference table
-
-
-| **Permission**                 | **Description**                                             |
-|--------------------------------|-------------------------------------------------------------|
-| `contracts.membership.edit`      | Edit members in the contract                                |
-| `contracts.workspace.create `    | Create workspaces in the contract                           |
-| `contracts.workspace.listAll`    | View all workspaces in the contract                         |
-| `contracts.workspace.delete`     | Delete workspaces in the contract                           |
-| `contracts.repository.edit `     | Edit contract repository                                    |
-| `contracts.devTeam.edit  `       | Edit developer team                                         |
-| `workspaces.workspace.edit`      | Edit the workspace                                          |
-| `workspaces.flow.edit`           | Edit flows in the workspace                                 |
-| `workspaces.flow.toggleStatus`   | Toggle flow status between **active** and **inactive**    |
-| `workspaces.flow.toggleRealtime` | Toggle flow status between **ordinary** and **real-time** |
-| `workspaces.credential.edit `    | Edit credentials                                            |
 
 ## Related links
 
