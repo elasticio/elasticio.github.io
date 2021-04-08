@@ -61,15 +61,15 @@ In case you need to stop a running Flow, click the stop button:
 
 By following the link below, you will learn how to perform the functions described above using API Calls:
 
-1\. [Start a Flow via the API](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#start-a-flow).
+1\. [Start a Flow via the API]({{site.data.tenant.apiBaseUri}}/docs/v2/#start-a-flow).
 
-2\. [Stop a Flow via the API](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#stop-a-flow).
+2\. [Stop a Flow via the API]({{site.data.tenant.apiBaseUri}}/docs/v2/#stop-a-flow).
 
-3\. [Delete a Flow via the API](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#delete-a-flow).
+3\. [Delete a Flow via the API]({{site.data.tenant.apiBaseUri}}/docs/v2/#delete-a-flow).
 
-4\. [Edit a Flow to some extent via the API](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#update-a-flow).
+4\. [Edit a Flow to some extent via the API]({{site.data.tenant.apiBaseUri}}/docs/v2/#update-a-flow).
 
-5\. [Retrieve a flow by ID](https://{{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-a-flow-by-id).
+5\. [Retrieve a flow by ID]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-a-flow-by-id).
 
 ## Copy Flow, Switch Flow Type
 
