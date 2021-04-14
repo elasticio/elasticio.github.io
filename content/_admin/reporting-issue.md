@@ -46,6 +46,12 @@ If you have submitted an issue before you already have an account -
 > support email. Registration is for convenience to manage all your queries in one
 > place from a unified interface.
 
+You can start conversation with us via the chat. Use the Intercom Chat Icon on
+the left-hand-side menu.
+
+{% include img.html max-width="50%" url="/assets/img/RN/2114/intercom-chat.png" title="Intercom Chat Icon" %}
+
+
 {% endif %}
 
 ## What information to send
@@ -54,13 +60,16 @@ To help you address the problems ASAP we ask you to send us as much information
 as possible about the encountered problem. If you don't know from where to start
 use the following list for guidance:
 
-
 *   **Your contract ID, workspace ID and the flow ID** - We need this to start our investigation. Check [how to find IDs we need?](#how-to-find-ids-we-need) section for help.
 *   **When did it happen?** - We would need this information to locate the events on our back-end.
 *   **Description including logs and screenshots** - Describe in as much detail as possible including the [logs and screenshots](#logs-and-screenshots).
 *   **Steps to reproduce if you can** - This would greatly help us to replicate the issue and provide the solution or a workaround for a time being.
 *   **Is this a blocker for you right now?** - Explain how it blocks your work.
 *   **Priority: how soon you need solution?** - What would be the latest acceptable time for you?
+
+> Please Note: you can use the **Grant Support Access** Button to grant our support representative
+> access to your workspace to speed up the process of investigation. [Read more about this](#grant-support-access).
+
 
 If you don't know how to locate the information listed here keep reading. We have
 necessary details and guidelines you can follow to start your own troubleshooting.
@@ -111,3 +120,16 @@ exact steps you need to do to replicate it again.
 
 If you cannot reproduce the issue and it happens randomly, then tell us what you
 were doing when this happens. Have you noticed anything unusual?
+
+## Grant Support Access
+
+Click on **Grant Support Access** button found in the workspace
+settings page to add our support representative so he/she can help in troubleshooting.
+
+When you no longer need this help you can click on **Revoke Support Access** button
+to remove our representative from your workspace.
+
+> Please note the button **Grant Support Access** changes into **Revoke Support Access** when
+> you add the support representative to your workspace.
+
+{% include img.html max-width="100%" url="/assets/img/RN/2114/grant-support.gif" title="Grant Support Access" %}
