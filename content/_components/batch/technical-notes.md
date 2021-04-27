@@ -5,13 +5,20 @@ description: Technical Notes for the Batch component
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2020-11-20
-ComponentVersion: 1.0.0
+updatedDate: 2021-04-27
+ComponentVersion: 2.0.0
 redirect_from:
   - /components/batch/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.0 (April 23, 2021)
+
+* Implemented Maester support
+* Disabled support of MongoDB as an external storage (credentials are no longer supported)
+* `Get ready batches` trigger feature `Delete Batch After Retrieval` replased by `Do Not Delete Batch After Retrieval`
+* Update sailor to v 2.6.24
 
 ### 1.0.0 (November 15, 2020)
 

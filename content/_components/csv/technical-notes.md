@@ -5,13 +5,18 @@ description: Technical Notes for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2021-03-12
-ComponentVersion: 2.1.7
+updatedDate: 2021-04-23
+ComponentVersion: 2.2.0
 redirect_from:
   - /components/csv/changelog.html
 ---
 
 ## Changelog
+
+### 2.2.0 (April 23, 2021)
+
+* Add pipe to list of separators in `Write CSV attachment from JSON Array` and `Write CSV attachment from JSON Object` actions
+* Bump dependencies
 
 ### 2.1.7 (March 12, 2021)
 
