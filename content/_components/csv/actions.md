@@ -5,8 +5,8 @@ description: CSV component actions.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2021-03-12
-ComponentVersion: 2.1.7
+updatedDate: 2021-04-23
+ComponentVersion: 2.2.0
 ---
 
 ## Read CSV attachment
@@ -66,7 +66,7 @@ able to handle file attachments.
 ## Write CSV attachment from JSON Object
 
 * `Include Header` - this select configures output behavior of the component. If option is `Yes` or no value chosen than header of csv file will be written to attachment, this is default behavior. If value `No` selected than csv header will be omitted from attachment.
-* `Separator` - this select configures type of CSV delimiter in an output file. There are next options: `Comma (,)`, `Semicolon (;)`, `Space ( )`, `Tab (\t)`.
+* `Separator` - this select configures type of CSV delimiter in an output file. There are next options: `Comma (,)`, `Semicolon (;)`, `Space ( )`, `Tab (\t)`, `Pipe (¦)`.
 
 This action will combine multiple incoming events into a CSV file until there is a gap
 of more than 10 seconds between events. Afterwards, the CSV file will be closed
@@ -109,7 +109,7 @@ able to handle file attachments.
 ## Write CSV attachment from JSON Array
 
 * `Include Header` - this select configures output behavior of the component. If option is `Yes` or no value chosen than header of csv file will be written to attachment, this is default behavior. If value `No` selected than csv header will be omitted from attachment.
-* `Separator` - this select configures type of CSV delimiter in an output file. There are next options: `Comma (,)`, `Semicolon (;)`, `Space ( )`, `Tab (\t)`.
+* `Separator` - this select configures type of CSV delimiter in an output file. There are next options: `Comma (,)`, `Semicolon (;)`, `Space ( )`, `Tab (\t)`, `Pipe (¦)`.
 
 ![Write CSV attachment from JSON Array](img/inputArray.png)
 

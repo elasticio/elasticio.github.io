@@ -5,13 +5,17 @@ description: Technical Notes for the Request-reply component.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2021-01-28
-ComponentVersion: 1.1.5
+updatedDate: 2021-04-23
+ComponentVersion: 1.2.0
 redirect_from:
   - /components/request-reply/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.0 (April 23, 2021)
+
+* Added new action `Reply With Attachment`
 
 ### 1.1.5 (January 28, 2021)
 

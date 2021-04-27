@@ -6,8 +6,8 @@ description: Request-Reply component for the platform.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2021-01-28
-ComponentVersion: 1.1.5
+updatedDate: 2021-04-23
+ComponentVersion: 1.2.0
 ---
 
 ## Description
@@ -56,13 +56,25 @@ select as a first component during the integration flow design.
 
 List of Expected Config fields:
 
-- Custom HTTP Headers - the `non-required` header names separated by comma (e.g `Content-Type`, `Content-Language`)
-- Content Type (default `application/json`) - the `non-required` header value tells the client what the content type of the returned content actually is. The component supports only types with `text/...` or `application/...` in the beginning of the header name.
-- Response Body - the `required` field supports JSONata expressions. Max length of a JSONata expression is 1000 symbols.
+- `Custom HTTP Headers` - not required, provides with possibility to set additional headers (e.g `Content-Language`)
+- `Content Type (Defaults to 'application/json')` - not required, header value tells the client what the content type of the returned content actually is. The action supports only types with `text/...` or `application/...` in the beginning of the header name.
+- `Response Body` -  required, supports JSONata expressions. Max length of a JSONata expression is 1000 symbols.
+- `Response Status Code` - not required,user may specify response code, if needed
 
 ![Reply](img/reply.png)
 
-### Use cases for HTTP Reply
+### Reply With Attachment
+
+List of Expected Config fields:
+
+- `Custom HTTP Headers` - non-required, provides with possibility to set additional headers (e.g `Content-Language`)
+- `Content Type (Defaults to 'application/json')` - the `non-required` header value tells the client what the content type of the returned content actually is
+- `Attachment URL` - required, supported are attachments from `stewart` microservice by URL and external attachments URL, Max field length is 1000 symbols.
+- `Response Status Code` - not required, user may specify response code, if needed
+
+![Reply with attachment](img/reply-with-attachment.png)
+
+## Use cases for HTTP Reply
 
 The use-cases of HTTP Reply component are numerous. It can be used for simple
 cases of getting an answer from the flow upon the completion of the process till
@@ -72,7 +84,7 @@ complex cases like:
   * Chatbots as a separate application.
   * Communicator between {{site.data.tenant.name}} as backend and a third party mobile application as frontend.
 
-#### Example: Advantage of Synchronous messaging
+### Example: Advantage of Synchronous messaging
 
 Here is a typical scenario: Integration flow is set to expect an incoming message via [WebHook](/components/webhook/) which is then processed further. The only acknowledgement that is given in this case is a simple Thank You from the [WebHook](/components/webhook/), nothing more.
 
