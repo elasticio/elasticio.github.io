@@ -35,6 +35,8 @@ Maester microservice should be enabled on installation and what would happen if 
 
 Emits all batches that are ready to be processed.
 
+![Get ready batches](img/get-ready-batches.png)
+
 #### Input fields description
 
 |Input field|Required|Description|Example|
@@ -52,6 +54,8 @@ Emits all batches that are ready to be processed.
 ### Add message to batch
 
 Stores a message in a batch and emits a created/updated batch with a processed item only.
+
+![Add message to batch](img/add-message-to-batch.png)
 
 #### Input fields description
 
