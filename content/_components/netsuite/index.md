@@ -24,7 +24,7 @@ versions in most cases. But 100% compatibility could not be guaranteed.
 
 ### Environment variables
 
-Component reuquires 1024 MB of RAM memory to properly function. It is recommended
+Component requires 1024 MB of RAM memory to properly function. It is recommended
 to increase the RAM memory prior any activity. Contact Support for more.
 
 ### Enable web-service communication
@@ -82,7 +82,7 @@ NetSuite component includes the following actions:
   4. [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id)       
   Either update an object in NetSuite by an ID provided or inserts as a new object if it does not exist.
 
-The following Salesforce actions are deprecated:
+The following NetSuite actions are deprecated:
 
   1. [Lookup Customer(deprecated)](/components/netsuite/deprecated-functions#lookup-customerdeprecated)       
   Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead. This action enables to find the customer by provided ID.
