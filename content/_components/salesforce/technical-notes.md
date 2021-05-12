@@ -5,8 +5,8 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-createdDate: 2020-01-02
-updatedDate: 2020-10-30
+updatedDate: 2020-11-18
+ComponentVersion: 2.0.3
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
@@ -14,7 +14,7 @@ redirect_from:
 
 ## Changelog
 
-## 2.0.3 (November 18, 2020)
+### 2.0.3 (November 18, 2020)
 
 * Fix fields dependencies from subject field in component.json
 
