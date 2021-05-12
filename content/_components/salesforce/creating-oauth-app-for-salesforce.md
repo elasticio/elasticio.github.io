@@ -5,8 +5,8 @@ description: How to create OAuth App for Salesforce.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-createdDate: 2019-06-27
-updatedDate: 2020-10-21
+updatedDate: 2020-11-18
+ComponentVersion: 2.0.3
 ---
 
 ## Purpose

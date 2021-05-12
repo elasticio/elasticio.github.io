@@ -6,8 +6,8 @@ description: A component enables you to manage your organization’s sales, mark
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-createdDate: 2019-06-27
-updatedDate: 2020-10-30
+updatedDate: 2020-11-18
+ComponentVersion: 2.0.3
 ---
 
 ## Description
@@ -35,7 +35,7 @@ The component uses Salesforce - API Version 46.0 by defaults but can be overwrit
 | HASH_LIMIT_ELEMENTS| false | Hash size number limit  | Default: `10` |
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Technical Notes
 
