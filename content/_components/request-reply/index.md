@@ -74,6 +74,8 @@ List of Expected Config fields:
 
 ![Reply with attachment](img/reply-with-attachment.png)
 
+> **Note:** Please be advised that the action does not actually write an attachment when the sample is retrieved. 
+
 ## Use cases for HTTP Reply
 
 The use-cases of HTTP Reply component are numerous. It can be used for simple
