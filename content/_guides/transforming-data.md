@@ -2,8 +2,8 @@
 title: Transforming data
 description: This article describes some JSONata basics so that you can start transforming your data.
 layout: article
-section: Data transformation
-category: data-transformation
+section: Data transfer
+category: data-transfer
 order: 0
 since: 20180216
 ---

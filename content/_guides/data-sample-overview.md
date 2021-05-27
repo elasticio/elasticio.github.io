@@ -1,10 +1,12 @@
 ---
-title: Data Sample
-layout: article
-section: Platform Features
+title: Understanding Data Sample
 description: This document provides basic information on data samples and how they are useful when building integration flows.
-order: 4
-category: platform-features
+layout: article
+order: 5
+section: Building integration flows
+category: building integration flows
+redirect_from:
+  - /getting-started/data-sample-overview.html
 ---
 
 This document provides basic information on [data samples](#data-sample) and how they are useful when [building integration flows](#samples-in-integration-flows).

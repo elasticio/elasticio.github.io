@@ -1,9 +1,9 @@
 ---
-title: New Mapper UI
+title: Mapper UI
 description: This document presents data mapping on our Platform and provides a detailed description of the new mapper UI.
 layout: article
-section: Data transformation
-category: data-transformation
+section: Data transfer
+category: data-transfer
 since: 20200116
 order: 3
 ---

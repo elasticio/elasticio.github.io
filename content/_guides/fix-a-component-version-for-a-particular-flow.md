@@ -1,5 +1,5 @@
 ---
-title: Component version
+title: Integration flow version
 description: This document provides information on a component versions, build history and how to fix a component version for a particular flow.
 layout: article
 section: Building integration flows
