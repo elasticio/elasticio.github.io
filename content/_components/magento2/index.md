@@ -6,8 +6,8 @@ description: A component to work with Magento 2.
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2021-02-25
-ComponentVersion: 1.6.2
+updatedDate: 2021-05-19
+ComponentVersion: 1.6.3
 ---
 
 ## Description
