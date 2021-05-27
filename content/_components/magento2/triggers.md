@@ -5,8 +5,8 @@ description: Magento2 component triggers page
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2021-02-25
-ComponentVersion: 1.6.2
+updatedDate: 2021-05-19
+ComponentVersion: 1.6.3
 ---
 
 ## Get New and Updated Objects Polling
@@ -41,7 +41,7 @@ Each object emitted individually.
 
 Trigger for retrieval of large sets of person and person related data, using bulk Marketo API.
 
-This trigger does not work as Get New and Updated Objects Polling trigger but for bulk operations due to Magento 2 API limitations. It will poll objects according to specified input parameters again after successful execution. 
+This trigger does not work as Get New and Updated Objects Polling trigger but for bulk operations due to Magento 2 API limitations. It will poll objects according to specified input parameters again after successful execution.
 
 ![Bulk Extract](img/bulk-extract.png)
 

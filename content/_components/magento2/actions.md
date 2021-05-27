@@ -5,8 +5,8 @@ description: Magento2 component actions page
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2021-02-25
-ComponentVersion: 1.6.2
+updatedDate: 2021-05-19
+ComponentVersion: 1.6.3
 ---
 
 ## Custom Request Action
@@ -507,14 +507,14 @@ For example:
       "default_display_currency_code": "USD",
       "timezone": "UTC",
       "weight_unit": "lbs",
-      "base_url": "http://magento_2_3_1/",
-      "base_link_url": "http://magento_2_3_1/",
-      "base_static_url": "http://magento_2_3_1/pub/static/version1554996639/",
-      "base_media_url": "http://magento_2_3_1/pub/media/",
-      "secure_base_url": "https://magento_2_3_1/",
-      "secure_base_link_url": "https://magento_2_3_1/",
-      "secure_base_static_url": "https://magento_2_3_1/pub/static/version1554996639/",
-      "secure_base_media_url": "https://magento_2_3_1/pub/media/"
+      "base_url": "http://magento_2_3_6/",
+      "base_link_url": "http://magento_2_3_6/",
+      "base_static_url": "http://magento_2_3_6/pub/static/version1554996639/",
+      "base_media_url": "http://magento_2_3_6/pub/media/",
+      "secure_base_url": "https://magento_2_3_6/",
+      "secure_base_link_url": "https://magento_2_3_6/",
+      "secure_base_static_url": "https://magento_2_3_6/pub/static/version1554996639/",
+      "secure_base_media_url": "https://magento_2_3_6/pub/media/"
     },
     {
       "id": 2,
@@ -525,14 +525,14 @@ For example:
       "default_display_currency_code": "USD",
       "timezone": "UTC",
       "weight_unit": "lbs",
-      "base_url": "http://magento_2_3_1/",
-      "base_link_url": "http://magento_2_3_1/",
-      "base_static_url": "http://magento_2_3_1/pub/static/version1554996639/",
-      "base_media_url": "http://magento_2_3_1/pub/media/",
-      "secure_base_url": "https://magento_2_3_1/",
-      "secure_base_link_url": "https://magento_2_3_1/",
-      "secure_base_static_url": "https://magento_2_3_1/pub/static/version1554996639/",
-      "secure_base_media_url": "https://magento_2_3_1/pub/media/"
+      "base_url": "http://magento_2_3_6/",
+      "base_link_url": "http://magento_2_3_6/",
+      "base_static_url": "http://magento_2_3_6/pub/static/version1554996639/",
+      "base_media_url": "http://magento_2_3_6/pub/media/",
+      "secure_base_url": "https://magento_2_3_6/",
+      "secure_base_link_url": "https://magento_2_3_6/",
+      "secure_base_static_url": "https://magento_2_3_6/pub/static/version1554996639/",
+      "secure_base_media_url": "https://magento_2_3_6/pub/media/"
     }
   ]
 }

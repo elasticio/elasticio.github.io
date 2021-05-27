@@ -5,11 +5,15 @@ description: Technical Notes for the Dun-and-bradstreet component.
 icon: dun-and-bradstreet.png
 icontext: Dun-and-bradstreet component
 category: dun-and-bradstreet
-updatedDate: 2020-12-07
-ComponentVersion: 1.0.1
+updatedDate: 2020-05-21
+ComponentVersion: 1.0.2
 ---
 
 ## Changelog
+
+### 1.0.2 (May 21, 2021)
+
+* Fix bug in Cleanse and Match action when a single field was not treated as array item
 
 ### 1.0.1 (December 7, 2020)
 
