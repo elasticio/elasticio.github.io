@@ -3,7 +3,7 @@ title: Integration Flow Overview
 layout: article
 section: Introduction
 description: This document provides basic information on integration flow and their parts.
-order: 5
+order: 3
 category: intro
 since: 20180102
 ---
@@ -91,7 +91,7 @@ Additionally, there are two intermediate states, which cannot be changed manuall
 - `Stopping`. This state is followed by `Stopped` automatically.
 - `Suspending`. This state is followed by `Suspended` automatically.
 
-A Flow in `Inactive` state is not working. No messages are sent, no triggers or actions performed, no containers running. From this state, a Flow can only be run, going from  `Starting` to `Running`. Note, that a `Stopped` Flow cannot be `Suspended`. 
+A Flow in `Inactive` state is not working. No messages are sent, no triggers or actions performed, no containers running. From this state, a Flow can only be run, going from  `Starting` to `Running`. Note, that a `Stopped` Flow cannot be `Suspended`.
 
 A `Running` Flow is operating as designed. Containers are running, triggers and actions are performed. From this state, a Flow can be `Stopped` or `Suspended`, going through corresponding intermediate states. Additionally, a `Running` Flow can go into `Sleeping` state.
 

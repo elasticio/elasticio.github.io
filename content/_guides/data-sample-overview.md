@@ -2,7 +2,7 @@
 title: Understanding Data Sample
 description: This document provides basic information on data samples and how they are useful when building integration flows.
 layout: article
-order: 5
+order: 4
 section: Building integration flows
 category: building integration flows
 redirect_from:

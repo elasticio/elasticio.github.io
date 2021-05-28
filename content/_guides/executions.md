@@ -1,11 +1,12 @@
 ---
 title: Executions Page
-layout: article
-section: Introduction
 description: This document provides basic information on executions page and how to filter executions based on flow names, flow statuses and the time interval.
-since: 20200116
-order: 3
-category: intro
+layout: article
+section: Building integration flows
+category: building integration flows
+order: 8
+redirect_from:
+  - /getting-started/executions.html
 ---
 
 This document provides basic information on [executions](#executions) and

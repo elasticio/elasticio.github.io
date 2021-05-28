@@ -4,7 +4,7 @@ description: This document provides information on a component versions, build h
 layout: article
 section: Building integration flows
 category: building integration flows
-order: 4
+order: 10
 ---
 
 ## Latest Component Version

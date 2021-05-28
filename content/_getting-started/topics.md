@@ -2,7 +2,7 @@
 title: Topics
 layout: article
 section: Introduction
-order: 10
+order: 6
 description: This document provides basic information on Topics.
 ---
 

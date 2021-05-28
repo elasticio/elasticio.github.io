@@ -3,7 +3,7 @@ title: Quota
 layout: article
 section: Introduction
 description: This document provides basic information on Platform resource quota and how the limit is calculated.
-order: 8
+order: 5
 category: intro
 since: 20191101
 ---
