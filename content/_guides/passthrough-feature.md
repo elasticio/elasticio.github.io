@@ -1,13 +1,12 @@
 ---
 title: Passthrough Feature
+description: This document introduces the passthrough feature, explains why would you use it, and gives a real-life example on how to use it.
 layout: article
-section: Platform Features
-description: This document introduces the passthrough feature,
- explains why would you use it,
- and gives a real-life example on how to use it.
-order: 9
-since: 20190903
-category: platform-features
+section: Integration patterns
+order: 5
+category: integration-patterns
+redirect_from:
+  - /getting-started/passthrough-feature.html
 ---
 
 This document introduces the [passthrough feature](#what-is-passthrough),

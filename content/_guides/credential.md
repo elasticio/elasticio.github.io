@@ -1,10 +1,12 @@
 ---
-title: Credentials
-layout: article
-section: Introduction
+title: Understanding Credentials
 description: What is a credential in general. How to create and use the credential in your integration components.
-order: 6
-category: intro
+order: 3
+layout: article
+section: Building integration flows
+category: building integration flows
+redirect_from:
+  - /getting-started/credential.html
 ---
 
 An [integration flow](integration-flow) runs on behalf of a person or an

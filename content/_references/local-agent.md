@@ -1,11 +1,12 @@
 ---
 title: Local Agent (Deprecated)
-layout: article
-section: Introduction
 description: This document provides the basic information on Local Agent and the way to get it in case you require one. Deprecated started from the platform release 20.31.
-order: 11
-since: 20191218
-category: intro
+layout: article
+section: Local Agents
+order: 2
+category: local agents
+redirect_from:
+  - /getting-started/credential.html
 ---
 
 > This document is about the deprecated (from [20.31 release](/releases/2020-07-30)) local agents.

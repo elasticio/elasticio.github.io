@@ -22,7 +22,7 @@ guides:
       description: Articles on how to build integration flows effectively
     - title: Integration patterns
       description: Articles on how to create complex non-linear integration flows
-    - title: Data transformation
+    - title: Data transfer
       description: Articles on how to query, transform and map data between steps of an integration flow
     - title: Troubleshooting
       description: Articles on Troubleshooting

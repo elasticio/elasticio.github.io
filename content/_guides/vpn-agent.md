@@ -1,11 +1,12 @@
 ---
 title: VPN Agent
-layout: article
-section: Introduction
 description: This document provides the basic information on VPN Agents and the way setup one in case you require one.
-order: 7
-since: 20200730
-category: intro
+order: 11
+layout: article
+section: Building integration flows
+category: building integration flows
+redirect_from:
+  - /getting-started/vpn-agent.html
 ---
 
 This document provides basic information on [VPN Agent](#vpn-agent), [how to set it up](#how-to-setup)

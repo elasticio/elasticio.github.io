@@ -1,11 +1,12 @@
 ---
-title: Secrets feature
-layout: article
-section: Platform Features
+title: Understanding Secrets
 description: This document provides basic information about Secrets feature.
-order: 11
-category: platform-features
-since: 20200924
+order: 6
+layout: article
+section: Building integration flows
+category: building integration flows
+redirect_from:
+  - /getting-started/secrets.html
 ---
 
 ## Introduction
