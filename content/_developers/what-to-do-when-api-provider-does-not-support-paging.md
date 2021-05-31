@@ -5,6 +5,8 @@ layout: article
 section: Paging
 category: paging
 order: 2
+redirect_from:
+  - /guides/what-to-do-when-api-provider-does-not-support-paging.html
 ---
 
 Some API providers do not support pagination via their API calls but only through their UI. At those providers, there is a general notion that API calls are used only for downloading the whole dataset only for offline use. However, in the current world of interconnectivity, this model is outdated and prone to many errors like:

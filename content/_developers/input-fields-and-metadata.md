@@ -2,9 +2,10 @@
 title: Fields vs Metadata
 description: Article explains the difference between input fields and input metadata.
 layout: article
-section: Developing Components
-category: component
+section: Developer Reference
 order: 7
+redirect_from:
+  - /guides/input-fields-and-metadata.html
 ---
 
 ## Prerequisites

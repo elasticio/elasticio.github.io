@@ -1,11 +1,11 @@
 ---
-title: Snapshot Feature
+title: Using Shapshot
 layout: article
-section: Platform Features
+section: How-Tos and Tutorials
 description: This document provides basic information on Snapshot feature and a few real-life use case.
 order: 9
-category: platform-features
-since: 20180102
+redirect_from:
+  - /getting-started/snapshot-overview.html
 ---
 
 This document provides basic information on [Snapshot](#component-snapshots) feature and a few real-life [use case](#use-cases).

@@ -5,6 +5,8 @@ layout: article
 section: Paging
 category: paging
 order: 1
+redirect_from:
+  - /guides/how-to-implement-the-pagination.html
 ---
 
 ## Description

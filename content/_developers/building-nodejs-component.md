@@ -2,9 +2,11 @@
 title: Building a component in Node.js
 description: Here is how to build a component in Node.js
 layout: article
-section: Developing Components
+section: How-Tos and Tutorials
 category: component
 order: 2
+redirect_from:
+  - /guides/building-nodejs-component.html
 ---
 
 The {{site.data.tenant.name}} platform supports `Node.js` programming language for building integration components.

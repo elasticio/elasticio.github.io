@@ -2,8 +2,10 @@
 title: package.json and Dependencies
 description: Here is how to make sure to have all the correct dependencies for your component.
 layout: article
-section: Developing Components
+section: Behaviour Checks
 order: 1
+redirect_from:
+  - /guides/package-json-and-dependencies.html
 ---
 
 ## Using external modules

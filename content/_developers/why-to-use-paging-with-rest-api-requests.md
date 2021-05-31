@@ -5,6 +5,8 @@ layout: article
 section: Paging
 category: paging
 order: 0
+redirect_from:
+  - /guides/why-to-use-paging-with-rest-api-requests.html
 ---
 
 ## Description

@@ -1,11 +1,12 @@
 ---
 title: Building a component in Java
 layout: article
-section: Developing Components
+section: How-Tos and Tutorials
 description: Here is how to build a component in Java.
 category: component
-order: 3
-since: 20171201
+order: 1
+redirect_from:
+  - /guides/building-java-component.html
 ---
 
 The {{site.data.tenant.name}} platform supports Java programming language for building integration components.

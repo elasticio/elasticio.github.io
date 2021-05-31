@@ -2,9 +2,10 @@
 title: Error Retry and Retention Policy
 description: Error retry is a feature which gives a possibility to try to process the failed messages in the integration Flows.
 layout: article
-section: Troubleshooting
-order: 1
-category: troubleshooting
+section: Component Troubleshooting
+order: 2
+redirect_from:
+  - /guides/error-retry.html
 ---
 
 ## Description

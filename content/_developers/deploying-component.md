@@ -2,9 +2,11 @@
 title: Deploying a component
 description: Here is a step-by-step guide to help you understand how our system works and the steps necessary to get a simple component pushed and ready for a successful integration.
 layout: article
-section: Developing Components
+section: How-Tos and Tutorials
 category: component
-order: 5
+order: 0
+redirect_from:
+  - /guides/deploying-component.html
 ---
 
 This document is a step-by-step guide to help you understand how our system works and the steps necessary to get a simple component pushed and ready for a successful integration using {{site.data.tenant.name}} platform.

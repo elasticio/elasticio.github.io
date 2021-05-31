@@ -416,15 +416,16 @@ h2 {
   background: linear-gradient(52deg, #720e2e 0%, #d87c83 100%);
   color: #fff; }
 
-
 .welcomer__icon_release_notes {
   background: linear-gradient(52deg, #3ab54b 0%, #66a1a0 100%);
   color: #fff; }
 
-
-
 .welcomer__icon_support {
   background: linear-gradient(52deg, #e64e39 0%, #d87c83 100%);
+  color: #fff; }
+
+.welcomer__icon_developers {
+  background: linear-gradient(52deg, #921cbd 0%, #921cbd 100%);
   color: #fff; }
 
 .search {
@@ -588,6 +589,9 @@ h2 {
 
 .categories__item_support:hover .categories__inner {
   background: linear-gradient(52deg, #e64e39 0%, #d87c83 100%); }
+
+.categories__item_developers:hover .categories__inner {
+  background: linear-gradient(52deg, #921cbd 0%, #921cbd 100%); }
 
 
 .categories__name {

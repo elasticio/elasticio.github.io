@@ -2,9 +2,10 @@
 title: Managing your Teams/Components
 description: This article discribes how to structure your work into Git repositories and manage your Teams and Components.
 layout: article
-section: Developing Components
-category: component
-order: 1
+section: How-Tos and Tutorials
+order: 4
+redirect_from:
+  - /guides/teams-and-repos.html
 ---
 
 When developing your own [integration components](/getting-started/integration-component) for the {{site.data.tenant.name}} platform, you need to structure your work into Git repositories. Each repository represents an integration component and gets used to push your local code to {{site.data.tenant.name}} remote server. Every push results in a new deployment of the component.

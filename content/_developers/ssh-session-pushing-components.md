@@ -2,9 +2,10 @@
 title: SSH session during the component pushing
 description: Here is how to keep your SSH sessions from disconnecting while pushing a component?
 layout: article
-section: Developing Components
-category: component
+section: Component Troubleshooting
 order: 1
+redirect_from:
+  - /guides/ssh-session-pushing-components.html
 ---
 
 > How to keep your SSH sessions from disconnecting while pushing a component?

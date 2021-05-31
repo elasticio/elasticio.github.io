@@ -2,10 +2,10 @@
 title: Using Attachments
 description: This document describes attachments. It also explains how attachments work and how to create them.
 layout: article
-section: Building integration flows
+section: How-Tos and Tutorials
 order: 7
-since: 20191119
-category: platform-limits
+redirect_from:
+  - /guides/using-attachments.html
 ---
 
 This document describes [attachments](#binary-data). It also explains

@@ -28,12 +28,8 @@ guides:
       description: Articles on Troubleshooting
     - title: Contract Management
       description: Articles on contract management
-    - title: Developing Components
-      description: Articles on component development and SDKs
     - title: Working with XML
       description: Articles on how to work with XML
-    - title: Paging
-      description: Articles on how to implement the Paging in components
     - title: Recipes
       description: Articles on Recipes and how to create and use them
 components:
@@ -104,3 +100,20 @@ admin:
   sections:
     - title: Support
       description: Everything about support activities
+developers:
+  title: Component Developers
+  description: The place to start learning component development and SDKs
+  class: categories__item_developers
+  welcommer-class: welcomer__icon_developers
+  fa-icon: fa-cogs
+  sections:
+    - title: How-Tos and Tutorials
+      description: Articles on developer How-Tos and Tutorials
+    - title: Component Troubleshooting
+      description: Articles on Troubleshooting
+    - title: Behaviour Checks
+      description: Articles on Behaviour Checks
+    - title: Developer Reference
+      description: Articles on Developer Reference
+    - title: Paging
+      description: Articles on how to implement the Paging in components

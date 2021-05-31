@@ -2,9 +2,10 @@
 title: Managing SSH Keys
 description: This document describes what is SSH keys, how to create your SSH keys and how to manage them.
 layout: article
-section: Developing Components
-category: component
-order: 0
+section: How-Tos and Tutorials
+order: 10
+redirect_from:
+  - /guides/ssh-keys.html
 ---
 
 {{site.data.tenant.name}} platform **requires from every developer a unique SSH key to authorise any code deployment into the system**. This is a standardised, industry accepted security feature which is widely used in similar services like GitHub.
