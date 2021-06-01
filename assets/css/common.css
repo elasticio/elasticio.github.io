@@ -555,6 +555,9 @@ h2 {
   color: #e64e39;
 }
 
+.categories__item:nth-child(7) .categories__icon .fa {
+  color: #921cbd; }
+
 .categories__item:hover .categories__icon .fa {
   color: #fff !important; }
 
