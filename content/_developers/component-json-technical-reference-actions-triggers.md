@@ -2,9 +2,11 @@
 title: Actions & Triggers in Component.json
 description: This technical reference describes the structure of the actions section of the component.json manifest file/component descriptor file
 layout: article
-section: Component.json
+section: Component Template Features
 order: 3
 category: component-descriptor
+redirect_from:
+  - /references/component-json-technical-reference-actions-triggers.html
 ---
 
 ## Actions & Triggers Object

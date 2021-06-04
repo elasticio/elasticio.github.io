@@ -5,6 +5,8 @@ layout: article
 section: Tokens in OAuth2 components
 order: 1
 category: tokens-in-oauth2-components
+redirect_from:
+  - /references/approach-to-send-requests-to-oauth2-apis.html
 ---
 
 ## Description

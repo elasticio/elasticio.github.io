@@ -2,9 +2,11 @@
 title: OAuth in Component.json
 description: This technical reference describes the changes required in component.json in order for the component to handle the OAuth authentication protocol
 layout: article
-section: Component.json
+section: Component Template Features
 order: 8
 category: component-descriptor
+redirect_from:
+  - /references/component-json-oauth.html
 ---
 
 ## OAuth1

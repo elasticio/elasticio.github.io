@@ -5,6 +5,8 @@ layout: article
 section: Tokens in OAuth2 components
 order: 5
 category: tokens-in-oauth2-components
+redirect_from:
+  - /references/how-to-access-access_token-during-component-execution.html
 ---
 
 ## Description

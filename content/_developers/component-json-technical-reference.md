@@ -2,9 +2,11 @@
 title: Component.json Overview
 description: This technical reference describes the structure of the component.json manifest file/component descriptor file
 layout: article
-section: Component.json
+section: Component Template Features
 order: 1
 category: component-descriptor
+redirect_from:
+  - /references/component-json-technical-reference.html
 ---
 
 {{site.data.tenant.name}} components are code libraries that are accompanied by a manifest file/**component descriptor** file which contains metadata about the component.  The metadata in this file includes:

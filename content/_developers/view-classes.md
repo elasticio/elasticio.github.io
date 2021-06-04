@@ -2,9 +2,10 @@
 title: View Classes
 description: Here are the general view classes which are used to render the input fields in integration components.
 layout: article
-section: Component.json
+section: Developer Reference
 order: 6
-category: component-descriptor
+redirect_from:
+  - /references/view-classes.html
 ---
 
 A view class specifies how to render an input field of any integration component

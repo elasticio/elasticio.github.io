@@ -5,6 +5,8 @@ layout: article
 section: Tokens in OAuth2 components
 order: 3
 category: tokens-in-oauth2-components
+redirect_from:
+  - /references/oauth2-setup-preparation-in-component-json.html
 ---
 
 ## Description

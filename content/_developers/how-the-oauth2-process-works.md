@@ -5,6 +5,8 @@ layout: article
 section: Tokens in OAuth2 components
 order: 2
 category: tokens-in-oauth2-components
+redirect_from:
+  - /references/how-the-oauth2-process-works.html
 ---
 
 To learn about the details of OAuth2 authorization and the mechanism behind we refer to [The OAuth Bible](http://oauthbible.com/) which we highly recommend. The exaplanation below is based on that extensive document customised to the case of this iPaaS.

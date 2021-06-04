@@ -2,9 +2,11 @@
 title: Credentials in Component.json
 description: This technical reference describes the structure of the credentials section of the component.json manifest file/component descriptor file
 layout: article
-section: Component.json
+section: Component Template Features
 order: 2
 category: component-descriptor
+redirect_from:
+  - /references/component-json-technical-reference-credentials.html
 ---
 
 The [credentials](/getting-started/credential) object is used to expose the information that the platform needs to collect from the integrator in order to be able to connect to their instance/account.  Information that is collected in this section typically include:

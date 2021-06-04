@@ -2,9 +2,11 @@
 title: Metadata Schemas for Components
 description: This technical reference describes how to implement JSONSchema references in .in and .out component metadata
 layout: article
-section: Component.json
+section: Component Template Features
 order: 7
 category: component-descriptor
+redirect_from:
+  - /references/component-json-metadata.html
 ---
 
 ## JSONSchema References

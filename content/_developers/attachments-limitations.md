@@ -2,10 +2,10 @@
 title: Limitations on Attachments
 description:  This document provides information on limitations on attachments.
 layout: article
-section: Platform Behaviour
+section: Behaviour Checks
 order: 1
-category: platform-limits
-since: 20191205
+redirect_from:
+  - /references/attachments-limitations.html
 ---
 
 The attachments is one of the platform areas where we enforce the limitations to

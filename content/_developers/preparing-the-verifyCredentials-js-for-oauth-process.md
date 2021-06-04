@@ -5,6 +5,8 @@ layout: article
 section: Tokens in OAuth2 components
 order: 4
 category: tokens-in-oauth2-components
+redirect_from:
+  - /references/preparing-the-verifyCredentials-js-for-oauth-process.html
 ---
 
 ## Description

@@ -2,9 +2,11 @@
 title: Fields in Component.json
 description: This technical reference describes the structure of the various fields sections of the component.json manifest file/component descriptor file
 layout: article
-section: Component.json
+section: Component Template Features
 order: 5
 category: component-descriptor
+redirect_from:
+  - /references/component-json-fields.html
 ---
 
 Each key-value pair in the object represents a field that is exposed. The string key acts as the identifier for the field.  The structure of the field object is described below.

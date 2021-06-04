@@ -2,9 +2,11 @@
 title: How to define environment variables for components
 description: This article explane why and how to define environment variables for components on examples.
 layout: article
-section: Environment Variables
+section: Developer Reference
 order: 1
 category: environment-variables
+redirect_from:
+  - /references/how-to-define-envirament-variables-for-components.html
 ---
 
 ## Description
