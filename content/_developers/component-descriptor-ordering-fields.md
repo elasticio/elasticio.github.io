@@ -35,7 +35,7 @@ order for the following sections:
 *   credentials on recipe activation page
 
 To order fields you can use any numerical sequence like `9,8,7,6,5,4,3,2,1,0`. The
-platform will order from the higherst value in the top (`9`) to the lowest values in
+platform will order from the highest value in the top (`9`) to the lowest values in
 the bottom (`0`).
 
 Your sequence can also have gaps like `100,10,5,3,0`. The platform will render

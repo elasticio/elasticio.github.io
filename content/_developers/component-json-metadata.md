@@ -178,5 +178,4 @@ Another way to implement a definition is by adding an `$id` field to the definit
 }
 ```
 
-
 >**IMPORTANT:** We do not support referencing external schemas at the moment.

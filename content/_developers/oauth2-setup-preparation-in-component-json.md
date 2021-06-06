@@ -11,13 +11,13 @@ redirect_from:
 
 ## Description
 
-It is important to make sure that this setup is prepared and provided during the design of the integration component. The setup of `oauth` part is one part of the general process of authorisation.
+It is important to make sure that this setup is prepared and provided during the design of the integration component. The setup of `oauth` part is one part of the general process of authorization.
 
 The `oauth` setup in the `component.json` of your component ensures that several things are set:
 
-  * The `credentials` field is presented in the user interface for the user to give its explicit authorisation to the {{site.data.tenant.name}} **Application**. This ensures the ability to add security credentials to be used for the integration component proper function.
+  * The `credentials` field is presented in the user interface for the user to give its explicit authorization to the {{site.data.tenant.name}} **Application**. This ensures the ability to add security credentials to be used for the integration component proper function.
 
-  * The proper connection endpoints, as well as connection specific protocols, are indicated. Those endpoints are used by the verification process to authorise the user `credentials`.
+  * The proper connection endpoints, as well as connection specific protocols, are indicated. Those endpoints are used by the verification process to authorize the user `credentials`.
 
 ## Example
 
@@ -55,6 +55,7 @@ Let us explain how it should be done on an example of currently working example.
       ]
     }
   }
+}
 ```
 
 ## Notes

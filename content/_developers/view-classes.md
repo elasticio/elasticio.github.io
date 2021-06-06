@@ -251,7 +251,7 @@ Here is how it looks like in the UI:
 
 ## PasswordFieldView
 
-The `PasswordFieldView` view class is used to provide a sequre input field for
+The `PasswordFieldView` view class is used to provide a secure input field for
 passwords in the credentials of the integration components. It has the following
 properties:
 

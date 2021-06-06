@@ -11,9 +11,9 @@ redirect_from:
 
 ## Description
 
-Before we can try to access any part of `credentials` structure we need to know how it is stored in database. In our database all the credentials are stored in an encrypted conditions. Whenever the process of authorisation wants to access a parameter from it, the system is decrypting it in the process and returns the value for further use.
+Before we can try to access any part of `credentials` structure we need to know how it is stored in database. In our database all the credentials are stored in an encrypted conditions. Whenever the process of authorization wants to access a parameter from it, the system is decrypting it in the process and returns the value for further use.
 
-Here is how the credentials are stored in the the database:
+Here is how the credentials are stored in the database:
 
 ```js
 {

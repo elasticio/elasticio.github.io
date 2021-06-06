@@ -57,7 +57,7 @@ Some components parse (read) or write (create) attachments:
 Exporting attachments to 3rd party systems imposed by component as well as
 limits of 3rd party systems:
 
--  [EMail component](/components/email/) has a limit of 25MB in total size of both message and all attachments.
+-  [Email component](/components/email/) has a limit of 25MB in total size of both message and all attachments.
 
 -  [REST API component](/components/rest-api/) can upload (`PUSH`, `PUT`) binary files via REST/HTTP. When uploading a file its maximum size is bounded to the available component memory. In case of running into the limit the platform will give an error message `Component run out of memory and terminated`, and if problem persists after a number of restarts the platform will suspend the complete integration flow.
 
@@ -72,4 +72,4 @@ Processing attachments
 - [REST API component](/components/rest-api/)
 - [ZIP Component](/components/zip/)
 - [CSV Component](/components/csv/)
-- [EMail component](/components/email/)
+- [Email component](/components/email/)

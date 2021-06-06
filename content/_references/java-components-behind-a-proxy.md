@@ -1,6 +1,6 @@
 ---
 title: Java components behind a proxy
-description: Deails on how to push the code in cases you are sitting behind the proxy.
+description: Details on how to push the code in cases you are sitting behind the proxy.
 layout: article
 section: Working with Java
 order: 3

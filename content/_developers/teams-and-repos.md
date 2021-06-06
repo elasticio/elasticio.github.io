@@ -41,8 +41,7 @@ You will see a list of members **(1)**, which you can choose from. Select the re
 
 As soon as you click *Send Invites*, the selected users become team members.
 
->**Note,** only members of the same Contract can be invited into this developer team. The list shows all the possible members that can be invited to this current team.
-
+>**Please Note** that only members of the same Contract can be invited into this developer team. The list shows all the possible members that can be invited to this current team.
 
 ### Delete the developers team
 
@@ -51,7 +50,6 @@ If you need to delete a developer team:
 *   The developer team must contain no integration component.
 
 If the above conditions are true, you can proceed and delete the developer team using [an API call]({{site.data.tenant.apiBaseUri}}/v2/docs/#delete-a-team).
-
 
 ## Manage integration components
 

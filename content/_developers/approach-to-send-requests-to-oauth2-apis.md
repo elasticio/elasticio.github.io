@@ -11,7 +11,7 @@ redirect_from:
 
 ## Description
 
-Before we would delve into the process of obtaining and refreshing the actual `access_token` and `refresh_token` it is recommended to check the overall setup of authorisation procedure in the integration component:
+Before we would delve into the process of obtaining and refreshing the actual `access_token` and `refresh_token` it is recommended to check the overall setup of authorization procedure in the integration component:
 
   1. [Here is how the OAuth2 authorization process works](/references/how-the-oauth2-process-works) at {{site.data.tenant.name}}.
   2. Prepare and check your `component.json`. Here are the [instructions and suggestions](/references/oauth2-setup-preparation-in-component-json).
@@ -24,15 +24,15 @@ Before we would delve into the process of obtaining and refreshing the actual `a
 
   The process of refreshing the `access_token` is initiated when the API responds with an access error **401 UNAUTHORIZED**. The methods of encountering and coding might vary from component to component due to different requirements from different API providers, however, the logic is the same, Service responds with the message: **Give me the** `refresh_token` **and I will give you the new** `access_token` **to continue accessing the protected data**.
 
-  >**Note:**
-  It is the job of the component creator to make sure that there is a routine in place to refresh the `access_token` according to the requirements of external API provider to which the component connects.
+  >**Please Note:** It is the job of the component creator to make sure that there is a routine in place to refresh the `access_token` according to the requirements of external API provider to which the component connects.
 
 ## Method of refreshing token during each access
 
   This method is perhaps too overzealous but works quite well while in ensuring to have an up-to-date. This method is not waiting for the above mentioned 401 error from the server but simply requests the `refresh_token` along with the `access_token` every time. Some API providers might discourage this but there is nothing technically wrong to do this. Here is an example of implementation:
 
 ```js
-return co(function* mainLoop() {
+{
+return co(function* mainLoop()
         console.log('Refreshing an OAuth Token');
         const newToken = yield rp({
             method: 'POST',
@@ -58,8 +58,6 @@ return co(function* mainLoop() {
                 done(null, newToken.access_token);
             }
         });
-...     
-
 }
 ```
 
@@ -69,7 +67,7 @@ In this example, which is taken from the [Microsoft Outlook component](https://g
 
 This solution was chosen since Microsoft requires the `refresh_token` to be updated regularly as well. This is rather an exception than a rule. Normally API providers do not require the `refresh_token` to be updated regularly or they are just updated and sent along with the `access_token` from time to time.
 
-It is important to get familiarised in advance with the requirements of the API provider in order to know when and how to initiate the refresh token procedure.
+It is important to get familiarized in advance with the requirements of the API provider in order to know when and how to initiate the refresh token procedure.
 
 ## Refreshing the tokens when it is required
 

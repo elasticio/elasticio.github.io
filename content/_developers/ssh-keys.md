@@ -8,7 +8,7 @@ redirect_from:
   - /guides/ssh-keys.html
 ---
 
-{{site.data.tenant.name}} platform **requires from every developer a unique SSH key to authorise any code deployment into the system**. This is a standardised, industry accepted security feature which is widely used in similar services like GitHub.
+{{site.data.tenant.name}} platform **requires from every developer a unique SSH key to authorize any code deployment into the system**. This is a standardized, industry accepted security feature which is widely used in similar services like GitHub.
 
 ## Creating your SSH keys
 

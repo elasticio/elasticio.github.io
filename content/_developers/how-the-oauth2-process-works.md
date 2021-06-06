@@ -9,7 +9,7 @@ redirect_from:
   - /references/how-the-oauth2-process-works.html
 ---
 
-To learn about the details of OAuth2 authorization and the mechanism behind we refer to [The OAuth Bible](http://oauthbible.com/) which we highly recommend. The exaplanation below is based on that extensive document customised to the case of this iPaaS.
+To learn about the details of OAuth2 authorization and the mechanism behind we refer to [The OAuth Bible](http://oauthbible.com/) which we highly recommend. The exaplanation below is based on that extensive document customized to the case of this iPaaS.
 
 >**Please note:** Every OAuth2 API provider has its own specific requirements. Make sure to check the documentation of the service before assuming anything and building the OAuth2 routines in your private component.
 
@@ -48,7 +48,7 @@ At this stage the **User** is being redirected to the **Service** by **Applicati
 
   * scopes - Optional, this is usually to indicate what is the given scope of access.
 
-Some OAuth API providers support more parameters which can be sent with this redirect. What additional parameters and how they are sent could be different from OAuth API provider to provider. This is the reason we recommend to consult the documentation for each API provider to customise this procedure accordingly.
+Some OAuth API providers support more parameters which can be sent with this redirect. What additional parameters and how they are sent could be different from OAuth API provider to provider. This is the reason we recommend to consult the documentation for each API provider to customize this procedure accordingly.
 
 ## User authenticates
 
@@ -62,7 +62,7 @@ This would send the special request to Google with all the necessary information
 
 ![OAuth ask for permission](/assets/img/references/tokens-in-oauth2-components/oauth-ask-for-permission.png)
 
-In some other cases the **User** might need to log-in to the system and authorise:
+In some other cases the **User** might need to log-in to the system and authorize:
 
 ![OAuth login to Salesforce](/assets/img/references/tokens-in-oauth2-components/oauth-login-to-salesforce.png)
 
@@ -70,7 +70,7 @@ Some **Service** providers might require a slightly different sequence of events
 
 In the end, the **Service** is redirecting our **User** back to the **Application** using the specific OAuth Callback URL with a specific `code`. This `code` will be used by the **Application** for further negotiation.
 
->**Please note** that if everything is done properly this would be the last instance where the **User** would need to manually interfere to authorise the **Application** to act on behalf of him/her to access the protected data at **Service** provider.
+>**Please note** that if everything is done properly this would be the last instance where the **User** would need to manually interfere to authorize the **Application** to act on behalf of him/her to access the protected data at **Service** provider.
 
 ## Application asks for an access
 

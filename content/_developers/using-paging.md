@@ -15,7 +15,7 @@ Paging is like requesting the data in batches from rest API resources. It is rem
 
 Paging in rest API requests is regarded a good practice for accessing a large amount of data via API calls in order not to overtax the system with long processes of single read instance.
 
-Many API providers have standardised approach and include quite an extensive support for pagination, however, there are still sizable amount who do not have that support. These two cases will be presented separately:
+Many API providers have standardized approach and include quite an extensive support for pagination, however, there are still sizable amount who do not have that support. These two cases will be presented separately:
 
   * [How to proceed when API provider has in-built pagination system?](/guides/how-to-implement-the-pagination)
 

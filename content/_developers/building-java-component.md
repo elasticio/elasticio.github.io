@@ -63,7 +63,7 @@ If you have a logo for the component, you can place the file called `logo.png` (
 Typically the logo of the API vendor gets used as component logo. If you did not provide any logo, the component will
 show a generic logo for your component.
 
-The directoty `src/main/java` (8) is predefined directory Gradle expects your Java sources to be located in and the
+The directory `src/main/java` (8) is predefined directory Gradle expects your Java sources to be located in and the
 `schemas` (7) directory is the location of JSON schemas defining the component's metatada which we will cover later in
 this article.
 

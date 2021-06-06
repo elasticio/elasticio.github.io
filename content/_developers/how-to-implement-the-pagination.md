@@ -11,7 +11,7 @@ redirect_from:
 
 ## Description
 
-Before we can proceed any further one should clearly examine the API provider's documentation to get familiarised with the accepted method of pagination usage.
+Before we can proceed any further one should clearly examine the API provider's documentation to get familiarized with the accepted method of pagination usage.
 
 In order to avoid producing too many data, a component developer should use paging which is done in a combination with the [snapshot](/getting-started/snapshot-overview) feature.
 

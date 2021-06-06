@@ -2,9 +2,10 @@
 title: Software Development Kit - SDK
 description: SDK provides developers with APIs and tools necessary to build, test, and debug integration component for the integration platform.
 layout: article
-section: Sailor
+section: How-Tos and Tutorials
 order: 0
-category: sailor
+redirect_from:
+  - /guides/sdk.html
 ---
 
 The {{site.data.tenant.name}} Software Development Kit or **SDK** provides

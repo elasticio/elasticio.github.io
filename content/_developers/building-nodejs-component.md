@@ -170,7 +170,7 @@ module.exports = function verifyCredentials(credentials, cb) {
 }
 ```
 
-The use of any specific verification method is dependant on the project and the third party API that gets communicated the credentials with. We will not dive into details of every possible solution for your chosen third party API here.
+The use of any specific verification method is dependent on the project and the third party API that gets communicated the credentials with. We will not dive into details of every possible solution for your chosen third party API here.
 
 ## Related links
 

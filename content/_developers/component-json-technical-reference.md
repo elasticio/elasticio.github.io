@@ -79,7 +79,7 @@ This identifies the information that the platform needs to collect from the inte
 * Username or other account identifier
 * Password or other API keys/tokens required to authenticate
 
-> **Note:** [See what happens when the credentials object is omitted](component-json-technical-reference-credentials.html#omitting-credentials)
+> **Please Note:** [See what happens when the credentials object is omitted](component-json-technical-reference-credentials.html#omitting-credentials)
 
 [See the dedicated article on the credentials object for more information.](component-json-technical-reference-credentials.html)
 
@@ -95,7 +95,7 @@ If the component has no actions, then the component.json file should not have an
 
 [See the dedicated article on the action/trigger object for more information.](component-json-technical-reference-actions-triggers.html)
 
-> **Note** All components must implement at least one action or at least one trigger.
+> **Please Note** All components must implement at least one action or at least one trigger.
 
 ## Deprecated
 

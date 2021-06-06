@@ -11,7 +11,7 @@ redirect_from:
 This document describes [attachments](#binary-data). It also explains
 [how attachments work](#how-attachments-work) and [how to create them](#how-to-create-attachments).
 
-> **NOTE** {{site.data.tenant.name}} attachment limit is 100MB. If you send bigger
+> **Please Note** that {{site.data.tenant.name}} attachment limit is 100MB. If you send bigger
 > attachment or your flow generates bigger attachments you will get an error.
 
 ## Binary Data
