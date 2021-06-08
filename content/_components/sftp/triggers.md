@@ -56,8 +56,11 @@ The following configuration fields are available:
 
 ### Expected output metadata
 
-<details>
-<summary>Output metadata</summary>
+<details close markdown="block">
+<summary>
+Output metadata
+</summary>
+{: .text-delta }
 
 ```json
 {

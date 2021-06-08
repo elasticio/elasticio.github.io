@@ -45,7 +45,7 @@ The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ '
 |`REGION`  | false | For integration-tests is required to specify this variable |  |
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Technical Notes
 
@@ -85,8 +85,11 @@ Triggers to get all new and updated s3 objects since last polling.
  - **End Time**: End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`
  - **Enable File Attachments**: If selected, the contents of the file will be exported in addition to the file metadata.
 
-<details>
-<summary>Output metadata</summary>
+<details close markdown="block">
+<summary>
+Output metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -166,8 +169,11 @@ File type resolves by it's extension. The name of attachment would be same to fi
  - **bucketName** - name of S3 bucket to read file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
 
-<details>
-<summary>Input metadata</summary>
+<details close markdown="block">
+<summary>
+Input metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -188,8 +194,11 @@ File type resolves by it's extension. The name of attachment would be same to fi
 
 #### Expected output metadata
 
-<details>
-<summary>Output metadata</summary>
+<details close markdown="block">
+<summary>
+Output metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -222,8 +231,11 @@ The filenames emits individually.
 
  - **bucketName** - name of S3 bucket to write file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
-<details>
-<summary>Input metadata</summary>
+<details close markdown="block">
+<summary>
+Input metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -240,8 +252,11 @@ The filenames emits individually.
 
 #### Expected output metadata
 
-<details>
-<summary>Output metadata</summary>
+<details close markdown="block">
+<summary>
+Output metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -289,8 +304,11 @@ This action removes file from S3 by provided name in selected bucket. The action
  - **filename** - name of file at S3 bucket to delete;
  - **bucketName** - name of S3 bucket and folder to delete file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
-<details>
-<summary>Input metadata</summary>
+<details close markdown="block">
+<summary>
+Input metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -311,8 +329,11 @@ This action removes file from S3 by provided name in selected bucket. The action
 
 #### Expected output metadata
 
-<details>
-<summary>Output metadata</summary>
+<details close markdown="block">
+<summary>
+Output metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -344,8 +365,11 @@ The action will emit properties of renamed file.
  - **oldFileName** - name of file that should be renamed
  - **newFileName** - new name of file
 
-<details>
-<summary>Input metadata</summary>
+<details close markdown="block">
+<summary>
+Input metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -375,8 +399,11 @@ The action will emit properties of renamed file.
 
 #### Expected output metadata
 
-<details>
-<summary>Output metadata</summary>
+<details close markdown="block">
+<summary>
+Output metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -434,8 +461,11 @@ Be careful: this action can process only one attachment - if it would be more or
  - **filename** - name of resulted file at S3 bucket (optional);
  - **bucketName** - name of S3 bucket to write file in (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
-<details>
-<summary>Input metadata</summary>
+<details close markdown="block">
+<summary>
+Input metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
@@ -456,8 +486,11 @@ Be careful: this action can process only one attachment - if it would be more or
 
 #### Expected output metadata
 
-<details>
-<summary>Output metadata</summary>
+<details close markdown="block">
+<summary>
+Output metadata
+</summary>
+{: .text-delta }
 
 ```json
 {
