@@ -26,6 +26,8 @@ collections:
     output: true
   admin:
     output: true
+  developers:
+    output: true
 
 plugins:
   - jekyll-redirect-from
