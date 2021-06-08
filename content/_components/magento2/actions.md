@@ -5,8 +5,8 @@ description: Magento2 component actions page
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2021-05-19
-ComponentVersion: 1.6.3
+updatedDate: 2021-06-03
+ComponentVersion: 1.6.4
 ---
 
 ## Custom Request Action
@@ -330,11 +330,12 @@ Determines the number of search terms that the entity must match. Need to be an 
 
 ### Expected input metadata
 
-<details>
-<summary>Input json Schema</summary>
-
+<details closed markdown="block">
+<summary>
+Input json Schema
+</summary>
+{: .text-delta }
 ```json
-
   {
     "type": "object",
     "properties": {
@@ -370,7 +371,6 @@ Determines the number of search terms that the entity must match. Need to be an 
   }
 
   ```
-
 </details>
 
 ### Expected output metadata
@@ -491,9 +491,11 @@ You can read all the configured stores on a Magento instance (like [GET /V1/stor
 Output metadata contains object with property `storeConfigs`, which contains array of store configs.
 For example:
 
-<details>
-
-<summary>Output metadata</summary>
+<details closed markdown="block">
+<summary>
+Output metadata
+</summary>
+{: .text-delta }
 
 ```
 {
