@@ -1,6 +1,6 @@
 ---
-title: How to define environment variables for components
-description: This article explane why and how to define environment variables for components on examples.
+title: Defining environment variables for components
+description: This article explain why and how to define environment variables for components on examples.
 layout: article
 section: Developer Reference
 order: 1
@@ -11,7 +11,7 @@ redirect_from:
 
 ## Description
 
-Environment variables are an essential part of the {{site.data.tenant.name}} platform environment. Apart from the ever growing [list of system-wide variables](/references/envirament-variables-available-during-component-execution), it is possible and rather encouraged, to define custom environment variables.
+Environment variables are an essential part of the {{site.data.tenant.name}} platform environment. Apart from the ever growing [list of system-wide variables](env-vars-execution), it is possible and rather encouraged, to define custom environment variables.
 
 ## Why use environment variables?
 
@@ -90,7 +90,7 @@ Some Node.js libraries have their own different way to use proxy setups. For exa
 
 ## Related links
 
-- [Environment variables available during component execution](/references/envirament-variables-available-during-component-execution)
+- [Environment variables available during component execution](env-vars-execution)
 - [Creating OAuth App for Salesforce](/components/salesforce/creating-oauth-app-for-salesforce)
 - [Salesforce-component GitHub repository](https://github.com/elasticio/salesforce-component)
 - [Microsoft SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript)

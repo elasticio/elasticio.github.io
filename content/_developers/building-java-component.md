@@ -180,7 +180,7 @@ Now let's have a look at how to implement a trigger defined in the `component.js
 listing demonstrates the `GetPetsByStatus` class which is responsible to retrieve pets from the Petstore API by a status.
 If new pets can be found, the trigger will start the flow to process the new pets.
 
-````java
+```java
 public class GetPetsByStatus implements Module {                            (1)
 
     @Override
@@ -207,7 +207,7 @@ public class GetPetsByStatus implements Module {                            (1)
         parameters.getEventEmitter().emitData(data);                        (9)
     }
 }
-````
+```
 
 The `GetPetsByStatus` class is an implementation of the `Module` interface (1). This interface specifies the `execute`
 method (2) to implement the trigger's logic. This method takes an instance of `ExecutionParameters` which provides a
