@@ -6,7 +6,7 @@ section: Local Agents
 order: 2
 category: local agents
 redirect_from:
-  - /getting-started/credential.html
+  - /getting-started/local-agent.html
 ---
 
 > This document is about the deprecated (from [20.31 release](/releases/2020-07-30)) local agents.

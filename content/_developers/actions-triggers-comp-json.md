@@ -52,7 +52,7 @@ The title and description of the action/trigger to be displayed in the UI
 
 Used to signal that this action/trigger should not be used in new flows and that existing flows should migrate to a different action/trigger.
 
-![Example of Action/Trigger Deprecation in the UI](/assets/img/references/component.json/deprecated-action.png)
+![Example of Action/Trigger Deprecation in the UI](/assets/img/references/component.json/deprecated-component.png)
 
 **Type:** boolean
 
