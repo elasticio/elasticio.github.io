@@ -87,9 +87,8 @@ Triggers to get all new and updated s3 objects since last polling.
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -127,6 +126,7 @@ Output metadata
   }
 }
 ```
+
 </details>
 
 ## Actions
@@ -171,9 +171,8 @@ File type resolves by it's extension. The name of attachment would be same to fi
 
 <details close markdown="block">
 <summary>
-Input metadata
+Click to expand - Input metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -190,15 +189,15 @@ Input metadata
   }
 }
 ```
+
 </details>
 
 #### Expected output metadata
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -211,6 +210,7 @@ Output metadata
   }
 }
 ```
+
 </details>
 
 ### Get filenames
@@ -233,9 +233,8 @@ The filenames emits individually.
 
 <details close markdown="block">
 <summary>
-Input metadata
+Click to expand - Input metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -248,15 +247,15 @@ Input metadata
   }
 }
 ```
+
 </details>
 
 #### Expected output metadata
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -281,6 +280,7 @@ Output metadata
   }
 }
 ```
+
 </details>
 
 #### Known limitations
@@ -306,9 +306,8 @@ This action removes file from S3 by provided name in selected bucket. The action
 
 <details close markdown="block">
 <summary>
-Input metadata
+Click to expand - Input metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -325,15 +324,15 @@ Input metadata
   }
 }
 ```
+
 </details>
 
 #### Expected output metadata
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -346,8 +345,8 @@ Output metadata
   }
 }
 ```
-</details>
 
+</details>
 
 ### Rename file
 
@@ -367,9 +366,8 @@ The action will emit properties of renamed file.
 
 <details close markdown="block">
 <summary>
-Input metadata
+Click to expand - Input metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -395,15 +393,15 @@ Input metadata
   }
 }
 ```
+
 </details>
 
 #### Expected output metadata
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -442,6 +440,7 @@ Output metadata
   }
 }
 ```
+
 </details>
 
 ### Write file(deprecated)
@@ -463,9 +462,8 @@ Be careful: this action can process only one attachment - if it would be more or
 
 <details close markdown="block">
 <summary>
-Input metadata
+Click to expand - Input metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -482,15 +480,15 @@ Input metadata
   }
 }
 ```
+
 </details>
 
 #### Expected output metadata
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {

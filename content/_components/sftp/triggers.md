@@ -58,9 +58,8 @@ The following configuration fields are available:
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -104,6 +103,7 @@ Output metadata
   }
 }
 ```
+
 </details>
 
 >**Note:** `type` field represents type of the file. You can find additional information about Unix file types [below](#ssh2-sftp-client-api-and-documentation-links).
