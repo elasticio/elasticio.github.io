@@ -49,13 +49,11 @@ The following configuration fields are available:
 - **Encoding**: The encoding (if any) that should be applied to the written file.
 - **File Mode**: The read/write/execute permissions for the file.
 
-
-
 <details close markdown="block">
 <summary>
-Input metadata
+Click to expand - Input metadata
 </summary>
-{: .text-delta }
+
 ```json
 {
   "type": "object",
@@ -84,15 +82,16 @@ Input metadata
   }
 }
 ```
+
 </details>
 
 ### Expected output metadata
 
 <details close markdown="block">
 <summary>
-Input metadata
+Click to expand - Input metadata
 </summary>
-{: .text-delta }
+
 ```json
 {
   "type": "object",
@@ -143,6 +142,7 @@ Input metadata
   }
 }
 ```
+
 </details>
 
 ## Delete file
@@ -244,9 +244,8 @@ Default `No`. In case `No` is selected - an error will be thrown when object id 
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -407,9 +406,8 @@ Schema of output metadata depends on Behaviour configuration:
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {
@@ -477,9 +475,8 @@ Output metadata
 
 <details close markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```json
 {

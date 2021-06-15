@@ -332,9 +332,9 @@ Determines the number of search terms that the entity must match. Need to be an 
 
 <details closed markdown="block">
 <summary>
-Input json Schema
+Click to expand - Input json Schema
 </summary>
-{: .text-delta }
+
 ```json
   {
     "type": "object",
@@ -369,8 +369,8 @@ Input json Schema
       }
     }
   }
-
   ```
+
 </details>
 
 ### Expected output metadata
@@ -493,9 +493,8 @@ For example:
 
 <details closed markdown="block">
 <summary>
-Output metadata
+Click to expand - Output metadata
 </summary>
-{: .text-delta }
 
 ```
 {
@@ -538,7 +537,8 @@ Output metadata
     }
   ]
 }
-```  
+```
+
 </details>
 
 ## Create order
