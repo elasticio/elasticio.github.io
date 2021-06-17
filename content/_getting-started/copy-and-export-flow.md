@@ -14,7 +14,7 @@ We are introducing a new functionalities:
  * Copy Flow inside your workspace - [Copy Flow](#copy-flows).
  * Export Flow from one workspace to the another - [Export Flow](#export-flows).
 
-> **Please Note:** You must have at least Integrator level access in both workspaces for this to work.
+>**Please Note:** You must have at least Integrator level access in both workspaces for this to work.
 
 ## Copy Flow
 
