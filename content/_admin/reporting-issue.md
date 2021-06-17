@@ -21,11 +21,11 @@ we also value your contribution and feedback.
 Before you submit your report or question please check the following documentation
 pages for explanations and suggestions on how to overcome problems.
 
-*   [Platform Behaviour](/guides/platform-behavior/) - a general guideline on imposed limits and safeguards.
-*   [Managing Flow Errors](/guides/managing-flow-errors/) - how to understand errors on your flows.
-*   [Understanding Sample errors](/guides/understanding-sample-errors/) - troubleshooting data sample errors.
-*   [Error Retry and Retention Policy](/guides/error-retry/) - how to retry the flow errors.
-*   [Custom Error Handler](/guides/custom-error-handler/) - how to set custom error handling.
+*   [Platform Behavior](/guides/platform-behavior) - a general guideline on imposed limits and safeguards.
+*   [Managing Flow Errors](/guides/managing-flow-errors) - how to understand errors on your flows.
+*   [Understanding Sample errors](/guides/understanding-sample-errors) - troubleshooting data sample errors.
+*   [Error Retry and Retention Policy](/guides/error-retry) - how to retry the flow errors.
+*   [Custom Error Handler](/guides/custom-error-handler) - how to set custom error handling.
 
 ## How to contact us
 
