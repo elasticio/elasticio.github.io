@@ -5,7 +5,6 @@ section: Utility components
 description: A component to manage records from a system which does not provide timebased change tracking or webhooks.
 icon: delta-detection.png
 icontext: Delta Detection Component
-category: utility
 updatedDate: 2021-05-11
 ComponentVersion: 2.0.0
 ---
