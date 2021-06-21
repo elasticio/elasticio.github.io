@@ -5,13 +5,17 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2021-03-04
-ComponentVersion: 2.0.8
+updatedDate: 2021-03-25
+ComponentVersion: 2.0.9
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.9 (June 25, 2021)
+
+Fix OAuth2 authentication strategy limitation: `refresh_token` property is now optional for Access Token Response (also optional in OAuth2 standard)
 
 ### 2.0.8 (March 3, 2021)
 

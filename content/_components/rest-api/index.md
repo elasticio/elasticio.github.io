@@ -6,8 +6,8 @@ description: A component allows you to connect to any REST API without programmi
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2021-03-04
-ComponentVersion: 2.0.8
+updatedDate: 2021-03-25
+ComponentVersion: 2.0.9
 ---
 
 ## Introduction
@@ -89,6 +89,6 @@ They are:
 
   2. Attachments mechanism does not work with [Local Agent Installation](/references/local-agents-requesting#compatible-operating-systems)
 
-**3.** OAuth2 authentication strategy limitation: [Access Token Response](https://www.oauth.com/oauth2-servers/access-tokens/access-token-response/) should   always contain `refresh_token` property (optional in OAuth2 standard). Reason behind it - platform shoud be able to refresh access token after it's expiration.  Possible solution - use `access_type:offline` in additional parameter which is supported by many OAuth2 providers.
-
-**4.** We suggest not to set Delay value more than time period between two executions of the flow. Please keep in mind that delay can influence the time of next execution. For example, the flow has type `Ordinary` and scheduled for execution for every 60 sec, but the delay is set to 120 sec, so the next execution will be started only after 120 sec, instead of 60 seconds.
+**3.** We suggest not to set Delay value more then time period between two executions of the flow.
+Please keep in mind that delay can influence on time of next execution.
+For example, the flow has type `Ordinary` and scheduled to execution for every 1 minute, but the delay is set to 120 sec, so the next execution will be started only after 120 sec, instead of 1 minute.
