@@ -1,5 +1,5 @@
 ---
-title: Basic Mapping data
+title: Basic Data Mapping
 description: In this article we will explain how to map the data between integration components to keep them in sync.
 layout: article
 section: Data transfer
@@ -23,9 +23,13 @@ Let us consider a simple scenario when we have an incoming data through the *Web
 ```js
 {
   "name": "Gromit",
-  "status": "sold"
+  "status": "Sold"
 }
 ```
+
+You can add this structure manually using the appropriate function:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapping-webhook.png" title="Mapping: Configure input" %}
 
 We intend to map these values into outgoing fields in *Petstore API* component. Let us jump into the integration flow design right at the mapping stage.
 
@@ -45,7 +49,13 @@ The screenshot above shows the successful mapping result which is `Gromit`. Noti
 
 Before going further we can check the *JSONata* mode here **(1)**. Here you can look under the hood of the [JSONata](http://jsonata.org/) powered mapper and see the list **(2)** of expressions and functions that is possible to use. We have already used them in the [how to create your first integration flow](/getting-started/first-flow) tutorial.
 
-We can match the *Status* field with the incoming `status` value as well to complete the mapping and go forward.
+We can match the *Status* field with the incoming `status` value as well to complete the mapping and go forward. Using the *Status* field as an example, you can see that there are fields that accept **fixed values only**. In this case, these are: `available`, `pending`, `sold`:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapping-petstore-status.png" title="Expressions tab" %}
+
+If you enter an incorrect value, the field will be highlighted in orange:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/incorrect-value.png" title="Expressions tab" %}
 
 > **Note** During the mapping process the mapping expressions is evaluated on the samples. During the component execution {{site.data.tenant.name}} evaluates these expressions based on the incoming data which will differ from the presented sample.
 
