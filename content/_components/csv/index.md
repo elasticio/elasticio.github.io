@@ -6,8 +6,8 @@ description: A simple file format used to store tabular data, for example from a
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2021-04-23
-ComponentVersion: 2.2.0
+updatedDate: 2021-06-25
+ComponentVersion: 3.0.0
 ---
 
 ## How works
@@ -42,8 +42,8 @@ The component does not require credentials to function.
 
 ## Triggers
 
-  1. [Read CSV file from URL](/components/csv/triggers#read-csv-file-from-url)
-  This trigger will fetch the CSV file from a given URL.
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
