@@ -5,13 +5,19 @@ description: Technical Notes for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2021-04-23
-ComponentVersion: 2.2.0
+updatedDate: 2021-06-25
+ComponentVersion: 3.0.0
 redirect_from:
   - /components/csv/changelog.html
 ---
 
 ## Changelog
+
+### 3.0.0 (June 25, 2021)
+
+* Deleted old action: `Read CSV file from URL`
+* Deleted old trigger: `Read CSV attachment`
+* Add New action: `Read CSV attachment`
 
 ### 2.2.0 (April 23, 2021)
 
