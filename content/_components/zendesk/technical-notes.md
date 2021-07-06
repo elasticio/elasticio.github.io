@@ -11,16 +11,19 @@ ComponentVersion: 1.0.0
 
 ## Changelog
 
-### 1.0.0 (June 11, 2021)
+### 1.0.0 (June 6, 2021)
 
 * Initial release
 
 * Add new actions:
-
 - `Lookup Object By Id`
 - `Lookup Objects`
 - `Make Raw Request`
 - `Upsert Object By Id`
+- `Add Attachment to Ticket`
+
+* Add new triggers:
+- `Subscribe To Ticket Audits`
 
 ## Completeness Matrix
 
