@@ -4,7 +4,8 @@ title: Delta Detection Technical Notes
 description: Technical Notes for the Delta Detection component.
 icon: delta-detection.png
 icontext: Delta Detection Component
-updatedDate: 2021-05-11
+category: delta-detection
+updatedDate: 2021-06-11
 ComponentVersion: 2.0.0
 ---
 
