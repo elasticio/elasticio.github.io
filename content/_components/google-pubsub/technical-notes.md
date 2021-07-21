@@ -5,13 +5,18 @@ description: Technical Notes for the Google PubSub component.
 icon: google-pubsub.png
 icontext: Google PubSub component
 category: google-pubsub
-updatedDate: 2021-03-25
-ComponentVersion: 1.7.2
+updatedDate: 2021-07-23
+ComponentVersion: 1.7.3
 redirect_from:
   - /components/google-pubsub/changelog.html
 ---
 
 ## Changelog
+
+### 1.7.3 (July 23, 2021)
+
+* Fix bug with not-awaited emits and endless cycle problem
+* Bump dependencies
 
 ### 1.7.2 (March 25, 2021)
 

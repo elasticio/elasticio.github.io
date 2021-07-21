@@ -5,13 +5,21 @@ description: Technical Notes for the Splitter component.
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2021-02-12
-ComponentVersion: 1.1.9
+updatedDate: 2021-07-23
+ComponentVersion: 1.2.1
 redirect_from:
   - /components/splitter/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.1 (July 23, 2021)
+
+* Implemented support of maester storage in `Re-assembled message` action (maester-client library 3.3.0)
+
+### 1.2.0 (July 9, 2021)
+
+* Add Ability to pass data from the individual messages to `Re-assembled message` action
 
 ### 1.1.9 (February 12, 2021)
 
