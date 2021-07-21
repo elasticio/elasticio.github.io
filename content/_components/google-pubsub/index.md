@@ -6,8 +6,8 @@ description: A service that makes it easier to pass messages between machines an
 icon: google-pubsub.png
 icontext: Google PubSub component
 category: google-pubsub
-updatedDate: 2021-03-25
-ComponentVersion: 1.7.2
+updatedDate: 2021-07-23
+ComponentVersion: 1.7.3
 ---
 
 ## Description

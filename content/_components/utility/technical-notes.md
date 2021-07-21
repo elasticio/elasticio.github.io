@@ -5,13 +5,19 @@ description: Technical Notes for Utility Component.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2021-02-12
-ComponentVersion: 1.2.2
+updatedDate: 2021-07-23
+ComponentVersion: 1.3.0
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+### 1.3.0 (July 23, 2021)
+
+* Add New action: `Delay`
+* Update sailor version to 2.6.26
+* Update buildType to docker
 
 ### 1.2.2 (February 12, 2021)
 

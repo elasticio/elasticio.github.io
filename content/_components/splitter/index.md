@@ -6,8 +6,8 @@ description: The Splitter integration connector was designed to work together wi
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2021-02-12
-ComponentVersion: 1.1.9
+updatedDate: 2021-07-23
+ComponentVersion: 1.2.1
 ---
 
 ## Description
@@ -142,5 +142,7 @@ If at any point there is more than a 15 second gap in messages, then the group w
 `groupId` - Globally unique id for the group to distinguish it from other groups. This value needs to be the same for all messages in a group.
 
 `messageId` - Id for a message to distinguish it from other messages in the group.
+
+`messageData` - object for providing some data derived from the steps between splitting and re-assembling
 
 Must be unique per group but does not have to be globally unique. This value needs to be different for all messages in a group.
