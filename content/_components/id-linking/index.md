@@ -6,8 +6,8 @@ description: A component used to map source data to target data.
 icon: id-linking.png
 icontext: ID Linking component
 category: mapper
-updatedDate: 2021-06-25
-ComponentVersion: 1.0.0
+updatedDate: 2021-07-09
+ComponentVersion: 1.0.1
 ---
 
 ## General information
