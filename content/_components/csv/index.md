@@ -6,8 +6,8 @@ description: A simple file format used to store tabular data, for example from a
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2021-04-23
-ComponentVersion: 2.2.0
+updatedDate: 2021-07-09
+ComponentVersion: 3.0.0
 ---
 
 ## How works
@@ -42,21 +42,18 @@ The component does not require credentials to function.
 
 ## Triggers
 
-  1. [Read CSV file from URL](/components/csv/triggers#read-csv-file-from-url)
-  This trigger will fetch the CSV file from a given URL.
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
   1. [Read CSV attachment](/components/csv/actions#read-csv-attachment)
   Read a CSV attachment of an incoming message.
 
-  2. [Write CSV attachment](/components/csv/actions#write-csv-attachment)
+  2. [Create CSV From Message Stream](/components/csv/actions#create-csv-from-message-stream)
   Multiple incoming events can be combined into one CSV file with the write CSV action.
 
-  3. [Write CSV attachment from JSON Object](/components/csv/actions#write-csv-attachment-from-json-object)
-  Multiple incoming events can be combined into one CSV file with the write CSV action.
-
-  4. [Write CSV attachment from JSON Array](/components/csv/actions#write-csv-attachment-from-json-array)
+  3. [Create CSV From JSON Array](/components/csv/actions#create-csv-from-json-array)
   Incoming array can be converted into one CSV file with the write CSV action.
 
 ## Limitations
