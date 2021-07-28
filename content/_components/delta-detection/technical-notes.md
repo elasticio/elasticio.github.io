@@ -5,16 +5,20 @@ description: Technical Notes for the Delta Detection component.
 icon: delta-detection.png
 icontext: Delta Detection Component
 category: delta-detection
-updatedDate: 2021-06-11
-ComponentVersion: 2.0.0
+updatedDate: 2021-07-09
+ComponentVersion: 2.0.1
 ---
 
 ## Changelog
 
+### 2.0.1 (July 9, 2021)
+
+* Use `maester-client` version 3.3.0
+
 ### 2.0.0 (June 11, 2021)
 
 * Use `maester-client` library based on `object-storage-client` library
-* Update `sailor-nodejs` version from 2.6.10 to 2.6.24
+* Update `elasticio-sailor-nodejs` version from 2.6.10 to 2.6.24
 
 ### 1.0.0 (June 11, 2018)
 
