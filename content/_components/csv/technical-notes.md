@@ -14,6 +14,7 @@ redirect_from:
 ## Changelog
 
 ### 3.0.0 (July 9, 2021)
+
 * Deleted trigger:  
   - `Read CSV attachment`
 * Deleted actions:
