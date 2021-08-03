@@ -12,9 +12,18 @@ ComponentVersion: 3.0.0
 ## Read CSV attachment
 
 This action will read the CSV attachment of the incoming message or from the specified URL and output a JSON object.
+
+An example of an object stored in the github repository:
+
+![Addresses](img/addresses.png)
+
 To configure this action the following fields can be used:
 
 ![Read CVS attachments](img/read-CSV-attachment.png)
+
+Here you can see an example of a sample:
+
+![Read CVS attachments sample](img/read-sample.png)
 
 ### Config Fields
 
@@ -29,9 +38,17 @@ To configure this action the following fields can be used:
 
 ## Create CSV From Message Stream
 
+Here you can see an Message Stream example created using the Node.js component:
+
+![Node.js stream](img/nodejs-stream.png)
+
 This action will combine multiple incoming events into a CSV file until there is a gap
 of more than 10 seconds between events. Afterwards, the CSV file will be closed
 and attached to the outgoing message.
+
+To configure this action the following fields can be used:
+
+![Create CSV From Message Stream](img/create-csv-from-message-stream.png)
 
 ### Config Fields
 
@@ -41,7 +58,7 @@ and attached to the outgoing message.
 
 ### Input Metadata
 
-* `Include Headers` - Indicates if a header row should be included in the generated file.
+* `Include Headers` - Indicates if a header row should be included in the generated file. Must be a `boolean`.
 * `Input Object` - Object to be written as a row in the CSV file. If the Column Order is specified, then individual properties can be specified.
 
 ### Output Metadata
@@ -59,7 +76,14 @@ and attached to the outgoing message.
 
 ## Create CSV From JSON Array
 
-This action will convert an incoming array into a CSV file
+This action will convert an incoming array into a CSV file.
+Here you can see an JSON Array example created using the Webhook component:
+
+![Array Example](img/array-example.png)
+
+To configure this action the following fields can be used:
+
+![Create CSV From JSON Array](img/create-csv-from-json-array.png)
 
 ### Config Fields
 
@@ -69,7 +93,7 @@ This action will convert an incoming array into a CSV file
 
 ### Input Metadata
 
-* `Include Headers` - Indicates if a header row should be included in the generated file.
+* `Include Headers` - Indicates if a header row should be included in the generated file. Must be a `boolean`.
 * `Input Array` - Array of objects to be written as rows in the CSV file. (One row per object + headers) If the Column Order is specified, then individual properties can be specified. The component will throw an error when the array is empty.
 
 ### Output Metadata
