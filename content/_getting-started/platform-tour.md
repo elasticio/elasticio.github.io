@@ -127,60 +127,53 @@ Support presents links to support helpdesk or built-in intercom.
 
 {% include img.html max-width="50%" url="/assets/img/getting-started/tour/support.png" title="Support" %}
 
-## Profile Management
-
-This menu section includes the following items:
-- [Profile Information](#profile-information)
-- [Identity Keys](#identity-keys)
-- [Sign Out](#sign-out)
-
-### Profile Information
+## Profile Information
 
 To find your profile information click to open the profile menu **(1)** and select
 the profile name **(2)**. Here you can do the following actions:
 
-*   Edit your profile **(3)**
-*   Change your password **(4)**
-*   Enable or disable Two-factor (RFA) authentication **(5)**
-*   Copy or regenerate your personal API Key **(6)**
-*   Delete your account **(7)**
+*   [Edit your profile](#edit-your-profile) **(3)**
+*   [Change your password](#change-your-password) **(4)**
+*   [Enable or disable Two-factor (RFA) authentication](#two-factor-authentication) **(5)**
+*   [Copy or regenerate your personal API Key](#manage-your-api-key) **(6)**
+*   [Delete your account](#delete-your-account) **(7)**
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/profile.png" title="Profile Information" %}
 
-#### Edit your profile
+### Edit your profile
 
 Here you can edit the name and email address associated with your account. Just be
 careful to safe this in your records to not get locked out of the platform.
 
 {% include img.html max-width="80%" url="/assets/img/getting-started/tour/edit-profile.png" title="Edit Profile" %}
 
-#### Change your password
+### Change your password
 
 Here you can change your password which you use to login to the platform - not your API Key.
 Please follow the instructions to generate secure password.
 
 {% include img.html max-width="80%" url="/assets/img/getting-started/tour/change-password.png" title="Change your password" %}
 
-#### Two-factor authentication
+### Two-factor authentication
 
 We use Google 2FA to provide additional layer of security. Here you can enable the
 two-factor authentication. You would need Google Authenticator to read the generated
 QR-code:
 
-{% include img.html max-width="60%" url="/assets/img/getting-started/tour/2fa-1-qr-code.png" title="Generated QR code" %}
+{% include img.html max-width="80%" url="/assets/img/getting-started/tour/2fa-1-qr-code.png" title="Generated QR code" %}
 
 Open your Google Authenticator and scan this QR-code to get the code:
 
-{% include img.html max-width="60%" url="/assets/img/getting-started/tour/2fa-2-code-entered.png" title="Code entered" %}
+{% include img.html max-width="80%" url="/assets/img/getting-started/tour/2fa-2-code-entered.png" title="Code entered" %}
 
 After this the 2fA will be enabled, but before navigating away you better copy the
 recovery codes:
 
-{% include img.html max-width="60%" url="/assets/img/getting-started/tour/2fa-3-recovery-codes.png" title="Recovery Codes" %}
+{% include img.html max-width="80%" url="/assets/img/getting-started/tour/2fa-3-recovery-codes.png" title="Recovery Codes" %}
 
 When everything is successfully enabled you will get the following screen:
 
-{% include img.html max-width="60%" url="/assets/img/getting-started/tour/2fa-4-generated.png" title="2FA enabled" %}
+{% include img.html max-width="80%" url="/assets/img/getting-started/tour/2fa-4-generated.png" title="2FA enabled" %}
 
 Here you can either close this window and you will get a prompt to use youe
 Google Authenticator along with your username/password pair to enter the platform UI.
@@ -188,11 +181,11 @@ Google Authenticator along with your username/password pair to enter the platfor
 You can also disable the 2FA from here by pressing Delete button and when system
 will confirm with the following message:
 
-{% include img.html max-width="60%" url="/assets/img/getting-started/tour/2fa-5-siabled.png" title="2FA siabled" %}
+{% include img.html max-width="80%" url="/assets/img/getting-started/tour/2fa-5-disabled.png" title="2FA siabled" %}
 
 To enable the 2FA again you must repeat all previous steps.
 
-#### Manage your API Key
+### Manage your API Key
 
 Every platform user has a dedicated API Key to work with our REST API to automate
 many actions to include in your own workflows. Here you can copy your API Key which
@@ -202,7 +195,7 @@ If you suspect your API Key might be compromissed (you gave to somebody and forg
 about it) or you would like to just re-generate it you can do it here. Click on
 **Generate new API Key** button to get the following prompt:
 
-{% include img.html max-width="60%" url="/assets/img/getting-started/tour/generate-api-key.png" title="Generate API Key" %}
+{% include img.html max-width="80%" url="/assets/img/getting-started/tour/generate-api-key.png" title="Generate API Key" %}
 
 You are warned to consider this action:
 
@@ -210,18 +203,18 @@ You are warned to consider this action:
 > a new API key is generated, then API calls made with the old API key will fail.
 > Are you sure that you wish to proceed?
 
-#### Delete your account
+### Delete your account
 
 You can delete your account by pressing this button. Please note this process is
 not reversible.
 
-### Identity Keys
+## Identity Keys
 
 If you open the section **(1)** and click this item **(2)**, you will reach your SSH keys list, which you can manage from here.
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/ssh.png" title="SSH Keys" %}
 
-### Sign Out
+## Sign Out
 
 This item signs you out of the profile.
 
