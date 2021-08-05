@@ -134,7 +134,7 @@ the profile name **(2)**. Here you can do the following actions:
 
 *   [Edit your profile](#edit-your-profile) **(3)**
 *   [Change your password](#change-your-password) **(4)**
-*   [Enable or disable Two-factor (RFA) authentication](#two-factor-authentication) **(5)**
+*   [Enable or disable Two-factor (2FA) authentication](#two-factor-authentication) **(5)**
 *   [Copy or regenerate your personal API Key](#manage-your-api-key) **(6)**
 *   [Delete your account](#delete-your-account) **(7)**
 
