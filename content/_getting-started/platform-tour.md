@@ -166,8 +166,8 @@ Open your Google Authenticator and scan this QR-code to get the code:
 
 {% include img.html max-width="80%" url="/assets/img/getting-started/tour/2fa-2-code-entered.png" title="Code entered" %}
 
-After this the 2fA will be enabled, but before navigating away you better copy the
-recovery codes:
+After this the 2FA will be enabled, but before navigating away you better copy,
+download or print the recovery codes:
 
 {% include img.html max-width="80%" url="/assets/img/getting-started/tour/2fa-3-recovery-codes.png" title="Recovery Codes" %}
 
@@ -175,10 +175,10 @@ When everything is successfully enabled you will get the following screen:
 
 {% include img.html max-width="80%" url="/assets/img/getting-started/tour/2fa-4-generated.png" title="2FA enabled" %}
 
-Here you can either close this window and you will get a prompt to use youe
+Here you can either close this window and you will get a prompt to use your
 Google Authenticator along with your username/password pair to enter the platform UI.
 
-You can also disable the 2FA from here by pressing Delete button and when system
+You can also disable the 2FA from here by pressing Disable button and when system
 will confirm with the following message:
 
 {% include img.html max-width="80%" url="/assets/img/getting-started/tour/2fa-5-disabled.png" title="2FA siabled" %}

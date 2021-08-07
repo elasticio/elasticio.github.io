@@ -74,7 +74,7 @@ Click **Send Invite** to finish.
 ## Setting user roles in Contract
 
 As a contract **Owner** or **Admin** you can modify roles of any user in the
-contract by visiting **Members** section of the the **Contract Settings** and
+contract by visiting **Members** section of the **Contract Settings** and
 clicking to edit (the pencil).
 
 ![Edit member’s roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-05.png)
@@ -96,9 +96,9 @@ Couple of points to keep in mind:
 
 ## User Invitations
 
-When you invite a user to join the Contract the platform generates a unique, one-time
+When you invite a user to join a Contract the platform generates a unique, one-time
 invitation token and sends it to email address you specify. The potential user
-clicks on a the provided link including the one-time token. When the potential user
+clicks on the provided link including the one-time token. When the potential user
 clicks and joins your contract this token becomes invalid and can not be used anymore.
 
 ### Delete Invitation
