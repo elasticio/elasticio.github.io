@@ -8,6 +8,9 @@ icontext: Simple-trigger component
 category: simple-trigger
 updatedDate: 2021-02-12
 ComponentVersion: 1.1.4
+redirect_from:
+  - /components/timer/index.html
+---
 ---
 
 ## How works
