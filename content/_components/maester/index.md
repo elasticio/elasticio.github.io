@@ -5,7 +5,7 @@ section: Maester components
 description: Maester component for the platform.
 icon: maester.png
 icontext: Maester Component
-category: utility
+category: maester
 updatedDate: 2021-07-09
 ComponentVersion: 1.0.0
 ---

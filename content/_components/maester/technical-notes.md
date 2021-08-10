@@ -4,7 +4,7 @@ title: Maester Technical Notes
 description: Technical Notes for the Maester Component
 icon: maester.png
 icontext: Maester Component
-category: utility
+category: maester
 updatedDate: 2021-07-09
 ComponentVersion: 1.0.0
 ---
