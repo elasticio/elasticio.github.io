@@ -1,7 +1,7 @@
 ---
 layout: component
 title: Maester Component
-section: Maester components
+section: Utility components
 description: Maester component for the platform.
 icon: maester.png
 icontext: Maester Component
