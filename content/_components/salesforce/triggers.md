@@ -5,8 +5,8 @@ description: Salesforce component triggers.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2020-11-18
-ComponentVersion: 2.0.3
+updatedDate: 2021-08-10
+ComponentVersion: 2.1.0
 ---
 
 ## Query trigger

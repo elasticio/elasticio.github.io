@@ -5,14 +5,18 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2020-11-18
-ComponentVersion: 2.0.3
+updatedDate: 2021-08-10
+ComponentVersion: 2.1.0
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.1.0 (August 10, 2021)
+
+* New `Raw Request` Action
 
 ### 2.0.3 (November 18, 2020)
 
