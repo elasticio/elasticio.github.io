@@ -5,8 +5,8 @@ description: Salesforce component actions.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2020-11-18
-ComponentVersion: 2.0.3
+updatedDate: 2021-08-10
+ComponentVersion: 2.1.0
 ---
 
 ## Query action
@@ -233,3 +233,29 @@ Fetches records to a CSV file.
 * **SOQL Query** - Input field where you should type the SOQL query. E.g. `"SELECT ID, Name from Contact where Name like 'John Smi%'"`
 
 Result is a CSV file in the attachment.
+
+## Raw Request
+
+![Raw Request](img/raw-request.png)
+
+### Input Metadata
+
+* HTTP Verb - Allowed values GET, POST, PUT, PATCH, DELETE, HEAD, Required. HTTP verb to use in the request.
+* Path - String, Required. Path to make request to (without `/services/data/v{SALESFORCE_API_VERSION}`, e.g. to list sobjects - type here not `https://{INSTANCE_NAME}.salesforce.com/services/data/v{SALESFORCE_API_VERSION}/sobjects` but just type `sobjects` instead)
+* Request Body - Object, Optional. Body to attach to the HTTP Request
+
+### Output Metadata
+
+* Response Object (Object, optional): HTTP response body
+
+### Resources List
+
+* More information about available resources you can find [here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_list.htm)
+
+### Request Examples
+
+* Examples of using REST API resources can be found [here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_user_tasks.htm)
+
+### Known limitations
+
+For the methods PUT and HEAD you need to specify the whole path (e.g. `services/OpportunityLineItem/00kR0000001WJJAIA4/OpportunityLineItemSchedules`) which have conflicts with `/services/data/v{SALESFORCE_API_VERSION}/{RESOURCE}` path, so Raw Request does not work for these two methods (PUT and HEAD) just for now.
