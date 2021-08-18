@@ -34,7 +34,7 @@ description: List of the release notes listing the product updates.
       {% assign week = releases[0].version | split: "." %}
       <p>
         The latest release is <strong>v{{releases[0].version}}</strong> and the
-        next release would be <strong>v{{week[0]}}.{{week[1] | plus: 4}}</strong>.
+        next release would be <strong>v{{week[0]}}.{{week[1] | plus: 2}}</strong>.
       </p>
     </div>
 </div>
