@@ -41,15 +41,15 @@ layout: default
                     <div class="side__title">Jump to</div>
                     <div id="article_toc" class="side__list">
                     </div>
-                    <div class="side__title">Product Updates for</div>
+                    <div class="side__title">Product Updates</div>
                     <div class="side__list">
-                      {% for collection in site.data.chapters%}
+                      {% for collection in site.data.chapters %}
                           {% assign collectionName = collection[0] %}
-                          {% assign related = site[collectionName] | where:'category', page.category%}
+                          {% assign related = site[collectionName] | where:'category', page.category %}
                           {% if related.size > 0 %}
-                              {% for item in related %}
+                              {% for item in related reversed %}
                                   {% if item.url != page.url %}
-                                  <a class="side__item" href="{{item.url}}">{{item.title}}</a>
+                                  <a class="side__item" href="{{item.url}}">v{{item.version}}</a>
                                   {% endif %}
                               {% endfor %}
                           {% endif %}

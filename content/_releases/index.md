@@ -24,7 +24,7 @@ description: List of the release notes listing the product updates.
 <div class="wrap">
     <div class="description">
       <p>
-      {{site.data.tenant.companyName}} product updates are released every 4th week.
+      {{site.data.tenant.companyName}} product updates are released every 2nd week.
       The release numbering format is based on year and week of the release - <strong>YY.WW</strong>.
       <ul>
         <li><strong>YY</strong> are the last two digits of the year.</li>
