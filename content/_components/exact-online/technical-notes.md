@@ -5,13 +5,18 @@ description: Technical Notes for the Exact Online component.
 icon: exact-online.png
 icontext: Exact Online component
 category: exact-online
-updatedDate: 2020-09-11
-ComponentVersion: 1.1.0
+updatedDate: 2021-08-13
+ComponentVersion: 1.1.1
 redirect_from:
   - /components/exact-online/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.1 (August 13, 2021)
+
+* Updated sailor-nodejs to version 2.6.26
+* Skipped tests for old authorization (not through faceless service)
 
 ### 1.1.0 (September 11, 2020)
 

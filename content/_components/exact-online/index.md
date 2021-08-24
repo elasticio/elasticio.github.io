@@ -6,8 +6,8 @@ description: A component to work with Exact Online ERP.
 icon: exact-online.png
 icontext: Exact Online component
 category: exact-online
-updatedDate: 2020-09-11
-ComponentVersion: 1.1.0
+updatedDate: 2021-08-13
+ComponentVersion: 1.1.1
 ---
 
 ## Description

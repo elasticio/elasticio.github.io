@@ -5,14 +5,18 @@ description: Technical Notes for the Amazon MWS component
 category: amazon-mws
 icon: amazon-mws.png
 icontext: Amazon MWS component
-ComponentVersion: 2.1.2
-updatedDate: 2021-02-22
+ComponentVersion: 2.1.3
+updatedDate: 2021-08-12
 redirect_from:
   - /components/amazon-mws/completeness-matrix.html
   - /components/amazon-mws/changelog.html
 ---
 
 ## Changelog
+
+### 2.1.3 (August 12, 2021)
+
+* Fix build
 
 ### 2.1.2 (February 22, 2021)
 

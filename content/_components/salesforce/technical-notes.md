@@ -5,8 +5,8 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2021-08-10
-ComponentVersion: 2.1.0
+updatedDate: 2021-08-20
+ComponentVersion: 2.2.0
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
@@ -14,9 +14,17 @@ redirect_from:
 
 ## Changelog
 
+### 2.2.0 (August 20, 2021)
+
+* New `Upsert Object` action
+* Old `Upsert Object` action is deprecated
+* `Get New and Updated Objects Polling` trigger updated:
+ - Default size of pages to be fetched changed from `1000` to `10000`
+ - Restriction `maxFetch should be maximum 10000 objects` is removed
+
 ### 2.1.0 (August 10, 2021)
 
-* New `Raw Request` Action
+* New `Raw Request` action
 
 ### 2.0.3 (November 18, 2020)
 
