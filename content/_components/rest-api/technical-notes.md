@@ -5,13 +5,17 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2021-03-25
-ComponentVersion: 2.0.9
+updatedDate: 2021-08-20
+ComponentVersion: 2.0.10
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.10 (August 20, 2021)
+
+* Fix bug with response charset `utf-16le`
 
 ### 2.0.9 (June 25, 2021)
 

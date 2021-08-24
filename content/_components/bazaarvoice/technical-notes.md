@@ -5,11 +5,16 @@ description: Technical Notes for the Bazaarvoice component.
 icon: bazaarvoice.png
 icontext: Bazaarvoice component
 category: bazaarvoice
-updatedDate: 2020-12-10
-ComponentVersion: 0.0.2
+updatedDate: 2021-08-12
+ComponentVersion: 0.0.3
 ---
 
 ## Changelog
+
+### 0.0.3 (August 12, 2021)
+
+* Update Sailor version to 2.6.26
+* Remove integration tests from build
 
 ### 0.0.2 (December 10, 2020)
 

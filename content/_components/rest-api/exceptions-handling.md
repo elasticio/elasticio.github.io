@@ -5,8 +5,8 @@ description: Information on exceptions and how to handle them.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2021-03-25
-ComponentVersion: 2.0.9
+updatedDate: 2021-08-20
+ComponentVersion: 2.0.10
 ---
 
 ## Exception handling

@@ -5,8 +5,8 @@ description: NetSuite component triggers.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2021-02-26
-ComponentVersion: 2.3.0
+updatedDate: 2021-08-12
+ComponentVersion: 2.3.1
 ---
 
 ## Get New and Updated Objects Polling
