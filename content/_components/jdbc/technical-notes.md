@@ -5,14 +5,18 @@ description: Technical Notes for JDBC component
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2021-08-12
-ComponentVersion: 2.4.4
+updatedDate: 2021-09-01
+ComponentVersion: 2.4.5
 redirect_from:
   - /components/jdbc/completeness-matrix.html
   - /components/jdbc/changelog.html
 ---
 
 ## Changelog
+
+### 2.4.5 (September 1, 2021)
+
+Open only one connection pool per one execution and reuse it
 
 ### 2.4.4 (August 12, 2021)
 

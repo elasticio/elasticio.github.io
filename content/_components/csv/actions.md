@@ -64,15 +64,15 @@ To configure this action the following fields can be used:
 ### Output Metadata
 
 * If **Upload CSV as file to attachments** is checked:
-  * `csvString` - The output CSV as a string inline in the body
-
-* If **Upload CSV as file to attachments** is not checked:
   * `attachmentUrl` - A URL to the CSV output
   * `type` - Always set to `.csv`
   * `size` - Size in bytes of the resulting CSV file
   * `attachmentCreationTime` - When the attachment was generated
   * `attachmentExpiryTime` - When the attachment is set to expire
   * `contentType` - Always set to `text/csv`
+
+* If **Upload CSV as file to attachments** is not checked:
+  * `csvString` - The output CSV as a string inline in the body
 
 ## Create CSV From JSON Array
 
@@ -98,16 +98,22 @@ To configure this action the following fields can be used:
 
 ### Output Metadata
 
-* If **Upload CSV as file to attachments** is checked:
-  * `csvString` - The output CSV as a string inline in the body
+If **Upload CSV as file to attachments** is checked:
 
-* If **Upload CSV as file to attachments** is not checked:
+![Checked](img/checked.png)
+
   * `attachmentUrl` - A URL to the CSV output
   * `type` - Always set to `.csv`
   * `size` - Size in bytes of the resulting CSV file
   * `attachmentCreationTime` - When the attachment was generated
   * `attachmentExpiryTime` - When the attachment is set to expire
   * `contentType` - Always set to `text/csv`
+
+If **Upload CSV as file to attachments** is not checked:
+
+![Not Checked](img/not-checked.png)
+
+  * `csvString` - The output CSV as a string inline in the body
 
 ## Limitations
 
