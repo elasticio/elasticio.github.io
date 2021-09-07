@@ -5,8 +5,8 @@ description: JDBC Component actions page
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2021-08-12
-ComponentVersion: 2.4.4
+updatedDate: 2021-09-01
+ComponentVersion: 2.4.5
 ---
 
 ## Execute custom query action
