@@ -1,5 +1,5 @@
 ---
-title: Shopify Admin component
+title: Shopify component
 layout: component
 section: E-Commerce components
 description: A component to work with the Shopify Admin API.
@@ -8,6 +8,8 @@ icontext: Shopify Admin component
 category: shopify-component
 updatedDate: 2020-11-20
 ComponentVersion: 1.4.1
+redirect_from:
+  - /components/shopify-admin/index.html
 ---
 
 ## How works. API version

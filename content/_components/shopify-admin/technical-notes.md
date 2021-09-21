@@ -1,5 +1,5 @@
 ---
-title: Shopify Admin Changelog
+title: Shopify Technical Notes
 layout: component
 description: Changelog for Shopify Admin component.
 icon: shopify-admin.png
@@ -10,6 +10,7 @@ ComponentVersion: 1.4.1
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
+  - /components/shopify-admin/technical-notes.html
 ---
 
 ## Changelog
