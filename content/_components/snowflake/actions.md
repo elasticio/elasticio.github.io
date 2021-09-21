@@ -39,6 +39,8 @@ INSERT INTO stars values (1,'Taurus', '2015-02-19 10:10:10.0', 123, 5, 'true', '
 
 This action will execute insert query into the specified table.
 
+![Insert](img/insert.png)
+
 ### Config Fields
 
 * **Table** - Dropdown (required) to specify table where row will be inserted
@@ -53,6 +55,8 @@ Dynamically generated list of properties according to selected `Table`
 
 This action will lookup row by it's primary key
 
+![Lookup row by primary key](img/lookup-row-by-primary-key.png)
+
 ### Config Fields
 
 * **Table** - Dropdown (required) to specify table where row will be searched
@@ -64,6 +68,8 @@ Dynamically generated `Primary key` according to selected `Table`
 ## Delete row by primary key actions
 
 This action will delete row by it's primary key
+
+![Delete row by primary key](img/delete-row-by-primary-key.png)
 
 ### Config Fields
 
