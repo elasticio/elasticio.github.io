@@ -1,5 +1,5 @@
 ---
-title: Shopify Admin triggers.
+title: Shopify triggers
 layout: component
 description: Shopify Admin component triggers.
 icon: shopify-admin.png
@@ -7,6 +7,8 @@ icontext: Shopify Admin component
 category: shopify-component
 updatedDate: 2020-11-20
 ComponentVersion: 1.4.1
+redirect_from:
+  - /components/shopify-admin/triggers.html
 ---
 
 ## Polling Trigger
