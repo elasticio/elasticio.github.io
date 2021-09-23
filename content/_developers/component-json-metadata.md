@@ -13,6 +13,8 @@ redirect_from:
 
 You can use [JSONSchema references](https://json-schema.org) in Component metadata files (i.e. files with `.in.json` and `.out.json` extensions). Basically, it allows you to avoid repetitive coding by referencing certain keys called definitions. Let's take an Order component metadata file (we'll call it `order.in.json`) as an example. Here you can see that this component has two address fields `billing_address` and `shipping_address`, each with some subfields:
 
+>You can use [Try Metadata Tool](/developers/try-metadata.html) to render the metadata structures to see how they would look on the platform UI.
+
 `order.in.json`:
 
 ```json

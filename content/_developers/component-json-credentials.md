@@ -51,9 +51,9 @@ The `credentials` should be an object with the following properties:
 
 ```json
 {
-    "title": ...,
-    "description": ...,
-    "buildType": ...,
+    "title": "Your Title",
+    "description": "Your Description",
+    "buildType": "Your BuildType",
     "credentials": {
         "fields": {
             "minorVersion": {
@@ -103,10 +103,10 @@ The `credentials` should be an object with the following properties:
         }
     },
     "triggers": {
-      ...
+      "first_trigger": "First Trigger"
     },
     "actions": {
-      ...
+      "first_action": "First Action"
     }
 }
 ```
