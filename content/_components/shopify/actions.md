@@ -1,12 +1,12 @@
 ---
 title: Shopify actions.
 layout: component
-description: Shopify Admin component actions.
+description: Shopify component actions.
 icon: shopify-admin.png
-icontext: Shopify Admin component
+icontext: Shopify component
 category: shopify-component
 updatedDate: 2020-11-20
-ComponentVersion: 1.4.1
+ComponentVersion: 1.4.2
 redirect_from:
   - /components/shopify-admin/actions.html
 ---
@@ -17,15 +17,12 @@ Finds object by id.
 
 ![Lookup Object](img/lookup-object.png)
 
-### List of Expected Config fields
+### List of Expected Configuration fields
 
-  * **Object Type -** Type of object for polling.
-
-  * **Allow Empty Result -** Default `No`. In case `No` is selected - an error will be thrown when no objects were found, If `Yes` is selected - an empty object will be returned instead of throwing an error.
-
-  * **Allow ID to be Omitted -** Default `No`. In case `No` is selected - an error will be thrown when object id is missing in metadata, if `Yes` is selected - an empty object will be returned instead of throwing an error.
-
-  * **Expected input metadata -** Input metadata contains `id` or several `ids` fields (some object types have complex id):
+*   **Object Type** - Object type for polling.
+*   **Allow Empty Result** - Default `No`. In case `No` is selected - an error will be thrown when no objects were found, If `Yes` is selected - an empty object will be returned instead of throwing an error.
+*   **Allow ID to be Omitted** - Default `No`. In case `No` is selected - an error will be thrown when object id is missing in metadata, if `Yes` is selected - an empty object will be returned instead of throwing an error.
+*   **Expected input metadata** - Input metadata contains `id` or several `ids` fields (some object types have complex id):
 
   1. Object type `Shop` - does not have `id` empty input expected in message.
 
@@ -40,14 +37,10 @@ Finds object by id.
 
 ### List of Expected Config fields
 
-  * **Object Type -** Type of object for polling.
-
-  * **Behavior -** `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message.
-
-  * **Max Size -** Maximum number of objects to fetch. Default `250`, maximum value is `250`.
-
-  * **Fetch Metafields for Objects -** If selected, in addition to returning the built-in fields associated with the objects,
-return the metafields.
+*   **Object Type** - Object type for polling.
+*   **Behavior** - `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message.
+*   **Max Size** - Maximum number of objects to fetch. Default `250`, maximum value is `250`.
+*   **Fetch Metafields for Objects** - If selected, in addition to returning the built-in fields associated with the objects, return the metafields.
 
 ### Expected Input metadata
 

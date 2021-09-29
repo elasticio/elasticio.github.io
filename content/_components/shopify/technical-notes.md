@@ -1,12 +1,12 @@
 ---
 title: Shopify Technical Notes
 layout: component
-description: Changelog for Shopify Admin component.
+description: Changelog for Shopify component.
 icon: shopify-admin.png
-icontext: Shopify Admin component
+icontext: Shopify component
 category: shopify-component
 updatedDate: 2020-11-20
-ComponentVersion: 1.4.1
+ComponentVersion: 1.4.2
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -15,11 +15,16 @@ redirect_from:
 
 ## Changelog
 
+### 1.4.2 (September 15, 2021)
+
+*   Add Make Raw Request Action
+*   Upgrade to Sailor `2.6.26`
+
 ### 1.4.1 (November 10, 2020)
 
-* Upgrade to sailor 2.6.18
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-* Annual npm vulnerabilities audit
+*   Upgrade to sailor 2.6.18
+*   Annual audit of the component code to check if it exposes a sensitive data in the logs
+*   Annual npm vulnerabilities audit
 
 ### 1.4.0 (Sept 11, 2020)
 
