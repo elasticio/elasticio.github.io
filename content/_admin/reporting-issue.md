@@ -26,6 +26,7 @@ pages for explanations and suggestions on how to overcome problems.
 *   [Understanding Sample errors](/guides/understanding-sample-errors) - troubleshooting data sample errors.
 *   [Error Retry and Retention Policy](/guides/error-retry) - how to retry the flow errors.
 *   [Custom Error Handler](/guides/custom-error-handler) - how to set custom error handling.
+*   [Update all components in flow](/guides/update-all-components) - how to update the components in all steps of your integration flow.
 
 ## How to contact us
 
