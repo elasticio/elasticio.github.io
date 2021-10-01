@@ -5,7 +5,7 @@ description: Shopify component triggers.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2020-11-20
+updatedDate: 2021-09-15
 ComponentVersion: 1.4.2
 redirect_from:
   - /components/shopify-admin/triggers.html

@@ -6,7 +6,7 @@ description: A component to work with the Shopify API.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2020-11-20
+updatedDate: 2021-09-15
 ComponentVersion: 1.4.2
 redirect_from:
   - /components/shopify-admin/index.html
@@ -14,8 +14,8 @@ redirect_from:
 
 ## How works. API version
 
-Component was tested on `2019-10` API version. You can find more information about
-API versioning at Shopify [here](https://help.shopify.com/en/api/versioning).
+Component was tested on `2021-04` API version.
+You can find more information about API versioning at Shopify [here](https://help.shopify.com/en/api/versioning).
 
 [Shopify API documentation](https://help.shopify.com/api/reference).
 
@@ -33,7 +33,7 @@ API versioning at Shopify [here](https://help.shopify.com/en/api/versioning).
 
 | Name | Mandatory | Description | Values |
 |---------------------|-------|------------------------------------------|--------------------|
-| SHOPIFY_API_VERSION | false | Determines API version of Shopify to use | Default: `2019-10` |
+|SHOPIFY_API_VERSION| false | Determines API version of Shopify to use | Default: `2019-10`, for Make Raw Request: `2021-04` |
 
 ### Metafield Notes
 
@@ -90,24 +90,24 @@ Shopify component has the following actions:
 3.  [Create Object action](actions#create-object) - Action to create new object instance. Only for object that can’t be updated.
 4.  [Upsert Object action](actions#upsert-object) - Upsert Object action is useful if it isn’t known if there is already an object in the system. Action determines if the data needs to be matched to an existing object or added to a new one. Only for objects that can be created and updated.
 5.  [Delete Object action](actions#delete-object) - Delete Object By Unique Criteria
+6.  [Make Raw Request](actions#make-raw-request) - Allows you to manually construct individual requests to be sent to the API.
 
 The following Shopify actions are deprecated:
 
-1.  [List Products(deprecated)](actions#list-productsdeprecated) -
-2.  This actions is deprecated. Use the [Lookup Object](actions#lookup-object) action instead.
-2.  [Upsert Product(deprecated)](actions#upsert-productdeprecated) - This actions is deprecated. Use the [Upsert Objects](actions#upsert-object) action instead.
-3.  [Delete Product(deprecated)](actions#delete-productdeprecated) - This actions is deprecated. Use the [Upsert Objects](actions#delete-object) action instead.
-4.  [Get Product(deprecated)](actions#get-productdeprecated) - This actions is deprecated. Use the [Lookup Object](actions#lookup-object) action instead.
-5.  [Count Products(deprecated)](actions#count-productsdeprecated) - This actions is deprecated. Use the [Delete Object](actions#delete-object) action instead.
-6.  [Create Product Image(deprecated)](actions#create-product-imagedeprecated) - This actions is deprecated. Use the [Upsert Object](actions#upsert-object) action instead.
-7.  [Update Product Image(deprecated)](actions#update-product-imagedeprecated) - This actions is deprecated. Use the [Upsert Object](actions#upsert-object) action instead.
-8.  [Delete Product Image(deprecated)](actions#delete-product-imagedeprecated) - This actions is deprecated. Use the [Upsert Object](actions#upsert-object) action instead.
-9.  [List Inventory Items(deprecated)](actions#list-inventory-itemsdeprecated) - This actions is deprecated. Use [Lookup Object](actions#lookup-object) action instead.
-10.  [Get Inventory Item(deprecated)](actions#get-inventory-itemdeprecated) - This actions is deprecated. Use the [Lookup Object](actions#lookup-object) action instead.
-11.  [Update Inventory Item(deprecated)](actions#update-inventory-itemdeprecated) - This actions is deprecated. Use [Upsert Object](actions#upsert-object) action instead.
-12.  [Create Product Variant(deprecated)](actions#create-product-variantdeprecated) - This actions is deprecated. Use [Upsert Object](actions#upsert-object) action instead.
-13.  [Update Product Variant(deprecated)](actions#update-product-variantdeprecated) - This actions is deprecated. Use [Upsert Object](actions#upsert-object) action instead.
-14.  [Delete Product Variant(deprecated)](actions#delete-product-variantdeprecated) - This actions is deprecated. Use [Upsert Object](actions#upsert-object) action instead.
+1.  [List Products(deprecated)](deprecated-actions#list-productsdeprecated) - This actions is deprecated. Use the [Lookup Object](actions#lookup-object) action instead.
+2.  [Upsert Product(deprecated)](deprecated-actions#upsert-productdeprecated) - This actions is deprecated. Use the [Upsert Objects](actions#upsert-object) action instead.
+3.  [Delete Product(deprecated)](deprecated-actions#delete-productdeprecated) - This actions is deprecated. Use the [Upsert Objects](actions#delete-object) action instead.
+4.  [Get Product(deprecated)](deprecated-actions#get-productdeprecated) - This actions is deprecated. Use the [Lookup Object](actions#lookup-object) action instead.
+5.  [Count Products(deprecated)](deprecated-actions#count-productsdeprecated) - This actions is deprecated. Use the [Delete Object](actions#delete-object) action instead.
+6.  [Create Product Image(deprecated)](deprecated-actions#create-product-imagedeprecated) - This actions is deprecated. Use the [Upsert Object](actions#upsert-object) action instead.
+7.  [Update Product Image(deprecated)](deprecated-actions#update-product-imagedeprecated) - This actions is deprecated. Use the [Upsert Object](actions#upsert-object) action instead.
+8.  [Delete Product Image(deprecated)](deprecated-actions#delete-product-imagedeprecated) - This actions is deprecated. Use the [Upsert Object](actions#upsert-object) action instead.
+9.  [List Inventory Items(deprecated)](deprecated-actions#list-inventory-itemsdeprecated) - This actions is deprecated. Use [Lookup Object](actions#lookup-object) action instead.
+10.  [Get Inventory Item(deprecated)](deprecated-actions#get-inventory-itemdeprecated) - This actions is deprecated. Use the [Lookup Object](actions#lookup-object) action instead.
+11.  [Update Inventory Item(deprecated)](deprecated-actions#update-inventory-itemdeprecated) - This actions is deprecated. Use [Upsert Object](actions#upsert-object) action instead.
+12.  [Create Product Variant(deprecated)](deprecated-actions#create-product-variantdeprecated) - This actions is deprecated. Use [Upsert Object](actions#upsert-object) action instead.
+13.  [Update Product Variant(deprecated)](deprecated-actions#update-product-variantdeprecated) - This actions is deprecated. Use [Upsert Object](actions#upsert-object) action instead.
+14.  [Delete Product Variant(deprecated)](deprecated-actions#delete-product-variantdeprecated) - This actions is deprecated. Use [Upsert Object](actions#upsert-object) action instead.
 
 ## Links
 
