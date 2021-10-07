@@ -12,31 +12,43 @@ ComponentVersion: 1.4.4
 
 ## General Information
 
-### Description and Purpose
+This component creates a connection to an external SFTP server so you can work
+with the files. You can use this component to read, write, move or delete the
+files on your SFTP server. The component has trigger and action functions covering
+each use case.
 
-This component creates a connection to an SFTP server to read and upload files.
+If you are interested in the past changes that the component has undergone check
+the [changelog](technical-notes#changelog).
 
-The optional environment variable `MAX_FILE_SIZE` should be set in settings to provide the maximum file size that can be uploaded in **megabytes (mb)**. The default value for `MAX_FILE_SIZE` is 100MB.
 
-### Technical Notes
+## Environment variables
 
-The [technical notes](technical-notes) page gives some technical details about SFTP component like [changelog](/components/sftp/technical-notes#changelog).
+The SFTP component works with different files sizes and different SFTP servers. To
+have more control over the process you can apply environment variables to further
+suit your scenarios.
+
+*   `MAX_FILE_SIZE` (bytes) - Use this variable to control or extend the allowed upload file size. The system caps the files bigger than 100MB by default (104857600).
+*   `REQUEST_TIMEOUT` (milliseconds) - Use this variable to control the platform behavior when the connection between the platform and the external SFTP server must be dropped in case of inactivity. The default value is 10 seconds (10000).
+
+**These variables are optional and if not set the default system value is used instead.**
 
 ## Credentials
 
-* **Host** - Host name of SFTP server
+To authenticate with an external SFTP server you must fill-in the necessary values
+in the credentials section.
 
-* **Port** - Optional, port of SFTP server. Defaults to 22 if not set.
+*  **Host** - Host name of the SFTP server.
+*  **Port** - Optional, port of SFTP server. Defaults to 22 if not set.
+*  **User Name** - Username for SFTP server.
+*  **Password** - Password for SFTP server.
+*  **Private Key** - An RSA private key. Set empty if password is already in use.
 
-* **User Name** - Username for SFTP server
-
-* **Password** - Password for SFTP server.
-
->**Note**: field `Private Key` should stay empty in case you fill a password.
 
 ### Private Key
 
-To access a secure SFTP servers that is configured with a key-based authentication you must at first upload your `Public key` to the SFTP server (please contact your server administrator to do this) and fill in this field with your `Private key`.
+To access a secure SFTP servers that is configured with a key-based authentication
+you must at first upload your `Public key` to the SFTP server (please contact your
+server administrator to do this) and fill in this field with your `Private key`.
 
 Also please pay attention that the field `Password` should be empty in this case.
 
@@ -46,44 +58,28 @@ Also please pay attention that the field `Password` should be empty in this case
 
 SFTP component includes the following triggers:
 
-  1. [Read files](/components/sftp/triggers#read-files)                            
-  Will continuously poll remote SFTP location for files that match given pattern. Found files will be transferred as attachments to the next component.
-
-  2. [Poll files](/components/sftp/triggers#poll-files)                        
-  Triggers to get all new and updated files since last polling.
+1.  [Read files](triggers#read-files) - Will continuously poll remote SFTP location for files that match given pattern. Found files will be transferred as attachments to the next component.
+2.  [Poll files](triggers#poll-files) - Triggers to get all new and updated files since last polling.
 
 ## Actions
 
 SFTP component includes the following actions:
 
-  1. [Upload files From Attachments Header](/components/sftp/actions#upload-files-from-attachments-header)                           
-  Upload all files from the attachments header to a defined SFTP directory.
-
-  2. [Upload File From URL](/components/sftp/actions#upload-file-from-url)                           
-  Given a filename and a URL to an attachment stored in the platform, transfers the contents of the attachment to the SFTP server. The component returns a summary of the written file.
-
-  3. [Delete file](/components/sftp/actions#delete-file)                        
-  Action to delete file by provided full file path.
-
-  4. [Download file by name](/components/sftp/actions#download-file-by-name)                           
-  Finds a file by name in the provided directory and uploads (streams) to the attachment storage (a.k.a. steward).
-
-  5. [Download files](/components/sftp/actions#download-files)                           
-  Finds a file by criterias in the provided directory and uploads (streams) to the attachment storage (a.k.a. steward).
-
-  6. [Move File](/components/sftp/actions#move-file)                           
-  Action to move file on SFTP already exists in one location on an sftp server to be moved to another location on the same SFTP server. Target location MUST exist.
+1.  [Upload files From Attachments Header](actions#upload-files-from-attachments-header) - Upload all files from the attachments header to a defined SFTP directory.
+2.  [Upload File From URL](actions#upload-file-from-url) - Given a filename and a URL to an attachment stored in the platform, transfers the contents of the attachment to the SFTP server. The component returns a summary of the written file.
+3.  [Delete file](actions#delete-file) - Action to delete file by provided full file path.
+4.  [Download file by name](actions#download-file-by-name) - Finds a file by name in the provided directory and uploads (streams) to the attachment storage (a.k.a. steward).
+5.  [Download files](actions#download-files) - Finds a file by criteria in the provided directory and uploads (streams) to the attachment storage (a.k.a. steward).
+6.  [Move File](actions#move-file) - Action to move file on SFTP already exists in one location on an sftp server to be moved to another location on the same SFTP server. Target location MUST exist.
 
 ## Known limitations
 
-* The maximum file size accepted by the SFTP component is limited to 100 MB.
 * The attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent)
 * `Get new and updated files` trigger mechanism is based on SFTP file `modifyTime` metadata field. For correct processing the trigger requires correct time configuration on the SFTP server.
 * `Get new and updated files` trigger does not support empty files processing.
 * `Get new and updated files` trigger does not support `fetch page` Emit Behaviour
 
-## SSH2 SFTP Client API and Documentation links
+## Related links
 
-The SFTP component uses [ssh2-sftp-client](https://www.npmjs.com/package/ssh2-sftp-client).
-
-Explanation of [Unix file types](https://en.wikipedia.org/wiki/Unix_file_types)
+*   The SFTP component uses [ssh2-sftp-client](https://www.npmjs.com/package/ssh2-sftp-client).
+*   Explanation of [Unix file types](https://en.wikipedia.org/wiki/Unix_file_types)
