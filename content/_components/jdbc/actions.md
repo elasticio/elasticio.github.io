@@ -5,11 +5,57 @@ description: JDBC Component actions page
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2021-09-01
-ComponentVersion: 2.4.5
+updatedDate: 2021-10-01
+ComponentVersion: 2.5.0
 ---
 
-## Execute custom query action
+
+### Select action
+
+![image](https://user-images.githubusercontent.com/16806832/134408205-04b84670-c976-41e7-b805-faabff4ae1e5.png)
+
+The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
+In SQL query you can use clause variables with specific data types.
+Internally we use prepared statements, so all incoming data is
+validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types
+therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
+
+**Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
+
+For example if you have a following SQL statement:
+
+```sql
+SELECT
+FROM users
+WHERE userid = @id AND language = @lang
+```
+
+you should add ``:type`` to each ``@parameter`` so your SQL query will looks like this:
+
+```sql
+SELECT
+FROM users
+WHERE userid = @id:number AND language = @lang:string
+```
+
+Following types are supported:
+ * ``string``
+ * ``number``
+ * ``bigint``
+ * ``boolean``
+ * ``float``
+ * ``date``
+
+![image](https://user-images.githubusercontent.com/16806832/134408591-b9faa51c-3b35-4cf2-992d-51dcd07c5cb5.png)
+
+Dropdown **Emit Behaviour** contains following possible options:
+ * Fetch all - a single message with an array `results` containing all the objects (rows) will be emitted
+ * Emit Individually - multiple messages (one message per one row) will be emitted
+ * Expect Single - a single message with one result row will be emitted. If more than one row is returned the error will be thrown. A boolean input "Allow Zero Results" (defaults to `false`) appears at input metadata. If `false` - error will be thrown, else - the empty object will be emitted.
+
+![image](https://user-images.githubusercontent.com/16806832/134408977-d4692d3f-e9fb-48be-9104-c4cb121accaa.png)
+
+## Execute query action
 
 Action to execute custom SQL query from provided request string.
 
@@ -41,50 +87,6 @@ Posgresql batch multiple statements request:
 DELETE FROM stars WHERE id = 1;
 UPDATE stars SET radius = 5 WHERE id = 2;
 ```
-
-## Select action
-
-![Select action](img/select-action.png)
-
-The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
-In SQL query you can use clause variables with specific data types.
-Internally we use prepared statements, so all incoming data is
-validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types
-therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
-
-> **Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
-
-For example if you have a following SQL statement:
-
-```sql
-SELECT
-FROM users
-WHERE userid = @id AND language = @lang
-```
-
-you should add ``:type`` to each ``@parameter`` so your SQL query will looks like this:
-
-```sql
-SELECT
-FROM users
-WHERE userid = @id:number AND language = @lang:string
-```
-
-Following types are supported:
- * ``string``
- * ``number``
- * ``bigint``
- * ``boolean``
- * ``float``
- * ``date``
-
-![Select Action - SQL Query](img\select-action-sql-query.png)
-
-Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
-
-### Input fields description
-
-Component supports dynamic incoming metadata - as soon as your query is in place it will be parsed and incoming metadata will be generated accordingly.
 
 ## Lookup Row By Primary Key action
 
@@ -217,3 +219,50 @@ As an input metadata you will get all fields of selected table. [PRIMARY KEY](ht
 
 This action exists in JDBC component only for backward compatibility.
 Please use [**Upsert row by primary key**](#upsert-row-by-primary-key-action) instead.
+
+## Select action(deprecated)
+
+This action exists in JDBC component only for backward compatibility.
+Please use **NEW** [**Select action**](#select-action) instead.
+
+![Select action dep](img/select-action-dep.png)
+
+The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
+In SQL query you can use clause variables with specific data types.
+Internally we use prepared statements, so all incoming data is
+validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types
+therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
+
+> **Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
+
+For example if you have a following SQL statement:
+
+```sql
+SELECT
+FROM users
+WHERE userid = @id AND language = @lang
+```
+
+you should add ``:type`` to each ``@parameter`` so your SQL query will looks like this:
+
+```sql
+SELECT
+FROM users
+WHERE userid = @id:number AND language = @lang:string
+```
+
+Following types are supported:
+ * ``string``
+ * ``number``
+ * ``bigint``
+ * ``boolean``
+ * ``float``
+ * ``date``
+
+![Select Action - SQL Query](img\select-action-sql-query.png)
+
+Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
+
+### Input fields description
+
+Component supports dynamic incoming metadata - as soon as your query is in place it will be parsed and incoming metadata will be generated accordingly.

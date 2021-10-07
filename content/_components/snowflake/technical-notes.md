@@ -5,16 +5,21 @@ description: Technical Notes for the Snowflake component.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2021-09-25
-ComponentVersion: 1.0.0
+updatedDate: 2021-10-01
+ComponentVersion: 1.1.0
 ---
 
 ## Changelog
 
+### 1.1.0 (October 1, 2021)
+
+- `Upsert row by primary key`
+- `Execute stored procedure`
+
 ### 1.0.0 (September 25, 2021)
 
-* Added `Custom query` action
-* Added `Insert` action
-* Added `LookupRowByPrimaryKey` action
-* Added `DeleteRowByPrimaryKey` action
-* Added `Select` action
+- `Custom query`
+- `Insert`
+- `LookupRowByPrimaryKey`
+- `DeleteRowByPrimaryKey`
+- `Select`

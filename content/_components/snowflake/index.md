@@ -6,8 +6,8 @@ description: A component for management over Snowflake database.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2021-09-25
-ComponentVersion: 1.0.0
+updatedDate: 2021-10-01
+ComponentVersion: 1.1.0
 ---
 
 ## General information
@@ -65,4 +65,8 @@ Snowflake component includes the following actions:
 
 4. [Delete row by primary key action](/components/snowflake/actions.html#delete-row-by-primary-key-action) - This action will delete row by it's primary key
 
-5. [Select action](/components/snowflake/actions.html#select-action) -The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results.
+5. [Upsert row by primary key action](/components/snowflake/actions.html#upsert-row-by-primary-key-action) - This action will execute upsert row by it's primary key.
+
+6. [Select action](/components/snowflake/actions.html#select-action) -The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results.
+
+7. [Execute stored procedure action](/components/snowflake/actions.html#execute-stored-procedure-action) - This action calls stored procedure

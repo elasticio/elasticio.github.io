@@ -6,8 +6,8 @@ description: A component to work with object-relational database management syst
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2021-09-01
-ComponentVersion: 2.4.5
+updatedDate: 2021-10-01
+ComponentVersion: 2.5.0
 ---
 
 ## Description
@@ -76,7 +76,7 @@ JDBC component includes the following triggers:
 
 JDBC component includes the following actions:
 
-  1. [Execute custom query action](/components/jdbc/actions#execute-custom-query-action)     
+  1. [Execute query action](/components/jdbc/actions#execute-query-action)     
   Action to execute custom SQL query from provided request string.
 
   2. [Select action](/components/jdbc/actions#select-action)                               
