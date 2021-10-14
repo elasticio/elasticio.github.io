@@ -16,13 +16,15 @@ ComponentVersion: 1.0.0
 * Initial release
 
 * Add new actions:
+
 - `Lookup Object By Id`
 - `Lookup Objects`
 - `Make Raw Request`
 - `Upsert Object By Id`
 - `Add Attachment to Ticket`
 
-* Add new triggers:
+* Add new trigger:
+
 - `Subscribe To Ticket Audits`
 
 ## Completeness Matrix

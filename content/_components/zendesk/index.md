@@ -46,10 +46,6 @@ The component uses [Password Grant type](https://support.zendesk.com/hc/en-us/ar
  * **Size of Polling Page** - TextField (optional, positive integer, defaults to 1000): Indicates the size of pages to be fetched
  * **Single Page per Interval** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page immediately, wait until the next flow start to fetch the next page
 
-#### Output Metadata
-
-[Array of items](/lib/schemas/subscribeToTicketAudits.out.json)
-
 ## Actions
 
 ### Lookup Object By Id
@@ -67,6 +63,7 @@ This action allows you to search objects by unique ID
 * **Linked Objects To Populate** - Multi-Select Dropdown (optional, no objects selected by default): Select which linked objects to fetch.
 
 **Available options to select:**
+
 <details closed markdown="block">
 <summary>
 Click to expand
@@ -132,9 +129,6 @@ Sorting is available on the following fields:
 
 * Search terms (optional) - Allow making search between objects. [Search term fields](/lib/actions/utils/lookupObjects/searchTerm.js)
 
-#### Output Metadata
-[Object containing array of items](/lib/schemas/ticketMetadata.out.json)
-
 ### Make Raw Request
 
 #### Config Fields
@@ -165,10 +159,6 @@ Dynamically generated:
 * `ID (optional)` - if filled and the object was found by this id - the object will be updated will create the new one in another case.
 * Inputs for all object fields: [system](/lib/schemas/ticketMetadata.in.json) and dynamically generated custom fields
 
-#### Output Metadata
-
-[Tickets fields](/lib/schemas/ticketMetadata.out.json)
-
 ### Add Attachment to Ticket
 
 #### Input Metadata
@@ -182,7 +172,3 @@ Dynamically generated:
   - Attachment Url (String URL, required): URL to attachment within platform storage
   - Filename (string, required): Filename that Zendesk should use for the attachment
   - Connent Type (string, optional: default to application/binary): Content type to save in ZenDesk
-
-#### Output Metadata
-
-[Tickets fields](/lib/schemas/ticketMetadata.out.json)
