@@ -103,6 +103,35 @@ The default limit is `1000` records per Flow. If the amount of errors per
 Flow gets higher then `1000` value, the Platform removes old error records and
 shows a corresponding notification in the UI.
 
+## Retry from step
+
+With this feature you can select any previous step in the flow and start retrying from that moment. The rerunning flow process starts from the selected step. Therefore, the messages on the steps will be doubled (another message will be added) and only on the step with an error - the behavior will be as before. The error will disappear - and either a valid message or an error will appear again.
+
+There are two points you should be aware of before using this feature:
+
+* To retry your flow must be active
+* If passthrought is disabled in a step, you will not be able to retry from previous steps. You can see this in the following example:
+
+{% include img.html max-width="60%" url="/assets/img/integrator-guide/instant-error-management/passthrought-disabled.png" title="Passthrought disabled" %}
+
+After you have started the flow and found an error, you can choose a step from which you want retry. You can select any step other than the trigger.
+
+We'll take a closer look at this function using this flow as an example. First, click on the place where the error is indicated:
+
+{% include img.html max-width="60%" url="/assets/img/integrator-guide/instant-error-management/example-flow.png" title="Example flow" %}
+
+Here you can see the description of the error in your flow and select the step in which you want to correct the message:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/instant-error-management/retry-from-step.png" title="Retry from step" %}
+
+In our case, the mistake was the wrong email address, which we can correct in the chosen step by editing message. The email is set in the second step, which means we can change the message in one of the following steps - for example, in the **Splitter**:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/instant-error-management/edit-message.png" title="Edit message" %}
+
+After you have fixed the error, click on the **Retry Message** and the flow will rerun:
+
+{% include img.html max-width="60%" url="/assets/img/integrator-guide/instant-error-management/retry-message.png" title="Retry message" %}
+
 
 ## Related links
 
