@@ -124,11 +124,11 @@ Here you can see the description of the error in your flow and select the step i
 
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/instant-error-management/retry-from-step.png" title="Retry from step" %}
 
-In our case, the mistake was the wrong email address, which we can correct in the chosen step by editing message. The email is set in the second step, which means we can change the message in one of the following steps - for example, in the **Splitter**:
+In our case, the mistake was the wrong email address, which we can correct in the chosen step by editing message. The second step produce a message which property was mapped into `to:` field of email-component, which means we can change the message in one of the following steps - for example, in the **Splitter**:
 
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/instant-error-management/edit-message.png" title="Edit message" %}
 
-After you have fixed the error, click on the **Retry Message** and the flow will rerun:
+After you edit corresponding message to have a correct output, click on the **Retry Message** and the flow will start from step *Spliter* and you will see the next picture:
 
 {% include img.html max-width="60%" url="/assets/img/integrator-guide/instant-error-management/retry-message.png" title="Retry message" %}
 
