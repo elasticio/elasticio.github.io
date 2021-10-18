@@ -5,8 +5,8 @@ description: SOAP component triggers.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2020-12-18
-ComponentVersion: 1.2.5
+updatedDate: 2021-10-15
+ComponentVersion: 1.2.6
 ---
 
 ## Receive SOAP Request
@@ -55,8 +55,8 @@ Webhook that validates input body over WSDL:
 }
 ```
 
-### Known Limitations
+### Current Limitations
 
-1.  Namespaces ignored and SOAP Body with 2 tags that have same name but in different namespaces would be invalid
-2.  SOAP Headers not supported yet
-3.  Retrieve Sample does not represent actual behavior of component
+1. Namespaces ignored and SOAP Body with 2 tags that have the same name but in different namespaces would be invalid
+2. SOAP Headers not supported yet
+3. Retrieve Sample does not represent actual behaviour of component

@@ -5,8 +5,8 @@ description: SOAP component actions.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2020-12-18
-ComponentVersion: 1.2.5
+updatedDate: 2021-10-15
+ComponentVersion: 1.2.6
 ---
 
 ## Call
@@ -29,6 +29,29 @@ Call action supports Basic Authorization, chose Basic Authorization type in cred
 A SOAP fault is used to carry error information within a SOAP message. The component
 handles SOAP faults and emits platform exception in this case. SOAP Fault should
 comply with the [W3C SOAP Fault standard](https://www.w3.org/TR/soap12-part1/#soapfault).
+
+Example of the SOAP 1.1 Fault:
+
+```json
+{
+  "Fault": {
+    "faultcode": "S:Server",
+    "faultstring": "Server error java.lang.NullPointerException",
+    "faultactor": null
+  }
+}
+```
+
+Example of the SOAP 1.2 Fault:
+
+```json
+{
+  "Fault": {
+    "faultcode": "S:Server",
+    "reason": "Server error java.lang.NullPointerException"
+  }
+}
+```
 
 ### Input json schema
 
