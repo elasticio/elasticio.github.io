@@ -132,6 +132,9 @@ After you edit corresponding message to have a correct output, click on the **Re
 
 {% include img.html max-width="60%" url="/assets/img/integrator-guide/instant-error-management/retry-message.png" title="Retry message" %}
 
+After you have fixed the error and retry the flow, you can see how the message goes through the entire flow again:
+
+{% include img.html max-width="60%" url="/assets/img/integrator-guide/instant-error-management/after-retry.png" title="After Retry" %}
 
 ## Related links
 
