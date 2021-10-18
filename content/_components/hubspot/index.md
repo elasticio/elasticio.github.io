@@ -6,8 +6,8 @@ description: A component that connects to Hubspot API
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2021-10-01
-ComponentVersion: 1.0.0
+updatedDate: 2021-10-15
+ComponentVersion: 1.1.0
 ---
 
 ## General information
@@ -44,7 +44,17 @@ Field name|Mandatory|Description|
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be selectable as the first component in an integration flow.
+### Get New and Updated Objects
+
+### Config Fields
+
+ * **Object Type** Dropdown: Indicates Object Type to be fetched
+ * **Emit behavior** Dropdown: Indicates emit objects individually or emit by page
+ * **Field to poll** Dropdown: Indicates field to poll (new objects or modified objects)
+ * **Start Time** - TextField (string, optional): Indicates the beginning time to start retrieving events from
+ * **End Time** - TextField (string, optional, defaults to never): If provided, don’t fetch records modified after this time
+ * **Size of Polling Page** - TextField (optional, positive integer, max 100, defaults to 100): Indicates the size of pages to be fetched
+ * **Single Page per Interval** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page immediately, wait until the next flow start to fetch the next page
 
 ## Actions
 
@@ -61,3 +71,7 @@ Action to call any Hubspot API endpoint
 * **URL** - Path of the resource relative to the URL base (https://api.hubapi.com), required.
 * **Method** - Allowed values `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, required. HTTP verb to use in the request.
 * **Request Body** - Body of the request to send
+
+## Known Limitations
+
+[Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits).

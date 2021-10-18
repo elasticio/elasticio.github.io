@@ -6,8 +6,8 @@ description: A messaging protocol for exchanging information between application
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2020-12-18
-ComponentVersion: 1.2.5
+updatedDate: 2021-10-15
+ComponentVersion: 1.2.6
 ---
 
 ## Description
@@ -30,7 +30,7 @@ Component supports the following WSDL styles:
 
 ### Environment variables
 
-`OIH_REQUIRED_RAM_MB - recommended value of allocated memory is 2048MB `
+` EIO_REQUIRED_RAM_MB - recommended value of allocated memory is 2048MB 2048MB`
 
 ### Credentials
 
@@ -97,7 +97,7 @@ Retrieve sample result:
   2. [Soap Reply](/components/soap/actions#soap-reply)                                                                        
   Wraps and returns input data as SOAP response by provided SOAP metadata.
 
-## Current limitations
+## Known limitations
 
 Here are the limitations of this component:
 
@@ -109,6 +109,7 @@ Here are the limitations of this component:
 *  Custom SOAP headers can not be added.
 *  The WSDL and associated schemas must be accessible via a publicly accessible URL. File upload of the WSDL and/or XSD schemas is not supported.
 *  Component does not support multi-part format of message in the SOAP request element. Only first part of request element will be processed in the current component version.
+* 'Emit SOAP Faults Instead of Throwing an Error' feature of the 'CallAction' action was not fully tested against all the possible SOAP faults.
 
 ## API and Documentation links
 

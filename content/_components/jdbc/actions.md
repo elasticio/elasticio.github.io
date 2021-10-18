@@ -9,8 +9,7 @@ updatedDate: 2021-10-01
 ComponentVersion: 2.5.0
 ---
 
-
-### Select action
+## Select action
 
 ![image](https://user-images.githubusercontent.com/16806832/134408205-04b84670-c976-41e7-b805-faabff4ae1e5.png)
 

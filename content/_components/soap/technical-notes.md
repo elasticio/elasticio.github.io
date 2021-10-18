@@ -5,14 +5,19 @@ description: Technical Notes for the SOAP component.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2020-12-18
-ComponentVersion: 1.2.5
+updatedDate: 2021-10-15
+ComponentVersion: 1.2.6
 redirect_from:
   - /components/soap/completeness-matrix.html
   - /components/soap/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.6 (October 15, 2021)
+
+* Update Sailor version to 3.3.6
+* `Call` action: add an option to emit a platform message instead of throwing an exception in case of a SOAP fault
 
 ### 1.2.5 (December 18, 2020)
 

@@ -66,7 +66,6 @@ During credentials creation you need to:
 Please check the [technical notes](technical-notes) page which lists in-depth
 technical details about Zoho component like the recent [changelog](technical-notes#changelog).
 
-
 ## Triggers
 
 ### Get All Subscriptions
