@@ -6,8 +6,8 @@ description: A component that connects to Zoho-crm API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.0.0
-updatedDate: 2021-10-15
+ComponentVersion: 1.1.0
+updatedDate: 2021-10-29
 ---
 
 ## General information
@@ -63,8 +63,17 @@ Save client and then:
 
 ## Trigger
 
-This component has no trigger functions. This means you can not select it as a first
-component during the integration flow design.
+### Get New and Updated Objects
+
+#### Config Fields
+
+ * **Object Type** Dropdown: Indicates Object Type to be fetched
+ * **Emit behavior** Dropdown: Indicates emit objects individually or emit by page
+ * **Field to poll** Dropdown: Indicates field to poll (new objects or modified objects)
+ * **Start Time** - TextField (string, optional): Indicates the beginning time to start retrieving events from
+ * **End Time** - TextField (string, optional, defaults to never): If provided, don’t fetch records modified after this time
+ * **Size of Polling Page** - TextField (optional, positive integer, defaults to 200): Indicates the size of pages to be fetched
+ * **Process Pages Consistently** - Checkbox: Indicates that pages will be processed one by one, without waiting next flow run. Defaults to false
 
 ## Actions
 
@@ -78,6 +87,53 @@ Action to call any Zoho-crm API endpoint
 
 #### Input Metadata
 
-* **Url** - Path of the resource relative to the URL base (https://api.hubapi.com), required.
+* **Url** - Path of the resource relative to the URL base (https://api.hubapi.com), required. For example `/crm/v2/leads`.
 * **Method** - Allowed values `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, required. HTTP verb to use in the request.
 * **Request Body** - Body of the request to send
+
+### Upsert
+
+Action to insert or update a record. The system checks for duplicate records based on the duplicate check field's values. If the record is already present, it gets updated. If not, the record is inserted.
+*Note*: you can add only system-defined duplicate check fields and user-defined unique fields. If you do not specify the `Duplicate field checks`, the system checks for duplicate records in this order: "system-defined duplicate check fields" > "user-defined unique fields"
+
+#### Config Fields
+
+* **Object Type** Dropdown: Indicates Object Type to be upserted
+* **Duplicate field checks** Multiselect dropdown: Indicates for system which fields to check for duplicate records
+
+#### Input Metadata
+
+Dynamically generated
+
+### Lookup object (at most one)
+
+Action designed to lookup one object by unique field
+
+#### Config Fields
+
+
+* **Object Type** Dropdown: Indicates Object Type to be fetched
+* **ID to Search On** Dropdown: Indicates unique field to search on
+* **Allow ID to be omitted** Checkbox: When selected, the ID field becomes optional, otherwise it is a required field
+* **Allow zero results** Checkbox: When selected, if zero results are returned, the empty object {} is emitted, otherwise typically an error would be thrown.
+
+#### Input Metadata
+
+* **ID value** Textfield: value for `ID to Search On` (unique field value by itself)
+
+### Lookup Set Of Objects By Unique Criteria
+
+Action designed to lookup set of objects by unique field
+
+#### Config Fields
+
+* **Object Type** Dropdown: Indicates Object Type to search
+* **ID to Search On** Dropdown: Indicates unique field to search on
+
+#### Input Metadata
+
+* **Id Values to Lookup** An array where each item is an ID. Required.
+
+#### Output Metadata
+
+The expected output is an object with a `resultsDictionary` property. The value of this `resultsDictionary` will be a dictionary where the keys are the lookup identity, and the key is the corresponding object.

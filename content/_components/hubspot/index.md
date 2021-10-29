@@ -6,8 +6,8 @@ description: A component that connects to Hubspot API
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2021-10-15
-ComponentVersion: 1.1.0
+updatedDate: 2021-10-29
+ComponentVersion: 1.2.0
 ---
 
 ## General information
@@ -71,6 +71,34 @@ Action to call any Hubspot API endpoint
 * **URL** - Path of the resource relative to the URL base (https://api.hubapi.com), required.
 * **Method** - Allowed values `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, required. HTTP verb to use in the request.
 * **Request Body** - Body of the request to send
+
+### Upsert
+
+Action to make upsert(update/create) object in Hubspot
+
+#### Config Fields
+
+* **Object type** - Object type for upsert ("Companies", "Contacts", "Deals", "Line Items", "Tickets")
+* **ID to Search On** - Identificator to search object ("Hubspot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
+
+#### Input Metadata
+
+Dynamically generated
+
+### Lookup Object (at most one)
+
+Action designed to lookup one object by unique field
+
+#### Config Fields
+
+* **Object Type** Dropdown: Indicates Object Type to find
+* **ID to Search On** Dropdown: Indicates unique field to search on
+* **Allow ID to be omitted** Checkbox: When selected, the ID field becomes optional, otherwise it is a required field
+* **Allow zero results** Checkbox: When selected, if zero results are returned, the empty object {} is emitted, otherwise typically an error would be thrown.
+
+#### Input Metadata
+
+* **ID value** Textfield: value for `ID to Search On` (unique field value by itself)
 
 ## Known Limitations
 
