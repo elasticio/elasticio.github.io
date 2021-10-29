@@ -5,8 +5,8 @@ description: A component for management over Snowflake database.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2021-10-01
-ComponentVersion: 1.1.0
+updatedDate: 2021-10-28
+ComponentVersion: 1.2.0
 ---
 
 ## Execute custom query action

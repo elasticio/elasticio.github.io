@@ -5,8 +5,8 @@ description: MongoDB component action function details.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2021-01-28
-ComponentVersion: 1.5.6
+updatedDate: 2021-10-29
+ComponentVersion: 1.5.7
 ---
 
 ## Description
@@ -22,6 +22,7 @@ Calculates aggregate values for the data in a collection or a view
 1. Select a DB - Database to be found in.
 2. Select a Collection - Collection to be found in.
 3. Select an Emit Behavior: **Emit Individually**, **Emit Batch** or **Fetch All** - Determines how many messages to emit when the number of results is not one.  **Emit Individually** attaches a `groupInfo` to the message (outside the body) which allows the message to be rebuilt.
+4. allowDiskUse - Enables writing to temporary files. When set to true, aggregation stages can write data to the _tmp subdirectory in the dbPath directory. See [docs](https://docs.mongodb.com/manual/reference/command/aggregate/#std-label-aggregate-cmd-allowDiskUse).
 
 ### Body
 
@@ -352,6 +353,23 @@ Lookup many documents by criteria.
 ### Body
 
 `criteria` of the document to search. **Required field**.
+
+>**Please Note:**: it is possible to lookup objects by fields with type ObjectID. For enabling this feature use template `"ObjectId('objectId')"`.
+
+Example:
+![image](https://user-images.githubusercontent.com/16806832/137541181-19a9c8f1-464a-4722-b399-323cf65c204b.png)
+
+```json
+{
+  "criteria": {
+    "taskId": "ObjectId('61523b6043a05f0006fc4800')"
+  },
+  "limit": 100
+}
+```
+
+>**Known limitation**: it is possible to lookup by ObjectId only on first level of criteria object. Nested properties are not supported.
+In case usage  template `"ObjectId('objectId')"` on next levels of criteria object value will accept as string.
 
 `limit` - specifies the maximum number of documents the action will return. 0 is equivalent to setting no limit. **Optional field**.
 

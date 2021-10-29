@@ -5,14 +5,18 @@ description: Technical Notes for the Magento2 component.
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2021-06-03
-ComponentVersion: 1.6.4
+updatedDate: 2021-10-29
+ComponentVersion: 1.6.5
 redirect_from:
   - /components/magento2/changelog.html
   - /components/magento2/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.6.5 (October 29, 2021)
+
+* Fixed bug in Get New And Updated Objects Trigger's Metadata: the trigger always outputs an array.
 
 ### 1.6.4 (June 3, 2021)
 
