@@ -6,8 +6,8 @@ description: Integration component to interact with MongoDB databases.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2021-01-28
-ComponentVersion: 1.5.6
+updatedDate: 2021-10-29
+ComponentVersion: 1.5.7
 ---
 
 ## Description

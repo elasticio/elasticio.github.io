@@ -6,8 +6,8 @@ description: A component for management over Snowflake database.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2021-10-01
-ComponentVersion: 1.1.0
+updatedDate: 2021-10-28
+ComponentVersion: 1.2.0
 ---
 
 ## General information
@@ -50,8 +50,7 @@ The full name of your account (provided by Snowflake). Note that your full accou
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+1. [Get Rows Polling Trigger](/components/snowflake/triggers.html#get-rows-polling-trigger)
 
 ## Actions
 

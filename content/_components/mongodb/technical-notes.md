@@ -5,13 +5,19 @@ description: Technical Notes for the MongoDB component.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2021-01-28
-ComponentVersion: 1.5.6
+updatedDate: 2021-10-29
+ComponentVersion: 1.5.7
 redirect_from:
   - /components/mongodb/changelog.html
 ---
 
 ## Changelog
+
+### 1.5.7 (October 29, 2021)
+
+* Update sailor version to `2.6.26`
+* Update `Aggregate` action: add 'allowDiskUse' option
+* Update `Lookup Plural` action: add ability to lookup objects by fields with ObjectID type
 
 ### 1.5.6 (January 28, 2021)
 
