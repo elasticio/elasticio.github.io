@@ -1,7 +1,7 @@
 ---
 title: Hubspot component
 layout: component
-section: Utility components
+section: Marketing-related components
 description: A component that connects to Hubspot API
 icon: hubspot.png
 icontext: Hubspot component
