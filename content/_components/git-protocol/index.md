@@ -3,7 +3,7 @@ title: Git-Protocol component
 layout: component
 section: Protocol components
 description:
-icon: git-Protocol.png
+icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
 ComponentVersion: 1.0.0
