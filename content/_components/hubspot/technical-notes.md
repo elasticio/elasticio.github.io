@@ -6,10 +6,25 @@ icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
 updatedDate: 2021-10-29
-ComponentVersion: 1.2.0
+ComponentVersion: 1.3.1
 ---
 
 ## Changelog
+
+### 1.3.1 (November 12, 2021)
+
+- Minor fix
+
+### 1.3.0 (November 12, 2021)
+
+- Added actions:
+  - `Lookup Objects (Plural)`
+  - `Create associations`
+  - `Remove associations`
+  - `Delete Object`
+
+- Added triggers:
+  - `Webhook`
 
 ### 1.2.0 (October 29, 2021)
 
