@@ -7,7 +7,7 @@ icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
 updatedDate: 2021-10-29
-ComponentVersion: 1.2.0
+ComponentVersion: 1.3.1
 ---
 
 ## General information
@@ -27,20 +27,11 @@ A [{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) component th
 Authentication occurs via OAuth 2.0.
 In order to make OAuth work, you need a new App in your Hubspot.
 
-More information you can find [here](https://developers.hubspot.com/docs/api/working-with-oauth).
+During credentials creation you would need to select existing Auth Client from drop-down list Choose Auth Client or create the new one:
 
-During credentials creation you would need to:
-- select existing Auth Client from drop-down list ``Choose Auth Client`` or create the new one.
-For creating Auth Client you should specify following fields:
+![Oauth2](img\client-exist.png)
 
-Field name|Mandatory|Description|
-|----|---------|-----------|
-|Name| true | your Auth Client's name (any) |
-|Client ID| true | your OAuth client key (provide by Hubspot) |
-|Client Secret| true | your OAuth client secret (provide by Hubspot) |
-|Authorization Endpoint| true | your OAuth authorization endpoint. ex: <br>`https://app-eu1.hubspot.com/oauth/authorize`
-|Token Endpoint| true | your OAuth Token endpoint for refreshing access token: <br>`https://api.hubapi.com/oauth/v1/token`|
-
+More information you can find in other article: [Creating OAuth App for Hubspot](creating-oauth-app-for-salesforce)
 
 ## Triggers
 
@@ -56,6 +47,19 @@ Field name|Mandatory|Description|
  * **Size of Polling Page** - TextField (optional, positive integer, max 100, defaults to 100): Indicates the size of pages to be fetched
  * **Single Page per Interval** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page immediately, wait until the next flow start to fetch the next page
 
+### Webhook
+
+Receive data from HubSpot based on configured [webhooks](https://developers.hubspot.com/docs/api/webhooks)
+
+### Config Fields
+
+* **Client secret** - You need provide Client secret from HubSpot application here
+> You will get error during webhook requests if this field will be incorrect
+
+#### Output Metadata
+
+Triggered object from HubSpot
+
 ## Actions
 
 ### Raw Request
@@ -64,7 +68,7 @@ Action to call any Hubspot API endpoint
 
 #### Config Fields
 
-* **Throw Error on 404 Response** - Treat 404 HTTP responses as errors.
+* **Throw Error on 404 Response** - (optional) Treat 404 HTTP responses as errors, defaults to `false`.
 
 #### Input Metadata
 
@@ -85,6 +89,20 @@ Action to make upsert(update/create) object in Hubspot
 
 Dynamically generated
 
+### Lookup Set Of Objects By Unique Criteria
+
+Action to lookup object in Hubspot.
+Lookup Set will make sure all the items in the set should be there, otherwise throw an error.
+
+#### Config Fields
+
+* **Object type** - Object type for lookup ("Companies", "Contacts", "Deals", "Line Items", "Tickets", "Quotes")
+* **ID to Search On** - Identification to search object ("Hubspot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
+
+#### Input Metadata
+
+An array where each item is an ID
+
 ### Lookup Object (at most one)
 
 Action designed to lookup one object by unique field
@@ -100,6 +118,113 @@ Action designed to lookup one object by unique field
 
 * **ID value** Textfield: value for `ID to Search On` (unique field value by itself)
 
+### Lookup Objects (Plural)
+
+Action to lookup objects in Hubspot
+
+#### Config Fields
+
+* **Object Type** Dropdown: Indicates Object Type to find
+* **Behaviour** Dropdown with options: `Fetch all`, `Fetch page`, `Emit individually`, required
+
+#### Input Metadata
+
+* **Search Criteria** Array: Search terms are to be combined with the AND operator. For each search term.
+
+>**Please note:** HubSpot support up to three criteria
+
+Example:
+Records created after *'2021-10-01T03:30:17.883Z'* with property *'firstname'* contains *'Tony'*
+```
+["createdate GT 1633059017883", "firstname CONTAINS_TOKEN Tony"]
+```
+Supported operators:
+|OPERATOR|DESCRIPTION|
+|----|------|
+|EQ | equal to|
+|NEQ | not equal to|
+|LT | less than|
+|LTE | less than or equal to|
+|GT | greater than|
+|GTE | greater than or equal to|
+|HAS_PROPERTY | has property value|
+|NOT_HAS_PROPERTY | does not have property value|
+|CONTAINS_TOKEN | contains token|
+|NOT_CONTAINS_TOKEN | does not contain token|
+
+If selected `Fetch page` additional metadata fields:
+* **Page Size** - Number of records to retrieve, limit - 100
+* **Page Number** - How many pages should be skipped
+* **Order** - Order direction, **ASCENDING** or **DESCENDING**
+
+Order example:
+
+```
+'createdate DESCENDING'
+```
+
+#### Output Metadata
+
+- For `Fetch page`: An object with:
+  - key ***results*** that has an array as its value
+  - key ***totalCountOfMatchingResults*** which contains the total number of results (not just on the page) which match the search criteria
+- For `Fetch All`:  An object, with key ***results*** that has an array as its value
+- For `Emit Individually`:  Each object fill the entire message
+
+### Create Association
+
+#### Config Fields
+
+* **From Object Type** Dropdown: Choose from which object needs to create association
+* **To Object Type** Dropdown: Choose to what object
+
+>**Please note**: Objects to assosiate are not dinamically retrieved, so please make sure in Hubspot documentation that selected objects can be assosiated
+
+#### Input Metadata
+
+* **From Object ID** - HubSpot id of object which needs to create association
+* **To Object ID** - id of associated object
+
+#### Output Metadata
+
+Object with key **statusCode** that represent result of request
+
+### Remove Association
+
+#### Config Fields
+
+* **From Object Type** Dropdown: Choose from which object needs to remove association
+* **To Object Type** Dropdown: Choose to what object
+
+>**Please note:** Objects to assosiate are not dinamically retrieved, so please make sure in Hubspot documentation that selected objects can be assosiated
+
+#### Input Metadata
+
+* **From Object ID** - HubSpot id of object which needs to remove association
+* **To Object ID** - id of associated object
+
+#### Output Metadata
+
+Object with key **statusCode** that represent result of request
+
+### Delete Object
+
+Action designed to delete one object by unique field
+
+#### Config Fields
+
+* **Object Type** Dropdown: Indicates Object Type to find
+* **ID to Search On** Dropdown: Indicates unique field to search on
+
+#### Input Metadata
+
+* **ID value** Textfield: value for `ID to Search On` (unique field value by itself)
+
+#### Output Metadata
+
+The expected output is an object with a `id` property. `id` value stands for id of delete object.
+
+
 ## Known Limitations
 
-[Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits).
+[Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits)
