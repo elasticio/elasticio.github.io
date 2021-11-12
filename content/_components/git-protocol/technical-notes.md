@@ -2,7 +2,7 @@
 title: Git-Protocol Technical Notes
 layout: component
 description: Technical Notes for the Git-Protocol component
-icon: git-Protocol.png
+icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
 ComponentVersion: 1.0.0
