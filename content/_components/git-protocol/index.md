@@ -4,7 +4,7 @@ layout: component
 section: Protocol components
 description:
 icon: git-Protocol.png
-icontext: XML component
+icontext: Git-Protocol component
 category: Git-Protocol
 ComponentVersion: 1.0.0
 updatedDate: 2021-11-12
