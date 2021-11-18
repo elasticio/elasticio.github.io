@@ -6,8 +6,8 @@ description: Request-Reply component for the platform.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2021-04-23
-ComponentVersion: 1.2.0
+updatedDate: 2021-11-12
+ComponentVersion: 1.2.2
 ---
 
 ## Description
@@ -74,7 +74,7 @@ List of Expected Config fields:
 
 ![Reply with attachment](img/reply-with-attachment.png)
 
-> **Note:** Please be advised that the action does not actually write an attachment when the sample is retrieved. 
+> **Note:** Please be advised that the action does not actually write an attachment when the sample is retrieved.
 
 ## Use cases for HTTP Reply
 
