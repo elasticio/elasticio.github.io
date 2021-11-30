@@ -1,6 +1,6 @@
 ---
 layout: component
-title: Zoho CRM component
+title: Zoho CRM Technical Notes
 description: Technical Notes for the Zoho CRM component.
 category: zoho-crm
 icon: zoho-crm.png
@@ -15,6 +15,11 @@ updatedDate: 2021-11-26
 
 - Added support for Attachments in `Lookup Object (at most one)`,  `Lookup objects (plural)`, `Upsert request` actions
 - Reduced the size of component icon file
+
+### 1.2.0 (November 12, 2021)
+
+- Added `Lookup objects (plural)` action
+- Added `Delete object` action
 
 ### 1.1.0 (October 29, 2021)
 
