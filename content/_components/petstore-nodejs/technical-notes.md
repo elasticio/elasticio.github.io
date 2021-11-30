@@ -5,13 +5,18 @@ description: Technical Notes for the Petstore-nodejs component
 category: petstore
 icon: petstore.png
 icontext: Petstore-nodejs componentt
-updatedDate: 2021-05-28
-ComponentVersion: 1.0.3
+updatedDate: 2021-11-26
+ComponentVersion: 1.0.4
 redirect_from:
   - /components/petstore-nodejs/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.4 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.0.3 (May 28, 2021)
 

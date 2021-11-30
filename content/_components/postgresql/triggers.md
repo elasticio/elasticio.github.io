@@ -5,8 +5,8 @@ description: PostgreSQL Component triggers.
 icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
-updatedDate: 2021-03-12
-ComponentVersion: 1.4.1
+updatedDate: 2021-11-26
+ComponentVersion: 1.4.2
 ---
 
 ## SELECT Trigger and Action

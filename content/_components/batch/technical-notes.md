@@ -5,13 +5,18 @@ description: Technical Notes for the Batch component
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2021-04-27
-ComponentVersion: 2.0.0
+updatedDate: 2021-11-26
+ComponentVersion: 2.0.1
 redirect_from:
   - /components/batch/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.1 (November 26, 2021)
+
+* Reduced the size of component icon file
+* Upgrade sailor version to 2.6.26
 
 ### 2.0.0 (April 23, 2021)
 

@@ -5,13 +5,13 @@ description: The Splitter integration connector was designed to work together wi
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2021-07-23
-ComponentVersion: 1.2.1
+updatedDate: 2021-11-26
+ComponentVersion: 1.4.0
 ---
 
 ## Split on JSONata Expression
 
-This component takes the incoming message body and applies the configured JSONata tranformation on it. The evaluated transformation must be an array. This array is split and emitted into multiple messages.
+This component takes the incoming message body and applies the configured JSONata transformation on it. The evaluated transformation must be an array. This array is split and emitted into multiple messages.
 
 For example, given the following message:
 
@@ -56,8 +56,7 @@ message parts have arrived:
 ![Re-assemble Messages](img/re-assemble.png)
 
 *  `Unique ID to describe the group` is actualy a `groupId` - Globally unique id for the group to distinguish it from other groups. This value needs to be the same for all messages in a group.
-*  `Unique ID to describe this message` is actualy a `messageId` - Id for a message to distinguish it from other messages in the group.
-Must be unique per group but does not have to be globally unique. This value needs to be different for all messages in a group.
+*  `Unique ID to describe this message` is actualy a `messageId` - Must be unique per group but does not have to be globally unique. This value needs to be different for all messages in a group. In case a messageId occures multiple times, only the messageData of the latest message survives. If the messageId is not defined, a random guid will be generated and used as messageID.
 *  `messageData` - Data from individual messages can be inserted here in form of an object. This object is then inserted into an array which is available in the message emitted for this group.
 *  `Number of Messages prodused by splitter` is actualy a `groupSize` - Number of messages in the group. Is required in `Produce Groups of Fixed Size` behaviour.
 *  `Delay timer (in ms)` - Time the process waits when no incoming messages before emiting (Max 40,000 milliseconds)
@@ -69,7 +68,7 @@ Must be unique per group but does not have to be globally unique. This value nee
 ![3 Groups](img/3-groups.png)
 
 * `Produce Groups of Fixed Size (Don't Emit Partial Groups)`: A message is emitted once the group size is reached for the given group. If arriving messages for a particular group are less than the defined group size then the group will **not be emitted**.
-* `Group All Incoming Messages`: All incoming messages will be gathered as long as specified in `Delay timer` After this time has passed messages will be emitted for each group.
+* `Group All Incoming Messages`: All incoming messages will be gathered until there are no more incoming messages in the specifeid timeframe (delay timer) at which point messages will be emitted for each group.
 * `Produce Groups of Fixed Size (Emit Partial Groups)`: Specify both `groupSize` and `Delay timer`. Once a group is complete, that group will be emitted. Once there are no more incoming messages, then partially completed groups will also be emitted.
 
 ### Flow example

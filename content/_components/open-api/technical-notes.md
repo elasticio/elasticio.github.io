@@ -5,14 +5,19 @@ description: Technical Notes for the Open API Component.
 icon: open-api.png
 icontext: Open API Component
 category: open-api
-updatedDate: 2021-03-25
-ComponentVersion: 1.1.2
+updatedDate: 2021-11-26
+ComponentVersion: 1.1.3
 redirect_from:
   - /components/open-api/completeness-matrix.html
   - /components/open-api/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.3 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.1.2 (March 25, 2021)
 

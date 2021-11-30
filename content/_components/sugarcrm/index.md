@@ -6,8 +6,8 @@ description: A user interface, industry-leading customer experience, and an intu
 icon:  sugarcrm.png
 icontext: SugarCRM component
 category: sugarcrm
-updatedDate: 2020-11-10
-ComponentVersion: 1.1.3
+updatedDate: 2021-11-26
+ComponentVersion: 1.1.4
 ---
 
 This is an open source component template for [SugarCRM](https://www.sugarcrm.com)

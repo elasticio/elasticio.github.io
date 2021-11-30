@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2021-09-15
-ComponentVersion: 1.4.2
+updatedDate: 2021-11-26
+ComponentVersion: 1.4.3
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,10 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.4.3 (November 26, 2021)
+
+* Reduced the size of component icon file
 
 ### 1.4.2 (September 15, 2021)
 

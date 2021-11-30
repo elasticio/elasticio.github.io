@@ -5,14 +5,19 @@ description: Technical Notes for PostgreSQL Component.
 icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component
-updatedDate: 2021-03-12
-ComponentVersion: 1.4.1
+updatedDate: 2021-11-26
+ComponentVersion: 1.4.2
 redirect_from:
   - /components/postgresql/completeness-matrix.html
   - /components/postgresql/changelog.html
 ---
 
 ## Changelog
+
+### 1.4.2 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.4.1 (March 12, 2021)
 

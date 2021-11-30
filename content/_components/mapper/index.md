@@ -6,7 +6,7 @@ description: A component used to map source data to target data.
 icon: mapper.png
 icontext: Mapper component
 category: mapper
-updatedDate: 2021-01-28
+updatedDate: 2021-11-26
 ComponentVersion: 0.0.13
 ---
 

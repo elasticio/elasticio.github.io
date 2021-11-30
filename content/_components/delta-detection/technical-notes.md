@@ -5,11 +5,16 @@ description: Technical Notes for the Delta Detection component.
 icon: delta-detection.png
 icontext: Delta Detection Component
 category: delta-detection
-updatedDate: 2021-07-09
-ComponentVersion: 2.0.1
+updatedDate: 2021-11-26
+ComponentVersion: 2.0.2
 ---
 
 ## Changelog
+
+### 2.0.2 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 2.0.1 (July 9, 2021)
 
