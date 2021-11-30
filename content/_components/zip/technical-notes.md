@@ -5,13 +5,18 @@ description: Technical Notes for the ZIP/UnZIP component.
 icon: zip-unzip.png
 icontext: ZIP/UnZIP component
 category: zip
-updatedDate: 2021-03-12
-ComponentVersion: 1.1.3
+updatedDate: 2021-11-26
+ComponentVersion: 1.1.4
 redirect_from:
   - /components/zip/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.4 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.1.3 (March 12, 2021)
 

@@ -5,13 +5,18 @@ description: Technical Notes for the SugarCRM component.
 icon:  sugarcrm.png
 icontext: SugarCRM component
 category: sugarcrm
-updatedDate: 2020-11-10
-ComponentVersion: 1.1.3
+updatedDate: 2021-11-26
+ComponentVersion: 1.1.4
 redirect_from:
   - /components/sugarcrm/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.4 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.1.3 (November 6, 2020)
 

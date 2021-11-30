@@ -5,13 +5,17 @@ description: Technical Notes for the MongoDB component.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2021-10-29
-ComponentVersion: 1.5.7
+updatedDate: 2021-11-26
+ComponentVersion: 1.5.8
 redirect_from:
   - /components/mongodb/changelog.html
 ---
 
 ## Changelog
+
+### 1.5.8 (November 26, 2021)
+
+* Reduced the size of component icon file
 
 ### 1.5.7 (October 29, 2021)
 

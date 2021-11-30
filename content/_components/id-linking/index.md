@@ -5,9 +5,9 @@ section: Utility components
 description: A component used to map source data to target data.
 icon: id-linking.png
 icontext: ID Linking component
-category: mapper
-updatedDate: 2021-07-09
-ComponentVersion: 1.0.1
+category: id-linking
+updatedDate: 2021-11-26
+ComponentVersion: 1.0.2
 ---
 
 ## General information

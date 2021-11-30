@@ -5,13 +5,18 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2021-08-20
-ComponentVersion: 2.0.10
+updatedDate: 2021-11-26
+ComponentVersion: 2.0.11
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.11 (November 26, 2021)
+
+* Updated the sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 2.0.10 (August 20, 2021)
 
@@ -65,6 +70,11 @@ Fix OAuth2 authentication strategy limitation: `refresh_token` property is now o
 * Use node version 14
 * Make use of new OAuth mechanism
 * First commit of v2 branch.
+
+### 1.2.18 (November 26, 2021)
+
+* Updated sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.2.17 (December 7, 2020)
 

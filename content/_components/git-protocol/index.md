@@ -6,8 +6,8 @@ description:
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.0.0
-updatedDate: 2021-11-12
+ComponentVersion: 1.0.1
+updatedDate: 2021-11-26
 ---
 
 ## General information
@@ -19,14 +19,6 @@ Git protocol component for the [{{site.data.tenant.name}} platform](http://www.{
 ## Credentials
 
 - Passphrase (string/text box, optional): Passphrase to use to authenticate
-- Private SSH Key (string/text box, required): Private SSH key to use to authenticate
-
-Example:
-
-```
-ssh-rsa AAAAB3NzaC1yc2EAAAAD{.....}kf0vBMStV user@exampleHost
-```
-
 - Public SSH Key (string/text box, required): Public SSH key to use to authenticate
 
 Example:
@@ -48,6 +40,32 @@ git@github.com
 ```
 
 - Git Project (string, required): Part of the git repo URL that is after the service URL. (e.g. If the Git Project is acme/git-protocol-component.git and the Service URL is git@github.com, then the full git URL should be git@github.com:acme/git-protocol-component.git
+
+- Private SSH Key (string/text box, required): Private SSH key to use to authenticate
+
+Example:
+
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAAD{.....}kf0vBMStV user@exampleHost
+```
+### Technical details
+
+The only field available on Platform UI to provide a secure input is a 'PasswordFieldView' view class. The problem is that it replaces new line characters with spaces.
+This method modifies the key in the following way. E.g. the key is:
+
+```
+   -----BEGIN RSA PRIVATE KEY-----
+   BASE64_ENCODED_DATA_LINE_1
+   BASE64_ENCODED_DATA_LINE_2
+   BASE64_ENCODED_DATA_LINE_3
+   -----END RSA PRIVATE KEY-----
+```
+
+The platform will then transform the key so:
+
+-----BEGIN RSA PRIVATE KEY----- BASE64_ENCODED_DATA_LINE_1 BASE64_ENCODED_DATA_LINE_2 BASE64_ENCODED_DATA_LINE_3 -----END RSA PRIVATE KEY-----
+
+The code in the component replaces all the space characters (except for in the header and footer lines) with new line characters
 
 ## Actions
 

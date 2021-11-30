@@ -5,11 +5,16 @@ description: Technical Notes for the Zoho CRM component.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.1.0
-updatedDate: 2021-10-29
+ComponentVersion: 1.3.0
+updatedDate: 2021-11-26
 ---
 
 ## Changelog
+
+### 1.3.0 (November 26, 2021)
+
+- Added support for Attachments in `Lookup Object (at most one)`,  `Lookup objects (plural)`, `Upsert request` actions
+- Reduced the size of component icon file
 
 ### 1.1.0 (October 29, 2021)
 
@@ -27,4 +32,4 @@ updatedDate: 2021-10-29
 
 Here is the Completeness Matrix for the Zoho CRM component:
 
-![Completeness Matrix](https://user-images.githubusercontent.com/7985390/139032863-3b616492-928d-41bd-be62-3e1b3e9e8efa.png)
+![Completeness Matrix](https://user-images.githubusercontent.com/30211658/142396645-e592d8d3-e897-4be8-9ec7-97c08497e6f2.png)

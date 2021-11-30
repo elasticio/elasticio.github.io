@@ -6,8 +6,8 @@ description: A component for management over Snowflake database.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2021-10-28
-ComponentVersion: 1.2.0
+updatedDate: 2021-11-26
+ComponentVersion: 1.2.1
 ---
 
 ## General information

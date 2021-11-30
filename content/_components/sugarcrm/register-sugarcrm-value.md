@@ -5,8 +5,8 @@ description: These are the instructions register a platform on your SugarCRM ins
 icon:  sugarcrm.png
 icontext: Registering a Platform Value through the UI
 category: sugarcrm
-updatedDate: 2020-11-10
-ComponentVersion: 1.1.3
+updatedDate: 2021-11-26
+ComponentVersion: 1.1.4
 ---
 
 This step is necessary to platform to your SugarCRM instance. This is one of the steps in

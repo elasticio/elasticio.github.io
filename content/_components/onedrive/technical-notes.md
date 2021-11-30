@@ -5,14 +5,19 @@ description: Technical Notes for the Microsoft OneDrive component
 icon: onedrive.png
 icontext: Microsoft OneDrive component
 category: onedrive
-ComponentVersion: 1.0.3
-updatedDate: 2021-03-25
+ComponentVersion: 1.0.4
+updatedDate: 2021-11-26
 redirect_from:
   - /components/onedrive/completeness-matrix.html
   - /components/onedrive/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.4 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.0.3 (March 25, 2021)
 

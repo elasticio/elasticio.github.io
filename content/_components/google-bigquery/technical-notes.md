@@ -5,14 +5,19 @@ description: Changelog for Google BigQuery component.
 icon: google-bigquery.png
 icontext: Google BigQuery component
 category: bigquery
-ComponentVersion: 1.0.6
-updatedDate: 2021-02-12
+ComponentVersion: 1.0.7
+updatedDate: 2021-11-26
 redirect_from:
   - /components/google-bigquery/completeness-matrix.html
   - /components/google-bigquery/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.7 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.0.6 (February 12, 2021)
 

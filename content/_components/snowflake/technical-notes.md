@@ -5,11 +5,15 @@ description: Technical Notes for the Snowflake component.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2021-10-28
-ComponentVersion: 1.2.0
+updatedDate: 2021-11-26
+ComponentVersion: 1.2.1
 ---
 
 ## Changelog
+
+### 1.2.1 (November 26, 2021)
+
+* Reduced the size of component icon file
 
 ### 1.2.0 (October 28, 2021)
 
