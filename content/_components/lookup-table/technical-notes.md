@@ -5,13 +5,18 @@ description: Technical Notes for Lookup Table component.
 icon: lookup.png
 icontext: Lookup component
 category: lookup
-ComponentVersion: 1.1.4
-updatedDate: 2021-02-12
+ComponentVersion: 1.1.5
+updatedDate: 2021-11-26
 redirect_from:
   - /components/lookup-table/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.5 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.1.4 (February 12, 2021)
 

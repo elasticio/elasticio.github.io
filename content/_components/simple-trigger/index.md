@@ -6,8 +6,8 @@ description: A component used to trigger integration flows without requesting da
 icon: simple-trigger.png
 icontext: Simple-trigger component
 category: simple-trigger
-updatedDate: 2021-02-12
-ComponentVersion: 1.1.4
+updatedDate: 2021-11-26
+ComponentVersion: 1.1.5
 redirect_from:
   - /components/timer/index.html
 ---

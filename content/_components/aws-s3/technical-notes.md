@@ -5,14 +5,19 @@ description: Technical Notes for  AWS S3 component.
 icon: aws-s3.png
 icontext: AWS S3 component
 category: aws-s3
-updatedDate: 2020-11-12
-ComponentVersion: 1.4.1
+updatedDate: 2020-11-26
+ComponentVersion: 1.4.2
 redirect_from:
   - /components/aws-s3/completeness-matrix.html
   - /components/aws-s3/changelog.html
 ---
 
 ## Changelog
+
+### 1.4.2 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.4.1 (November 12, 2020)
 
