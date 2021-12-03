@@ -6,8 +6,8 @@ description: A Google Spreadsheets component to read and write to the Google Spr
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
-updatedDate: 2020-10-30
-ComponentVersion: 2.0.0
+updatedDate: 2021-11-26
+ComponentVersion: 2.0.1
 ---
 
 ## Requirements
@@ -44,7 +44,7 @@ Following environment are required:
 > **Please note:** if result quota restriction will be less than 1 request/min component `Retrieve Sample` task won't be complete
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
  To get these please use the [Google Developers Console](https://console.developers.google.com). As a callback please use `https://your-tenant.address/callback/oauth2`.
 

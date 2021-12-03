@@ -5,13 +5,17 @@ description: Technical Notes for the Configuration component
 icon: configuration.png
 icontext: Configuration component
 category: configuration
-updatedDate: 2021-02-12
-ComponentVersion: 0.0.6
+updatedDate: 2021-11-26
+ComponentVersion: 0.0.7
 redirect_from:
   - /components/configuration/changelog.html
 ---
 
 ## Changelog
+
+### 0.0.7 (November 26, 2021)
+
+* Updated sailor version to 2.6.26
 
 ### 0.0.6 (February 12, 2021)
 

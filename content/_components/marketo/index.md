@@ -6,8 +6,8 @@ description: A marketing automation component focused on account-based marketing
 icon: marketo.png
 icontext: Marketo component
 category: marketo
-createdDate: 2018-03-02
-updatedDate: 2020-05-21
+updatedDate: 2021-11-26
+ComponentVersion: 2.2.3
 ---
 
 ## Description
@@ -32,7 +32,7 @@ Marketo [provides instructions to grant API access](http://developers.marketo.co
 | `BULK_IMPORT_POLLING_TIMEOUT`| false | Timeout for polling bulk import job status in ms | 60000 |
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ###  Credentials
 

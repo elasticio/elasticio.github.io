@@ -6,8 +6,8 @@ description: A object storage that can store and retrieve e.g. files, documents 
 icon:  aws-s3.png
 icontext: AWS S3 component
 category: aws-s3
-updatedDate: 2020-11-12
-ComponentVersion: 1.4.1
+updatedDate: 2020-11-26
+ComponentVersion: 1.4.2
 ---
 
 ## General information

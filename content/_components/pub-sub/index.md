@@ -6,8 +6,8 @@ description: An open-source Component for publish–subscribe messaging pattern 
 icon: pub-sub.png
 icontext: Pub-Sub component
 category: pub-sub
-updatedDate: 2021-02-12
-ComponentVersion: 1.0.6
+updatedDate: 2021-11-26
+ComponentVersion: 1.0.7
 ---
 
 ## Description

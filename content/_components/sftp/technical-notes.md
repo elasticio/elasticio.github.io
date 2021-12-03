@@ -5,15 +5,20 @@ description: Technical Notes for the SFTP component.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2021-02-12
-ComponentVersion: 1.4.4
+updatedDate: 2021-11-26
+ComponentVersion: 1.4.5
 redirect_from:
   - /components/sftp/changelog.html
 ---
 
 ## Changelog
 
-## 1.4.4 (February 12, 2021)
+### 1.4.5 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
+
+### 1.4.4 (February 12, 2021)
 
 * Update sailor version to 2.6.24
 
@@ -31,6 +36,15 @@ redirect_from:
 * Annual audit of the component code to check if it exposes sensitive data in the logs
 * Update sailor to 2.6.17
 
+### 1.4.0 (July 6, 2020)
+
+* Update component to new sailor version 2.6.10
+* If deleting a file that does not exist, emit the empty message.
+* Use POSIX rename if possible to move files. It is now possible to replace existing files with move.
+* Update all dependencies.
+* Use Node v 14.
+* Remove update docs on deploy script
+
 ### 1.3.0 (June 5, 2020)
 
 * Add new 'Move File' action
@@ -40,7 +54,7 @@ redirect_from:
 
 * Update component to new sailor version 2.6.7
 
-### 1.2.1 (December 30, 2019)
+## 1.2.1 (December 30, 2019)
 
 * Update component to new sailor version 2.5.4
 
@@ -49,7 +63,7 @@ redirect_from:
 * Add max to file size and environment variable to configure
 * Add key-based authentication
 * Add Download files action
-* Add Upload File From URL action    
+* Add Upload File From URL action
 * The following actions are renamed:
   - Upload files -> Upload files From Attachments Header
   - Lookup file by name -> Download file by name
@@ -61,8 +75,14 @@ redirect_from:
 * Migrate integration tests to another SFTP Server
 * Fix integration tests error during local running
 * Migrate SFTP-->Attachment upload logic to streams
-* Poll files action - Fix 0kb file download bug
-* Download file by name action - Fix 0kb file download bug  
+
+#### Action: Poll files
+
+* Fix 0kb file download bug
+
+#### Action: Download file by name
+
+* Fix 0kb file download bug
 
 ### 1.1.1 (December 6 2019)
 
@@ -73,7 +93,10 @@ redirect_from:
 * Add `Delete file` action
 * Add `Lookup file by name` action
 * Add `Get new and updated files` trigger
-* Upload files action - Add custom name for uploaded file
+
+#### Action: Upload files
+
+* Add custom name for uploaded file
 
 ### 1.0.0 (October 8, 2019)
 
