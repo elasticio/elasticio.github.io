@@ -5,14 +5,21 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2021-08-20
-ComponentVersion: 2.2.0
+updatedDate: 2021-12-01
+ComponentVersion: 2.2.1
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.2.1 (December 1, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
+* Fix output metadata for `Get New and Updated Objects Polling` trigger
+* Fix output metadata for `Lookup Objects` action
 
 ### 2.2.0 (August 20, 2021)
 
