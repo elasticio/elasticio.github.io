@@ -7,7 +7,7 @@ icon:  sugarcrm.png
 icontext: SugarCRM component
 category: sugarcrm
 updatedDate: 2021-11-26
-ComponentVersion: 1.1.4
+ComponentVersion: 1.1.5
 ---
 
 This is an open source component template for [SugarCRM](https://www.sugarcrm.com)

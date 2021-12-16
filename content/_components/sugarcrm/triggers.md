@@ -6,7 +6,7 @@ icon:  sugarcrm.png
 icontext: SugarCRM component
 category: sugarcrm
 updatedDate: 2021-11-26
-ComponentVersion: 1.1.4
+ComponentVersion: 1.1.5
 ---
 
 ## Fetching New and Updated Objects from SugarCRM - Polling

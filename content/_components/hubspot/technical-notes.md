@@ -5,11 +5,17 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2021-10-29
-ComponentVersion: 1.3.1
+updatedDate: 2021-12-10
+ComponentVersion: 1.4.0
 ---
 
 ## Changelog
+
+### 1.4.0 (December 10, 2021)
+
+- Reduced the size of component icon file
+- Added support for File Custom Fields in `Upsert` action
+- Added option `Enable download attachments` to actions: `Lookup Objects`, `Lookup Object', 'Lookup Set of Objects`
 
 ### 1.3.1 (November 12, 2021)
 

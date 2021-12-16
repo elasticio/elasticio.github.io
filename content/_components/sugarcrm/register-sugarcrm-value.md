@@ -6,7 +6,7 @@ icon:  sugarcrm.png
 icontext: Registering a Platform Value through the UI
 category: sugarcrm
 updatedDate: 2021-11-26
-ComponentVersion: 1.1.4
+ComponentVersion: 1.1.5
 ---
 
 This step is necessary to platform to your SugarCRM instance. This is one of the steps in
