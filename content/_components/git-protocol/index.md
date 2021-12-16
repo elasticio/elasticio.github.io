@@ -6,8 +6,8 @@ description:
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.0.1
-updatedDate: 2021-11-26
+ComponentVersion: 1.1.0
+updatedDate: 2021-12-10
 ---
 
 ## General information
@@ -22,6 +22,7 @@ Git protocol component for the [{{site.data.tenant.name}} platform](http://www.{
 - Public SSH Key (string/text box, required): Public SSH key to use to authenticate
 
 Example:
+
 ```
 -----BEGIN RSA PRIVATE KEY-----
 MBJH8a7JHVHg67JKB98yNB7y8776867dsfaAUG925ZwqePrSWDL8ikHB
@@ -35,6 +36,7 @@ jnJHBGH68t76ghvdsaHJVH66657VCHHcEZD+aVRKDQwjIosXR8r88b==
 - Service URL (string, required): Url of the service to test the SSH key for validity
 
 Example:
+
 ```
 git@github.com
 ```
@@ -48,6 +50,7 @@ Example:
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAAD{.....}kf0vBMStV user@exampleHost
 ```
+
 ### Technical details
 
 The only field available on Platform UI to provide a secure input is a 'PasswordFieldView' view class. The problem is that it replaces new line characters with spaces.
@@ -65,7 +68,12 @@ The platform will then transform the key so:
 
 -----BEGIN RSA PRIVATE KEY----- BASE64_ENCODED_DATA_LINE_1 BASE64_ENCODED_DATA_LINE_2 BASE64_ENCODED_DATA_LINE_3 -----END RSA PRIVATE KEY-----
 
-The code in the component replaces all the space characters (except for in the header and footer lines) with new line characters
+The code in the component replaces all the space characters (except for in the header and footer lines) with new line character
+
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
@@ -108,5 +116,34 @@ This action does the equivalent to
 
 * commitId - ID of the commit in the repo
 
+### Read from Branch
+
+This action reads the files from a Git repository and saves them in Maester (Elastic's internal object storage)
+
+#### Config Fields
+
+- Include hidden files: When selected, hidden files (starting with '.') are included. Otherwise they are skipped
+
+#### Input Metadata
+
+- Git Branch (string, required): Identifies an existing branch in the git repo from which to read
+- Files to transfer to IPAAS (array of strings, required): List of files or file wildcards to read from the commit and transfer to Maester
+
+#### Output Metadata
+
+* commitId - ID of the commit in the repo
+
+#### File patterns usage
+
+Internally this library is being used to find the wildcards/patterns match: https://www.npmjs.com/package/fast-glob
+
+Examples:
+
+1. Match all the files including all subdirectories (also note that 'Include hidden files' configuration field might affect the result): `'**'`
+2. Match all the files of js type: `'**/*.js'`
+3. Match a single file in the root folder: `'component.json'`
+4. Match all the files in the given 'lib' folder: `'lib/**'`
+
 ## Known limitations
+
 1. Maester object created by Sailor's Lightweight message feature can not be read (to be precise - they will be processed but not decrypted)

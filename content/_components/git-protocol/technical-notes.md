@@ -5,11 +5,15 @@ description: Technical Notes for the Git-Protocol component
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.0.1
-updatedDate: 2021-11-26
+ComponentVersion: 1.1.0
+updatedDate: 2021-12-10
 ---
 
 ## Changelog
+
+### 1.1.0 (December 10, 2021)
+
+* Added new action `Read from Branch`
 
 ### 1.0.1 (November 26, 2021)
 

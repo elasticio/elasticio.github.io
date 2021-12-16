@@ -6,8 +6,8 @@ description: A component that connects to Hubspot API
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2021-10-29
-ComponentVersion: 1.3.1
+updatedDate: 2021-12-10
+ComponentVersion: 1.4.0
 ---
 
 ## General information
@@ -89,6 +89,24 @@ Action to make upsert(update/create) object in Hubspot
 
 Dynamically generated
 
+For each custom file field, it is generated an object to upload the custom file to populate that field. That object includes the following:
+
+ * Attachment URL (URL containing the file contents to upload)
+ * Folder Path
+ * File Name
+ * Charset Hunch
+ * Access
+ * TTL
+ * Overwrite
+ * Duplicate Validation Strategy
+ * Duplicate Validation Scope
+
+For uploading file [Files API](https://developers.hubspot.com/docs/api/files/files) is used.
+
+#### Known limitations
+
+Please, don't use platform attachments url (like http://steward-service.platform.svc.cluster.local:8200/v2/objects/xxxxx) for fields `Attachment URL`, it is thrown exception `process.uncaughtException`.
+
 ### Lookup Set Of Objects By Unique Criteria
 
 Action to lookup object in Hubspot.
@@ -98,6 +116,7 @@ Lookup Set will make sure all the items in the set should be there, otherwise th
 
 * **Object type** - Object type for lookup ("Companies", "Contacts", "Deals", "Line Items", "Tickets", "Quotes")
 * **ID to Search On** - Identification to search object ("Hubspot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
+* **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
 
 #### Input Metadata
 
@@ -113,6 +132,7 @@ Action designed to lookup one object by unique field
 * **ID to Search On** Dropdown: Indicates unique field to search on
 * **Allow ID to be omitted** Checkbox: When selected, the ID field becomes optional, otherwise it is a required field
 * **Allow zero results** Checkbox: When selected, if zero results are returned, the empty object {} is emitted, otherwise typically an error would be thrown.
+* **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
 
 #### Input Metadata
 
@@ -126,6 +146,7 @@ Action to lookup objects in Hubspot
 
 * **Object Type** Dropdown: Indicates Object Type to find
 * **Behaviour** Dropdown with options: `Fetch all`, `Fetch page`, `Emit individually`, required
+* **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
 
 #### Input Metadata
 
@@ -227,4 +248,5 @@ The expected output is an object with a `id` property. `id` value stands for id 
 
 ## Known Limitations
 
-[Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits)
+1. [Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits)
+2. Platform attachments url (like http://steward-service.platform.svc.cluster.local:8200/v2/objects/xxxxx) thrown process.uncaughtException

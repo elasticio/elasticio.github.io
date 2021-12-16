@@ -6,12 +6,16 @@ icon:  sugarcrm.png
 icontext: SugarCRM component
 category: sugarcrm
 updatedDate: 2021-11-26
-ComponentVersion: 1.1.4
+ComponentVersion: 1.1.5
 redirect_from:
   - /components/sugarcrm/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.5 (November 26, 2021)
+
+* Added metadata where it was missing
 
 ### 1.1.4 (November 26, 2021)
 
