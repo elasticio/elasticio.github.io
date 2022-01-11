@@ -1,7 +1,7 @@
 ---
 title: Docuware Technical Notes
 layout: component
-description: Changelog for Docuware component
+description: Changelog for the Docuware component
 icon: docuware.png
 icontext: Docuware component
 category: docuware

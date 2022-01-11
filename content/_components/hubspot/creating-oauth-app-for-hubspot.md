@@ -5,8 +5,8 @@ description: How to create OAuth App for Hubspot.
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2021-12-10
-ComponentVersion: 1.4.0
+updatedDate: 2021-12-22
+ComponentVersion: 1.4.1
 ---
 
 Authentication occurs via OAuth 2.0.

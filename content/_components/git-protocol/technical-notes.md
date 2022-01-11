@@ -5,11 +5,19 @@ description: Technical Notes for the Git-Protocol component
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.1.0
-updatedDate: 2021-12-10
+ComponentVersion: 1.1.2
+updatedDate: 2021-12-24
 ---
 
 ## Changelog
+
+### 1.1.2 (December 24, 2021)
+
+* Fixed a bug in verify credentials
+
+### 1.1.1 (December 22, 2021)
+
+* Fixed a bug when metadata could not be loaded in the `Create Commit` action
 
 ### 1.1.0 (December 10, 2021)
 

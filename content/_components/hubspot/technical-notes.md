@@ -5,11 +5,15 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2021-12-10
-ComponentVersion: 1.4.0
+updatedDate: 2021-12-22
+ComponentVersion: 1.4.1
 ---
 
 ## Changelog
+
+### 1.4.1 (December 22, 2021)
+
+- Fix bug with attachments uploading in `Upsert` action
 
 ### 1.4.0 (December 10, 2021)
 
