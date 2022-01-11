@@ -6,8 +6,8 @@ description: A component that connects to Hubspot API
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2021-12-10
-ComponentVersion: 1.4.0
+updatedDate: 2021-12-22
+ComponentVersion: 1.4.1
 ---
 
 ## General information
@@ -249,4 +249,4 @@ The expected output is an object with a `id` property. `id` value stands for id 
 ## Known Limitations
 
 1. [Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits)
-2. Platform attachments url (like http://steward-service.platform.svc.cluster.local:8200/v2/objects/xxxxx) thrown process.uncaughtException
+2. Please, use some timer (around 5sec) if you are going to implement flow like `Upsert Object Action` -> any type of `Lookup Object(s) Action` with enabled feature `Enable download attachments`. Uploading the file to Hubspot on `Upsert Object Action` takes some time, so it is possible to receive `404` error on lookup.
