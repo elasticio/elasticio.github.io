@@ -58,3 +58,47 @@ Action to call any DocuWare API endpoint
 * **HTTP headers** - HTTP headers of the response, required.
 * **Response Body** - HTTP response body.
 * **URL to Response Body** - If the HTTP response body is present and is not JSON, here will be a link to the Maester attachment.
+
+### Lookup Documents (Lookup Objects Plural)
+
+Action to lookup documents in DocuWare by parameters
+
+#### Config Fields
+
+* **File Cabinet Id** - (String, required): Id of File Cabinet to use.
+* **Search Dialog to Use** - (String, required): Id of Search Dialog to use.
+* **Behavior** - (Dropdown, required): Behavior to emit items (`Emit Individually` or `Fetch all`.)
+
+#### Input Metadata
+
+* **Operation** - (String, required): Operation for request parameters (`Or` or `And`).
+Other fields are dynamically generated
+
+#### Output Metadata
+
+* **Result** - array of items or single item depends os selected `Behavior`
+
+### Make Raw File Upload Request
+
+Action to upload file to DocuWare
+
+#### Config Fields
+
+* **Method** - (String, required): values `GET`, `POST`, `DELETE`. HTTP verb to use in the request.
+
+#### Input Metadata
+
+* **DocuwareUrl** - (String, required): Relative URL path to call. For example: `https://servername.com/docuware/platform/FileCabinets/{FileCabinetId}/Documents/{DocumentId}/FileDownload?targetFileType=Auto&keepAnnotations=false`
+* **Request Headers** - (Object, optional): Headers of request for `DocuwareUrl`  
+When `Method` is `POST` additionally two fields:
+  * **Request Body URL** - (String, required): URL to a Maester attachment that would be provided as the HTTP body for the request. For example: `http://maester-service.platform.svc.cluster.local:3002/objects/object-id?storage_type=maester`
+  * **File Name** - (String, required): Url for the file from platform storage
+
+#### Output Metadata
+
+* **Status Code** - HTTP status code of the response, required.
+* **HTTP headers** - HTTP headers of the response, required.  
+When `Method` is `GET`:
+  * **Attachment URL** - Link for attachment saved into platform Maester storage.
+In other `Method`-s:
+  * **Response Body** - HTTP response body.
