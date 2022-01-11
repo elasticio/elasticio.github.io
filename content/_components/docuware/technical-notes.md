@@ -6,7 +6,7 @@ icon: docuware.png
 icontext: Docuware component
 category: docuware
 ComponentVersion: 1.1.0
-updatedDate: 2021-24-10
+updatedDate: 2021-12-24
 ---
 
 ## Changelog
