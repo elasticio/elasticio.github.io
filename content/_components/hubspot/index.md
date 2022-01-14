@@ -31,6 +31,13 @@ During credentials creation you would need to select existing Auth Client from d
 
 ![Oauth2](img\client-exist.png)
 
+* The **Additional parameters** input can be left empty.
+* In the **Scopes** input, the following value should be provided. (If you wish to only grant certain permissions, you can do so by removing them from this list.) 
+
+```
+crm.objects.contacts.read,crm.objects.contacts.write,crm.schemas.contacts.read,crm.schemas.contacts.write,crm.objects.owners.read
+``` 
+
 More information you can find in other article: [Creating OAuth App for Hubspot](creating-oauth-app-for-salesforce)
 
 ## Triggers
