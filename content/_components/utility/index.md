@@ -6,8 +6,8 @@ description: A component that is designed for utility operations.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2021-07-23
-ComponentVersion: 1.3.0
+updatedDate: 2022-01-14
+ComponentVersion: 1.4.0
 ---
 
 ## Environment variables
@@ -102,6 +102,56 @@ Introduce a delay before passing the message to the next step.
 * `Delay Time (in seconds)` - Amount of time this component should wait/delay (in seconds) before emiting the message. Negative number will be converted to positive, strings converted to number, if converted failed will set to zero.
 * `Data to transfer` - Use this field to transfer data in to another steps
 
+### Log Message
+
+Log the message (and potentially passthrough) into the provided logger at the selected level.
+
+#### Config Fields
+
+* `Log Level` - dropdown, the log level at which to store the message, default: Info. To see message in logs, level in config must be higher or equal component Log Level. When you do "Retrieve new sample" log Level set to platform default value - Info.
+* `Log All Passthrough` - dropdown, Log only the message body or log all passthrough data, default: message body
+
+#### Input Metadata
+
+There are no Input Metadata in this action.
+
+#### Output Metadata
+
+Match the input message metadata
+
+### Create JSON Patch
+
+Utility to create a JSON patch
+
+#### Config Fields
+
+There are no Config Fields in this action.
+
+#### Input Metadata
+
+* `Origin Object` - Object that we have now
+* `Target Object` - Object that should be after patch was applied
+
+#### Output Metadata
+
+* `JSON Patch` - Series of changes to be applied to go from Origin Object to Target Object
+
+### Apply JSON Patch
+
+Utility to apply a JSON patch
+
+#### Config Fields
+
+There are no Config Fields in this action.
+
+#### Input Metadata
+
+* `Origin Object` - Object that we have now
+* `JSON Patch` - Series of changes to be applied to go from Origin Object to Target Object
+
+#### Output Metadata
+
+* `Target Object` - Object that should be after patch was applied
 
 ## Limitations
 

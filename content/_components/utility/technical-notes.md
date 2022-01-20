@@ -5,13 +5,20 @@ description: Technical Notes for the Utility Component.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2021-07-23
-ComponentVersion: 1.3.0
+updatedDate: 2022-01-14
+ComponentVersion: 1.4.0
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+### 1.4.0 (January 14, 2022)
+
+* Add New action: `Log Message`
+* Add New action: `Create JSON Patch`
+* Add New action: `Apply JSON Patch`
+* Bump dependencies
 
 ### 1.3.0 (July 23, 2021)
 
