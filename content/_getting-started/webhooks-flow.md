@@ -78,10 +78,6 @@ You can also generate a sample automatically:
 
 The sample gets evaluated for the correctness of the format. Click on *Save* button to continue.
 
-![Finish webhook configuration](/assets/img/getting-started/webhook-flow/webhook-flow-10.png "Finish webhook configuration")
-
-We have now the sample data for our webhook. Please click on *Continue* button to finish configuring the webhook component and load the step summary page.
-
 ![Webhook step summary](/assets/img/getting-started/webhook-flow/webhook-flow-11.png "Webhook step summary")
 
 Screenshot above shows the Webhook step summary page where you can add a note to describe the step and change the step name. Click on *Add another step* button to finish the Webhook step and load the component chooser again.
@@ -116,7 +112,7 @@ Click on *Save* to verify the credentials. The verification can take no more tha
 
 The screenshot above demonstrates the mapping of data between the data from webhook and the Petstore action two fields. Please select these properties by pressing the drop-down menu on the right of each input field as shown.
 
-The `petname` gets mapped with the *Name* field and the `petstatus` with the *Status* field respectively. Click on *Continue* button after you have done with the mapping.
+The `petname` gets mapped with the *Name* field and the `petstatus` with the *Status* field respectively.
 
 ![Retrieve the sample](/assets/img/getting-started/webhook-flow/webhook-flow-17.png "Retrieve the sample")
 
