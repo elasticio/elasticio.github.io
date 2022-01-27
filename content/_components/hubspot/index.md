@@ -8,13 +8,15 @@ icontext: Hubspot component
 category: hubspot
 updatedDate: 2021-12-22
 ComponentVersion: 1.4.1
+redirect_from:
+  - /components/hubspot-component
+  - /components/hubspot-component/actions
+  - /components/hubspot-component/triggers
 ---
 
 ## General information
 
-### Description
-
-A [{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) component that connects to Hubspot API.
+{{page.description}}
 
 ### Environment variables
 
@@ -24,43 +26,45 @@ A [{{site.data.tenant.name}}](http://www.{{site.data.tenant.name}}) component th
 
 ## Credentials
 
-Authentication occurs via OAuth 2.0.
-In order to make OAuth work, you need a new App in your Hubspot.
+Authentication occurs via OAuth 2.0. To make OAuth work, you need to
+[create a new OAuth2 App](creating-oauth-app-for-hubspot) in your Hubspot.
 
-During credentials creation you would need to select existing Auth Client from drop-down list Choose Auth Client or create the new one:
+During the credentials creation you can either select existing OAuth2 Client
+from the drop-down list or [choose to create a new OAuth2 Client](creating-oauth-app-for-hubspot)
+to use your created OAuth2 App in HubSpot.
 
-![Oauth2](img\client-exist.png)
+![Oauth2](img/hubspot-credentials-screen.png)
 
-* The **Additional parameters** input can be left empty.
-* In the **Scopes** input, the following value should be provided. (If you wish to only grant certain permissions, you can do so by removing them from this list.) 
+* Leave the **Additional parameters** input empty unless you have specifically configured this field in your HubSpot.
+* Provide the following value in the **Scopes** input: `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.schemas.contacts.write`, `crm.objects.owners.read`. If you wish to grant certain permissions, you can do so by removing them from this list.
 
-```
-crm.objects.contacts.read,crm.objects.contacts.write,crm.schemas.contacts.read,crm.schemas.contacts.write,crm.objects.owners.read
-``` 
+To complete the process:
 
-More information you can find in other article: [Creating OAuth App for Hubspot](creating-oauth-app-for-salesforce)
+*   click on **Authenticate** button - if you have not logged into Hubspot before, then log in by entering data in the login window that appears
+*   click on **Verify** button for verifying your credentials
+*   click on **Save** button for saving your credentials.
 
 ## Triggers
 
 ### Get New and Updated Objects
 
-### Config Fields
+### Configuration Fields
 
- * **Object Type** Dropdown: Indicates Object Type to be fetched
- * **Emit behavior** Dropdown: Indicates emit objects individually or emit by page
- * **Field to poll** Dropdown: Indicates field to poll (new objects or modified objects)
- * **Start Time** - TextField (string, optional): Indicates the beginning time to start retrieving events from
- * **End Time** - TextField (string, optional, defaults to never): If provided, don’t fetch records modified after this time
- * **Size of Polling Page** - TextField (optional, positive integer, max 100, defaults to 100): Indicates the size of pages to be fetched
- * **Single Page per Interval** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page immediately, wait until the next flow start to fetch the next page
+*   **Object Type** drop-down: Indicates Object Type to be fetched
+*   **Emit behavior** drop-down: Indicates emit objects individually or emit by page
+*   **Field to poll** drop-down: Indicates field to poll (new objects or modified objects)
+*   **Start Time** - Text field (string, optional): Indicates the beginning time to start retrieving events from
+*   **End Time** - Text field (string, optional, defaults to never): If provided, don’t fetch records modified after this time
+*   **Size of Polling Page** - Text field (optional, positive integer, max 100, defaults to 100): Indicates the size of pages to be fetched
+*   **Single Page per Interval** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page at once, wait until the next flow start to fetch the next page
 
 ### Webhook
 
 Receive data from HubSpot based on configured [webhooks](https://developers.hubspot.com/docs/api/webhooks)
 
-### Config Fields
+### Configuration Fields
 
-* **Client secret** - You need provide Client secret from HubSpot application here
+*   **Client secret** - You need provide Client secret from HubSpot application here
 > You will get error during webhook requests if this field will be incorrect
 
 #### Output Metadata
@@ -73,57 +77,60 @@ Triggered object from HubSpot
 
 Action to call any Hubspot API endpoint
 
-#### Config Fields
+#### Configuration Fields
 
-* **Throw Error on 404 Response** - (optional) Treat 404 HTTP responses as errors, defaults to `false`.
+*   **Throw Error on 404 Response** - (optional) Treat 404 HTTP responses as errors, defaults to `false`.
 
 #### Input Metadata
 
-* **URL** - Path of the resource relative to the URL base (https://api.hubapi.com), required.
-* **Method** - Allowed values `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, required. HTTP verb to use in the request.
-* **Request Body** - Body of the request to send
+*   **URL** - Path of the resource relative to the URL base ([https://api.hubapi.com](https://api.hubapi.com)), required.
+*   **Method** - Allowed values `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, required. HTTP verb to use in the request.
+*   **Request Body** - Body of the request to send
 
 ### Upsert
 
 Action to make upsert(update/create) object in Hubspot
 
-#### Config Fields
+#### Configuration Fields
 
-* **Object type** - Object type for upsert ("Companies", "Contacts", "Deals", "Line Items", "Tickets")
-* **ID to Search On** - Identificator to search object ("Hubspot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
+*   **Object type** - Object type for upsert ("Companies", "Contacts", "Deals", "Line Items", "Tickets")
+*   **ID to Search On** - Id to search object ("Hubspot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
 
 #### Input Metadata
 
 Dynamically generated
 
-For each custom file field, it is generated an object to upload the custom file to populate that field. That object includes the following:
+For each custom file field, an object is generated to upload the custom file
+to populate that field. That object includes the following:
 
- * Attachment URL (URL containing the file contents to upload)
- * Folder Path
- * File Name
- * Charset Hunch
- * Access
- * TTL
- * Overwrite
- * Duplicate Validation Strategy
- * Duplicate Validation Scope
+*   Attachment URL (URL containing the file contents to upload)
+*   Folder Path
+*   File Name
+*   Charset Hunch
+*   Access
+*   TTL
+*   Overwrite
+*   Duplicate Validation Strategy
+*   Duplicate Validation Scope
 
 For uploading file [Files API](https://developers.hubspot.com/docs/api/files/files) is used.
 
 #### Known limitations
 
-Please, don't use platform attachments url (like http://steward-service.platform.svc.cluster.local:8200/v2/objects/xxxxx) for fields `Attachment URL`, it is thrown exception `process.uncaughtException`.
+Please, don't use platform attachments url
+(like `http://steward-service.platform.svc.cluster.local:8200/v2/objects/xxxxx`)
+for fields `Attachment URL`. The component will throw an exception `process.uncaughtException`.
 
 ### Lookup Set Of Objects By Unique Criteria
 
 Action to lookup object in Hubspot.
 Lookup Set will make sure all the items in the set should be there, otherwise throw an error.
 
-#### Config Fields
+#### Configuration Fields
 
-* **Object type** - Object type for lookup ("Companies", "Contacts", "Deals", "Line Items", "Tickets", "Quotes")
-* **ID to Search On** - Identification to search object ("Hubspot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
-* **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
+*   **Object type** - Object type for lookup ("Companies", "Contacts", "Deals", "Line Items", "Tickets", "Quotes")
+*   **ID to Search On** - Identification to search object ("Hubspot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
+*   **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
 
 #### Input Metadata
 
@@ -133,57 +140,60 @@ An array where each item is an ID
 
 Action designed to lookup one object by unique field
 
-#### Config Fields
+#### Configuration Fields
 
-* **Object Type** Dropdown: Indicates Object Type to find
-* **ID to Search On** Dropdown: Indicates unique field to search on
-* **Allow ID to be omitted** Checkbox: When selected, the ID field becomes optional, otherwise it is a required field
-* **Allow zero results** Checkbox: When selected, if zero results are returned, the empty object {} is emitted, otherwise typically an error would be thrown.
-* **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
+*   **Object Type** drop-down: Indicates Object Type to find
+*   **ID to Search On** drop-down: Indicates unique field to search on
+*   **Allow ID to be omitted** Checkbox: When selected, the ID field becomes optional, otherwise it is a required field
+*   **Allow zero results** Checkbox: When selected, if zero results are returned, the empty object {} is emitted, otherwise typically an error would be thrown.
+*   **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
 
 #### Input Metadata
 
-* **ID value** Textfield: value for `ID to Search On` (unique field value by itself)
+*   **ID value** Text field: value for `ID to Search On` (unique field value by itself)
 
 ### Lookup Objects (Plural)
 
 Action to lookup objects in Hubspot
 
-#### Config Fields
+#### Configuration Fields
 
-* **Object Type** Dropdown: Indicates Object Type to find
-* **Behaviour** Dropdown with options: `Fetch all`, `Fetch page`, `Emit individually`, required
-* **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
+*   **Object Type** drop-down: Indicates Object Type to find
+*   **Behaviour** drop-down with options: `Fetch all`, `Fetch page`, `Emit individually`, required
+*   **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
 
 #### Input Metadata
 
-* **Search Criteria** Array: Search terms are to be combined with the AND operator. For each search term.
+*   **Search Criteria** Array: Search terms are to be combined with the AND operator. For each search term.
 
 >**Please note:** HubSpot support up to three criteria
 
 Example:
 Records created after *'2021-10-01T03:30:17.883Z'* with property *'firstname'* contains *'Tony'*
+
 ```
 ["createdate GT 1633059017883", "firstname CONTAINS_TOKEN Tony"]
 ```
+
 Supported operators:
-|OPERATOR|DESCRIPTION|
-|----|------|
-|EQ | equal to|
-|NEQ | not equal to|
-|LT | less than|
-|LTE | less than or equal to|
-|GT | greater than|
-|GTE | greater than or equal to|
-|HAS_PROPERTY | has property value|
-|NOT_HAS_PROPERTY | does not have property value|
-|CONTAINS_TOKEN | contains token|
-|NOT_CONTAINS_TOKEN | does not contain token|
+
+| OPERATOR | DESCRIPTION |
+| ---- | ------ |
+| EQ | equal to |
+| NEQ | not equal to |
+| LT | less than |
+| LTE | less than or equal to |
+| GT | greater than |
+| GTE | greater than or equal to |
+| HAS_PROPERTY | has property value |
+| NOT_HAS_PROPERTY | does not have property value |
+| CONTAINS_TOKEN | contains token |
+| NOT_CONTAINS_TOKEN | does not contain token |
 
 If selected `Fetch page` additional metadata fields:
-* **Page Size** - Number of records to retrieve, limit - 100
-* **Page Number** - How many pages should be skipped
-* **Order** - Order direction, **ASCENDING** or **DESCENDING**
+*   **Page Size** - Number of records to retrieve, limit - 100
+*   **Page Number** - How many pages should be skipped
+*   **Order** - Order direction, **ASCENDING** or **DESCENDING**
 
 Order example:
 
@@ -193,25 +203,26 @@ Order example:
 
 #### Output Metadata
 
-- For `Fetch page`: An object with:
-  - key ***results*** that has an array as its value
-  - key ***totalCountOfMatchingResults*** which contains the total number of results (not just on the page) which match the search criteria
-- For `Fetch All`:  An object, with key ***results*** that has an array as its value
-- For `Emit Individually`:  Each object fill the entire message
+*   For `Fetch page`: An object with:
+    *   key ***results*** that has an array as its value
+    *   key ***totalCountOfMatchingResults*** which contains the total number of results (not just on the page) which match the search criteria
+*   For `Fetch All`:  An object, with key ***results*** that has an array as its value
+*   For `Emit Individually`:  Each object fill the entire message
 
 ### Create Association
 
-#### Config Fields
+#### Configuration Fields
 
-* **From Object Type** Dropdown: Choose from which object needs to create association
-* **To Object Type** Dropdown: Choose to what object
+*   **From Object Type** drop-down: Choose from which object needs to create association
+*   **To Object Type** drop-down: Choose to what object
 
->**Please note**: Objects to assosiate are not dinamically retrieved, so please make sure in Hubspot documentation that selected objects can be assosiated
+> **Please note**: Objects to associate are not dynamically retrieved, so please
+> make sure in Hubspot documentation that selected objects can be associated.
 
 #### Input Metadata
 
-* **From Object ID** - HubSpot id of object which needs to create association
-* **To Object ID** - id of associated object
+*   **From Object ID** - HubSpot id of object which needs to create association
+*   **To Object ID** - id of associated object
 
 #### Output Metadata
 
@@ -219,17 +230,18 @@ Object with key **statusCode** that represent result of request
 
 ### Remove Association
 
-#### Config Fields
+#### Configuration Fields
 
-* **From Object Type** Dropdown: Choose from which object needs to remove association
-* **To Object Type** Dropdown: Choose to what object
+*   **From Object Type** drop-down: Choose from which object needs to remove association
+*   **To Object Type** drop-down: Choose to what object
 
->**Please note:** Objects to assosiate are not dinamically retrieved, so please make sure in Hubspot documentation that selected objects can be assosiated
+> **Please note:** Objects to associate are not dynamically retrieved, so please
+> make sure in Hubspot documentation that selected objects can be associated
 
 #### Input Metadata
 
-* **From Object ID** - HubSpot id of object which needs to remove association
-* **To Object ID** - id of associated object
+*   **From Object ID** - HubSpot id of object which needs to remove association
+*   **To Object ID** - id of associated object
 
 #### Output Metadata
 
@@ -239,14 +251,14 @@ Object with key **statusCode** that represent result of request
 
 Action designed to delete one object by unique field
 
-#### Config Fields
+#### Configuration Fields
 
-* **Object Type** Dropdown: Indicates Object Type to find
-* **ID to Search On** Dropdown: Indicates unique field to search on
+*   **Object Type** drop-down: Indicates Object Type to find
+*   **ID to Search On** drop-down: Indicates unique field to search on
 
 #### Input Metadata
 
-* **ID value** Textfield: value for `ID to Search On` (unique field value by itself)
+* **ID value** text field: value for `ID to Search On` (unique field value by itself)
 
 #### Output Metadata
 
