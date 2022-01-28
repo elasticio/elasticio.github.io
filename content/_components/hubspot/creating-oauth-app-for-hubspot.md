@@ -1,7 +1,7 @@
 ---
-title: Creating OAuth App for Hubspot
+title: Creating OAuth App for HubSpot
 layout: component
-description: Document describes how to create an OAuth2 App for Hubspot and how to use newly generated Client ID and Client Secret to configure Auth Client.
+description: Document describes how to create an OAuth2 App for HubSpot and how to use newly generated Client ID and Client Secret to configure Auth Client.
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
@@ -13,8 +13,8 @@ ComponentVersion: 1.4.1
 
 ## Creating OAuth2 App
 
-Hubspot component authentication occurs via OAuth 2.0. Before you can make it work
-on our platform you MUST create an OAuth2 App on Hubspot side.
+HubSpot component authentication occurs via OAuth 2.0. Before you can make it work
+on our platform you MUST create an OAuth2 App on HubSpot side.
 
 The HubSpot documentation already contains a detailed explanation of the process
 and we encourage you to [follow it](https://developers.hubspot.com/docs/api/working-with-oauth).
@@ -26,8 +26,8 @@ MUST specify the following fields:
 | Field name | Mandatory | Description |
 |----|---------|-----------|
 | Name | true | your Auth Client's name (any) |
-| Client ID| true | your OAuth client key (provided by Hubspot) |
-| Client Secret| true | your OAuth client secret (provided by Hubspot) |
+| Client ID| true | your OAuth client key (provided by HubSpot) |
+| Client Secret| true | your OAuth client secret (provided by HubSpot) |
 | Authorization Endpoint | true | your OAuth authorization endpoint. ex: `https://app-eu1.hubspot.com/oauth/authorize` |
 | Token Endpoint | true | your OAuth Token endpoint for refreshing access token: `https://api.hubapi.com/oauth/v1/token`|
 
