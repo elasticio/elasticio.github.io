@@ -22,7 +22,7 @@ redirect_from:
 
 | Name | Mandatory | Description | Values |
 |----|---------|-----------|------|
-| `REQUEST_MAX_RETRY`| false | The number of retries to HubSpot API the platform should do on errors (3 by default) | any `integer` above 0|
+| `REQUEST_MAX_RETRY` | false | The number of retries to HubSpot API the platform should do on errors (3 by default) | any `integer` above 0 |
 
 ## Credentials
 
@@ -50,12 +50,12 @@ To complete the process:
 
 ### Configuration Fields
 
-*   **Object Type** dropdown: Indicates Object Type to be fetched
-*   **Emit behavior** dropdown: Indicates emit objects individually or emit by page
-*   **Field to poll** dropdown: Indicates field to poll (new objects or modified objects)
-*   **Start Time** - Text field (string, optional): Indicates the beginning time to start retrieving events from
-*   **End Time** - Text field (string, optional, defaults to never): If provided, don’t fetch records modified after this time
-*   **Size of Polling Page** - Text field (optional, positive integer, max 100, defaults to 100): Indicates the size of pages to be fetched
+*   **Object Type** dropdown: Select an Object Type to fetch.
+*   **Emit behavior** dropdown: Choose between **emit objects individually** or **emit by page** options.
+*   **Field to poll** dropdown: Used to select the field to poll (new objects or modified objects)
+*   **Start Time** - Text field (string, optional): Used to set the time from which to start retrieving events
+*   **End Time** - Text field (string, optional, defaults to never): When provided, don’t fetch records modified after this time
+*   **Size of Polling Page** - Text field (optional, positive integer, max 100, defaults to 100): Set the size of the fetched pages
 *   **Single Page per Interval** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page at once, wait until the next flow start to fetch the next page
 
 ### Webhook
@@ -64,8 +64,8 @@ Receive data from HubSpot based on configured [webhooks](https://developers.hubs
 
 ### Configuration Fields
 
-*   **Client secret** - You need provide Client secret from HubSpot application here
-> You will get error during webhook requests if this field will be incorrect
+**Client secret** - Provide Client secret from HubSpot application here otherwise
+you will get an error during the webhook requests in case of incorrect or missing value.
 
 #### Output Metadata
 
@@ -79,7 +79,7 @@ Action to call any Hubspot API endpoint
 
 #### Configuration Fields
 
-*   **Throw Error on 404 Response** - (optional) Treat 404 HTTP responses as errors, defaults to `false`.
+**Throw Error on 404 Response** - (optional) Treat 404 HTTP responses as errors, defaults to `false`.
 
 #### Input Metadata
 
@@ -93,8 +93,8 @@ Action to make upsert (update/create) object in HubSpot
 
 #### Configuration Fields
 
-*   **Object type** - Object type for upsert ("Companies", "Contacts", "Deals", "Line Items", "Tickets")
-*   **ID to Search On** - Identifier to search object ("HubSpot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
+*   **Object type** - Object type for upsert like `Companies`, `Contacts`, `Deals`, `Line Items` or `Tickets`.
+*   **ID to Search On** - Identifier to search objects like **HubSpot Id** or **Email**. Use **Email** for `Object Type` in the **Contacts**.
 
 #### Input Metadata
 
@@ -113,7 +113,7 @@ to populate that field. That object includes the following:
 *   Duplicate Validation Strategy
 *   Duplicate Validation Scope
 
-For uploading file [Files API](https://developers.hubspot.com/docs/api/files/files) is used.
+We use [Files API](https://developers.hubspot.com/docs/api/files/files) for file uploading.
 
 #### Known limitations
 
@@ -128,9 +128,9 @@ Lookup Set will make sure all the items in the set should be there, otherwise th
 
 #### Configuration Fields
 
-*   **Object type** - Object type for lookup ("Companies", "Contacts", "Deals", "Line Items", "Tickets", "Quotes")
-*   **ID to Search On** - Identification to search object ("HubSpot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
-*   **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
+*   **Object type** - Object type for lookup like `Companies`, `Contacts`, `Deals`, `Line Items` or `Tickets`.
+*   **ID to Search On** - Identifier to search objects like **HubSpot Id** or **Email**. Use **Email** for `Object Type` in the **Contacts**.
+*   **Enable download attachments** - Checkbox for enabling attachment download for the `file` field type
 
 #### Input Metadata
 
@@ -142,15 +142,15 @@ Action designed to lookup one object by unique field
 
 #### Configuration Fields
 
-*   **Object Type** dropdown: Indicates Object Type to find
-*   **ID to Search On** dropdown: Indicates unique field to search on
-*   **Allow ID to be omitted** Checkbox: When selected, the ID field becomes optional, otherwise it is a required field
-*   **Allow zero results** Checkbox: When selected, if zero results are returned, the empty object {} is emitted, otherwise typically an error would be thrown.
-*   **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
+*   **Object Type** dropdown: Select an Object Type to lookup.
+*   **ID to Search On** dropdown: Used to search a unique field.
+*   **Allow ID to be omitted** Checkbox: Select to make the ID field optional (default: required).
+*   **Allow zero results** Checkbox: Select to allow zero results. System will emit an empty object `{}`, otherwise system will through an error in case of zero results.
+*   **Enable download attachments** - Checkbox for enabling attachment download for the `file` field type.
 
 #### Input Metadata
 
-*   **ID value** Text field: value for `ID to Search On` (unique field value by itself)
+**ID value** Text field: value for `ID to Search On` (unique field value by itself)
 
 ### Lookup Objects (Plural)
 
@@ -158,18 +158,18 @@ Action to lookup objects in HubSpot
 
 #### Configuration Fields
 
-*   **Object Type** dropdown: Indicates Object Type to find
-*   **Behaviour** dropdown with options: `Fetch all`, `Fetch page`, `Emit individually`, required
-*   **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
+*   **Object Type** dropdown: Select an Object Type to find.
+*   **Behaviour** dropdown with options: `Fetch all`, `Fetch page`, `Emit individually`, required.
+*   **Enable download attachments** - Checkbox for enabling attachment download for the `file` field type.
 
 #### Input Metadata
 
-*   **Search Criteria** Array: Search terms are to be combined with the AND operator. For each search term.
+**Search Criteria** Array: Combine each search term with an `AND` operator.
 
->**Please note:** HubSpot support up to three criteria
+> **Please note:** HubSpot support up to three criteria
 
 Example:
-Records created after *'2021-10-01T03:30:17.883Z'* with property *'firstname'* contains *'Tony'*
+Records created after `2021-10-01T03:30:17.883Z` with property `firstname` containing `Tony`
 
 ```
 ["createdate GT 1633059017883", "firstname CONTAINS_TOKEN Tony"]
@@ -179,20 +179,20 @@ Supported operators:
 
 | OPERATOR | DESCRIPTION |
 | ---- | ------ |
-| EQ | equal to |
-| NEQ | not equal to |
-| LT | less than |
-| LTE | less than or equal to |
-| GT | greater than |
-| GTE | greater than or equal to |
-| HAS_PROPERTY | has property value |
-| NOT_HAS_PROPERTY | does not have property value |
-| CONTAINS_TOKEN | contains token |
-| NOT_CONTAINS_TOKEN | does not contain token |
+| `EQ` | equal to |
+| `NEQ` | not equal to |
+| `LT` | less than |
+| `LTE` | less than or equal to |
+| `GT` | greater than |
+| `GTE` | greater than or equal to |
+| `HAS_PROPERTY` | has property value |
+| `NOT_HAS_PROPERTY` | does not have property value |
+| `CONTAINS_TOKEN` | contains token |
+| `NOT_CONTAINS_TOKEN` | does not contain token |
 
 If selected `Fetch page` additional metadata fields:
-*   **Page Size** - Number of records to retrieve, limit - 100
-*   **Page Number** - How many pages should be skipped
+*   **Page Size** - Number of records to retrieve, limit - 100.
+*   **Page Number** - Number of pages to skip.
 *   **Order** - Order direction, **ASCENDING** or **DESCENDING**
 
 Order example:
@@ -204,20 +204,20 @@ Order example:
 #### Output Metadata
 
 *   For `Fetch page`: An object with:
-    *   key ***results*** that has an array as its value
-    *   key ***totalCountOfMatchingResults*** which contains the total number of results (not just on the page) which match the search criteria
-*   For `Fetch All`:  An object, with key ***results*** that has an array as its value
+    *   key `results` that has an array as its value
+    *   key `*totalCountOfMatchingResults` containing the total number of results (not just on the page) matching the search criteria
+*   For `Fetch All`:  An object, with key `*results` that has an array as its value
 *   For `Emit Individually`:  Each object fill the entire message
 
 ### Create Association
 
 #### Configuration Fields
 
-*   **From Object Type** dropdown: Choose from which object needs to create association
-*   **To Object Type** dropdown: Choose to what object
+*   **From Object Type** dropdown: Choose an object type to create association
+*   **To Object Type** dropdown: Choose an object type to associate to
 
-> **Please note**: Objects to associate are not dynamically retrieved, so please
-> make sure in HubSpot documentation that selected objects can be associated.
+> **Please note**: We do not retrieve objects to associate dynamically. Check the
+> HubSpot documentation to verify that the association between selected objects is possible.
 
 #### Input Metadata
 
@@ -226,17 +226,17 @@ Order example:
 
 #### Output Metadata
 
-Object with key **statusCode** that represent result of request
+Object with `statusCode` key that represent result of request
 
 ### Remove Association
 
 #### Configuration Fields
 
-*   **From Object Type** dropdown: Choose from which object needs to remove association
-*   **To Object Type** dropdown: Choose to what object
+*   **From Object Type** dropdown: Choose from which object to remove association
+*   **To Object Type** dropdown: Choose to which object
 
-> **Please note:** Objects to associate are not dynamically retrieved, so please
-> make sure in HubSpot documentation that selected objects can be associated
+> **Please note**: We do not retrieve objects to associate dynamically. Check the
+> HubSpot documentation to verify that the association between selected objects is possible.
 
 #### Input Metadata
 
@@ -245,7 +245,7 @@ Object with key **statusCode** that represent result of request
 
 #### Output Metadata
 
-Object with key **statusCode** that represent result of request
+Object with `statusCode` key that represent result of request
 
 ### Delete Object
 
@@ -258,7 +258,7 @@ Action designed to delete one object by unique field
 
 #### Input Metadata
 
-* **ID value** text field: value for `ID to Search On` (unique field value by itself)
+*   **ID value** text field: value for `ID to Search On` (unique field value by itself)
 
 #### Output Metadata
 
@@ -267,5 +267,5 @@ The expected output is an object with a `id` property. `id` value stands for id 
 
 ## Known Limitations
 
-1. [Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits)
-2. Please, use some timer (around 5sec) if you are going to implement flow like `Upsert Object Action` -> any type of `Lookup Object(s) Action` with enabled feature `Enable download attachments`. Uploading the file to HubSpot on `Upsert Object Action` takes some time, so it is possible to receive `404` error on lookup.
+1.  [Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits)
+2.  Please, use a timer (around 5 seconds) if you need to build a flow like `Upsert Object Action` -> any type of `Lookup Object(s) Action` with enabled feature `Enable download attachments`. Uploading the file to HubSpot on `Upsert Object Action` takes some time, your might get `404` error on lookup.
