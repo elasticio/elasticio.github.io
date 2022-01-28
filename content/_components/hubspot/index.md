@@ -258,7 +258,7 @@ Action designed to delete one object by unique field
 
 #### Input Metadata
 
-*   **ID value** text field: value for `ID to Search On` (unique field value by itself)
+**ID value** text field: value for `ID to Search On` (unique field value by itself)
 
 #### Output Metadata
 
