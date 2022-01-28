@@ -102,8 +102,6 @@ references:
       description: References on our SDKs
     - title: Working with Java
       description: How to use Java on the platform
-    - title: Local Agents
-      description: Articles on Local Agent installation and running
 admin:
   title: Support
   description: Support and Administration
