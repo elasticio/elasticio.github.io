@@ -50,9 +50,9 @@ To complete the process:
 
 ### Configuration Fields
 
-*   **Object Type** drop-down: Indicates Object Type to be fetched
-*   **Emit behavior** drop-down: Indicates emit objects individually or emit by page
-*   **Field to poll** drop-down: Indicates field to poll (new objects or modified objects)
+*   **Object Type** dropdown: Indicates Object Type to be fetched
+*   **Emit behavior** dropdown: Indicates emit objects individually or emit by page
+*   **Field to poll** dropdown: Indicates field to poll (new objects or modified objects)
 *   **Start Time** - Text field (string, optional): Indicates the beginning time to start retrieving events from
 *   **End Time** - Text field (string, optional, defaults to never): If provided, don’t fetch records modified after this time
 *   **Size of Polling Page** - Text field (optional, positive integer, max 100, defaults to 100): Indicates the size of pages to be fetched
@@ -142,8 +142,8 @@ Action designed to lookup one object by unique field
 
 #### Configuration Fields
 
-*   **Object Type** drop-down: Indicates Object Type to find
-*   **ID to Search On** drop-down: Indicates unique field to search on
+*   **Object Type** dropdown: Indicates Object Type to find
+*   **ID to Search On** dropdown: Indicates unique field to search on
 *   **Allow ID to be omitted** Checkbox: When selected, the ID field becomes optional, otherwise it is a required field
 *   **Allow zero results** Checkbox: When selected, if zero results are returned, the empty object {} is emitted, otherwise typically an error would be thrown.
 *   **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
@@ -158,8 +158,8 @@ Action to lookup objects in HubSpot
 
 #### Configuration Fields
 
-*   **Object Type** drop-down: Indicates Object Type to find
-*   **Behaviour** drop-down with options: `Fetch all`, `Fetch page`, `Emit individually`, required
+*   **Object Type** dropdown: Indicates Object Type to find
+*   **Behaviour** dropdown with options: `Fetch all`, `Fetch page`, `Emit individually`, required
 *   **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
 
 #### Input Metadata
@@ -213,8 +213,8 @@ Order example:
 
 #### Configuration Fields
 
-*   **From Object Type** drop-down: Choose from which object needs to create association
-*   **To Object Type** drop-down: Choose to what object
+*   **From Object Type** dropdown: Choose from which object needs to create association
+*   **To Object Type** dropdown: Choose to what object
 
 > **Please note**: Objects to associate are not dynamically retrieved, so please
 > make sure in HubSpot documentation that selected objects can be associated.
@@ -232,8 +232,8 @@ Object with key **statusCode** that represent result of request
 
 #### Configuration Fields
 
-*   **From Object Type** drop-down: Choose from which object needs to remove association
-*   **To Object Type** drop-down: Choose to what object
+*   **From Object Type** dropdown: Choose from which object needs to remove association
+*   **To Object Type** dropdown: Choose to what object
 
 > **Please note:** Objects to associate are not dynamically retrieved, so please
 > make sure in HubSpot documentation that selected objects can be associated
@@ -253,8 +253,8 @@ Action designed to delete one object by unique field
 
 #### Configuration Fields
 
-*   **Object Type** drop-down: Indicates Object Type to find
-*   **ID to Search On** drop-down: Indicates unique field to search on
+*   **Object Type** dropdown: Indicates Object Type to find
+*   **ID to Search On** dropdown: Indicates unique field to search on
 
 #### Input Metadata
 
