@@ -1,8 +1,8 @@
 ---
-title: Hubspot component
+title: HubSpot component
 layout: component
 section: Marketing-related components
-description: A component that connects to Hubspot API
+description: A component that connects to HubSpot API
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
@@ -20,27 +20,27 @@ redirect_from:
 
 ### Environment variables
 
-|Name|Mandatory|Description|Values|
+| Name | Mandatory | Description | Values |
 |----|---------|-----------|------|
-|`REQUEST_MAX_RETRY`| false | Set how many time system try to make request to API on errors (3 by default) | any `integer` above 0|
+| `REQUEST_MAX_RETRY`| false | The number of retries to HubSpot API the platform should do on errors (3 by default) | any `integer` above 0|
 
 ## Credentials
 
 Authentication occurs via OAuth 2.0. To make OAuth work, you need to
-[create a new OAuth2 App](creating-oauth-app-for-hubspot) in your Hubspot.
-
-During the credentials creation you can either select existing OAuth2 Client
-from the drop-down list or [choose to create a new OAuth2 Client](creating-oauth-app-for-hubspot)
-to use your created OAuth2 App in HubSpot.
+[create a new OAuth2 App](creating-oauth-app-for-hubspot) in your HubSpot or use
+an existing OAuth2 Client during the credentials creation process.
 
 ![Oauth2](img/hubspot-credentials-screen.png)
 
-* Leave the **Additional parameters** input empty unless you have specifically configured this field in your HubSpot.
-* Provide the following value in the **Scopes** input: `crm.objects.contacts.read`, `crm.objects.contacts.write`, `crm.schemas.contacts.read`, `crm.schemas.contacts.write`, `crm.objects.owners.read`. If you wish to grant certain permissions, you can do so by removing them from this list.
+*   Leave the **Additional parameters** input empty.
+*   Provide the following value in the **Scopes** input. If you wish to grant certain permissions, you can do so by removing them from this list.
+```
+crm.objects.contacts.read, crm.objects.contacts.write, crm.schemas.contacts.read, crm.schemas.contacts.write, crm.objects.owners.read
+```
 
 To complete the process:
 
-*   click on **Authenticate** button - if you have not logged into Hubspot before, then log in by entering data in the login window that appears
+*   click on **Authenticate** button - if you have not logged into HubSpot before, then log in by entering data in the login window that appears
 *   click on **Verify** button for verifying your credentials
 *   click on **Save** button for saving your credentials.
 
@@ -83,18 +83,18 @@ Action to call any Hubspot API endpoint
 
 #### Input Metadata
 
-*   **URL** - Path of the resource relative to the URL base ([https://api.hubapi.com](https://api.hubapi.com)), required.
+*   **URL** - Path of the resource relative to the URL base (`https://api.hubapi.com`), required.
 *   **Method** - Allowed values `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, required. HTTP verb to use in the request.
 *   **Request Body** - Body of the request to send
 
 ### Upsert
 
-Action to make upsert(update/create) object in Hubspot
+Action to make upsert (update/create) object in HubSpot
 
 #### Configuration Fields
 
 *   **Object type** - Object type for upsert ("Companies", "Contacts", "Deals", "Line Items", "Tickets")
-*   **ID to Search On** - Id to search object ("Hubspot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
+*   **ID to Search On** - Identifier to search object ("HubSpot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
 
 #### Input Metadata
 
@@ -123,13 +123,13 @@ for fields `Attachment URL`. The component will throw an exception `process.unca
 
 ### Lookup Set Of Objects By Unique Criteria
 
-Action to lookup object in Hubspot.
+Action to lookup object in HubSpot.
 Lookup Set will make sure all the items in the set should be there, otherwise throw an error.
 
 #### Configuration Fields
 
 *   **Object type** - Object type for lookup ("Companies", "Contacts", "Deals", "Line Items", "Tickets", "Quotes")
-*   **ID to Search On** - Identification to search object ("Hubspot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
+*   **ID to Search On** - Identification to search object ("HubSpot Id" or "Email". "Email" is only for "Contacts" `Object Type`)
 *   **Enable download attachments** - Checkbox for enabling downloading attachments from fields with type `file`
 
 #### Input Metadata
@@ -154,7 +154,7 @@ Action designed to lookup one object by unique field
 
 ### Lookup Objects (Plural)
 
-Action to lookup objects in Hubspot
+Action to lookup objects in HubSpot
 
 #### Configuration Fields
 
@@ -217,7 +217,7 @@ Order example:
 *   **To Object Type** drop-down: Choose to what object
 
 > **Please note**: Objects to associate are not dynamically retrieved, so please
-> make sure in Hubspot documentation that selected objects can be associated.
+> make sure in HubSpot documentation that selected objects can be associated.
 
 #### Input Metadata
 
@@ -236,7 +236,7 @@ Object with key **statusCode** that represent result of request
 *   **To Object Type** drop-down: Choose to what object
 
 > **Please note:** Objects to associate are not dynamically retrieved, so please
-> make sure in Hubspot documentation that selected objects can be associated
+> make sure in HubSpot documentation that selected objects can be associated
 
 #### Input Metadata
 
@@ -268,4 +268,4 @@ The expected output is an object with a `id` property. `id` value stands for id 
 ## Known Limitations
 
 1. [Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits)
-2. Please, use some timer (around 5sec) if you are going to implement flow like `Upsert Object Action` -> any type of `Lookup Object(s) Action` with enabled feature `Enable download attachments`. Uploading the file to Hubspot on `Upsert Object Action` takes some time, so it is possible to receive `404` error on lookup.
+2. Please, use some timer (around 5sec) if you are going to implement flow like `Upsert Object Action` -> any type of `Lookup Object(s) Action` with enabled feature `Enable download attachments`. Uploading the file to HubSpot on `Upsert Object Action` takes some time, so it is possible to receive `404` error on lookup.
