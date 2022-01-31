@@ -31,7 +31,7 @@ After that please process the data using a [Splitter component](/components/spli
 
 ![Splitter](img/splitter.png)
 
-The last component that we use in the integration flow is the [Google Spreadsheet component](/components/gspreadsheet/index). Here select a pre-created spreadsheet with firs rows as headers and match the information you need with these headers:
+The last component that we use in the integration flow is the [Google Spreadsheet component](/components/gspreadsheet/index). Here select a pre-created spreadsheet with first row as header values and match the information you need with these headers:
 
 ![Configure Spreadsheet](img/configure-spreadsheet.png)
 
