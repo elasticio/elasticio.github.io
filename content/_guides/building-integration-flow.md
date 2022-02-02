@@ -34,9 +34,11 @@ After successful configuration, request a sample:
 
 ## REST API Configuration
 
-In the next step, we will use the [REST API component](/components/rest-api) to get green energy information for the next 3 days for a specific city. We will take the necessary data such as `postal code` and `API-key` from the previous step:
+In the next step, we will use the [REST API component](/components/rest-api) to get green energy information for the next 3 days for a specific city. We will take the necessary data such as `postal code` from the previous step. If necessary, we can also add a header and use the API-key from the database for this:
 
 ![REST API Input](/assets/img/integrator-guide/building-integration-flow/rest-api-input.png)
+
+> https://api.corrently.io/v2.0/gsi/prediction?zip=POSTAL_CODE
 
 As a sample, you will receive a large amount of data that needs to be processed in the next step:
 
@@ -78,4 +80,4 @@ We configure the two remaining branches accordingly, depending on the amount of 
 
 ![Received Email](/assets/img/integrator-guide/building-integration-flow/received-email.png)
 
-As you can see, the text says that there is not enough energy because the `Mean` variable is equal `49.6`.
+As you can see, the text says that there is enough energy because the `Mean` variable is equal `50.36`.
