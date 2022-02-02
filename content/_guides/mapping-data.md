@@ -1,6 +1,6 @@
 ---
 title: Basic Data Mapping
-description: In this article we will explain how to map the data between integration components to keep them in sync.
+description: This article shows how to map the data between integration components to keep them in sync.
 layout: article
 section: Data transfer
 category: data-transfer
@@ -8,17 +8,29 @@ order: 0
 since: 20180216
 ---
 
-In this article we will explain how to map the data between integration components to keep them in sync.
+{{page.description}}
 
-An integration flow on {{site.data.tenant.name}} platform must have at least two components, one trigger and one action. Trigger emits a data for the action component to receive and process it. Between these two components seats the {{site.data.tenant.name}} **data mapper**, which maps or matches the incoming data to the specific fields where the next component expects them to receive.
+An integration flow on {{site.data.tenant.name}} platform must have at least two
+components, one trigger and one action. Trigger emits a data for the action
+component to receive and process it. Between these two components seats the
+{{site.data.tenant.name}} **data mapper**, which maps or matches the incoming data
+to the specific fields where the next component expects them to receive.
 
-To understand how the data-mapping works in practice visit our tutorials and platform feature sections. We recommend starting from steps-by-step instructions in [how to create your first integration flow](/getting-started/first-flow) and [creating a webhook flow](/getting-started/webhooks-flow) followed by the [data samples](/getting-started/data-sample-overview) articles as an introduction to the data-mapping.
+To understand how the data-mapping works in practice visit our tutorials and
+platform feature sections. We recommend starting from steps-by-step instructions
+in [how to create your first integration flow](/getting-started/first-flow) and
+[creating a webhook flow](/getting-started/webhooks-flow) followed by the
+[data samples](/getting-started/data-sample-overview) articles as an introduction
+to the data-mapping.
 
-If you have already followed the tutorials you realise that the data-mapping on {{site.data.tenant.name}} platform is an important part of the integration process which warrants detailed explanation in its own.
+If you have already followed the tutorials you realise that the data-mapping on
+{{site.data.tenant.name}} platform is an important part of the integration process
+which warrants detailed explanation in its own.
 
 ## Mapping simple values
 
-Let us consider a simple scenario when we have an incoming data through the *Webhook* component like the following `JSON` structure.
+Let us consider a simple scenario when we have an incoming data through the
+[**Webhook component**](/components/webhook/) like the following `JSON` structure.
 
 ```js
 {
@@ -29,39 +41,61 @@ Let us consider a simple scenario when we have an incoming data through the *Web
 
 You can add this structure manually using the appropriate function:
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapping-webhook.png" title="Mapping: Configure input" %}
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapping-webhook.png" title="Mapping: Configure input" %}
 
-We intend to map these values into outgoing fields in *Petstore API* component. Let us jump into the integration flow design right at the mapping stage.
+We intend to map these values into outgoing fields in the
+[**Petstore component**](/components/petstore/). Let us jump into the integration
+flow design right at the mapping stage.
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-01.png" title="Mapping: Configure input" %}
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapper-01.png" title="Mapping: Configure input" %}
 
-The screenshot above shows the stage in integration flow designer where the actual mapping or matching of the values is done. The *Petstore API* operation for creating a Pet requires a name and a status for the new pet. That's why the component asks the user to provide input in two fields: `Name` and `Status`. These two fields are required (red exclamation marks), which means without providing the values for them we won't be able to proceed further and click on *Continue* button. Let us proceed with the mapping.
+The screenshot above shows the stage in integration flow designer where you can do
+the actual mapping or matching of the values. Here we choose to create a Pet and
+need to provide values for **Name** and **Status** required fields (red asterisks)
+to proceed further.
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-02.png" title="Mapping: Selecting drop-down" %}
+Here we will map these required fields using incoming data from the previous step(s).
 
-To map the *Name* field click on a drop-down menu **(1)**, choose the step you need **(2)** and select the matching value from the provided values **(3)** . For example, our incoming data has a field `name` which we match with the *Name* field from *Petstore API* component.
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapper-02.png" title="Mapping: Selecting drop-down" %}
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-03.png" title="Mapping result of the field" %}
+To map the **Name** field click on cross to open a drop-down menu **(1)**, choose
+the step you need **(2)** and select the matching value from the provided values **(3)** .
+For example, our incoming data has a field `name` which we match with the **Name**
+field from the Petstore component.
 
-The screenshot above shows the successful mapping result which is `Gromit`. Notice that you have to click to the *Eye* button here which shows the successful evaluation result.
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapper-03.png" title="Mapping result of the field" %}
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-04.png" title="Expressions tab" %}
+The screenshot above shows the successful mapping result which is `Gromit`. You
+have to click to the **Eye button** here which shows the successful evaluation result.
 
-Before going further we can check the *JSONata* mode here **(1)**. Here you can look under the hood of the [JSONata](http://jsonata.org/) powered mapper and see the list **(2)** of expressions and functions that is possible to use. We have already used them in the [how to create your first integration flow](/getting-started/first-flow) tutorial.
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapper-04.png" title="Expressions tab" %}
 
-We can match the *Status* field with the incoming `status` value as well to complete the mapping and go forward. Using the *Status* field as an example, you can see that there are fields that accept **fixed values only**. In this case, these are: `available`, `pending`, `sold`:
+Before going further we can check the **JSONata* Mode** here **(1)**. Here you
+can look under the hood of the [JSONata](http://jsonata.org/) powered mapper and
+see the list **(2)** of expressions and functions you can use. We have already
+used them in the [how to create your first integration flow](/getting-started/first-flow) tutorial.
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapping-petstore-status.png" title="Expressions tab" %}
+We can match the **Status** field with the incoming `status` value as well to
+complete the mapping and go forward. Using the **Status** field as an example,
+you can see that there are fields that accept **fixed values**. In this case,
+the Petstore component accepts: `available`, `pending` and `sold` values.
 
-If you enter an incorrect value, the field will be highlighted in orange:
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapping-petstore-status.png" title="Expressions tab" %}
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/incorrect-value.png" title="Expressions tab" %}
+If you enter an incorrect value, the platform user field as well as the step
+number will be highlighted in orange:
 
-> **Note** During the mapping process the mapping expressions is evaluated on the samples. During the component execution {{site.data.tenant.name}} evaluates these expressions based on the incoming data which will differ from the presented sample.
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/incorrect-value.png" title="Expressions tab" %}
+
+> **Note** During the mapping process the mapping expressions is evaluated on
+> the samples. During the component execution {{site.data.tenant.name}} evaluates
+> these expressions based on the incoming data which will differ from the presented sample.
 
 ## Using advanced mapping mode
 
-In the previous section you learned how to map data between two steps of an integration flow using a JSONata expression. This is a convenient approach, however, the graphical mapping in the *Integrator mode* has certain limitations.
+In the previous section you learned how to map data between two steps of an
+integration flow using a JSONata expression. This is a convenient approach, however, 
+the graphical mapping in the *Integrator mode* has certain limitations.
 
 The following screenshot demonstrates the *Developer mode*.
 
@@ -98,7 +132,7 @@ Obviously, the mapping result will also be an array. The mapper will take object
 
 - It is only possible to map data from objects inside arrays
 - It is impossible to map properties from objects located in multiple arrays
-- If you map an array in *Integrator mode*, the mapping will not be saved if you switch to *Developer mode*, and vice-versa.  
+- If you map an array in *Integrator mode*, the mapping will not be saved if you switch to *Developer mode*, and vice-versa.
 
 Here is an example of array mapping:
 
