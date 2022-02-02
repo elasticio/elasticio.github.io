@@ -69,9 +69,9 @@ For more information please visite our [Managing Workspaces](/guides/managing-wo
 
 ### Agents
 
-This is the [VPN Agent](vpn-agent) management page **(1)**. Here you can manage your Local Agents **(2)**, and request them **(3)**.
+This is the [VPN Agent](vpn-agent) management page **(1)**. Here you can manage your Local Agents **(2)**, and create them **(3)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/vpn-agents.png" title="Agents" %}
+{% include img.html max-width="100%" url="/assets/img/getting-started/tour/agents.png" title="Agents" %}
 
 ### Topics
 
@@ -91,7 +91,6 @@ For more information please visite our [Managing Workspaces](/guides/managing-wo
 
 This menu section includes the following items:
 - [Quota Usages](#quota-usages)
-- [Developer Teams](#developer-teams)
 - [Members](#members)
 
 ### Quota Usages
@@ -100,12 +99,6 @@ This item opens the [Quota](quota-overview) page **(1)** that contains all the i
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/quota.png" title="Quota page" %}
 
-### Developer Teams
-
-Here you can manage your Developer Teams **(1)**. Each team's details **(2)** can be opened on this page. Also, you can add new teams via the corresponding button **(3)**.
-
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/devteams.png" title="Developer Teams" %}
-
 ### Members
 
 This item brings you to the Members page **(1)**, where you can manage Contract Members **(2)**.
@@ -113,6 +106,26 @@ This item brings you to the Members page **(1)**, where you can manage Contract 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/members.png" title="Members" %}
 
 For more information please visite our [Managing user roles](/guides/managing-user-roles-in-a-tenant) page.
+
+
+## Development
+
+This menu section includes the following items:
+
+- [Developer Teams](#developer-teams)
+- [Test Metadata Tool](#test-metadata-tool)
+
+### Developer Teams
+
+Here you can manage your Developer Teams **(1)**. Each team's details **(2)** can be opened on this page. Also, you can add new teams via the corresponding button **(3)**.
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/tour/devteams.png" title="Developer Teams" %}
+
+### Test Metadata Tool
+
+Here you can render the component metadata structures to see how they would look on the platform UI using our [tool](/developers/try-metadata) **(1)**.
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/tour/metadata-tool.png" title="Test Metadata Tool" %}
 
 ## Documentation
 
