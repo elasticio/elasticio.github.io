@@ -27,6 +27,7 @@ If you have already followed the tutorials you realise that the data-mapping on
 {{site.data.tenant.name}} platform is an important part of the integration process
 which warrants detailed explanation in its own.
 
+
 ## Mapping simple values
 
 Let us consider a simple scenario when we have an incoming data through the
@@ -68,9 +69,11 @@ field from the Petstore component.
 The screenshot above shows the successful mapping result which is `Gromit`. You
 have to click to the **Eye button** here which shows the successful evaluation result.
 
+## JSONata Mode
+
 {% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapper-04.png" title="Expressions tab" %}
 
-Before going further we can check the **JSONata* Mode** here **(1)**. Here you
+Before going further we can check the **JSONata Mode** here **(1)**. Here you
 can look under the hood of the [JSONata](http://jsonata.org/) powered mapper and
 see the list **(2)** of expressions and functions you can use. We have already
 used them in the [how to create your first integration flow](/getting-started/first-flow) tutorial.
@@ -87,43 +90,82 @@ number will be highlighted in orange:
 
 {% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/incorrect-value.png" title="Expressions tab" %}
 
-> **Note** During the mapping process the mapping expressions is evaluated on
-> the samples. During the component execution {{site.data.tenant.name}} evaluates
-> these expressions based on the incoming data which will differ from the presented sample.
+> **Note** During the flow building process the platform evaluates mapping
+> expressions using samples. During the component execution it evaluates
+> these expressions based on the incoming data which can differ from the presented sample.
+> **Use data samples as close to your real data as possible to avoid inconsistencies in outcome.**
+
+## Required and optional fields
+
+There is a way to filter mapping view to see mandatory fields only by hiding optional fields:
+
+{% include img.html max-width="60%" url="/assets/img/integrator-guide/data-mapper/filtering-required-optional.gif" title="Hiding and showing optional fields" %}
+
 
 ## Using advanced mapping mode
 
 In the previous section you learned how to map data between two steps of an
-integration flow using a JSONata expression. This is a convenient approach, however, 
-the graphical mapping in the *Integrator mode* has certain limitations.
+integration flow using a JSONata expression. This is a convenient approach, however,
+the graphical mapping in the **Integrator mode** has certain limitations.
 
-The following screenshot demonstrates the *Developer mode*.
+The following short animation demonstrates how to switch to the **Developer mode**.
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-05.png" title="Developer mode" %}
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/integrator-developer-mode-switch.gif" title="Switch to Developer mode" %}
 
-In the *Developer mode* you can write a single JSONata expressions for the entire input object instead of defining expressions for each individual field as in case of the *Integrator mode*.
+In the **Developer mode** you can write a JSON containing JSONata expressions for
+the entire input object instead of defining expressions for each individual field as in case
+of the **Integrator mode**.
 
-To use the *Developer mode*, you need to know the meta-model of input data: the structure of the object and the property names. Without having access to component's source code knowing the input model is impossible.
+Here you can write your own JSON if you know the meta-model of input data structure
+or open the **Fields** menu which lists all incoming meta-model fields. For example
+the Petstore component has two fields to choose from:
 
-Therefore, when you switch from *Integrator mode* to *Developer mode*, the mapper input field is pre-populated with a required JSON expression. {{site.data.tenant.name}} generates it from the incoming meta-model parameter values and random property values. You can write your mapping by overriding the property values.
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/fields-incoming-meta-model.png" title="Field menu: incoming meta-model fields" %}
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-06.png" title="Developer mode edited values" %}
+The Fields menu will contain more values for components with extensive meta-model
+structure such as the case of the [Salesforce component](/components/salesforce/):
 
-The above screenshot shows how the property values is replaced by the variables `name` and `status`. These variables get their values from the incoming payload of the Webhook component. To get a mapping result, you should evaluate the expression by clicking the corresponding button.
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/fields-complex-case.png" title="Field menu: complex incoming meta-model fields" %}
 
-> **Please note** your expression is evaluated as you are typing it. The result is shown at once below the mapper input field, in the *Mapping result* section. If you give an invalid expression, an error message is displayed.
+In this long list you can **Search** to find the parameter you need and click on
+**plus sign** to add to the JSON structure.
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-07.png" title="Error in mapping" %}
+> **Please Note** The platform user interface assumes that you know what you are
+> mapping when you switch to Developer mode. It will allow an empty JSON `{}`
+> as an input structure. **You are responsible to ensure the validity of your mapping.**
 
-The screenshot above shows the incomplete `JSON` structure which is not accepted by {{site.data.tenant.name}} and the error is shown in the *Mapping result* section.
+To avoid unexpected results we recommend to:
 
-There is a way to filter mapping view to see mandatory fields only by hiding optional fields:
+*   Include and map the **Required** fields to avoid unexpected behaviour from the API provider.
+*   Make sure to use correct data **Type** while filling-in the parameter values.
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/hide-optional-fields.gif" title="Hiding optional fields" %}
+### Evaluate results
+
+You are already familiar with evaluation function. In the Developer mode it evaluates
+the whole JSON structure in input field rather than individual fields like in the
+Integrator mode.
+
+The following animation shows how you can use the **Fields** menu to choose values,
+fill-in, get their property values and **Evaluate** the result.
+
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/developer-mode-using.gif" title="Using Fields menu in Developer mode" %}
+
+We can see in the evaluation stage how the platform interface replaces the property
+values `name` and `status` to their real values from the incoming payload.
+
+When you enter an incorrect JSON and press Evaluate the platform UI will check it
+and you will get an error in the **Mapping result** section:
+
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/error-json.png" title="Error in input JSON" %}
+
+
 
 > **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new draft version of a flow must be created.
 
 ## Array-to-array Mapping
+
+
+
 Now you can map not just individual objects, but entire arrays in the *Integrator mode*. [Array-to-array mapping](#array-to-array-mapping) was only possible in the *Developer mode* before. If you saw arrays in *Integrator mode*, you would get the following message:
 
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/old-array-to-array.png" title="No array mapping" %}
