@@ -102,7 +102,7 @@ There is a way to filter mapping view to see mandatory fields only by hiding opt
 {% include img.html max-width="60%" url="/assets/img/integrator-guide/data-mapper/filtering-required-optional.gif" title="Hiding and showing optional fields" %}
 
 
-## Using advanced mapping mode
+## Developer mode
 
 In the previous section you learned how to map data between two steps of an
 integration flow using a JSONata expression. This is a convenient approach, however,
@@ -139,6 +139,11 @@ To avoid unexpected results we recommend to:
 *   Include and map the **Required** fields to avoid unexpected behaviour from the API provider.
 *   Make sure to use correct data **Type** while filling-in the parameter values.
 
+When you write a JSONata expression which contains property not included in input
+meta-data the platform user interface will block switching back to Integrator mode.
+
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapping-metadata-not-included.png" title="Mapping when the property not included in meta-data." %}
+
 ### Evaluate results
 
 You are already familiar with evaluation function. In the Developer mode it evaluates
@@ -158,27 +163,37 @@ and you will get an error in the **Mapping result** section:
 
 {% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/error-json.png" title="Error in input JSON" %}
 
+> **Note** You can switch between *Developer* and *Integrator* modes during the
+> design of integration flow but not after you publish it. To change the mapping
+> mode, create a new draft version of a flow.
 
-
-> **Note** You can switch between *Developer* and *Integrator* modes during the design of integration flow but not after the flow is published. To change the mapping mode a new draft version of a flow must be created.
 
 ## Array-to-array Mapping
 
+You can map the incoming array values with an outgoing array fields, we call this
+an array-to-array mapping.
 
+You can use both **Integrator** or **Developer** modes to map array structure.
+However, when you have complex array-to-array case we recommend using the developer
+mode since the Integrator mode has certain limitations.
 
-Now you can map not just individual objects, but entire arrays in the *Integrator mode*. [Array-to-array mapping](#array-to-array-mapping) was only possible in the *Developer mode* before. If you saw arrays in *Integrator mode*, you would get the following message:
+*   You can map data from objects inside the arrays.
+*   You can't map properties from objects located in multiple arrays.
+*   Due to complexity and limitations, when you map array-to-array Integrator mode, the mapping will not be saved if you switch to Developer mode and, vice-versa.
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/old-array-to-array.png" title="No array mapping" %}
+When in Integrator mode, the system checks if the incoming array has properties
+to map. If not then the previous step is disabled.
 
-Obviously, the mapping result will also be an array. The mapper will take objects from the original array, and map them to the resulting array. Note that mapping of arrays has following limitations:
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapping-array-step-disabled.png" title="Disabled step in array mapping" %}
 
-- It is only possible to map data from objects inside arrays
-- It is impossible to map properties from objects located in multiple arrays
-- If you map an array in *Integrator mode*, the mapping will not be saved if you switch to *Developer mode*, and vice-versa.
+Alternatively, when there are array parameters to map you can access the incoming
+data fields.
 
-Here is an example of array mapping:
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapping-array.png" title="Array mapping" %}
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/mapper-08.png" title="No array mapping" %}
+> For complex cases of array-to-array mapping we recommend switching to Developer
+> mode where you can write extensive JSONata expressions and use data from
+> different arrays simultaneously.
 
 
 ## Related links
