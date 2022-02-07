@@ -1,6 +1,6 @@
 ---
 title: Mapper UI
-description: This document presents data mapping on our Platform and provides a detailed description of the new mapper UI.
+description: This document provides a detailed description of the mapper UI used in the integration flow step configuration.
 layout: article
 section: Data transfer
 category: data-transfer
@@ -8,15 +8,17 @@ since: 20200116
 order: 3
 ---
 
-This document presents data mapping on our Platform and provides a detailed description of the new mapper UI.
+Components that receive data from previous steps must be mapped to those steps
+for proper data processing. Data mapper matches the data from trigger Component
+to the corresponding fields in the action Component, this we call data mapping.
+For in-depth explanation of mapping methods we refer to a dedicated
+[data mapping](mapping-data) article.
 
-## Mapping
+{{page.description}} Depending on component type, not all configuration fields
+(steps) will show. For example if the component requires no authorisation, credentials
+section would not show. Let us examine each section (or configuration step) in detail.
 
-[Components](/getting-started/integration-component.html) that receive data from previous steps must be mapped to those steps for proper data processing. Data mapper matches the data from trigger Component to the corresponding fields in the action Component, and that's what we call mapping. You can read all about our current way of data mapping [here](mapping-data). The process remains basically the same, but there is a different UI for it.
-
-You will arrive at Step Configuration, which presents some of the following settings in tabs, depending on the Component. You may be familiar with them, but to be sure, let's go over each one.
-
-## Components
+## Component selector
 
 In this tab you select the Component for this step.
 
