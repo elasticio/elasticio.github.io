@@ -56,8 +56,8 @@ The *Webhook* receives an incoming data in the following structure:
 The JSON object above demonstrates an example of a *Webhook* payload sent by
 your ERP system.
 
-Let us add the main ingredient of this workflow - the **Content-Based Router**
-[component](/components/router/index).
+Let us add the main ingredient of this workflow - the
+[**Content-Based Router**](/components/router/index) component.
 
 As you can see below, to find the Content-Based Router component type
 the word `content` in the component search field. Once found, choose it and click
@@ -75,30 +75,31 @@ screenshot.
 
 As you can see in the above screenshot you need to add branches in the next step.
 These branches are used to route messages to different recipients, your stores
-in this example. To add a branch either click on the *Create Branch* tab or on
-the *Continue* button.
+in this example. To add a branch click on the **Create Branch** button.
 
 > **Note** The Content-Based Router component with a single branch acts as a
 > simple filter.
 
-![Configuring the first branch](/assets/img/integrator-guide/cbr/create-cbr-4.png "Configuring the first branch")
+![Configuring the first branch](/assets/img/integrator-guide/cbr/cbr-configure-first-branch.png "Configuring the first branch")
 
-Screenshot above shows the configuration step for this branch. Here we can see the
-incoming data sample and an input field to write a JSONata expression. The result
-of JSONata expression evaluation gets displayed below the data sample field.
+Screenshot above shows the configuration step for first branch. Here we can see the
+incoming data sample and an input field to write a JSONata expression.
 
-![Evaluation result](/assets/img/integrator-guide/cbr/create-cbr-5.png "Evaluation result")
+In the top expression field write:
 
-In the top expression field we write:
 ```
 Category = "sport"
 ```
+
+The result of JSONata expression evaluation gets displayed below in the **Result**
+field (scroll-down to see it).
+
 This JSONata expression evaluates to a `boolean` value `true` since in the
 incoming data `Category` has a value of `"sport"`. Let us
 add another branch to encounter for the other case. Click on the
-*Create Branch* button to start configuring the second branch.
+**Create Branch** button to configure the second branch.
 
-![Adding the second branch](/assets/img/integrator-guide/cbr/create-cbr-6.png "Adding the second branch")
+![Adding the second branch](/assets/img/integrator-guide/cbr/cbr-configure-second-branch.png "Adding the second branch")
 
 The screenshot above shows the configuration stage for a second branch. Here
 we use a different JSONata expression like:
