@@ -54,8 +54,8 @@ time then select the **Latest** label as shown in the screenshot.
 ## Available versions
 
 Starting from the [platform release 21.41](/releases/21.41#reduce-list-of-component-version),
-we limit the selectable component versions available during the integration flow
-step design to two. This means you can select latest 2 deployments.
+we limit the component versions available to select during the integration flow
+step design to two (2). This means you can select latest 2 deployments.
 
 If you have an integration flow where you use earlier version you would still see
 the version during the step configuration.
@@ -65,5 +65,5 @@ the version during the step configuration.
 When you change the version to newest one, the old version will no longer show.
 
 > We recommend using newer version of components when possible to ensure the
-> message processing stavbility. We fix and improve our components so they can
+> message processing stability. We fix and improve our components so they can
 > serve you well.
