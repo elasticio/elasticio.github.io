@@ -33,7 +33,8 @@ The component can handle the following authentication models:
 
 ## Triggers
 
-*None*
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
@@ -374,7 +375,7 @@ Raw HTTP Request Action allows to assemble custom requests to be sent to the sys
 
 #### Related API Documentation
 
-Platform API documentation can be found [here](https://api.elastic.io/docs/v2)
+Platform API documentation can be found [here]({{site.data.tenant.apiBaseUri}}/docs/v2)
 
 ### Fetch Dynamic Select Model
 
