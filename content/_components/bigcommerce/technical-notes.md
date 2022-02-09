@@ -5,11 +5,17 @@ description: Technical Notes for the BigCommerce component
 icon: bigcommerce.png
 icontext: BigCommerce Component
 category: bigcommerce
-updatedDate: 2022-01-14
-ComponentVersion: 1.1.0
+updatedDate: 2022-01-28
+ComponentVersion: 1.2.0
 ---
 
 ## Changelog
+
+### 1.2.0 (January 28, 2022)
+
+* Add `Create a Payment` action
+* Add `Orders` support for lookup (both) and delete actions
+* Add API versioning to `Make Raw Request` action
 
 ### 1.1.0 (January 14, 2022)
 

@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2021-12-10
-ComponentVersion: 1.4.4
+updatedDate: 2021-12-28
+ComponentVersion: 1.4.5
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,10 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.4.5 (January 28, 2022)
+
+* Fix `startTime` and `endTime` parameters processing for `Polling Trigger`
 
 ### 1.4.4 (December 10, 2021)
 

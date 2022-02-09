@@ -79,6 +79,11 @@ However, the component needs environment variables ELASTICIO_OBJECT_STORAGE_TOKE
 
 Bucket ID - a text input of a bucket ID to assign.
 
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
 ## Actions
 
 ### Lookup Object
