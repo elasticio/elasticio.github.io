@@ -38,6 +38,11 @@ Component does not use any environment variables
 
 > Example: `"{\"access_token\":\"access_token_value\",\"token_type\":\"bearer\",\"expires_in\":86400,\"tokenExpiryTime\":\"2021-11-11T23:18:00.470Z\"}"`
 
+## Triggers
+
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
+
 ## Actions
 
 ### HTTP request

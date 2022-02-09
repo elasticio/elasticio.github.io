@@ -6,8 +6,8 @@ description: A component to work with BigCommerce online stores
 icon: bigcommerce.png
 icontext: BigCommerce Component
 category: bigcommerce
-updatedDate: 2022-01-14
-ComponentVersion: 1.1.0
+updatedDate: 2022-01-28
+ComponentVersion: 1.2.0
 ---
 
 ## General information
@@ -54,7 +54,7 @@ Executes custom request
 #### Input field description
 
 * **Method** - (string enum (`GET`,`POST`,`PUT`,`DELETE`, `PATCH`), required): HTTP Verb for the request.
-* **URL** - (string, required): Path of the resource relative to the URL base.
+* **URL** - (string, required): Path of the resource relative to the URL base. Mostly starts with API version.
 * **Request Body** - (object, optional): Body of the request to send.
 
 #### Output field description
@@ -98,6 +98,61 @@ Deletes selected object by ID.
 
 Result is an object with a property **id** in case of successful operation.
 
+### Create a Payment
+
+Action creates a payment for order using one of BigCommerce payment gateways
+
+#### Config fields
+
+None
+
+#### Input Metadata
+
+* **Order ID** (number, required) - Unique order identifier which will be used for the payment, make sure that order `status_id:0` ([more info](https://developer.bigcommerce.com/api-docs/store-management/payment-processing#using-the-orders-api))
+* **Payment method ID** (string, required) - Provide payment method, that was configured on platform and supported by order (ex. - `"authorizenet.card"`). Available list can be found using [Get Payment Methods](https://developer.bigcommerce.com/api-reference/store-management/payment-processing/accepted-methods/paymentsmethodsget)
+* **Payment Instrument details** (object, required) - Details of the payment
+
+<details close markdown="block">
+<summary>
+Credit card sample
+</summary>
+  ```json
+    {
+      "type": "card",
+      "number": "4111111111111111",
+      "cardholder_name": "success",
+      "expiry_month": 3,
+      "expiry_year": 2030,
+      "verification_value": "737"
+    }
+  ```
+</details>
+
+<details close markdown="block">
+<summary>
+Stored card sample
+</summary>
+
+  ```json
+    {
+      "type": "stored_card",
+      "token": "050a1e5c982e5905288ec5ec33f292772762033a0704f46fccb16bf1940b51ef",
+      "verification_value": "4242"
+    }
+  ```
+    \* You will need the `"token"` from [Get Payment Methods](https://developer.bigcommerce.com/api-reference/store-management/payment-processing/accepted-methods/paymentsmethodsget)
+</details>
+
+* **Save Instrument** (boolean, optional) - Should the credit card be saved once used. False by default.
+
+#### Output Metadata
+
+* **status** (number, required) - Http status code
+* **data** (object, required) - Data returned from the payment API
+
+#### Limitations
+
+If you provide wrong/unavailable `Payment method ID` system return status 204 without errors and data
 
 ### Lookup Object by ID
 
@@ -127,15 +182,12 @@ Lookup objects satisfying specified criteria.
 
 The input metadata can contain different fields depending on the configuration field **Output method** :
 
-**Output method** - `Emit all`:
-* **Maximum number of records** - an optional positive integer (the default value is 5000);
-
-**Output method** - `Emit individually`:
-* **Maximum number of records** - an optional positive integer (the default value is 10000);
+**Output method** - `Emit all` or `Emit individually`:
+* **Maximum number of records** - an optional positive integer (the default value is 250);
 
 **Output method** - `Emit page`:
-* **Page size** - a required integer from the interval [1-5000]. It defaults to 5000 if a value not from the interval is specified;
-* **Page number** - a required non-negative integer (greater than or equal to 0); It defaults to 0 if a negative value is specified.
+* **Page size** - a required integer from the interval [1-250]. It defaults to 250 if a value not from the interval is specified;
+* **Page number** - a required non-negative integer (greater than 0); It defaults to 1 if a negative value is specified.
 
 Note that the number of records the component emits may affect the performance of the platform/component.
 
