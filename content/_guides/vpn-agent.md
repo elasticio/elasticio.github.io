@@ -6,7 +6,10 @@ layout: article
 section: Building integration flows
 category: building integration flows
 redirect_from:
-  - /getting-started/vpn-agent.html
+  - /references/local-agent.html
+  - /references/local-agents-HyperV.html
+  - /references/local-agents-requesting.html
+  - /references/local-agents-VirtualBox.html
 ---
 
 This document provides basic information on [VPN Agent](#vpn-agent), [how to set it up](#how-to-setup)
