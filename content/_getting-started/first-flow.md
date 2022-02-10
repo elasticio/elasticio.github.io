@@ -32,11 +32,11 @@ The platform prompts you to setup the first step. First you can select the Compo
 
 ![Setup the first step](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-04.png)
 
-The next step is data sample retrieval. You can read about [data samples here](/getting-started/data-sample-overview). Click "Retrieve sample from Simple trigger" **(1)**, then "Continue" **(2)** will become active on success.
+The next step is data sample retrieval. You can read about [data samples here](/getting-started/data-sample-overview). Click "Retrieve sample from Simple trigger" **(1)** or "Add sample manually" **(2)**. After that you will be automatically redirected to the last step.
 
 ![Data sample retrieval](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-05.png)
 
-Then click "Continue" to proceed:
+You can also change the sample if you wish:
 
 ![Data sample retrieval - Continue](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-06.png)
 
@@ -55,11 +55,11 @@ Again, we're prompted to setup the step, similar to the first one. We're going t
 
 ![Choose Email](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-09.png)
 
-Email Component sends an email when triggered, so you should just fill in the details as you would for an email. After you've entered all the data, click "Continue":
+Email Component sends an email when triggered, so you should just fill in the details as you would for an email. After you've entered all the data, click to "Sample":
 
 ![Configure input](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-10.png)
 
-Next, you retrieve a data sample **(1)** and click "Continue" **(2)**:
+Next click to "Retrieve sample from Simple trigger" **(1)** or "Add sample manually" **(2)**. After that you will be automatically redirected to the last step. 
 
 ![Retrieve a data sample](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-11.png)
 

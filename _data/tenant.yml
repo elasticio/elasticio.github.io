@@ -1,7 +1,8 @@
 name: elastic.io
 companyName: elastic.io GmbH
-appURL: https://app.elastic.io 
+appURL: https://app.elastic.io
 apiBaseUri: https://api.elastic.io
+apiDocsUri: https://api.elastic.io/docs
 gitDomain: git.elastic.io
 supportEmail: support@elastic.io
 petStoreDocs: https://petstore.elastic.io/docs
