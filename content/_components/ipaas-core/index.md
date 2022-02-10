@@ -1,11 +1,11 @@
 ---
-title: IPass Core component
+title: IPaas Core component
 layout: component
 section: Utility components
 description: A component to manipulate integration artifacts such as flows via the REST API (v2) of the Integration Platform As a Service.
-icon: ipass-core.png
-icontext: IPass Core component
-category: ipass-core
+icon: ipaas-core.png
+icontext: IPaas Core component
+category: ipaas-core
 updatedDate: 2021-01-28
 ComponentVersion: 1.3.0
 ---
@@ -14,22 +14,25 @@ ComponentVersion: 1.3.0
 
 #### Environment variables
 
-|Name|Mandatory|Description|Values|
+| Name | Mandatory | Description | Values |
 |----|---------|-----------|------|
-|`PARALLEL_PLATFORM_API_CALLS`| false | Sets the max number of concurrent API calls that will be made to the platform at a given time | Positive Integer. Default is `20`.|
+| `PARALLEL_PLATFORM_API_CALLS`| false | Sets the max number of concurrent API calls that will be made to the platform at a given time | Positive Integer. Default is `20`.|
 
 ## Credentials
 
-In order to authenticate against the platform API, three pieces of information are required.  All three pieces of information can be found on your **Profile Information** page located at `/account/profile`.
+To authenticate against the platform API, you need three pieces of information.
+You can get all three pieces of information on your **Profile Information** page
+located at `/account/profile`.
 
-* **Platform Instance URL** - The address to the platform API
-* **Email** - The Email Address To use in authentication
-* **API Key** - The API key used in authentication
+*   **Platform Instance URL** - The address to the platform API
+*   **Email** - The Email Address To use in authentication
+*   **API Key** - The API key used in authentication
 
 The component can handle the following authentication models:
-* Integrator provides no additional authentication parameters: The component fetches all three pieces of required information from environment variables in the component. The component will only have access to the current workspace.
-* The integrator provides a username/api combination to gain access to artifacts within the same tenant. The address of the platform API is fetched from environment variables.
-* The integrator provides all three pieces of information so that artifacts from other tenants/instances can be accessed.
+
+*   Integrator provides no additional authentication parameters: The component fetches all three pieces of required information from environment variables in the component. The component will only have access to the current workspace.
+*   The integrator provides a username/api combination to gain access to artifacts within the same tenant. The address of the platform API is fetched from environment variables.
+*   The integrator provides all three pieces of information so that artifacts from other tenants/instances can be accessed.
 
 ## Triggers
 
@@ -128,9 +131,7 @@ The following inputs can be set through JSONata expressions:
 ![image](https://user-images.githubusercontent.com/7985390/151942532-825af8b4-db4a-474a-b3ab-710cf1f78552.png)
 
 <details close markdown="block">
-<summary>
-Sample
-</summary>
+<summary>Sample</summary>
 **Attributes:**
   ```json
     {
