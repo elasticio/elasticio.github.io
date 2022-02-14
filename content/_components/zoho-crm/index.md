@@ -6,8 +6,8 @@ description: A component that connects to Zoho-crm API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.0
-updatedDate: 2021-11-26
+ComponentVersion: 1.3.1
+updatedDate: 2022-02-14
 ---
 
 ## General information
@@ -68,12 +68,23 @@ Save client and then:
 #### Config Fields
 
  * **Object Type** Dropdown: Indicates Object Type to be fetched
- * **Emit behavior** Dropdown: Indicates emit objects individually or emit by page
+ * **Emit behavior** Dropdown: Indicates behavior to emit result objects: `Emit individually` or `Emit page`
  * **Field to poll** Dropdown: Indicates field to poll (new objects or modified objects)
  * **Start Time** - TextField (string, optional): Indicates the beginning time to start retrieving events from
  * **End Time** - TextField (string, optional, defaults to never): If provided, don’t fetch records modified after this time
  * **Size of Polling Page** - TextField (optional, positive integer, defaults to 200): Indicates the size of pages to be fetched
  * **Process Pages Consistently** - Checkbox: Indicates that pages will be processed one by one, without waiting next flow run. Defaults to false
+
+#### Input Metadata
+
+There is no Input Metadata
+
+#### Output Metadata
+
+ If `Emit behavior` = `Emit individually`: dynamically generated properties according to selected `Object Type`
+ If `Emit behavior` = `Emit page`:
+ 
+  * **results** Array with items: dynamically generated properties according to selected `Object Type`
 
 ## Actions
 
