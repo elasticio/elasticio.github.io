@@ -48,7 +48,7 @@ Alternatively, you can navigate to the Flow itself by clicking on its name:
 
 ![Click on flows name](/assets/img/tenant-management-guide/managing-flows/Screenshot_3.png)
 
-Then click the corresponding buttons to start **(1)**, edit **(2)** or delete **(3)** Flow.
+Then click the corresponding buttons to start **(1)**, edit **(2)** or delete **(4)** Flow. You can also update all components by clicking **(3)**.
 
 ![Corresponding buttons](/assets/img/tenant-management-guide/managing-flows/Screenshot_4.png)
 
