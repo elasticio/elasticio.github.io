@@ -5,8 +5,8 @@ description: Shopify component triggers.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2021-12-28
-ComponentVersion: 1.4.5
+updatedDate: 2022-02-11
+ComponentVersion: 1.4.6
 redirect_from:
   - /components/shopify-admin/triggers.html
 ---
@@ -21,10 +21,10 @@ Polls Shopify API for new and updated objects.
 
 *   **Object Type** - Object type for polling.
 *   **Emit Behaviour** - Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message and `Fetch Page` emits object in messages size of `Size Of Polling Page`.
-*   **Start Time** - Start date-time of polling. Default min date:`-271821-04-20T00:00:00.000Z`.
-*   **End Time** - End date-time of polling. Default max date: `+275760-09-13T00:00:00.000Z`.
-*   **Size Of Polling Page** - Size of polling page, used in Fetch Page behaviour to determine size of emitted message. Default: `1000`.
-*   **Single Page Per Interval** - If `Yes` polls for one page each execution, if `No` polls for all pages in one execution. Default: `Yes`.
+*   **Start Time** - Start datetime of polling. Default min date:`1970-01-01T00:00:00.000Z`
+*   **End Time** - End datetime of polling. Default max date: `Current Timestamp`
+*   **Size Of Polling Page** - Size of polling page, used in Fetch Page behaviour to determine size of emitted message. Default: `50`
+*   **Single Page Per Interval** - If `Yes` polls for one page each execution, if `No` polls for all pages in one execution, exception - `Emit Behaviour` - `Fetch All` that always poll all records. Default: `Yes`
 *   **Fetch Metafields for Object** - If selected, in addition to returning the built-in fields associated with the object, return the metafields.
 
 ## Webhook subscription

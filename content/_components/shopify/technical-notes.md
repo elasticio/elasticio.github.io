@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2021-12-28
-ComponentVersion: 1.4.5
+updatedDate: 2022-02-11
+ComponentVersion: 1.4.6
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,11 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.4.6 (February 11, 2022)
+
+- Added *Time stamp field to poll on* field for `Get New and Updated Objects` trigger
+- Fixed dynamic-metadata schema
 
 ### 1.4.5 (January 28, 2022)
 

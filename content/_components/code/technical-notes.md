@@ -5,13 +5,17 @@ description: Technical Notes for the Code component.
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2021-11-26
-ComponentVersion: 1.2.6
+updatedDate: 2022-02-15
+ComponentVersion: 1.2.7
 redirect_from:
   - /components/code/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.7 (February 15, 2022)
+
+* Updated Node engine to 15.8.0
 
 ### 1.2.6 (November 26, 2021)
 

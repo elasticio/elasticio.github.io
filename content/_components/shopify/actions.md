@@ -5,8 +5,8 @@ description: Shopify component actions.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2021-12-28
-ComponentVersion: 1.4.5
+updatedDate: 2022-02-11
+ComponentVersion: 1.4.6
 redirect_from:
   - /components/shopify-admin/actions.html
 ---
@@ -38,7 +38,7 @@ Finds object by id.
 ### List of Expected Config fields
 
 *   **Object Type** - Object type for polling.
-*   **Behavior** - `Fetch All` - fetch all objects in one message in form of array, `Emit Individually` - emit each fetched object as separate message.
+*   **Behavior** - `Fetch All` - fetch all records in one object - `results` in form of array, `Emit Individually` - emit each fetched object as separate message.
 *   **Max Size** - Maximum number of objects to fetch. Default `250`, maximum value is `250`.
 *   **Fetch Metafields for Objects** - If selected, in addition to returning the built-in fields associated with the objects, return the metafields.
 

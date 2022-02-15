@@ -5,8 +5,8 @@ description: SOAP component actions.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2021-10-15
-ComponentVersion: 1.2.6
+updatedDate: 2022-02-11
+ComponentVersion: 1.2.7
 ---
 
 ## Call
@@ -23,6 +23,7 @@ Call action supports Basic Authorization, chose Basic Authorization type in cred
 *   **WSDL URI** - Public URL address of the WSDL
 *   **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
 *   **Operation** - One of the operations available for the binding you have selected above.
+*   **Request timeout** - Timeout period in milliseconds (1-1140000) while component waiting for server response. Defaults to 60000 (60 sec).
 
 ### SOAP Fault
 
