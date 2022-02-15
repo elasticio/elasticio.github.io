@@ -1,11 +1,12 @@
 ---
-title: Basic Data Mapping
+title: Mapping Data
 description: This article shows how to map the data between integration components to keep them in sync.
 layout: article
 section: Data transfer
 category: data-transfer
 order: 0
-since: 20180216
+redirect_from:
+  - /guides/new-mapper.html
 ---
 
 {{page.description}}
