@@ -1,26 +1,19 @@
 ---
 title: Managing user roles in a contract
-description: This document explains what roles and permissions are, how roles are set in the UI and how custom roles are configured.
+description: This document explains the default roles and permissions of the platform and how to set them in the UI.
 layout: article
 section: Contract Management
 order: 1
 since: 20190321
 category: integrator-management
-redirect_from:
-  - /guides/managing-user-roles-in-a-tenant#setting-user-roles.html
-  - /guides/managing-user-roles-in-a-tenant#configuring-custom-user-roles.html
-  - /guides/managing-user-roles-in-a-tenant#essential-roles.html
-  - /guides/managing-user-roles-in-a-tenant#permissions-reference-table.html
 ---
 
-This document explains [what roles and permissions are](#roles-and-permissions)
-and how [to set roles in the UI](#setting-user-roles).
+{{page.description}}
 
 ## Roles and permissions
 
-A tenant admin can
-control user rights in his tenant by configuring user roles. A role is a user
-attribute that defines a set of permissions for the user. Contract roles define
+A tenant admin can control user rights in his tenant by configuring user roles.
+A role is a user attribute that defines a set of permissions for the user. Contract roles define
 permissions for contract management, and workspace roles define permissions for
 workspace management.
 
@@ -33,8 +26,8 @@ The default **contract roles** are:
 The default **workspace roles** are:
 
 *   **Owner** - Users with this role can edit the workspace, edit [flows](/getting-started/integration-flow), start/stop flows, change flows from/to [real-time/ordinary](realtime-flows) status, and edit credentials in a workspace.
-*   **Admin** - Users with this role have the same permission set as **Owner**
-*   **Integrator** - Users with this role can edit flows, start/stop flows, change flows from/to real-time/ordinary, and edit [credentials](/getting-started/credential).
+*   **Admin** - Users with this role have the same permission set as **Owner** plus [recipe creation and modification](creating-recipes).
+*   **Integrator** - Users with this role can edit flows, start/stop flows, change flows from/to real-time/ordinary, and edit [credentials](/getting-started/credential). They can also [create and edit recipes](creating-recipes).
 *   **Guest** - Users with this role can browse the workspace.
 
 Note that a full set of contract permissions does not automatically mean a full
@@ -57,8 +50,8 @@ drop-down menu.
 As a workspace Owner and Admin you can set the user role while inviting them to
 the Contract and Workspace.
 
-> **Please Note** You can invite to Contract and Workspace only if your have
-> **Owner** or **Admin** role in the contract.
+> **Please Note** You can invite to Contract and Workspace you have either **Owner**
+> or **Admin** role in the contract.
 
 Click **Invite new member**, enter user email and use **Contract Role** and
 **Workspace Role** drop-down menus. In the corresponding menu, select the required
