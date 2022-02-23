@@ -47,7 +47,7 @@ layout: default
                           {% assign collectionName = collection[0] %}
                           {% assign related = site[collectionName] | where:'category', page.category %}
                           {% if related.size > 0 %}
-                              {% for item in related reversed | at_most:5 %}
+                              {% for item in related reversed %}
                                   {% if item.url != page.url %}
                                   <a class="side__item" href="{{item.url}}">v{{item.version}}</a>
                                   {% endif %}
