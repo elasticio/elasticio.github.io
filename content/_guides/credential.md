@@ -65,6 +65,6 @@ A new credential can be added by pressing the `Add New Credential` button that y
 
 ## Related links
 
-- [Integration flows](integration-flow)
-- [Creating a flow](first-flow)
+- [Integration flows](/getting-started/integration-flow)
+- [Creating a flow](/getting-started/first-flow)
 - [Petstore API]({{site.data.tenant.petStoreDocs}})

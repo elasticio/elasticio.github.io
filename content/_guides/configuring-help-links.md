@@ -6,7 +6,7 @@ order: 1
 category: integrator-management
 ---
 
-This document explains how to configure [help links](#help-links) for Platform UI and provides [examples](examples).
+This document explains how to configure [help links](#help-links) for Platform UI and provides [examples](#examples).
 
 ## Help Links
 You can put help links on different stages of integration Flow creation:

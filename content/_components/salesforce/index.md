@@ -133,4 +133,4 @@ Use this list to navigate to the action you seek.
 
 ## Known limitations
 
-Attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent)
+Attachments mechanism does not work with Local Agent Installation.

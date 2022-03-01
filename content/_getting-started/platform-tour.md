@@ -69,7 +69,7 @@ For more information please visite our [Managing Workspaces](/guides/managing-wo
 
 ### Agents
 
-This is the [VPN Agent](vpn-agent) management page **(1)**. Here you can manage your Local Agents **(2)**, and create them **(3)**.
+This is the [VPN Agent](/guides/vpn-agent) management page **(1)**. Here you can manage your Local Agents **(2)**, and create them **(3)**.
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/agents.png" title="Agents" %}
 
@@ -85,7 +85,7 @@ This is the page where you can manage your Workspace **(1)**. This includes chan
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/workspace.png" title="Organize Workspace" %}
 
-For more information please visite our [Managing Workspaces](/guides/managing-workspaces) page.
+For more information please visit our [Managing Workspaces](/guides/managing-workspaces) page.
 
 ## Contract Settings
 

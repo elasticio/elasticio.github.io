@@ -74,7 +74,7 @@ Determines how the component should be built and run on the platform
 
 ## Credentials Object
 
-This identifies the information that the platform needs to collect from the integrator in order to be able to connect to their instance/account.  Information that is collected in this section typically include:
+This identifies the information that the platform needs to collect from the integrator in order to be able to connect to their instance/account. Information that is collected in this section typically include:
 * URL to the integrator's instance (if there is not a shared cloud url)
 * Username or other account identifier
 * Password or other API keys/tokens required to authenticate
@@ -87,7 +87,7 @@ This identifies the information that the platform needs to collect from the inte
 
 The `actions` object describes the actions that exist within the component. The `triggers` object describes the triggers that exist within the component.
 
-Actions are operations exposed to the flow builder that can be placed in any step except the first step.  
+Actions are operations exposed to the flow builder that can be placed in any step except the first step.
 
 Triggers are operations exposed to the flow builder that can only be placed in the first step of a flow.
 
@@ -109,7 +109,7 @@ Used to signal that this action/trigger should not be used in new flows and that
 
 ## ConsumesRawData
 
-Normally for webhook triggers, the platform will attempt to parse incoming data to the JSON equivalent before handing it to the component code.  
+Normally for webhook triggers, the platform will attempt to parse incoming data to the JSON equivalent before handing it to the component code.
 
 When this value is set to `true`, then the HTTP body of the incoming request will be passed to your component as an unparsed string in the `msg.body.rawData` field.
 

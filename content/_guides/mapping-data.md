@@ -46,7 +46,7 @@ You can add this structure manually using the appropriate function:
 {% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapping-webhook.png" title="Mapping: Configure input" %}
 
 We intend to map these values into outgoing fields in the
-[**Petstore component**](/components/petstore/). Let us jump into the integration
+[**Petstore component**](/components/petstore-nodejs/). Let us jump into the integration
 flow design right at the mapping stage.
 
 {% include img.html max-width="80%" url="/assets/img/integrator-guide/data-mapper/mapper-01.png" title="Mapping: Configure input" %}
