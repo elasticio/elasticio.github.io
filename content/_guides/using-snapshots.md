@@ -11,7 +11,7 @@ This document provides a quick guide on [creating and using Snapshots](#creating
 
 ## Creating and Using a Snapshot
 
-To create a [Snapshot](/getting-started/snapshot-overview.html), you need to emit it from your Component function:
+To create a [Snapshot](/guides/using-snapshots), you need to emit it from your Component function:
 
 `emit('snapshot',snapshot)`
 

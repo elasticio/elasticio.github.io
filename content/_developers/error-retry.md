@@ -26,7 +26,7 @@ connecting and downloading the data would fail. This would disrupt your integrat
 To recover from this situation might seem tricky at first, but, the platform
 features are here to help.
 
-As a good sign we suggest using the [snapshots](/developers/snapshot-overview) to save the state of
+As a good sign we suggest using the [snapshots](/guides/using-snapshot) to save the state of
 the step. Configure the [rebound](/getting-started/rebound) to enable automatic retry
 of messages in case of failures. And the last not least, use the retry.
 
