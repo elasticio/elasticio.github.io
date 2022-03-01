@@ -16,7 +16,7 @@ CRM within that product family.
 
 ![Microsoft Dynamics Finance and Operations](img/DynamicsOps1.png)
 
-Microsoft Dynamics Finance and Operations is a product in the Microsoft Dynamics family.  It is a
+Microsoft Dynamics Finance and Operations is a product in the Microsoft Dynamics family. It is a
 ERP within that product family.
 
 This component can interact with both of these systems and possibly other systems in the dynamics family that expose OData APIs that support authentication through OAuth.
@@ -27,8 +27,8 @@ Like other members of the Dynamics product family, Business Central exposes
 [OData APIs](http://www.odata.org/documentation/) for editions published after
 approximately 2015.  These APIs have the following caveats:
 
-* Authentication is done with OAuth.  Both the [Authorization Code Flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) and the [Resource Owner Password Credentials Grant Flow](https://tools.ietf.org/html/rfc6749#section-1.3.3).  There is a postman collection which demonstrates the Resource Owner Password Credentials Grant Flow case.  The corresponding environment variables are in BitWarden
-* The URL of the OData root  is hard to find.  For CRM it is `/api/data/v8.2`.  For Finance and Operations it is `/data`.
+* Authentication is done with OAuth.  Both the [Authorization Code Flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) and the [Resource Owner Password Credentials Grant Flow](https://tools.ietf.org/html/rfc6749#section-1.3.3).  There is a postman collection which demonstrates the Resource Owner Password Credentials Grant Flow case. The corresponding environment variables are in BitWarden
+* The URL of the OData root is hard to find.  For CRM it is `/api/data/v8.2`.  For Finance and Operations it is `/data`.
 
 ## Test Instance Set Up - Using Cloud Trial Instance
 
@@ -59,7 +59,7 @@ One previous issue was resolved by using incognito mode.  A screenshot of that e
 
 ## Integration Tests
 
-An `.env` file for integration tests can be found in BitWarden.  It requires a valid access token for authentication to be manually provided first.  One can be obtained using the provided postman collection.
+An `.env` file for integration tests can be found in BitWarden. It requires a valid access token for authentication to be manually provided first.  One can be obtained using the provided postman collection.
 
 ## License
 

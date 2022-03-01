@@ -15,7 +15,7 @@ explains [why would you use it](#passthrough-usage), and gives a
 
 ## What is passthrough
 
-Most components in an [integration flow](integration-flow) receive, process and
+Most components in an [integration flow](/guides/building-integration-flow) receive, process and
 send data. Incoming data typically differs from the outgoing one, so the
 last step may receive a message without even a small trace of the initial data.
 If you want a component to map data other than what it receives from the previous
