@@ -53,9 +53,11 @@ Example:
 
 ## Actions
 
-### Send data
+### Send data (deprecated)
 
 Simply sends data it receives as an input to a URL provided.
+
+> Please note, that this action is deprecated which is marked in orange in the Funktions tab.
 
 WebHook action can also be used to troubleshoot many processes to see the outcome.
 For example one could create Invoices (in [Salesforce](https://www.salesforce.com/)) to Webhook flow and configure the Webhook with a url created in https://webhook.site or with any similar services.
