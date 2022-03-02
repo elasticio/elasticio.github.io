@@ -4,8 +4,6 @@ description: Error retry is a feature which gives a possibility to try to proces
 layout: article
 section: Component Troubleshooting
 order: 2
-redirect_from:
-  - /guides/error-retry.html
 ---
 
 ## Description
@@ -26,7 +24,7 @@ connecting and downloading the data would fail. This would disrupt your integrat
 To recover from this situation might seem tricky at first, but, the platform
 features are here to help.
 
-As a good sign we suggest using the [snapshots](using-snapshots) to save the state of
+As a good sign we suggest using the [snapshots](/guides/using-snapshots) to save the state of
 the step. Configure the [rebound](/getting-started/rebound) to enable automatic retry
 of messages in case of failures. And the last not least, use the retry.
 
@@ -135,8 +133,3 @@ After you edit corresponding message to have a correct output, click on the **Re
 After you have fixed the error and retry the flow, you can see how the message goes through the entire flow again:
 
 {% include img.html max-width="60%" url="/assets/img/integrator-guide/instant-error-management/after-retry.png" title="After Retry" %}
-
-## Related links
-
-- [Using Snapshots](using-snapshots)
-- [Rebound](/getting-started/rebound)

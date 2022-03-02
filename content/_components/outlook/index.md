@@ -34,7 +34,7 @@ The [technical notes](technical-notes) page gives some technical details about O
 | `MAIL_RETRIEVE_MAX_COUNT`| false | Define max count mails could be retrieved per one `Poll for New Mail` trigger execution. Default to 1000| 1000 |
 
 > Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow. 
+> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Credentials
 
@@ -110,7 +110,7 @@ If not specified, the message will be soft-deleted (moved to the folder with pro
 
 ### Current implementation uses AD V2.0 OAuth2
 
-Second version of AD protocol has [some advantages](https://azure.microsoft.com/en-us/documentation/articles/active-directory-v2-compare/), see [here](https://azure.microsoft.com/en-us/documentation/articles/active-directory-v2-limitations/) for more information.
+Second version of AD protocol has some advantages, see [here](https://docs.microsoft.com/en-us/azure/active-directory/azuread-dev/azure-ad-endpoint-comparison) for more information.
 
 ### OData output for lastModifiedDateTime has a precision issue
 

@@ -5,23 +5,30 @@ layout: article
 section: Tokens in OAuth2 components
 order: 2
 category: tokens-in-oauth2-components
-redirect_from:
-  - /references/how-the-oauth2-process-works.html
 ---
 
-To learn about the details of OAuth2 authorization and the mechanism behind we refer to [The OAuth Bible](http://oauthbible.com/) which we highly recommend. The exaplanation below is based on that extensive document customized to the case of this iPaaS.
+To learn about the details of OAuth2 authorization and the mechanism behind we
+refer to [The OAuth Bible](https://github.com/Kong/mashape-oauth) which we highly
+recommend. The explanation below is based on that extensive document customized
+to the case of this iPaaS.
 
->**Please note:** Every OAuth2 API provider has its own specific requirements. Make sure to check the documentation of the service before assuming anything and building the OAuth2 routines in your private component.
+>**Please note:** Every OAuth2 API provider has its own specific requirements.
+> Make sure to check the documentation of the service before assuming anything
+> and building the OAuth2 routines in your private component.
 
 ## Establishing the initial connections
 
-The purpose of any basic integration scenario is to communicate the data between the systems. In order to prevent any third party from getting access to this data, 2 communicating systems need to talk securely. This is done by **establishing a secure connection** via OAuth where the data is communicated to and between known parties.
+The purpose of any basic integration scenario is to communicate the data between
+the systems. To prevent any third party from getting access to this data, 2
+communicating systems need to talk securely. This is done by
+**establishing a secure connection** via OAuth where the data is communicated to
+and between known parties.
 
 Within the scope of the platform the known parties are:
 
-  * **User** - This is the individual (perhaps you) which holds the ultimate rights to the data. This data is protected by the credentials which are unique to this individual, the user.
+*    **User** - This is the individual (perhaps you) which holds the ultimate rights to the data. This data is protected by the credentials which are unique to this individual, the user.
 
-  * **Service** - This is the external resource where the protected data is hosted. For example Salesforce, Google, SAP, etc.
+*    **Service** - This is the external resource where the protected data is hosted. For example Salesforce, Google, SAP, etc.
 
   * **Application** - This is the program which is going to access the external data on behalf of the user. In our case, it is the iPaaS.
 
@@ -126,7 +133,7 @@ After the tokens are refreshed **Application** can resume accessing the protecte
 
 ## Related links
 
-- [The OAuth Bible](http://oauthbible.com/)
+- [The OAuth Bible](https://github.com/Kong/mashape-oauth)
 - [OAuth Callback redirect URL](/guides/oauth-callback-redirect-url)
 - [Salesforce component](/components/salesforce/index)
 - [Google Spreadsheets component](/components/gspreadsheet/index)s
