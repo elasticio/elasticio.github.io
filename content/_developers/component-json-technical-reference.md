@@ -79,9 +79,9 @@ This identifies the information that the platform needs to collect from the inte
 * Username or other account identifier
 * Password or other API keys/tokens required to authenticate
 
-> **Please Note:** [See what happens when the credentials object is omitted](component-json-technical-reference-credentials.html#omitting-credentials)
+> **Please Note:** [See what happens when the credentials object is omitted](component-json-credentials#omitting-credentials)
 
-[See the dedicated article on the credentials object for more information.](component-json-technical-reference-credentials)
+[See the dedicated article on the credentials object for more information.](component-json-credentials)
 
 ## Actions & Triggers Objects
 
@@ -93,7 +93,7 @@ Triggers are operations exposed to the flow builder that can only be placed in t
 
 If the component has no actions, then the component.json file should not have an actions field. If the component has no triggers, then the component.json file should not have a triggers field.
 
-[See the dedicated article on the action/trigger object for more information.](component-json-technical-reference-actions-triggers)
+[See the dedicated article on the action/trigger object for more information.](actions-triggers-comp-json)
 
 > **Please Note** All components must implement at least one action or at least one trigger.
 

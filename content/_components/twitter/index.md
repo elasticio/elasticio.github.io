@@ -14,9 +14,13 @@ ComponentVersion: 0.0.2
 
 ![Credentials](img/credentials.png)
 
+To retrieve credentials you need to create Twitter App and generate token in that app.
+
+
 ## Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about PostgreSQL component like [changelog](/components/twitter/technical-notes#changelog) and.
+The [technical notes](technical-notes) page gives some technical details about
+Twitter component like [changelog](technical-notes#changelog).
 
 ## Triggers
 
@@ -35,7 +39,7 @@ in/out metadata can be found at `/lib/schemas/postTweet.{in/out}.json`
 
 input message:
 
-```
+```json
 {
     "text": "hi there"
 }
@@ -43,7 +47,7 @@ input message:
 
 output message:
 
-```
+```json
 {
     "text": "hi there",
     "id": "979656103867887616",
@@ -61,7 +65,7 @@ in/out metadata can be found at `/lib/schemas/searchTweets.{in/out}.json`
 
 input message:
 
-```
+```json
 {
     "text": "hi there",
     "count": 2
@@ -70,7 +74,7 @@ input message:
 
 output message:
 
-```
+```json
 {
 	"tweets": [
 		{
@@ -90,7 +94,3 @@ output message:
 	]
 }
 ```
-
-## Links
-
-To retrieve credentials you need to create Twitter App [here](https://apps.twitter.com/) and generate token in that app.

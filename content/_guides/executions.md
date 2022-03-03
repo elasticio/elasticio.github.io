@@ -134,6 +134,6 @@ Then, for example, you can check the errors that occurred:
 
 ![Executions error](/assets/img/getting-started/exec-page/exec-retry2.png)
 
-You can use the [retry feature](/guides/error-retry) to re-submit or retry.
+You can use the [retry feature](/developers/error-retry) to re-submit or retry.
 
 ![Executions error retry](/assets/img/getting-started/exec-page/exec-retry3.png)

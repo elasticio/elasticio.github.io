@@ -7,27 +7,25 @@ order: 1
 category: integration-patterns
 ---
 
-This document provides a quick guide on [creating and using Snapshots](#creating-a-snapshot) for Components in your Flows via the UI and [via the API](#snapshots-via-the-api).
+{{page.description}}
 
 ## Creating and Using a Snapshot
 
-To create a [Snapshot](/getting-started/snapshot-overview.html), you need to emit it from your Component function:
+To create a [Snapshot](/developers/snapshot-overview.html), you need to emit it
+from your Component function:
 
 `emit('snapshot',snapshot)`
 
 Let's see how it works with querying objects by timestamp:
 
-1\. Query all objects since 2017, 1 Jan to establish the first point of reference. Typically, this happens on the first global sync between two systems.
-
-2\. Iterate over all objects. In some cases this stage can take a while due to the amount of data in the source system, therefore it is recommended to use paging if the originating API supports it.
-
-3\. Calculate the last update date based on returned objects. It's not recommended to calculate the last date as current time as you can miss some objects. This stage is also dependent on the originating API properties.
-
-4\. Emit the new last date as snapshot after iterating through all objects.
+1.  Query all objects since 2017, 1 Jan to establish the first point of reference. Typically, this happens on the first global sync between two systems.
+2.  Iterate over all objects. In some cases this stage can take a while due to the amount of data in the source system, therefore it is recommended to use paging if the originating API supports it.
+3.  Calculate the last update date based on returned objects. It's not recommended to calculate the last date as current time as you can miss some objects. This stage is also dependent on the originating API properties.
+4.  Emit the new last date as snapshot after iterating through all objects.
 
 Having gone through this list, here is what we get:
 
-```
+```javascript
 params.snapshot = snapshot;
 
 if (!params.snapshot || typeof params.snapshot !== "string" || params.snapshot === '') {
@@ -47,7 +45,7 @@ emitSnapshot(newSnapshot);
 
 **EXAMPLE:**
 
-```
+```javascript
 'use strict';
 
 const elasticio = require('elasticio-node');
@@ -78,18 +76,11 @@ Additionally, there is a way to reset snapshot for a Flow via the UI. Here is ho
 
 ## Snapshots via the API
 
-There is a number of API endpoints for creating and using snapshots. They allow you to (follow the links for details):
+There is a number of API endpoints for creating and using snapshots. They allow
+you to (follow the links for details):
 
-1\. [Retrieve snapshots for all steps in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-snapshots-for-all-steps-in-flow)
-
-2\. [Retrieve snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-snapshot-for-one-step-in-flow)
-
-3\. [Edit snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#edit-snapshot-for-one-step-in-flow)
-
-4\. [Create snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-snapshot-for-one-step-in-flow)
-
-5\. [Remove snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#remove-snapshot-for-one-step-in-flow)
-
-## Related links
-
-- [Snapshot Overview](/getting-started/snapshot-overview.html)
+1.  [Retrieve snapshots for all steps in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-snapshots-for-all-steps-in-flow)
+2.  [Retrieve snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-snapshot-for-one-step-in-flow)
+3.  [Edit snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#edit-snapshot-for-one-step-in-flow)
+4.  [Create snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-snapshot-for-one-step-in-flow)
+5.  [Remove snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#remove-snapshot-for-one-step-in-flow)

@@ -24,7 +24,8 @@ The [technical notes](technical-notes) page gives some technical details about M
 
 ### Inbound e-mail trigger
 
-Intbound e-mail trigger can receive e-mails that are sent to mandrill inbox(es), it uses [Webhooks API](https://mandrill.zendesk.com/hc/en-us/articles/360038739814).
+Inbound e-mail trigger can receive e-mails that are sent to mandrill inbox(es),
+it uses Mandrill Webhooks API.
 
 You have following configuration parameters:
 

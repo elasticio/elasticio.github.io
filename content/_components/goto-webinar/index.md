@@ -38,5 +38,4 @@ select as a first component during the integration flow design.
 
 OAuth 2.0 token that is obtained by the component is currently not refreshed,
 this shortcoming need to be fixed later. Reason for that according
-to [the documentation](https://developer.citrixonline.com/how-use-refresh-tokens)
- issued token is valid **365 days**.
+to the documentation issued token is valid **365 days**.
