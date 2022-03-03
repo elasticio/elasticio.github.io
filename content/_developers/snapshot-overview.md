@@ -4,27 +4,34 @@ layout: article
 section: How-Tos and Tutorials
 description: This document provides basic information on Snapshot feature and a few real-life use case.
 order: 9
-redirect_from:
-  - /getting-started/snapshot-overview.html
 ---
 
-This document provides basic information on [Snapshot](#component-snapshots) feature and a few real-life [use case](#use-cases).
+{{page.description}}
 
 ## Component Snapshots
 
-You may have heard of snapshots before, in terms of backup or other data-related topics. Basically, a snapshot is a saved state that you can revert to if needed. It can be an OS snapshot, an application snapshot, and in our case - a [Flow](integration-flow) step snapshot.
+You may have heard of snapshots before, in terms of backup or other data-related
+topics. Basically, a snapshot is a saved state that you can revert to if needed.
+It can be an OS snapshot, an application snapshot, and in our case - a
+[Flow](/getting-started/integration-flow) step snapshot.
 
-Containers that house the steps often get started and stopped, for example, to conserve resources. When a container is stopped, the [Component](integration-component) loses all the data that was in processing. In case this Component has to start again, it will have to request and process the same data all over again.
+Containers that house the steps often get started and stopped, for example, to
+conserve resources. When a container is stopped, the
+[Component](/getting-started/integration-component) loses all the data that was
+in processing. In case this Component has to start again, it will have to request
+and process the same data all over again.
 
-That's where snapshots come in handy. A snapshot contains information about Component state when it was run last. The next time that Component runs, it will start from the same point it ended the last time. Basically, a snapshot saves a step's last action. This way:
+That's where snapshots come in handy. A snapshot contains information about
+Component state when it was run last. The next time that Component runs, it will
+start from the same point it ended the last time. Basically, a snapshot saves a
+step's last action. This way:
 
-- The Component avoids possible data duplication caused by overwriting the same data every time it starts.
-
-- The Platform saves time and resources by keeping the data the Component already processed.
+*   The Component avoids possible data duplication caused by overwriting the same data every time it starts.
+*   The Platform saves time and resources by keeping the data the Component already processed.
 
 It is important to understand, that taking snapshots and using them is an asynchronous process. This means that if a Component fails before another snapshot is taken, it will lose all the data between failure and the last snapshot.
 
-Also, an important thing is that there can only be one snapshot per step in a Flow. A snapshot is limited to `5 KB`, so **please refrain from trying to use it as an intermediate database and writing unnecessary data there**.  
+Also, an important thing is that there can only be one snapshot per step in a Flow. A snapshot is limited to `5 KB`, so **please refrain from trying to use it as an intermediate database and writing unnecessary data there**.
 
 ## Use Cases
 

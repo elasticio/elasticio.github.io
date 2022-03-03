@@ -24,7 +24,8 @@ The component can be configured using the following environment variables:
 *   `MANDRILL_FROM_EMAIL` - to configure which address the communication would come. It should be of the following format: `no-reply@your-site-name`
 *   `MANDRILL_FROM_NAME` - this will be the name of your company or service
 
-Please note that you must [verify your domain](https://mandrill.zendesk.com/hc/en-us/articles/205582247) before using this component and configuring it with your environment variables.
+Please note that you must verify your domain before using this component and
+configuring it with your environment variables.
 
 ### Technical Notes
 

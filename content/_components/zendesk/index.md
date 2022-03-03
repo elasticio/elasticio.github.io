@@ -127,7 +127,7 @@ Sorting is available on the following fields:
 
 #### Common
 
-* Search terms (optional) - Allow making search between objects. [Search term fields](/lib/actions/utils/lookupObjects/searchTerm.js)
+* Search terms (optional) - Allow making search between objects.
 
 ### Make Raw Request
 
@@ -157,7 +157,7 @@ Sorting is available on the following fields:
 Dynamically generated:
 
 * `ID (optional)` - if filled and the object was found by this id - the object will be updated will create the new one in another case.
-* Inputs for all object fields: [system](/lib/schemas/ticketMetadata.in.json) and dynamically generated custom fields
+* Inputs for all object fields and dynamically generated custom fields
 
 ### Add Attachment to Ticket
 

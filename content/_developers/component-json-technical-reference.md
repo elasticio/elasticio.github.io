@@ -74,26 +74,26 @@ Determines how the component should be built and run on the platform
 
 ## Credentials Object
 
-This identifies the information that the platform needs to collect from the integrator in order to be able to connect to their instance/account.  Information that is collected in this section typically include:
+This identifies the information that the platform needs to collect from the integrator to be able to connect to their instance/account.  Information that is collected in this section typically include:
 * URL to the integrator's instance (if there is not a shared cloud url)
 * Username or other account identifier
 * Password or other API keys/tokens required to authenticate
 
 > **Please Note:** [See what happens when the credentials object is omitted](component-json-technical-reference-credentials.html#omitting-credentials)
 
-[See the dedicated article on the credentials object for more information.](component-json-technical-reference-credentials.html)
+[See the dedicated article on the credentials object for more information.](component-json-technical-reference-credentials)
 
 ## Actions & Triggers Objects
 
 The `actions` object describes the actions that exist within the component. The `triggers` object describes the triggers that exist within the component.
 
-Actions are operations exposed to the flow builder that can be placed in any step except the first step.  
+Actions are operations exposed to the flow builder that can be placed in any step except the first step.
 
 Triggers are operations exposed to the flow builder that can only be placed in the first step of a flow.
 
 If the component has no actions, then the component.json file should not have an actions field. If the component has no triggers, then the component.json file should not have a triggers field.
 
-[See the dedicated article on the action/trigger object for more information.](component-json-technical-reference-actions-triggers.html)
+[See the dedicated article on the action/trigger object for more information.](component-json-technical-reference-actions-triggers)
 
 > **Please Note** All components must implement at least one action or at least one trigger.
 
@@ -103,13 +103,13 @@ Used to signal that this action/trigger should not be used in new flows and that
 
 ![Example of Action/Trigger Deprecation in the UI](/assets/img/references/component.json/deprecated-component.png)
 
-**Type:** boolean
+**Type:** Boolean
 
 **Default Value:** `false`
 
 ## ConsumesRawData
 
-Normally for webhook triggers, the platform will attempt to parse incoming data to the JSON equivalent before handing it to the component code.  
+Normally for webhook triggers, the platform will attempt to parse incoming data to the JSON equivalent before handing it to the component code.
 
 When this value is set to `true`, then the HTTP body of the incoming request will be passed to your component as an unparsed string in the `msg.body.rawData` field.
 
