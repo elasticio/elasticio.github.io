@@ -38,7 +38,7 @@ Authentication Client (`auth-client`) and the Authentication Secret (`auth-secre
 The `auth-client` takes the responsibility of communication between the Application (the platform)
 and the Service (3rd party service), while the `auth-secret` takes the role of the User
 (user of the platform) and communicates with the Client in the normal
-[3-leg OAuth2 authorisation process](/references/how-the-oauth2-process-works).
+[3-leg OAuth2 authorisation process](/developers/how-the-oauth2-process-works).
 
 Let us consider the case of Google OAuth2 authentication:
 

@@ -5,11 +5,9 @@ order: 3
 layout: article
 section: Building integration flows
 category: building integration flows
-redirect_from:
-  - /getting-started/credential.html
 ---
 
-An [integration flow](integration-flow) runs on behalf of a person or an
+An [integration flow](/getting-started/integration-flow) runs on behalf of a person or an
 organization to synchronize data between multiple applications. Each step
 of an integration flow is accessing a particular application, for example
 through an API, to retrieve, store or update some data. Usually
@@ -35,7 +33,7 @@ component or any other API.
 
 ## Creating a credential for a flow
 
-When [creating a flow](first-flow) an credential must be chosen. You can
+When [creating a flow](/getting-started/first-flow) an credential must be chosen. You can
 either chose an existing one or create a new one. The following screenshot
 demonstrates how the credential is created for the [Petstore API]({{site.data.tenant.petStoreDocs}})
 component.
@@ -65,6 +63,6 @@ A new credential can be added by pressing the `Add New Credential` button that y
 
 ## Related links
 
-- [Integration flows](integration-flow)
-- [Creating a flow](first-flow)
+- [Integration flows](/getting-started/integration-flow)
+- [Creating a flow](/getting-started/first-flow)
 - [Petstore API]({{site.data.tenant.petStoreDocs}})

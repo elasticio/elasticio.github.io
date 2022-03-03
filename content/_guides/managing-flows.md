@@ -10,19 +10,13 @@ category: integrator-management
 This document provides information on Flow management, namely the following
 actions:
 
-- [Start, stop, edit, delete](#start-stop-edit-delete)
-
-- [Copy Flow within the same Workspace, switch between *real-time* and *ordinary*](#copy-flow-switch-flow-type)
-
-- [Subscribe to errors](#subscribe-to-errors)
-
-- [Schedule via CRON expressions](#scheduling)
-
-- [Flow versioning](#flow-versioning)
-
-- [Parallel Processing](#parallel-processing)
-
-- [Reset Snapshot](#reset-snapshot)
+*   [Start, stop, edit, delete](#start-stop-edit-delete)
+*   [Copy Flow within the same Workspace, switch between *real-time* and *ordinary*](#copy-flow-switch-flow-type)
+*   [Subscribe to errors](#subscribe-to-errors)
+*   [Schedule via CRON expressions](#scheduling)
+*   [Flow versioning](#flow-versioning)
+*   [Parallel Processing](#parallel-processing)
+*   [Reset Snapshot](#reset-snapshot)
 
 All actions are available to users with the corresponding [permissions](/guides/managing-user-roles-in-a-tenant).
 
@@ -199,7 +193,7 @@ Parallel processing, also called "Step message prefetch count", can be configure
 
 ## Reset Snapshot
 
-A [Snapshot](/getting-started/snapshot-overview) is the data saved by a Component during its execution. When the Component is run next time, it will read the Snapshot to continue the process from the point it finished last time. You can manually reset this Snapshot, so the Component starts from scratch next time. Note that you can only reset Snapshot for a stopped Flow. To do this, click the settings button on the Flow **(1)**, and select Reset Snapshot **(2)**:
+A [Snapshot](/developers/snapshot-overview) is the data saved by a Component during its execution. When the Component is run next time, it will read the Snapshot to continue the process from the point it finished last time. You can manually reset this Snapshot, so the Component starts from scratch next time. Note that you can only reset Snapshot for a stopped Flow. To do this, click the settings button on the Flow **(1)**, and select Reset Snapshot **(2)**:
 
 ![Reset Snapshot](/assets/img/tenant-management-guide/managing-flows/Screenshot_18.png)
 

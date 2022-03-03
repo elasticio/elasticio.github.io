@@ -107,7 +107,9 @@ For example, if you want to find all entities with types `Contacts` with field `
 
 #### Output metadata
 
-JSON schema location folder: [schemas/io/...](schemas/io). The necessary schema begins with the `get` and ends with the `.out` and has an entity type between. For example, for entity `Accounts` schema has name `getAccounts.out.json`
+JSON schema location folder: `schemas/io/`. The necessary schema begins with the
+`get` and ends with the `.out` and has an entity type between. For example, for
+entity `Accounts` schema has name `getAccounts.out.json`
 
 #### Known limitations
 See [action limitations](#current-limitations)

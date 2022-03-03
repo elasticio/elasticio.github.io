@@ -35,7 +35,8 @@ No.
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about AllMySMS component like [changelog](/components/allmysms/technical-notes#changelog).
+The [technical notes](technical-notes) page gives some technical details about
+AllMySMS component like [changelog](technical-notes#changelog).
 
 ## Triggers
 
@@ -59,7 +60,7 @@ Here are the input fields:
 
 ### Additional information
 
-[Here](https://doc.allmysms.com/api/allmysms_api_https_v9.0_1.18_EN.pdf) is the document describing the API documentation of the AllMySMS.
+Check [AllMySMS API online documentation](https://doc.allmysms.com/api/en/) for details.
 
 ## Known limitations
 

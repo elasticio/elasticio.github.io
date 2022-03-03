@@ -12,7 +12,8 @@ updatedDate: 2020-11-30
 
 ## Description
 
-Component is designed to work with ChannelAdvisor platform which implement the [OData v4 specification](http://www.odata.org).
+Component is designed to work with ChannelAdvisor platform which implement the
+[OData v4 specification](http://www.odata.org).
 
 ## Requirements
 
@@ -26,7 +27,8 @@ This component interacts with OData version 4.
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about ChannelAdvisor component like [changelog](/components/channelgitisor/technical-notes#changelog).
+The [technical notes](technical-notes) page gives some technical details about
+ChannelAdvisor component like [changelog](technical-notes#changelog).
 
 ## Credentials
 
