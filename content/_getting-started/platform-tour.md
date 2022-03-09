@@ -1,131 +1,162 @@
 ---
-title: Platform Tour
+title: Platform UI tour
 layout: article
 section: Introduction
-description: This document provides a short tour of the Platform to introduce new users to our basics.
-since: 20200220
+description: This document provides a quick tour of the Platform User Interface (UI) describing each item of the Navigation Menu from top to bottom in case of already established contract with working integration flows.
 order: 1
 category: intro
 ---
 
-This document provides an insight into the basics of Platform UI. It describes
-all the items of the Navigational Menu from top to bottom.
+{{page.description}}
 
 ## Menu Header
 
-At the top of our Navigational Menu you can find Contract name **(1)** and status **(2)**. Also there is the Workspace switch **(3)**, where you can select the Workspace you need to work with, and create new Workspaces **(4)**.
+At the top of our Navigation Menu you can find Contract name **(1)** and status
+**(2)**. Also, there is the Workspace switch **(3)**, where you can select the
+Workspace you need to work with, and create new Workspaces **(4)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/menu-header.png" title="Navigational Menu Header" %}
+![Navigation Menu Header](/assets/img/getting-started/tour/menu-header.png "Navigation Menu Header")
 
 ## Analyze
 
-This menu section includes the following items:
-- [Dashboard](#dashboard)
-- [Executions](#executions)
-- [Logs](#logs)
+This menu section links pages to help you monitor and debug your integration flows.
+
+*   [Dashboard](#dashboard)
+*   [Executions](#executions)
+*   [Logs](#logs)
 
 ### Dashboard
 
-The Dashboard **(1)** item opens the default page that you see when you open the Platform. On this page you can see the daily statistics diagram **(2)**. The tabs below provide you with the lists of past executions **(3)** and errors **(4)**. Also, there is an *Add new flow* button **(5)** that initiates Flow creation.
+The Dashboard **(1)** item opens the default page that you see when you open the
+Platform. On this page, you can see the daily statistics diagram **(2)**. The
+tabs below list the past executions **(3)** and errors **(4)**. Also, there is
+an *Add new flow* button **(5)** you can use to create a new Flow.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/dashboard.png" title="Dashboard" %}
+![Dashboard](/assets/img/getting-started/tour/dashboard.png "Dashboard")
 
 ### Executions
 
-The Executions **(1)** item opens our [Executions Page](executions). Here you can find a list of executions **(2)** that you can sort with filters **(3)**.
+The Executions **(1)** item opens our [Executions Page](executions). Here you can
+find a list of executions **(2)** that you can sort with filters **(3)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/executions.png" title="Executions" %}
+![Executions](/assets/img/getting-started/tour/executions.png "Executions")
+
 
 ### Logs
 
-The Logs **(1)** item opens our [Logs Page](logs-page). Here you can find a list of logs **(2)** that you can sort with filters **(3)**. You can also go to [Executions Page](executions) by clicking on *"Thread's detais"* **(4)**.
+The Logs **(1)** item opens our [Logs Page](logs-page). Here you can find a list
+of logs **(2)** that you can sort with filters **(3)**. You can also go to
+[Executions Page](executions) by clicking on *"Thread's details"* **(4)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/logs.png" title="Logs" %}
+![Logs](/assets/img/getting-started/tour/logs.png "Logs")
+
 
 ## Integrate
 
 This menu section includes the following items:
-- [Flows](#flows)
-- [Credentials](#credentials)
-- [Agents](#agents)
-- [Topics](#topics)
+
+*   [Flows](#flows)
+*   [Credentials](#credentials)
+*   [Agents](#agents)
+*   [Topics](#topics)
 
 ### Flows
 
-You can manage your integration [Flows](integration-flow) here **(1)**. Navigation through your Flow list is simplified with search and filters **(2)**. You can open **(3)** each Flow for details and management, and see Flow status **(4)**. Also, part of the management is done here, for example: starting **(5)**, deleting **(6)**, running **(7)** or stopping **(8)**.
+You can manage your integration [Flows](integration-flow) here **(1)**. Navigation
+through your Flow list is simplified with search and filters **(2)**. You can
+open **(3)** each Flow for details and management, and see Flow status **(4)**.
+Also, part of the management is done here, for example: starting **(5)**,
+deleting **(6)**, running **(7)** or stopping **(8)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/flows.png" title="Flows" %}
+![Flows](/assets/img/getting-started/tour/flows.png "Flows")
 
-For more information please visite our [Managing Flows](/guides/managing-flows) page.
+For more information please visit our [Managing Flows](/guides/managing-flows) page.
 
 ### Credentials
 
-This page **(1)** contains a list of [Components](integration-component) that may require [Credentials](credential) to work. In order to manage Credentials, select one of the Components **(2)**. The green circle with a number **(3)** represents the number of valid Credentials you have for a certain Component.
+This page **(1)** contains a list of [Components](integration-component) that may
+require [Credentials](credential) to work. To manage Credentials, select one of
+the Components **(2)**. The green circle with a number **(3)** represents the
+number of valid Credentials you have for a certain Component.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/creds.png" title="Credentials" %}
+![Credentials](/assets/img/getting-started/tour/creds.png "Credentials")
 
-
-For more information please visite our [Managing Workspaces](/guides/managing-workspaces.html#creating-credentials) page.
+For more information please visit our
+[Managing Workspaces](/guides/managing-workspaces.html#creating-credentials) page.
 
 ### Agents
 
-This is the [VPN Agent](vpn-agent) management page **(1)**. Here you can manage your Local Agents **(2)**, and create them **(3)**.
+This is the [VPN Agent](vpn-agent) management page **(1)**. Here you can manage
+your Local Agents **(2)**, and create them **(3)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/agents.png" title="Agents" %}
+![Agents](/assets/img/getting-started/tour/agents.png "Agents")
 
 ### Topics
 
-This is the [Topics](topics) management page **(1)**. Here you can manage your Topics **(2)** or create a new one **(3)**.
+This is the [Topics](topics) management page **(1)**. Here you can manage your
+Topics **(2)** or create a new one **(3)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/topics.png" title="Topics" %}
+![Topics](/assets/img/getting-started/tour/topics.png "Topics")
 
 ## Organize
 
-This is the page where you can manage your Workspace **(1)**. This includes changing Workspace name **(2)**, adding members **(3)**, and checking member list where you can edit or delete **(5)** members. Additionally, here you can delete **(6)** the Workspace itself.
+This is the page where you can manage your Workspace **(1)**. This includes
+changing Workspace name **(2)**, adding members **(3)**, and checking member
+list where you can edit or delete **(5)** members. Additionally, here you can
+delete **(6)** the Workspace itself.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/workspace.png" title="Organize Workspace" %}
+![Organize Workspace](/assets/img/getting-started/tour/workspace.png "Organize Workspace")
 
-For more information please visite our [Managing Workspaces](/guides/managing-workspaces) page.
+For more information please visit our
+[Managing Workspaces](/guides/managing-workspaces) page.
 
 ## Contract Settings
 
 This menu section includes the following items:
-- [Quota Usages](#quota-usages)
-- [Members](#members)
+
+*   [Quota Usages](#quota-usages)
+*   [Members](#members)
 
 ### Quota Usages
 
-This item opens the [Quota](quota-overview) page **(1)** that contains all the information on the used and available resources, and a detailed report **(2)**. It is beneficial for limited [Workspaces](contracts-and-workspaces).
+This item opens the [Quota](quota-overview) page **(1)** that contains all the
+information on the used and available resources, and a detailed report **(2)**.
+ It is beneficial for limited [Workspaces](contracts-and-workspaces).
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/quota.png" title="Quota page" %}
+![Quota page](/assets/img/getting-started/tour/quota.png "Quota page")
 
 ### Members
 
-This item brings you to the Members page **(1)**, where you can manage Contract Members **(2)**.
+This item brings you to the Members page **(1)**, where you can manage Contract
+Members **(2)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/members.png" title="Members" %}
+![Members](/assets/img/getting-started/tour/members.png "Members")
 
-For more information please visite our [Managing user roles](/guides/managing-user-roles-in-a-tenant) page.
+For more information please visit our
+[Managing user roles](/guides/managing-user-roles-in-a-tenant) page.
 
 
 ## Development
 
 This menu section includes the following items:
 
-- [Developer Teams](#developer-teams)
-- [Test Metadata Tool](#test-metadata-tool)
+*   [Developer Teams](#developer-teams)
+*   [Test Metadata Tool](#test-metadata-tool)
 
 ### Developer Teams
 
-Here you can manage your Developer Teams **(1)**. Each team's details **(2)** can be opened on this page. Also, you can add new teams via the corresponding button **(3)**.
+Here you can manage your Developer Teams **(1)**. Each team's details **(2)**
+can be opened on this page. Also, you can add new teams via the corresponding button **(3)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/devteams.png" title="Developer Teams" %}
+![Developer Teams](/assets/img/getting-started/tour/devteams.png "Developer Teams")
 
 ### Test Metadata Tool
 
-Here you can render the component metadata structures to see how they would look on the platform UI using our [tool](/developers/try-metadata) **(1)**.
+Here you can render the component metadata structures to see how they would look
+on the platform UI using our [tool](/developers/try-metadata) **(1)**.
 
-{% include img.html max-width="100%" url="/assets/img/getting-started/tour/metadata-tool.png" title="Test Metadata Tool" %}
+![Test Metadata Tool](/assets/img/getting-started/tour/metadata-tool.png "Test Metadata Tool")
+
 
 ## Documentation
 
@@ -204,7 +235,7 @@ Every platform user has a dedicated API Key to work with our REST API to automat
 many actions to include in your own workflows. Here you can copy your API Key which
 is purposefully obfuscated. Just click on the API key.
 
-If you suspect your API Key might be compromissed (you gave to somebody and forgot
+If you suspect your API Key might be compromised (you gave to somebody and forgot
 about it) or you would like to just re-generate it you can do it here. Click on
 **Generate new API Key** button to get the following prompt:
 
