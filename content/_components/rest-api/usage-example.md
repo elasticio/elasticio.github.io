@@ -23,11 +23,13 @@ Use the REST API component to get the necessary information on green energy. To 
 
 ![Rest api input](img/url-only.png)
 
+> Here is URL from our example: https://api.corrently.io/v2.0/gsi/prediction?zip=53177
+
 As a Sample you will receive the necessary data:
 
 ![Rest api Sample](img/rest-api-sample.png)
 
-After that please process the data using a [Splitter component](/components/splitter/index):
+After that please process the data using a [Splitter component](/components/splitter/index). We use **"Split on JSONata Expression"** action:
 
 ![Splitter](img/splitter.png)
 
