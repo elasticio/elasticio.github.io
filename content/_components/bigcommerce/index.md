@@ -6,8 +6,8 @@ description: A component to work with BigCommerce online stores
 icon: bigcommerce.png
 icontext: BigCommerce Component
 category: bigcommerce
-updatedDate: 2022-02-11
-ComponentVersion: 2.0.0
+updatedDate: 2022-03-03
+ComponentVersion: 2.0.1
 ---
 
 ## General information

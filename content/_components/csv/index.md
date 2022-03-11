@@ -6,8 +6,8 @@ description: A simple file format used to store tabular data, for example from a
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2021-07-09
-ComponentVersion: 3.0.0
+updatedDate: 2022-03-03
+ComponentVersion: 3.1.0
 ---
 
 ## How works
