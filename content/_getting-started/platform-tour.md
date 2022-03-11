@@ -7,17 +7,52 @@ order: 1
 category: intro
 ---
 
+<img src="/assets/img/getting-started/tour/menu-all.png" style="width:200px; float:right; margin:10px 0px 20px 20px" alt="Menu" title="Menu">
+
 {{page.description}}
 
-## Menu Header
+**Menu structure**:
 
-At the top of our Navigation Menu you can find Contract name **(1)** and status
-**(2)**. Also, there is the Workspace switch **(3)**, where you can select the
-Workspace you need to work with, and create new Workspaces **(4)**.
+1.  [Contract name and status](#1-contract-name-and-status)
+2.  [Workspaces](#2-workspaces)
+3.  [Analyze](#3-analyze)
+4.  [Integrate](#4-integrate)
+5.  [Organize](#5-organize)
+6.  [Contract Settings](#6-contract-settings)
+7.  [Development](#7-development)
 
-![Navigation Menu Header](/assets/img/getting-started/tour/menu-header.png "Navigation Menu Header")
+Click through each menu section while you reading this tour since you might
+see slightly different picture based on your access level and the project stage in
+your contract.
 
-## Analyze
+## 1. Contract name and status
+
+At the top of our navigation menu you can find your contract name and the status.
+Contract status shows state of the contract - Active or Suspended.
+
+If you have access to more than one contract on our platform you will also see the
+chevron icon which you can click on to open list of your contracts. Select the
+name to switch to a different contract.
+
+![Menu: Contracts](/assets/img/getting-started/tour/menu-contracts.png "Menu: Contracts")
+
+
+## 2. Workspaces
+
+This part of the menu shows the current workspace. Click on the chevron icon to
+open a sub-menu containing list of the workspaces you can access in the current
+contract. Select the name to switch to a different workspace.
+
+![Menu: Workspaces](/assets/img/getting-started/tour/menu-workspaces.png "Menu: Workspaces")
+
+The open workspaces sub-menu on the right shows the following details and menu items:
+
+1.  Production or `full` workspace used for production flows,
+2.  Development or `limited` workspace used to develop integration flows and run tests,
+3.  Menu item to **View All Workspaces** in the contract,
+4.  Menu item to **+ Create Workspace**.
+
+## 3. Analyze
 
 This menu section links pages to help you monitor and debug your integration flows.
 
@@ -51,7 +86,7 @@ of logs **(2)** that you can sort with filters **(3)**. You can also go to
 ![Logs](/assets/img/getting-started/tour/logs.png "Logs")
 
 
-## Integrate
+## 4. Integrate
 
 This menu section includes the following items:
 
@@ -98,7 +133,8 @@ Topics **(2)** or create a new one **(3)**.
 
 ![Topics](/assets/img/getting-started/tour/topics.png "Topics")
 
-## Organize
+
+## 5. Organize
 
 This is the page where you can manage your Workspace **(1)**. This includes
 changing Workspace name **(2)**, adding members **(3)**, and checking member
@@ -110,7 +146,7 @@ delete **(6)** the Workspace itself.
 For more information please visit our
 [Managing Workspaces](/guides/managing-workspaces) page.
 
-## Contract Settings
+## 6. Contract Settings
 
 This menu section includes the following items:
 
@@ -136,7 +172,7 @@ For more information please visit our
 [Managing user roles](/guides/managing-user-roles-in-a-tenant) page.
 
 
-## Development
+## 7. Development
 
 This menu section includes the following items:
 
