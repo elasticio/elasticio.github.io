@@ -36,7 +36,6 @@ name to switch to a different contract.
 
 ![Menu: Contracts](/assets/img/getting-started/tour/menu-contracts.png "Menu: Contracts")
 
-
 ## 2. Workspaces
 
 This part of the menu shows the current workspace. Click on the chevron icon to
@@ -62,33 +61,52 @@ This menu section links pages to help you monitor and debug your integration flo
 
 ### Dashboard
 
-The Dashboard **(1)** item opens the default page that you see when you open the
-Platform. On this page, you can see the daily statistics diagram **(2)**. The
-tabs below list the past executions **(3)** and errors **(4)**. Also, there is
-an *Add new flow* button **(5)** you can use to create a new Flow.
+The first page you land when navigate to your contract is the Dashboard page. It
+shows the daily execution statistics graph and the runlog of executions and errors.
+
+<details close markdown="block"><summary><strong>Click to expand for more details.</strong></summary>
+
+1.  The **Daily Execution Statistics** graph showing the values for data records and errors. You can click on the legend to filter one or the other.
+2.  The **Runlog** showing the past execution and errors of integration flows in your workspace. You can use tabs to switch between the executions and errors.
+3.  **Add new flow** button to create an integration flow.
 
 ![Dashboard](/assets/img/getting-started/tour/dashboard.png "Dashboard")
 
+</details>
+
 ### Executions
 
-The Executions **(1)** item opens our [Executions Page](executions). Here you can
-find a list of executions **(2)** that you can sort with filters **(3)**.
+The Executions menu item opens our [Executions Page](executions). Here you can
+find a list of executions based on a data transfer, sort them with filters to
+narrow down your search and navigate to the one you need.
+
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+1.  Use filters to narrow down your search based on the Flow Name, Status and the time.
+2.  The list of execution matching the selected criteria.
 
 ![Executions](/assets/img/getting-started/tour/executions.png "Executions")
 
+</details>
 
 ### Logs
 
-The Logs **(1)** item opens our [Logs Page](logs-page). Here you can find a list
-of logs **(2)** that you can sort with filters **(3)**. You can also go to
-[Executions Page](executions) by clicking on *"Thread's details"* **(4)**.
+The Logs menu item opens our [Logs Page](logs-page). Here you can find the logs of
+all executions in your workspace. The view shows logs sorted by time. You can search
+and filter the logs you are looking for.
+
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+1.  You can search in the logs and use the filters to find the logs you need.
+2.  The panel shows the logs sorted according to the time-stamp. Here you can click to navigate to the specific execution of the logs (3 dots on the right). You can expand long log entries by clicking on the triangle which will show on the left of the log entry.
 
 ![Logs](/assets/img/getting-started/tour/logs.png "Logs")
 
+</details>
 
 ## 4. Integrate
 
-This menu section includes the following items:
+This menu section links the pages you need to build integration flows.
 
 *   [Flows](#flows)
 *   [Credentials](#credentials)
@@ -97,42 +115,73 @@ This menu section includes the following items:
 
 ### Flows
 
-You can manage your integration [Flows](integration-flow) here **(1)**. Navigation
-through your Flow list is simplified with search and filters **(2)**. You can
-open **(3)** each Flow for details and management, and see Flow status **(4)**.
-Also, part of the management is done here, for example: starting **(5)**,
-deleting **(6)**, running **(7)** or stopping **(8)**.
+The Flows menu item opens the page where you can
+[manage your integration Flows](/guides/managing-flows). From here you can
+start, stop and edit your existing flows. You can also create new flows either
+from scratch or by copying and editing the existing flows. From here you can also
+export flows into different workspaces or create flow recipes.
+
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+1.  Use the button to **Add New Flow**
+2.  Use the free search or provided filters to find the flow(s). You can see the used filters below the search field.
+3.  Use to change the view of flows page between flow cards and list view.
+4.  The Flow card containing information about each flow. You can use the buttons to **Edit**, **Start** or **Stop** flows. You can also use the menu (click on cog icon to open) to **copy** and **export** the flow, **reset the snapshot**, **subscribe to errors**, **enable real-time** and **delete** the flow.
 
 ![Flows](/assets/img/getting-started/tour/flows.png "Flows")
 
 For more information please visit our [Managing Flows](/guides/managing-flows) page.
 
+</details>
+
 ### Credentials
 
-This page **(1)** contains a list of [Components](integration-component) that may
-require [Credentials](credential) to work. To manage Credentials, select one of
-the Components **(2)**. The green circle with a number **(3)** represents the
-number of valid Credentials you have for a certain Component.
+The Credentials menu item opens the page containing [component credentials](/guides/credential)
+for each component to use for authentication with the 3rd party resources. Here
+you can create, edit and delete the credentials for each integration component.
 
-![Credentials](/assets/img/getting-started/tour/creds.png "Credentials")
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
-For more information please visit our
-[Managing Workspaces](/guides/managing-workspaces.html#creating-credentials) page.
+1.  Here you will find a card for each component which requires a credential to function. Click on any card to navigate to page to **create**, **edit** or **delete** the credentials associated with the component.
+2.  The green number on each credential card shows the number of credentials you have for this component.
+
+![Credentials](/assets/img/getting-started/tour/credentials.png "Credentials")
+
+> **Please Note** you can also create credentials during the flow step configuration.
+> These credentials will appear on the credentials page as well.
+
+</details>
 
 ### Agents
 
-This is the [VPN Agent](vpn-agent) management page **(1)**. Here you can manage
-your Local Agents **(2)**, and create them **(3)**.
+The Agents menu item links the [VPN Agent](/guides/vpn-agent) management page where
+you can create, edit and delete the VPN Agents. You can use this feature to establish
+a secure VPN tunnel between your local resource and the platform. This enables a secure
+data exchange between your local system and the active integration flow.
+
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+1.  Use to [create the VPN Agents](/guides/vpn-agent.html#how-to-setup).
+2.  The list of VPN Agents configured for your workspace.
 
 ![Agents](/assets/img/getting-started/tour/agents.png "Agents")
 
+</details>
+
 ### Topics
 
-This is the [Topics](topics) management page **(1)**. Here you can manage your
-Topics **(2)** or create a new one **(3)**.
+The Topics menu item opens the [Topics](topics) management page. Here you can
+create, edit and delete your Topics. You can use this feature to establish a
+publish-subscribe messaging pattern to exchange data between the integration flows.
+
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+1.  Use the **Create** button to create a new topic.
+2.  The existing topic cards. Click on them to edit or delete them.
 
 ![Topics](/assets/img/getting-started/tour/topics.png "Topics")
 
+</details>
 
 ## 5. Organize
 
