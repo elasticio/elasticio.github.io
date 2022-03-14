@@ -46,9 +46,9 @@ contract. Select the name to switch to a different workspace.
 
 The open workspaces sub-menu on the right shows the following details and menu items:
 
-1.  Production or `full` workspace used for production flows,
-2.  Development or `limited` workspace used to develop integration flows and run tests,
-3.  Menu item to **View All Workspaces** in the contract,
+1.  Production or `full` workspace used for production flows.
+2.  Development or `limited` workspace used to develop integration flows and run tests.
+3.  Menu item to [**View All Workspaces**](#workspaces) in the contract.
 4.  Menu item to **+ Create Workspace**.
 
 ## 3. Analyze
@@ -185,15 +185,26 @@ publish-subscribe messaging pattern to exchange data between the integration flo
 
 ## 5. Organize
 
-This is the page where you can manage your Workspace **(1)**. This includes
-changing Workspace name **(2)**, adding members **(3)**, and checking member
-list where you can edit or delete **(5)** members. Additionally, here you can
-delete **(6)** the Workspace itself.
+This menu section has one item - the Workspace which opens [workspace management](/guides/managing-workspaces)
+page. Each workspace has a separate page like this where you can rename it,
+manage members and delete it based on your access role.
 
-![Organize Workspace](/assets/img/getting-started/tour/workspace.png "Organize Workspace")
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+While in workspace management page you can:
+
+1.  Rename the workspace.
+2.  Add or Invite new member to this workspace.
+3.  See the list of workspace members.
+4.  Edit member roles or remove them completely.
+5.  Delete the workspace.
+
+![Organize Workspace](/assets/img/getting-started/tour/organize-workspace.png "Organize Workspace")
 
 For more information please visit our
 [Managing Workspaces](/guides/managing-workspaces) page.
+
+</details>
 
 ## 6. Contract Settings
 
@@ -201,47 +212,107 @@ This menu section includes the following items:
 
 *   [Quota Usages](#quota-usages)
 *   [Members](#members)
+*   [Workspaces](#workspaces)
 
 ### Quota Usages
 
-This item opens the [Quota](quota-overview) page **(1)** that contains all the
-information on the used and available resources, and a detailed report **(2)**.
- It is beneficial for limited [Workspaces](contracts-and-workspaces).
+The Quota Usages menu item opens our [quota overview](quota-overview) page. Here
+you can check the combined memory usage of flows in all your workspaces of the
+contract. From here you can drill-down the usage based on the workspaces and
+individual flows for the current month. If you have the memory quota limit set for
+your contract then you will see relationship of used and still remaining quota.
 
-![Quota page](/assets/img/getting-started/tour/quota.png "Quota page")
+
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+1.  Shows the current month and the current usage. It also shows the quota limit if defined.
+2.  Use the button to drill-down into the workspace and flow level usage.
+3.  The histogram of the used memory per month. If the contract has a quota limit then histogram shows the used memory and the still remaining quota. You can hover on any month to get the exact values.
+4.  The legend for the histogram.
+
+![Quota page](/assets/img/getting-started/tour/quota-page.png "Quota page")
+
+</details>
 
 ### Members
 
-This item brings you to the Members page **(1)**, where you can manage Contract
-Members **(2)**.
+The Members menu item opens the contract Member management page. Here you can
+rename the contract, view and invite members, edit the [member access roles](managing-user-roles-in-a-tenant) or
+remove the member from the contract. From this page you can access [Workspaces](#workspaces)
+page as well.
 
-![Members](/assets/img/getting-started/tour/members.png "Members")
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
-For more information please visit our
-[Managing user roles](/guides/managing-user-roles-in-a-tenant) page.
+You can do the following action if you have `Owner` role in the contract.
 
+1.  Rename the contract.
+2.  The list of members in current contract.
+3.  Workspaces switcher to open page with all workspaces.
+4.  **Invite new member** button to invite new member to this contract based on your role in this contract.
+5.  Pencil icon to use for [managing the user roles](/guides/managing-user-roles-in-a-tenant) and bin icon to delete the user.
+
+![Members](/assets/img/getting-started/tour/members-page.png "Members")
+
+</details>
+
+### Workspaces
+
+You can access this page from the **Workspaces tab** of the [Members](#members) page
+or from the **View all workspaces** menu link of the [Workspaces name](#2-workspaces).
+Here you can [manage the workspaces](/guides/managing-workspaces) of this contract.
+You can create a new workspace, see all existing workspaces and navigate to each
+workspace if you have appropriate access and role in the contract.
+
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+1.  Click on **+ Create New Workspace** button to create new workspace.
+2.  See the existing workspace cards showing the name, type and number of users.
+3.  Delete the workspace by pressing on bin icon. **Warning: this action is irreversible**.
+
+![Workspaces](/assets/img/getting-started/tour/workspaces-page.png "Workspaces")
+
+For more information please cvisit our [Managing workspaces](/guides/managing-workspaces) page.
+
+</details>
 
 ## 7. Development
 
-This menu section includes the following items:
+This menu section includes items for component developers. Here you have a link
+to the following pages:
 
 *   [Developer Teams](#developer-teams)
-*   [Test Metadata Tool](#test-metadata-tool)
+*   [Metadata Test Tool](#metadata-test-tool)
 
 ### Developer Teams
 
-Here you can manage your Developer Teams **(1)**. Each team's details **(2)**
-can be opened on this page. Also, you can add new teams via the corresponding button **(3)**.
+The Developer Teams menu item opens the contract developer teams page. Here you
+can [manage your existing teams and integration components](/developers/teams-and-repos) or
+create a new ones if your have contract `Admin` access role.
 
-![Developer Teams](/assets/img/getting-started/tour/devteams.png "Developer Teams")
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
-### Test Metadata Tool
+1.  Use **+ Add New Team** button to create a new developer team.
+2.  Card showing the developer team details, number of members and repositories it contains.
+3.  Click on **See Details** to navigate to any developer team.
 
-Here you can render the component metadata structures to see how they would look
-on the platform UI using our [tool](/developers/try-metadata) **(1)**.
+![Developer Teams](/assets/img/getting-started/tour/developer-teams.png "Developer Teams")
 
-![Test Metadata Tool](/assets/img/getting-started/tour/metadata-tool.png "Test Metadata Tool")
+</details>
 
+### Metadata Test Tool
+
+The Metadata Test Tool menu link opens a [special tool](/developers/try-metadata)
+our developers use to test and improve the component metadata structures. You can
+paste your metadata here to see how it renders on the platform UI.
+
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+1.  The panel you can use to paste the JSON structure of your metadata.
+2.  The panel renders the output based on your input data.
+
+![Metadata Test Tool](/assets/img/getting-started/tour/metadata-test-tool.png "Metadata Test Tool")
+
+</details>
 
 ## Documentation
 
