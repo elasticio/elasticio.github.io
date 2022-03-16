@@ -34,6 +34,8 @@ Topic can be created via UI or [API-call](https://api.elastic.io/docs/v2/#pub/su
 
 For example, here is the topic that contains information about some person:
 
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
 ```
 {
     "data": {
@@ -65,6 +67,8 @@ For example, here is the topic that contains information about some person:
 }
 ```
 
+</details>
+
 ## Triggers
 
 ### Subscribe
@@ -73,11 +77,19 @@ Trigger, which receives data of a certain type from a Topic as an input and star
 When you create a Subscriber Flow you must choose a Topic on which your flow will be listening for messages.
 You can create as many Subscriber Flows as you want, and they will process messages from the Publisher independently.
 
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
 ![Trigger input](img/trigger-input.png)
 
 >**Please Note:** Topics can only be accessed if they are already in your workspace.Topic can be created via UI or [API-call](https://api.elastic.io/docs/v2/#pub/sub-topics).
 
-Using the Topic schema provided in the `Topics` section and after step configuration your Subscriber flow can automatically generate this incoming data sample:
+![Publisher](img/publisher.png)
+
+For our example, we have created a special flow that publishes messages for our trigger.
+
+>**Please Note:** You need to know what your flow sample will look like in order to work with it further.
+
+Since we know what our sample should be, we can add it manually:
 
 ![Trigger sample](img/trigger-sample.png)
 
@@ -91,18 +103,20 @@ This sample can be used later in your Flows as usual.
     }
 ```
 
+</details>
+
 ## Actions
 
 ### Publish
 
 Action that publishes a message of a certain type to the topic to be later received by loosely coupled Subscribers.
-During the creation of a Publisher Flow you must choose a `topic` created earlier, by which your Publisher Flow will communicate with it's Subscribers:
+During the creation of a Publisher Flow you must choose a `topic` created earlier, by which your Publisher Flow will communicate with it's Subscribers. As you can see, we have already used this action for our `Subscribe` trigger before. After you have chosen the topic you need, you can enter new data.
 
-![Action input](img/action-input.png)
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
-After you have chosen the topic you need, you can enter new data:
-
-![Action configure input](img/action-configure-input.png)
+![Action configure input](img/publisher.png)
 
 Connection between the Publisher and the Subscriber is loosely coupled. This means that your Publisher will never
 know if there any subscribers at all, and if they processed incoming message.
+
+</details>
