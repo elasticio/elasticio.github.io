@@ -1,7 +1,7 @@
 ---
 title: JDE E1 Orchestrator component
 layout: component
-section: Service components
+section: ERP components
 description: This is the component for working with Oracle JDE Edwards EnterpriseOne Orchestrator service on platform.
 icon: jde-e1.png
 icontext: JDE E1 Orchestrator component
