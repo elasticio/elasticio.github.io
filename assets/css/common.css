@@ -45,7 +45,7 @@ q:before, q:after, blockquote:before, blockquote:after {
 a img {
   border: none; }
 
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+article, aside, figcaption, figure, footer, header, main, menu, nav, section {
   display: block; }
 
 button::-moz-focus-inner,
