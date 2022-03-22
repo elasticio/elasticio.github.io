@@ -1,7 +1,7 @@
 ---
 title: Oracle E-Business Suite Component
 layout: component
-section: E-Commerce components
+section: ERP components
 description: A component for working with Oracle E-Business Suite services on the platform.
 icon: oracle-ebs.png
 icontext: Oracle E-Business Suite Component

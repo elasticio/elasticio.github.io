@@ -1,7 +1,7 @@
 ---
 title: Mercado Pago component
 layout: component
-section: Utility components
+section: Finance-related components
 description: A component that connects to Mercado Pago API.
 icon: mercado.png
 icontext: Mercado component

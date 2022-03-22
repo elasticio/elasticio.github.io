@@ -1,7 +1,7 @@
 ---
 title: Zendesk Component
 layout: component
-section: Utility components
+section: Service components
 description: Article on why and how to use Zendesk component.
 icon: zendesk.png
 icontext: Zendesk component

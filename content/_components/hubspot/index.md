@@ -1,7 +1,7 @@
 ---
 title: HubSpot component
 layout: component
-section: Marketing-related components
+section: CRM components
 description: A component that connects to HubSpot API
 icon: hubspot.png
 icontext: Hubspot component
