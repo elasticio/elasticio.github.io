@@ -1,6 +1,6 @@
 # elastic.io Documentation
 ![](https://github.com/elasticio/splitter-component/blob/master/elastic.io%20Logo%20pure-01.png)
-## Test
+
 
 This repository contains the documentation of the elastic.io iPaaS platform. Visit
 the [doc.elastic.io](https://docs.elastic.io) to see it live.
