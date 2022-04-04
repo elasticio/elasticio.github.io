@@ -5,13 +5,17 @@ description: Technical Notes for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2022-03-03
-ComponentVersion: 3.1.0
+updatedDate: 2022-03-15
+ComponentVersion: 3.1.1
 redirect_from:
   - /components/csv/changelog.html
 ---
 
 ## Changelog
+
+### 3.1.1 (March 15, 2022)
+
+* Added component pusher build script
 
 ### 3.1.0 (March 3, 2022)
 

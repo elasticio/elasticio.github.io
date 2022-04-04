@@ -6,8 +6,8 @@ description: The Vtex iPaaS component that connects to VTEX API
 icontext: Vtex component
 icon: vtex.png
 category: vtex
-updatedDate: 2022-03-11
-ComponentVersion: 1.1.0
+updatedDate: 2022-03-29
+ComponentVersion: 1.2.0
 ---
 
 ## Credentials
@@ -44,6 +44,8 @@ Output metadata is generated dynamically and depends on Object Type (see [VTEX S
 
 Executes custom request
 
+![Make Raw Request](img/make-raw-request.png)
+
 #### Configuration Fields
 
 * **Don't throw error on 404 Response** - (optional, boolean) Treat 404 HTTP responses not as error, defaults to `false`.
@@ -64,10 +66,14 @@ Executes custom request
 
 Provides the possibility to obtain multiple objects from the server by passing in some unique criteria for finding objects and retrieving them.
 
+![Lookup Objects (Plural)](img/lookup-objects-plural.png)
+
 #### Configuration Fields
 
 * **Object Type**: (dropdown, required). One of `Customers`, `Orders` or `Products`.
-* Note: For now this action supports only `Orders` Object Type.
+
+>**Please Note:** For now this action supports only `Orders` Object Type.
+
 * **Behavior**: (dropdown, required). Indicates in what manner the action will fetch and retrieve the requested objects. Available options: `Fetch All`, `Fetch Page`, `Emit Individually`.
 
 #### Input Metadata
@@ -84,11 +90,39 @@ Depending on the `Behavior` it can be:
 - `Fetch All` mode: an object, with key results that has an array as its value.
 - `Emit Individually` mode: each object that fills the entire message.
 
->**Please Note:**  When the user passes search criteria that doesn't match any objects - an empty array inside the object is returned as the results: [], with additional field totalCountOfMatchingResults: 0
+>**Please Note:**  When the user passes search criteria that doesn't match any objects - an empty array inside the object is returned as the results: [], with additional field totalCountOfMatchingResults: 0.
+
+### Lookup Set Of Objects By Unique Criteria
+
+Action to bulk map product SKUs to VTEX product IDs and backward
+
+![Lookup Set Of Objects By Unique Criteria](img/lookup-set-of-objects-by-unique-criteria.png)
+
+>**Please Note:** If no objects found - error will be thrown
+
+#### Input fields description
+
+* **Object type** - a dropdown list where you should choose the object type, which you want to lookup. E.g. `Products`;
+* **Conversion direction** - a dropdown list where you should choose direction for conversion: `SKU -> VTEX ID` or `VTEX ID -> SKU`;
+
+#### Input Metadata description
+
+If `Conversion direction` is set to `SKU -> VTEX ID`:
+* **List of SKUs to map** (array, required) - list of SKUs values to map. E.g `[1, 2, 3]`
+If `Conversion direction` is set to `VTEX ID -> SKU`:
+* **VTEX product IDs to map** (array, required) - list of IDs values to map. E.g `[1, 2, 3]`
+
+#### Output Metadata description
+
+* **results** (object, required) - An object which contains:
+If `Conversion direction` is set to `SKU -> VTEX ID` then `SKU` as key and `VTEX ID` as value
+If `Conversion direction` is set to `VTEX ID -> SKU` then `VTEX ID` as key and `SKU` as value
 
 ### Upsert Object
 
 Allows upsert object by chosen schema
+
+![Upsert Object](img/upsert-object.png)
 
 #### Configuration Fields
 

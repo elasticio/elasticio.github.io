@@ -5,11 +5,15 @@ description: Technical Notes for the Vtex component
 icontext: Vtex component
 icon: vtex.png
 category: vtex
-updatedDate: 2022-03-11
-ComponentVersion: 1.1.0
+updatedDate: 2022-03-29
+ComponentVersion: 1.2.0
 ---
 
 ## Changelog
+
+### 1.2.0 (March 29, 2022)
+
+- Added `Lookup Set Of Objects By Unique Criteria` action
 
 ### 1.1.0 (March 11, 2022)
 
