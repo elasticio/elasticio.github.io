@@ -14,7 +14,9 @@ ComponentVersion: 1.0.0
 
 To use paypal API you need to **Create App** in [developer account](https://developer.paypal.com/) and use *Client ID* and *Secret* from there, to do this go to:
 
-DASHBOARD -> My Apps & Credentials -> REST API apps
+DASHBOARD -> My Apps & Credentials -> REST API apps:
+
+![PayPal Rest API](img/paypal-rest-api.png)
 
 You will also need to configure your credentials during flow configuration.
 
