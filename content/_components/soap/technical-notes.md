@@ -5,8 +5,8 @@ description: Technical Notes for the SOAP component.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2022-02-11
-ComponentVersion: 1.2.7
+updatedDate: 2022-03-15
+ComponentVersion: 1.2.8
 redirect_from:
   - /components/soap/completeness-matrix.html
   - /components/soap/changelog.html
@@ -14,7 +14,11 @@ redirect_from:
 
 ## Changelog
 
-## # 1.2.7 (February 11, 2022)
+### 1.2.8 (March 15, 2022)
+
+* Added component pusher build script
+
+### 1.2.7 (February 11, 2022)
 
 * Add configuration field `Request timeout` for `Call` action: timeout period in milliseconds (1-1140000) while component waiting for server response. Defaults to 60000 (60 sec).
 

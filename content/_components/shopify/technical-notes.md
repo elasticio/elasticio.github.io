@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-02-11
-ComponentVersion: 1.4.6
+updatedDate: 2022-03-15
+ComponentVersion: 1.5.0
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,16 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.5.0 (March 25, 2022)
+
+- Added new action `Update Inventory Level`
+- Fixed output metadata for `Get New And Updated Objects Polling` trigger
+- Upgraded `sailor-nodejs` to version 2.6.27
+
+### 1.4.7 (March 15, 2022)
+
+- Added component pusher build script
 
 ### 1.4.6 (February 11, 2022)
 

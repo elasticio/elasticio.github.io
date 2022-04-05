@@ -5,8 +5,8 @@ description: CSV component actions.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2022-03-03
-ComponentVersion: 3.1.0
+updatedDate: 2022-03-15
+ComponentVersion: 3.1.1
 ---
 
 ## Read CSV attachment

@@ -6,8 +6,8 @@ description: A component to work with the Shopify API.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-02-11
-ComponentVersion: 1.4.6
+updatedDate: 2022-03-15
+ComponentVersion: 1.5.0
 redirect_from:
   - /components/shopify-admin/index.html
 ---
@@ -48,7 +48,7 @@ metafield data, the following format is also expected for the `metafields` objec
 
 ```json
 {
-  "metafieldNamespaceOne" : {
+  "metafieldNamespaceOne": {
     "metafieldKeyOne": "Metafield Value for metafieldNamespaceOne.metafieldKeyOne",
     "metafieldKeyTwo": "Metafield Value for metafieldNamespaceOne.metafieldKeyTwo"
   },

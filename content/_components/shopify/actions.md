@@ -5,8 +5,8 @@ description: Shopify component actions.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-02-11
-ComponentVersion: 1.4.6
+updatedDate: 2022-03-15
+ComponentVersion: 1.5.0
 redirect_from:
   - /components/shopify-admin/actions.html
 ---
@@ -119,6 +119,28 @@ Output message:
   "admin_graphql_api_id": "gid://shopify/OnlineStoreBlog/49341497426"
 }
 ```
+
+## Update Inventory Level
+
+An action to allow integrators to update the `Inventory level` for products. This acton performs setting updated `Inventory level` for a particular Product by `Product Id` only for those products which has the **Track quantity** checkbox enabled on the UI Shopify admin in Products section. Also `SKU` for this product must be provided. Otherwise an error "Inventory item is missing a sku" will be thrown. Read more about it [here](https://help.shopify.com/en/manual/products/inventory/transfers/enable-tracking)
+
+![Update Inventory Level](img/update-inventory-level.png)
+
+### Expected input metadata
+
+* **Product Id** (string, required): The `Product Id` to set Inventory level for it (for example: 7027481375264). The `Product Id` can be found in the UI Shopify admin - it's taken from browser's address bar while integrator is on the Product view page (it's the last pert of URL string). More about it can be found [here](https://support.judge.me/support/solutions/articles/44001929364-get-your-shopify-product-id-and-product-handle).
+* **Location Id** (string, optional): The `Location Id` (for example: 33381379746). If not provided, the current `Location Id` will be chosen (considering there is only one `Location Id` exists). If there are multiple locations, then the integrator must provide `Location Id` manually. This `Location Id` also can be found in the UI Shopify admin (the same as for `Product Id`) from Settings > Locations page. Explore it in details [here](https://help.smart-tags-app.com/article/73-how-to-find-out-the-location-id-from-shopify-admin).
+* **Inventory Level** (number, required): The `Inventory level` to set (for example: 42). This will update the available `Inventory level` of the current Inventory Item.
+
+### Expected output metadata
+
+Response from the request containing response body and status code.
+
+>**Please Note:** If the **Track quantity** on UI Shopify admin is switched off, then as the result of action execution will be: 422 Error - "Inventory item does not have inventory tracking enabled", which means that Inventory Tracking is not enabled for a Product, then it is not possible to set `Inventory level` for that particular product.
+
+>**Please Note:** In the case when the product `SKU` is not specified, error 422 "Inventory item is missing a sku" will be generated.
+
+>**Please Note:** Please be advised that in case when `locationId` is set incorrectly, Shopify API may return error "N".
 
 ## Upsert Object
 

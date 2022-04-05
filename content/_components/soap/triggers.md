@@ -5,8 +5,8 @@ description: SOAP component triggers.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2022-02-11
-ComponentVersion: 1.2.7
+updatedDate: 2022-03-15
+ComponentVersion: 1.2.8
 ---
 
 ## Receive SOAP Request
