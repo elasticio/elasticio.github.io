@@ -4,7 +4,7 @@ layout: component
 section: Utility components
 description: A first step component to deploy into our platform.
 category: petstore
-icon: petstore-java.png
+icon: petstore.png
 icontext: Petstore-java componentt
 updatedDate: 2022-03-26
 ComponentVersion: 1.0.3
