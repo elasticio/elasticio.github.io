@@ -6,8 +6,8 @@ description: A component that connects to HubSpot API
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2022-02-11
-ComponentVersion: 1.5.0
+updatedDate: 2022-04-08
+ComponentVersion: 1.5.1
 redirect_from:
   - /components/hubspot-component
   - /components/hubspot-component/actions
@@ -23,6 +23,7 @@ redirect_from:
 | Name | Mandatory | Description | Values |
 |----|---------|-----------|------|
 | `REQUEST_MAX_RETRY` | false | The number of retries to HubSpot API the platform should do on errors (3 by default) | any `integer` above 0 |
+|`RENEW_LIMIT`| false | Set biggest number of records in `Get New and Updated Objects` trigger before set new start date, 9800 by default | any `integer` above 0 and less 10000|
 
 ## Credentials
 
@@ -57,6 +58,15 @@ To complete the process:
 *   **End Time** - Text field (string, optional, defaults to never): When provided, don’t fetch records modified after this time
 *   **Size of Polling Page** - Text field (optional, positive integer, max 100, defaults to 100): Set the size of the fetched pages
 *   **Single Page per Interval** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page at once, wait until the next flow start to fetch the next page
+
+#### Output Metadata
+
+- For `Fetch page`: An object with key ***results*** that has an array as its value
+- For `Emit Individually`:  Each object fill the entire message
+
+#### Limitations
+
+After reaching **9800** records flow will find largest `Field to poll` in last Polling Page and use it as `Start Time` for next iterations, results with this date will be excluded from that iteration and include in the next one
 
 ### Webhook
 

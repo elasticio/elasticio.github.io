@@ -2,18 +2,17 @@
 title: JDBC Component
 layout: component
 section: Database components
-description: A component to work with object-relational database management systems.
+description: A component to work with object-relational database management systems. It works with the works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2021-11-26
-ComponentVersion: 2.5.1
+updatedDate: 2021-04-08
+ComponentVersion: 2.5.2
 ---
 
-## Description
+## General information
 
-This a component for working with object-relational database management systems.
-It works with the works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
+{{page.description}}
 
 ### Technical Notes
 

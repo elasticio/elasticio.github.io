@@ -5,13 +5,21 @@ description: Technical Notes for the SFTP component.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2021-11-26
-ComponentVersion: 1.4.5
+updatedDate: 2021-04-12
+ComponentVersion: 1.4.7
 redirect_from:
   - /components/sftp/changelog.html
 ---
 
 ## Changelog
+
+### 1.4.7 (April 12, 2022)
+
+* Fix uploading attachments
+
+### 1.4.6 (April 08, 2022)
+
+* Fix downloading files of size > 10MB
 
 ### 1.4.5 (November 26, 2021)
 
