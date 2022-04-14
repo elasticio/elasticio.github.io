@@ -5,8 +5,8 @@ description: SOAP component actions.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2022-03-15
-ComponentVersion: 1.2.8
+updatedDate: 2022-04-08
+ComponentVersion: 1.2.9
 ---
 
 ## Call

@@ -5,14 +5,19 @@ description: Technical Notes for the SOAP component.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2022-03-15
-ComponentVersion: 1.2.8
+updatedDate: 2022-04-08
+ComponentVersion: 1.2.9
 redirect_from:
   - /components/soap/completeness-matrix.html
   - /components/soap/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.9 (April 8, 2022)
+
+* Added possibility to handle WSDL files where the "message" doesn't contain an element
+* Updated the Sailor version to 3.3.9
 
 ### 1.2.8 (March 15, 2022)
 

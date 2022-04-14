@@ -6,15 +6,13 @@ description: A messaging protocol for exchanging information between application
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2022-03-15
-ComponentVersion: 1.2.8
+updatedDate: 2022-04-08
+ComponentVersion: 1.2.9
 ---
 
-## Description
+## General information
 
-The SOAP Component provides the SOAP Web Services work opportunity within a
-{{site.data.tenant.name}} flow. As an integration platform, {{site.data.tenant.name}} has an opportunity to
-invoke SOAP Web services over HTTP.
+{{page.description}}
 
 ## Requirements
 

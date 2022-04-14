@@ -5,14 +5,21 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2021-12-01
-ComponentVersion: 2.2.1
+updatedDate: 2022-04-08
+ComponentVersion: 2.2.2
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.2.2 (April 08, 2022)
+
+* Implemented reconnect logic on errors
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 2.2.1 (December 1, 2021)
 

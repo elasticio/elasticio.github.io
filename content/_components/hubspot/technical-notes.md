@@ -5,11 +5,18 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2022-02-11
-ComponentVersion: 1.5.0
+updatedDate: 2022-04-08
+ComponentVersion: 1.5.1
 ---
 
 ## Changelog
+
+### 1.5.1 (April 08, 2022)
+
+* Fixed limit 10000 records for `Get New and Updated Objects` trigger
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 1.5.0 (February 11, 2022)
 

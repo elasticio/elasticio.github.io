@@ -6,9 +6,13 @@ description: The Vtex iPaaS component that connects to VTEX API
 icontext: Vtex component
 icon: vtex.png
 category: vtex
-updatedDate: 2022-03-29
-ComponentVersion: 1.2.0
+updatedDate: 2022-04-08
+ComponentVersion: 1.3.0
 ---
+
+## General information
+
+{{page.description}}
 
 ## Credentials
 
@@ -61,7 +65,6 @@ Executes custom request
 * **Status Code** - (number, required) HTTP status code of the response, required.
 * **Response Body** - (object, optional) HTTP response body.
 
-
 ### Lookup Objects (Plural)
 
 Provides the possibility to obtain multiple objects from the server by passing in some unique criteria for finding objects and retrieving them.
@@ -90,7 +93,28 @@ Depending on the `Behavior` it can be:
 - `Fetch All` mode: an object, with key results that has an array as its value.
 - `Emit Individually` mode: each object that fills the entire message.
 
->**Please Note:**  When the user passes search criteria that doesn't match any objects - an empty array inside the object is returned as the results: [], with additional field totalCountOfMatchingResults: 0.
+>**Please Note:**  When the user passes search criteria that doesn't match any objects - an empty array inside the object is returned as the results: [], with additional field totalCountOfMatchingResults: 0
+
+### Lookup Object (at Most 1)
+
+Provides the possibility to obtain single object from the server by passing in some unique criteria.
+
+![Lookup Object (at Most 1)](img/lookup-objects-at-most-1.png)
+
+#### Configuration Fields
+
+* **Object Type**: (dropdown, required) - Select object that you want to look up. One of `Customers`, `Orders` or `Products`
+* **Search Criteria**: (dropdown, required) - Uniq field that used as search criteria. For customers - Email or VTEX ID, For Orders - VTEX ID, For Products - SKU or VTEX ID
+* **Allow ID to be omitted**: (checkbox, optional) - when selected, the ID field becomes optional, otherwise it is a required field
+* **Allow zero results**: (checkbox, optional) - when selected, if zero results are returned, the empty object {} is emitted, otherwise an error would be thrown.
+
+#### Input Metadata
+
+* Value of search criteria for selected object type
+
+#### Output Metadata
+
+Selected object that fills the entire message
 
 ### Lookup Set Of Objects By Unique Criteria
 
