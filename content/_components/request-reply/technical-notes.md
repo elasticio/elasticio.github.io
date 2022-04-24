@@ -5,13 +5,19 @@ description: Technical Notes for the Request-reply component.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2021-11-12
-ComponentVersion: 1.2.2
+updatedDate: 2022-04-14
+ComponentVersion: 1.2.3
 redirect_from:
   - /components/request-reply/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.3 (April 14, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 1.2.2 (November 12, 2021)
 
