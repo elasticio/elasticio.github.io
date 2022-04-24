@@ -72,7 +72,7 @@ function processTrigger(msg, cfg, snapshot) {
 
 Additionally, there is a way to reset snapshot for a Flow via the UI. Here is how it is done:
 
-![Resetting snapshots via UI](/assets/img/integrator-guide/using-snapshots/reset-snapshot.gif)
+![Resetting snapshots via UI](/assets/img/integrator-guide/using-snapshots/reset-snapshot.png)
 
 ## Snapshots via the API
 

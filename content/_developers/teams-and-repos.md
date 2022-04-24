@@ -23,7 +23,7 @@ team. The team members may collaborate on common integration component in integr
 
 To create a new developer team, navigate to *Developer Teams* and click *Add New Team* button. Then give the team a unique name and click *Save*. Your team has been added to the list:
 
-![Developer Teams - Add New Team button](/assets/img/developer-guide/team-repo/devteam.gif)
+![Developer Teams - Add New Team button](/assets/img/developer-guide/team-repo/devteam.png)
 
 >**Note**: you can only use letters, digits, `-` and `_` to name your team.
 

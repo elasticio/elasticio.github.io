@@ -40,7 +40,7 @@ component.
 
 To create a credential, open the Navigational Menu and go to *Credentials*. Then click *Create New Credential* button:
 
-![Petstore API - Creating a credential for a flow](/assets/img/getting-started/credential/creds.gif)
+![Petstore API - Creating a credential for a flow](/assets/img/getting-started/credential/creds.png)
 
 You will need to fill in data for two input fields:
 -   **Account name** - an optional name for this credential
