@@ -197,10 +197,6 @@ specify input(`userid` field is in our case a Primary key) data and click "Conti
 
 ![Upsert Row By Primary Key - Input](img/upsert-row-by-primary-key-input.png)
 
-Retrieving sample
-
-![Upsert Row By Primary Key - Retrieving sample](img/upsert-row-by-primary-key-sample.png)
-
 Retrieve sample result, click "Continue" and finish component configuration.
 
 ![Upsert Row By Primary Key - finish](img/upsert-row-by-primary-key-finish.png)
