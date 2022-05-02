@@ -26,7 +26,7 @@ For more convenience the quota service will notify you via email on different st
 
 ![Quota page](/assets/img/getting-started/quota/quota.png)
 
-By clicking **View Report**, you will see a resource usage chart and quota usage per each Workspace you have, and by clicking on the Workspace from the list, you can see quota usage per Flow:
+By clicking on **View Report**, you will see a resource usage chart and quota usage per each Workspace you have, and by clicking on the Workspace from the list, you can see quota usage per Flow:
 
 ![Report](/assets/img/getting-started/quota/quotadetail.gif)
 
