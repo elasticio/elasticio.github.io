@@ -15,7 +15,7 @@ Deletes an object by the ID provided.
 
 ![Delete Object By Id](img/delete-by-id.png)
 
-### Delete Object By Id. Config fields
+### Config fields
 
 * **Object Category** - a category of an object in NetSuite:
 
@@ -24,7 +24,7 @@ Deletes an object by the ID provided.
 
 * **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
 
-### Delete Object By Id. Input Metadata
+### Input Metadata
 
 Is being fetched dynamically. The sample:
 
@@ -39,15 +39,18 @@ Input metadata for Transaction objects:
 }
 ```
 
-Deletion Reason Usage Notes
+<details close markdown="block"><summary><strong>Deletion Reason Usage Notes:</strong></summary>
 
-<details><summary>Click to expand</summary>
+> **Please Note:** the following about the deletionReason parameter:
 
-> Note the following about the deletionReason parameter:
-> The deletionReason complex type includes two fields: deletionReasonCode and deletionReasonMemo. The deletionReasonCode must identify a deletion reason that is listed at Setup > Accounting > Accounting Lists. If the Use Deletion Reasons feature is enabled and you use the deletionReasonCode to identify a code that does not exist, the request fails with an INVALID_REF_KEY error.
+>The deletionReason complex type includes two fields: deletionReasonCode and deletionReasonMemo. The deletionReasonCode must identify a deletion reason that is listed at Setup > Accounting > Accounting Lists. If the Use Deletion Reasons feature is enabled and you use the deletionReasonCode to identify a code that does not exist, the request fails with an INVALID_REF_KEY error.
+
 > Deletion reasons can be saved only for transactions. However, in SOAP web services, you must use the deletionReason parameter even when referencing other record types, and even when the Use Deletion Reasons feature is not enabled. For situations where it is not appropriate to identify a deletion reason, pass in a value of null.
+
 > Even when a deletion reason is required, you can use a value of null. In these cases, the system automatically populates the deletion reason fields with default values. These defaults are: Other for deletionReasonCode and This transaction was deleted by script or web service for deletionReasonMemo.
+
 > The deletionReason complex type is defined in the core XSD.
+
 > For more details about the Use Deletion Reasons feature, see Recording a Reason for Deleting a Transaction.
 
 </details>
@@ -75,7 +78,7 @@ Lookup an object by the ID provided.
 
 ![Lookup Object By Id](img/lookup-by-id.png)
 
-### Lookup Object By Id. Config fields
+### Config fields
 
 * **Object Category** - a category of an object in NetSuite
   * Standard
@@ -98,7 +101,7 @@ Use this action to execute the following types of searches:
 
 * [**Advanced search**](#advanced-search) — Execute a search on a record type in which you specify search filter fields and/or search return columns or joined search columns. Using advanced search, you can also return an existing saved search. See Advanced Searches in SOAP Web Services.
 
-### Lookup Objects. Config fields
+### Config fields
 
 * **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
 
@@ -132,9 +135,7 @@ What you should do next is to build a correct search request using object fields
 
 It is just the recommended list. You should always use an actual one based on the Help center of your account.
 
-- **GetSelectValueFilterOperator**:
-
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>GetSelectValueFilterOperator:</strong></summary>
 
 * contains
 * is
@@ -142,9 +143,7 @@ It is just the recommended list. You should always use an actual one based on th
 
 </details>
 
-- **SearchDateFieldOperator**:
-
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>SearchDateFieldOperator:</strong></summary>
 
 * after
 * before
@@ -163,9 +162,7 @@ It is just the recommended list. You should always use an actual one based on th
 
 </details>
 
-- **SearchDoubleFieldOperator**:
-
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>SearchDoubleFieldOperator:</strong></summary>
 
 * between
 * empty
@@ -184,18 +181,14 @@ It is just the recommended list. You should always use an actual one based on th
 
 </details>
 
-- **SearchEnumMultiSelectFieldOperator**:
-
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>SearchEnumMultiSelectFieldOperator:</strong></summary>
 
 * anyOf
 * noneOf
 
 </details>
 
-- **SearchLongFieldOperator**:
-
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>SearchLongFieldOperator:</strong></summary>
 
 * between
 * empty
@@ -214,18 +207,14 @@ It is just the recommended list. You should always use an actual one based on th
 
 </details>
 
-- **SearchMultiSelectFieldOperator**:
-
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>SearchMultiSelectFieldOperator:</strong></summary>
 
 * anyOf
 * noneOf
 
 </details>
 
-- **SearchStringFieldOperator**:
-
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>SearchStringFieldOperator:</strong></summary>
 
 * contains
 * doesNotContain
@@ -239,9 +228,7 @@ It is just the recommended list. You should always use an actual one based on th
 
 </details>
 
-- **SearchTextNumberFieldOperator**:
-
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>SearchTextNumberFieldOperator:</strong></summary>
 
 * between
 * empty
@@ -270,7 +257,7 @@ Search Type: ContactSearchBasic
 
 XML request:
 
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
 ```xml
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:messages_2019_1.platform.webservices.netsuite.com" xmlns:urn1="urn:core_2019_1.platform.webservices.netsuite.com">
@@ -315,7 +302,7 @@ The same request for the component (JSON):
 
 Response:
 
-<details><summary>Click to see the response</summary>
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
 ```json
 {
@@ -365,7 +352,7 @@ The following sample shows how to return an associated joined list of records. I
 
 XML request:
 
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
 ```xml
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:messages_2019_1.platform.webservices.netsuite.com" xmlns:urn1="urn:core_2019_1.platform.webservices.netsuite.com">
@@ -425,9 +412,9 @@ The same request for the component (JSON):
 }
 ```
 
-Response
+Response:
 
-<details><summary>Click to see the response</summary>
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
 ```json
 {
@@ -502,7 +489,7 @@ The following sample shows how to search for all items that have a price level o
 
 XML request:
 
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
 ```xml
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:messages_2019_1.platform.webservices.netsuite.com" xmlns:urn1="urn:core_2019_1.platform.webservices.netsuite.com">
@@ -564,7 +551,7 @@ The same request for the component (JSON):
 
 Response
 
-<details><summary>Click to see the response</summary>
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
 ```json
 {
@@ -799,7 +786,7 @@ The component will always fetch all the existing metadata for the advanced searc
  - Input metadata for property columns absent for object type: `Transaction` and  `Advance Search` search type.
  - The following transaction searches are not supported:
 
- <details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
      - Blanket Purchase Order
      - CCard Refund
@@ -850,7 +837,7 @@ The following sample shows how to find customers, using saved search (by a keywo
 
 XML request:
 
-<details><summary>Click to expand</summary>
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
 ```xml
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:messages_2019_1.platform.webservices.netsuite.com" xmlns:urn1="urn:core_2019_1.platform.webservices.netsuite.com">
@@ -882,9 +869,9 @@ The same request for the component (JSON):
 }
 ```
 
-Response
+Response:
 
-<details><summary>Click to see the response</summary>
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
 ```json
 {
