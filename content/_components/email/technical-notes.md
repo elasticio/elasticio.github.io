@@ -5,13 +5,19 @@ description: Technical Notes for the Email component
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.0.12
-updatedDate: 2021-11-26
+ComponentVersion: 1.0.14
+updatedDate: 2022-04-08
 redirect_from:
   - /components/lookup-table/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.14 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 1.0.12 (November 26, 2021)
 

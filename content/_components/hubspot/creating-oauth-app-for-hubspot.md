@@ -5,8 +5,8 @@ description: Document describes how to create an OAuth2 App for HubSpot and how 
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2022-04-08
-ComponentVersion: 1.5.1
+updatedDate: 2022-04-13
+ComponentVersion: 1.5.2
 ---
 
 {{page.description}}

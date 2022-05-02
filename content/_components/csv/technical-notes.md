@@ -5,13 +5,23 @@ description: Technical Notes for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2022-03-15
-ComponentVersion: 3.1.1
+updatedDate: 2022-04-22
+ComponentVersion: 3.1.3
 redirect_from:
   - /components/csv/changelog.html
 ---
 
 ## Changelog
+
+### 3.1.3 (April 22, 2022)
+
+* Fix a bug when emit strategy 'Emit Batch' did not process correctly
+
+### 3.1.2 (April 14, 2022)
+
+* Update `component-commons-library` to read and upload attachments through `Maester`
+* Update `elasticio-sailor-nodejs` to v2.6.27
+* Fix dependencies
 
 ### 3.1.1 (March 15, 2022)
 
