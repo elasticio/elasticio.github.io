@@ -16,13 +16,17 @@ A quota defines the limit of usable resources in your Contract, Workspace or Flo
 
 Quotas can be set per Contract, per Workspace and per Flow, depending on the requirements. If a quota is enabled, but not defined, a default value in  will be set. To set a quota, a user needs a corresponding Service Account.
 
-Note, that you can set the Workspace quota higher than Contract quota, but there is no practical sense in doing so. Workspace quota will just become redundant.
+>**Please Note**, that you can set the Workspace quota higher than Contract quota, but there is no practical sense in doing so. Workspace quota will just become redundant.
 
-You can see the actual resource usage on the dedicated page. The usage is shown per Contract, per Workspace and per Flow. Also, you don't really need to keep an eye on the usage page all the time, because the quota service will notify you via email on different steps of approach to the limit.
+You can see the actual resource usage on the dedicated page. The usage is shown per Contract, per Workspace and per Flow.
+
+Also on the histogram you can see the RAM quota overuse. If you go over the set RAM quota value the overused part will show in red.
+
+For more convenience the quota service will notify you via email on different steps of approach to the limit.
 
 ![Quota page](/assets/img/getting-started/quota/quota.png)
 
-As seen on the page above, only approximately 1% of the memory quota has been used this month. If you click **View Report**, you will see a resource usage chart and quota usage per each Workspace you have, and by clicking on the Workspace from the list, you can see quota usage per Flow:
+By clicking on **View Report**, you will see a resource usage chart and quota usage per each Workspace you have, and by clicking on the Workspace from the list, you can see quota usage per Flow:
 
 ![Report](/assets/img/getting-started/quota/quotadetail.gif)
 

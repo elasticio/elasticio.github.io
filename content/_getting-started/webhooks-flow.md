@@ -46,20 +46,18 @@ title="Types of credentials" %}
 As you can see in the screenshot above there are multiple types of credentials
 available to choose in the *Type* drop-down. We will cover the Webhook credential
 [later in this article](#securing-your-webhooks). For now let's choose the `No Auth` option to
-continue with webhook creation. The result should look like in the following
+continue with webhook creation and click on *Save*. The result should look like in the following
 screenshot.
 
 {% include img.html
 url="/assets/img/getting-started/webhook-flow/webhook-flow-05.png"
 title="Create credentials" %}
 
-Now click on *Save* to continue to with webhook creation.
+Next we need to give the sample data structure which the webhook expects to receive from the external system. Click on *Add sample manually* or *Send sample request* button to add your sample. You can also just Skip the Sample. To *Send sample request* you can use [Postman](https://www.postman.com).
 
 ![Add sample manually](/assets/img/getting-started/webhook-flow/webhook-flow-07.png "Add sample manually")
 
-Next we need to give the sample data structure which the webhook expects to receive from the external system. Click on *Add sample manually* or *Send sample request* button to add your sample. To *Send sample request* you can use [Postman](https://www.postman.com).
-
-The only supported format for the input sample is `JSON`, so your sample must be a valid JSON object.
+>**Please Note:** The only supported format for the input sample is `JSON`, so your sample must be a valid JSON object. If an error is made in the input, it will be marked in red and you will not be able to save this sample until you fix the error.
 
 ![Paste the JSON](/assets/img/getting-started/webhook-flow/webhook-flow-08.png "Paste the JSON")
 
@@ -80,7 +78,7 @@ The sample gets evaluated for the correctness of the format. Click on *Save* but
 
 ![Webhook step summary](/assets/img/getting-started/webhook-flow/webhook-flow-11.png "Webhook step summary")
 
-Screenshot above shows the Webhook step summary page where you can add a note to describe the step and change the step name. Click on *Add another step* button to finish the Webhook step and load the component chooser again.
+Screenshot above shows the Webhook step summary page where you can add a note to describe the step and change the step name. Click on *Finish step* button to finish the Webhook step and load the component chooser again.
 
 ## Choosing the data target
 
@@ -116,7 +114,7 @@ The `petname` gets mapped with the *Name* field and the `petstatus` with the *St
 
 ![Retrieve the sample](/assets/img/getting-started/webhook-flow/webhook-flow-17.png "Retrieve the sample")
 
-On the next page click on *Retrieve sample from Petstore API (Node.js)* to retrieve the sample. When the sample gets retrieved click on *Choose this sample* to continue.
+On the next page click on *Retrieve sample* to retrieve the sample. When the sample gets retrieved click on *Continue*.
 
 ![Petstore step summary](/assets/img/getting-started/webhook-flow/webhook-flow-18.png "Petstore step summary")
 

@@ -32,7 +32,7 @@ The platform prompts you to setup the first step. First you can select the Compo
 
 ![Setup the first step](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-04.png)
 
-The next step is data sample retrieval. You can read about [data samples here](/getting-started/data-sample-overview). Click "Retrieve sample from Simple trigger" **(1)** or "Add sample manually" **(2)**. After that you will be automatically redirected to the last step.
+The next step is data sample retrieval. You can read about [data samples here](/getting-started/data-sample-overview). Click "Retrieve sample from Simple trigger" **(1)**, "Add sample manually" **(2)** or just Skip the Sample **(3)**. After that you will be automatically redirected to the last step.
 
 ![Data sample retrieval](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-05.png)
 
@@ -59,11 +59,11 @@ Email Component sends an email when triggered, so you should just fill in the de
 
 ![Configure input](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-10.png)
 
-Next click to "Retrieve sample from Simple trigger" **(1)** or "Add sample manually" **(2)**. After that you will be automatically redirected to the last step. 
+Next click to "Retrieve sample from E-Mail" or "Add sample manually". You can also Skip the Sample. After that you will be automatically redirected to the last step.
 
 ![Retrieve a data sample](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-11.png)
 
-Finally, you can change a name **(1)**, may add a description **(2)** and click "Finish step" **(3)**:
+Finally, Same as in the trigger step, you can change a name , may add a description and click to "Finish step":
 
 ![Summary - Finish step](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-12.png)
 

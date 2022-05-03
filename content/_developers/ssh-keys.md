@@ -83,7 +83,7 @@ can paste it into the SSH entry form on the {{site.data.tenant.name}} platform.
 
 To add a newly generated SSH Keys, click your "avatar" and navigate to *Identity Keys* section. There you can define key name, enter the SSH key and save it:
 
-![Identity Keys section](/assets/img/developer-guide/ssh-keys/SSH.gif)
+![Identity Keys section](/assets/img/developer-guide/ssh-keys/SSH.png)
 
 If you already have some SSH keys, just click *Add New SSH Key*:
 

@@ -76,12 +76,6 @@ Retrieve sample or add sample manually:
 
 ![Step 4: Retrieve sample](img/step_4.png)
 
-### Step 5
-
-Retrieve sample result:
-
-![Step 5: Retrieve sample result](img/step_5.png)
-
 ## Triggers
 
   1. [Receive SOAP Request](/components/soap/triggers#receive-soap-request)                                                 
