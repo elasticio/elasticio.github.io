@@ -31,7 +31,7 @@ Since there is only one function in the component, this step is performed automa
 
 >**Please Note:** For information on other methods of authorization please read the [Authorization methods](authorization-methods) page.
 
-Now we need to configure the input. In our case, we use the `GET` request, which returns information upon request using the URL. We use `{{site.data.tenant.apiBaseUri}}/v2/users/me` as URL. As a result, we should get information about us as a user of the platform.
+Now we need to configure the input. In our case, we use the `GET` request, which returns information upon request using the URL. We could use the platform API as URL example. As a result, we should get information about us as a user of the platform.
 
 ![Configure Input](img/user-me-input.png)
 
