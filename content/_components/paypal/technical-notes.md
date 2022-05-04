@@ -5,11 +5,18 @@ description: Technical Notes for the PayPal component
 icon: paypal.png
 icontext: PayPal component
 category: paypal
-updatedDate: 2022-04-08
-ComponentVersion: 1.2.0
+updatedDate: 2022-04-22
+ComponentVersion: 1.3.0
 ---
 
 ## Changelog
+
+### 1.3.0 (April 22, 2022)
+
+* Added `Webhook` trigger
+* Added `Create Object` action
+* Added `Update Object` action
+* Improvement input metadata in `Make a Payment` action
 
 ### 1.2.0 (April 08, 2022)
 
