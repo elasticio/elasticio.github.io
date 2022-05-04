@@ -6,8 +6,8 @@ description: Examines the message content and routes the message onto a differen
 icon: router.png
 icontext: Router component
 category: router
-updatedDate: 2021-11-26
-ComponentVersion: 0.0.13
+updatedDate: 2022-04-08
+ComponentVersion: 1.0.0
 ---
 
 This component implements the [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
