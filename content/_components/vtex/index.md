@@ -6,8 +6,8 @@ description: The Vtex iPaaS component that connects to VTEX API
 icontext: Vtex component
 icon: vtex.png
 category: vtex
-updatedDate: 2022-04-08
-ComponentVersion: 1.3.0
+updatedDate: 2022-05-06
+ComponentVersion: 1.4.0
 ---
 
 ## General information
@@ -163,3 +163,19 @@ And dynamically generated fields according to chosen `Upsert Schema`
 #### Output Metadata
 
 Dynamically generated fields according to chosen `Upsert Schema`
+
+### Place Order
+
+Placing an order from an existing cart to VTEX.
+Documentation: [https://developers.vtex.com/vtex-rest-api/reference/placeorderfromexistingorderform#placeorder](https://developers.vtex.com/vtex-rest-api/reference/placeorderfromexistingorderform#placeorder)
+
+![Place Order](img/place-order.png)
+
+#### Input Metadata
+
+Order schema
+
+#### Output
+
+**Result Object**: contains `orderGroup` key which could be taken as `ID` for `Lookup Object (at Most 1)` action.
+For example it could mapped to the next step as `orderGroup-01`.

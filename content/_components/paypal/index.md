@@ -6,13 +6,15 @@ description: A PayPal component with implementations of actions and triggers bas
 icon: paypal.png
 icontext: PayPal component
 category: paypal
-updatedDate: 2022-04-08
-ComponentVersion: 1.2.0
+updatedDate: 2022-04-22
+ComponentVersion: 1.3.0
 ---
 
 ## General information
 
 {{page.description}}
+
+> For more information you can visit [PayPal REST API documentation](https://developer.paypal.com/api/rest/)
 
 ## Credentials
 
@@ -33,6 +35,31 @@ Component credentials configuration Fields:
   * **Secret**  (string, required) - from App
 
 ## Triggers
+
+### Webhook trigger
+
+Creates webhook subscriptions on the PayPal side and receives events to the flow.
+
+![Webhook trigger](img/webhook-trigger.png)
+
+#### Configuration Fields
+
+* **Webhook ID** - (string, required) - webhook ID that becomes available after [creating a webhook](https://developer.paypal.com/docs/api/webhooks/v1/#webhooks_post).
+It is necessary to set the Internet accessible URL configured to listen for incoming POST notification messages containing event information when webhook creates.
+To implement this mechanism, the following steps must be taken:
+1. Create a flow with a random id in the config field
+2. Publish flow, after which the webhook URL will become available.
+3. Copy the URL of the elastic.io webhook
+4. Create a webhook on the PayPal side with the URL generated in the previous step.
+5. Edit the flow and specify the webhook ID created in the previous step.
+
+#### Input Metadata
+
+There is no Input Metadata
+
+#### Output Metadata
+
+Data received in the request
 
 ### Get New And Updated Objects Polling
 
@@ -59,6 +86,43 @@ Output metadata is generated dynamically and depends on Object Type
 2. It takes a maximum of three hours for executed transactions to appear in the list transactions call and even more time is sandbox
 
 ## Actions
+
+### Create Object
+
+Creates PayPal object
+
+![Create object](img/create-object.png)
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required) For example `Orders`.
+
+#### Input Metadata
+
+Inputs for request fields.
+
+#### Output Metadata
+
+The object creation result as reported by the system.
+
+### Update Object
+
+Updates PayPal object
+
+![Update Object](img/update-object.png)
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required) For example `Orders`.
+
+#### Input Metadata
+
+* **PayPal ID** - (string, required) ID of the object.
+Other input fields depending on selected object.
+
+#### Output Metadata
+
+If request succeed - [empty object will be returned.](https://developer.paypal.com/docs/api/orders/v2/#orders_patch)
 
 ### Make Raw Request
 
