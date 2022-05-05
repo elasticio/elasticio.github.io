@@ -77,6 +77,14 @@ Fix OAuth2 authentication strategy limitation: `refresh_token` property is now o
 * Make use of new OAuth mechanism
 * First commit of v2 branch.
 
+
+### 1.2.19 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Update component-commons-library version to 2.0.2
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to the Circle.ci config
+
 ### 1.2.18 (November 26, 2021)
 
 * Updated sailor version to 2.6.26
