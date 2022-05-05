@@ -6,8 +6,8 @@ description: A component to filter the incoming data based on an arbitrary JSONa
 icon: filter.png
 icontext: Filter component
 category: filter
-ComponentVersion: 1.1.2
-updatedDate: 2021-11-26
+ComponentVersion: 1.1.3
+updatedDate: 2022-04-08
 ---
 
 ## Description

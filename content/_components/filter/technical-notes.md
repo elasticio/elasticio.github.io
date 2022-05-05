@@ -5,13 +5,20 @@ description: Technical Notes for the Filter component
 icon: filter.png
 icontext: Filter component
 category: filter
-ComponentVersion: 1.1.2
-updatedDate: 2021-11-26
+ComponentVersion: 1.1.3
+updatedDate: 2022-04-08
 redirect_from:
   - /components/filter/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.3 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.2
 
 ### 1.1.2 (November 26, 2021)
 
