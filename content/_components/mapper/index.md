@@ -6,8 +6,8 @@ description: A component used to map source data to target data.
 icon: mapper.png
 icontext: Mapper component
 category: mapper
-updatedDate: 2021-11-26
-ComponentVersion: 0.0.13
+updatedDate: 2022-04-08
+ComponentVersion: 1.0.0
 ---
 
 ## Used languages
@@ -16,7 +16,7 @@ At the moment there are two different languages used to define transformation be
 - [JSONata](http://jsonata.org)
 - Based on handlebars template engine (will be deprecated)
 
-> **Note**: Please do not use Handlebars expression language.
+> **Please Note**: Do not use Handlebars expression language.
 
 ## JSONata expression language
 

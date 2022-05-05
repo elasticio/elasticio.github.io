@@ -5,13 +5,19 @@ description: Technical Notes for Mapper component.
 icon: mapper.png
 icontext: Mapper component
 category: mapper
-updatedDate: 2021-11-26
-ComponentVersion: 0.0.13
+updatedDate: 2022-04-08
+ComponentVersion: 1.0.0
 redirect_from:
   - /components/mapper/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.0 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 0.0.14 (November 26, 2021)
 
