@@ -5,13 +5,19 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2021-11-26
-ComponentVersion: 2.0.11
+updatedDate: 2022-04-08
+ComponentVersion: 2.0.12
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.12 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 2.0.11 (November 26, 2021)
 
@@ -70,6 +76,14 @@ Fix OAuth2 authentication strategy limitation: `refresh_token` property is now o
 * Use node version 14
 * Make use of new OAuth mechanism
 * First commit of v2 branch.
+
+
+### 1.2.19 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Update component-commons-library version to 2.0.2
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to the Circle.ci config
 
 ### 1.2.18 (November 26, 2021)
 
