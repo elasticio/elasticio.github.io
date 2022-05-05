@@ -5,13 +5,19 @@ description: Technical Notes for the Webhook component.
 icon: webhook.png
 icontext: Webhook component
 category: webhook
-updatedDate: 2021-11-26
-ComponentVersion: 1.2.10
+updatedDate: 2022-04-08
+ComponentVersion: 1.2.11
 redirect_from:
   - /components/webhook/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.11 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 1.2.10 (November 26, 2021)
 
