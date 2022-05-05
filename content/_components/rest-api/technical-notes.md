@@ -5,13 +5,19 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2021-11-26
-ComponentVersion: 2.0.11
+updatedDate: 2022-04-08
+ComponentVersion: 2.0.12
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.12 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 2.0.11 (November 26, 2021)
 
