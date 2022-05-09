@@ -5,11 +5,18 @@ description: Technical Notes for the IPass Core component
 icon: ipass-core.png
 icontext: IPass Core component
 category: ipass-core
-updatedDate: 2021-01-28
-ComponentVersion: 1.3.0
+updatedDate: 2022-04-08
+ComponentVersion: 1.3.2
 ---
 
 ## Chanhelog
+
+### 1.3.2 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.2
 
 ### 1.3.0 (January 28, 2022)
 

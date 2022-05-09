@@ -6,8 +6,8 @@ description: A component to manipulate integration artifacts such as flows via t
 icon: ipaas-core.png
 icontext: IPaas Core component
 category: ipaas-core
-updatedDate: 2021-01-28
-ComponentVersion: 1.3.0
+updatedDate: 2022-04-08
+ComponentVersion: 1.3.2
 ---
 
 ## Description
