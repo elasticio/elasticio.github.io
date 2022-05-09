@@ -5,14 +5,21 @@ description: Technical Notes for the Magento2 component.
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2021-10-29
-ComponentVersion: 1.6.5
+updatedDate: 2022-04-22
+ComponentVersion: 1.6.6
 redirect_from:
   - /components/magento2/changelog.html
   - /components/magento2/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.6.6 (April 22, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.2
 
 ### 1.6.5 (October 29, 2021)
 
