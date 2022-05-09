@@ -5,13 +5,20 @@ description: Technical Notes for the Petstore-nodejs component
 category: petstore
 icon: petstore.png
 icontext: Petstore-nodejs componentt
-updatedDate: 2021-11-26
-ComponentVersion: 1.0.4
+updatedDate: 2022-04-08
+ComponentVersion: 1.0.5
 redirect_from:
   - /components/petstore-nodejs/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.5 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.2
 
 ### 1.0.4 (November 26, 2021)
 
