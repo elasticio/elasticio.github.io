@@ -5,13 +5,19 @@ description: Technical Notes for the Pub-Sub component
 icon: pub-sub.png
 icontext: Pub-Sub component
 category: pub-sub
-updatedDate: 2021-11-26
-ComponentVersion: 1.0.7
+updatedDate: 2022-04-29
+ComponentVersion: 1.0.8
 redirect_from:
   - /components/pub-sub/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.8 (April 29, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 1.0.7 (November 26, 2021)
 
