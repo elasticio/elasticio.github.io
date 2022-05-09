@@ -6,8 +6,8 @@ description: A component to connect Flows
 icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
-ComponentVersion: 1.0.0
-updatedDate: 2022-01-28
+ComponentVersion: 1.0.1
+updatedDate: 2022-04-22
 ---
 
 ## General information
@@ -40,7 +40,10 @@ This action allows you to trigger another flow with request body
 
 #### Input Metadata
 
-**Flow Name to Call** (String Enum, required): A single flow from a list of flows that have the "Flow Linking Component" as the trigger within the current workspace. Note: `Enum` is only available if flows amount < 100. In other case input name by yourself.
+**Flow Name to Call** (String Enum, required): A single flow from a list of flows that have the "Flow Linking Component" as the trigger within the current workspace.
+
+>**Pleae Note:** `Enum` is only available if flows amount < 100. In other case input name by yourself.
+
 **Data to transfer** (Object, required): JSON object containing data to send into the next flow.
 
 #### Output Metadata
