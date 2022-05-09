@@ -5,11 +5,18 @@ description: Technical Notes for the GraphQL component
 icon: graphql.png
 icontext: GraphQL component
 category:  graphql
-updatedDate: 2022-03-16
-ComponentVersion: 1.1.1
+updatedDate: 2022-04-22
+ComponentVersion: 1.1.2
 ---
 
 ## Changelog
+
+### 1.1.2 (April 22, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.2
 
 ### 1.1.1 (March 16, 2022)
 
