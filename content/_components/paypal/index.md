@@ -90,7 +90,7 @@ Output metadata is generated dynamically and depends on Object Type
 Webhook trigger for receive IPN.
 Instant Payment Notification ([IPN](https://developer.paypal.com/api/nvp-soap/ipn/)) is a message service that automatically notifies merchants of events related to PayPal transactions.
 
-You can test your trigger using [Instant Payment Notification (IPN) simulator](https://developer.paypal.com/developer/ipnSimulator): set ElasticIO webhookURL to `IPN handler URL` field, select any value of `Transaction type`, set `receiver_email` the same, as `Expected Email Address` from configuration and press `Send IPN`.
+You can test your trigger using [Instant Payment Notification (IPN) simulator](https://developer.paypal.com/developer/ipnSimulator): set your webhookURL to `IPN handler URL` field, select any value of `Transaction type`, set `receiver_email` the same, as `Expected Email Address` from configuration and press `Send IPN`.
 
 #### Configuration Fields
 
@@ -107,7 +107,7 @@ All Transaction data (including success/fail)
 ### Receive Payment Data Transfer
 
 Webhook trigger for receive PDT.
-Payment Data Transfer ((PDT)[https://developer.paypal.com/api/nvp-soap/payment-data-transfer/]) is a notification service that, once activated, can send transaction-related information immediately to merchants who are using PayPal payment buttons.
+Payment Data Transfer ([PDT](https://developer.paypal.com/api/nvp-soap/payment-data-transfer/)) is a notification service that, once activated, can send transaction-related information immediately to merchants who are using PayPal payment buttons.
 
 #### Configuration Fields
 
