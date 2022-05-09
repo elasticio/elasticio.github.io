@@ -6,8 +6,8 @@ description: A component that is designed for utility operations.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2022-01-14
-ComponentVersion: 1.4.0
+updatedDate: 2022-04-13
+ComponentVersion: 1.4.1
 ---
 
 ## Environment variables

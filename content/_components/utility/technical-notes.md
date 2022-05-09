@@ -5,13 +5,20 @@ description: Technical Notes for the Utility Component.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2022-01-14
-ComponentVersion: 1.4.0
+updatedDate: 2022-04-13
+ComponentVersion: 1.4.1
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+### 1.4.1 (April 13, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.1
 
 ### 1.4.0 (January 14, 2022)
 
