@@ -5,11 +5,19 @@ description: Technical Notes for the Delta Detection component.
 icon: delta-detection.png
 icontext: Delta Detection Component
 category: delta-detection
-updatedDate: 2021-11-26
-ComponentVersion: 2.0.2
+updatedDate: 2022-05-05
+ComponentVersion: 2.0.3
 ---
 
 ## Changelog
+
+### 2.0.3 (May 05, 2022)
+
+* Upgrade sailor version to 2.6.27
+* Upgrade component-commons-library version to 2.0.2
+* Upgrade maester-client version to 3.4.3
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 2.0.2 (November 26, 2021)
 
