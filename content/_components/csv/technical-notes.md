@@ -48,6 +48,13 @@ redirect_from:
 
 * Removed old dependencies
 
+
+### 2.2.1 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+
 ### 2.2.0 (April 23, 2021)
 
 * Add pipe to list of separators in `Write CSV attachment from JSON Array` and `Write CSV attachment from JSON Object` actions
