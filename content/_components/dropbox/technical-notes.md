@@ -5,14 +5,21 @@ description: Technical Notes for the Dropbox component
 icon: dropbox.png
 icontext: Dropbox component
 category: dropbox
-updatedDate: 2021-03-12
-ComponentVersion: 1.0.2
+updatedDate: 2022-04-22
+ComponentVersion: 1.0.3
 redirect_from:
   - /components/dropbox/completeness-matrix.html
   - /components/dropbox/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.3 (April 22, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.2
 
 ### 1.0.2 (March 12, 2021)
 
