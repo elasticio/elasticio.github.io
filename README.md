@@ -11,37 +11,18 @@ the [doc.elastic.io](https://docs.elastic.io) to see it live.
 *   [Testing locally](#testing-locally)
 
 ## Contributing
+Contributions are welcome. If you create a pull request with some changes, we will review and incorporate as appropriate.
 
-1.  Fork this repo
-2.  Write your articles, change existing ones
-3.  Create a pull request back to this repo
-4.  Wait for review approval by contributors
-5.  Enjoy the new docs
-
-If you are first-time user, do the following steps
-
-1.  Clone `git clone https://github.com/elasticio/elasticio.github.io`
-2.  Init the submodule by executing `git submodule update --init`
-3.  Start your Jekyll app locally if you want to see the docs
-
-If you are returning user, perform the following steps:
-
-1. `git checkout master`
-2. `git pull --rebease origin master`
-3. `git checkout -b {MY_BRANCH}`
-4. Update submodule `git submodule update --update`
-5. The last step will create changes to the `docs` folder. Please commit them to your branch
-6. `git push origin {MY_BRANCH}`
-7. Go to GitHub and create a PR from `MY_BRANCH` to `master`.
-8. Go through review
-9. Merge the content to `master`
-10. Enjoy the content on [https://docs.elastic.io](http://docs.elastic.io)
+## Style Guidelines
+* In order to maximize re-use for white-label customers who run elastic.io software under a different brand, it is important to use the handlebars replacements when appropriate. For example, instead of referencing `elastic.io` within a document, `{{site.data.tenant.name}}` should be used instead. [A full list of substitution values can be found here.](_data/tenant.yml)
+* All git commits should have meaningful messages. Related commits should be combined into a single commit.
+* Commits should be ideally be scoped to a single feature as much as possible.
 
 ## White-labeling
+*(Follow the instructions in this section if you wish to set up a white-labeled copy of the documentation.)*
 
 To provide a white-labeled documentation to your customers, please follow the
 following steps:
-
 
 1. Fork this repository
 2. Customize [variables](_data/tenant.yml) used in documentation pages
@@ -51,8 +32,8 @@ following steps:
 6. DO NOT edit any content to avoid merging conflicts
 7. Pull changes from the original repository regularly so that your docs are up-to-date
 
-
-## Creating Algolia configuration
+### Creating Algolia configuration
+*(Required to have search run on a white-labeled instance. Local dev runs fine without this step.)*
 
 As a part of white-labelling you must take care of your own configuration to build
 the search statistics. To do so, create an Algolia account and use your own keys in
@@ -67,7 +48,6 @@ the setup as explained here.
 ![algolia4](https://user-images.githubusercontent.com/36419533/41036640-6449c626-6999-11e8-93b7-c5d0ea8ede03.png)
 
 5. Now you can Customize your Algolia configuration in the `_config.yml` file
-
 
 ## Testing locally
 
