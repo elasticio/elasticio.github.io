@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-03-15
-ComponentVersion: 1.5.0
+updatedDate: 2022-05-06
+ComponentVersion: 1.6.0
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,15 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.6.0 (May 06, 2022)
+
+* Add validation the HMAC signature for `Webhook subscription` trigger
+
+### 1.5.1 (April 08, 2022)
+
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 1.5.0 (March 25, 2022)
 

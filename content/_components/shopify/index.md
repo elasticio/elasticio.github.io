@@ -6,8 +6,8 @@ description: A component to work with the Shopify API.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-03-15
-ComponentVersion: 1.5.0
+updatedDate: 2022-05-06
+ComponentVersion: 1.6.0
 redirect_from:
   - /components/shopify-admin/index.html
 ---
@@ -23,11 +23,22 @@ You can find more information about API versioning at Shopify [here](https://hel
 
 ### Credentials
 
-*   `shopName`
-*   `apiKey`
-*   `password`
+![Credentials](img/shopify-cred.png)
 
-> **Please Note:** [How to generate creds](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin)
+ - *ShopName* - name of your shop, for an example `example.myshopify.com`
+ - *API Key*
+ - *Password*
+ - *Type* - authorization type, used only for trigger `Webhook subscription`. It is supported the following authorization types:
+   * **No Auth** - use this method to work with any open REST API
+   * **Basic Auth** - use it to provide login credentials like username/password
+   * **API Key Auth** - use it to provide API Key to access the resource
+   * **HMAC verification shared secret** - use it to verify via a shared secret. Header `x-eio-signature` should be specified.
+
+> **Please Note**: due to current platform limitations it is needed to keep 'Type' field with 'No auth' value for correct component behaviour
+
+ - *Shopify Webhook HMAC Secret* - this field is used and required only for trigger `Webhook subscription`, because when Shopify sends data via Webhooks, it [signs the request with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
+
+For finding the secret, you need to navigate to the `Settings` select tab `Notifications` go to `Webhooks` and copy the [secret.generate creds](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin)
 
 ### Environment variables
 
