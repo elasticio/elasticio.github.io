@@ -5,13 +5,19 @@ description: Technical Notes for Lookup Table component.
 icon: lookup.png
 icontext: Lookup component
 category: lookup
-ComponentVersion: 1.1.5
-updatedDate: 2021-11-26
+ComponentVersion: 1.1.6
+updatedDate: 2022-04-05
 redirect_from:
   - /components/lookup-table/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.6 (May 05, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 1.1.5 (November 26, 2021)
 
