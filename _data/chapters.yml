@@ -111,3 +111,5 @@ admin:
   sections:
     - title: Support
       description: Everything about support activities
+    - title: elastic.io Specific Settings
+      description: Information that is specific to accounts on app.elastic.io & app-us.elastic.io
