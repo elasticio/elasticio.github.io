@@ -5,13 +5,17 @@ description: Technical Notes for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2022-04-22
-ComponentVersion: 3.1.3
+updatedDate: 2022-05-06
+ComponentVersion: 3.1.4
 redirect_from:
   - /components/csv/changelog.html
 ---
 
 ## Changelog
+
+### 3.1.4 (May 06, 2022)
+
+* Fix memory leak on `Emit Batch` behavior for `Read CSV attachment` action
 
 ### 3.1.3 (April 22, 2022)
 

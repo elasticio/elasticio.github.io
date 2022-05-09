@@ -5,8 +5,8 @@ description: CSV component actions.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2022-04-22
-ComponentVersion: 3.1.3
+updatedDate: 2022-05-06
+ComponentVersion: 3.1.4
 ---
 
 ## Read CSV attachment
@@ -37,6 +37,17 @@ Here you can see an example of a sample:
 *   `Convert Data types` - numeric, date and boolean data will be converted to their type instead of remaining strings, false by default.
 
 If `Emit Behavior` equals to `Emit Batch` - new field appears: `Batch Size` - max length of array for each message
+
+### Output Metadata
+
+- For `Fetch page` and `Emit Batch`: An object with key *result* that has an array as its value
+- For `Emit Individually`:  Each object fill the entire message
+
+### Limitations
+
+* If you use `Fetch All` then component needs to store whole file and object in memory that cause big memory usage
+* In `Emit Batch` use wisely `Batch Size`, bigger number cause bigger memory usage
+* Possible exception: `[ERR_STREAM_PREMATURE_CLOSE]` could be thrown when flow stopped before finish emiting all data in file, as stream stopped
 
 ## Create CSV From Message Stream
 
