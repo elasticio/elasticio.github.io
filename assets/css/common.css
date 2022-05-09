@@ -469,7 +469,7 @@ h2 {
   padding: 0 0 0 10px; }
 
 .search__input {
-  font-family: "PT Sans", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-backface-visibility: hidden;
@@ -1092,8 +1092,8 @@ div[class*=' language'].highlighter-rouge,
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-backface-visibility: hidden;
-  font-family: "PT Sans", sans-serif;
-  font-size: 17px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
   line-height: 1.7; }
 .article h2,
 .description h2 {
@@ -1524,7 +1524,7 @@ nav:hover + .big-overlay,
   visibility: visible; }
 
 nav {
-  font-family: "PT Sans", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
   position: fixed !important;
   top: 67px !important;
@@ -1869,7 +1869,7 @@ h4:hover .deep-link {
   vertical-align: middle; }
 
 .date {
-  font-family: "PT Sans", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -2037,7 +2037,7 @@ h4:hover .deep-link {
 }
 
 .overview__item {
-  font-family: "PT Sans", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
