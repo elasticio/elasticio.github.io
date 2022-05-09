@@ -5,13 +5,19 @@ description: Technical Notes for the ZIP/UnZIP component.
 icon: zip-unzip.png
 icontext: ZIP/UnZIP component
 category: zip
-updatedDate: 2021-11-26
-ComponentVersion: 1.1.4
+updatedDate: 2022-04-22
+ComponentVersion: 1.1.5
 redirect_from:
   - /components/zip/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.5 (April 22, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 1.1.4 (November 26, 2021)
 
