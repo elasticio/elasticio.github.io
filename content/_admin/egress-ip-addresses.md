@@ -7,7 +7,7 @@ order: 1
 category: support
 ---
 
-**Summary**
+## Summary
   * *Traffic from the {{site.data.tenant.name}} platform comes from fixed IP addresses*
   * *The fixed IP addresses are listed on this page*
   * *{{site.data.tenant.companyName}} commits to supporting the ability to allowing integrators to add {{site.data.tenant.name}} IP addresses to their whitelists*
