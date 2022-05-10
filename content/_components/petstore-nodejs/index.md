@@ -6,8 +6,8 @@ description: A first step component to deploy into our platform.
 category: petstore
 icon: petstore.png
 icontext: Petstore-nodejs componentt
-updatedDate: 2021-11-26
-ComponentVersion: 1.0.4
+updatedDate: 2022-04-08
+ComponentVersion: 1.0.5
 ---
 
 ## Description

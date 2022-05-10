@@ -6,8 +6,8 @@ description: A component to manage records from a system which does not provide 
 icon: delta-detection.png
 icontext: Delta Detection Component
 category: delta-detection
-updatedDate: 2021-11-26
-ComponentVersion: 2.0.2
+updatedDate: 2022-05-05
+ComponentVersion: 2.0.3
 ---
 
 ## Description

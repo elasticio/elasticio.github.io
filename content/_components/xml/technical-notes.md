@@ -5,13 +5,20 @@ description: Technical Notes for the XML component.
 icon: xml.png
 icontext: XML component
 category: xml
-ComponentVersion: 1.3.4
-updatedDate: 2021-02-12
+ComponentVersion: 1.3.5
+updatedDate: 2022-04-13
 redirect_from:
   - /components/xml/changelog.html
 ---
 
 ## Changelog
+
+### 1.3.5 (April 13, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.2
 
 ### 1.3.4 (February 12, 2021)
 

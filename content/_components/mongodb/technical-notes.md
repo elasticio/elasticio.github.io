@@ -5,13 +5,19 @@ description: Technical Notes for the MongoDB component.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2021-11-26
-ComponentVersion: 1.5.8
+updatedDate: 2022-04-29
+ComponentVersion: 1.5.9
 redirect_from:
   - /components/mongodb/changelog.html
 ---
 
 ## Changelog
+
+### 1.5.9 (April 29, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 1.5.8 (November 26, 2021)
 

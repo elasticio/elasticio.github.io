@@ -6,7 +6,7 @@ description: A PayPal component with implementations of actions and triggers bas
 icon: paypal.png
 icontext: PayPal component
 category: paypal
-updatedDate: 2022-04-22
+updatedDate: 2022-05-06
 ComponentVersion: 1.3.0
 ---
 
@@ -84,6 +84,42 @@ Output metadata is generated dynamically and depends on Object Type
 
 1. `Transactions` always use `Created` date to poll
 2. It takes a maximum of three hours for executed transactions to appear in the list transactions call and even more time is sandbox
+
+### Receive Instant Payment Notification
+
+Webhook trigger for receive IPN.
+Instant Payment Notification ([IPN](https://developer.paypal.com/api/nvp-soap/ipn/)) is a message service that automatically notifies merchants of events related to PayPal transactions.
+
+You can test your trigger using [Instant Payment Notification (IPN) simulator](https://developer.paypal.com/developer/ipnSimulator): set your webhookURL to `IPN handler URL` field, select any value of `Transaction type`, set `receiver_email` the same, as `Expected Email Address` from configuration and press `Send IPN`.
+
+#### Configuration Fields
+
+* **Expected Email Address** - (required, string)
+
+#### Input Metadata
+
+There is no Input Metadata
+
+#### Output Metadata
+
+All Transaction data (including success/fail)
+
+### Receive Payment Data Transfer
+
+Webhook trigger for receive PDT.
+Payment Data Transfer ([PDT](https://developer.paypal.com/api/nvp-soap/payment-data-transfer/)) is a notification service that, once activated, can send transaction-related information immediately to merchants who are using PayPal payment buttons.
+
+#### Configuration Fields
+
+* **Identity Token** - (required, string)
+
+#### Input Metadata
+
+There is no Input Metadata
+
+#### Output Metadata
+
+All Transaction data (including success/fail)
 
 ## Actions
 

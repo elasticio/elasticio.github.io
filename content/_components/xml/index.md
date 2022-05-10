@@ -6,8 +6,8 @@ description: XML is used to describe the transportation, structure, and storage 
 icon: xml.png
 icontext: XML component
 category: xml
-ComponentVersion: 1.3.4
-updatedDate: 2021-02-12
+ComponentVersion: 1.3.5
+updatedDate: 2022-04-13
 ---
 
 ## Description

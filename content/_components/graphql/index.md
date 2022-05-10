@@ -6,8 +6,8 @@ description: A component that use GraphQL - a query language for APIs and a runt
 icon: graphql.png
 icontext: GraphQL component
 category:  graphql
-updatedDate: 2022-03-16
-ComponentVersion: 1.1.1
+updatedDate: 2022-04-22
+ComponentVersion: 1.1.2
 ---
 
 ## Credentials

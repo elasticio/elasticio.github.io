@@ -6,8 +6,8 @@ description: A component to work with object-relational database management syst
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2021-04-08
-ComponentVersion: 2.5.2
+updatedDate: 2022-05-06
+ComponentVersion: 2.5.3
 ---
 
 ## General information

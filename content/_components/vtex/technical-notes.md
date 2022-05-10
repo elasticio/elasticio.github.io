@@ -6,14 +6,16 @@ icontext: Vtex component
 icon: vtex.png
 category: vtex
 updatedDate: 2022-05-06
-ComponentVersion: 1.4.0
+ComponentVersion: 1.4.1
 ---
 
 ## Changelog
 
-### 1.4.0 (May 06, 2022)
+### 1.4.1 (May 06, 2022)
 
-* Added `Place Order` action
+- Added `Place Order` action
+- Get rid of vulnerabilities in dependencies
+- Add component pusher job to Circle.ci config
 
 ### 1.3.0 (April 08, 2022)
 

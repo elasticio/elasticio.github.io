@@ -7,7 +7,7 @@ icontext: Vtex component
 icon: vtex.png
 category: vtex
 updatedDate: 2022-05-06
-ComponentVersion: 1.4.0
+ComponentVersion: 1.4.1
 ---
 
 ## General information

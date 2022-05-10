@@ -6,8 +6,8 @@ description: Component to interact with Dropbox.
 icon: dropbox.png
 icontext: Dropbox component
 category: dropbox
-updatedDate: 2021-03-12
-ComponentVersion: 1.0.2
+updatedDate: 2022-04-22
+ComponentVersion: 1.0.3
 ---
 
 ## General information

@@ -6,8 +6,8 @@ description: Component to convert or replace incoming values using a Lookup tabl
 icon: lookup.png
 icontext: Lookup component
 category: lookup
-ComponentVersion: 1.1.5
-updatedDate: 2021-11-26
+ComponentVersion: 1.1.6
+updatedDate: 2022-04-05
 ---
 
 ## Description
