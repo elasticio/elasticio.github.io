@@ -3,7 +3,7 @@ title: Egress IP Addresses for IP Whitelisting
 layout: article
 section: elastic.io Specific Settings
 description: "Document lists public egress IP addresses of our clusters to whitelist if required."
-order: 3
+order: 1
 category: support
 ---
 
