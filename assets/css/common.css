@@ -1163,6 +1163,11 @@ div[class*=' language'].highlighter-rouge,
   border-radius: 50%;
 }
 
+.subtitle {
+  font-style: italic;
+  font-weight: normal !important;
+  line-height: 1.1 !important; }
+
 .article ol,
 .description ol {
   margin: 0 0 17px 30px;
