@@ -42,6 +42,54 @@ Here you can see how to select an existing `client`:
 
 >**Please note** that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorization in the headers section directly.
 
+### Auth-client creation
+
+The REST-API-v2 component has a possibility to use 4 types of auth-clients:
+
+* `oauth2` - this is the OAuth2 type
+* `basic` - a basic type with username and password only
+* `api_key` - this is for API Key and header key
+* `noauth` - no authentication is required
+
+For all 4 cases, an auth-client must be created before you can use them. This means even for the `noauth` you must have auth-client .
+Each auth-client is unique to a component. That means if you deploy another copy of the REST-API-V2 component to our platform you would need to create all 4 types of auth-clients for this component to work. Here you can see an example what `noauth` body should look like:
+
+![Noauth example](img/auth-client-noauth.png)
+
+<details close markdown="block"><summary><strong>noauth body</strong></summary>
+
+```json
+{
+    "data": {
+        "type":"auth-client",
+        "attributes":{
+            "type":"noauth",
+            "name": "No Auth",
+            "credentials": {}
+        },
+        "relationships":{
+         "components":{
+            "data":[
+               {
+                  "id":"COMPONENT_ID",
+                  "type":"component"
+               }
+            ]
+         },
+         "tenant":{
+            "data":{
+               "id":"TENNT_ID",
+               "type":"tenant"
+            }
+         }
+        }
+    }
+}
+```
+
+</details>
+
+As you can see in the ???third block???,  the above API call body is for creating `noauth` type auth-client for the whole tenant. You can choose between `component`, `workspace`, `contract` and `tenant` levels. For more information please visit out [API documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client).
 ### Environment variables
 
 | NAME                       | DESCRIPTION    | DEFAULT   | OPTIONAL |
