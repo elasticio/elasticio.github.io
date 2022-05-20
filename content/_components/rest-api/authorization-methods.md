@@ -97,7 +97,7 @@ As you can see, in the `noauth` type Credentials field was left blank. In the ot
 
 ```json
 "credentials": {
-                "foo": "bar"
+                "name": "{USER_NAME}"
             }
 ```
 </details>
@@ -106,8 +106,8 @@ As you can see, in the `noauth` type Credentials field was left blank. In the ot
 
 ```json
 "credentials":{
-                "name" : "bar",
-                "value" : "foo"
+                "name" : "{HEADER_NAME}",
+                "value" : "{API_KEY}"
             }
 ```
 </details>
