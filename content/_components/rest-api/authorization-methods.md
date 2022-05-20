@@ -42,7 +42,7 @@ Here you can see how to select an existing `client`:
 
 >**Please note** that the result of creating a credential is an HTTP header automatically placed for you. You can also specify the authorization in the headers section directly.
 
-### Auth-client creation
+## Auth-client creation
 
 The REST-API-v2 component has a possibility to use 4 types of auth-clients:
 
