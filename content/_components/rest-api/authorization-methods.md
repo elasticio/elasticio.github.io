@@ -56,7 +56,9 @@ Each auth-client is unique to a component. That means if you deploy another copy
 
 ![Noauth example](img/auth-client-noauth.png)
 
-<details close markdown="block"><summary><strong>noauth body</strong></summary>
+As you can see in the ???orange block???,  the above API call body is for creating `noauth` type auth-client for the whole tenant. You can choose between `component`, `workspace`, `contract` and `tenant` levels. For more information please visit out [API documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client).
+
+<details close markdown="block"><summary><strong>noauth body in json</strong></summary>
 
 ```json
 {
@@ -89,7 +91,16 @@ Each auth-client is unique to a component. That means if you deploy another copy
 
 </details>
 
-As you can see in the ???third block???,  the above API call body is for creating `noauth` type auth-client for the whole tenant. You can choose between `component`, `workspace`, `contract` and `tenant` levels. For more information please visit out [API documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client).
+> **Please Note:** authClientTypes must be exactly the same as specified in the component structure.
+```json
+"authClientTypes": [
+    "oauth2",
+    "basic",
+    "api_key",
+    "noauth"
+  ]
+```
+
 ### Environment variables
 
 | NAME                       | DESCRIPTION    | DEFAULT   | OPTIONAL |
