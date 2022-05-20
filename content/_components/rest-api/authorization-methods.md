@@ -51,7 +51,7 @@ The REST-API-v2 component has a possibility to use 4 types of auth-clients:
 * `api_key` - this is for API Key and header key
 * `noauth` - no authentication is required
 
-For all 4 cases, an `auth-client` [must be created](({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client)) before you can use them. This means even for the `noauth` you must have `auth-client` .
+For all 4 cases, an `auth-client` [must be created]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client) before you can use them. This means even for the `noauth` you must have `auth-client` .
 Each `auth-client` is unique to a component. That means if you deploy another copy of the REST-API-V2 component to our platform you would need to create all 4 types of `auth-clients` for this component to work. Here you can see an example what `noauth` body should look like:
 
 ![Noauth example](img/auth-client-noauth.png)
@@ -89,6 +89,41 @@ As you can see from example, the above API call body is for creating `noauth` ty
 }
 ```
 
+</details>
+
+As you can see, in the `noauth` type Credentials field was left blank. In the other three cases, you need to specify the credentials:
+
+<details close markdown="block"><summary><strong>Basic</strong></summary>
+
+```json
+"credentials": {
+                "foo": "bar"
+            }
+```
+</details>
+
+<details close markdown="block"><summary><strong>API Key</strong></summary>
+
+```json
+"credentials":{
+                "name" : "bar",
+                "value" : "foo"
+            }
+```
+</details>
+
+<details close markdown="block"><summary><strong>OAuth 2</strong></summary>
+
+```json
+"credentials":{
+            "client_id":"{CLIENT_ID}",
+            "client_secret":"{CLIENT_SECRET}",
+            "refresh_token_uri":"http://example.com",
+            "token_expires_in":18000,
+            "token_uri":"{TOKEN_URI}",
+            "auth_uri":"{AUTH_URI}"
+         }
+```
 </details>
 
 > **Please Note:** `authClientTypes` must be exactly the same as specified in the component structure.
