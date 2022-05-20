@@ -91,13 +91,13 @@ As you can see from example, the above API call body is for creating `noauth` ty
 
 </details>
 
-As you can see, in the `noauth` type Credentials field was left blank. In the other three cases, you need to specify the credentials:
+As you can see, in the `noauth` type credentials field was left blank. In the other three cases, you need to specify the credentials:
 
 <details close markdown="block"><summary><strong>Basic</strong></summary>
 
 ```json
 "credentials": {
-                "name": "{USER_NAME}"
+                "name": "USER_NAME"
             }
 ```
 </details>
@@ -106,8 +106,8 @@ As you can see, in the `noauth` type Credentials field was left blank. In the ot
 
 ```json
 "credentials":{
-                "name" : "{HEADER_NAME}",
-                "value" : "{API_KEY}"
+                "name" : "HEADER_NAME",
+                "value" : "API_KEY"
             }
 ```
 </details>
@@ -116,12 +116,12 @@ As you can see, in the `noauth` type Credentials field was left blank. In the ot
 
 ```json
 "credentials":{
-            "client_id":"{CLIENT_ID}",
-            "client_secret":"{CLIENT_SECRET}",
+            "client_id":"CLIENT_ID",
+            "client_secret":"CLIENT_SECRET",
             "refresh_token_uri":"http://example.com",
             "token_expires_in":18000,
-            "token_uri":"{TOKEN_URI}",
-            "auth_uri":"{AUTH_URI}"
+            "token_uri":"TOKEN_URI",
+            "auth_uri":"AUTH_URI"
          }
 ```
 </details>
