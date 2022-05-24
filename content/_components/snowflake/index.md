@@ -32,15 +32,13 @@ No required Environment variables.
 
 ## Credentials
 
-### Account name
-
-The full name of your account (provided by Snowflake). Note that your full account name might include additional segments that identify the region and cloud platform where your account is hosted
-
 ![Credentials](img/credentials.png)
 
 * **Username:** Snowflake user login name to connect with
 
 * **Password:** Password for the user
+
+* **Account Name:** The full name of your account (provided by Snowflake). Please enter the name without `snowflakecomputing.com` part.
 
 * **User role:** Security role to use for the session after connecting
 
