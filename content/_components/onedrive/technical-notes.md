@@ -5,14 +5,20 @@ description: Technical Notes for the Microsoft OneDrive component
 icon: onedrive.png
 icontext: Microsoft OneDrive component
 category: onedrive
-ComponentVersion: 1.0.4
-updatedDate: 2021-11-26
+ComponentVersion: 1.0.5
+updatedDate: 2022-04-14
 redirect_from:
   - /components/onedrive/completeness-matrix.html
   - /components/onedrive/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.5 (April 14, 2022)
+
+* Update `component-commons-library` to read and upload attachments through `Maester`
+* Update `elasticio-sailor-nodejs` to v2.6.27
+* Fix dependencies
 
 ### 1.0.4 (November 26, 2021)
 

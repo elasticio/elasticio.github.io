@@ -6,8 +6,8 @@ description: This is the component for working with Microsoft OneDrive storage s
 icon: onedrive.png
 icontext: Microsoft OneDrive component
 category: onedrive
-ComponentVersion: 1.0.4
-updatedDate: 2021-11-26
+ComponentVersion: 1.0.5
+updatedDate: 2022-04-14
 ---
 
 ## General information
