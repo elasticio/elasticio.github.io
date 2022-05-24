@@ -5,11 +5,18 @@ description: Changelog for the HJSON component
 icon: hjson.png
 icontext: HJSON component
 category: hjson
-updatedDate: 2021-12-22
-ComponentVersion: 1.0.0
+updatedDate: 2022-04-22
+ComponentVersion: 1.0.1
 ---
 
 ## Changelog
+
+### 1.0.1 (April 22, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.2
 
 ### 1.0.0 (December 22, 2021)
 
