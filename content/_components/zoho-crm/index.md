@@ -6,8 +6,8 @@ description: A component that connects to Zoho-crm API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.1
-updatedDate: 2022-02-14
+ComponentVersion: 1.3.3
+updatedDate: 2022-05-23
 ---
 
 ## General information
@@ -83,7 +83,7 @@ There is no Input Metadata
 
  If `Emit behavior` = `Emit individually`: dynamically generated properties according to selected `Object Type`
  If `Emit behavior` = `Emit page`:
- 
+
   * **results** Array with items: dynamically generated properties according to selected `Object Type`
 
 ## Actions
