@@ -5,11 +5,18 @@ description: Technical Notes for the Git-Protocol component
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.1.2
-updatedDate: 2021-12-24
+ComponentVersion: 1.1.3
+updatedDate: 2022-04-22
 ---
 
 ## Changelog
+
+### 1.1.3 (April 22, 2022)
+
+* Update `component-commons-library` to 2.0.2
+* Update `elasticio-sailor-nodejs` to 2.6.27
+* Added component-pusher to circleci
+* Fix dependencies
 
 ### 1.1.2 (December 24, 2021)
 
