@@ -5,11 +5,18 @@ description: Changelog for the Docuware component
 icon: docuware.png
 icontext: Docuware component
 category: docuware
-ComponentVersion: 1.1.0
-updatedDate: 2021-12-24
+ComponentVersion: 1.1.1
+updatedDate: 2022-05-20
 ---
 
 ## Changelog
+
+### 1.1.1 (May 20, 2022)
+
+* Fixed url to attachment in `Raw Request` action
+* Upgrade sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Added component-pusher to circleci
 
 ### 1.1.0 (December 24, 2021)
 
