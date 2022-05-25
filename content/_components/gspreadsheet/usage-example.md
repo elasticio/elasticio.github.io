@@ -5,8 +5,8 @@ description: Google Spreadsheets Usage Example.
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
-updatedDate: 2022-05-10
-ComponentVersion: 2.0.2
+updatedDate: 2022-05-20
+ComponentVersion: 2.0.3
 ---
 
 ## Introduction

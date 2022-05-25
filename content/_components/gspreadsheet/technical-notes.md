@@ -5,14 +5,19 @@ description: Technical Notes for Google Spreadsheets component.
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
-updatedDate: 2022-05-10
-ComponentVersion: 2.0.2
+updatedDate: 2022-05-20
+ComponentVersion: 2.0.3
 redirect_from:
   - /components/gspreadsheet/completeness-matrix.html
   - /components/gspreadsheet/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.3 (May 20, 2022)
+
+* Moved a delay between calls value from env vars to credentials
+* Added a number of retry attempts field to credentials
 
 ### 2.0.2 (May 10, 2022)
 
