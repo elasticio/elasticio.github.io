@@ -5,14 +5,34 @@ description: Technical Notes for  AWS S3 component.
 icon: aws-s3.png
 icontext: AWS S3 component
 category: aws-s3
-updatedDate: 2020-11-26
-ComponentVersion: 1.4.2
+updatedDate: 2022-05-20
+ComponentVersion: 1.5.1
 redirect_from:
   - /components/aws-s3/completeness-matrix.html
   - /components/aws-s3/changelog.html
 ---
 
 ## Changelog
+
+### 1.5.1 (May 20, 2022)
+
+* Fixed bug in `Get New and Updated S3 Objects` trigger when selected Emit Behaviour - Fetch All
+
+### 1.5.0 (May 20, 2022)
+
+* Created new `Read file` action instead of existing due to incorrect output metadata, old one set as deprecated
+* Fix memory leak for `Read file` action and `Get New and Updated S3 Objects` trigger, also added attachment url in message body to them
+* Default value for environment variable `ATTACHMENT_MAX_SIZE` increased from `10000000` (almost **10** MB) to `104857600` bytes (**100** MB)
+* Implemented additional check attachments size  in `Get New and Updated S3 Objects` trigger
+* Get rid of vulnerabilities in dependencies
+
+### 1.4.3 (April 22, 2022)
+
+* Update `component-commons-library` to 2.0.2
+* Update `oih-standard-library` to 2.0.2
+* Update `elasticio-sailor-nodejs` to 2.6.27
+* Added component-pusher to circleci
+* Fix dependencies
 
 ### 1.4.2 (November 26, 2021)
 

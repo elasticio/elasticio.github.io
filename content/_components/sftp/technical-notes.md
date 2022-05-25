@@ -5,13 +5,18 @@ description: Technical Notes for the SFTP component.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-04-12
-ComponentVersion: 1.4.7
+updatedDate: 2022-04-20
+ComponentVersion: 1.4.8
 redirect_from:
   - /components/sftp/changelog.html
 ---
 
 ## Changelog
+
+### 1.4.8 (April 20, 2022)
+
+* Fix memory leak for `Download Files/File by name` actions and `Read Files` trigger
+* Get rid of vulnerabilities in dependencies
 
 ### 1.4.7 (April 12, 2022)
 

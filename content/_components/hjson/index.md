@@ -6,8 +6,8 @@ description: A component to parse, validate, generate HJSON data for the platfor
 icon: hjson.png
 icontext: HJSON component
 category: hjson
-updatedDate: 2021-12-22
-ComponentVersion: 1.0.0
+updatedDate: 2022-04-22
+ComponentVersion: 1.0.1
 ---
 
 ## General information

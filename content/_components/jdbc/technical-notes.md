@@ -5,14 +5,22 @@ description: Technical Notes for JDBC component
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2022-05-06
-ComponentVersion: 2.5.3
+updatedDate: 2022-05-20
+ComponentVersion: 2.5.5
 redirect_from:
   - /components/jdbc/completeness-matrix.html
   - /components/jdbc/changelog.html
 ---
 
 ## Changelog
+
+### 2.5.5 (May 20, 2022)
+
+* Set default `connectionTimeZone` parameter for MYSQL to `SERVER`
+
+### 2.5.4 (May 11, 2022)
+
+* Made an automated vulnerability check run in CI/CD
 
 ### 2.5.3 (May 06, 2022)
 

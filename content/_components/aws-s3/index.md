@@ -6,8 +6,8 @@ description: A object storage that can store and retrieve e.g. files, documents 
 icon:  aws-s3.png
 icontext: AWS S3 component
 category: aws-s3
-updatedDate: 2020-11-26
-ComponentVersion: 1.4.2
+updatedDate: 2022-05-20
+ComponentVersion: 1.5.1
 ---
 
 ## General information
@@ -31,7 +31,7 @@ This is the component for working with AWS S3 object storage service on {{site.d
 
 ### How works. SDK version
 
-The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ 'SDK for NodeJS') version 2.683.0.
+The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ 'SDK for NodeJS') version 2.1132.0.
 
 ## Requirements
 
@@ -39,7 +39,7 @@ The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ '
 
 |Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
-|`ATTACHMENT_MAX_SIZE`| false | For `elastic.io` attachments configuration. Maximal possible attachment size in bytes. By default set to 1000000 and according to platform limitations CAN'T be bigger than that. | Up to `1000000` bytes|
+|`ATTACHMENT_MAX_SIZE`| false | For `elastic.io` attachments configuration. Maximal possible attachment size in bytes. By default set to `104857600` and according to platform limitations **CAN'T** be bigger than that. | Up to `104857600` bytes (100MB)|
 |`ACCESS_KEY_ID`| false | For integration-tests is required to specify this variable |  |
 |`ACCESS_KEY_SECRET`| false | For integration-tests is required to specify this variable |  |
 |`REGION`  | false | For integration-tests is required to specify this variable |  |
@@ -79,21 +79,25 @@ Triggers to get all new and updated s3 objects since last polling.
 
 ![Get New and Updated S3 Objects](img/get-new-and-update.png)
 
- - **Bucket Name and folder** - name of S3 bucket to read files from
- - **Emit Behaviour**: Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message
- - **Start Time**: Start datetime of polling. Default min date:`-271821-04-20T00:00:00.000Z`
- - **End Time**: End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`
- - **Enable File Attachments**: If selected, the contents of the file will be exported in addition to the file metadata.
+* **Bucket Name and folder** - name of S3 bucket to read files from
+* **Emit Behaviour**: Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects as array in one object with key `results`
+* **Start Time**: Start datetime of polling. Default min date:`-271821-04-20T00:00:00.000Z`
+* **End Time**: End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`
+* **Enable File Attachments**: If selected, the contents of the file will be exported in addition to the attachment.
 
-<details close markdown="block">
-<summary>
-Click to expand - Output metadata
-</summary>
+
+> **Please Note:** If **Emit Behaviour** selected as `Emit Individually` - emits each object in separate message with schema below, if `Fetch All` emits all objects as array in one object with key `results`, each item regards schema below `attachmentUrl` appears only if selected **Enable File Attachments**
+
+<details close markdown="block"><summary><strong>Output metadata:</strong></summary>
 
 ```json
 {
   "type": "object",
   "properties": {
+    "attachmentUrl": {
+      "type": "string",
+      "required": true
+    },
     "Key": {
       "type": "string",
       "required": true
@@ -169,10 +173,8 @@ File type resolves by it's extension. The name of attachment would be same to fi
  - **bucketName** - name of S3 bucket to read file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
 
-<details close markdown="block">
-<summary>
-Click to expand - Input metadata
-</summary>
+<details close markdown="block"><summary><strong>Input metadata:</strong></summary>
+
 
 ```json
 {
@@ -194,10 +196,7 @@ Click to expand - Input metadata
 
 #### Expected output metadata
 
-<details close markdown="block">
-<summary>
-Click to expand - Output metadata
-</summary>
+<details close markdown="block"><summary><strong>Output metadata:</strong></summary>
 
 ```json
 {
@@ -205,6 +204,14 @@ Click to expand - Output metadata
   "properties": {
     "filename": {
       "type": "string",
+      "required": true
+    },
+    "attachmentUrl": {
+      "type": "string",
+      "required": true
+    },
+    "size": {
+      "type": "number",
       "required": true
     }
   }
@@ -231,10 +238,8 @@ The filenames emits individually.
 
  - **bucketName** - name of S3 bucket to write file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
-<details close markdown="block">
-<summary>
-Click to expand - Input metadata
-</summary>
+ <details close markdown="block"><summary><strong>Input metadata:</strong></summary>
+
 
 ```json
 {
@@ -252,10 +257,7 @@ Click to expand - Input metadata
 
 #### Expected output metadata
 
-<details close markdown="block">
-<summary>
-Click to expand - Output metadata
-</summary>
+<details close markdown="block"><summary><strong>Output metadata:</strong></summary>
 
 ```json
 {
@@ -304,10 +306,7 @@ This action removes file from S3 by provided name in selected bucket. The action
  - **filename** - name of file at S3 bucket to delete;
  - **bucketName** - name of S3 bucket and folder to delete file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
-<details close markdown="block">
-<summary>
-Click to expand - Input metadata
-</summary>
+ <details close markdown="block"><summary><strong>Input metadata:</strong></summary>
 
 ```json
 {
@@ -329,10 +328,7 @@ Click to expand - Input metadata
 
 #### Expected output metadata
 
-<details close markdown="block">
-<summary>
-Click to expand - Output metadata
-</summary>
+<details close markdown="block"><summary><strong>Output metadata:</strong></summary>
 
 ```json
 {
@@ -364,10 +360,7 @@ The action will emit properties of renamed file.
  - **oldFileName** - name of file that should be renamed
  - **newFileName** - new name of file
 
-<details close markdown="block">
-<summary>
-Click to expand - Input metadata
-</summary>
+ <details close markdown="block"><summary><strong>Input metadata:</strong></summary>
 
 ```json
 {
@@ -398,10 +391,7 @@ Click to expand - Input metadata
 
 #### Expected output metadata
 
-<details close markdown="block">
-<summary>
-Click to expand - Output metadata
-</summary>
+<details close markdown="block"><summary><strong>Output metadata:</strong></summary>
 
 ```json
 {
@@ -460,10 +450,7 @@ Be careful: this action can process only one attachment - if it would be more or
  - **filename** - name of resulted file at S3 bucket (optional);
  - **bucketName** - name of S3 bucket to write file in (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
-<details close markdown="block">
-<summary>
-Click to expand - Input metadata
-</summary>
+ <details close markdown="block"><summary><strong>Input metadata:</strong></summary>
 
 ```json
 {
@@ -485,10 +472,7 @@ Click to expand - Input metadata
 
 #### Expected output metadata
 
-<details close markdown="block">
-<summary>
-Click to expand - Output metadata
-</summary>
+<details close markdown="block"><summary><strong>Output metadata:</strong></summary>
 
 ```json
 {

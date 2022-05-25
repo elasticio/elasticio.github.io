@@ -5,11 +5,22 @@ description: Technical Notes for the Zoho CRM component.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.1
-updatedDate: 2022-02-14
+ComponentVersion: 1.3.3
+updatedDate: 2022-05-23
 ---
 
 ## Changelog
+
+### 1.3.3 (May 23, 2022)
+
+* Add `version` field to the component.json file
+
+### 1.3.2 (April 13, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update component-commons-library version to 2.0.1
 
 ### 1.3.1 (February 14, 2022)
 

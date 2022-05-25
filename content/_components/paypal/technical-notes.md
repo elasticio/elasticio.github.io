@@ -5,11 +5,15 @@ description: Technical Notes for the PayPal component
 icon: paypal.png
 icontext: PayPal component
 category: paypal
-updatedDate: 2022-05-06
-ComponentVersion: 1.3.0
+updatedDate: 2022-05-20
+ComponentVersion: 1.3.1
 ---
 
 ## Changelog
+
+### 1.3.1 (May 20, 2022)
+
+* Added checking for duplicate of incoming message for `Receive Instant Payment Notification` trigger
 
 ### 1.3.0 (May 06, 2022)
 

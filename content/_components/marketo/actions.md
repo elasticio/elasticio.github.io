@@ -5,8 +5,8 @@ description: Marketo component actions page.
 icon: marketo.png
 icontext: Marketo component
 category: marketo
-updatedDate: 2021-11-26
-ComponentVersion: 2.2.3
+updatedDate: 2022-04-13
+ComponentVersion: 2.2.4
 ---
 
 ## Describe Object

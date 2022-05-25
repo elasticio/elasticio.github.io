@@ -6,8 +6,8 @@ description: A PayPal component with implementations of actions and triggers bas
 icon: paypal.png
 icontext: PayPal component
 category: paypal
-updatedDate: 2022-05-06
-ComponentVersion: 1.3.0
+updatedDate: 2022-05-20
+ComponentVersion: 1.3.1
 ---
 
 ## General information

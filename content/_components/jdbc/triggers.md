@@ -5,8 +5,8 @@ description: JDBC Component triggers page
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2022-05-06
-ComponentVersion: 2.5.3
+updatedDate: 2022-05-20
+ComponentVersion: 2.5.5
 ---
 
 ## Select trigger
