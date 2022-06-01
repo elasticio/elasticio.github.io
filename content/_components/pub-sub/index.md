@@ -12,7 +12,7 @@ ComponentVersion: 1.0.8
 
 ## Description
 
-An open-source Component for [publish–subscribe](https://en.wikipedia.org/wiki/Publish-subscribe_pattern) messaging pattern on {{site.data.tenant.name}} platform.
+A component for [publish–subscribe](https://en.wikipedia.org/wiki/Publish-subscribe_pattern) messaging pattern on {{site.data.tenant.name}} platform.
 This feature implements conditional logic for data flow in a loosely coupled way, using a "contract" between the Publisher and its Subscribers. Such a "contract" is called a `Topic`.
 
 ### Technical Notes
