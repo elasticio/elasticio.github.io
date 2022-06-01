@@ -13,7 +13,7 @@ The International Organization for Standardization (ISO) has developed a set of
 globally recognized standards for information and community security. These are
 intended to help companies to develop reliable and innovative products and services.
 
-<img src="/assets/img/assist-in-iso-27001-documents-and-process-preparation.jpeg" style="width:250px; float:right; margin:10px 50px 20px 20px" alt="Menu" title="Menu">
+<img src="/assets/img/admin/iso-27001-logo.jpeg" style="width:250px; float:right; margin:10px 50px 20px 20px" alt="ISO 27001 certified" title="ISO 27001 certified">
 
 
 elastic.io is now ISO 27001 certified. The certificate recognizes that systems,
@@ -42,7 +42,7 @@ ISO 27001 certificate for the operation and development of the IPaaS platform el
 
 ## Statement of Applicability (SoA)
 
-Our customers are welcome to request a copy of the SoA by [contacting us](mailto:info@elastic.io). In
+Our customers are welcome to request a copy of the SoA by [contacting us](https://www.elastic.io/contact/). In
 individual cases, the conclusion of a non-disclosure agreement (NDA) may be
 necessary in this context.
 
@@ -70,3 +70,7 @@ List of important suppliers:
 *   Dropbox
 
 *The names listed are trademarks of the respective companies.*
+
+## Resources
+
+> Download your copy of [Information Security Management Criteria and Related Controls document](/assets/img/admin/Generic INFOSEC DATA_220524.pdf) (216KB, PDF).
