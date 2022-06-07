@@ -5,13 +5,17 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2022-04-08
-ComponentVersion: 2.0.12
+updatedDate: 2022-05-26
+ComponentVersion: 2.0.13
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.13 (May 26, 2022)
+
+* Made secrets only load once per container lifetime (per token expiration time in case of OAUTH2)
 
 ### 2.0.12 (April 08, 2022)
 
