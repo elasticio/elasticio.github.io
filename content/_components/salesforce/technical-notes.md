@@ -5,14 +5,18 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-04-14
-ComponentVersion: 2.2.3
+updatedDate: 2022-06-03
+ComponentVersion: 2.2.4
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.2.4 (June 03, 2022)
+
+* Added timeout for `Upsert Object` action
 
 ### 2.2.3 (April 14, 2022)
 
