@@ -5,11 +5,15 @@ description: Changelog for the HJSON component
 icon: hjson.png
 icontext: HJSON component
 category: hjson
-updatedDate: 2022-04-22
-ComponentVersion: 1.0.1
+updatedDate: 2022-06-03
+ComponentVersion: 1.0.2
 ---
 
 ## Changelog
+
+### 1.0.2 (June 03, 2022)
+
+* Fixed url in attachment
 
 ### 1.0.1 (April 22, 2022)
 
