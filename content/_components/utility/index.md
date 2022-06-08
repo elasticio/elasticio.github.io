@@ -6,8 +6,8 @@ description: A component that is designed for utility operations.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2022-04-13
-ComponentVersion: 1.4.1
+updatedDate: 2022-06-08
+ComponentVersion: 1.5.0
 ---
 
 ## Environment variables
@@ -152,6 +152,24 @@ There are no Config Fields in this action.
 #### Output Metadata
 
 * `Target Object` - Object that should be after patch was applied
+
+### Network Diagnostics
+
+Useful to diagnose connectivity issues between an eio pod and some endpoint
+
+#### Config Fields
+
+There is no Config Fields
+
+#### Input Metadata
+
+* `URL` - Full url to the resource. E.g `https://github.com`
+
+#### Output Metadata
+
+* `pingResult` - Result object for `ping`
+* `nsLookupResult` - Result object for `NsLookup`
+* `sslCertCheckResult` - Result object for `SSL certificate check`
 
 ## Limitations
 
