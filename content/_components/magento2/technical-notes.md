@@ -5,14 +5,19 @@ description: Technical Notes for the Magento2 component.
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2022-04-22
-ComponentVersion: 1.6.6
+updatedDate: 2022-06-03
+ComponentVersion: 1.6.7
 redirect_from:
   - /components/magento2/changelog.html
   - /components/magento2/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.6.7 (June 3, 2022)
+
+* Add support for Magento2 versions 2.4.4
+* Integration tests fix
 
 ### 1.6.6 (April 22, 2022)
 
