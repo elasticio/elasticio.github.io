@@ -5,11 +5,18 @@ description: Technical Notes for the IPass Core component
 icon: ipass-core.png
 icontext: IPass Core component
 category: ipass-core
-updatedDate: 2022-04-08
-ComponentVersion: 1.3.2
+updatedDate: 2022-06-03
+ComponentVersion: 1.4.0
 ---
 
 ## Chanhelog
+
+### 1.4.0 (June 03, 2022)
+
+* Hydrate flow with `pubSubTopicName` at actions `Lookup Object By Unique Criteria` and `Lookup Objects (plural)`
+* Add logic to handle matching Pub-Sub topics at actions `Upsert Object By Unique Criteria`
+* Hydrate flow with `componentSemanticVersion` at actions `Lookup Object By Unique Criteria` and `Lookup Objects (plural)`
+* Add logic to handle matching on Semantic Versions at actions `Upsert Object By Unique Criteria`
 
 ### 1.3.2 (April 08, 2022)
 
