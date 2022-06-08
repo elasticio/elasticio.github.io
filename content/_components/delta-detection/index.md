@@ -6,8 +6,8 @@ description: A component to manage records from a system which does not provide 
 icon: delta-detection.png
 icontext: Delta Detection Component
 category: delta-detection
-updatedDate: 2022-05-05
-ComponentVersion: 2.0.3
+updatedDate: 2022-06-03
+ComponentVersion: 2.1.0
 ---
 
 ## Description
@@ -78,6 +78,58 @@ Click to expand metadata schema
 > Please use developer mode in case when `objectId` or `objectData` should be another object type (array or object).
 
 Expected output metadata depends on incoming object structure.
+
+### Read Entire Bucket Contents
+
+Action helps to read the entire contents of the saved bucket in a single message.
+
+#### Expected config
+
+There are no configuration fields.
+
+#### Expected input metadata
+
+There is no input metadata.
+
+#### Expected output metadata
+
+Output metadata is `bucketContents` object (required): the entire contents of the saved bucket.
+
+### Write Entire Bucket Contents
+
+Action helps to set the entire bucket contents.
+
+#### Expected config
+
+There are no configuration fields.
+
+#### Expected input metadata
+
+Input metadata is `bucketContents` object (required):  value to set the entire bucket contents.
+The object must have the following structure:
+
+```json
+{
+    "objects": [
+        {
+            "objectId": 1,
+            "lastSeenTime": "2022-05-26T13: 47: 17.887Z",
+            "objectData": {
+                "b": "foo",
+                "c": "bar",
+                "a": "foo"
+            }
+        }
+    ]
+}
+```
+
+Each object from `objects` array must contain `objectId` and `objectData` properties, `lastSeenTime` is optional and if is not set will be set current timestamp.
+
+#### Expected output metadata
+
+Output metadata is `bucketContents` object (required):  echo back the value that was saved.
+
 
 ## Known Limitations
 
