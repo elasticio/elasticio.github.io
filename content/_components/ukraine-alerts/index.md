@@ -41,7 +41,7 @@ Subscription for alarms activation and deactivation.
 
 >**Please Note:** To activate subscription you should press `Start Flow` and after flow started - trigger it by pressing on a flow webhook URI:
 
-![image](https://user-images.githubusercontent.com/30211658/170873321-31a1d82c-1d24-4f3a-9258-27872d649bd9.png)
+![Webhook](img/webhook-trigger.png)
 
 #### Configuration Fields
 
