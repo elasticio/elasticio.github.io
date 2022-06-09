@@ -6,8 +6,8 @@ description: A component for connecting to an SFTP server to read/write files.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-04-20
-ComponentVersion: 1.4.8
+updatedDate: 2022-06-03
+ComponentVersion: 1.4.9
 ---
 
 ## General Information

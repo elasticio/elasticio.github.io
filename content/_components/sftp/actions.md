@@ -5,8 +5,8 @@ description: SFTP component actions.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-04-20
-ComponentVersion: 1.4.8
+updatedDate: 2022-06-03
+ComponentVersion: 1.4.9
 ---
 
 ## Upload files From Attachments Header
@@ -580,6 +580,6 @@ Action to move file on SFTP already exists in one location on an sftp server to 
 }
 ```
 
-### Known limitations
+#### Action Known limitations
 
 Action does not support `Fetch Page` mode (according to OIH standards)

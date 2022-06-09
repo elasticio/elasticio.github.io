@@ -5,11 +5,17 @@ description: Technical Notes for the ID Linking component
 icon: id-linking.png
 icontext: ID Linking component
 category: id-linking
-updatedDate: 2021-11-26
-ComponentVersion: 1.0.2
+updatedDate: 2022-06-08
+ComponentVersion: 1.1.0
 ---
 
 ## Changelog
+
+### 1.1.0 (June 08, 2022)
+
+* Added `Write Entire Bucket Contents` Action
+* Added `Read Entire Bucket Contents` Action
+* Fix label names for `Upsert Object` input metadata
 
 ### 1.0.2 (November 26, 2021)
 
