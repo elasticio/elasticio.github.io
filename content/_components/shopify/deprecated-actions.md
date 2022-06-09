@@ -5,8 +5,8 @@ description: Shopify component deprecated actions.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-05-06
-ComponentVersion: 1.6.0
+updatedDate: 2022-05-20
+ComponentVersion: 1.6.1
 ---
 
 ## Table of contents
