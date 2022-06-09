@@ -6,8 +6,8 @@ description: A component to manipulate integration artifacts such as flows via t
 icon: ipaas-core.png
 icontext: IPaas Core component
 category: ipaas-core
-updatedDate: 2022-04-08
-ComponentVersion: 1.3.2
+updatedDate: 2022-06-03
+ComponentVersion: 1.4.0
 ---
 
 ## Description
@@ -133,197 +133,204 @@ The following inputs can be set through JSONata expressions:
 <details close markdown="block">
 <summary>Sample</summary>
 **Attributes:**
-  ```json
-    {
-    "api_version": "2.0",
-    "default_mapper_type": "jsonata",
-    "description": null,
-    "graph": {
-      "nodes": [
-        {
-          "id": "step_1",
-          "component_id": {
-            "componentId": "5c41a519299462001290d260",
-            "componentDevTeam": "elasticio",
-            "componentName": "simple-trigger-component"
-          },
-          "command": {
-            "actionOrTrigger": "timer",
-            "componentVersion": "9505be5cff3a408fbaa2d468d668690a2e30031b"
-          },
-          "name": "",
-          "description": "",
-          "first": true
+```json
+  {
+  "api_version": "2.0",
+  "default_mapper_type": "jsonata",
+  "description": null,
+  "graph": {
+    "nodes": [
+      {
+        "id": "step_1",
+        "component_id": {
+          "componentId": "5c41a519299462001290d260",
+          "componentDevTeam": "elasticio",
+          "componentName": "simple-trigger-component",
+          "componentSemanticVersion": "1.0.0"
         },
-        {
-          "id": "step_3",
-          "component_id": {
-            "componentId": "55ffca6ecc04c20600000001",
-            "componentDevTeam": "elasticio",
-            "componentName": "jdbc"
-          },
-          "command": {
-            "actionOrTrigger": "customQuery",
-            "componentVersion": "ba59a3b5b679c7071706a3da9afbda060a9c2710"
-          },
-          "name": "2. qwerty",
-          "description": "",
-          "credentials_id": {
-            "credentialId": "615709ccb0bc08001129de87",
-            "credentialName": "MySQL"
-          }
+        "command": {
+          "actionOrTrigger": "timer",
+          "componentVersion": "9505be5cff3a408fbaa2d468d668690a2e30031b"
         },
-        {
-          "id": "step_4",
-          "component_id": {
-            "componentId": "6156f6ecb8eee60012c3965f",
-            "componentDevTeam": "elasticio",
-            "componentName": "hubspot"
-          },
-          "command": {
-            "actionOrTrigger": "lookupObjects",
-            "componentVersion": "b07cf3a30cba42a9b2c7c78cdcdbda9858088340"
-          },
-          "name": "3. Extract data",
-          "description": "",
-          "fields": {
-            "emitBehaviour": "fetchPage",
-            "objectType": "contacts"
-          },
-          "secret_id": {
-            "secretId": "61570904ebca010011b50f51",
-            "secretName": "My New Hubspot Credential"
-          }
+        "name": "",
+        "description": "",
+        "first": true
+      },
+      {
+        "id": "step_3",
+        "component_id": {
+          "componentId": "55ffca6ecc04c20600000001",
+          "componentDevTeam": "elasticio",
+          "componentName": "jdbc",
+          "componentSemanticVersion": "1.0.0"
         },
-        {
-          "id": "step_5",
-          "component_id": {
-            "componentId": "5968b3c594cbb000199f2adc",
-            "componentDevTeam": "elasticio",
-            "componentName": "router"
-          },
-          "command": {
-            "actionOrTrigger": "route",
-            "componentVersion": "4039731b2bf72e8f518237ccfb2176e25605c631"
-          },
-          "name": "",
-          "description": "",
-          "service": "router"
+        "command": {
+          "actionOrTrigger": "customQuery",
+          "componentVersion": "ba59a3b5b679c7071706a3da9afbda060a9c2710"
         },
-        {
-          "id": "step_6",
-          "component_id": {
-            "componentId": "566d7ca473917c0a0000005c",
-            "componentDevTeam": "elasticio",
-            "componentName": "code"
-          },
-          "command": {
-            "actionOrTrigger": "execute",
-            "componentVersion": "57bddebd24721929d50abee0a727fae0b150ae04"
-          },
-          "name": "",
-          "description": "",
-          "fields": {
-            "code": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Execution finished');\n}"
-          }
-        },
-        {
-          "id": "step_10",
-          "component_id": {
-            "componentId": "566d7ca473917c0a0000005c",
-            "componentDevTeam": "elasticio",
-            "componentName": "code"
-          },
-          "command": {
-            "actionOrTrigger": "execute",
-            "componentVersion": "57bddebd24721929d50abee0a727fae0b150ae04"
-          },
-          "name": "",
-          "description": "",
-          "fields": {
-            "code": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Incoming message is %s', JSON.stringify(msg));\n\tconst body = { result : 'Hello world!' };\n\t// You can emit as many data messages as required\n\tawait this.emit('data', { body });\n\tthis.logger.info('Execution finished');\n}"
-          }
-        },
-        {
-          "id": "step_9",
-          "component_id": {
-            "componentId": "5d42a70b0a1c6bb17137cdb7",
-            "componentDevTeam": "elasticio",
-            "componentName": "utility-component"
-          },
-          "command": {
-            "actionOrTrigger": "decodeBase64",
-            "componentVersion": "244f810a67a0bf87c390a0dc8104f9eb7f2f9506"
-          },
-          "name": "",
-          "description": ""
+        "name": "2. qwerty",
+        "description": "",
+        "credentials_id": {
+          "credentialId": "615709ccb0bc08001129de87",
+          "credentialName": "MySQL"
         }
-      ],
-      "edges": [
-        {
-          "id": "mapper:step_1:step_3",
-          "target": "step_3",
-          "config": {
-            "mapper_type": "jsonata",
-            "mapper": {
-              "query": "fireTime"
-            },
-            "condition": null
-          },
-          "source": "step_1"
+      },
+      {
+        "id": "step_4",
+        "component_id": {
+          "componentId": "6156f6ecb8eee60012c3965f",
+          "componentDevTeam": "elasticio",
+          "componentName": "hubspot",
+          "componentSemanticVersion": "1.0.0"
         },
-        {
-          "id": "mapper:step_3:step_4",
-          "target": "step_4",
-          "config": {
-            "mapper_type": "jsonata",
-            "mapper": {
-              "pageNumber": "1",
-              "pageSize": "10",
-              "order": "$getPassthrough().\"step_1\".body.fireTime"
-            },
-            "condition": null
-          },
-          "source": "step_3"
+        "command": {
+          "actionOrTrigger": "lookupObjects",
+          "componentVersion": "b07cf3a30cba42a9b2c7c78cdcdbda9858088340"
         },
-        {
-          "id": "step_4:step_5",
-          "source": "step_4",
-          "target": "step_5"
+        "name": "3. Extract data",
+        "description": "",
+        "fields": {
+          "emitBehaviour": "fetchPage",
+          "objectType": "contacts"
         },
-        {
-          "id": "step_5:step_6",
-          "source": "step_5",
-          "target": "step_6",
-          "config": {
-            "condition": "true"
-          }
-        },
-        {
-          "id": "step_5:step_10",
-          "source": "step_5",
-          "target": "step_10"
-        },
-        {
-          "id": "mapper:step_6:step_9",
-          "target": "step_9",
-          "config": {
-            "mapper_type": "jsonata",
-            "mapper": {
-              "value": "\"123\""
-            },
-            "condition": null
-          },
-          "source": "step_6"
+        "secret_id": {
+          "secretId": "61570904ebca010011b50f51",
+          "secretName": "My New Hubspot Credential"
         }
-      ]
-    },
-    "nodes_config": {},
-    "name": "Elementary flow",
-    "type": "ordinary",
-    "stats_enabled": true
-    }
-  ```
+      },
+      {
+        "id": "step_5",
+        "component_id": {
+          "componentId": "5968b3c594cbb000199f2adc",
+          "componentDevTeam": "elasticio",
+          "componentName": "router",
+          "componentSemanticVersion": "1.0.0"
+        },
+        "command": {
+          "actionOrTrigger": "route",
+          "componentVersion": "4039731b2bf72e8f518237ccfb2176e25605c631"
+        },
+        "name": "",
+        "description": "",
+        "service": "router"
+      },
+      {
+        "id": "step_6",
+        "component_id": {
+          "componentId": "566d7ca473917c0a0000005c",
+          "componentDevTeam": "elasticio",
+          "componentName": "code",
+          "componentSemanticVersion": "1.0.0"
+        },
+        "command": {
+          "actionOrTrigger": "execute",
+          "componentVersion": "57bddebd24721929d50abee0a727fae0b150ae04"
+        },
+        "name": "",
+        "description": "",
+        "fields": {
+          "code": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Execution finished');\n}"
+        }
+      },
+      {
+        "id": "step_10",
+        "component_id": {
+          "componentId": "566d7ca473917c0a0000005c",
+          "componentDevTeam": "elasticio",
+          "componentName": "code",
+          "componentSemanticVersion": "1.0.0"
+        },
+        "command": {
+          "actionOrTrigger": "execute",
+          "componentVersion": "57bddebd24721929d50abee0a727fae0b150ae04"
+        },
+        "name": "",
+        "description": "",
+        "fields": {
+          "code": "// Please note only Node.js code is supported here\nasync function run(msg, cfg, snapshot) {\n\tthis.logger.info('Incoming message is %s', JSON.stringify(msg));\n\tconst body = { result : 'Hello world!' };\n\t// You can emit as many data messages as required\n\tawait this.emit('data', { body });\n\tthis.logger.info('Execution finished');\n}"
+        }
+      },
+      {
+        "id": "step_9",
+        "component_id": {
+          "componentId": "5d42a70b0a1c6bb17137cdb7",
+          "componentDevTeam": "elasticio",
+          "componentName": "utility-component",
+          "componentSemanticVersion": "1.0.0"
+        },
+        "command": {
+          "actionOrTrigger": "decodeBase64",
+          "componentVersion": "244f810a67a0bf87c390a0dc8104f9eb7f2f9506"
+        },
+        "name": "",
+        "description": ""
+      }
+    ],
+    "edges": [
+      {
+        "id": "mapper:step_1:step_3",
+        "target": "step_3",
+        "config": {
+          "mapper_type": "jsonata",
+          "mapper": {
+            "query": "fireTime"
+          },
+          "condition": null
+        },
+        "source": "step_1"
+      },
+      {
+        "id": "mapper:step_3:step_4",
+        "target": "step_4",
+        "config": {
+          "mapper_type": "jsonata",
+          "mapper": {
+            "pageNumber": "1",
+            "pageSize": "10",
+            "order": "$getPassthrough().\"step_1\".body.fireTime"
+          },
+          "condition": null
+        },
+        "source": "step_3"
+      },
+      {
+        "id": "step_4:step_5",
+        "source": "step_4",
+        "target": "step_5"
+      },
+      {
+        "id": "step_5:step_6",
+        "source": "step_5",
+        "target": "step_6",
+        "config": {
+          "condition": "true"
+        }
+      },
+      {
+        "id": "step_5:step_10",
+        "source": "step_5",
+        "target": "step_10"
+      },
+      {
+        "id": "mapper:step_6:step_9",
+        "target": "step_9",
+        "config": {
+          "mapper_type": "jsonata",
+          "mapper": {
+            "value": "\"123\""
+          },
+          "condition": null
+        },
+        "source": "step_6"
+      }
+    ]
+  },
+  "nodes_config": {},
+  "name": "Elementary flow",
+  "type": "ordinary",
+  "stats_enabled": true
+  }
+```
 </details>
 
 * **Restart Flow** *(Default: false)*  - Boolean: If referencing an existing flow that is running, should the existing flow be stopped so that the update can be applied.
@@ -331,6 +338,15 @@ The following inputs can be set through JSONata expressions:
 * **Component Match Strategy** - Options are `componentId` or `nameAndTeam`. When `componentId` is used, each step in the flow must have a `component_id` property which is either a string reference to the component ID or an object with a `componentId` property which is a string reference to the component ID. This is the component that will be used in this flow. When `nameAndTeam` is used, each step in the flow must have a `component_id` property which is an object which then contains `componentDevTeam` and `componentName` to identify the component that will be used in the flow.
 
 * **Credential Match Strategy** - Options are `credentialId` or `credentialName`.  When `credentialId` is used, each step in the flow that uses credential or secrets must have a `credentials_id`/`secret_id` property which is either a string reference to the credential/secret ID or an object with a `credential_id`/`secret_id` property which is a string reference to the credential ID oran object with a `credentialId`/`secretId` property which is a string reference to the credential/secret ID. When `credentialName` is used, each step in the flow that uses credentials must have a `credentials_id`/`secret_id` property which is an object which then contains `credentialName`/`secretName` to identify the name of the credential/secret that will be used in the flow.
+
+* **Pub-Sub Topic Match Strategy** - Options are `pubSubId` or `pubSubTopicName`, optional, `pubSubId` by default. When the match strategy is `pubSubId`, the upsert action will delete the `pubSubTopicName` attribute before uploading the flow definition.
+When the match strategy is `pubSubTopicName`, the upsert action will find the topic ID of the topic that has the exact same name referenced in `pubSubTopicName` and use that in the flow definition. (pubSubTopicName will be deleted before upload.) The component throw an error if the number of topics with the provided name is not exactly 1.
+
+* **Component Version Match Strategy** - Options are `alwaysUseLatest`, `exactMatch` or `exactMatchOrHigher`, optional, `alwaysUseLatest` by default.
+  * When the match strategy is `alwaysUseLatest`, the upsert action grab the latest published version of every component.
+  * When the match strategy is `exactMatch`, the upsert action grab the published version of the component with the exact same semantic version. (Throw an error if there is no published version of the component with the exact same semantic version.)
+  * When the match strategy is `exactMatchOrHigher`, the upsert action grab the latest (fix) published version of the component with the same major semantic version. The action throw an error if the latest fix is less than the semantic version provided in the incoming message for the step.
+
 
 #### Notes on Component and Credential Match Strategies
 

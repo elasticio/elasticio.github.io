@@ -5,11 +5,17 @@ description: Technical Notes for the Vtex component
 icontext: Vtex component
 icon: vtex.png
 category: vtex
-updatedDate: 2022-05-06
-ComponentVersion: 1.4.1
+updatedDate: 2022-05-20
+ComponentVersion: 1.4.2
 ---
 
 ## Changelog
+
+### 1.4.2 (May 20, 2022)
+
+- Added `Last interaction` option to `Time stamp field to poll on` in `Get New And Updated Objects Polling` trigger
+- Improved `Get New And Updated Objects Polling` trigger to use [scroll](https://developers.vtex.com/vtex-rest-api/reference/scroll) instead of [search](https://developers.vtex.com/vtex-rest-api/reference/search) to collect all records
+
 
 ### 1.4.1 (May 06, 2022)
 

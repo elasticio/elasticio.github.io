@@ -6,8 +6,8 @@ description: The Vtex iPaaS component that connects to VTEX API
 icontext: Vtex component
 icon: vtex.png
 category: vtex
-updatedDate: 2022-05-06
-ComponentVersion: 1.4.1
+updatedDate: 2022-05-20
+ComponentVersion: 1.4.2
 ---
 
 ## General information
@@ -31,16 +31,13 @@ Polls VTEX API for new and updated objects.
 #### Configuration Fields
 
 * **Object Type** - (required, dropdown) currently supported only `Customers` object.
-* **Time stamp field to poll on** - (required, dropdown) Indicates just new items or new and modified items: `Created` or `Updated`.
-**Notice** If you select `Updated` option - only updated objects will be polled, VTEX API fills updatedIn field only if you change object, for created object this field is empty.
+* **Time stamp field to poll on** - (required, dropdown) Indicates just new items, modified or new and modified items: `Created`, `Updated` or `Last interaction`.
 
-#### Input Metadata
+#### Limitations
 
-Input metadata is absent for triggers
-
-#### Output Metadata
-
-Output metadata is generated dynamically and depends on Object Type (see [VTEX Schemas API](https://developers.vtex.com/vtex-rest-api/reference/schemas))
+* If you select `Updated` option - only updated objects will be polled, VTEX API fills updatedIn field only if you change object, for created object this field is empty, use `Last interaction` if you need both
+* According to [VTEX documentation](https://help.vtex.com/tutorial/querying-the-master-data-via-scroll-path--tutorials_4631) you can execute only one trigger at the same time
+* If you make update on object without actually changing it VTEX will not return it
 
 ## Actions
 

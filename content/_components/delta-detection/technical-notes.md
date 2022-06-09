@@ -5,11 +5,16 @@ description: Technical Notes for the Delta Detection component.
 icon: delta-detection.png
 icontext: Delta Detection Component
 category: delta-detection
-updatedDate: 2022-05-05
-ComponentVersion: 2.0.3
+updatedDate: 2022-06-03
+ComponentVersion: 2.1.0
 ---
 
 ## Changelog
+
+### 2.1.0 (June 03, 2022)
+
+* Add action `Read Entire Bucket Contents`
+* Add action `Write Entire Bucket Contents`
 
 ### 2.0.3 (May 05, 2022)
 

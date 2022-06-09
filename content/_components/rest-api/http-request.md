@@ -5,8 +5,8 @@ description: Information on how works HTTP request in REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2022-04-08
-ComponentVersion: 2.0.12
+updatedDate: 2022-05-26
+ComponentVersion: 2.0.13
 ---
 
 ## HTTP request function

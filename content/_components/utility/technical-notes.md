@@ -5,13 +5,17 @@ description: Technical Notes for the Utility Component.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2022-04-13
-ComponentVersion: 1.4.1
+updatedDate: 2022-06-08
+ComponentVersion: 1.5.0
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+### 1.5.0 (June 08, 2022)
+
+* Added `Network Diagnostics` action
 
 ### 1.4.1 (April 13, 2022)
 
