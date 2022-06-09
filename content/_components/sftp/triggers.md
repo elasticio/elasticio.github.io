@@ -5,8 +5,8 @@ description: SFTP component triggers.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-04-20
-ComponentVersion: 1.4.8
+updatedDate: 2022-06-03
+ComponentVersion: 1.4.9
 ---
 
 ## Read files
@@ -53,6 +53,7 @@ The following configuration fields are available:
 * **Emit Behaviour**: Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message
 * **Start Time**: Start datetime of polling. Default min date:`-271821-04-20T00:00:00.000Z`
 * **End Time**: End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`
+* **Pattern**: Optional regex pattern for file names. If no pattern is given, no matching is done.
 
 ### Expected output metadata
 
