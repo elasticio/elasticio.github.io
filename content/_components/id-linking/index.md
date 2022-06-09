@@ -6,8 +6,8 @@ description: A component used to map source data to target data.
 icon: id-linking.png
 icontext: ID Linking component
 category: id-linking
-updatedDate: 2021-11-26
-ComponentVersion: 1.0.2
+updatedDate: 2022-06-08
+ComponentVersion: 1.1.0
 ---
 
 ## General information
@@ -20,45 +20,41 @@ Bucket contains bucket ID and an array of linked objects between the systems. Li
 
 **Bucket samples:**
 
-<details closed markdown="block">
-<summary>
-Click to expand - Bucket Sample 1
-</summary>
+<details close markdown="block"><summary><strong>Click to expand - Bucket Sample 1 </strong></summary>
+
 ```json
 {
-  "bucket_id": "some_sf_bucket_id",
-  "linked_ids": [
+  "bucketId": "some_sf_bucket_id",
+  "linkedIds": [
     {
-      "system_a_id": "00344000020qT3K",
-      "system_b_id": 123
+      "systemAId": "00344000020qT3K",
+      "systemBId": 123
     },
     {
-      "system_a_id": "0034400001uxwXZ",
-      "system_b_id": 62
+      "systemAId": "0034400001uxwXZ",
+      "systemBId": 62
     }
   ]
 }
 ```
 </details>
 
-<details closed markdown="block">
-<summary>
-Click to expand - Bucket Sample 2
-</summary>
+<details close markdown="block"><summary><strong>Click to expand - Bucket Sample 2 </strong></summary>
+
 ```json
 {
-  "bucket_id": "some_sf_bucket_id",
-  "linked_ids": [
+  "bucketId": "some_sf_bucket_id",
+  "linkedIds": [
     {
-      "system_a_id": "00344000020qT3K",
-      "system_b_id": {
+      "systemAId": "00344000020qT3K",
+      "systemBId": {
         "company": "mvise-eio",
         "id": "7c7fec00-d313-40c7-890b-3bc857bbb7dd"
       }
     },
     {
-      "system_a_id": "0034400001uxwXZ",
-      "system_b_id": {
+      "systemAId": "0034400001uxwXZ",
+      "systemBId": {
         "company": "mvise-salessphere",
         "id": "fc64c4f0-06f7-47ef-b3b6-8441b4837305"
       }
@@ -119,5 +115,53 @@ This action allows you to search linked objects in the bucket by the source syst
 
 #### Input Metadata
 
-* sourceSystemId - Number, String or Object (optional). ID to lookup in the source system.
-* targetSystemId - Number, String or Object (optional). ID of the target system to upsert.
+* **System A ID** - Number, String or Object (optional): ID value.
+* **System B ID** - Number, String or Object (optional): ID value.
+
+### Write Entire Bucket Contents
+
+Creates/Updates a bucket
+
+>**Please Note:** Currently buckets in Maester are being created with infinite lifetime.
+
+#### Config Fields
+
+There is no Config Fields in this action.
+
+#### Input Metadata
+
+* linkedIds - (array, required): array of objects with optional fields: `[{ systemAId: ["object", "string"], systemBId: ["object", "string"] }]`
+
+<details close markdown="block"><summary><strong>Click to expand - linkedIds </strong></summary>
+
+   ```json
+    [
+      {
+        "systemAId": "aid",
+        "systemBId": "bid"
+      },
+      {
+        "systemAId": "aid2",
+        "systemBId": "bid2"
+      }
+    ]
+   ```
+</details>
+
+#### Output Metadata
+
+* bucketContents - (object, required): Echo back the value that was saved
+
+### Read Entire Bucket Contents
+
+#### Config Fields
+
+There is no Config Fields in this action.
+
+#### Input Metadata
+
+There is no Input Metadata in this action.
+
+#### Output Metadata
+
+* bucketContents - (object, required): Emit the entire contents of the bucket in a single message.
