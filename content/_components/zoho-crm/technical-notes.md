@@ -5,11 +5,18 @@ description: Technical Notes for the Zoho CRM component.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.3
-updatedDate: 2022-05-23
+ComponentVersion: 1.3.4
+updatedDate: 2022-06-03
 ---
 
 ## Changelog
+
+### 1.3.4 (June 03, 2022)
+
+* Fix attachment processing
+* Set node engine to 16.x (fix error with "Verify Credentials")
+* Added ENV `MAX_FILE_SIZE` to control attachment size limit
+* Upgrade `component-commons-library` to v2.1.0
 
 ### 1.3.3 (May 23, 2022)
 
