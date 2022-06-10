@@ -6,8 +6,8 @@ description: A component that connects to Zoho-crm API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.3
-updatedDate: 2022-05-23
+ComponentVersion: 1.3.4
+updatedDate: 2022-06-03
 ---
 
 ## General information
@@ -17,6 +17,8 @@ updatedDate: 2022-05-23
 |Name|Mandatory|Description|Values|
 |----|---------|-----------|------|
 |`REQUEST_MAX_RETRY`| false | Set how many time system try to make request to API on errors (3 by default) | min: 0, max: 10 |
+
+>The optional environment variable MAX_FILE_SIZE could be set in settings to provide the maximum file size for attachments in megabytes (mb). The default value for MAX_FILE_SIZE is 100MB.
 
 ## Credentials
 
@@ -56,10 +58,15 @@ In order to setup created Auth Client on Elastic.io platform you should click on
 - For CN: https://accounts.zoho.com.cn/oauth/v2/token
 
 Save client and then:
-- [provide scopes](https://www.zoho.com/crm/developer/docs/api/v2/scopes.html). `ZohoCRM.modules.ALL` is recommended as default
-- click on ``Authenticate`` - login (if needed) and provide access
-- click on ``Verify`` button for verifying your credentials
-- click on ``Save`` button for saving your credentials
+- [provide scopes](https://www.zoho.com/crm/developer/docs/api/v2/scopes.html)
+
+>**Please Note:** attention to the scope of the operations you are going to use. If the provided scope does not satisfy Zoho API requirements the request will fail (E.g. with 400 code - `Request failed with status code 400`).
+
+A few (not a comprehensive list, just a few examples!) most used scopes:
+1. `ZohoCRM.settings.ALL`. Recommended by default. Is required to get a list of modules (Object types). Is used in all the actions and triggers except for the `Raw Request` action.
+2. `ZohoCRM.modules.ALL`. Recommended by default.
+3. `ZohoCRM.users.ALL`. Required to communicate with the `Users` module.
+4. `ZohoCRM.coql.READ`. Required for Lookup objects (plural) action as it uses COQL queries under the hood.
 
 ## Trigger
 
@@ -132,7 +139,7 @@ Action designed to lookup one object by unique field
 #### Input Metadata
 
 * **ID value** Textfield: value for `ID to Search On` (unique field value by itself)
-* **Fetch Attachments** Boolean: If `true` attachments will saved to storage. Result array for `attachments` consists of objects with properties `maesterStorageId` and `attachmentUrl`. Where `attachmentUrl` - url to attachment in Zoho CRM.
+* **Fetch Attachments** Boolean: If `true` attachments will saved to storage. Result array for `attachments` consists of objects with properties `maesterStorageId` and `attachmentUrl`. Where `attachmentUrl` - url to attachment in Zoho CRM. Attachments of size bigger than `MAX_FILE_SIZE` ENV will be skipped.
 
 ### Lookup Set Of Objects By Unique Criteria
 
@@ -163,7 +170,7 @@ Action designed to lookup objects
 #### Input Metadata
 
 * **Search Criteria** Array, required: Array of sql search terms. Search terms are to be combined with the AND operator. Example: ["Email='user@gmail.com'", "First_Name='user name'"]
-* **Fetch Attachments** Boolean: If `true` attachments will saved to storage. Result array for `attachments` consists of objects with properties `maesterStorageId` and `attachmentUrl`. Where `attachmentUrl` - url to attachment in Zoho CRM.
+* **Fetch Attachments** Boolean: If `true` attachments will saved to storage. Result array for `attachments` consists of objects with properties `maesterStorageId` and `attachmentUrl`. Where `attachmentUrl` - url to attachment in Zoho CRM. Attachments of size bigger than `MAX_FILE_SIZE` ENV will be skipped.
 NEXT FIELDS ONLY FOR `Fetch Page` Emit behavior:
 * **Page Number** Integer: Indicates amount of pages to be fetched. Defaults to 0
 * **Page Size** Integer: Indicates the size of pages to be fetched. Defaults to Zoho Default Page Size of 200
