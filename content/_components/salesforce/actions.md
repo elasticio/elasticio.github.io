@@ -5,8 +5,8 @@ description: Salesforce component actions.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-06-03
-ComponentVersion: 2.2.4
+updatedDate: 2022-06-17
+ComponentVersion: 2.3.0
 ---
 
 ## Query action
@@ -34,7 +34,7 @@ Action creates a single object. Input metadata is fetched dynamically from your 
 
 ![Create Object action](img/create-object-action.png)
 
-> **NOTE**:
+> **Please Note**:
 In case of an **Attachment** object type you should specify `Body` in base64 encoding. `ParentId` is a Salesforce ID of an object (Account, Lead, Contact) which an attachment is going to be attached to.
 
 ### Input fields description
@@ -83,8 +83,19 @@ Action creates a single object. Input metadata is fetched dynamically from your 
 ### Input field description
 
 * **Object** - Input field where you should choose the object type, which you want to find. E.g. `Account`
-* **Type Of Search** - Dropdown list with two values: `Unique Fields` and `All Fields`.
-* **Lookup by field** - Dropdown list with all fields on the selected object if the *Type Of Search* is `All Fields`. If the *Type Of Search* is `Unique Fields`, the dropdown lists instead all fields on the selected object where `type` is `id` or `unique` is `true`.
+* **Type Of Search** - Dropdown list with values: `Unique Fields`, `All Fields` and `External IDs`
+  * `All Fields` - all available fields in the object
+  * `Unique Fields` - fields where `type` is `id` or `unique` is `true`
+  * `External IDs` - fields where `externalId` is `true`, this option uses built-in salesforce method [upsert](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_calls_upsert.htm).
+
+   It works as following:
+   * If there is no value in the lookup field - a new object will be created
+   * If a lookup value is specified and `External IDs` selected as a Type Of Search - it is the most efficient (fast) way to go. In this case an object will be upserted directly on the Salesforce side. When this field has an attribute `Unique` it would guarantee that no errors are emitted.
+   * If a lookup value is specified and one of `Unique Fields` or `All Fields` selected - then an action will first lookup for an existing object in Salesforce:
+      * If no objects found - a new one will be created
+      * If 1 object found - it will be updated
+      * If more than 1 object found - ar error `Found more than 1 Object` will be thrown
+* **Lookup by field** - Dropdown list with fields on the selected object, depending on the *Type Of Search*
 
 #### Expected input metadata
 
@@ -132,7 +143,7 @@ Metadata contains one field whose name, type and mandatoriness are generated acc
 
 When **Pass binary data to the next component (if found object has it)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'
 
->**NOTE**
+> **Please Note**:
 Action has caching mechanism. By default action stores last 10 request-response pairs for 10 min duration.
 This parameters can be changed by setting environment variables:
 
@@ -159,7 +170,7 @@ Lookup a list of objects satisfying specified criteria.
 
 * **Max Fetch Count** - limit for a number of messages that can be fetched. 1,000 is the default value when the variable is not set.
 
->**NOTE**
+> **Please Note**:
 Action has caching mechanism. By default action stores last 10 request-response pairs for 10 min duration.
 This parameters can be changed by setting environment variables:
 

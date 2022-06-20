@@ -5,14 +5,20 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-06-03
-ComponentVersion: 2.2.4
+updatedDate: 2022-06-17
+ComponentVersion: 2.3.0
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.3.0 (June 17, 2022)
+
+* Added new `Type Of Search` - `External IDs` to `Upsert Object` action
+* Implemented caching for metadata in `Upsert Object` action (metadata needs to find fields that contain attachment)
+* Small fixes
 
 ### 2.2.4 (June 03, 2022)
 
