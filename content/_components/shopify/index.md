@@ -40,7 +40,7 @@ You can find more information about API versioning at Shopify [here](https://hel
   * due to current platform limitations it is needed to keep 'Type' field with 'No auth' value for correct component behaviour
     - *Shopify Webhook HMAC Secret* - this field is used and required only for trigger `Webhook subscription`, because when Shopify sends data via Webhooks, it [signs the request with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
     For finding the secret, you need to navigate to the `Settings` select tab `Notifications` go to `Webhooks` and copy the secret.
-  * How to generate creds https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin
+  * [Here](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin) is how to generate creds
 
 ### Environment variables
 
