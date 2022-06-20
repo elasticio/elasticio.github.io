@@ -6,8 +6,8 @@ description: A component to work with the Shopify API.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-05-20
-ComponentVersion: 1.6.1
+updatedDate: 2022-06-17
+ComponentVersion: 1.6.2
 redirect_from:
   - /components/shopify-admin/index.html
 ---
@@ -34,11 +34,13 @@ You can find more information about API versioning at Shopify [here](https://hel
    * **API Key Auth** - use it to provide API Key to access the resource
    * **HMAC verification shared secret** - use it to verify via a shared secret. Header `x-eio-signature` should be specified.
 
-> **Please Note**: due to current platform limitations it is needed to keep 'Type' field with 'No auth' value for correct component behaviour
-
- - *Shopify Webhook HMAC Secret* - this field is used and required only for trigger `Webhook subscription`, because when Shopify sends data via Webhooks, it [signs the request with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
-
-For finding the secret, you need to navigate to the `Settings` select tab `Notifications` go to `Webhooks` and copy the [secret.generate creds](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin)
+> **Please Note:**
+  * The component calls a list products endpoint under the hood to verify credentials. To succeed you need to grant at least Read permissions to the app in Apps -> App development -> * your Private app name * -> ADMIN API PERMISSIONS -> Products set to 'Read access' (or 'Read and write'):
+![image](https://user-images.githubusercontent.com/7985390/173592587-1972d5f2-03ca-4b03-b0de-b31573323186.png)
+  * due to current platform limitations it is needed to keep 'Type' field with 'No auth' value for correct component behaviour
+    - *Shopify Webhook HMAC Secret* - this field is used and required only for trigger `Webhook subscription`, because when Shopify sends data via Webhooks, it [signs the request with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
+    For finding the secret, you need to navigate to the `Settings` select tab `Notifications` go to `Webhooks` and copy the secret.
+  * [Here](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin) is how to generate creds
 
 ### Environment variables
 

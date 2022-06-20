@@ -6,8 +6,8 @@ description: Component to retrieve alerts statuses for Ukraine regions.
 icon: ukraine-alerts.png
 icontext: Ukraine-alerts Component
 category: utility
-updatedDate: 2022-06-03
-ComponentVersion: 1.0.0
+updatedDate: 2022-06-14
+ComponentVersion: 1.0.1
 ---
 
 {{page.description}}
