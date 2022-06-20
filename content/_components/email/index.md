@@ -10,8 +10,6 @@ ComponentVersion: 1.2.0
 updatedDate: 2022-06-17
 ---
 
-{{page.description}}
-
 ## How works
 
 The component sends a new transaction through Mandrill using the [Send](https://mandrillapp.com/api/docs/messages.JSON.html#method=send) API resource for each incoming message.
