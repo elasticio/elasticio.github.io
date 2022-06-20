@@ -6,9 +6,11 @@ description: In this case it is not about a particular application but the email
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.0.14
-updatedDate: 2022-04-08
+ComponentVersion: 1.2.0
+updatedDate: 2022-06-17
 ---
+
+{{page.description}}
 
 ## How works
 
@@ -18,14 +20,17 @@ The component sends a new transaction through Mandrill using the [Send](https://
 
 ### Environment variables
 
-The component can be configured using the following environment variables:
+The component can be configured using the following environmental variables
 
-*   `MANDRILL_API_KEY` - this is your Mandrill API Key
-*   `MANDRILL_FROM_EMAIL` - to configure which address the communication would come. It should be of the following format: `no-reply@your-site-name`
-*   `MANDRILL_FROM_NAME` - this will be the name of your company or service
+Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|`MANDRILL_API_KEY`| true | You can use API key provided by platform or [generate](https://mailchimp.com/developer/transactional/guides/quick-start/#generate-your-api-key) it by yourself (required for custom component/installation) | any `string` |
+|`MANDRILL_FROM_EMAIL`| false | Sender email address, `no-reply@elastic.io` by default | any `string`|
+|`MANDRILL_FROM_NAME`| false | Sender name, `elastic.io` by default | any `string`|
+|`MANDRILL_URL`| false | Base path and version of mandrill installation, `https://mandrillapp.com/api/1.0` by default | any `string`|
+|`MAX_BODY_LENGTH`| false | Maximum email message size (including attachments), `10485760` (10MB) by default | any `number`|
 
-Please note that you must verify your domain before using this component and
-configuring it with your environment variables.
+>**Please note:** that you must [verify your domain](https://mailchimp.com/developer/transactional/docs/authentication-delivery/#authentication) before using this component and configuring it with your environmental variables.
 
 ### Technical Notes
 
@@ -38,86 +43,34 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-### Send
+### Send Email
 
-This action would send your message. There are several parameters which can be
-configures for this function:
+For each incoming message the component send a new transactional message through Mandrill using the [Send new message](https://mailchimp.com/developer/transactional/api/messages/send-new-message/) API resource.
 
 ![Send](img/email-action.png)
 
-### Error handling types
+#### Configuration Fields
 
-You can choose different scenarios of exception handler using "**Do not throw an error when e-mail send failed**" switch.
+* **Do not throw an error when e-mail send failed** - (checkbox, required): If checked, component will not throw an error when sending failed, details will be provided in output message.
 
-*   If switch above has false value, error event will be emitted for each element of Mandrill API response array that has `status==(rejected | invalid)`, error event will be the same as result we've got from Mandrill API.
-*   If switch above has true value, error events will not emitted to the flow level. In this case sending result will be in output message.
+#### Input Metadata
 
-### Multiple recipients
+* **To** - (string, required): The email address(es) for primary recipients, you can fill comma separated list
+* **Cc** - (string, optional): Comma separated list of E-mail addresses to receive a copy of the mail
+* **Bcc** - (string, optional): Comma separated list of E-mail addresses to receive a blind copy of the mail
+* **Subject** - (string, required): Subject of the E-mail
+* **Body** - (string, required): The content of the E-mail to be sent. If body is a JSON object/array, then it will be stringified
+* **Attachments** (array, optional): Series of objects with the following format:
+    * **Attachment URL** (string, required): URL to file (platform storage or external)
+    * **Filename** (string, required): Name of the attached file that will appear in the received email
 
-Email component can send messages to multiple recipients. You can fill comma
-separated list of email addresses for input parameters:
+#### Output Metadata
 
-*   **To**
-*   **Cc**
-*   **Bcc**
+As a result of sending you will get object **"results"** which contain result entities of sending messages for each recipient, consists of:
 
-### Response structure
-
-As a result of sending you will get object **"results"** which contain result
-entities of sending messages for each recipient:
-
-``` js
-{
-  "results": [
-    {
-      "RecipientType": "to",
-      "Message": "INVALID",
-      "ErrorCode": 0,
-      "MessageID": "cae5a6d1233d430fa41cd4317b2ad070",
-      "SubmittedAt": "2018-06-07T14:24:13.9150000+00:00",
-      "To": "email1@example.com"
-    },
-    {
-      "RecipientType": "to",
-      "Message": "OK",
-      "ErrorCode": 0,
-      "MessageID": "97d78bc5b37f4b7b8a0517c409d5e43c",
-      "SubmittedAt": "2018-06-07T14:24:13.9180000+00:00",
-      "To": "email2@example.com"
-    },
-    {
-      "RecipientType": "cc",
-      "Message": "OK",
-      "ErrorCode": 0,
-      "MessageID": "c785b33ccfd546668752605d6c19f878",
-      "SubmittedAt": "2018-06-07T14:24:13.9180000+00:00",
-      "To": "email3@example.com"
-    },
-    {
-      "RecipientType": "cc",
-      "Message": "OK",
-      "ErrorCode": 0,
-      "MessageID": "511f60c5da974980b797cbbd2796b129",
-      "SubmittedAt": "2018-06-07T14:24:13.9180000+00:00",
-      "To": "email4@example.com"
-    },
-    {
-      "RecipientType": "bcc",
-      "Message": "OK",
-      "ErrorCode": 0,
-      "MessageID": "ba5d29e8ca2f4322961eac50180a4caf",
-      "SubmittedAt": "2018-06-07T14:24:13.9180000+00:00",
-      "To": "email5@example.com"
-    }
-  ]
-}
-```
-
-### Attachments
-
-E-mail component can include attachment to email. More information about attachments functionality on elastic.io platform You can find at [this resource](/guides/using-attachments#binary-data).
-
-## Limitations
-
-1. Attachment size limitations could be found [here](/references/attachments-limitations).
-2. Attachments mechanism does not work with [Deprecated Local Agent Installation](/getting-started/local-agent)
+* **To** - (string): the email address of the recipient
+* **RecipientType** - (string): Type of recipient, possible values: `to`, `cc`, `bcc`
+* **Message** - (string): The sending status of the recipient, possible values: `OK` or `QUEUED` - if successful, `REJECTED` or `INVALID` on fail
+* **MessageID** - (string): The message's unique id
+* **SubmittedAt** - (string): Date, when message was submitted in format - `YYYY-MM-DDTHH:mm:ss.SSSSSSSZ`
+* **ErrorCode** - (number): deprecated parameter, always `0`

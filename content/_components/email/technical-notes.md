@@ -5,13 +5,20 @@ description: Technical Notes for the Email component
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.0.14
-updatedDate: 2022-04-08
+ComponentVersion: 1.2.0
+updatedDate: 2022-06-17
 redirect_from:
   - /components/lookup-table/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.0 (June 17, 2022)
+
+* Added support attachments from metadata
+* Stringify JSON bodies by default
+* New main library for sending emails (old one is now deprecated)
+* Migration to TypeScript
 
 ### 1.0.14 (April 08, 2022)
 
