@@ -27,14 +27,6 @@ Polls for alerts statuses for chosen Ukraine regions.
 * **Regions** - (array, required): Array of selected regions to receive statuses.
 * **Emit data if no alerts found** - (checkbox, optional): If checked: when no alerts are found empty array will be emitted. Not checked by default.
 
-#### Input Metadata
-
-There is no Input Metadata.
-
-#### Output Metadata
-
-Array of regions with detailed alerts statuses, schema can be found [here](https://github.com/elasticio/ukraine-alert-component/blob/master/src/schemas/triggers/getUkraineAlertsPolling.out.json)
-
 ### Webhook
 
 Subscription for alarms activation and deactivation.
@@ -71,13 +63,42 @@ Subscription for alarms activation and deactivation.
 }
 
 ```
-#### Input metadata
 
-There is no Input Metadata
+All regions of Ukraine with the corresponding IDs are listed here:
 
-#### Output Metadata
+<details close markdown="block"><summary><strong>Click to expand</strong></summary>
 
-Received message from subscription.
+```
+{
+  "3": "Хмельницька область (Khmelnytsky region)",
+  "4": "Вінницька область (Vinnytsia region)",
+  "5": "Рівненська область (Rivne region)",
+  "8": "Волинська область (Volyn region)",
+  "9": "Дніпропетровська область (Dnipropetrovsk region)",
+  "10": "Житомирська область (Zhytomyr region)",
+  "11": "Закарпатська область (Zakarpattia region)",
+  "12": "Запорізька область (Zaporizhzhya region)",
+  "13": "Івано-Франківська область (Ivano-Frankivsk region)",
+  "14": "Київська область (Kyiv region)",
+  "15": "Кіровоградська область (Kirovohrad region)",
+  "16": "Луганська область (Luhansk region)",
+  "17": "Миколаївська область (Mykolaiv region)",
+  "18": "Одеська область (Odesa region)",
+  "19": "Полтавська область (Poltava region)",
+  "20": "Сумська область (Sumy region)",
+  "21": "Тернопільська область (Ternopil region)",
+  "22": "Харківська область (Kharkiv region)",
+  "23": "Херсонська область (Kherson region)",
+  "24": "Черкаська область (Cherkasy region)",
+  "25": "Чернігівська область (Chernihiv region)",
+  "26": "Чернівецька область (Chernivtsi region)",
+  "27": "Львівська область (Lviv region)",
+  "28": "Донецька область (Donetsk region)",
+  "31": "м. Київ (Kyiv city)"
+}
+```
+
+</details>
 
 ## Actions
 
