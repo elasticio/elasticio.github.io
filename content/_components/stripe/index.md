@@ -6,8 +6,8 @@ description: A component that connects to Stripe API.
 icon: stripe.png
 icontext: Stripe component
 category: stripe
-createdDate: 2022-06-01
-updatedDate: 2022-06-01
+createdDate: 2022-07-01
+updatedDate: 2022-07-01
 ---
 
 ## Environment variables
