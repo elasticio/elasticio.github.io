@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-06-17
-ComponentVersion: 1.6.2
+updatedDate: 2022-06-01
+ComponentVersion: 1.6.3
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,10 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.6.3 (July 1, 2022)
+
+* Action `Lookup Objects` now uses method `search` instead of `list` for `customer` objectType
 
 ### 1.6.2 (June 17, 2022)
 

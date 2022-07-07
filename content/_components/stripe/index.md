@@ -2,47 +2,56 @@
 title: Stripe component
 layout: component
 section: Finance-related components
-description: A online payment processing system to power commerce for businesses of all sizes.
+description: A component that connects to Stripe API.
 icon: stripe.png
 icontext: Stripe component
 category: stripe
-createdDate: 2015-09-29
-updatedDate: 2019-11-07
+createdDate: 2022-07-01
+updatedDate: 2022-07-01
 ---
 
-## Description
-
-This is an open source component for [Stripe](https://stripe.com/) Online Payment
-System. It focuses among other things on providing the technical, fraud prevention,
-and banking infrastructure required to operate on-line payment systems.
+## Environment variables
+|Name|Mandatory|Description|Values|
+|----|---------|-----------|------|
+|`API_RETRIES_COUNT`| false | Set how many time system try to make request to API on errors (3 by default) | any `integer` above 0|
+|`API_RETRY_DELAY`| false | Delay between retry attempts in milliseconds (10000 by default) | any `integer` above 0|
+|`API_REQUEST_TIMEOUT`| false | HTTP requests timeout in milliseconds (15000 by default) | any `integer` above 0|
 
 ## Credentials
 
-  * API Key
+Component credentials configuration fields:
+
+* **API Key**  (string, required) - Stripe [Secret Key](https://dashboard.stripe.com/apikeys). [Documentation](https://stripe.com/docs/keys) for Stripe API Keys.
+
+To verify credentials request `GET https://api.stripe.com/v1/charges` with your Secret Key is used. So if you are restricted to make this API call - simply skip credentials verification.
 
 ## Triggers
 
- * Get succeeded payments
+This component has no trigger functions. This means it will not be accessible to
+select as a first component during the integration flow design.
 
 ## Actions
 
-This component has no action functions.
+### Make Raw Request
 
-## Stripe integration connector
+Executes custom request.
 
-This is an open source component to work with Stripe in your integration flows
-and it was developed specifically to run on {{site.data.tenant.name}} platform
+#### Configuration Fields
 
-This is the first release of the component and it is still under development.
-Therefore, it currently supports only the trigger functionality, which means
-that you can use it to execute a certain event. In the case of this particular
-component, you can get succeeded invoices.
+* **Don't throw error on 404 or 402 Response** - (optional, boolean): Treat 404 and 402 HTTP responses not as error, defaults to `false`.
 
-Follow the Documentation link above to find what you need to do to set it up.
+#### Input Metadata
 
-Like with all other {{site.data.tenant.name}} components that are under the
-Apache license, you can clone it and enhance it yourself to include more
-functionalities out of the box. Alternatively, you can contact our pre-sales team
-if you prefer our developers to extend the Stripe integration connector for you.
+![Make Rae Request](img/make-raw-request.png)
 
-![Stripe Component](img/stripe-component.png)
+* **Url** - (string, required): Path of the resource relative to `https://api.stripe.com`.
+* **Method** - (string, required): HTTP verb to use in the request, one of `GET`, `POST`, `PUT`, `PATCH`, `DELETE`.
+* **Request Body** - (object, optional): Body of the request to send.
+* **API Version** - (string, optional): API version (by default version '2020-08-27' will be used). Stripe [versioning](https://stripe.com/docs/api/versioning). Stripe [API-changelog](https://stripe.com/docs/upgrades#api-changelog).
+* **Idempotency Key** - (string, optional): Unique value which the server uses to recognize subsequent retries of the same request ([UUID](https://wikipedia.org/wiki/Universally_unique_identifier) is recommended). Stripe [Idempotent requests](https://stripe.com/docs/api/idempotent_requests).
+
+#### Output Metadata
+
+* **Status Code** - (number, required): HTTP status code of the response.
+* **HTTP headers** - (object, required): HTTP headers of the response.
+* **Response Body** - (object, optional): HTTP response body.
