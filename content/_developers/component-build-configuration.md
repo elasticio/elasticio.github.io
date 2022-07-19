@@ -40,10 +40,32 @@ ignore:
 
  * **`CBH`**  has `generateDockerfile` function, which is used to create `Dockerfile` structure during deploy component to the platform.
 
- **`CBH`** uses latest `amazoncorretto:8-alpine-jdk(jre)` docker image as build and runtime environment. That’s helps to avoid vulnerabilities in the build/runtime docker image.
+ * **`CBH`** supports builds of next java versions: 1.8, 11, 17, 18
 
- * **`CBH`** supports only **Gradle** as Build tool. By default **`CBH`** uses gradle version `7.4.2`. If component requires special version of gradle, **[wrapper](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.wrapper.Wrapper.html#org.gradle.api.tasks.wrapper.Wrapper)** can be configured.
+ *  Depending on the targetCompatibility value CBH supports different build/runtime images:
 
+ | targetCompatibility | build image | runtime image |
+ | --- | --- | --- |
+ | 1.8 | `amazoncorretto:8-alpine-jdk` | `amazoncorretto:8-alpine-jre` |
+ | 11 | `amazoncorretto:11-alpine-jdk` | `alpine:latest` |
+ | 17 | `amazoncorretto:17-alpine-jdk` | `alpine:latest` |
+ | 18 | `amazoncorretto:18-alpine-jdk` | `alpine:latest` |
+
+ > **Limitation:** despite the fact that CBH supports Java 17/18, such Java version can not be used during components development. sailor-jvm doesn’t support Java 17/18 yet.
+
+* **`CBH`** uses latest `amazoncorretto:8-alpine-jdk(jre)` docker image as build and runtime environment. That’s helps to avoid vulnerabilities in the build/runtime docker image.
+
+* **`CBH`** uses `8-alpine-jre` as runtime image for Java 8 and  `alpine:latest`  for the Java versions > 8. Thanks to **Java modulespackaging mechanism,** `CBH` tries to identify all needed modules for the component classpath and creates a runtime image only with needed for runtime java modules.
+
+The list of runtime java modules can be overridden by adding `jdeps.info` to the root dir of component sources. `jdeps.info` must be comma separated list of modules.
+
+Example:
+
+```yaml
+java.base,java.desktop,java.management,java.security.jgss,java.security.sasl,java.sql.rowset,jdk.security.auth,jdk.unsupported
+```
+
+* **`CBH`** supports only **Gradle** as Build tool. By default CBH uses gradle version `7.4.2`. If component requires special version of gradle, **wrapper** can be configured.
 Example of the wrapper configuration in the **build.gradle:**
 
 ```groovy
@@ -51,6 +73,9 @@ wrapper {
     gradleVersion = '5.4.1'
 }
 ```
+
+> **Limitation:** **`CBH`** supports only gradle wrapper generated using gradle version > `3.2`.
+Starting from gradle `3.2` it generates wrapper with `#!/usr/bin/env sh` instead on `#!/usr/bin/env bash`. `CBH` generates dockerfile without bash installed.
 
  *  **`CBH`** expect to find built classes in the `build/classes/main` directory. By default gradle use another directory to locate built classes. That’s why **build.gradle** must contains right `sourceSets` configuration:
 
