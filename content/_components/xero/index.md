@@ -6,8 +6,8 @@ description: iPaaS component that connects to Xero API
 icon: xero.png
 icontext: Xero component
 category: xero
-ComponentVersion: 1.1.1
-updatedDate: 2022-07-06
+ComponentVersion: 1.2.0
+updatedDate: 2022-28-07
 ---
 
 ## Requirements
@@ -143,6 +143,30 @@ Executes custom request
 * **Status Code** - (number, required) HTTP status code of the response
 * **HTTP headers** - (object, required) HTTP headers of the response
 * **Response Body** - (object, optional) HTTP response body
+
+### Upsert Object
+
+Updates (of record found) or creates a new object.
+
+#### Configuration Fields
+
+* **Tenant** - (required, dropdown): Select tenant you want to make request
+* **Object Type** - (dropdown, required): Object-type to upsert. E.g `Invoice`.
+
+#### Input Metadata
+
+* **[Object Type]ID** - (string, optional): ID of the object to upsert.
+And dynamically generated fields according to chosen `Upsert Schema`.
+
+> **Please Note:** to create object, minimum required fields needs to be filled:
+  * `Invoice`: Type, Contact, LineItems
+  * `Contact`: Name
+
+> **Please also Note:** If object with provided ID not found, component create a new object
+
+#### Output Metadata
+
+Result object from upsert.
 
 ### Void approved invoices or bills
 
