@@ -11,7 +11,7 @@ ComponentVersion: 1.0.0
 ---
 
 
-This component is a new version of [Google Spreadsheets component](/gspreadsheet/index) but with breaking changes:
+This component is a new version of [Google Spreadsheets component](/components/gspreadsheet/index) but with breaking changes:
 
 * Use [Faceless](/guides/secrets) service for authentication
 * Added `Create/Upsert/Update Spreadsheet Row` action
