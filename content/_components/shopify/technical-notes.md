@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-06-01
-ComponentVersion: 1.6.3
+updatedDate: 2022-07-29
+ComponentVersion: 1.6.4
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,13 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.6.4 (July 29, 2022)
+
+* Added `email` support in `Upsert Object` action for `customer` objectType
+* Improved error message
+* Updated elasticio-sailor-nodejs to v2.6.29
+* Updated oih-standard-library to v2.0.3
 
 ### 1.6.3 (July 1, 2022)
 
