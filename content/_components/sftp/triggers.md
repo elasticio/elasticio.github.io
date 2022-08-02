@@ -5,106 +5,61 @@ description: SFTP component triggers.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-06-03
-ComponentVersion: 1.4.9
+updatedDate: 2022-07-29
+ComponentVersion: 1.5.0
 ---
 
-## Read files
-
-Will continuously poll remote SFTP location for files that match given pattern. Found files will be transferred as attachments to the next component.
-
-The following configuration fields are available:
-
-* **Directory**: The directory of the files to read from.
-* **Pattern**: Optional regex pattern for file names. If no pattern is given, no matching is done.
-
-After a file is found:
-
- * It is moved to the (hidden) directory `.elasticio_processed`
- * It is pulled and uploaded (streamed) to the attachment storage (a.k.a. steward)
- * After the upload, the READ-URL of the file will be used to generate a message with content like below:
-
-```json
-{
-  "id": "5e00ca80-f2a3-11e6-9fdd-e7b75b43e28b",
-  "attachments": {
-    "large.xml": {
-      "url": "https://adress/foo&Signature=5%2FsrvmbGGfVoYpKeMH3ugaEL"
-    }
-  },
-  "body": {
-    "filename": "large.xml",
-    "size": 2508908
-  }
-}
-```
-
-The next component may read from `url` in `attachments` for a memory-efficient way to read/parse data. Please note that if multiple files are found, SFTP component will generate one message per file.
-
->**Note:** you may need to consider cleaning up the `.elasticio_processed` directory manually
-
-## Poll files
+## Poll Files
 
 Triggers to get all new and updated files since last polling.
 
-The following configuration fields are available:
+### Configuration Fields
 
-* **Directory**: The directory of the files to read from.
-* **Emit Behaviour**: Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message
-* **Start Time**: Start datetime of polling. Default min date:`-271821-04-20T00:00:00.000Z`
-* **End Time**: End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`
-* **Pattern**: Optional regex pattern for file names. If no pattern is given, no matching is done.
+* **Directory** - (string, required): The directory of the files to read from
+* **Emit Behaviour** - (dropdown, optional): Defines the way result objects will be emitted, defaults to `Emit individually`
+    * **Fetch All** - All objects will be emitted as array in one object with key `results`
+    * **Emit Individually** - Each object will be emitted separately filling the entire message
+* **Start Time** - (string, optional): Start datetime of polling, defaults to`-271821-04-20T00:00:00.000Z`
+* **End Time** - (string, optional): End datetime of polling, defaults to `+275760-09-13T00:00:00.000Z`
+* **Pattern** - (string, optional): Regex pattern for file names. If no pattern is given, no matching is done
 
-### Expected output metadata
 
-<details close markdown="block">
-<summary>
-Click to expand - Output metadata
-</summary>
+### Output Metadata
 
-```json
-{
-  "type": "object",
-  "properties": {
-    "filename": {
-      "title": "File Name",
-      "type": "string",
-      "required": true
-    },
-    "size": {
-      "title": "File Size",
-      "type": "number",
-      "required": true
-    },
-    "type": {
-      "title": "File Type",
-      "type": "string",
-      "required": true
-    },
-    "modifyTime": {
-      "title": "Last Modification Time",
-      "type": "number",
-      "required": true
-    },
-    "accessTime": {
-      "title": "Last Access Time",
-      "type": "number",
-      "required": true
-    },
-    "directory": {
-      "title": "Directory",
-      "type": "string",
-      "required": true
-    },
-    "path": {
-      "title": "Full Path",
-      "type": "string",
-      "required": true
-    }
-  }
-}
-```
+* **filename** - (string, required): File Name
+* **size** - (number, required): File Size
+* **type** - (string, required): File Type
+* **modifyTime** - (string, required): Last Modification Time
+* **accessTime** - (string, required): Last Access Time
+* **directory** - (string, required): Directory
+* **path** - (string, required): Full Path
 
-</details>
+### Known limitations
 
->**Note:** `type` field represents type of the file. You can find additional information about Unix file types [below](#ssh2-sftp-client-api-and-documentation-links).
+* Trigger mechanism is based on SFTP file `modifyTime` metadata field. For correct processing the trigger requires correct time configuration on the SFTP server.
+
+## Read files(Deprecated)
+
+>**Please Note:** This action is deprecated.
+
+Will continuously poll remote SFTP location for files that match given pattern. Found files will be transferred as attachments to the next component
+
+After a file is found:
+ * It is moved to the (hidden) directory `.elasticio_processed` and to name of the file will be added timestamp, ex.: file `test.txt` will be renamed to `test.txt_1657621889133`
+ * It is pulled and uploaded (streamed) to the attachment storage
+
+>**Please Note:** you may need to consider cleaning up the `.elasticio_processed` directory manually
+
+### Configuration Fields
+
+* **Directory** - (string, required): The directory of the files to read from
+* **Pattern** - (string, optional): Regex pattern for file names. If no pattern is given, no matching is done.
+
+### Input Metadata
+
+There is no Input Metadata
+
+### Output Metadata
+
+* **filename** - (string, required): Name of the file
+* **size** - (number, required): File size
