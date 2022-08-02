@@ -5,11 +5,21 @@ description: Technical Notes for the Snowflake component.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2021-11-26
-ComponentVersion: 1.2.1
+updatedDate: 2022-07-29
+ComponentVersion: 1.3.0
 ---
 
 ## Changelog
+
+### 1.3.0 (July 29, 2022)
+
+* Added schema name to tables names in dropdown lists
+* Fixed issue when tables use schema other than PUBLIC
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
+* Update sailor-nodejs to v2.6.29
+* Added `emitIndividually` emitBehavior for trigger `Get rows polling trigger`
+* Added ability to operate with snowflake `Views` same to `Tables`
 
 ### 1.2.1 (November 26, 2021)
 
@@ -17,8 +27,7 @@ ComponentVersion: 1.2.1
 
 ### 1.2.0 (October 28, 2021)
 
-* Added new trigger:
-    - `Get rows polling trigger`
+* Added new `Get rows polling trigger`
 
 ### 1.1.1 (October 15, 2021)
 
