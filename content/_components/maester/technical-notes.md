@@ -5,11 +5,20 @@ description: Technical Notes for the Maester Component
 icon: maester.png
 icontext: Maester Component
 category: maester
-updatedDate: 2021-11-26
-ComponentVersion: 1.0.2
+updatedDate: 2022-07-29
+ComponentVersion: 1.0.3
 ---
 
 ## Changelog
+
+### 1.0.3 (July 29, 2022)
+
+* `Delete Object`: Fix error message when amount of objects found by search criteria is more than 1
+* Now, if more than 1 object found by search criteria for `Upsert Object` action - error will be thrown
+* Update maester-client to v4.0.0
+* Update oih-standard-library to v2.0.3
+* Update component-commons-library to v3.0.0
+* Update sailor-nodejs to v2.6.29
 
 ### 1.0.2 (November 26, 2021)
 
