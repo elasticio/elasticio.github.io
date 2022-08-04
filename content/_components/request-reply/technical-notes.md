@@ -5,13 +5,20 @@ description: Technical Notes for the Request-reply component.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2022-04-14
-ComponentVersion: 1.2.3
+updatedDate: 2022-07-29
+ComponentVersion: 1.2.4
 redirect_from:
   - /components/request-reply/changelog.html
 ---
 
 ## Changelog
+
+###  1.2.4 (July 29, 2022)
+
+* Change library for attachments processing (object-storage-client => maester-client)  
+* Update component-commons-library to 3.0.0  
+* Update maester-client to 4.0.0
+* Update Sailor to 2.6.29
 
 ### 1.2.3 (April 14, 2022)
 

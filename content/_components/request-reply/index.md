@@ -6,8 +6,8 @@ description: Request-Reply component for the platform.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2022-04-14
-ComponentVersion: 1.2.3
+updatedDate: 2022-07-29
+ComponentVersion: 1.2.4
 ---
 
 ## Description

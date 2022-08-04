@@ -5,13 +5,19 @@ description: Technical Notes for the Batch component
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2021-11-26
-ComponentVersion: 2.0.1
+updatedDate: 2022-07-29
+ComponentVersion: 2.0.2
 redirect_from:
   - /components/batch/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.2 (June 25, 2022)
+
+* Update sailor-nodejs to v2.6.28
+* Update batching-library to v2.0.1
+* Updated Circle.ci config
 
 ### 2.0.1 (November 26, 2021)
 

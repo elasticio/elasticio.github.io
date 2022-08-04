@@ -6,8 +6,8 @@ description: Maester component for the platform.
 icon: maester.png
 icontext: Maester Component
 category: maester
-updatedDate: 2021-11-26
-ComponentVersion: 1.0.2
+updatedDate: 2022-07-29
+ComponentVersion: 1.0.3
 ---
 
 ## General information
@@ -49,6 +49,8 @@ Dynamically generated
 
 ![Lookup Object](img/lookup-object.png)
 
+>**Please Note:** if more than one object found by `Search Parameters` - error will be thrown
+
 #### Config Fields
 
 * **Lookup Criteria** - (Dropdown with options: [`Maester Object ID`, `Custom Headers`], required)
@@ -79,6 +81,8 @@ Dynamically generated
 ### Upsert Object
 
 ![Upsert Object](img/upsert-object.png)
+
+>**Please Note:** if more than one object found by `Search Parameters` - error will be thrown
 
 #### Config Fields
 
