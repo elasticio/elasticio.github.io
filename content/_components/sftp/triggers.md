@@ -40,7 +40,7 @@ Triggers to get all new and updated files since last polling.
 
 ## Read files(Deprecated)
 
->**Please Note:** This action is deprecated.
+>**Please Note:** This trigger is deprecated, please use Poll Files trigger instead
 
 Will continuously poll remote SFTP location for files that match given pattern. Found files will be transferred as attachments to the next component
 
