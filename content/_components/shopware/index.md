@@ -10,6 +10,8 @@ updatedDate: 2020-01-30
 ComponentVersion: 1.1.2
 ---
 
+>**IMPORTANT:** This component was tested with the Shopware version `5 (5.6)`. If you are working with version `6` please use this component
+
 ## Description
 
 This is component for [Shopware](https://shopware.com/) eCommerce software which
@@ -19,8 +21,6 @@ is developed specifically to run on {{site.data.tenant.name}} platform.
 
 > **PLEASE NOTE:** This component depends on [Shopware REST API extenstions](https://github.com/elasticio/elasticio-shopware-api-extension),
 > please install it first before proceeding further.	please install it first before proceeding further.
-
-**This component was tested with the Shopware version 5 (5.6).**
 
 ### Credentials
 
