@@ -5,13 +5,17 @@ description: Technical Notes for the Batch component
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2022-07-29
-ComponentVersion: 2.0.2
+updatedDate: 2022-08-12
+ComponentVersion: 2.0.3
 redirect_from:
   - /components/batch/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.3 (August 12, 2022)
+
+* Update batching-library to v2.0.2
 
 ### 2.0.2 (June 25, 2022)
 

@@ -6,8 +6,8 @@ description: A component that provides an opportunity to collect messages to a b
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2022-07-29
-ComponentVersion: 2.0.2
+updatedDate: 2022-08-12
+ComponentVersion: 2.0.3
 ---
 
 ## General information
