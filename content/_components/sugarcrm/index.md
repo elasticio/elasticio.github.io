@@ -6,26 +6,14 @@ description: A user interface, industry-leading customer experience, and an intu
 icon:  sugarcrm.png
 icontext: SugarCRM component
 category: sugarcrm
-updatedDate: 2021-11-26
-ComponentVersion: 1.1.5
+updatedDate: 2022-08-12
+ComponentVersion: 1.1.6
 ---
 
 This is an open source component template for [SugarCRM](https://www.sugarcrm.com)
 which is developed specifically to run on
 [{{site.data.tenant.name}} platform](https://www.{{site.data.tenant.name}} "{{site.data.tenant.name}} platform").
 You can clone it and change it as you wish.
-
-## Latest changelog
-
-**1.1.3 (November 6, 2020)**
-
-* Upgrade to sailor 2.6.18
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-* Annual npm vulnerabilities audit
-* Fix bug: `Verify` credentials button does not really verify credentials
-* Fix exception, emit called without await
-
-> To see the full **changelog** please use the following [link](changelog).
 
 ## Authentication
 
