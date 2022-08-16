@@ -12,7 +12,7 @@ redirect_from:
   - /components/shopware/index.html
 ---
 
->**IMPORTANT:** This component was tested with the Shopware version `5 (5.6)`. If you are working with version `6` please use this [component](/components/shopify-6)
+>**IMPORTANT:** This component was tested with the Shopware version `5 (5.6)`. If you are working with version `6` please use this [component](/components/shopware-6)
 
 ## Description
 
