@@ -6,8 +6,8 @@ description: iPaaS component to read and write to Google Spreadsheets Component 
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet-v2
-updatedDate: 2022-07-29
-ComponentVersion: 1.0.0
+updatedDate: 2022-08-12
+ComponentVersion: 1.0.1
 ---
 
 
@@ -231,10 +231,9 @@ After a trigger execution, data will be extracted from the table above and the f
 
 #### Limitations
 
-Trigger can emit maximum 1000 messages per one execution.
-
-Trigger uses version 4 of [Google Sheet API](https://developers.google.com/sheets/api/).
-You can find more information in the [Google Sheets API Documentation](https://developers.google.com/sheets/api/samples/reading).
+1. Trigger can emit maximum 1000 messages per one execution.
+2. Currently `Enter number of retries` and `Max number of calls per second` credential fields use default values only. Those are 5 and 5 respectively.
+3. Trigger uses version 4 of [Google Sheet API](https://developers.google.com/sheets/api/).
 
 ## Actions
 
