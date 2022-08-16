@@ -5,8 +5,8 @@ description: These are the instructions to how to create an OAuth APP on a Sugar
 icon:  sugarcrm.png
 icontext: Creating an app on a SugarCRM instance
 category: sugarcrm
-updatedDate: 2021-11-26
-ComponentVersion: 1.1.5
+updatedDate: 2022-08-12
+ComponentVersion: 1.1.6
 ---
 
 This step is necessary to platform to your SugarCRM instance. This is one of the steps in

@@ -5,13 +5,20 @@ description: Technical Notes for the SugarCRM component.
 icon:  sugarcrm.png
 icontext: SugarCRM component
 category: sugarcrm
-updatedDate: 2021-11-26
-ComponentVersion: 1.1.5
+updatedDate: 2022-08-12
+ComponentVersion: 1.1.6
 redirect_from:
   - /components/sugarcrm/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.6 (August 12, 2022)
+
+* Added `email1` and `email2` fields for metadata of `Contacts` module in `Upsert Action`
+* Updated Circle.ci config
+* Updated sailor-nodejs to v2.6.29
+* Get rid of vulnerabilities
 
 ### 1.1.5 (November 26, 2021)
 
