@@ -31,7 +31,7 @@ Here you can see a Sample. All the data we need - city, customer name and custom
 
 ![Google Spreadsheet Sample](img/gspreadsheet-sample.png)
 
-After that use a[Router component](/components/router/index) to sort the data by city. Create 4 different branches, in each of which select a criteria for routing. In our case, this is the name of the city: Berlin, Chicago, Sydney and Boston:
+After that use a [Router component](/components/router/index) to sort the data by city. Create 4 different branches, in each of which select a criteria for routing. In our case, this is the name of the city: Berlin, Chicago, Sydney and Boston:
 
 ![Router configure input](img/router-input.png)
 
