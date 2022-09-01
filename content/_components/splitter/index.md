@@ -12,7 +12,7 @@ ComponentVersion: 1.4.1
 
 ## Description
 
-The Splitter processes income messages containing multiple elements that might have to be processed in different ways. The Splitter emits out the composite message into individual messages, each containing data related to one item.
+The Splitter processes income messages containing multiple elements that might have to be processed in different ways. The splitter handles incoming messages that contain multiple elements that might need to be handled differently. At the moment, there are two actions that allow you to process incoming data. [Split](actions.html#split-on-jsonata-expression) action takes the incoming message body and applies the configured JSONata transformation on it. [Re-assemble Messages action](actions.html#re-assemble-messages) is the opposite of the Split action. In this document, we will introduce you to all the technical aspects of the component, describe both actions in detail and show an [example of using](usage-example) a Splitter component.
 
 ### Environment variables
 
@@ -32,5 +32,5 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-* [Split on JSONata Expression](actions.html#split-on-jsonata-expression) - This component takes the incoming message body and applies the configured JSONata tranformation on it.
-* [Re-assemble Messages](actions.html#re-assemble-messages) - Inverse of the split action.
+* [Split on JSONata Expression](actions.html#split-on-jsonata-expression) - This action takes the incoming message body and applies the configured JSONata tranformation on it.
+* [Re-assemble Messages](actions.html#re-assemble-messages) - The opposite of the Split action.
