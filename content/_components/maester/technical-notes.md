@@ -5,11 +5,15 @@ description: Technical Notes for the Maester Component
 icon: maester.png
 icontext: Maester Component
 category: maester
-updatedDate: 2022-08-12
-ComponentVersion: 1.0.4
+updatedDate: 2022-08-26
+ComponentVersion: 1.0.5
 ---
 
 ## Changelog
+
+### 1.0.5 (August 26, 2022)
+
+* Updated maester-client to v4.0.3
 
 ### 1.0.4 (August 12, 2022)
 
