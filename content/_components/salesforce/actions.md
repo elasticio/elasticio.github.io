@@ -5,8 +5,8 @@ description: Salesforce component actions.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-06-17
-ComponentVersion: 2.3.0
+updatedDate: 2022-08-30
+ComponentVersion: 2.4.0
 ---
 
 ## Query action
@@ -207,6 +207,10 @@ Between each two term's group of fields:
 Field "Logical operator" - one of the following: "AND", "OR";
 
 Output data is an object, with a field "results" that is an array of objects.
+
+### Known limitations
+
+If `Output method` set to `Emit page` maximum "Page number" must be less or equal to "Page size"/2000
 
 ## Bulk Create/Update/Delete/Upsert action
 

@@ -5,14 +5,21 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-06-17
-ComponentVersion: 2.3.0
+updatedDate: 2022-08-30
+ComponentVersion: 2.4.0
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.4.0 (August 30, 2022)
+
+* New `Get New and Updated Objects Polling` trigger, old one set to deprecated
+* Update Sailor version to 2.6.29
+* Get rid of vulnerabilities in dependencies
+* Update component-commons-library version to 3.0.2
 
 ### 2.3.0 (June 17, 2022)
 
