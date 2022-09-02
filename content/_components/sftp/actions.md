@@ -5,8 +5,8 @@ description: SFTP component actions.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-08-12
-ComponentVersion: 1.5.1
+updatedDate: 2022-08-26
+ComponentVersion: 1.5.2
 ---
 
 ## Delete File
