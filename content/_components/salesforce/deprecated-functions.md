@@ -5,8 +5,8 @@ description: Information on deprecated Salesforce functions
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-06-17
-ComponentVersion: 2.3.0
+updatedDate: 2022-08-30
+ComponentVersion: 2.4.0
 ---
 
 ## Deprecated authentication method
@@ -65,31 +65,39 @@ You would need to create two variables here:
 
 Polls existing and updated Cases (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
+Trigger is `deprecated`. You can use [Get Updated Objects Polling](triggers#get-updated-objects-polling) trigger instead.
 
 ### New Lead trigger(deprecated)
 
 Polls existing and updated Leads (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
+Trigger is `deprecated`. You can use [Get Updated Objects Polling](triggers#get-updated-objects-polling) trigger instead.
 
 ### New Contact trigger(deprecated)
 
 Polls existing and updated Contacts (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
+Trigger is `deprecated`. You can use [Get Updated Objects Polling](triggers#get-updated-objects-polling) trigger instead.
 
 ### New Account trigger(deprecated)
 
 Polls existing and updated Accounts (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
+Trigger is `deprecated`. You can use [Get Updated Objects Polling](triggers#get-updated-objects-polling) trigger instead.
 
 ### New Task trigger(deprecated)
 
 Polls existing and updated Tasks (fetches a maximum of 1000 objects per execution)
 
-Trigger is `deprecated`. You can use [Get New and Updated Objects Polling](triggers#get-new-and-updated-objects-polling-trigger) trigger instead.
+Trigger is `deprecated`. You can use [Get Updated Objects Polling](triggers#get-updated-objects-polling) trigger instead.
+
+## Get New and Updated Objects Polling trigger(Deprecated)
+
+Polls existing and updated objects. You can select any custom or built-in object for your Salesforce instance.
+
+This trigger is `deprecated`. Please use [Get Updated Objects Polling](triggers#get-updated-objects-polling)trigger instead.
+
+
 
 ## Deprecated Actions
 

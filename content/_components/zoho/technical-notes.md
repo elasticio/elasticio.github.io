@@ -5,11 +5,22 @@ description: Technical Notes for the Zoho Subscriptions component.
 icon: zoho.png
 category: zoho
 icontext: Zoho component
-ComponentVersion: 1.0.2
-updatedDate: 2020-11-10
+ComponentVersion: 2.0.0
+updatedDate: 2022-08-17
 ---
 
 ## Changelog
+
+##№ 2.0.0 (August 17, 2022)
+
+* Use `OAuth 2.0` protocol to authorize and authenticate calls (Enable `Faceless` service)
+* Upgrade sailor version to 2.6.29
+* Update Circle.ci config
+
+#№# 1.0.3 (November 26, 2021)
+
+* Upgrade sailor version to 2.6.26
+* Reduced the size of component icon file
 
 ### 1.0.2 (November 10, 2020)
 

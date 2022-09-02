@@ -1,13 +1,13 @@
 ---
-layout: component
 title: Zoho Subscriptions component
+layout: component
 section: Marketing-related components
 description: A component that connects to Zoho Subscriptions API.
 category: zoho
 icon: zoho.png
 icontext: Zoho component
-ComponentVersion: 1.0.2
-updatedDate: 2020-11-10
+ComponentVersion: 2.0.0
+updatedDate: 2022-08-17
 ---
 
 ## Introduction
@@ -25,41 +25,47 @@ use it either to execute or to act upon a certain event. For example, using it
 as a trigger, you can filter existing subscriptions based on a subscription status.
 Using it as an action, you can create or update customer data or a subscription.
 
-> **Please Note: Component uses Zoho Subscription API v1.0**.
+### API Version
 
-## Requirements
+The component uses Zoho Subscription - [API Version 1.0](https://www.zoho.com/subscriptions/api/v1/introduction/#overview)
 
-Before you can use the Zoho Subscriptions integration component, the following
-requirements must be met:
+### Environment variables
 
-*   An active subscription plan with Zoho.
-*   An account on the {{site.data.tenant.name}} integration platform.
-*   Follow the [setup process in Zoho](#zoho-authentication-setup) and [platform site](#credentials-on-platform).
+| Name                     | Mandatory | Description                                                                                           | Values                              |
+|--------------------------|-----------|-------------------------------------------------------------------------------------------------------|-------------------------------------|
+| `API_RETRIES_COUNT`      | false     | Set how many time system try to make request to API on errors (3 by default)                          | `integer` above 0 and below 5       |
+| `API_REQUEST_TIMEOUT`    | false     | HTTP requests timeout in milliseconds (15000 by default)                                              | `integer` above 500 and below 20000 |
+| `FACELESS_RETRIES_COUNT` | false     | Set how many time system try to reload access_token from Faceless service on 401 error (3 by default) | `integer` above 0 and below 5       |
 
-### Zoho authentication setup
+### Credentials
 
-All Zoho Subscriptions APIs requires at least two mandatory headers.
+Component version 2.0.0 and higher contains breaking changes due to Deprecating [Support for Authtokens](https://help.zoho.com/portal/en/community/topic/deprecating-support-for-authtokens):
+component start to use [Faceless](https://docs.elastic.io/guides/secrets.html) service for authentication, credentials must be re-created.
 
-1.  Authorization - Authentication request header. (`Zoho Authtoken`)
-2.  `X-com-zoho-subscriptions-organizationid` - the header that contains the `organization ID` of the organization you need to access.
+Zoho REST APIs uses the [OAuth 2.0](https://www.zoho.com/subscriptions/api/v1/oauth/#overview) protocol to authorize and authenticate calls.
+During credentials creation you would need to:
+- select `OAuth2` drop-down list ``Type``.
+- select existing Auth Client from drop-down list ``Choose Auth Client`` or create the new one.
+  For creating Auth Client you should specify following fields:
 
-`Zoho Authtoken` : To obtaining an authentication token, login to your Zoho Account
-and go [here](https://accounts.zoho.com/apiauthtoken/create?SCOPE=ZohoSubscriptions/subscriptionsapi).
+| Field name             | Mandatory | Description                                                                                                                |
+|------------------------|-----------|----------------------------------------------------------------------------------------------------------------------------|
+| Name                   | true      | your Auth Client's name                                                                                                    |
+| Client ID              | true      | your OAuth Client ID (see [Step 1: Registering New Client](https://www.zoho.com/subscriptions/api/v1/oauth/#overview))     |
+| Client Secret          | true      | your OAuth Client Secret (see [Step 1: Registering New Client](https://www.zoho.com/subscriptions/api/v1/oauth/#overview)) |
+| Authorization Endpoint | true      | set: `https://accounts.zoho.com/oauth/v2/auth`                                                                             |
+| Token Endpoint         | true      | set: `https://accounts.zoho.com/oauth/v2/token`                                                                            |
 
-`Organization ID` : Each organization is an independent Zoho Subscriptions Organization
-with it’s own organization ID, base currency, time zone, language, customers,
-reports, etc. To get the ID follow these [steps](https://www.zoho.com/subscriptions/api/v1/#organization-id).
+- fill field ``Name Your Credential``
+- fill field ``Scopes (Comma-separated list)`` List of scopes available in Zoho Subscriptions you can find [here](https://www.zoho.com/subscriptions/api/v1/oauth/#overview), for current actions and triggers following scopes is required:
+`ZohoSubscriptions.settings.READ`, `ZohoSubscriptions.customers.READ`, `ZohoSubscriptions.customers.UPDATE`, `ZohoSubscriptions.customers.CREATE`, `ZohoSubscriptions.subscriptions.CREATE`, `ZohoSubscriptions.subscriptions.UPDATE`, `ZohoSubscriptions.subscriptions.READ`
+but if you don't want to restrict your client, just use `ZohoSubscriptions.fullaccess.all`
+- fill field ``Additional parameters (Comma-separated list)`` as `access_type:offline`
+- click on ``Authenticate`` button - the process would take you to Zoho to log-in and give permissions to the platform to access your service.
+- click on ``Verify`` button for verifying your credentials
+- click on ``Save`` button for saving your credentials
 
-### Credentials on platform
-
-During credentials creation you need to:
-
-*   Name your credential according to what organization you are using. For example, test environment should be explicitly labeled as `test`.
-*   Enter `Zoho Authtoken` for `Authorization`. **Do not include the word `Authtoken`, input the actual token ID.**
-*   Enter `Organization ID`.
-*   Verify and save new credentials.
-
-![Credentials](img/credentials.png)
+![image.png](https://images.zenhubusercontent.com/5bbdbe5852317e2a55ad20be/be4d3b64-93a8-49ef-8426-e1da46098490)
 
 ### Technical Notes
 
@@ -112,7 +118,7 @@ fields that you mapped as input to be returned as output.
 ![Upsert subscription](img/upsert-subscription.png)
 
 
-## Limitations
+## Known Limitations
 
 As of right now the component does not take in account for Customers who wants
 an online subscription which will charge the customer’s card automatically on every renewal.
