@@ -5,13 +5,19 @@ description: Technical Notes for the Request-reply component.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2022-08-12
-ComponentVersion: 1.2.5
+updatedDate: 2022-08-26
+ComponentVersion: 1.2.6
 redirect_from:
   - /components/request-reply/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.6 (August 26, 2022)
+
+* Updated maester-client to v4.0.3
+* Updated component-commons-library to v3.0.2
+
 
 ### 1.2.5 (August 12, 2022)
 
