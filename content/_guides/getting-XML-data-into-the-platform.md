@@ -71,7 +71,16 @@ will be sent to the next component in the flow. Here is how such message will lo
 
 ### I want to prevent body transformation
 
-In such case, the trigger consuming raw XML must define `consumesRawData:true` in component.json.
+In case you want avoid body transformation to JSON, the trigger consuming raw XML must define `consumesRawData:true` in component.json. Please use `raw` query parameter
+(`?raw=true`) like below:
+
+```xml
+curl -X POST -H "Content-Type: application/xml" \
+  -d '<foo>Hello XML!</foo>' \
+  https://in.platform.address/hooks/your-hook?raw=true
+```
+
+This works for any payload, including XML.
 
 ## HTTP Post with XML file as attachment
 
