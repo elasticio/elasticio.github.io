@@ -65,22 +65,13 @@ will be sent to the next component in the flow. Here is how such message will lo
 }
 ```
 
-> **NOTE:** your XML payload will be automatically parsed and transformed to JSON
+> **Please Note:** your XML payload will be automatically parsed and transformed to JSON
 > and if it is an invalid XML document the platform will return `HTTP 400 "Bad Request"`
 > error (e.g. close tag is missing).
 
 ### I want to prevent body transformation
 
-In case you want avoid body transformation to JSON, use `raw` query parameter
-(`?raw=true`) like below:
-
-```xml
-curl -X POST -H "Content-Type: application/xml" \
-  -d '<foo>Hello XML!</foo>' \
-  https://in.platform.address/hooks/your-hook?raw=true
-```
-
-This works for any payload, including XML.
+In such case, the trigger consuming raw XML must define `consumesRawData:true` in component.json.
 
 ## HTTP Post with XML file as attachment
 
@@ -124,7 +115,7 @@ part of the generate message:
 }
 ```
 
-> **NOTE:** The platform will not parse your XML file. It will be
+> **Please Note:** The platform will not parse your XML file. It will be
 > temporarily stored for the next steps in the integration flow to pick and process
 > this file. It is the responsibility of the following components to handle
 > parsing/validation/transformation later.
