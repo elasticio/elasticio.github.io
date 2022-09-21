@@ -5,17 +5,22 @@ description: Technical Notes for the Vtex component
 icontext: Vtex component
 icon: vtex.png
 category: vtex
-updatedDate: 2022-05-20
-ComponentVersion: 1.4.2
+updatedDate: 2022-09-09
+ComponentVersion: 1.4.3
 ---
 
 ## Changelog
 
+### 1.4.3 (September 09, 2022)
+
+* Fixed output metadata for `Lookup Object (at Most 1)` action for Object Type - Orders
+* Fixed incorrect behavior of `Allow ID to be omitted` for `Lookup Object (at Most 1)` action
+* Update Sailor version to 2.6.29
+
 ### 1.4.2 (May 20, 2022)
 
-- Added `Last interaction` option to `Time stamp field to poll on` in `Get New And Updated Objects Polling` trigger
-- Improved `Get New And Updated Objects Polling` trigger to use [scroll](https://developers.vtex.com/vtex-rest-api/reference/scroll) instead of [search](https://developers.vtex.com/vtex-rest-api/reference/search) to collect all records
-
+* Added `Last interaction` option to `Time stamp field to poll on` in `Get New And Updated Objects Polling` trigger
+* Improved `Get New And Updated Objects Polling` trigger to use [scroll](https://developers.vtex.com/vtex-rest-api/reference/scroll) instead of [search](https://developers.vtex.com/vtex-rest-api/reference/search) to collect all records
 
 ### 1.4.1 (May 06, 2022)
 
