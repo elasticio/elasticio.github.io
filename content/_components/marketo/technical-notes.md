@@ -5,14 +5,18 @@ description: Technical Notes for for the Marketo component.
 icon: marketo.png
 icontext: Marketo component
 category: marketo
-updatedDate: 2022-04-13
-ComponentVersion: 2.2.4
+updatedDate: 2022-09-20
+ComponentVersion: 2.2.5
 redirect_from:
   - /components/marketo/completeness-matrix.html
   - /components/marketo/changelog.html
 ---
 
 ## Changelog
+
+### 2.2.5 (September 09, 2022)
+
+* Fixed all incorrect required fields
 
 ### 2.2.4 (April 13, 2022)
 

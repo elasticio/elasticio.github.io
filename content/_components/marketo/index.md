@@ -6,8 +6,8 @@ description: A marketing automation component focused on account-based marketing
 icon: marketo.png
 icontext: Marketo component
 category: marketo
-updatedDate: 2022-04-13
-ComponentVersion: 2.2.4
+updatedDate: 2022-09-20
+ComponentVersion: 2.2.5
 ---
 
 ## Description
