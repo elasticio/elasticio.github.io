@@ -5,8 +5,8 @@ description: Information on authorization methods in REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2022-05-26
-ComponentVersion: 2.0.13
+updatedDate: 2022-09-14
+ComponentVersion: 2.0.14
 ---
 
 ## Authorization methods
