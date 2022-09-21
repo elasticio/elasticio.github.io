@@ -5,11 +5,19 @@ description: Technical Notes for the IPass Core component
 icon: ipass-core.png
 icontext: IPass Core component
 category: ipass-core
-updatedDate: 2022-06-03
-ComponentVersion: 1.4.0
+updatedDate: 2022-08-26
+ComponentVersion: 1.5.0
 ---
 
 ## Chanhelog
+
+### 1.5.0 (August 26, 2022)
+
+* Added `Calculate Flow Dependencies` Action
+* Added `Validate Deployability` Action
+* Added ability to fetch more that 100 objects (in total) for `Lookup Objects (plural)` action
+* Added checkbox `Retrieve only base fields` for `Lookup Objects (plural)` action
+* Update Sailor version to 2.6.29
 
 ### 1.4.0 (June 03, 2022)
 

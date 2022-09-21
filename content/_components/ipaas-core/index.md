@@ -6,8 +6,8 @@ description: A component to manipulate integration artifacts such as flows via t
 icon: ipaas-core.png
 icontext: IPaas Core component
 category: ipaas-core
-updatedDate: 2022-06-03
-ComponentVersion: 1.4.0
+updatedDate: 2022-08-26
+ComponentVersion: 1.5.0
 ---
 
 ## Description
@@ -40,6 +40,91 @@ This component has no trigger functions. This means it will not be accessible to
 select as a first component during the integration flow design.
 
 ## Actions
+
+### Calculate Flow Dependencies
+
+Action which emits list of all topics, secrets, credentials and components which are required by flow.
+
+#### Configuration Fields
+
+There is no configuration fields
+
+#### Input Metadata
+
+* **Flow ID** - (string, required): ID of the flow to be processed.
+
+### Validate Deployability
+
+Action which emits list of all topics, secrets, credentials and components which are NOT presented in provided workspace.
+
+#### Configuration Fields
+
+There is no configuration fields
+
+#### Input Metadata
+
+**Workspace Id** - (string, required): ID of the workspace where needed to check data.
+
+**Component version match strategy** - (string, optional). Select one of version check strategy:
+
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+    * `exactMatch` - workspace must have same version of component
+    * `exactMatchOrHigher` -  workspace must have same or above version of component
+</details>
+
+**Rebase** - (array of objects, optional): If you need to use another component in target workspace that is different to original, here you can provide mapping for it
+
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+    * **team_name** - original component developer team
+    * **to_team_name** - target workspace component developer team
+    * **repo_name** - original component repository name
+    * **to_repo_name** - target workspace repository name
+</details>
+
+**Topics** - (array of objects, optional): A list of all distinct topics
+
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+  * **id** - Unique topic identifier
+  * **name** - Topic name
+  * **schema** - Topic schema
+</details>
+
+**Credentials** - (array of objects, optional): A list of all distinct credentials
+
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+  * **id** - Unique credential identifier
+  * **name** - Credential name
+  * **component** - The component that uses the credential
+    * **id** - Component id
+    * **name** - Component repository name
+    * **team_name** - Component developer team
+</details>
+
+**Secrets** - (array of objects, optional): A list of all distinct (OAuth) secrets
+
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+  * **id** - Unique secret identifier
+  * **name** - Secret name
+  * **auth_client** - Authentication Client
+    * **id** - Client id
+    * **name** - Client name
+  * **component** - The component that uses the secret
+    * **id** - Component id
+    * **name** - Component repository name
+    * **team_name** - Component developer team
+</details>
+
+**components** - (array of objects, optional): A list of all distinct components
+
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+  * **id** - Component id
+  * **repo_name** - Component repository name
+  * **team_name** - Component developer team
+  * **title** - The name of the component identified by the component.json
+  * **description** - Component description
+  * **name** - Component name
+  * **version_number** - Component version number
+</details>
 
 ### Lookup Object (at Most One)
 
@@ -85,6 +170,7 @@ Use for retrieving multiple flows by provided search criteria
 #### Config Fields
 
 * **Object Type** Dropdown: Indicates Object Type, only **Flow** objects are supported.
+* **Retrieve only base fields** Checkbox: If selected, retrieves additional fields of selected Object Type. (Defaults to false)
 * **Emit behavior** Dropdown with options: `Fetch all`, `Fetch page`, `Emit individually`, required
 
 #### Input Metadata
