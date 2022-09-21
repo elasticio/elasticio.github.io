@@ -6,8 +6,8 @@ description: Article on why and how to use Zendesk component.
 icon: zendesk.png
 icontext: Zendesk component
 category: zendesk
-updatedDate: 2022-04-14
-ComponentVersion: 1.0.1
+updatedDate: 2022-09-09
+ComponentVersion: 1.0.2
 ---
 
 ## General information
