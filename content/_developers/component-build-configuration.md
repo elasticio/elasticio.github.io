@@ -19,7 +19,7 @@ Component vulnerabilities check contains two parts:
 
  * check vulnerabilities in the build docker image - **must be** **done by `CBH` during component build process**
 
-**`CBH`** has `build_component_docker` command which checks docker image vulnerabilities using `grype` tool.  
+**`CBH`** has `build_component_docker` command which checks docker image vulnerabilities using `grype` tool.
 
  * Image vulnerabilities check can be temporary disabled using env var`GRYPE_DISABLED=true`.
  * In case developer needs to ignore some vulnerability for component image `.grype-ignore.yaml` file can be included to the sources.
@@ -40,7 +40,7 @@ ignore:
 
  * **`CBH`**  has `generateDockerfile` function, which is used to create `Dockerfile` structure during deploy component to the platform.
 
- * **`CBH`** supports builds of next java versions: 1.8, 11, 17, 18
+ * **`CBH`** supports builds of the following java versions: 1.8, 11, 17
 
  *  Depending on the targetCompatibility value CBH supports different build/runtime images:
 
@@ -49,9 +49,9 @@ ignore:
  | 1.8 | `amazoncorretto:8-alpine-jdk` | `amazoncorretto:8-alpine-jre` |
  | 11 | `amazoncorretto:11-alpine-jdk` | `alpine:latest` |
  | 17 | `amazoncorretto:17-alpine-jdk` | `alpine:latest` |
- | 18 | `amazoncorretto:18-alpine-jdk` | `alpine:latest` |
 
- > **Limitation:** despite the fact that CBH supports Java 17/18, such Java version can not be used during components development. sailor-jvm doesn’t support Java 17/18 yet.
+
+ > **Limitation:** despite the fact that CBH supports Java 17, such Java version can not be used during components development. sailor-jvm doesn’t support Java 17 yet.
 
 * **`CBH`** uses latest `amazoncorretto:8-alpine-jdk(jre)` docker image as build and runtime environment. That’s helps to avoid vulnerabilities in the build/runtime docker image.
 
