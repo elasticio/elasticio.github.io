@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-07-29
-ComponentVersion: 1.6.4
+updatedDate: 2022-09-23
+ComponentVersion: 1.6.5
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,10 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.6.5 (September 23, 2022)
+
+* Added retry on `429` error (respecting the `Retry-After` header)
 
 ### 1.6.4 (July 29, 2022)
 

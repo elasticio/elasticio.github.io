@@ -6,8 +6,8 @@ description: A component to work with the Shopify API.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-07-29
-ComponentVersion: 1.6.4
+updatedDate: 2022-09-23
+ComponentVersion: 1.6.5
 redirect_from:
   - /components/shopify-admin/index.html
 ---
