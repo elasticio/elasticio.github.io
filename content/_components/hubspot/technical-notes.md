@@ -5,11 +5,15 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2022-04-13
-ComponentVersion: 1.5.2
+updatedDate: 2022-09-23
+ComponentVersion: 1.5.3
 ---
 
 ## Changelog
+
+### 1.5.3 (September 23, 2022)
+
+* Fix `Verify` for credentials
 
 ### 1.5.2 (April 13, 2022)
 
