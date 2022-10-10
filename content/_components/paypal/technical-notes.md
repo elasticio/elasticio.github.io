@@ -5,11 +5,17 @@ description: Technical Notes for the PayPal component
 icon: paypal.png
 icontext: PayPal component
 category: paypal
-updatedDate: 2022-05-20
-ComponentVersion: 1.3.1
+updatedDate: 2022-09-23
+ComponentVersion: 1.3.2
 ---
 
 ## Changelog
+
+### 1.3.2 (September 23, 2022)
+
+* Update Sailor version to 2.6.29
+* Get rid of vulnerabilities in dependencies
+* Update maester-client version to 4.0.3
 
 ### 1.3.1 (May 20, 2022)
 
