@@ -5,11 +5,17 @@ description: Changelog for the Docuware component
 icon: docuware.png
 icontext: Docuware component
 category: docuware
-ComponentVersion: 1.1.1
-updatedDate: 2022-05-20
+ComponentVersion: 1.1.2
+updatedDate: 2022-09-23
 ---
 
 ## Changelog
+
+### 1.1.2 (September 23, 2022)
+
+* Update Sailor version to 2.6.29
+* Get rid of vulnerabilities in dependencies
+* Update component-commons-library version to 3.0.2
 
 ### 1.1.1 (May 20, 2022)
 

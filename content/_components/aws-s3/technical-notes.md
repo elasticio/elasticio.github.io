@@ -5,14 +5,21 @@ description: Technical Notes for  AWS S3 component.
 icon: aws-s3.png
 icontext: AWS S3 component
 category: aws-s3
-updatedDate: 2022-05-20
-ComponentVersion: 1.5.1
+updatedDate: 2022-09-23
+ComponentVersion: 1.5.2
 redirect_from:
   - /components/aws-s3/completeness-matrix.html
   - /components/aws-s3/changelog.html
 ---
 
 ## Changelog
+
+### 1.5.2 (September 23, 2022)
+
+* Update Sailor version to 2.6.29
+* Get rid of vulnerabilities in dependencies
+* Update component-commons-library version to 3.0.2
+* Update oih-standard-library version to 2.0.3
 
 ### 1.5.1 (May 20, 2022)
 

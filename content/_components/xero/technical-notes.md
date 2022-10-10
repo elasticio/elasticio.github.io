@@ -5,11 +5,16 @@ description: Technical Notes for the Xero component
 icon: xero.png
 icontext: Xero component
 category: xero
-ComponentVersion: 1.2.0
-updatedDate: 2022-28-07
+ComponentVersion: 1.2.1
+updatedDate: 2022-09-23
 ---
 
 ## Changelog
+
+### 1.2.1 (September 23, 2022)
+
+* Update Sailor version to 2.6.29
+* Update component-commons-library version to 3.0.2
 
 ### 1.2.0 (July 15, 2022)
 

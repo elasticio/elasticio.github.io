@@ -6,8 +6,8 @@ description: A component that connects to Zoho-crm API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.4
-updatedDate: 2022-06-03
+ComponentVersion: 1.3.5
+updatedDate: 2022-09-09
 ---
 
 ## General information

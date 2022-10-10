@@ -6,8 +6,8 @@ description: A component that connects to DocuWare API
 icon: docuware.png
 icontext: Docuware component
 category: docuware
-ComponentVersion: 1.1.1
-updatedDate: 2022-05-20
+ComponentVersion: 1.1.2
+updatedDate: 2022-09-23
 ---
 
 ## General information

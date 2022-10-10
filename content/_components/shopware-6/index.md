@@ -2,12 +2,12 @@
 title: Shopware 6  component
 layout: component
 section: E-Commerce components
-description: A component to work with Shopware API.
+description: A component to connect to Shopware 6 API
 icon: shopware.png
 category: shopware-6
 icontext: Shopware-6 component
-updatedDate: 2022-09-09
-ComponentVersion: 1.1.0
+updatedDate: 2022-09-23
+ComponentVersion: 1.1.1
 ---
 
 ## Credentials
@@ -65,8 +65,8 @@ Lookup a set of objects by defined criteria list. Can be emitted in different wa
 * **Search Criteria** - (array of strings, required): [Search terms to filter objects](https://shopware.stoplight.io/docs/store-api/docs/concepts/search-queries.md#filter). Search terms are array which will be used as value for `filter` param of search. Be default, mapping configured to use fields "type", "field", "value", if you want to use another filter configuration - proceed to advanced mode. E.g: `[{ type: 'equals', field: 'firstName', value: 'John' }]`
 
 If selected `Emit Behavior` is `Emit page` additionally fields will be added:
-* **Page Number** - (number, defaults 0): Indicates amount number of page to fetched.
 * **Page Size** - (number, defaults to 500): Indicates amount of objects per page. Value from 0 to 500.
+* **Page Number** - (number, defaults 0): Indicates index of page to be fetched.
 
 #### Output Metadata
 
