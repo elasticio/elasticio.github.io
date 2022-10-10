@@ -5,11 +5,16 @@ description: Changelog for the HJSON component
 icon: hjson.png
 icontext: HJSON component
 category: hjson
-updatedDate: 2022-09-09
-ComponentVersion: 1.0.3
+updatedDate: 2022-10-07
+ComponentVersion: 1.0.4
 ---
 
 ## Changelog
+
+### 1.0.4 (October 07, 2022)
+
+* Fixed error while receiving attachment from Maester
+* Update Sailor version to 2.7.0
 
 ### 1.0.3 (September 09, 2022)
 
