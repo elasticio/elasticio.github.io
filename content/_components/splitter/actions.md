@@ -5,8 +5,8 @@ description: The Splitter integration connector was designed to work together wi
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2022-04-08
-ComponentVersion: 1.4.1
+updatedDate: 2022-10-07
+ComponentVersion: 1.4.2
 ---
 
 ## Split on JSONata Expression
@@ -86,7 +86,7 @@ If all the messages in the group do not arrive, then the group will not be emitt
 * The group is dropped if there are any unexpected restarts to the container.
 * In case only a groupSize is given and no delay timer is specified. The size of the group must be known by all group members.
 * In case of using the delay timer. Messages are only emitted when all parts arrive. Emitting a message only when the first part arrives isn't supported.
-* The delay timer can not exceed 40,000 milliseconds. If more than this maximum is given, then this maximum will be used instead.
+* The delay timer can not exceed 20,000 milliseconds. If more than this maximum is given, then this maximum will be used instead.
 
 ## Split Message By Array(deprecated)
 
