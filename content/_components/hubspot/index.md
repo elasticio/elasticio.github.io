@@ -6,8 +6,8 @@ description: A component that connects to HubSpot API
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2022-09-23
-ComponentVersion: 1.5.3
+updatedDate: 2022-10-07
+ComponentVersion: 1.5.4
 redirect_from:
   - /components/hubspot-component
   - /components/hubspot-component/actions
