@@ -24,10 +24,15 @@ the above conditions are met.
 
 ![Configuration component credential](img/configuration-component01.png)
 
-Afterwards, it emits a message with an object equivalent to the JSON in the configuration.
-So any data which is used in the flow and is repeated in multiple places can be
-configured (or later changed) in the single step. After that new values are used
-where it is needed.
+Afterwards, it emits a message with an object equivalent to the JSON in the config.
+So any data which is used in the flow and is repeated in multiple places can be configured (or later changed) in the single step.
+After that new values are used where it is needed.
+
+### Short example
+
+You want to make an email marketing that can allow the customers on your email list to be aware of new products, discounts, and other services. You have a base of your clients but your CRM system cannot automatically control the special clients which you want to mail with special promotions or offers. This can be done by adding a configuration component where you can set the list of your special clients that are very important for you and control it manually by modifying the clients list.
+
+If you are interested in a more detailed example of using a configuration component, please read this [article](usage-example).
 
 ### Environment variables
 
@@ -49,6 +54,7 @@ Input data example. Consider the following example:
 *   This fixed rate must be the same between all flows.
 
 If the configuration component existed, you build flows of the following form:
+
 ```
 ERP.GetPriceInfo()
   -> Config.LoadConfig()
@@ -87,8 +93,9 @@ This means **the component can not be selected as a first step in any integratio
 
 ### Emit data
 
-`Emit data` action emits the configuration data as a valid JSON object in a message.
-The output json schema can have any complexity.
+The only action that is supported by this component is to emit data. This action emits the configuration data as a valid JSON object in a message. The output json schema can have any complexity.
+
+But there are some [platform limitations](#known-limitations) with naked arrays, which do not allow access to the data in such arrays that has been emitted from a component, from the next step. This is why the naked arrays should not be passed to the component directly.
 
 ## Known limitations
 
