@@ -1,7 +1,7 @@
 ---
 title: Configuration Usage Example
 layout: component
-description: In this article you will see a flow with which you will clearly see how and where the Configuration component is used.
+description: In this article we demonstrate the function of the Configuration Component within an integration flow.
 icon: configuration.png
 icontext: Configuration component
 category: configuration
@@ -17,19 +17,19 @@ As the first step, we will use the Simpe trigger component, since there is no tr
 
 ![Configuration usage example 1](img/configuration-usage-1.png)
 
-In the next step we will use the Configuration component with our credentials - it emits JSON which was put in the credential field. Credential field consist of IDs of the most important clients:
+In the second step we will use the Configuration component with our credentials - it emits JSON which was put in the credential field. Credential field consist of IDs of the most important clients:
 
 ![Configuration usage example 1](img/configuration-usage-2.png)
 
-The 3d step is REST API v2 component which makes an API call to the CRM system that retrieves email addresses by client IDs:
+The third step uses the REST API v2 component which makes an API call to the CRM system that retrieves email addresses by client IDs:
 
 ![Configuration usage example 3](img/configuration-usage-3.png)
 
-Here you can see the client email addresses Sample:
+Here you can see the client email addresses Sample data:
 
 ![Configuration usage example 4](img/configuration-usage-4.png)
 
-The 4th and the last step is a E-Mail component which sends mail to our clients.
+The final step is the E-Mail component which sends mail to our clients.
 
 ![Configuration usage example 5](img/configuration-usage-5.png)
 
