@@ -13,7 +13,7 @@ ComponentVersion: 0.0.7
 
 In our example, we will be sending emails to our important customers. We will get access to the clients' IDs with the help of a Configuration component that will later pass this data on to get access to the clients' email addresses from the CRM system.
 
-As the first step, we will use the Simpe trigger component, since there is no trigger function in the Configuration component:
+As the first step, we will use the Simple trigger component, since there is no trigger function in the Configuration component:
 
 ![Configuration usage example 1](img/configuration-usage-1.png)
 
