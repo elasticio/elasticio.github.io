@@ -16,16 +16,10 @@ A component to filter the incoming data based on an arbitrary JSONata expression
 
 ## How it works
 
-Filter will pass through the incoming data if it matches the JSONata condition
-specified in the configuration. You can use any valid **JSONata** expression,
-so you can be creative. Here are some examples that are possible:
+Filter will pass through the incoming data if it matches the JSONata condition specified in the configuration.
+You can use any valid JSONata expression, however it can cause an error to be thrown if it is invalid based on the context.
 
-*   `true`
-*   `false`
-*   `$not(false)`
-*   `$not(true)`
-*    `20 > 5`
-*   `body.foo` - is true if `body.foo` is defined and not `false`
+>**For example:** $number(hello) > 5 where hello: "world". This JSONata expression is valid but an error will be thrown as hello is NaN.
 
 ## Requirements
 
@@ -60,6 +54,29 @@ The expression will be evaluated to a value of  `true` or `false`.
 the component will throw an error when the condition is not met.
 
 * `Metadata To Response` Adding passthrough from a previous step to message body as `elasticioMeta` variable, if enabled.
+
+## What can Filter do
+
+Filter condition - A JSONata expression passed in through the cfg.
+The expression will be evaluated to a value of true or false.
+
+* If **false** - a message will be logged to the console and the msg will not be sent forward to the next component.
+* If **true** - a new message with an empty body will be passed forward along with all data that passed the condition.
+
+The given expressions can be true or false if one and two is numbers:
+
+* $number(one) > $number(two), $number(one) < $number(two),
+* $number(one) >= $number(two), $number(one) <= $number(two),
+* $number(one) = $number(two), $number(one) != number(two), etc.
+
+body.foo - is true if body.foo is defined and not false.
+
+>**For example:** $exists(body.foo) - if the value exists then it will be defined as true, if not then false.
+
+If given Checkbox is checked:
+
+* Assertion - will throw an error if the condition is not met.
+* Metadata To Response - adds passthrough from a previous step to the message body as elasticioMeta variable. That means that data from all previous steps will be added to the message that is emitted.
 
 ## Additional Notes
 
