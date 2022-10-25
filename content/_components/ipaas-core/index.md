@@ -478,7 +478,7 @@ Raw HTTP Request Action allows to assemble custom requests to be sent to the sys
 
 #### Related API Documentation
 
-Platform API documentation can be found [here]({{site.data.tenant.apiBaseUri}}/docs/v2)
+Platform API documentation can be found [here]({{site.data.tenant.apiDocsUri}}/v2).
 
 ### Fetch Dynamic Select Model
 

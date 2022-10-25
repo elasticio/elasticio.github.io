@@ -49,7 +49,7 @@ If you need to delete a developer team:
 *   You should have the appropriate [permissions](/guides/managing-user-roles-in-a-tenant) and
 *   The developer team must contain no integration component.
 
-If the above conditions are true, you can proceed and delete the developer team using [an API call]({{site.data.tenant.apiBaseUri}}/v2/docs/#delete-a-team).
+If the above conditions are true, you can proceed and delete the developer team using [an API call]({{site.data.tenant.apiDocsUri}}/v2#/teams/delete_teams__team_id_)
 
 ## Manage integration components
 
@@ -145,4 +145,4 @@ When you create Environment variables, please set name and value and click to **
 
 - [Integration Component Overview](/getting-started/integration-component)
 - [Managing user roles in a tenant](/guides/managing-user-roles-in-a-tenant)
-- [Delete the developer team]({{site.data.tenant.apiBaseUri}}/v2/docs/#delete-a-team)
+- [Delete the developer team]({{site.data.tenant.apiDocsUri}}/v2#/teams/delete_teams__team_id_)
