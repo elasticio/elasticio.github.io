@@ -91,7 +91,7 @@ You can create a Recipe from scratch provided you have `workspaces.recipe.edit` 
 POST /v2/recipes/
 ```
 
-To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-recipe).
+To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiDocsUri}}/v2#/recipes/post_recipes).
 
 ### Creating Recipes from an existing flow
 
@@ -101,7 +101,7 @@ To create a Recipe from a chosen Flow, use the following request, provided you h
 POST /v2/flows/{FLOW_ID}/export-to-recipe
 ```
 
-To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-recipe).
+To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiDocsUri}}/v2#/recipes/post_flows__flow_id__export_to_recipe).
 
 ## Managing recipes using API
 
@@ -124,7 +124,7 @@ To retrieve a Recipe by its ID please use the following request, provided you ar
 GET /v2/recipes/{RECIPE_ID}
 ```
 
-To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-a-recipe-by-id).
+To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiDocsUri}}/v2#/recipes/get_recipes__recipe_id_).
 
 ### Retrieve all Recipes
 
@@ -136,7 +136,7 @@ To retrieve all Recipes please use the following request:
 GET /v2/recipes/
 ```
 
-To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-all-recipes).
+To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiDocsUri}}/v2#/recipes/get_recipes).
 
 ### Update a Recipe
 
@@ -148,7 +148,7 @@ To update the given Recipe please use the following request, provided you have `
 PATCH /v2/recipes/{RECIPE_ID}
 ```
 
-To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#update-a-recipe).
+To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiDocsUri}}/v2#/recipes/patch_recipes__recipe_id_).
 
 ### Update a Recipe visibility
 
@@ -166,7 +166,7 @@ This request is authorized depend on specified visibility level for a user that 
 *   to `contract` if user has permission `workspaces.recipe.edit`
 *   to `workspace` if user has permission `workspaces.recipe.edit`
 
-To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#update-a-recipe-visibility).
+To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiDocsUri}}/v2#/recipes/patch_recipes__recipe_id__visibility).
 
 ### Activate a Recipe - create a flow
 
@@ -178,7 +178,7 @@ To activate a Recipe please use the following request, provided you have `worksp
 POST /v2/recipes/{RECIPE_ID}/activate
 ```
 
-To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#activate-a-recipe).
+To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiDocsUri}}/v2#/recipes/post_recipes__recipe_id__activate).
 
 ### Delete a Recipe
 
@@ -189,4 +189,4 @@ following request:
 DELETE /v2/recipe/{RECIPE_ID}
 ```
 
-To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#delete-a-recipe).
+To see parameters and examples please visit [API-Documentation]({{site.data.tenant.apiDocsUri}}/v2#/recipes/delete_recipes__recipe_id_).

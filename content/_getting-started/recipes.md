@@ -31,5 +31,5 @@ There may be a few configurables that you'll need to deal with manually after ac
 ## Related links
 
 - [Integration Flow Overview](integration-flow)
-- [Create a recipe from existing flow]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-recipe-from-existing-flow)
-- [Create a recipe from scratch]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-a-recipe)
+- [Create a recipe from existing flow]({{site.data.tenant.apiDocsUri}}/v2#/recipes/post_flows__flow_id__export_to_recipe)
+- [Create a recipe from scratch]({{site.data.tenant.apiDocsUri}}/v2#/recipes/post_recipes)
