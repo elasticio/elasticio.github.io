@@ -79,8 +79,8 @@ Additionally, there is a way to reset snapshot for a Flow via the UI. Here is ho
 There is a number of API endpoints for creating and using snapshots. They allow
 you to (follow the links for details):
 
-1.  [Retrieve snapshots for all steps in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-snapshots-for-all-steps-in-flow)
-2.  [Retrieve snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-snapshot-for-one-step-in-flow)
-3.  [Edit snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#edit-snapshot-for-one-step-in-flow)
-4.  [Create snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-snapshot-for-one-step-in-flow)
-5.  [Remove snapshot for one step in Flow.]({{site.data.tenant.apiBaseUri}}/docs/v2/#remove-snapshot-for-one-step-in-flow)
+1.  [Retrieve snapshots for all steps in Flow.]({{site.data.tenant.apiDocsUri}}/v2#/snapshots/get_flows__flow_id__snapshots)
+2.  [Retrieve snapshot for one step in Flow.]({{site.data.tenant.apiDocsUri}}/v2#/snapshots/get_flows__flow_id__snapshots__step_id_)
+3.  [Edit snapshot for one step in Flow.]({{site.data.tenant.apiDocsUri}}/v2#/snapshots/patch_flows__flow_id__snapshots__step_id_)
+4.  [Create snapshot for one step in Flow.]({{site.data.tenant.apiDocsUri}}/v2#/snapshots/post_flows__flow_id__snapshots)
+5.  [Remove snapshot for one step in Flow.]({{site.data.tenant.apiDocsUri}}/v2#/snapshots/delete_flows__flow_id__snapshots__step_id_)

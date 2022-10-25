@@ -115,7 +115,7 @@ section of the **Contract Settings**, scrolling down to find the list of
 
 You can also delete invitation using a HTTP `DELETE` method to call our API
 `/v2/contracts/{CONTRACT_ID}/invites/{INVITE_ID}` endpoint if you have contract **Owner** and **Admin** role. Check our
-[API documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#remove-an-invitation-to-the-contract's-scope) for more details.
+[API documentation]({{site.data.tenant.apiDocsUri}}/v2#/contracts/delete_contracts__contract_id__invites__invite_id_) for more details.
 
 After deleting the invitation if your user tries to use the link in invitation
 email to join, he/she will get an error **Invite is not found or no longer valid**.
@@ -125,7 +125,7 @@ email to join, he/she will get an error **Invite is not found or no longer valid
 As a contract **Owner** and **Admin** you can update already sent but not accepted
 invitations using a HTTP `PATCH` method to call our API `/v2/contracts/{CONTRACT_ID}/invites/{INVITE_ID}` endpoint.
 You can update or remove roles you granted to this potential user and more. Check our
-[API documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#update-an-invitation-to-the-contract's-scope) for more details.
+[API documentation]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id__invites__invite_id_) for more details.
 
 ## Related links
 
