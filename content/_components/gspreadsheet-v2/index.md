@@ -291,12 +291,6 @@ A datatype of inserted values will be the same as for JSON type (string, numeric
 2. Input Mode: "First Row As Headers" requires cells in first row to be not empty. - check there are no empty cells in between in first row.
 3. Input Mode: "First Row As Headers" requires cells in first row to be unique. - check values in first row are distinct.
 
-#### Json schema locations
-
-|Schema type|Json schema location|
-|-----------| -------------|
-|Output   |[/schemas/createSpreadsheetRow.out.json](/schemas/createSpreadsheetRow.out.json)|
-
 ### Create/Upsert/Update Spreadsheet Row
 
 Action search the row/column identified by Upsert Criteria and find rows/columns where the value in the sheet matches the value in the incoming message:
