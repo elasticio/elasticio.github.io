@@ -51,12 +51,12 @@ The REST-API-v2 component has a possibility to use 4 types of auth-clients:
 * `api_key` - this is for API Key and header key
 * `noauth` - no authentication is required
 
-For all 4 cases, an `auth-client` [must be created]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client) before you can use them. This means even for the `noauth` you must have `auth-client` .
+For all 4 cases, an `auth-client` [must be created]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients/post_auth_clients) before you can use them. This means even for the `noauth` you must have `auth-client` .
 Each `auth-client` is unique to a component. That means if you deploy another copy of the REST-API-V2 component to our platform you would need to create all 4 types of `auth-clients` for this component to work. Here you can see an example what `noauth` body should look like:
 
 {% include img.html max-width="40%" url="img/auth-client-noauth.png" title="Noauth example" %}
 
-As you can see from example, the above API call body is for creating `noauth` type auth-client for the whole tenant. You can choose between `component`, `workspace`, `contract` and `tenant` levels. For more information please visit out [API documentation]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client).
+As you can see from example, the above API call body is for creating `noauth` type auth-client for the whole tenant. You can choose between `component`, `workspace`, `contract` and `tenant` levels. For more information please visit out [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients/post_auth_clients).
 
 <details close markdown="block"><summary><strong>noauth body in json</strong></summary>
 

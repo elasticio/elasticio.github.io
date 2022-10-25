@@ -74,4 +74,4 @@ select as a first component during the integration flow design.
 
 ## Known Limitations
 
-Please note that for the functionality to save and update the token to work correctly, the platform user must have `workspaces.credential.edit` permission (see [API docs]({{site.data.tenant.apiBaseUri}}/docs/v2/#update-a-credential)).
+Please note that for the functionality to save and update the token to work correctly, the platform user must have `workspaces.credential.edit` permission (see [API docs]({{site.data.tenant.apiDocsUri}}/v2#/credentials/patch_credentials__credential_id_)).
