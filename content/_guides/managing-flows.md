@@ -63,7 +63,7 @@ By following the link below, you will learn how to perform the functions describ
 
 4\. [Edit a Flow to some extent via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_).
 
-5\. [Retrieve a flow by ID]({{site.data.tenant.apiBaseUri}}/docs/v2/#retrieve-a-flow-by-id).
+5\. [Retrieve a flow by ID]({{site.data.tenant.apDocsUri}}/v2#/flows/get_flows__flow_id_).
 
 ## Copy Flow, Switch Flow Type
 
