@@ -80,7 +80,7 @@ For more advanced cases we recommend using an [API call](#creating-oauth2-client
 
 > **Please Note:** At the moment you can create other client types only via an API call.
 
-To create other `auth-client` types using the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client) API documentation. However, our platform knows already about the following types:
+To create other `auth-client` types using the [Create Auth Client]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients/post_auth_clients) API documentation. However, our platform knows already about the following types:
 
 *   `noauth` - to use for no authentication.
 *   `basic` - to use for regular `username`/`password` pair.
@@ -181,5 +181,5 @@ Below you can see where to find `CONTRACT_ID`(**1**) and `COMPONENT_ID`(**2**):
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/ids.png" title="Contact and Clients ID" %}
 
-Please consult the [Create Auth Client]({{site.data.tenant.apiBaseUri}}/docs/v2/#create-auth-client)
+Please consult the [Create Auth Client]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients/post_auth_clients)
 section for more.
