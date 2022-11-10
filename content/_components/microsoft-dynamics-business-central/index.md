@@ -14,7 +14,6 @@ ComponentVersion: 1.1.0
 
 Microsoft Dynamics Business Central APIs uses the OAuth 2.0.
 How to register an application look [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
-Redirect URI for EIO platform is `https://app.elastic.io/callback/oauth2`
 
 ![image](https://user-images.githubusercontent.com/16806832/195303766-ef8a1ca6-927c-4a6e-883a-c62c4d176623.png)
 
