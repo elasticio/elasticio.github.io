@@ -5,13 +5,18 @@ description: Technical Notes for the Jsonata component.
 icon: jsonata.png
 icontext: Jsonata component
 category: jsonata
-updatedDate: 2022-04-08
-ComponentVersion: 1.0.11
+updatedDate: 2022-10-28
+ComponentVersion: 1.0.12
 redirect_from:
   - /components/jsonata/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.12 (October 28, 2022)
+
+* Update Sailor version to 2.7.1
+* Update component-commons-library to 3.1.2 to support Jsonata 1.8.6
 
 ### 1.0.11 (April 08, 2022)
 
