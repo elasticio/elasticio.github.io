@@ -6,8 +6,8 @@ description: A component to connect Flows
 icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
-ComponentVersion: 1.0.1
-updatedDate: 2022-04-22
+ComponentVersion: 1.0.2
+updatedDate: 2022-10-07
 ---
 
 ## General information
@@ -20,7 +20,7 @@ However, the component needs next environment variables: ELASTICIO_API_URI, ELAS
 
 ### Credentials
 
-**Shared Secret** (string, required): A value to be used to authenticate all HTTP calls.
+* **Shared Secret** (string, required): A value to be used to authenticate all HTTP calls.
 
 ## Triggers
 
@@ -30,7 +30,7 @@ This trigger allows you receive and validate request from other action.
 
 #### Output Metadata
 
-Body from the request (Object, required)
+* Body from the request (Object, required)
 
 ## Actions
 
@@ -40,16 +40,17 @@ This action allows you to trigger another flow with request body
 
 #### Input Metadata
 
-**Flow Name to Call** (String Enum, required): A single flow from a list of flows that have the "Flow Linking Component" as the trigger within the current workspace.
+* **Flow Name to Call** (String Enum, required): A single flow from a list of flows that have the "Flow Linking Component" as the trigger within the current workspace.
 
->**Pleae Note:** `Enum` is only available if flows amount < 100. In other case input name by yourself.
+>**Please Note:** `Enum` is only available if flows amount < 100. In other case input name by yourself.
 
-**Data to transfer** (Object, required): JSON object containing data to send into the next flow.
+* **Data to transfer** (Object, required): JSON object containing data to send into the next flow.
 
 #### Output Metadata
 
-**Response** (Object, required): Response of triggering request
+* **Response** (Object, required): Response of triggering request
 
 ## Known limitations
 
-* Flow matching should be done by Name. If the number of matching flows is not exactly 1, then an error should be thrown.
+* Flow matching should be done by Name. If the number of matching flows is not exactly 1, then an error will be thrown.
+* `Flow Name to Call` lists all flows that contains `Flow Linking Component` technical trigger name - `receiveTrigger`
