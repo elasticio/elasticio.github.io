@@ -5,8 +5,8 @@ description: In this article you will see a flow with which you will clearly see
 icon: hjson.png
 icontext: HJSON component
 category: hjson
-updatedDate: 2022-10-07
-ComponentVersion: 1.0.4
+updatedDate: 2022-10-21
+ComponentVersion: 1.0.5
 ---
 
 ## JSON to HJSON
