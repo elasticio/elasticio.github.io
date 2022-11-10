@@ -6,8 +6,8 @@ description:
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.1.3
-updatedDate: 2022-04-22
+ComponentVersion: 1.2.0
+updatedDate: 2022-10-21
 ---
 
 ## General information
@@ -127,7 +127,7 @@ This action reads the files from a Git repository and saves them in Maester (Ela
 #### Input Metadata
 
 - Git Branch (string, required): Identifies an existing branch in the git repo from which to read
-- Files to transfer to IPAAS (array of strings, required): List of files or file wildcards to read from the commit and transfer to Maester
+- Files to transfer (array of strings, required): List of files or file wildcards to read from the commit and transfer to Maester
 
 #### Output Metadata
 

@@ -5,16 +5,23 @@ description: Technical Notes for the Git-Protocol component
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.1.3
-updatedDate: 2022-04-22
+ComponentVersion: 1.2.0
+updatedDate: 2022-10-21
 ---
 
 ## Changelog
 
+### 1.2.0 (October 21, 2022)
+
+* Added support for public git repositories
+* Update `sailor-nodejs` to 2.7.0
+* Implement custom Dockerfile
+* Update Node engine version to 16.13.2
+
 ### 1.1.3 (April 22, 2022)
 
 * Update `component-commons-library` to 2.0.2
-* Update `elasticio-sailor-nodejs` to 2.6.27
+* Update `sailor-nodejs` to 2.6.27
 * Added component-pusher to circleci
 * Fix dependencies
 
