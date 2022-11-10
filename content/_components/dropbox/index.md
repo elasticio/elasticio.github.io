@@ -6,8 +6,8 @@ description: Component to interact with Dropbox.
 icon: dropbox.png
 icontext: Dropbox component
 category: dropbox
-updatedDate: 2022-04-22
-ComponentVersion: 1.0.3
+updatedDate: 2022-10-07
+ComponentVersion: 1.1.0
 ---
 
 ## General information
@@ -133,7 +133,8 @@ Action upserts (create or replace) with file from attachment by provided path in
   "rev": "015a224d3e0147b00000001b724db90",
   "size": 28,
   "is_downloadable": true,
-  "content_hash": "10931f016454cbd4d852632b81f2e5ab2502dc120e2afb7efcd6b64fb9d27e7a"
+  "content_hash": "10931f016454cbd4d852632b81f2e5ab2502dc120e2afb7efcd6b64fb9d27e7a",
+  "url": "http://maester-service.platform.svc.cluster.local:3002/objects/70d14266-37ae-46b7-b485-d4a2948b24e7?storage_type=maester"
 }
 ```
 
@@ -153,7 +154,7 @@ Action to delete folder or file from Dropbox by provided path:
 
 #### Input example:
 
-```
+```json
   {
       "path": "base_folder/inner_folder/file.any"
   }
@@ -163,39 +164,39 @@ Action to delete folder or file from Dropbox by provided path:
 
   - Error response example
 
-```json
- {
-   "metadata": {
-     "path": "/test/DeleteByPath/Document.docx"
-   },
-   "result": "path_lookup/not_found/...",
-   "error": {
-     ".tag": "path_lookup",
-     "path_lookup": {
-       ".tag": "not_found"
+  ```json
+  {
+     "metadata":{
+        "path":"/test/DeleteByPath/Document.docx"
+     },
+     "result":"path_lookup/not_found/...",
+     "error":{
+        ".tag":"path_lookup",
+        "path_lookup":{
+           ".tag":"not_found"
+        }
      }
-   }
- }
+  }
 ```
 
 - Successful response
 
 ```json
 {
-  "metadata": {
-    ".tag": "file",
-    "name": "Document.docx",
-    "path_lower": "/test/deletebypath/document.docx",
-    "path_display": "/test/DeleteByPath/Document.docx",
-    "id": "id:o0yGDTvyrFAAAAAAAAAAIw",
-    "client_modified": "2020-03-31T13:32:00Z",
-    "server_modified": "2020-03-31T13:32:01Z",
-    "rev": "015a22697b3373f000000013a1ecc50",
-    "size": 10982,
-    "is_downloadable": true,
-    "content_hash": "8424108d60c2a77a6c36355e4a974882a79ca4ecd25a611f0c0b68713d31a044"
-  },
-  "result": "deleted"
+   "metadata":{
+      ".tag":"file",
+      "name":"Document.docx",
+      "path_lower":"/test/deletebypath/document.docx",
+      "path_display":"/test/DeleteByPath/Document.docx",
+      "id":"id:o0yGDTvyrFAAAAAAAAAAIw",
+      "client_modified":"2020-03-31T13:32:00Z",
+      "server_modified":"2020-03-31T13:32:01Z",
+      "rev":"015a22697b3373f000000013a1ecc50",
+      "size":10982,
+      "is_downloadable":true,
+      "content_hash":"8424108d60c2a77a6c36355e4a974882a79ca4ecd25a611f0c0b68713d31a044"
+   },
+   "result":"deleted"
 }
 ```
 
