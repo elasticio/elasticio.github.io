@@ -5,8 +5,8 @@ description: Google Spreadsheets component triggers.
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
-updatedDate: 2022-05-20
-ComponentVersion: 2.0.3
+updatedDate: 2022-10-07
+ComponentVersion: 2.0.4
 ---
 
 ## Get Spreadsheet Row

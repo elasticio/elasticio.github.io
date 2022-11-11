@@ -5,14 +5,20 @@ description: Technical Notes for Google Spreadsheets component.
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet
-updatedDate: 2022-05-20
-ComponentVersion: 2.0.3
+updatedDate: 2022-10-07
+ComponentVersion: 2.0.4
 redirect_from:
   - /components/gspreadsheet/completeness-matrix.html
   - /components/gspreadsheet/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.4 (October 07, 2022)
+
+* Update Sailor version to 2.7.0
+* Get rid of vulnerabilities in dependencies
+* Fixed errors during push to platform - reduced size of metadata
 
 ### 2.0.3 (May 20, 2022)
 

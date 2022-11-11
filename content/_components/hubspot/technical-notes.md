@@ -5,11 +5,17 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2022-10-07
-ComponentVersion: 1.5.4
+updatedDate: 2022-10-21
+ComponentVersion: 1.5.5
 ---
 
 ## Changelog
+
+### 1.5.5 (October 21, 2022)
+
+* Implemented support for custom fields in `Get New and Updated Objects` trigger
+* Fixed missing output metadata for lookup actions
+* Update Sailor version to 2.7.1
 
 ### 1.5.4 (October 07, 2022)
 
