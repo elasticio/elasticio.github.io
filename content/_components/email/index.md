@@ -6,8 +6,8 @@ description: In this case it is not about a particular application but the email
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.2.1
-updatedDate: 2022-08-26
+ComponentVersion: 1.2.3
+updatedDate: 2022-11-04
 ---
 
 ## How works
@@ -20,13 +20,13 @@ The component sends a new transaction through Mandrill using the [Send](https://
 
 The component can be configured using the following environmental variables
 
-Name|Mandatory|Description|Values|
-|----|---------|-----------|------|
-|`MANDRILL_API_KEY`| true | You can use API key provided by platform or [generate](https://mailchimp.com/developer/transactional/guides/quick-start/#generate-your-api-key) it by yourself (required for custom component/installation) | any `string` |
-|`MANDRILL_FROM_EMAIL`| false | Sender email address, `no-reply@elastic.io` by default | any `string`|
-|`MANDRILL_FROM_NAME`| false | Sender name, `elastic.io` by default | any `string`|
-|`MANDRILL_URL`| false | Base path and version of mandrill installation, `https://mandrillapp.com/api/1.0` by default | any `string`|
-|`MAX_BODY_LENGTH`| false | Maximum email message size (including attachments), `10485760` (10MB) by default | any `number`|
+| Name                  | Mandatory | Description                                                                                                                                                                                                 | Values       |
+|-----------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| `MANDRILL_API_KEY`    | true      | You can use API key provided by platform or [generate](https://mailchimp.com/developer/transactional/guides/quick-start/#generate-your-api-key) it by yourself (required for custom component/installation) | any `string` |
+| `MANDRILL_FROM_EMAIL` | false     | Sender email address | any `string` |
+| `MANDRILL_FROM_NAME`  | false     | Sender name | any `string` |
+| `MANDRILL_URL`        | false     | Base path and version of mandrill installation, `https://mandrillapp.com/api/1.0` by default | any `string` |
+| `MAX_BODY_LENGTH`     | false     | Maximum email message size (including attachments), `10485760` (10MB) by default | any `number` |
 
 >**Please note:** that you must [verify your domain](https://mailchimp.com/developer/transactional/docs/authentication-delivery/#authentication) before using this component and configuring it with your environmental variables.
 
