@@ -6,8 +6,8 @@ description: Component to convert or replace incoming values using a Lookup tabl
 icon: lookup.png
 icontext: Lookup component
 category: lookup
-ComponentVersion: 1.1.6
-updatedDate: 2022-04-05
+ComponentVersion: 1.1.7
+updatedDate: 2022-10-21
 ---
 
 ## Description
@@ -112,10 +112,7 @@ where the value is the result of the table lookup, if it exists:
 
 ## Additional Info
 
-Any elements of the CSV that contain the delimiter in them should be wrapped in
-`"double quotes"`. Any elements of the CSV that contain the delimiter and also
-quotations should have the quotes backspaced.
-
+- Any elements of the CSV that contain the delimiter in them should be wrapped in `"double quotes"`. Any elements of the CSV that contain the delimiter and also quotations should have the quotes backspaced.
 e.g.
 
 ```
@@ -123,6 +120,9 @@ Full Name,First,Last
 "Bond,James",James,Bond
 "Johnson, Dwayne \"The Rock\"",Dwayne,Johnson
 ```
+
+- If you want to mark an element as a string (e.g. "5" or "Some text inside a single element"), you must use `"`, not `'`, because `'` is considered as an additional character. So in this case:
+2 is the same as "2", but '2' would be equal to "'2'".
 
 ### Known Limitations
 
