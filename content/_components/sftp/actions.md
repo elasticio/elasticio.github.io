@@ -5,8 +5,8 @@ description: SFTP component actions.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-08-26
-ComponentVersion: 1.5.2
+updatedDate: 2022-11-04
+ComponentVersion: 1.6.0
 ---
 
 ## Delete File
@@ -63,6 +63,9 @@ Finds a file by criteria in the provided directory and uploads (streams) to the 
     * **Emit Individually** - Each object will be emitted separately filling the entire message
 * **Number of search terms** - (number, optional, between 0 and 99): Defines the number of search terms that the entity must match
 * **Upload files to attachment** - (dropdown, optional): If set to `Yes` files will be uploaded to platform storage
+* **File Upload Retry** - (number, optional, default 5): How many times to retry file upload as attachment to platform storage
+* **Retry Timeout** - (number, optional, default 10000): How long to wait between retry attempts in milliseconds
+* **File Upload Timeout** - (number, optional, default 10000): If a file upload process is longer than the specified number of milliseconds and is not processing any data (receiving or uploading), the timeout will be thrown (the process will be retried if \"File Upload Retry\" set)
 
 ### Input Metadata
 

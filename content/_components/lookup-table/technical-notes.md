@@ -5,13 +5,19 @@ description: Technical Notes for Lookup Table component.
 icon: lookup.png
 icontext: Lookup component
 category: lookup
-ComponentVersion: 1.1.6
-updatedDate: 2022-04-05
+ComponentVersion: 1.1.7
+updatedDate: 2022-10-21
 redirect_from:
   - /components/lookup-table/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.7 (October 21, 2022)
+
+* Update Sailor version to 2.7.1
+* Add async to a process action
+* Input values are now stringified before being processing
 
 ### 1.1.6 (May 05, 2022)
 

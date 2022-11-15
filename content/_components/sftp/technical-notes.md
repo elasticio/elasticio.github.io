@@ -5,13 +5,18 @@ description: Technical Notes for the SFTP component.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-08-26
-ComponentVersion: 1.5.2
+updatedDate: 2022-11-04
+ComponentVersion: 1.6.0
 redirect_from:
   - /components/sftp/changelog.html
 ---
 
 ## Changelog
+
+### 1.6.0 (November 04, 2022)
+
+* Added configurable retries on file upload to platform in `Download Files` action
+* Update Sailor version to 2.7.1
 
 ### 1.5.2 (August 26, 2022)
 

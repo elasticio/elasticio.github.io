@@ -5,11 +5,17 @@ description: Technical Notes for the  Google Spreadsheets component v2
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet-v2
-updatedDate: 2022-08-12
-ComponentVersion: 1.0.1
+updatedDate: 2022-10-07
+ComponentVersion: 1.0.2
 ---
 
 ## Changelog
+
+### 1.0.2 (October 07, 2022)
+
+* Update Sailor version to 2.7.0
+* Fixed issue when component doesn't send any data during timeout
+* Fixed errors during push to platform - reduced size of metadata
 
 ### 1.0.1 (August 12, 2022)
 

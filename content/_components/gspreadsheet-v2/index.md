@@ -6,8 +6,8 @@ description: iPaaS component to read and write to Google Spreadsheets Component 
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet-v2
-updatedDate: 2022-08-12
-ComponentVersion: 1.0.1
+updatedDate: 2022-10-07
+ComponentVersion: 1.0.2
 ---
 
 
