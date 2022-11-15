@@ -5,13 +5,23 @@ description: Technical Notes for the Configuration component
 icon: configuration.png
 icontext: Configuration component
 category: configuration
-updatedDate: 2021-11-26
-ComponentVersion: 0.0.7
+updatedDate: 2022-11-04
+ComponentVersion: 1.0.1
 redirect_from:
   - /components/configuration/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.1 (November 04, 2022)
+
+* Update Sailor version to 2.7.1
+
+### 1.0.0 (April 08, 2022)
+
+* Update Sailor version to 2.6.27
+* Get rid of vulnerabilities in dependencies
+* Add component pusher job to Circle.ci config
 
 ### 0.0.7 (November 26, 2021)
 
