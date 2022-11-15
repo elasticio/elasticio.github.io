@@ -86,6 +86,11 @@ Fix OAuth2 authentication strategy limitation: `refresh_token` property is now o
 * First commit of v2 branch.
 
 
+### 1.2.20 (November 11, 2022)
+
+* Update Sailor version to 2.7.1
+* Update Node engine to 16.13.2
+
 ### 1.2.19 (April 08, 2022)
 
 * Update Sailor version to 2.6.27
