@@ -5,13 +5,18 @@ description: Technical Notes for the Utility Component.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2022-09-23
-ComponentVersion: 1.5.2
+updatedDate: 2022-11-04
+ComponentVersion: 1.5.3
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+### 1.5.3 (November 04, 2022)
+
+* Update Sailor version to 2.7.1
+* Fix issue where action `String From Attachment` don't work properly
 
 ### 1.5.2 (September 23, 2022)
 
