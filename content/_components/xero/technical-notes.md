@@ -5,11 +5,15 @@ description: Technical Notes for the Xero component
 icon: xero.png
 icontext: Xero component
 category: xero
-ComponentVersion: 1.2.1
-updatedDate: 2022-09-23
+ComponentVersion: 1.2.2
+updatedDate: 2022-11-04
 ---
 
 ## Changelog
+
+### 1.2.2 (November 04, 2022)
+
+* Fix verify credentials
 
 ### 1.2.1 (September 23, 2022)
 

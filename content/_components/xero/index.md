@@ -6,8 +6,8 @@ description: iPaaS component that connects to Xero API
 icon: xero.png
 icontext: Xero component
 category: xero
-ComponentVersion: 1.2.1
-updatedDate: 2022-09-23
+ComponentVersion: 1.2.2
+updatedDate: 2022-11-04
 ---
 
 ## Requirements
