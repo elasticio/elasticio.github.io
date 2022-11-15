@@ -6,8 +6,8 @@ description: A component enables you to manage your organization’s sales, mark
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-08-30
-ComponentVersion: 2.4.0
+updatedDate: 2022-11-18
+ComponentVersion: 2.4.2
 ---
 
 {{page.description}}
