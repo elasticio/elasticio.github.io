@@ -6,8 +6,8 @@ description: This component is designed to operate with zip files.
 icon: zip-unzip.png
 icontext: ZIP/UnZIP component
 category: zip
-updatedDate: 2022-04-22
-ComponentVersion: 1.1.5
+updatedDate: 2022-11-04
+ComponentVersion: 1.1.6
 ---
 
 ## Environment variables
@@ -91,3 +91,5 @@ Contains array of items with properties:
 ## Limitations
 
 1. Attachments mechanism does not work with the [Local Agent Installation](/getting-started/local-agent).
+
+2. UnZIP action does not support archived folders. It can only unzip archived files.
