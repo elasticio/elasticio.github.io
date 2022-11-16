@@ -15,12 +15,11 @@ redirect_from:
 
 ### 1.1.8 (November 11, 2022)
 
-* The same 1.1.7 release. Just to publish under greater version number ?????
+* Update Node version to 16.13.2
 
 ### 1.1.7 (November 04, 2022)
 
 * Update Sailor version to 2.7.1
-* Update Node version to 16.13.2
 
 ### 1.1.6 (April 08, 2022)
 
