@@ -5,14 +5,23 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-08-30
-ComponentVersion: 2.4.0
+updatedDate: 2022-11-18
+ComponentVersion: 2.4.2
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.4.2 (November 18, 2022)
+
+* Improved error handling in `Lookup Objects` action
+
+### 2.4.1 (October 07, 2022)
+
+* Fixed loop issue when records equal to `Size of Polling Page` and have same `LastModifiedDate` in `Get Updated Objects Polling` trigger
+* Update Sailor version to 2.7.0
 
 ### 2.4.0 (August 30, 2022)
 

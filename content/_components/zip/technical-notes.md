@@ -5,13 +5,18 @@ description: Technical Notes for the ZIP/UnZIP component.
 icon: zip-unzip.png
 icontext: ZIP/UnZIP component
 category: zip
-updatedDate: 2022-04-22
-ComponentVersion: 1.1.5
+updatedDate: 2022-11-04
+ComponentVersion: 1.1.6
 redirect_from:
   - /components/zip/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.6 (November 04, 2022)
+
+* Fix 'EACCESS: permission denied' error in the Unzip action
+* Update Sailor version to 2.7.1
 
 ### 1.1.5 (April 22, 2022)
 

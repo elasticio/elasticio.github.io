@@ -5,8 +5,8 @@ description: In this article you will see a flow with which you will clearly see
 icon: filter.png
 icontext: Filter component
 category: filter
-ComponentVersion: 1.1.3
-updatedDate: 2022-04-08
+ComponentVersion: 1.1.4
+updatedDate: 2022-11-18
 ---
 
 ## Calculate discount if exists

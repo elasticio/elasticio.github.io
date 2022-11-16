@@ -6,8 +6,8 @@ description: Request-Reply component for the platform.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2022-08-26
-ComponentVersion: 1.2.6
+updatedDate: 2022-11-04
+ComponentVersion: 1.2.7
 ---
 
 ## Description
@@ -21,8 +21,7 @@ This component requires no authentication.
 
 ### Environment variables
 
-> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
+> **Please Note:** From the platform version [20.51](/releases/2020-12-17) we deprecated the component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Technical Notes
 
@@ -74,7 +73,7 @@ List of Expected Config fields:
 
 ![Reply with attachment](img/reply-with-attachment.png)
 
-> **Note:** Please be advised that the action does not actually write an attachment when the sample is retrieved.
+> **Please Note:** Be advised that the action does not actually write an attachment when the sample is retrieved.
 
 ## Use cases for HTTP Reply
 

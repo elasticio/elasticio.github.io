@@ -5,13 +5,17 @@ description: Technical Notes for the Filter component
 icon: filter.png
 icontext: Filter component
 category: filter
-ComponentVersion: 1.1.3
-updatedDate: 2022-04-08
+ComponentVersion: 1.1.4
+updatedDate: 2022-11-18
 redirect_from:
   - /components/filter/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.4 (November 18, 2022)
+
+* Update Sailor version to 2.7.1
 
 ### 1.1.3 (April 08, 2022)
 
