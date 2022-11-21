@@ -13,6 +13,7 @@ ComponentVersion: 2.0.4
 ## General information
 
 ### Description
+
 Сomponent that provides an opportunity to collect messages to a batch.
 
 The main purpose is to provide a user with a simple collection and an opportunity to process messages in batches.
