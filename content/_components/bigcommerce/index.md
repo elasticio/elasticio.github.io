@@ -6,8 +6,8 @@ description: A component to work with BigCommerce online stores
 icon: bigcommerce.png
 icontext: BigCommerce Component
 category: bigcommerce
-updatedDate: 2022-03-03
-ComponentVersion: 2.0.1
+updatedDate: 2022-11-18
+ComponentVersion: 3.0.0
 ---
 
 ## General information
@@ -112,62 +112,6 @@ Deletes selected object by ID.
 * **ID** - `string`, BigCommerce object ID
 
 Result is an object with a property **id** in case of successful operation.
-
-### Create a Payment
-
-Action creates a payment for order using one of BigCommerce payment gateways
-
-#### Config fields
-
-None
-
-#### Input Metadata
-
-* **Order ID** (number, required) - Unique order identifier which will be used for the payment, make sure that order `status_id:0` ([more info](https://developer.bigcommerce.com/api-docs/store-management/payment-processing#using-the-orders-api))
-* **Payment method ID** (string, required) - Provide payment method, that was configured on platform and supported by order (ex. - `"authorizenet.card"`). Available list can be found using [Get Payment Methods](https://developer.bigcommerce.com/api-reference/store-management/payment-processing/accepted-methods/paymentsmethodsget)
-* **Payment Instrument details** (object, required) - Details of the payment
-
-<details close markdown="block">
-<summary>
-Credit card sample
-</summary>
-  ```json
-    {
-      "type": "card",
-      "number": "4111111111111111",
-      "cardholder_name": "success",
-      "expiry_month": 3,
-      "expiry_year": 2030,
-      "verification_value": "737"
-    }
-  ```
-</details>
-
-<details close markdown="block">
-<summary>
-Stored card sample
-</summary>
-
-  ```json
-    {
-      "type": "stored_card",
-      "token": "050a1e5c982e5905288ec5ec33f292772762033a0704f46fccb16bf1940b51ef",
-      "verification_value": "4242"
-    }
-  ```
-    \* You will need the `"token"` from [Get Payment Methods](https://developer.bigcommerce.com/api-reference/store-management/payment-processing/accepted-methods/paymentsmethodsget)
-</details>
-
-* **Save Instrument** (boolean, optional) - Should the credit card be saved once used. False by default.
-
-#### Output Metadata
-
-* **status** (number, required) - Http status code
-* **data** (object, required) - Data returned from the payment API
-
-#### Limitations
-
-If you provide wrong/unavailable `Payment method ID` system return status 204 without errors and data
 
 ### Lookup Object by ID
 
