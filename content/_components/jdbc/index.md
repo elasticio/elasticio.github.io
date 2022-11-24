@@ -6,8 +6,8 @@ description: A component to work with object-relational database management syst
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2022-05-20
-ComponentVersion: 2.5.5
+updatedDate: 2022-11-04
+ComponentVersion: 2.5.6
 ---
 
 ## General information
@@ -118,3 +118,5 @@ JDBC component includes the following actions:
  - ``Oracle``: 61000
  - ``MSSQL``: 40001
  - ``PostgreSQL``:  40P01
+
+5. If your database server configured to custom timezone (differ from UTC) JDBC driver may convert time appropriate - for example if you want to use `Insert action` with `MySQL` which is configured to `+2:00` time zone and provide `2022-01-01 15:00:00` as value to some datetime field in database it will be saved as `2022-01-01 17:00:00`.
