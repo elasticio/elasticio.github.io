@@ -6,8 +6,8 @@ description: A component used to map source data to target data.
 icon: id-linking.png
 icontext: ID Linking component
 category: id-linking
-updatedDate: 2022-06-08
-ComponentVersion: 1.1.0
+updatedDate: 2022-11-24
+ComponentVersion: 1.2.0
 ---
 
 ## General information
@@ -81,6 +81,25 @@ This component has no trigger functions. This means it will not be accessible to
 select as a first component during the integration flow design.
 
 ## Actions
+
+### Delete Object
+
+This action deletes a linked object from the list of linked objects in the bucket by the source system ID key provided once a match object is found.
+
+#### Config Fields
+
+* **System Type to delete by (a key to lookup by)** - (required) - A system to lookup the ID in. Either System A or System B.
+
+* **Do not throw error when no object found** - (optional) - This option defines the strategy to follow if no object found by the provided key. By default, an error `No object found by provided ID in the bucket` will be thrown. Once the checkbox is checked - an empty message will be returned instead of throwing errors.
+
+#### Input Metadata
+
+* sourceSystemId - Number, String or Object (required). ID to lookup in the source system.
+
+#### Output Metadata
+
+* result - a found object or empty. **If result is not empty**:
+* An object representing a bucket. Contains a bucket ID and an array of linked objects
 
 ### Lookup Object
 

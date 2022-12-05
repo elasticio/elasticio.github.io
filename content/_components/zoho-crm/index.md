@@ -6,8 +6,8 @@ description: A component that connects to Zoho-crm API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.5
-updatedDate: 2022-09-09
+ComponentVersion: 1.3.6
+updatedDate: 2022-11-24
 ---
 
 ## General information
@@ -67,6 +67,12 @@ A few (not a comprehensive list, just a few examples!) most used scopes:
 2. `ZohoCRM.modules.ALL`. Recommended by default.
 3. `ZohoCRM.users.ALL`. Required to communicate with the `Users` module.
 4. `ZohoCRM.coql.READ`. Required for Lookup objects (plural) action as it uses COQL queries under the hood.
+
+Multiple scopes can be applied with the comma as a separator.
+
+>**Please Note:** that whitespaces between scopes are not allowed!
+
+E.g.: `ZohoCRM.settings.ALL,ZohoCRM.modules.ALL,ZohoCRM.users.ALL`
 
 ## Trigger
 
