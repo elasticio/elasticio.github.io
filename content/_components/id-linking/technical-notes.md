@@ -5,11 +5,16 @@ description: Technical Notes for the ID Linking component
 icon: id-linking.png
 icontext: ID Linking component
 category: id-linking
-updatedDate: 2022-06-08
-ComponentVersion: 1.1.0
+updatedDate: 2022-11-24
+ComponentVersion: 1.2.0
 ---
 
 ## Changelog
+
+### 1.2.0 (November 24, 2022)
+
+* Added Delete Object action
+* Updated Sailor to 2.7.1
 
 ### 1.1.0 (June 08, 2022)
 
