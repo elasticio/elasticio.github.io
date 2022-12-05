@@ -1,12 +1,3 @@
-node_modules
-*.gz
-.idea
-lib-cov
-coverage.html
-reports
-.DS_Store
-/*.png
-coverage
 _site
 vendor
 .jekyll-cache
