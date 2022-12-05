@@ -6,8 +6,8 @@ description: Plytix Component is designed to connect Plytix API.
 icon: plytix.png
 icontext: Plytix component
 category: plytix
-updatedDate: 2022-11-18
-ComponentVersion: 1.0.0
+updatedDate: 2022-11-23
+ComponentVersion: 1.1.0
 ---
 
 ## Description
@@ -48,6 +48,30 @@ There is no Input or Output Metadata
 Pagination has not been implemented yet in this trigger. Running a flow will return a single page with all of the results of the query.
 
 ## Actions
+
+### Link or Unbind object
+
+Action execute `Link` or `Unbind` operation for objects:
+
+ - `Products` <-> `Assets`
+ - `Products` <-> `Categories`
+ - `Products` <-> `Variations`
+ - `Products` <-> `Relationships`
+ - `Product Attribute Groups` <-> `Attribute`
+ - `Assets` <-> `Categories`
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Assets`.
+* **Operation** - (dropdown, required): `Link` or `Unbind` operation.
+
+#### Input Metadata
+
+Generated dynamically and depends on the object type, typically: parent object ID and label object ID or object to be linked or unbounded to the parent object.
+
+#### Output Metadata
+
+Dynamically generated, depended on Object Type.
 
 ### Lookup Object (at most one)
 

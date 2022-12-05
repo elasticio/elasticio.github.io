@@ -5,11 +5,15 @@ description: Technicl Notes for the Plytix components.
 icon: plytix.png
 icontext: Plytix component
 category: plytix
-updatedDate: 2022-11-18
-ComponentVersion: 1.0.0
+updatedDate: 2022-11-23
+ComponentVersion: 1.1.0
 ---
 
 ## Changelog
+
+### 1.1.0 (November 23, 2022)
+
+* Added `Link or Unbind object` Action
 
 ### 1.0.0 (November 18, 2022)
 
