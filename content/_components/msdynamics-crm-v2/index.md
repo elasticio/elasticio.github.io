@@ -67,12 +67,12 @@ Lookup a set of object by defined criteria list. Can be emitted in different way
 
 #### Configuration Fields
 
-* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Contacts`.
-* **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
+*   **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Contacts`.
+*   **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
 
 #### Input Metadata
 
-* **Search Criteria** - (array of strings, required): [Search terms to filter objects](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results). Search terms are array which will be used as value for `filter` param of search. Be default, mapping configured to combine all search terms with `and` logical operator, if you want to use another behavior - proceed to advanced mode. Example Search Criteria: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: '_primarycontactid_value', operator: 'eq', fieldValue: 'd1bf9a01-b056-e711-abaa-00155d701c02' }]`
+* **Search Criteria** - (array of strings, required): [Search terms to filter objects](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results). Search terms are array which will be used as value for `filter` parameter of search. Be default, mapping configured to combine all search terms with `and` logical operator, if you want to use another behavior - proceed to advanced mode. Example Search Criteria: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: '_primarycontactid_value', operator: 'eq', fieldValue: 'd1bf9a01-b056-e711-abaa-00155d701c02' }]`
 
 If selected `Emit Behavior` is `Emit page` additionally fields will be added:
 * **Page Number** - (number, defaults 0): Indicates number of page to fetched.
@@ -90,10 +90,10 @@ Lookup a single object by a selected field.
 
 #### Configuration Fields
 
-* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Users`.
-* **Lookup Criteria** - (dropdown, required): A list of object parameters by which object could be searched.
-* **Allow criteria to be omitted** - (boolean, optional): If selected field `Lookup Criteria Value` becomes optional.
-* **Allow zero results** - (boolean, optional): When selected, if the object is not found - an empty object will be returned instead of throwing error.
+*   **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Users`.
+*   **Lookup Criteria** - (dropdown, required): A list of object parameters by which object could be searched.
+*   **Allow criteria to be omitted** - (Boolean, optional): If selected field `Lookup Criteria Value` becomes optional.
+*   **Allow zero results** - (Boolean, optional): When selected, if the object is not found - an empty object will be returned instead of throwing error.
 
 #### Input Metadata
 
@@ -142,7 +142,7 @@ Executes custom request.
 
 ### Extract Raw System Metadata
 
-Read the large XML-only document located at `{{endpoint}}/api/data/{{api version}}/$metadata` and place the raw XML contents into either an attachment or into a JSON string.
+Read the large XML-only document located at `endpoint/api/data/api_version/$metadata` and place the raw XML contents into either an attachment or into a JSON string.
 
 #### Configuration Fields
 
