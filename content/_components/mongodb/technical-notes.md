@@ -5,13 +5,17 @@ description: Technical Notes for the MongoDB component.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2022-04-29
-ComponentVersion: 1.5.9
+updatedDate: 2022-12-02
+ComponentVersion: 1.5.10
 redirect_from:
   - /components/mongodb/changelog.html
 ---
 
 ## Changelog
+
+### 1.5.10 (December 02, 2022)
+
+* Update Sailor version to 2.7.1
 
 ### 1.5.9 (April 29, 2022)
 
