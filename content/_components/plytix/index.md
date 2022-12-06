@@ -63,6 +63,30 @@ If job still not finished after 15 minutes, emit last job details. If unchecked 
 
 Metadata contains array of products: each product should contain `id` or `sku` and system attributes and user attributes arrays.
 The maximum number of editable products is 1000.
+=======
+### Link or Unbind object
+
+Action execute `Link` or `Unbind` operation for objects:
+
+ - `Products` <-> `Assets`
+ - `Products` <-> `Categories`
+ - `Products` <-> `Variations`
+ - `Products` <-> `Relationships`
+ - `Product Attribute Groups` <-> `Attribute`
+ - `Assets` <-> `Categories`
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Assets`.
+* **Operation** - (dropdown, required): `Link` or `Unbind` operation.
+
+#### Input Metadata
+
+Generated dynamically and depends on the object type, typically: parent object ID and label object ID or object to be linked or unbounded to the parent object.
+
+#### Output Metadata
+
+Dynamically generated, depended on Object Type.
 
 ### Lookup Object (at most one)
 

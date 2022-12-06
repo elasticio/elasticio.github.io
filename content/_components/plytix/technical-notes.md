@@ -14,6 +14,10 @@ ComponentVersion: 1.2.0
 ### 1.2.0 (December 02, 2022)
 
 * Added `Product Bulk` Action
+=======
+### 1.1.0 (November 23, 2022)
+
+* Added `Link or Unbind object` Action
 
 ### 1.0.0 (November 18, 2022)
 
