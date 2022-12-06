@@ -5,11 +5,15 @@ description: Technicl Notes for the Plytix components.
 icon: plytix.png
 icontext: Plytix component
 category: plytix
-updatedDate: 2022-11-18
-ComponentVersion: 1.0.0
+updatedDate: 2022-12-02
+ComponentVersion: 1.2.0
 ---
 
 ## Changelog
+
+### 1.2.0 (December 02, 2022)
+
+* Added `Product Bulk` Action
 
 ### 1.0.0 (November 18, 2022)
 

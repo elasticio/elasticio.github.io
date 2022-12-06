@@ -6,8 +6,8 @@ description: Plytix Component is designed to connect Plytix API.
 icon: plytix.png
 icontext: Plytix component
 category: plytix
-updatedDate: 2022-11-18
-ComponentVersion: 1.0.0
+updatedDate: 2022-12-02
+ComponentVersion: 1.2.0
 ---
 
 ## Description
@@ -48,6 +48,21 @@ There is no Input or Output Metadata
 Pagination has not been implemented yet in this trigger. Running a flow will return a single page with all of the results of the query.
 
 ## Actions
+
+### Product Bulk
+
+Bulk action on products.
+
+#### Configuration Fields
+
+* **Action Type** - (dropdown, required): Currently supported only `Update`
+* **Wait Until Bulk Job Finish** - (checkbox, optional): If checked - check every 1 minute during 15 minutes bulk job status, when status is `FINISHED` - emit job result details.
+If job still not finished after 15 minutes, emit last job details. If unchecked - will emit job result that was received immediately after execution bulk operation.
+
+#### Input Metadata
+
+Metadata contains array of products: each product should contain `id` or `sku` and system attributes and user attributes arrays.
+The maximum number of editable products is 1000.
 
 ### Lookup Object (at most one)
 
