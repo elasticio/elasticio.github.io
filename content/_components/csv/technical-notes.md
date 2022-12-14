@@ -5,13 +5,17 @@ description: Technical Notes for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2022-08-26
-ComponentVersion: 3.1.5
+updatedDate: 2022-12-16
+ComponentVersion: 3.1.6
 redirect_from:
   - /components/csv/changelog.html
 ---
 
 ## Changelog
+
+### 3.1.6 (December 16, 2022)
+
+* Update Sailor version to 2.7.1
 
 ### 3.1.5 (August 26, 2022)
 

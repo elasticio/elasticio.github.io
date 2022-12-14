@@ -5,11 +5,17 @@ description: Technical Notes for the Shopware component.
 icon: shopware.png
 icontext: Shopware-6 component
 category: shopware-6
-updatedDate: 2022-09-23
-ComponentVersion: 1.1.1
+updatedDate: 2022-12-16
+ComponentVersion: 1.1.2
 ---
 
 ## Chagelog
+
+### 1.1.2 (December 16, 2022)
+
+* Fix schema to support both namings e.g. `product_flat` and `Product`
+* Limited number of (infinitely in general) nesting depth of 'parent' and 'children' objects for Products metadata to 1
+* Update Sailor version to 2.7.1
 
 ### 1.1.1 (September 23, 2022)
 

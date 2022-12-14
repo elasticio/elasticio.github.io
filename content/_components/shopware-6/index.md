@@ -6,8 +6,8 @@ description: A component to connect to Shopware 6 API
 icon: shopware.png
 category: shopware-6
 icontext: Shopware-6 component
-updatedDate: 2022-09-23
-ComponentVersion: 1.1.1
+updatedDate: 2022-12-16
+ComponentVersion: 1.1.2
 ---
 
 ## Credentials
@@ -108,6 +108,54 @@ And dynamically generated fields according to chosen `Upsert Schema`.
 If `Make GET request after object created/updated` is `false`:
 * **ID** - (string, optional): ID of the object to upsert.
 And dynamically generated fields according to chosen `Upsert Schema`.
+
+And dynamically generated fields according to chosen `Upsert Schema` using first level of inherit. If object has link to itself, it will be replaced to empty Object to avoid recursive dependencies
+
+<details close markdown="block"><summary><strong>Create product sample </strong></summary>
+
+  ```json
+    {
+      "taxId": "31249d3e7d2a46839f0e126f40c4a44f",
+      "productNumber": "NSP-10272123",
+      "stock": 50,
+      "name": "Ice Cream Sweatshirt, Grey, Unisex",
+      "createdAt": "2022-11-03T13:49:19.509000+00:00",
+      "price": [
+        {
+          "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+          "net": 16.799999999999997,
+          "gross": 19.99,
+          "linked": true,
+          "listPrice": null,
+          "percentage": null,
+          "regulationPrice": null,
+          "extensions": []
+        }
+      ],
+      "children": [
+        {
+          "taxId": "31249d3e7d2a46839f0e126f40c4a44f",
+          "productNumber": "NSP-10272321",
+          "stock": 50,
+          "name": "Ice Cream Sweatshirt, Grey, Unisex",
+          "createdAt": "2022-11-03T13:49:19.509000+00:00",
+          "price": [
+            {
+              "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+              "net": 16.799999999999997,
+              "gross": 19.99,
+              "linked": true,
+              "listPrice": null,
+              "percentage": null,
+              "regulationPrice": null,
+              "extensions": []
+            }
+          ]
+        }
+      ]
+    }
+  ```
+</details>
 
 #### Output Metadata
 
