@@ -6,8 +6,8 @@ description: Amazon Selling Partner Component is designed to work with Selling P
 icon: amazon-selling-partner-api.png
 icontext: Amazon Selling Partner Component
 category: amazon-selling-partner-api
-ComponentVersion: 1.0.0
-updatedDate: 2022-12-02
+ComponentVersion: 1.1.0
+updatedDate: 2022-12-13
 ---
 
 ## Description
@@ -49,8 +49,24 @@ Component credentials configuration fields:
 
 ## Triggers
 
-This component has no trigger functions. This means you can not select it as a first
-component during the integration flow design.
+### Get New and Updated Objects Polling
+
+Retrieve all the updated or created objects within a given start time.
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Retail Procurement Orders v1 getPurchaseOrders`.
+* **Timestamp field to poll on** - (dropdown, optional): Currently supported `Created After` option only.
+* **Emit Behavior** - (dropdown, optional):  output method. Defaults to: `Emit individually`
+* **Start Time** - (string, optional): The timestamp, in ISO8601 format, to start polling from (inclusive). Default value is the beginning of time (January 1, 1970 at 00:00.000).
+
+#### Input Metadata
+
+There is no Input Metadata in this trigger.
+
+#### Output Metadata
+
+Depend on fields `Object Type` and `Emit Behavior`. Generated dynamically - if `Emit Behavior` is set as `Emit individually` - each item from results will be emitted individually, if `Emit page` - all found objects will be emitted in one array `results`. A maximum of 100 elements will be returned per execution.
 
 ## Actions
 
