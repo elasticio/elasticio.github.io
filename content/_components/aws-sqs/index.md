@@ -6,8 +6,8 @@ description: Amazon AWS SQS (Simple Queue Service) Component is designed to use 
 icon:  aws-sqs.png
 icontext: AWS SQS component
 category: aws-sqs
-updatedDate: 2022-11-04
-ComponentVersion: 1.0.0
+updatedDate: 2022-12-09
+ComponentVersion: 1.1.0
 ---
 
 ## Description
@@ -27,8 +27,38 @@ The credentials consist of 4 fields:
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+### Receive Messages Long Polling
+
+**Please note: The flow must be set as real-time!** Otherwise, errors may appear.
+
+We recommend you set the lowest flow schedule (cron expression) frequency possible. E.g. once a day (0 0 * * *). And start the flow with the button 'Run Now' manually. Even though it does not affect the logic directly, each scheduled flow execution will create a record in the Executions list with no messages and no logs inside. All the logs and emitted messages will be appearing in the first execution.
+
+Receive messages from the queue in a [long polling manner](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html).
+The component sends long polling requests to the SQS infinitely. Once a message (a set of messages - up to `MaxNumberOfMessages` messages) received it is being emitted per each message. If, say, 3 messages received, 3 individual messages would be emitted.
+Right after the first call a new API request starts. And so on until the flow is shut down.
+
+
+#### Configuration Fields
+
+* **Visibility Timeout** - (optional, string): The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a ReceiveMessage request. Default: 30. Max 12 hours.
+* **Max number of messages per 1 API call** - (optional, string): Maximum number of messages to fetch in the single API call. From 0 to 10. Default: 10.
+* **Max number of seconds to wait for a message** - (optional, string): The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a ReceiveMessage request. Default: 0. Max.
+* **Delete a message after it is received** - (optional, boolean): Delete a message from a queue after it is received. Default: false.
+
+#### Input Metadata
+
+There is no Input Metadata in this trigger.
+
+#### Output Metadata
+
+* **ResponseMetadata**
+  * **RequestId** - ID of the request
+* **Messages** - An array of received messages
+  * **MessageId** - The MessageId you received when you sent the message to the queue
+  * **ReceiptHandle** - The identifier you must provide when deleting the message. For more information, see [Queue and Message Identifiers](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html) in the Amazon SQS Developer Guide.
+  * **MD5OfBody** - An MD5 digest of the message body. For information about MD5, see RFC1321
+  * **Body** - Body of the message
+  * **Attributes** - An object containing a set of attributes (sender ID, timestamp, etc.)
 
 ## Actions
 
