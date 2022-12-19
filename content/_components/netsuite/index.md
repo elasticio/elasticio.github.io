@@ -6,21 +6,19 @@ description: A component which interacts with the NetSuite ERP system.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2021-08-12
-ComponentVersion: 2.3.1
+updatedDate: 2022-12-16
+ComponentVersion: 3.0.0
 ---
 
 ## How works
 
-Communication with NetSuite API established using NetSuite's native SDK. **2017.2**
-NetSuite version is used and supported. The component will work with other NS
-versions in most cases. But 100% compatibility could not be guaranteed.
+Communication with NetSuite API established using NetSuite's native SDK.
 
 ## Requirements
 
 ### API version
 
-**2019.1** NetSuite version is used and supported. The component will work with other NS versions in most cases. But 100% compatibility could not be guaranteed.
+**2022.1** NetSuite version is used and supported. The component will work with other NS versions in most cases. But 100% compatibility could not be guaranteed.
 
 ### Environment variables
 
