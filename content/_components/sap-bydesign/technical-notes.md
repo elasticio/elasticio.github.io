@@ -5,14 +5,18 @@ description: Technical Notes for the SAP ByDesign component.
 icon: sapbydesign.png
 icontext: SAP ByDesign component
 category: sap-byDesign
-updatedDate: 2019-11-21
-ComponentVersion: 2.1.3
+updatedDate: 2022-12-16
+ComponentVersion: 2.1.4
 redirect_from:
   - /components/sap-bydesign/completeness-matrix.html
   - /components/sap-bydesign/changelog.html
 ---
 
 ## Changelog
+
+### 2.1.4 (December 16, 2022)
+
+- Update Sailor version to 3.5.0
 
 ### 2.1.3 (November 21, 2019)
 
