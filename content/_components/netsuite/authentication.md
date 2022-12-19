@@ -5,8 +5,8 @@ description: Information on NetSuite component authentication on the platform
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2021-08-12
-ComponentVersion: 2.3.1
+updatedDate: 2022-12-16
+ComponentVersion: 3.0.0
 ---
 
 ## API version
@@ -74,6 +74,8 @@ to connect to NetSuite via native SuiteTalk API Can be found here:
 ![Get Application ID](https://user-images.githubusercontent.com/8449044/44274840-e4392f80-a24b-11e8-9d1d-00676e0b9217.png)
 
 ### Token-Based authentication (TBA)
+
+Netsuite connector since version **3.0.0** only supports a token based authentication mechanisms. Support of a user credentials mechanism has been removed by Netsuite SOAP API.
 
 To use Token-Based authentication you must at first setup a Netsuite account:
 

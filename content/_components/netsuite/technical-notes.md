@@ -5,13 +5,21 @@ description: Technical Notes for the NetSuite component.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2021-08-12
-ComponentVersion: 2.3.1
+updatedDate: 2022-12-16
+ComponentVersion: 3.0.0
 redirect_from:
   - /components/netsuite/changelog.html
 ---
 
 ## Changelog
+
+### 3.0.0 (December 16, 2022)
+
+* **Breaking change** - User credentials authentication mechanism has been removed. As it is no more supported by Netsuite SOAP API
+* Update API version to 2022.1
+* Update Sailor to 3.4.0
+* Add 'required' dependencies to component.json fields
+* Add a Circle.ci job to build and push images to Docker Hub
 
 ### 2.3.1 August 12, 2021)
 
