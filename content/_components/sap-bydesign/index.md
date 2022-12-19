@@ -6,8 +6,8 @@ description: A component to work with the SAP byDesign API.
 icon: sapbydesign.png
 icontext: SAP ByDesign component
 category: sap-byDesign
-updatedDate: 2019-11-21
-ComponentVersion: 2.1.3
+updatedDate: 2022-12-16
+ComponentVersion: 2.1.4
 ---
 
 ## Description

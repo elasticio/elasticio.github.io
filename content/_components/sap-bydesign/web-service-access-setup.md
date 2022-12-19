@@ -5,8 +5,8 @@ description: Web Service consuming from SAP Business ByDesign
 icon: sapbydesign.png
 icontext: SAP ByDesign component
 category: sap-byDesign
-updatedDate: 2019-11-21
-ComponentVersion: 2.1.3
+updatedDate: 2022-12-16
+ComponentVersion: 2.1.4
 ---
 
 This document will guide you to get access to Web Service consuming from SAP Business ByDesign.

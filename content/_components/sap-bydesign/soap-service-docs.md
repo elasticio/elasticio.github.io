@@ -5,8 +5,8 @@ description: SAP Business byDesign Component metadata documentation links
 icon: sapbydesign.png
 icontext: SAP ByDesign component
 category: sap-byDesign
-updatedDate: 2019-11-21
-ComponentVersion: 2.1.3
+updatedDate: 2022-12-16
+ComponentVersion: 2.1.4
 ---
 
 You can find metadata documentation links bellow
