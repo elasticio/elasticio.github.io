@@ -133,6 +133,7 @@ Output metadata is `bucketContents` object (required):  echo back the value that
 
 ## Known Limitations
 
- 1. The hash function generates the same hash for different types of quotes: `''`, `""`, ` `` `
- 2. Pre-fetch count should be equal 1. Correct behavior with pre-fetch > 1 is not guaranteed
- 3. One credential cannot be used in more than one step per all platform instances that are connected to one `maester` installation as it would lead to a collision
+ 1. Please note: **Bucket Lifetime is 24 hours**.
+ 2. The hash function generates the same hash for different types of quotes: `''`, `""`, ` `` `
+ 3. Pre-fetch count should be equal 1. Correct behavior with pre-fetch > 1 is not guaranteed
+ 4. One credential cannot be used in more than one step per all platform instances that are connected to one `maester` installation as it would lead to a collision
