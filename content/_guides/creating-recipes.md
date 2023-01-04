@@ -13,19 +13,49 @@ This document provides information on how to [create Recipes from UI](#creating-
 
 [Recipes](/getting-started/recipes) allow users to share [Flow](/getting-started/integration-flow) templates with others without disclosing their non-shareable data ([Credentials](/getting-started/credential), Fields, Variables).
 ​
-## Creating And Activating Recipes from UI
+## Creating and Activating Recipes from UI
 
-Right now we are developing some stylish UI for Recipes functionality. At the moment, we are testing the way to create a Recipe via the UI:
+### Creating the recipe
 
-![Export Recipe](/assets/img/integrator-guide/creating-recipes/export-recipe.png)
+You can create a recipe from a flow simply by clicking on the corresponding button, as shown in the screenshot:
 
-  **1.** This page shows the selected Recipe and its details. A dedicated button allows the user to activate it, opening the Recipe activation wizard:
 
-![Activate Recipe](/assets/img/integrator-guide/creating-recipes/activate-recipe.png)
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/export-recipe.png" title="Export Recipe" %}
 
-  **2.** First you have to specify Contract and Workspace to which the Recipe will be activated. The recipe has an attribute visibility, which indicates how the recipe is shared by other clients. The default recipe visibility is `workspace`:
+After that, you will automatically be directed to the created recipe, where you can activate it. This page shows the selected Recipe and its details.
 
-![Contract and Workspace](/assets/img/integrator-guide/creating-recipes/specify.png)
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/activate-recipe-1.png" title="Activate Recipe 1" %}
+
+You can also find the recipe you are interested in by going to the recipes section. Next, you can activate the recipe you want.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/activate-recipe-2.png" title="Activate Recipe 2" %}
+
+We display the number of deployments of these recipes on each Recipe Card. Each deployment can include more than one integration flows and these we display when you click **Show Deployments** on the Recipe Card.
+
+You can deploy running integration flows from any listed Recipe by hitting the **Activate** button.
+
+{% include img.html max-width="60%" url="/assets/img/integrator-guide/creating-recipes/recipe-card.png" title="Recipe Card" %}
+
+> **Please note:** you can delete the recipe deployment by selecting the cog menu on the recipe card. However, you can only delete recipe deployments with `workspace` visibility and only when you have `Admin` role in the workspace. You can not delete public recipes (those with `Tenant` or `Global` visibility).
+
+If you have used this recipe before to create a flow, the **Deployments** page will
+list them all.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/recipes-deployments.png" title="Recipes Deployments" %}
+
+From here you can:
+*   Open the flows if you have the required workspace access.
+*   **Upgrade** the flow using a new recipe version if available.
+*   **Delete** the recipe deployment - severing the connection between flow and recipe.
+*   **Delete With Flows** - deleting the recipe deployment with the associated flows (one recipe deployment can contain more than one flow).
+
+After clicking on the **"Activate"** button, you will be able to set up the recipe.
+
+### Recipe Setup
+
+**1.** First you have to specify Contract and Workspace to which the Recipe will be activated. The recipe has an attribute visibility, which indicates how the recipe is shared by other clients. The default recipe visibility is `workspace`:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/specify.png" title="Contract and Workspace" %}
 
 You can change the visibility using the API function [Update a recipe visibility](#update-a-recipe-visibility):
 
@@ -50,24 +80,23 @@ curl {{site.data.tenant.apiBaseUri}}.io/v2/recipes/{RECIPE_ID}/visibility \
 
 > **Please Note**: you can set visibility level of Recipe according to the used Components visibility in Recipe. **You can't downgrade Recipe visibility level.**
 
-
 After changing the visibility to **contract**, the recipe setup will look like this:
 
-![Contract visibility](/assets/img/integrator-guide/creating-recipes/contract-visibility.png)
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/contract-visibility.png" title="Contract visibility" %}
 
 And after changing the visibility to **tenant**, the recipe setup will look like this:
 
-![Tenant visibility](/assets/img/integrator-guide/creating-recipes/tenant-visibility.png)
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/tenant-visibility.png" title="Tenant visibility" %}
 
-  **3.** Here you can setup your credentials for every step. You can verify(**1**), edit(**2**) or delete(**3**) credentials and choose credentials you need(**4**):
+**2.** Here you can setup your credentials for every step. You can verify(**1**), edit(**2**) or delete(**3**) credentials and choose credentials you need:
 
-![Setup recipe credential](/assets/img/integrator-guide/creating-recipes/recipe-cred-setup.png)
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/recipe-cred-setup.png" title="Setup recipe credential" %}
 
 You can even create a new credential using the plus sign if you need.
 
-  **4.** After that you have to click to "Finish" and new identical flow with the same name will be created:
+**3.** After completing the recipe setup a new identical flow with the same name will be created:
 
-![New flow](/assets/img/integrator-guide/creating-recipes/new-flow.png)
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/new-flow.png" title="New flow" %}
 
 ## Recipe with Topics
 
