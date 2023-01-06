@@ -6,8 +6,8 @@ description: Plytix Component is designed to connect Plytix API.
 icon: plytix.png
 icontext: Plytix component
 category: plytix
-updatedDate: 2022-12-02
-ComponentVersion: 1.2.0
+updatedDate: 2022-12-30
+ComponentVersion: 1.3.0
 ---
 
 ## Description

@@ -5,13 +5,18 @@ description: Technical Notes for the Router component.
 icon: router.png
 icontext: Router component
 category: router
-updatedDate: 2022-04-08
-ComponentVersion: 1.0.0
+updatedDate: 2022-12-23
+ComponentVersion: 1.0.1
 redirect_from:
   - /components/router/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.1 (December 23, 2022)
+
+* Update jsonata-moment library to 1.1.5 in order to support Jsonata 1.8.6
+* Update Sailor version to 2.7.1
 
 ### 1.0.0 (April 08, 2022)
 

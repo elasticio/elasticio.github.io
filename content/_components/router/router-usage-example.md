@@ -5,8 +5,8 @@ description: In this article you will see a flow with which you will clearly see
 icon: router.png
 icontext: Router component
 category: router
-updatedDate: 2022-04-08
-ComponentVersion: 1.0.0
+updatedDate: 2022-12-23
+ComponentVersion: 1.0.1
 ---
 
 ## Introduction
