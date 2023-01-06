@@ -5,8 +5,8 @@ description: An article on how the Content-Based Routing technicaly mechanism wo
 icon: router.png
 icontext: Router component
 category: router
-updatedDate: 2022-04-08
-ComponentVersion: 1.0.0
+updatedDate: 2022-12-23
+ComponentVersion: 1.0.1
 ---
 
 ## How it works?
