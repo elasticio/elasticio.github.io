@@ -6,8 +6,8 @@ description: Google Cloud Storage Component is designed to connect to Google Clo
 icon: google-cloud-storage.png
 icontext: Google Cloud Storage component
 category: google-cloud-storage
-updatedDate: 2022-12-16
-ComponentVersion: 1.0.0
+updatedDate: 2022-12-30
+ComponentVersion: 1.1.0
 ---
 
 ## Description
@@ -55,8 +55,33 @@ Now you can create new credentials for component:
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+### Webhook
+
+This trigger allow to track changes in bucket
+
+#### Configuration Fields
+
+* **Bucket** - (dropdown, required): select one of the available buckets
+* **Enable File Attachments** - (checkbox, optional, `false` by default): If selected, the contents of the file will be exported in addition to the attachment
+
+#### Input Metadata
+
+There is no Input metadata in this trigger.
+
+#### Output Metadata
+
+* **operation** - (object, required): One of `Create`', `Update` or `Delete`
+* **fileMetadata** - (object, required): File metadata from `Google Cloud storage`
+
+If selected `Enable File Attachments` there will be additional field:
+* **attachmentUrl** - (string, required): Url to file in internal storage
+
+#### Limitations
+
+1. `attachmentUrl` not available for Deleted objects
+2. In an ordinary flow you need to follow the webhook URL after a flow started in order to correctly initialize it (no extra actions needed if a flow is real-time)
+
+![image](https://user-images.githubusercontent.com/7985390/209659032-278a19eb-ac51-4915-96ac-d7136794558b.png)
 
 ## Actions
 
