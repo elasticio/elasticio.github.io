@@ -38,6 +38,8 @@ You can deploy running integration flows from any listed Recipe by hitting the *
 
 > **Please note:** you can delete the recipe deployment by selecting the cog menu on the recipe card. However, you can only delete recipe deployments with `workspace` visibility and only when you have `Admin` role in the workspace. You can not delete public recipes (those with `Tenant` or `Global` visibility).
 
+> **Please Note:** Here you can see the access URL of an individual recipe page: `{base_url}/c/{contract_id}/w/{workspace_id}/recipes/{recipe_id}`
+
 If you have used this recipe before to create a flow, the **Deployments** page will
 list them all.
 
