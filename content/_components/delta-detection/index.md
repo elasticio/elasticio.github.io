@@ -6,8 +6,8 @@ description: A component to manage records from a system which does not provide 
 icon: delta-detection.png
 icontext: Delta Detection Component
 category: delta-detection
-updatedDate: 2022-06-03
-ComponentVersion: 2.1.0
+updatedDate: 2023-01-03
+ComponentVersion: 2.2.0
 ---
 
 ## Description
@@ -130,6 +130,24 @@ Each object from `objects` array must contain `objectId` and `objectData` proper
 
 Output metadata is `bucketContents` object (required):  echo back the value that was saved.
 
+### Delete Object/Record
+
+This action use for deletion one Object/Record from the bucket
+
+#### Expected config
+
+* `If no object found` (dropdown, optional, `Emit nothing` by default) - select one of options to handle case when Object not exist in bucket:
+  * `Emit nothing` - component will not produce any messages
+  * `Emit an empty object` - result will be empty object: `{}`
+  * `Throw an error` - error will be thrown
+
+#### Expected input metadata
+
+* `objectId` (number/string/object, required) - unique identifier for Object/Record
+
+#### Expected output metadata
+
+Empty JSON Object (`{}`)
 
 ## Known Limitations
 
