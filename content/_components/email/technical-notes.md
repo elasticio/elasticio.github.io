@@ -5,13 +5,17 @@ description: Technical Notes for the Email component
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.2.3
-updatedDate: 2022-11-04
+ComponentVersion: 1.2.4
+updatedDate: 2023-01-13
 redirect_from:
   - /components/lookup-table/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.4 (January 13, 2023)
+
+* Fixed a typo in logs
 
 ### 1.2.3 (November 04, 2022)
 

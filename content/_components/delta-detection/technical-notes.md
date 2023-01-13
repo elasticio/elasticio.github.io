@@ -5,11 +5,18 @@ description: Technical Notes for the Delta Detection component.
 icon: delta-detection.png
 icontext: Delta Detection Component
 category: delta-detection
-updatedDate: 2022-06-03
-ComponentVersion: 2.1.0
+updatedDate: 2023-01-03
+ComponentVersion: 2.2.0
 ---
 
 ## Changelog
+
+### 2.2.0 (January 03, 2023)
+
+* Add action `Delete Object/Record`
+* Removed sensitive data from logs
+* Upgrade Sailor version to 2.7.1
+* Upgrade maester-client version to 5.0.1
 
 ### 2.1.0 (June 03, 2022)
 
