@@ -112,6 +112,7 @@ This menu section links the pages you need to build integration flows.
 *   [Credentials](#credentials)
 *   [Agents](#agents)
 *   [Topics](#topics)
+*   [Recipes](#recipes)
 
 ### Flows
 
@@ -180,6 +181,21 @@ publish-subscribe messaging pattern to exchange data between the integration flo
 2.  The existing topic cards. Click on them to edit or delete them.
 
 ![Topics](/assets/img/getting-started/tour/topics.png "Topics")
+
+</details>
+
+### Recipes
+
+The Recipes menu item opens the [Recipes](/guides/creating-recipes) management page. Here you can
+activate and delete your Recipes. We also display the number of deployments of these recipes on each Recipe Card. Recipes allow users to share Flow templates with others without disclosing their non-shareable data (Credentials, Fields, Variables).​
+
+<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+
+1.  You can deploy running integration flows from any listed Recipe by hitting the **Activate** button.
+2.  Each deployment can include more than one integration flows and these we display when you click **Show Deployments** on the Recipe Card.
+3. You can also delete any Recipe. 
+
+![Recipes](/assets/img/getting-started/tour/recipes.png "Recipes")
 
 </details>
 
@@ -292,10 +308,17 @@ create a new ones if your have contract `Admin` access role.
 <details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
 1.  Use **+ Add New Team** button to create a new developer team.
-2.  Card showing the developer team details, number of members and repositories it contains.
-3.  Click on **See Details** to navigate to any developer team.
+2.  Here you can see the developer team details, number of members and repositories it contains.  Click on the Name to navigate to any developer team.
 
 ![Developer Teams](/assets/img/getting-started/tour/developer-teams.png "Developer Teams")
+
+If you clicked on the team name, you will see the functionality to manage your team:
+
+1. Create a new repositories or invite new members.
+2. Delete member of the developer team.
+3. See details on repositories.
+
+![Your Team](/assets/img/getting-started/tour/your-team.png "Your Team")
 
 </details>
 
