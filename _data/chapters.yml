@@ -32,6 +32,8 @@ guides:
       description: Articles on how to work with XML
     - title: Recipes
       description: Articles on Recipes and how to create and use them
+    - title: Marketplace
+      description: Articles on Marketplace
 components:
   title: Components
   description: Extensive documentation of the integration components
