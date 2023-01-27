@@ -6,7 +6,7 @@ description: Amazon AWS SQS (Simple Queue Service) Component is designed to use 
 icon:  aws-sqs.png
 icontext: AWS SQS component
 category: aws-sqs
-updatedDate: 2022-01-27
+updatedDate: 2023-01-27
 ComponentVersion: 1.1.1
 ---
 
