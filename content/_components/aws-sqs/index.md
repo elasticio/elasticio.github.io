@@ -6,8 +6,8 @@ description: Amazon AWS SQS (Simple Queue Service) Component is designed to use 
 icon:  aws-sqs.png
 icontext: AWS SQS component
 category: aws-sqs
-updatedDate: 2022-12-09
-ComponentVersion: 1.1.0
+updatedDate: 2023-01-27
+ComponentVersion: 1.1.1
 ---
 
 ## Description
@@ -40,7 +40,7 @@ Right after the first call a new API request starts. And so on until the flow is
 
 #### Configuration Fields
 
-* **Visibility Timeout** - (optional, string): The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a ReceiveMessage request. Default: 30. Max 12 hours.
+* **Visibility Timeout** - (optional, string): The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a ReceiveMessage request. Default: SQS server timeout. Max 12 hours.
 * **Max number of messages per 1 API call** - (optional, string): Maximum number of messages to fetch in the single API call. From 0 to 10. Default: 10.
 * **Max number of seconds to wait for a message** - (optional, string): The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a ReceiveMessage request. Default: 0. Max.
 * **Delete a message after it is received** - (optional, boolean): Delete a message from a queue after it is received. Default: false.
