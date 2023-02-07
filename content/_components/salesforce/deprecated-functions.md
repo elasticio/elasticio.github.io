@@ -5,8 +5,8 @@ description: Information on deprecated Salesforce functions
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-11-18
-ComponentVersion: 2.4.2
+updatedDate: 2023-01-02
+ComponentVersion: 2.5.1
 ---
 
 ## Deprecated authentication method

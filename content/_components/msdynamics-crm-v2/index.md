@@ -6,8 +6,8 @@ description: Microsoft Dynamics CRM v2 Component is designed to use Web API from
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2022-09-23
-ComponentVersion: 1.1.0
+updatedDate: 2023-01-02
+ComponentVersion: 1.2.0
 ---
 
 ## Credentials
@@ -102,6 +102,24 @@ Lookup a single object by a selected field.
 #### Output Metadata
 
 Object with result of lookup as value.
+
+### Upsert Object
+
+Updates (if record found) or creates a new object.
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): Object-type to upsert. E.g `Accounts`.
+* **ID to Search On** - (dropdown, required): select criteria to upsert. E.g `Entity ID`.
+
+#### Input Metadata
+
+* **ID** - (string, optional): ID of the object to upsert.
+  And dynamically generated fields according to chosen `Object Type`.
+
+#### Output Metadata
+
+Created or Updated object will be returned. Metadata are dynamically generated fields according to chosen `Object Type`
 
 ### Delete Object By ID
 
