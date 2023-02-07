@@ -5,8 +5,8 @@ description: Salesforce component triggers.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-11-18
-ComponentVersion: 2.4.2
+updatedDate: 2023-01-02
+ComponentVersion: 2.5.1
 ---
 
 ## Get Updated Objects Polling
@@ -14,6 +14,7 @@ ComponentVersion: 2.4.2
 ### Config Fields
 
  * **Object Type** Dropdown: Indicates Object Type to be fetched
+ * **Selected Fields** Multiselect dropdown: list with all Object Fields. Select fields, which will be returned in response. That can prevent [431 and 414 Errors](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).
  * **Include linked objects** Multiselect dropdown: list with all the related child and parent objects of the selected object type. List entries are given as `Object Name/Reference To (Relationship Name)`. Select one or more related objects, which will be join queried and included in the response from your Salesforce Organization. Please see the **Limitations** section below for use case advisories.
  * **Emit behavior** Dropdown: Indicates emit objects individually or emit by page
  * **Start Time** - TextField (string, optional): Indicates the beginning time to start retrieving events from in ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ

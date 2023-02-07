@@ -6,8 +6,8 @@ description: A component enables you to manage your organization’s sales, mark
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2022-11-18
-ComponentVersion: 2.4.2
+updatedDate: 2023-01-02
+ComponentVersion: 2.5.1
 ---
 
 {{page.description}}
@@ -26,13 +26,14 @@ by the environment variable `SALESFORCE_API_VERSION`.
 
 ### Environment variables
 
-| Name|Mandatory|Description|Values|
-|----|---------|-----------|------|
-| SALESFORCE_API_VERSION| false | Determines API version of Salesforce to use | Default: `46.0` |
-| REFRESH_TOKEN_RETRIES| false | Determines how many retries to refresh token should be done before throwing an error | Default: `10` |
-| HASH_LIMIT_TIME| false | Hash expiration time in ms  | Default: `600000` |
-| HASH_LIMIT_ELEMENTS| false | Hash size number limit  | Default: `10` |
-|UPSERT_TIME_OUT| false | Time out for `Upsert Object` action in ms | Default: `120000` (2min) |
+| Name                   | Mandatory | Description                                                                          | Values                   |
+|------------------------|-----------|--------------------------------------------------------------------------------------|--------------------------|
+| SALESFORCE_API_VERSION | false     | Determines API version of Salesforce to use                                          | Default: `46.0`          |
+| REFRESH_TOKEN_RETRIES  | false     | Determines how many retries to refresh token should be done before throwing an error | Default: `10`            |
+| HASH_LIMIT_TIME        | false     | Hash expiration time in ms                                                           | Default: `600000`        |
+| HASH_LIMIT_ELEMENTS    | false     | Hash size number limit                                                               | Default: `10`            |
+| UPSERT_TIME_OUT        | false     | Time out for `Upsert Object` action in ms                                            | Default: `120000` (2min) |
+
 
 > Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
@@ -65,13 +66,13 @@ For creating Auth Client you should specify following fields:
 
 ![Define client](img/define-client.png)
 
-| Field name             | Mandatory | Description |
-| ---------------------- | --------- | ----------- |
-| Name                   | true      | your Auth Client's name |
-| Client ID              | true      | your OAuth client key |
-| Client Secret          | true      | your OAuth client secret |
-| Authorization Endpoint | true | your OAuth authorization endpoint. For production use `https://login.salesforce.com/services/oauth2/authorize`, for sandbox - `https://test.salesforce.com/services/oauth2/authorize`|
-| Token Endpoint         | true | your OAuth Token endpoint for refreshing access token. For production use `https://login.salesforce.com/services/oauth2/token`, for sandbox - `https://test.salesforce.com/services/oauth2/token`|
+| Field name             | Mandatory | Description      |
+|------------------------|-----------|------------------|
+| Name                   | true      | your Auth Client's name    |
+| Client ID              | true      | your OAuth client key      |
+| Client Secret          | true      | your OAuth client secret   |
+| Authorization Endpoint | true      | your OAuth authorization endpoint. For production use `https://login.salesforce.com/services/oauth2/authorize`, for sandbox - `https://test.salesforce.com/services/oauth2/authorize` |
+| Token Endpoint         | true      | your OAuth Token endpoint for refreshing access token. For production use `https://login.salesforce.com/services/oauth2/token`, for sandbox - `https://test.salesforce.com/services/oauth2/token` |
 
 - fill field ``Name Your Credential``
 - click on ``Authenticate`` button - if you have not logged in Salesforce before then log in by entering data in the login window that appears
