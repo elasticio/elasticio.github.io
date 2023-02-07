@@ -14,7 +14,7 @@ redirect_from:
 
 ## Changelog
 
-## 2.5.1 (January 31, 2023)
+### 2.5.1 (January 31, 2023)
 
 * Fixed issue with `431` and `414` errors in `Get Updated Objects Polling` trigger
 * New configuration field `Selected Fields`in `Get Updated Objects Polling` trigger added
