@@ -12,7 +12,7 @@ There is a way to provide a direct link to a Recipe Deployment for an end user. 
 ## Setup
 
 1. User has activated a Recipe. (e.g. using [Embedded recipe](embedded-recipe) page)
-2. [Create a one-time token for the user](({{site.data.tenant.apiDocsUri}}/v2#/users/post_users__user_id__one_time_token)) using API.
+2. [Create a one-time token for the user]({{site.data.tenant.apiDocsUri}}/v2#/users/post_users__user_id__one_time_token) using API.
 3. Generate URL and give it to the user.
 
 ## Generate URL

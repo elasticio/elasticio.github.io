@@ -11,11 +11,11 @@ There is a way to provide a direct link to a Recipe page for an end user. It’s
 
 ## Setup
 
-1. [Create a user](({{site.data.tenant.apiDocsUri}}/v2#/users/post_users)) using API.
-2. [Add user as a contract member](({{site.data.tenant.apiDocsUri}}/v2#/contracts/post_contracts__contract_id__members)) using API.
-3. [Add user as a workspace member](({{site.data.tenant.apiDocsUri}}/v2#/workspaces/post_workspaces__workspace_id__members)) using API.
+1. [Create a user]({{site.data.tenant.apiDocsUri}}/v2#/users/post_users) using API.
+2. [Add user as a contract member]({{site.data.tenant.apiDocsUri}}/v2#/contracts/post_contracts__contract_id__members) using API.
+3. [Add user as a workspace member]({{site.data.tenant.apiDocsUri}}/v2#/workspaces/post_workspaces__workspace_id__members) using API.
 4. Revise user permissions to make him access only things required to activate a recipe.
-5. [Create a one-time token for the user](({{site.data.tenant.apiDocsUri}}/v2#/users/post_users__user_id__one_time_token)) using API.
+5. [Create a one-time token for the user]({{site.data.tenant.apiDocsUri}}/v2#/users/post_users__user_id__one_time_token) using API.
 6. Generate URL and give it to the user.
 
 ## Generate URL
