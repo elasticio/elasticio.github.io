@@ -9,7 +9,7 @@ category: Recipes Feature
 
 The **Recipe Deployment** is an entity that connects an original Recipe with a set of flows created during a single activation.
 
-All flows that are part of the Recipe Deployment are not editable. The only way to edit the flows is to [delete](#deletion) the Recipe Deployment.
+All flows that are part of the Recipe Deployment are not editable. The only way to edit the flows is to [unlink](#unlinking) the Recipe Deployment.
 
 ## Synchronization
 
@@ -24,9 +24,11 @@ The synchronization process will:
 3. Create a new set of flows.
 4. Start the new set of flows.
 
-## Deletion
+## Unlinking
 
-On the Recipe Deployment deletion, you will be asked for 2 options:
+On the Recipe Deployment unlinking, you will be asked for 2 options:
 
-1. Just delete the Recipe Deployment - unlink its flows from the Recipe
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/recipe-deployment/unlinking.png" title="Unlinking" %}
+
+1. Just unlink the Recipe Deployment - unlink its flows from the Recipe
 2. Same as in the first option, however, in addition, delete the flow

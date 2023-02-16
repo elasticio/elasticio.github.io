@@ -13,19 +13,33 @@ The **Recipe** is a set of flows templates that on activation will create a sing
 
 ## Create Recipe - Flows Export
 
-Open the Flows page. Press a gear button of the first Flow which you want to be a part of the Recipe. Choose the “Export to a Recipe” menu item. The multi-select mode will be enabled and you can choose other flows which will be a part of the Recipe. Then click the “Export to recipe” button in the top right corner.
+Open the Flows page. Press a gear button of the first Flow which you want to be a part of the Recipe. Choose the “Export to a Recipe” menu item:
+
+{% include img.html max-width="60%" url="/assets/img/integrator-guide/creating-recipes/export-recipe.png" title="Export Recipe" %}
+
+The multi-select mode will be enabled and you can choose other flows which will be a part of the Recipe. Then click the “Export to recipe” button in the top right corner.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/select-multiple-flows.png" title="Select Multiple Flows" %}
 
 ### Export to a new Recipe
 
-By default, you will be suggested to create a new Recipe. Enter its name, description (supports [Markdown](https://www.markdownguide.org/)), and description of its credentials.
+By default, you will be suggested to create a new Recipe. Enter its name (**1**), description(**2**) (supports [Markdown](https://www.markdownguide.org/)), and description of its credentials(**3**).
 
-You can also change its [visibility](#visibility). On Save, you will be redirected to the newly created Recipe.
+You can also change its [visibility](#visibility)(**4**). On Save, you will be redirected to the newly created Recipe:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/configure-export.png" title="Configure Export" %}
 
 ### Export to an existing Recipe
 
-The “Save as” dropdown allows you to choose “Update existing recipe”. In this case, you will be able to choose an existing Recipe to update. The rest of the form is the same except for the [credentials mapping](#mapping) block.
+The “Save as” dropdown allows you to choose “Update existing recipe”. In this case, you will be able to choose an existing Recipe to update:
 
->**Please Note:** When you want to activate a Recipe based on the Flow with Topics you have to follow the steps described in above  . However, there is one important difference from a recipe with topics from a recipe without topics - a recipe using topics can only be activated within one workspace.
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/select-recipe.png" title="Select Recipe" %}
+
+The rest of the form is the same except for the [credentials mapping](#mapping) block:
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/set-credentials.png" title="Set Credentials" %}
+
+>**Please Note:** When you want to activate a Recipe based on the Flow with Topics you have to follow the steps described in above. However, there is one important difference from a recipe with topics from a recipe without topics - a recipe using topics can only be activated within one workspace.
 
 ## Create and manage recipes with API
 
