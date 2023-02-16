@@ -43,4 +43,4 @@ The update doesn’t require the “approval” from the SaaS vendor.
 
 ### Recipe Syncing
 
-When a new version of the Recipe appears, already existing Recipe Deployments can be [synced](recipe-deployment#synchronization) to match the latest version. The synchronization is done from the UI by the member of the workspace where the Recipe Deployment is placed or anyone with a [special permission](access-rights#permissions). **The synchronization process may have some destructive effects**. Read the [explanation](recipe-deployment#synchronization) carefully.
+When a new version of the Recipe appears, already existing Recipe Deployments can be [synced](recipe-deployment#synchronization) to match the latest version. The synchronization is done from the UI by the member of the workspace where the Recipe Deployment is placed or anyone with a [special permission](recipes-access-rights#permissions). **The synchronization process may have some destructive effects**. Read the [explanation](recipe-deployment#synchronization) carefully.
