@@ -30,10 +30,8 @@ guides:
       description: Articles on contract management
     - title: Working with XML
       description: Articles on how to work with XML
-    - title: Recipes
+    - title: Recipes Feature
       description: Articles on Recipes and how to create and use them
-    - title: Marketplace
-      description: Articles on Marketplace
 components:
   title: Components
   description: Extensive documentation of the integration components
