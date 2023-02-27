@@ -5,11 +5,15 @@ description: Technical Notes for the Microsoft Dynamics CRM v2 component
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2023-01-02
-ComponentVersion: 1.2.0
+updatedDate: 2023-02-15
+ComponentVersion: 1.2.1
 ---
 
 ## Changelog
+
+### 1.2.1 (February 15, 2023)
+
+* Fixed input and output metadata for `Upsert Object` Action
 
 ### 1.2.0 (February 01, 2023)
 
