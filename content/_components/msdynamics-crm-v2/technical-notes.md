@@ -11,7 +11,7 @@ ComponentVersion: 1.2.1
 
 ## Changelog
 
-## 1.2.1 (February 15, 2023)
+### 1.2.1 (February 15, 2023)
 
 * Fixed input and output metadata for `Upsert Object` Action
 

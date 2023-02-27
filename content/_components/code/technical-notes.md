@@ -13,11 +13,11 @@ redirect_from:
 
 ## Changelog
 
-## 1.2.10 (February 10, 2023)
+### 1.2.10 (February 10, 2023)
 
 * Get rid of vulnerabilities in dependencies
 
-## 1.2.9 (February 10, 2023)
+### 1.2.9 (February 10, 2023)
 
 * Update Sailor version to 2.7.1
 
