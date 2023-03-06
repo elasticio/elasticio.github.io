@@ -5,11 +5,15 @@ description: Technical Notes for the AWS SQS component
 icon:  aws-sqs.png
 icontext: AWS SQS component
 category: aws-sqs
-updatedDate: 2023-01-27
-ComponentVersion: 1.1.1
+updatedDate: 2023-03-06
+ComponentVersion: 1.1.2
 ---
 
 ## Changelog
+
+### 1.1.2 (March 02, 2022)
+
+Added `High load performance` information
 
 ### 1.1.1 (January 27, 2022)
 
