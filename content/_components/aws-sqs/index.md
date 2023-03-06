@@ -6,8 +6,8 @@ description: Amazon AWS SQS (Simple Queue Service) Component is designed to use 
 icon:  aws-sqs.png
 icontext: AWS SQS component
 category: aws-sqs
-updatedDate: 2023-03-06
-ComponentVersion: 1.1.2
+updatedDate: 2023-01-27
+ComponentVersion: 1.1.1
 ---
 
 ## Description
@@ -142,33 +142,3 @@ Sending a message to a queue
 * **MD5OfMessageBody** - An MD5 digest of the message body
 * **MD5OfMessageAttributes** - An MD5 digest of the message attributes
 * **MessageId** - ID of the message
-
-## High load performance
-
-After several load tests we can make several conclusions:
-* `Send Message` action is able to generate:
-  * `2-3` messages per second 1 by 1, each up to 10KB in size
-  * `10-20` messages per second using parallel processing x10.
-
-* `Receive Messages` trigger is able to receive:
-  * `2` messages per second, if you use delete option enabled.
-  * `20-30` messages per second w/o delete option.
-
-* No issues with processing large amounts of messages (tested up to 100,000).
-
-These numbers are just for reference and can depend on many factors - like current Amazon SQS server and platform load, network stability, and so on.
-
-### Recommendations
-
-* To reach best performance we recommend using `Parallel Processing` feature in `Send Message` action - optimal size is **10**.
-
-* If you use delete flag, speed decrease to only 2 messages per second, so better split flow logic - delete messages using separate action - `Delete Message`
-
-Here is how to enable "Parallel Processing" option:
-
-  * Open step, where you want to enable this option
-  * Go to `Summary` tab
-  * Expand `Show Advanced Settings`
-  * Increase `Parallel Processing` number
-
-![Parallel processing](img/aws-sqs-parallel.png)

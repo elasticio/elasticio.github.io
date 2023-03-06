@@ -5,16 +5,11 @@ description: Technical Notes for the Shopify Admin v2 component.
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2023-02-28
-ComponentVersion: 2.2.0
+updatedDate: 2023-02-24
+ComponentVersion: 2.1.0
 ---
 
 ## Chagelog
-
-### 2.2.0 (February 28, 2023)
-
-* Added `Return Full Response` checkbox for `Get New and Updated Objects Polling` Trigger and `Lookup Objects (plural)` Action
-* Fixed Error `There can be only one argument named "after"` in `Get New and Updated Objects Polling` trigger
 
 ### 2.1.0 (February 24, 2023)
 
