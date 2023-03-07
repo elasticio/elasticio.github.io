@@ -6,8 +6,8 @@ description: Shopify admin Component is designed to connect to Shopify GraphQL A
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2023-02-24
-ComponentVersion: 2.1.0
+updatedDate: 2023-02-28
+ComponentVersion: 2.2.0
 ---
 
 ## Description
@@ -92,8 +92,67 @@ Retrieve all the updated or created objects within a given time range.
 
 * **Size of Polling Page** - (optional, positive integer, defaults to 250, max 250): Indicates the size of pages to be fetched per request. If you query cost will be over shop limit, you can decrease page size.
 * **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`
-* **Start Time** - (string, optional): The timestamp, in ISO8601 format, to start polling from (inclusive). Default value is the beginning of time (January 1, 1970 at 00:00.000).
-* **End Time** - (string, optional): The timestamp, in ISO8601 format, to end at (inclusive). Default value is never.
+* **Return Full Response** - (checkbox): Defines the format of emitted result: with service information or without.
+  Examples for Object type `customers` are given below:
+
+<details close markdown="block"><summary><strong>Response with enabled `Return Full Response` checkbox and `Emit Behavior` = `Emit page`</strong></summary>  
+
+```json
+{
+    "data": {
+      "customers": [
+        {
+          "id": "gid://shopify/Customer/2444144115794",
+          "firstName": "Willy"
+        },
+        {
+          "id": "gid://shopify/Customer/2444144148562",
+          "firstName": "Tobi"
+        },
+        {
+          "id": "gid://shopify/Customer/2444144181330",
+          "firstName": "Mathilde"
+        }
+      ]
+    },
+    "extensions": {
+      "cost": {
+        "requestedQueryCost": 5,
+        "actualQueryCost": 5,
+        "throttleStatus": {
+          "maximumAvailable": 1000,
+          "currentlyAvailable": 40,
+          "restoreRate": 50
+        }
+      }
+    }
+}
+```
+</details>
+
+
+<details close markdown="block"><summary><strong>Response with disabled `Return Full Response` checkbox and `Emit Behavior` = `Emit page`</strong></summary>  
+
+```json
+{
+  "results": [
+    {
+      "id": "gid://shopify/Customer/2444144115794",
+      "firstName": "Willy"
+    },
+    {
+      "id": "gid://shopify/Customer/2444144148562",
+      "firstName": "Tobi"
+    },
+    {
+      "id": "gid://shopify/Customer/2444144181330",
+      "firstName": "Mathilde"
+    }
+  ]
+}
+```
+
+</details>
 
 #### Input Metadata
 
@@ -261,7 +320,67 @@ Lookup a set of objects by defined criteria list. Can be emitted in different wa
 </details>
 
 * **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit page` or `Emit individually`.
-* **Number of search terms** - text field to specify a number of search terms (positive integer number [1-99] or 0).
+* **Return Full Response** - (checkbox): Defines the format of emitted result: with service information or without.
+Examples for Object type `customers` are given below:
+
+<details close markdown="block"><summary><strong>Response with enabled `Return Full Response` checkbox and `Emit Behavior` = `Emit page`</strong></summary>
+
+```json
+{
+    "data": {
+      "customers": [
+        {
+          "id": "gid://shopify/Customer/2444144115794",
+          "firstName": "Willy"
+        },
+        {
+          "id": "gid://shopify/Customer/2444144148562",
+          "firstName": "Tobi"
+        },
+        {
+          "id": "gid://shopify/Customer/2444144181330",
+          "firstName": "Mathilde"
+        }
+      ]
+    },
+    "extensions": {
+      "cost": {
+        "requestedQueryCost": 5,
+        "actualQueryCost": 5,
+        "throttleStatus": {
+          "maximumAvailable": 1000,
+          "currentlyAvailable": 40,
+          "restoreRate": 50
+        }
+      }
+    }
+}
+```
+</details>
+
+
+<details close markdown="block"><summary><strong>Response with disabled `Return Full Response` checkbox and `Emit Behavior` = `Emit page`</strong></summary>
+
+```json
+{
+  "results": [
+    {
+      "id": "gid://shopify/Customer/2444144115794",
+      "firstName": "Willy"
+    },
+    {
+      "id": "gid://shopify/Customer/2444144148562",
+      "firstName": "Tobi"
+    },
+    {
+      "id": "gid://shopify/Customer/2444144181330",
+      "firstName": "Mathilde"
+    }
+  ]
+}
+```
+
+</details>
 
 #### Input Metadata
 
@@ -410,3 +529,6 @@ There is no configuration fields in this action.
 ## Known limitations
 
 * Look at [Shopify API rate limits](https://shopify.dev/api/usage/rate-limits), specially [GraphQL Admin API rate limits](https://shopify.dev/api/usage/rate-limits#graphql-admin-api-rate-limits)
+* If the component reaches API rate limit it will retry request after waiting until queue will be restored up to 10 times: for example - query cost `500` points, currently available only `100` points, restore rate `50` points/second, component will wait `8` seconds until available points will be restored and try again to get data
+
+  Be carefully with several flows running at the same time, each of then can affect on total available points, if component won't be able to get data after 10 retries, then error `"Throttled"` will be thrown
