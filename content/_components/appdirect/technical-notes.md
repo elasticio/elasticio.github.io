@@ -5,14 +5,19 @@ description: Technical notes for the AppDirect component.
 icon:  appdirect.png
 icontext: AppDirect Component
 category: appdirect
-ComponentVersion: 1.0.5
-updatedDate: 2020-11-27
+ComponentVersion: 2.0.0
+updatedDate: 2021-05-11
 redirect_from:
   -/components/appdirect/changelog.html
   -/components/appdirect/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 2.0.0 (May 11, 2021)
+
+* OAuth2 secrets feature implemented
+* Unit and integration tests fixed
 
 ### 1.0.5 (November 27, 2020)
 
