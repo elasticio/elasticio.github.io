@@ -1,18 +1,24 @@
 ---
-title: Google BigQuery Changelog
+title: Google BigQuery Technical Notes
 layout: component
-description: Changelog for Google BigQuery component.
+description: CTechnical Notes for the Google BigQuery component.
 icon: google-bigquery.png
 icontext: Google BigQuery component
 category: bigquery
-ComponentVersion: 1.0.7
-updatedDate: 2021-11-26
+ComponentVersion: 1.1.0
+updatedDate: 2023-02-10
 redirect_from:
   - /components/google-bigquery/completeness-matrix.html
   - /components/google-bigquery/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.0 (Februar 10, 2023)
+
+* Added action `Insert Rows as Stream`
+* Upgrade sailor version to 2.7.1
+* Upgrade circle.ci configuration
 
 ### 1.0.7 (November 26, 2021)
 
