@@ -5,13 +5,17 @@ description: Technical Notes for AMQP component.
 icon:  amqp.png
 icontext: AMQP component
 category: amqp
-ComponentVersion: 1.3.2
-updatedDate: 2020-11-05
+ComponentVersion: 1.3.3
+updatedDate: 2021-03-25
 redirect_from:
   - /components/amqp/changelog.html
 ---
 
 ## Changelog
+
+### 1.3.3 (March 25, 2021)
+
+* Upgrade to sailor 2.6.24
 
 ### 1.3.2 (November 5, 2020)
 
