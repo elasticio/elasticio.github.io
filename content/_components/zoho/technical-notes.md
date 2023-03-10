@@ -11,13 +11,13 @@ updatedDate: 2022-08-17
 
 ## Changelog
 
-##№ 2.0.0 (August 17, 2022)
+### 2.0.0 (August 17, 2022)
 
 * Use `OAuth 2.0` protocol to authorize and authenticate calls (Enable `Faceless` service)
 * Upgrade sailor version to 2.6.29
 * Update Circle.ci config
 
-#№# 1.0.3 (November 26, 2021)
+### 1.0.3 (November 26, 2021)
 
 * Upgrade sailor version to 2.6.26
 * Reduced the size of component icon file
