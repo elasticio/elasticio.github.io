@@ -5,13 +5,17 @@ description: Technical Notes for the ZIP/UnZIP component.
 icon: zip-unzip.png
 icontext: ZIP/UnZIP component
 category: zip
-updatedDate: 2022-11-04
-ComponentVersion: 1.1.6
+updatedDate: 2022-12-02
+ComponentVersion: 1.2.0
 redirect_from:
   - /components/zip/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.0 (December 02, 2022)
+
+* Add Maester support.
 
 ### 1.1.6 (November 04, 2022)
 
