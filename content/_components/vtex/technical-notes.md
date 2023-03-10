@@ -5,11 +5,16 @@ description: Technical Notes for the Vtex component
 icontext: Vtex component
 icon: vtex.png
 category: vtex
-updatedDate: 2022-09-09
-ComponentVersion: 1.4.3
+updatedDate: 2023-01-27
+ComponentVersion: 1.5.0
 ---
 
 ## Changelog
+
+### 1.5.0 (January 27, 2023)
+
+* Added new Trigger - `Selective Get New And Updated Objects Polling Trigger`
+* Updated Sailor version to 2.7.1
 
 ### 1.4.3 (September 09, 2022)
 
