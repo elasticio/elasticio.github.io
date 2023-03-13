@@ -74,6 +74,10 @@ Multiple scopes can be applied with the comma as a separator.
 
 E.g.: `ZohoCRM.settings.ALL,ZohoCRM.modules.ALL,ZohoCRM.users.ALL`
 
+### Credentials Fields
+
+* **API version** Dropdown, optional: list of available APIs (2, 2.1, 3, 4). By default the component uses v4 if other is not set in the credentials
+
 ## Trigger
 
 ### Get New and Updated Objects
