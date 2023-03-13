@@ -1,7 +1,7 @@
 ---
-title: Technical Notes
+title: PostgreSQL Technical Notes
 layout: component
-description: Technical Notes for PostgreSQL Component.
+description: Technical Notes for the PostgreSQL Component.
 icon: postgresql.png
 icontext: PostgreSQL Component
 category: postgresql-component

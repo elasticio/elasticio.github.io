@@ -6,8 +6,8 @@ description: Integration component to interact with Google BigQuery.
 icon: google-bigquery.png
 icontext: Google BigQuery component
 category: bigquery
-ComponentVersion: 1.0.7
-updatedDate: 2021-11-26
+ComponentVersion: 1.1.0
+updatedDate: 2023-02-10
 ---
 
 ## Description

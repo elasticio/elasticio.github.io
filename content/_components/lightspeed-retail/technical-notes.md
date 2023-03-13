@@ -7,7 +7,7 @@ icon: lightspeed-retail.png
 icontext: Lightspeed-retail component
 category: lightspeed-retail
 updatedDate: 2020-12-04
-ComponentVersion: 1.0.2
+ComponentVersion: 1.0.1
 ---
 
 ## Changelog

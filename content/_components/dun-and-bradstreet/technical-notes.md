@@ -5,11 +5,16 @@ description: Technical Notes for the Dun-and-bradstreet component.
 icon: dun-and-bradstreet.png
 icontext: Dun-and-bradstreet component
 category: dun-and-bradstreet
-updatedDate: 2020-08-12
-ComponentVersion: 1.0.3
+updatedDate: 2021-11-16
+ComponentVersion: 1.0.4
 ---
 
 ## Changelog
+
+### 1.0.4 (November 16, 2021)
+
+* Add Apache-2.0 LICENSE
+* Remove a version field from build.gradle
 
 ### 1.0.3 August 12, 2021)
 

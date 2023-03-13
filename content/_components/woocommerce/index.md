@@ -6,8 +6,8 @@ description: A component that works with WooCommerce online stores, based on Woo
 icontext: WooCommerce component
 icon: woocommerce.png
 category: woocommerce
-updatedDate: 2022-05-06
-ComponentVersion: 2.0.1
+updatedDate: 2022-03-10
+ComponentVersion: 2.0.2
 ---
 
 ## Credentials

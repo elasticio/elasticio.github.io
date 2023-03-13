@@ -6,8 +6,8 @@ description: D&B is a corporation that provides information on commercial credit
 icon: dun-and-bradstreet.png
 icontext: Dun-and-bradstreet component
 category: dun-and-bradstreet
-updatedDate: 2020-08-12
-ComponentVersion: 1.0.3
+updatedDate: 2021-11-16
+ComponentVersion: 1.0.4
 ---
 
 ## Environment variables

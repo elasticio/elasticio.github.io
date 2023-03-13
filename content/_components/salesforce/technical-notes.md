@@ -49,7 +49,7 @@ redirect_from:
 
 * Bump dependencies
 
-## 2.2.2 (April 08, 2022)
+### 2.2.2 (April 08, 2022)
 
 * Implemented reconnect logic on errors
 * Update Sailor version to 2.6.27

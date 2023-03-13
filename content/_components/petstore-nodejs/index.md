@@ -3,7 +3,7 @@ title: Petstore-nodejs component
 layout: component
 section: Utility components
 description: A first step component to deploy into our platform.
-category: petstore
+category: petstore-nodejs
 icon: petstore.png
 icontext: Petstore-nodejs componentt
 updatedDate: 2022-04-08
