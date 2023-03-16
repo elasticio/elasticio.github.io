@@ -29,7 +29,7 @@ Before building any integration flow you must at first configure the app from in
 5. Press `Add` button next to `Jira API` and then `Configure`
 6. Here you can provide required Scopes
 
-[More info](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/#enabling-oauth-2-0--3lo-)
+> Please visite [this](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/#enabling-oauth-2-0--3lo-) website fot more information.
 
 Now you can create new credentials for the component:
 

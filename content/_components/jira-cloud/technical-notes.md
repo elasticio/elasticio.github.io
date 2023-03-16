@@ -1,8 +1,7 @@
 ---
-title: Jira Cloud component
+title: Jira Cloud Technical Notes
 layout: component
-section: Service components
-description: Jira Cloud Component is designed to connect to Atlassian Jira Cloud platform.
+description: Technical Notes for the Jira Cloud Component.
 icon: jira-cloud.png
 icontext: Jira Cloud component
 category: jira-cloud
