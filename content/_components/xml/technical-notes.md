@@ -5,13 +5,23 @@ description: Technical Notes for the XML component.
 icon: xml.png
 icontext: XML component
 category: xml
-ComponentVersion: 1.3.5
-updatedDate: 2022-04-13
+ComponentVersion: 1.3.7
+updatedDate: 2022-09-12
 redirect_from:
   - /components/xml/changelog.html
 ---
 
 ## Changelog
+
+### 1.3.7 (September 12, 2022)
+
+* Deleted buildType from component.json to fix component build
+
+### 1.3.6 (September 09, 2022)
+
+* Update Sailor version to 2.6.29
+* Get rid of vulnerabilities in dependencies
+* Update component-commons-library version to 3.0.2
 
 ### 1.3.5 (April 13, 2022)
 

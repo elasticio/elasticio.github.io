@@ -6,8 +6,8 @@ description: A component that connects to Zoho-crm API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.6
-updatedDate: 2022-11-24
+ComponentVersion: 1.4.0
+updatedDate: 2023-03-10
 ---
 
 ## General information
@@ -73,6 +73,10 @@ Multiple scopes can be applied with the comma as a separator.
 >**Please Note:** that whitespaces between scopes are not allowed!
 
 E.g.: `ZohoCRM.settings.ALL,ZohoCRM.modules.ALL,ZohoCRM.users.ALL`
+
+### Credentials Fields
+
+* **API version** Dropdown, optional: list of available APIs (2, 2.1, 3, 4). By default the component uses v4 if other is not set in the credentials
 
 ## Trigger
 

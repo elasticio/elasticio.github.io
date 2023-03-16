@@ -5,8 +5,8 @@ description: AppDirect component actions
 icon:  appdirect.png
 icontext: AppDirect Component
 category: appdirect
-ComponentVersion: 1.0.5
-updatedDate: 2020-11-27
+ComponentVersion: 2.0.0
+updatedDate: 2021-05-11
 ---
 
 ## Create Object

@@ -2,7 +2,7 @@
 title: Petstore-nodejs Technical Notes
 layout: component
 description: Technical Notes for the Petstore-nodejs component
-category: petstore
+category: petstore-nodejs
 icon: petstore.png
 icontext: Petstore-nodejs componentt
 updatedDate: 2022-04-08

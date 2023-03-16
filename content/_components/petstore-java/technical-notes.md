@@ -2,7 +2,7 @@
 title: Petstore-java Technical Notes
 layout: component
 description: Technical Notes for the Petstore-java component
-category: petstore
+category: petstore-java
 icon: petstore.png
 icontext: Petstore-java componentt
 updatedDate: 2022-05-06

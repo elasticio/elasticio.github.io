@@ -6,8 +6,8 @@ description: This component is designed to operate with zip files.
 icon: zip-unzip.png
 icontext: ZIP/UnZIP component
 category: zip
-updatedDate: 2022-11-04
-ComponentVersion: 1.1.6
+updatedDate: 2022-12-02
+ComponentVersion: 1.2.0
 ---
 
 ## Environment variables

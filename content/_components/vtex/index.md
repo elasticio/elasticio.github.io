@@ -6,8 +6,8 @@ description: The Vtex iPaaS component that connects to VTEX API
 icontext: Vtex component
 icon: vtex.png
 category: vtex
-updatedDate: 2022-09-09
-ComponentVersion: 1.4.3
+updatedDate: 2023-01-27
+ComponentVersion: 1.5.0
 ---
 
 ## General information

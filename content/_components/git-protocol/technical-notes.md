@@ -5,11 +5,23 @@ description: Technical Notes for the Git-Protocol component
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.2.0
-updatedDate: 2022-10-21
+ComponentVersion: 1.2.3
+updatedDate: 2023-02-01
 ---
 
 ## Changelog
+
+### 1.2.3 (February 01, 2023)
+
+* Add GHSA-hrpp-h998-j3pp vulnerability to .nsprc
+
+### 1.2.2 (February 01, 2023)
+
+* Add Circleci context
+
+### 1.2.1 (February 01, 2023)
+
+* Test commit for testing pushing the image to the Docker hub
 
 ### 1.2.0 (October 21, 2022)
 

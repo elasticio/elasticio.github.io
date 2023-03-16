@@ -5,11 +5,16 @@ description: Technical Notes for the Zoho CRM component.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.6
-updatedDate: 2022-11-24
+ComponentVersion: 1.4.0
+updatedDate: 2023-03-10
 ---
 
 ## Changelog
+
+### 1.4.0 (March 10, 2023)
+
+* Fix Search criteria bug in the Lookup Objects Plural action
+* Add new field `API version` to credentials
 
 ### 1.3.6 (November 24, 2022)
 

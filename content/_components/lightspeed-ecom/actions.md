@@ -6,7 +6,7 @@ icon: lightspeed-ecom.png
 icontext: Lightspeed-ecom component
 category: lightspeed-ecom
 updatedDate: 2020-12-04
-ComponentVersion: 1.0.2
+ComponentVersion: 1.0.1
 ---
 
 ## Create Object

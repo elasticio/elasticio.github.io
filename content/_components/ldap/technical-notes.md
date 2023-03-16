@@ -5,13 +5,17 @@ description: Technical Notes for Ldap component
 icon: ldap.png
 icontext: Ldap component
 category: ldap
-updatedDate: 2020-12-04
-ComponentVersion: 1.0.1
+updatedDate: 2021-03-25
+ComponentVersion: 1.0.2
 redirect_from:
   - /components/ldap/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.2 (March 25, 2021)
+
+* Updated the Sailor library version to 2.6.24
 
 ### 1.0.1 (December 4, 2020)
 
