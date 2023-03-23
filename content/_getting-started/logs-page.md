@@ -29,6 +29,8 @@ You can also go to the [Executions page](executions) simply by clicking on the *
 
 ![Thread's details](/assets/img/getting-started/logs-page/threads-details.png)
 
+>Please note that in case you are interested in all logs of a particular workspace, you can use the corresponding [API Call]({{site.data.tenant.apiDocsUri}}/v2#/logs) for that.
+
 ## Filter by Flow Name
 
 This filter allows you to concentrate on logs of one or more Flows by selecting
