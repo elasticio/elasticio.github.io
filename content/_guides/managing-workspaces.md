@@ -15,7 +15,7 @@ and why we need workspaces.
 ## Creating Workspace
 
 Every contract member can create a workspace on the [user interface](#creating-workspace-ui)
-or using a [REST API call](#creating-workspace-api).
+or using an [API call](#creating-workspace-api).
 
 **Please note** no matter which method you use to create, a workspace name must
 adhere to the following standards:
@@ -45,21 +45,10 @@ button.
 
 ### Creating workspace: API
 
-To create a workspace using our REST API you must use your `email` and `APIKEY`
+To create a workspace you can use our [API call]({{site.data.tenant.apiDocsUri}}/v2#/workspaces/post_workspaces). Note that you must use your `email` and `APIKEY`
 to authenticate. Check the [platform tour profile information section](/getting-started/platform-tour.html#profile-information) if unsure where to find this information.
 
-Make an HTTP `POST` to `{{site.data.tenant.apiBaseUri}}/v2/workspaces` using the
-following request parameters:
-
-| Payload Parameter                  | Required | Description                |
-|------------------------------------|----------|----------------------------|
-| `type`                             | yes      | Allowed value: `workspace` |
-| `attributes.name`                  | yes      | Name of the new workspace  |
-| `relationships.contract.data.id`   | yes      | ID of the contract         |
-| `relationships.contract.data.type` | yes      | Allowed value: `contract`  |
-
-Check our REST API documentation [workspace creation section]({{site.data.tenant.apiDocsUri}}/v2/#create-a-workspace) for more details.
-
+> Please note that you have to be a member of the Contract’s scope and need `contracts.workspace.create` permission to access this resource.
 
 ## Editing Workspace
 
@@ -81,25 +70,10 @@ page. Now click on the name of the workspace to edit.
 
 ### Editing workspace: API
 
-You can edit the workspace record using our REST API providing your `email` and `APIKEY`
+You can edit the workspace record using our [API call]({{site.data.tenant.apiDocsUri}}/v2#/workspaces/patch_workspaces__workspace_id_) providing your `email` and `APIKEY`
 to authenticate.
 
-To change the workspace parameters make an HTTP `PATCH` call to
-`{{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}` endpoint using the
-following request parameters:
-
-| Payload Parameter | Required | Description                       |
-|-------------------|----------------------------------------------|
-| `type`            | yes      | The value must be `workspace`.    |
-| `attributes.name` | yes      | Name of the workspace.            |
-| `attributes.flow_stats_enabled_default` | no | Boolean `true`/`false`. Read more: [Flow Stats Toggle](https://api.elastic.io/docs/v2/#flow-stats-toggle) |
-| `attributes.type` | no | Type of the Workspace. Allowed values: full or limited. |
-
-Check our REST API documentation [update workspace section]({{site.data.tenant.apiDocsUri}}/v2/#update-a-workspace) for more details.
-
-> To change the workspace type you need to have at least tenant administration access
-> rights (`tenantAdmin`).
-
+> Please note that you have to be a member of the Contract’s scope and need `workspaces.workspace.edit` permission to access this resource. To update the type of Workspace you need `workspaces.workspace.edit_type` permission.
 
 ## Deleting workspace
 
@@ -142,12 +116,10 @@ to permanently delete it.
 
 ### Deleting workspace: API
 
-To delete workspace via the API we make an HTTP `DELETE` call to the the following
-endpoint `{{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}`. Here you
-must only provide the ID of the workspace.
+To delete workspace via the API please use the corresponding endpoint. Here you
+must only provide the ID of the workspace. For more information, visit the [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/workspaces/delete_workspaces__workspace_id_).
 
 > **Please note** No warning message comes when you execute this call via the API.
-
 
 ## Workspace members
 
@@ -208,56 +180,4 @@ Editing the member means changing the roles. The following animation shows more:
 
 ### Managing workspace members: API
 
-You can manage members in your workspace using our
-[REST API workspace unit]({{site.data.tenant.apiDocsUri}}/v2/#workspace-unit)
-section. In includes information abour adding new members, managing their workspace
-user roles and removing members.
-
-#### Add new member via API
-
-To add a new member via the API, use the following request:
-
-`POST {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members`
-
-Below are request parameters:
-
-| Payload Parameter    | Required | Description                                |
-|----------------------|--------------|----------------------------------------|
-| `id`                 | yes      | ID of an already registered user, who will be added as a member of the workspace |
-| `type`               | yes      | Allowed value: `member`.                   |
-| `attributes.roles[]` | yes      | New member roles.                          |
-
-#### Update members via API
-
-To update user roles via the API, use the following request:
-
-`PATCH {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/`
-
-Below are request parameters:
-
-| URL Parameter      | Required | Description                              |
-|--------------------|----------|------------------------------------------|
-| `WORKSPACE_ID`     | yes      | Workspace ID                             |
-| `USER_ID`          | yes      | Target user ID                           |
-
-
-| Payload Parameter    | Required | Description                                |
-|----------------------|----------|--------------------------------------------|
-| `id`                 | yes      | ID of an already registered user, match URL parameter `{USER_ID}` |
-| `type`               | yes      | Allowed value: `member`.                   |
-| `attributes.roles[]` | yes      | Roles.                                     |
-
-
-#### Delete member via API
-
-To remove a member from the workspace via the API we will use the following
-request:
-
-`DELETE {{site.data.tenant.apiBaseUri}}/v2/workspaces/{WORKSPACE_ID}/members/{USER_ID}/`
-
-Below are request parameters:
-
-| URL Parameter  | Description                                  |
-|----------------|----------------------------------------------|
-| `WORKSPACE_ID` | The ID of the Workspace.                     |
-| `USER_ID `     | The ID of the user, which requires deletion. |
+You can add, update and delete members in your workspace using API calls. For more informations on how to do that and even more please visit the [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/workspaces/get_workspaces__workspace_id__members).
