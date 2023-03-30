@@ -6,8 +6,8 @@ description: Jira Cloud Component is designed to connect to Atlassian Jira Cloud
 icon: jira-cloud.png
 icontext: Jira Cloud component
 category: jira-cloud
-updatedDate: 2023-03-10
-ComponentVersion: 1.0.0
+updatedDate: 2023-03-24
+ComponentVersion: 1.1.0
 ---
 
 ## Description
@@ -73,3 +73,43 @@ Executes custom request.
 * **Status Code** - (number, required): HTTP status code of the response.
 * **HTTP headers** - (object, required): HTTP headers of the response.
 * **Response Body** - (object, optional): HTTP response body.
+
+### Upsert Object
+
+Updates (if record found) or creates a new object.
+
+#### Configuration Fields
+
+* **Select cloud** - (dropdown, required): This will retrieve the sites that have scopes granted by the token.
+* **Object Type** - (dropdown, required): Object-type to upsert. E.g `Issue`.
+
+#### Input Metadata
+
+* **Id Or Key** - (string, optional): Id Or Key of the object to upsert.
+And dynamically generated fields according to chosen `Object Type`.
+
+#### Output Metadata
+
+If object was created, there will be both - `id` and `key`, otherwise depends on input
+* **id** - (string, optional): Id Or Key of the object to upsert.
+* **key** - (string, optional): Id Or Key of the object to upsert.
+
+
+### Lookup Object (at most one)
+
+Lookup a single object by a selected field that uniquely identifies it.
+
+#### Configuration Fields
+
+* **Select cloud** - (dropdown, required): This will retrieve the sites that have scopes granted by the token.
+* **Object Type** - (string, required): Object-type to lookup on. E.g `User`.
+* **Allow criteria to be omitted** - (boolean, optional): If selected field `Lookup Criteria Value` becomes optional.
+* **Allow zero results** - (boolean, optional): When selected, if the object is not found - an empty object will be returned instead of throwing error.
+
+#### Input Metadata
+
+* **Lookup Criteria Value** - (string, required unless `Allow criteria to be omitted` is selected): Value for unique search criteria in `Lookup Criteria` configuration field.
+
+#### Output Metadata
+
+Object with result of lookup as value.
