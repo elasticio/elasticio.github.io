@@ -74,7 +74,7 @@ OAuth2 client:
 After this step you can create the `auth-secret` the same way as one would create
 a credential.
 
-For more advanced cases we recommend using an [API call](#creating-oauth2-clients-using-api-call) to create `auth-client`.
+For more advanced cases we recommend using an [API call](#creating-oauth2-clients-using-api-call) to create `auth-client`. We also recommend you to read our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients) on this topic.
 
 ### Creating other clients
 
@@ -109,7 +109,9 @@ unless you add a new client:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-oauth2-secret-choose-client.png" title="Create OAuth2 Secret." %}
 
->**Please note** that you can also create a auth secret using the API call. This is described in detail in this [API documentation section]({{site.data.tenant.apiDocsUri}}/v2#/auth%20secrets/post_workspaces__workspace_id__secrets).
+### Auth Secret Creation vie API calls
+
+Of course, you can also create an Auth secret using the appropriate API endpoint. We recommend you to familiarize yourself with this feature, which is described in detail in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/auth%20secrets). Please note that there are cases where creating secrets will be much easier and more convenient using API calls.
 
 ## Components and Secrets feature
 

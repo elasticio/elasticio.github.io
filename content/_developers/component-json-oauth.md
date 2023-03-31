@@ -57,6 +57,8 @@ Specifies OAuth 2.0 specific details of the API used by the component. For more
 details about Authenticating with OAuth 2.0 please read the
 [OAuth 2.0 specification](http://tools.ietf.org/html/rfc6749).
 
+To use an OAuth2 based Component in the platform it is required to register a client at the authorization server. After registration the authorization server issues the registered client an identifier (client ID) and a secret. These client credentials are used to create a client using the corresponding API calls. Auth clients can be created on any level: tenant, contract or workspace which incapsulate each other (in order), i.e client created on tenant level is available to use for creating secrets in any workspace of the tenant. You can find all information about the required API endpoints in the [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients).
+
 | Property Name | Type     | Required | Description |
 | :------------ | :------: | :------: | :---------- |
 | client_id   | `string` | Yes      | The Consumer Key |
@@ -83,7 +85,7 @@ Here is an example of `OAuth2` implementation in [Google Spreadsheets](https://g
 }
 ```
 
-Please note that the properties `access_type` and `prompt` above are specific to Google. They are not defined in the OAuth2 specification.
+> Please note that the properties `access_type` and `prompt` above are specific to Google. They are not defined in the OAuth2 specification.
 
 Sometimes you will need to access values in the `oauth2` properties you
 gathered from the user using fields, as for example is done in the [Salesforce component](https://github.com/elasticio/salesforce-component/blob/master/component.json).
