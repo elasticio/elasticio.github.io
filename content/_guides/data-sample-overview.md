@@ -39,6 +39,8 @@ or may require it in completely different order. That’s when you configure
 proper mapping so that the receiving component gets input in accordance with its
 standard.
 
+![Data Sample](/assets/img/integrator-guide/data-sample/data-sample.png)
+
 >**Please note** that samples exist for flow building and testing purposes. Retrieving a sample for an action creates new objects in the target system. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards. You can also just **Skip Sample** if you don't need it. However, we recommend doing this only when you are sure about the data your component will receive.
 
 ### Managing Data Sample via API calls
