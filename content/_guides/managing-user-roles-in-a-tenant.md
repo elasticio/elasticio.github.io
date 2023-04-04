@@ -19,13 +19,15 @@ and how [to set roles in the UI](#setting-user-roles).
 ## Roles and permissions
 
 A tenant admin can control user rights in a tenant by configuring user roles. A role is a user
-attribute that defines a set of permissions for the user. Contract roles define
+attribute that defines a set of permissions for the user. Tenant roles define permissions for tenant management, contract roles define
 permissions for contract management, and workspace roles define permissions for
-tenant management.
+workspace management.
 
 The default **tenant role** is:
 
 *   **Tenant-Admin** - Users with this role can manage tenants, contracts and users.
+
+> Plese note that with `global.tenant.edit_roles` permission you can use `PATCH /v2/tenants/:tenantId/roles` funktion which allows to create a new role with permissions in a tenant scope.
 
 The default **contract roles** are:
 
@@ -45,10 +47,6 @@ set of permissions for every workspace. A contract **Admin** may be a **Guest**
 in a certain workspace.
 
 > Please note that you can always get the list of available permissions using an [API call]({{site.data.tenant.apiDocsUri}}/v2#/permissions/get_permissions). This endpoint is available to all the platforms' users.
-
-We have changed the name of permission tenants.tenant.edit_roles to global.tenant.edit_roles.
-
-Now PATCH /v2/tenants/:tenantId/roles allows to create a new role with permissions in a tenant scope. We have also updated API endpoint PATCH /v2/tenants/{tenant_id}/members/{user_id} which allows granting any role from the tenant’s scope to any user. The permission tenants.user.generate_one_time_token can be granted to any user inside the tenant.
 
 ## Setting user roles in Workspace
 
