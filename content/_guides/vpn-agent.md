@@ -27,6 +27,8 @@ using the secure VPN tunnel. All the processing is happening on platform side, y
 resource serves the role of data source or final destination of data depending on
 your use case.
 
+> Please note that you can manage VPN agents using API calls. You can find all the information you need about it [here]({{site.data.tenant.apiDocsUri}}/v2#/vpn%20agents).
+
 ## How to setup
 
 To setup the Agent you would need to fulfill the following preconditions:
@@ -42,7 +44,7 @@ Let's assume our local database is accessible on `192.168.1.7` address and `2701
 port (standard MongoDB port).
 
 Navigate to left-hand-side menu, Integrate > Agents and press on **Create an Agent** button
-if you don't have any Agents or press on **Create New Agent** button to add new one.
+if you don't have any Agents or press on **Create New Agent** button to add new one. You can also create a VPN agent using this [API endpoint]({{site.data.tenant.apiDocsUri}}/v2#/vpn%20agents/post_agents_vpn).
 
 You will get a new pop-up form to fill in the details. Note you can extend the form
 by selecting **Create New Endpoint**.
@@ -94,3 +96,6 @@ And lastly **Verify** and **Save** your credential.
 
 Congratulations, you are now ready to query your local database and use the results
 to process further.
+
+>You can always update your agent, get all the information you need about it, or just delete it using the appropriate **API endpoints**.
+All the necessary information about this you can find in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/vpn%20agents).

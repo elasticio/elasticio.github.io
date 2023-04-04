@@ -43,4 +43,4 @@ To access navigate to Flows, select any active flow, click to cogwheel and selec
 
 ### API endpoint
 
-You can also access the queue information using the `/v2/stats/queues/FLOW_ID API` endpoint. More information is available from the [API reference documentation](https://api.elastic.io/docs/v2/#stats).
+You can also access the queue information using the `/v2/stats/queues/FLOW_ID API` endpoint. More information is available from the [API reference documentation](https://api.elastic.io/docs/v2#/stats).

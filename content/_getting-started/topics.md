@@ -17,7 +17,7 @@ A Topic is a named JSON schema you can use to communicate in a [publish–subscr
 
 Topic can be created via UI or API-call:
 
-  * [API-call](https://api.elastic.io/docs/v2/#pub/sub-topics).
+  * [API-call]({{site.data.tenant.apiDocsUri}}/v2#/topics/post_workspaces__workspace_id__topics).
 
   * Via UI:
 
@@ -38,6 +38,8 @@ To make changes to an existing topic, select the topic you need and then click "
 Here you can change the Topic name and JSON-schema and then save your changes:
 
   ![Editing topic](/assets/img/getting-started/topics/editing-topic.png)
+
+> Please note that you can also perform all the actions described above with the corresponding [API calls]({{site.data.tenant.apiDocsUri}}/v2#/topics).
 
 ## Generating schema for JSON sample
 

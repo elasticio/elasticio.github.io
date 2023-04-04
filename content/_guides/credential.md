@@ -7,6 +7,8 @@ section: Building integration flows
 category: building integration flows
 ---
 
+## Description
+
 An [integration flow](/getting-started/integration-flow) runs on behalf of a person or an
 organization to synchronize data between multiple applications. Each step
 of an integration flow is accessing a particular application, for example
@@ -30,6 +32,8 @@ As you can see in the examples above, a `credential` is specific to the
 API it is used to authenticate with. This means a credential for a
 *Salesforce* component will not work with a credential for a *Database*
 component or any other API.
+
+> Please note that you can manage credential not only through the UI, but also using the corresponding API endpoints. All necessary information can be found in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/credentials).
 
 ## Creating a credential for a flow
 
@@ -57,7 +61,6 @@ Credentials are structured by components. The green number on a component icon t
 >**Please note** that before saving a credential, the {{site.data.tenant.name}} platform performs a verification by sending a "dry" request to the particular API. This allows us to avoid saving invalid credentials caused by typos, invalidated API keys, etc.
 
 A new credential can be added by pressing the `Add New Credential` button that you can see at the end of the video above. An existing credential can also be edited or deleted. This is accomplished by clicking the `Edit` or `Delete` button on an existing credential.
-
 
 >**Please note** that it is not possible to delete a credential used by an active integration flow as the flow would become broken. If you try to delete such a credential, a corresponding error message will be displayed. Please delete these flow first or reconfigure them to use another credentials.
 

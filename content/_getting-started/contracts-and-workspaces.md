@@ -58,6 +58,8 @@ Here is the full list of contract permissions:
 
 6.  Edit developer team
 
+>Please note that you can use an [API endpoint]({{site.data.tenant.apiDocsUri}}/v2#/stats/get_stats_workspaces) to get lists of workspaces with flows in them and flow components. To do that you must be a member of the Contract’s scope with the `global.stats.workspaces` permission or a member of a Tenant Admin users group.
+
 ## Workspaces
 
 A client’s enclosed environment within a contract is called a workspace. Each

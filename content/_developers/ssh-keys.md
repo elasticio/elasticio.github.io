@@ -31,6 +31,8 @@ drwxr-xr-x+ 33 username  staff  1122 Jul 24 09:06 ..
 
 This shows that this user called username has already GitHub created SSH key which is possible to use. We recommend creating a new one for a simplicity and proper record keeping.
 
+> Alternatively, you can use an [API call](({{site.data.tenant.apiDocsUri}}/v2#/sshkeys/get_sshkeys) to list all SSH keys of the current user.
+
 ### Creating a new SSH key
 
 To create an SSH Key open a terminal and type:
@@ -78,6 +80,8 @@ $ less ~/.ssh/id_rsa.pub | pbcopy
 
 This command copies the newly created SSH Key into your clipboard, so that you
 can paste it into the SSH entry form on the {{site.data.tenant.name}} platform.
+
+> Alternatively, you can use an [API call](({{site.data.tenant.apiDocsUri}}/v2#/sshkeys/post_sshkeys) to create a new SSH key.
 
 ## Uploading your SSH keys
 
