@@ -6,8 +6,8 @@ description: A open standard application layer protocol for passing business mes
 icon:  amqp.png
 icontext: AMQP component
 category: amqp
-ComponentVersion: 1.4.0
-updatedDate: 2023-03-25
+ComponentVersion: 1.4.2
+updatedDate: 2023-03-27
 ---
 
 ## Description

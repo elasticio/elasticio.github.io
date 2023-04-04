@@ -5,13 +5,21 @@ description: Technical Notes for AMQP component.
 icon:  amqp.png
 icontext: AMQP component
 category: amqp
-ComponentVersion: 1.4.0
-updatedDate: 2023-03-25
+ComponentVersion: 1.4.2
+updatedDate: 2023-03-27
 redirect_from:
   - /components/amqp/changelog.html
 ---
 
 ## Changelog
+
+### 1.4.2 (March 27, 2023)
+
+Fixed issue with shutdown hook in `Consume` trigger
+
+### 1.4.1 (March 27, 2023)
+
+Fixed connection cloning in `Publish` action
 
 ### 1.4.0 (March 25, 2023)
 
