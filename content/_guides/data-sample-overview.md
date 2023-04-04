@@ -23,6 +23,8 @@ You can generate more than one sample from a component. By default, the first on
 
 ## Samples in Integration Flows
 
+### Data Sample purposes
+
 Each component in a flow has its own input/output data standards. For proper
 flow operation, the components need [data mapping](/guides/mapping-data). It is a process of
 data conversion from one component’s standard to the next one’s. Basically, data
@@ -37,7 +39,15 @@ or may require it in completely different order. That’s when you configure
 proper mapping so that the receiving component gets input in accordance with its
 standard.
 
->**Please note** that samples exist for flow building and testing purposes. Retrieving a sample for an action creates new objects in the target system. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards.
+![Data Sample](/assets/img/integrator-guide/data-sample/data-sample.png)
+
+>**Please note** that samples exist for flow building and testing purposes. Retrieving a sample for an action creates new objects in the target system. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards. You can also just **Skip Sample** if you don't need it. However, we recommend doing this only when you are sure about the data your component will receive.
+
+### Managing Data Sample via API calls
+
+Sometimes it is easier and more convenient to work with the samples not on the platform itself, but by using the corresponding API calls. You can create a data sample, update it or get the specified data sample. To familiarize yourself with this functionality, please read the corresponding section in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/data%20samples).
+
+### Data Sample example
 
 Let’s observe the following process example:
 
