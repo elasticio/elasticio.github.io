@@ -27,7 +27,7 @@ The default **tenant role** is:
 
 *   **Tenant-Admin** - Users with this role can manage tenants, contracts and users.
 
-> Please note that with `global.tenant.edit_roles` permission you can use `PATCH /v2/tenants/:tenantId/roles` funсtion which allows to create a new role with permissions in a tenant scope. Please use `PATCH /v2/tenants/{tenant_id}/members/{user_id}` [API endpoint]({{site.data.tenant.apiDocsUri}}/v2#/tenants/patch_tenants__tenant_id__members__user_id_) to grante any role from the tenant’s scope to any user.
+> Please note that with `global.tenant.edit_roles` permission you can use `PATCH /v2/tenants/:tenantId/roles` API call which allows to create a new role with permissions in a tenant scope. Please use `PATCH /v2/tenants/{tenant_id}/members/{user_id}` [API endpoint]({{site.data.tenant.apiDocsUri}}/v2#/tenants/patch_tenants__tenant_id__members__user_id_) to grante any role from the tenant’s scope to any user.
 
 The default **contract roles** are:
 
