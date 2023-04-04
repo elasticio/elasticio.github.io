@@ -1,6 +1,6 @@
 ---
 title: Managing user roles in a contract
-description: This document explains what roles and permissions are, how roles are set in the UI and how custom roles are configured.
+description: This document explains the default roles and permissions of the platform and how to set them in the UI.
 layout: article
 section: Contract Management
 order: 1
@@ -18,11 +18,16 @@ and how [to set roles in the UI](#setting-user-roles).
 
 ## Roles and permissions
 
-A tenant admin can
-control user rights in his tenant by configuring user roles. A role is a user
-attribute that defines a set of permissions for the user. Contract roles define
+A tenant admin can control user rights in a tenant by configuring user roles. A role is a user
+attribute that defines a set of permissions for the user. Tenant roles define permissions for tenant management, contract roles define
 permissions for contract management, and workspace roles define permissions for
 workspace management.
+
+The default **tenant role** is:
+
+*   **Tenant-Admin** - Users with this role can manage tenants, contracts and users.
+
+> Please note that with `global.tenant.edit_roles` permission you can use `PATCH /v2/tenants/:tenantId/roles` API call which allows to create a new role with permissions in a tenant scope. Please use `PATCH /v2/tenants/{tenant_id}/members/{user_id}` [API endpoint]({{site.data.tenant.apiDocsUri}}/v2#/tenants/patch_tenants__tenant_id__members__user_id_) to grante any role from the tenant’s scope to any user.
 
 The default **contract roles** are:
 
@@ -33,8 +38,8 @@ The default **contract roles** are:
 The default **workspace roles** are:
 
 *   **Owner** - Users with this role can edit the workspace, edit [flows](/getting-started/integration-flow), start/stop flows, change flows from/to [real-time/ordinary](realtime-flows) status, and edit credentials in a workspace.
-*   **Admin** - Users with this role have the same permission set as **Owner**
-*   **Integrator** - Users with this role can edit flows, start/stop flows, change flows from/to real-time/ordinary, and edit [credentials](/getting-started/credential).
+*   **Admin** - Users with this role have the same permission set as **Owner** plus [recipe creation and modification](creating-recipes).
+*   **Integrator** - Users with this role can edit flows, start/stop flows, change flows from/to real-time/ordinary, and edit [credentials](credential). They can also [create and edit recipes](creating-recipes).
 *   **Guest** - Users with this role can browse the workspace.
 
 Note that a full set of contract permissions does not automatically mean a full
@@ -59,8 +64,8 @@ drop-down menu.
 As a workspace Owner and Admin you can set the user role while inviting them to
 the Contract and Workspace.
 
-> **Please Note** You can invite to Contract and Workspace only if your have
-> **Owner** or **Admin** role in the contract.
+> **Please Note:** You can invite to Contract and Workspace only if your have
+> **Owner** role in the contract.
 
 Click **Invite new member**, enter user email and use **Contract Role** and
 **Workspace Role** drop-down menus. In the corresponding menu, select the required
@@ -75,7 +80,7 @@ Click **Send Invite** to finish.
 
 ## Setting user roles in Contract
 
-As a contract **Owner** or **Admin** you can modify roles of any user in the
+As a contract **Owner** you can modify roles of any user in the
 contract by visiting **Members** section of the **Contract Settings** and
 clicking to edit (the pencil).
 
@@ -93,7 +98,7 @@ the Contract. Click on **Invite new member** button and start filling in the for
 
 Couple of points to keep in mind:
 
-*   If you don't have access to a particular workspace or your role is not **Owner** or **Admin** you can't invite somebody else into this workspace.
+*   If you don't have access to a particular workspace or your role is not **Owner** you can't invite somebody else into this workspace.
 *   You can not invite anybody to the contract when you have **Member** role in that contract.
 
 ## User Invitations
@@ -128,9 +133,3 @@ As a contract **Owner** and **Admin** you can update already sent but not accept
 invitations using a HTTP `PATCH` method to call our API `/v2/contracts/{CONTRACT_ID}/invites/{INVITE_ID}` endpoint.
 You can update or remove roles you granted to this potential user and more. Check our
 [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id__invites__invite_id_) for more details.
-
-## Related links
-
-- [Integration Flow Overview](/getting-started/integration-flow)
-- [Building real-time flows](realtime-flows)
-- [Understanding credentials](/getting-started/credential)
