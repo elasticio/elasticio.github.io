@@ -49,7 +49,7 @@ If you need to delete a developer team:
 *   You should have the appropriate [permissions](/guides/managing-user-roles-in-a-tenant) and
 *   The developer team must contain no integration component.
 
-If the above conditions are true, you can proceed and delete the developer team using an API call. However, the functionality of the endpoints is not limited to these two actions. You can find out more about this in the [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/teams).
+If the above conditions are true, you can proceed and delete the developer team using an API call or via UI. However, the functionality of the endpoints is not limited to these two actions. You can find out more about this in the [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/teams).
 
 ## Manage integration components
 
