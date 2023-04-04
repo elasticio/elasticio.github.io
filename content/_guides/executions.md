@@ -45,8 +45,7 @@ next scheduling interval.
 
 The action receiving the data processes it in parallel or serially, and emits
 10 messages for each piece of data. The last action of the flow receives 100
-messages totally. All the 110 messages belong to the same execution.
-
+messages totally. All the 110 messages belong to the same execution. In the following sections, we will describe how to manage executions on the platform.
 
 ## Executions Page
 

@@ -93,3 +93,7 @@ not reversible.
 If you open the section **(1)** and click this item **(2)**, you will reach your SSH keys list, which you can manage from here.
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/ssh.png" title="SSH Keys" %}
+
+## Managing users with API calls
+
+You can do many of the things described above using the corresponding API calls. You can find all necessary information about this functionality in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/users).

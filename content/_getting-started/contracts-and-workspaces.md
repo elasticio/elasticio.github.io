@@ -46,17 +46,17 @@ differentiate contract and workspace members by
 
 Here is the full list of contract permissions:
 
-1.  Edit members in the contract
+1.  [Edit members in the contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id__members__user_id_)
 
-2.  Create workspaces in the contract
+2.  [Create workspaces in the contract]({{site.data.tenant.apiDocsUri}}/v2#/workspaces/post_workspaces)
 
-3.  View all workspaces in the contract
+3.  [View all workspaces in the contract]({{site.data.tenant.apiDocsUri}}/v2#/workspaces/get_workspaces)
 
-4.  Delete workspaces in the contract
+4.  [Delete workspaces in the contract]({{site.data.tenant.apiDocsUri}}/v2#/workspaces/delete_workspaces__workspace_id_)
 
-5.  Edit contract repositories
+5.  [Edit contract repositories]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id_)
 
-6.  Edit developer team
+6.  [Edit developer team]({{site.data.tenant.apiDocsUri}}/v2#/teams/patch_teams__team_id_)
 
 ## Workspaces
 

@@ -74,7 +74,7 @@ OAuth2 client:
 After this step you can create the `auth-secret` the same way as one would create
 a credential.
 
-For more advanced cases we recommend using an [API call](#creating-oauth2-clients-using-api-call) to create `auth-client`.
+For more advanced cases we recommend using an [API call](#creating-oauth2-clients-using-api-call) to create `auth-client`. We also recommend you to read our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients) on this topic.
 
 ### Creating other clients
 
@@ -109,6 +109,10 @@ unless you add a new client:
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/create-oauth2-secret-choose-client.png" title="Create OAuth2 Secret." %}
 
+### Auth Secret Creation vie API calls
+
+Of course, you can also create an Auth secret using the appropriate API endpoint. We recommend you to familiarize yourself with this feature, which is described in detail in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/auth%20secrets). Please note that there are cases where creating secrets will be much easier and more convenient using API calls.
+
 ## Components and Secrets feature
 
 At the moment of writing this, not many components on our platform use the Secrets feature.
@@ -131,6 +135,8 @@ Right now new version of the following components use the Secrets feature:
 ## Creating OAuth2 Clients using API call
 
 As already mentioned in advance, you can create a `auth-client` for a `contract` only using a API call. This resource allows you to create an `auth-client`:
+
+<details close markdown="block"><summary><strong>Click to expand</strong></summary>
 
 ```json
 {
@@ -167,6 +173,7 @@ As already mentioned in advance, you can create a `auth-client` for a `contract`
   }
 }
 ```
+</details>
 
 Of course, you can create a `auth-client` for the `workspace` using a API call. You can select a visibility level for a `auth-client` in a relationship: `workspace`, `contract` or `tenant`. No relationship means that `auth-client` visibility level will be global.
 
@@ -181,5 +188,6 @@ Below you can see where to find `CONTRACT_ID`(**1**) and `COMPONENT_ID`(**2**):
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/secrets/ids.png" title="Contact and Clients ID" %}
 
-Please consult the [Create Auth Client]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients/post_auth_clients)
-section for more.
+> Please consult the [Create Auth Client]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients/post_auth_clients)
+section for more. Also note that in addition to the creation itself, you can use API calls for a variety of other tasks. For example, you can [lists]({{site.data.tenant.apiDocsUri}}/v2#/auth%20secrets/get_workspaces__workspace_id__secrets) all auth secrets of the specified workspace or [return]({{site.data.tenant.apiDocsUri}}/v2#/auth%20secrets/get_workspaces__workspace_id__secrets__secret_id_) the specified auth secret from the defined workspace. You can also [update]({{site.data.tenant.apiDocsUri}}/v2#/auth%20secrets/patch_workspaces__workspace_id__secrets__secret_id_) or [remove]({{site.data.tenant.apiDocsUri}}/v2#/auth%20secrets/delete_workspaces__workspace_id__secrets__secret_id_)
+ the specified auth secret.

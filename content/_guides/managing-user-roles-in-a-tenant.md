@@ -41,6 +41,8 @@ Note that a full set of contract permissions does not automatically mean a full
 set of permissions for every workspace. A contract **Admin** may be a **Guest**
 in a certain workspace.
 
+> Please note that you can always get the list of available permissions using an [API call]({{site.data.tenant.apiDocsUri}}/v2#/permissions/get_permissions). This endpoint is available to all the platforms' users.
+
 ## Setting user roles in Workspace
 
 As a workspace Owner or Admin you can modify user roles in the workspace by

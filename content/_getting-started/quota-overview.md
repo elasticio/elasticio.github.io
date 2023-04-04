@@ -14,11 +14,11 @@ This document provides basic information on Platform [resource quota](#quota) an
 
 A quota defines the limit of usable resources in your Contract, Workspace or Flow. It was designed to allow the user to maintain a better resource balance, and minimize the possibility of failure due to overuse. The resources that you can limit are RAM and CPU.
 
-Quotas can be set per Contract, per Workspace and per Flow, depending on the requirements. If a quota is enabled, but not defined, a default value in  will be set. To set a quota, a user needs a corresponding Service Account.
+Quotas can be set per Contract, per Workspace and per Flow, depending on the requirements. If a quota is enabled, but not defined, a default value will be set. To set a quota, a user needs a corresponding Service Account.
 
 >**Please Note**, that you can set the Workspace quota higher than Contract quota, but there is no practical sense in doing so. Workspace quota will just become redundant.
 
-You can see the actual resource usage on the dedicated page. The usage is shown per Contract, per Workspace and per Flow.
+You can see the actual resource usage on the dedicated page. You can also use [API calls]({{site.data.tenant.apiDocsUri}}/v2#/quota%20usages) to get this information. The usage is shown per Contract, per Workspace and per Flow.
 
 Also on the histogram you can see the RAM quota overuse. If you go over the set RAM quota value the overused part will show in red.
 
@@ -29,6 +29,8 @@ For more convenience the quota service will notify you via email on different st
 By clicking on **View Report**, you will see a resource usage chart and quota usage per each Workspace you have, and by clicking on the Workspace from the list, you can see quota usage per Flow:
 
 ![Report](/assets/img/getting-started/quota/quotadetail.gif)
+
+>Please note that you can get more information on quotas and their limits using API endpoints. You can also manage `LimitRecords` for quotas. All information on this topic can be found in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/quotas).
 
 ## Quota Limit Calculation
 

@@ -22,7 +22,7 @@ All actions are available to users with the corresponding [permissions](/guides/
 
 ## Start, Stop, Edit, Delete
 
-These basic actions may be done via the [UI](#start-stop-edit-delete-via-the-ui), and via the [API](#start-stop-edit-sdelete-via-the-api). Note that when you start a Flow, the latest [Flow version](#flow-versioning) is used.
+These basic actions may be done via the UI, and via the [API]({{site.data.tenant.apiDocsUri}}/v2#/flows). Note that when you start a Flow, the latest [Flow version](#flow-versioning) is used.
 
 #### Start, Stop, Edit, Delete via the UI
 
@@ -50,6 +50,7 @@ In case you need to stop a running Flow, click the stop button:
 
 ![Stop a running Flow](/assets/img/tenant-management-guide/managing-flows/Screenshot_5.png)
 
+>It is important to remember, that every time you change a flow, you create a draft of that flow to make the changes. Please note that you can work with a draft not only via UI, but also using API calls. All necessary information on this topic can be found in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/flow%20drafts)
 
 #### Start, Stop, Edit, Delete via the API
 
@@ -75,7 +76,7 @@ Alternatively, you can navigate to the Flow itself by clicking on its name:
 
 ![Navigate to the flow](/assets/img/tenant-management-guide/managing-flows/Screenshot_3.png)
 
-Then switch to *Implement* tab **(1)** and click the command **(2)** to copy it to clipboard, and [create a copy of the Flow via the API](/guides/managing-workspaces):
+Then switch to *Implement* tab **(1)** and click the command **(2)** to copy it to clipboard, and [create a copy of the Flow via the API]({{site.data.tenant.apDocsUri}}/v2#/flows/post_flows__flow_id__copy):
 
 ![Implement tab](/assets/img/tenant-management-guide/managing-flows/Screenshot_8.png)
 
@@ -163,6 +164,8 @@ To achieve that, you should select the required version:
 
 Then [edit](#start-stop-edit-delete) it to create a draft, and publish this draft so it becomes the latest Flow version.
 
+> Please note that you can see all versions of a particular flow not only on the platform Ui itself, but also with the corresponding [API endpoint]({{site.data.tenant.apiDocsUri}}/v2#/flow%20versions)
+
 You can work on one draft of a given Flow at a time. If you try to create another one, the Platform will ask you if you want to overwrite the existing one.  Remember that a draft can only become a new version of a Flow if you publish it. It is possible to publish drafts of active and stopped Flows. In case you publish a draft of an active Flow, it will stop immediately, and then restart from scratch as a new version.
 
 ## Parallel Processing
@@ -197,7 +200,7 @@ A [Snapshot](/developers/snapshot-overview) is the data saved by a Component dur
 
 ![Reset Snapshot](/assets/img/tenant-management-guide/managing-flows/Screenshot_18.png)
 
-This is the only way to delete an existing snapshot.
+This is the only way to delete an existing snapshot via UI. You can also use the appropriate [API Call]({{site.data.tenant.apDocsUri}}/v2#/snapshots/delete_flows__flow_id__snapshots__step_id_) for this.
 
 ## Related links
 

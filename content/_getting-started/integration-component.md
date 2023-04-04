@@ -100,6 +100,10 @@ of custom components. Please read how to build integration components using
 [Node.js](/guides/building-nodejs-component) or
 [Java programming](/guides/building-java-component) languages.
 
+## Managing components with API calls
+
+You can create component repositories, update and delete components, get all information related to them and much more using corresponding API calls. In the process of using the components, there are often situations where you will find it easier, and sometimes necessary, to use functions that API endpoints provides. For this reason, we recommend that you familiarize yourself with all call options, which are presented in detail in the [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/components).
+
 ## Related links
 
 - [Understanding credentials](credential)
