@@ -9,11 +9,16 @@ category: integrator-management
 
 ## Maganig Contract via UI
 
-At the moment, it is mostly possible to manage contracts on the platform mostly via API calls. There are three functions available through UI:
+At the moment, it is mostly possible to manage contracts on the platform mostly via API calls. The following functions available through UI:
 
 *  Change the name of a contract. For updating Contract name you need `contracts.contract.edit` permission.
-* Invite users to a contract. You need have `contracts.membership.edit` permission or to be a user with `TenantAdmin` role for that.
-* Remove users from a contract. You need have `contracts.membership.edit` permission or to be a user with `TenantAdmin` role for that.
+
+For the next functions you need have `contracts.membership.edit` permission or to be a user with `TenantAdmin` role:
+
+* Invite users to a contract. Note that you can either invite to the contract only, or to the contract and workspace at the same time.
+* Remove pending invitation
+* Change member role
+* Remove users from a contract
 
 Of course, the functionality of contract management is not limited to this. However, it is only possible using the corresponding API calls. All functionality can be divided into 3 groups: getting Contract data, editing Contract memberships and editing Contracts.
 
@@ -33,9 +38,10 @@ a Contract member can get Contract data via the API. Namely, the following actio
 A Contract member with the corresponding [permission](/guides/managing-user-roles-in-a-tenant) can:
 
 1. [Invite a user to the Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/post_contracts__contract_id__invites)
-2. [Add a new member to the Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/post_contracts__contract_id__members)
-3. [Update membership in the Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id__members__user_id_)
-4. [Remove a user from a Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/delete_contracts__contract_id__invites__invite_id_)
+2. [Update the specified Invitation]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id__invites__invite_id_)
+3. [Add a new member to the Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/post_contracts__contract_id__members)
+4. [Update membership in the Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id__members__user_id_)
+5. [Remove a user from a Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/delete_contracts__contract_id__invites__invite_id_)
 
 >**PLease Note:**
 - If a contract only has one member, which is the Owner, it is still possible to remove this member. However, this user also will be removed from the Platform completely if they are not a member of other contracts.
