@@ -181,7 +181,7 @@ Here you can see what the XML file we archived looks like:
 
 <details close markdown="block"><summary><strong>XML output file</strong></summary>
 
-```XML
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <table>
   <column0>Identifier</column0>
