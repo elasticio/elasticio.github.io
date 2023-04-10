@@ -20,13 +20,7 @@ In the {{site.data.tenant.name}} platform, working within this pattern is done w
 The advantage of the publish-subscribe pattern is that we can keep publishers and subscribers working independently of each other and exchanging between them as needed within a strict patterning framework. That is, we can have several independent threads running simultaneously and asynchronously.
 For an example, consider the following situation. We want to collect data from at least one news source, convert that data into the formats we need, and somehow interact with it and store it.
 
-### Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about Pub-Sub component like [changelog](/components/pub-sub/technical-notes#changelog).
-
-### Requirements
-
-#### Environment variables
+### Environment variables
 
 By default no environment variable is necessary to operate the component.
 
@@ -49,7 +43,7 @@ For example, we need Topic, which contains all the basic news parameters that mi
 
 <details close markdown="block"><summary><strong>JSON Schema</strong></summary>
 
-```JSON
+```json
 {
   "type": "object",
   "properties": {
@@ -162,7 +156,6 @@ Also, prepare our Subscribers. For the example, we will use three flows, each of
 
 {% include img.html max-width="80%" url="img/three-flows.png" title="Three flows" %}
 
-
 ### First flow - E-mail sender
 
 The first flow takes some fields from the received message and does an E-mail to the required addresses.
@@ -185,17 +178,19 @@ By sending a request to Webhook in the Publisher thread we start three flows at 
 
 {% include img.html max-width="80%" url="img/executions.png" title="Executions" %}
 
+### Result of three flows
+
 As a result, we will get:
 
-* an E-mail to the specified address
+* an E-mail to the specified address:
 
 {% include img.html max-width="75%" url="img/new-mail.png" title="New Mail" %}
 
-* a Google Spreadsheet with the selected data
+* a Google Spreadsheet with the selected data:
 
 {% include img.html max-width="100%" url="img/news-statistics-spreadsheet.png" title="News Statistics Spreadsheet" %}
 
-* a CSV document on the remote server
+* a CSV document on the remote server:
 
 {% include img.html max-width="100%" url="img/csv-table.png" title="CSV Table" %}
 
