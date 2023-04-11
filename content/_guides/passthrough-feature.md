@@ -52,8 +52,7 @@ a significant difference.
 *   As an integrator you want to retrieve the data from more than one external resource and combine it into one outgoing message to store it in your desired storage. Without the passthrough feature you would need to retrieve the data separately from different resources, synchronize them and store in the storage. For this you would definitely need to use more than one integration flow and make sure not overwrite it every time.
 *   As an integrator you would like to retrieve the data at least two times from the third party resource due to limitations of the third party API abilities. Without the passthrough you would need to use two different integration flows and somehow synchronize the information between them.
 
-Let us have a look into an example on how the passthrough feature can help to solve
-a real-life integration dilemma.
+Let us have a look into an  beginner's example on how the passthrough feature works.
 
 ## Beginner's Example
 
@@ -114,35 +113,80 @@ Solution to this dilemma is provided by the passthrough feature.
 
 ### Using the passthrough
 
-Using the passthrough features we can get the `listOrders` and `listOrderItems` in two
-separate steps. Let's take a look at our flow:
+In this use case, we want to transfer Orders from Google Spreadsheets into Salesforce Orders. We aim to have all information about the orders found in Spreadsheet synchronized in the Salesforce. In fact, it makes absolutely no difference whether Spreadsheet will be the source or it will be a database or some CRM component. The Spreadsheet example would just be more visual, because we can see the tables themselves and the relationship between them.
 
-![Passthrough flow](/assets/img/getting-started/passthrough/Passthrough_flow.gif)
+Since within any database, the relationship between Orders and Items are formed by one-to-many or many-to-many relations, services form an additional table OrderItems from which you can understand which order refers to Item.
+As an example, we will use two tables for Orders and for OrderItems:
 
-**Step 1** gets a list of orders:
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dfed2ded-06e4-498f-a87b-82606167a16d/Untitled.png)
 
-![Step 1: Get list of orders](/assets/img/getting-started/passthrough/Passthrough-flow-step1.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f585c304-f570-47c7-99c5-30c38ce411b4/Untitled.png)
 
-**Step 2** splits the list by order:
+- When we query the list of orders from Orders sheet we get information about orders such as IDs, the Update and Index dates of orders, descriptions, etc. But this answer does not include information about specific items included in those orders.
+- To get items (listOrderItems) we need to store the order IDs and then use them to query the items belonging to those orders.
+- Then we need to combine both: Orders and items (OrderItems) together to store this information into Salesforce. But, without having the order IDs, we can not get item IDs.
+We can address the above-presented scenario in two ways:
+1. We use multiple flows (the sequential mechanism) and external ID to pass the information gradually or
+2. Use the passthrough feature to merge all the information on-the-fly.
 
-![Step 2: Split the list by order](/assets/img/getting-started/passthrough/Passthrough-flow-step2.png)
+### ****Sequential mechanism****
 
-**Step 3** gets items in the orders:
+In the imaginary unlucky case when we didn’t have passthrough, we would have to create a second flow for second query. There may be problems of synchronization between the two flows, which we can try to solve with rebounds. The system tries to get the external IDs of those orders before asking for items. If the IDs are still not there it will try again later and later. However, there is always a limit on how many times the system can try and that many connections can fail if one end of integration reports a timeout.
 
-![Step 3: Get items in the orders](/assets/img/getting-started/passthrough/Passthrough-flow-step3.png)
+**We need a solution which would not fail and would do it in one go!** Solution to this dilemma is provided by the passthrough feature.
 
-**Step 4** retrieves orders from Step 2 via passthrough by update date:
+### **Using the passthrough**
 
-![Step 4: Retrieves orders from Step 2](/assets/img/getting-started/passthrough/Passthrough-flow-step4.png)
+Using the passthrough features we can get the list of Orders and list of the OrderItems in two separate steps. Let’s take a look at our flow:
 
-**Step 5** retrieves order items from Step 3 via passthrough, adding data on
-scheduled delivery date, shipping date, item price and quantity of ordered items:
+{% include img.html max-width="40%" url="/assets/img/getting-started/passthrough/entire-flow.png" title="Entige flow" %}
 
-![Step 5: Retrieves order items from Step 3](/assets/img/getting-started/passthrough/Passthrough-flow-step5.png)
+### Step 1
 
-**In summary**: Instead of separating order and item handling to a second flow, we
-reduce the complexity by using the passthrough feature of the platform.
+Simple trigger with a preset timer that will start the flow.
 
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d58037d8-a682-4622-a510-b4e600033bf4/Untitled.png)
+
+### Step 2
+
+Google Spreadsheet component that accesses the Orders table and retrieves data for all Orders.
+
+> With the function Emit Behaviour - Emit Individually, we have the ability to immediately divide the received array of Orders into individual messages and work with each message individually in the next step
+>
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b71505ea-f2c8-444c-9210-739a64eedbf6/Untitled.png)
+
+### Step 3
+
+Google spreadsheet component that accesses the OrderItems and retrieves data for all Orders.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e5c4ab49-c2fe-40ed-be10-acec48202a2a/Untitled.png)
+
+### Step 4
+
+Filter component that allows you to match Order ID's from the Orders table with Order ID's from the OrderItems table.
+
+> If you use DB instead of Google Spreadsheets, you won't need filtering step, because there is possibility to query records with regard to ID at once.
+>
+
+> In this step, we already use the passthrough function to match the data from the tables
+>
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e50d58d3-e30b-496f-9df9-ca3871f8f799/Untitled.png)
+
+### Step 5
+
+Retrieves orders from Step 2 via passthrough by update date
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9872c39d-74bf-45cc-b126-40ef6a2cb7fa/Untitled.png)
+
+### Step 6
+
+Retrieves order items from Step 3 via passthrough, adding data on scheduled delivery date, shipping date, item price and other necessary parameters
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4dad2c1c-f215-4b87-933a-c1b710a65429/Untitled.png)
+
+**In summary**: Instead of separating order and item handling to a second flow, we reduce the complexity by using the passthrough feature of the platform.****
 
 ## Disable passthrough
 
