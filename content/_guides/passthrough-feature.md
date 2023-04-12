@@ -52,75 +52,16 @@ a significant difference.
 *   As an integrator you want to retrieve the data from more than one external resource and combine it into one outgoing message to store it in your desired storage. Without the passthrough feature you would need to retrieve the data separately from different resources, synchronize them and store in the storage. For this you would definitely need to use more than one integration flow and make sure not overwrite it every time.
 *   As an integrator you would like to retrieve the data at least two times from the third party resource due to limitations of the third party API abilities. Without the passthrough you would need to use two different integration flows and somehow synchronize the information between them.
 
-Let us have a look into an  beginner's example on how the passthrough feature works.
-
-## Beginner's Example
-
-In this example, we want to update the status of a pet named Gromit in the pet store. We need to send information about changing the status of the pet to the boss’s mail using the E-mail component. To accomplish the task, we created this flow:
-
-![Passthrough flow](/assets/img/getting-started/passthrough/passthrough-flow.png)
-
-We use the Webhook component in order to send data to the Petstore component.
-
-![Webhook step](/assets/img/getting-started/passthrough/webhook_step.png)
-
-Paste the following `JSON` in the input field:
-
-```
-{
-"petname": "Gromit",
-"petstatus": "sold",
-"email": "boss.mail@mail.com"
-}
-```
-
-Then we have to configure Petstore input using data from Webhook component:
-
-![Petstore step](/assets/img/getting-started/passthrough/petstore_step.png)
-
-Finally, we move on to the E-Mail component where we need to use the passthrough function. While configuring E-Mail component input we must fill in the "To" field using data from the Webhook component. At this moment we use the passthrough that allows us to use data not only from the previous, but also from earlier steps (Webhook in our case):
-
-![E-mail step](/assets/img/getting-started/passthrough/email_step.png)
+Let us have a look into an example on how the passthrough feature can help to solve a real-life integration dilemma.
 
 ## Real-life Example
-
-In this use case, we want to transfer Amazon MWS Orders into Salesforce Orders.
-We aim to have all information about the orders found in Amazon MWS synchronized in
-the Salesforce.
-
-This case is interesting since Amazon MWS API gives answers in some certain ways:
-
-*   When we query the list of orders (`listOrders`) from Amazon MWS we get information about orders such as IDs, the total amount of orders, shipping information, etc. But this answer does not include information about specific items included in those orders (`listOrderItems`).
-*   To get items (`listOrderItems`) we need to store the order IDs and then use them to query the items belonging to those orders.
-*   Then we need to combine both: orders (`listOrders`) and items (`listOrderItems`) together to store this information into Salesforce. But, without having the order IDs, we can not get item IDs.
-
-We can address the above-presented scenario in two ways:
-1.  We use multiple flows (the sequential mechanism) and external ID to pass the information gradually or
-2.  Use the passthrough feature to merge all the information on-the-fly.
-
-### Sequential mechanism
-
-In the imaginary unlucky case when we didn't have passthrough, we would have to
-create a second flow for second query. There may be problems of synchronization
-between the two flows, which we can try to solve with rebounds. The system tries to
-get the external IDs of those orders before asking for items. If the IDs are still
-not there it will try again later and later. However, there is always a limit on
-how many times the system can try and that many connections can fail if one end
-of integration reports a timeout.
-
-**We need a solution which would not fail and would do it in one go!**
-Solution to this dilemma is provided by the passthrough feature.
-
-### Using the passthrough
 
 In this use case, we want to transfer Orders from Google Spreadsheets into Salesforce Orders. We aim to have all information about the orders found in Spreadsheet synchronized in the Salesforce. In fact, it makes absolutely no difference whether Spreadsheet will be the source or it will be a database or some CRM component. The Spreadsheet example would just be more visual, because we can see the tables themselves and the relationship between them.
 
 Since within any database, the relationship between Orders and Items are formed by one-to-many or many-to-many relations, services form an additional table OrderItems from which you can understand which order refers to Item.
 As an example, we will use two tables for Orders and for OrderItems:
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dfed2ded-06e4-498f-a87b-82606167a16d/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f585c304-f570-47c7-99c5-30c38ce411b4/Untitled.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/passthrough/orderlist-orderitems.png" title="Orders+OrderItems" %}
 
 - When we query the list of orders from Orders sheet we get information about orders such as IDs, the Update and Index dates of orders, descriptions, etc. But this answer does not include information about specific items included in those orders.
 - To get items (listOrderItems) we need to store the order IDs and then use them to query the items belonging to those orders.
@@ -129,64 +70,67 @@ We can address the above-presented scenario in two ways:
 1. We use multiple flows (the sequential mechanism) and external ID to pass the information gradually or
 2. Use the passthrough feature to merge all the information on-the-fly.
 
-### ****Sequential mechanism****
+### Sequential mechanism
 
 In the imaginary unlucky case when we didn’t have passthrough, we would have to create a second flow for second query. There may be problems of synchronization between the two flows, which we can try to solve with rebounds. The system tries to get the external IDs of those orders before asking for items. If the IDs are still not there it will try again later and later. However, there is always a limit on how many times the system can try and that many connections can fail if one end of integration reports a timeout.
 
 **We need a solution which would not fail and would do it in one go!** Solution to this dilemma is provided by the passthrough feature.
 
-### **Using the passthrough**
+### Using the passthrough
 
 Using the passthrough features we can get the list of Orders and list of the OrderItems in two separate steps. Let’s take a look at our flow:
 
+<details close markdown="block"><summary><strong>Flow view</strong></summary>
+
 {% include img.html max-width="40%" url="/assets/img/getting-started/passthrough/entire-flow.png" title="Entige flow" %}
 
-### Step 1
+</details>
 
-Simple trigger with a preset timer that will start the flow.
+#### Step 1
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d58037d8-a682-4622-a510-b4e600033bf4/Untitled.png)
+In the first step we use [Simple trigger](/components/simple-trigger/) component with a preset timer that will start the flow.
 
-### Step 2
+{% include img.html max-width="100%" url="/assets/img/getting-started/passthrough/simple-trigger.png" title="Simple Trigger" %}
 
-Google Spreadsheet component that accesses the Orders table and retrieves data for all Orders.
+#### Step 2
 
-> With the function Emit Behaviour - Emit Individually, we have the ability to immediately divide the received array of Orders into individual messages and work with each message individually in the next step
->
+In the second stept we use [Google Spreadsheet](/components/gspreadsheet-v2/) component that accesses the Orders table and retrieves data for all Orders.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b71505ea-f2c8-444c-9210-739a64eedbf6/Untitled.png)
+>**Please Note:** With the function Emit Behaviour - Emit Individually, we have the ability to immediately divide the received array of Orders into individual messages and work with each message individually in the next step
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/passthrough/get-all-order-configurations.png" title="Get all order configuration" %}
 
 ### Step 3
 
-Google spreadsheet component that accesses the OrderItems and retrieves data for all Orders.
+In this step in the same way as in the previous step we use [Google Spreadsheet](/components/gspreadsheet-v2/) component that accesses the OrderItems and retrieves data for all Orders.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e5c4ab49-c2fe-40ed-be10-acec48202a2a/Untitled.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/passthrough/get-all-order-configurations-2.png" title="Get all order configuration 2" %}
 
-### Step 4
+#### Step 4
 
-Filter component that allows you to match Order ID's from the Orders table with Order ID's from the OrderItems table.
+In this step [Filter](/components/filter/) component allows you to match Order ID's from the Orders table with Order ID's from the OrderItems table.
 
-> If you use DB instead of Google Spreadsheets, you won't need filtering step, because there is possibility to query records with regard to ID at once.
->
+> **Please тote:** If you use DB instead of Google Spreadsheets, you won't need filtering step, because there is possibility to query records with regard to ID at once.
 
-> In this step, we already use the passthrough function to match the data from the tables
->
+> In this step, we already use the **passthrough feature** to match the data from the tables
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e50d58d3-e30b-496f-9df9-ca3871f8f799/Untitled.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/passthrough/filter-component.png" title="Filter component" %}
 
-### Step 5
+#### Step 5
 
-Retrieves orders from Step 2 via passthrough by update date
+Now we are using [Salesforce](/components/salesforce/) component that retrieves orders from **Step 2** via **passthrough** by update date.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9872c39d-74bf-45cc-b126-40ef6a2cb7fa/Untitled.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/passthrough/get-order-configurations.png" title="Get order configuration" %}
 
-### Step 6
+#### Step 6
 
-Retrieves order items from Step 3 via passthrough, adding data on scheduled delivery date, shipping date, item price and other necessary parameters
+In the last step we are using [Salesforce](/components/salesforce/) component again. This time it retrieves order items from **Step 3** via **passthrough**, adding data on scheduled delivery date, shipping date, item price and other necessary parameters.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4dad2c1c-f215-4b87-933a-c1b710a65429/Untitled.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/passthrough/update-order-configurations.png" title="Update order configuration" %}
 
-**In summary**: Instead of separating order and item handling to a second flow, we reduce the complexity by using the passthrough feature of the platform.****
+### Summary
+
+With the **passthrough** feature, we cut the complexity of the task **in half**, or to be more precise, we don't need to create a second flow to separate the processing of orders and items. It's important to note that this is one of many examples of using this feature. In most cases, using the **passthrough** feature will reduce the complexity of the task and the time it takes to solve it.
 
 ## Disable passthrough
 
@@ -205,10 +149,4 @@ component to have sailor version `3.0.0+`.
 
 You can disable passthrough during the flow creation/editing via the UI:
 
-![Disable Passthrough](/assets/img/RN/20.07/disable-passthrough.png).
-
-
-
-## Related links
-
-- [Integration Flow Overview](integration-flow)
+{% include img.html max-width="100%" url="/assets/img/RN/20.07/disable-passthrough.png" title="Disable Passthrough" %}
