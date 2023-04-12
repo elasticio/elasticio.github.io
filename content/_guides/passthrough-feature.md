@@ -94,7 +94,7 @@ In the first step we use [Simple trigger](/components/simple-trigger/) component
 
 #### Step 2
 
-In the second stept we use [Google Spreadsheet](/components/gspreadsheet-v2/) component that accesses the Orders table and retrieves data for all Orders.
+In the second step we use [Google Spreadsheet](/components/gspreadsheet-v2/) component that accesses the Orders table and retrieves data for all Orders.
 
 >**Please Note:** With the function Emit Behaviour - Emit Individually, we have the ability to immediately divide the received array of Orders into individual messages and work with each message individually in the next step
 
