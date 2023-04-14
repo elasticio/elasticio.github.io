@@ -12,7 +12,7 @@ updatedDate: 2022-09-12
 
 ## Description
 
-iPaaS component to convert between XML and JSON data.
+Many organizations use XML files because they are extendable, readable and understandable but it is difficult to code. Imagine a restaurant that uses XML files containing breakfast menus. The integration flow must calculate business statistics that can be used in accounting and data analytics. XML component could transform format to JSON which can be modified and transformed back again. JSON is simple and easy to use with its hierarchical structure. JSON functions can do all necessary calculations. As an output, there will be a string with results which will be converted to XML.
 
 ### Purpose
 
@@ -34,6 +34,8 @@ JSON inputs must be objects with exactly one field as XML documents must be cont
 XML attributes on a tag can be read and set by setting an `_attr` sub-object in the JSON.  
 The inner-text of an XML element can also be controlled with `#` sub-object.
 
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+
 For example:
 
 ```json
@@ -53,6 +55,8 @@ is equivalent to
 <someTag id="my id">my inner text</someTag>
 ```
 
+</details>
+
 ### Environment variables
 
 * `MAX_FILE_SIZE`: *optional* - Controls the maximum size of an attachment to be written in MB.
@@ -67,11 +71,18 @@ component during the integration flow design.
 
 ### XML to JSON
 
-Takes XML string and converts it to generic JSON object.
+Takes XML string and converts it to a generic JSON object.
+
+![XML to JSON](img/xml-to-json.png)
 
 ### Limitation
 
-Value inside xml tags will be converting into string only, e.g.:   
+Value inside xml tags will be converting into string only. It means that first, you need to convert string numbers - to numbers.
+
+* `$number("5")` => `5`
+* `["1", "2", "3", "4", "5"].$number()` => `[1, 2, 3, 4, 5]`
+
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
 
 given xml
 
@@ -85,7 +96,7 @@ given xml
 </note>
 ```
 
-![XML string](img/xml-to-json-1.png)
+{% include img.html max-width="100%" url="img/xml-to-json-1.png" title="XML string" %}
 
 will be converted into:
 
@@ -101,7 +112,9 @@ will be converted into:
 }
 ```
 
-![Convert into JSON](img/xml-to-json-2.png)
+{% include img.html max-width="100%" url="img/xml-to-json-2.png" title="Convert into JSON" %}
+
+</details>
 
 ### XML Attachment to JSON
 
@@ -110,13 +123,28 @@ XML that it finds to generic JSON objects and produces one outbound message per
 matching attachment. As input, the user can enter a patter pattern for filtering
 files by name or leave this field empty for processing all incoming `*.xml` files.
 
-![XML Attachment to JSON](img/xml-attachment-to-json.png)
+{% include img.html max-width="100%" url="img/xml-attachment.png" title="XML Attachment" %}
+
+* The maximum size of the incoming file for processing is 5 MiB. If the size of the incoming file will be more than 5 MiB, the action will throw the error `Attachment *.xml is to large to be processed by XML component. File limit is: 5242880 byte, file given was: * byte.`.
+
+* All actions involving attachments are not supported by local agents due to current platform limitations.
 
 ### JSON to XML
 
 Provides an input where a user provides a JSONata expression that should evaluate to an object to convert to JSON.
 See [Requirements & Conversion Behavior](#requirements-and-conversion-behavior) for details on conversion logic.
+
+{% include img.html max-width="100%" url="img/json-to-xml.png" title="XML Attachment to JSON" %}
+
+When creating XML files with invalid XML tags, the name of the potentially invalid tag will not be reported. XML tags are case-sensitive. The tag `<Text>` is different from the tag `<text>`.
+
+Opening and closing tags must be written with the same case:
+
+`<message>Hello, World!</message>`
+
 The following options are supported:
+
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
 
 * **Upload XML as file to attachments**: When checked, the resulting XML will be placed directly into an attachment.
 The attachment information will be provided in both the message's attachments section as well as `attachmentUrl` and `attachmentSize`
@@ -142,7 +170,13 @@ The incoming message should have a single field `input`. When using integrator m
 }
 ```
 
-![JSON to XML](img/json-to-xml.png)
+{% include img.html max-width="100%" url="img/json-to-xml-2.png" title="JSON to XML" %}
+
+</details>
+
+## Usage Example
+
+We have created a special [document](use-case) that contains an example to better understand how the XML component works.
 
 ## Known limitations
 
@@ -155,8 +189,3 @@ File limit is: 5242880 byte, file given was: * byte
 
 - All actions involving attachments are not supported on local agents due to current platform limitations.
 - When creating XML files with invalid XML tags, the name of the potentially invalid tag will not be reported.
-
-
-## Additional Info
-
-Icon made by Freepik from [www.flaticon.com](https://www.flaticon.com)
