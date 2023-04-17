@@ -37,15 +37,7 @@ The following variables control the retry process:
 *  `AMQP_PUBLISH_RETRY_ATTEMPTS`: Infinity
 *  `AMQP_PUBLISH_MAX_RETRY_DELAY`: 5 minutes.
 
-### Impact on Flow Queues
-
-Dynamic flow control can have a significant impact on [flow queues](flow-queues). A flow queue is a buffer that holds messages waiting to be processed by a component of a data integration flow. The flow queue size can be limited by the maximum number of messages that can be processed simultaneously by a component.
-
-With static flow control, the flow queue size is fixed and does not change based on real-time feedback from each component. This can lead to overloading or underloading of the components, causing delays, errors, or data loss.
-
-In contrast, dynamic flow control adjusts the flow queue size based on real-time feedback from each component. If a component is processing messages too slowly, the platform may reduce the flow queue size to prevent overloading the component. If a component is processing messages quickly, the platform may increase the flow queue size to ensure that messages are processed efficiently.
-
-Dynamic flow control can also adjust the flow queue size based on external factors, such as network conditions or resource availability. For example, if the network latency increases, the platform may reduce the flow queue size to prevent message delays or errors.
+> **Please Note:** Dynamic Flow Control affects **Flow Queues**. For more information read this [article](/guides/platform-behavior.html#messaging-queue-limits).
 
 ### Disable Dynamic Flow Control
 
