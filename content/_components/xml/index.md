@@ -10,17 +10,7 @@ ComponentVersion: 1.3.7
 updatedDate: 2022-09-12
 ---
 
-## Description
-
-Many organizations use XML files because they are extendable, readable and understandable but it is difficult to code. Imagine a restaurant that uses XML files containing breakfast menus. The integration flow must calculate business statistics that can be used in accounting and data analytics. XML component could transform format to JSON which can be modified and transformed back again. JSON is simple and easy to use with its hierarchical structure. JSON functions can do all necessary calculations. As an output, there will be a string with results which will be converted to XML.
-
-### Purpose
-
-Allows users to convert XML attachments and strings to and from JSON.
-This component has 3 actions allowing users to pass in either generic but well formatted XML/JSON strings or XML attachments
-and produces a generic string or attachment of the other file type. The output then can be mapped and used in other components.
-
-### Requirements and Conversion Behavior
+## Requirements and Conversion Behavior
 
 Provided XML document (for XML to JSON) should be [well-formed](https://en.wikipedia.org/wiki/Well-formed_document) in order to be parsed correctly. You will get an error otherwise.
 
@@ -68,6 +58,8 @@ This component has no trigger functions. This means you can not select it as a f
 component during the integration flow design.
 
 ## Actions
+
+It allows users to convert XML attachments and strings to and from JSON. This component has 3 actions allowing users to pass in either generic but well-formatted XML/JSON strings or XML attachments and produces a generic string or attachment of the other file type. The output then can be mapped and used in other components.
 
 ### XML to JSON
 

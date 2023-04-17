@@ -9,8 +9,9 @@ ComponentVersion: 1.3.7
 updatedDate: 2022-09-12
 ---
 
-
 ## Client use case
+
+Many organizations use XML files because they are extendable, readable and understandable but it is difficult to code. Imagine a restaurant that uses XML files containing breakfast menus. The integration flow must calculate business statistics that can be used in accounting and data analytics. XML component could transform format to JSON which can be modified and transformed back again. JSON is simple and easy to use with its hierarchical structure. JSON functions can do all necessary calculations. As an output, there will be a string with results which will be converted to XML. Let's start with our flow.
 
 <details close markdown="block"><summary><strong>Flow view</strong></summary>
 
@@ -18,11 +19,13 @@ updatedDate: 2022-09-12
 
 </details>
 
-We have the 1st step [Webhook](/components/webhook) component which receives **XML**.
+### Step 1 - Webhook
 
-![**XML** body sent to Webhook](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4db4463e-39fa-46cf-9e07-6192a2d6735f/Untitled.png)
+In the first step we will use the [Webhook](/components/webhook) component which receives **XML**.
 
-**XML** body sent to Webhook:
+{% include img.html max-width="100%" url="img/post-webhook.png" title="Post webhook" %}
+
+**XML** body sent to Webhook which contains the restaurant menu:
 
 <details close markdown="block"><summary><strong>XML body</strong></summary>
 
@@ -63,21 +66,21 @@ We have the 1st step [Webhook](/components/webhook) component which receives **X
 
 </details>
 
-The 2d step is XML component with **XML to JSON** action and sample retrieved from the [Webhook](/components/webhook/).
+### Step 2 - XML
 
-![XML Configuration with XML to JSON action](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/862fa9d4-782e-4669-b540-8be39a855dc4/Untitled.png)
+The second step is XML component with **XML to JSON** action and sample retrieved from the [Webhook](/components/webhook/) from the first step.
 
-The 3d step is XML component with **JSON to XML action**. There is no need to use [Jsonata component](/components/jsonata/) because JSON can be put into the **JSON to convert*** field in the Mapping. Upload XML as file to attachments is enabled.
+{% include img.html max-width="100%" url="img/xml-to-json-step-2.png" title="XML to JSON" %}
 
-![XML configuration with [JSON to XML](https://github.com/elasticio/xml-component#json-to-xml) **action**](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/513c2e9e-19a5-4e45-be29-50922edd0318/Untitled.png)
+### Step 3 - XML
 
-XML configuration with [JSON to XML](https://github.com/elasticio/xml-component#json-to-xml) **action**
+In the third step we are using XML component again, this time **JSON to XML** action. There is no need to use [Jsonata component](/components/jsonata/) because JSON can be put into the **JSON to convert*** field in the Mapping. Upload XML as file to attachments is enabled.
 
-To calculate the sales statistics we need to convert string-numbers to numbers and then use JSONata functions.
+{% include img.html max-width="100%" url="img/json-to-xml-step-3.png" title="JSON to XML" %}
 
-- **JSON to convert*** field:
+Now let's take a closer look at XML configuration with **JSON to XML** action. To calculate the sales statistics we need to convert string-numbers to numbers and then use JSONata functions:
 
-<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+<details close markdown="block"><summary><strong>JSON to convert field</strong></summary>
 
     ```
     {
@@ -92,15 +95,15 @@ To calculate the sales statistics we need to convert string-numbers to numbers a
 
 </details>
 
-- The 4th and last step will be the [E-Mail](https://github.com/elasticio/email-component) component with an XML file as an **attachment** to see the output file with the results.
+### Step 4 - E-Mail
 
-![E-Mail configuration with an XML file as an **attachment**](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7a739040-c952-4b15-ba75-97f55b174355/Untitled.png)
+Our last step will be the [E-Mail](/components/email/) component with an XML file as an **attachment** to see the output file with the results.
 
-E-Mail configuration with an XML file as an **attachment**
+{% include img.html max-width="100%" url="img/email-config.png" title="Email Configuration" %}
 
-![E-Mail message with the **attachment**](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/727c4794-cda5-45ae-8fd3-a700829dd6e6/Untitled.png)
+You can see the E-Mail message with the **attachment** we need:
 
-E-Mail message with the **attachment**
+{% include img.html max-width="50%" url="img/email-attach.png" title="Email with attachment" %}
 
 The XML output will consist of the profit and order numbers for the breakfast menu for the month of July.
 
