@@ -52,7 +52,7 @@ As the feature may have a performance impact, you can disable it. Currently disa
     1. step 1 will get a reject from RabbitMQ and try to make infinite amount of retries with [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) until successful publish
     2. until successful publish 2 messages in step 1 queue will stay there
 
-###E-commerce Order Management example
+### E-commerce Order Management example
 
 In an e-commerce order management system, orders may need to be processed in real-time to ensure timely delivery to customers. A static flow control system may be configured to send a fixed number of orders to the warehouse management system every minute. However, if there is a surge in orders, the warehouse may become overloaded, and orders may not be processed on time, resulting in customer complaints.
 
