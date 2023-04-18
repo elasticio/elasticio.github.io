@@ -23,7 +23,7 @@ Sailors use [Publish Confirm](https://www.rabbitmq.com/confirms.html) RabbitMQ f
 
 RabbitMQ [Flow Control](https://www.rabbitmq.com/flow-control.html) automatically reduces the speed to connections which are publishing too quickly to keep the rate of message ingress at one that the rest of the server (e.g. queues those messages are route to) can handle.
 
->**Please note:** If your component is written in Java then you can now disable the dynamic flow control in the step by setting the `AMQP_PUBLISH_CONFIRM_ENABLED` environment variable in the component repository as false. This is only possible if your component is using the Java sailor version 3.3.5.
+>**Please note:** If your component is written in Java then you can disable the dynamic flow control. This is only possible if your component is using the Java sailor version 3.3.5+.
 
 ### Dynamic Flow Control details
 
