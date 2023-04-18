@@ -1,7 +1,7 @@
 ---
 title: Microsoft Dynamics Business Central Component
 layout: component
-section: ERP components
+section: Marketing-related components
 description: Microsoft Dynamics Business Central Component is designed to use Web API from Microsoft.
 icon: microsoft-dynamic-business-central.png
 icontext: Microsoft-Dynamics-Business-Central component

@@ -1,7 +1,7 @@
 ---
 title: Outlook component
 layout: component
-section: Office components
+section: Marketing-related components
 description: An integration component for the Office 365 Outlook REST API.
 icon: outlook.png
 icontext: Outlook component

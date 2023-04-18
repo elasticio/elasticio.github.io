@@ -1,7 +1,7 @@
 ---
 title: Exact Online component
 layout: component
-section: Finance-related components
+section: ERP components
 description: A component to work with Exact Online ERP.
 icon: exact-online.png
 icontext: Exact Online component

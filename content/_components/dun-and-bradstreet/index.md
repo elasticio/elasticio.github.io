@@ -1,7 +1,7 @@
 ---
 title: Dun-and-bradstreet component
 layout: component
-section: E-Commerce components
+section: Finance-related components
 description: D&B is a corporation that provides information on commercial credit and reports on businesses.
 icon: dun-and-bradstreet.png
 icontext: Dun-and-bradstreet component

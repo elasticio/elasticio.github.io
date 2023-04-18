@@ -1,7 +1,7 @@
 ---
 layout: component
 title: Allmysms component
-section: Service components
+section: Marketing-related components
 description: This component provides a possibility to send SMS to one or multiple receivers using the AllMySMS API.
 category: allmysms
 icon: allmysms.png

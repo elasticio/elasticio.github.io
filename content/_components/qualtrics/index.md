@@ -1,7 +1,7 @@
 ---
 title: Qualtrics component
 layout: component
-section: Service components
+section: Marketing-related components
 description: Component is designed to connect to Qualtrics API
 icon: qualtrics.png
 icontext: Qualtrics component

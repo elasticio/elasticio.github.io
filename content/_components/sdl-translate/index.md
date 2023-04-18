@@ -1,7 +1,7 @@
 ---
 title: Sdl-translate component
 layout: component
-section: Marketing-related components
+section: Service components
 description: A intelligent platform designed for teams involved in the localization supply chain.
 icon: sdl-translate.png
 icontext: Sdl-translate component
