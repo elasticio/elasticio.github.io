@@ -17,7 +17,7 @@ Static flow control involves setting a fixed rate of data transfer, regardless o
 
 ## Dynamic Flow Control
 
-The Dynamic Flow Control is based on RabbitMQ Publisher Confirms and RabbitMQ Flow Policies which enables a dynamic slow-down of a publisher/producer based on the current queue state. Each task queue has a messages limit. RabbitMQ `overflow: 'reject-publish'` policy is set for all task queues to reject steps to publish into queue which is overflowed by messages. Sailor will retry publish infinitely until message will be successfully sent.
+The Dynamic Flow Control is based on RabbitMQ Publisher Confirms and RabbitMQ Flow Policies which enables a dynamic slow-down of a publisher/producer based on the current queue state. Each task queue has a messages limit. RabbitMQ `overflow: 'reject-publish'` policy is set for all task queues to reject steps to publish into queue which is overflowed by messages. [Sailor](/references/sailor-compatibility-matrix) will retry publish infinitely until message will be successfully sent.
 
 Sailors use [Publish Confirm](https://www.rabbitmq.com/confirms.html) RabbitMQ feature. They prefetch some amount of messages (”Parallel Processing” in UI, default: 1) and send confirmation back to RabbitMQ  after processing each incoming message. Processing of incoming message ends when sailor successfully sends a message to the next step. So a step can’t process more then “Parallel Processing” messages at a time, other messages are waiting in a queue.
 
