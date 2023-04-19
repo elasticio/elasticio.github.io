@@ -40,19 +40,19 @@ Here is where to pay particular attention:
 
 ### Node.js Sailor compatibility matrix
 
-| Features             | v2.0.x | v2.1.x | v2.2.x | 2.5.x | 2.6.x | 2.7.0 |
-| :---                 | :---   | :---   | :---   | : --- | : --- | : --- |
-| Request-reply        | Yes    | Yes    | Yes    | Yes   | Yes   | Yes   |
-| Startup Hook         | Yes    | Yes    | Yes    | Yes   | Yes   | Yes   |
-| Init Hook            | Yes    | Yes    | Yes    | Yes   | Yes   | Yes   |
-| Passthrough          | -      | Yes    | Yes    | Yes   | Yes   | Yes   |
-| Shutdown Hook        | -      | -      | Yes    | Yes   | Yes   | Yes   |
-| Bunyan Logger        | -      | -      | -      | Yes   | Yes   | Yes   |
-| Message Size         | -      | -      | -      | -     | Yes   | Yes   |
-| Disable Passthrough  | -      | -      | -      | -     | Yes   | Yes   |
-| Dynamic flow control | -      | -      | -      | -     | Yes   | Yes   |
-| Custom error handler | -      | -      | -      | -     | Yes   | Yes   |
-| Lightweight messages | -      | -      | -      | -     | Yes   | Yes   |
+| Features             | v2.0.x | v2.1.x | v2.2.x | v2.5.x | v2.6.x-v2.7.0 |
+| :---                 | :---   | :---   | :---   | : --- | : --- |
+| [Request-reply](/components/request-reply/index.html#request-reply-mechanism)| Yes    | Yes    | Yes    | Yes   | Yes   |
+| [Startup Hook](/references/sailor-hooks.html#startup-hook)| Yes    | Yes    | Yes    | Yes   | Yes   |
+| [Init Hook](/references/sailor-hooks.html#init-hook)| Yes    | Yes    | Yes    | Yes   | Yes   |
+| [Passthrough](/guides/passthrough-feature)| -      | Yes    | Yes    | Yes   | Yes   |
+| [Shutdown Hook](/references/sailor-hooks.html#shutdown-hook)| -      | -      | Yes    | Yes   | Yes   |
+| [Bunyan Logger](/references/sailor-logger)| -      | -      | -      | Yes   | Yes   |
+| [Message Size](/guides/platform-behavior.html#default-limits)| -      | -      | -      | -     | Yes   |
+| [Disable Passthrough](/guides/passthrough-feature.html#disable-passthrough)| -      | -      | -      | -     | Yes   |
+| Dynamic flow control | -      | -      | -      | -     | Yes   |
+| [Custom error handler](/guides/custom-error-handler.html)| -      | -      | -      | -     | Yes   |
+| [Lightweight messages](/releases/20/31.html#support-for-large-messages)| -      | -      | -      | -     | Yes   |
 
 ## Java - build.gradle
 
@@ -71,15 +71,15 @@ dependencies {
 
 ### Java Sailor compatibility matrix
 
-| Features             | v2.0.x | v2.1.x | v3.0.x | v3.1.x | v3.2.x | v3.3.x | v3.4.0 | v3.5.0 | v4.0.0 |
-| :---                 | :---   | :---   | :---   | :---   | :---   | :---   | :---   | :---   | :---   |
-| Request-reply        | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
-| Startup Hook         | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
-| Init Hook            | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
-| Passthrough          | -      | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
-| Shutdown Hook        | -      | -      | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
-| Bunyan Logger        | -      | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
-| Disable Passthrough  | -      | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
-| Dynamic flow control | -      | -      | -      | Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
-| Custom error handler | -      | -      | -      | -      | -      | Yes    | Yes    | Yes    | Yes    |
-| Lightweight messages | -      | -      | -      | -      | Yes    | Yes    | Yes    | Yes    | Yes    |
+| Features             | v2.0.x | v2.1.x | v3.0.x | v3.1.x | v3.2.x | v3.3.x-v4.0.0 |
+| :---                 | :---   | :---   | :---   | :---   | :---   | :---   |
+| [Request-reply](/components/request-reply/index.html#request-reply-mechanism)| Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
+| [Startup Hook](/references/sailor-hooks.html#startup-hook)| Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
+| [Init Hook](/references/sailor-hooks.html#init-hook)| Yes    | Yes    | Yes    | Yes    | Yes    | Yes    |
+| [Passthrough](/guides/passthrough-feature)| -      | Yes    | Yes    | Yes    | Yes    | Yes    |
+| [Shutdown Hook](/references/sailor-hooks.html#shutdown-hook)| -      | -      | Yes    | Yes    | Yes    | Yes    |
+| [Bunyan Logger](/references/sailor-logger)| -      | Yes    | Yes    | Yes    | Yes    | Yes    |
+| [Disable Passthrough](/guides/passthrough-feature.html#disable-passthrough)| -      | Yes    | Yes    | Yes    | Yes    | Yes    |
+| Dynamic flow control | -      | -      | -      | Yes    | Yes    | Yes    |
+| [Custom error handler](/guides/custom-error-handler.html)| -      | -      | -      | -      | -      | Yes    |
+| [Lightweight messages](/releases/20/31.html#support-for-large-messages)| -      | -      | -      | -      | Yes    | Yes    |
