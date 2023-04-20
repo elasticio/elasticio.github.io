@@ -103,8 +103,9 @@ in the **input field** "Object type".
 
 ## UI
 
-Both **Input fields** and input **metadata** you can see on the same UI element,
-it is the "Input" (Step 5) tab during step configuration.
+The **Input fields** are part of the configuration(Step 5) and are always static except for dropdown menus, where sometimes objects are generated dynamically, depending on the input data. If you are working with dynamic **Input fields** as in example below, you always have the reload option:
+
+{% include img.html max-width="100%" url="/assets/img/developer-guide/input-fields-and-metadata/dynamic-input-fields.png" title="Dynamic Input Fields" %}
 
 **Input fields** always above input **metadata** and always fully visible. While
 input **metadata** structure visible immediate if it is static and rendered after
