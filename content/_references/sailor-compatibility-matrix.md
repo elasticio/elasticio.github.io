@@ -33,8 +33,8 @@ Here is where to pay particular attention:
 
 ```js
 "dependencies": {
-    "elasticio-sailor-nodejs": "2.1.0",
-    "elasticio-node": "0.0.8",
+    "elasticio-sailor-nodejs": "2.7.1",
+    "elasticio-node": "0.0.9",
 }
 ```
 
