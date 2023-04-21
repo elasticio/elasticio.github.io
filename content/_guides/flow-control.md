@@ -43,6 +43,10 @@ The following variables control the retry process:
 
 As the feature may have a performance impact, you can disable it. Currently disable is supported only if step is using sailor-jvm `3.3.5+` or it’s a webhook step. In this case you will see a “Dynamic flow control” switch in UI during step configuration. When Dynamic Flow Control is disabled for a step, RabbitMQ Publish Confirm feature is not used by sailor and, of course, there will be no retries on error.
 
+{% include img.html max-width="80%" url="/assets/img/integrator-guide/flow-control/disable-UI.png" title="Disable Dynamic Flow Control via UI" %}
+
+> Please note taht you can also disable dynamic flow control using the corresponding API call. More on this in our [API Documentation]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_).
+
 ### Use Cases
 
 1. webhook (new request arrives) → step 1 queue (overflowed) → step 1 (processing 2 messages)
