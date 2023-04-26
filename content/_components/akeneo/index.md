@@ -1,7 +1,7 @@
 ---
 title: Akeneo Component
 layout: component
-section: Marketing-related components
+section: CRM components
 description: Akeneo Component is designed to connect Akeneo API.
 icon: akeneo.png
 icontext: Akeneo Component

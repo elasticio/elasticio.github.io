@@ -1,7 +1,7 @@
 ---
 title: AWS SQS component
 layout: component
-section: Protocol components
+section: Utility components
 description: Amazon AWS SQS (Simple Queue Service) Component is designed to use Amazon AWS SQS via AWS SDK.
 icon:  aws-sqs.png
 icontext: AWS SQS component

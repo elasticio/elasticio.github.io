@@ -1,7 +1,7 @@
 ---
 title: Twitter component
 layout: component
-section: Marketing-related components
+section: Service components
 description: Twitter is a channel where you can connect with your prospects, customers, and journalists.
 icon:  twitter.png
 icontext: Twitter component
@@ -15,7 +15,6 @@ ComponentVersion: 0.0.2
 ![Credentials](img/credentials.png)
 
 To retrieve credentials you need to create Twitter App and generate token in that app.
-
 
 ## Technical Notes
 
