@@ -74,6 +74,11 @@ an object that needs to be scanned (payload from previous steps or/and literals)
 in the scan frame. In case of oven input **metadata** would be cooking forms that
 needs to be filled (mapped) with ingredients (payload from previous steps or/and literals)
 
+Input **metadata** can be static or dynamic. We will look further at the differences
+and how they are implemented in [UI](#ui) and [developer mode](#component-development). The main reason for having two
+types of **metadata** is the fact that it is often necessary to configure **metadata** for
+a particular scenario, which can vary depending on the configuration of a particular component.
+
 ## component.json
 
 As you may already know, how component feels and looks described by a component
@@ -103,18 +108,19 @@ in the **input field** "Object type".
 
 ## UI
 
-The **Input fields** are part of the configuration(Step 5) and are always static except for dropdown menus, where sometimes objects are generated dynamically, depending on the input data. If you are working with dynamic **Input fields** as in example below, you always have the reload option:
+The **Input fields** are part of the Configuration Step and are always static except for dropdown menus, where sometimes objects are generated dynamically, depending on the input data. If you are working with dynamic **Input fields** as in example below, you always have the reload option:
 
 {% include img.html max-width="100%" url="/assets/img/developer-guide/input-fields-and-metadata/dynamic-input-fields.png" title="Dynamic Input Fields" %}
 
-**Input fields** always above input **metadata** and always fully visible. While
-input **metadata** structure visible immediate if it is static and rendered after
+Input **metadata** structure visible immediate if it is static and rendered after
 required **Input fields** will be filled if **metadata** is dynamic.
 
 Another difference is that input **metadata** (rendered representation) can be
 filled with mapped values from the payload (from previous steps or/and literals).
 While **Input fields** should be filled manually with a value that will be static
 in the scope of the flow and won't change in the runtime.
+
+> **Please note:** **Input fields** and Input **metadata** depend on what kind of credentials you use and what permission you have. In some cases, this may change how the fields and metadata look.
 
 ## Component development
 
