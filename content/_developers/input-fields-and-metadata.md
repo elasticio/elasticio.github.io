@@ -108,7 +108,7 @@ in the **input field** "Object type".
 
 ## UI
 
-The **Input fields** are part of the Configuration Step and are always static except for dropdown menus, where sometimes objects are generated dynamically, depending on the input data. If you are working with dynamic **Input fields** as in example below, you always have the reload option:
+The **Input fields** are part of the Configuration Step and are always static except for dropdown menus, where sometimes objects are generated dynamically,depending on the credentials and other configuration fields. If you are working with dynamic **Input fields** as in example below, you always have the reload option:
 
 {% include img.html max-width="100%" url="/assets/img/developer-guide/input-fields-and-metadata/dynamic-input-fields.png" title="Dynamic Input Fields" %}
 
