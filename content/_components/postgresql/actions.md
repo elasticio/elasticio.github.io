@@ -11,14 +11,14 @@ ComponentVersion: 1.4.2
 
 ## SELECT action
 
-Check the [SELECT Action and Trigger](/components/postgresql/triggers#select-trigger-and-action).
+Please check the [SELECT Action and Trigger](/components/postgresql/triggers#select-trigger-and-action).
 
 ## INSERT/UPDATE/DELETE action
 
 Use this action to insert, update or delete some data, returned
 value is ignored, number of affected rows you can see in the log file.
 
-![PostgreSQL - INSERT/UPDATE/DELETE Action](img/postgresql-insert-update-delete.png)
+{% include img.html max-width="100%" url="img/postgresql-insert-update-delete.png" title="INSERT/UPDATE/DELETE action" %}
 
 Following configuration options are available:
 
@@ -35,7 +35,7 @@ incoming message needs to contain a body with an array of objects.
 
 ### Configuration field
 
-![INSERT Bulk action](img/insert-bulk-action.png)
+{% include img.html max-width="100%" url="img/insert-bulk-action.png" title="INSERT Bulk action" %}
 
 #### Table Name
 
@@ -93,7 +93,7 @@ statement variables like this way `sqlVariableName = @MetadataVariableName:type`
 For example, for SQL expression `SELECT * FROM tableName WHERE column1 = 'text' AND column2 = 15`
 you need to use following template: `SELECT * FROM tableName WHERE column1 = @column1:string AND column2 = @column2:number` and put values into generated metadata.
 
-![SQL Query](img/sql-query.png)
+{% include img.html max-width="100%" url="img/sql-query.png" title="SQL Query" %}
 
 #### Input metadata
 
@@ -159,7 +159,7 @@ which can read this file on the previous step and return value like this:
 ```
 and in this action you need put `query_string` (or some JSONata expression) to `Sql Injection string`:
 
-![Integrator mode](img/sql-expression.png)
+{% include img.html max-width="100%" url="img/sql-expression.png" title="SQL Injection actionn" %}
 
 ### Number of retries in case of deadlock transaction
 

@@ -14,7 +14,7 @@ ComponentVersion: 1.4.2
 This trigger and action are actually the same but can be used in two different
 scenarios - trigger as a first step and action in between other steps.
 
-![PostgreSQL - first step](img/postgresql-first-step.png)
+{% include img.html max-width="100%" url="img/select-trigger-and-action.png" title="SELECT Trigger and Action" %}
 
 Following configuration options are available:
 
