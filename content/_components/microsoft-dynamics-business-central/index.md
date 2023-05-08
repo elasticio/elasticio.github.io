@@ -6,8 +6,8 @@ description: Microsoft Dynamics Business Central Component is designed to use We
 icon: microsoft-dynamic-business-central.png
 icontext: Microsoft-Dynamics-Business-Central component
 category: microsoft-dynamic-business-central
-updatedDate: 2022-11-04
-ComponentVersion: 1.1.0
+updatedDate: 2023-05-02
+ComponentVersion: 1.1.1
 ---
 
 ## Credentials
