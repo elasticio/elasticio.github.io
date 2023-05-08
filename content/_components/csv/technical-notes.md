@@ -5,13 +5,22 @@ description: Technical Notes for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2022-12-16
-ComponentVersion: 3.1.6
+updatedDate: 2023-05-02
+ComponentVersion: 3.2.0
 redirect_from:
   - /components/csv/changelog.html
 ---
 
 ## Changelog
+
+### 3.2.0 (May 02, 2023)
+
+* Added new config fields to `Read CSV attachment` action:
+  * `Skip empty lines`
+  * `Comment char`
+* Added new config fields to `Create CSV From Message Stream` and `Create CSV From JSON Array` actions:
+  * `New line delimiter`
+  * `Escape formulae`
 
 ### 3.1.6 (December 16, 2022)
 

@@ -5,8 +5,8 @@ description: Technical Notes for the CSV component.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2022-12-16
-ComponentVersion: 3.1.6
+updatedDate: 2023-05-02
+ComponentVersion: 3.2.0
 ---
 
 ## Deprecated Triggers
