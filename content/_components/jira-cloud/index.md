@@ -6,8 +6,8 @@ description: Jira Cloud Component is designed to connect to Atlassian Jira Cloud
 icon: jira-cloud.png
 icontext: Jira Cloud component
 category: jira-cloud
-updatedDate: 2023-03-24
-ComponentVersion: 1.1.0
+updatedDate: 2023-04-28
+ComponentVersion: 1.2.0
 ---
 
 ## Description
@@ -48,10 +48,152 @@ Now you can create new credentials for the component:
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+### Get New and Updated Objects Polling
+
+Retrieve all the updated or created objects within a given time range. Currently supported `Issues` only
+
+#### Configuration Fields
+
+* **Select cloud** - (dropdown, required): This will retrieve the sites that have scopes granted by the token.
+* **Object Type** - (string, required): Object-type to lookup on. E.g `Issues`.
+* **Timestamp field to poll on** - (string, optional): Can be either Last Modified or Created dates (updated or new objects, respectively). Defaults to Last Modified.
+* **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
+* **Start Time** - (string, optional): The timestamp to start polling from (inclusive) - format YYYY-MM-DD hh:mm, should include timezone. Default value is the beginning of time (January 1, 1970 at 00:00).
+* **End Time** - (string, optional): The timestamp to stop polling (exclusive) - format YYYY-MM-DD hh:mm, should include timezone. Default value is execution time.
+
+#### Input Metadata
+
+There is no input metadata in this component.
+
+#### Output Metadata
+
+For `Emit Page` mode: An object with key `results` that has an array as its value
+For `Emit Individually` mode: Each object which fill the entire message.
+
+#### Known Limitations
+
+* For `Retrieve sample` there will be limit of 10 records
 
 ## Actions
+
+### Delete Object
+
+Simply delete an object. Currently, only one - 'issues' object type is supported.
+
+#### Configuration Fields
+
+* **Select cloud** - (dropdown, required): This will retrieve the sites that have scopes granted by the token.
+* **Object Type** - (dropdown, required): Object-type to delete. Currently, the only one object type is supported: `Issue`.
+* **Emit strategy when no object found** - (dropdown, optional): This specifies the output when no object is found by the provided criteria (e.g. ID). One of:
+  * **Emit nothing** - Emit nothing. Just skips an execution. Please note! If this option is selected, retrieving a sample, you will see an error with the text No object found. Execution stopped. This error is only applicable to the Retrieve Sample. In flow executions there will be no error, just an execution skip.. This is fine. In a real flow execution there will be no error.
+  * **Emit an empty object {}** - Emit an empty object, e.g. {}.
+  * **Throw an error (Default)** - Throw an error with the text No object found by provided ID. This is the default option if nothing else is selected.
+
+#### Input Metadata
+
+* **Issue ID or Key** - (string, required): An ID or a key of an issue to delete.
+
+Example:
+
+```json
+{
+  "issueIdOrKey": "SP-60"
+}
+```
+
+#### Output Metadata
+
+* **Issue ID or Key** - (string, optional): An ID or a key of a deleted issue.
+
+### Lookup Objects (plural)
+
+Lookup a set of objects by defined criteria. Currently supported `Users` and `Issues`
+
+#### Configuration Fields
+
+* **Select cloud** - (dropdown, required): This will retrieve the sites that have scopes granted by the token.
+* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Users`.
+* **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
+* **Number of search terms**- (number, optional, max 99): - specify a number of search terms (not applicable to `Users`).
+
+#### Input Metadata
+
+* For `Issues` Object Type:
+Groups of fields for each search term:
+  * **Field name** - (string, required): Object field name to filter (a list of allowed values is available)
+  * **Condition** - (string, required): Condition to compare selected field with value, [more info](https://support.atlassian.com/jira-software-cloud/docs/advanced-search-reference-jql-operators/)
+  * **Field value** - (string, optional): Value of selected field, pay attention to syntax - if value contains spaces, they should be quoted, if condition may have several values it should be enclosed in parentheses. for example:
+    * Condition is `=` and value doesn't contains space, it can be simple text: `John`
+    * Condition is `=` and value contains space, it should be quoted: `"John Smith"`
+    * Condition is `IN` and value doesn't contains space, it should be enclosed in parentheses: `(Jack,Jill)`
+    * Condition is `IN` and value contains space, it should be quoted and enclosed in parentheses: `("Jack Smith", "Jill Smith")`
+  * **Logical operator** - one of the following: `and`, `or` to combine multiple search terms
+
+<details close markdown="block"><summary><strong>Example</strong></summary>
+
+
+```json
+    {
+      "sTerm_1": {
+        "fieldName": "summary",
+        "condition": "~",
+        "fieldValue": "Fail"
+      },
+      "link_1_2": "and",
+      "sTerm_2": {
+        "fieldName": "assignee",
+        "condition": "=",
+        "fieldValue": "null"
+      }
+    }
+```
+
+</details>
+
+* For `Users` Object Type:
+
+  * **Query** - (string, optional): Find users by query, you can put here part of string that is matched against user attributes `displayName` and `emailAddress` or use statements [more info](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-user-search/#api-rest-api-3-user-search-query-get)
+
+
+If `Emit Behavior` equals `Emit page` additional fields will be added:
+
+* **Page Number** - (number, defaults to 0): Indicates index of page to be fetched.
+* **Page Size** - (number, defaults to 100, max 100): Indicates the number of objects per page
+
+
+#### Output Metadata
+
+For `Emit All` mode: An object, with key `results` that has an array as its value.
+
+For `Emit Page` mode: An object with key `results` that has an array as its value (if `Page Size` > 0). Key `totalCountOfMatchingResults` which contains the total number of results (not just on the page) which match the search criteria (not available with `Users` Object Type).
+
+For `Emit Individually` mode: Each object which fill the entire message.
+
+#### Known Limitations
+
+* If you expect a big amount of records in result, avoid using `Emit All`
+* `Number of search terms` not applicable to `Users` Object Type
+* `Users` total results with provided `Query` restricted to 1000, if you need more, leave it blank
+* For `Retrieve sample` there will be limit of 10 records
+
+### Lookup Object (at most one)
+
+Lookup a single object by a selected field that uniquely identifies it.
+
+#### Configuration Fields
+
+* **Select cloud** - (dropdown, required): This will retrieve the sites that have scopes granted by the token.
+* **Object Type** - (string, required): Object-type to lookup on. E.g `User`.
+* **Allow criteria to be omitted** - (boolean, optional): If selected field `Lookup Criteria Value` becomes optional.
+* **Allow zero results** - (boolean, optional): When selected, if the object is not found - an empty object will be returned instead of throwing error.
+
+#### Input Metadata
+
+* **Lookup Criteria Value** - (string, required unless `Allow criteria to be omitted` is selected): Value for unique search criteria in `Lookup Criteria` configuration field.
+
+#### Output Metadata
+
+Object with result of lookup as value.
 
 ### Make Raw Request
 
@@ -93,7 +235,6 @@ And dynamically generated fields according to chosen `Object Type`.
 If object was created, there will be both - `id` and `key`, otherwise depends on input
 * **id** - (string, optional): Id Or Key of the object to upsert.
 * **key** - (string, optional): Id Or Key of the object to upsert.
-
 
 ### Lookup Object (at most one)
 
