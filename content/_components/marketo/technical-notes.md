@@ -5,14 +5,25 @@ description: Technical Notes for for the Marketo component.
 icon: marketo.png
 icontext: Marketo component
 category: marketo
-updatedDate: 2022-09-20
-ComponentVersion: 2.2.5
+updatedDate: 2023-05-03
+ComponentVersion: 2.3.0
 redirect_from:
   - /components/marketo/completeness-matrix.html
   - /components/marketo/changelog.html
 ---
 
 ## Changelog
+
+### 2.3.0 (May 03, 2023)
+
+* Added retry mechanism for requests to Marketo
+* Changes in `Get New Leads Polling` trigger:
+  * Added `Emit page` option to `Emit Behaviour`
+  * Added new config fields - `Page Size`, `Max iterations` and `Return Leads`
+  * Added metadata
+  * Improved stability (retry logic that handles errors caused by API limits and connection drops)
+* Upgrade to sailor 2.7.1
+* Update to node v18
 
 ### 2.2.5 (September 09, 2022)
 

@@ -5,8 +5,8 @@ description: Marketo component triggers page.
 icon: marketo.png
 icontext: Marketo component
 category: marketo
-updatedDate: 2022-09-20
-ComponentVersion: 2.2.5
+updatedDate: 2023-05-03
+ComponentVersion: 2.3.0
 ---
 
 ## Get New Activities Polling
@@ -32,10 +32,24 @@ Trigger to get all leads updates. Only [updated](https://developers.marketo.com/
 
 ### List of Expected Config fields
 
-* **Events type** - leads events type on Marketo: for leads changes select `Changes`, to get deleted leads - `Deleted`
-* **Emit Behaviour** -  Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message
+* **Events type** - leads events type on Marketo: for leads changes select `Changes`, to get deleted leads - `Deleted`, and `New Leads and changes` to get all leads in the first execution and only lead changes after the first run
+* **Emit Behaviour** -  Options are: default is `Emit Individually` emits each object in separate message, `Emit page` emits each page in separate message, `Fetch All` emits all objects in one message
+* **Page Size** - (optional, positive integer, defaults to 300, max 300): Indicates the size of pages to be fetched per request
+* **Max iterations** - (optional, positive integer, defaults to 1000): Limit the number of iterations to get activities in one flow run, if last iteration doesn't contain records process will continue to first iteration with records
+* **Return Leads** - (checkbox, optional): If checked, trigger will produce Leads instead of activities, makes more additional requests equal to `Total activities found` / `Page Size`
 * **Start Time** - Start datetime of polling. Default min date: 1970-01-01T00:00:00.000Z
-* **End Time** - End datetime of polling. Default max date: +275760-09-13T00:00:00.000
+* **End Time** - End datetime of polling. Defaults to each flow execution time
+
+### Expected output metadata
+
+Depends on `Return Leads` and `Emit behavior` fields.
+ * If `Emit behavior` field is equal to `Emit page` - object with property `results` that contains array of activities or leads
+ * If `Emit behavior` field is equal to `Emit individually`, activities or leads will fulfill whole message
+
+### Known limitations
+
+* If `Emit behavior` set to `Fetch All` or `Emit page` and data not found component will emit empty `results`
+* Leads can't be returned from `Events Type` - `Deleted`
 
 ## Poll Bulk Extract Results
 
