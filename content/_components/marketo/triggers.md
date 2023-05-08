@@ -13,7 +13,7 @@ ComponentVersion: 2.3.0
 
 Trigger to get all new and updated activities since last polling.
 
-![Get New Activities Polling](img/get-new-activities-polling.png)
+{% include img.html max-width="100%" url="img/get-new-activities-polling.png" title="Get New Activities Polling" %}
 
 Trigger uses {endpointUrl}/v1/activities.json [url](https://developers.marketo.com/rest-api/endpoint-reference/lead-database-endpoint-reference/#/Activities/getLeadActivitiesUsingGET)
 
@@ -28,7 +28,7 @@ Trigger uses {endpointUrl}/v1/activities.json [url](https://developers.marketo.c
 
 Trigger to get all leads updates. Only [updated](https://developers.marketo.com/rest-api/lead-database/activities/#data_value_changes) leads fields wold be retrieved.
 
-![Get New Leads Polling](img/get-new-leads-polling.png)
+{% include img.html max-width="100%" url="img/get-new-leads-polling.png" title="Get New Leads Polling" %}
 
 ### List of Expected Config fields
 
@@ -61,7 +61,7 @@ Action [Bulk Extract](#bulk-extract) creates a job with a defined set of data to
 This trigger `Poll Bulk Extract Results` is used for polling status of the export and retrieving file.
 The bulk extract job result file is placed in the attachment and can be processed in the next flow step.
 
-![Poll Bulk Extract Results](img/poll-bulk-extract-results.png)
+{% include img.html max-width="100%" url="img/poll-bulk-extract-results.png" title="Poll Bulk Extract Results" %}
 
 >**Please Note:** action `Bulk Extract` and trigger `Poll Bulk Extract Results` should be used in different flows,
  both flows: with action `Bulk Extract` and with trigger `Poll Bulk Extract Results`, should be created in the same workspace.
