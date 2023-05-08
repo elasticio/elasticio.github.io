@@ -5,13 +5,17 @@ description: Technical Notes for the Code component.
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2023-02-10
-ComponentVersion: 1.2.10
+updatedDate: 2023-04-21
+ComponentVersion: 1.2.11
 redirect_from:
   - /components/code/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.11 (April 21, 2023)
+
+* Add json-bigint library
 
 ### 1.2.10 (February 10, 2023)
 
