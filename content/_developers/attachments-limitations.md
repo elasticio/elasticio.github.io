@@ -42,7 +42,7 @@ will receive the `HTTP 413 - Request Entity Too Large` error response.
 
 Importing attachments from outside by polling is limited by individual components:
 
--   [SFTP component](/components/sftp/) would poll the files below 100 MB in size, if your file is bigger than that SFTP would not poll it and the platform would not report an error message.
+-   [SFTP component](/components/sftp/) would poll the files below 100 MB in size. In cases where a file is bigger than 100 MB, it throws an error indicating that the file size, for example, is 124857600 bytes and it violates the variable MAX_FILE_SIZE, which is currently set to 104857600 bytes."
 
 -   [REST API component](/components/rest-api/) would download large binary files via REST/HTTP and serve them as attachments (see content-type limitations in the [REST API component documentation](/components/rest-api/#known-limitations). When reading a file from HTTP its maximum size is bounded to the available component memory. In case of running into the limit the error message will be shown to the user, and if problem persists after a number of restarts the complete integration flow will be suspended.
 
