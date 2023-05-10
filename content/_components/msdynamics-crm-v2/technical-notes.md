@@ -5,11 +5,16 @@ description: Technical Notes for the Microsoft Dynamics CRM v2 component
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2023-02-15
-ComponentVersion: 1.2.1
+updatedDate: 2023-05-10
+ComponentVersion: 1.2.2
 ---
 
 ## Changelog
+
+### 1.2.2 (May 10, 2023)
+
+* Fixed output metadata for `Get New and Updated Objects Polling` Trigger
+* Fixed verify credentials fails
 
 ### 1.2.1 (February 15, 2023)
 

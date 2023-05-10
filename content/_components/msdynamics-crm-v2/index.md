@@ -6,8 +6,8 @@ description: Microsoft Dynamics CRM v2 Component is designed to use Web API from
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2023-02-15
-ComponentVersion: 1.2.1
+updatedDate: 2023-05-10
+ComponentVersion: 1.2.2
 ---
 
 ## Credentials
