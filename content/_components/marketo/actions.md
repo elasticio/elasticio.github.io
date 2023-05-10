@@ -5,8 +5,8 @@ description: Marketo component actions page.
 icon: marketo.png
 icontext: Marketo component
 category: marketo
-updatedDate: 2022-09-20
-ComponentVersion: 2.2.5
+updatedDate: 2023-05-03
+ComponentVersion: 2.3.0
 ---
 
 ## Describe Object
@@ -57,8 +57,7 @@ Options are: `Emit Individually` emits each object in separate message, `Fetch A
 
 ### Expected input metadata
 
-<details>
-<summary>Input json Schema</summary>
+<details close markdown="block"><summary><strong>Input JSON schema</strong></summary>
 
 ```json
 {
@@ -162,8 +161,7 @@ Checkbox, if unchecked - action returns the result of bulk import job creation i
 
 Input metadata depend on object type:
 
-<details>
-       <summary>Metadata for object type Leads</summary>
+<details close markdown="block"><summary><strong>Metadata for object type Leads</strong></summary>
 
 ```json
 {
@@ -190,11 +188,11 @@ Input metadata depend on object type:
 }
 }
 ```
+
 </details>
 
 
-<details>
-       <summary>Metadata for object type Program Members</summary>
+<details close markdown="block"><summary><strong>Metadata for object type Program Members</strong></summary>
 
 ```json
 {
@@ -223,8 +221,7 @@ Input metadata depend on object type:
 
 </details>
 
-<details>
-       <summary>Metadata for custom objects type</summary>
+<details close markdown="block"><summary><strong>Metadata for custom objects type</strong></summary>
 
 ```json
 {
@@ -242,6 +239,7 @@ Input metadata depend on object type:
 }
 }
 ```
+
 </details>
 
 ### Limitation
@@ -397,8 +395,7 @@ Input metadata depend on object type and unique criteria.
 Output metadata will be calculated for defined object type dynamically according to Marketo documentation. If an object was not found action returns empty object.
 For instance for object type `Companies` it is:
 
-<details>
-<summary>Output metadata schema</summary>
+<details close markdown="block"><summary><strong>Output metadata schema</strong></summary>
 
 ```json
 {

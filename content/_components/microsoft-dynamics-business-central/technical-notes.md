@@ -5,12 +5,16 @@ description: Technical Notes for the Microsoft Dynamics Business Central Compone
 icon: microsoft-dynamic-business-central.png
 icontext: Microsoft-Dynamics-Business-Central component
 category: microsoft-dynamic-business-central
-updatedDate: 2022-11-04
-ComponentVersion: 1.1.0
+updatedDate: 2023-05-02
+ComponentVersion: 1.1.1
 ---
 
 ## Changelog
 
+### 1.1.1 (May 02, 2023)
+
+* Fixed verify credentials fails
+* Upgrade sailor to 2.7.1
 
 ### 1.1.0 (November 04, 2022)
 

@@ -5,8 +5,8 @@ description: CSV component actions.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2022-12-16
-ComponentVersion: 3.1.6
+updatedDate: 2023-05-02
+ComponentVersion: 3.2.0
 ---
 
 ## Read CSV attachment
@@ -27,14 +27,42 @@ Here you can see an example of a sample:
 
 ### Config Fields
 
-*   `Emit Behavior` - this selector configures output behavior of the component. If the option is `Fetch All` - the component emits an array of messages; `Emit Individually` - the component emits a message per row; `Emit Batch` - component will produce a series of message where each message has an array of max length equal to the `Batch Size`;
+* `Emit Behavior` (dropdown, required) - this selector configures output behavior of the component.
+  * `Fetch All` - the component emits an array of messages;
+  * `Emit Individually` - the component emits a message per row;
+  * `Emit Batch` - component will produce a series of message where each message has an array of max length equal to the `Batch Size`;
+* `Skip empty lines` (checkbox, optional) - by default, empty lines are parsed if checked they will be skipped
+* `Comment char` (string, optional) - if specified, skips lines starting with this string
 
 ### Input Metadata
 
 *   `URL` - We will fetch this URL and parse it as CSV file
 *   `Contains headers` - if true, the first row of parsed data will be interpreted as field names, false by default.
-*   `Delimiter` - The delimiting character. Leave blank to auto-detect from a list of most common delimiters.
-*   `Convert Data types` - numeric, date and boolean data will be converted to their type instead of remaining strings, false by default.
+*   `Delimiter` - The delimiting character. Leave blank to auto-detect from a list of most common delimiters or provide your own
+
+<details close markdown="block"><summary><strong>Example</strong></summary>
+
+if you use "$" as Delimiter, this CSV:
+
+```
+a$b$c$d
+```
+
+can be parsed into this JSON
+
+``` json
+   {
+    "column0": "a",
+    "column1": "b",
+    "column2": "c",
+    "column3": "d"
+   }
+```
+
+</details>
+
+
+*   `Convert Data types` - numeric data and boolean data will be converted to their type instead of remaining strings, false by default.
 
 If `Emit Behavior` equals to `Emit Batch` - new field appears: `Batch Size` - max length of array for each message
 
@@ -65,9 +93,33 @@ To configure this action the following fields can be used:
 
 ### Config Fields
 
-* `Upload CSV as file to attachments` -  If checked store the generated CSV data as an attachment. If unchecked, place the CSV as a string in the outbound message.
-* `Separator` - A single char used to delimit the CSV file. Default to `,`
-* `Column Order` - A string delimited with the separator indicating which columns & in what order the columns should appear in the resulting file. If omitted, the column order in the resulting file will not be deterministic. Columns names will be trimmed (removed spaces in beginning and end of column name, for example: 'col 1,col 2 ,col 3, col 4' => ['col 1', 'col 2', 'col 3', 'col 4'])
+* `Upload CSV as file to attachments` (checkbox, optional) -  If checked store the generated CSV data as an attachment. If unchecked, place the CSV as a string in the outbound message.
+* `Separator` (string, optional) - A single char used to delimit the CSV file. Default to "`,`" but you can set any
+
+<details close markdown="block"><summary><strong>Example</strong></summary>
+
+if you use "$" as Delimiter, this CSV:
+
+```
+a$b$c$d
+```
+
+can be parsed into this JSON
+
+``` json
+    {
+     "column0": "a",
+     "column1": "b",
+     "column2": "c",
+     "column3": "d"
+    }
+```
+
+</details>
+
+* `Column Order` (string, optional) - A string delimited with the separator indicating which columns & in what order the columns should appear in the resulting file. If omitted, the column order in the resulting file will not be deterministic. Columns names will be trimmed (removed spaces in beginning and end of column name, for example: 'col 1,col 2 ,col 3, col 4' => ['col 1', 'col 2', 'col 3', 'col 4'])
+* `New line delimiter` (string, optional, defaults to `\r\n`) - The character used to determine newline sequence.
+* `Escape formulae` (checkbox, optional) - If checked, field values that begin with `=`, `+`, `-`, `@`, `\t`, or `\r`, will be prepended with a **"`"** to defend against injection attacks, because Excel and LibreOffice will automatically parse such cells as formulae
 
 ### Input Metadata
 
@@ -100,9 +152,28 @@ To configure this action the following fields can be used:
 
 ### Config Fields
 
-* `Upload CSV as file to attachments` -  If checked store the generated CSV data as an attachment. If unchecked, place the CSV as a string in the outbound message.
-* `Separator` - A single char used to delimit the CSV file. Default to `,`
-* `Column Order` - A string delimited with the separator indicating which columns & in what order the columns should appear in the resulting file. If omitted, the column order in the resulting file will not be deterministic.
+* `Upload CSV as file to attachments` (checkbox, optional) -  If checked store the generated CSV data as an attachment. If unchecked, place the CSV as a string in the outbound message.
+* `Separator` (string, optional) - A single char used to delimit the CSV file. Default to "`,`" but you can set any
+
+<details close markdown="block"><summary><strong>Example</strong></summary>
+
+default:
+
+```
+a,b,c,d
+```
+
+using "`;`" as separator:
+
+```
+a;b;c;d
+```
+
+</details>
+
+* `Column Order` (string, optional) - A string delimited with the separator indicating which columns & in what order the columns should appear in the resulting file. If omitted, the column order in the resulting file will not be deterministic. Columns names will be trimmed (removed spaces in beginning and end of column name, for example: 'col 1,col 2 ,col 3, col 4' => ['col 1', 'col 2', 'col 3', 'col 4'])
+* `New line delimiter` (string, optional, defaults to `\r\n`) - The character used to determine newline sequence.
+* `Escape formulae` (checkbox, optional) - If checked, field values that begin with `=`, `+`, `-`, `@`, `\t`, or `\r`, will be prepended with a  **"`"** to defend against injection attacks, because Excel and LibreOffice will automatically parse such cells as formulae
 
 ### Input Metadata
 
