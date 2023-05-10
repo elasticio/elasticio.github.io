@@ -8,6 +8,14 @@ order: 1
 category: sailor
 ---
 
+## Platform Sailor
+
+{{site.data.tenant.name}} Sailor is a tool to help developers build and deploy their own integrations using the platform. Sailor is essentially a set of out-of-the-box functionality in library form that allows developers to create, test and deploy integration components.
+
+Using {{site.data.tenant.name}} Sailor, developers can create and package their own integration components in the form of Docker image, which can be easily deployed and run on the Elastic.io platform. These components can be used to integrate various cloud-based services and applications, such as CRMs, ERPs, marketing automation tools, and more.
+
+Sailor also provides a number of tools and utilities to help developers manage their integration components, including the ability to test and debug components locally, as well as the ability to deploy and manage components on the Elastic.io platform. Overall, {{site.data.tenant.name}} Sailor is a powerful tool that can help developers streamline the integration process and build better, more reliable integrations in less time.
+
 The following tables shows the support of the platform features in Sailor versions:
 
  * [Node.js Sailor compatibility matrix](#nodejs-sailor-compatibility-matrix)
