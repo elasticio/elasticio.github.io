@@ -8,6 +8,17 @@ order: 1
 category: sailor
 ---
 
+## Platform Sailor
+
+Sailor is a tool that provides developers with a set of pre-built functionalities in library form, allowing them to easily create integration components for the {{site.data.tenant.name}} platform. It enables developers to interact with the platform by:
+
+* emit messages - send them from the component further into the flow
+* write logs
+* manage the load - [flow control](/guides/flow-control)
+* [create some hooks](/references/sailor-hooks) - code that will be executed once, for example, at startup flow
+
+Sailor also takes care of platform interactions under the hood, including message encryption, queuing, and other tasks, making it easier for developers to focus on building their integrations.
+
 The following tables shows the support of the platform features in Sailor versions:
 
  * [Node.js Sailor compatibility matrix](#nodejs-sailor-compatibility-matrix)
