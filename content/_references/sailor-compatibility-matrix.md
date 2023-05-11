@@ -14,7 +14,7 @@ Sailor is a tool that provides developers with a set of pre-built functionalitie
 
 * emit messages - send them from the component further into the flow
 * write logs
-* manage the load -flow control
+* manage the load - flow control
 * create some hooks - code that will be executed once, for example, at startup flow
 
 Sailor also takes care of platform interactions under the hood, including message encryption, queuing, and other tasks, making it easier for developers to focus on building their integrations.
