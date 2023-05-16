@@ -130,17 +130,19 @@ Additionally, there are two checkboxes that can be used to allow empty results a
 
 During the mapping stage, you can specify which flow you want to retrieve by selecting the search criteria defined in the mapping. This allows you to retrieve the specific data you need from the identified flow.
 
-*Note: Actually, the search for your criteria has already been performed after completing the configuration settings and you only need to select from the options, to do this you can hover over the question mark and see which options are available based on your credentials specified in the credentials configuration step.*
+> **Please Note:** Once you have completed the configuration settings for this component, the search based on your specified criteria has already been performed. To select the desired flow, you can simply hover over the question mark icon to see the available options, which are based on the credentials specified in the credentials configuration step
 
 ![image3.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d396775e-b34e-424f-8232-cb9a7d6a3c6a/image3.png)
 
-Also, in the mapping step, you can select two additional options Include Data Samples and Remove Non-writeable Properties. Both parameters handle the content of the resulting message. With Include Data Samples enabled, you can see additional information about the Samples in the flow components. And with Remove Non-Writeable Properties, you will remove from the message some of the flow attributes that the integrator can write (see the [documentation of the Ipaas core component](https://docs.elastic.io/components/ipaas-core/index.html#lookup-object-at-most-one) for more details).
+Additionally, in the mapping step, you have the option to select two additional parameters: Include Data Samples and Remove Non-writeable Properties. These parameters affect the content of the resulting message. Enabling Include Data Samples provides additional information about the samples in the flow components. On the other hand, enabling Remove Non-writeable Properties will remove certain flow attributes from the message that the integrator cannot write.
 
-The only possible use of this component is to obtain complete information about the flow with the ability to further process this data. In the example below I have shown how to sample flow data from the screenshot below. During configuration, the data samples and non-writable properties were turned off to reduce the size of the text in the example.
+> Please see the Lookup Object (at Most One) action documentation for more details).
+
+The primary purpose of this component is to retrieve comprehensive information about a flow, which can then be further processed. In the example below, we have demonstrated how to extract sample flow data based on the provided screenshot. For the sake of brevity, the configuration in the example has disabled data samples and non-writable properties, resulting in reduced text size.
 
 ![image8.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2a0de32f-2f56-402e-8697-4dbcdee3dbc1/image8.png)
 
-**Data sample for flow on the screenshot above:**
+<details close markdown="block"><summary><strong>Data sample for flow on the screenshot above</strong></summary>
 
 ```json
 {
@@ -269,35 +271,49 @@ The only possible use of this component is to obtain complete information about 
 }
 ```
 
-*Note. When using a function with the ability to search by flow name, you may encounter a situation of duplicate flow names. Be vigilant to avoid duplicate flow names, it will help prevent errors like those in the screenshot below.*
+</details>
+
+> **Please note** that when using the function that allows searching by flow name, it is important to be aware of potential duplicate flow names. It is crucial to exercise vigilance and avoid duplicating flow names to prevent errors, as depicted in the screenshot below.
 
 ![image7.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be0cc7af-9f1d-424d-8bdd-1d13338d2e85/image7.png)
 
-# **Lookup Objects (plural)**
+## Lookup Objects (plural)
 
-The IPaas core component can operate in Lookup Objects (plural) mode. As the name implies, it is the same as the Lookup object(at most one) but is designed to get data from multiple flows at the same time.
+The Ipaas Core component can operate in Lookup Objects (plural) mode. As the name implies, it functions similarly to the Lookup object (which operates on at most one flow), but it is specifically designed to retrieve data from multiple flows simultaneously.
 
-The principle of configuration is almost no different from the Lookup object(at most one) except for a few things. First, at the configuration stage, it is possible to select Emitting behavior (emit individually, emit page and fetch all). This is typical for all components which can emit data about multiple objects and is responsible for the format of emitting data.
+The configuration principle of the Ipaas Core component in Lookup Objects mode(plural) is similar to that of the Lookup object (which operates on at most one flow), with a few distinctions. Firstly, during the configuration stage, you have the option to select the Emitting behavior (emit individually, emit page, and fetch all). This behavior is common among components that can emit data for multiple objects and determines the format in which the data is emitted.
 
 ![image5.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59e9e507-19b0-4766-9962-aff8b0e7e489/image5.png)
 
 There are three standard fields in the settings: Sort flows list by certain fields, Search Criteria and Remove Non-Writeable Properties, and Page Size and Page Number, provided that Emit page mode was selected in the configuration settings.
 
+The settings for the this mode include three standard fields:
+* Sort flows list by specific fields
+* Search Criteria and Remove Non-Writeable Properties
+* Page Size and Page Number
+
+These settings are applicable when the Emit page mode is selected in the configuration settings.
+
 ![image6.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b501ddc-32f8-46e5-92bc-14b6a9c40fe8/image6.png)
 
-The first of the three main mapping parameters are the Sort flows list by certain fields to set the desired sorting for the received objects. Among the allowed values created_at, updated_at, name, and by the same value, but in descending order (respectively a variable with a minus sign, like "-name")
+????
+The first of the three main mapping parameters is `Sort flows list by certain fields`, which allows you to set the desired sorting for the received objects. You can use values such as `created_at`, `updated_at`, and `name` to sort in ascending order. To sort in descending order, prepend the field with a minus sign (e.g., '-name').
 
-Also, a boolean parameter Remove Non Writable Properties, which allows you to specify whether the final data needs to use values as in Lookup Object(at most one)
+Another important parameter is `Remove Non-Writable Properties`, a boolean parameter that determines whether the final data should include non-writable properties, similar to the behavior in Lookup Object (at most one).
 
-And the most important parameter is Search Criteria, which allows you to specify a sorting criterion for finding the right flow. Among the criteria, you can explicitly specify filter by draft, status, type, user, and search by name or description (see the [documentation](https://docs.elastic.io/components/ipaas-core/index.html#lookup-objects-plural) for details)
+The most crucial parameter is `Search Criteria`, which enables you to specify the sorting criteria for finding the desired flow. You can explicitly filter by criteria such as draft, status, type, user, and search by name or description.
 
-The main and only use of this flow is, as in the case with Lookup Object(at most one) to get complete information about the flows by a given criterion. This action can be used to obtain data for further processing or to obtain information about the number of flows with a certain criterion, that is, to collect statistics.
+> Please see the Lookup Object (plural) action documentation for more details).
 
-An example would be a simple flow structure with an iPaaS component. For example, the workspace specified in the credentials has several flows with the word HJSON in the flow name. You can use the Lookup Objects(plural) function with HJSON in the search criteria to display all information about these flows.
+The primary and sole purpose of this flow is similar to that of the Lookup Object (at most one): to retrieve comprehensive information about flows based on a specified criterion. This action can be used to obtain data for further processing or to gather statistics by determining the number of flows that meet a specific criterion.
+
+For instance, let's consider a simple flow structure with an iPaaS component. Suppose the workspace specified in the credentials contains multiple flows with the term 'HJSON' in their flow names. In such a case, you can utilize the Lookup Objects (plural) function by specifying `HJSON` in the search criteria to retrieve and display comprehensive information about all the flows matching this criterion.
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1746ae44-ac8f-4b54-8f8a-9e77b34e8e15/Untitled.png)
 
-As a result, we will get complete information about these flows. For brevity, we will cut out some of the information about the flows, since it corresponds to the information provided by the Lookup Objects(at most one) function.
+As a result, we will obtain comprehensive information about these flows. To maintain brevity, we can exclude redundant details about the flows, as they align with the information provided by the Lookup Objects (at most one) function
+
+<details close markdown="block"><summary><strong>Click to expand</strong></summary>
 
 ```json
 {
@@ -314,10 +330,8 @@ As a result, we will get complete information about these flows. For brevity, we
         "current_status": "inactive",
         "default_mapper_type": "jsonata",
         "description": "This flow allows transform json-based body to hjson format with simple request.\nDon't forget to follow rule: request body must contain body object with json right attributes.\n",
-        ...
         }
-      }
-    },
+      },
     {
       "id": "6311db11d17be30011246c42",
       "type": "flow",
@@ -330,22 +344,46 @@ As a result, we will get complete information about these flows. For brevity, we
         "current_status": "inactive",
         "default_mapper_type": "jsonata",
         "description": "This flow allows transform HJOSN-based body to JSON format with simple request.\nDon't forget follow rule: request body must contain hjson_body parameter with a hjson string!",
-        ...
         }
       }
-    }
   ]
 }
 ```
 
-# ****Raw Request****
+</details>
 
-The Raw Request function is a request to the [elastic.io](http://elastic.io/) API using all the rules typical for working with APIs. The appearance of this function is due to the mechanism of the iPaaS component, as all the functionality of this component works through this API. The Raw Request feature allows you to customize your flows to meet your requirements. In fact, you can completely replace this function with the Rest API component, but Raw Request allows you to access [Elastic.io API](https://api.elastic.io/docs/v2/) a bit more conveniently, as it works on the credentials you've prepared in advance.
+## Raw Request
 
-To take a simple endpoint [`https://api.elastic.io/v2/users/me`](https://api.elastic.io/v2/users/me) as an example. With a GET request to it, we can output information about the current user.
+The Raw Request function enables making requests to the {{site.data.tenant.name}} API, following the typical rules for working with APIs. This function is an integral part of the iPaaS component, as all the component's functionality operates through this API. The Raw Request feature provides flexibility to customize your flows according to your requirements. While you can substitute this function entirely with the Rest API component, Raw Request offers the advantage of conveniently accessing the {{site.data.tenant.name}} API using the credentials you have prepared in advance.
+
+We will take a simple endpoint `https://api.{{site.data.tenant.name}}.io/v2/users/me` as an example. With a GET request to it, we can output information about the current user.
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/861aefc5-a2d0-41c1-89d7-6a6744db5d49/Untitled.png)
 
-You can select the method used, Request Body for requests in which it is accepted, and the boolean parameter Throw error on 404 Response code for cases where it is needed. You also need to specify the URL to the specified endpoint, note that if you specify the URL correctly, you need to omit the initial part of the address, including the protocol part `https:/`, the API address [`api.elastic.io`](http://api.elastic.io/) and the versioned part, including the trailing slash `/v2/`.
+You have the option to select the method used, such as Request Body for requests that accept it, and the boolean parameter `Throw error on 404 Response code` for cases where it is necessary. Additionally, you need to specify the URL for the desired endpoint. Please note that when specifying the URL correctly, you should omit the initial part of the address, including the protocol (https:/), the API address (api.{{site.data.tenant.name}}.io), and the versioned part, which includes the trailing slash (/v2/).
+
 
 The result of the component will be an API response to the corresponding request.
+
+```json
+{
+  "body": {
+    "data": {
+      "id": "607013a4a17cbd0011eaa456",
+      "type": "user",
+      "links": {
+        "self": "/v2/users/607013a4a17cbd0011eaa456"
+      },
+      "attributes": {
+        "first_name": "EIO",
+        "last_name": "Support",
+        "email": "helpme@{{site.data.tenant.name}}",
+        "registered": "2021-04-09T08:43:16.434Z",
+        "last_login": "2022-10-13T11:41:40.894Z"
+      }
+    },
+    "meta": {}
+  },
+  "statusCode": 200
+}
+```
