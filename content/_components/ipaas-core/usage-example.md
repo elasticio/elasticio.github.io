@@ -23,7 +23,7 @@ To use the component, we need to specify the mode as **Calculate Flow Dependenci
 
 In this example, we specify the FlowID of the flow shown in the screenshot below. When the flow is executed and the HTTPReply component is triggered, the result message returned will be a confirmation that the flow has been successfully executed. The message will contain relevant information about the flow's execution status and any errors encountered during the process.
 
-{% include img.html max-width="100%" url="img/get-csv-from-dropbox.png" title="Get CSV from Dropbox" %}
+{% include img.html max-width="80%" url="img/get-csv-from-dropbox.png" title="Get CSV from Dropbox" %}
 
 <details close markdown="block"><summary><strong>Result</strong></summary>
 
@@ -132,7 +132,7 @@ During the mapping stage, you can specify which flow you want to retrieve by sel
 
 > **Please Note:** Once you have completed the configuration settings for this component, the search based on your specified criteria has already been performed. To select the desired flow, you can simply hover over the question mark icon to see the available options, which are based on the credentials specified in the credentials configuration step
 
-{% include img.html max-width="100%" url="img/info.png" title="Info" %}
+{% include img.html max-width="50%" url="img/info.png" title="Info" %}
 
 Additionally, in the mapping step, you have the option to select two additional parameters: Include Data Samples and Remove Non-writeable Properties. These parameters affect the content of the resulting message. Enabling Include Data Samples provides additional information about the samples in the flow components. On the other hand, enabling Remove Non-writeable Properties will remove certain flow attributes from the message that the integrator cannot write.
 
@@ -140,7 +140,7 @@ Additionally, in the mapping step, you have the option to select two additional 
 
 The primary purpose of this component is to retrieve comprehensive information about a flow, which can then be further processed. In the example below, we have demonstrated how to extract sample flow data based on the provided screenshot. For the sake of brevity, the configuration in the example has disabled data samples and non-writable properties, resulting in reduced text size.
 
-{% include img.html max-width="100%" url="img/filter-component-flow.png" title="Filter component flow" %}
+{% include img.html max-width="80%" url="img/filter-component-flow.png" title="Filter component flow" %}
 
 <details close markdown="block"><summary><strong>Data sample for flow on the screenshot above</strong></summary>
 
