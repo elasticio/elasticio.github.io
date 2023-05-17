@@ -136,7 +136,7 @@ During the mapping stage, you can specify which flow you want to retrieve by sel
 
 Additionally, in the mapping step, you have the option to select two additional parameters: Include Data Samples and Remove Non-writeable Properties. These parameters affect the content of the resulting message. Enabling Include Data Samples provides additional information about the samples in the flow components. On the other hand, enabling Remove Non-writeable Properties will remove certain flow attributes from the message that the integrator cannot write.
 
-> Please see the Lookup Object (at Most One) action documentation for more details.
+> Please see the Lookup Object (at Most One) action [documentation](/components/ipaas-core/index#lookup-object-at-most-one) for more details.
 
 The primary purpose of this component is to retrieve comprehensive information about a flow, which can then be further processed. In the example below, we have demonstrated how to extract sample flow data based on the provided screenshot. For the sake of brevity, the configuration in the example has disabled data samples and non-writable properties, resulting in reduced text size.
 
@@ -296,14 +296,13 @@ These settings are applicable when the Emit page mode is selected in the configu
 
 {% include img.html max-width="100%" url="img/lookup-objects-plural-mapping.png" title="Lookup Objects (plural) mapping" %}
 
-????
 The first of the three main mapping parameters is `Sort flows list by certain fields`, which allows you to set the desired sorting for the received objects. You can use values such as `created_at`, `updated_at`, and `name` to sort in ascending order. To sort in descending order, prepend the field with a minus sign (e.g., '-name').
 
 Another important parameter is `Remove Non-Writable Properties`, a boolean parameter that determines whether the final data should include non-writable properties, similar to the behavior in Lookup Object (at most one).
 
 The most crucial parameter is `Search Criteria`, which enables you to specify the sorting criteria for finding the desired flow. You can explicitly filter by criteria such as draft, status, type, user, and search by name or description.
 
-> Please see the Lookup Object (plural) action documentation for more details).
+> Please see the Lookup Object (plural) action [documentation](/components/ipaas-core/index#lookup-objects-plural) for more details.
 
 The primary and sole purpose of this flow is similar to that of the Lookup Object (at most one): to retrieve comprehensive information about flows based on a specified criterion. This action can be used to obtain data for further processing or to gather statistics by determining the number of flows that meet a specific criterion.
 
