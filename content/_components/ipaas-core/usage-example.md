@@ -15,7 +15,7 @@ This article will show you where and how to use the IPaas Core component. Throug
 
 The Calculate Flow Dependencies function is designed to retrieve information about a flow **in the current workspace**, including its topics, secrets, credentials, and components. This information can be further processed for various use cases. For example, you could use this function to obtain the necessary data to generate a report about a particular flow. To illustrate, consider the following simple flow.
 
-![image4.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ae249693-a784-4848-98b1-f29f4df0770f/image4.png)
+{% include img.html max-width="100%" url="img/calculate-flow-dependencies-simple-flow.png" title="Calculate Flow Dependencies simple flow" %}
 
 To use the component, we need to specify the mode as **Calculate Flow Dependencies**, create the necessary credentials for authentication, and specify the flow ID of the flow we want to retrieve dependencies for. The 'Calculate Flow Dependencies' mode instructs the component to retrieve information about the flow's topics, secrets, credentials, and components, which can be used for further data processing or analysis.
 
@@ -23,7 +23,7 @@ To use the component, we need to specify the mode as **Calculate Flow Dependenci
 
 In this example, we specify the FlowID of the flow shown in the screenshot below. When the flow is executed and the HTTPReply component is triggered, the result message returned will be a confirmation that the flow has been successfully executed. The message will contain relevant information about the flow's execution status and any errors encountered during the process.
 
-![image2.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9c2776ce-98b3-46ca-bafc-37c579e3845d/image2.png)
+{% include img.html max-width="100%" url="img/get-csv-from-dropbox.png" title="Get CSV from Dropbox" %}
 
 <details close markdown="block"><summary><strong>Result</strong></summary>
 
@@ -113,7 +113,7 @@ In this example, we specify the FlowID of the flow shown in the screenshot below
 
 >**Please note** that in order for this component to function properly, the flow must be fully created and published, rather than just in draft form with an assigned ID. If the flow is not published and remains in draft status, the output may not be as expected, as shown in the example below.
 
-![image1.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/495509a0-4d1f-4210-b8d9-052472e63dce/image1.png)
+{% include img.html max-width="100%" url="img/calculate-flow-dependencies-ipaas-core-sample.png" title="Ipaas Core sample" %}
 
 ## Lookup Object (at Most One)
 
@@ -132,15 +132,15 @@ During the mapping stage, you can specify which flow you want to retrieve by sel
 
 > **Please Note:** Once you have completed the configuration settings for this component, the search based on your specified criteria has already been performed. To select the desired flow, you can simply hover over the question mark icon to see the available options, which are based on the credentials specified in the credentials configuration step
 
-![image3.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d396775e-b34e-424f-8232-cb9a7d6a3c6a/image3.png)
+{% include img.html max-width="100%" url="img/info.png" title="Info" %}
 
 Additionally, in the mapping step, you have the option to select two additional parameters: Include Data Samples and Remove Non-writeable Properties. These parameters affect the content of the resulting message. Enabling Include Data Samples provides additional information about the samples in the flow components. On the other hand, enabling Remove Non-writeable Properties will remove certain flow attributes from the message that the integrator cannot write.
 
-> Please see the Lookup Object (at Most One) action documentation for more details).
+> Please see the Lookup Object (at Most One) action documentation for more details.
 
 The primary purpose of this component is to retrieve comprehensive information about a flow, which can then be further processed. In the example below, we have demonstrated how to extract sample flow data based on the provided screenshot. For the sake of brevity, the configuration in the example has disabled data samples and non-writable properties, resulting in reduced text size.
 
-![image8.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2a0de32f-2f56-402e-8697-4dbcdee3dbc1/image8.png)
+{% include img.html max-width="100%" url="img/filter-component-flow.png" title="Filter component flow" %}
 
 <details close markdown="block"><summary><strong>Data sample for flow on the screenshot above</strong></summary>
 
@@ -275,7 +275,7 @@ The primary purpose of this component is to retrieve comprehensive information a
 
 > **Please note** that when using the function that allows searching by flow name, it is important to be aware of potential duplicate flow names. It is crucial to exercise vigilance and avoid duplicating flow names to prevent errors, as depicted in the screenshot below.
 
-![image7.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be0cc7af-9f1d-424d-8bdd-1d13338d2e85/image7.png)
+{% include img.html max-width="100%" url="img/error.png" title="Error" %}
 
 ## Lookup Objects (plural)
 
@@ -283,7 +283,7 @@ The Ipaas Core component can operate in Lookup Objects (plural) mode. As the nam
 
 The configuration principle of the Ipaas Core component in Lookup Objects mode(plural) is similar to that of the Lookup object (which operates on at most one flow), with a few distinctions. Firstly, during the configuration stage, you have the option to select the Emitting behavior (emit individually, emit page, and fetch all). This behavior is common among components that can emit data for multiple objects and determines the format in which the data is emitted.
 
-![image5.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59e9e507-19b0-4766-9962-aff8b0e7e489/image5.png)
+{% include img.html max-width="100%" url="img/lookup-objects-plural-config.png" title="Lookup Objects (plural) config" %}
 
 There are three standard fields in the settings: Sort flows list by certain fields, Search Criteria and Remove Non-Writeable Properties, and Page Size and Page Number, provided that Emit page mode was selected in the configuration settings.
 
@@ -294,7 +294,7 @@ The settings for the this mode include three standard fields:
 
 These settings are applicable when the Emit page mode is selected in the configuration settings.
 
-![image6.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0b501ddc-32f8-46e5-92bc-14b6a9c40fe8/image6.png)
+{% include img.html max-width="100%" url="img/lookup-objects-plural-mapping.png" title="Lookup Objects (plural) mapping" %}
 
 ????
 The first of the three main mapping parameters is `Sort flows list by certain fields`, which allows you to set the desired sorting for the received objects. You can use values such as `created_at`, `updated_at`, and `name` to sort in ascending order. To sort in descending order, prepend the field with a minus sign (e.g., '-name').
@@ -309,7 +309,7 @@ The primary and sole purpose of this flow is similar to that of the Lookup Objec
 
 For instance, let's consider a simple flow structure with an iPaaS component. Suppose the workspace specified in the credentials contains multiple flows with the term 'HJSON' in their flow names. In such a case, you can utilize the Lookup Objects (plural) function by specifying `HJSON` in the search criteria to retrieve and display comprehensive information about all the flows matching this criterion.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1746ae44-ac8f-4b54-8f8a-9e77b34e8e15/Untitled.png)
+{% include img.html max-width="100%" url="img/lookup-objects-plural-config-and-mapping.png" title="Lookup Objects (plural) config + mapping" %}
 
 As a result, we will obtain comprehensive information about these flows. To maintain brevity, we can exclude redundant details about the flows, as they align with the information provided by the Lookup Objects (at most one) function
 
@@ -356,11 +356,11 @@ As a result, we will obtain comprehensive information about these flows. To main
 
 The Raw Request function enables making requests to the {{site.data.tenant.name}} API, following the typical rules for working with APIs. This function is an integral part of the iPaaS component, as all the component's functionality operates through this API. The Raw Request feature provides flexibility to customize your flows according to your requirements. While you can substitute this function entirely with the Rest API component, Raw Request offers the advantage of conveniently accessing the {{site.data.tenant.name}} API using the credentials you have prepared in advance.
 
-We will take a simple endpoint `https://api.{{site.data.tenant.name}}.io/v2/users/me` as an example. With a GET request to it, we can output information about the current user.
+We will take a simple endpoint `https://api.{{site.data.tenant.name}}/v2/users/me` as an example. With a GET request to it, we can output information about the current user.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/861aefc5-a2d0-41c1-89d7-6a6744db5d49/Untitled.png)
+{% include img.html max-width="100%" url="img/raw-request-mapping.png" title="raw Request mapping" %}
 
-You have the option to select the method used, such as Request Body for requests that accept it, and the boolean parameter `Throw error on 404 Response code` for cases where it is necessary. Additionally, you need to specify the URL for the desired endpoint. Please note that when specifying the URL correctly, you should omit the initial part of the address, including the protocol (https:/), the API address (api.{{site.data.tenant.name}}.io), and the versioned part, which includes the trailing slash (/v2/).
+You have the option to select the method used, such as Request Body for requests that accept it, and the boolean parameter `Throw error on 404 Response code` for cases where it is necessary. Additionally, you need to specify the URL for the desired endpoint. Please note that when specifying the URL correctly, you should omit the initial part of the address, including the protocol (https:/), the API address (api.{{site.data.tenant.name}}), and the versioned part, which includes the trailing slash (/v2/).
 
 
 The result of the component will be an API response to the corresponding request.
