@@ -75,6 +75,14 @@ will provide a failed result.
 > The CSV can only be a maximum of 5kB, and if it contains any duplicate values
 > in a given column, it will fail validation.
 
+### How it works
+
+To utilize the Lookup Table component, you need to provide a valid CSV table in the component's credentials. It's important to note that the CSV file should not exceed 5kB in size, and if it contains any duplicate values within a specific column, it will fail the validation process.
+
+The Lookup Table component supports the **Lookup From Table** action exclusively. It enables you to establish relationships between your configured values based on the columns present in the CSV table. To ensure proper configuration, each column in the CSV table should have a corresponding header name, which you can pass into the Lookup Table component's Configuration.
+
+{% include img.html max-width="100%" url="img/lookup-table-config.png" title="Lookup table configuration" %}
+
 ### Technical Notes
 
 The [technical notes](technical-notes) page gives some technical details about Lookup Table component like [changelog](/components/lookup-table/technical-notes#changelog).
@@ -88,21 +96,25 @@ select as a first component during the integration flow design.
 
 ### Lookup From Table
 
-The lookup from table action takes a table to lookup from, a table to translate
-to, and an input value to translate. It returns an object in the form `{result: value}`
-where the value is the result of the table lookup, if it exists:
+The Lookup From Table action allows you to establish relationships between the values in different columns of your CSV table. To configure this action, you need to select two columns from your CSV table: **column X** and **column Y**.
 
-![Lookup From Table](img/lookup-from-table.png)
+Once the columns are chosen, you can specify the input value from **column X**. The Lookup Table component will then search for a corresponding match in **column X** and return the value from **column Y** that is present in the same row.
+
+In summary, the result of the Lookup From Table action will be the value from **column Y**, which corresponds to the selected input value from **column X** in the Mapping process. This enables you to retrieve and utilize specific values from the CSV table based on your configured mappings.
+
+{% include img.html max-width="100%" url="img/lookup-table-mapping.png" title="Lookup table mapping" %}
+
+> To gain a better understanding of how the Lookup Table component functions, we highly recommend reviewing a [brief example](usage-example). This example will provide you with practical insights into the component's operation and usage.
 
 #### Input Configuration
 
--   `Emit empty object on unsuccessful lookup`: if selected, an empty object `{}` will be emitted given an unsuccessful lookup where nothing is found. If *not* selected, an error will be thrown on unsuccessful lookup
--   `From this table`: the column to translate from
--   `To this table`: the column to translate to
+*  `From this table` - is the first field that contains the name of the **column X** header. These column values will be used in **Mapping**.
+*  `To this table` - is the second field that contains the name of the **column Y** header. These column values will be thrown as a result.
+*  `Emit empty object on unsuccessful lookup` - is a checkbox. If selected, an empty object {} will be emitted given an unsuccessful lookup where nothing is found. If not selected, an error will be thrown on an unsuccessful lookup.
 
 #### Expected input metadata
 
-- `Input`: the value to translate. Should be selected from the list of available values under `Values`
+As input in Mapping, you must choose any value from column X that you put in From this table field.
 
 #### Expected output metadata
 
@@ -126,6 +138,11 @@ Full Name,First,Last
 
 ### Known Limitations
 
--   the CSV has a max size of 5kB
--   the CSV must be able to be parsed as a rectangle
--   the CSV must not contain any duplicates in column values
+- the CSV has a max size of 5kB.
+- the CSV must be able to be parsed as a rectangle.
+- the CSV must not contain any duplicates in column values.
+- the CSV must not contain text as **number values**.
+
+Example:
+
+{% include img.html max-width="100%" url="img/lookup-table-text-content.png" title="Lookup table text content" %}
