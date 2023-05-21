@@ -6,8 +6,8 @@ description: This is the component for working with Oracle JDE Edwards Enterpris
 icon: jde-e1.png
 icontext: JDE E1 Orchestrator component
 category: jde-e1
-updatedDate: 2019-09-17
-ComponentVersion: 1.0.0
+updatedDate: 2023-04-07
+ComponentVersion: 1.1.1
 ---
 
 ## Description

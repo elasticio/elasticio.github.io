@@ -6,8 +6,8 @@ description: A international standard for electronic data interchange (EDI).
 icon: edifact.png
 icontext: Edifact-parser component
 category: edifact-parser
-updatedDate: 2021-03-12
-ComponentVersion: 0.0.3
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.0
 ---
 
 ## Authentication

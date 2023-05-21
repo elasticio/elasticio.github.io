@@ -6,17 +6,17 @@ description: A component that connects to Zoho-crm API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.7
-updatedDate: 2023-03-15
+ComponentVersion: 1.3.8
+updatedDate: 2023-04-16
 ---
 
 ## General information
 
 ### Environment variables
 
-|Name|Mandatory|Description|Values|
-|----|---------|-----------|------|
-|`REQUEST_MAX_RETRY`| false | Set how many time system try to make request to API on errors (3 by default) | min: 0, max: 10 |
+| Name                | Mandatory | Description                                                                  | Values          |
+|---------------------|-----------|------------------------------------------------------------------------------|-----------------|
+| `REQUEST_MAX_RETRY` | false     | Set how many time system try to make request to API on errors (3 by default) | min: 0, max: 10 |
 
 >The optional environment variable MAX_FILE_SIZE could be set in settings to provide the maximum file size for attachments in megabytes (mb). The default value for MAX_FILE_SIZE is 100MB.
 
@@ -30,11 +30,11 @@ More information you can find [here](https://api-console.zoho.com).
 
 For creating Auth Client you should specify following fields:
 
-|Field name|Mandatory|Description|
-|----|---------|-----------|
-|Client Name| true | your Auth Client's name (any) |
-|Homepage URL| true | https://{installation-url}|
-|Authorized Redirect URIs| true | https:/{installation-url}/callback/oauth2 |
+| Field name               | Mandatory | Description                                     |
+|--------------------------|-----------|-------------------------------------------------|
+| Client Name              | true      | your Auth Client's name (any)                   |
+| Homepage URL             | true      | https://{installation-url}                      |
+| Authorized Redirect URIs | true      | https:/{installation-url}/callback/oauth2       |
 
 You will receive next fields: `Client ID`, `Client Secret`
 
@@ -175,7 +175,9 @@ Action designed to lookup objects
 #### Config Fields
 
 * **Object type** Dropdown, required: Indicates Object type to be fetched
-* **Emit behavior** Dropdown, required: Indicates flow behavior. One of `Fetch All`, `Fetch Page`, `Emit Individually`
+* **Emit behavior** Dropdown, required: Indicates flow behavior. One of `Fetch All`, `Fetch Page`, `Emit Individually`.
+
+>**Please Note**: an empty array `results` will be emitted when no objects are found for all possible `Emit behavior` options.
 
 #### Input Metadata
 

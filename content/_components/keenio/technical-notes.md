@@ -6,11 +6,15 @@ description: Technical Notes for the Keenio component.
 icon: keenio.png
 icontext: Keenio component
 category: keenio
-updatedDate: 2020-12-10
-ComponentVersion: 0.0.2
+updatedDate: 2023-04-06
+ComponentVersion: 1.0.0
 ---
 
 ## Changelog
+
+### 1.0.0 (April 06, 2023)
+
+* Fixed version mismatch
 
 ### 0.0.2 (December 10, 2020)
 

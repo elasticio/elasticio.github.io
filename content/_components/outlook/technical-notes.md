@@ -5,14 +5,18 @@ description: Technical Notes for Microsoft Outlook Component.
 icon: outlook.png
 icontext: Outlook component
 category: outlook
-updatedDate: 2020-11-27
-ComponentVersion: 1.0.2
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.3
 redirect_from:
   - /components/outlook/changelog.html
   - /components/outlook/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.0.3 (April 07, 2023)
+
+* Fixed version mismatch
 
 ### 1.0.2 (November 27, 2020)
 

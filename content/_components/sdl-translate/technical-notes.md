@@ -5,11 +5,15 @@ description: Technical Notes for the Sdl-translate component.
 icon: sdl-translate.png
 icontext: Sdl-translate component
 category: sdl-translate
-updatedDate: 2020-12-04
-ComponentVersion: 0.0.2
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.0
 ---
 
 ## Changelog
+
+### 1.0.0 (April 07, 2023)
+
+* Fixed version mismatch
 
 ### 0.0.2 (December 4, 2020)
 

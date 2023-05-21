@@ -6,8 +6,8 @@ description: Lionbridge translation component for the platform.
 icon: lionbridge.png
 icontext: Lionbridge-translation component
 category: lionbridge
-updatedDate: 2018-03-28
-ComponentVersion: 0.0.2
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.0
 ---
 
 ## Credentials

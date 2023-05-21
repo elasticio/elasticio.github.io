@@ -5,13 +5,17 @@ description: Technical Notes for the ODATA component.
 icon: odata.png
 icontext: ODATA component
 category: odata
-updatedDate: 2020-10-30
-ComponentVersion: 3.0.2
+updatedDate: 2023-04-06
+ComponentVersion: 3.0.3
 redirect_from:
   - /components/odata/changelog.html
 ---
 
 ## Changelog
+
+### 3.0.3 (April 06, 2023)
+
+* Fixed version mismatch
 
 ### 3.0.2 (October 30, 2020)
 

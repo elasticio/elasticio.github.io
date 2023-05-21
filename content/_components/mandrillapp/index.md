@@ -6,8 +6,8 @@ description: Mandrill is an email infrastructure service offered as an add-on fo
 icon: mandrillapp.png
 icontext: Mandrillapp component
 category: mandrillapp
-updatedDate: 2020-12-20
-ComponentVersion: 0.0.2
+updatedDate: 2023-04-06
+ComponentVersion: 1.0.0
 ---
 
 ## Authentication

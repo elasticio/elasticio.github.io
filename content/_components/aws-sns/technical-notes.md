@@ -5,13 +5,17 @@ description: Technical Notes for the AWS SNS component.
 icon: aws-sns.png
 icontext: AWS SNS component
 category: aws-sns
-updatedDate: 2020-11-20
-ComponentVersion: 1.2.3
+updatedDate: 2023-04-06
+ComponentVersion: 1.2.4
 redirect_from:
   - /components/aws-sns/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.4 (April 06, 2023)
+
+* Fixed version mismatch
 
 ### 1.2.3 (November 12, 2020)
 

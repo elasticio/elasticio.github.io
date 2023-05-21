@@ -5,11 +5,15 @@ description: Technical Notes for the Petstore-java component
 category: petstore-java
 icon: petstore.png
 icontext: Petstore-java componentt
-updatedDate: 2022-05-06
-ComponentVersion: 1.0.5
+updatedDate: 2023-05-11
+ComponentVersion: 1.0.6
 ---
 
 ## Changelog
+
+### 1.0.6 (May 11, 2022)
+
+* Made an automated vulnerability check run in CI/CD
 
 ### 1.0.5 (May 6, 2022)
 

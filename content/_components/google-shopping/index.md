@@ -6,8 +6,8 @@ description: Component exposes Google shopping API.
 icon: google-shopping.png
 icontext: Google-shopping component
 category: google-shopping
-createdDate: 2018-02-14
-updatedDate: 2018-06-12
+updatedDate: 2023-05-17
+ComponentVersion: 1.0.1
 ---
 
 ## Description

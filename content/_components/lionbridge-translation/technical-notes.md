@@ -5,11 +5,15 @@ description: Technical Notes for the Lionbridge Translation component.
 icon: lionbridge.png
 icontext: Lionbridge-translation component
 category: lionbridge
-updatedDate: 2018-03-28
-ComponentVersion: 0.0.2
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.0
 ---
 
 ## Changelog
+
+### 1.0.0 (April 07, 2023)
+
+* Fixed version mismatch
 
 ### 0.0.2 (December 10, 2020)
 

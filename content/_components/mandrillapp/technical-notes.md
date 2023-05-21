@@ -5,11 +5,15 @@ description: Technical Notes fot the Mandrillapp component.
 icon: mandrillapp.png
 icontext: Mandrillapp component
 category: mandrillapp
-updatedDate: 2020-12-20
-ComponentVersion: 0.0.2
+updatedDate: 2023-04-06
+ComponentVersion: 1.0.0
 ---
 
 ## Changelog
+
+### 1.0.0 (April 06, 2023)
+
+* Fixed version mismatch
 
 ### 0.0.2 (December 20, 2020)
 

@@ -6,8 +6,8 @@ description: A component to work with Magento 1.
 icon: magento.png
 icontext: Magento1 component
 category: magento1
-updatedDate: 2020-03-04
-ComponentVersion: 1.3.1
+updatedDate: 2023-04-06
+ComponentVersion: 1.3.2
 ---
 
 ## Description

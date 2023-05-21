@@ -5,8 +5,8 @@ description: Dun-and-bradstreet component actions.
 icon: dun-and-bradstreet.png
 icontext: Dun-and-bradstreet component
 category: dun-and-bradstreet
-updatedDate: 2021-11-16
-ComponentVersion: 1.0.4
+updatedDate: 2023-05-17
+ComponentVersion: 1.0.5
 ---
 
 ## Business Background Report

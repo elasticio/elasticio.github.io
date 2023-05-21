@@ -5,11 +5,15 @@ description: Technical Notes for AWS Lambda component.
 icon: aws-lambda.png
 icontext: AWS Lambda component
 category: aws-lambda
-updatedDate: 2020-11-27
-ComponentVersion: 1.0.1
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.2
 ---
 
 ## Changelog
+
+### 1.0.2 (April 07, 2023)
+
+* Fix version mismatch
 
 ### 1.0.1 (November 27, 2020)
 

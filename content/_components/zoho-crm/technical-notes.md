@@ -5,11 +5,15 @@ description: Technical Notes for the Zoho CRM component.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.7
-updatedDate: 2023-03-15
+ComponentVersion: 1.3.8
+updatedDate: 2023-04-16
 ---
 
 ## Changelog
+
+### 1.3.8 (March 16, 2023)
+
+* Fix bug in Lookup objects (plural) action. An empty array `results` will be emitted when no objects are found
 
 ### 1.3.7 (March 15, 2023)
 
