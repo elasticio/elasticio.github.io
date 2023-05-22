@@ -6,8 +6,8 @@ description: A protocol for accessing and maintaining distributed directory info
 icon: ldap.png
 icontext: Ldap component
 category: ldap
-updatedDate: 2021-03-25
-ComponentVersion: 1.0.2
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.3
 ---
 
 ## Technical Notes

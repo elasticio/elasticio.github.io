@@ -6,8 +6,8 @@ description: DocuSign is a service that provides secure way to sign documents el
 icon: docusign.png
 icontext: Docusign component
 category: docusign
-ComponentVersion: 1.0.3
-updatedDate: 2021-03-25
+ComponentVersion: 1.0.4
+updatedDate: 2023-04-06
 ---
 
 ## Environment Variables & OAuth Callback Values

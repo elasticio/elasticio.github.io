@@ -6,8 +6,8 @@ description: Keenio component for the platform.
 icon: keenio.png
 icontext: Keenio component
 category: keenio
-updatedDate: 2020-12-10
-ComponentVersion: 0.0.2
+updatedDate: 2023-04-06
+ComponentVersion: 1.0.0
 ---
 
 ## Description

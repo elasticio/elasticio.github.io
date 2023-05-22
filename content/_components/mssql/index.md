@@ -6,8 +6,8 @@ description: MsSQL designed for use in corporate applications, both on-premises 
 icon: mssql.png
 icontext: MsSQL component
 category: mssql
-ComponentVersion: 1.1.4
-updatedDate: 2021-03-12
+ComponentVersion: 1.1.5
+updatedDate: 2023-04-06
 ---
 
 ## Authentication

@@ -6,8 +6,8 @@ description: A software which is often praised for its focus on APIs and extensi
 icon: sphereio.png
 icontext: Commercetools component
 category: commercetools
-updatedDate: 2020-01-17
-ComponentVersion: 1.0.1
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.2
 ---
 
 ## Requirements

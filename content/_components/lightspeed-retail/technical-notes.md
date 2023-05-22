@@ -6,11 +6,15 @@ description: Tecnical Notes for the Lightspeed-retail API component.
 icon: lightspeed-retail.png
 icontext: Lightspeed-retail component
 category: lightspeed-retail
-updatedDate: 2020-12-04
-ComponentVersion: 1.0.1
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.2
 ---
 
 ## Changelog
+
+### 1.0.2 (April 07, 2023)
+
+* Fixed version mismatch
 
 ### 1.0.1 (December 4, 2020)
 

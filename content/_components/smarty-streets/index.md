@@ -6,8 +6,8 @@ description: Smarty-streets offers software for address validation and geocoding
 icon: smarty-streets.png
 icontext: Smarty-streets component
 category: Smarty-streets component
-createdDate: 2018-03-13
-updatedDate: 2018-06-20
+updatedDate: 2023-05-17
+ComponentVersion: 2.0.2
 ---
 
 ## Credentials

@@ -5,13 +5,17 @@ description: Changelog for Docusign component.
 icon: docusign.png
 icontext: Docusign component
 category: docusign
-ComponentVersion: 1.0.3
-updatedDate: 2021-03-25
+ComponentVersion: 1.0.4
+updatedDate: 2023-04-06
 redirect_from:
   - /components/docusign/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.4 (April 06, 2023)
+
+* Added version to component.json
 
 ### 1.0.3 (March 25, 2021)
 

@@ -5,11 +5,15 @@ description: Technical Notes for the Edifact-parser component.
 icon: edifact.png
 icontext: Edifact-parser component
 category: edifact-parser
-updatedDate: 2021-03-12
-ComponentVersion: 0.0.3
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.0
 ---
 
 ## Changelog
+
+### 1.0.0 (April 07, 2023)
+
+* Fixed version mismatch
 
 ### 0.0.3 (March 12, 2021)
 

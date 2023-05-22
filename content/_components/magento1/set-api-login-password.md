@@ -5,8 +5,8 @@ description: Setting up Magento 1 API login and password
 icon: magento.png
 icontext: Magento 1 Component
 category: magento1
-updatedDate: 2020-03-04
-ComponentVersion: 1.3.1
+updatedDate: 2023-04-06
+ComponentVersion: 1.3.2
 ---
 
 ## Description

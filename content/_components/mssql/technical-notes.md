@@ -5,13 +5,17 @@ description: Technical Notes for MsSQL component.
 icon: mssql.png
 icontext: MsSQL component
 category: mssql
-ComponentVersion: 1.1.4
-updatedDate: 2021-03-12
+ComponentVersion: 1.1.5
+updatedDate: 2023-04-06
 redirect_from:
   - /components/mssql/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.5 (April 06, 2023)
+
+* Fixed version mismatch
 
 ### 1.1.4 (March 12, 2021)
 

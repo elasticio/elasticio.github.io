@@ -6,8 +6,8 @@ description: The ChannelAdvisor component for the platform.
 icon: channeladvisor.png
 icontext: ChannelAdvisor component
 category: channeladvisor
-ComponentVersion: 2.1.1
-updatedDate: 2020-11-30
+ComponentVersion: 1.0.2
+updatedDate: 2023-04-06
 ---
 
 ## Description

@@ -6,8 +6,8 @@ description: A component to work with Shopware API.
 icon: shopware.png
 category: shopware
 icontext: Shopware component
-updatedDate: 2020-01-30
-ComponentVersion: 1.1.2
+updatedDate: 2023-04-06
+ComponentVersion: 1.2.1
 redirect_from:
   - /components/shopware/index.html
 ---

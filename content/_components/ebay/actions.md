@@ -5,8 +5,8 @@ description: Ebay component actions.
 icon: ebay.png
 icontext: Ebay component
 category: ebay
-createdDate: 2018-05-07
-updatedDate: 2019-06-26
+updatedDate: 2023-05-17
+ComponentVersion: 2.0.2
 ---
 
 ## Get Item

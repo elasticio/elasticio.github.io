@@ -6,8 +6,8 @@ description: Lightspeed-retail API component for iPaaS platform.
 icon: lightspeed-retail.png
 icontext: Lightspeed-retail component
 category: lightspeed-retail
-updatedDate: 2020-12-04
-ComponentVersion: 1.0.1
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.2
 ---
 
 ## Authentication

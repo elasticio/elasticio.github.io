@@ -6,8 +6,8 @@ description: An integration component that calls out to Amazon AWS Lambda API.
 icon: aws-lambda.png
 icontext: AWS Lambda component
 category: aws-lambda
-updatedDate: 2020-11-27
-ComponentVersion: 1.0.1
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.2
 ---
 
 ## Requirements

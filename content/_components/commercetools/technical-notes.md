@@ -5,13 +5,17 @@ description: Technical Notes for the Commercetools component.
 icon: sphereio.png
 icontext: Commercetools component
 category: commercetools
-updatedDate: 2020-01-17
-ComponentVersion: 1.0.1
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.2
 redirect_from:
   - /components/commercetools/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.2 (April 07, 2023)
+
+* Fixed version mismatch
 
 ### 1.0.1 (December 30, 2019)
 

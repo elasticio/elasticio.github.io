@@ -5,13 +5,17 @@ description: Technical Notes for the Magento 1 component.
 icon: magento.png
 icontext: Magento1 component
 category: magento1
-updatedDate: 2020-03-04
-ComponentVersion: 1.3.1
+updatedDate: 2023-04-06
+ComponentVersion: 1.3.2
 redirect_from:
   - /components/magento1/changelog.html
 ---
 
 ## Changelog
+
+### 1.3.2 (April 06, 2023)
+
+* Fixed version mismatch
 
 ### 1.3.1 (March 3, 2020)
 

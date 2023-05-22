@@ -5,13 +5,17 @@ description: Technical Notes for Ldap component
 icon: ldap.png
 icontext: Ldap component
 category: ldap
-updatedDate: 2021-03-25
-ComponentVersion: 1.0.2
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.3
 redirect_from:
   - /components/ldap/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.3 (April 07, 2023)
+
+* Fixed version mismatch
 
 ### 1.0.2 (March 25, 2021)
 

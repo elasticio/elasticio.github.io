@@ -6,8 +6,8 @@ description: An integration component for Pipedrive.
 icon: pipedrive.png
 icontext: Pipedrive component
 category: pipedrive
-updatedDate: 2020-11-30
-ComponentVersion: 0.0.2
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.0
 ---
 
 Pipedrive Component component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).

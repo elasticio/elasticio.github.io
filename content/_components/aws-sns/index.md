@@ -6,8 +6,8 @@ description: A push messaging service that provides a low-cost infrastructure fo
 icon: aws-sns.png
 icontext: AWS SNS component
 category: aws-sns
-updatedDate: 2020-11-20
-ComponentVersion: 1.2.3
+updatedDate: 2023-04-06
+ComponentVersion: 1.2.4
 ---
 
 ## How works

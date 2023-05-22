@@ -6,8 +6,8 @@ description: An integration component which helps Amazon sellers to programmatic
 icon: amazon-mws.png
 icontext: Amazon MWS component
 category: amazon-mws
-ComponentVersion: 2.1.3
-updatedDate: 2021-08-12
+ComponentVersion: 2.1.4
+updatedDate: 2023-05-17
 ---
 
 ## Description

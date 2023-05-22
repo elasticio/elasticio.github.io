@@ -5,14 +5,18 @@ description: Technical Notes for the Shopware component.
 icon: shopware.png
 icontext: Shopware component
 category: shopware
-updatedDate: 2020-01-30
-ComponentVersion: 1.1.2
+updatedDate: 2023-04-06
+ComponentVersion: 1.2.1
 redirect_from:
   - /components/shopware/completeness-matrix.html
   - /components/shopware/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.1 (April 06, 2023)
+
+* Fixed version mismatch
 
 ### 1.1.2 (January 30, 2020)
 

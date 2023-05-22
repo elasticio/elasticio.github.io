@@ -6,8 +6,8 @@ description: OData stands for Open Data Protocol and it is used to querying and 
 icon: odata.png
 category: odata
 icontext: ODATA component
-updatedDate: 2020-10-30
-ComponentVersion: 3.0.2
+updatedDate: 2023-04-06
+ComponentVersion: 3.0.3
 ---
 
 A component designed to work with generic APIs which implement the [OData v4 specification](http://www.odata.org).

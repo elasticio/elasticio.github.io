@@ -5,11 +5,15 @@ description: Technical Notes for Microsoft Dynamics NAV Odata component
 icon: microsoft-dynamic-nav-odata.png
 icontext: Microsoft-Dynamics-NAV-Odata component
 category: microsoft-dynamics-nav-odata
-updatedDate: 2020-03-25
-ComponentVersion: 1.0.1
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.2
 ---
 
 ## Changelog
+
+### 1.0.2 (April 07, 2023)
+
+* Fixed version mismatch
 
 ### 1.0.1 (November 27, 2020)
 

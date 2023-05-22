@@ -5,11 +5,15 @@ description: Technical Notes for Pipedrive component.
 icon: pipedrive.png
 icontext: Pipedrive component
 category: pipedrive
-updatedDate: 2020-11-30
-ComponentVersion: 0.0.2
+updatedDate: 2023-04-07
+ComponentVersion: 1.0.0
 ---
 
 ## Changelog
+
+### 1.0.0 (April 07, 2023)
+
+* Fixed version mismatch
 
 ### 0.0.2 (November 30, 2020)
 
