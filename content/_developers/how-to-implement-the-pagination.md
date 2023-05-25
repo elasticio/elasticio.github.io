@@ -13,7 +13,7 @@ redirect_from:
 
 Before we can proceed any further one should clearly examine the API provider's documentation to get familiarized with the accepted method of pagination usage.
 
-In order to avoid producing too many data, a component developer should use paging which is done in a combination with the [snapshot](/getting-started/snapshot-overview) feature.
+In order to avoid producing too many data, a component developer should use paging which is done in a combination with the [snapshot](/developers/snapshot-overview) feature.
 
 ## Implementing paging with the help of snapshot
 
@@ -32,4 +32,4 @@ First, we would need to setup the snapshot object which would only have 2 proper
 
 ## Related links
 
-- [Snapshot overview](/getting-started/snapshot-overview)
+- [Snapshot overview](/developers/snapshot-overview)

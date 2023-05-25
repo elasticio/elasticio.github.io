@@ -33,7 +33,7 @@ The [technical notes](technical-notes) page gives some technical details about O
 | `OAUTH_CLIENT_SECRET`| true | Microsoft Graph Application OAuth2 Client Secret | More on [dedicated OAuth2 App page](create-oauth-app). |
 | `MAIL_RETRIEVE_MAX_COUNT`| false | Define max count mails could be retrieved per one `Poll for New Mail` trigger execution. Default to 1000| 1000 |
 
-> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Credentials

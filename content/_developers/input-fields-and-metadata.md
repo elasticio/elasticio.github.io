@@ -25,7 +25,7 @@ start:
     *   Body - a result of the mapping of the emitted message from the previous step into **input metadata**.
     *   [Attachments](/guides/using-attachments) - an array of attachments provided by the previous step.
 *   Configuration:
-    *   [Credentials](/getting-started/credential) - chosen during step configuration.
+    *   [Credentials](/guides/credential) - chosen during step configuration.
     *   **Input field** values.
 *   [Snapshot](/guides/using-snapshots) - 5KB storage shared between executions.
 

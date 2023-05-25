@@ -10,7 +10,7 @@ category: platform-features
 An integration component is a small application specialized on
 retrieving/storing objects from/to a service such as Salesforce, Quickbooks,
 SAP, etc. In most cases a component connects to the service's API
-(REST, SOAP, etc) on user's behalf using the provided [credentials](credential).
+(REST, SOAP, etc) on user's behalf using the provided [credentials](/guides/credential).
 A component may also connect to a Database, an SFTP server, etc. to retrieve
 or store data.
 
@@ -60,7 +60,7 @@ An component acts as a black box: its internals are hidden to an integrator.
 The component exposes the following details only:
 
 * **How to authenticate**: what data does the component require in order
-to operate on integrator's behalf. Please read the details on [credentials](credential).
+to operate on integrator's behalf. Please read the details on [credentials](/guides/credential).
 * **Consumed input**: In order to operate properly a component needs
 some input data.
 * **Produced output**: For each incoming message a component typically produces
@@ -106,7 +106,7 @@ You can create component repositories, update and delete components, get all inf
 
 ## Related links
 
-- [Understanding credentials](credential)
+- [Understanding credentials](/guides/credential)
 - [Integration Flow Overview](integration-flow)
 - [Petstore]({{site.data.tenant.petStoreDocs}})
 - [Mapping data](/guides/mapping-data)

@@ -51,7 +51,7 @@ Please note that the proxy configuration is done by your administrator of the {{
 
 In the example above the proxy configuration is retrieved from the environmental variable `HTTP_PROXY`. If set, the value of the variable is used to create an instance of `HttpHost` class which is passed to `RequestConfig.setProxy()`. The resulting configuration is set into the request object of type `HttpGet`.
 
-For further details on how to configure the **HttpClient** to use your proxy, please check out [this example](https://hc.apache.org/httpcomponents-client-ga/httpclient/examples/org/apache/http/examples/client/ClientExecuteProxy.java).
+For further details on how to configure the **HttpClient** to use your proxy, please check out [this example](https://hc.apache.org/httpcomponents-client-4.5.x/examples.html).
 
 ## Related links
 
@@ -59,4 +59,4 @@ For further details on how to configure the **HttpClient** to use your proxy, pl
 - [Maven Central](https://search.maven.org/)
 - [Accessing the web through a HTTP proxy](https://docs.gradle.org/current/userguide/build_environment.html#sec:accessing_the_web_via_a_proxy)
 - [Apace Http Components](http://hc.apache.org/httpcomponents-client-ga/)
-- [Example on how to configurethe HttpClient](https://hc.apache.org/httpcomponents-client-ga/httpclient/examples/org/apache/http/examples/client/ClientExecuteProxy.java)
+- [Example on how to configurethe HttpClient](https://hc.apache.org/httpcomponents-client-4.5.x/examples.html)

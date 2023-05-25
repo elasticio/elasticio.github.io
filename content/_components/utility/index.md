@@ -174,7 +174,7 @@ There is no Config Fields
 ## Limitations
 
 1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with [Local Agent](/getting-started/local-agent) Installation.
+2. Attachments mechanism does not work with [Local Agent](/references/vpn-agent) Installation.
 3. `Delay All` option from `Delay` don't correctly support `Parallel Processing` option in component more then 1
 4. `Delay Each` option from `Delay` in ordinary flow type can handle delay up to 30 sec, if you need more, use real-time type
 5. Needs to use `Data to transfer` field for correct transfer data after `Delay` component.

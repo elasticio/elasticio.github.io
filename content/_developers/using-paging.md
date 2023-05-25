@@ -71,7 +71,7 @@ Obviously, the `limit` parameter is defined elsewhere and is available as a glob
 
 >Word of caution: Not all API providers would let you choose the batch sizes so this implementation would not be applicable. Normally, you can only control the page number and request only the next page incrementally.
 
-When the pagination is tied directly with page number then we suggest using a [snapshot](/getting-started/snapshot-overview) feature to save the last requested page number. More information is given in the [how to implement pagination](/guides/how-to-implement-the-pagination) help article.
+When the pagination is tied directly with page number then we suggest using a [snapshot](/developers/snapshot-overview) feature to save the last requested page number. More information is given in the [how to implement pagination](/guides/how-to-implement-the-pagination) help article.
 
 
 ## Related links
@@ -79,5 +79,5 @@ When the pagination is tied directly with page number then we suggest using a [s
 - [How to implement the pagination?](/guides/how-to-implement-the-pagination)
 - [What to do when API provider does not support paging?](/guides/what-to-do-when-api-provider-does-not-support-paging)
 - [Shopware component](/components/shopware/index)
-- [Snapshot Overview](/getting-started/snapshot-overview)
+- [Snapshot Overview](/developers/snapshot-overview)
 - [How to implement pagination](/guides/how-to-implement-the-pagination)

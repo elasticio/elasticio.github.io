@@ -6,6 +6,8 @@ description: This document provides basic information on integration flow and th
 order: 3
 category: intro
 since: 20180102
+redirect_from:
+  - /guides/integration-flow.html
 ---
 
 An integration Flow is an automated workflow used to synchronize data between multiple applications or services.
@@ -25,7 +27,7 @@ A flow can have a single trigger only. All the other components of the flow are 
 
 The Platform can be configured to show handy help links to the corresponding documentation in the process of creating an integration Flow:
 
-- When creating and verifying new [Credentials](credential)
+- When creating and verifying new [Credentials](/guides/credential)
 
 - When selecting trigger or action of the Component
 

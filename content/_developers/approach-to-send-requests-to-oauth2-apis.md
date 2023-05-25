@@ -13,7 +13,7 @@ redirect_from:
 
 Before we would delve into the process of obtaining and refreshing the actual `access_token` and `refresh_token` it is recommended to check the overall setup of authorization procedure in the integration component:
 
-  1. [Here is how the OAuth2 authorization process works](/references/how-the-oauth2-process-works) at {{site.data.tenant.name}}.
+  1. [Here is how the OAuth2 authorization process works](/developers/how-the-oauth2-process-works) at {{site.data.tenant.name}}.
   2. Prepare and check your `component.json`. Here are the [instructions and suggestions](/references/oauth2-setup-preparation-in-component-json).
   3. Prepare the `verifyCredentials.js`. Here is [what can be done](/references/preparing-the-verifyCredentials-js-for-oauth-process) for that.
   4. The stored `credentials` can be accessed [following this example](/references/how-to-access-access_token-during-component-execution).
@@ -162,7 +162,7 @@ public static final void refreshTokens(final JsonObject configuration) {
 
 ## Related links
 
-- [How the OAuth2 process works](/references/how-the-oauth2-process-works)
+- [How the OAuth2 process works](/developers/how-the-oauth2-process-works)
 - [OAuth2 setup preparation in component.json](/references/oauth2-setup-preparation-in-component-json)
 - [Preparing the verifyCredentials.js for oauth](/references/preparing-the-verifyCredentials-js-for-oauth-process)
 - [How to access access_token during component execution?](/references/how-to-access-access_token-during-component-execution)

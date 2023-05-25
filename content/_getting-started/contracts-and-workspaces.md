@@ -62,7 +62,7 @@ Here is the full list of contract permissions:
 
 A client’s enclosed environment within a contract is called a workspace. Each
 contract can have multiple workspaces, and each workspace is virtually separated
-from other workspaces within a contract. A workspace includes members, [credentials](credential) and
+from other workspaces within a contract. A workspace includes members, [credentials](/guides/credential) and
 [integration flows](integration-flow):
 
 -   A **member** is a user with certain access rights in the workspace. These
@@ -135,6 +135,6 @@ your tenant administration.
 ## Related links
 
 - [Managing user roles in a tenant](/guides/managing-user-roles-in-a-tenant)
-- [Credentials](credential)
+- [Credentials](/guides/credential)
 - [Integration flows](integration-flow)
 - [Workspace management](/guides/managing-workspaces)

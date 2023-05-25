@@ -28,7 +28,7 @@ SAP Java Connector 3.0.19 SDK is being used.
 |----|---------|-----------|------|
 | `EIO_REQUIRED_RAM_MB` | false | Recommended value of allocated memory, MB | `512` |
 
-> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Credentials

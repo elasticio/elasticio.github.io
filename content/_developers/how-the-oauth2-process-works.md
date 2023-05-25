@@ -5,6 +5,8 @@ layout: article
 section: Tokens in OAuth2 components
 order: 2
 category: tokens-in-oauth2-components
+redirect_from:
+  - /developers/how-the-oauth2-process-works.html
 ---
 
 To learn about the details of OAuth2 authorization and the mechanism behind we

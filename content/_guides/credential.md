@@ -5,6 +5,8 @@ order: 3
 layout: article
 section: Building integration flows
 category: building integration flows
+redirect_from:
+  - /getting-started/credential.html
 ---
 
 ## Description

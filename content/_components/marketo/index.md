@@ -31,7 +31,7 @@ Marketo [provides instructions to grant API access](http://developers.marketo.co
 | `SWAGGER_URL`| false | Define url to Marketo swagger document for generation correct metadata  | https://developers.marketo.com/swagger/swagger-mapi.json |
 | `BULK_IMPORT_POLLING_TIMEOUT`| false | Timeout for polling bulk import job status in ms | 60000 |
 
-> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ###  Credentials

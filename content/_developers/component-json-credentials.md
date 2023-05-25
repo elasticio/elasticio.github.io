@@ -9,7 +9,7 @@ redirect_from:
   - /references/component-json-technical-reference-credentials.html
 ---
 
-The [credentials](/getting-started/credential) object is used to expose the information that the platform needs to collect from the integrator in order to be able to connect to their instance/account.  Information that is collected in this section typically include:
+The [credentials](/guides/credential) object is used to expose the information that the platform needs to collect from the integrator in order to be able to connect to their instance/account.  Information that is collected in this section typically include:
 * URL to the integrator's instance (if there is not a shared cloud URL)
 * Username or other account identifier
 * Password or other API keys/tokens required to authenticate
@@ -113,6 +113,6 @@ The `credentials` should be an object with the following properties:
 
 ## Related links
 
-- [Credentials](/getting-started/credential)
+- [Credentials](/guides/credential)
 - [Component.json Overview](/references/component-json-technical-reference)
 - [Fields in Component.json](/references/component-json-fields)

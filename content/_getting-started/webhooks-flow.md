@@ -29,7 +29,7 @@ url="/assets/img/getting-started/webhook-flow/webhook-flow-02.png"
 title="Selecting the webhook component" %}
 
 Type `webhook` in the search bar to find it and click on *Choose Webhook* afterwards to select it.
-In the next step, you can create or choose an existing [credential](credential),
+In the next step, you can create or choose an existing [credential](/guides/credential),
 as shown in the screenshot below.
 
 {% include img.html
