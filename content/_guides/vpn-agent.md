@@ -12,6 +12,7 @@ redirect_from:
   - /references/local-agents-VirtualBox.html
   - /getting-started/local-agent.html
   - /getting-started/vpn-agent.html
+  - /references/vpn-agent.html
 ---
 
 This document provides basic information on [VPN Agent](#vpn-agent), [how to set it up](#how-to-setup)
