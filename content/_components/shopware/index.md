@@ -180,4 +180,4 @@ This action is deprecated, please use [Upsert Object By ID](/components/shopware
 
 The Shopware API has many shortcomings which limit the ability to use Shopware
 out of the box.  [Shopware allows for features to be requested in their issue
-tracker](http://en.community.shopware.com/_detail_1282.html#Ticket_overview).
+tracker](https://issues.shopware.com/).

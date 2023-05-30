@@ -241,4 +241,4 @@ Create new folder in provided `path`. Path should contains folder name:
 ## Known Limitations
 
 1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with [Local Agent Installation](/references/vpn-agent).
+2. Attachments mechanism does not work with [Local Agent Installation](/guides/vpn-agent).
