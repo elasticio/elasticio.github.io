@@ -44,13 +44,13 @@ Additional predicate to filter customers.
 **Additional predicate to filter customers** is an optional field which you can
 use to filter and include only the customers needed for the particular integration
 flow. More information about how to use this field can be learned from the
-[Commercetools help pages](https://docs.commercetools.com/http-api.html#predicates).
+[Commercetools help pages](https://docs.commercetools.com/api/predicates/query).
 
 ### Query Orders
 
 After adding the credential there are two possible configuration fields:
 
-*   **Additional predicate to filter orders** is an optional field you can used to filter the resources through flexible predicates which are described in the [Commercetools help pages](https://docs.commercetools.com/http-api.html#predicates).
+*   **Additional predicate to filter orders** is an optional field you can used to filter the resources through flexible predicates which are described in the [Commercetools help pages](https://docs.commercetools.com/api/predicates/query).
 *   **Expand customer's external ID** is an optional field that you can use to have external ID also included in the outcome. You can use this to pass the data to other components and sync with the records for existing list of customers.
 
 ## Actions

@@ -46,8 +46,3 @@ The component has actions for accessing for all endpoints of the commerce cloud
 ### Update inventory
 
 `PATCH` inventory_lists `/inventory_lists/{id}`
-
-## Related information
-
-Here is the Demandware (commerce cloud) [API documentation](https://documentation.demandware.com/DOC1/index.jsp).
-You need to be authorized to access the docs.
