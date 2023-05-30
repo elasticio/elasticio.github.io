@@ -193,7 +193,7 @@ activate and delete your Recipes. We also display the number of deployments of t
 
 1.  You can deploy running integration flows from any listed Recipe by hitting the **Activate** button.
 2.  Each deployment can include more than one integration flows and these we display when you click **Show Deployments** on the Recipe Card.
-3. You can also delete any Recipe. 
+3. You can also delete any Recipe.
 
 ![Recipes](/assets/img/getting-started/tour/recipes.png "Recipes")
 
@@ -253,7 +253,7 @@ your contract then you will see relationship of used and still remaining quota.
 ### Members
 
 The Members menu item opens the contract Member management page. Here you can
-rename the contract, view and invite members, edit the [member access roles](managing-user-roles-in-a-tenant) or
+rename the contract, view and invite members, edit the [member access roles](/guides/managing-user-roles-in-a-tenant) or
 remove the member from the contract. From this page you can access [Workspaces](#workspaces)
 page as well.
 

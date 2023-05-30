@@ -18,7 +18,7 @@ It interacts withe [Exact Online API](https://support.exactonline.com/community/
 
 ### Environment Variables
 
-> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Credentials
@@ -156,7 +156,7 @@ all existing webhooks with callback URL or topic which are same to current.
 -   action currently does not support filtering by a null value
 -   action currently does not support choosing fields to return
 -   if any entity was not found, the action did not provide data
--   you need to set the `Field Value` according to the field type, `Field Value` is `string` in the metadata and is checked only when executed. You can check type of the field in the schema [there](schemas/io). The necessary schema begins with the `get` and ends with the `.in` and has an entity type between. For example, for entity `Accounts` schema has name `getAccounts.in.json`
+-   you need to set the `Field Value` according to the field type, `Field Value` is `string` in the metadata and is checked only when executed. The necessary schema begins with the `get` and ends with the `.in` and has an entity type between. For example, for entity `Accounts` schema has name `getAccounts.in.json`
 
 
 ### Update Entity

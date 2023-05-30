@@ -22,7 +22,7 @@ Visibility level is set by the Recipe author, and can be **Workspace, Contract, 
 
 There may be a few configurables that you'll need to deal with manually after activating a Recipe:
 
-- **[Credentials](credential)**. Obviously, Credentials are Workspace-bound, so they will not work in another Workspace. The user will need his own Credentials to activate a Recipe.
+- **[Credentials](/guides/credential)**. Obviously, Credentials are Workspace-bound, so they will not work in another Workspace. The user will need his own Credentials to activate a Recipe.
 
 - **Fields**. Certain fields in Components require manual configuration just because you can not use another user's data, and need to enter your own.
 

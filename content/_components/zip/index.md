@@ -213,6 +213,6 @@ After all the above steps, this archive is completely ready for use in the new C
 
 ## Limitations
 
-1. Attachments mechanism does not work with the [Local Agent Installation](/getting-started/local-agent).
+1. Attachments mechanism does not work with the [Local Agent Installation](/references/vpn-agent).
 
 2. UnZIP action does not support archived folders. It can only unzip archived files.

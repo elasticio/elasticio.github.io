@@ -18,7 +18,7 @@ By default minor API version 26 is used, but it's also possible to specify a mor
 
 ### Environment variables
 
-> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Technical Notes

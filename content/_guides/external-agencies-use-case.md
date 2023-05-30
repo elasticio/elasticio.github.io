@@ -27,7 +27,7 @@ The third-party agency builds a set of flows that works as one. This set represe
 
 When the third-party is ready to sell their Recipe, they send a message to the SaaS vendor via their internal communication mechanism. The SaaS vendor user is invited into the agency workspace to test the Recipe.
 
-The SaaS vendor checks the Recipe. On approval, it [changes its visibility](creating-recipes#visibility) via API to Tenant or Global using a [role](access-rights#roles) with required permissions.
+The SaaS vendor checks the Recipe. On approval, it [changes its visibility](creating-recipes#visibility) via API to Tenant or Global using a [role](/guides/managing-user-roles-in-a-tenant#roles-and-permissions) with required permissions.
 
 ### Recipe Activation
 

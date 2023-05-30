@@ -67,7 +67,7 @@ SFTP component includes the following actions:
 
 ## Known limitations
 
-* The attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent)
+* The attachments mechanism does not work with [Local Agent Installation](/references/vpn-agent)
 
 ## Related links
 

@@ -4,6 +4,8 @@ description: Error retry is a feature which gives a possibility to try to proces
 layout: article
 section: Component Troubleshooting
 order: 2
+redirect_from:
+  - /guides/error-retry.html
 ---
 
 ## Description
@@ -68,7 +70,7 @@ an error again after the Retry. You may have noticed the *Edit* button that allo
 ## Retry-all flow errors
 
 During some exceptional circumstances, you might get too many errors in your flow
-execution step to [retry it one-by-one](/guides/error-retry#reprocess-and-retry). To help
+execution step to [retry it one-by-one](#reprocess-and-retry). To help
 process these errors in one go we introduce a new option **Retry All Errors** which
 will appear if more than one error happens in this step during an execution.
 

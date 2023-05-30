@@ -32,7 +32,7 @@ The [technical notes](technical-notes) page gives some technical details about C
 |REQUEST_MAX_CONTENT_LENGTH| false | Max size of http request in bytes | Default value: `10485760` |
 |TIMEOUT_BETWEEN_EVENTS| false | Number of milliseconds write action wait before creating separate attachments | Default value: `10000` |
 
-> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Credentials
@@ -61,4 +61,4 @@ select as a first component during the integration flow design.
   1. You may get `Component run out of memory and terminated.` error during run-time, that means that component needs more memory, please add  `EIO_REQUIRED_RAM_MB` environment variable with an appropriate value (e.g. value `1024` means that 1024 MB will be allocated) for the component in this case.
   2. You may get `Error: write after end` error, as a current workaround try increase value of environment variable: `TIMEOUT_BETWEEN_EVENTS`.
   3. Maximal possible size for an attachment is 10 MB.
-  4. Attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent).
+  4. Attachments mechanism does not work with [Local Agent Installation](/references/vpn-agent).

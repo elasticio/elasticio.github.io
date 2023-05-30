@@ -44,7 +44,7 @@ The following scheme shows how our platform uses Webhooks for integration flows.
 
 We have Webhook component and Webhooks Service. An external HTTP request in JSON or XML format, a list of properties, or a file reaches a Webhook component's URL exposed by Webhooks Service. The Webhooks Service differentiates the requests by flow ID, and sends them to the platform for queueing. The queue of requests is then processed and sent to the corresponding Webhook flows. As a running flow gets its request, it initiates execution of steps.   
 
-Webhook components can be secured with credentials to avoid unwanted activity. There are four types of Webhook [credentials](credential):
+Webhook components can be secured with credentials to avoid unwanted activity. There are four types of Webhook [credentials](/guides/credential):
 
 -   `No Auth` - makes the Webhook URL accessible by anyone
 -   `Basic Auth` - defines username and password to authenticate the Webhook clients using [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
@@ -54,5 +54,5 @@ Webhook components can be secured with credentials to avoid unwanted activity. T
 ## Related links
 
 - [Integration Flow Overview](integration-flow)
-- [Understanding credentials](credential)
+- [Understanding credentials](/guides/credential)
 - [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)

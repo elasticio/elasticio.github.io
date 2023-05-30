@@ -64,7 +64,7 @@ By following the link below, you will learn how to perform the functions describ
 
 4\. [Edit a Flow to some extent via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_).
 
-5\. [Retrieve a flow by ID]({{site.data.tenant.apDocsUri}}/v2#/flows/get_flows__flow_id_).
+5\. [Retrieve a flow by ID]({{site.data.tenant.apiDocsUri}}/v2#/flows/get_flows__flow_id_).
 
 ## Copy Flow, Switch Flow Type
 
@@ -76,7 +76,7 @@ Alternatively, you can navigate to the Flow itself by clicking on its name:
 
 ![Navigate to the flow](/assets/img/tenant-management-guide/managing-flows/Screenshot_3.png)
 
-Then switch to *Implement* tab **(1)** and click the command **(2)** to copy it to clipboard, and [create a copy of the Flow via the API]({{site.data.tenant.apDocsUri}}/v2#/flows/post_flows__flow_id__copy):
+Then switch to *Implement* tab **(1)** and click the command **(2)** to copy it to clipboard, and [create a copy of the Flow via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/post_flows__flow_id__copy):
 
 ![Implement tab](/assets/img/tenant-management-guide/managing-flows/Screenshot_8.png)
 
@@ -200,7 +200,7 @@ A [Snapshot](/developers/snapshot-overview) is the data saved by a Component dur
 
 ![Reset Snapshot](/assets/img/tenant-management-guide/managing-flows/Screenshot_18.png)
 
-This is the only way to delete an existing snapshot via UI. You can also use the appropriate [API Call]({{site.data.tenant.apDocsUri}}/v2#/snapshots/delete_flows__flow_id__snapshots__step_id_) for this.
+This is the only way to delete an existing snapshot via UI. You can also use the appropriate [API Call]({{site.data.tenant.apiDocsUri}}/v2#/snapshots/delete_flows__flow_id__snapshots__step_id_) for this.
 
 ## Related links
 

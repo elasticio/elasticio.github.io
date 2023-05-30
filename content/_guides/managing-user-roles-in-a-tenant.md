@@ -11,6 +11,7 @@ redirect_from:
   - /guides/managing-user-roles-in-a-tenant#configuring-custom-user-roles.html
   - /guides/managing-user-roles-in-a-tenant#essential-roles.html
   - /guides/managing-user-roles-in-a-tenant#permissions-reference-table.html
+  - /getting-started/managing-user-roles-in-a-tenant.html
 ---
 
 This document explains [what roles and permissions are](#roles-and-permissions)

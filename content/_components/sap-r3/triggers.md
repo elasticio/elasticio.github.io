@@ -28,7 +28,7 @@ See example bellow:
 
 ![credentials](img/sap-r3-credentials.png)
 
-Additionally, to this, the server supports `FTP_R3_TO_CLIENT` function can receive binary data from the remote sap system and upload this data to [attachments](guides/using-attachments).
+Additionally, to this, the server supports `FTP_R3_TO_CLIENT` function can receive binary data from the remote sap system and upload this data to [attachments](/developers/using-attachments).
 
 ### Configuration steps on the SAP ECC side
 

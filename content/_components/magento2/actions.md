@@ -273,7 +273,7 @@ The Component will not show an error if the **status** value is invalid, but Mag
 
 |Type|Json schema location|
 |-----------| -------------|
-| SalesOrder  | [/lib/schemas/addUpdateToSalesOrder.out.json](/lib/schemas/setSalesOrderExternalId.out.json) |
+| SalesOrder  | **/lib/schemas/addUpdateToSalesOrder.out.json** |
 
 
 ## Lookup Object by ID
@@ -330,10 +330,7 @@ Determines the number of search terms that the entity must match. Need to be an 
 
 ### Expected input metadata
 
-<details closed markdown="block">
-<summary>
-Click to expand - Input json Schema
-</summary>
+<details close markdown="block"><summary><strong>Click to expand - Input Json Schema: </strong></summary>
 
 ```json
   {
@@ -491,10 +488,7 @@ You can read all the configured stores on a Magento instance (like [GET /V1/stor
 Output metadata contains object with property `storeConfigs`, which contains array of store configs.
 For example:
 
-<details closed markdown="block">
-<summary>
-Click to expand - Output metadata
-</summary>
+<details close markdown="block"><summary><strong>Click to expand - Output metadata: </strong></summary>
 
 ```
 {

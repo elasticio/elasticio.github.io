@@ -21,7 +21,7 @@ Also, we will provide a few [examples](#examples).
 
 ## Integration Logic
 
-The first thing you might want to do when encountering errors is checking the *[Errors](error-retry)* tab on the Dashboard:
+The first thing you might want to do when encountering errors is checking the *[Errors](/developers/error-retry)* tab on the Dashboard:
 
 ![Dashboard](/assets/img/integrator-guide/troubleshoot/Screenshot_1.png)
 

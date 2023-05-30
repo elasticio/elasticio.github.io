@@ -44,7 +44,7 @@ The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ '
 |`ACCESS_KEY_SECRET`| false | For integration-tests is required to specify this variable |  |
 |`REGION`  | false | For integration-tests is required to specify this variable |  |
 
-> Please Note: From the platform version [20.51](/releases/2020-12-17) we deprecated the
+> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Technical Notes
@@ -507,4 +507,4 @@ Be careful: this action can process only one attachment - if it would be more or
 ## Known Limitations
 
 1. Maximal possible size for an attachment is 10 MB.
-2. Attachments mechanism does not work with [Local Agent Installation](/getting-started/local-agent)
+2. Attachments mechanism does not work with [Local Agent Installation](/references/vpn-agent)
