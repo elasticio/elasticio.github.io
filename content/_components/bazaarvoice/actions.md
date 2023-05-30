@@ -655,7 +655,7 @@ output message:
 
 The in/out metadata can be found at `/lib/schemas/retrieveCurationsContent.{in/out}.json`
 
-The source doc [can be located here](https://developer.bazaarvoice.com/curations-api/reference/curations-3/requesting-contents).
+The source doc [can be located here](https://developer.bazaarvoice.com/curations-api/apis/get/get).
 
 An input message:
 

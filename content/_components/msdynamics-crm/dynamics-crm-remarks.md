@@ -60,7 +60,3 @@ One previous issue was resolved by using incognito mode.  A screenshot of that e
 ## Integration Tests
 
 An `.env` file for integration tests can be found in BitWarden.  It requires a valid access token for authentication to be manually provided first.  One can be obtained using the provided postman collection.
-
-## License
-
-Apache-2.0 © [{{site.data.tenant.name}} GmbH]({{site.data.tenant.name}})
