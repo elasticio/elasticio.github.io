@@ -6,13 +6,15 @@ description: Jira Cloud Component is designed to connect to Atlassian Jira Cloud
 icon: jira-cloud.png
 icontext: Jira Cloud component
 category: jira-cloud
-updatedDate: 2023-04-28
-ComponentVersion: 1.2.0
+updatedDate: 2023-05-31
+ComponentVersion: 1.3.0
 ---
 
 ## Description
 
-Jira Cloud Component is designed to connect to Atlassian [Jira Cloud platform](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/)
+The Jira Cloud Component is specifically designed to integrate with Atlassian products such as the [Jira Cloud platform](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/) and [Jira Service Management Cloud](https://developer.atlassian.com/cloud/jira/service-desk/rest/intro/).
+
+In Jira Cloud, `Service requests` and `Issues` refer to the same type of objects. This means that you can utilize all the available actions and triggers for `Issue` to create, update, and delete `Service requests`. The Jira Cloud Component enables seamless interaction with these objects, allowing you to perform various operations on them within the context of your integration.
 
 ### API version
 
@@ -20,7 +22,7 @@ Current release of component tested on API `v3`.
 
 ### Credentials
 
-Before building any integration flow you must at first configure the app from inside the [Atlassian developer console](https://developer.atlassian.com/console/myapps/). Here is hot to do that:
+Before creating an integration flow, it is essential to configure the app by accessing the [Atlassian developer console](https://developer.atlassian.com/console/myapps/). This console allows you to set up and manage your app's configuration. To do this, follow the steps below:
 
 1. Create new `OAuth 2.0 integration` app or select from existing
 2. Go to the `Authorization` section and press `Configure` button - near `OAuth 2.0 (3LO)`
@@ -41,7 +43,7 @@ Now you can create new credentials for the component:
   * **Authorization Endpoint** (string, required) - Atlassian authorization endpoint `https://auth.atlassian.com/authorize`
   * **Token Endpoint** (string, required) - Atlassian refresh token endpoint `https://auth.atlassian.com/oauth/token`
 * **Name Your Credential** (string, required) - provide any name you want
-* **Scopes (Space-separated list)** (string, required) - Put here scopes to get access to your Jira - `offline_access read:jira-user read:jira-work write:jira-work`, [more info](https://developer.atlassian.com/cloud/jira/platform/scopes-for-oauth-2-3LO-and-forge-apps/)
+* **Scopes (Space-separated list)** (string, required) - Put here scopes to get access to your Jira - `offline_access read:jira-user read:jira-work write:jira-work` [more info](https://developer.atlassian.com/cloud/jira/platform/scopes-for-oauth-2-3LO-and-forge-apps/), additionally `manage:servicedesk-customer read:servicedesk-request write:servicedesk-request` if you going to use Service Management
 * **Additional parameters (Comma-separated list)** (string, required) - set it as `prompt:consent` to make component works properly
 * **Number of retries** (number, optional, 5 by default, maximum 10) - How many times component should retry to make request
 * **Delay between retries** (number ms, optional, 3000 by default, maximum 10 000) - How much time to wait until the new attempt. Note that in case a response includes a header `Retry-After` it will be used
@@ -202,11 +204,16 @@ Executes custom request.
 #### Configuration Fields
 
 * **Select cloud** - (dropdown, required): This will retrieve the sites that have scopes granted by the token.
+* **Cloud product** - (dropdown, required): Select one of supported Atlassian products:
+  * [Jira Cloud platform](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/)
+  * [Jira Service Management Cloud](https://developer.atlassian.com/cloud/jira/service-desk/rest/intro/)
 * **Don't throw error on 404 Response** - (optional, boolean): Treat 404 HTTP responses not as error, defaults to `false`.
 
 #### Input Metadata
 
-* **Url** - (string, required): Path of the resource relative to the base URL - `https://api.atlassian.com/ex/jira/{cloudid}/rest/api/3/`
+* **Url** - (string, required): Path of the resource relative to the base URL:
+  * `https://api.atlassian.com/ex/jira/{cloudid}/rest/api/3/` for `Jira Cloud platform`
+  * `https://api.atlassian.com/ex/jira/{cloudid}/rest/servicedeskapi/` for `Jira Service Management Cloud`
 * **Method** - (string, required): HTTP verb to use in the request, one of `GET`, `POST`, `PUT`, `PATCH`, `DELETE`.
 * **Request Body** - (object, optional): Body of the request to send.
 
