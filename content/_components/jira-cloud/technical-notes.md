@@ -5,11 +5,15 @@ description: Technical Notes for the Jira Cloud Component.
 icon: jira-cloud.png
 icontext: Jira Cloud component
 category: jira-cloud
-updatedDate: 2023-04-28
-ComponentVersion: 1.2.0
+updatedDate: 2023-05-31
+ComponentVersion: 1.3.0
 ---
 
 ## Changelog
+
+### 1.3.0 (May 30, 2023)
+
+* Added support `Jira Service Management Cloud`
 
 ### 1.2.0 (April 28, 2023)
 
