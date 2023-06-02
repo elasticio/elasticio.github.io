@@ -10,6 +10,12 @@ updatedDate: 2020-11-30
 ComponentVersion: 1.2.2
 ---
 
+## Deprecated component
+
+>**Plese note:** the Microsoft Dynamics CRM component has been **deprecated** and is no longer supported. We highly recommend migrating to the newer [Microsoft Dynamics CRM v2](/components/msdynamics-crm-v2) component, which offers improved functionality and ongoing maintenance.
+
+>Please update your codebase to utilize the [Microsoft Dynamics CRM v2](/components/msdynamics-crm-v2) as soon as possible to ensure compatibility with future updates and benefit from the latest features.
+
 ## Description
 
 Connects to Products in the Microsoft Dynamics/NAV Family Via the OData API

@@ -19,6 +19,8 @@ There are countless APIs and not all have separate components. In this case, you
 Triggers and actions are implemented in the component using the HTTP request. This component function is based on the API call.
 In a nutshell, an API call is a process that takes place when you send a request after setting up your API with the correct endpoints. Your information is transferred, processed, and feedback is returned back.
 
+>**Please Note:** We highly recommend using only the second version of the component The REST API v1 component has been deprecated and is no longer supported. We highly recommend migrating to the actual version of componet. REST API v2 component offers improved functionality and ongoing maintenance. If you still using REST API v1 component please update your codebase to utilize the REST API v2 component as soon as possible to ensure compatibility with future updates and benefit from the latest features.
+
 ## Quick Start
 
 The best way to understand a REST API component is to see it in action. We'll start with a simple example. First of all, you need to create a flow and find the component in the list:
