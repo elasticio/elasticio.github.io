@@ -10,6 +10,10 @@ createdDate: 2018-02-06
 updatedDate: 2018-02-20
 ---
 
+## Deprecated component
+
+>**Plese note:** the Microsoft Dynamics CRM component has been **deprecated** and is no longer supported. 
+
 ## Description
 
 The component implements following use cases:

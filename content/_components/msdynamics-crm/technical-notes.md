@@ -12,6 +12,12 @@ redirect_from:
   - /components/msdynamics/changelog.html
 ---
 
+## Deprecated component
+
+>**Plese note:** the Microsoft Dynamics CRM component has been **deprecated** and is no longer supported. We highly recommend migrating to the newer [Microsoft Dynamics CRM v2](/components/msdynamics-crm-v2) component, which offers improved functionality and ongoing maintenance.
+
+>Please update your codebase to utilize the [Microsoft Dynamics CRM v2](/components/msdynamics-crm-v2) as soon as possible to ensure compatibility with future updates and benefit from the latest features.
+
 ## Changelog
 
 ### 1.2.2 (November 30, 2020)
