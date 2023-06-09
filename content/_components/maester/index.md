@@ -27,6 +27,12 @@ select as a first component during the integration flow design.
 
 ## Actions
 
+Within the Actions section of the documentation, you can leverage the Maester component, along with its Upsert Object action, to seamlessly integrate your data. Simply provide the body of your Webhook in the Data field. The Upsert Criteria will dynamically generate the Maester Object ID, which you can retrieve as an output.
+
+In another flow, incorporating the Maester component and its Lookup Object (at Most One) action, you can effortlessly retrieve the desired data. Choose the Maester Object ID as the Lookup Criteria and supply the ID obtained from the previous flow.
+
+For further streamlining the connection of Maester Object IDs across your workflows, consider utilizing the ID Linking component.
+
 ### Delete Object
 
 ![Delete Object](img/delete-object.png)
