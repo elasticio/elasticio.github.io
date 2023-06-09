@@ -86,6 +86,8 @@ select as a first component during the integration flow design.
 
 This action deletes a linked object from the list of linked objects in the bucket by the source system ID key provided once a match object is found.
 
+{% include img.html max-width="100%" url="img/delete-object.png" title="Delete object" %}
+
 #### Config Fields
 
 * **System Type to delete by (a key to lookup by)** - (required) - A system to lookup the ID in. Either System A or System B.
@@ -104,6 +106,8 @@ This action deletes a linked object from the list of linked objects in the bucke
 ### Lookup Object
 
 This action allows you to search linked objects in the bucket by the source system ID.
+
+{% include img.html max-width="100%" url="img/lookup-object.png" title="Lookup object" %}
 
 #### Config Fields
 
@@ -126,6 +130,10 @@ This action allows you to search linked objects in the bucket by the source syst
 
 ### Upsert Object
 
+This action allows you to create/update a linked object in the bucket by system ID keys.
+
+{% include img.html max-width="100%" url="img/upsert-object.png" title="Upsert object" %}
+
 >**Please Note:** Currently buckets in Maester are being created with infinite lifetime.
 
 #### Config Fields
@@ -139,7 +147,9 @@ This action allows you to search linked objects in the bucket by the source syst
 
 ### Write Entire Bucket Contents
 
-Creates/Updates a bucket
+This action allows you to write linked objects (array of objects) in the bucket, Bucket ID needs to be specified in the credentials.
+
+{% include img.html max-width="100%" url="img/write-entire-bucket-contents.png" title="Write Entire Bucket Contents" %}
 
 >**Please Note:** Currently buckets in Maester are being created with infinite lifetime.
 
@@ -172,6 +182,10 @@ There is no Config Fields in this action.
 * bucketContents - (object, required): Echo back the value that was saved
 
 ### Read Entire Bucket Contents
+
+This action allows you to read linked objects (array of objects) from the bucket, Bucket ID needs to be specified in the credentials.
+
+{% include img.html max-width="100%" url="img/read-entire-bucket-contents.png" title="Read Entire Bucket Contents" %}
 
 #### Config Fields
 
