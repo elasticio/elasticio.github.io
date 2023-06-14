@@ -44,7 +44,7 @@ To create the credentials you should do the following:
 > **Please Note:** The component calls a list products endpoint under the hood to verify credentials. To succeed you need to grant at least Read permissions to the app in Apps -> App development -> **your Private app name** -> ADMIN API PERMISSIONS -> Products set to 'Read access' (or 'Read and write'):
 ![image](https://user-images.githubusercontent.com/7985390/173592587-1972d5f2-03ca-4b03-b0de-b31573323186.png)
 
-Additional link to the documentation on how to generate the creds https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin
+You can find additional information on how to generate the creds in Shopify [documentation](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin)
 
 ### Environment variables
 
