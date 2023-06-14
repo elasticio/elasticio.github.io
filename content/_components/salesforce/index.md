@@ -6,8 +6,8 @@ description: A component enables you to manage your organization’s sales, mark
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-01-02
-ComponentVersion: 2.5.1
+updatedDate: 2023-06-09
+ComponentVersion: 2.6.0
 ---
 
 {{page.description}}
@@ -117,12 +117,27 @@ Use this list to navigate to the action you seek.
 
 ## Permissions
 
-Some user profiles in Salesforce have disabled permissions by default. To ensure that an object will be visible in the metadata of component's actions and triggers, it must have the required standard object permissions enabled.
+By default, certain user profiles in Salesforce have disabled permissions. In order to ensure the visibility of an object in the metadata of components' actions and triggers, it is necessary to enable the required standard object permissions.
 
-- To enable it go to the Salesforce Setup page → ADMINISTRATION → Profiles, choose your profile, and press the Edit button.
+To enable these permissions, please follow these steps:
 
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ef2dd612-a0d9-49b8-9f14-777ce8c9880e/Untitled.png)
+1. Go to the Salesforce Setup page.
+2. Navigate to the "ADMINISTRATION" section.
+3. Under "Profiles", select the profile that needs modification.
+4. Click on the "Edit" button to proceed.
 
-- Make sure all required standard object permissions are enabled. For example, to use [Get New and Updated Objects Polling trigger](https://docs.elastic.io/components/salesforce/triggers#get-new-and-updated-objects-polling-trigger), you need to have: Read, Create, Edit permissions.
+<details close markdown="block"><summary><strong>Salesforce setup page</strong></summary>
 
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d65fad9f-f6ed-4a1d-a282-67e542557334/Untitled.png)
+{% include img.html max-width="100%" url="img/permission-1.png" title="Salesforce setup page" %}
+
+</details>
+
+Once you are on the profile editing page, ensure that all the required standard object permissions are enabled. For instance, if you intend to utilize the [Get New and Updated Objects Polling trigger](triggers#get-new-and-updated-objects-polling-trigger), the following permissions are necessary: Read, Create, and Edit.
+
+<details close markdown="block"><summary><strong>Standart objects permissions</strong></summary>
+
+{% include img.html max-width="100%" url="img/permission-2.png" title="Standart objects permissions" %}
+
+</details>
+
+Carefully review the permissions and make any necessary adjustments to enable the required access.
