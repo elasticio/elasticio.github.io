@@ -5,14 +5,18 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-01-02
-ComponentVersion: 2.5.1
+updatedDate: 2023-06-09
+ComponentVersion: 2.6.0
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.6.0 (June 09, 2023)
+
+Added `Don't emit on empty results` checkbox in `Query` trigger
 
 ### 2.5.1 (January 31, 2023)
 

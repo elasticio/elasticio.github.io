@@ -6,8 +6,8 @@ description: A component enables you to manage your organization’s sales, mark
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-01-02
-ComponentVersion: 2.5.1
+updatedDate: 2023-06-09
+ComponentVersion: 2.6.0
 ---
 
 {{page.description}}
@@ -114,3 +114,30 @@ Use this list to navigate to the action you seek.
 8.  [Bulk Query action](actions#bulk-query-action) Fetches records to a CSV file.
 
 > You can find information on deprecated actions [here](deprecated-functions#deprecated-triggers).
+
+## Permissions
+
+By default, certain user profiles in Salesforce have disabled permissions. In order to ensure the visibility of an object in the metadata of components' actions and triggers, it is necessary to enable the required standard object permissions.
+
+To enable these permissions, please follow these steps:
+
+1. Go to the Salesforce Setup page.
+2. Navigate to the "ADMINISTRATION" section.
+3. Under "Profiles", select the profile that needs modification.
+4. Click on the "Edit" button to proceed.
+
+<details close markdown="block"><summary><strong>Salesforce setup page</strong></summary>
+
+{% include img.html max-width="100%" url="img/permission-1.png" title="Salesforce setup page" %}
+
+</details>
+
+Once you are on the profile editing page, ensure that all the required standard object permissions are enabled. For instance, if you intend to utilize the [Get New and Updated Objects Polling trigger](triggers#get-new-and-updated-objects-polling-trigger), the following permissions are necessary: Read, Create, and Edit.
+
+<details close markdown="block"><summary><strong>Standart objects permissions</strong></summary>
+
+{% include img.html max-width="100%" url="img/permission-2.png" title="Standart objects permissions" %}
+
+</details>
+
+Carefully review the permissions and make any necessary adjustments to enable the required access.
