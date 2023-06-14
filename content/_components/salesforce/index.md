@@ -114,3 +114,15 @@ Use this list to navigate to the action you seek.
 8.  [Bulk Query action](actions#bulk-query-action) Fetches records to a CSV file.
 
 > You can find information on deprecated actions [here](deprecated-functions#deprecated-triggers).
+
+## Permissions
+
+Some user profiles in Salesforce have disabled permissions by default. To ensure that an object will be visible in the metadata of component's actions and triggers, it must have the required standard object permissions enabled.
+
+- To enable it go to the Salesforce Setup page → ADMINISTRATION → Profiles, choose your profile, and press the Edit button.
+
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ef2dd612-a0d9-49b8-9f14-777ce8c9880e/Untitled.png)
+
+- Make sure all required standard object permissions are enabled. For example, to use [Get New and Updated Objects Polling trigger](https://docs.elastic.io/components/salesforce/triggers#get-new-and-updated-objects-polling-trigger), you need to have: Read, Create, Edit permissions.
+
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d65fad9f-f6ed-4a1d-a282-67e542557334/Untitled.png)
