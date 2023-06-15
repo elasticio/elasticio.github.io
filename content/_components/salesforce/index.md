@@ -117,7 +117,7 @@ Use this list to navigate to the action you seek.
 
 ## Permissions
 
-By default, certain user profiles in Salesforce have disabled permissions. In order to ensure the visibility of an object in the metadata of components' actions and triggers, it is necessary to enable the required standard object permissions.
+By default, certain user profiles in Salesforce have disabled permissions. In order to ensure the visibility of an object in the metadata of component's actions and triggers, it is necessary to enable the required standard object permissions.
 
 To enable these permissions, please follow these steps:
 
