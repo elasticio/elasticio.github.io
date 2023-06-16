@@ -6,7 +6,7 @@ icon: onedrive.png
 icontext: Microsoft OneDrive component
 category: onedrive
 ComponentVersion: 2.0.0
-updatedDate: 2022-09-23
+updatedDate: 2023-05-19
 redirect_from:
   - /components/onedrive/completeness-matrix.html
   - /components/onedrive/changelog.html

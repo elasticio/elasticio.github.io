@@ -6,8 +6,8 @@ description: This is the component for working with Microsoft OneDrive storage s
 icon: onedrive.png
 icontext: Microsoft OneDrive component
 category: onedrive
-ComponentVersion: 1.0.6
-updatedDate: 2022-09-23
+ComponentVersion: 2.0.0
+updatedDate: 2023-05-19
 ---
 
 ## Description
@@ -51,7 +51,9 @@ Retrieve all the updated or created objects within a given time range.
 
 * **Drive Identity** - (dropdown, required): OneDrive instance to work with
 * **Folders path** - (multiselect dropdown, required): Select folders to follow
-* **Include subfolders** - (checkbox, optional): If checked, trigger will follow to each subfolder of selected folder. <br>❗Note: this will increase the number of API calls
+* **Include subfolders** - (checkbox, optional): If checked, trigger will follow to each subfolder of selected folder.
+    >**Please Note:** this will increase the number of API calls
+
 * **Enable File Attachments** - (checkbox, optional): If checked, file will be uploaded to local storage and link provided in response
 * **Time stamp field to poll on** - (dropdown, optional, default `Last Modified`): Select which date will be used to track files - `Last Modified` or `Created`
 * **Emit Behavior** - (dropdown, optional, default `Emit individually`): Defines the way result objects will be emitted, one of `Emit page` or `Emit individually`.
