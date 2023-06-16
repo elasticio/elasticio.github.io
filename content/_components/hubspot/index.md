@@ -6,8 +6,8 @@ description: A component that connects to HubSpot API
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2022-11-04
-ComponentVersion: 1.5.6
+updatedDate: 2023-05-22
+ComponentVersion: 1.6.0
 redirect_from:
   - /components/hubspot-component
   - /components/hubspot-component/actions
@@ -69,6 +69,8 @@ To complete the process:
 After reaching **9800** records flow will find largest `Field to poll` in last Polling Page and use it as `Start Time` for next iterations, results with this date will be excluded from that iteration and include in the next one
 
 ### Webhook
+
+> This trigger is deprecated. Please use [HubSpot Webhook component](/components/hubspot-webhook/) instead.
 
 Receive data from HubSpot based on configured [webhooks](https://developers.hubspot.com/docs/api/webhooks)
 
