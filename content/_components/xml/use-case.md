@@ -5,8 +5,8 @@ description: An example for a better understanding of how the XML component work
 icon: xml.png
 icontext: XML component
 category: xml
-ComponentVersion: 1.3.7
-updatedDate: 2022-09-12
+ComponentVersion: 1.4.0
+updatedDate: 2023-06-09
 ---
 
 ## Client use case

@@ -6,8 +6,8 @@ description: XML is used to describe the transportation, structure, and storage 
 icon: xml.png
 icontext: XML component
 category: xml
-ComponentVersion: 1.3.7
-updatedDate: 2022-09-12
+ComponentVersion: 1.4.0
+updatedDate: 2023-06-09
 ---
 
 ## Requirements and Conversion Behavior
@@ -49,8 +49,11 @@ is equivalent to
 
 ### Environment variables
 
-* `MAX_FILE_SIZE`: *optional* - Controls the maximum size of an attachment to be written in MB.
-Defaults to 10 MB where 1 MB = 1024 * 1024 bytes.
+* `MAX_FILE_SIZE`: *optional* - Controls the maximum size of an attachment to be read or written in MB.
+  Defaults to 10 MB where 1 MB = 1024 * 1024 bytes.
+
+* `EIO_REQUIRED_RAM_MB`: *optional* - You can increase memory usage limit for component if you going to work with big files
+  Defaults to 256 MB where 1 MB = 1024 * 1024 bytes.
 
 ## Trigger
 
@@ -117,9 +120,42 @@ files by name or leave this field empty for processing all incoming `*.xml` file
 
 {% include img.html max-width="100%" url="img/xml-attachment.png" title="XML Attachment" %}
 
-* The maximum size of the incoming file for processing is 5 MiB. If the size of the incoming file will be more than 5 MiB, the action will throw the error `Attachment *.xml is to large to be processed by XML component. File limit is: 5242880 byte, file given was: * byte.`.
+#### Configuration Fields
 
-* All actions involving attachments are not supported by local agents due to current platform limitations.
+* **Pattern** - (string, optional): RegEx for filtering files by name provided via old attachment mechanism (outside message body)
+* **Upload single file** - (checkbox, optional): Use this option if you want to upload a single file
+
+#### Input Metadata
+
+If `Upload single file` checked, there will be 2 fields:
+* **URL** - (string, required): link to file on Internet or platform
+
+If `Upload single file` unchecked:
+* **Attachments** - (array, required): Collection of files to upload, each record contains object with two keys:
+  * **URL** - (string, required): link to file on Internet or platform
+
+If you going to use this option with static data, you need to switch to Developer mode
+
+<details close markdown="block"><summary><strong>Sample</strong></summary>
+
+```json
+  {
+    "attachments": [
+      {
+        "url": "https://example.com/files/file1.xml"
+      },
+      {
+        "url": "https://example.com/files/file2.xml"
+      }
+    ]
+  }
+  ```
+
+</details>
+
+#### Output Metadata
+
+Resulting JSON object
 
 ### JSON to XML
 
@@ -181,3 +217,4 @@ File limit is: 5242880 byte, file given was: * byte
 
 - All actions involving attachments are not supported on local agents due to current platform limitations.
 - When creating XML files with invalid XML tags, the name of the potentially invalid tag will not be reported.
+- When you try to retrieve sample in `XML Attachment to JSON` action and it's size is more then 500Kb, there will be generated new smaller sample with same structure as original
