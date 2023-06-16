@@ -6,8 +6,8 @@ description: Google Cloud Storage Component is designed to connect to Google Clo
 icon: google-cloud-storage.png
 icontext: Google Cloud Storage component
 category: google-cloud-storage
-updatedDate: 2022-12-30
-ComponentVersion: 1.1.0
+updatedDate: 2023-05-24
+ComponentVersion: 1.2.0
 ---
 
 ## Description
@@ -54,6 +54,35 @@ Now you can create new credentials for component:
 * **Delay between retries** (number ms, optional, 10000 by default) - How much time wait until new try
 
 ## Triggers
+
+### Get New and Updated Objects Polling
+
+Retrieve all the updated or created objects within a given time range.
+
+#### Configuration Fields
+* **Bucket** - (dropdown, required): select one of the available buckets
+* **Enable File Attachments** - (checkbox, optional): If checked, file will be uploaded to local storage and link provided in response
+* **Time stamp field to poll on** - (dropdown, optional, default `Last Modified`): Select which date will be used to track files - `Last Modified` or `Created`
+* **Emit Behavior** - (dropdown, optional, default `Emit individually`): Defines the way result objects will be emitted, one of `Emit page` or `Emit individually`.
+* **Page Size** - (number, optional, defaults to 999, max 999): Indicates the size of pages to be fetched per request
+* **Start Time** - (string, optional): The timestamp to start polling from (inclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ. Default value is the beginning of time (January 1, 1970 at 00:00).
+* **End Time** - (string, optional): The timestamp to stop polling (exclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ. Default value is flow execution time.
+
+#### Input Metadata
+
+There is no input metadata in this trigger.
+
+#### Output Metadata
+
+Depends on `Enable File Attachments` and `Emit behavior` fields.
+ * If `Emit behavior` field is equal to `Emit page` - object with property `results` that contains array of files
+ * If `Emit behavior` field is equal to `Emit individually`, file information will fulfill whole message
+ * If `Enable File Attachments` checked, for each file there will be additional field - `attachmentUrl`
+
+#### Limitations
+
+* Google Cloud Storage API doesn't support filtering by dates - as result we collect information about all files from selected Bucket and filter them locally (inside component) for each trigger execution
+* From point above, option `Emit page` not always emit records according to `Page Size`
 
 ### Webhook
 
