@@ -6,8 +6,8 @@ description: A open standard application layer protocol for passing business mes
 icon: mailchimp.png
 icontext: Mailchimp component
 category: mailchimp
-updatedDate: 2022-04-27
-ComponentVersion: 1.0.3
+updatedDate: 2023-06-12
+ComponentVersion: 1.0.4
 ---
 
 ## Credentials
