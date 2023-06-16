@@ -6,7 +6,7 @@ icon: hubspot.png
 icontext: Hubspot Webhook component
 category: hubspot-webhook
 updatedDate: 2023-05-22
-ComponentVersion: 1.6.0
+ComponentVersion: 1.0.0
 ---
 
 ## Changelog
