@@ -6,8 +6,8 @@ description: Maester component for the platform.
 icon: maester.png
 icontext: Maester Component
 category: maester
-updatedDate: 2022-08-26
-ComponentVersion: 1.0.5
+updatedDate: 2022-06-07
+ComponentVersion: 2.0.1
 ---
 
 ## General information
@@ -46,7 +46,7 @@ For further streamlining the connection of Maester Object IDs across your workfl
 Dynamically generated
 
 * `Maester Object ID` (string, uuid) - Used if `Upsert Criteria`: `Maester Object ID`. An id to find object in Maester. *Required*
-* `Search Parameters` - Used if `Upsert Criteria`: `Custom Headers`. Array of headers `{ key: header-key-1, value: heder-value-1}` which will be used to find an object in Maester (up to 5 headers). *Required*
+* `Search Headers` - Used if `Upsert Criteria`: `Custom Headers`. Array of headers `{ key: header-key-1, value: heder-value-1}` which will be used to find an object in Maester (up to 5 headers). *Required*
 * `Data` (JSON object) - Data which will be stored in object by itself. Only plain objects are supported. *Required*
 * `Headers` - Array of headers `{ key: header-key-1, value: heder-value-1}` which will be added to new objects. *Optional*
 * `TTL` (number) - Time in seconds while which Maester object will be present in db. After this time object will be deleted and won't be available. Note: process of deleting objects from db starts every hour. By default will be used default expiration time from Maester installation. *Optional*
@@ -55,7 +55,7 @@ Dynamically generated
 
 ![Lookup Object](img/lookup-object.png)
 
->**Please Note:** if more than one object found by `Search Parameters` - error will be thrown
+>**Please Note:** if more than one object found by `Search Headers` - error will be thrown
 
 #### Config Fields
 
@@ -68,7 +68,7 @@ Dynamically generated
 Dynamically generated
 
 * `Maester Object ID` (string, uuid) - Used if `Upsert Criteria`: `Maester Object ID`. An id to find object in Maester. *Required*
-* `Search Parameters` - Used if `Upsert Criteria`: `Custom Headers`. Array of headers `{ key: header-key-1, value: heder-value-1}` which will be used to find an object in Maester (up to 5 headers). *Required*
+* `Search Headers` - Used if `Upsert Criteria`: `Custom Headers`. Array of headers `{ key: header-key-1, value: heder-value-1}` which will be used to find an object in Maester (up to 5 headers). *Required*
 
 ### Lookup Objects
 
@@ -86,9 +86,16 @@ Dynamically generated
 
 ### Upsert Object
 
+Depending on the 'Upsert Criteria' (see below) do the following:
+1. Upsert Criteria: Maester Object ID. Look for an object with the given ID. If an object not found, creates a new object. If found - updates it.
+
+>**Please Note**: If there is no object with given ID it creates a new object with the NEW ID. So the new object's id will differ from the provided one.
+
+2. Upsert Criteria: Maester Object ID. Look for an object with the given search headers (up to 5). Further logic is the same as in the previous item.
+
 ![Upsert Object](img/upsert-object.png)
 
->**Please Note:** if more than one object found by `Search Parameters` - error will be thrown
+>**Please Note**: if more than one object found by `Search Headers` - error will be thrown
 
 #### Config Fields
 
@@ -99,7 +106,7 @@ Dynamically generated
 Dynamically generated
 
 * `Maester Object ID` (string, uuid) - Used if `Upsert Criteria`: `Maester Object ID`. An id to find object in Maester. *Optional*
-* `Search Parameters` - Used if `Upsert Criteria`: `Custom Headers`. Array of headers `{ key: header-key-1, value: heder-value-1}` which will be used to find an object in Maester (up to 5 headers). *Required*
+* `Search Headers` - Used if `Upsert Criteria`: `Custom Headers`. Array of headers `{ key: header-key-1, value: heder-value-1}` which will be used to find an object in Maester (up to 5 headers). *Required*
 * `Data` (JSON object) - Data which will be stored in object by itself. *Required*
 * `Headers` - Array of headers `{ key: header-key-1, value: heder-value-1}` which will be added to new objects. Headers could be added to an existing object and modified as well, but they can not be deleted. *Optional*
 * `TTL` (number) - Time in seconds while which Maester object will be present in db. After this time object will be deleted and won't be available. Note: process of deleting objects from db starts every hour. By default will be used default expiration time from Maester installation. TTL cannot be modified or deleted once object created. *Optional*
@@ -107,4 +114,4 @@ Dynamically generated
 ### Known issues
 
 1. Object TTL is not included in the output metadata.
-2. TTL can not be updated
+2. TTL value will be ignored for updating existing object
