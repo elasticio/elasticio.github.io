@@ -5,7 +5,7 @@ description: Technical Notes for the Microsoft OneDrive component
 icon: onedrive.png
 icontext: Microsoft OneDrive component
 category: onedrive
-ComponentVersion: 1.0.6
+ComponentVersion: 2.0.0
 updatedDate: 2022-09-23
 redirect_from:
   - /components/onedrive/completeness-matrix.html
@@ -13,6 +13,16 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 2.0.0 (May 19, 2023)
+
+* New version of component, no backward compatibility! Written from scratch using TS and last versions of libraries
+* New authentication mechanism
+* Added retries on server errors
+* Added retries on 429 (too many requests) errors
+* Attachment URL provided directly in messages
+* Added support for uploading large files to OneDrive
+* Updated ReadMe
 
 ### 1.0.6 (September 23, 2022)
 
@@ -57,9 +67,3 @@ redirect_from:
 * Create Create Folder Action
 * Create Get File Action
 * Create Delete File Action
-
-## Completeness Matrix
-
-Here is the Microsoft OneDrive component Completeness Matrix:
-
-![Completeness Matrix](https://user-images.githubusercontent.com/16806832/77531578-d58d1280-6e9b-11ea-8802-4ed8e492f081.png)
