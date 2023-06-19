@@ -127,12 +127,12 @@ files by name or leave this field empty for processing all incoming `*.xml` file
 
 #### Input Metadata
 
-If `Upload single file` checked, there will be 2 fields:
-* **URL** - (string, required): link to file on Internet or platform
+If `Upload single file` is checked, there will be 2 fields:
+* **URL** - (string, required): link to file on the Internet or platform
 
-If `Upload single file` unchecked:
+If `Upload single file` is unchecked:
 * **Attachments** - (array, required): Collection of files to upload, each record contains object with two keys:
-  * **URL** - (string, required): link to file on Internet or platform
+  * **URL** - (string, required): link to file on the Internet or platform
 
 If you going to use this option with static data, you need to switch to Developer mode
 
@@ -217,4 +217,4 @@ File limit is: 5242880 byte, file given was: * byte
 
 - All actions involving attachments are not supported on local agents due to current platform limitations.
 - When creating XML files with invalid XML tags, the name of the potentially invalid tag will not be reported.
-- When you try to retrieve sample in `XML Attachment to JSON` action and it's size is more then 500Kb, there will be generated new smaller sample with same structure as original
+- When you try to retrieve a sample in `XML Attachment to JSON` action and it's size is more than 500Kb, there will be generated new smaller sample with the same structure as original

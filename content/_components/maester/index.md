@@ -49,7 +49,7 @@ Dynamically generated
 * `Search Headers` - Used if `Upsert Criteria`: `Custom Headers`. Array of headers `{ key: header-key-1, value: heder-value-1}` which will be used to find an object in Maester (up to 5 headers). *Required*
 * `Data` (JSON object) - Data which will be stored in object by itself. Only plain objects are supported. *Required*
 * `Headers` - Array of headers `{ key: header-key-1, value: heder-value-1}` which will be added to new objects. *Optional*
-* `TTL` (number) - Time in seconds while which Maester object will be present in db. After this time object will be deleted and won't be available. Note: process of deleting objects from db starts every hour. By default will be used default expiration time from Maester installation. *Optional*
+* `TTL` (number) - Time in seconds while which Maester object will be present in DB. After this time object will be deleted and won't be available. Note: the process of deleting objects from DB starts every hour. By default will be used default expiration time from Maester installation. *Optional*
 
 ### Lookup Object (at Most One)
 
@@ -109,7 +109,7 @@ Dynamically generated
 * `Search Headers` - Used if `Upsert Criteria`: `Custom Headers`. Array of headers `{ key: header-key-1, value: heder-value-1}` which will be used to find an object in Maester (up to 5 headers). *Required*
 * `Data` (JSON object) - Data which will be stored in object by itself. *Required*
 * `Headers` - Array of headers `{ key: header-key-1, value: heder-value-1}` which will be added to new objects. Headers could be added to an existing object and modified as well, but they can not be deleted. *Optional*
-* `TTL` (number) - Time in seconds while which Maester object will be present in db. After this time object will be deleted and won't be available. Note: process of deleting objects from db starts every hour. By default will be used default expiration time from Maester installation. TTL cannot be modified or deleted once object created. *Optional*
+* `TTL` (number) - Time in seconds while which Maester object will be present in DB. After this time object will be deleted and won't be available. Note: the process of deleting objects from DB starts every hour. By default will be used default expiration time from Maester installation. TTL cannot be modified or deleted once an object is created. *Optional*
 
 ### Known issues
 

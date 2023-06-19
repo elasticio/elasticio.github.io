@@ -27,7 +27,7 @@ Current release of component tested on Graph API `v1` (`https://graph.microsoft.
 
 ## Credentials
 
-Microsoft OneDrive uses the OAuth 2.0.
+Microsoft OneDrive uses OAuth 2.0.
 How to register an application look [here](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/app-registration?view=odsp-graph-online).
 Redirect URI for platform is `https://{your-tenant-address}/callback/oauth2`
 
@@ -54,11 +54,11 @@ Retrieve all the updated or created objects within a given time range.
 * **Include subfolders** - (checkbox, optional): If checked, trigger will follow to each subfolder of selected folder.
     >**Please Note:** this will increase the number of API calls
 
-* **Enable File Attachments** - (checkbox, optional): If checked, file will be uploaded to local storage and link provided in response
-* **Time stamp field to poll on** - (dropdown, optional, default `Last Modified`): Select which date will be used to track files - `Last Modified` or `Created`
+* **Enable File Attachments** - (checkbox, optional): If checked, the file will be uploaded to local storage and the link provided in response.
+* **Timestamp field to poll on** - (dropdown, optional, default `Last Modified`): Select which date will be used to track files - `Last Modified` or `Created`
 * **Emit Behavior** - (dropdown, optional, default `Emit individually`): Defines the way result objects will be emitted, one of `Emit page` or `Emit individually`.
 * **Page Size** - (number, optional, defaults to 999, max 999): Indicates the size of pages to be fetched per request
-* **Start Time** - (string, optional): The timestamp to start polling from (inclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ. Default value is the beginning of time (January 1, 1970 at 00:00).
+* **Start Time** - (string, optional): The timestamp to start polling from (inclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ. The default value is the beginning of time (January 1, 1970, at 00:00).
 * **End Time** - (string, optional): The timestamp to stop polling (exclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ. Default value is flow execution time.
 
 #### Input Metadata
@@ -70,28 +70,27 @@ There is no Input or Output metadata in this trigger.
 Depends on `Enable File Attachments` and `Emit behavior` fields.
  * If `Emit behavior` field is equal to `Emit page` - object with property `results` that contains array of files
  * If `Emit behavior` field is equal to `Emit individually`, file information will fulfill whole message
- * If `Enable File Attachments` checked, for each file there will be additional field - `attachmentUrl`
-
+ * If `Enable File Attachments` is checked, for each file there will be an additional field - `attachmentUrl`
 
 #### Limitations
 
-* OneDrive API doesn't support filtering - as result we collect information about all files from selected folders and filter them locally (inside component) for each trigger execution
-* From point above, option `Emit page` not always emit records according to `Page Size`
+* OneDrive API doesn't support filtering - as result, we collect information about all files from selected folders and filter them locally (inside the component) for each trigger execution
+* From the point above, option `Emit page` does not always emit records according to `Page Size`
 * `Include subfolders` increase amount of API calls - additional call for each subfolder and inner folders
 
 ## Actions
 
 ### Create Folder
 
-Create new folder in provided `path`. If `path` not exist component will fail.
+Create a new folder in provided `path`. If `path` does not exist component will fail.
 
 #### Configuration Fields
 
 * **Drive Identity** - (dropdown, required): OneDrive instance to work with
 * **Conflict Behavior** - (dropdown, optional, `Fail` by default) - Select one of options to handle case when folder already exists:
-  * **Fail** - Fails if folder with same name already exists under provided `path`
-  * **Generate new name** - If folder with same name already exists under provided `path` then will be created new folder with different name. Examples: `folder_name` (already exist) -> `folder_name 1` (will be created), `folder_name 1` (already exist) -> `folder_name 1 1` (will be created)
-  * **Upsert** - If folder already exist, you will get information about this folder
+  * **Fail** - Fails if a folder with the same name already exists under provided `path`
+  * **Generate new name** -  If the folder with the same name already exists under provided `path` then will be created a new folder with a different name. Examples: `folder_name` (already exist) -> `folder_name 1` (will be created), `folder_name 1` (already exist) -> `folder_name 1 1` (will be created)
+  * **Upsert** - If the folder already exists, you will get information about this folder
 
 #### Input Metadata
 

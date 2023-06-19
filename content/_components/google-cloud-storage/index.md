@@ -61,11 +61,11 @@ Retrieve all the updated or created objects within a given time range.
 
 #### Configuration Fields
 * **Bucket** - (dropdown, required): select one of the available buckets
-* **Enable File Attachments** - (checkbox, optional): If checked, file will be uploaded to local storage and link provided in response
-* **Time stamp field to poll on** - (dropdown, optional, default `Last Modified`): Select which date will be used to track files - `Last Modified` or `Created`
+* **Enable File Attachments** - (checkbox, optional): If checked, the file will be uploaded to local storage and the link provided in response
+* **Timestamp field to poll on** - (dropdown, optional, default `Last Modified`): Select which date will be used to track files - `Last Modified` or `Created`
 * **Emit Behavior** - (dropdown, optional, default `Emit individually`): Defines the way result objects will be emitted, one of `Emit page` or `Emit individually`.
 * **Page Size** - (number, optional, defaults to 999, max 999): Indicates the size of pages to be fetched per request
-* **Start Time** - (string, optional): The timestamp to start polling from (inclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ. Default value is the beginning of time (January 1, 1970 at 00:00).
+* **Start Time** - (string, optional): The timestamp to start polling from (inclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm: ssZ. The default value is the beginning of time (January 1, 1970, at 00:00).
 * **End Time** - (string, optional): The timestamp to stop polling (exclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ. Default value is flow execution time.
 
 #### Input Metadata
@@ -75,18 +75,18 @@ There is no input metadata in this trigger.
 #### Output Metadata
 
 Depends on `Enable File Attachments` and `Emit behavior` fields.
- * If `Emit behavior` field is equal to `Emit page` - object with property `results` that contains array of files
- * If `Emit behavior` field is equal to `Emit individually`, file information will fulfill whole message
- * If `Enable File Attachments` checked, for each file there will be additional field - `attachmentUrl`
+ * If `Emit behavior` field is equal to `Emit page` - object with the property `results` that contains array of files
+ * If `Emit behavior` field is equal to `Emit individually`, file information will fulfill the  whole message
+ * If `Enable File Attachments` is checked, for each file there will be an additional field - `attachmentUrl`
 
 #### Limitations
 
 * Google Cloud Storage API doesn't support filtering by dates - as result we collect information about all files from selected Bucket and filter them locally (inside component) for each trigger execution
-* From point above, option `Emit page` not always emit records according to `Page Size`
+* From the point above, option `Emit page` does not always emit records according to `Page Size`
 
 ### Webhook
 
-This trigger allow to track changes in bucket
+This trigger allows tracking changes in the bucket
 
 #### Configuration Fields
 

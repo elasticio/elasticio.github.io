@@ -12,7 +12,7 @@ ComponentVersion: 1.0.0
 
 ## Description
 
-HubSpot webhook Component is designed to track events happening in a HubSpot account. Designed separate from main `HubSpot` component due to different credential mechanism and trigger behavior
+HubSpot webhook Component is designed to track events happening in a HubSpot account. Designed separately from the main HubSpot component due to different credential mechanisms and trigger behaviour.
 
 ## Credentials
 
@@ -22,11 +22,12 @@ Component credentials configuration fields:
 ## Triggers
 
 ### Webhook
+
 Receive data from HubSpot based on configured [webhooks](https://developers.hubspot.com/docs/api/webhooks) and [validate](https://developers.hubspot.com/docs/api/webhooks/validating-requests) it
 
 Note that you always have to use the `Add sample manually` approach to save the sample.
 
-To use this action you need to preform the following steps:
+To use this action you need to perform the following steps:
 
 1. Create flow with `Hubspot webhook Component` as initial step and save it
 2. Now you can get Webhook url:
@@ -39,7 +40,7 @@ To use this action you need to preform the following steps:
 
 ### Config Fields
 
-There is no configuration fields in this trigger.
+There are no configuration fields in this trigger.
 
 #### Input Metadata
 
@@ -47,7 +48,7 @@ There is no input metadata in this trigger.
 
 #### Output Metadata
 
-Event will fulfill whole message
+The event will fulfil the whole message.
 
 ## Limitations
 
