@@ -5,11 +5,20 @@ description: Technical Notes for the Maester Component
 icon: maester.png
 icontext: Maester Component
 category: maester
-updatedDate: 2022-08-26
-ComponentVersion: 1.0.5
+updatedDate: 2022-06-07
+ComponentVersion: 2.0.1
 ---
 
 ## Changelog
+
+### 2.0.1 (June 07, 2023)
+
+Don't throw an error when updating an object with TTL
+
+### 2.0.0 (May 19, 2023)
+
+* BREAKING CHANGE - Changed output metadata structure. Introduced 2 objects - metaHeaders and searchHeaders
+* Fixed the issue when Upsert Object action did not save the search headers in Maester
 
 ### 1.0.5 (August 26, 2022)
 

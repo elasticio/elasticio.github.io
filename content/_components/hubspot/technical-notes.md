@@ -5,11 +5,15 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2022-11-04
-ComponentVersion: 1.5.6
+updatedDate: 2023-05-22
+ComponentVersion: 1.6.0
 ---
 
 ## Changelog
+
+### 1.6.0 (May 22, 2022)
+
+* `Webhook` trigger deprecated in favor `Hubspot webhook` component.
 
 ### 1.5.6 (November 04, 2022)
 

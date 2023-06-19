@@ -6,8 +6,8 @@ description: Component to convert or replace incoming values using a Lookup tabl
 icon: lookup.png
 icontext: Lookup component
 category: lookup
-ComponentVersion: 1.1.7
-updatedDate: 2022-10-21
+ComponentVersion: 1.2.0
+updatedDate: 2023-06-12
 ---
 
 ## Description
@@ -108,9 +108,14 @@ In summary, the result of the Lookup From Table action will be the value from **
 
 #### Input Configuration
 
-*  `From this table` - is the first field that contains the name of the **column X** header. These column values will be used in **Mapping**.
-*  `To this table` - is the second field that contains the name of the **column Y** header. These column values will be thrown as a result.
 *  `Emit empty object on unsuccessful lookup` - is a checkbox. If selected, an empty object {} will be emitted given an unsuccessful lookup where nothing is found. If not selected, an error will be thrown on an unsuccessful lookup.
+* `From this column`: the column to translate from
+* `To this column`: the column to translate to
+* `Duplicates behavior`: How to handle cases when found several records in selected `From this column` in provided table, options:
+    - `Emit all mach individually` - Will emit each record as separate message
+    - `Emit all mach as Array` - Will emit all founded records as array of strings
+    - `Emit first found` - Will emit first founded record
+    - `Throw an error (Default)` - By default error will be thrown
 
 #### Expected input metadata
 

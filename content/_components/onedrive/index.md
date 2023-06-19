@@ -6,152 +6,157 @@ description: This is the component for working with Microsoft OneDrive storage s
 icon: onedrive.png
 icontext: Microsoft OneDrive component
 category: onedrive
-ComponentVersion: 1.0.6
-updatedDate: 2022-09-23
+ComponentVersion: 2.0.0
+updatedDate: 2023-05-19
 ---
 
-## General information
+## Description
 
-Microsoft OneDrive component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
+Microsoft OneDrive Component is designed to manage files and folders in OneDrive service using [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/use-the-api)
 
-### Description
+## Environment variables
 
-This is the component for working with Microsoft OneDrive storage service on [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
+| Name                     | Mandatory | Description                                                                                           | Values                              |
+|--------------------------|-----------|-------------------------------------------------------------------------------------------------------|-------------------------------------|
+| `API_RETRIES_COUNT`      | false     | Set how many time system try to make request to API on server errors (3 by default)                          | `integer` above 0 and below 5|
+| `API_REQUEST_TIMEOUT`    | false     | HTTP requests timeout in milliseconds (15000 by default)                                              | `integer` above 500 and below 20000 |
 
-### Purpose
+## API version
 
-The component provides ability to connect to Microsoft OneDrive storage service.
+Current release of component tested on Graph API `v1` (`https://graph.microsoft.com/v1.0/`)
 
-### Completeness Matrix
+## Credentials
 
-The [component completeness](completeness-matrix) matrix gives the technical
-details about Salesforce objects this component covers.
+Microsoft OneDrive uses OAuth 2.0.
+How to register an application look [here](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/app-registration?view=odsp-graph-online).
+Redirect URI for platform is `https://{your-tenant-address}/callback/oauth2`
 
-## Requirements
-
-### Environment variables
-
-| Name|Mandatory|Description|Values|
-|----|---------|-----------|------|
-| `OAUTH_CLIENT_ID`| true | Microsoft Graph Application OAuth2 Client ID | Can be found in your application page on [https://portal.azure.com](https://portal.azure.com) |
-| `OAUTH_CLIENT_SECRET`| true | Microsoft Graph Application OAuth2 Client Secret | Can be found in your application page on [https://portal.azure.com](https://portal.azure.com) |
-| `ATTACHMENT_MAX_SIZE`| false | For `elastic.io` attachments configuration. Maximal possible attachment size in bytes. By default set to 1000000 and according to platform limitations CAN'T be bigger than that. | Up to `1000000` bytes|
-
-> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
-
-### Credentials
-
-To create new credentials you need to authorize in Microsoft system using OAuth2 protocol.
+* **Type** (dropdown, required) - `OAuth2`
+* **Choose Auth Client** (dropdown, required) - select one of created before or `Add New Auth Client`:
+  * **Name** (string, required) - provide any name you want
+  * **Client ID** (string, required) - put here `Application (client) ID`
+  * **Client Secret** (string, required) - put here `Client credentials`
+  * **Authorization Endpoint** (string, required) - OneDrive authorization endpoint `https://login.microsoftonline.com/common/oauth2/v2.0/authorize`
+  * **Token Endpoint** (string, required) - OneDrive refresh token endpoint `https://login.microsoftonline.com/common/oauth2/v2.0/token`
+* **Name Your Credential** (string, required) - provide any name you want
+* **Scopes (Space-separated list)** (string, required) - Put here scopes to get access to your OneDrive - `offline_access Files.ReadWrite.All`
 
 ## Triggers
 
-### Get New And Updated Files Polling
+### Get New and Updated Objects Polling
 
-Triggers to get all new and updated files since last polling. Polling is provided by `lastModifiedDateTime` file's property.
+Retrieve all the updated or created objects within a given time range.
 
-![Get New And Updated Files Polling](img/get-new-and-update.png)
+#### Configuration Fields
 
-#### List of Expected Config fields
+* **Drive Identity** - (dropdown, required): OneDrive instance to work with
+* **Folders path** - (multiselect dropdown, required): Select folders to follow
+* **Include subfolders** - (checkbox, optional): If checked, trigger will follow to each subfolder of selected folder.
+    >**Please Note:** this will increase the number of API calls
 
-* **Drive Identity** - OneDrive instance to work with.
-* **Folder path** - Dropdown with folders to poll files from.
-* **Emit Behavior** -  Available options: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message.
-* **Start Time** - Start datetime of polling. Default min date: `-271821-04-20T00:00:00.000Z`.
-* **End Time** - End datetime of polling. Default max date: `+275760-09-13T00:00:00.000Z`.
-* **Size Of Polling Page** - Indicates the size of pages to be fetched. Defaults to `1000`.
-* **Expand Children** - Checkbox, trigger retrieves files from subfolders of chosen path, if enabled. Disabled by default.
-* **Enable File Attachments** - Checkbox for attaching files content to response. Disabled by default.
+* **Enable File Attachments** - (checkbox, optional): If checked, the file will be uploaded to local storage and the link provided in response.
+* **Timestamp field to poll on** - (dropdown, optional, default `Last Modified`): Select which date will be used to track files - `Last Modified` or `Created`
+* **Emit Behavior** - (dropdown, optional, default `Emit individually`): Defines the way result objects will be emitted, one of `Emit page` or `Emit individually`.
+* **Page Size** - (number, optional, defaults to 999, max 999): Indicates the size of pages to be fetched per request
+* **Start Time** - (string, optional): The timestamp to start polling from (inclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ. The default value is the beginning of time (January 1, 1970, at 00:00).
+* **End Time** - (string, optional): The timestamp to stop polling (exclusive) - using ISO 8601 Date time utc format - YYYY-MM-DDThh:mm:ssZ. Default value is flow execution time.
+
+#### Input Metadata
+
+There is no Input or Output metadata in this trigger.
+
+#### Output Metadata
+
+Depends on `Enable File Attachments` and `Emit behavior` fields.
+ * If `Emit behavior` field is equal to `Emit page` - object with property `results` that contains array of files
+ * If `Emit behavior` field is equal to `Emit individually`, file information will fulfill whole message
+ * If `Enable File Attachments` is checked, for each file there will be an additional field - `attachmentUrl`
+
+#### Limitations
+
+* OneDrive API doesn't support filtering - as result, we collect information about all files from selected folders and filter them locally (inside the component) for each trigger execution
+* From the point above, option `Emit page` does not always emit records according to `Page Size`
+* `Include subfolders` increase amount of API calls - additional call for each subfolder and inner folders
 
 ## Actions
 
-### Get File
+### Create Folder
 
-Action to get item from OneDrive by provided path in selected disc.
+Create a new folder in provided `path`. If `path` does not exist component will fail.
 
-![Get File](img/get-file.png)
+#### Configuration Fields
 
-#### Input fields description
+* **Drive Identity** - (dropdown, required): OneDrive instance to work with
+* **Conflict Behavior** - (dropdown, optional, `Fail` by default) - Select one of options to handle case when folder already exists:
+  * **Fail** - Fails if a folder with the same name already exists under provided `path`
+  * **Generate new name** -  If the folder with the same name already exists under provided `path` then will be created a new folder with a different name. Examples: `folder_name` (already exist) -> `folder_name 1` (will be created), `folder_name 1` (already exist) -> `folder_name 1 1` (will be created)
+  * **Upsert** - If the folder already exists, you will get information about this folder
 
-* **Drive Identity** - OneDrive instance to work with. Selects by owner
-* **Enable File Attachments** - checkbox for attaching files content to action response
+#### Input Metadata
 
-#### Metadata fields description
+* **Path** - (string, required): Full path to folder where you need to create new folder, ex: `Monthly reports/November`
+* **Name** - (string, required): Name of new folder
 
-* **Path** - Full path to item to create or replace
+#### Output Metadata
 
-#### Input example:
-
-```
-{
-    "path": "base_folder/inner_folder/file.any"
-}
-```
-
-### Upsert File
-
-Action upserts (create or replace) with first file from attachment by provided path in Microsoft One Drive
-
-![Upsert File](img/upsert-file.png)
-
-#### Input fields description
-
-* **Drive Identity** - OneDrive instance to work with. Selects by owner
-
-#### Metadata fields description
-
-* **Path** - Full path to item to create or replace
-
-#### Input example:
-
-```
-{
-    "path": "base_folder/inner_folder/file.any"
-}
-```
+Metadata of created folder
 
 ### Delete File
 
 Action to delete item from OneDrive by provided path in selected disc.
-Returns filename if file was deleted and empty message if already wasn't exist
 
-![Delete File](img/delete-file.png)
+#### Configuration Fields
 
-#### Input fields description
+* **Drive Identity** - (dropdown, required): OneDrive instance to work with
+* **Emit strategy when file not found** - (dropdown, optional, `Emit nothing` by default) - select one of options to handle case when file not exist:
+  * **Emit nothing** - component will not produce any messages
+  * **Emit an empty object** - result will be empty object: `{}`
+  * **Throw an error** - error will be thrown
 
-* **Drive Identity** - OneDrive instance to work with. Selects by owner
+#### Input Metadata
 
-#### Metadata fields description
+* **Path** - (string, required): Full path to item, ex: `Monthly reports/November/Cars sales.pdf`
 
-* **Path** - Full path to item to delete
+#### Output Metadata
 
-#### Input example:
+* **Path** - (string, required): Full path to item, ex: `Monthly reports/November/Cars sales.pdf`
 
-```
-{
-    "path": "base_folder/inner_folder/file.any"
-}
-```
+### Get File
 
-### Create Folder
+Lookup a single file by its path.
 
-Create new folder in provided `path`. If `path` not exist component will fail.
+#### Configuration Fields
 
-![Create Folder](img/create-folder.png)
+* **Drive Identity** - (dropdown, required): OneDrive instance to work with
+* **Enable File Attachments** - (checkbox, optional): If checked, file will be uploaded to local storage and link provided in response
 
-#### Input fields description
+#### Input Metadata
 
-* **Drive Identity** - OneDrive instance to work with. Selects by owner
-* **Conflict Behaviour** - behaviour in case folder already exists. Default: `Fail`. Options: `Fail`, `Replace`, `Rename`.
-    1. `Fail` - fails if folder with same name already exists under provided `path`
-    2. `Rename` - rename folder if folder with same name already exists under provided `path`. Examples: `exists` -> `exists_1`, `exists_1` -> `exists_1_1`
-    3. `Replace` - replace folder if folder with same name already exists under provided `path`. Note: files inside folder will not be replaced, but last modified date of folder will be updated
+* **Path** - (string, required): Full path to item, ex: `Monthly reports/November/Cars sales.pdf`
 
-#### Metadata fields description
+#### Output Metadata
 
-* **Path** - Path to to folder where new folder will be created. Use empty string or `/` for root
-* **Name** - Name of new folder
+File information as JSON object, if `Enable File Attachments` checked, there also will be additional field `attachmentUrl` with link to file on platform
 
-## Known Limitations
+### Upsert File
 
-1. Attachments mechanism does not work with [Local Agent Installation](/references/local-agents-requesting#compatible-operating-systems)
+Updates (if record exist) or creates a new file
+
+#### Configuration Fields
+
+* **Drive Identity** - (dropdown, required): OneDrive instance to work with
+* **Upload single file** - (checkbox, optional): Use this option if you want to upload a single file
+
+#### Input Metadata
+If `Upload single file` checked, there will be 2 fields:
+* **URL** - (string, required): link to file on Internet or platform
+* **Path** - (string, required): Full path to item on OneDrive, ex: `Monthly reports/November/Cars sales.pdf`
+
+If `Upload single file` unchecked:
+* **Files** - (array, required): Collection of files to upload, each record contains object with two keys:
+  * **URL** - (string, required): link to file on Internet or platform
+  * **Path** - (string, required): Full path to item on OneDrive, ex: `Monthly reports/November/Cars sales.pdf`
+
+#### Output Metadata
+
+Result object from upsert.
