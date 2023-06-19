@@ -13,6 +13,8 @@ ComponentVersion: 1.6.0
 
 Action to delete file by provided full file path. If the file does not exist, the empty message (`{}`) is returned
 
+> **Plesae Note:** To gain a better understanding of the functionality provided by Delete File action, we recommend checking out our [example article](/components/sftp/usage-example#delete-file). It provides a detailed walkthrough of how to use Delete File action effectively, which will assist you in working with it.
+
 ### Configuration Fields
 
 There is no Configuration Fields.
@@ -28,6 +30,8 @@ There is no Configuration Fields.
 ## Download File by name
 
 Finds a file by name in the provided directory and uploads (streams) to the attachment storage
+
+> **Plesae Note:** To gain a better understanding of the functionality provided by Download File by name action, we recommend checking out our [example article](/components/sftp/usage-example#download-file-by-name). It provides a detailed walkthrough of how to use Download File by name action effectively, which will assist you in working with it.
 
 ### Configuration Fields
 
@@ -55,6 +59,8 @@ Finds a file by name in the provided directory and uploads (streams) to the atta
 ## Download Files
 
 Finds a file by criteria in the provided directory and uploads (streams) to the attachment storage
+
+> **Plesae Note:** To gain a better understanding of the functionality provided by Download Files action, we recommend checking out our [example article](/components/sftp/usage-example#download-files). It provides a detailed walkthrough of how to use Download Files action effectively, which will assist you in working with it.
 
 ### Configuration Fields
 
@@ -109,6 +115,8 @@ Finds a file by criteria in the provided directory and uploads (streams) to the 
 Action to move file on SFTP already exists in one location on an sftp server to be moved to another location on the same SFTP server.
 Target location MUST exist.  If the target filename already exists it will be overwritten. This action uses the openssh POSIX rename extension introduced in OpenSSH 4.8 if it is available. The advantage of this version of rename over standard SFTP rename is that it is an atomic operation and will allow renaming a resource where the destination name exists. If the openssh POSIX rename mechanism is not available, then a delete operation and then rename operation will be completed.
 
+> **Plesae Note:** To gain a better understanding of the functionality provided by Move File action, we recommend checking out our [example article](/components/sftp/usage-example#move-file). It provides a detailed walkthrough of how to use Move File action effectively, which will assist you in working with it.
+
 ### Configuration Fields
 
 There is no Configuration Fields.
@@ -124,6 +132,8 @@ There is no Configuration Fields.
 - **newFilename** - (string, required): Full filename and path to the file where is moved
 
 ## Upload File From URL
+
+> **Plesae Note:** To gain a better understanding of the functionality provided by Upload File From URL action, we recommend checking out our [example article](/components/sftp/usage-example#upload-file-from-url). It provides a detailed walkthrough of how to use Upload File From URL action effectively, which will assist you in working with it.
 
 Given a filename and a URL to an attachment, transfers the contents of the attachment to the SFTP server
 
@@ -156,6 +166,8 @@ Given a filename and a URL to an attachment, transfers the contents of the attac
 
 
 ## Upload Files From Attachments Header
+
+> **Plesae Note:** To gain a better understanding of the functionality provided by Upload Files From Attachments Header action, we recommend checking out our [example article](/components/sftp/usage-example#upload-files-from-attachments-header). It provides a detailed walkthrough of how to use Move Upload Files From Attachments Header action effectively, which will assist you in working with it.
 
 ### Configuration Fields
 

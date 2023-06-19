@@ -13,6 +13,8 @@ ComponentVersion: 1.6.0
 
 Triggers to get all new and updated files since last polling.
 
+> **Plesae Note:** To gain a better understanding of the functionality provided by Poll Files trigger, we recommend checking out our [example article](/components/sftp/usage-example#poll-files). It provides a detailed walkthrough of how to use Poll Files trigger effectively, which will assist you in working with it.
+
 ### Configuration Fields
 
 * **Directory** - (string, required): The directory of the files to read from
@@ -22,7 +24,6 @@ Triggers to get all new and updated files since last polling.
 * **Start Time** - (string, optional): Start datetime of polling, defaults to`-271821-04-20T00:00:00.000Z`
 * **End Time** - (string, optional): End datetime of polling, defaults to `+275760-09-13T00:00:00.000Z`
 * **Pattern** - (string, optional): Regex pattern for file names. If no pattern is given, no matching is done
-
 
 ### Output Metadata
 
