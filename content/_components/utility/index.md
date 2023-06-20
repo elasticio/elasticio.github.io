@@ -92,10 +92,11 @@ Introduce a delay before passing the message to the next step.
 
 #### Config Fields
 
-* `Delay behavior`, as two options:
+There are two options for delay behavior:
 
-  * `Delay Each` - every incoming message will to delay independent each other, for example: we have 100 messages at the same moment with delay 1 sec, after 1 sec all messages will get to the next step.
-  * `Delay All` - all incoming message will to delay one by one, new message will go farther only after previous finish, for example: we have 100 messages at the same moment with delay 1 sec, each second a message will go to the next step (from oldest).
+* `Delay Each`: In this option, every incoming message will be independently delayed from one another. For example, if we have 100 messages arriving simultaneously with a delay of 1 second, after 1 second, all messages will proceed to the next step together.
+
+* `Delay All`: In this option, each incoming message will be delayed one by one. A new message will only proceed to the next step once the previous message has completed. For instance, if we have 100 messages arriving simultaneously with a delay of 1 second, each message will advance to the next step at the rate of one message per second, starting from the oldest message.
 
 #### Input Metadata
 
