@@ -5,13 +5,17 @@ description: Technical Notes for Lookup Table component.
 icon: lookup.png
 icontext: Lookup component
 category: lookup
-ComponentVersion: 1.2.0
-updatedDate: 2023-06-12
+ComponentVersion: 1.2.1
+updatedDate: 2023-06-16
 redirect_from:
   - /components/lookup-table/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.1 (June 16, 2023)
+
+* Fixed typo in `Duplicates behavior` option
 
 ### 1.2.0 (June 12, 2023)
 

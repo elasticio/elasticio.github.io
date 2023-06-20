@@ -5,8 +5,8 @@ description: Usage Example for the Lookup Table component.
 icon: lookup.png
 icontext: Lookup component
 category: lookup
-ComponentVersion: 1.2.0
-updatedDate: 2023-06-12
+ComponentVersion: 1.2.1
+updatedDate: 2023-06-16
 ---
 
 ## Scenario
