@@ -32,8 +32,6 @@ Sailors use [Publish Confirm](https://www.rabbitmq.com/confirms.html) RabbitMQ f
 
 RabbitMQ [Flow Control](https://www.rabbitmq.com/flow-control.html) automatically reduces the speed to connections which are publishing too quickly to keep the rate of message ingress at one that the rest of the server (e.g. queues those messages are route to) can handle.
 
-> **Please note** that Dynamic Flow Control cannot be disabled in Node.js components. However, you can disable dynamic flow control in Java components by using the UI or API call. This option is available only for components with Sailor version 3.3.5+.
-
 ### Dynamic Flow Control details
 
 When you retry erroneous messages, they get marked with `retry=true` header, so lookout doesn’t write data record.
@@ -54,7 +52,7 @@ As the feature may have a performance impact, you can disable it. Currently disa
 
 {% include img.html max-width="80%" url="/assets/img/integrator-guide/flow-control/disable-UI.png" title="Disable Dynamic Flow Control via UI" %}
 
-> Please note taht you can also disable dynamic flow control using the corresponding API call. More on this in our [API Documentation]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_).
+> **Please note** that Dynamic Flow Control cannot be disabled in Node.js components. However, you can disable dynamic flow control in Java components by using the UI or [API call]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_). This option is available only for components with Sailor version 3.3.5+.
 
 ### Use Cases
 
