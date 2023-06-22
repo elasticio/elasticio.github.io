@@ -15,6 +15,15 @@ Our platform is designed to connect a variety of applications and systems. The p
 
 Static flow control involves setting a fixed rate of data transfer, regardless of their current performance or capacity. While static flow control can be useful in situations where the performance of the applications and network is predictable and stable, it can lead to problems if the data flow rate is set too high or too low. Static flow control can cause data loss, latency issues, or other problems if the rate of data flow is not adjusted based on real-time feedback from each application.
 
+In older components, static flow control will continue to work as usual. If the maximum number of messages is exceeded, the flow will be suspended.
+
+In newer Node.js components and Java components (from Sailor version 3.3.5+), where Dynamic Flow Control is not disabled, Dynamic Flow Control works in conjunction with static flow control. The following criteria are taken into consideration:
+
+* Number of messages in the queue (75000)
+* Total volume of messages in the queue (200 MB)
+
+If either of these criteria is fulfilled, a restriction is triggered, and the message cannot be queued. The system will attempt to queue the message exponentially, resulting in retries with increasing backoff intervals.
+
 ## Dynamic Flow Control
 
 The Dynamic Flow Control is based on RabbitMQ Publisher Confirms and RabbitMQ Flow Policies which enables a dynamic slow-down of a publisher/producer based on the current queue state. Each task queue has a messages limit. RabbitMQ `overflow: 'reject-publish'` policy is set for all task queues to reject steps to publish into queue which is overflowed by messages. [Sailor](/references/sailor-compatibility-matrix) will retry publish infinitely until message will be successfully sent.
@@ -43,7 +52,7 @@ As the feature may have a performance impact, you can disable it. Currently disa
 
 {% include img.html max-width="80%" url="/assets/img/integrator-guide/flow-control/disable-UI.png" title="Disable Dynamic Flow Control via UI" %}
 
-> Please note taht you can also disable dynamic flow control using the corresponding API call. More on this in our [API Documentation]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_).
+> **Please note** that Dynamic Flow Control cannot be disabled in Node.js components. However, you can disable dynamic flow control in Java components by using the UI or [API call]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_). This option is available only for components with Sailor version 3.3.5+.
 
 ### Use Cases
 
