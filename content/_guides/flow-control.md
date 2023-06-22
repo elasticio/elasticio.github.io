@@ -19,7 +19,7 @@ In older components, static flow control will continue to work as usual. If the 
 
 In newer Node.js components and Java components (from Sailor version 3.3.5+), where Dynamic Flow Control is not disabled, Dynamic Flow Control works in conjunction with static flow control. The following criteria are taken into consideration:
 
-* Number of messages in the queue (75 KB)
+* Number of messages in the queue (75000)
 * Total volume of messages in the queue (200 MB)
 
 If either of these criteria is fulfilled, a restriction is triggered, and the message cannot be queued. The system will attempt to queue the message exponentially, resulting in retries with increasing backoff intervals.
