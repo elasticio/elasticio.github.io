@@ -39,11 +39,41 @@ The rest of the form is the same except for the [credentials mapping](#mapping) 
 
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/set-credentials.png" title="Set Credentials" %}
 
->**Please Note:** When you want to activate a Recipe based on the Flow with Topics you have to follow the steps described in above. However, there is one important difference from a recipe with topics from a recipe without topics - a recipe using topics can only be activated within one workspace.
-
 ## Create and manage recipes with API
 
 You can create and manage recipes not only through our platform, but also directly through API endpoints. You can find all information on this subject in our [API Docs]({{site.data.tenant.apiDocsUri}}/v2#/recipes).
+
+## Viewing and Activating Recipes
+
+Once you have created one or more recipes, you can easily access them in the dedicated section of our platform.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/recipes-list.png" title="List recipes" %}
+
+From there, you have the ability to activate the recipes as needed. By leveraging these already created recipes, you can quickly set up flows based on their predefined configurations. Follow the steps below to activate a recipe and create corresponding flows:
+
+1. Access the list of available recipes.
+2. Choose the desired recipe that suits your requirements.
+3. Activate the chosen recipe.
+4. Perform a simple configuration to tailor the recipe to your specific needs.
+5. Once activated, the recipe will generate the necessary flows based on its predefined settings.
+
+By utilizing existing recipes, you can expedite the process of creating flows while benefiting from the expertise and best practices embedded within the chosen recipe. It's important to keep in mind that when activating a recipe, you will need to configure credentials for each component involved in the recipe flow. 
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/creating-recipes/activate-recipe.gif" title="Activate recipe" %}
+
+>**Please Note:** When activating a recipe based on a flow with topics, please follow the steps mentioned above. However, it's crucial to be aware of an important distinction between recipes with topics and those without. Recipes that utilize topics can only be activated within a single workspace.
+
+### Deleting Recipes
+
+In addition to managing and activating recipes, you also have the option to delete any recipe when necessary. To delete a recipe, follow these steps:
+
+1. Locate the recipe you wish to delete.
+2. Click on the gear icon located in the top-right corner of the recipe.
+3. From the dropdown menu that appears, select the **"Delete Recipe"** option.
+
+{% include img.html max-width="60%" url="/assets/img/integrator-guide/creating-recipes/delete-recipe.png" title="Delete recipe" %}
+
+By following these steps, you can easily remove unwanted recipes from your collection.
 
 ## Visibility
 

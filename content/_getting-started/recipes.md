@@ -8,28 +8,48 @@ category: platform-features
 since: 20191030
 ---
 
-This document provides basic information on [Recipes](#recipes) and some [details](#details) of their usage.
+## Recipes Overview
 
-## Recipes
+The Recipes feature allows users to leverage integration Flow templates for easy sharing and reusability. This comprehensive documentation provides detailed information on creating, managing, and deploying Recipes. A Recipe serves as a blueprint for an integration Flow, enabling users to share popular flow patterns while abstracting away the underlying implementation details. Recipes are conveniently stored and can be accessed based on their [visibility settings](/guides/recipes-access-rights), which can be defined at the Workspace, Contract, Tenant, or Global level. Managing Recipe visibility requires appropriate permissions.
 
-A Recipe is, basically, a template for an integration [Flow](integration-flow). It allows users to share popular flow patterns without exposing any details. Recipes will be available in a sort of Recipe store, provided they are visible to the user.
+## Managing Recipes
 
-Recipes can be created [from existing integration Flows](/guides/creating-recipes.html#creating-recipes-from-existing-flows), or [from scratch](/guides/creating-recipes.html#creating-recipes-from-scratch). If created from a Flow, the Recipe will contain everything another user needs to recreate the same Flow, except for the [non-shareable data](#details). Having configured them, a user can activate the Recipe and recreate a Flow.
+### Creating Recipes
 
-Visibility level is set by the Recipe author, and can be **Workspace, Contract, Tenant or Global**, values that define the space where a Recipe is shared. Setting a certain visibility level requires corresponding permissions.
+Recipes can be easily created from existing integration Flows. A Recipe encapsulates all the necessary information to recreate the Flow, excluding any non-shareable data. By activating a Recipe, users can effortlessly reproduce the desired Flow with their own configurations.
 
-## Details
+For more information, please refer to the article on [creating and managing Recipes](/guides/creating-recipes).
 
-There may be a few configurables that you'll need to deal with manually after activating a Recipe:
+### Activating Recipes
 
-- **[Credentials](/guides/credential)**. Obviously, Credentials are Workspace-bound, so they will not work in another Workspace. The user will need his own Credentials to activate a Recipe.
+Another convenient feature is the ability to use pre-existing recipes and activate them with ease. By leveraging these already created recipes, you can quickly set up flows based on their predefined configurations.
 
-- **Fields**. Certain fields in Components require manual configuration just because you can not use another user's data, and need to enter your own.
+For more information, please refer to the article on [activating Recipes](/guides/creating-recipes#viewing-and-activating-recipes).
 
-- **Flow Variables**. Flow variables are special variables used in Flow metadata to hardcode certain data. They will need to be configured, if used in a Recipe.
+### Recipe Deployment
 
-## Related links
+A Recipe Deployment establishes a link between an original Recipe and a set of Flows created during a single activation. It's important to note that the Flows within a Recipe Deployment are not editable. If modifications to the Flows are required, the Recipe Deployment must be unlinked.
 
-- [Integration Flow Overview](integration-flow)
-- [Create a recipe from existing flow]({{site.data.tenant.apiDocsUri}}/v2#/recipes/post_flows__flow_id__export_to_recipe)
-- [Create a recipe from scratch]({{site.data.tenant.apiDocsUri}}/v2#/recipes/post_recipes)
+For more information, please refer to the article on [Recipe deployment](/guides/recipe-deployment).
+
+### Embedded Recipes
+
+To accommodate scenarios where end users prefer not to directly manage the elastic.io platform, we offer the Embedded Recipes feature. It enables you to provide a direct link to a Recipe page for end users. This allows them to authenticate and activate Recipes without navigating the entire platform.
+
+For more information, please refer to the article on [embedded Recipes](/guides/embedded-recipe).
+
+### Embedded Recipe Deployment
+
+For cases where end users prefer not to manage the platform directly, we provide the Embedded Recipe Deployment feature. You can generate a direct link to a Recipe Deployment, allowing end users to update credentials used in the deployment and restart Flows without extensive platform management.
+
+For more information, please refer to the article on [embedded Recipe deployment](/guides/embedded-recipe-deployment).
+
+## Use Cases
+
+To enhance your understanding of the aforementioned features of Recipes, we recommend exploring two use cases: the "External Agencies" use case and the "Copying Flow" use case. These examples will provide further insight into the functionalities and capabilities of the Recipes feature.
+
+1. [External Agencies Use Case](/guides/external-agencies-use-case): This use case highlights how Recipes can be leveraged by external agencies. It showcases the benefits of using Recipes to streamline integrations and ensure consistent flow patterns across different agencies. By referring to this example, you can gain a better understanding of how Recipes can be utilized in real-world scenarios involving external agencies.
+
+2. [Copying flow through recipes Use Case](/guides/copying-flow-through-recipes): This use case focuses on the details of copying a Flow using Recipes. It demonstrates how Recipes serve as a blueprint for reproducing Flows with predefined configurations. By exploring this example, you will gain a comprehensive understanding of how to effectively utilize Recipes to replicate and share Flows across different environments or users.
+
+By reviewing these use cases, you will acquire a deeper comprehension of the functionality and practical applications of the Recipes feature.
