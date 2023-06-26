@@ -4,7 +4,7 @@ title: Ukraine alerts Technical Notes
 description: Technical Notes for the Ukraine alerts component
 icon: ukraine-alerts.png
 icontext: Ukraine-alerts Component
-category: utility
+category: ukraine-alerts
 updatedDate: 2022-06-14
 ComponentVersion: 1.0.1
 ---
