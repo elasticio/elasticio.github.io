@@ -25,7 +25,6 @@ Credentials Section: Alternatively, you can add authorization methods by navigat
 
 {% include img.html max-width="100%" url="img/credentials_rest_api.png" title="Credentials section" %}
 
-
 ### Supported Authorization Types
 
 The REST API component supports the following authorization types:
@@ -65,7 +64,7 @@ In the `component.json` file of the REST API V2 component, you need to define th
 
 "authClientTypes": [
   "oauth2_instagram"
-],
+]
 "credentials": {
   "fields": {
     "auth": {
@@ -76,15 +75,17 @@ In the `component.json` file of the REST API V2 component, you need to define th
   "oauth2": {
     "scopes": ["user_profile", "user_media"]
   }
-},
+}
 
 ```
+
+>**Please Note:** `HTTPAuthView` does NOT support `oauth2_instagram` type.
 
 Here's how the authorization process works on our platform:
 
 1. The user creates an OAuth Client by providing all the necessary data.
 
-2. The user then creates a new credential and clicks "Authenticate," which redirects them to the Instagram OAuth window. Once the user logs in, Instagram returns an authorization code.
+2. The user then creates a new credential and clicks **"Authenticate"**, which redirects them to the Instagram OAuth window. Once the user logs in, Instagram returns an authorization code.
 
 3. The user saves the credential, and our backend automatically exchanges the authorization code for a short-lived token. Subsequently, it instantly exchanges the short-lived token for a long-lived token, which becomes associated with the credential.
 
