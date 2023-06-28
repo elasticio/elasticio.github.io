@@ -40,6 +40,8 @@ To setup the Agent you would need to fulfill the following preconditions:
 *   **Working VPN client which accepts OpenVPN configurations.**
 *   Optionally: Administrative rights to configure the local network on your host machine in case you have non-standard setup.
 
+> Plesae note that below, you will find a dedicated section specifically for the Windows operating system (OS) family. This section comprehensively covers all the essential details pertaining to setting up the VPN Agent on [Windows OS](#vpn-agent---windows-os-family).
+
 ### Connecting to local database
 
 As an example let us connect the locally running Mongo database with the platform.
@@ -77,6 +79,120 @@ Press **Download Configuration** to get configured OpenVPN configuration file
 
 Congratulations, you have established a secure VPN tunnel between your local
 resource and the platform. Now time to use this in your integration flow configuration.
+
+## VPN Agent - Windows OS Family
+
+This documentation provides instructions for setting up the VPN Agent on the Windows OS family, including Windows Server 2019, Windows Server 2012 R2, and Windows 7 Professional. While the steps mentioned here have been tested on specific versions, they should generally work on older versions as well. Please note that no manual testing has been conducted on the older versions.
+
+Before you begin the installation process, ensure that you have administrator privileges on the machine. Commands executed in the command prompt (`cmd`) or PowerShell should be run with administrator privileges. The easiest way to do this is by starting the shell as an administrator by right-clicking and selecting "Run as administrator."
+
+### Common Part
+
+1. Install and run the OpenVPN client with the appropriate configuration.
+
+2. The installation process will create a new network connection. You can find this connection's name (`tunnel interface`), IP address (`tunnel IP address`), network, and netmask (`tunnel net` in CIDR format, e.g., 172.19.0.0/16) by referring to the Control Panel, using the `ipconfig` command in the command prompt, or using the `Get-NetIPInterface` command in PowerShell.
+
+3. Identify the network connection that will be used to connect to your remote system (`typically Ethernet`) (`outgoing interface`). Make a note of its IP address (`outgoing IP address`).
+
+<details close markdown="block"><summary><strong>Windows Server 2019 - click to expand</strong></summary>
+
+**1.** SEnable IP routing by running the following command in PowerShell as an administrator:
+
+```
+Set-NetIPInterface -Forwarding Enabled
+```
+
+To check if IP routing is enabled, run the following command in PowerShell:
+
+```
+Get-NetIPInterface | Select-Object ifIndex, InterfaceAlias, AddressFamily, ConnectionState, Forwarding | Sort-Object -Property IfIndex | Format-Table
+```
+
+**2.** Enable NAT by running the following command in PowerShell as an administrator:
+
+```
+New-NetNat -Name NAT_NAME -InternalIPInterfaceAddressPrefix <tunnel net>
+```
+Replace `<tunnel net>` with the appropriate value for the tunnel network. To check if NAT was created successfully, run the following command in PowerShell:
+
+```
+Get-NetNat
+```
+
+**3.** Grant access through the firewall by running the following command in PowerShell as an administrator:
+
+```
+New-NetFirewallRule -DisplayName "Allow Inbound from Tunnel" -Direction Inbound -RemoteAddress <tunnel net>, <outgoing IP address> -Action Allow
+```
+
+Replace `<tunnel net>` with the tunnel network and `<outgoing IP address>` with the outgoing IP address. You can also use the `Windows Firewall` UI or disable the firewall entirely in the `Control Panel`. However, disabling the firewall poses security risks. To check if the rule was installed successfully, you can use the `Windows Firewall` UI or run the following command in PowerShell:
+
+```
+Get-NetFirewallRule
+```
+
+</details>
+
+<details close markdown="block"><summary><strong>Windows Server 2012 R2 - click to expand</strong></summary>
+
+**1.** Enable IP routing by running the following command in PowerShell as an administrator:
+
+```
+Set-NetIPInterface -Forwarding Enabled
+```
+
+To check if IP routing is enabled, run the following command in PowerShell:
+
+```
+Get-NetIPInterface | Select-Object ifIndex, InterfaceAlias, AddressFamily, ConnectionState, Forwarding | Sort-Object -Property IfIndex | Format-Table
+```
+
+**2.** Enable NAT:
+
+Setting up NAT in Windows Server 2012 R2 is more involved compared to Windows Server 2019. Please refer to the [documentation](https://www.itprotoday.com/windows-server/jsi-tip-7353-how-do-i-configure-nat-server-windows-server-2003) for detailed instructions. This involves installing and configuring the Routing and Remote Access Service (RRAS) using the UI. Add the `tunnel interface` as Private and the `outgoing interface` as Public. You can install and enable RRAS using the following PowerShell command:
+
+```
+Install-WindowsFeature Routing -IncludeManagementTools
+```
+
+**3.** Grant access through the firewall by running the following command in PowerShell as an administrator:
+
+```
+New-NetFirewallRule -DisplayName "Allow Inbound from Tunnel" -Direction Inbound -RemoteAddress <tunnel net>, <outgoing IP address> -Action Allow
+```
+
+Replace `<tunnel net>` with the tunnel network and `<outgoing IP address>` with the outgoing IP address. You can also use the `Windows Firewall` UI or disable the firewall entirely in the `Control Panel`. However, disabling the firewall poses security risks. To check if the rule was installed successfully, you can use the `Windows Firewall` UI or run the following command in PowerShell:
+
+```
+Get-NetFirewallRule
+```
+
+</details>
+
+<details close markdown="block"><summary><strong>Windows 7 - click to expand</strong></summary>
+
+**1.** Enable Routing and Remote Service (RRAS): Go to Control Panel -> Administrative Tools -> Services -> Routing and Remote Access. Set the startup mode to "Automatic," apply the changes, and start the service.
+
+**2.** Instead of enabling NAT, configure Internet Connection Sharing (ICS):
+
+* Go to Control Panel -> Network and Internet -> Network and Sharing Center.
+* Click on "Change adapter settings."
+* Right-click on the `outgoing interface` and select "Properties."
+* In the "Properties" window, navigate to the "Sharing" tab.
+* Enable the checkbox "Allow other network users to connect through this computer's Internet connection."
+* Select the `tunnel interface` under "Home networking connection."
+
+> Notice: It might be necessary to disconnect and reconnect the OpenVPN client after making this setting change.
+
+**3.** Grant access through the firewall:
+
+* Go to Control Panel -> System and Security -> Windows Firewall -> Advanced Settings -> New Rule.
+* Create an "Inbound" rule that allows all traffic for all programs, protocols, and ports where remote IP addresses are from the `tunnel net` (e.g., 172.19.0.0/16).
+* Alternatively, you can disable the firewall entirely by going to Control Panel -> System and Security -> Windows Firewall -> Turn Windows Firewall on or off. However, disabling the firewall poses security risks.
+
+> Please keep in mind the security implications when modifying firewall settings.
+
+</details>
 
 ## Using VPN Agent
 
