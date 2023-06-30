@@ -40,7 +40,7 @@ To setup the Agent you would need to fulfill the following preconditions:
 *   **Working VPN client which accepts OpenVPN configurations.**
 *   Optionally: Administrative rights to configure the local network on your host machine in case you have non-standard setup.
 
-> Plesae note that below, you will find a dedicated section specifically for the Windows operating system (OS) family. This section comprehensively covers all the essential details pertaining to setting up the VPN Agent on [Windows OS](#vpn-agent---windows-os-family).
+> Please note that below, you will find a dedicated section specifically for the Windows operating system (OS) family. This section comprehensively covers all the essential details pertaining to setting up the VPN Agent on [Windows OS](#vpn-agent---windows-os-family).
 
 ### Connecting to local database
 
