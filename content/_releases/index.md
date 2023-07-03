@@ -24,18 +24,21 @@ description: List of the release notes listing the product updates.
 <div class="wrap">
     <div class="description">
       <p>
-      {{site.data.tenant.companyName}} product updates are released every 2nd week.
+      {{site.data.tenant.companyName}} product updates are released once per month.
       The release numbering format is based on year and week of the release - <strong>YY.WW</strong>.
       <ul>
         <li><strong>YY</strong> are the last two digits of the year.</li>
         <li><strong>WW</strong> is the number of the week in that year.</li>
         </ul>
-      </p>
+        <p>
+            The latest release is 23.27 and the next release would be 23.31.
+        </p>
+      <!-- </p>
       {% assign week = releases[0].version | split: "." %}
       <p>
         The latest release is <strong>v{{releases[0].version}}</strong> and the
         next release would be <strong>v{{week[0]}}.{{week[1] | plus: 2}}</strong>.
-      </p>
+      </p> -->
     </div>
 </div>
 
