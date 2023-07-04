@@ -123,7 +123,9 @@ async function run(msg, cfg, snapshot) {
     return body;
 }
 ```
+
 In this case `configData` field should be:
+
 ```
 "{\"tokenUrl\":\"https://example.com/api/v2/client/tokens\",\"username\":\"username\",\"password\":\"password\",\"data\":\"data\"}"
 ```
