@@ -19,7 +19,7 @@ functions like `$uppercase(str)`, `$lowercase(str)`, `$split(str, separator [, l
 
 For the following examples we will assume the following incoming data:
 
-```js
+```json
 {
   "author":"Mark Twain",
   "fname":"Tom",
@@ -33,7 +33,7 @@ For the following examples we will assume the following incoming data:
 To start with a simple example let us combine the parts of the incoming data by
 simple concatenation. For example, let us write the title of the book:
 
-```js
+```json
 "The Adventures of " & fname & " " & lname
 ```
 
@@ -42,7 +42,7 @@ Here we used the `&` operator to combine the strings into one message:
 
 Now we want to write the same sentence in all caps since it is the title of a book:
 
-```js
+```json
 $uppercase("The Adventures of " & fname & " " & lname)
 ```
 
@@ -50,10 +50,12 @@ The result is: `THE ADVENTURES OF TOM SAWYER`.
 
 How about adding a new line and adding the name of the author?
 
-```js
+```json
 $uppercase("The Adventures of " & fname & " " & lname)
 & "\n" & $uppercase("by " & author)
 ```
+
+> **Please note**, that `\n` - does not work in [JSONata exerciser](https://try.jsonata.org/) but it works well on our platform.
 
 And the outcome is:
 
@@ -66,7 +68,7 @@ What if we want to get the domain name from the incoming email address
 `tom.sawyer@twaincreations.com`? To do that we could write the following JSONata
 expression:
 
-```js
+```
 $split(email, /[@,.]+/)[2]
 ```
 
@@ -77,13 +79,13 @@ which is the element `[2]`, to get the final result of `twaincreations` .
 
 If you noticed the email address domain contains the author's surname. Can we be sure?
 
-```js
-$contains(email,$lowercase($split(author,"")[1]))
+```json
+$contains(email,$lowercase($split(author," ")[1]))
 ```
 
 This JSONata expression takes the value of the `author` field, splits it into an
 array and takes the surname part (Twain). Then it converts it to lower case and
-uses the value (`twain`) to check the `email` field for a presence of a value. The
+uses the value (`twain`) to check the `email` field for a presence of a value. The  
 answer is `true`.
 
 More example of string functions and their implementation is available in
@@ -98,7 +100,7 @@ inconsistency.
 
 Let us consider the following incoming data sample:
 
-```js
+```json
 {
   "itemPrice": {
     "amount": "25.44",
@@ -111,14 +113,14 @@ The value of the `itemPrice.amount` parameter is not a number but a `"25.44"`,
 which is a `string`. As it stands we would not be able to use it in any numeric
 calculations. To address this we could write:
 
-```js
+```json
 $number(itemPrice.amount)
 ```
 
 This would result in `25.44`, which is a number. A related issue can be when the
 incoming data contains a number in German accounting format.
 
-```js
+```json
 {
   "itemPrice": {
     "amount": "12,99",
@@ -131,7 +133,7 @@ Before we pass the value `itemPrice.amount` to `$number(arg)` function we need
 to replace the comma with a point. Here we will use a string transformation
 function `$replace(str, pattern, replacement [, limit])`:
 
-```js
+```json
 $number($replace(itemPrice.amount, ",","."))
 ```
 
@@ -140,7 +142,7 @@ The result would be `12.99`, which is a number.
 Now let's perform some basic arithmetic operations on numbers in your payload.
 Consider the following data was produced by a source system:
 
-```js
+```json
 {
   "orderItems": [
     {
@@ -171,7 +173,7 @@ Consider the following data was produced by a source system:
 As an exercise, we could get the price of the whole order but only the part
 which was shipped. We would also like to get the output as a JSON:
 
-```js
+```
 {
   "shipment title" : orderItems.title,
   "shipment price" : orderItems.(quantityShipped*(itemPrice.amount + shippingPrice.amount) - promotionDiscount.amount)
@@ -184,7 +186,7 @@ multiplied with `quantityShipped` value to get the whole order before applying
 the `promotionDiscount.amount`. So, in numbers that would be `2 * (25.44 + 4.49) - 1.99`.
 Here is the outgoing JSON:
 
-```js
+```json
 {
   "shipment title": "my life in kenya",
   "shipment price": 57.87
@@ -196,7 +198,7 @@ Here is the outgoing JSON:
 Now let us slightly change the requirement from above example. We want to apply
 the `promotionDiscount.amount` to each item in the order.
 
-```js
+```
 {
   "shipment title" : orderItems.title,
   "shipment price" : orderItems.(quantityShipped*$sum([itemPrice.amount, shippingPrice.amount, -promotionDiscount.amount]))
@@ -205,7 +207,7 @@ the `promotionDiscount.amount` to each item in the order.
 
 Here is the outgoing JSON:
 
-```js
+```json
 {
   "shipment title": "my life in kenya",
   "shipment price": 55.88
@@ -227,7 +229,7 @@ You can use `$moment()` to return the current timestamp (equivalent to `$now()`)
 For example, if the local time is 2017-09-01T12:00:00 (Germany Time, Central
 Europen Summer Time) which is 1-hour ahead of UTC + DST (Daylight Saving Time).
 
-```js
+```json
 $moment()
 ```
 
@@ -239,7 +241,7 @@ The output is going to be in ISO 8601 standard format:
 
 To convert the date explicitly to UTC use:
 
-```js
+```json
 $moment().utc()
 ```
 
@@ -249,7 +251,7 @@ crucial for the operations.
 
 When a date string is passed:
 
-```js
+```json
 $moment('06.12.2017')
 ```
 
@@ -263,7 +265,7 @@ will get complicated if it is not, therefore, one should prevent this inconsiste
 in advance by using known [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601)
 or String + Format method:
 
-```js
+```json
 // String + format
 $moment('06.12.2017','DD.MM.YYYY')
 // or ISO 8601
@@ -281,7 +283,7 @@ Both implementations will return the same value:
 `$moment()` returns the date and time in a standard ISO 8601 format but it can
 be modified by using .format() parameter. When used in the initial empty state:
 
-```js
+```json
 $moment('2017-12-06').format() & "\n" &
 $moment('2017-06-12').format()
 ```
@@ -297,7 +299,7 @@ These are the ISO 8601 formatted date and the time values offset from UTC at
 each particular moment (German Time). It is also possible to output using many
 other formats. For example:
 
-```js
+```json
 $moment('2012-12-01').format('MM/DD/YYYY')
 ```
 
@@ -309,7 +311,7 @@ This expression returns the input ISO 8601 value in a formatted US date format.
 
 Let us take another example:
 
-```js
+```json
 $moment('2012-12-01T22:32:16').format("dddd, MMMM Do YYYY, h:mm:ss a")
 ```
 
@@ -328,7 +330,7 @@ Any given date one can be changed using manipulate functions. It is possible to
 add and subtract years, months, weeks, days and etc. For example to add 1 year,
 3 months and 15 days from any particular date:
 
-```js
+```json
 $moment('2012-12-01').add(1, 'year').add(3,'months').add(15,'days').format('LL')
 ```
 
@@ -340,7 +342,7 @@ March 16, 2014
 
 It is also possible to use add and subtract together in one expression like this:
 
-```js
+```json
 $moment('2012-12-01').add(3, 'year').subtract(25,'days').format('LL')
 ```
 
@@ -375,7 +377,7 @@ or `String + Format` method for date and time.
 To address the second problem use not only the date but local time and the time
 offset. For example, if the input field has this:
 
-```js
+```json
 $moment("01.04.1980")
 ```
 
@@ -388,7 +390,7 @@ Then the output would be:
 It is obvious that the input date and time were incorrectly interpreted. Here is
 how to correct it:
 
-```js
+```json
 $moment("01.04.1980" & "-0400","MM.DD.YYYYZZ")
 ```
 
@@ -408,7 +410,7 @@ have the same time offset.
 
 Let us consider the following input array:
 
-```js
+```json
 {
   "Order": [
     {"ids":[1,2,3]},
@@ -420,19 +422,19 @@ Let us consider the following input array:
 
 To select the first embedded array elements (`[1,2,3]`) use:
 
-```js
+```json
 Order[0].ids
 ```
 
 To select only the first element of the first embedded array (`1`) use:
 
-```js
+```json
 Order[0].ids[0]
 ```
 
 It is possible to select elements using a wildcard `*` like:
 
-```js
+```json
 *[0].*[0]
 ```
 
@@ -443,7 +445,7 @@ Returning just `1` like the previous example.
 Considering the same input array example, here is how to flatten the two
 embedded arrays into one:
 
-```js
+```json
 Order.ids
 ```
 
@@ -451,7 +453,7 @@ Which would result in: `[1,2,3,4,5,6,7,8,9]`
 
 Let us use a nested array example from the [JSONata Exerciser page](http://try.jsonata.org/).
 
-```js
+```json
 {
   "Account": {
     "Account Name": "Firefly",
@@ -499,56 +501,59 @@ To create a custom JSON document on output follow these guidelines:
 *   Include the output in curly brackets `{ }`
 *   JSON property names can be declared:
 
-```js
+```
 {"parameter": Account.Order[0].OrderID}
 ```
 
 which returns:
 
-```js
+```json
 {"parameter":"order103"}
 ```
 
 *   To access the properties with space in the name use brackets:
 
-```js
+```
 {"name": Account.Order[0].Product[0]."Product Name"}
 ```
 
  returns:
 
-```js
+```json
 {"name": "Bowler Hat"}
 ```
 
 *   To refer the value of `"Product Name"` property in an embedded array structure use `$` to reference the current array level:
 
-```js
+```
 {"product": Account.Order.Product.({"name" : $."Product Name"})}
 ```
 
 which would return
 
-```js
+```json
 {
   "product": [
-    {"name": "Bowler Hat"},
-    {"name": "Trilby hat"},
-    {"name": "Bowler Hat"},
-    {"name": "Cloak"}
+    {
+      "name": "Bowler Hat"
+    },
+    {
+      "name": "Trilby hat"
+    }
   ]
 }
 ```
 
 JSON document with an array including the names of the products.
-> **Note** without `$` the value of `"Product Name"` would not have been propagated.
+
+> **Please note:** without `$` the value of `"Product Name"` would not have been propagated.
 
 Following the above guidelines, here is the final JSONata expression:
 
-```js
+```
 {
   "account": Account."Account Name",
-  "orderID": Account.Order.(OrderID),
+  "orderID": Account.Order.OrderID,
   "products": Account.Order.Product.({
     "name": $."Product Name",
     "revenue": (Price * Quantity)
