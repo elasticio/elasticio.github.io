@@ -33,7 +33,7 @@ aggregation pipeline operators for details. **Required field**.
 
 `batchSize` - size of pages. Rendered only if `Emit Batch` strategy is chosen. Default: 10.
 
-Examples:
+<details close markdown="block"><summary><strong>Examples</strong></summary>
 
 ```
 {
@@ -53,7 +53,9 @@ Examples:
 }
 ```
 
-Emit batch strategy:
+</details>
+
+<details close markdown="block"><summary><strong>Emit batch strategy</strong></summary>
 
 ```
 {
@@ -64,6 +66,8 @@ Emit batch strategy:
   "batchSize": 10
 }
 ```
+
+</details>
 
 ## Bulk Write
 
@@ -78,7 +82,7 @@ Bulk Write takes an array of write operations and executes each of them. Operati
 
 `operations` - Valid operations are: `insertOne`, `updateOne`, `updateMany`, `deleteOne`, `deleteMany`, `replaceOne`
 
-Example:
+<details close markdown="block"><summary><strong>Example</strong></summary>
 
 ```json
 {
@@ -104,6 +108,9 @@ Example:
 }
 
 ```
+
+</details>
+
 ## Delete By ID
 
 Delete document by ID.
@@ -117,7 +124,7 @@ Delete document by ID.
 
 'id' of the document to delete
 
-Example:
+<details close markdown="block"><summary><strong>Example</strong></summary>
 
 ```json
 {
@@ -125,10 +132,11 @@ Example:
 }
 ```
 
+</details>
+
 ### Result
 
-<details>
-  <summary>Resulting JSON is a MongoDB specific information</summary>
+<details close markdown="block"><summary><strong>Resulting JSON is a MongoDB specific information</strong></summary>
 
 ```json
 {
@@ -197,7 +205,7 @@ Delete document by Unique Criteria.
 
 `criteria` of the document to search
 
-Example:
+<details close markdown="block"><summary><strong>Example</strong></summary>
 
 ```json
 {
@@ -206,10 +214,12 @@ Example:
   }
 }
 ```
+
+</details>
+
 ### Result
 
-<details>
-  <summary>Resulting JSON is a MongoDB specific information</summary>
+<details close markdown="block"><summary><strong>Resulting JSON is a MongoDB specific information</strong></summary>
 
 ```json
 {
@@ -278,13 +288,15 @@ Lookup document by ID.
 
 `id` of the document
 
-Example:
+<details close markdown="block"><summary><strong>Example</strong></summary>
 
 ```json
 {
   "id" : "5e936f7c7c876ec2e1e48f4d"
 }
 ```
+
+</details>
 
 ### Result
 
@@ -319,19 +331,24 @@ This document is emitted
 Error 'More than one document found' thrown.
 
 ### Body
+
 'criteria' of the document to search
 
-Example:
-```json5
+<details close markdown="block"><summary><strong>Example</strong></summary>
+
+```json
 {
   "criteria": {
     "value" : 4
   }
 }
 ```
+
+</details>
+
 ### Result
 
-```json5
+```json
 {
   "_id": "5a97f9c91c807bb9c6eb5fb4",
   "user_id": "t3qulfeem@kwiv5.6ur",
@@ -356,7 +373,8 @@ Lookup many documents by criteria.
 
 >**Please Note:**: it is possible to lookup objects by fields with type ObjectID. For enabling this feature use template `"ObjectId('objectId')"`.
 
-Example:
+<details close markdown="block"><summary><strong>Example</strong></summary>
+
 ![image](https://user-images.githubusercontent.com/16806832/137541181-19a9c8f1-464a-4722-b399-323cf65c204b.png)
 
 ```json
@@ -368,6 +386,8 @@ Example:
 }
 ```
 
+</details>
+
 >**Known limitation**: it is possible to lookup by ObjectId only on first level of criteria object. Nested properties are not supported.
 In case usage  template `"ObjectId('objectId')"` on next levels of criteria object value will accept as string.
 
@@ -377,11 +397,11 @@ In case usage  template `"ObjectId('objectId')"` on next levels of criteria obje
 
 `batchSize` - size of pages. Rendered only if `Emit Batch` strategy is chosen. Default: 10.
 
-Examples:
+<details close markdown="block"><summary><strong>Example</strong></summary>
 
-1. This will find all the documents (plural) according to th given criteria. In this case this will retrieve all the objects with the root value equals 4:
+This will find all the documents (plural) according to th given criteria. In this case this will retrieve all the objects with the root value equals 4:
 
-```
+```json
 {
   "criteria": {
     "value": 4
@@ -389,11 +409,14 @@ Examples:
   "limit": 100
 }
 ```
+
+</details>
+
 ### Result
 
 Will return an array of documents inside the `result` property:
 
-```
+```json
 {
   "result": [
     {
@@ -411,7 +434,7 @@ Will return an array of documents inside the `result` property:
 2. Complex queries are also supported. E.g. the next query will return all the objects that have a property `otherValue` equals 4 inside of a property `nestedObj`.
 You will get a 'Projection cannot have a mix of inclusion and exclusion' error otherwise.
 
-```
+```json
 {
   "criteria": {
     "nestedObj.otherValue": 4
@@ -431,7 +454,7 @@ The following sample returns all the objects (as the 'criteria' object is empty)
 
 4. Emit batch strategy:
 
-```
+```json
 {
   "criteria": {
     "value": 4
@@ -455,7 +478,7 @@ Upserts document by ID.
 
 Document to be upserted.
 
-Example:
+<details close markdown="block"><summary><strong>Example</strong></summary>
 
 ```json
 {
@@ -464,9 +487,11 @@ Example:
 }
 ```
 
+</details>
+
 ### Result
 
-```json
+```
 {
   "result":  {
     "id": "some id" // object id
@@ -484,13 +509,15 @@ Updates documents in a collection
 1. Select a DB - Database to be found in.
 2. Select a Collection - Collection to be found in.
 3. Upsert - When checked, creates a new document if no document matches the query.
+
 #### Body
+
 1. `criteria` - the criteria used to select the documents to update.
 2. `update` - the update operations to be applied to the documents
 
 Please refer the [MongoDB Update Operators Documentation](https://docs.mongodb.com/manual/reference/operator/update/) for the details on the operators.
 
-Example:
+<details close markdown="block"><summary><strong>Example</strong></summary>
 
 ```json
 {
@@ -506,10 +533,12 @@ Example:
   }
 }
 ```
+
+</details>
+
 ### Result
 
-<details>
-  <summary>Resulting JSON</summary>
+<details close markdown="block"><summary><strong>Resulting JSON</strong></summary>
 
 ```json
 {
@@ -583,7 +612,7 @@ Upserts document by unique criteria.
 
 1. `criteria` - criteria for upsertion.
 
-Examples:
+<details close markdown="block"><summary><strong>Example</strong></summary>
 
  ```json
 {
@@ -598,17 +627,25 @@ Examples:
   }
 } // Property status equals 'A' or 'D'
 ```
-2. `value` -
-Document to be upserted.
-Example:
-```json5
+
+</details>
+
+2. `value` - Document to be upserted.
+
+<details close markdown="block"><summary><strong>Example</strong></summary>
+
+```json
 {
   "name" : "some_value",
   "surname": "updated_value"
 }
 ```
+
+</details>
+
 ### Result
-```json5
+
+```
 {
   "result":  {
     "id": "some id" // object id
