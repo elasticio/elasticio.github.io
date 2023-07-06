@@ -39,6 +39,8 @@ The Dropbox SDK utilizes OAuth 2 for authorizing API requests. To ensure secure 
 
 To create and set up your app, follow these steps:
 
+<details close markdown="block"><summary><strong>Steps</strong></summary>
+
 **1.** Navigate to the Dropbox `App Center` in your web browser.
 
 {% include img.html max-width="100%" url="img/app_center.png" title="App Center" %}
@@ -51,11 +53,13 @@ To create and set up your app, follow these steps:
 
 {% include img.html max-width="100%" url="img/create_apps.png" title="Choose create app" %}
 
-**4.** Fill in the required fields, such as `Choose an API`, `Choose the type of access you need` and `NAme your App`. After configuration, press `Create app`.
+**4.** Fill in the required fields, such as `Choose an API`, `Choose the type of access you need` and `Name your App`. After configuration, press `Create app`.
 
 {% include img.html max-width="100%" url="img/create_app.png" title="Config" %}
 
-## Access Token
+</details>
+
+### Access Token
 
 On the 'Developer Settings' page of your app, follow these steps:
 
