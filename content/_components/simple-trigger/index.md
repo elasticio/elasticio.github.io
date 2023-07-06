@@ -6,54 +6,34 @@ description: A component used to trigger integration flows without requesting da
 icon: simple-trigger.png
 icontext: Simple-trigger component
 category: simple-trigger
-updatedDate: 2022-11-11
-ComponentVersion: 1.1.8
+updatedDate: 2023-06-30
+ComponentVersion: 1.2.0
 redirect_from:
   - /components/timer/index.html
 ---
----
 
-## How works
+## Description
 
-This component should be used as a first step in your flow to trigger integration flows.
-
-## Requirements
-
-This component should be the first step in your flow.
-
-![set as first step](img/1ststep.png)
-
-### Environment variables
-
-Environment variables are not required for this component.
-
-### Credentials
-
-This component does not require credentials to work.
-
-### Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about Simple-trigger component like [changelog](/components/simple-trigger/technical-notes#changelog).
+This component serves as a trigger for integration flows without requiring data from any services.
 
 ## Triggers
 
 ### Simple trigger
 
-This component can have a cronjob so you can choose when exactly and how often
-you want this component to work.
+This trigger sends a message with information when the current and previous messages are sent.
 
-![the cron setup](img/cron.png)
+{% include img.html max-width="100%" url="img/simple-trigger.png" title="Simple trigger" %}
 
-## Actions
+#### Configuration Fields
 
-This component has no action functions.
+* **Start Time** (string, optional): The timestamp to start sending messages from (inclusive), using the ISO 8601 Date time UTC format (YYYY-MM-DDThh:mm:ss.sssZ). The default value is the beginning of time (January 1, 1970 at 00:00).
+* **End Time** (string, optional): The timestamp to stop sending messages (exclusive), using the ISO 8601 Date time UTC format (YYYY-MM-DDThh:mm:ss.sssZ). The default value is set to never stop.
 
-## Others
+#### Input Metadata
 
-Here is how generated sample looks. You also can edit it.
+This trigger does not require any input metadata.
 
-![generated sample](img/simple-trigger-sample.png)
+#### Output Metadata
 
-## Known limitations
-
-There are no known limitations for this component.
+* **fireTime** (string, required): The timestamp when the trigger was executed, formatted in the ISO 8601 Date time format (YYYY-MM-DDThh:mm:ss.sssZ).
+* **lastPoll** (string, required): The timestamp of the previous execution in the ISO 8601 Date time UTC format (YYYY-MM-DDThh:mm:ss.sssZ).
