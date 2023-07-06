@@ -168,7 +168,6 @@ and you will get an error in the **Mapping result** section:
 > design of integration flow but not after you publish it. To change the mapping
 > mode, create a new draft version of a flow.
 
-
 ## Array-to-array Mapping
 
 You can map the incoming array values with an outgoing array fields, we call this
@@ -196,9 +195,139 @@ data fields.
 > mode where you can write extensive JSONata expressions and use data from
 > different arrays simultaneously.
 
+## Support arrays of Objects
 
-## Related links
+When working with arrays in the context of mapping data, you may have encountered limitations in representing values that are not objects. Our platform utilizes [JSON](https://datatracker.ietf.org/doc/html/rfc7159) as the data interchange format, which imposes certain constraints, including the lack of support for arrays containing values. Therefore, in our platform, we only support arrays that consist of objects. This section aims to explain where this limitation arises and provide solutions for working with arrays effectively.
 
-- [Data Sample](/getting-started/data-sample-overview)
-- [Creating a Basic Integration Flow](/getting-started/first-flow)
-- [Creating a webhook flow](/getting-started/webhooks-flow)
+### Example
+
+Let's consider a scenario where you receive the following payload through a [Webhook](/components/webhook/) trigger:
+
+```json
+{
+  "body": {
+    "registered": true,
+    "header": [
+      "customer_id"
+    ],
+    "rows": [
+      [
+        "ozzy.osbourne@example.com"
+      ],
+      [
+        "michael.jackson@example.com"
+      ],
+      [
+        "janis.joplin@example.com"
+      ],
+      [
+        "whitney.houston@example.com"
+      ]
+    ]
+  }
+}
+```
+
+Suppose you want to extract user emails from the rows array and use them in the URL field of your [REST API](/components/rest-api/). To achieve this, you need to split the `rows` array, treating each value as a separate URL.
+
+<details close markdown="block"><summary><strong>Attempting an Incorrect Approach</strong></summary>
+
+Initially, you may attempt to split the sample provided by the [Webhook](/components/webhook/) component to extract array values.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/splitter-config-incorrect.png" title="Splitter configuration" %}
+
+However, this sample does not contain a name and is not an object but a simple array value.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/splitter-config-sample-incorrect.png" title="Splitter sample" %}
+
+In [JSON](https://datatracker.ietf.org/doc/html/rfc7159), you cannot directly interact with an array of values in this manner.
+
+```json
+[
+  [
+    "ozzy.osbourne@example.com"
+  ],
+  [
+    "michael.jackson@example.com"
+  ],
+  [
+    "janis.joplin@example.com"
+  ],
+  [
+    "whitney.houston@example.com"
+  ]
+]
+```
+
+Consequently, you won't be able to utilize the [Splitter](/components/splitter/) component to work with this array of values as expected.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/rest-api-config-incorrect.png" title="Unable to utilize" %}
+
+</details>
+
+<details close markdown="block"><summary><strong>Adopting the Correct Approach</strong></summary>
+
+To overcome this limitation, each element within the array should be represented as an object.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/splitter-config.png" title="Splitter configuration" %}
+
+In JSON, to create an object, we need to provide a name. By using the dot notation before the `{ }`, we can assign a name to each value within the `rows` array.
+
+```
+body.rows @ $email.{ "email": $email }
+```
+
+Consequently, each sample becomes an object.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/splitter-config-sample.png" title="Splitter sample" %}
+
+This results in an array of objects.
+
+```json
+[
+  {
+    "email": [
+      "ozzy.osbourne@example.com"
+    ]
+  },
+  {
+    "email": [
+      "michael.jackson@example.com"
+    ]
+  },
+  {
+    "email": [
+      "janis.joplin@example.com"
+    ]
+  },
+  {
+    "email": [
+      "whitney.houston@example.com"
+    ]
+  }
+]
+```
+
+The [Splitter](/components/splitter/) component sample can now be used in the URL field.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/rest-api-config-1.png" title="Sample in URL field" %}
+
+As shown, the value is placed inside the object, which is an array.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/rest-api-config-2.png" title="Sample is an array" %}
+
+To extract this value, switch to JSONata mode instead of the Integrator mode.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/rest-api-config-3.png" title="JSONata mode" %}
+
+Then, specify zero within `[ ]` as the first element of the array.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/rest-api-config-4.png" title="JSONata mode" %}
+
+Finally, you will obtain the email value, and each subsequent iteration will provide the next email from the array of objects.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-mapper/rest-api-config-5.png" title="Email value" %}
+
+</details>
+
+In conclusion, [JSON](https://datatracker.ietf.org/doc/html/rfc7159) offers a high level of interoperability for data exchange across platforms. However, it does have limitations concerning support for object arrays. It is crucial to be aware of these limitations to set up your flow logic correctly.
