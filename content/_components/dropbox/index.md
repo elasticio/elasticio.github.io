@@ -35,12 +35,43 @@ It is used [Dropbox JavaScript SDK](https://github.com/dropbox/dropbox-sdk-js).
 
 ## Credentials
 
-The Dropbox SDK uses OAuth 2 for authorizing API requests. Dropbox requires an access token to make authenticated requests.
-You should create, set up your app, see [OAuth guide](https://www.dropbox.com/developers/reference/oauth-guide), and generate `access token`.
+The Dropbox SDK utilizes OAuth 2 for authorizing API requests. To ensure secure communication and access to Dropbox resources, you need to obtain an access token. To get started, create and set up your app. For detailed instructions on how to set up OAuth and generate an `access token`, refer to the Dropbox [OAuth guide](https://developers.dropbox.com/ru-ru/oauth-guide).
+
+To create and set up your app, follow these steps:
+
+<details close markdown="block"><summary><strong>Steps</strong></summary>
+
+**1.** Navigate to the Dropbox `App Center` in your web browser.
+
+{% include img.html max-width="100%" url="img/app_center.png" title="App Center" %}
+
+**2.**  In the `Manage` section, click on `Build an app`.
+
+{% include img.html max-width="100%" url="img/manage_build_an_app.png" title="Build an app" %}
+
+**3.** On the redirected page, click on the `Create app` button.
+
+{% include img.html max-width="100%" url="img/create_apps.png" title="Choose create app" %}
+
+**4.** Fill in the required fields, such as `Choose an API`, `Choose the type of access you need` and `Name your App`. After configuration, press `Create app`.
+
+{% include img.html max-width="100%" url="img/create_app.png" title="Config" %}
+
+</details>
 
 ### Access Token
 
-Use generated previously `access token`.
+On the 'Developer Settings' page of your app, follow these steps:
+
+1. Find the `OAuth2` title.
+2. Click on the `Generate` button located below the `Generate access token` field to generate a new access token.
+3. Alternatively, if you have previously generated an access token, you can use that instead.
+
+{% include img.html max-width="100%" url="img/genetare_token.png" title="Genetare token" %}
+
+> Please note: In order to perform certain actions, such as accessing user files or creating folders, you need to have all necessary permissions enabled. To manage permissions, click on the `Scoped App` link in the `Developer Settings` section or switch to the `Developer Permissions` page.
+
+{% include img.html max-width="100%" url="img/dropbox_permissions.png" title="Permissions" %}
 
 ## Triggers
 
@@ -51,6 +82,8 @@ This component has no trigger functions. This means it will not be accessible to
 ### Get File By Path
 
 Action to get file from Dropbox by provided path
+
+{% include img.html max-width="100%" url="img/get-file-by-path.png" title="Get File By Path" %}
 
 #### List of Expected Config fields
 
@@ -71,17 +104,18 @@ Checkbox for attaching files content to action response
 
 * **path** - Full path to file
 
-#### Input example:
+<details close markdown="block"><summary><strong>Input example</strong></summary>
 
 ```json
 {
     "path": "/inner_folder/file.any"
 }
 ```
+</details>
 
-#### Output example:
+<details close markdown="block"><summary><strong>Output example</strong></summary>
 
-  - Successful response
+- Successful response
 
 ```json
 {
@@ -99,17 +133,19 @@ Checkbox for attaching files content to action response
 }
 ```
 
+</details>
+
 ### Upsert File
 
 Action upserts (create or replace) with file from attachment by provided path in Microsoft One Drive. If more then 1 attachments (or no attachments) provided the action will throw an error:
 
-![Upsert File](img/dropbox-upsert-file.png)
+{% include img.html max-width="100%" url="img/upsert-file.png" title="Upsert File" %}
 
 #### Metadata fields description
 
   * **Path** - Full path to item to create or replace
 
-#### Input example:
+<details close markdown="block"><summary><strong>Input example</strong></summary>
 
 ```json
 {
@@ -117,9 +153,11 @@ Action upserts (create or replace) with file from attachment by provided path in
 }
 ```
 
-#### Output example:
+</details>
 
-  - Successful response
+<details close markdown="block"><summary><strong>Output example</strong></summary>
+
+- Successful response
 
 ```json
 {
@@ -138,11 +176,13 @@ Action upserts (create or replace) with file from attachment by provided path in
 }
 ```
 
+</details>
+
 ### Delete Folder Or File By Path
 
 Action to delete folder or file from Dropbox by provided path:
 
-![Delete Folder Or File By Path](img/dropbox-delete-folder-or-file-by-path.png)
+{% include img.html max-width="100%" url="img/delete-folder-or-file-by-path.png" title="Delete Folder Or File By Path" %}
 
 #### List of Expected Config fields
 
@@ -152,7 +192,7 @@ Action to delete folder or file from Dropbox by provided path:
 
 * **Path** - Full path to a file or a folder
 
-#### Input example:
+<details close markdown="block"><summary><strong>Input example</strong></summary>
 
 ```json
   {
@@ -160,9 +200,11 @@ Action to delete folder or file from Dropbox by provided path:
   }
 ```
 
-#### Output example:
+</details>
 
-  - Error response example
+<details close markdown="block"><summary><strong>Output example</strong></summary>
+
+- Error response example
 
   ```json
   {
@@ -200,11 +242,13 @@ Action to delete folder or file from Dropbox by provided path:
 }
 ```
 
+</details>
+
 ### Create Folder
 
 Create new folder in provided `path`. Path should contains folder name:
 
-![Create Folder](img/dropbox-create-folder.png)
+{% include img.html max-width="100%" url="img/create-folder.png" title="Create Folder" %}
 
 #### Input fields description
 
@@ -217,7 +261,7 @@ Create new folder in provided `path`. Path should contains folder name:
 
   * **Path** - Path to to folder where new folder will be created. Use empty string or `/` for root
 
-#### Input example:
+<details close markdown="block"><summary><strong>Input example</strong></summary>
 
 ```json
 {
@@ -225,7 +269,9 @@ Create new folder in provided `path`. Path should contains folder name:
 }
 ```
 
-#### Output example:
+</details>
+
+<details close markdown="block"><summary><strong>Output example</strong></summary>
 
   - Successful response
 
@@ -237,6 +283,8 @@ Create new folder in provided `path`. Path should contains folder name:
     "id": "id:U6e6XFFVGvAAAAAAAAAAlw"
 }
 ```
+
+</details>
 
 ## Known Limitations
 
