@@ -5,8 +5,8 @@ description: Information on NetSuite component authentication on the platform
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2022-12-16
-ComponentVersion: 3.0.0
+updatedDate: 2023-05-26
+ComponentVersion: 3.1.0
 ---
 
 ## API version

@@ -5,8 +5,8 @@ description: Information on deprecated NetSuite functions
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2022-12-16
-ComponentVersion: 3.0.0
+updatedDate: 2023-05-26
+ComponentVersion: 3.1.0
 ---
 
 ## Deprecated Triggers
@@ -93,6 +93,62 @@ Retrieve sample result
 ![Step 5: Retrieve sample result](https://user-images.githubusercontent.com/16806832/44350359-d849a980-a4a7-11e8-9f78-57023a0c2dfa.png)
 
 ## Deprecated Action
+
+### Lookup Customer(deprecated)
+
+Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead.
+
+This action enables to find the customer by provided ID. It is possible to provide
+**internal**, **external** id or **all** of them in input message.
+
+If entity doesn't have `externalId` You must specify only `internalId` in
+input message. If You specify incorrect internal or external id, You will get
+error **That record does not exist.**
+
+For example when the `externalId` exists the answer would be:
+
+```javascript
+{
+  "internalId":"1234",
+  "externalId":"4567"
+}
+```
+
+When the `externalId` does not exist:
+
+```javascript
+{
+  "internalId":"1234"
+}
+```
+
+### Lookup Invoice(deprecated)
+
+Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead.
+
+This action can be used to find invoices by provided ID.
+
+You can provide **internal**, **external** id or **all** of them in input message.
+If entity doesn't have `externalId` You must specify only `internalId` in input message.
+
+If You specify incorrect internal or external id, You will get error "**That record does not exist.**"
+
+For example if the `externalId` exists:
+
+```javascript
+{
+  "internalId":"1234",
+  "externalId":"4567"
+}
+```
+
+If the `externalId` does not exist:
+
+```javascript
+{
+  "internalId":"1234"
+}
+```
 
 ### Upsert Customer(deprecated)
 

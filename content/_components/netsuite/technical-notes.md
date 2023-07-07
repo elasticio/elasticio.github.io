@@ -5,13 +5,19 @@ description: Technical Notes for the NetSuite component.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2022-12-16
-ComponentVersion: 3.0.0
+updatedDate: 2023-05-26
+ComponentVersion: 3.1.0
 redirect_from:
   - /components/netsuite/changelog.html
 ---
 
 ## Changelog
+
+### 3.1.0 (May 26, 2023)
+
+* Add Lookup Objects by Custom Field Action
+* Add Add Object Action
+* Add Update Object Action
 
 ### 3.0.0 (December 16, 2022)
 
