@@ -97,7 +97,7 @@ Deletes an object by the ID provided.
 
 ![Delete Object By Id](img/delete-by-id.png)
 
-### Configuration fields
+### Configuration Fields
 
 * **Object Category** - a category of an object in NetSuite:
 
@@ -160,7 +160,7 @@ Lookup an object by the ID provided.
 
 ![Lookup Object By Id](img/lookup-by-id.png)
 
-### Configuraton fields
+### Configuration fields
 
 * **Object Category** - a category of an object in NetSuite
   * Standard
@@ -1034,14 +1034,11 @@ You should to use property **type**, which can accept next values:
 
  You can find example of custom field structures [here](/components/netsuite/index#upsert-custom-fields).
 
- ### Lookup Objects By Custom Field
-Looks for objects available in NetSuite which meet given custom string field criteria.
-
 ## Lookup Objects By Custom Field
 
 Looks for objects available in NetSuite which meet given custom string field criteria.
 
-### Configuraton fields
+### Configuration fields
 
 * **Object Category** - a category of an object in NetSuite
     * Standard
