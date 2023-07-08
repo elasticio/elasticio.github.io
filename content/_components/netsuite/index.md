@@ -10,7 +10,7 @@ updatedDate: 2023-05-26
 ComponentVersion: 3.1.0
 ---
 
-## How works
+## How it works
 
 Communication with NetSuite API established using NetSuite's native SDK.
 
