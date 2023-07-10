@@ -5,9 +5,91 @@ description: NetSuite component actions.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2022-12-16
-ComponentVersion: 3.0.0
+updatedDate: 2023-05-26
+ComponentVersion: 3.1.0
 ---
+
+## Add Object
+
+Add an object to NetSuite.
+
+### Configuration Fields
+
+* **Object Category** - a category of an object in NetSuite
+    * Standard
+    * Custom
+* **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
+
+### Input Metadata
+
+Is being fetched dynamically. Sample:
+
+<details close markdown="block"><summary><strong>Input metadata for invoice object</strong></summary>
+
+```json
+{
+  "entity": {
+    "internalId": "5"
+  },
+  "currency": {
+    "internalId": "1"
+  },
+  "tranDate": "2023-05-23",
+  "itemList": {
+    "item": [
+      {
+        "description": "General Donation",
+        "amount": 1000,
+        "item": {
+          "internalId": "12"
+        },
+        "quantity": 1,
+        "rate": "100",
+        "taxCode": {
+          "internalId": "5"
+        },
+        "customFieldList": {
+          "customField": [
+            {
+              "type": "SelectCustomFieldRef",
+              "scriptId": "asd_d3",
+              "value": {
+                "name": "Charity type",
+                "internalId": "2"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customFieldList": {
+    "customField": [
+      {
+        "type": "StringCustomFieldRef",
+        "scriptId": "custbody_sf_field-one",
+        "value": "Bank Transfer"
+      },
+      {
+        "type": "StringCustomFieldRef",
+        "scriptId": "custbody_sf_field-two",
+        "value": "Individual One-Off"
+      },
+      {
+        "type": "StringCustomFieldRef",
+        "scriptId": "custbody_sf_field-three",
+        "value": "John Doe"
+      },
+      {
+        "type": "StringCustomFieldRef",
+        "scriptId": "custbody_sf_field-four",
+        "value": "ABC-987"
+      }
+    ]
+  }
+}
+```
+</details>
 
 ## Delete Object By Id
 
@@ -15,7 +97,7 @@ Deletes an object by the ID provided.
 
 ![Delete Object By Id](img/delete-by-id.png)
 
-### Config fields
+### Configuration Fields
 
 * **Object Category** - a category of an object in NetSuite:
 
@@ -64,7 +146,7 @@ Input metadata for other objects:
 }
 ```
 
-### Delete Object By Id. Output Metadata
+### Output Metadata
 
 ```json
 {
@@ -78,7 +160,7 @@ Lookup an object by the ID provided.
 
 ![Lookup Object By Id](img/lookup-by-id.png)
 
-### Config fields
+### Configuration Fields
 
 * **Object Category** - a category of an object in NetSuite
   * Standard
@@ -937,62 +1019,6 @@ Either update an object in NetSuite by an ID provided or inserts as a new object
   * Custom
 * **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
 
-## Lookup Customer(deprecated)
-
-Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead.
-
-This action enables to find the customer by provided ID. It is possible to provide
-**internal**, **external** id or **all** of them in input message.
-
-If entity doesn't have `externalId` You must specify only `internalId` in
-input message. If You specify incorrect internal or external id, You will get
-error **That record does not exist.**
-
-For example when the `externalId` exists the answer would be:
-
-```javascript
-{
-  "internalId":"1234",
-  "externalId":"4567"
-}
-```
-
-When the `externalId` does not exist:
-
-```javascript
-{
-  "internalId":"1234"
-}
-```
-
-## Lookup Invoice(deprecated)
-
-Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead.
-
-This action can be used to find invoices by provided ID.
-
-You can provide **internal**, **external** id or **all** of them in input message.
-If entity doesn't have `externalId` You must specify only `internalId` in input message.
-
-If You specify incorrect internal or external id, You will get error "**That record does not exist.**"
-
-For example if the `externalId` exists:
-
-```javascript
-{
-  "internalId":"1234",
-  "externalId":"4567"
-}
-```
-
-If the `externalId` does not exist:
-
-```javascript
-{
-  "internalId":"1234"
-}
-```
-
 ## Upsert Custom Fields
 
 Currently, You can upsert custom fields only from developer mode.
@@ -1007,3 +1033,109 @@ You should to use property **type**, which can accept next values:
  - StringCustomFieldRef
 
  You can find example of custom field structures [here](/components/netsuite/index#upsert-custom-fields).
+
+## Lookup Objects By Custom Field
+
+Looks for objects available in NetSuite which meet given custom string field criteria.
+
+### Configuration Fields
+
+* **Object Category** - a category of an object in NetSuite
+    * Standard
+    * Custom
+* **Object Type** - an object in NetSuite (Contact, Customer, Invoice, Cash Sale etc.). Fetches dynamically.
+
+Input metadata  objects:
+
+* Custom field name - name of the custom field. E.g. `custbody_tran_number`
+* Custom field value - value of the custom field. E.g. `ABC-123`
+
+```json
+{
+  "customFieldName": "custbody_tran_number",
+  "customFieldValue": "ABC-123"
+}
+```
+
+## Update Object
+
+Update an object in NetSuite.
+
+### Configuration Fields
+
+* **Object Category** - a category of an object in NetSuite
+    * Standard
+    * Custom
+* **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
+
+### Input Metadata
+
+Is being fetched dynamically. Sample:
+
+<details close markdown="block"><summary><strong>Input metadata for Invoice object:</strong></summary>
+
+```json
+{
+  "internalId": "13817",
+  "entity": {
+    "internalId": "5"
+  },
+  "currency": {
+    "internalId": "1"
+  },
+  "tranDate": "2023-05-23",
+  "itemList": {
+    "item": [
+      {
+        "description": "General Donation",
+        "amount": 1000,
+        "item": {
+          "internalId": "12"
+        },
+        "quantity": 1,
+        "rate": "100",
+        "taxCode": {
+          "internalId": "5"
+        },
+        "customFieldList": {
+          "customField": [
+            {
+              "type": "SelectCustomFieldRef",
+              "scriptId": "asd_d3",
+              "value": {
+                "name": "Charity type",
+                "internalId": "2"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customFieldList": {
+    "customField": [
+      {
+        "type": "StringCustomFieldRef",
+        "scriptId": "custbody_sf_field-one",
+        "value": "Bank Transfer"
+      },
+      {
+        "type": "StringCustomFieldRef",
+        "scriptId": "custbody_sf_field-two",
+        "value": "Individual One-Off"
+      },
+      {
+        "type": "StringCustomFieldRef",
+        "scriptId": "custbody_sf_field-three",
+        "value": "John Doe"
+      },
+      {
+        "type": "StringCustomFieldRef",
+        "scriptId": "custbody_sf_field-four",
+        "value": "ABC-987"
+      }
+    ]
+  }
+}
+```
+</details>

@@ -5,13 +5,17 @@ description: Technical Notes for the Simple-trigger component.
 icon: simple-trigger.png
 icontext: Simple-trigger component
 category: simple-trigger
-updatedDate: 2022-11-11
-ComponentVersion: 1.1.8
+updatedDate: 2023-06-30
+ComponentVersion: 1.2.0
 redirect_from:
   - /components/simple-trigger/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.0 (June 30, 2023)
+
+* Added `Start Time` and `End Time` configuration fields to limit polling range
 
 ### 1.1.8 (November 11, 2022)
 

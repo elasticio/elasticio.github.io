@@ -5,13 +5,18 @@ description: Technical Notes for the Request-reply component.
 icon: request-reply.png
 icontext: Request-reply component
 category: request-reply
-updatedDate: 2022-11-04
-ComponentVersion: 1.2.7
+updatedDate: 2023-06-29
+ComponentVersion: 1.3.0
 redirect_from:
   - /components/request-reply/changelog.html
 ---
 
 ## Changelog
+
+### 1.3.0 (June 29, 2023)
+
+* Added `Response Status Code` validation
+* Get rid of vulnerabilities and unused libraries in dependencies
 
 ### 1.2.7 (November 04, 2022)
 

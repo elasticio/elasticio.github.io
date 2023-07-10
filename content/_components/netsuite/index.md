@@ -6,11 +6,11 @@ description: A component which interacts with the NetSuite ERP system.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2022-12-16
-ComponentVersion: 3.0.0
+updatedDate: 2023-05-26
+ComponentVersion: 3.1.0
 ---
 
-## How works
+## How it works
 
 Communication with NetSuite API established using NetSuite's native SDK.
 
@@ -68,17 +68,26 @@ The following NetSuite triggers are deprecated:
 
 NetSuite component includes the following actions:
 
-  1. [Delete Object By Id](/components/netsuite/actions#delete-object-by-id)       
+  1. [Add Object](/components/netsuite/actions#add-object)       
+  Add an object to NetSuite.
+
+  2. [Delete Object By Id](/components/netsuite/actions#delete-object-by-id)       
   Deletes an object by the ID provided.
 
-  2. [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id)       
+  3. [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id)       
   Lookup an object by the ID provided.
 
-  3. [Lookup Objects](/components/netsuite/actions#lookup-objects)       
+  4. [Lookup Objects](/components/netsuite/actions#lookup-objects)       
   Looks for objects available in NetSuite which meet given criteria.
 
-  4. [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id)       
+  5. [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id)       
   Either update an object in NetSuite by an ID provided or inserts as a new object if it does not exist.
+
+  6. [Lookup Objects By Custom Field](/components/netsuite/actions#lookup-objects-by-custom-field)       
+  Looks for objects available in NetSuite which meet given custom string field criteria.
+
+  7. [Update Object](/components/netsuite/actions#update-object)       
+  Update an object in NetSuite.
 
 The following NetSuite actions are deprecated:
 

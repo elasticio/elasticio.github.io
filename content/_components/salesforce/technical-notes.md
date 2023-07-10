@@ -5,14 +5,18 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-06-09
-ComponentVersion: 2.6.0
+updatedDate: 2023-06-29
+ComponentVersion: 2.7.0
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.7.0 (June 29, 2023)
+
+Added support for  files attachment by providing a URL in the body for all actions where it is used
 
 ### 2.6.0 (June 09, 2023)
 

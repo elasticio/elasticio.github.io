@@ -5,8 +5,8 @@ description: Salesforce component actions.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-06-09
-ComponentVersion: 2.6.0
+updatedDate: 2023-06-29
+ComponentVersion: 2.7.0
 ---
 
 ## Query action
@@ -23,7 +23,7 @@ Empty object will be returned, if query doesn't find any data.
 ### Input fields description
 
 * **Optional batch size** - A positive integer specifying batch size. If no batch size is specified then results of the query will be emitted one-by-one, otherwise, query results will be emitted in an array of maximum batch size.
-* **Allow all results to be returned in a set** - checkbox which allows emitting query results in a single array. `Optional batch size` option is ignored in this case.
+* **Allow all results to be returned in a set** - checkbox which allows emitting query results in a single array. `Optional batch size` and `Max Fetch Count` options are ignored in this case.
 * **SOQL Query** - Input field where you should type the SOQL query. E.g. `"SELECT ID, Name from Contact where Name like 'John Smi%'"`
 * **Max Fetch Count** - limit for a number of messages that can be fetched. 1,000 is the default value when the variable is not set.
 
@@ -133,7 +133,7 @@ Action creates a single object. Input metadata is fetched dynamically from your 
 
 * **Allow zero results** - Checkbox. If checked and nothing is found in your Salesforce Organization, an empty object will be returned. If not checked and nothing is found, the action will throw an error.
 
-* **Pass binary data to the next component (if found object has it)** - Checkbox. If it is checked and the found object record has a binary field (primitive type `base64`), then its data will be passed to the next component as a binary attachment.
+* **Pass binary data to the next component (if found object has it)** - Checkbox. If it is checked and the found object record has a binary field (primitive type `base64`), then its data will be passed to the next component as a binary attachment and link to it will be replaced to link on the platform
 
 ### Metadata description
 
