@@ -160,7 +160,7 @@ Lookup an object by the ID provided.
 
 ![Lookup Object By Id](img/lookup-by-id.png)
 
-### Configuration fields
+### Configuration Fields
 
 * **Object Category** - a category of an object in NetSuite
   * Standard
@@ -1038,7 +1038,7 @@ You should to use property **type**, which can accept next values:
 
 Looks for objects available in NetSuite which meet given custom string field criteria.
 
-### Configuration fields
+### Configuration Fields
 
 * **Object Category** - a category of an object in NetSuite
     * Standard
