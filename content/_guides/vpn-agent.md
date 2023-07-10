@@ -94,7 +94,7 @@ Before you begin the installation process, ensure that you have administrator pr
 
 3. Identify the network connection that will be used to connect to your remote system (`typically Ethernet`) (`outgoing interface`). Make a note of its IP address (`outgoing IP address`).
 
-<details close markdown="block"><summary><strong>Windows Server 2019 - click to expand</strong></summary>
+<details close markdown="block"><summary><strong>Windows Server 2019</strong></summary>
 
 **1.** SEnable IP routing by running the following command in PowerShell as an administrator:
 
@@ -133,7 +133,7 @@ Get-NetFirewallRule
 
 </details>
 
-<details close markdown="block"><summary><strong>Windows Server 2012 R2 - click to expand</strong></summary>
+<details close markdown="block"><summary><strong>Windows Server 2012 R2</strong></summary>
 
 **1.** Enable IP routing by running the following command in PowerShell as an administrator:
 
@@ -169,7 +169,7 @@ Get-NetFirewallRule
 
 </details>
 
-<details close markdown="block"><summary><strong>Windows 7 - click to expand</strong></summary>
+<details close markdown="block"><summary><strong>Windows 7</strong></summary>
 
 **1.** Enable Routing and Remote Service (RRAS): Go to Control Panel -> Administrative Tools -> Services -> Routing and Remote Access. Set the startup mode to "Automatic," apply the changes, and start the service.
 
