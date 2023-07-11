@@ -67,7 +67,7 @@ To illustrate the functionality, consider a scenario where you pass a link to a 
 
 ### Create JSON Patch
 
-The Patch Utility component offers a powerful feature known as Create JSON Patch mode. In this mode, the component requires two parameters: the origin object and the target object. By analyzing the differences between these two objects, the Patch Utility component generates a Patch that can be used to transform the origin object into the target object.
+The Utility component offers a powerful feature known as Create JSON Patch mode. In this mode, the component requires two parameters: the origin object and the target object. By analyzing the differences between these two objects, the Patch Utility component generates a Patch that can be used to transform the origin object into the target object.
 
 <details close markdown="block"><summary><strong>Example</strong></summary>
 
@@ -75,7 +75,7 @@ The Patch Utility component offers a powerful feature known as Create JSON Patch
 
 Let's consider an example scenario where a webhook captures the body of a document. We can pass this body as the origin object to the Utility component, along with the target object based on the old version of the document. To access the entire document body from the first step, you can utilize the $getPassthrough().step_1.body parameter.
 
-The Patch Utility component then performs a comparison between the origin and target objects, identifying the changes required to transition from one document to another. The result is a Patch that encapsulates the necessary modifications.
+The Utility component then performs a comparison between the origin and target objects, identifying the changes required to transition from one document to another. The result is a Patch that encapsulates the necessary modifications.
 
 Upon completion of the component configuration, the HTTP Reply component can return the generated Patch. This Patch represents a set of operations that, when applied, will transform the origin document into the target document. Applying the Patch ensures consistency between different versions of the document.
 
@@ -187,7 +187,7 @@ To conveniently review the logged data, you can access the Thread Details tab by
 
 ## Delay
 
-The delay function serves as a mechanism to introduce a delay in the execution of components placed between it. This delay allows for controlled timing and sequencing of messages within an integration flow.
+The Delay mode serves as a mechanism to introduce a delay in the execution of components placed between it. This delay allows for controlled timing and sequencing of messages within an integration flow.
 
 <details close markdown="block"><summary><strong>Example</strong></summary>
 
