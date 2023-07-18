@@ -31,7 +31,7 @@ description: List of the release notes listing the product updates.
         <li><strong>WW</strong> is the number of the week in that year.</li>
         </ul>
         <p>
-            The latest release is 23.27 and the next release would be 23.31.
+            The latest release is 23.27.1 and the next release would be 23.31.
         </p>
     </p>
     <!-- {% assign week = releases[0].version | split: "." %}
