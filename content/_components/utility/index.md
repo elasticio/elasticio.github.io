@@ -18,10 +18,6 @@ ComponentVersion: 1.5.3
 * [optional] **REQUEST_MAX_RETRY** - Number of HTTP request retry attempts. 7 by default
 * [optional] **REQUEST_MAX_CONTENT_LENGTH** - Max size of HTTP request in bytes. 10485760 by default
 
-## Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about Utility component like [changelog](/components/utility/technical-notes#changelog).
-
 ## Triggers
 
 This component has no trigger functions. This means it will not be accessible to
@@ -33,7 +29,7 @@ select as a first component during the integration flow design.
 
 Creates attachment from input `value`. Output is `attachmentId` and `attachmentUrl` in `message.body` and attachment object in `message.attachments`:
 
-![String To Attachment](img/string-to-attachment.png)
+{% include img.html max-width="100%" url="img/string-to-attachment.png" title="String To Attachment" %}
 
 #### Configuration fields description
 
@@ -45,7 +41,7 @@ Creates string from attachment with provided input `attachmentId` which must be 
 * A numeric ID of the attachment that can be referenced in the step immediately prior
 * A URL to an attachment produced by any component in the flow.
 
-![String From Attachment](img/string-from-attachment.png)
+{% include img.html max-width="100%" url="img/string-from-attachment.png" title="String From Attachment" %}
 
 #### Configuration fields description
 
@@ -55,19 +51,19 @@ Creates string from attachment with provided input `attachmentId` which must be 
 
 Decodes input `value` using Base64 decoding to regular string. If malformed input provided or not Base64 encoded string, result will be malformed:
 
-![Base64 Decode](img/decode.png)
+{% include img.html max-width="100%" url="img/decode.png" title="Base64 Decode" %}
 
 ### Base64 Encode
 
 Encodes input `value` using Base64 encoding:
 
-![Base64 Encode](img/encode.png)
+{% include img.html max-width="100%" url="img/encode.png" title="Base64 Encode" %}
 
 ### Convert Between Timezones
 
 Given two timezones and an array of timestamps (without any timezone info) converts the timestamps to the output timezone. The output is a dictionary of oldTimezone -> newTimezone values:
 
-![Convert Between Timezones](img/convert-between-timezones.png)
+{% include img.html max-width="100%" url="img/convert-between-timezones.png" title="Convert Between Timezones" %}
 
 E.g. If converting from UTC to German time then
 
@@ -90,6 +86,8 @@ Epoch time conversion is not supported.
 
 Introduce a delay before passing the message to the next step.
 
+{% include img.html max-width="100%" url="img/delay.png" title="Delay" %}
+
 #### Config Fields
 
 There are two options for delay behavior:
@@ -106,6 +104,8 @@ There are two options for delay behavior:
 ### Log Message
 
 Log the message (and potentially passthrough) into the provided logger at the selected level.
+
+{% include img.html max-width="100%" url="img/log-message.png" title="Log Message" %}
 
 #### Config Fields
 
@@ -124,6 +124,8 @@ Match the input message metadata
 
 Utility to create a JSON patch
 
+{% include img.html max-width="100%" url="img/create-json-patch.png" title="Create JSON Patch" %}
+
 #### Config Fields
 
 There are no Config Fields in this action.
@@ -141,6 +143,8 @@ There are no Config Fields in this action.
 
 Utility to apply a JSON patch
 
+{% include img.html max-width="100%" url="img/apply-json-patch.png" title="Apply JSON Patch" %}
+
 #### Config Fields
 
 There are no Config Fields in this action.
@@ -157,6 +161,8 @@ There are no Config Fields in this action.
 ### Network Diagnostics
 
 Useful to diagnose connectivity issues between an eio pod and some endpoint
+
+{% include img.html max-width="100%" url="img/network-diagnostics.png" title="Network Diagnostics" %}
 
 #### Config Fields
 
