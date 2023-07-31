@@ -9,11 +9,15 @@ updatedDate: 2022-11-04
 ComponentVersion: 1.6.0
 ---
 
+> This article provides a detailed explanation of the trigger function in the sftp component. To better understand how the component works and its individual functions, we suggest reviewing an [example](usage-example) that demonstrates the practical use of the sftp component. This will help you grasp its capabilities more effectively.
+
 ## Poll Files
 
 Triggers to get all new and updated files since last polling.
 
 > **Plesae Note:** To gain a better understanding of the functionality provided by Poll Files trigger, we recommend checking out our [example article](/components/sftp/usage-example#poll-files). It provides a detailed walkthrough of how to use Poll Files trigger effectively, which will assist you in working with it.
+
+{% include img.html max-width="100%" url="img/pool-files.png" title="Poll Files" %}
 
 ### Configuration Fields
 
