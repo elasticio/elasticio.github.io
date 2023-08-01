@@ -5,13 +5,25 @@ description: Technical Notes for the MongoDB component.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2022-12-02
-ComponentVersion: 1.5.10
+updatedDate: 2023-07-06
+ComponentVersion: 1.5.12
 redirect_from:
   - /components/mongodb/changelog.html
 ---
 
 ## Changelog
+
+## 1.5.12 (July 06, 2023)
+
+* Added ability to use `ObjectId` in following actions:
+  - `Lookup By Unique Criteria`
+  - `Update Many`
+  - `Upsert By Unique Criteria`
+* Added unit tests
+
+## 1.5.11 (July 03, 2023)
+
+* Fixed the issue of long verification of credentials in the event of failure
 
 ### 1.5.10 (December 02, 2022)
 
