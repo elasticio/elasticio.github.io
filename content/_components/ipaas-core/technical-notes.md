@@ -5,11 +5,15 @@ description: Technical Notes for the IPass Core component
 icon: ipaas-core.png
 icontext: IPaas Core component
 category: ipaas-core
-updatedDate: 2022-12-02
-ComponentVersion: 1.5.1
+updatedDate: 2023-07-07
+ComponentVersion: 1.5.2
 ---
 
 ## Chanhelog
+
+### 1.5.2 (July 07, 2023)
+
+* Fixed credential verification
 
 ### 1.5.1 (December 02, 2022)
 
