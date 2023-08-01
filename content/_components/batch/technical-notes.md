@@ -5,13 +5,21 @@ description: Technical Notes for the Batch component
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2022-11-18
-ComponentVersion: 2.0.6
+updatedDate: 2023-07-06
+ComponentVersion: 2.0.7
 redirect_from:
   - /components/batch/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.7 (July 06, 2023)
+
+* Added more informative logs
+* Fixed vulnerabilities
+* `batching-library` functionality implemented as internal client
+* Upgraded to node version 18
+* Added unit tests
 
 ### 2.0.6 (November 18, 2022)
 
