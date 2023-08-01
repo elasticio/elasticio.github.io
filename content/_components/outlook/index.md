@@ -6,8 +6,8 @@ description: An integration component for the Office 365 Outlook REST API.
 icon: outlook.png
 icontext: Outlook component
 category: outlook
-updatedDate: 2023-04-07
-ComponentVersion: 1.0.3
+updatedDate: 2023-08-01
+ComponentVersion: 2.0.0
 ---
 
 ## Description
@@ -16,29 +16,54 @@ ComponentVersion: 1.0.3
 
 ### API version
 
-It is used [Microsoft Graph REST API v1.0](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0).
-
-### Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about Outlook component like [changelog](/components/outlook/technical-notes#changelog) and [completeness matrix](/components/outlook/technical-notes#completeness-matrix).
-
+The component uses [Microsoft Graph REST API v1.0](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0).
 
 ## Requirements
 
+To create the credentials you would need:
+
+- select existing Auth Client from drop-down list `Choose Auth Client` or create a new one. To create a new client you should specify the following fields:
+
+| Field name             | Mandatory | Description                                                                                                              |
+|------------------------|-----------|--------------------------------------------------------------------------------------------------------------------------|
+| Name                   | true      | your Auth Client's name                                                                                                  |
+| Client ID              | true      | your OAuth client key                                                                                                    |
+| Client Secret          | true      | your OAuth client secret                                                                                                 |
+| Authorization Endpoint | true      | your OAuth authorization endpoint. Use `https://login.microsoftonline.com/common/oauth2/v2.0/authorize`                  |
+| Token Endpoint         | true      | your OAuth Token endpoint for refreshing access token. Use `https://login.microsoftonline.com/common/oauth2/v2.0/token`  |
+
+- fill field ``Name Your Credential``
+- click on ``Authenticate`` button - if you have not logged in Salesforce before then log in by entering data in the login window that appears
+- click on ``Verify`` button for verifying your credentials
+- click on ``Save`` button for saving your credentials
+
+This is the list of the scopes that the credentials for the entire component might require. If you want to limit the scope of the credentials, feel free to only select the required scopes (space separated list):
+* openid
+* offline_access
+* User.Read
+* Contacts.Read
+* Profile
+* Calendars.ReadWrite
+* Mail.ReadWrite
+* Mail.Send
+
+offline_access is required for each credential.
+
+Example of the scopes for the `Send Mail` action: `offline_access Mail.Send`
+
+> **Please Note!** To be able to verify the credentials you need these scopes: `offline_access User.Read`
+
+> You can find more details in [dedicated OAuth2 App creation page](create-oauth-app).
+
 ### Environment variables
 
-| Name|Mandatory|Description|Values|
-|----|---------|-----------|------|
-| `OAUTH_CLIENT_ID`| true | Microsoft Graph Application OAuth2 Client ID | More on [dedicated OAuth2 App page](create-oauth-app). |
-| `OAUTH_CLIENT_SECRET`| true | Microsoft Graph Application OAuth2 Client Secret | More on [dedicated OAuth2 App page](create-oauth-app). |
-| `MAIL_RETRIEVE_MAX_COUNT`| false | Define max count mails could be retrieved per one `Poll for New Mail` trigger execution. Default to 1000| 1000 |
+| Name                      |Mandatory|Description|Values|
+|---------------------------|---------|-----------|------|
+| `MAIL_RETRIEVE_MAX_COUNT` | false | Define max count mails could be retrieved per one `Poll for New Mail` trigger execution. Defaults to 1000| 1000 |
+| `TOP_LIST_MAIL_FOLDER`    | false | Define the maximum number of folders that can be found for dropdown fields containing a list of Mail Folder. Defaults to 100| 100 |
 
 > Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
-
-### Credentials
-
-To create new credentials you need to authorize in Microsoft system using OAuth2 protocol - details are described in [dedicated OAuth2 App creation page](create-oauth-app).
 
 ## Triggers
 
@@ -73,7 +98,7 @@ The action retrieves events for the time specified in `Time` field or for the cu
 ### Find Next Available Time
 
 The action retrieves events for the time specified in `Time` field or for the current time (in case if `Time` field is empty).
-Returns specified time if no events found, otherwise calculates the new available time based on found event.
+Returns specified time if no events found, otherwise calculates the new available time based on found event. If no time specified, the result time will be emitted in UTC time zone (e.g. 2023-08-20T10:00:00Z)
 
 ![Find Next Available Time](img/find-next.png)
 
@@ -105,6 +130,42 @@ The action moves message with specified id from the original mail folder to a sp
 * **Destination Mail Folder** - Drop-down list with available Outlook mail folders - where mail should be moved, not required field.
 If not specified, the message will be soft-deleted (moved to the folder with property `deleteditems`).
 
+### Send Mail
+
+The action simply send a message to a recipient(s).
+
+#### Expected input metadata
+
+GIVE IT HERE???
+
+[/lib/schemas/sendMail.in.json](/lib/schemas/sendMail.in.json)
+
+#### Expected output metadata
+
+GIVE IT HERE???
+
+In case of a success, output metadata simply repeats the incoming message. I.e. output message schema is exactly the same as for input message.
+[/lib/schemas/sendMail.out.json](/lib/schemas/sendMail.in.json)
+
+#### Message Example
+
+```json
+{
+  "subject": "Hello",
+  "toRecipients": [
+    {
+      "emailAddress": {
+        "address": "email@example.com",
+        "name": "John"
+      }
+    }
+  ],
+  "body": {
+    "content": "Hello, I am an email content text",
+    "contentType": "text"
+  }
+}
+```
 
 ## Known issues and limitations
 
