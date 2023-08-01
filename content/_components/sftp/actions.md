@@ -15,6 +15,8 @@ Action to delete file by provided full file path. If the file does not exist, th
 
 > **Plesae Note:** To gain a better understanding of the functionality provided by Delete File action, we recommend checking out our [example article](/components/sftp/usage-example#delete-file). It provides a detailed walkthrough of how to use Delete File action effectively, which will assist you in working with it.
 
+{% include img.html max-width="100%" url="img/delete.png" title="Delete File" %}
+
 ### Configuration Fields
 
 There is no Configuration Fields.
@@ -30,6 +32,8 @@ There is no Configuration Fields.
 ## Download File by name
 
 Finds a file by name in the provided directory and uploads (streams) to the attachment storage
+
+{% include img.html max-width="100%" url="img/download-by-name.png" title="Download File by name" %}
 
 > **Plesae Note:** To gain a better understanding of the functionality provided by Download File by name action, we recommend checking out our [example article](/components/sftp/usage-example#download-file-by-name). It provides a detailed walkthrough of how to use Download File by name action effectively, which will assist you in working with it.
 
@@ -61,6 +65,8 @@ Finds a file by name in the provided directory and uploads (streams) to the atta
 Finds a file by criteria in the provided directory and uploads (streams) to the attachment storage
 
 > **Plesae Note:** To gain a better understanding of the functionality provided by Download Files action, we recommend checking out our [example article](/components/sftp/usage-example#download-files). It provides a detailed walkthrough of how to use Download Files action effectively, which will assist you in working with it.
+
+{% include img.html max-width="100%" url="img/download-files.png" title="Download Files" %}
 
 ### Configuration Fields
 
@@ -117,6 +123,8 @@ Target location MUST exist.  If the target filename already exists it will be ov
 
 > **Plesae Note:** To gain a better understanding of the functionality provided by Move File action, we recommend checking out our [example article](/components/sftp/usage-example#move-file). It provides a detailed walkthrough of how to use Move File action effectively, which will assist you in working with it.
 
+{% include img.html max-width="100%" url="img/move-file.png" title="Move File" %}
+
 ### Configuration Fields
 
 There is no Configuration Fields.
@@ -136,6 +144,8 @@ There is no Configuration Fields.
 > **Plesae Note:** To gain a better understanding of the functionality provided by Upload File From URL action, we recommend checking out our [example article](/components/sftp/usage-example#upload-file-from-url). It provides a detailed walkthrough of how to use Upload File From URL action effectively, which will assist you in working with it.
 
 Given a filename and a URL to an attachment, transfers the contents of the attachment to the SFTP server
+
+{% include img.html max-width="100%" url="img/upload-file.png" title="Upload File From URL" %}
 
 ### Configuration Fields
 
@@ -168,6 +178,8 @@ Given a filename and a URL to an attachment, transfers the contents of the attac
 ## Upload Files From Attachments Header
 
 > **Plesae Note:** To gain a better understanding of the functionality provided by Upload Files From Attachments Header action, we recommend checking out our [example article](/components/sftp/usage-example#upload-files-from-attachments-header). It provides a detailed walkthrough of how to use Move Upload Files From Attachments Header action effectively, which will assist you in working with it.
+
+{% include img.html max-width="100%" url="img/upload-files-from-attachments-header.png" title="Upload Files From Attachments Header" %}
 
 ### Configuration Fields
 
