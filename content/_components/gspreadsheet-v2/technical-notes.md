@@ -5,11 +5,16 @@ description: Technical Notes for the  Google Spreadsheets component v2
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet-v2
-updatedDate: 2022-10-07
-ComponentVersion: 1.0.2
+updatedDate: 2023-07-03
+ComponentVersion: 1.0.3
 ---
 
 ## Changelog
+
+### 1.0.3 (July 03, 2023)
+
+* Update Sailor version to 2.7.1
+* Fixed issue when component doesn't read `Number of retries` and `Max number of calls per second` from credentials configuration
 
 ### 1.0.2 (October 07, 2022)
 
