@@ -6,7 +6,7 @@ description: An integration component for the Office 365 Outlook REST API.
 icon: outlook.png
 icontext: Outlook component
 category: outlook
-updatedDate: 2023-08-01
+updatedDate: 2023-07-19
 ComponentVersion: 2.0.0
 ---
 
