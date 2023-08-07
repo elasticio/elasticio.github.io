@@ -29,6 +29,8 @@ This trigger sends a message with information when the current and previous mess
 * **Start Time** (string, optional): The timestamp to start sending messages from (inclusive), using the ISO 8601 Date time UTC format (YYYY-MM-DDThh:mm:ss.sssZ). The default value is the beginning of time (January 1, 1970 at 00:00).
 * **End Time** (string, optional): The timestamp to stop sending messages (exclusive), using the ISO 8601 Date time UTC format (YYYY-MM-DDThh:mm:ss.sssZ). The default value is set to never stop.
 
+> **Please Note:** As is the case with all other trigger components, to complete the Simple-trigger setup, you must plan a [schedule](/guides/managing-flows#scheduling) for your flow. If not, the default schedule will be used.
+
 #### Input Metadata
 
 This trigger does not require any input metadata.
