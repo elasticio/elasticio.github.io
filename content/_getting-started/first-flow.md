@@ -18,64 +18,59 @@ For the first step, the list of available Components is limited to those that ca
 
 To start the creation of our Flow, go to the navigational menu, select your Workspace and either click "Add new flow" on the dashboard:
 
-![Workspace - add new flow](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-01.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-01.png" title="Workspace - add new flow" %}
 
 **OR** go to *Flows* and click "Add New Flow":
 
-![Flows - add new flow](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-02.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-02.png" title="Flows - add new flow" %}
 
 This brings you to *Designer* page. Let's start with naming your Flow **(1)**, which is optional, and adding the initial trigger **(2)**:
 
-![Designer page - add initial trigger](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-03.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-03.png" title="Designer page - add initial trigger" %}
 
 The platform prompts you to setup the first step. First you can select the Component you want to use by using search bar or Component list. We want to use Simple Trigger, so we will start typing "simple" to the search bar **(1)**, and find it faster. Then select it **(2)** and click "Choose Simple trigger" **(3)**:
 
-![Setup the first step](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-04.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-04.png" title="Setup the first step" %}
 
 The next step is data sample retrieval. You can read about [data samples here](/getting-started/data-sample-overview). Click "Retrieve sample from Simple trigger" **(1)**, "Add sample manually" **(2)** or just Skip the Sample **(3)**. After that you will be automatically redirected to the last step.
 
-![Data sample retrieval](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-05.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-05.png" title="Data sample retrieval" %}
 
 You can also change the sample if you wish:
 
-![Data sample retrieval - Continue](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-06.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-06.png" title="Data sample retrieval - Continue" %}
 
 In the next tab you may change a name **(1)**, add a description if you want **(2)**, and click "Finish step" **(3)** to finalize the initial trigger:
 
-![Data sample retrieval - Finish Step](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-07.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-07.png" title="Data sample retrieval - Finish Step" %}
 
 
 ## Configuring Action Steps
 
 As our initial trigger is ready, let's proceed with the second step, which is an action triggered by the first step. To start configuring the action, click "Add a new action":
 
-![Configuring Action Steps - Add a new action](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-08.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-08.png" title="Configuring Action Steps - Add a new action" %}
 
 Again, we're prompted to setup the step, similar to the first one. We're going to use Email Component for our third step, so let's start typing into the search bar **(1)**. Select the component **(2)** and click "Choose Email" **(3)**:
 
-![Choose Email](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-09.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-09.png" title="Choose Email" %}
 
 Email Component sends an email when triggered, so you should just fill in the details as you would for an email. After you've entered all the data, click to "Sample":
 
-![Configure input](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-10.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-10.png" title="Configure input" %}
 
 Next click to "Retrieve sample from E-Mail" or "Add sample manually". You can also Skip the Sample. After that you will be automatically redirected to the last step.
 
-![Retrieve a data sample](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-11.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-11.png" title="Retrieve a data sample" %}
 
 Finally, Same as in the trigger step, you can change a name , may add a description and click to "Finish step":
 
-![Summary - Finish step](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-12.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-12.png" title="Summary - Finish step" %}
 
 To publish the Flow draft and be able to run the Flow, click the corresponding button:
 
-![Publish the Flow draft](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-13.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-13.png" title="Publish the Flow draft" %}
 
 Congratulations! You Flow has been published, and it's ready to run. You can run it **(1)**, edit it **(2)** or delete it **(3)** using the corresponding buttons:
 
-![Run, edit, or delete a flow](/assets/img/getting-started/creating-basic-flow/creating-basic-flow-14.png)
-
-## Related links
-
-- [Integration Component Overview](/getting-started/integration-component)
-- [Data Sample Overview](/getting-started/data-sample-overview)
+{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-14.png" title="Run, edit, or delete a flow" %}
