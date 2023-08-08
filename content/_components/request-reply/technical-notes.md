@@ -1,10 +1,10 @@
 ---
-title: Request-reply Technical Notes
+title: HTTP Reply Technical Notes
 layout: component
-description: Technical Notes for the Request-reply component.
+description: Technical Notes for the HTTP Reply component.
 icon: request-reply.png
-icontext: Request-reply component
-category: request-reply
+icontext: HTTP Reply component
+category: http-reply
 updatedDate: 2023-06-29
 ComponentVersion: 1.3.0
 redirect_from:

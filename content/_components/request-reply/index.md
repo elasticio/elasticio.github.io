@@ -1,11 +1,11 @@
 ---
-title: Request-reply component
+title: HTTP Reply component
 layout: component
 section: Utility components
-description: Request-Reply component for the platform.
+description: HTTP Reply component for the platform.
 icon: request-reply.png
-icontext: Request-reply component
-category: request-reply
+icontext: HTTP Reply component
+category: http-reply
 updatedDate: 2023-06-29
 ComponentVersion: 1.3.0
 ---
@@ -24,7 +24,7 @@ This component requires no authentication.
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about Request-reply component like [changelog](/components/request-reply/technical-notes#changelog).
+The [technical notes](technical-notes) page gives some technical details about HTTP Reply component like [changelog](/components/request-reply/technical-notes#changelog).
 
 ## Asynchronous vs. Synchronous messaging
 
@@ -39,9 +39,8 @@ and then the replier receives the request message and responds with a reply mess
 
 These two approaches are called: **Asynchronous** (one-way) and **Synchronous**
 (two-way) messaging transmission types. At {{site.data.tenant.name}} all
-integration flows are asynchronous in nature unless **HTTP Reply** or
-**Request-reply** component is added. It enables the two-way messaging conversation
-through the request-reply pattern transforming the flow into a synchronous one.
+integration flows are asynchronous in nature unless **HTTP Reply** component is added. It enables the two-way messaging conversation
+through the HTTP Reply pattern transforming the flow into a synchronous one.
 
 ## Triggers
 
@@ -128,7 +127,7 @@ If you require to receive a meaningful, configurable response and immediately th
 "email" : "Email was sent by john.newman@example.com"
 }
 ```
-## Request-reply mechanism
+## HTTP Reply mechanism
 
 In all of the use cases described above, the basic principle is the same: there is an incoming message which is passed through the integration flow for processing and a reply is sent back to the waiting entry point with on output information. Logic is the following:
 
@@ -149,6 +148,6 @@ In all of the use cases described above, the basic principle is the same: there 
 There are several specific requirements that need to be fulfilled before the
 request-response mechanism can be used. There are:
 
-*   If a custom Node.js component is to be used in the flow with request-reply then then [sailor-node.js](/references/sailor-compatibility-matrix) version should be 1.3.0 or above to support the messaging in the flow. We recommend to use the most recent sailor version.
+*   If a custom Node.js component is to be used in the flow with HTTP Reply then then [sailor-node.js](/references/sailor-compatibility-matrix) version should be 1.3.0 or above to support the messaging in the flow. We recommend to use the most recent sailor version.
 *   If a custom Java component is to be used then please use `sailor-jvm` version 2.0.0 or above.
 *   Care must be met to have all the steps tested in advance so the proper fields are mapped.
