@@ -5,8 +5,8 @@ description: MongoDB component action function details.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2022-12-02
-ComponentVersion: 1.5.10
+updatedDate: 2023-07-06
+ComponentVersion: 1.5.12
 ---
 
 ## Description
@@ -332,14 +332,22 @@ Error 'More than one document found' thrown.
 
 ### Body
 
-'criteria' of the document to search
+'criteria' of the document to search. If you provide `ObjectId` it will be automatically parsed to MongoDB `ObjectId`
 
-<details close markdown="block"><summary><strong>Example</strong></summary>
+<details close markdown="block"><summary><strong>Examples</strong></summary>
 
 ```json
 {
   "criteria": {
     "value" : 4
+  }
+}
+```
+
+```json
+{
+  "criteria": {
+    "_id" : "ObjectId('64a296786751183ae1f615ed')"
   }
 }
 ```
@@ -369,7 +377,7 @@ Lookup many documents by criteria.
 
 ### Body
 
-`criteria` of the document to search. **Required field**.
+'criteria' of the document to search. **Required field**. If you provide `ObjectId` it will be automatically parsed to MongoDB `ObjectId`
 
 >**Please Note:**: it is possible to lookup objects by fields with type ObjectID. For enabling this feature use template `"ObjectId('objectId')"`.
 
@@ -512,12 +520,12 @@ Updates documents in a collection
 
 #### Body
 
-1. `criteria` - the criteria used to select the documents to update.
+1. `criteria` - the criteria used to select the documents to update. If you provide `ObjectId` it will be automatically parsed to MongoDB `ObjectId`
 2. `update` - the update operations to be applied to the documents
 
 Please refer the [MongoDB Update Operators Documentation](https://docs.mongodb.com/manual/reference/operator/update/) for the details on the operators.
 
-<details close markdown="block"><summary><strong>Example</strong></summary>
+<details close markdown="block"><summary><strong>Examples</strong></summary>
 
 ```json
 {
@@ -525,6 +533,19 @@ Please refer the [MongoDB Update Operators Documentation](https://docs.mongodb.c
     "nestedObj.otherValue": {
       "$gt": 2
     }
+  },
+  "update": {
+    "$set": {
+      "nestedObj.anotherValue":"bla"
+    }
+  }
+}
+```
+
+```json
+{
+  "criteria": {
+    "_id" : "ObjectId('64a296786751183ae1f615ed')"
   },
   "update": {
     "$set": {
@@ -610,9 +631,9 @@ Upserts document by unique criteria.
 
 ### Body
 
-1. `criteria` - criteria for upsertion.
+1. `criteria` - criteria for upsertion. If you provide `ObjectId` it will be automatically parsed to MongoDB `ObjectId`
 
-<details close markdown="block"><summary><strong>Example</strong></summary>
+<details close markdown="block"><summary><strong>Examples</strong></summary>
 
  ```json
 {
@@ -626,6 +647,12 @@ Upserts document by unique criteria.
     "$in": "['A', 'D']"
   }
 } // Property status equals 'A' or 'D'
+```
+
+```json
+{
+  "_id" : "ObjectId('64a296786751183ae1f615ed')"
+} // Document MongoDB id equal '64a296786751183ae1f615ed'
 ```
 
 </details>

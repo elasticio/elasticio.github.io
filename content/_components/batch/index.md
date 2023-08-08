@@ -6,8 +6,8 @@ description: A component that provides an opportunity to collect messages to a b
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2022-11-18
-ComponentVersion: 2.0.6
+updatedDate: 2023-07-06
+ComponentVersion: 2.0.7
 ---
 
 ## General information
@@ -20,7 +20,7 @@ The main purpose is to provide a user with a simple collection and an opportunit
 
 Integrators would need to split an integration logic into 2 parts. The first one should use the action `Add message to batch` which starts to collect messages. The second one should start with the `Get ready batches` trigger.
 
-![Flow parts](img/flow-parts.png)
+{% include img.html max-width="100%" url="img/flow-parts.png" title="Flow parts" %}
 
 It uses the Maester service as a package repository, the legacy component versions support using MongoDB (versions: 4.0 and higher stable releases) as a batches repository.
 
@@ -36,7 +36,7 @@ Maester microservice should be enabled on installation and what would happen if 
 
 Emits all batches that are ready to be processed.
 
-![Get ready batches](img/get-ready-batches.png)
+{% include img.html max-width="100%" url="img/get-ready-batches.png" title="Get ready batches" %}
 
 #### Input fields description
 
@@ -56,7 +56,7 @@ Emits all batches that are ready to be processed.
 
 Stores a message in a batch and emits a created/updated batch with a processed item only.
 
-![Add message to batch](img/add-message-to-batch.png)
+{% include img.html max-width="100%" url="img/add-message-to-batch.png" title="Add message to batch" %}
 
 #### Input fields description
 

@@ -5,11 +5,15 @@ description: Technical Notes for the Dun-and-bradstreet component.
 icon: dun-and-bradstreet.png
 icontext: Dun-and-bradstreet component
 category: dun-and-bradstreet
-updatedDate: 2023-05-17
-ComponentVersion: 1.0.5
+updatedDate: 2023-07-07
+ComponentVersion: 1.0.6
 ---
 
 ## Changelog
+
+### 1.0.6 (July 07, 2023)
+
+* Upgrade sailor version to 4.0.1
 
 ### 1.0.5 (May 17, 2023)
 

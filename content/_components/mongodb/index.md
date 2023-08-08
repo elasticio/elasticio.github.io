@@ -6,8 +6,8 @@ description: Integration component to interact with MongoDB databases.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2022-12-02
-ComponentVersion: 1.5.10
+updatedDate: 2023-07-06
+ComponentVersion: 1.5.12
 ---
 
 ## Description
@@ -42,8 +42,8 @@ Example: mongodb://example.com:2017, mongodb+srv://server.example.com:2017 .
 The component has no required variables, however in some cases it would be beneficiary
 to use them. Here are the available variables:
 
-*   `MONGO_CONNECTION_TIMEOUT` - timeout in ms for connection to MongoDB. Default is `10000`.
-*   `EIO_REQUIRED_RAM_MB` - Number of RAM megabytes provided to container. Additional memory may be needed in cases when incoming massage is big (up to 10MB).
+1.  `MONGO_CONNECTION_TIMEOUT` - timeout in ms for connection to MongoDB. Default is `10000`.
+2. `EIO_REQUIRED_RAM_MB` - Number of RAM megabytes provided to container. Additional memory may be needed in cases when incoming message is big (up to 10MB)
 
 ## Triggers
 

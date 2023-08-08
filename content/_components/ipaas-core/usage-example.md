@@ -5,8 +5,8 @@ description: Usage Example for the IPass Core component
 icon: ipaas-core.png
 icontext: IPaas Core component
 category: ipaas-core
-updatedDate: 2022-12-02
-ComponentVersion: 1.5.1
+updatedDate: 2023-07-07
+ComponentVersion: 1.5.2
 ---
 
 This article will show you where and how to use the IPaas Core component. Through a few examples, you'll discover some of the component's possible use cases and gain a better understanding of how it works.

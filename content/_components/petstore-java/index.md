@@ -6,8 +6,8 @@ description: A first step component to deploy into our platform.
 category: petstore-java
 icon: petstore.png
 icontext: Petstore-java componentt
-updatedDate: 2023-05-11
-ComponentVersion: 1.0.6
+updatedDate: 2023-07-07
+ComponentVersion: 1.0.7
 ---
 
 ## Description

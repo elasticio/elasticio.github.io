@@ -5,14 +5,19 @@ description: Technical Notes for Microsoft Outlook Component.
 icon: outlook.png
 icontext: Outlook component
 category: outlook
-updatedDate: 2023-04-07
-ComponentVersion: 1.0.3
+updatedDate: 2023-07-19
+ComponentVersion: 2.0.0
 redirect_from:
   - /components/outlook/changelog.html
   - /components/outlook/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 2.0.0 (July 19, 2023)
+
+* Breaking change! Reworked authentication mechanism - implemented Secrets feature
+* Add new action - Send Mail
 
 ### 1.0.3 (April 07, 2023)
 

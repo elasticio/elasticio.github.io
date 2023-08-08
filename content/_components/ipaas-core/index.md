@@ -6,8 +6,8 @@ description: A component to manipulate integration artifacts such as flows via t
 icon: ipaas-core.png
 icontext: IPaas Core component
 category: ipaas-core
-updatedDate: 2022-12-02
-ComponentVersion: 1.5.1
+updatedDate: 2023-07-07
+ComponentVersion: 1.5.2
 ---
 
 ## Description
@@ -45,6 +45,8 @@ select as a first component during the integration flow design.
 
 Action which emits list of all topics, secrets, credentials and components which are required by flow.
 
+{% include img.html max-width="100%" url="img/calculate-flow-dependencies.png" title="Calculate Flow Dependencies" %}
+
 #### Configuration Fields
 
 There is no configuration fields
@@ -56,6 +58,8 @@ There is no configuration fields
 ### Validate Deployability
 
 Action which emits list of all topics, secrets, credentials and components which are NOT presented in provided workspace.
+
+{% include img.html max-width="100%" url="img/validate-doployability.png" title="Validate Deployability" %}
 
 #### Configuration Fields
 
@@ -131,6 +135,8 @@ There is no configuration fields
 Given a set of criteria, that identifies at most one object, return the matching object.
 Currently, only **Flow** objects are supported.
 
+{% include img.html max-width="100%" url="img/lookup-object.png" title="Lookup Object (at Most One)" %}
+
 The following three types of unique criteria are supported:
 * Flow ID
 * Flow Name & Workspace ID (defaults to current workspace if omitted)
@@ -166,6 +172,8 @@ Additionally, the following two boolean settings can be set through JSONata expr
 ### Lookup Objects (plural)
 
 Use for retrieving multiple flows by provided search criteria
+
+{% include img.html max-width="100%" url="img/lookup-objects.png" title="Lookup Objects" %}
 
 #### Config Fields
 
@@ -206,7 +214,10 @@ Supported fields:
 
 Given a set of criteria, that identifies at most one object, update that object, otherwise create it.  Currently, only **Flow** objects are supported.
 
+{% include img.html max-width="100%" url="img/upsert-object.png" title="Upsert Object" %}
+
 The following three types of unique criteria are supported:
+
 * Flow ID
 * Flow Name & Workspace ID (defaults to current workspace if omitted)
 * Flow Name & Workspace Name (defaults to current workspace if omitted)
@@ -214,10 +225,10 @@ The following three types of unique criteria are supported:
 The following inputs can be set through JSONata expressions:
 * **Flow Attributes** - Data which matches the `attributes` property of an exported flow.  Can be modified to change properties of the flow.
 
-![image](https://user-images.githubusercontent.com/7985390/151942532-825af8b4-db4a-474a-b3ab-710cf1f78552.png)
+{% include img.html max-width="100%" url="img/elementary-flow.png" title="Elementary flow" %}
 
-<details close markdown="block">
-<summary>Sample</summary>
+<details close markdown="block"><summary><strong>Sample</strong></summary>
+
 **Attributes:**
 ```json
   {
@@ -433,7 +444,6 @@ When the match strategy is `pubSubTopicName`, the upsert action will find the to
   * When the match strategy is `exactMatch`, the upsert action grab the published version of the component with the exact same semantic version. (Throw an error if there is no published version of the component with the exact same semantic version.)
   * When the match strategy is `exactMatchOrHigher`, the upsert action grab the latest (fix) published version of the component with the same major semantic version. The action throw an error if the latest fix is less than the semantic version provided in the incoming message for the step.
 
-
 #### Notes on Component and Credential Match Strategies
 
 Consider the following cases for copying flows:
@@ -464,6 +474,8 @@ When copying flows between platform instances or copying flows from a case where
 
 Raw HTTP Request Action allows to assemble custom requests to be sent to the system. Given a set of request options returns response body and status code.
 
+{% include img.html max-width="100%" url="img/raw-request.png" title="Raw Request" %}
+
 #### Input Metadata
 
 * **HTTP Verb (Method)** HTTP verb to use in the request (GET, POST, PUT, PATCH, DELETE), required.
@@ -484,6 +496,8 @@ Platform API documentation can be found [here]({{site.data.tenant.apiDocsUri}}/v
 
 Fetch Dynamic Select Model Action built to access dynamic select model from any Component's action or trigger, if there is one described in `component.json` file as field with **"model": "{{MethodName}}"** for correspondent action or trigger. `{{MethodName}}` is the name of the method from the Component's code which returns the dynamic select model. Moreover, custom metadata fields and values for that fields should be chosen, as specified in `component.json` file for each of action or trigger to be sent to the API in order to get the dynamic select model for the Component. Given a set of other required options, like Component's Credentials or Secret Id and Method Name, returns object with Dynamic Select Model.
 
+{% include img.html max-width="100%" url="img/fetch-dynamic-select-model.png" title="Fetch Dynamic Select Model" %}
+
 #### Input Metadata
 
 * **Credential Id / Secret Id** The Component's `Credential Id` or `Secret Id`. Required field
@@ -498,7 +512,10 @@ Fetch Dynamic Select Model Action built to access dynamic select model from any 
 * Model (object, required): An object recommending the selectable options for the Component. This is an object that might look like this: `{ "TABLE_NAME_1": "TABLE_NAME_1", "TABLE_NAME_2": "TABLE_NAME_2" }`
 
 ### Fetch Dynamic Metadata
+
 Fetch Dynamic Metadata Action provides possibility to acquire dynamic metadata from any Component's action or trigger, if there is one described in `component.json` file as field **"dynamicMetadata": true** for correspondent action or trigger. Besides, custom metadata fields and values for that fields should be chosen, as specified in `component.json` file for each of action or trigger to be sent to the API in order to get the dynamic metadata for the Component. Given a set of other required options, like Component's Credentials or Secret Id and Component's Workspace Id returns object with Dynamic Metadata.
+
+{% include img.html max-width="100%" url="img/fetch-dynamic-metadata.png" title="Fetch Dynamic Metadata" %}
 
 #### Input Metadata
 

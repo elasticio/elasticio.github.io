@@ -5,14 +5,18 @@ description: Technical Notes for JDBC component
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2022-11-04
-ComponentVersion: 2.5.6
+updatedDate: 2023-07-07
+ComponentVersion: 2.5.7
 redirect_from:
   - /components/jdbc/completeness-matrix.html
   - /components/jdbc/changelog.html
 ---
 
 ## Changelog
+
+### 2.5.7 (July 07, 2023)
+
+* Updated Sailor to to 4.0.1
 
 ### 2.5.6 (November 04, 2022)
 
