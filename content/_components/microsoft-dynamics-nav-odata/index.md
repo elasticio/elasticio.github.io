@@ -1,7 +1,7 @@
 ---
 title: Microsoft Dynamics NAV OData component
 layout: component
-section: ERP components
+section: CRM components
 description: Microsoft Dynamics NAV is a global enterprise resource planning (ERP) solution that provides small and midsize businesses greater control over their financials and can simplify their supply chain, manufacturing, and operations.
 icon: microsoft-dynamic-nav-odata.png
 icontext: Microsoft-Dynamics-NAV-Odata component

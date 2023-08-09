@@ -1,7 +1,7 @@
 ---
 title: SaleSphere component
 layout: component
-section: CRM components
+section: E-Commerce components
 description: A component to work with SaleSphere CRM by mVISE.
 icon: salesphere.png
 icontext: SaleSphere Component

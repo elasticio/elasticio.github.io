@@ -1,7 +1,7 @@
 ---
 title: Zoom Webhook component
 layout: component
-section: Service components
+section: Utility components
 description: A component to receive Zoom webhook events from Zoom API.
 icon: zoom-webhook.png
 icontext: Zoom Webhook component

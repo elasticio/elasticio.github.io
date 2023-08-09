@@ -1,7 +1,7 @@
 ---
 title: Google Cloud Storage component
 layout: component
-section: Service components
+section: Database components
 description: Google Cloud Storage Component is designed to connect to Google Cloud Storage JSON API
 icon: google-cloud-storage.png
 icontext: Google Cloud Storage component

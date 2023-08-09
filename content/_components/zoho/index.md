@@ -1,7 +1,7 @@
 ---
 title: Zoho Subscriptions component
 layout: component
-section: Marketing-related components
+section: CRM components
 description: A component that connects to Zoho Subscriptions API.
 category: zoho
 icon: zoho.png

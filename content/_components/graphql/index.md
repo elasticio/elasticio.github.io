@@ -1,7 +1,7 @@
 ---
 title: GraphQL component
 layout: component
-section: Utility components
+section: Protocol components
 description: A component that use GraphQL - a query language for APIs and a runtime for fulfilling those queries with your existing data.
 icon: graphql.png
 icontext: GraphQL component

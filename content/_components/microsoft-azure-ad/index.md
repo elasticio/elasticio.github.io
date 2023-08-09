@@ -1,7 +1,7 @@
 ---
 title: Microsoft Azure AD Component
 layout: component
-section: Database components
+section: Service components
 description: Microsoft Azure AD Component is designed to access users and group data from Azure AD, as well as manage roles, and permissions.
 icon: microsoft-azure-ad.png
 icontext: Microsoft Azure AD Component

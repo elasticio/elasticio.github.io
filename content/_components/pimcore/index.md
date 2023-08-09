@@ -1,7 +1,7 @@
 ---
 title: Pimcore component
 layout: component
-section: Database components
+section: E-Commerce components
 description: Pimcore data can be exposed with Datahub.
 icon: pimcore.png
 icontext: Pimcore component

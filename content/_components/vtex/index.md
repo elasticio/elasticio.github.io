@@ -1,7 +1,7 @@
 ---
 title: Vtex component
 layout: component
-section: E-Commerce components
+section: Utility components
 description: The Vtex iPaaS component that connects to VTEX API
 icontext: Vtex component
 icon: vtex.png
