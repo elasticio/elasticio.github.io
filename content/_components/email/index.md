@@ -1,7 +1,7 @@
 ---
 title: Email component
 layout: component
-section: Service components
+section: Utility components
 description: In this case it is not about a particular application but the email function in general.
 icon: email.png
 icontext: Email component

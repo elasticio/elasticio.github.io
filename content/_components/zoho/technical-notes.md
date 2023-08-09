@@ -1,5 +1,5 @@
 ---
-title: Zoho Component Technical Notes
+title: Zoho Subscriptions Component Technical Notes
 layout: component
 description: Technical Notes for the Zoho Subscriptions component.
 icon: zoho.png

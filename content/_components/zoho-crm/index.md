@@ -1,7 +1,7 @@
 ---
 layout: component
 title: Zoho CRM component
-section: Marketing-related components
+section: CRM components
 description: A component that connects to Zoho-crm API.
 category: zoho-crm
 icon: zoho-crm.png

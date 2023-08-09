@@ -1,7 +1,7 @@
 ---
 title: Akeneo Component
 layout: component
-section: Utility components
+section: E-Commerce components
 description: Akeneo Component is designed to connect Akeneo API.
 icon: akeneo.png
 icontext: Akeneo Component
