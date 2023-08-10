@@ -44,7 +44,9 @@ with SAP Business byDesign API.
 
 ## Triggers
 
-### Get New And Updated Objects Polling. Config Fields
+### Get New And Updated Objects Polling
+
+{% include img.html max-width="100%" url="img/get-new-and-update-objects-polling.png" title="Get New And Updated Objects Polling" %}
 
 1. Polling Object - objects that going to be polled by the trigger.
 
@@ -74,8 +76,11 @@ At the moment only few object types are supported:
 
 ### Call Service
 
-Calls SAP byDesign service for specified binding and operation. The configuration
-fields are:
+Calls SAP byDesign service for specified binding and operation.
+
+{% include img.html max-width="100%" url="img/call-service.png" title="Call Service" %}
+
+The configuration fields are:
 
 | Input field | Required | Description | Example|
 |--------------|------|----------------------------------|------------------|
@@ -97,7 +102,9 @@ In case when user set `Enable Rebound For SOAP Fault`: `Yes` but did not specify
 
 ## Request examples
 
-  **1.** Query Accounts ![Query Accounts](img/action-query-accounts.png)
+**1.** Query Accounts
+
+{% include img.html max-width="100%" url="img/action-query-accounts.png" title="Query Accounts" %}
 
 Example in metadata:
 
@@ -120,7 +127,10 @@ Example in metadata:
     }
 }
 ```
-  **2.** Query Price Lists ![Query Price Lists](img/action-query-pricelists.png)
+
+**2.** Query Price Lists
+
+{% include img.html max-width="100%" url="img/action-query-pricelists.png" title="Query Price Lists" %}
 
 Example in metadata:
 
@@ -137,7 +147,9 @@ Example in metadata:
 }
 ```
 
-  **3.** Query Sales Orders ![Query Sales Orders](img/action-query-salesorders.png).
+**3.** Query Sales Orders
+
+{% include img.html max-width="100%" url="img/action-query-salesorders.png" title="Query Sales Orders" %}
 
 Example in metadata:
 
