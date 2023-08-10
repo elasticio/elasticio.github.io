@@ -33,7 +33,7 @@ following tasks need to be completed:
 
 ## Authentication on platform
 
-![Authentication on platform](img/auth.png)
+{% include img.html max-width="100%" url="img/auth.png" title="Authentication on platform" %}
 
 Fill in the following for your account:
 
