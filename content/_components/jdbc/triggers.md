@@ -13,7 +13,8 @@ ComponentVersion: 2.5.7
 
 You are able to provide SELECT query with last execution timestamp as WHERE clause criteria.
 
-![Select trigger](img/select-trigger.png)
+{% include img.html max-width="100%" url="img/select-trigger.png" title="Select trigger" %}
+
 
 Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
 During the first execution, date will be equal to ["start" of Unix Time](https://en.wikipedia.org/wiki/Unix_time) - ``1970-01-01 00:00:00.000``.
@@ -30,8 +31,6 @@ The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-d
 ## Get Rows Polling trigger
 
 This trigger can polling data from provided table. As WHERE clause you can use column, which has datatype like DATE or TIMESTAMP.
-
-![Get Rows Polling trigger](img/get-rows-polling-trigger.png)
 
 Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
 During the first execution, date will be equal to ["start" of Unix Time](https://en.wikipedia.org/wiki/Unix_time) - ``1970-01-01 00:00:00.000``.
@@ -50,7 +49,7 @@ The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-d
 
 ### Input fields description
 
-![Get Rows Polling trigger - Input fields description](img\get-rows-polling-trigger-input-fields.png)
+{% include img.html max-width="100%" url="img/get-rows-polling-trigger.png" title="Get Rows Polling trigger" %}
 
   * Tables List
 

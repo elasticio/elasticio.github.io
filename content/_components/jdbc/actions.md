@@ -9,9 +9,9 @@ updatedDate: 2023-07-07
 ComponentVersion: 2.5.7
 ---
 
-## Select action
+## Select Query
 
-![image](https://user-images.githubusercontent.com/16806832/134408205-04b84670-c976-41e7-b805-faabff4ae1e5.png)
+{% include img.html max-width="100%" url="img/select-query-1.png" title="Select Query" %}
 
 The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
 In SQL query you can use clause variables with specific data types.
@@ -19,7 +19,7 @@ Internally we use prepared statements, so all incoming data is
 validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types
 therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
 
-**Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
+>**Please Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
 
 For example if you have a following SQL statement:
 
@@ -38,6 +38,7 @@ WHERE userid = @id:number AND language = @lang:string
 ```
 
 Following types are supported:
+
  * ``string``
  * ``number``
  * ``bigint``
@@ -45,14 +46,14 @@ Following types are supported:
  * ``float``
  * ``date``
 
-![image](https://user-images.githubusercontent.com/16806832/134408591-b9faa51c-3b35-4cf2-992d-51dcd07c5cb5.png)
+{% include img.html max-width="100%" url="img/select-query-2.png" title="Select Query" %}
 
 Dropdown **Emit Behaviour** contains following possible options:
  * Fetch all - a single message with an array `results` containing all the objects (rows) will be emitted
  * Emit Individually - multiple messages (one message per one row) will be emitted
  * Expect Single - a single message with one result row will be emitted. If more than one row is returned the error will be thrown. A boolean input "Allow Zero Results" (defaults to `false`) appears at input metadata. If `false` - error will be thrown, else - the empty object will be emitted.
 
-![image](https://user-images.githubusercontent.com/16806832/134408977-d4692d3f-e9fb-48be-9104-c4cb121accaa.png)
+{% include img.html max-width="100%" url="img/select-query-3.png" title="Select Query" %}
 
 ## Execute query action
 
@@ -63,7 +64,7 @@ Action to execute custom SQL query from provided request string.
 Execution result returns as array of objects. If request contains multiple sql statements - them will execute inside one transaction.
 If one of statements fails, transaction will be rollbacked.
 
-![Execute custom query action](img/execute-custom-query-action.png)
+{% include img.html max-width="100%" url="img/execute-custom-query-action.png" title="Execute custom query action" %}
 
 ### Input fields description
 
@@ -89,21 +90,22 @@ UPDATE stars SET radius = 5 WHERE id = 2;
 
 ## Lookup Row By Primary Key action
 
-![Look up Row by Primary key](img\look-up-row-by-primary-key.png)
+{% include img.html max-width="100%" url="img/look-up-row-by-primary-key-1.png" title="Look up Row by Primary key" %}
 
 The action will execute select query from a ``Table`` dropdown field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns only one result (a primary key is unique).
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
 
 ### Input fields description
 
-![Look up Row by Primary key - Input fields description](img\look-up-row-by-primary-key-input-field.png)
+{% include img.html max-width="100%" url="img/look-up-row-by-primary-key-2.png" title="Look up Row by Primary key - Input fields description" %}
+
 As an input metadata you will get a Primary Key field to provide the data inside as a clause value.
 
 ## Insert action
 
 The action will execute ``INSERT`` command into the table from ``Table`` dropdown list the values specified in the body.
 
-![Insert Action](img\insert-action.png)
+{% include img.html max-width="100%" url="img/insert-action-1.png" title="Insert Action" %}
 
 ### List of Expected Config fields
 
@@ -113,7 +115,7 @@ The action will execute ``INSERT`` command into the table from ``Table`` dropdow
 
 Action contains only one configuration field `Table` - dropdown list with available table names.
 
-![Insert Action - Input fields description](img/insert-action-input-fields.png)
+{% include img.html max-width="100%" url="img/insert-action-2.png" title="Insert Action - Input fields description" %}
 
 ### Expected input metadata
 
@@ -130,7 +132,7 @@ As output metadata, you will get execution insert result like:
 
 ## Delete Row By Primary Key action
 
-![Delete Row By Primary Key](img/delete-row-by-primary-key.png)
+{% include img.html max-width="100%" url="img/delete-row-by-primary-key-1.png" title="Delete Row By Primary Key" %}
 
 The action will execute delete query from a ``Table`` dropdown field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns count of affected rows.
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
@@ -139,7 +141,8 @@ Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty respon
 
 ### Input fields description
 
-![Delete Row By Primary Key - Input fields description](img/delete-row-by-primary-key-input-fields.png)
+{% include img.html max-width="100%" url="img/delete-row-by-primary-key-2.png" title="Delete Row By Primary Key - Input fields description" %}
+
 As an input metadata you will get a Primary Key field to provide the data inside as a clause value.
 
 ## Execute stored procedure action
@@ -183,7 +186,7 @@ END;
 
 Component generates next metadata:
 
-![Execute stored procedure - Input fields description](img/execute-store-procedure-input-fields.png)
+{% include img.html max-width="100%" url="img/execute-store-procedure-input-fields.png" title="Execute stored procedure - Input fields description" %}
 
 ## Upsert Row By Primary Key action
 
@@ -191,15 +194,15 @@ The action will execute ``SELECT`` command from a ``Tables`` dropdown field, as 
 
 Select table from `Table` dropdown list,
 
-![Upsert Row By Primary Key](img/upsert-row-by-primary-key.png)
+{% include img.html max-width="100%" url="img/upsert-row-by-primary-key-1.png" title="Upsert Row By Primary Key" %}
 
 specify input(`userid` field is in our case a Primary key) data and click "Continue". You can also enable rebound mechanism if needed.
 
-![Upsert Row By Primary Key - Input](img/upsert-row-by-primary-key-input.png)
+{% include img.html max-width="100%" url="img/upsert-row-by-primary-key-2.png" title="Upsert Row By Primary Key - Input" %}
 
 Retrieve sample result, click "Continue" and finish component configuration.
 
-![Upsert Row By Primary Key - finish](img/upsert-row-by-primary-key-finish.png)
+{% include img.html max-width="100%" url="img/upsert-row-by-primary-key-3.png" title="Upsert Row By Primary Key - finish" %}
 
 ### Input fields description
 
@@ -207,8 +210,7 @@ Retrieve sample result, click "Continue" and finish component configuration.
 
 As an input metadata you will get all fields of selected table. [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY") is required field and other input fields are optional.
 
-![Upsert Row By Primary Key - Input fields](img/upsert-row-by-primary-key-input-fields.png)
-
+{% include img.html max-width="100%" url="img/upsert-row-by-primary-key-4.png" title="Upsert Row By Primary Key - Input fields" %}
 
 ## Create or update record action (Deprecated)
 
@@ -219,45 +221,3 @@ Please use [**Upsert row by primary key**](#upsert-row-by-primary-key-action) in
 
 This action exists in JDBC component only for backward compatibility.
 Please use **NEW** [**Select action**](#select-action) instead.
-
-![Select action dep](img/select-action-dep.png)
-
-The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
-In SQL query you can use clause variables with specific data types.
-Internally we use prepared statements, so all incoming data is
-validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types
-therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
-
-> **Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
-
-For example if you have a following SQL statement:
-
-```sql
-SELECT
-FROM users
-WHERE userid = @id AND language = @lang
-```
-
-you should add ``:type`` to each ``@parameter`` so your SQL query will looks like this:
-
-```sql
-SELECT
-FROM users
-WHERE userid = @id:number AND language = @lang:string
-```
-
-Following types are supported:
- * ``string``
- * ``number``
- * ``bigint``
- * ``boolean``
- * ``float``
- * ``date``
-
-![Select Action - SQL Query](img\select-action-sql-query.png)
-
-Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
-
-### Input fields description
-
-Component supports dynamic incoming metadata - as soon as your query is in place it will be parsed and incoming metadata will be generated accordingly.
