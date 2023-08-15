@@ -28,7 +28,7 @@ common errors connected to these limits and the ways to prevent or address them.
 The table below lists {{site.data.tenant.name}} platform parameters which you
 can configure to impose limits along with their default values.
 
-{% include table3col-30-55-15.html items="msgqueue, sizequeue, outgoingsize, errorret, sampleret, limitworkspace, rammemory" file="limits" caption="Default limits imposed in the platform" headers="Limit Name, Description, Value" %}
+{% include table3col-30-55-15.html items="msgqueue, sizequeue, outgoingsize, errorret, sampleret, limitworkspace, rammemory, containerlogsttl, executionsttl, logsttl, inputmessagesttl" file="limits" caption="Default limits imposed in the platform" headers="Limit Name, Description, Value" %}
 
 Platform has set limitations on accepting, processing and exporting attachments.
 Please check the [attachment limitations page](/references/attachments-limitations) for more details.

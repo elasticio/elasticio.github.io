@@ -41,3 +41,27 @@ limitworkspace:
   description: >
     <p>Time <b>in hours</b> until <a href="/guides/platform-behavior#flows-stopped-in-limited-workspaces">flows stopped in Limited Workspaces.</a></p>
   value: '<b>8h</b>'
+
+containerlogsttl:
+  field: 'Container logs TTL'
+  description: >
+    <p>The number of <b>days</b> for which <a href="/releases/23/24#implement-new-containers-page">container</a> information is stored on the platform.</p>
+  value: '<b>30d</b>'
+
+executionsttl:
+  field: 'Executions TTL'
+  description: >
+    <p>The number of <b>days</b> during which <a href="/guides/executions#executions-page">execution</a> details are stored on the platform.</p>
+  value: '<b>30d</b>'
+
+logsttl:
+  field: 'Logs TTL'
+  description: >
+    <p>The time in <b>days</b> that <a href="/getting-started/logs-page">logs</a> information is stored on the platform.</p>
+  value: '<b>14d</b>'
+
+inputmessagesttl:
+  field: 'Input messages TTL'
+  description: >
+    <p>The time in <b>days</b> that the <a href="/developers/error-retry#retry-from-step">messages</a> that led to the error are stored on the platform.</p>
+  value: '<b>5d</b>'
