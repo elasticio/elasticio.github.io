@@ -25,23 +25,23 @@ through the necessary steps to show where to locate those setup options.
 To start you need to navigate to the Setup section. Please log-in to your account
 and select the Setup menu.
 
-![Navigate to Salesforce setup](img/salesforce-navigate-to-setup.png)
+{% include img.html max-width="100%" url="img/salesforce-navigate-to-setup.png" title="Navigate to Salesforce setup" %}
 
 Next on the left-side menu use the **Quick Find** and search for `App Manager`,
 click to navigate to the page, and press on `New Connected App` to start.
 
-![Navigate to create app](img/salesforce-navigate-to-create-app.png)
+{% include img.html max-width="100%" url="img/salesforce-navigate-to-create-app.png" title="Navigate to create app" %}
 
 It will open a new page which should look like this:
 
-![Creating the new app](img/Salesforce-oauth-new-app.png)
+{% include img.html max-width="100%" url="img/Salesforce-oauth-new-app.png" title="Creating the new app" %}
 
 Fill-in the required details for **Connected App Name**, **API Name** and
 **Contact Email** and also select the check-box called **Enable OAuth Settings**
 at **API (Enable OAuth Settings)** section. After enabling this check-box it will
 extend into the following setup:
 
-![Configuring the OAuth settings](img/Salesforce-api-enable-oauth-settings.png)
+{% include img.html max-width="100%" url="img/Salesforce-api-enable-oauth-settings.png" title="Configuring the OAuth settings" %}
 
 *  **Callback URL** - put the correct URL which should of the `https://your-tenant-address/callback/oauth2` form.
 *  **Selected Oauth Scopes** - The Salesforce documentation explains [API (Enable OAuth Settings)](https://help.salesforce.com/articleView?id=connected_app_create.htm&type=5) part requirements. In particular, a special care must be taken to select at least these two settings:
@@ -55,7 +55,7 @@ Press save to create your OAuth App.
 After creating the OAuth App Salesforce would show you a screen containing all
 the necessary details of your newly created OAuth App.
 
-![Created app details](img/Salesforce-oauth-key-final-result.png)
+{% include img.html max-width="100%" url="img/Salesforce-oauth-key-final-result.png" title="Created app details" %}
 
 From this setup you would need to copy the **Consumer Key** and the **Consumer Secret**
 for use in your custom installation of Salesforce component.
@@ -65,11 +65,11 @@ for use in your custom installation of Salesforce component.
 
 You can create a Auth client directly in the credentials section:
 
-![Add new client](img/add-new-client.png)
+{% include img.html max-width="100%" url="img/add-new-client.png" title="Add new client" %}
 
 You would need to define four variables here:
 
-![Define client](img/define-client.png)
+{% include img.html max-width="100%" url="img/define-client.png" title="Define client" %}
 
 *   **Client ID** - your OAuth client key, meaning the **Consumer Key**.
 *   **Client Secret** - your OAuth client secret, meaning the **Consumer Secret**.
@@ -78,6 +78,6 @@ You would need to define four variables here:
 
 Here you can see how to select an existing `client`:
 
-![Choose client](img/client-exist.png)
+{% include img.html max-width="100%" url="img/client-exist.png" title="Choose client" %}
 
 For more information pleas read our [Secrets feature](/getting-started/secrets) article.

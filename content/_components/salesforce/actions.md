@@ -14,7 +14,7 @@ ComponentVersion: 2.7.0
 Executing a SOQL Query that may return many objects. Each resulting object is emitted one-by-one. Use the Salesforce Object Query Language (SOQL) to search your organization’s Salesforce data for specific information. SOQL is similar to the SELECT statement in the widely used Structured Query Language (SQL) but is designed specifically for Salesforce data. This action allows you to interact with your data using SOQL.
 Empty object will be returned, if query doesn't find any data.
 
-![Query action](img/query-action.png)
+{% include img.html max-width="100%" url="img/query-action.png" title="Query action" %}
 
 ### Input fields description
 
@@ -32,7 +32,7 @@ Empty object will be returned, if query doesn't find any data.
 Creates a new Selected Object.
 Action creates a single object. Input metadata is fetched dynamically from your Salesforce account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
 
-![Create Object action](img/create-object-action.png)
+{% include img.html max-width="100%" url="img/create-object-action.png" title="Create Object action" %}
 
 > **Please Note**:
 In case of an **Attachment** object type you should specify `Body` in base64 encoding. `ParentId` is a Salesforce ID of an object (Account, Lead, Contact) which an attachment is going to be attached to.
@@ -53,7 +53,7 @@ When **Utilize data attachment from previous step (for objects with a binary fie
 
 Deletes an object by a selected field. One can filter by either unique fields or all fields of that sobject. Input metadata is fetched dynamically from your Salesforce account.
 
-![Delete Object action (at most 1)](img/delete-object-action.png)
+{% include img.html max-width="100%" url="img/delete-object-action.png" title="Delete Object action (at most 1)" %}
 
 ### Input field description
 
@@ -78,7 +78,7 @@ Metadata for each particular `Object type` + `Lookup by field` is generating dyn
 Creates or Updates Selected Object.
 Action creates a single object. Input metadata is fetched dynamically from your Salesforce account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
 
-![Upsert Object action](img/upsert-object-action.png)
+{% include img.html max-width="100%" url="img/upsert-object-action.png" title="Upsert Object action" %}
 
 ### Input field description
 
@@ -119,7 +119,7 @@ When **Utilize data attachment from previous step (for objects with a binary fie
 Lookup an object by a selected field.
 Action creates a single object. Input metadata is fetched dynamically from your Salesforce account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
 
-![Lookup Object action (at most 1)](img/lookup-object-action.png)
+{% include img.html max-width="100%" url="img/lookup-object-action.png" title="Lookup Object action (at most 1)" %}
 
 ### Input field description
 
@@ -154,7 +154,7 @@ This parameters can be changed by setting environment variables:
 
 Lookup a list of objects satisfying specified criteria.
 
-![Lookup Object actions](img/lookup-object-actions.png)
+{% include img.html max-width="100%" url="img/lookup-object-actions.png" title="Lookup Object actions" %}
 
 ### Input field description
 
@@ -181,20 +181,22 @@ This parameters can be changed by setting environment variables:
 
 Depending on the the configuration field *Output method* the input metadata can contain different fields:
 
-*Output method* - "Emit page":
+<details close markdown="block"><summary><strong>Metadata fields</strong></summary>
+
+* **Output method** - "Emit page":
 
 Field "Page size" - optional positive integer that defaults to 1000;
 Field "Page number" - required non-negative integer (starts with 0, default value 0);
 
-*Output method* - "Emit all":
+* **Output method** - "Emit all":
 
 Field "Maximum number of records" - optional positive integer (default value 1000);
 
-*Output method* - "Emit individually":
+* **Output method** - "Emit individually":
 
 Field "Maximum number of records" - optional positive integer (default value 10000);
 
-Note that the number of records the component emits may affect the performance of the platform/component.
+>**Please note:** that the number of records the component emits may affect the performance of the platform/component.
 
 Groups of fields for each search term go next:
 
@@ -208,6 +210,8 @@ Field "Logical operator" - one of the following: "AND", "OR";
 
 Output data is an object, with a field "results" that is an array of objects.
 
+</details>
+
 ### Known limitations
 
 If `Output method` set to `Emit page` maximum "Page number" must be less or equal to "Page size"/2000
@@ -218,7 +222,7 @@ Bulk API provides a simple interface for quickly loading large amounts of data f
 
 Action takes a CSV file from the attachment as an input. CSV file format is described in the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.api_bulk_v2.meta/api_bulk_v2/datafiles.htm)
 
-![Bulk Create/Update/Delete action](img/bulk-create-update-delete.png)
+{% include img.html max-width="100%" url="img/bulk-create-update-delete.png" title="Bulk Create/Update/Delete action" %}
 
 ### Input field description
 
@@ -251,7 +255,7 @@ Result is an object with a property **result**: `array`. It contains objects wit
 
 Fetches records to a CSV file.
 
-![Bulk Query action](img/bulk-query-action.png)
+{% include img.html max-width="100%" url="img/bulk-query-action.png" title="Bulk Query action" %}
 
 ### Input field description
 
@@ -259,14 +263,16 @@ Fetches records to a CSV file.
 
 Result is a CSV file in the attachment.
 
-## Raw Request
+## Raw Request action
 
-![Raw Request](img/raw-request.png)
+Make raw request.
+
+{% include img.html max-width="100%" url="img/raw-request.png" title="Raw Request" %}
 
 ### Input Metadata
 
 * HTTP Verb - Allowed values GET, POST, PUT, PATCH, DELETE, HEAD, Required. HTTP verb to use in the request.
-* Path - String, Required. Path to make request to (without `/services/data/v{SALESFORCE_API_VERSION}`, e.g. to list sobjects - type here not `https://{INSTANCE_NAME}.salesforce.com/services/data/v{SALESFORCE_API_VERSION}/sobjects` but just type `sobjects` instead)
+* Path - String, Required. Path to make a request (for a list of all types of objects - sobjects, for a list of specific type of objects - `sobjects/{Salesforce object}`, e.g., to list the type of objects Account - `sobjects/account`)
 * Request Body - Object, Optional. Body to attach to the HTTP Request
 
 ### Output Metadata
