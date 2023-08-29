@@ -24,11 +24,11 @@ Also on the histogram you can see the RAM quota overuse. If you go over the set 
 
 For more convenience the quota service will notify you via email on different steps of approach to the limit.
 
-![Quota page](/assets/img/getting-started/quota/quota.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/quota/quota.png" title="Quota page" %}
 
-By clicking on **View Report**, you will see a resource usage chart and quota usage per each Workspace you have, and by clicking on the Workspace from the list, you can see quota usage per Flow:
+By selecting the **View Report** option, you'll gain access to a comprehensive resource usage chart along with a detailed breakdown of quota utilization for each individual Workspace under your account. To further explore the allocation of quotas, you can simply click on the workspace name displayed in the **Workspace Memory Usage** list within the **Current Month Quota**. This action will seamlessly navigate you to the respective workspace's Dashboard. Here, you'll be presented with an insightful overview of quota distribution per specific Flows, enabling you to assess and manage your resource allocation more effectively.
 
-![Report](/assets/img/getting-started/quota/quotadetail.gif)
+{% include img.html max-width="100%" url="/assets/img/RN/2331/Quota1.gif" title="Quota Report" %}
 
 >Please note that you can get more information on quotas and their limits using API endpoints. You can also manage `LimitRecords` for quotas. All information on this topic can be found in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/quotas).
 
