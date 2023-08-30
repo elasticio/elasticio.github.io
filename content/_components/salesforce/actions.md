@@ -272,7 +272,13 @@ Make raw request.
 ### Input Metadata
 
 * HTTP Verb - Allowed values GET, POST, PUT, PATCH, DELETE, HEAD, Required. HTTP verb to use in the request.
-* Path - String, Required. Use a relative path to make a request (for a list of all types of objects - `sobjects`, e.g., to list the type of objects Account - `sobjects/account`). Since Salesforce sends the endpoint that must be called dynamically, there is no need to enter the base URL like this - `https://{INSTANCE_NAME}.salesforce.com/services/data/v{SALESFORCE_API_VERSION}/sobjects/{SALESFORCE_OBJECT}`. Instead, you should use a relative path - `sobjects/{SALESFORCE_OBJECT}`.
+* Path - String, Required. Use a relative path to make a request (for a list of all types of objects - `sobjects`, e.g.,
+to list the type of objects Account - `sobjects/account`). Since Salesforce sends the endpoint that must be called dynamically, there is no need to enter the base URL like this:
+```
+https://{INSTANCE_NAME}.salesforce.com/services/data/v{SALESFORCE_API_VERSION}/sobjects/{SALESFORCE_OBJECT}
+```
+Instead, you should use a relative path - `sobjects/{SALESFORCE_OBJECT}`.
+
 * Request Body - Object, Optional. Body to attach to the HTTP Request
 
 ### Output Metadata
