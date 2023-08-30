@@ -54,17 +54,19 @@ authentication via elastic.io platform your callback URL should be `{{site.data.
 
 More information you can find [here](https://help.salesforce.com/apex/HTViewHelpDoc?id=connected_app_create.htm).
 
+> **Please note:** Salesforce migration or any changes that affect endpoints, single sign-on (SSO), OAuth and JSON web tokens (JWT), and other connections can lead to unpredictable behavior that can cause authentication issues. To avoid this after making changes you need to create new credentials and authenticate again, once this is done the old ones can be safely removed from the platform.
+
 ### Credentials creation
 
 During credentials creation you would need to:
 
 *  select existing Auth-Client from drop-down list ``Choose Auth Client`` or create the new one.
 
-![Add new client](img/add-new-client.png)
+{% include img.html max-width="100%" url="img/add-new-client.png" title="Add new client" %}
 
 For creating Auth Client you should specify following fields:
 
-![Define client](img/define-client.png)
+{% include img.html max-width="70%" url="img/define-client.png" title="Define client" %}
 
 | Field name             | Mandatory | Description      |
 |------------------------|-----------|------------------|
@@ -81,7 +83,7 @@ For creating Auth Client you should specify following fields:
 
 Here you can see how to select an existing `client`:
 
-![Choose client](img/client-exist.png)
+{% include img.html max-width="100%" url="img/client-exist.png" title="Choose client" %}
 
 For more information pleas read our [Creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
 
@@ -112,6 +114,7 @@ Use this list to navigate to the action you seek.
 6.  [Lookup Objects action](actions#lookup-objects-action) Lookup a list of objects satisfying specified criteria.
 7.  [Bulk Create/Update/Delete/Upsert action](actions#bulk-createupdatedeleteupsert-action) Bulk API provides a simple interface for quickly loading large amounts of data from CSV file into Salesforce.
 8.  [Bulk Query action](actions#bulk-query-action) Fetches records to a CSV file.
+9.  [Raw Request action](actions#raw-request-action) Make raw request.
 
 > You can find information on deprecated actions [here](deprecated-functions#deprecated-triggers).
 

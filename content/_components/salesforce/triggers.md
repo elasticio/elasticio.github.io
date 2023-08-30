@@ -34,41 +34,14 @@ ComponentVersion: 2.7.0
  * Highly not recommended use very small (less than 5) `Size of Polling Page` (look at previous point)
  * When a binary field (primitive type `base64`, e.g. Documents, Attachments, etc) is selected on **Include linked objects**, an error will be thrown: `MALFORMED_QUERY: Binary fields cannot be selected in join queries. Instead of querying objects with binary fields as linked objects (such as children Attachments), try querying them directly.` There is also a limit to the number of linked objects that you can query at once - beyond two or three, depending on the number of fields in the linked objects, Salesforce could potentially return a Status Code 431 or 414 error, meaning the query is too long. Finally, due to a bug with multiselect dropdowns, it is recommended to deselect all of the elements in this field before you change your selection in the *Object* dropdown list.
 
-### Query Trigger
+## Query trigger
 
-Continuously runs the same SOQL Query and emits results according to ``Output method`` configuration field.
+Continuously runs the same SOQL Query and emits results according to `Output method` configuration field.
 Use the Salesforce Object Query Language (SOQL) to search your organization’s Salesforce data for specific information.
 SOQL is similar to the SELECT statement in the widely used Structured Query Language (SQL) but is designed specifically for Salesforce data.
 This trigger allows you to interact with your data using SOQL.
 
-#### List of Expected Config fields
-
-* **SOQL Query** - Input field for your SOQL Query
-* **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
-
-### Subscribe to platform events (REALTIME FLOWS ONLY)
-
-This trigger will subscribe for any platform Event using Salesforce streaming API.
-
-#### Input field description
-
-* **Event object name** - Input field where you should select the type of platform event which you want to subscribe E.g. `My platform event`
-
-#### How to create new custom Platform event Entity:
-
-`Setup --> Integrations --> Platform Events --> New Platform Event`
-![Screenshot from 2019-03-11 11-51-10](https://user-images.githubusercontent.com/13310949/54114889-1088e900-43f4-11e9-8b49-3a8113b6577d.png)
-
-You can find more detail information in the [Platform Events Intro Documentation](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_intro.htm).
-
-#### Limitations
-
-At the moment this trigger can be used only for **"Realtime"** flows.
-
-## Query trigger
-
-Continuously runs the same SOQL Query and emits results one-by-one.
-Use the Salesforce Object Query Language (SOQL) to search your organization’s Salesforce data for specific information. SOQL is similar to the SELECT statement in the widely used Structured Query Language (SQL) but is designed specifically for Salesforce data. This trigger allows you to interact with your data using SOQL.
+{% include img.html max-width="100%" url="img/query-trigger.png" title="Query trigger - configure input" %}
 
 ### List of Expected Config fields trigger
 
@@ -76,7 +49,7 @@ Use the Salesforce Object Query Language (SOQL) to search your organization’s 
 
 * **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
 
-![Query trigger - configure input](img/query-trigger.png)
+* **Don't emit on empty results** - checkbox, optional. If selected, component will not produce empty messages when result is empty.
 
 ### SOQL Query Input example
 
@@ -93,7 +66,7 @@ LIMIT 5
 
 This trigger will subscribe for any platform Event using Salesforce streaming API:
 
-![Subscribe to platform events trigger](img/subscribe-trigger.png)
+{% include img.html max-width="100%" url="img/subscribe-trigger.png" title="Subscribe to platform events trigger" %}
 
 >**Please note:** REALTIME FLOWS ONLY
 
@@ -105,6 +78,6 @@ This trigger will subscribe for any platform Event using Salesforce streaming AP
 
 `Setup --> Integrations --> Platform Events --> New Platform Event`
 
-![Platform Events](img/platform-events.png)
+{% include img.html max-width="100%" url="img/platform-events.png" title="Platform Events" %}
 
 You can find more detail information in the [Platform Events Intro Documentation](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_intro.htm).
