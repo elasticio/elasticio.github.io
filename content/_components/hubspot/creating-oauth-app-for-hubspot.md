@@ -17,7 +17,8 @@ HubSpot component authentication occurs via OAuth 2.0. Before you can make it wo
 on our platform you MUST create an OAuth2 App on HubSpot side.
 
 The HubSpot documentation already contains a detailed explanation of the process
-and we encourage you to [follow it](https://developers.hubspot.com/docs/api/working-with-oauth).
+and we encourage you to [follow it](https://developers.hubspot.com/docs/api/working-with-oauth). After granting access, you should be redirected back to our platform via a `redirect_url`. To do this, you will need to provide our [OAuth Callback Redirect URL](/guides/oauth-callback-redirect-url).
+
 
 During the OAuth2 App creation you would need to select an existing Auth Client
 from the drop-down list **Choose Auth Client** or create the new one. Next you

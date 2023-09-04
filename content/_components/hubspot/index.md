@@ -29,7 +29,7 @@ redirect_from:
 
 Authentication occurs via OAuth 2.0. To make OAuth work, you need to
 [create a new OAuth2 App](creating-oauth-app-for-hubspot) in your HubSpot or use
-an existing OAuth2 Client during the credentials creation process. After granting access, you should be redirected back to our platform via a `redirect_url`. To do this, you will need to provide our [OAuth Callback Redirect URL](/guides/oauth-callback-redirect-url).
+an existing OAuth2 Client during the credentials creation process.
 
 {% include img.html max-width="100%" url="img/hubspot-credentials-screen.png" title="Oauth2" %}
 
