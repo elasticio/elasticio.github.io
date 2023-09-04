@@ -31,10 +31,11 @@ Authentication occurs via OAuth 2.0. To make OAuth work, you need to
 [create a new OAuth2 App](creating-oauth-app-for-hubspot) in your HubSpot or use
 an existing OAuth2 Client during the credentials creation process.
 
-![Oauth2](img/hubspot-credentials-screen.png)
+{% include img.html max-width="100%" url="img/hubspot-credentials-screen.png" title="Oauth2" %}
 
 *   Leave the **Additional parameters** input empty.
 *   Provide the following value in the **Scopes** input. If you wish to grant certain permissions, you can do so by removing them from this list.
+
 ```
 crm.objects.contacts.read, crm.objects.contacts.write, crm.schemas.contacts.read, crm.schemas.contacts.write, crm.objects.owners.read
 ```
@@ -48,6 +49,8 @@ To complete the process:
 ## Triggers
 
 ### Get New and Updated Objects
+
+{% include img.html max-width="100%" url="img/get-new-and-updated-objects.png" title="Get New and Updated Objects" %}
 
 ### Configuration Fields
 
@@ -89,6 +92,8 @@ Triggered object from HubSpot
 
 Action to call any Hubspot API endpoint
 
+{% include img.html max-width="100%" url="img/raw-request.png" title="Raw Request" %}
+
 #### Configuration Fields
 
 **Throw Error on 404 Response** - (optional) Treat 404 HTTP responses as errors, defaults to `false`.
@@ -102,6 +107,8 @@ Action to call any Hubspot API endpoint
 ### Upsert
 
 Action to make upsert (update/create) object in HubSpot
+
+{% include img.html max-width="100%" url="img/upsert-object.png" title="Upsert" %}
 
 #### Configuration Fields
 
@@ -138,6 +145,8 @@ for fields `Attachment URL`. The component will throw an exception `process.unca
 Action to lookup object in HubSpot.
 Lookup Set will make sure all the items in the set should be there, otherwise throw an error.
 
+{% include img.html max-width="100%" url="img/lookup-set-of-objects.png" title="Lookup Set Of Objects By Unique Criteria" %}
+
 #### Configuration Fields
 
 *   **Object type** - Object type for lookup like `Companies`, `Contacts`, `Deals`, `Line Items` or `Tickets`.
@@ -151,6 +160,8 @@ An array where each item is an ID
 ### Lookup Object (at most one)
 
 Action designed to lookup one object by unique field
+
+{% include img.html max-width="100%" url="img/lookup-object-at-most-one.png" title="Lookup Object (at most one)" %}
 
 #### Configuration Fields
 
@@ -167,6 +178,8 @@ Action designed to lookup one object by unique field
 ### Lookup Objects (Plural)
 
 Action to lookup objects in HubSpot
+
+{% include img.html max-width="100%" url="img/lookup-objects.png" title="Lookup Objects (Plural)" %}
 
 #### Configuration Fields
 
@@ -223,6 +236,8 @@ Order example:
 
 ### Create Association
 
+{% include img.html max-width="100%" url="img/create-associations.png" title="Create Association" %}
+
 #### Configuration Fields
 
 *   **From Object Type** dropdown: Choose an object type to create association
@@ -241,6 +256,8 @@ Order example:
 Object with `statusCode` key that represent result of request
 
 ### Remove Association
+
+{% include img.html max-width="100%" url="img/remove-associations.png" title="Remove Association" %}
 
 #### Configuration Fields
 
@@ -263,6 +280,8 @@ Object with `statusCode` key that represent result of request
 
 Action designed to delete one object by unique field
 
+{% include img.html max-width="100%" url="img/delete-object.png" title="Delete Object" %}
+
 #### Configuration Fields
 
 *   **Object Type** dropdown: Indicates Object Type to find
@@ -275,7 +294,6 @@ Action designed to delete one object by unique field
 #### Output Metadata
 
 The expected output is an object with a `id` property. `id` value stands for id of delete object.
-
 
 ## Known Limitations
 
