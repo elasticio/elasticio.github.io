@@ -23,7 +23,7 @@ forming an execution. Also, the same `ID` will be assigned to any messages cause
 by this initial message in the flow. The following diagram demonstrates executions
 using a webhook flow:
 
-![Executions Webhook Flow](/assets/img/getting-started/exec-page/exec1.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec1.png" title="Executions Webhook Flow" %}
 
 A client sent two messages to a webhook URL simultaneously. The message `A`
 passed by the webhook trigger to the next action without change. While processing the
@@ -35,7 +35,7 @@ logically but not necessarily physically.
 
 As for a polling flow, everything works as shown on the diagram:
 
-![Executions polling Flow](/assets/img/getting-started/exec-page/exec2.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec2.png" title="Executions polling Flow" %}
 
 The platform internal scheduling triggers a polling flow execution. The message
 emitted by the trigger creates a large number of messages that all belong to the same
@@ -56,7 +56,7 @@ This page shows the list of all executions. You can filter the executions
 by [flow names](#filtering-by-flow-name), [flow statuses](#filtering-by-status)
 and the [time interval](#filtering-by-time-interval).
 
-![Executions page filters](/assets/img/getting-started/exec-page/exec-filters.gif)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec-filters.gif" title="Executions page filters" %}
 
 The platform adds all filters to the URL code, so you can send a link to the filtered
 executions list to your colleague.
@@ -70,7 +70,7 @@ will show a notification at the top of the list, and a prompt to load them. You 
 it by clicking `X`. The idea is to not let new executions interfere with
 your current selection. The screenshot below shows a typical view with a notification:
 
-![Load new executions](/assets/img/getting-started/exec-page/executions-load-new.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-load-new.png" title="Load new executions" %}
 
 When you dismiss the notification above the new executions are not lost, you will
 get the same notification with an updated number of new executions again when new
@@ -85,7 +85,7 @@ executions happen.
 This filter allows you to concentrate on executions of one or more flows by selecting
 the check-boxes in front of their names in the drop-down menu.
 
-![Flow Name filter with two selected flows](/assets/img/getting-started/exec-page/executions-filter-flow-name.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-filter-flow-name.png" title="Flow Name filter with two selected flows" %}
 
 You can select more than one flow if you need to debug related flows.
 Here you can search for the flow names to find the relevant flows faster.
@@ -98,7 +98,7 @@ Here you can search for the flow names to find the relevant flows faster.
 This filter allows you to list executions based on their statuses:
 **Successful** or **Erroneous**. By default the platform shows **all** executions.
 
-![Flow statuses](/assets/img/getting-started/exec-page/executions-filter-statuses.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-filter-statuses.png" title="Flow statuses" %}
 
 ## Filtering by time interval
 
@@ -106,7 +106,7 @@ This filter allows you to list executions based on their time. A drop-down menu
 offers a calendar view where you can customise and concentrate on the time interval
 when the executions have started.
 
-![Time interval default view](/assets/img/getting-started/exec-page/executions-filter-time-interval01.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-filter-time-interval01.png" title="Time interval default view" %}
 
 Picture above shows the default view of the time interval with today's executions.
 You can select any of the predefined options like `last 15 minutes`, `last hour`,
@@ -114,12 +114,11 @@ You can select any of the predefined options like `last 15 minutes`, `last hour`
 the starting date and end date. You can also select the starting and ending hour
 of the interval.
 
-![Time interval Custom Range](/assets/img/getting-started/exec-page/executions-filter-time-interval02.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-filter-time-interval02.png" title="Time interval Custom Range" %}
 
-> **Note** - you must press **Apply** for it to take effect. You will know it worked
+> **Please Note:** you must press **Apply** for it to take effect. You will know it worked
 > when the check-mark shows the **Custom Range** and the name interval menu shows
 > the selected interval instead of Today.
-
 
 ## Debugging the executions
 
@@ -127,12 +126,47 @@ Since most of the errors inside components are related to the processed data, ex
 are beneficial for debugging integration flows. On the executions page you can
 select a single execution:
 
-![Execution](/assets/img/getting-started/exec-page/exec-retry1.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec-retry1.png" title="Execution" %}
 
 Then, for example, you can check the errors that occurred:
 
-![Executions error](/assets/img/getting-started/exec-page/exec-retry2.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec-retry3.png" title="Executions error" %}
 
 You can use the [retry feature](/developers/error-retry) to re-submit or retry.
 
-![Executions error retry](/assets/img/getting-started/exec-page/exec-retry3.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec-retry3.png" title="Executions error retry" %}
+
+## Scheduled executions
+
+Scheduled Executions are a critical feature designed to address configuration challenges that arise when using a component within a specific node in a particular flow. These challenges are often dynamic and context-dependent, making it difficult to predefine all configuration options. To illustrate this, consider the example of a component with a module that retrieves a list of products from various e-commerce platforms. In such cases, there are three dynamic parameters that need to be configured:
+
+1. Category: Each e-commerce installation has its own unique set of product categories, and the choice of category impacts the data structure of the resulting messages (metadata).
+
+2. Metadata: Metadata associated with a selected category must be retrieved for each use case.
+
+3. Credentials: Every client employs their own set of credentials to connect the connector with their specific e-commerce platform installation. These credentials need to be validated to prevent potential errors when using the component.
+
+To tackle these challenges, we introduce the concept of Scheduled Executions, which allows the execution of special methods within a component. These methods include:
+
+* `selectModel`: Retrieves available options for configuring a parameter of the component when used in a specific node within a flow.
+* `getMetaModel`: Fetches metadata associated with a specific configuration of a node in a flow.
+* `verifyCredentials`: Validates the validity of the credentials for a particular component configuration.
+
+All these methods are executed in the same environment as the component/module during the execution of flows.
+
+### Scheduled Execution Workflow
+
+The execution of a component is an asynchronous process. When a client requests an execution, it is scheduled and awaits the availability of a worker. Once a worker becomes available, the component is executed, and the results are sent back to the client. Since the results cannot be immediately generated and returned, the client must engage in polling to retrieve them.
+
+>For a more detailed understanding of asynchronous REST, please refer to the [RESTful Cookbook](https://restcookbook.com/Resources/asynchroneous-operations/).
+
+The following diagram illustrates the process of scheduling a component:
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/scheduling-diagramm.png" title="Scheduling diagramm" %}
+
+1. Initiation: A method execution is scheduled by sending a request to the corresponding endpoint (see below). The API responds with a status of `202 Accepted`. The URL for polling execution results is provided in the `Location` HTTP header.
+
+2. Polling: To check the execution result's status, the client periodically sends requests to the polling resource at `exec/poll/{EXECUTION_ID}`. The API responds with a `200 OK` if the result is not yet available. Please see how to [poll execution results]({{site.data.tenant.apiDocsUri}}/v2#/scheduled%20executions/get_exec_poll__execution_id_).
+
+3. Result Availability: When the result becomes available, the polling resource responds with a `303 See Other` status. The URL for retrieving the execution results is provided in the Location HTTP header. Please see how to [poll execution results]({{site.data.tenant.apiDocsUri}}/v2#/scheduled%20executions/get_exec_poll__execution_id_).
+4. Retrieval: The final step involves retrieving the results from exec/result/{EXECUTION_ID}. Refer to retrieve [execution results]({{site.data.tenant.apiDocsUri}}/v2#/scheduled%20executions/get_exec_result__execution_id_) for details.
