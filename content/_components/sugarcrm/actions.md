@@ -14,7 +14,7 @@ ComponentVersion: 1.1.6
 Given an object, looks up the object with that ID. You must select the type of
 object to lookup.
 
-![Lookup Object By ID](img/lookup-object.png)
+{% include img.html max-width="100%" url="img/lookup-object.png" title="Lookup Object By ID" %}
 
 ### Input field description
 
@@ -26,7 +26,7 @@ object to lookup.
 
 Lookup a list of objects satisfying specified criteria.
 
-![Lookup Objects](img/lookup-objects.png)
+{% include img.html max-width="100%" url="img/lookup-objects.png" title="Lookup Objects" %}
 
 ### Input field description
 
@@ -76,14 +76,14 @@ Output data depends on the configuration field *Output method*:
 Given an object, deletes the object with that ID.  You must select the type of
 object to lookup.
 
-![Delete Object By ID](img/delete-object.png)
+{% include img.html max-width="100%" url="img/delete-object.png" title="Delete Object By ID" %}
 
 ## Upsert Object By ID
 
 Update an existing entry if the id provided. Otherwise create a new entry. You must select the type of object to lookup.
 Input metadata is fetched dynamically from your SugarCRM account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
 
-![Upsert Object By ID](img/upsert-object.png)
+{% include img.html max-width="100%" url="img/upsert-object.png" title="Upsert Object By ID" %}
 
 ### Input fields description
 
@@ -99,7 +99,7 @@ When **Utilize data attachment from previous step (for objects with a binary fie
 
 Provides a simple interface for quickly creating large amounts of objects.
 
-![Bulk Create Objects](img/bulk-create-objects.png)
+{% include img.html max-width="100%" url="img/bulk-create-objects.png" title="Bulk Create Objects" %}
 
 ### Input field description
 
@@ -115,7 +115,7 @@ Result is an object with a property **result**: `array`. It contains the list of
 
 Provides a simple interface for quickly updating large amounts of objects.
 
-![Bulk Update Objects](img/bulk-update-objects.png)
+{% include img.html max-width="100%" url="img/bulk-update-objects.png" title="Bulk Update Objects" %}
 
 ### Input field description
 
@@ -137,7 +137,7 @@ Result is an object with the 2 properties:
 
 Provides a simple interface for quickly deleting large amounts of objects.
 
-![Bulk Delete Objects](img/bulk-delete-objects.png)
+{% include img.html max-width="100%" url="img/bulk-delete-objects.png" title="Bulk Delete Objects" %}
 
 ### Input field description
 
@@ -157,7 +157,7 @@ Result is an object with the 2 properties:
 
 Retrieve a set of records filtered by an expression utilizing the SugarCRM REST API filter endpoint. [See for details](https://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_9.1/Integration/Web_Services/REST_API/Endpoints/modulefilter_POST/)
 
-![Query](img/query.png)
+{% include img.html max-width="100%" url="img/query.png" title="Query" %}
 
 ### Input field description
 

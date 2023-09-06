@@ -39,32 +39,28 @@ select as a first component during the integration flow design.
 
 Create a new activity in pipedrive:
 
-![Create Activity](img/create-a-new-activity.png)
+{% include img.html max-width="100%" url="img/create-a-new-activity.png" title="Create Activity" %}
 
 ### Create Deals
 
 Create a new deal in pipedrive:
 
-![Create Deals](img/create-a-new-deal.png)
+{% include img.html max-width="100%" url="img/create-a-new-deal.png" title="Create Deals" %}
 
 ### Create Note
 
 Create a new note in pipedrive:
 
-![Create Note](img/create-a-new-note.png)
+{% include img.html max-width="100%" url="img/create-a-new-note.png" title="Create Note" %}
 
 ### Create Organisation
 
 Create a new organisation in pipedrive:
 
-![Create Organisation](img/create-a-new-organisation.png)
+{% include img.html max-width="100%" url="img/create-a-new-organisation.png" title="Create Organisation" %}
 
 ### Create Person
 
 Create a new person in pipedrive:
 
-![Create Person](img/create-a-new-person.png)
-
-## Known issues
-
-No known issues are there yet.
+{% include img.html max-width="100%" url="img/create-a-new-person.png" title="Create Person" %}
