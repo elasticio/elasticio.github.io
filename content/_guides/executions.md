@@ -158,7 +158,7 @@ All these methods are executed in the same environment as the component/module d
 
 The execution of a component is an asynchronous process. When a client requests an execution, it is scheduled and awaits the availability of a worker. Once a worker becomes available, the component is executed, and the results are sent back to the client. Since the results cannot be immediately generated and returned, the client must engage in polling to retrieve them.
 
->For a more detailed understanding of asynchronous REST, please refer to the [RESTful Cookbook](https://restcookbook.com/Resources/asynchroneous-operations/).
+>For a more detailed understanding of asynchronous REST, please refer to the [REST Cookbook](https://restcookbook.com/Resources/asynchroneous-operations/).
 
 The following diagram illustrates the process of scheduling a component:
 
