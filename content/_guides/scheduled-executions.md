@@ -15,7 +15,7 @@ Scheduled Executions are a critical feature designed to address configuration ch
 
 2. Metadata: Metadata associated with a selected category must be retrieved for each use case.
 
-3. Credentials: Every client employs their own set of credentials to connect the connector with their specific e-commerce platform installation. These credentials need to be validated to prevent potential errors when using the component.
+3. Credentials: Every client employs their own set of credentials to connect the connector with their specific e-commerce platform installation. These credentials need to be verified to prevent potential errors when using the component.
 
 To tackle these challenges, we introduce the concept of Scheduled Executions, which allows the execution of special methods within a component. These methods include:
 
