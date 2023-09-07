@@ -18,7 +18,7 @@ directly to the Smarty-Streets API servers. A secret key pair is not limited to
 any particular hostname like website keys are. A key pair consists of an ID to
 identify your account and a token which is like a password.
 
-![Credentials](img/credentials.png)
+{% include img.html max-width="100%" url="img/smarty-streets-credentials.png" title="Credentials" %}
 
 ### How to insert credentials
 
@@ -40,7 +40,7 @@ select as a first component during the integration flow design.
 
 Action to verify an international address using the Smarty-Streets International API.
 
-![International Address](img/international-street-address.png)
+{% include img.html max-width="100%" url="img/international-street-adress.png" title="International Street Address" %}
 
 > **Please Note:** This action can not be accessed from the free (test) account.
 > Hence it can not be tested. You should have a real paid account to use or even test this action.
@@ -51,7 +51,7 @@ Request JSON schema `src/main/resources/schemas/json/InternationalStreetAddress.
 
 Action to use the Smarty-Streets US Autocomplete API.
 
-![US Autocomplete](img/us-autocomplete.png)
+{% include img.html max-width="100%" url="img/us-autocomplete.png" title="US Autocomplete" %}
 
 > **Please Note:** Because the US Autocomplete API relies on the user to know
 > their primary number, the returned suggestions do not necessarily represent
@@ -65,7 +65,7 @@ Request JSON schema `src/main/resources/schemas/json/USAutocomplete.in.json`
 
 This action uses the extraction endpoint to find and validate addresses in arbitrary text input.
 
-![US Extract](img/us-extract.png)
+{% include img.html max-width="100%" url="img/us-extract.png" title="US Extract" %}
 
 Request JSON schema `src/main/resources/schemas/json/USExtract.in.json`
 
@@ -73,7 +73,7 @@ Request JSON schema `src/main/resources/schemas/json/USExtract.in.json`
 
 This action verifies one or more addresses using the Smarty-Streets US Street Address API.
 
-![US Street Address](img/us-street-address.png)
+{% include img.html max-width="100%" url="img/us-street-adress.png" title="US Street Address" %}
 
 Request JSON schema `src/main/resources/schemas/json/USStreetAddress.in.json`
 
@@ -82,7 +82,7 @@ Request JSON schema `src/main/resources/schemas/json/USStreetAddress.in.json`
 Action allows you to look up and verify city, state, and ZIP Code combinations
 using the Smarty-Streets APIs
 
-![US Zip Code](img/us-zip.png)
+{% include img.html max-width="100%" url="img/us-zip-code.png" title="US Zip Code" %}
 
 Request JSON schema `src/main/resources/schemas/json/USZipCodeSingle.in.json`
 
