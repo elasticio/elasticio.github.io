@@ -50,7 +50,7 @@ component during the integration flow design.
 This action will send SMS to one or multiple numbers provided all the input
 fields are filled are filled correctly.
 
-![Send](img/send-action.png)
+{% include img.html max-width="100%" url="img/send-SMS.png" title="Send" %}
 
 Here are the input fields:
 

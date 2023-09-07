@@ -47,13 +47,13 @@ Such codes can be foud in a result of `Retrieve supported languages` action exec
 
 `sourceLang` field is optional. Google will autodetect the source locale if not specified.
 
-![Translate phrase](img/translate-phrase.png)
+{% include img.html max-width="100%" url="img/translate-phrase.png" title="Translate phrase" %}
 
 in/out metadata can be found at `/lib/schemas/translatePhrase.{in/out}.json`
 
 ### Detect language
 
-![Detect language](img/detect-language.png)
+{% include img.html max-width="100%" url="img/detect-language.png" title="Detect language" %}
 
 in/out metadata can be found at `/lib/schemas/detectLanguage.{in/out}.json`
 
@@ -63,12 +63,14 @@ out metadata can be found at `/lib/schemas/retrieveSupportedLanguages.out.json`
 
 ### Translate object properties
 
-![Translate object properties](img/translate-object-properties.png)
+{% include img.html max-width="100%" url="img/translate-objects-properties.png" title="Translate object properties" %}
 
 in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
 
-### usage example
+#### Usage example
+
 input message:
+
 ```
 {
     "sourceObject": {
@@ -79,22 +81,26 @@ input message:
     "targetLang": "de"
 }
 ```
+
 output message:
+
 ```
 {
     "hello": "Hallo Welt",
     "capital": "London ist die Hauptstadt von Großbritannien"
 }
 ```
+
 ### Translate array of objects
 
-![Translate array of objects](img/translate-array-of-objects.png)
+{% include img.html max-width="100%" url="img/translate-array-of-objects.png" title="Translate array of objects" %}
 
 in/out metadata can be found at `/lib/schemas/translateObjectProperties.{in/out}.json`
 
-### usage example
+#### Usage example
 
 input message:
+
 ```
 {
 	"sourceArray": [
@@ -111,7 +117,9 @@ input message:
 	"targetLang": "de"
 }
 ```
+
 output message:
+
 ```
 {
     "translatedArray": [
