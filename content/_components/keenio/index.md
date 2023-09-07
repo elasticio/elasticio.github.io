@@ -20,7 +20,7 @@ The [technical notes](technical-notes) page gives some technical details about K
 
 ## Credentials
 
-![Credentials](img/credentials.png)
+{% include img.html max-width="100%" url="img/keenio-credentials.png" title="Credentials" %}
 
 ## Triggers
 
@@ -31,4 +31,4 @@ select as a first component during the integration flow design.
 
 ### Send Event
 
-![Send Event](img/send-event.png)
+{% include img.html max-width="100%" url="img/send-event.png" title="Send Event" %}
