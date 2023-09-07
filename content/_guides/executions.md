@@ -23,7 +23,7 @@ forming an execution. Also, the same `ID` will be assigned to any messages cause
 by this initial message in the flow. The following diagram demonstrates executions
 using a webhook flow:
 
-![Executions Webhook Flow](/assets/img/getting-started/exec-page/exec1.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec1.png" title="Executions Webhook Flow" %}
 
 A client sent two messages to a webhook URL simultaneously. The message `A`
 passed by the webhook trigger to the next action without change. While processing the
@@ -35,7 +35,7 @@ logically but not necessarily physically.
 
 As for a polling flow, everything works as shown on the diagram:
 
-![Executions polling Flow](/assets/img/getting-started/exec-page/exec2.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec2.png" title="Executions polling Flow" %}
 
 The platform internal scheduling triggers a polling flow execution. The message
 emitted by the trigger creates a large number of messages that all belong to the same
@@ -56,7 +56,7 @@ This page shows the list of all executions. You can filter the executions
 by [flow names](#filtering-by-flow-name), [flow statuses](#filtering-by-status)
 and the [time interval](#filtering-by-time-interval).
 
-![Executions page filters](/assets/img/getting-started/exec-page/exec-filters.gif)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec-filters.gif" title="Executions page filters" %}
 
 The platform adds all filters to the URL code, so you can send a link to the filtered
 executions list to your colleague.
@@ -70,7 +70,7 @@ will show a notification at the top of the list, and a prompt to load them. You 
 it by clicking `X`. The idea is to not let new executions interfere with
 your current selection. The screenshot below shows a typical view with a notification:
 
-![Load new executions](/assets/img/getting-started/exec-page/executions-load-new.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-load-new.png" title="Load new executions" %}
 
 When you dismiss the notification above the new executions are not lost, you will
 get the same notification with an updated number of new executions again when new
@@ -85,7 +85,7 @@ executions happen.
 This filter allows you to concentrate on executions of one or more flows by selecting
 the check-boxes in front of their names in the drop-down menu.
 
-![Flow Name filter with two selected flows](/assets/img/getting-started/exec-page/executions-filter-flow-name.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-filter-flow-name.png" title="Flow Name filter with two selected flows" %}
 
 You can select more than one flow if you need to debug related flows.
 Here you can search for the flow names to find the relevant flows faster.
@@ -98,7 +98,7 @@ Here you can search for the flow names to find the relevant flows faster.
 This filter allows you to list executions based on their statuses:
 **Successful** or **Erroneous**. By default the platform shows **all** executions.
 
-![Flow statuses](/assets/img/getting-started/exec-page/executions-filter-statuses.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-filter-statuses.png" title="Flow statuses" %}
 
 ## Filtering by time interval
 
@@ -106,7 +106,7 @@ This filter allows you to list executions based on their time. A drop-down menu
 offers a calendar view where you can customise and concentrate on the time interval
 when the executions have started.
 
-![Time interval default view](/assets/img/getting-started/exec-page/executions-filter-time-interval01.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-filter-time-interval01.png" title="Time interval default view" %}
 
 Picture above shows the default view of the time interval with today's executions.
 You can select any of the predefined options like `last 15 minutes`, `last hour`,
@@ -114,12 +114,11 @@ You can select any of the predefined options like `last 15 minutes`, `last hour`
 the starting date and end date. You can also select the starting and ending hour
 of the interval.
 
-![Time interval Custom Range](/assets/img/getting-started/exec-page/executions-filter-time-interval02.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/executions-filter-time-interval02.png" title="Time interval Custom Range" %}
 
-> **Note** - you must press **Apply** for it to take effect. You will know it worked
+> **Please Note:** you must press **Apply** for it to take effect. You will know it worked
 > when the check-mark shows the **Custom Range** and the name interval menu shows
 > the selected interval instead of Today.
-
 
 ## Debugging the executions
 
@@ -127,12 +126,12 @@ Since most of the errors inside components are related to the processed data, ex
 are beneficial for debugging integration flows. On the executions page you can
 select a single execution:
 
-![Execution](/assets/img/getting-started/exec-page/exec-retry1.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec-retry1.png" title="Execution" %}
 
 Then, for example, you can check the errors that occurred:
 
-![Executions error](/assets/img/getting-started/exec-page/exec-retry2.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec-retry3.png" title="Executions error" %}
 
 You can use the [retry feature](/developers/error-retry) to re-submit or retry.
 
-![Executions error retry](/assets/img/getting-started/exec-page/exec-retry3.png)
+{% include img.html max-width="100%" url="/assets/img/getting-started/exec-page/exec-retry3.png" title="Executions error retry" %}
