@@ -25,6 +25,8 @@ To tackle these challenges, we introduce the concept of Scheduled Executions, wh
 
 All these methods are executed in the same environment as the component/module during the execution of flows.
 
+> You can find more information on this subject in our [API Documentation]({{site.data.tenant.apiDocsUri}}/v2#/scheduled%20executions).
+
 ## Scheduled Execution Workflow
 
 The execution of a component is an asynchronous process. When a client requests an execution, it is scheduled and awaits the availability of a worker. Once a worker becomes available, the component is executed, and the results are sent back to the client. Since the results cannot be immediately generated and returned, the client must engage in polling to retrieve them.
