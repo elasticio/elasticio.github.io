@@ -25,7 +25,7 @@ To tackle these challenges, we introduce the concept of Scheduled Executions, wh
 
 All these methods are executed in the same environment as the component/module during the execution of flows.
 
-> You can find more information on this subject in our [API Documentation]({{site.data.tenant.apiDocsUri}}/v2#/scheduled%20executions).
+> You can manage scheduled executions using API calls. For more information on this subject please visite our [API Documentation]({{site.data.tenant.apiDocsUri}}/v2#/scheduled%20executions).
 
 ## Scheduled Execution Workflow
 
