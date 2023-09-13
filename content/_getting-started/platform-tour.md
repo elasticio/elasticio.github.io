@@ -57,6 +57,7 @@ This menu section links pages to help you monitor and debug your integration flo
 
 *   [Dashboard](#dashboard)
 *   [Executions](#executions)
+*   [Containers](#containers)
 *   [Logs](#logs)
 
 ### Dashboard
@@ -86,6 +87,37 @@ narrow down your search and navigate to the one you need.
 2.  The list of execution matching the selected criteria.
 
 ![Executions](/assets/img/getting-started/tour/executions.png "Executions")
+
+</details>
+
+### Containers
+
+The Containers menu item opens our Containers page. This page provides insights into containers and their components. By default, it displays today's log information, but users can expand the date range using the filtering and search features.
+
+<details close markdown="block"><summary><strong>Click to expand for more details.</strong></summary>
+
+Container logs are retained for up to 30 days. On the Containers page, you'll encounter the following states:
+
+* **Running** (Green Flag): Indicates that the container is currently operational.
+* **Finished** (Green Flag): Indicates that the container has been successfully shut down.
+* **Finished** (Red Flag): Suggests that the container has been stopped due to a registered error.
+* **Killed** (Green Flag): Signifies a successful termination of the container.
+* **Killed** (Red Flag): Indicates that the container was abruptly terminated by the operating system.
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/tour/container-states.png" title="Container States" %}
+
+To access specific information for a container, simply click on the 'Step Name.' On the individual container page, you will find the following details:
+
+* **Status:** The current status of the container.
+* **Flow Name:** The name of the flow associated with this container. Clicking on the flow name opens the corresponding flow designer page.
+* **Start Date:** The date and time when the container started.
+* **Stop Date:** The date and time when the container stopped.
+* **Exit Code:** The current or last status code of the container.
+* **Reason:** A description of the current or last status code.
+* **Filtering:** Options for filtering the container's logs, including Search, Log Level, and Date Range.
+* **Details:** Log entries with Date/Time, Log Level, and Description.
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/tour/container.png" title="Container" %}
 
 </details>
 
