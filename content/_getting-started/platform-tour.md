@@ -92,7 +92,7 @@ narrow down your search and navigate to the one you need.
 
 ### Containers
 
-The Containers menu item opens our Containers page. This page provides insights into containers and their components. By default, it displays today's log information, but users can expand the date range using the filtering and search features.
+The Containers menu item opens our [Containers page](/guides/executions#containers-page). This page provides insights into containers and their components. By default, it displays today's log information, but users can expand the date range using the filtering and search features.
 
 <details close markdown="block"><summary><strong>Click to expand for more details.</strong></summary>
 
