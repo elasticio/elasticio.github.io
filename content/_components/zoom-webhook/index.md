@@ -14,7 +14,6 @@ updatedDate: 2023-01-13
 
 There is no specific version of the Zoom Events API. [Zoom Events Changelog](https://marketplace.zoom.us/docs/guides/stay-up-to-date/changelog/).
 We can only refer to the development date as of the specific point where the component has been developed and tested.
-Current CHANGELOG can be found [here](https://github.com/elasticio/salesforce-component-v2/blob/master/CHANGELOG.md)
 
 ## Credentials
 
@@ -55,7 +54,7 @@ Or, in case of the validation event, calculate and respond to the API to prove t
 - Validate webhook endpoint. When you add a new webhook or make changes to an existing one you need to validate the
   webhook endpoint. Zoom will also automatically revalidate webhooks every 72 hours.
   Read more about the validation
-  process [here](https://marketplace.zoom.us/docs/api-reference/webhook-reference/#validate-your-webhook-endpoint).
+  process [here](https://developers.zoom.us/docs/api/rest/webhook-reference/#validate-your-webhook-endpoint).
 - Pass events through as is
 
 Incoming messages (events) are validated according to the Zoom [process](https://marketplace.zoom.us/docs/api-reference/webhook-reference/#verify-webhook-events).
