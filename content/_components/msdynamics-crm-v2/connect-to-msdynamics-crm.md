@@ -29,9 +29,13 @@ Go to [Azure Portal](https://portal.azure.com/) and log in using your Microsoft 
 
 Select **App registrations** in the Azure Portal.
 
+{% include img.html max-width="100%" url="img/INSERT.png" title="App registrations" %}
+
 3. Create a New Registration:
 
 Click on **New registration**.
+
+{% include img.html max-width="100%" url="img/INSERT.png" title="New registration" %}
 
 4. Enter Registration Details:
 
@@ -40,8 +44,10 @@ Fill in the following information:
 * **Name:** Choose any name for your registration.
 * **Supported account types:** Select "Accounts in this organizational directory only."
 * **Redirect URL:**
-  * **Platform:** Choose "Web."
+  * **Platform:** Choose **Web**.
   * **URL:** Enter `https://your-tenant-address/callback/oauth2`.
+
+{% include img.html max-width="100%" url="img/INSERT.png" title="New registration process" %}
 
 ## Step 2: Add CRM Permissions to the App
 
@@ -49,21 +55,31 @@ Fill in the following information:
 
 Click on **API Permissions**.
 
+{% include img.html max-width="100%" url="img/INSERT.png" title="API Permission" %}
+
 2. Add a Permission:
 
 Click **Add a permission**.
+
+{% include img.html max-width="100%" url="img/INSERT.png" title="Add a permission" %}
 
 3. Select Dynamics CRM:
 
 Search for and select **Dynamics CRM**.
 
+{% include img.html max-width="100%" url="img/INSERT.png" title="Select Dynamics CRM" %}
+
 4. Choose Permissions:
 
 Check the **user_impersonation** checkbox and click **Add permissions**.
 
+{% include img.html max-width="100%" url="img/INSERT.png" title="Add permissions" %}
+
 5. Grant Admin Consent:
 
 Click **Grant admin consent** and confirm by clicking **Yes**.
+
+{% include img.html max-width="100%" url="img/INSERT.png" title="Grant admin consent" %}
 
 ## Step 3: Generate a Secret for the App
 
@@ -71,30 +87,43 @@ Click **Grant admin consent** and confirm by clicking **Yes**.
 
 Click on **Certificates & secrets**.
 
+{% include img.html max-width="100%" url="img/INSERT.png" title="Certificates & secrets" %}
+
 2. Generate a New Client Secret:
 
 Click **New client secret**.
+
+{% include img.html max-width="100%" url="img/INSERT.png" title="New client secret" %}
 
 3. Enter Secret Details:
 
 * Provide a description for the secret and select the desired expiration period (maximum 24 months).
 * Click **Add**.
 
+{% include img.html max-width="100%" url="img/INSERT.png" title="Enter Secret Details" %}
+
 4. Save Secret Value:
 
-* Save the value displayed in the **Value** column. You will need this when creating an Auth Client on your platform.
+* Save the value displayed in the **Value** column. You will need this when creating an Auth Client on {{site.data.tenant.name}} platform.
+
+{% include img.html max-width="100%" url="img/INSERT.png" title="Save Secret Value" %}
 
 ## Step 4: Create an Auth Client on Your Platform
 
 1. Create a New Credential:
 
-Create a new credential on your platform for connecting to Microsoft Dynamics CRM.
+Create a new credential on {{site.data.tenant.name}} platform for connecting to Microsoft Dynamics CRM.
+
+{% include img.html max-width="100%" url="img/INSERT.png" title="Create a New Credential on platform" %}
 
 2. Configuration Details:
 
 * Fill in the following details:
   * **Name:** Provide a name for this credential (free text).
   * **Client Id:** Use the Application ID copied from **Microsoft Azure -> API permissions -> Application ID**.
+
+  {% include img.html max-width="100%" url="img/INSERT.png" title="Client Id" %}
+
   * **Client Secret:** Add the client secret generated in the previous step.
   * **Authorization Endpoint:** Set it to `https://login.windows.net/common/oauth2/authorize?resource={{ URL encoded URL of CRM instance }}`. For example, if your CRM instance URL is `https://orgfb974624.crm4.dynamics.com/`, the encoded URL becomes `https%3A%2F%2Forgfb974624.crm4.dynamics.com%2F`.
   * **Token Endpoint:** Set it to `https://login.windows.net/common/oauth2/token`.
