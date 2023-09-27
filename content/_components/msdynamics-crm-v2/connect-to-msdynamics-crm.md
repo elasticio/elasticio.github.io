@@ -93,7 +93,7 @@ Click on **Certificates & secrets**.
 
 Click **New client secret**.
 
-{% include img.html max-width="100%" url="img/INSERT.png" title="New client secret" %}
+{% include img.html max-width="100%" url="img/new-client-secret.png" title="New client secret" %}
 
 3. Enter Secret Details:
 
@@ -114,7 +114,7 @@ Click **New client secret**.
 
 Create a new credential on {{site.data.tenant.name}} platform for connecting to Microsoft Dynamics CRM.
 
-{% include img.html max-width="100%" url="img/create-a-new-credential-on-platform.png" title="Create a New Credential on platform" %}
+{% include img.html max-width="60%" url="img/create-a-new-credential-on-platform.png" title="Create a New Credential on platform" %}
 
 2. Configuration Details:
 
