@@ -193,8 +193,8 @@ Example for `Number of search terms = 2`:
 
 Depends on `Emit behavior` fields.
 
-* If `Emit behavior` field is equal to `Emit page` or `Emit all` - object with property `results` that contains an array of emails with the same structure as in [Get Email by ID](get-email-by-id).
-* If `Emit behavior` field is equal to `Emit individually`, email information will fulfill the whole message with the same structure as in [Get Email by ID](get-email-by-id).
+* If `Emit behavior` field is equal to `Emit page` or `Emit all` - object with property `results` that contains an array of emails with the same structure as in [Get Email by ID](#get-email-by-id).
+* If `Emit behavior` field is equal to `Emit individually`, email information will fulfill the whole message with the same structure as in [Get Email by ID](#get-email-by-id).
 
 ### Send Email
 
@@ -270,6 +270,6 @@ There is no input metadata in this action.
 
 The output metadata structure depends on the selected `Emit behavior` field:
 
-* If `Emit behavior` is set to `Emit page`, the output is an object with the property results, which contains an array of emails with the same structure as described in [Get Email by ID](get-email-by-id).
+* If `Emit behavior` is set to `Emit page`, the output is an object with the property results, which contains an array of emails with the same structure as described in [Get Email by ID](#get-email-by-id).
 
-* If `Emit behavior` is set to `Emit individually`, the email information will fill the entire message with the same structure as described in [Get Email by ID](get-email-by-id).
+* If `Emit behavior` is set to `Emit individually`, the email information will fill the entire message with the same structure as described in [Get Email by ID](#get-email-by-id).
