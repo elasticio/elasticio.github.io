@@ -6,8 +6,8 @@ description: An integration component for the Office 365 Outlook REST API.
 icon: outlook.png
 icontext: Outlook component
 category: outlook
-updatedDate: 2023-07-19
-ComponentVersion: 2.0.0
+updatedDate: 2023-08-04
+ComponentVersion: 2.1.0
 ---
 
 ## Description
@@ -85,6 +85,7 @@ Per one execution it is possible to poll 1000 mails by defaults, this can be cha
 * **Mail Folder** - Drop-down list with available Outlook mail folders
 * **Start Time** - Start date-time of polling. Defaults: `1970-01-01T00:00:00.000Z`
 * **Poll Only Unread Mail** - Check-Box, if set, only unread mails will be poll
+* **Get Attachment** - CheckBox, if checked, email attachments will be downloaded to the platform and the link will be provided as a part of the output metadata with the key `attachments`
 * **Emit Behavior** -  Options are: default is `Emit Individually` emits each mail in separate message, `Emit All` emits all found mails in one message
 
 ## Actions
@@ -134,19 +135,6 @@ If not specified, the message will be soft-deleted (moved to the folder with pro
 
 The action simply send a message to a recipient(s).
 
-#### Expected input metadata
-
-GIVE IT HERE???
-
-[/lib/schemas/sendMail.in.json](/lib/schemas/sendMail.in.json)
-
-#### Expected output metadata
-
-GIVE IT HERE???
-
-In case of a success, output metadata simply repeats the incoming message. I.e. output message schema is exactly the same as for input message.
-[/lib/schemas/sendMail.out.json](/lib/schemas/sendMail.in.json)
-
 #### Message Example
 
 ```json
@@ -166,6 +154,8 @@ In case of a success, output metadata simply repeats the incoming message. I.e. 
   }
 }
 ```
+
+> **Please note:** When employing the `Send Mail` action along with attachments, the component seamlessly handles files up to 20MB as its default capability. Nevertheless, should your tasks involve larger files, it is recommended to either establish or augment the `EIO_REQUIRED_RAM_MB` environment variable. This variable functions as the memory usage threshold for the component, initially configured at 256MB.
 
 ## Known issues and limitations
 

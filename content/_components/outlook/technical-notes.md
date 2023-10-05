@@ -5,14 +5,19 @@ description: Technical Notes for Microsoft Outlook Component.
 icon: outlook.png
 icontext: Outlook component
 category: outlook
-updatedDate: 2023-07-19
-ComponentVersion: 2.0.0
+updatedDate: 2023-08-04
+ComponentVersion: 2.1.0
 redirect_from:
   - /components/outlook/changelog.html
   - /components/outlook/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 2.1.0 (August 04, 2023)
+
+* Added checkbox `Get Attachment` to `Poll for New Mail` trigger
+* Added metadata field `Attachments` to `Send Mail` action
 
 ### 2.0.0 (July 19, 2023)
 
