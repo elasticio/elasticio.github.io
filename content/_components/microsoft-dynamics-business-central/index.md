@@ -12,29 +12,57 @@ ComponentVersion: 1.1.1
 
 ## Credentials
 
-Microsoft Dynamics Business Central APIs uses the OAuth 2.0.
-How to register an application look [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
+Microsoft Dynamics Business Central APIs use OAuth 2.0 for authentication. To establish a connection, you need to perform the following three steps:
 
-![image](https://user-images.githubusercontent.com/16806832/195303766-ef8a1ca6-927c-4a6e-883a-c62c4d176623.png)
+**1.** Register an OAuth App in Azure Active Directory:
 
- - `Client ID` can be found at `Application (client) ID` (see picture)
- - `Client Secret` follow link `Client credentials` (see picture) and use `Value` section
- - `Authorization Endpoint` is equal `https://login.microsoftonline.com/{tenantId}/oauth2/authorize?resource=https://api.businesscentral.dynamics.com`, where `tenantId` can be found at `Directory (tenant) ID` (see picture)
- - `Token Endpoint` is equal `https://login.windows.net/{tenantId}/oauth2/token?resource=https://api.businesscentral.dynamics.com`, where `tenantId` can be found at `Directory (tenant) ID` (see picture)
+  * Begin by registering an OAuth App in Azure Active Directory.
+  * Follow the steps outlined in [this guide](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) to register your application.
+
+**2.** Create an Auth Client on the Platform:
+
+  * On the platform you are using, create an authentication client that includes the information of the OAuth App registered in step 1.
+  * Ensure that the client configuration aligns with the details provided during the registration of the OAuth App.
+
+**3.** Generate a Secret for the OAuth App:
+
+  * Generate a secret on the platform to be used by the OAuth App registered in step 1.
+  * This secret is a crucial part of the authentication process and must be securely stored.
+
+<details close markdown="block"><summary><strong>Setting up Credentials for the Component</strong></summary>
+
+### Fields mapping
+
+**1.** `Client ID` can be found at `Application (client) ID` (see picture below)
+
+**2.** `Authorization Endpoint` is equal `https://login.microsoftonline.com/{tenantId}/oauth2/authorize?resource=https://api.businesscentral.dynamics.com`, where `tenantId` can be found at `Directory (tenant) ID` (see picture below)
+
+**3.** `Token Endpoint` is equal `https://login.windows.net/{tenantId}/oauth2/token?resource=https://api.businesscentral.dynamics.com`, where `tenantId` can be found at `Directory (tenant) ID` (see picture below)
+
+{% include img.html max-width="100%" url="img/client-id.png" title="Application (client) ID" %}
+
+**4.** `Client Secret` follow link `Certificates & secrets` (see picture below) and use `Value` section
+
+{% include img.html max-width="100%" url="img/client-secret.png" title="Client Secret" %}
+
+### Credentials creation
 
 During credentials creation you would need to:
 
 - select `OAuth2` drop-down list `Type`.
 - select existing Auth Client from drop-down list `Choose Auth Client` or create the new one.
-  For creating Auth Client you should specify following fields:
 
-| Field name             | Mandatory | Description                                                                                                                                                  |
-|------------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name                   | true      | your Auth Client's name                                                                                                                                      |
-| Client ID              | true      | your `Application (client) ID`                                                                                                                               |
-| Client Secret          | true      | your `Value` from `Client secrets`                                                                                                                           |
+For creating Auth Client you should specify following fields:
+
+| Field name | Mandatory | Description |
+|------------------------|-----------|-----------------------------------------------------------------|
+| Name                   | true      | your Auth Client's name |
+| Client ID              | true      | your `Application (client) ID` |
+| Client Secret          | true      | your `Value` from `Client secrets` |
 | Authorization Endpoint | true      | set: `https://login.microsoftonline.com/{tenantId}/oauth2/authorize?resource=https://api.businesscentral.dynamics.com`, where `tenantId` is user domain name |
 | Token Endpoint         | true      | set: `https://login.windows.net/{tenantId}/oauth2/token?resource=https://api.businesscentral.dynamics.com`, where `tenantId` is user domain name             |
+
+{% include img.html max-width="100%" url="img/auth-client.png" title="Auth client" %}
 
 - fill field ``Name Your Credential``
 - fill field ``Environment Name`` - required, field indicates what environment to be used. How to get a list of business central environments see [here](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/api-get-environments). Example: `Production`.
@@ -42,6 +70,29 @@ Base URL for this component is `https://api.businesscentral.dynamics.com/v2.0/${
 - click on ``Authenticate`` button - the process would take you to Microsoft Dynamics to log-in and give permissions to the platform to access your service.
 - click on ``Verify`` button for verifying your credentials
 - click on ``Save`` button for saving your credentials
+
+### How to get Microsoft Dynamics Business Central instance URL
+
+To access the Microsoft Dynamics Business Central Instance URL, follow these steps:
+
+1. Register on Microsoft Dynamics Business Central:
+   Begin by registering on the [Microsoft Dynamics Business Central platform](https://dynamics.microsoft.com/en-us/business-central/signin/?ru=https%3A%2F%2Fbusinesscentral.dynamics.com%2F%3FnoSignUpCheck%3D1).
+2. Navigate to the Admin Center:
+   Open the **"Settings"** tab, and select **"Admin Center"**.
+
+{% include img.html max-width="100%" url="img/admin-center-settings.png" title="Admin Center - Settings" %}
+
+3. Access Environments:
+   In the **"Admin Center"** page, navigate to the **"Environments"** section. Choose the specific environment you are interested in by clicking on it.
+
+{% include img.html max-width="100%" url="img/admin-center-environments.png" title="Admin Center - Environments" %}
+
+4. Retrieve the Instance URL:
+   Once you are on the environment details page, locate the URL containing the instance ID. This URL is crucial for accessing Authorization and Token endpoints.
+
+{% include img.html max-width="100%" url="img/environments-url.png" title="Environments URL" %}
+
+</details>
 
 ## Triggers
 
