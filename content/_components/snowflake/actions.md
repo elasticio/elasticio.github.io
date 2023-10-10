@@ -15,7 +15,7 @@ ComponentVersion: 1.3.0
 
 Action to execute custom SQL query from provided request string:
 
-![Execute custom query](img/execute-custom-query.png)
+{% include img.html max-width="100%" url="img/execute-custom-query.png" title="Execute custom query" %}
 
 ### Input Metadata
 
@@ -39,7 +39,7 @@ INSERT INTO stars values (1,'Taurus', '2015-02-19 10:10:10.0', 123, 5, 'true', '
 
 This action will execute insert query into the specified table.
 
-![Insert](img/insert.png)
+{% include img.html max-width="100%" url="img/insert.png" title="Insert" %}
 
 ### Config Fields
 
@@ -55,7 +55,7 @@ Dynamically generated list of properties according to selected `Table`
 
 This action will lookup row by it's primary key
 
-![Lookup row by primary key](img/lookup-row-by-primary-key.png)
+{% include img.html max-width="100%" url="img/lookup-row-by-primary-key.png" title="Lookup row by primary key" %}
 
 ### Config Fields
 
@@ -69,7 +69,7 @@ Dynamically generated `Primary key` according to selected `Table`
 
 This action will delete row by it's primary key
 
-![Delete row by primary key](img/delete-row-by-primary-key.png)
+{% include img.html max-width="100%" url="img/delete-row-by-primary-key.png" title="Delete row by primary key" %}
 
 ### Config Fields
 
@@ -97,7 +97,7 @@ Dynamically generated list of properties according to selected `Table`
 
 The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
 
-![Select](img/select.png)
+{% include img.html max-width="100%" url="img/select.png" title="Select" %}
 
 In SQL query you can use clause variables with specific data types.
 Internally we use prepared statements, so all incoming data is

@@ -13,6 +13,8 @@ ComponentVersion: 1.3.0
 
 This trigger will execute polling new and updated rows from specified table with simple criteria of selected datetime or timestamp table. The trigger will remember last execution timestamp and let you build queries on it.
 
+{% include img.html max-width="100%" url="img/get-row-polling.png" title="Get Rows Polling" %}
+
 ### Config Fields
 
 * **Table** - Dropdown (required) to specify the `Table` from which to get rows. Tables with only date type columns appear in the dropdown list.
