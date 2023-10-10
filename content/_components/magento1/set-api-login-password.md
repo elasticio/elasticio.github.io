@@ -87,6 +87,6 @@ that it actually means a full access:
 After all our efforts, we can come back and add all the necessary
 credentials in the **My New Magento Credential** form.
 
-![Magento 1 Credentials filled](img/magento1-credentials-filled.png)
+![Magento 1 Credentials](img/credentials.png)
 
 Go [back and input the values](index#credentials) in the correct places as it is shown above.
