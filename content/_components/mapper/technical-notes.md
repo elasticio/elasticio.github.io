@@ -5,13 +5,18 @@ description: Technical Notes for Mapper component.
 icon: mapper.png
 icontext: Mapper component
 category: mapper
-updatedDate: 2022-04-08
-ComponentVersion: 1.0.0
+updatedDate: 2023-10-10
+ComponentVersion: 1.0.1
 redirect_from:
   - /components/mapper/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.1 (October 10, 2023)
+
+* Update Sailor version to 2.7.1
+* Update jsonata-moment to 1.1.5 which supports jsonata 1.8.6
 
 ### 1.0.0 (April 08, 2022)
 
