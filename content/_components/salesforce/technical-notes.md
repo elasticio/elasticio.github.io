@@ -5,14 +5,20 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-09-21
-ComponentVersion: 2.7.1
+updatedDate: 2023-09-28
+ComponentVersion: 2.7.2
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.7.2 (September 28, 2023)
+
+* Improvements in `Subscribe to platform events` trigger:
+  * fixed duplicates retries on connections lost
+  * fixed incorrect behavior with AuthFailure
 
 ### 2.7.1 (September 21, 2023)
 
