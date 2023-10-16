@@ -14,7 +14,8 @@ updatedDate: 2023-04-06
 
 You may use following properties to configure a connection:
 
-![Properties to configure a connection](img/mssql-credentials.png)
+
+{% include img.html max-width="100%" url="img/mssql-credentials.png" title="Properties to configure a connection" %}
 
 other types of configuration parameters are also supported, more information and samples you can find [here](https://www.npmjs.com/package/mssql#formats)
 
@@ -33,11 +34,7 @@ The [technical notes](technical-notes) page gives some technical details about M
 
 With this action you may fetch data out of the database, e.g. using ``SELECT`` statement.
 
-![SELECT Trigger and Action - configure input](img/select-configure-input-00.png)
-
-You can also see the mapping result immediately:
-
-![SELECT Trigger and Action - configure input](img/select-configure-input-01.png)
+{% include img.html max-width="100%" url="img/select-configure-input.png" title="SELECT Trigger and Action - configure input" %}
 
 This trigger & action has no limitations on the number of rows so you may expect to get all of these
 via sequential fetching that is implemented within the node.js ``mssql`` driver.
@@ -60,11 +57,7 @@ Check the [SELECT Action description above](#select-trigger-and-action).
 
 ### INSERT/DELETE/UPDATE Action
 
-![INSERT/DELETE/UPDATE Action - configure input](img/insert-update-delete-configure-input-00.png)
-
-You can also see the mapping result immediately:
-
-![INSERT/DELETE/UPDATE Action - configure input](img/insert-update-delete-configure-input-01.png)
+{% include img.html max-width="100%" url="img/insert-update-delete-configure-input.png" title="INSERT/DELETE/UPDATE Action - configure input" %}
 
 You may use this action to do the operations that are not producing output rows but do the database manipulations,
 e.g. ``INSERT``, ``UPDATE`` or ``DELETE`` statements. Internally we use prepared statements, so all incoming data is
@@ -103,7 +96,3 @@ Following types are supported:
 more details can be found [here](https://github.com/elasticio/mssql-component/blob/master/lib/actions/insert.js#L25)
 
 Component supports dynamic incoming metadata - as soon as your query is in place it will be parsed and incoming metadata will be generated accordingly.
-
-## Known issues
-
-No known issues are there yet.
