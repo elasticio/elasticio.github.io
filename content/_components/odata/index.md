@@ -14,7 +14,7 @@ A component designed to work with generic APIs which implement the [OData v4 spe
 
 ## Authentication
 
-![Authentication](img/odata-cred.png)
+{% include img.html max-width="100%" url="img/odata-credentials.png" title="Authentication" %}
 
 ## Triggers
 
@@ -22,7 +22,7 @@ A component designed to work with generic APIs which implement the [OData v4 spe
 
 Get objects which have recently been modified or created.
 
-![Get Objects Polling](img/get-objects-polling.png)
+{% include img.html max-width="100%" url="img/odata-get-objects-polling.png" title="Get Objects Polling" %}
 
 All types of objects programmatically detectable are covered.  When selecting this trigger, the first input that must be configured is **Object type to fetch**.  This drop-down when opened will produce a list of all object types on the system.
 
@@ -46,7 +46,7 @@ output.
 
 Given a field and a field value that matches exactly one record, find that matching record.
 
-![Lookup Object by Field](img/lookup-objects-by-field.png)
+{% include img.html max-width="100%" url="img/odata-get-lookup-object.png" title="Lookup Object by Field" %}
 
 There are three configuration drop downs:
 
@@ -92,7 +92,7 @@ ELSE
 
 Update an existing entry with the id provided.  Otherwise create a new entry.
 
-![Upsert Object By ID](img/upsert-object-by-id.png)
+{% include img.html max-width="100%" url="img/odata-upsert-object.png" title="Upsert Object By ID" %}
 
 All types of objects programmatically detectable are covered.  When selecting this trigger, the first input that must be configured is **Object type to fetch**.  This drop-down when opened will produce a list of all object types on the system.
 
