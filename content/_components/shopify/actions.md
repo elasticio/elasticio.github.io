@@ -5,8 +5,8 @@ description: Shopify component actions.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-12-02
-ComponentVersion: 1.6.6
+updatedDate: 2023-10-18
+ComponentVersion: 1.6.7
 redirect_from:
   - /components/shopify-admin/actions.html
 ---

@@ -6,8 +6,8 @@ description: A component to work with the Shopify API.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-12-02
-ComponentVersion: 1.6.6
+updatedDate: 2023-10-18
+ComponentVersion: 1.6.7
 redirect_from:
   - /components/shopify-admin/index.html
 ---
@@ -40,9 +40,6 @@ To create the credentials you should do the following:
 - *Type* - select 'No Auth' type. It will use the API credentials you specified
 - *Shopify Webhook HMAC Secret* - this field is used and required **only** for trigger `Webhook subscription` to [sign the request with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
   Use `API Secret Key` from the Shopify app credentials creation step
-
-> **Please Note:** The component calls a list products endpoint under the hood to verify credentials. To succeed you need to grant at least Read permissions to the app in Apps -> App development -> **your Private app name** -> ADMIN API PERMISSIONS -> Products set to 'Read access' (or 'Read and write'):
-![image](https://user-images.githubusercontent.com/7985390/173592587-1972d5f2-03ca-4b03-b0de-b31573323186.png)
 
 You can find additional information on how to generate the creds in Shopify [documentation](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin)
 
