@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2022-12-02
-ComponentVersion: 1.6.6
+updatedDate: 2023-10-18
+ComponentVersion: 1.6.7
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,11 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.6.7 (October 04, 2023)
+
+* Modified the credentials verification process so that it did not require any Shopify scope (it required `read_products` scope before).
+Now instead of `list products` the platform calls `get shop` endpoint which does not require any scope.
 
 ### 1.6.6 (December 02, 2022)
 
