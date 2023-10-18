@@ -25,7 +25,7 @@ select as a first component during the integration flow design.
 
 Performs an [LDAP search operation](https://www.ldap.com/the-ldap-search-operation) on the instance.
 
-![Search](img/search.png)
+{% include img.html max-width="100%" url="img/ldap-search.png" title="Search action" %}
 
 * *Base* refers to the base object in the directory from which to start the search.
 * *Filter* allows you to specify one or more [LDAP filters](https://www.ldap.com/ldap-filters) to restrict the results of the search.
