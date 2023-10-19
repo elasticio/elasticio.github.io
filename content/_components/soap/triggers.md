@@ -13,7 +13,7 @@ ComponentVersion: 1.2.9
 
 Webhook that validates input body over WSDL:
 
-![Soap triggers - Soap reply](img/soap-reply-trigger.png)
+{% include img.html max-width="100%" url="img/soap-recive-trigger.png" title="Receive SOAP Request" %}
 
 ### Input fields description
 

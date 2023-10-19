@@ -14,7 +14,7 @@ ComponentVersion: 1.2.9
 Makes a call to SOAP service over HTTP using public WSDL URL.
 Call action supports Basic Authorization, choose Basic Authorization type in credentials and provide credentials for WSDL.
 
-![Soap actions - call](img/step_3.png)
+{% include img.html max-width="100%" url="img/soap-call-action.png" title="Call action" %}
 
 Call action supports Basic Authorization, chose Basic Authorization type in credentials and provide credentials for WSDL
 
@@ -68,17 +68,16 @@ Output json schema is generated dynamically the same as for the input (see above
 ### Additional information
 
 **You should specify input fields exactly in the order below. You'll get an error otherwise**.
+
 1. WSDL URI
 2. Binding
 3. Operation
 
 ## Soap Reply
 
-soap-reply
-
 Wraps and returns input data as SOAP response by provided SOAP metadata:
 
-![Soap actions - Soap reply](img/soap-reply-action.png)
+{% include img.html max-width="100%" url="img/soap-reply-action.png" title="Soap Reply" %}
 
 ### Input fields description
 

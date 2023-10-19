@@ -56,25 +56,25 @@ The [technical notes](technical-notes) page gives some technical details about S
 
 Find and select SOAP component in the component repository:
 
-![Step 1](img/step_1.png)
+{% include img.html max-width="100%" url="img/step_1.png" title="Step 1" %}
 
 ### Step 2
 
 Create new or select existing credentials:
 
-![Step 2](img/step_2.png)
+{% include img.html max-width="100%" url="img/step_2.png" title="Step 2" %}
 
 ### Step 3
 
 Specify WSDL URL, then choose binding and operation consecutively. **The order matters!** Then configure an input data and click "Continue":
 
-![Step 3](img/step_3.png)
+{% include img.html max-width="100%" url="img/step_3.png" title="Step 3" %}
 
 ### Step 4
 
 Retrieve sample or add sample manually:
 
-![Step 4: Retrieve sample](img/step_4.png)
+{% include img.html max-width="100%" url="img/step_4.png" title="Step 4" %}
 
 ## Triggers
 
