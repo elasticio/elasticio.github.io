@@ -16,7 +16,7 @@ Microsoft Dynamics Business Central APIs use OAuth 2.0 for authentication. To es
 
 **1.** Register an OAuth App in Azure Active Directory:
 
-  * Begin by registering an OAuth App in Azure Active Directory.
+  * Start by registering an OAuth App in the Azure Active Directory.
   * Follow the steps outlined in [this guide](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) to register your application.
 
 **2.** Create an Auth Client on the Platform:
@@ -76,7 +76,7 @@ Base URL for this component is `https://api.businesscentral.dynamics.com/v2.0/${
 To access the Microsoft Dynamics Business Central Instance URL, follow these steps:
 
 1. Register on Microsoft Dynamics Business Central:
-   Begin by registering on the [Microsoft Dynamics Business Central platform](https://dynamics.microsoft.com/en-us/business-central/signin/?ru=https%3A%2F%2Fbusinesscentral.dynamics.com%2F%3FnoSignUpCheck%3D1).
+   Start by registering on the [Microsoft Dynamics Business Central platform](https://dynamics.microsoft.com/en-us/business-central/signin/?ru=https%3A%2F%2Fbusinesscentral.dynamics.com%2F%3FnoSignUpCheck%3D1).
 2. Navigate to the Admin Center:
    Open the **"Settings"** tab, and select **"Admin Center"**.
 
