@@ -10,11 +10,12 @@ category: integrator-management
 This document provides information on Flow management, namely the following
 actions:
 
-*   [Start, stop, edit, delete](#start-stop-edit-delete)
+*   [Start, Stop, Edit, Delete](#start-stop-edit-delete)
+*   [Restoring Deleted Flow](#restoring-deleted-flow)
 *   [Copy Flow within the same Workspace, switch between *real-time* and *ordinary*](#copy-flow-switch-flow-type)
-*   [Subscribe to errors](#subscribe-to-errors)
+*   [Subscribe to Errors](#subscribe-to-errors)
 *   [Schedule via CRON expressions](#scheduling)
-*   [Flow versioning](#flow-versioning)
+*   [Flow Versioning](#flow-versioning)
 *   [Parallel Processing](#parallel-processing)
 *   [Reset Snapshot](#reset-snapshot)
 
@@ -65,6 +66,18 @@ By following the link below, you will learn how to perform the functions describ
 4\. [Edit a Flow to some extent via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_).
 
 5\. [Retrieve a flow by ID]({{site.data.tenant.apiDocsUri}}/v2#/flows/get_flows__flow_id_).
+
+## Restoring Deleted Flow
+
+If you accidentally delete a Flow you need, you can restore it within 24 hours after deletion.
+
+If you have Tenant-Admin rights, you can use these two endpoints to find and restore access to Flow:
+
+1\. [List deleted Flows]({{site.data.tenant.apiDocsUri}}/v2#/flows/get_flows_deleted)
+
+2\. [Restore deleted Flow by ID]({{site.data.tenant.apiDocsUri}}/v2#/flows/post_flows__flow_id__restore)
+
+If you do not have Tenant-Admin rights, please [contact support](/admin/reporting-issue.html#how-to-contact-us) and describe the flow you need to restore.
 
 ## Copy Flow, Switch Flow Type
 
