@@ -13,6 +13,7 @@ actions:
 *   [Start, Stop, Edit, Delete](#start-stop-edit-delete)
 *   [Restoring Deleted Flow](#restoring-deleted-flow)
 *   [Copy Flow within the same Workspace, switch between *real-time* and *ordinary*](#copy-flow-switch-flow-type)
+*   [Filtering, Sorting Flows](#filtering-sorting-flows)
 *   [Subscribe to Errors](#subscribe-to-errors)
 *   [Schedule via CRON expressions](#scheduling)
 *   [Flow Versioning](#flow-versioning)
@@ -78,6 +79,25 @@ If you have Tenant-Admin rights, you can use these two endpoints to find and res
 2\. [Restore deleted Flow by ID]({{site.data.tenant.apiDocsUri}}/v2#/flows/post_flows__flow_id__restore)
 
 If you do not have Tenant-Admin rights, please [contact support](/admin/reporting-issue.html#how-to-contact-us) and describe the flow you need to restore.
+
+## Filtering, Sorting Flows
+
+The Flows tab provides a wide range of managment tools: Searching, Filtering and Sorting Flows in Workspace.
+
+![Filtering Sorting](/assets/img/tenant-management-guide/managing-flows/Filtering_Sorting.png)
+
+You can: 
+1. Search Flow **(1)** by name via Search bar
+2. Filter Flows **(2)** by Creator via dropdown menu
+3. Filter Flows **(3)** by [Status](/getting-started/integration-flow.html#flow-states): *Active*, *Stopped*, *Suspended*
+4. Filter Flows **(4)** by [Flow type](/guides/realtime-flows.html): *Ordinary* or *Real-Time*
+5. Filter Flows **(5)** by content of certain components in Flow
+6. Filter flows **(6)** via checkbox  only Flows having *Draft*
+7. Sort Flows **(7)** by creation date, by update date and alphabetical order and reverse alphabetical order
+8. You can also switch **(8)** between Flow display modes in Grid or a List:
+
+![Flows_list_view](/assets/img/tenant-management-guide/managing-flows/Flows_list_view.png)
+
 
 ## Copy Flow, Switch Flow Type
 
