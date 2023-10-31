@@ -70,7 +70,9 @@ By following the link below, you will learn how to perform the functions describ
 
 ## Restoring Deleted Flow
 
-If you accidentally delete a Flow you need, you can restore it within 24 hours after deletion.
+If you accidentally delete a Flow you need, you can restore it for some time after deletion.
+
+> The amount of time during which Flow can be restored is set by the installation environment variable. By default, this parameter is equivalent to 24 hours.
 
 If you have Tenant-Admin rights, you can use these two endpoints to find and restore access to Flow:
 
