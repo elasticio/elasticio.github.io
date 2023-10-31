@@ -10,11 +10,13 @@ category: integrator-management
 This document provides information on Flow management, namely the following
 actions:
 
-*   [Start, stop, edit, delete](#start-stop-edit-delete)
+*   [Start, Stop, Edit, Delete](#start-stop-edit-delete)
+*   [Restoring Deleted Flow](#restoring-deleted-flow)
 *   [Copy Flow within the same Workspace, switch between *real-time* and *ordinary*](#copy-flow-switch-flow-type)
-*   [Subscribe to errors](#subscribe-to-errors)
+*   [Filtering, Sorting Flows](#filtering-sorting-flows)
+*   [Subscribe to Errors](#subscribe-to-errors)
 *   [Schedule via CRON expressions](#scheduling)
-*   [Flow versioning](#flow-versioning)
+*   [Flow Versioning](#flow-versioning)
 *   [Parallel Processing](#parallel-processing)
 *   [Reset Snapshot](#reset-snapshot)
 
@@ -65,6 +67,39 @@ By following the link below, you will learn how to perform the functions describ
 4\. [Edit a Flow to some extent via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_).
 
 5\. [Retrieve a flow by ID]({{site.data.tenant.apiDocsUri}}/v2#/flows/get_flows__flow_id_).
+
+## Restoring Deleted Flow
+
+If you accidentally delete a Flow you need, you can restore it for some time after deletion.
+
+> The amount of time during which Flow can be restored is set by the installation environment variable. By default, this parameter is equivalent to 24 hours.
+
+If you have Tenant-Admin rights, you can use these two endpoints to find and restore access to Flow:
+
+1\. [List deleted Flows]({{site.data.tenant.apiDocsUri}}/v2#/flows/get_flows_deleted)
+
+2\. [Restore deleted Flow by ID]({{site.data.tenant.apiDocsUri}}/v2#/flows/post_flows__flow_id__restore)
+
+If you do not have Tenant-Admin rights, please [contact support](/admin/reporting-issue.html#how-to-contact-us) and describe the flow you need to restore.
+
+## Filtering, Sorting Flows
+
+The Flows tab provides a wide range of managment tools: Searching, Filtering and Sorting Flows in Workspace.
+
+![Filtering Sorting](/assets/img/tenant-management-guide/managing-flows/Filtering_Sorting.png)
+
+You can: 
+1. Search Flow **(1)** by name via Search bar
+2. Filter Flows **(2)** by Creator via dropdown menu
+3. Filter Flows **(3)** by [Status](/getting-started/integration-flow.html#flow-states): *Active*, *Stopped*, *Suspended*
+4. Filter Flows **(4)** by [Flow type](/guides/realtime-flows.html): *Ordinary* or *Real-Time*
+5. Filter Flows **(5)** by content of certain components in Flow
+6. Filter flows **(6)** via checkbox  only Flows having *Draft*
+7. Sort Flows **(7)** by creation date, by update date and alphabetical order and reverse alphabetical order
+8. You can also switch **(8)** between Flow display modes in Grid or a List:
+
+![Flows_list_view](/assets/img/tenant-management-guide/managing-flows/Flows_list_view.png)
+
 
 ## Copy Flow, Switch Flow Type
 
