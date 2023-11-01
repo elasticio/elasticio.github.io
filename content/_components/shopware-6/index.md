@@ -2,12 +2,12 @@
 title: Shopware 6  component
 layout: component
 section: E-Commerce components
-description: A component to connect to Shopware 6 API
+description: A component to connect to Shopware 6 API version 6.5.5.2 and lower
 icon: shopware.png
 category: shopware-6
 icontext: Shopware-6 component
-updatedDate: 2022-12-16
-ComponentVersion: 1.1.2
+updatedDate: 2023-10-31
+ComponentVersion: 1.1.3
 ---
 
 ## Credentials
