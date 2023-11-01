@@ -5,11 +5,16 @@ description: Technical Notes for the Rest API OAuth2 Client Credentials componen
 icon: rest-api-client-credentials-auth-component.png
 icontext: Rest API OAuth2 Client Credentials Component
 category: rest-api-client
-updatedDate: 2021-11-26
-ComponentVersion: 1.0.0
+updatedDate: 2023-10-31
+ComponentVersion: 1.0.1
 ---
 
 ## Changelog
+
+### 1.0.1 (October 31, 2023)
+
+* Updated dependencies to the latest versions
+* Made REST client reusable
 
 ### 1.0.0 (November 26, 2021)
 
