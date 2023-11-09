@@ -16,7 +16,7 @@ A quota defines the limit of usable resources in your Contract, Workspace or Flo
 
 Quotas can be set per Contract, per Workspace and per Flow, depending on the requirements. If a quota is enabled, but not defined, a default value will be set. To set a quota, a user needs a corresponding Service Account.
 
->**Please Note**, that you can set the Workspace quota higher than Contract quota, but there is no practical sense in doing so. Workspace quota will just become redundant.
+>**Please Note:** You can set the Workspace quota higher than Contract quota, but there is no practical sense in doing so. Workspace quota will just become redundant.
 
 You can see the actual resource usage on the dedicated page. You can also use [API calls]({{site.data.tenant.apiDocsUri}}/v2#/quota%20usages) to get this information. The usage is shown per Contract, per Workspace and per Flow.
 
@@ -30,7 +30,7 @@ By clicking on **View Report**, you will see a resource usage chart and quota us
 
 ![Report](/assets/img/getting-started/quota/quotadetail.gif)
 
->Please note that you can get more information on quotas and their limits using API endpoints. You can also manage `LimitRecords` for quotas. All information on this topic can be found in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/quotas).
+>**Please note:** Other ways and criteria for limiting resource usage are also presented. You can find other types of limits on the [Limit Quotas page](/guides/managing-limit-quotas), as well as in [API Documentation]({{site.data.tenant.apiDocsUri}}/v2#/quotas)
 
 ## Quota Limit Calculation
 
