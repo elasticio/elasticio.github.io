@@ -90,37 +90,13 @@ Limits amount of available [RAM Memory](/getting-started/quota-overview.html#quo
 
 Limits the number of Flows for certain Workspace.
 
-- `per_workspace_ordinary_flow_count_limit`
-
-Limits the number of *Ordinary* Flows for certain Workspace.
-
-- `per_workspace_long_running_flow_count_limit`
-
-Limits the number of *Real-Time* Flows for certain Workspace.
-
 - `per_contract_flow_count_limit`
 
 Limits the number of Flows for certain Contract.
 
-- `per_contract_ordinary_flow_count_limit`
-
-Limits the number of *Ordinary* Flows for certain Contract.
-
-- `per_contract_long_running_flow_count_limit`
-
-Limits the number of *Real-Time* Flows for certain Contract.
-
 - `per_tenant_flow_count_limit`
 
 Limits the number of Flows for certain Tenant.
-
-- `per_tenant_ordinary_flow_count_limit`
-
-Limits the number of *Ordinary* Flows for certain Tenant.
-
-- `per_tenant_long_running_flow_count_limit`
-
-Limits the number of *Real-Time* Flows for certain Tenant.
 
 > **Please Note:** Before you can use this quota you MUST sync your existing flow counts with the quotatxns DB tables. Use `POST {{site.data.tenant.apiBaseUri}}/sidedoor/quotatxns/sync/flow` endpoint using the *Service Account* credentials.
 
