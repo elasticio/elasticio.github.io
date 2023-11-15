@@ -11,11 +11,11 @@ ComponentVersion: 2.0.14
 
 ## Attachments
 
-With the REST API component, you can send binary data as attachment. You just need to choose
+With the *REST API component*, you can send binary data as attachment. You just need to choose
 `multipart/form-data` Content type and attachments from the input message will be
 included to the request payload automatically.
 
-REST API component automatically load binary data to attachments with next content
+*REST API component* automatically load binary data to attachments with next content
 types in response headers:
 
 *   `image/*`

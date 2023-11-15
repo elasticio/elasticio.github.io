@@ -11,7 +11,7 @@ ComponentVersion: 2.0.14
 
 ## Deprecated authentication method
 
-To use the REST API component with any restricted access API provide the authorisation information.
+To use the *REST API component* with any restricted access API provide the authorisation information.
 
 ![Choose credentials](img/choose-credentials.png)
 

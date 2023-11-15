@@ -11,7 +11,7 @@ ComponentVersion: 2.0.14
 
 ## Introduction
 
-REST API component can be used for all sorts of purposes - from receiving [NYT news articles](https://developer.nytimes.com/docs/archive-product/1/overview) for a given month, going back to 1851 to communicating between online stores and search engines. We want to show you an example of the use of REST API component in which we will use data on green energy to understand when there is a lot of renewable electricity on the grid that can be used in a household. If the Green Index is high enough, a lot of electricity is available from renewable sources. During this time, you can use household appliances climate-friendly.
+The *REST API component* can be used for all sorts of purposes - from receiving [NYT news articles](https://developer.nytimes.com/docs/archive-product/1/overview) for a given month, going back to 1851 to communicating between online stores and search engines. We want to show you an example of the use of REST API component in which we will use data on green energy to understand when there is a lot of renewable electricity on the grid that can be used in a household. If the Green Index is high enough, a lot of electricity is available from renewable sources. During this time, you can use household appliances climate-friendly.
 
 ## Flow example
 

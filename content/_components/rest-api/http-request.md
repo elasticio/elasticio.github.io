@@ -11,11 +11,11 @@ ComponentVersion: 2.0.14
 
 ## HTTP request function
 
-In a REST API component the trigger and action perform the same function - HTTP request witch will send a `GET`/`POST`/`PUT`/`PATCH`/`DELETE` requests and parse the response back to the flow.
+In a REST API component the trigger and action perform the same function - *HTTP request* witch will send a `GET`/`POST`/`PUT`/`PATCH`/`DELETE` requests and parse the response back to the flow.
 
 ### Output
 
-The messages produced by the REST API component will have the following properties:
+The messages produced by the *REST API* component will have the following properties:
 
 * `headers`: Object containing the HTTP response headers
 * `statusCode`: HTTP Status Code of the Response. Number between `100` and `599`
@@ -51,7 +51,7 @@ The **body input field** changes according to the chosen content type.
 1.  **Response body** will be stored in `msg.body`
 2.  Request body that causes empty response body will return `{}`
 
-### Sending JSON data
+## Sending JSON data
 
 Here is how to send a JSON data in the body. Change the **content type** to
 `application/json` and the **body input part** would change accordingly to accept
@@ -61,7 +61,7 @@ JSON object. Please note that this field supports [JSONata](http://jsonata.org) 
 
 *Example shows the JSON in the body where the `name` parameter value gets mapped using the value of `project_name` from the previous step of integration.*
 
-### Sending XML data
+## Sending XML data
 
 To send an `XML` data, set the content type to `application/xml` or `text/xml` and place the `XML` in the body input field between double-quotes like:
 
@@ -78,7 +78,7 @@ To send an `XML` data, set the content type to `application/xml` or `text/xml` a
 
 Use a JSONata expression to include and map any values coming from the previous steps. It will replace the variable with a real value in the final mapping. Note that the rest of `XML` gets passed as a `string`.
 
-### Sending Form data
+## Sending Form data
 
 To send a form data, two content types are available:
 
@@ -115,7 +115,7 @@ Content-Disposition: form-data; name="part2"
 
 Notice how different parts get separated by the boundary. This form is capable of supporting attachments as well.
 
-### Working with XML
+## Working with XML
 
 This component will try to parse XML content types in the HTTP Response assuming the `Content-Type` header has a
 **MIME Content Type** with `xml` in it (e.g. `application/xml`).
@@ -151,7 +151,7 @@ In this case output structure of component will be:
     }
 ```
 
-### Defining HTTP headers
+## Defining HTTP headers
 
 Use this section to add the request headers.
 
