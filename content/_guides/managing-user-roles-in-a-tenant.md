@@ -134,3 +134,141 @@ As a contract **Owner** and **Admin** you can update already sent but not accept
 invitations using a HTTP `PATCH` method to call our API `/v2/contracts/{CONTRACT_ID}/invites/{INVITE_ID}` endpoint.
 You can update or remove roles you granted to this potential user and more. Check our
 [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id__invites__invite_id_) for more details.
+
+## Create Custom User Roles
+
+> **Please Note:** You MUST have the **Service Account** credentials to create custom user roles.
+
+You can create your own Custom User Roles. To do so, make a request listing the list of permissions required for the role.
+
+### Process
+Let's understand the process of creating a *Custom User Role* using the *Operator* for workspace *Scope* role as an example. *Operator* will have slightly more permissions than *Guest*, but less than *Integrator*.
+
+**1.** First, we will need to get a list of all current roles on Tenant. To do this, do a **GET** request at `{{site.data.tenant.apiBaseUri}}/v2/tenants/{YOUR_TENANT_ID}/roles`.
+
+In response, you will receive a complete list of roles for both *Scopes*: `contracts` and `workspaces`:
+
+```
+{
+    "data": {
+        "id": "{YOUR_TENANT_POLICY_ID}",
+        "type": "tenant-policy",
+        "attributes": {
+            "roles": [
+                {
+                    "i18n": {
+                        "en": "Admin"
+                    },
+                    "role": "admin",
+                    "permissions": [
+                        "contracts.workspace.create",
+                        "contracts.workspace.listAll",
+                        "contracts.workspace.delete",
+                        "contracts.repository.edit",
+                        "contracts.devTeam.edit",
+                        "global.auth_clients.create",
+                        "global.auth_clients.get",
+                        "global.auth_clients.edit",
+                        "global.auth_clients.delete"
+                    ],
+                    "scope": "contracts"
+                },
+                ...
+                {
+                    "i18n": {
+                        "en": "Guest"
+                    },
+                    "role": "guest",
+                    "permissions": [
+                        "global.auth_clients.get",
+                        "workspaces.auth_secret.get",
+                        "workspaces.logs.read_all",
+                        "workspaces.vpn_agent.get",
+                        "workspaces.topic.get"
+                    ],
+                    "scope": "workspaces"
+                }
+            ]
+        }
+    }
+}
+```
+**2.** After that, form the object of the future role. *Operator* will be a Super-guest. It will be able to view and edit credentials, and run flows, but unlike the *Integrator* role cannot modify flow structures.
+
+> **Please Note:** You can find list of available permission with **GET** request for the `{{site.data.tenant.apiBaseUri}}/v2/permissions`
+
+According to the goal, collect the necessary permissions and form an object:
+
+```
+{
+    "i18n": {
+        "en": "Operator"
+    },
+    "role": "operator",
+    "permissions": [
+        "workspaces.auth_secret.get",
+        "workspaces.auth_secret.get_credentials",
+        "workspaces.auth_secret.refresh",
+        "workspaces.credential.edit",
+        "global.auth_clients.get",        
+        "workspaces.logs.read_all",
+        "workspaces.flow.toggleStatus",
+        "workspaces.flow.toggleRealtime"
+    ],
+    "scope": "workspaces"
+}
+```
+**3.** Based on the previously obtained data, assemble the body of the next query. Let's take the body obtained at step 1, with all existing roles and insert object formed at step 2 in the `roles` array.
+The following body is obtained:
+
+```
+{
+    "data": {
+        "type": "tenant-policy",
+        "attributes": {
+            "roles": [
+                {
+                    "i18n": {
+                        "en": "Operator"
+                    },
+                    "role": "operator",
+                    "permissions": [
+                        "workspaces.auth_secret.get",
+                        "workspaces.auth_secret.get_credentials",
+                        "workspaces.auth_secret.refresh",
+                        "workspaces.credential.edit",
+                        "global.auth_clients.get",
+                        "workspaces.logs.read_all",
+                        "workspaces.flow.toggleStatus",
+                        "workspaces.flow.toggleRealtime"
+                    ],
+                    "scope": "workspaces"
+                },
+                {
+                    "i18n": {
+                        "en": "Admin"
+                    },
+                    "role": "admin",
+                    "permissions": [
+                        "contracts.workspace.create",
+                        "contracts.workspace.listAll",
+                        "contracts.workspace.delete",
+                        "contracts.repository.edit",
+                        "contracts.devTeam.edit",
+                        "global.auth_clients.create",
+                        "global.auth_clients.get",
+                        "global.auth_clients.edit",
+                        "global.auth_clients.delete"
+                    ],
+                    "scope": "contracts"
+                },
+                ...
+}
+```
+> **Please Note:** The request does not need to use some of the fields received in response to a GET of this object, such as `id`, `relationships`, `meta`, `links`.
+
+**4.** Now let's make a **PATCH** request for the `{{site.data.tenant.apiBaseUri}}/v2/tenants/{YOUR_TENANT_ID}/roles` with the body formed in step 3.
+
+As a result, we have a special role with a specific set of action permissions for the Workspaces scope. Now we can assign this role in the UI in the Workspace page:
+
+![Operator-role](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/Operator.png)
