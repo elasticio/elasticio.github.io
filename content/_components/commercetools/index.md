@@ -18,7 +18,7 @@ To authenticate this component you need to get the details of the project from
 inside the project. The information is in the **Client Credential Flow** part of
 the `Developers > API CLIENTS`.
 
-![Find information in Commercetools](img/credentials-finding-information.png)
+{% include img.html max-width="100%" url="img/credentials-finding-information.png" title="Find information in Commercetools" %}
 
 Here are the values to copy to use in the account authentication part:
 
@@ -29,7 +29,7 @@ Here are the values to copy to use in the account authentication part:
 You can configure the credentials in the **Credentials** section by selecting the
 component and giving a memorable name for your credential.
 
-![Commercetools credentials page](img/commercetools-credentials.png)
+{% include img.html max-width="100%" url="img/commercetools-credentials.png" title="Commercetools credentials page" %}
 
 ## Triggers
 

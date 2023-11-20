@@ -45,7 +45,7 @@ in input:
 *   `TopicArn` - this is the specific topic name. More about the topic format below.
 *   `AWS Region` - set this to the specific Amazon SNS service access point in the required region.
 
-![Publish](img/publish-action.png)
+{% include img.html max-width="100%" url="img/aws-sns-publish.png" title="Publish action" %}
 
 **Topic ARN**
 

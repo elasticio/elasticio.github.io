@@ -27,7 +27,10 @@ Component credentials configuration fields:
 
 Retrieve all the updated or created objects within a given time range.
 
+{% include img.html max-width="100%" url="img/get-new-and-update-objects-polling.png" title="Get New and Updated Objects Polling" %}
+
 #### Configuration Fields
+
 * **Object Type** - (dropdown, required): Object Type to be fetched
 * **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`
 * **Size of Polling Page** - (optional, positive integer, defaults to 100, max 500): Indicates the size of pages to be fetched
@@ -55,6 +58,8 @@ There is no input metadata
 
 Lookup a set of objects by defined criteria list. Can be emitted in different way.
 
+{% include img.html max-width="100%" url="img/lookup-objects.png" title="Lookup Objects (plural)" %}
+
 #### Configuration Fields
 
 * **Object Type** - (dropdown, required): Object-type to lookup on. E.g `User`.
@@ -78,6 +83,8 @@ For `Emit Individually` mode: Each object which fill the entire message.
 
 Delete a single object by its ID.
 
+{% include img.html max-width="100%" url="img/delete-object.png" title="Delete Object By ID" %}
+
 #### Configuration Fields
 
 * **Object Type** - (string, required): Object-type to lookup on. E.g `Customer`.
@@ -93,6 +100,8 @@ Delete a single object by its ID.
 ### Upsert Object
 
 Updates (if record found) or creates a new object.
+
+{% include img.html max-width="100%" url="img/upsert-object.png" title="Upsert Object" %}
 
 #### Configuration Fields
 
@@ -169,6 +178,8 @@ If `Make GET request after object created/updated` is `false`:
 
 Lookup a single object by a selected field that uniquely identifies it.
 
+{% include img.html max-width="100%" url="img/lookup-object.png" title="Lookup Object (at most one)" %}
+
 #### Configuration Fields
 
 * **Object Type** - (string, required): Object-type to lookup on. E.g `Users`.
@@ -186,6 +197,8 @@ Object with result of lookup as value.
 ### Make Raw Request
 
 Executes custom request.
+
+{% include img.html max-width="100%" url="img/make-row-request.png" title="Make Raw Request" %}
 
 #### Configuration Fields
 

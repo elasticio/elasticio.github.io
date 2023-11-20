@@ -6,7 +6,6 @@ description: A component to store and retrieve value from key:value storage.
 icon: simple-storage.png
 icontext: Simple Storage component
 category: Simple Storage component
-createdDate: 2016-11-02
 updatedDate: 2020-11-20
 ---
 
@@ -33,7 +32,7 @@ The [technical notes](technical-notes) page gives some technical details about S
 
 ## Credentials
 
-![Credentials](img/credentials.png)
+{% include img.html max-width="100%" url="img/simple-storage-credentials.png" title="Credentials" %}
 
   * **hostname -** Hostname or IP address of MongoDB server.
 
@@ -56,7 +55,7 @@ select as a first component during the integration flow design.
 
 Insert new or update existing Key:Value pair
 
-![Store Key](img/store-key.png)
+{% include img.html max-width="100%" url="img/simple-storage-store-key.png" title="Store Key" %}
 
 #### Input fields:
 
@@ -126,7 +125,7 @@ Result will be:
 
 Insert new or replace existing Key:Value pair from Batch.
 
-![Store Key Batch](img/store-key-batch.png)
+{% include img.html max-width="100%" url="img/simple-storage-store-key-batch.png" title="Store Key Batch" %}
 
 #### Input fields:
 
@@ -175,7 +174,8 @@ Response:
 
 Returns value by provided key and Value name if found or provided default value.
 
-![Retrieve Key](img/retrieve-key.png)
+{% include img.html max-width="100%" url="img/simple-storage-retrieve.png" title="Retrieve Key" %}
+
 
 #### Input fields:
 
@@ -197,7 +197,7 @@ In response document from MongoDB collection will be provided, e.g.:
 
 Returns  array of values by provided key array.
 
-![Retrieve Key Batch](img/retrieve-key-batch.png)
+{% include img.html max-width="100%" url="img/simple-storage-retrieve-batch.png" title="Retrieve Key Batch" %}
 
 #### Input fields:
 
@@ -226,7 +226,7 @@ Response format is following:
 
 Removes Value provided in valueName or all values for specified key if **"Delete all values for this key?"** checkbox checked.
 
-![Remove Key](img/remove-key.png)
+{% include img.html max-width="100%" url="img/simple-storage-remove.png" title="Remove Key" %}
 
 #### Input fields:
 

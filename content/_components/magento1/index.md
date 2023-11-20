@@ -37,7 +37,7 @@ or as we call it authenticate it. This means finding the right kind of
 information from your Magento installation and filling-in the form when adding
 the new Magento account.
 
-![Magento 1 Credentials](img/magento1-credentials.png)
+![Magento 1 Credentials](img/credentials.png)
 
 *   **Name your account** (required) - Give any name that you can easily recognise afterwards.
 

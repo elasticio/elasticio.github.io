@@ -77,7 +77,7 @@ Triggers to get all new and updated s3 objects since last polling.
 
 #### List of Expected Config fields
 
-![Get New and Updated S3 Objects](img/get-new-and-update.png)
+{% include img.html max-width="100%" url="img/aws-s3-polling-trigger.png" title="Get New and Updated S3 Objects" %}
 
 * **Bucket Name and folder** - name of S3 bucket to read files from
 * **Emit Behaviour**: Options are: default is `Emit Individually` emits each object in separate message, `Fetch All` emits all objects as array in one object with key `results`
@@ -139,6 +139,8 @@ Triggers to get all new and updated s3 objects since last polling.
 
 Given a filename and a URL to an attachment stored in the platform, transfers the contents of the attachment to AWS S3. The component returns a summary of the written file. AWS S3 always overwrites the contents of the file if it already exists.
 
+{% include img.html max-width="100%" url="img/aws-s3-upsert-file.png" title="Write File to S3 From a Provided Attachment" %}
+
 #### Expected input metadata
 
  - **bucketName** - name of S3 bucket to write the file to; Sufficient write permission is required;
@@ -161,20 +163,19 @@ Read file from S3 bucket.
 This action reads file from S3 bucket by provided name. The result is storing in the output body (for json or xml) or in the output attachment (for other types).
 File type resolves by it's extension. The name of attachment would be same to filename.
 
+{% include img.html max-width="100%" url="img/aws-s3-read-file.png" title="Read file" %}
+
 #### List of Expected Config fields
 
  - **Default Bucket Name and folder** - name of S3 bucket to read file from (by default, if `bucketName` is not provided in metadata);
 
 #### Expected input metadata
 
-![Read file](img/read-file.png)
-
  - **filename** - name of file at S3 bucket to read;
  - **bucketName** - name of S3 bucket to read file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
 
 <details close markdown="block"><summary><strong>Input metadata:</strong></summary>
-
 
 ```json
 {
@@ -226,15 +227,15 @@ Emit individually all filenames from S3 bucket.
 This action gets all names of files which are storing in S3 bucket with provided name.
 The filenames emits individually.
 
-> **Please Note:** if you provide bucket and folder (as example `eio-dev/inbound`), not only all names of files will  return but name of root folder (`inbound/`) as well.
+{% include img.html max-width="100%" url="img/aws-s3-get-filenames.png" title="Get filenames" %}
+
+> **Please Note:** If you provide a bucket and folder (as an example `eio-dev/inbound`), not only all names of files will return but the name of the root folder (`inbound/`) as well.
 
 #### List of Expected Config fields
 
  - **Default Bucket Name and folder** - name of S3 bucket to read file from (by default, if `bucketName` is not provided in metadata);
 
 #### Expected input metadata
-
-![Get filenames](img/get-filename.png)
 
  - **bucketName** - name of S3 bucket to write file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
 
@@ -295,13 +296,13 @@ Delete file from S3 bucket.
 
 This action removes file from S3 by provided name in selected bucket. The action will emit single filename of removed file.
 
+{% include img.html max-width="100%" url="img/aws-s3-delete.png" title="Delete file" %}
+
 #### List of Expected Config fields
 
  - **Default Bucket Name and folder** - name of S3 bucket to delete file from (by default, if `bucketName` is not provided);
 
 #### Expected input metadata
-
-![Delete file](img/delete-file.png)
 
  - **filename** - name of file at S3 bucket to delete;
  - **bucketName** - name of S3 bucket and folder to delete file from (will replace `Default Bucket Name and folder` if provided, the field is optional).
@@ -351,9 +352,9 @@ Rename file in S3 bucket and folder.
 This action renames file by provided name in selected bucket and folder.
 The action will emit properties of renamed file.
 
-#### Expected input metadata
+{% include img.html max-width="100%" url="img/aws-s3-rename-file.png" title="Rename file" %}
 
-![Rename file](img/rename-file.png)
+#### Expected input metadata
 
  - **bucketName** - name of S3 bucket where file is placed
  - **folder** - name of folder where file is placed (can be omitted)

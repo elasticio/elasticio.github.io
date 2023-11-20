@@ -33,21 +33,22 @@ The [technical notes](technical-notes) page gives some technical details about O
 
 ## Credentials
 
-![image](https://user-images.githubusercontent.com/16806832/74028730-bf8ec580-49b3-11ea-82ba-ff44ebde6c13.png)
+{% include img.html max-width="100%" url="img/open-api-credentials.png" title="Credentials" %}
 
 ### Type
 
 Authentication type field to define the authentication schema that would be used for making request.
+
   It is supported 4 auth type:
 
   - `No Auth` - used by default, make request without authentication.
   - `Basic Auth` - make request with basic authentication, `Username` and `Password` fields should be specified:
 
-  ![image](https://user-images.githubusercontent.com/16806832/73258339-2a7b1800-41ce-11ea-894a-98fa65e37b81.png)
+{% include img.html max-width="100%" url="img/open-api-credentials-basic-auth.png" title="Credentials Basic" %}
 
   - `API Key Auth` - make request with API key in headers authentication, `Header Name` and `Header Value` fields should be specified:
 
-  ![image](https://user-images.githubusercontent.com/16806832/73258541-93629000-41ce-11ea-899d-6d1531df3fa1.png)
+{% include img.html max-width="100%" url="img/open-api-credentials-api-key-auth.png" title="Credentials API Key" %}
 
    - `OAuth2` - it is supported `Authorization code` OAuth2 flow. Fields:
         - `Client Id` - is a public identifier for apps
@@ -56,7 +57,7 @@ Authentication type field to define the authentication schema that would be used
         - `Token URI` -  uri for getting an access token
         - `Scopes` -  is a scope of the access request
 
-  ![image](https://user-images.githubusercontent.com/16806832/74029107-9a4e8700-49b4-11ea-996a-6b9a511f8fc3.png)
+{% include img.html max-width="100%" url="img/open-api-credentials-OAuth2.png" title="Credentials OAuth2" %}
 
 ### A URL to an OpenAPI/Swagger document
 
@@ -71,7 +72,7 @@ select as a first component during the integration flow design.
 
 ### Make Request
 
-![Make Request](img/make-request.png)
+{% include img.html max-width="100%" url="img/open-api-make-request.png" title="Make Request" %}
 
 #### List of Expected Config fields
 
@@ -103,8 +104,7 @@ For example, path `/pet/{petId}` and operation `get` metadata is:
      }
 ```
 
-<details>
-<summary> OpenApi Description for path `/pet/{petId}` and operation `get`</summary>     
+<details close markdown="block"><summary><strong> OpenApi Description for path `/pet/{petId}` and operation `get`</strong></summary>
 
      {
        "paths": {
@@ -154,7 +154,7 @@ For example, path `/pet/{petId}` and operation `get` metadata is:
        }
      }
 
-   </details>
+</details>
 
 #### Expected output metadata
 

@@ -36,7 +36,7 @@ If you create an app that needs a Callback URL for authentication purposes then 
 
 `https://{YOUR_TENANT_ADDRESS}/callback/oauth2`
 
-![image](https://user-images.githubusercontent.com/16806832/97473962-3f026180-1954-11eb-9e5a-7288cab5fdbd.png)
+{% include img.html max-width="100%" url="img/quickbooks-credentials.png" title="Credentials" %}
 
 * Company ID - Set the id of the company you want to access.
 * Application Client Id - OAuth client id (client key)
@@ -50,6 +50,8 @@ If you create an app that needs a Callback URL for authentication purposes then 
 
 Allows to get entries by chosen type. On first request, trigger will provide all existing objects by current type.
 On the next iterations, trigger will provide ONLY objects which were changed since a previous request. **This trigger supports all type of business entities and response pagination.** To set response size you should set/change 'Batch Size for request pagination' field in trigger settings.
+
+{% include img.html max-width="100%" url="img/polling-object.png" title="Polling Trigger" %}
 
 #### List of Expected Config fields
 

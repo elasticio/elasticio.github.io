@@ -22,7 +22,7 @@ The screenshot below shows the configuration component *Choose Credential* stage
 during the integration flow design. The text field will be evaluated to check if
 the above conditions are met.
 
-![Configuration component credential](img/configuration-component01.png)
+{% include img.html max-width="100%" url="img/configuration-credentials.png" title="Credentials" %}
 
 Afterwards, it emits a message with an object equivalent to the JSON in the config.
 So any data which is used in the flow and is repeated in multiple places can be configured (or later changed) in the single step.

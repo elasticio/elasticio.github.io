@@ -27,9 +27,7 @@ Pub/Sub offers durable message storage and real-time message delivery with high 
 
 ### Credentials
 
-*   **Project ID**
-*   **Client E-Mail**
-*   **Private Key**
+{% include img.html max-width="100%" url="img/google-pubsub-credentials.png" title="Credentials" %}
 
 > Please Note: Google provides a JSON file which includes your private key. You should be careful how you are using the information. Follow the instructions below to succeed:
 
@@ -68,10 +66,11 @@ need to create a new Service Account on [Service Accounts Page](https://console.
 
 The Subscribe trigger receives a message from a Topic, emits it, and sends an acknowledgement to Pub/Sub.
 
+{% include img.html max-width="100%" url="img/google-pubsub-subscribe-trigger.png" title="Subscribe trigger" %}
+
 #### Configuration
 
 - `Topic Name` - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
-
 
 ## Actions
 
@@ -79,7 +78,7 @@ The Subscribe trigger receives a message from a Topic, emits it, and sends an ac
 
 The Publish action retrieves message body from a previous step and sends a message to a Topic while remaining unaware of any existing subscriptions.
 
-![Publish](img/google-pubsub-publish.png)
+{% include img.html max-width="100%" url="img/google-pubsub-publish-action.png" title="Publish action" %}
 
 #### Configuration
 

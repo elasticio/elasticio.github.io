@@ -19,7 +19,6 @@ between applications or organizations (see [amqp.org](https://www.amqp.org) for 
 AMQP component establishes an asynchronous communications with queues and topics
 to publish or consume records.
 
-
 ## How works
 
 The consumer will register a non-exclusive non-durable queue with `autodelete=true` and
@@ -51,7 +50,7 @@ be embedded as part of the URL, for example `amqp://foo:bar@server`. You can
 also use URL syntax to provide further parameters and any other options
 (e.g. `vHost` or port).
 
-![Credentials](img/credentials.png)
+{% include img.html max-width="100%" url="img/amqp-credentials.png" title="Credentials" %}
 
 ## Triggers
 
@@ -60,7 +59,7 @@ also use URL syntax to provide further parameters and any other options
 Will consume the incoming message object that contains `body` with the payload.
 If the exchange doesn't exist it will be created on start.
 
-![Consume](img/consume.png)
+{% include img.html max-width="100%" url="img/consume-trigger.png" title="Consume Trigger" %}
 
 #### Configuration Fields
 
@@ -77,7 +76,7 @@ If the exchange doesn't exist it will be created on start.
 Will publish the messages into an exchange. This exchange will be created on
 start if it doesn't exists.
 
-![Publish](img/publish.png)
+{% include img.html max-width="100%" url="img/publish-action.png" title="Publish action" %}
 
 #### Configuration Fields
 
@@ -90,5 +89,6 @@ start if it doesn't exists.
 ## Known limitations
 
 Following limitations of the component are known:
+
 *   You can not publish to the default exchange.
 *   All published exchanges are `topic` exchanges by default. However, with the `topic` exchanges one can emulate `direct` and `fanout` exchanges.

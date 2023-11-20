@@ -34,14 +34,9 @@ ChannelAdvisor component like [changelog](technical-notes#changelog).
 
 Supports the [Developer Console Token](https://developer.channeladvisor.com/authorization/developer-console-token 'Developer Console Token') type of authorization. Prerequisites are valid developer key and
 password in addition to the access to login to desired ChannelAdvisor accounts
-with permission to grant API access. Here is the list of values:
+with permission to grant API access.
 
-*   `Application Client Id`
-*   `Application Client Secret`
-*   `Application Refresh Token`
-*   `The URL of the OData service to consume`
-*   `Print OAuth Token` - for debugging purposes
-
+{% include img.html max-width="100%" url="img/channel-advisor-credentials.png" title="Credentials" %}
 
 ## Triggers
 
@@ -49,7 +44,7 @@ with permission to grant API access. Here is the list of values:
 
 Get objects which have recently been modified or created.
 
-![Get Objects Polling](img/fetch-new-and-update.png)
+{% include img.html max-width="100%" url="img/get-objects-polling.png" title="Get Objects Polling" %}
 
 All types of objects programmatically detectable are covered.  When selecting
 this trigger, the first input that must be configured is **Object type to fetch**.
@@ -59,6 +54,7 @@ This trigger relies on the service implementing OData's delta links. Not all
 services support this.
 
 ### Technical Notes
+
 *   Time range options are not supported.
 *   Standardized `isNew`,`createdOn` and `modifiedOn` not included in output.
 *   This trigger could not be tested directly but can the code path can be tested through dynamics CRM component
@@ -74,7 +70,7 @@ services support this.
 
 Given a field and a field value that matches exactly one record, find that matching record.
 
-![Lookup Object by Field](img/lookup-object.png)
+{% include img.html max-width="100%" url="img/lookup-objects-by-fields.png" title="Lookup Object by Field" %}
 
 There are three configuration drop-downs:
 
@@ -122,7 +118,7 @@ ELSE
 
 Update an existing entry with the id provided.  Otherwise create a new entry.
 
-![Upsert Object By ID](img/upsert-object.png)
+{% include img.html max-width="100%" url="img/upsert-object.png" title="Upsert Object By ID" %}
 
 All types of objects programmatically detectable are covered.  When selecting
 this trigger, the first input that must be configured is **Object type to fetch**.
