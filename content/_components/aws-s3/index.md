@@ -229,7 +229,7 @@ The filenames emits individually.
 
 {% include img.html max-width="100%" url="img/aws-s3-get-filenames.png" title="Get filenames" %}
 
-> **Please Note:** if you provide bucket and folder (as example `eio-dev/inbound`), not only all names of files will  return but name of root folder (`inbound/`) as well.
+> **Please Note:** If you provide a bucket and folder (as an example `eio-dev/inbound`), not only all names of files will return but the name of the root folder (`inbound/`) as well.
 
 #### List of Expected Config fields
 
