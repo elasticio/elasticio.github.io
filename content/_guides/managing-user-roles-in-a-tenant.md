@@ -139,12 +139,12 @@ You can update or remove roles you granted to this potential user and more. Chec
 
 > **Please Note:** You MUST have the **Service Account** credentials to create custom user roles.
 
-You can create your own Custom User Roles. To do so, make a request listing the list of permissions required for the role.
+You can create your own Custom User Roles. To do so, make a request listing the list of permissions required for the role. The process is described below in detail.
 
 ### Process
 Let's understand the process of creating a *Custom User Role* using the *Operator* for workspace *Scope* role as an example. *Operator* will have slightly more permissions than *Guest*, but less than *Integrator*.
 
-**1.** First, we will need to get a list of all current roles on Tenant. To do this, do a **GET** request at `{{site.data.tenant.apiBaseUri}}/v2/tenants/{YOUR_TENANT_ID}/roles`.
+**1.** First, we will need to get a list of all current roles on Tenant. To do this, do a [**GET** request]({{site.data.tenant.apiDocsUri}}/v2#/tenants/get_tenants__tenant_id__roles) at `{{site.data.tenant.apiBaseUri}}/v2/tenants/{YOUR_TENANT_ID}/roles`.
 
 In response, you will receive a complete list of roles for both *Scopes*: `contracts` and `workspaces`:
 
@@ -195,7 +195,7 @@ In response, you will receive a complete list of roles for both *Scopes*: `contr
 ```
 **2.** After that, form the object of the future role. *Operator* will be a Super-guest. It will be able to view and edit credentials, and run flows, but unlike the *Integrator* role cannot modify flow structures.
 
-> **Please Note:** You can find list of available permission with **GET** request for the `{{site.data.tenant.apiBaseUri}}/v2/permissions`
+> **Please Note:** You can find list of available permission with [**GET** request]({{site.data.tenant.apiDocsUri}}/v2#/permissions/get_permissions) for the `{{site.data.tenant.apiBaseUri}}/v2/permissions`
 
 According to the goal, collect the necessary permissions and form an object:
 
@@ -267,7 +267,7 @@ The following body is obtained:
 ```
 > **Please Note:** The request does not need to use some of the fields received in response to a GET of this object, such as `id`, `relationships`, `meta`, `links`.
 
-**4.** Now let's make a **PATCH** request for the `{{site.data.tenant.apiBaseUri}}/v2/tenants/{YOUR_TENANT_ID}/roles` with the body formed in step 3.
+**4.** Now let's make a [**PATCH** request]({{site.data.tenant.apiDocsUri}}/v2#/tenants/patch_tenants__tenant_id__roles) for the `{{site.data.tenant.apiBaseUri}}/v2/tenants/{YOUR_TENANT_ID}/roles` with the body formed in step 3.
 
 As a result, we have a special role with a specific set of action permissions for the Workspaces scope. Now we can assign this role in the UI in the Workspace page:
 
