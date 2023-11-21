@@ -11,17 +11,19 @@ ComponentVersion: 2.0.14
 
 ## Authorization Methods
 
-When working with the REST API component and accessing restricted APIs, you need to provide authorization information. This article explains how to add different types of authorization during the integration flow design.
+When working with the *REST API component* and accessing restricted APIs, you need to provide authorization information. This article explains how to add different types of authorization during the integration flow design.
 
 ### Adding Authorization Methods
 
 There are two ways to add authorization methods:
 
-Integration Flow Design: You can add authorization methods directly during the integration flow design process. To do this, refer to the image below:
+### Integration Flow Design:
+You can add authorization methods directly during the integration flow design process. To do this, refer to the image below:
 
 {% include img.html max-width="100%" url="img/basic_auth.png" title="Basic auth" %}
 
-Credentials Section: Alternatively, you can add authorization methods by navigating to the left side-bar, choosing `Credentials > REST API V2` and adding them there. Follow the steps below to add new credentials:
+### Credentials Section:
+Alternatively, you can add authorization methods by navigating to the left side-bar, choosing `Credentials > REST API V2` and adding them there. Follow the steps below to add new credentials:
 
 {% include img.html max-width="100%" url="img/credentials_rest_api.png" title="Credentials section" %}
 
@@ -95,7 +97,7 @@ Here's how the authorization process works on our platform:
 
 ## Auth-client creation
 
-The REST-API-v2 component supports four types of auth-clients:
+The *REST API component* supports four types of auth-clients:
 
 * `oauth2` - this is the OAuth2 type
 * `basic` - a basic type with username and password only
@@ -104,7 +106,7 @@ The REST-API-v2 component supports four types of auth-clients:
 
 For all four cases, you need to [create]({{site.data.tenant.apiDocsUri}}/v2#/auth%20clients/post_auth_clients) an `auth-client` before using them. This means even for the `noauth` method, an `auth-client` is required.
 
-Each `auth-client` is unique to a component. If you deploy another copy of the REST-API-V2 component to our platform, you will need to create all four types of `auth-clients` for it to work.
+Each `auth-client` is unique to a component. If you deploy another copy of the *REST API component* to our platform, you will need to create all four types of `auth-clients` for it to work.
 
 Below is an example of what the body of a noauth type auth-client should look like:
 
@@ -191,11 +193,3 @@ In the example, the API call body is for creating a `noauth` type auth-client fo
 ```
 
 </details>
-
-### Environment variables
-
-| NAME                       | DESCRIPTION    | DEFAULT   | OPTIONAL |
-|----------------------------|------------------------|-----------|----------|
-| REQUEST_TIMEOUT            | HTTP authorization request timeout in milliseconds.                                                   | 10000     | true     |
-| REQUEST_RETRY_DELAY        | Delay between authorization retry attempts in milliseconds                                            | 5000      | true     |
-| REQUEST_MAX_RETRY          | Number of HTTP authorization request retry attempts.                                                  | 3         | true     |

@@ -17,6 +17,8 @@ in this case you should check the ``Don`t throw Error on Failed Calls`` option. 
 
 ![Cookies](img/cookies-sample.png)
 
-To _set_ Cookies you could simply use the HTTP header on your _Response_ called `Cookie` to a cookie value to a
-list of name-value pairs in the form of <cookie-name>=<cookie-value>. Pairs in the list are separated by a semicolon and a space ('; ')
+To *set* Cookies you could simply use the HTTP header on your *Response* called `Cookie` to a cookie value to a
+list of name-value pairs in the form of `<cookie-name>=<cookie-value>`.
+
+Pairs in the list are separated by a semicolon and a space `('; ')`
 like `yummy_cookie=choco; tasty_cookie=strawberry`. More information on setting the cookies can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie).
