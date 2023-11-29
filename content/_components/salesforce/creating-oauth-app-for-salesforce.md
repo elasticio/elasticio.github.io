@@ -46,7 +46,12 @@ extend into the following setup:
 *  **Callback URL** - put the correct URL which should of the `https://your-tenant-address/callback/oauth2` form.
 *  **Selected Oauth Scopes** - The Salesforce documentation explains [API (Enable OAuth Settings)](https://help.salesforce.com/articleView?id=connected_app_create.htm&type=5) part requirements. In particular, a special care must be taken to select at least these two settings:
    *   **Full access (full)** - which allows access to all data accessible by the logged-in user, and encompasses all other scopes. This option, however, doesn't return a `refresh_token`. For that purposes you need to explicitly request the `refresh_token` scope to get one.
-   *   **Perform requests on your behalf at any time (refresh_token, offline_access)** - This option would allows a `refresh_token` to be returned if you are eligible to receive one. This lets the app interact with the user's data while the user is offline. **The `refresh_token` scope is synonymous with offline_access**.
+   *   **Perform requests at any time (refresh_token, offline_access)** - This option would allows a `refresh_token` to be returned if you are eligible to receive one. This lets the app interact with the user's data while the user is offline. **The `refresh_token` scope is synonymous with offline_access**.
+
+> Check all required checkboxes from the list below:
+>   * **Require Secret for Web Server Flow**
+>   * **Require Secret for Refresh Token Flow**
+>   * **Enable Authorization Code and Credentials Flow** (it is not enabled by default)
 
 Press save to create your OAuth App.
 
