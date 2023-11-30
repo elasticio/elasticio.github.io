@@ -19,7 +19,7 @@ Microsoft Dynamics Business Central APIs use OAuth 2.0 for authentication. To es
   * Start by registering an OAuth App in the Azure Active Directory.
   * Follow the steps outlined in [this guide](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) to register your application.
   
-  > **Note**: Specify the [Redirect URL](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#add-a-redirect-uri) according to documentation and ensure it is used according to callback [according to callback](/guides/oauth-callback-redirect-url.html).
+  > **Note**: Specify the [Redirect URL](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#add-a-redirect-uri) according to documentation and ensure it is used [according to callback](/guides/oauth-callback-redirect-url.html).
 
   > **Note**: Make sure that the application is given the necessary [permissions](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#more-on-api-permissions-and-admin-consent) to work with OAuth in Azure Active Directory.
   > {% include img.html max-width="100%" url="img/permissions.png" title="Permissions" %}
