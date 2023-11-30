@@ -100,6 +100,9 @@ You can:
 
 ![Flows_list_view](/assets/img/tenant-management-guide/managing-flows/Flows_list_view.png)
 
+> **Note:** You can observe all active filters in the tooltips that appear below:
+> ![Filtering_tooltips](/assets/img/tenant-management-guide/managing-flows/Filtering_tooltips.png)
+
 
 ## Copy Flow, Switch Flow Type
 
