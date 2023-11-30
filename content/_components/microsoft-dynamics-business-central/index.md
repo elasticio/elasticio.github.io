@@ -18,6 +18,11 @@ Microsoft Dynamics Business Central APIs use OAuth 2.0 for authentication. To es
 
   * Start by registering an OAuth App in the Azure Active Directory.
   * Follow the steps outlined in [this guide](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) to register your application.
+  
+  > **Note**: Specify the [Redirect URL](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#add-a-redirect-uri) according to documentation and ensure it is used [according to callback](/guides/oauth-callback-redirect-url.html).
+
+  > **Note**: Make sure that the application is given the necessary [permissions](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#more-on-api-permissions-and-admin-consent) to work with OAuth in Azure Active Directory.
+  > {% include img.html max-width="100%" url="img/permissions.png" title="Permissions" %}
 
 **2.** Create an Auth Client on the Platform:
 
@@ -54,13 +59,15 @@ During credentials creation you would need to:
 
 For creating Auth Client you should specify following fields:
 
-| Field name | Mandatory | Description |
-|------------------------|-----------|-----------------------------------------------------------------|
-| Name                   | true      | your Auth Client's name |
-| Client ID              | true      | your `Application (client) ID` |
-| Client Secret          | true      | your `Value` from `Client secrets` |
-| Authorization Endpoint | true      | set: `https://login.microsoftonline.com/{tenantId}/oauth2/authorize?resource=https://api.businesscentral.dynamics.com`, where `tenantId` is user domain name |
-| Token Endpoint         | true      | set: `https://login.windows.net/{tenantId}/oauth2/token?resource=https://api.businesscentral.dynamics.com`, where `tenantId` is user domain name             |
+| Field name | Description |
+|------------------------|-----------------------------------------------------------------|
+| Name                   | your Auth Client's name |
+| Client ID              | your `Application (client) ID` |
+| Client Secret          | your `Value` from `Client secrets` |
+| Authorization Endpoint | set: `https://login.microsoftonline.com/{tenantId}/oauth2/authorize?resource=https://api.businesscentral.dynamics.com`, where `tenantId` is user domain name |
+| Token Endpoint         |  set: `https://login.windows.net/{tenantId}/oauth2/token?resource=https://api.businesscentral.dynamics.com`, where `tenantId` is user domain name             |
+
+> **Note!**: All of the above fields are mandatory
 
 {% include img.html max-width="100%" url="img/auth-client.png" title="Auth client" %}
 
