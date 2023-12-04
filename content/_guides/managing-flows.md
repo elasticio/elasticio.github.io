@@ -100,6 +100,9 @@ You can:
 
 ![Flows_list_view](/assets/img/tenant-management-guide/managing-flows/Flows_list_view.png)
 
+> **Note:** You can observe all active filters in the tooltips that appear below:
+> ![Filtering_tooltips](/assets/img/tenant-management-guide/managing-flows/Filtering_tooltips.png)
+
 
 ## Copy Flow, Switch Flow Type
 
@@ -141,11 +144,14 @@ Unsubscribing works the same way.
 
 ## Scheduling
 
-To schedule your Flow via [CRON expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression), you need to be in drafting mode. You can turn it on by [editing the Flow](#start-stop-edit-delete-via-the-ui). While editing the Flow, switch to *Settings* tab **(1)**, use CRON expression to schedule the Flow, and click *Save*:
+To schedule your Flow via [CRON expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression), you need to be in drafting mode. You can turn it on by [editing the Flow](#start-stop-edit-delete-via-the-ui). While editing the Flow, switch to *Settings* tab **(1)**, use CRON expression to schedule the Flow **(2)**, and click *Save* **(3)**:
 
 ![Settings - Scheduling](/assets/img/tenant-management-guide/managing-flows/Screenshot_13.png)
 
-The default CRON expression is `*/3 * * * *`, meaning "every 3 minutes". The positions in the expression from left to right represent:
+The default CRON expression is `*/10 * * * *`, meaning "Every 10 minutes".
+> **Note:** The default value of this parameter can be changed by configuring the internal environment variable `SCHEDULER_TASK_POLLING_INTERVAL`.
+
+The positions in the expression from left to right represent:
 
 - Minutes (allowed values: from `0` to `59`)
 - Hours (allowed values: from `0` to `23`)
@@ -172,7 +178,7 @@ Also, the following special characters are in use:
 
 **EXAMPLE:** `* * * */2 *` means every two months.
 
-Feel free to use the hint below the CRON expression field for reference. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use `POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/run-now` request to run the Flow on demand.
+Feel free to use the hint below the CRON expression field for reference. Otherwise, you can always click [*Run Now*](#start-stop-edit-delete) or use [`POST {{site.data.tenant.apiBaseUri}}/v2/flows/{FLOW_ID}/run-now`]({{site.data.tenant.apiDocsUri}}/v2#/flows/post_flows__flow_id__run_now) request to run the Flow on demand.
 
 If the CRON expression was written properly, you'll see your schedule in the Next Occurrences:
 
