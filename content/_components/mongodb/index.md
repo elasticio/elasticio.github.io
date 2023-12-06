@@ -12,30 +12,18 @@ ComponentVersion: 1.5.12
 
 ## Description
 
-Integration component to interact with MongoDB databases. The component works with
-the MongoDB versions `2.6` and above.
-
-### Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about MongoDB component like [changelog](/components/mongodb/technical-notes#changelog).
-
-## Authentication
-
-The authenticate and connect with the MongoDB you must create credential with
-following entries:
-
-*   **URL** - The connection URL to your MongoDB. For example: `mongodb://example.com:2017`or `mongodb+srv://server.example.com:2017`.
-*   **User** - user for connection to MongoDB.
-*   **Password** - password for user to connect with MongoDB.
-*   **Authentication Database** - database that used for authentication user. By default it is `admin`, but your case can be different. Please check your records.
+Integration component to interact with MongoDB databases.
+> **Note:** The component works with the MongoDB versions `2.6` and above.
 
 ## Credentials
 
-1. `URL` - URL used to connect with Mongo DB.
-Example: mongodb://example.com:2017, mongodb+srv://server.example.com:2017 .
-2. `User` - user for connection to Mongo DB.
-3. `Password` - password for user to connect with Mongo DB.
-4. `Authentication Database` - database that used for authentication user. Default: admin. If you connect to your database via the mongo shell with a command of the form `mongo mongodb://example.com/myDatabase -u myUser -p myPassword` then you should place `myDatabase` in this field.  If you connect to your database via the mongo shell with a command of the form  `mongo mongodb://example.com/ -u myUser -p myPassword` then you should leave this field blank.
+1. **URL** - URL used to connect with Mongo DB. Example: `mongodb://example.com:2017`, `mongodb+srv://server.example.com:2017`.
+2. **User** - user for connection to Mongo DB.
+3. **Password** - password for user to connect with Mongo DB.
+4. **Authentication Database** - database that used for authentication user. Default: `admin`. If you connect to your database via the mongo shell with a command of the form `mongo mongodb://example.com/myDatabase -u myUser -p myPassword` then you should place `myDatabase` in this field.  If you connect to your database via the mongo shell with a command of the form  `mongo mongodb://example.com/ -u myUser -p myPassword` then you should leave this field blank.
+5. **MongoDB version** - version of the MongoDB. One of options:
+- `4.4 and lower (Default)` - Node.JS MongoDB driver version 3.5.9 will be used
+- `5.0 and higher` - Node.JS MongoDB driver version 6.2.0 will be used
 
 ## Environment Variables
 
@@ -66,8 +54,12 @@ action functions, each linked to the section where more explanation is given.
 *   **[Update Many](actions#update-many)** - Updates documents in a collection.
 *   **[Upsert By Unique Criteria](actions#upsert-by-unique-criteria)** - Upserts document by unique criteria.
 
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about MongoDB component like [changelog](/components/mongodb/technical-notes#changelog).
+
+
 ## Limitations
 
 *   Not supported authentication mechanisms: `LDAP`, `Kerberos` (`GSSAPI`) and `X.509`
-*   Lookup by `ObjectId` criteria is not supported in Lookup By Unique Criteria action, Lookup by ID action should be used in this case
-*   The component supports MongoDB `2.6+`
+*   Backward compatibility has not been broken for old MongoDB versions (`2.6` - `4.4`). But output metadata might have changed for certain actions for the latest MongoDB versions due to the changes made in the latest MongoDB and Node.JS driver implementations
