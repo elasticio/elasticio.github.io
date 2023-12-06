@@ -14,6 +14,9 @@ redirect_from:
 
 ## Changelog
 
+### 2.7.3 (November 30, 2023)
+* Fixed issue when real-time flows have authentication errors sometimes
+
 ### 2.7.2 (September 28, 2023)
 
 * Improvements in `Subscribe to platform events` trigger:
