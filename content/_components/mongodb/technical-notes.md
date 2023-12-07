@@ -6,12 +6,21 @@ icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
 updatedDate: 2023-07-06
-ComponentVersion: 1.5.12
+ComponentVersion: 1.6.0
 redirect_from:
   - /components/mongodb/changelog.html
 ---
 
 ## Changelog
+
+### 1.6.0 (November 30, 2023)
+* Added support for MongoDB latest versions (incl. 7.0) updating MongoDB Node.js driver to the latest version (6.2.0)
+    - Nothing has been changed for the old MongoDB versions (4.4 and older). MongoDB version can be chosen in the credentials
+    - Due to changes made in both MongoDB and its Node.JS driver certain things might have changed.
+    Like output format of data (metadata) emitted by some actions.
+    - A couple of options that have been removed in MongoDB 5.0+ but still are available for older versions:
+        - `keepAlive`
+        - `useNewUrlParser` and `useUnifiedTopology`
 
 ## 1.5.12 (July 06, 2023)
 

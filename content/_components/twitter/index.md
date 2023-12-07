@@ -10,6 +10,8 @@ updatedDate: 2020-12-18
 ComponentVersion: 0.0.2
 ---
 
+> **Note:** We have introduced a new component with more extensive functionality supporting X (Twitter) API V2. You can [find it here](/components/x-twitter-component).
+
 ## Credentials
 
 ![Credentials](img/credentials.png)
