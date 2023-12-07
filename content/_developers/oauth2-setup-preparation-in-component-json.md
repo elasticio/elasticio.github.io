@@ -58,6 +58,43 @@ Let us explain how it should be done on an example of currently working example.
 }
 ```
 
+There are two ways how we can exchange authorization code for tokens:
+- Using `client_id` and `client_secret` inside body parameter (as example above).
+- Using headers - Basic Authentication, where `client_id` and `client_secret` will be used as user and password.
+
+To use headers - you need to provide additional parameter in `component.json` at credentials section:
+
+```json
+"oauth2" : {
+      "client_auth": "basic"
+}
+```
+
+Your `component.json` will be look like this:
+
+```json
+{
+  "title": "Best component",
+  "description": "Best component",
+  "version": "1.0.0",
+  "authClientTypes": [
+    "oauth2"
+  ],
+  "credentials": {
+    "fields": {
+      "oauth": {
+        "label": "Authentication",
+        "viewClass": "HTTPAuthView",
+        "required": true
+      }
+    },
+    "oauth2" : {
+      "client_auth": "basic"
+    }
+  },
+  ...
+```
+
 ## Notes
 
 From the example we have the following sections to note:
