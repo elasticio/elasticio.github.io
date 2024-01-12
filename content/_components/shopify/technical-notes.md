@@ -5,8 +5,8 @@ description: Changelog for Shopify component.
 icon: shopify-admin.png
 icontext: Shopify component
 category: shopify-component
-updatedDate: 2023-10-18
-ComponentVersion: 1.6.7
+updatedDate: 2023-12-29
+ComponentVersion: 1.6.8
 redirect_from:
   - /components/shopify-admin/completeness-matrix.html
   - /components/shopify-admin/changelog.html
@@ -14,6 +14,10 @@ redirect_from:
 ---
 
 ## Changelog
+
+### 1.6.8 (December 29, 2023)
+
+* Fixed incorrect output metadata structure for arrays
 
 ### 1.6.7 (October 04, 2023)
 
