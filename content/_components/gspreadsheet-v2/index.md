@@ -6,8 +6,8 @@ description: iPaaS component to read and write to Google Spreadsheets Component 
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet-v2
-updatedDate: 2023-07-03
-ComponentVersion: 1.0.3
+updatedDate: 2023-12-04
+ComponentVersion: 1.1.0
 ---
 
 
@@ -329,6 +329,10 @@ One input field for each row/column, all inputs optional except for the field id
 | updatedRows    | number | true     | Count of updated rows                |
 | updatedColumns | number | true     | Count of updated columns             |
 | updatedCells   | number | true     | Count of updated cells               |
+
+
+### Get Spreadsheet Row Action
+This action is very similar to [Get Spreadsheet Row](#get-spreadsheet-row) trigger. It works the same as the trigger does. To initiate it, a message of any structure should be sent to the step with this action
 
 ## Recommendations
 
