@@ -49,11 +49,12 @@ select as a first component during the integration flow design.
 
 #### Config Fields
 
-* Error Tolerance (dropdown, required): Determines behavior for when an erroneous HTTP code is received. Options are as follows:
+* **Error Tolerance** (dropdown, required): Determines behavior for when an erroneous HTTP code is received. Options are as follows:
     * **No Errors Tolerated**: Any HTTP status code >= 400 should result in an error being thrown
     * **Only Not Found Errors Tolerated**: HTTP status codes of 404, 410 or similar should result in a message being produced with the status code and the HTTP reponse. All other error codes should result in an error being thrown.
     * **None**: Regardless of the HTTP error code, the component should produce an outbound message with the status code and the HTTP response.
     * **Manual**: A range of error codes to throw errors on can be configured via the message input.
+* **Request timeout in sec** (number, optional): How long to wait for a response from the remote server before throwing a timeout error (this timeout value also applies to the token request call).  *Default - 60sec*.
 
 #### Input Metadata
 
