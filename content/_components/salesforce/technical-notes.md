@@ -18,6 +18,10 @@ redirect_from:
 
 * Fixed duplicate retries and added exponential backoff in `Subscribe to PubSub` trigger
 
+### 2.8.0 (December 15, 2023)
+
+* Added new `Subscribe to PubSub` trigger
+
 ### 2.7.3 (November 30, 2023)
 
 * Fixed issue when real-time flows have authentication errors sometimes
