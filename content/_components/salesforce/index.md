@@ -6,8 +6,8 @@ description: A component enables you to manage your organization’s sales, mark
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-11-30
-ComponentVersion: 2.7.3
+updatedDate: 2023-12-29
+ComponentVersion: 2.8.1
 ---
 
 {{page.description}}
@@ -99,6 +99,7 @@ Salesforce component includes the following triggers:
 1.  [Query trigger](triggers#query-trigger) Continuously runs the same `SOQL` query and emits results one-by-one. Use the Salesforce Object Query Language (`SOQL`) to search your organization’s Salesforce data for specific information.
 2.  [Get New and Updated Objects Polling trigger](triggers#get-new-and-updated-objects-polling-trigger) Polls existing and updated objects. You can select any custom or built-in object for your Salesforce instance.
 3.  [Subscribe to platform events](/components/salesforce/triggers#subscribe-to-platform-events-trigger) This trigger will subscribe for any platform Event using Salesforce streaming API. Realtime flows only.
+4. [Subscribe to PubSub](triggers#subscribe-to-PubSub) This trigger will subscribe for any platform Event using [Pub/Sub API](https://developer.salesforce.com/docs/platform/pub-sub-api/overview).
 
 > You can find information on deprecated triggers [here](deprecated-functions#deprecated-actions).
 
@@ -144,3 +145,8 @@ Once you are on the profile editing page, ensure that all the required standard 
 </details>
 
 Carefully review the permissions and make any necessary adjustments to enable the required access.
+
+
+## Known limitations
+
+Attachments mechanism doesn't work with [Local Agent Installation](/getting-started/local-agent.html)

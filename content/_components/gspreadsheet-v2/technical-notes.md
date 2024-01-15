@@ -11,6 +11,10 @@ ComponentVersion: 1.0.3
 
 ## Changelog
 
+### 1.1.0 (December 4, 2023)
+
+* Added `Get Spreadsheets Row` action (based on the existing trigger `Get Spreadsheet Row`)
+
 ### 1.0.3 (July 03, 2023)
 
 * Update Sailor version to 2.7.1

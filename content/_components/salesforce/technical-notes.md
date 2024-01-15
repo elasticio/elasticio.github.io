@@ -5,8 +5,8 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-09-28
-ComponentVersion: 2.7.2
+updatedDate: 2023-12-29
+ComponentVersion: 2.8.1
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
@@ -14,7 +14,16 @@ redirect_from:
 
 ## Changelog
 
+### 2.8.1 (December 29, 2023)
+
+* Fixed duplicate retries and added exponential backoff in `Subscribe to PubSub` trigger
+
+### 2.8.0 (December 15, 2023)
+
+* Added new `Subscribe to PubSub` trigger
+
 ### 2.7.3 (November 30, 2023)
+
 * Fixed issue when real-time flows have authentication errors sometimes
 
 ### 2.7.2 (September 28, 2023)
