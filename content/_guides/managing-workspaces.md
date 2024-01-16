@@ -29,18 +29,18 @@ When you start from an empty contract you can open the menu (**1**), click to cr
 a workspace (**2**) either from the menu item **+ Create Workspace** or by clicking
 on a **+ Create New Workspace** button in the middle:
 
-{% include img.html max-width="80%" url="/assets/img/integrator-guide/managing-workspaces/create-workspace-empty-contract.png" title="Creating workspace in empty contract" %}
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/managing-workspaces/create-workspace-empty-contract.png" title="Creating workspace in empty contract" %}
 
 The following animation shows workspace creation in case of fully operation contract:
 
-{% include img.html max-width="80%" url="/assets/img/integrator-guide/managing-workspaces/creating-workspace-contract.gif" title="Creating workspace in contract" %}
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/managing-workspaces/creating-workspace-contract.gif" title="Creating workspace in contract" %}
 
 You can create a Workspace when viewing all workspaces page as well. Open the menu,
 and expand the workspace list and click on **View All Workspaces** menu item to navigate
 to all workspaces page. Here you can create a new one by clicking on **+ Create New Workspace**
 button.
 
-{% include img.html max-width="80%" url="/assets/img/integrator-guide/managing-workspaces/creating-workspace-all-workspaces.png" title="Creating workspace from all workspaces page" %}
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/managing-workspaces/creating-workspace-all-workspaces.png" title="Creating workspace from all workspaces page" %}
 
 
 ### Creating workspace: API
@@ -176,7 +176,7 @@ and Data Samples to your member.
 
 Editing the member means changing the roles. The following animation shows more:
 
-{% include img.html max-width="80%" url="/assets/img/integrator-guide/managing-workspaces/workspace-edit-member-role.gif" title="Edit member role." %}
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/managing-workspaces/workspace-edit-member-role.gif" title="Edit member role." %}
 
 ### Managing workspace members: API
 
