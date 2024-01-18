@@ -5,11 +5,15 @@ description: Technical Notes for the Shopify Admin v2 component.
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2023-02-28
-ComponentVersion: 2.2.0
+updatedDate: 2024-01-18
+ComponentVersion: 2.2.1
 ---
 
 ## Chagelog
+
+### 2.2.1 (January 18, 2024)
+
+* Fixed Error `Cannot read properties of null (reading 'map')` `in Lookup Objects (plural)` action
 
 ### 2.2.0 (February 28, 2023)
 
