@@ -10,7 +10,7 @@ category: integrator-management
 This document provides information on Flow management, namely the following
 actions:
 
-*   [Start, Stop, Edit, Delete](#start-stop-edit-delete)
+*   [Start, Stop, Edit, Suspend, Delete](#start-stop-edit-suspend-delete)
 *   [Restoring Deleted Flow](#restoring-deleted-flow)
 *   [Copy Flow within the same Workspace, switch between *real-time* and *ordinary*](#copy-flow-switch-flow-type)
 *   [Filtering, Sorting Flows](#filtering-sorting-flows)
@@ -22,13 +22,13 @@ actions:
 
 All actions are available to users with the corresponding [permissions](/guides/managing-user-roles-in-a-tenant).
 
-## Start, Stop, Edit, Delete
+## Start, Stop, Edit, Suspend, Delete
 
 These basic actions may be done via the UI, and via the [API]({{site.data.tenant.apiDocsUri}}/v2#/flows). Note that when you start a Flow, the latest [Flow version](#flow-versioning) is used.
 
-#### Start, Stop, Edit, Delete via the UI
+#### Start, Stop, Edit, Suspend, Delete via the UI
 
-To start, stop, edit and delete a Flow via the UI, navigate to Flows. Here you can see all your Flows, identify the required stopped Flow by name **(1)** and start **(2)** it:
+To start, stop, edit, suspend and delete a Flow via the UI, navigate to Flows. Here you can see all your Flows, identify the required stopped Flow by name **(1)** and start **(2)** it:
 
 ![Start flow](/assets/img/tenant-management-guide/managing-flows/Screenshot_1.png)
 
@@ -36,9 +36,9 @@ Also you can run Flow on demand **(1)** or stop **(2)** a started Flow:
 
 ![Run or stop](/assets/img/tenant-management-guide/managing-flows/Screenshot_2.png)
 
-Edit or delete the Flow by opening the settings menu **(1)** of the selected Flow, and clicking *Edit Flow* **(2)** or *Delete Flow* **(3)**:
+Edit or delete the Flow by opening the settings menu **(1)** of the selected Flow, and clicking *Edit Flow* **(2)**, *Suspend Flow* **(3)** or *Delete Flow* **(4)**:
 
-![Settings menu](/assets/img/tenant-management-guide/managing-flows/Screenshot_6.png)
+![Settings menu](/assets/img/tenant-management-guide/managing-flows/edit_suspend_delete_flow.png)
 
 Alternatively, you can navigate to the Flow itself by clicking on its name:
 
@@ -46,15 +46,15 @@ Alternatively, you can navigate to the Flow itself by clicking on its name:
 
 Then click the corresponding buttons to start **(1)**, edit **(2)** or delete **(4)** Flow. You can also update all components by clicking **(3)**.
 
-![Corresponding buttons](/assets/img/tenant-management-guide/managing-flows/Screenshot_4.png)
+![Corresponding buttons](/assets/img/tenant-management-guide/managing-flows/save_edit_update_delete_flow.png)
 
-In case you need to stop a running Flow, click the stop button:
+In case you need to stop a running Flow, click the *Stop Flow* **(1)** button. Or if you want suspend flow, click *Suspend Flow* button **(2)**:
 
-![Stop a running Flow](/assets/img/tenant-management-guide/managing-flows/Screenshot_5.png)
+![Stop a running Flow](/assets/img/tenant-management-guide/managing-flows/stop_suspend_flow.png)
 
 >It is important to remember, that every time you change a flow, you create a draft of that flow to make the changes. Please note that you can work with a draft not only via UI, but also using API calls. All necessary information on this topic can be found in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/flow%20drafts)
 
-#### Start, Stop, Edit, Delete via the API
+#### Start, Stop, Edit, Suspend, Delete via the API
 
 By following the link below, you will learn how to perform the functions described above using API Calls:
 
@@ -64,9 +64,11 @@ By following the link below, you will learn how to perform the functions describ
 
 3\. [Delete a Flow via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/delete_flows__flow_id_).
 
-4\. [Edit a Flow to some extent via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_).
+4\. [Suspend a Flow via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/post_flows__flow_id__suspend).
 
-5\. [Retrieve a flow by ID]({{site.data.tenant.apiDocsUri}}/v2#/flows/get_flows__flow_id_).
+5\. [Edit a Flow to some extent via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/patch_flows__flow_id_).
+
+6\. [Retrieve a flow by ID]({{site.data.tenant.apiDocsUri}}/v2#/flows/get_flows__flow_id_).
 
 ## Restoring Deleted Flow
 
@@ -116,7 +118,7 @@ Alternatively, you can navigate to the Flow itself by clicking on its name:
 
 Then switch to *Implement* tab **(1)** and click the command **(2)** to copy it to clipboard, and [create a copy of the Flow via the API]({{site.data.tenant.apiDocsUri}}/v2#/flows/post_flows__flow_id__copy):
 
-![Implement tab](/assets/img/tenant-management-guide/managing-flows/Screenshot_8.png)
+![Implement tab](/assets/img/tenant-management-guide/managing-flows/Implement_flow.png)
 
 As a result, you get a copy of your Flow:
 
