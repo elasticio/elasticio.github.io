@@ -15,7 +15,7 @@ In order to prevent unaware changes and protect against malicious changes of dat
 
 ## Settings
 
-The mechanism is implemented through a flag in the Tenant configuration and can be activated optionally for the entire installation.
+The mechanism is implemented through a flag in the Tenant configuration and can be activated optionally for all users of the current Tenant.
 
 `sensitive_actions_reauth`
 
@@ -49,7 +49,7 @@ This feature will work on all modern web browsers versions from:
 * Chrome `66+`
 * Firefox `63+`
 
-> **Please Note:** The user will be asked to re-authenticate every 6 hours. It means that after successful authentication the user will be able to do sensitive actions for another 6 hours without additional authentication.
+> **Please Note:** The user will be asked to re-authenticate every 6 hours. It means that after successful authentication the user will be able to do sensitive actions for another 6 hours without additional authentication. This time can also be modified by changing the `SENSITIVE_ACTION_AUTH_LIFETIME` environment variable for a single installation.
 
 ## Actions
 
