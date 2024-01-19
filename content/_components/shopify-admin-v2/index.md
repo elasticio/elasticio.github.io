@@ -26,10 +26,10 @@ To use this component you need to create a custom App:
 5. Provide any app name and press `Create app`.
 6. Follow to `Configure Admin API scopes`.
 7. Select access scopes - Objects, that component will have access to and press `Save`.
-8. Now you be able to install this app by pressing `Install app` button in `API credentials` section or in right upper corner.
-9. Finally you can get `Admin API access token` by selecting `Reveal token once`. It will be needed in component credentials configuration.
+8. Now you be able to install this app by pressing `Install app` button in `API credentials` section in the right upper corner.
+9. Finally you can get `Admin API access token` by selecting `Reveal token once`. It will be needed in the component credentials configuration.
 
-<details close markdown="block"><summary><strong>Screenschot instructions</strong></summary>
+<details close markdown="block"><summary><strong>Screenshot instructions</strong></summary>
 
 ![Instruction 1](img/shopify-admin-v2-instructions-1.png)
 ![Instruction 2](img/shopify-admin-v2-instructions-2.png)
@@ -49,7 +49,7 @@ Component credentials configuration fields:
 ![Store Name](img/store-name.png)
 
 * **Admin API access token** (string, required) - this token you will get after app creation (look at instructions above)
-* **API version** (string, required) - Provide API version you are going to work with. Currently component tested on `2023-01`, but should work with any available.
+* **API version** (string, required) - Provide the API version you are going to work with. The component has been tested on `2023-01`, but should work with any available.
 
 > **Notes:**
 * `Admin API access token` shows only once.
@@ -67,12 +67,14 @@ Retrieve all the updated or created objects within a given time range.
 
 * **Timestamp field to poll on** - (dropdown, required): Can be either `Last Modified` or `Created dates` (updated or new objects, respectively).
 
-* **Select basic fields for resulting object** - (dropdown, optional): Here provided only basic fields that can be included in resulting object, it may affect on query cost.
+* **Select basic fields for resulting object** - (dropdown, optional): Here only basic fields that can be included in the resulting object, may affect query cost.
 
-* **You can provide additional fields here** - (string, optional): Resulting object can be expanded using GraphQL request, this field represent content from each `edges.node`, it may affect on query cost.
+* **You can provide additional fields here** - (string, optional): The resulting object can be expanded using GraphQL request, this field represents content from each `edges.node`, it may affect on query cost.
 
 * **Size of Polling Page** - (optional, positive integer, defaults to 250, max 250): Indicates the size of pages to be fetched per request. If you query cost will be over shop limit, you can decrease page size.
+
 * **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`
+
 * **Return Full Response** - (checkbox): Defines the format of emitted result: with service information or without.
   Examples for Object type `customers` are given below:
   
@@ -438,7 +440,7 @@ query{
 {% include img.html max-width="100%" url="img/example-3.png" title="Example 3" %}
 > **Please Note**: Additional fields are fields that can't be selected in `Basic fields` section. As rule, they are fields with specifying arguments or adding additional levels such as: `addresses{country}`.
 
-**4.** Select `Emit Behavior`. If it is needed to receive each object individually, use `Emit individually`, in other case, `Emit page` option - all objects will be returned in one array `result`. For example, lets use 'Emit individually'.
+**4.** Select `Emit Behavior`. If it is needed to receive each object individually, use `Emit individually`, in other cases, `Emit page` option - all objects will be returned in one array `result`. For example, lets use `Emit individually`.
 {% include img.html max-width="100%" url="img/example-4.png" title="Example 4" %}
 
 **5.** Specify `Number of search terms`: in example query we see 2 conditions, so set it to `2`.
@@ -474,8 +476,8 @@ Lookup a single object by its ID - only query with one argument `id` can be used
 #### Configuration Fields
 
 * **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Customer`.
-* **Select basic fields for resulting object** - (dropdown, optional): Here provided only basic fields that can be included in resulting object, it may affect on query cost.
-* **You can provide additional fields here** - (string, optional): Resulting object can be expanded using GraphQL request, it may affect on query cost.
+* **Select basic fields for resulting object** - (dropdown, optional): Here only basic fields can be included in the resulting object, it may affect query cost.
+* **You can provide additional fields here** - (string, optional): The resulting object can be expanded using GraphQL request, it may affect query cost.
 
 <details close markdown="block"><summary><strong>Example for customer</strong></summary>
 
@@ -521,6 +523,6 @@ There is no configuration fields in this action.
 ## Known limitations
 
 * Look at [Shopify API rate limits](https://shopify.dev/api/usage/rate-limits), specially [GraphQL Admin API rate limits](https://shopify.dev/api/usage/rate-limits#graphql-admin-api-rate-limits)
-* If the component reaches API rate limit it will retry request after waiting until queue will be restored up to 10 times: for example - query cost `500` points, currently available only `100` points, restore rate `50` points/second, component will wait `8` seconds until available points will be restored and try again to get data.
+* If the component reaches the API rate limit it will retry request after waiting until queue is restored up to 10 times: for example - a query cost `500` points, currently available only `100` points, restore rate `50` points/second, component will wait `8` seconds until available points will be restored and try again to get data.
 
-  Be carefully with several flows running at the same time, each of then can affect on total available points, if component won't be able to get data after 10 retries, then error `"Throttled"` will be thrown.
+  Be careful with several flows running at the same time, each of them can affect on total available points, if the component won't be able to get data after 10 retries, then the error `"Throttled"` will be thrown.
