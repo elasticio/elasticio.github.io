@@ -14,6 +14,10 @@ redirect_from:
 
 ## Changelog
 
+### 2.8.2 (February 02, 2023)
+
+* Fixed bug when component didn't use `replayId` after error in `Subscribe to PubSub` trigger
+
 ### 2.8.1 (December 29, 2023)
 
 * Fixed duplicate retries and added exponential backoff in `Subscribe to PubSub` trigger
