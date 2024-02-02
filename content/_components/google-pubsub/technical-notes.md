@@ -13,7 +13,7 @@ redirect_from:
 
 ## Changelog
 
-### 1.8.0 (01.02.2024)
+### 1.8.0 (February 01, 2024)
 
 * Added new `Subscribe` trigger (old one set as deprecated)
 * Bump dependencies
