@@ -16,7 +16,8 @@ the profile name **(2)**. Here you can do the following actions:
 *   [Change your password](#change-your-password) **(4)**
 *   [Enable or disable Two-factor (2FA) authentication](#two-factor-authentication) **(5)**
 *   [Copy or regenerate your personal API Key](#manage-your-api-key) **(6)**
-*   [Delete your account](#delete-your-account) **(7)**
+*   [Manage your sessions](#manage-your-sessions) **(7)**
+*   [Delete your account](#delete-your-account) **(8)**
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/profile.png" title="Profile Information" %}
 
@@ -82,6 +83,27 @@ You are warned to consider this action:
 > **Please Note** Generating a new API key will replace the existing API key. If
 > a new API key is generated, then API calls made with the old API key will fail.
 > Are you sure that you wish to proceed?
+
+## Manage your sessions
+
+In this section, you can view the details of your current platform session such as:
+- **Browser**
+- **Operational System**
+- **Model**
+- **IP Address**
+
+As well as additional session information:
+- **Expires**
+- **Last Modified**
+- **Created At**
+- **Last Authentication**
+- **Engine**
+- **CPU Architecture**
+
+Also, in this section you can see the details of other sessions and close the external session if you consider it unauthorized:
+
+{% include img.html max-width="100%" url="/assets/img/getting-started/tour/manage_sessions.gif" title="Manage sessions" %}
+
 
 ## Delete your account
 
