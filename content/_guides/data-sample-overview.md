@@ -43,11 +43,25 @@ standard.
 
 >**Please note** that samples exist for flow building and testing purposes. Retrieving a sample for an action creates new objects in the target system. If you want to avoid this, you can use **Generate Stub Sample** function. It retrieves the component's output template and fills it with fake data that you can discard afterwards. You can also just **Skip Sample** if you don't need it. However, we recommend doing this only when you are sure about the data your component will receive.
 
-### Managing Data Sample via API calls
+## Handling Large Data Samples
+
+Sometimes there are situations when the size of data sample may be too large and its processing and visualization may take a very long time, which complicates and slows down the debugging of flows. If the data-sample size exceeds 512 Kb, the JSON schema generation mechanism is activated instead of real data.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-sample/generate-json-schema.gif" title="Generate JSON schema" %}
+
+The generated JSON schema is a set of actual keys from the processed object with arbitrary dummy values of the same type as in the used object. As a result, you significantly save time on loading real data and still have the ability to customize the mapping for the next steps.
+
+When the platform replaces real data with the generated JSON schema, a corresponding notification appears in the upper right corner.
+
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/data-sample/large_data_sample_notification.png" title="JSON schema warning" %}
+
+
+
+## Managing Data Sample via API calls
 
 Sometimes it is easier and more convenient to work with the samples not on the platform itself, but by using the corresponding API calls. You can create a data sample, update it or get the specified data sample. To familiarize yourself with this functionality, please read the corresponding section in our [API documentation]({{site.data.tenant.apiDocsUri}}/v2#/data%20samples).
 
-### Data Sample example
+## Data Sample example
 
 Let’s observe the following process example:
 
