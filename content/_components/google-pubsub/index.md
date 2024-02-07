@@ -46,10 +46,16 @@ YOUR KEY HERE
 
 PubSub component authentication works with
 [Google IAM Service Accounts](https://developers.google.com/identity/protocols/OAuth2ServiceAccount)
-and two-legged OAuth, to authenticate your component you would need to create a new Service Account on [Service Accounts Page](https://console.developers.google.com/permissions/serviceaccounts) of your project and download the JSON file with the private key. You would need ``client_email`` and ``private_key`` values on component authentication page (see [here](https://github.com/google/google-api-nodejs-client#using-jwt-service-tokens) for more information).
+and two-legged OAuth, to authenticate your component you would need to create a new Service Account on [Service Accounts Page](https://console.cloud.google.com/iam-admin/serviceaccounts) of your project and download the JSON file with the private key. You would need ``client_email`` and ``private_key`` values on component authentication page (see [here](https://github.com/google/google-api-nodejs-client#using-jwt-service-tokens) for more information).
 
 > **Please Note** : The authentication mechanism required access to the topics in your account to read and publish.
 > If your created service account had no read permission (to subscribe as a trigger function) then verifications will fail. Save the credential without verification and use it for the publishing to the topics (as action function).
+
+### Permissions
+
+To use the Subscribe trigger and Publish action make sure that your service account has all required permissions. Follow the screenshot below to succeed:
+
+{% include img.html max-width="100%" url="img/google-pubsub-permissions.png" title="Permissions" %}
 
 ## Triggers
 
@@ -89,7 +95,7 @@ The Subscribe trigger receives a message from a Topic, emits it, and sends an ac
 
 #### Configuration
 
-- `Topic Name` - (required field): Fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
+- `Topic Name` - (required field): Fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`.
 </details>
 
 ## Actions
@@ -102,11 +108,11 @@ The Publish action retrieves the message body from a previous step and sends a m
 
 #### Configuration
 
-- `Topic Name` - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`
+- `Topic Name` - (required field) fully-qualified topic resource name string, e.g. `projects/<project_id>/topics/<topic_name>`.
 
 ## Warning
 
-Please take special care of the independency of your processing flow, here is the extract from [PubSub Subscriber Guide](https://cloud.google.com/pubsub/docs/subscriber)
+Please take special care of the independency of your processing flow, here is the extract from [PubSub Subscriber Guide](https://cloud.google.com/pubsub/docs/subscriber).
 
 > For the most part Pub/Sub delivers each message once, and in the order in which it was published. However, once-only and in-order delivery are not guaranteed: it may happen that a message is delivered more than once, and out of order. Therefore, your subscriber should be [idempotent](http://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning) when processing messages, and, if necessary, able to handle messages received out of order. If ordering is important, we recommend that the publisher of the topic to which you subscribe include some kind of sequence information in the message; see [this page](https://cloud.google.com/pubsub/ordering) for a full discussion on message ordering. Messages that are not acknowledged, are retried indefinitely for up to seven days.
 
