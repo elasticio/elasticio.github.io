@@ -12,7 +12,7 @@ ComponentVersion: 1.0.0
 
 ## Description
 
-Microsoft Power BI Component is designed to interact with [Power BI REST API](https://learn.microsoft.com/en-us/rest/api/power-bi/) Current release of the component tested on [API v1](https://api.powerbi.com/v1.0/)
+Microsoft Power BI Component is designed to interact with [Power BI REST API](https://learn.microsoft.com/en-us/rest/api/power-bi/) Current release of the component tested on [API v1](https://api.powerbi.com/v1.0/).
 
 ## Credentials
 
@@ -30,10 +30,11 @@ Microsoft Power BI uses the OAuth 2.0. How to register an application look [here
 * **Name Your Credential** (string, required) - provide any name you want.
 * **Scopes** (Space-separated list) (string, required) - Put here scopes to get access to your Power BI reports - `offline_access Report.ReadWrite.All` and any additional scopes that you need.
 
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
+
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+This component has no trigger functions. This means it will not be accessible to select as a first component during the integration flow design.
 
 ## Actions
 
@@ -53,7 +54,7 @@ Used to search and retrieve reports.
 Depends on the selected Operation:
 * `Get Report Info` and `Export Report`:
     * **Report id** - (string, required): Unique report identifier.
-* `Search Report`
+* `Search Report`:
     * **Report name** - (string, optional): You can use any part of the report name to search multiple reports or leave it blank to get all.
     
 ### Make Raw Request

@@ -12,13 +12,15 @@ ComponentVersion: 1.0.0
 
 ## Credentials
 
-To use component you need to [create APP](https://api.slack.com/apps/new) than go to `OAuth & Permissions` section and provide needed [Scopes](https://api.slack.com/scopes), after that [install it to slack Workspace](https://api.slack.com/authentication/basics#installing)
+To use component you need to [create APP](https://api.slack.com/apps/new) than go to `OAuth & Permissions` section and provide needed [Scopes](https://api.slack.com/scopes), after that [install it to slack Workspace](https://api.slack.com/authentication/basics#installing).
 
 Component credentials configuration fields:
 
 * **OAuth Token**  (string, required) - OAuth Tokens for Your Workspace. This token automatically generated when you installed the app to your team.
 
->**Please Note:** To successfully verify credentials you need to provide access to `channels:read` scopes
+>**Please Note:** To successfully verify credentials you need to provide access to `channels:read` scopes.
+
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
 ## Triggers
 
@@ -48,7 +50,7 @@ Lookup a single object by a selected field that uniquely identifies it.
 
 #### Output Metadata
 
-Object with result of lookup
+Object with result of lookup.
 
 ### Make Raw Request
 
@@ -56,7 +58,7 @@ Executes custom request.
 
 #### Configuration Fields
 
-There is no Configuration Fields
+There is no Configuration Fields.
 
 #### Input Metadata
 
@@ -76,7 +78,7 @@ Implements [post message](https://api.slack.com/methods/chat.postMessage) API en
 
 #### Configuration Fields
 
-There is noConfiguration Fields
+There is noConfiguration Fields.
 
 #### Input Metadata
 

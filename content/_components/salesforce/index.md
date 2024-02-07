@@ -15,14 +15,13 @@ ComponentVersion: 2.8.2
 > **Please Note**: The component works with the Salesforce API. This means you must
 > make sure your Salesforce edition has API Access enabled. To check which editions
 > have API access see the [Salesforce editions with API Access](https://help.salesforce.com/articleView?id=000326486&type=1&mode=1) document.
-> **If your edition has no API Access by default this component _will not work for you_.**
+> **If your edition has no API Access by default this component _will not work for you_.**.
 
 ### API version
 
-The component uses Salesforce - API Version 46.0 by defaults but can be overwritten
-by the environment variable `SALESFORCE_API_VERSION`.
+The component uses Salesforce - API Version 46.0 by defaults but can be overwritten by the environment variable `SALESFORCE_API_VERSION`.
 
->**Please note:** Deprecated Actions and Triggers - API Version 25.0
+>**Please note:** Deprecated Actions and Triggers - API Version 25.0.
 
 ### Environment variables
 
@@ -40,21 +39,19 @@ by the environment variable `SALESFORCE_API_VERSION`.
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about
-Salesforce component like [changelog](technical-notes#changelog) and the
-[completeness matrix](technical-notes#completeness-matrix).
+The [technical notes](technical-notes) page gives some technical details about Salesforce component like [changelog](technical-notes#changelog) and the [completeness matrix](technical-notes#completeness-matrix).
 
 ## Credentials
 
 Authentication occurs via OAuth 2.0.
 
-In order to make OAuth work, you need a new App in your Salesforce. During app
-creation process you will be asked to specify the callback URL, to process OAuth
-authentication via elastic.io platform your callback URL should be `{{site.data.tenant.appURL}}/callback/oauth2`.
+In order to make OAuth work, you need a new App in your Salesforce. During app creation process you will be asked to specify the callback URL, to process OAuth authentication via elastic.io platform your callback URL should be `{{site.data.tenant.appURL}}/callback/oauth2`.
 
 More information you can find [here](https://help.salesforce.com/apex/HTViewHelpDoc?id=connected_app_create.htm).
 
 > **Please note:** Salesforce migration or any changes that affect endpoints, single sign-on (SSO), OAuth and JSON web tokens (JWT), and other connections can lead to unpredictable behavior that can cause authentication issues. To avoid this after making changes you need to create new credentials and authenticate again, once this is done the old ones can be safely removed from the platform.
+
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
 ### Credentials creation
 
@@ -76,10 +73,10 @@ For creating Auth Client you should specify following fields:
 | Authorization Endpoint | true      | your OAuth authorization endpoint. For production use `https://login.salesforce.com/services/oauth2/authorize`, for sandbox - `https://test.salesforce.com/services/oauth2/authorize` |
 | Token Endpoint         | true      | your OAuth Token endpoint for refreshing access token. For production use `https://login.salesforce.com/services/oauth2/token`, for sandbox - `https://test.salesforce.com/services/oauth2/token` |
 
-- fill field ``Name Your Credential``
-- click on ``Authenticate`` button - if you have not logged in Salesforce before then log in by entering data in the login window that appears
-- click on ``Verify`` button for verifying your credentials
-- click on ``Save`` button for saving your credentials
+- fill field ``Name Your Credential``.
+- click on ``Authenticate`` button - if you have not logged in Salesforce before then log in by entering data in the login window that appears.
+- click on ``Verify`` button for verifying your credentials.
+- click on ``Save`` button for saving your credentials.
 
 Here you can see how to select an existing `client`:
 
@@ -149,4 +146,4 @@ Carefully review the permissions and make any necessary adjustments to enable th
 
 ## Known limitations
 
-Attachments mechanism doesn't work with [Local Agent Installation](/getting-started/local-agent.html)
+Attachments mechanism doesn't work with [Local Agent Installation](/getting-started/local-agent.html).

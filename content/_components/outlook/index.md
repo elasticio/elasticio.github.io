@@ -82,11 +82,11 @@ Per one execution it is possible to poll 1000 mails by defaults, this can be cha
 
 #### List of Expected Configuration fields
 
-* **Mail Folder** - Drop-down list with available Outlook mail folders
-* **Start Time** - Start date-time of polling. Defaults: `1970-01-01T00:00:00.000Z`
-* **Poll Only Unread Mail** - Check-Box, if set, only unread mails will be poll
-* **Get Attachment** - CheckBox, if checked, email attachments will be downloaded to the platform and the link will be provided as a part of the output metadata with the key `attachments`
-* **Emit Behavior** -  Options are: default is `Emit Individually` emits each mail in separate message, `Emit All` emits all found mails in one message
+* **Mail Folder** - Drop-down list with available Outlook mail folders.
+* **Start Time** - Start date-time of polling. Defaults: `1970-01-01T00:00:00.000Z`.
+* **Poll Only Unread Mail** - Check-Box, if set, only unread mails will be poll.
+* **Get Attachment** - CheckBox, if checked, email attachments will be downloaded to the platform and the link will be provided as a part of the output metadata with the key `attachments`.
+* **Emit Behavior** -  Options are: default is `Emit Individually` emits each mail in separate message, `Emit All` emits all found mails in one message.
 
 ## Actions
 
@@ -99,7 +99,7 @@ The action retrieves events for the time specified in `Time` field or for the cu
 ### Find Next Available Time
 
 The action retrieves events for the time specified in `Time` field or for the current time (in case if `Time` field is empty).
-Returns specified time if no events found, otherwise calculates the new available time based on found event. If no time specified, the result time will be emitted in UTC time zone (e.g. 2023-08-20T10:00:00Z)
+Returns specified time if no events found, otherwise calculates the new available time based on found event. If no time specified, the result time will be emitted in UTC time zone (e.g. 2023-08-20T10:00:00Z).
 
 ![Find Next Available Time](img/find-next.png)
 
@@ -111,13 +111,13 @@ The action creates event in specified calendar with specified options.
 
 #### List of Expected Configuration fields
 
-* **Calendar** - Drop-down list with available Outlook calendars
-* **Time Zone** - Drop-down list with available time zones
-* **Importance** - Drop-down list, options are: `Low`, `Normal`, `High`
-* **Show As** - Drop-down list, options are: `Free`, `Tentative`, `Busy`, `Out of Office`, `Working Elsewhere`, `Unknown`
-* **Sensitivity** - Drop-down list, options are: `Normal`, `Personal`, `Private`, `Confidential`
-* **Body Content Type** - Drop-down list, options are: `Text`, `HTML`
-* **All Day Event** - Check-Box, if set, all day event will be created
+* **Calendar** - Drop-down list with available Outlook calendars.
+* **Time Zone** - Drop-down list with available time zones.
+* **Importance** - Drop-down list, options are: `Low`, `Normal`, `High`.
+* **Show As** - Drop-down list, options are: `Free`, `Tentative`, `Busy`, `Out of Office`, `Working Elsewhere`, `Unknown`.
+* **Sensitivity** - Drop-down list, options are: `Normal`, `Personal`, `Private`, `Confidential`.
+* **Body Content Type** - Drop-down list, options are: `Text`, `HTML`.
+* **All Day Event** - Check-Box, if set, all day event will be created.
 
 ### Move Mail
 
@@ -165,7 +165,4 @@ Second version of AD protocol has some advantages, see [here](https://docs.micro
 
 ### OData output for lastModifiedDateTime has a precision issue
 
-Apparently the `lastModifiedDateTime` returned by MS Graph has no milliseconds
-in it is obvious that filter query accept and treat millisecond values correctly
-there is a workaround for that issue implemented in the code, however you need to
-keep an eye on it.
+Apparently the `lastModifiedDateTime` returned by MS Graph has no millisecond in it is obvious that filter query accept and treat millisecond values correctly there is a workaround for that issue implemented in the code, however you need to keep an eye on it.

@@ -121,7 +121,7 @@ Deletes a Selected Object.
 
 ### Metadata description
 
-* **id** - `string`, DynamicsCRM 365 object id
+* **id** - `string`, DynamicsCRM 365 object id.
 
 In case of successful operation result is an object with a property **result**: `boolean` = `true`.
 
@@ -129,9 +129,7 @@ In case of successful operation result is an object with a property **result**: 
 
 Given a set of criteria which matches exactly one record, find that matching record.
 
-All Objects Programmatically Detectable Covered. Requires a sample object to
-exist to infer schema. Shows all fields, not just unique fields.  Does not
-necessarily understand type for field.
+All Objects Programmatically Detectable Covered. Requires a sample object to exist to infer schema. Shows all fields, not just unique fields. Does not necessarily understand type for field.
 
 ## Upsert Object
 
@@ -148,7 +146,7 @@ You should specify **ID** for making updates in object.
 
 ### Limitations
 
-When **Utilize data attachment from previous step (for objects with a binary field)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'
+When **Utilize data attachment from previous step (for objects with a binary field)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'.
 
 ## Lookup Object by Field(deprecated)
 
@@ -156,9 +154,7 @@ Use **Lookup Object by Field** instead
 
 Given a set of criteria which matches exactly one record, find that matching record.
 
-All Objects Programmatically Detectable Covered. Requires a sample object to
-exist to infer schema. Shows all fields, not just unique fields.  Does not
-necessarily understand type for field.
+All Objects Programmatically Detectable Covered. Requires a sample object to exist to infer schema. Shows all fields, not just unique fields. Does not necessarily understand type for field.
 
 ## Upsert Object(deprecated)
 
@@ -166,45 +162,44 @@ Use **Upsert Object** instead
 
 Update an existing entry if the id provided.  Otherwise create a new entry.
 
-All Objects Programmatically Detectable Covered. Requires a sample object to
-exist to infer schema.  Does not inform following components if new.
+All Objects Programmatically Detectable Covered. Requires a sample object to exist to infer schema. Does not inform following components if new.
 
 ## Sync Accounts(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.
 
 ## Sync Contacts(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.
 
 ## Sync Invoices(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.
 
 ## Sync Orders(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.
 
 ## Sync Price Levels(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.
 
 ## Sync Product Price Levels(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.
 
 ## Sync Products(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.
 
 ## Sync Quotes(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.
 
 ## Sync Unit Groups(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.
 
 ## Sync Units(deprecated)
 
-Use **Upsert Object** action instead
+Use **Upsert Object** action instead.

@@ -129,3 +129,5 @@ Create a new credential on {{site.data.tenant.name}} platform for connecting to 
   * **Token Endpoint:** Set it to `https://login.windows.net/common/oauth2/token`.
 
 That's it! You've successfully configured the connection to Microsoft Dynamics CRM using OAuth. Make sure to test the connection on your platform to ensure it's working as expected.
+
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.

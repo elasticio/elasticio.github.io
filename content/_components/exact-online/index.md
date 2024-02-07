@@ -25,11 +25,11 @@ It interacts withe [Exact Online API](https://support.exactonline.com/community/
 
 Here are the credentials necessary to authenticate the component with the Exact Online API:
 
-*   `Your Exact Online Division` - This is your division number
+*   `Your Exact Online Division` - This is your division number.
 *   `Application Client Id` - Here should be the OAuth client Id (`client dev`). More about how to obtain your OAuth credentials check below.
 *   `Application Client Secret` - Here should be your OAuth secret (`client secret`).
 *   `Location of the root of the OData API` - The default is `/api/v1`. If not value is provided the default will be used.
-*   `Print OAuth Token` - for debugging purposes
+*   `Print OAuth Token` - for debugging purposes.
 
 Information about how to retrieve OAuth keys is described in the [Register an app](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Process-appcenter-eol-appcenter-dev-registerapp-p) document.
 
@@ -76,8 +76,7 @@ See [trigger limitations](#current-limitations)
 
 ### Lookup Objects
 
-Allows to get a list of all entities with current type in your division or to
-get entities that satisfy the filter. This action emits multiple results of required objects.
+Allows to get a list of all entities with current type in your division or to get entities that satisfy the filter. This action emits multiple results of required objects.
 
 ### Input fields
 
@@ -112,51 +111,42 @@ JSON schema location folder: `schemas/io/`. The necessary schema begins with the
 entity `Accounts` schema has name `getAccounts.out.json`
 
 #### Known limitations
-See [action limitations](#current-limitations)
+See [action limitations](#current-limitations).
 
 
 ### Upsert Entity
 
 Allows to add new Entity or update one of the existing entity in your division.
-To add a new Entity you should provide Account (account ), `FirstName`, and
-`LastName` in the request body. To update entity you should provide primary key
-(usually entity's `GUID`) and fields which you want to update. **This action contains dynamic metadata**.
+To add a new Entity you should provide Account (account ), `FirstName`, and `LastName` in the request body. To update entity you should provide primary key (usually entity's `GUID`) and fields which you want to update. **This action contains dynamic metadata**.
 
 ### Insert Entity
 
-Allows adding a new entity to your division. To Insert Entity you must provide
-mandatory fields and fields which you want to update. This action is available
-ONLY for entities which can't be updated with API. **This action contains dynamic metadata**.
+Allows adding a new entity to your division. To Insert Entity you must provide mandatory fields and fields which you want to update. This action is available ONLY for entities which can't be updated with API. **This action contains dynamic metadata**.
 
 
 ### Update Entity
 
-Allows updating one of the existing entities in your division. To update entity
-you should provide primary key (usually entity's `GUID`) and fields which you want to update.
-This action is available ONLY for entities which can't be inserted with API. **This action contains dynamic metadata**.
+Allows updating one of the existing entities in your division. To update entity you should provide primary key (usually entity's `GUID`) and fields which you want to update. This action is available ONLY for entities which can't be inserted with API. **This action contains dynamic metadata**.
 
-See [action limitations](#current-limitations)
+See [action limitations](#current-limitations).
 
 
 ### Delete Entity
 
-Allows removing one of the existing entities in your division. To remove Entity
-you should provide a primary key (usually entity's `GUID`)  in the request body. **This action contains dynamic metadata**.
+Allows removing one of the existing entities in your division. To remove Entity you should provide a primary key (usually entity's `GUID`)  in the request body. **This action contains dynamic metadata**.
 
 ## Current Limitations
 
 ### Webhook Subscription
 
-According to Exact Online documentation, you can't create more than one webhook
-for the same topic, so webhook subscription trigger will remove, on start,
-all existing webhooks with callback URL or topic which are same to current.
+According to Exact Online documentation, you can't create more than one webhook for the same topic, so webhook subscription trigger will remove, on start, all existing webhooks with callback URL or topic which are same to current.
 
 ### Lookup Objects
 
--   action currently does not support filtering by a null value
--   action currently does not support choosing fields to return
--   if any entity was not found, the action did not provide data
--   you need to set the `Field Value` according to the field type, `Field Value` is `string` in the metadata and is checked only when executed. The necessary schema begins with the `get` and ends with the `.in` and has an entity type between. For example, for entity `Accounts` schema has name `getAccounts.in.json`
+-   Action currently does not support filtering by a null value.
+-   Action currently does not support choosing fields to return.
+-   If any entity was not found, the action did not provide data.
+-   You need to set the `Field Value` according to the field type, `Field Value` is `string` in the metadata and is checked only when executed. The necessary schema begins with the `get` and ends with the `.in` and has an entity type between. For example, for entity `Accounts` schema has name `getAccounts.in.json`.
 
 
 ### Update Entity

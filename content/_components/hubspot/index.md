@@ -56,41 +56,40 @@ To complete the process:
 
 *   **Object Type** dropdown: Select an Object Type to fetch.
 *   **Emit behavior** dropdown: Choose between **emit objects individually** or **emit by page** options.
-*   **Field to poll** dropdown: Used to select the field to poll (new objects or modified objects)
-*   **Start Time** - Text field (string, optional): Used to set the time from which to start retrieving events
-*   **End Time** - Text field (string, optional, defaults to never): When provided, don’t fetch records modified after this time
-*   **Size of Polling Page** - Text field (optional, positive integer, max 100, defaults to 100): Set the size of the fetched pages
-*   **Single Page per Interval** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page at once, wait until the next flow start to fetch the next page
+*   **Field to poll** dropdown: Used to select the field to poll (new objects or modified objects).
+*   **Start Time** - Text field (string, optional): Used to set the time from which to start retrieving events.
+*   **End Time** - Text field (string, optional, defaults to never): When provided, don’t fetch records modified after this time.
+*   **Size of Polling Page** - Text field (optional, positive integer, max 100, defaults to 100): Set the size of the fetched pages.
+*   **Single Page per Interval** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page at once, wait until the next flow start to fetch the next page.
 
 #### Output Metadata
 
-- For `Fetch page`: An object with key ***results*** that has an array as its value
-- For `Emit Individually`:  Each object fill the entire message
+- For `Fetch page`: An object with key ***results*** that has an array as its value.
+- For `Emit Individually`:  Each object fill the entire message.
 
 #### Limitations
 
-After reaching **9800** records flow will find largest `Field to poll` in last Polling Page and use it as `Start Time` for next iterations, results with this date will be excluded from that iteration and include in the next one
+After reaching **9800** records flow will find largest `Field to poll` in last Polling Page and use it as `Start Time` for next iterations, results with this date will be excluded from that iteration and include in the next one.
 
 ### Webhook
 
 > This trigger is deprecated. Please use [HubSpot Webhook component](/components/hubspot-webhook/) instead.
 
-Receive data from HubSpot based on configured [webhooks](https://developers.hubspot.com/docs/api/webhooks)
+Receive data from HubSpot based on configured [webhooks](https://developers.hubspot.com/docs/api/webhooks).
 
 ### Configuration Fields
 
-**Client secret** - Provide Client secret from HubSpot application here otherwise
-you will get an error during the webhook requests in case of incorrect or missing value.
+**Client secret** - Provide Client secret from HubSpot application here otherwise you will get an error during the webhook requests in case of incorrect or missing value.
 
 #### Output Metadata
 
-Triggered object from HubSpot
+Triggered object from HubSpot.
 
 ## Actions
 
 ### Raw Request
 
-Action to call any Hubspot API endpoint
+Action to call any Hubspot API endpoint.
 
 {% include img.html max-width="100%" url="img/raw-request.png" title="Raw Request" %}
 
@@ -102,11 +101,11 @@ Action to call any Hubspot API endpoint
 
 *   **URL** - Path of the resource relative to the URL base (`https://api.hubapi.com`), required.
 *   **Method** - Allowed values `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, required. HTTP verb to use in the request.
-*   **Request Body** - Body of the request to send
+*   **Request Body** - Body of the request to send.
 
 ### Upsert
 
-Action to make upsert (update/create) object in HubSpot
+Action to make upsert (update/create) object in HubSpot.
 
 {% include img.html max-width="100%" url="img/upsert-object.png" title="Upsert" %}
 
@@ -117,10 +116,9 @@ Action to make upsert (update/create) object in HubSpot
 
 #### Input Metadata
 
-Dynamically generated
+Dynamically generated.
 
-For each custom file field, an object is generated to upload the custom file
-to populate that field. That object includes the following:
+For each custom file field, an object is generated to upload the custom file to populate that field. That object includes the following:
 
 *   Attachment URL (URL containing the file contents to upload)
 *   Folder Path
@@ -136,9 +134,7 @@ We use [Files API](https://developers.hubspot.com/docs/api/files/files) for file
 
 #### Known limitations
 
-Please, don't use platform attachments url
-(like `http://steward-service.platform.svc.cluster.local:8200/v2/objects/xxxxx`)
-for fields `Attachment URL`. The component will throw an exception `process.uncaughtException`.
+Please, don't use platform attachments url (like `http://steward-service.platform.svc.cluster.local:8200/v2/objects/xxxxx`) for fields `Attachment URL`. The component will throw an exception `process.uncaughtException`.
 
 ### Lookup Set Of Objects By Unique Criteria
 
@@ -155,11 +151,11 @@ Lookup Set will make sure all the items in the set should be there, otherwise th
 
 #### Input Metadata
 
-An array where each item is an ID
+An array where each item is an ID.
 
 ### Lookup Object (at most one)
 
-Action designed to lookup one object by unique field
+Action designed to lookup one object by unique field.
 
 {% include img.html max-width="100%" url="img/lookup-object-at-most-one.png" title="Lookup Object (at most one)" %}
 
@@ -173,11 +169,11 @@ Action designed to lookup one object by unique field
 
 #### Input Metadata
 
-**ID value** Text field: value for `ID to Search On` (unique field value by itself)
+**ID value** Text field: value for `ID to Search On` (unique field value by itself).
 
 ### Lookup Objects (Plural)
 
-Action to lookup objects in HubSpot
+Action to lookup objects in HubSpot.
 
 {% include img.html max-width="100%" url="img/lookup-objects.png" title="Lookup Objects (Plural)" %}
 
@@ -194,7 +190,7 @@ Action to lookup objects in HubSpot
 > **Please note:** HubSpot support up to three criteria
 
 Example:
-Records created after `2021-10-01T03:30:17.883Z` with property `firstname` containing `Tony`
+Records created after `2021-10-01T03:30:17.883Z` with property `firstname` containing `Tony`.
 
 ```
 ["createdate GT 1633059017883", "firstname CONTAINS_TOKEN Tony"]
@@ -229,10 +225,10 @@ Order example:
 #### Output Metadata
 
 *   For `Fetch page`: An object with:
-    *   key `results` that has an array as its value
-    *   key `*totalCountOfMatchingResults` containing the total number of results (not just on the page) matching the search criteria
-*   For `Fetch All`:  An object, with key `*results` that has an array as its value
-*   For `Emit Individually`:  Each object fill the entire message
+    *   key `results` that has an array as its value.
+    *   key `*totalCountOfMatchingResults` containing the total number of results (not just on the page) matching the search criteria.
+*   For `Fetch All`:  An object, with key `*results` that has an array as its value.
+*   For `Emit Individually`:  Each object fill the entire message.
 
 ### Create Association
 
@@ -240,20 +236,20 @@ Order example:
 
 #### Configuration Fields
 
-*   **From Object Type** dropdown: Choose an object type to create association
-*   **To Object Type** dropdown: Choose an object type to associate to
+*   **From Object Type** dropdown: Choose an object type to create association.
+*   **To Object Type** dropdown: Choose an object type to associate to.
 
 > **Please note**: We do not retrieve objects to associate dynamically. Check the
 > HubSpot documentation to verify that the association between selected objects is possible.
 
 #### Input Metadata
 
-*   **From Object ID** - HubSpot id of object which needs to create association
-*   **To Object ID** - id of associated object
+*   **From Object ID** - HubSpot id of object which needs to create association.
+*   **To Object ID** - id of associated object.
 
 #### Output Metadata
 
-Object with `statusCode` key that represent result of request
+Object with `statusCode` key that represent result of request.
 
 ### Remove Association
 
@@ -261,35 +257,35 @@ Object with `statusCode` key that represent result of request
 
 #### Configuration Fields
 
-*   **From Object Type** dropdown: Choose from which object to remove association
-*   **To Object Type** dropdown: Choose to which object
+*   **From Object Type** dropdown: Choose from which object to remove association.
+*   **To Object Type** dropdown: Choose to which object.
 
 > **Please note**: We do not retrieve objects to associate dynamically. Check the
 > HubSpot documentation to verify that the association between selected objects is possible.
 
 #### Input Metadata
 
-*   **From Object ID** - HubSpot id of object which needs to remove association
-*   **To Object ID** - id of associated object
+*   **From Object ID** - HubSpot id of object which needs to remove association.
+*   **To Object ID** - id of associated object.
 
 #### Output Metadata
 
-Object with `statusCode` key that represent result of request
+Object with `statusCode` key that represent result of request.
 
 ### Delete Object
 
-Action designed to delete one object by unique field
+Action designed to delete one object by unique field.
 
 {% include img.html max-width="100%" url="img/delete-object.png" title="Delete Object" %}
 
 #### Configuration Fields
 
-*   **Object Type** dropdown: Indicates Object Type to find
-*   **ID to Search On** dropdown: Indicates unique field to search on
+*   **Object Type** dropdown: Indicates Object Type to find.
+*   **ID to Search On** dropdown: Indicates unique field to search on.
 
 #### Input Metadata
 
-**ID value** text field: value for `ID to Search On` (unique field value by itself)
+**ID value** text field: value for `ID to Search On` (unique field value by itself).
 
 #### Output Metadata
 
@@ -297,5 +293,5 @@ The expected output is an object with a `id` property. `id` value stands for id 
 
 ## Known Limitations
 
-1.  [Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits)
+1.  [Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits).
 2.  Please, use a timer (around 5 seconds) if you need to build a flow like `Upsert Object Action` -> any type of `Lookup Object(s) Action` with enabled feature `Enable download attachments`. Uploading the file to HubSpot on `Upsert Object Action` takes some time, your might get `404` error on lookup.

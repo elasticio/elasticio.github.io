@@ -18,20 +18,19 @@ This component requires the following environment variables:
 
 The OAuth Key & Secret can be obtained by:
 
-1. Log in to DocuSign on [https://appdemo.docusign.com](https://appdemo.docusign.com)
-2. Click `Go to Admin` on the user picture in the top right
+1. Log in to DocuSign on [https://appdemo.docusign.com](https://appdemo.docusign.com).
+2. Click `Go to Admin` on the user picture in the top right.
 3. Select `API and Keys` from the right hand menu.
-4. The value under `Integrator Key` should be used as the value for `OAUTH_KEY`
+4. The value under `Integrator Key` should be used as the value for `OAUTH_KEY`.
 5. Clicking `Actions` -> `Edit` will open a dialog.
-6. The values under `Secret Keys` can be used as a value for `OAUTH_SECRET`
-7. There must be an entry of the form `https://<platform base
-url>/callback/oauth2` under the section `Redirect URIs` in order for OAuth to
-work.
+6. The values under `Secret Keys` can be used as a value for `OAUTH_SECRET`.
+7. There must be an entry of the form `https://{your-tenant-address}/callback/oauth2` under the section `Redirect URIs` in order for OAuth to work.
+
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
 ### Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about
-DocuSign component like [changelog](technical-notes#changelog).
+The [technical notes](technical-notes) page gives some technical details about DocuSign component like [changelog](technical-notes#changelog).
 
 ## Triggers
 
@@ -58,8 +57,7 @@ Currently component does not support local agents.
 
 ### DocuSign API and Documentation links
 
-To interact with DocuSign platform, this component interacts with the DocuSign
-[REST API (v2)](https://developers.docusign.com/docs/)
+To interact with DocuSign platform, this component interacts with the DocuSign [REST API (v2)](https://developers.docusign.com/docs/).
 
 ### For trigger Get
 

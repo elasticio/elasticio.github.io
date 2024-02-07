@@ -19,15 +19,15 @@ ComponentVersion: 1.2.2
 
 Component is structured in the following parts:
 
- * Actions can be found in `lib/actions`
- * Triggers can be found in `lib/triggers`
- * This component supports validation of credentials information, code for that you'll find in `/verifyCredentials.js`
+ * Actions can be found in `lib/actions`.
+ * Triggers can be found in `lib/triggers`.
+ * This component supports validation of credentials information, code for that you'll find in `/verifyCredentials.js`.
 
 ## How to start working on it
 
 You would need a node.js and npm. Node.js version > 0.11.
 
-Check it out from GitHub and install dependencies
+Check it out from GitHub and install dependencies.
 
 ```sh
 git clone git@github.com:elasticio/microsoft-dynamics-crm.git
@@ -147,8 +147,8 @@ The updateField used is 'Description', and it is setup as updateField by baseLis
 The updateField for Details (or Lines) will be used only if the parent document is being updated. This was done for performance reasons, it prevents unnecessary extra requests.
 
 The component will modify the 'Description' field from the message input, it will add:
-- parent document name => so the right detail from the right document is found
-- product description => frequently this is mapped as the product number
+- parent document name => so the right detail from the right document is found.
+- product description => frequently this is mapped as the product number.
 - description
 
 
@@ -174,15 +174,15 @@ Triggers page size is 50.
 Some performance problems may be observed especially for Quotes, Invoices and Orders - they all have lineas, meaning that processing them required a high number of messages.
 In practice, a few out of memory errors were observed.
 If this happens, try the following:
-1. Reduce number of messages processed per flow iteration
-2. Allocate additional memory to CRM containers, using {{site.data.tenant.name}} Repo Environment Variables
+1. Reduce number of messages processed per flow iteration.
+2. Allocate additional memory to CRM containers, using {{site.data.tenant.name}} Repo Environment Variables.
 
 ### Actions: Quotes, Invoices, Orders
 
 These are using `baseListAction.js` and `baseDetailsAction.js`.
 The component is:
-* first, creating the empty Quote/Invoice/Order
-* then, adding details/lines, one by one
+* First, creating the empty Quote/Invoice/Order.
+* Then, adding details/lines, one by one.
 
 Adding the details one by one implies a risk: incomplete data in case an error is thrown while iterating through the details.
 Adding details in bulk would be a desirable option, however, this does not seem possible in CRM.

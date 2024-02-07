@@ -13,17 +13,13 @@ ComponentVersion: 1.6.0
 
 ## Creating OAuth2 App
 
-HubSpot component authentication occurs via OAuth 2.0. Before you can make it work
-on our platform you MUST create an OAuth2 App on HubSpot side.
+HubSpot component authentication occurs via OAuth 2.0. Before you can make it work on our platform you MUST create an OAuth2 App on HubSpot side.
 
-The HubSpot documentation already contains a detailed explanation of the process
-and we encourage you to [follow it](https://developers.hubspot.com/docs/api/working-with-oauth).
+The HubSpot documentation already contains a detailed explanation of the process and we encourage you to [follow it](https://developers.hubspot.com/docs/api/working-with-oauth).
 
 After granting access, you should be redirected back to our platform via a `redirect_url`. To do this, you will need to provide our [OAuth Callback Redirect URL](/guides/oauth-callback-redirect-url).
 
-During the OAuth2 App creation you would need to select an existing Auth Client
-from the drop-down list **Choose Auth Client** or create the new one. Next you
-MUST specify the following fields:
+During the OAuth2 App creation you would need to select an existing Auth Client from the drop-down list **Choose Auth Client** or create the new one. Next you MUST specify the following fields:
 
 | Field name | Mandatory | Description |
 |----|---------|-----------|
@@ -35,7 +31,7 @@ MUST specify the following fields:
 
 ![ksnip_20210924-154946](https://user-images.githubusercontent.com/7985390/134677237-b9aedd64-e7c0-4489-9125-f476cc129e31.png)
 
-*   Fill-in the field **Name Your Credential** (any)
+*   Fill-in the field **Name Your Credential** (any).
 *   Fill-in the field **Scopes** like: `crm.objects.contacts.read` `crm.objects.contacts.write` `crm.schemas.contacts.read` `crm.schemas.contacts.write` `crm.objects.owners.read`.
 
 ![Scopes](img/scopes.png)
@@ -47,12 +43,10 @@ MUST specify the following fields:
 
 ## OAuth2 client creation
 
-You can now create Auth Client using the details outputted by the HubSpot OAuth2 App
-creation. Select **+Add New Client** option from the **Choose Auth Client**
-drop-down while creating the HubSpot credential to see an OAuth2 client creation
-pop-up form:
+You can now create Auth Client using the details outputted by the HubSpot OAuth2 App creation. Select **+Add New Client** option from the **Choose Auth Client** drop-down while creating the HubSpot credential to see an OAuth2 client creation pop-up form:
 
 ![Oauth 2](img/hubspot-oauth2.png)
 
-Fill-in the form as we show in the screenshot and press Save button to create
-Auth Client to use for your [credential creation](index#credentials).
+Fill-in the form as we show in the screenshot and press Save button to create Auth Client to use for your [credential creation](index#credentials).
+
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.

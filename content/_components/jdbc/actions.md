@@ -15,9 +15,7 @@ ComponentVersion: 2.5.7
 
 The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query that can return multiple results, it has limitations on the query and suited only for SELECT type of queries.
 In SQL query you can use clause variables with specific data types.
-Internally we use prepared statements, so all incoming data is
-validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types
-therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
+Internally we use prepared statements, so all incoming data is validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
 
 >**Please Note:** prepared statement variables name could contain: any characters between a-z or A-Z, a digit and a character `_` (`[a-zA-Z0-9_]`).
 
@@ -49,8 +47,8 @@ Following types are supported:
 {% include img.html max-width="100%" url="img/select-query-2.png" title="Select Query" %}
 
 Dropdown **Emit Behaviour** contains following possible options:
- * Fetch all - a single message with an array `results` containing all the objects (rows) will be emitted
- * Emit Individually - multiple messages (one message per one row) will be emitted
+ * Fetch all - a single message with an array `results` containing all the objects (rows) will be emitted.
+ * Emit Individually - multiple messages (one message per one row) will be emitted.
  * Expect Single - a single message with one result row will be emitted. If more than one row is returned the error will be thrown. A boolean input "Allow Zero Results" (defaults to `false`) appears at input metadata. If `false` - error will be thrown, else - the empty object will be emitted.
 
 {% include img.html max-width="100%" url="img/select-query-3.png" title="Select Query" %}
@@ -68,7 +66,7 @@ If one of statements fails, transaction will be rollbacked.
 
 ### Input fields description
 
-As input metadata, you will get one field named `query` to provide request string
+As input metadata, you will get one field named `query` to provide request string.
 
 ### Query Samples:
 
@@ -109,7 +107,7 @@ The action will execute ``INSERT`` command into the table from ``Table`` dropdow
 
 ### List of Expected Config fields
 
-   * `Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3
+   * `Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3.
 
 ### Input fields description
 
@@ -137,7 +135,7 @@ As output metadata, you will get execution insert result like:
 The action will execute delete query from a ``Table`` dropdown field, as criteria can be used only [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY"). The action returns count of affected rows.
 Checkbox ``Don't throw Error on an Empty Result`` allows to emit an empty response, otherwise you will get an error on empty response.
 
-`Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3
+`Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3.
 
 ### Input fields description
 
@@ -147,12 +145,12 @@ As an input metadata you will get a Primary Key field to provide the data inside
 
 ## Execute stored procedure action
 
-This action calls stored procedure from selected `DB Schema` and `Stored procedure` name
+This action calls stored procedure from selected `DB Schema` and `Stored procedure` name.
 
 ### Input fields description
 
-- **DB Schema** - a schema that contains a procedure to call. Must be selected from the dropdown list before `Stored procedure` name
-- **Stored procedure** - a name of a procedure to call, can be selected from the dropdown list
+- **DB Schema** - a schema that contains a procedure to call. Must be selected from the dropdown list before `Stored procedure` name.
+- **Stored procedure** - a name of a procedure to call, can be selected from the dropdown list.
 
 Metadata generates automatically using `IN` & `IN OUT` procedure parameters for input, and `OUT` & `IN OUT` procedure parameters for output.
 
@@ -206,7 +204,7 @@ Retrieve sample result, click "Continue" and finish component configuration.
 
 ### Input fields description
 
-* `Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3
+* `Enable Rebound` if `Yes` in case of deadlocks rebound message using Sailor rebound mechanism, number of rebound can be specified via environment variable: `ELASTICIO_REBOUND_LIMIT` recommended value 3.
 
 As an input metadata you will get all fields of selected table. [PRIMARY KEY](https://en.wikipedia.org/wiki/Primary_key "PRIMARY KEY") is required field and other input fields are optional.
 
