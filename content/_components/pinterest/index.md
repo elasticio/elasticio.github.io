@@ -25,7 +25,7 @@ Component credentials configuration fields:
     - **Name** (string, required) - provide any name you want.
     - **Client ID** (string, required) - put here `App ID` of your application.
     - **Client Secret** (string, required) - put here `App Secret Key`.
-    - **Authorization Endpoint** (string, required) - Pinterest oauth2 authorization endpoint `https://www.pinterest.com/oauth/`
+    - **Authorization Endpoint** (string, required) - Pinterest oauth2 authorization endpoint `https://www.pinterest.com/oauth/`.
     - **Token Endpoint** (string, required) - Pinterest refresh token endpoint `https://api.pinterest.com/v5/oauth/token`
 - **Name Your Credential** (string, required) - provide any name you want.
 - **Scopes (Comma-separated list)** (string, required) - Put here the scopes required to access Pinterest - e.g. `boards:read,pins:read,user_accounts:read`, [more info](https://developers.pinterest.com/docs/getting-started/scopes/).
@@ -34,6 +34,8 @@ Component credentials configuration fields:
 - **Additional parameters (Comma-separated list)** (string, required) - leave it blank.
 - **OpenAPI JSON file location** - (string, optional): OpenAPI description of Pinterest's REST API in JSON format (By default component uses the local file version: `5.11.0`) (ex: `https://raw.githubusercontent.com/pinterest/api-description/main/v5/openapi.json`).
 - **Sandbox access token** - (string, optional): Must be empty for OAuth2! For `No Auth` this field is mandatory, Sandbox API will be used instead of the production.
+
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
 
 ## Triggers
@@ -54,7 +56,7 @@ This action is used to call any Pinterest endpoint.
 
 #### Input Metadata
 
-Each field is auto-generated based on the endpoint selected
+Each field is auto-generated based on the endpoint selected:
 
 - **Parameters from the path** - (object, optional): Required fields to build a correct path with, for example, if the endpoint looks like this `/boards/{board_id}/pins`, it will be `board_id`.
 

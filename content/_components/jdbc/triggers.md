@@ -35,7 +35,7 @@ This trigger can polling data from provided table. As WHERE clause you can use c
 Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
 During the first execution, date will be equal to ["start" of Unix Time](https://en.wikipedia.org/wiki/Unix_time) - ``1970-01-01 00:00:00.000``.
 Precision of the polling clause can be till milliseconds.
-The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-dd hh:mi:ss[.sss]``, where
+The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-dd hh:mi:ss[.sss]``, where:
 
 - ``yyyy`` - year
 - ``mm`` - month
@@ -61,7 +61,7 @@ Dropdown list with available Column names, that have a type like `java.sql.Date`
 
   * Start Polling From (optional)
 
-Optional field, indicates the beginning time to start polling from (defaults to the current time)
+Optional field, indicates the beginning time to start polling from (defaults to the current time).
 
 ## SELECT trigger (Deprecated)
 

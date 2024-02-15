@@ -131,3 +131,5 @@ Now click to open the configuration page to set the environment variables.
 
 We have successfully added environment variables. Now all you need to do is create
 a credential for Outlook component to make OAuth2 Authentication.
+
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.

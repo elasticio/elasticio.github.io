@@ -33,6 +33,8 @@ Microsoft Dynamics Business Central APIs use OAuth 2.0 for authentication. To es
 
   * Generate a secret on the platform to be used by the OAuth App registered in step 1.
   * This secret is a crucial part of the authentication process and must be securely stored.
+  
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
 <details close markdown="block"><summary><strong>Setting up Credentials for the Component</strong></summary>
 
@@ -75,8 +77,8 @@ For creating Auth Client you should specify following fields:
 - fill field ``Environment Name`` - required, field indicates what environment to be used. How to get a list of business central environments see [here](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/api-get-environments). Example: `Production`.
 Base URL for this component is `https://api.businesscentral.dynamics.com/v2.0/${environmentName}/api/v2.0`
 - click on ``Authenticate`` button - the process would take you to Microsoft Dynamics to log-in and give permissions to the platform to access your service.
-- click on ``Verify`` button for verifying your credentials
-- click on ``Save`` button for saving your credentials
+- click on ``Verify`` button for verifying your credentials.
+- click on ``Save`` button for saving your credentials.
 
 ### How to get Microsoft Dynamics Business Central instance URL
 
@@ -175,7 +177,7 @@ Lookup a set of object by defined criteria list. Can be emitted in different way
 * **Company Name** - (dropdown, required): Select you company.
 * **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
 * **Expert Mode for Filter Expression** - (checkbox): if checked, any [filter expression](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/use-filter-expressions-in-odata-uris#filter-expressions) can be entered in metadata field `Filter Expression`. For advanced users. Otherwise, enter your search criteria in the appropriate metadata field.
-* **Number of search terms** - text field to specify a number of search terms (positive integer number [1-99] or 0). (If `Expert Mode for Filter Expression` checkbox is disabled)
+* **Number of search terms** - text field to specify a number of search terms (positive integer number [1-99] or 0). (If `Expert Mode for Filter Expression` checkbox is disabled).
 
 #### Input Metadata
 
@@ -205,7 +207,7 @@ Example for `Number of search terms = 2`:
 If selected `Emit Behavior` is `Emit page` additionally fields will be added:
 
 * **Page Number** - (number, defaults to 1): Indicates index of page to be fetched.
-* **Page Size** - (number, defaults to 0): Indicates amount of objects per page. If 0, `totalCountOfMatchingResults` wil be returned
+* **Page Size** - (number, defaults to 0): Indicates amount of objects per page. If 0, `totalCountOfMatchingResults` wil be returned.
 
 #### Output Metadata
 
@@ -219,7 +221,7 @@ Updates (if record found) or creates a new object.
 
 #### Configuration Fields
 
-* **Object Type** - (dropdown, required): Object-type to upsert. Currently supported: `Customers`, `Sales Orders`, `Items`
+* **Object Type** - (dropdown, required): Object-type to upsert. Currently supported: `Customers`, `Sales Orders`, `Items`.
 * * **Company Name** - (dropdown, required): Select you company.
 
 #### Input Metadata

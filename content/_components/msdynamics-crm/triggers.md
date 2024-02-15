@@ -23,7 +23,7 @@ All Objects Programmatically Detectable Covered. Time range options not supporte
 
 ## Query Accounts
 
-Query Objects: Accounts
+Query Objects: Accounts.
 
 ### Input fields description
 
@@ -31,13 +31,13 @@ Query Objects: Accounts
 
 ## Query Contacts
 
-Query Objects: Contacts
+Query Objects: Contacts.
 
 No input fields available.
 
 ## Query Quotes
 
-Query Objects: Quotes
+Query Objects: Quotes.
 
 ### Input fields description
 

@@ -18,8 +18,7 @@ ComponentVersion: 1.2.2
 
 ## Description
 
-Connects to Products in the Microsoft Dynamics/NAV Family Via the OData API
-which use Authorization grant.
+Connects to Products in the Microsoft Dynamics/NAV Family Via the OData API which use Authorization grant.
 
 ### Dynamics Remarks
 
@@ -27,8 +26,7 @@ See [Dynamics Crm Remarks](dynamics-crm-remarks).
 
 ### Authentication
 
-See how to [configure an OData App](configuring-odata-app) for Dynamics On Azure
-Active Directory for details on this process.
+See how to [configure an OData App](configuring-odata-app) for Dynamics On Azure Active Directory for details on this process.
 
 ### Technical Notes
 
@@ -40,13 +38,13 @@ The [technical notes](technical-notes) page gives some technical details about M
   Get objects which have recently been modified or created.
 
   2. [Query Accounts](/components/msdynamics-crm/triggers#query-accounts)                                                     
-  Query Objects: Accounts
+  Query Objects: Accounts.
 
   3. [Query Contacts](/components/msdynamics-crm/triggers#query-contacts)                                                     
-  Query Objects: Contacts
+  Query Objects: Contacts.
 
   4. [Query Quotes](/components/msdynamics-crm/triggers#query-quotes)                                                         
-  Query Objects: Quotes
+  Query Objects: Quotes.
 
 ## Actions
 
@@ -71,40 +69,40 @@ The [technical notes](technical-notes) page gives some technical details about M
 ## Deprecated Actions
 
   1. [Lookup Object by Field(deprecated)](/components/msdynamics-crm/actions#lookup-object-by-fielddeprecated)                  
-  Use [Lookup Object by Field(s)](/components/msdynamics-crm/actions#lookup-object-by-fields)  action instead
+  Use [Lookup Object by Field(s)](/components/msdynamics-crm/actions#lookup-object-by-fields)  action instead.
 
   2. [Upsert Object(deprecated)](/components/msdynamics-crm/actions#upsert-objectdeprecated)                                    
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   3. [Sync Accounts(deprecated)](/components/msdynamics-crm/actions#sync-accountsdeprecated)                                    
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   4. [Sync Contacts(deprecated)](/components/msdynamics-crm/actions#sync-contactsdeprecated)                                    
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   5. [Sync Invoices(deprecated)](/components/msdynamics-crm/actions#sync-invoicesdeprecated)                                    
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   6. [Sync Orders(deprecated)](/components/msdynamics-crm/actions#sync-ordersdeprecated)                                        
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   7. [Sync Price Levels(deprecated)](/components/msdynamics-crm/actions#sync-price-levelsdeprecated)                            
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   8. [Sync Product Price Levels(deprecated)](/components/msdynamics-crm/actions#sync-price-levelsdeprecated)                    
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   9. [Sync Products(deprecated)](/components/msdynamics-crm/actions#sync-productsdeprecated)                                    
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   10. [Sync Quotes(deprecated)](/components/msdynamics-crm/actions#sync-quotesdeprecated)                                       
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   11. [Sync Unit Groups(deprecated)](/components/msdynamics-crm/actions#sync-unit-groupsdeprecated)                             
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
   12. [Sync Units(deprecated)](/components/msdynamics-crm/actions#sync-unitsdeprecated)                                         
-  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead
+  Use [Upsert Object](/components/msdynamics-crm/actions#upsert-object)    action instead.
 
 ## Legacy Behavior
 
@@ -138,4 +136,4 @@ Client version: 1.4.831-2005.2
 
 ## Known limitations
 
-The component was not tested with the latest Microsoft Dynamics CRM version. Althouh it was fully tested with one the recent Dynamics releases, 100% compatibility can not be guaranteed
+The component was not tested with the latest Microsoft Dynamics CRM version. Althouh it was fully tested with one the recent Dynamics releases, 100% compatibility can not be guaranteed.

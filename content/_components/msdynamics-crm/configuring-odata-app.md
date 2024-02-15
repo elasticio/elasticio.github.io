@@ -15,11 +15,9 @@ ComponentVersion: 1.2.2
 
 >Please update your codebase to utilize the [Microsoft Dynamics CRM v2](/components/msdynamics-crm-v2) as soon as possible to ensure compatibility with future updates and benefit from the latest features.
 
-Here is how to register and configure an app in Active Directory or Azure Active
-Directory.
+Here is how to register and configure an app in Active Directory or Azure Active Directory.
 
-The following steps and screenshots describe app registration on Azure Active
-Directory. These instructions may differ for other types of Active Directory.
+The following steps and screenshots describe app registration on Azure Active Directory. These instructions may differ for other types of Active Directory.
 
 ## 1. Login
 
@@ -39,32 +37,31 @@ Directory. These instructions may differ for other types of Active Directory.
 ![* Select new application registration](https://user-images.githubusercontent.com/5710732/35617711-3bf82894-0679-11e8-9a63-d500948a1559.png)
 
 *   Enter:
-    1.  A **Name** of your choosing
-    2.  Select **Web app/API** for **Application Type**
-    3.  Enter `{{site.data.tenant.appURL}}` for the **Sign-on URL**
-* Click **Create**
+    1.  A **Name** of your choosing.
+    2.  Select **Web app/API** for **Application Type**.
+    3.  Enter `{{site.data.tenant.appURL}}` for the **Sign-on URL**.
+* Click **Create**.
 
 ![Create new app](https://user-images.githubusercontent.com/5710732/35617712-3c14ba54-0679-11e8-89e8-dd72f52b0f5a.png)
 
 ## 3. Settings
 
 * Select the newly created application.
-* Select **Settings**
+* Select **Settings**.
 
 ![Settings](https://user-images.githubusercontent.com/5710732/35617713-3c30b736-0679-11e8-944e-23920225c716.png)
 
-* Select **Reply URLs**.  Add `{{site.data.tenant.appURL}}/callback/oauth2` as a
-reply URL.  Click **Save**.
+* Select **Reply URLs**.  Add `{{site.data.tenant.appURL}}/callback/oauth2` as a reply URL.  Click **Save**.
 
 ![Select Reply URLs](https://user-images.githubusercontent.com/5710732/35617714-3c4e5840-0679-11e8-8180-ebabbd3b0fa6.png)
 
 * Select **Required Permissions**.  Click **Add**.
-* Click **Select an API**
-* Click **Dynamics CRM Online**
+* Click **Select an API**.
+* Click **Dynamics CRM Online**.
 
 ![Dynamics CRM Online](https://user-images.githubusercontent.com/5710732/35617715-3c8599ae-0679-11e8-9c1f-1de8c6f6001c.png)
 
-* Select the permission **Access CRM Online as organization users**
+* Select the permission **Access CRM Online as organization users**.
 * Click **Done** to add the permissions.
 
 ![Access CRM Online as organization users](https://user-images.githubusercontent.com/5710732/35617716-3ca231d6-0679-11e8-8c96-6f682d6fb0d4.png)
@@ -76,11 +73,12 @@ reply URL.  Click **Save**.
 
 ![Keys - Set Duration](https://user-images.githubusercontent.com/5710732/35617717-3cbaa14e-0679-11e8-92fc-7f1dd291c2ee.png)
 
-* Select **Save**.  Copy the key value created. You will need this value in
-the **Configure app details in {{site.data.tenant.name}}** section.
+* Select **Save**.  Copy the key value created. You will need this value in the **Configure app details in {{site.data.tenant.name}}** section.
 
 ![Key value created](https://user-images.githubusercontent.com/5710732/35617718-3cdb3710-0679-11e8-8a9b-43d1868b614f.png)
 
 * Copy the value of the **Application ID**.  You will also need this value in the next section.
 
 ![Value of the Application ID](https://user-images.githubusercontent.com/5710732/35617719-3cf7fa44-0679-11e8-9c42-693b49b6f532.png)
+
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.

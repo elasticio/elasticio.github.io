@@ -50,7 +50,7 @@ Refer to the API documentation of the resource you want to connect to for more i
 
 {% include img.html max-width="100%" url="img/add_auth_client.png" title="Add Auth Client" %}
 
->**Warning:* To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
 Additionally, you can select an existing `client` by following the steps shown in the image below:
 

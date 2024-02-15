@@ -18,12 +18,12 @@ Microsoft Azure AD Component is designed to access users and group data from Azu
 
 Microsoft Azure AD uses the OAuth 2.0.
 How to register an application look [here](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
-Redirect URI for EIO platform is `https://your-tenant.address/callback/oauth2`
+Redirect URI for can be found [here](/guides/oauth-callback-redirect-url.html), f.e. `https://{your-tenant-address}/callback/oauth2`.
 
 ![Credentials](img/microsoft-azure-ad.png)
 
-- `Client ID` can be found at `Application (client) ID` (see picture)
-- `Client Secret` follow link `Client credentials` (see picture) and use `Value` section
+- `Client ID` can be found at `Application (client) ID` (see picture).
+- `Client Secret` follow link `Client credentials` (see picture) and use `Value` section.
 
 During credentials creation you would need to:
 - select `OAuth2` drop-down list ``Type``.
@@ -42,6 +42,8 @@ During credentials creation you would need to:
 - click on ``Authenticate`` button - the process would take you to Exact Online to log-in and give permissions to the platform to access your service.
 - click on ``Verify`` button for verifying your credentials
 - click on ``Save`` button for saving your credentials
+
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
 ## Triggers
 
@@ -69,7 +71,7 @@ For `Emit Individually` mode: Each object which fill the entire message.
 
 #### Known Limitations
 
-* Users and Applications use `createdDateTime` field to poll, Groups use `renewedDateTime` instead (due to Azure AD limitations)
+* Users and Applications use `createdDateTime` field to poll, Groups use `renewedDateTime` instead (due to Azure AD limitations).
 
 ## Actions
 
@@ -115,7 +117,7 @@ If configuration field `Expert Mode for Filter Expression` is disabled:
 
 #### Output Metadata
 
-For `Emit All` mode: An object, with key `results` that has an array as its value, if selected `Advanced query capabilities` additionally there will be key `totalCountOfMatchingResults` with total number of results
+For `Emit All` mode: An object, with key `results` that has an array as its value, if selected `Advanced query capabilities` additionally there will be key `totalCountOfMatchingResults` with total number of results.
 For `Emit Individually` mode: Each object which fill the entire message.
 
 ### Linking or Unlinking objects
@@ -130,8 +132,8 @@ Allows link or unlink two objects, for instance Add Member to Group.
 
 #### Input Metadata
 
-* **ID field for 1st Object to be linked** - (string, required): ID of `Object Type`
-* **ID field for 2nd Object of the linked object** - (string, required): ID of `Object Type To link`
+* **ID field for 1st Object to be linked** - (string, required): ID of `Object Type`.
+* **ID field for 2nd Object of the linked object** - (string, required): ID of `Object Type To link`.
 
 #### Output Metadata
 
@@ -233,6 +235,6 @@ See the `Delete Criteria` section in the `Configuration Fields`.
 ## Known Limitations
 
 * Currently only 3 object types are supported:
-  * Users
-  * Groups
-  * Applications
+  * **Users**
+  * **Groups**
+  * **Applications**

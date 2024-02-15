@@ -27,12 +27,12 @@ During credentials creation you would need to:
 | Authorization Endpoint | true      | set: `https://login.windows.net/common/oauth2/authorize?resource=https%3A%2F%2Forg1.crm4.dynamics.com%2F`, where `org1.crm4.dynamics.com` it is URL of your MS Dynamic CRM organization |
 | Token Endpoint         | true      | set: `https://login.windows.net/common/oauth2/token`    |
 
-- fill field ``Name Your Credential``
-- fill field ``Base URL`` - required, field indicates what URL base needs to be used. Example `https://org1.crm4.dynamics.com/api/data/v9.2` or `https://org1.crm4.dynamics.com/api/data` (without version)
-- fill field ``API version`` - optional, API version to use. Right format is `vXX.XX`. By default, `v9.2`
-- click on ``Authenticate`` button - the process would take you to Microsoft Dynamics to log-in and give permissions to the platform to access your service.
-- click on ``Verify`` button for verifying your credentials
-- click on ``Save`` button for saving your credentials
+- Fill field ``Name Your Credential``.
+- Fill field ``Base URL`` - required, field indicates what URL base needs to be used. Example `https://org1.crm4.dynamics.com/api/data/v9.2` or `https://org1.crm4.dynamics.com/api/data` (without version).
+- Fill field ``API version`` - optional, API version to use. Right format is `vXX.XX`. By default, `v9.2`
+- Click on ``Authenticate`` button - the process would take you to Microsoft Dynamics to log-in and give permissions to the platform to access your service.
+- Click on ``Verify`` button for verifying your credentials.
+- Click on ``Save`` button for saving your credentials.
 
 
 ## Triggers
@@ -45,7 +45,7 @@ Retrieve all the updated or created objects within a given time range.
 
 * **Object Type** - (dropdown, required): Object-type to poll on. E.g `Accounts`.
 * **Emit behavior** - (dropdown, required): list with options: `Emit page` - all found values will be emitted in one array `results`, and `Emit individually` - each found object will be emitted individual.
-* **Size of Polling Page** - (string, optional): Indicates the size of pages to be fetched. Defaults to ['odata.maxpagesize'](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#specify-the-number-of-rows-to-return-in-a-page) preference value equals 5000
+* **Size of Polling Page** - (string, optional): Indicates the size of pages to be fetched. Defaults to ['odata.maxpagesize'](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#specify-the-number-of-rows-to-return-in-a-page) preference value equals 5000.
 * **Process Single Page Per Execution** - (checkbox): Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page immediately, wait until the next flow start to fetch the next page.
 * **Start Time** - (string, optional): The timestamp, in ISO8601 format, to start polling from (inclusive). Default value is the beginning of time (January 1, 1970 at 00:00.000).
 * **End Time** - (string, optional): The timestamp, in ISO8601 format, to end at (inclusive). Default value is never.
@@ -53,7 +53,7 @@ Retrieve all the updated or created objects within a given time range.
 
 #### Input Metadata
 
-There is no Input Metadata
+There is no Input Metadata.
 
 #### Output Metadata
 
@@ -72,7 +72,7 @@ Lookup a set of object by defined criteria list. Can be emitted in different way
 
 #### Input Metadata
 
-* **Search Criteria** - (array of strings, required): [Search terms to filter objects](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results). Search terms are array which will be used as value for `filter` parameter of search. Be default, mapping configured to combine all search terms with `and` logical operator, if you want to use another behavior - proceed to advanced mode. Example Search Criteria: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: '_primarycontactid_value', operator: 'eq', fieldValue: 'd1bf9a01-b056-e711-abaa-00155d701c02' }]`
+* **Search Criteria** - (array of strings, required): [Search terms to filter objects](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results). Search terms are array which will be used as value for `filter` parameter of search. Be default, mapping configured to combine all search terms with `and` logical operator, if you want to use another behavior - proceed to advanced mode. Example Search Criteria: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: '_primarycontactid_value', operator: 'eq', fieldValue: 'd1bf9a01-b056-e711-abaa-00155d701c02' }]`.
 
 If selected `Emit Behavior` is `Emit page` additionally fields will be added:
 * **Page Number** - (number, defaults 0): Indicates number of page to fetched.
@@ -119,7 +119,7 @@ Updates (if record found) or creates a new object.
 
 #### Output Metadata
 
-Created or Updated object will be returned. Metadata are dynamically generated fields according to chosen `Object Type`
+Created or Updated object will be returned. Metadata are dynamically generated fields according to chosen `Object Type`.
 
 ### Delete Object By ID
 
@@ -164,7 +164,7 @@ Read the large XML-only document located at `endpoint/api/data/api_version/$meta
 
 #### Configuration Fields
 
-* **Output** - (dropdown, required): Where the fetched metadata should be placed
+* **Output** - (dropdown, required): Where the fetched metadata should be placed.
 
 #### Input Metadata
 
@@ -184,5 +184,5 @@ Depends on selected `Output`:
 ## Limitations
 
 1. Output metadata for `Lookup Object (at most one)` Action can be inaccurate because:
- - some of the fields may have another name. E.g `ownerid` will look like `_ownerid_value`, so extra symbols could be added
- - microsoft schema has too much data types, most of which doesn't supported by platform so they are set to 'string'
+ - some of the fields may have another name. E.g `ownerid` will look like `_ownerid_value`, so extra symbols could be added.
+ - microsoft schema has too much data types, most of which doesn't supported by platform so they are set to 'string'.

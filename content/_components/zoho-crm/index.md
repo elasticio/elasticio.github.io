@@ -36,11 +36,11 @@ For creating Auth Client you should specify following fields:
 | Homepage URL             | true      | https://{installation-url}                      |
 | Authorized Redirect URIs | true      | https:/{installation-url}/callback/oauth2       |
 
-You will receive next fields: `Client ID`, `Client Secret`
+You will receive next fields: `Client ID`, `Client Secret`.
 
 In order to setup created Auth Client on Elastic.io platform you should click on `Add New Auth Client`, and fill next fields:
-* **Name** -  Name your Auth Client's name (any)
-* **Client ID** - Your `Client ID` from Zoho Developer Console
+* **Name** -  Name your Auth Client's name (any).
+* **Client ID** - Your `Client ID` from Zoho Developer Console.
 * **Client Secret** - Your `Client Secret` from Zoho Developer Console |
 * **Authorization Endpoint** - Zoho Accounts URL-based auth url + parameter `access_type` with value `offline` (needed for refresh token to be present).
 
@@ -72,11 +72,11 @@ Multiple scopes can be applied with the comma as a separator.
 
 >**Please Note:** that whitespaces between scopes are not allowed!
 
-E.g.: `ZohoCRM.settings.ALL,ZohoCRM.modules.ALL,ZohoCRM.users.ALL`
+E.g.: `ZohoCRM.settings.ALL,ZohoCRM.modules.ALL,ZohoCRM.users.ALL`.
 
 ### Credentials Fields
 
-* **API version** Dropdown, optional: list of available APIs (2, 2.1, 3, 4). By default the component uses v4 if other is not set in the credentials
+* **API version** Dropdown, optional: list of available APIs (2, 2.1, 3, 4). By default the component uses v4 if other is not set in the credentials.
 
 ## Trigger
 
@@ -84,32 +84,32 @@ E.g.: `ZohoCRM.settings.ALL,ZohoCRM.modules.ALL,ZohoCRM.users.ALL`
 
 #### Config Fields
 
- * **Object Type** Dropdown: Indicates Object Type to be fetched
- * **Emit behavior** Dropdown: Indicates behavior to emit result objects: `Emit individually` or `Emit page`
- * **Field to poll** Dropdown: Indicates field to poll (new objects or modified objects)
- * **Start Time** - TextField (string, optional): Indicates the beginning time to start retrieving events from
- * **End Time** - TextField (string, optional, defaults to never): If provided, don’t fetch records modified after this time
- * **Size of Polling Page** - TextField (optional, positive integer, defaults to 200): Indicates the size of pages to be fetched
- * **Process Pages Consistently** - Checkbox: Indicates that pages will be processed one by one, without waiting next flow run. Defaults to false
+ * **Object Type** Dropdown: Indicates Object Type to be fetched.
+ * **Emit behavior** Dropdown: Indicates behavior to emit result objects: `Emit individually` or `Emit page`.
+ * **Field to poll** Dropdown: Indicates field to poll (new objects or modified objects).
+ * **Start Time** - TextField (string, optional): Indicates the beginning time to start retrieving events from.
+ * **End Time** - TextField (string, optional, defaults to never): If provided, don’t fetch records modified after this time.
+ * **Size of Polling Page** - TextField (optional, positive integer, defaults to 200): Indicates the size of pages to be fetched.
+ * **Process Pages Consistently** - Checkbox: Indicates that pages will be processed one by one, without waiting next flow run. Defaults to false.
 
 #### Input Metadata
 
-There is no Input Metadata
+There is no Input Metadata.
 
 #### Output Metadata
 
- If `Emit behavior` = `Emit individually`: dynamically generated properties according to selected `Object Type`
+ If `Emit behavior` = `Emit individually`: dynamically generated properties according to selected `Object Type`.
  If `Emit behavior` = `Emit page`:
 
-  * **results** Array with items: dynamically generated properties according to selected `Object Type`
+  * **results** Array with items: dynamically generated properties according to selected `Object Type`.
 
 ## Actions
 
 ### Raw Request
 
-Action to call any Zoho-crm API endpoint
+Action to call any Zoho-crm API endpoint.
 
->**Please Note**: when you are trying to get some object by id, in case no object found - Zoho API will return empty body and statusCode 204
+>**Please Note**: when you are trying to get some object by id, in case no object found - Zoho API will return empty body and statusCode 204.
 
 #### Config Fields
 
@@ -117,48 +117,48 @@ Action to call any Zoho-crm API endpoint
 
 * **Url** - Path of the resource relative to the URL base (https://api.hubapi.com), required. For example `/crm/v2/leads`.
 * **Method** - Allowed values `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, required. HTTP verb to use in the request.
-* **Request Body** - Body of the request to send
+* **Request Body** - Body of the request to send.
 
 ### Upsert
 
 Action to insert or update a record. The system checks for duplicate records based on the duplicate check field's values. If the record is already present, it gets updated. If not, the record is inserted.
-*Note*: you can add only system-defined duplicate check fields and user-defined unique fields. If you do not specify the `Duplicate field checks`, the system checks for duplicate records in this order: "system-defined duplicate check fields" > "user-defined unique fields"
+*Note*: you can add only system-defined duplicate check fields and user-defined unique fields. If you do not specify the `Duplicate field checks`, the system checks for duplicate records in this order: "system-defined duplicate check fields" > "user-defined unique fields".
 
 #### Config Fields
 
-* **Object Type** Dropdown: Indicates Object Type to be upserted
-* **Duplicate field checks** Multiselect dropdown: Indicates for system which fields to check for duplicate records
+* **Object Type** Dropdown: Indicates Object Type to be upserted.
+* **Duplicate field checks** Multiselect dropdown: Indicates for system which fields to check for duplicate records.
 
 #### Input Metadata
 
 * **Attachments** Array of objects with properties `attachmentUrl` and `fileName`. Where `attachmentUrl`: Steward/Maester URL containing the file contents to upload.
-Example: [{"attachmentUrl": "http://steward-service.platform.svc.cluster.local:8200/v2/objects/b9a6a95f-fc68-4ae7-aa2b-22717979bf1b", "fileName": "myimage.png"}]
-Other fields are dynamically generated
+Example: [{"attachmentUrl": "http://steward-service.platform.svc.cluster.local:8200/v2/objects/b9a6a95f-fc68-4ae7-aa2b-22717979bf1b", "fileName": "myimage.png"}].
+Other fields are dynamically generated.
 
 ### Lookup object (at most one)
 
-Action designed to lookup one object by unique field
+Action designed to lookup one object by unique field.
 
 #### Config Fields
 
-* **Object Type** Dropdown: Indicates Object Type to be fetched
-* **ID to Search On** Dropdown: Indicates unique field to search on
-* **Allow ID to be omitted** Checkbox: When selected, the ID field becomes optional, otherwise it is a required field
+* **Object Type** Dropdown: Indicates Object Type to be fetched.
+* **ID to Search On** Dropdown: Indicates unique field to search on.
+* **Allow ID to be omitted** Checkbox: When selected, the ID field becomes optional, otherwise it is a required field.
 * **Allow zero results** Checkbox: When selected, if zero results are returned, the empty object {} is emitted, otherwise typically an error would be thrown.
 
 #### Input Metadata
 
-* **ID value** Textfield: value for `ID to Search On` (unique field value by itself)
+* **ID value** Textfield: value for `ID to Search On` (unique field value by itself).
 * **Fetch Attachments** Boolean: If `true` attachments will saved to storage. Result array for `attachments` consists of objects with properties `maesterStorageId` and `attachmentUrl`. Where `attachmentUrl` - url to attachment in Zoho CRM. Attachments of size bigger than `MAX_FILE_SIZE` ENV will be skipped.
 
 ### Lookup Set Of Objects By Unique Criteria
 
-Action designed to lookup set of objects by unique field
+Action designed to lookup set of objects by unique field.
 
 #### Config Fields
 
-* **Object Type** Dropdown: Indicates Object Type to search
-* **ID to Search On** Dropdown: Indicates unique field to search on
+* **Object Type** Dropdown: Indicates Object Type to search.
+* **ID to Search On** Dropdown: Indicates unique field to search on.
 
 #### Input Metadata
 
@@ -170,40 +170,40 @@ The expected output is an object with a `resultsDictionary` property. The value 
 
 ### Lookup objects (plural)
 
-Action designed to lookup objects
+Action designed to lookup objects.
 
 #### Config Fields
 
-* **Object type** Dropdown, required: Indicates Object type to be fetched
+* **Object type** Dropdown, required: Indicates Object type to be fetched.
 * **Emit behavior** Dropdown, required: Indicates flow behavior. One of `Fetch All`, `Fetch Page`, `Emit Individually`.
 
 >**Please Note**: an empty array `results` will be emitted when no objects are found for all possible `Emit behavior` options.
 
 #### Input Metadata
 
-* **Search Criteria** Array, required: Array of sql search terms. Search terms are to be combined with the AND operator. Example: ["Email='user@gmail.com'", "First_Name='user name'"]
+* **Search Criteria** Array, required: Array of sql search terms. Search terms are to be combined with the AND operator. Example: ["Email='user@gmail.com'", "First_Name='user name'"].
 * **Fetch Attachments** Boolean: If `true` attachments will saved to storage. Result array for `attachments` consists of objects with properties `maesterStorageId` and `attachmentUrl`. Where `attachmentUrl` - url to attachment in Zoho CRM. Attachments of size bigger than `MAX_FILE_SIZE` ENV will be skipped.
 NEXT FIELDS ONLY FOR `Fetch Page` Emit behavior:
-* **Page Number** Integer: Indicates amount of pages to be fetched. Defaults to 0
-* **Page Size** Integer: Indicates the size of pages to be fetched. Defaults to Zoho Default Page Size of 200
-* **Order** String: Indicates Field and direction to order objects. Examples: "Email ASC", "First_Name DESC"
+* **Page Number** Integer: Indicates amount of pages to be fetched. Defaults to 0.
+* **Page Size** Integer: Indicates the size of pages to be fetched. Defaults to Zoho Default Page Size of 200.
+* **Order** String: Indicates Field and direction to order objects. Examples: "Email ASC", "First_Name DESC".
 
 #### Output Metadata
 
-Dynamically generated
+Dynamically generated.
 
 ### Delete object
 
-Action designed to delete object
+Action designed to delete object.
 
 #### Config Fields
 
-* **Object type** Dropdown, required: Indicates Object type to be fetched
-* **ID to Search On** Dropdown: Indicates unique field to search on
+* **Object type** Dropdown, required: Indicates Object type to be fetched.
+* **ID to Search On** Dropdown: Indicates unique field to search on.
 
 #### Input Metadata
 
-* **ID value** Textfield: value for `ID to Search On` (unique field value by itself)
+* **ID value** Textfield: value for `ID to Search On` (unique field value by itself).
 
 #### Output Metadata
 
@@ -211,4 +211,4 @@ The expected output is an object with a `id` property. `id` value stands for id 
 
 ## Known limitations
 
-- External id is not supported
+- External id is not supported.

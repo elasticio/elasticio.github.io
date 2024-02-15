@@ -11,8 +11,7 @@ ComponentVersion: 1.1.6
 
 ## Lookup Object By ID
 
-Given an object, looks up the object with that ID. You must select the type of
-object to lookup.
+Given an object, looks up the object with that ID. You must select the type of object to lookup.
 
 {% include img.html max-width="100%" url="img/lookup-object.png" title="Lookup Object By ID" %}
 
@@ -73,8 +72,7 @@ Output data depends on the configuration field *Output method*:
 
 ## Delete Object By ID
 
-Given an object, deletes the object with that ID.  You must select the type of
-object to lookup.
+Given an object, deletes the object with that ID.  You must select the type of object to lookup.
 
 {% include img.html max-width="100%" url="img/delete-object.png" title="Delete Object By ID" %}
 
@@ -87,13 +85,13 @@ Input metadata is fetched dynamically from your SugarCRM account. Output metadat
 
 ### Input fields description
 
-* **Module** - Input field where you should choose the object type, which you want to find. E.g. `Note`
+* **Module** - Input field where you should choose the object type, which you want to find. E.g. `Note`.
 
 * **Utilize data attachment from previous step (for objects with a binary field)** - a checkbox, if it is checked and an input message contains an attachment and specified object has a binary field (type of `file`) then the attachment is put into object's binary field.
 
 ### Limitations
 
-When **Utilize data attachment from previous step (for objects with a binary field)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'
+When **Utilize data attachment from previous step (for objects with a binary field)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'.
 
 ## Bulk Create Objects
 
@@ -107,7 +105,7 @@ Provides a simple interface for quickly creating large amounts of objects.
 
 ### Metadata description
 
-* **Objects** - an array of the objects that will be created. Example of format [SugarCRM objects](https://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_9.2/Integration/Web_Services/REST_API/Endpoints/module_POST/)
+* **Objects** - an array of the objects that will be created. Example of format [SugarCRM objects](https://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_9.2/Integration/Web_Services/REST_API/Endpoints/module_POST/).
 
 Result is an object with a property **result**: `array`. It contains the list of newly created objects.
 
@@ -129,7 +127,7 @@ Result is an object with the 2 properties:
 
 * **failed** - `numeric`, how many objects were failed to update.
 
-* **status** - `string`, if operation were successful `status="done"`. Operation could consider successful even if `failed > 0`
+* **status** - `string`, if operation were successful `status="done"`. Operation could consider successful even if `failed > 0`.
 
 > **Please note:** SugarCRM server doesn't return errors in case of a wrong uid.
 
@@ -151,11 +149,11 @@ Result is an object with the 2 properties:
 
 * **failed** - `numeric`, how many objects were failed to delete.
 
-* **status** - `string`, if operation were successful `status="done"`. Operation could consider successful even if `failed > 0`
+* **status** - `string`, if operation were successful `status="done"`. Operation could consider successful even if `failed > 0`.
 
 ## Query
 
-Retrieve a set of records filtered by an expression utilizing the SugarCRM REST API filter endpoint. [See for details](https://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_9.1/Integration/Web_Services/REST_API/Endpoints/modulefilter_POST/)
+Retrieve a set of records filtered by an expression utilizing the SugarCRM REST API filter endpoint. [See for details](https://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_9.1/Integration/Web_Services/REST_API/Endpoints/modulefilter_POST/).
 
 {% include img.html max-width="100%" url="img/query.png" title="Query" %}
 

@@ -2,7 +2,7 @@
 title: JDBC Component
 layout: component
 section: Database components
-description: A component to work with object-relational database management systems. It works with the works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
+description: A component to work with object-relational database management systems. It works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
@@ -24,14 +24,14 @@ For integration-testing is needed to specify following environment variables:
 
 Connection to DB:
 
- - ``CONN_USER_name`` - user login
- - ``CONN_PASSWORD_name`` - user password
- - ``CONN_DBNAME_name`` - DataBase name
- - ``CONN_HOST_name`` - DataBase host
+ - ``CONN_USER_name`` - User login.
+ - ``CONN_PASSWORD_name`` - User password.
+ - ``CONN_DBNAME_name`` - DataBase name.
+ - ``CONN_HOST_name`` - DataBase host.
  - ``CONN_PORT_name`` - DataBase port
 
 > Where `name` can have these values: `MySQL`, `PostgreSQL`, `Oracle` or `MSSQL`.
-> For example: `CONN_USER_MySQL`
+> For example: `CONN_USER_MySQL`.
 
 ## Credentials
 
@@ -46,7 +46,7 @@ You need to use following properties to configure credentials:
 
 ### Connection URI
 
-Provide hostname of the server, e.g. ``acme.com``
+Provide hostname of the server, e.g. ``acme.com``.
 
   * Database Name - Provide name of database at the instance that you want to interact with.
 
@@ -111,7 +111,7 @@ JDBC component includes the following actions:
 3. The current implementation of the action ``Execute stored procedure`` doesn't support:
 * ResultSet MSSQL output.
 * Any array types parameters.
-* MySQL schemas dropdown list. (MySQL does not have schemas by definition)
+* MySQL schemas dropdown list. (MySQL does not have schemas by definition).
 
 4. Rebound mechanism only works for this SQL State:
  - ``MySQL``: 40001, XA102

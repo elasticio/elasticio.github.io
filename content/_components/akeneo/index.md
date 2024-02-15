@@ -27,6 +27,8 @@ Component credentials configuration fields:
 * **Username** (string, required) - "Username" from generated connection app.
 * **Password** (string, required) - "Password" from generated connection app.
 
+>**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
+
 ## Triggers
 
 ### Get New and Updated Objects Polling
@@ -37,19 +39,19 @@ Retrieve all the updated or created objects within a given time range.
 
 * **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Products`.
 * **Timestamp field to poll on** - (dropdown, optional): Can be either `Last Modified` or `Created` (updated or new objects, respectively). Defaults to `Last Modified`.
-* **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`
-* **Size of Polling Page** - (optional, positive integer, defaults to 100, max 100): Indicates the size of pages to be fetched
+* **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`.
+* **Size of Polling Page** - (optional, positive integer, defaults to 100, max 100): Indicates the size of pages to be fetched.
 * **Single Page per Interval** - (boolean, optional): Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page immediately, wait until the next flow start to fetch the next page. Defaults to false.
 * **Start Time** - (string, optional): The timestamp, in ISO8601 format, to start polling from (inclusive). Default value is the beginning of time (January 1, 1970 at 00:00.000).
 * **End Time** - (string, optional): The timestamp, in ISO8601 format, to end at (inclusive). Default value is never.
 
 #### Input Metadata
 
-There is no Input Metadata
+There is no Input Metadata.
 
 #### Output Metadata
-- For `Emit page`: An object with key ***results*** that has an array as its value
-- For `Emit Individually`:  Each object fill the entire message
+- For `Emit page`: An object with key ***results*** that has an array as its value.
+- For `Emit Individually`:  Each object fill the entire message.
 
 #### Limitations
 
@@ -105,7 +107,7 @@ Lookup a set of object by defined criteria list. Can be emitted in different way
 
 #### Input Metadata
 
-* **Search Criteria** - (array of strings, required): Search terms to be combined with the AND operator, E.g: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: 'name', operator: 'eq', fieldValue: '"Alex"' }]`
+* **Search Criteria** - (array of strings, required): Search terms to be combined with the AND operator, E.g: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: 'name', operator: 'eq', fieldValue: '"Alex"' }]`.
 
 If selected `Emit Behavior` is `Emit page` additionally fields will be added:
 * **Page Number** - (number, defaults to 0): Indicates index of page to be fetched.
