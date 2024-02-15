@@ -6,8 +6,8 @@ description: Shopify admin Component is designed to connect to Shopify GraphQL A
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2024-01-18
-ComponentVersion: 2.2.1
+updatedDate: 2024-02-13
+ComponentVersion: 2.3.0
 ---
 
 ## Description
@@ -28,6 +28,7 @@ To use this component you need to create a custom App:
 7. Select access scopes - Objects, that component will have access to and press `Save`.
 8. Now you be able to install this app by pressing `Install app` button in `API credentials` section in the right upper corner.
 9. Finally you can get `Admin API access token` by selecting `Reveal token once`. It will be needed in the component credentials configuration.
+10. In addition, you may need to save `API secret key` if you going to use webhooks.
 
 <details close markdown="block"><summary><strong>Screenshot instructions</strong></summary>
 
@@ -50,12 +51,34 @@ Component credentials configuration fields:
 
 * **Admin API access token** (string, required) - this token you will get after app creation (look at instructions above)
 * **API version** (string, required) - Provide the API version you are going to work with. The component has been tested on `2023-01`, but should work with any available.
+* **API secret key** (string, required) - This field is used and required **only** for trigger - `Webhook` to [sign the request with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
 
 > **Notes:**
 * `Admin API access token` shows only once.
 * To rotate the API credentials for a custom app that was created in the Shopify admin, you need to uninstall and reinstall the app.
 
 ## Triggers
+
+### Webhook
+
+Creates [webhook subscription](https://shopify.dev/docs/api/admin-graphql/2024-01/mutations/webhookSubscriptionCreate) for selected topics on the Shopify side to receive events.
+
+#### Configuration Fields
+
+* **Select topics** - (multi-select dropdown, required): Select available topics to create a subscription.
+* **Skip validation** - (checkbox, optional): If checked - the component will not validate the incoming message to be sure that it comes from Shopify, use it for test purposes only!
+
+#### Input Metadata
+
+There is no input metadata.
+
+#### Output Metadata
+Event from the subscription on the selected topic.
+
+#### Limitations
+* **Generate Stub Sample** works only for the most used objects.
+* This trigger doesn't support `Retrieve sample` functionality.
+* If you use ordinary flow (The `Real-time` functionality not enabled) after flow starts you will need to run it once - just follow the webhook URL (to make the first execution) this action will create a subscription, error on this execution may be ignored.
 
 ### Get New and Updated Objects Polling
 
@@ -523,6 +546,6 @@ There is no configuration fields in this action.
 ## Known limitations
 
 * Look at [Shopify API rate limits](https://shopify.dev/api/usage/rate-limits), specially [GraphQL Admin API rate limits](https://shopify.dev/api/usage/rate-limits#graphql-admin-api-rate-limits)
-* If the component reaches the API rate limit it will retry request after waiting until queue is restored up to 10 times: for example - a query cost `500` points, currently available only `100` points, restore rate `50` points/second, component will wait `8` seconds until available points will be restored and try again to get data.
+* If the component reaches API rate limit it will retry the request after waiting until the queue is restored up to 10 times: for example - a query costs `500` points, currently available only `100` points, the restore rate `50` points/second, the component will wait `8` seconds until available points will be restored and try again to get data.
 
   Be careful with several flows running at the same time, each of them can affect on total available points, if the component won't be able to get data after 10 retries, then the error `"Throttled"` will be thrown.
