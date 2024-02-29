@@ -61,5 +61,6 @@ Below you can see a list of actions that are considered sensitive by the platfor
 - [Inviting Members to Contracts.](/guides/managing-contracts.html#editing-contract-memberships)
 - [Inviting and removing Members from Workspaces](/guides/managing-workspaces.html#workspace-members) 
 - [Changing user roles in Contracts and Workspaces](/guides/managing-user-roles-in-a-tenant.html#setting-user-roles-in-workspace)
+- [Removing Full Workspaces](/getting-started/contracts-and-workspaces.html#workspaces)
 - [Adding or removing SSH Keys](/getting-started/user-profile-information.html#identity-keys)
 - [Removing Member from Contract](/guides/managing-user-roles-in-a-tenant.html#setting-user-roles-in-workspace)
