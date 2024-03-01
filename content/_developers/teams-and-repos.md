@@ -23,17 +23,17 @@ team. The team members may collaborate on common integration component in integr
 
 To create a new developer team, navigate to *Developer Teams* and click *Add New Team* button. Then give the team a unique name and click *Save*. Your team has been added to the list:
 
-![Developer Teams - Add New Team button](/assets/img/developer-guide/team-repo/devteam.png)
+![Developer Teams - Add New Team button](/assets/img/developer-guide/team-repo/devteam.gif)
 
 >**Note**: you can only use letters, digits, `-` and `_` to name your team.
 
-To access your new team, click *See Details*:
+To access your new team, click on the team name:
 
-![See Details](/assets/img/developer-guide/team-repo/Screenshot_1.png)
+![See Details](/assets/img/developer-guide/team-repo/Enter_the_Team.png)
 
 As you can see, you're the only member of the team. To add more developers, click *Invite Developer*:
 
-![Invite Developer](/assets/img/developer-guide/team-repo/Screenshot_2.png)
+![Invite Developer](/assets/img/developer-guide/team-repo/Invite_Developer.png)
 
 You will see a list of members **(1)**, which you can choose from. Select the required members and click *Send Invites* **(2)** to invite developers:
 
@@ -71,11 +71,11 @@ a particular repository.
 
 To create a new repository for your custom Components, click *New Repo* button **(1)**, enter repository name **(2)**, and then click *Save* **(3)**:
 
-![New Repo](/assets/img/developer-guide/team-repo/Screenshot_4.png)
+![New Repo](/assets/img/developer-guide/team-repo/Create_Repo.gif)
 
 You can now see it in the list of repositories:
 
-![List of repositories](/assets/img/developer-guide/team-repo/Screenshot_5.png)
+![List of repositories](/assets/img/developer-guide/team-repo/Repo_List.png)
 
 >**Note:** As with the naming of the teams use letters, digits, `-` and `_` to name your repository.
 
@@ -83,7 +83,7 @@ You can now see it in the list of repositories:
 
 To manage your repository click on the name to see the following page with details:
 
-![Manage your repository](/assets/img/developer-guide/team-repo/Screenshot_6.png)
+![Manage your repository](/assets/img/developer-guide/team-repo/Repo_Details.png)
 
 #### Repository URL:
 
@@ -119,27 +119,27 @@ Here is the deployment history of the repository containing:
 
 To add these values as environment variables to the component repository on the platform please select **Developer Teams** on Navigation panel:
 
-![Navigate Developer Teams](/assets/img/developer-guide/team-repo/navigate-developer-teams.png)
+![Navigate Developer Teams](/assets/img/developer-guide/team-repo/DevTeams.png)
 
 Then click on your Team:
 
-![Choose your Team](/assets/img/developer-guide/team-repo/choose-your-team.png)
+![Choose your Team](/assets/img/developer-guide/team-repo/Enter_the_team.png)
 
 And find component you need:
 
-![Component you need](/assets/img/developer-guide/team-repo/component-you-need.png)
+![Component you need](/assets/img/developer-guide/team-repo/Enter_the_repo.png)
 
 In the component description you can see Environment variables field where you can configure them:
 
-![Configure here](/assets/img/developer-guide/team-repo/configure-here.png)
+![Configure here](/assets/img/developer-guide/team-repo/Enter_envar.png)
 
 Here you can create new Environment variables **(1)** or edit **(2)** and delete **(3)** existing one:
 
-![Manage env vars](/assets/img/developer-guide/team-repo/manage-env-vars.png)
+![Manage env vars](/assets/img/developer-guide/team-repo/Configuring_Envar.png)
 
 When you create Environment variables, please set name and value and click to **Add**:
 
-![Create env vars](/assets/img/developer-guide/team-repo/create-env-vars.png)
+![Create env vars](/assets/img/developer-guide/team-repo/CreatingEnvar.gif)
 
 ## Related links
 
