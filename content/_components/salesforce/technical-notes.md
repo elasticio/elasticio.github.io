@@ -5,14 +5,19 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-12-29
-ComponentVersion: 2.8.1
+updatedDate: 2024-03-01
+ComponentVersion: 2.8.3
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.8.3 (March 01, 2024)
+
+* The component interface has not changed. This is a technical enhancement! Introduced baseURL parameter in the Raw Request Action's configuration of the axios library. Refer to the documentation for the details.
+It will not affect any of the existing integration. Instead, it gives more flexibility allowing to call other REST endpoints than the standard `/services/data`
 
 ### 2.8.2 (February 02, 2023)
 

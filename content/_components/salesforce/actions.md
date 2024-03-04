@@ -5,8 +5,8 @@ description: Salesforce component actions.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2023-09-28
-ComponentVersion: 2.7.2
+updatedDate: 2024-03-01
+ComponentVersion: 2.8.3
 ---
 
 ## Query action
@@ -265,13 +265,16 @@ Result is a CSV file in the attachment.
 
 ## Raw Request action
 
-Make raw request.
+This function executes a custom REST API call request. By default, the service called is `/services/data`, which encompasses most of the services provided by Salesforce. 
+Alternatively, you can call any other services, such as `/services/apexrest`, by specifying the full URL instead of a relative one.
 
 {% include img.html max-width="100%" url="img/raw-request.png" title="Raw Request" %}
 
 ### Input Metadata
 
 * HTTP Verb - Allowed values GET, POST, PUT, PATCH, DELETE, HEAD, Required. HTTP verb to use in the request.
+  * To call services based on the `/services/data` endpoint, you can utilize a relative path, for instance, `query/?q=SELECT+Id,Name+FROM+Account`. This automatically constructs the URL as follows: `https://{your_instance}.salesforce.com/services/data/{SALESFORCE_API_VERSION}/query/?q=SELECT+Id,Name+FROM+Account`
+  * For calling other services like `/services/apexrest`, provide **the full URL**, such as `https://{your_instance}.salesforce.com/services/apexrest/myApexClass`
 * Path - String, Required. Use a relative path to make a request (for a list of all types of objects - `sobjects`, e.g.,
 to list the type of objects Account - `sobjects/account`). Since Salesforce sends the endpoint that must be called dynamically, there is no need to enter the base URL like this:
 ```
