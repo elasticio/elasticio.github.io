@@ -5,13 +5,20 @@ description: Technical Notes for the Utility Component.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2022-11-04
-ComponentVersion: 1.5.3
+updatedDate: 2024-03-03
+ComponentVersion: 1.6.0
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+### 1.6.0 (March 01, 2024)
+
+* Improvements in Log Message action:
+  * Added Log without formatting checkbox to configuration.
+  * Added Message to log object to input metadata.
+  * Fixed issue with incorrect logs when message is above 256000 bytes.
 
 ### 1.5.3 (November 04, 2022)
 
