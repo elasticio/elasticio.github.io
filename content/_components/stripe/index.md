@@ -6,8 +6,8 @@ description: A component that connects to Stripe API.
 icon: stripe.png
 icontext: Stripe component
 category: stripe
-updatedDate: 2022-12-30
-ComponentVersion: 1.1.0
+updatedDate: 2024-03-0
+ComponentVersion: 1.2.0
 ---
 
 ## API version
@@ -107,3 +107,41 @@ Body:
   }
 }
 ```
+
+### Lookup Objects (plural)
+
+Lookup a set of objects by defined criteria. The action is built on top of the `Search` endpoint provided by the Stripe API.
+
+To lookup objects you need to construct a query according to the Stripe requirements. You can learn more about the [Stripe Search mechanism](https://stripe.com/docs/search)
+and [Search Query Language](https://stripe.com/docs/search#search-query-language) in particular following the links provided.
+
+This language is very straightforward and powerful.
+
+Note: Use single quotes `''` instead of `""` if you need to use it on the platform.
+
+Let us provide a few examples:
+1. `name:'Joe' AND -phone:'000'` - Look for all the objects of a given type having name 'Joe' **and** NOT having phone '000'.
+2. `amount>100 OR status:'succeeded'` - Look for all the objects of a given type having amount greater than 100 **or** status `succeeded`.
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): Object-type to lookup. Currently, supported types are: 
+  * `Charges`.
+  * `Customers`.
+  * `Invoices`.
+  * `PaymentIntents`.
+  * `Prices`.
+  * `Products`.
+  * `Subscriptions`.
+* **Emit Behavior** - (dropdown, required): Defines the way resulting objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
+* **Page size** - (number, defaults to 100, maximum 100) Number of records to be fetched for each API request. Positive integer only.
+
+#### Input Metadata
+
+* **query** - (string, required): A search query. See the links and samples above to get an idea on how to build it.
+
+#### Output Metadata
+
+For `Emit All` and `Emit Page` mode: An object, with key `results` that has an array as its value.
+For `Emit Individually` mode: Each object that fills the entire message.
+
