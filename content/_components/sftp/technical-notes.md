@@ -5,13 +5,17 @@ description: Technical Notes for the SFTP component.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-11-04
-ComponentVersion: 1.6.0
+updatedDate: 2024-03-01
+ComponentVersion: 1.7.0
 redirect_from:
   - /components/sftp/changelog.html
 ---
 
 ## Changelog
+
+### 1.7.0 (March 01, 2024)
+
+* Added a new option `Emit file content (Base64)` to the configuration of two actions - `Download Files` and `Download Files by name`. This option makes file content to be emitted as a message. Read the documentation to learn more how this feature works.
 
 ### 1.6.0 (November 04, 2022)
 

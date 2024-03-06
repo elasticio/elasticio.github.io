@@ -5,11 +5,15 @@ description: Technical Notes for the Stripe component.
 icon: stripe.png
 icontext: Stripe component
 category: stripe
-updatedDate: 2022-12-30
-ComponentVersion: 1.1.0
+updatedDate: 2024-03-01
+ComponentVersion: 1.2.0
 ---
 
 ## Changelog
+
+### 1.2.0 (March 01, 2024)
+
+* Added `Lookup Objects (plural)` Action
 
 ### 1.1.0 (December 30, 2022)
 

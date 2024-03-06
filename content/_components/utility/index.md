@@ -6,8 +6,8 @@ description: A component that is designed for utility operations.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2022-11-04
-ComponentVersion: 1.5.3
+updatedDate: 2024-03-01
+ComponentVersion: 1.6.0
 ---
 
 ## Environment variables
@@ -38,14 +38,14 @@ Creates attachment from input `value`. Output is `attachmentId` and `attachmentU
 ### String From Attachment
 
 Creates string from attachment with provided input `attachmentId` which must be either:
-* A numeric ID of the attachment that can be referenced in the step immediately prior
+* A numeric ID of the attachment that can be referenced in the step immediately prior.
 * A URL to an attachment produced by any component in the flow.
 
 {% include img.html max-width="100%" url="img/string-from-attachment.png" title="String From Attachment" %}
 
 #### Configuration fields description
 
-* `decodeFromBase64` - if checked decode attachment content using Base64 decode before output. If content of attachment is malformed or not Base64 encoded string, result will be malformed.  
+* `decodeFromBase64` - if checked decode attachment content using Base64 decode before output. If content of attachment is malformed or not Base64 encoded string, result will be malformed.
 
 ### Base64 Decode
 
@@ -111,18 +111,55 @@ Log the message (and potentially passthrough) into the provided logger at the se
 
 * `Log Level` - dropdown, the log level at which to store the message, default: Info. To see message in logs, level in config must be higher or equal component Log Level. When you do "Retrieve new sample" log Level set to platform default value - Info.
 * `Log All Passthrough` - dropdown, Log only the message body or log all passthrough data, default: message body
+* `Log without formatting` - checkbox. If checked, the message in logs will be not formatted, for example:
+  * Formatted message (default):
+      ```json
+        {
+          "key1": "value1",
+          "key2": "value2"
+        }
+      ```
+  * Message without formatting:
+      ```json
+        {"key1":"value1","key2":"value2"}
+      ```
 
 #### Input Metadata
 
-There are no Input Metadata in this action.
+* `Message to log` - If you don't need to log the whole message, you can specify here the needed part.
+    
+    For example, you have the following incoming message:
+    ncomming message:
+    
+    ```json
+    {
+      "key1": "value1",
+      "key2": "value2",
+      "key3": "value3",
+      "key4": "value4"
+    }
+    ```
+  
+  But you need to log only `key2` and `key4`, in this case, you should put here:
+    Message to log:
+
+    ```json
+    {
+      "key2": key2,
+      "key4": key4
+    }
+    ```
 
 #### Output Metadata
 
 Match the input message metadata
 
+#### Limitations
+* The maximum size of the logged message is 256000 bytes, all data above this will be cut off (use `Log without formatting` to log more useful data).
+
 ### Create JSON Patch
 
-Utility to create a JSON patch
+Utility to create a JSON patch.
 
 {% include img.html max-width="100%" url="img/create-json-patch.png" title="Create JSON Patch" %}
 

@@ -5,8 +5,8 @@ description: Usage example for the SFTP component.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2022-11-04
-ComponentVersion: 1.6.0
+updatedDate: 2024-03-01
+ComponentVersion: 1.7.0
 ---
 
 In this article we will explore various scenarios demonstrating the usage of the SFTP component. By providing examples for each trigger and action, we aim to enhance your understanding of when to utilize specific functionalities within the component. Let's dive in and explore the possibilities together.
