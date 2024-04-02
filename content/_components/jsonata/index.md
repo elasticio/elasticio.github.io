@@ -6,8 +6,8 @@ description: Dedicated data transformation component.
 icon: jsonata.png
 icontext: Jsonata component
 category: jsonata
-updatedDate: 2022-10-28
-ComponentVersion: 1.0.12
+updatedDate: 2024-03-28
+ComponentVersion: 1.0.13
 ---
 
 ## Authentication
