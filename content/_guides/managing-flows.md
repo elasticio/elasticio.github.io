@@ -74,7 +74,7 @@ By following the link below, you will learn how to perform the functions describ
 
 If you accidentally delete a Flow you need, you can restore it for some time after deletion.
 
-> The amount of time during which Flow can be restored is set by the installation environment variable. By default, this parameter is equivalent to 24 hours.
+> The amount of time during which Flow can be restored is set by the installation environment variable. By default, this parameter is equivalent to 48 hours.
 
 If you have Tenant-Admin rights, you can use these two endpoints to find and restore access to Flow:
 
@@ -136,7 +136,7 @@ Note, that you can only switch Flow type if there's at least one published Flow 
 
 ## Subscribe to Errors
 
-You can order the platform to send you emails in case of any errors in your running Flow. However, it will not just mindlessly spam you with messages if an error repeats. With some errors, messaging interval is one email per hour, while with others its one per 24 hours. This interval is hard-coded and cannot be configured.
+You can order the platform to send you emails in case of any errors in your running Flow. The platform will automatically sign you up for errors subscription if you are a Flow creator. With some errors, messaging interval is one email per hour, while with others its one per 24 hours. This interval is hard-coded and cannot be configured. You can always unsubscribe from notifications or subscribe to notifications from Flow of which you are not a creator by the method described below.
 
 To subscribe to errors, use the settings menu **(1)** of the corresponding Flow and click *Subscribe to Errors* **(2)**:
 
