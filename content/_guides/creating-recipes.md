@@ -75,7 +75,7 @@ In addition to managing and activating recipes, you also have the option to dele
 
 By following these steps, you can easily remove unwanted recipes from your collection.
 
->**Please Note:** Deleting Recipes with `contract`, `tenant` and `global` visibility is forbidden. To take these actions, contact your administration. 
+>**Please Note:** Deleting Recipes with `contract`, `tenant`, and `global` visibility is forbidden. To perform these actions, contact your administration. 
 
 ## Visibility
 
