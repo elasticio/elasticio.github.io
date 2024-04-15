@@ -543,6 +543,18 @@ There is no configuration fields in this action.
 * **HTTP headers** - (object, required): HTTP headers of the response.
 * **Response Body** - (object, optional): HTTP response body.
 
+> **Note:** GraphQL and REST endpoints are supported. You can find examples below.
+
+#### GraphQL
+* **URL** - `/graphql.json`.
+* **Method** - `POST`.
+* **Request Body** - `{"query": "query { products(first: 10) { edges { node { id title } } } }"}`.
+
+#### REST
+- **URL** - `/products.json?fields=id,title`.
+- **Method** - `POST`.
+* **Request Body** - `{}`.
+
 ## Known limitations
 
 * Look at [Shopify API rate limits](https://shopify.dev/api/usage/rate-limits), specially [GraphQL Admin API rate limits](https://shopify.dev/api/usage/rate-limits#graphql-admin-api-rate-limits)
