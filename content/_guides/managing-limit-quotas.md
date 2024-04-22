@@ -84,6 +84,16 @@ Limits amount of available [RAM Memory](/getting-started/quota-overview.html#quo
 
 > **Please Note:** The numerical value of the memory quota limit must be expressed in Mb*s. [Details](/getting-started/quota-overview.html#quota-limit-calculation).
 
+### Amount of Requests per minute
+
+- `per_contract_request_webhooks_per_minute_limit`
+
+Limits amount of available [Requests to Webhooks](/getting-started/webhooks-overview.html#webhook-flows) for certain contract per minute.
+
+- `per_workspace_request_webhooks_per_minute_limit`
+
+Limits amount of available [Requests to Webhooks](/getting-started/webhooks-overview.html#webhook-flows) for certain workspace per minute.
+
 ### Count of Flows
 
 - `per_workspace_flow_count_limit`
