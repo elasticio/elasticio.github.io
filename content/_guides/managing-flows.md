@@ -144,6 +144,8 @@ To subscribe to errors, use the settings menu **(1)** of the corresponding Flow 
 
 Unsubscribing works the same way.
 
+> **Note:** With the appropriate permissions [you can change the default contract behavior](/guides/managing-contracts#feature-flag-subscribe-to-error-by-default) by turning off the automatic error subscription feature.
+
 ## Scheduling
 
 To schedule your Flow via [CRON expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression), you need to be in drafting mode. You can turn it on by [editing the Flow](#start-stop-edit-delete-via-the-ui). While editing the Flow, switch to *Settings* tab **(1)**, use CRON expression to schedule the Flow **(2)**, and click *Save* **(3)**:
