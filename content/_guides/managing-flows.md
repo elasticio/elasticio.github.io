@@ -48,7 +48,7 @@ Then click the corresponding buttons to start **(1)**, edit **(2)** or delete **
 
 ![Corresponding buttons](/assets/img/tenant-management-guide/managing-flows/save_edit_update_delete_flow.png)
 
-In case you need to stop a running Flow, click the *Stop Flow* **(1)** button. Or if you want suspend flow, click *Suspend Flow* button **(2)**:
+In case you need to stop a running Flow, click the *Stop Flow* **(1)** button. Or if you want suspend flow, click *Suspend Flow* button **(2)**. Also you can immediately start this flow by click *Run Now* button **(3)**:
 
 ![Stop a running Flow](/assets/img/tenant-management-guide/managing-flows/stop_suspend_flow.png)
 
