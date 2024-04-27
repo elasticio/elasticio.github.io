@@ -51,6 +51,79 @@ A Contract member with the corresponding [permission](/guides/managing-user-role
 
 A Contract member with the corresponding [permission](/guides/managing-user-roles-in-a-tenant) can edit the Contract in the following ways:
 
-1. [Suspend Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/post_contracts__contract_id__suspend), which means stopping of all of its flows and inability of performing any actions with the Contract
-2. [Unsuspend Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/post_contracts__contract_id__unsuspend)
-3. [Update a Contract's name and available roles]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id_)
+### Update a Contrat's attributes
+
+As a contract owner, [you can change the following attributes via API]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id_):
+#### Contract Name
+```json
+{
+  "data": {
+    "attributes": {
+      "name": "Your contract name"
+    }
+  }
+}
+```
+
+#### Contract Description
+```json
+{
+  "data": {
+    "attributes":{
+      "custom_data": {
+        "description": "Your contract description"
+      }
+    }
+  }
+}
+```
+#### Contract Roles
+```json
+  {
+    "data": {
+      "attributes":{
+        "available_roles": [
+          {
+            "scope": "contracts",
+            "role": "admin"
+          }
+        ]
+      }
+    }
+  }
+```
+
+#### Feature flag: Enabling Recipe Feature
+You can enable [Recipe feature](/getting-started/recipes) for separate contract.
+
+```json
+  {
+    "data": {
+      "attributes":{
+        "feature_flags": {
+            "disable_recipe_feature": true
+          }
+      }
+    }
+  }
+```
+
+#### Feature Flag: Subscribe to error by default
+You can enable [subscription for flow errors](/guides/managing-flows.html#subscribe-to-errors) by default.
+```json
+  {
+    "data": {
+      "attributes":{
+        "feature_flags":{
+            "subscribe_to_error_by_default": true
+          }
+      }
+    }
+  }
+```
+
+### Suspend Contract
+[You can suspend contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/post_contracts__contract_id__suspend). Which means stopping of all of its flows and inability of performing any actions with the Contract.
+
+### Unsuspend Contract
+[You can unsuspend contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/post_contracts__contract_id__unsuspend). This is return contract in available state after suspending.
