@@ -11,7 +11,7 @@ ComponentVersion: 1.0.0
 
 ## Changelog
 
-### 1.0.0 (March 28, 2024)
+### 1.0.0 (May 08, 2024)
 
 * Added `Lookup Objects (plural)` action.
 
