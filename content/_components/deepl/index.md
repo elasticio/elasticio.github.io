@@ -64,7 +64,7 @@ This action enables you to translate whole documents and supports the following 
     
 ### Configuration Fields
 - **Target language** - (dropdown, required): The language into which the text should be translated.
-- **Emit behavior** (dropdown, required) - By default, we need to wait until DeepL translates the file after it was sent to the server periodically checking the status, here you can select when the component should emit a message. Options currently available:
+- **Emit behaviour** (dropdown, required) - By default, we need to wait until DeepL translates the file after it was sent to the server periodically checking the status, here you can select when the component should emit a message. Options currently available:
   - `Emit directly after sending` - The component will not wait for the result but will provide `document_id` and `document_key` to check it manually.
   - `Wait for the file without download` - The component will emit a message with `document_id` and `document_key` only after the file is translated and ready for download.
   - `Wait and download file (default)` - The component will emit a message with `attachment_url` with downloaded to the internal storage file and `billed_characters`.
