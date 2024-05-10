@@ -6,8 +6,8 @@ description: Notion component is designed to interact with Notion API.
 icon: notion.png
 icontext: Notion component
 category: notion
-updatedDate: 2024-02-02
-ComponentVersion: 1.0.0
+updatedDate: 2024-05-08
+ComponentVersion: 1.1.0
 ---
 
 
@@ -34,6 +34,56 @@ Component credentials configuration fields:
 This component has no trigger functions. This means it will not be accessible to select as a first component during the integration flow design.
 
 ## Actions
+
+### Archive Object
+Archive a single object by its ID.
+
+#### Configuration Fields
+- **Object Type** - (dropdown, required): Object type to Archive. Currently, supported types are: Pages and Blocks
+- **Emit strategy when no object is found** - (dropdown, optional): This specifies the output when no object is found by the provided ID. One of:
+  - **Emit nothing** - Emit nothing. Just skips an execution. Please note! If this option is selected, retrieving a sample, you will see an error with the text 'No object found. Execution stopped. This error is only applicable to the Retrieve Sample. In flow executions there will be no error, just an execution skip... This is fine. In a real flow execution, there will be no error.
+  - **Emit an empty object {}** - Emit an empty object - `{}`.
+  - **Throw an error (Default)** - Throw an error with the text `No object found by provided ID`. This is the default option if nothing else is selected.
+
+#### Input Metadata
+- **ID** - (string, required): Value for ID of the object to archive.
+
+#### Output Metadata
+- `id` - (string, required): ID of archived object.
+
+### Lookup Object at Most One
+Look for an object by unique criteria.
+
+#### Configuration Fields
+- **Object Type** - (dropdown, required): Object-type to upsert. Currently, supported types are: `Page`, `Database` and `Block`.
+- **Lookup Criteria** - (dropdown, required): A unique field by which you want to lookup the object. Currently, supported types are: `ID` (for all object types) and `Title` (for `Page` and `Database` only).
+- **Allow criteria to be omitted** - (boolean, optional): If selected, the field Lookup Criteria Value becomes optional.
+- **Allow zero results** - (boolean, optional): When selected, if the object is not found - an empty object will be returned instead of throwing an error.
+
+#### Input Metadata
+- **Lookup Criteria Value** - (string, required unless `Allow criteria to be omitted` is selected): Value for unique search criteria in `Lookup Criteria` configuration field.
+
+#### Output Metadata
+Result object depending on the object selected and the configuration setting `Allow Zero Result`.
+
+### Lookup Objects (plural)
+Lookup a set of objects by defined criteria.
+
+#### Configuration Fields
+- **Object Type** - (dropdown, required): Object-type to lookup. Currently, supported types are: `Pages`, `Databases`, `Database records` and `Blocks`.
+- **Emit Behavior** - (dropdown, required): Defines the way resulting objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
+- **Page size** - (number, defaults to 100, maximum 100) Number of records to be fetched for each API request. Positive integer only.
+
+#### Input Metadata
+Depend on the selected Object Type:
+- **Pages** - one field: `Part of the page title`.
+  > Note - Results will also include pages if the parent database contains the provided title.
+- **Databases** - one field: `Part of the database title`.
+- **Database records** - two fields: `Identifier for a Notion database`. (required) and `Filter` object.
+- **Blocks** - one field: `Parent block or page identifier`. (required).
+
+#### Output Metadata
+For `Emit All` and `Emit Page` mode: An object, with key `results` that has an array as its value. For `Emit Individually` mode: Each object that fills the entire message.
 
 ### Make Raw Request
 

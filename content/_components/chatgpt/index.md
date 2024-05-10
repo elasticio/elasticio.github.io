@@ -6,8 +6,8 @@ description: ChatGPT Component is designed to connect with ChatGPT
 icon: chatgpt.png
 icontext: ChatGPT component
 category: chatgpt
-updatedDate: 2023-12-29
-ComponentVersion: 1.0.0
+updatedDate: 2024-05-08
+ComponentVersion: 1.1.0
 ---
 
 ## Description
@@ -33,7 +33,8 @@ Simply send a request. Only text-based models are supported so far (gpt-4 and gp
 #### Configuration Fields
 
 * **Organization** (string, optional) - For users who belong to multiple organizations, you can pass a header to specify which organization is used for an API request. Usage from these API requests will count as usage for the specified organization. Leave it blank if you only belong to one organization.
-* **Select model** (dropdown, required) - List and describe the various models available in the API. Only text-based models are supported so far (gpt-4 and gpt-3.5). You should select a model which is supported in your billing plan. Otherwise, an error will be returned.
+* **Select model** (dropdown, required) - A dynamic list of the models available in your account. Only text-based GPT models are supported so far.
+* **API call request timeout, in seconds** (dropdown, optional) - Depending on the input text complexity it might take long time for the API to generate a response and reply. It can easily take up to 40-60 seconds. If you are getting timeout errors, increase this value. Defaults to 60 seconds.
 
 #### Input Metadata
 

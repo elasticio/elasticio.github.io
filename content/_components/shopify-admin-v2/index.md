@@ -6,8 +6,8 @@ description: Shopify admin Component is designed to connect to Shopify GraphQL A
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2024-02-13
-ComponentVersion: 2.3.0
+updatedDate: 2024-05-08
+ComponentVersion: 2.4.0
 ---
 
 ## Description
@@ -406,6 +406,9 @@ Examples for Object type `customers` are given below:
   ]
 }
 ```
+
+- **Number of search terms** - (number, optional): text field to specify the number of search terms (positive integer number [1-99] or 0).
+- **Emit empty object if no entities found** - (checkbox): If this checkbox is selected and objects are not found component will emit an empty object instead of skipping execution
 
 </details>
 
