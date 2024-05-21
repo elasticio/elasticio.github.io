@@ -26,6 +26,8 @@ Libraries that are available there:
     * xml2js
 * Tokens: Place to store access tokens & other received metadata (e.g. expiry time)
 
+> **Note:**: *Credentials always verify successfully.* The component is not any system-agnostic. This is why we can't do any meaningful verification.
+
 ## Triggers
 
 This component has no trigger functions. This means it will not be accessible to
