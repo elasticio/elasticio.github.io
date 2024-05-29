@@ -215,7 +215,10 @@ You can work on one draft of a given Flow at a time. If you try to create anothe
 
 ## Parallel Processing
 
-Parallel processing, also called "Step message prefetch count", can be configured via the UI and the API.
+Parallel Processing (also known as a prefetch count) - the number of messages that will be consumed at once, and will be processed in one execution in a parallel-sequential way. It means that at one point in time step will be working on one message but as soon as it is waiting for some IO operation it will start processing another message. The default value is 1, increasing the prefetch count should help for integration flows that have a considerable amount of messages in the queue.
+> **Note:** that the processing speed is not linear to the Parallel Processing configuration.
+
+Parallel processing can be configured via the UI and the API.
 
 1\. To configure parallel processing via the UI, use *Advanced Settings* section in *Step Summary* tab:
 
