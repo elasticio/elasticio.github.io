@@ -124,6 +124,8 @@ As a result, you get a copy of your Flow:
 
 ![Flow copy](/assets/img/tenant-management-guide/managing-flows/Screenshot_9.png)
 
+> **Note:** If you need to publish a Flow not in the current Workspace, you can use the Export Flow(s) feature, which is described in detail [here](/getting-started/copy-and-export-flow).
+
 To switch between real-time and ordinary types, navigate to see your Flows. Then click on the corresponding icon to open the settings menu of the selected Flow:
 
 ![Switch to real-time](/assets/img/tenant-management-guide/managing-flows/Screenshot_10.png)
