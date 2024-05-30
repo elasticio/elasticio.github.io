@@ -18,6 +18,8 @@ An open source component for sending and receiving [WebHooks](https://en.wikiped
 
 Webhook component supports the following authorisation types:
 
+![creds](img/credentials.png)
+
 * **No Auth** - use this method to work with any open REST API.
 * **Basic Auth** - use it to provide login credentials like username/password.
 * **API Key Auth** - use it to provide API Key to access the resource.
@@ -26,8 +28,14 @@ Webhook component supports the following authorisation types:
   Component supporting 2 types of HMAC verification shared secrets:
     - **SHA512**
     - **SHA256**
+    
+  For both cases of HMAC authentication it is possible to specify the fields:
+  1. **Header Name** - responsible for the Header title passing the request signature.
+  2. **HMAC verification shared secret** - responsible for the encryption secret key.
+  ![HMAC-credentials-settings](img/HMAC-credentials-settings.png)
+  
 
-![creds](img/credentials.png)
+
 
 ## Technical Notes
 
