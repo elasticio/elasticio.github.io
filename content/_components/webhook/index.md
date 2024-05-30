@@ -63,46 +63,6 @@ Example:
   }
 ```
 
-## Actions
-
-### Send data (deprecated)
-
-Simply sends data it receives as an input to a URL provided.
-
-> Please note, that this action is deprecated which is marked in orange in the Funktions tab.
-
-WebHook action can also be used to troubleshoot many processes to see the outcome.
-For example one could create Invoices (in [Salesforce](https://www.salesforce.com/)) to Webhook flow and configure the Webhook with a url created in https://webhook.site or with any similar services.
-
-
-### List of Expected Config fields
-
-
-  * **[required]** **HTTP Verb**
-    *   **POST**. The WebHook component can POST information to preconfigured WebHook address. This action could be used for different purposes. For example WebHook can be used to inform your custom connector about an event which it waits to work.
-    *   **PUT**. The WebHook component can also PUT a specific preconfigured JSON into specific address where the process will not be handled by the server. For this reason the "Output JSON Sample" field can be used.
-
-  * **[required]** **URI**. This is the address to send WebHook.
-  * **[not required]** **Secret**. This is an optional field to authenticate WebHook POST. There maybe cases when a special password or a secret might be required. For example the WebHook address was generated explicitly with a password so that to prevent any third parties to use it. This could be your specific WebHook address that you use to send your Wordpress posts into your server.
-
-![Webhookcredentials](img/httpverb.png)
-
-Example:
-
-```
-    {
-        "recievedBody": "recievedBody",
-        "_query": {},
-        "_headers": {
-          "content-type": "application/json",
-          "accept": "*/*",
-          "accept-encoding": "gzip, deflate"
-        },
-        "_method": "POST",
-        "_url": "/hook/5d691738cb5a286adc1e68e2"
-      }
-```
-
 ## Supported Data Types
 
 The Webhook component is capable of accepting various data types, with JSON being the most commonly used format due to its compatibility with the platform. However, the Webhook component can process different types of data, which will be explained in detail in this section.
