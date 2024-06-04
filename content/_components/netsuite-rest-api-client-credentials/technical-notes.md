@@ -1,5 +1,5 @@
 ---
-title: Netsuite REST API client credentials
+title: Netsuite REST API OAuth Client Credentials
 layout: component
 description: Technical Notes for the Netsuite REST API client credentials component.
 icon: netsuite_rest_api_client_credentials.png
