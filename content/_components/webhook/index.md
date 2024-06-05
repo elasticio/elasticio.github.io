@@ -32,7 +32,7 @@ Webhook component supports the following authorisation types:
   For both cases of HMAC authentication it is possible to specify the fields:
   1. **Header Name** - responsible for the Header title passing the request signature.
   2. **HMAC verification shared secret** - responsible for the encryption secret key.
-  ![HMAC-credentials-settings](img/HMAC-credentials-settings.png)
+  ![HMAC-credentials-settings](img/HMAC-credentials-settings.png). If it's not specified - default `x-eio-signature` will be used.
   
 
 
