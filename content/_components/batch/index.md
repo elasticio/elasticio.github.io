@@ -6,8 +6,8 @@ description: A component that provides an opportunity to collect messages to a b
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2023-07-06
-ComponentVersion: 2.0.7
+updatedDate: 2024-06-03
+ComponentVersion: 2.0.8
 ---
 
 ## General information
@@ -24,7 +24,7 @@ Integrators would need to split an integration logic into 2 parts. The first one
 
 It uses the Maester service as a package repository, the legacy component versions support using MongoDB (versions: 4.0 and higher stable releases) as a batches repository.
 
-> **Please be advised that the component does not support external MongoDB as a data store since version 2.0.0 (disabled support for credentials in the component)**
+> **Please be advised that the component does not support external MongoDB as a data store since version 2.0.0 (disabled support for credentials in the component).**
 
 ### Requirements
 
@@ -48,7 +48,7 @@ Emits all batches that are ready to be processed.
 |Correlation Id|true|Correlation Id between action and trigger. Correlation Id helps identify what collection of batches should be used|Flow1|
 |Do Not Delete Batch After Retrieval|false|If checked, the batch will not be deleted after emit|false|
 
->**Important: Use the same configuration in action for correct batch processing**
+>**Important: Use the same configuration in action for correct batch processing.**
 
 ## Actions
 
@@ -72,10 +72,11 @@ Stores a message in a batch and emits a created/updated batch with a processed i
 ## Additional info
 
 1. Created objects in Maester would have default TTL, please contact support in case if you need value of this property.
-2. Please make sure that values of `Max time in ms before Batch is ready` are less than Maester default TTL, as you would never get your batch ready (object in Maester would be deleted before batch is ready)
+2. Please make sure that values of `Max time in ms before Batch is ready` are less than Maester default TTL, as you would never get your batch ready (object in Maester would be deleted before batch is ready).
 
 ## Known Limitations
 
 1. Component uses Maester microservice, so the component is affected by it's limitations.
 2. Emit rate logic is not implemented.
 3. The library does not guarantee a sequence of batch items.
+4. `Parallel Processing` doesn't affect on component performance.
