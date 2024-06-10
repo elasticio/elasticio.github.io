@@ -2,12 +2,12 @@
 title: CSV component
 layout: component
 section: Protocol components
-description: A simple file format used to store tabular data, for example from a spreadsheet or a database.
+description: A component to read and write Comma Separated Values (CSV) files.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2023-05-02
-ComponentVersion: 3.2.0
+updatedDate: 2024-06-03
+ComponentVersion: 3.3.0
 ---
 
 ## How works
@@ -42,8 +42,9 @@ The component does not require credentials to function.
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+  1. [Read CSV file from URL](/components/csv/actions#read-csv-file-from-url).
+  This trigger read the CSV file from the URL provided in the configuration fields and output the result as a JSON object.
+
 
 ## Actions
 
