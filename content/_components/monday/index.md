@@ -49,9 +49,37 @@ select as a first component during the integration flow design.
 
 ## Actions
 
+  * [**Execute Mutation**](#execute-mutation).
   * [**Lookup Objects (plural)**](#lookup-objects-plural).
   * [**Lookup Object By ID**](#lookup-object-by-id).
   * [**Make Raw Request**](#make-raw-request).
+
+
+## Execute mutation
+
+Execute any mutation available on API. This action can be used to `Create`, `Update` or `Delete` Objects and any other operations that affect Monday data.
+
+#### Configuration Fields
+
+* **Mutation type** - (dropdown, required): Mutation type to execute. E.g `Add users to team`.
+* **Select basic fields for resulting object** - (dropdown, optional): Here provided only basic fields that can be included in resulting object, it may affect on query cost
+* **You can provide additional fields here** - (string, optional): Resulting object can be expanded using GraphQL request, it may affect on query cost 
+#### Example for Add users to team
+
+  ```graphql
+    successful_users {
+      name
+      email 
+    }
+  ```
+
+#### Input Metadata
+
+Dynamically generated fields according to chosen `Mutation type`.
+
+#### Output Metadata
+
+Result object from executed mutation.
 
 ## Lookup Objects plural
 Lookup a set of objects by a defined criteria list. Can be emitted differently.

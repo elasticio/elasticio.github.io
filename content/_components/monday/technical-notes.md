@@ -5,11 +5,15 @@ description: The Monday Component facilitates interaction with the Monday API.
 icon: monday.png
 icontext: Monday component
 category: monday
-updatedDate: 2024-05-08
-ComponentVersion: 1.0.0
+updatedDate: 2024-06-03
+ComponentVersion: 1.1.0
 ---
 
 ## Changelog
+
+### 1.1.0 (June 03, 2024)
+
+* Added `Execute Mutation` action.
 
 ### 1.0.0 (May 08, 2024)
 
