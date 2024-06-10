@@ -106,11 +106,11 @@ This action does the equivalent to
   - Email (string, required)
   - Date (string, optional: default to now). Time (in seconds from epoch) when the action happened
 - Files to add to commit (array, required)
-  - File Source Meta (string, required): Dynamically generated. Will be one the following depending on File Source chosen in the configuration:
-    - Configuration 'Maester': Object ID - ID of the object in Maester (e.g. 797bb70d-1590-4136-b9db-2abb01983d92)
-    - Configuration 'URL': External link to the file (e.g. https://example.com/file.txt). Must be publicly available. Authentication mechanisms are not supported
+  - File Source Meta (string, required): Dynamically generated. Will be one of the following depending on File Source chosen in the configuration:
+    - Configuration 'Maester Object ID or Maester URL': - either ID of the object in Maester (e.g. `797bb70d-1590-4136-b9db-2abb01983d92`) or the full Maester object URL (e.g. `http://maester-service.platform.svc.cluster.local:3002/objects/dbceb3f1-6d18-4eb4-9f08-2437b6ef685f?storage_type=maester`)) 
+    - Configuration 'External URL': External link to the file (e.g. `https://example.com/file.txt`). Must be publicly available. Authentication mechanisms are not supported
   - Filename + path (string, required): Location within the git repo to create the file
-- Files to remove from the commit (array of strings, optional): List of files or file wildcards to remove as part of the commit. (equivalent to git rm -r fileOne.txt fileTwo.txt someFolder)
+- Files to remove from the commit (array of strings, optional): List of files or file wildcards to remove as part of the commit. (equivalent to `git rm -r fileOne.txt fileTwo.txt someFolder`)
 
 #### Output Metadata
 
