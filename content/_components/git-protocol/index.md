@@ -6,8 +6,8 @@ description:
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.2.3
-updatedDate: 2023-02-01
+ComponentVersion: 1.2.4
+updatedDate: 2024-06-03
 ---
 
 ## General information
