@@ -5,8 +5,8 @@ description: Usage Example for the Flow Linking component
 icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
-ComponentVersion: 1.0.2
-updatedDate: 2022-10-07
+ComponentVersion: 1.0.3
+updatedDate: 2024-06-03
 ---
 
 ## Example scenario

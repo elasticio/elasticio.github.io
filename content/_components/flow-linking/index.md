@@ -7,7 +7,7 @@ icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
 ComponentVersion: 1.0.3
-updatedDate: 2024-05-21
+updatedDate: 2024-06-03
 ---
 
 ## General information
