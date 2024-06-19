@@ -5,11 +5,15 @@ description: Technical Notes for the Flow Linking component
 icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
-ComponentVersion: 1.0.3
-updatedDate: 2024-06-03
+ComponentVersion: 1.1.0
+updatedDate: 2024-06-19
 ---
 
 ## Changelog
+
+### 1.1.0 (June 19, 2024)
+* Added `Lookup by id` checkbox to `Trigger another` flow action.
+* Added `Retry errors` checkbox to `Trigger another` flow action.
 
 ### 1.0.3 (May 21, 2024)
 
