@@ -12,7 +12,6 @@ updatedDate: 2024-06-19
 ## Changelog
 
 ### 1.1.0 (June 19, 2024)
-* Fixed `socket hang up` issue.
 * Added `Lookup by id` checkbox to `Trigger another` flow action.
 * Added `Retry errors` checkbox to `Trigger another` flow action.
 
