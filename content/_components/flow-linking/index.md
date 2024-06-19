@@ -2,18 +2,18 @@
 title: Flow Linking component
 layout: component
 section: Utility components
-description: A component to connect Flows
+description: The component to connect Flows
 icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
-ComponentVersion: 1.0.3
-updatedDate: 2024-06-03
+ComponentVersion: 1.1.0
+updatedDate: 2024-06-19
 ---
 
 ## General information
 ### Environment variables
 
-No need to set up any environment variables manually.
+There is no need to set up any environment variables manually..
 
 However, the component needs the next environment variables: 
 - `ELASTICIO_API_URI`
@@ -45,11 +45,20 @@ This action allows you to trigger another flow with a request body.
 
 > **Note:** There are no limits on the number of flows that trigger the same flow with the Receive trigger.
 
+#### Configuration Fields
+
+* **Lookup by id** - (optional, boolean): If checked, the component will use flow **Id** instead of flow **Name** to trigger another flow.
+* **Retry errors** - (optional, boolean): If checked, the component will retry the request in case of errors, exceptions are HTTP codes less than `500` or equal `504`.
+
 #### Input Metadata
 
-* **Flow Name to Call** (String Enum, required): A single flow from a list of flows that have the "Flow Linking Component" as the trigger within the current workspace.
+* If `Lookup by id` is unchecked:
+    * **Flow Name to Call** (String Enum, required): A single flow name from a list of flows that have the "Flow Linking Component" as the trigger within the current workspace. If the number of matching flows is not exactly 1, then an error will be thrown.
 
-    >**Note:** `Enum` is only available if flows amount < 100. In other cases input the name by yourself.
+* If `Lookup by id` is checked:
+    * **Flow Id to Call** (String Enum, required): A single flow id from a list of flows that have the "Flow Linking Component" as the trigger within the current workspace.
+
+> **Note:** Enum is only available if the number of the flows is less than 100. Otherwise, manually specify the name or ID of the flow.
 
 * **Data to transfer** (Object, required): JSON object containing data to send into the next flow.
 
@@ -60,5 +69,4 @@ This action allows you to trigger another flow with a request body.
 ## Known limitations
 
 * Receive trigger from another flow has a restriction on receiving a sample, you need to provide it manually. Safely ignore the following error `"Shared Secret" is not valid!`.
-* Flow matching should be done by Name. If the number of matching flows is not exactly 1, then an error will be thrown.
 * `Flow Name to Call` lists all flows that contain `Flow Linking Component` technical trigger name - `receiveTrigger`.
