@@ -5,11 +5,15 @@ description: Technical Notes for the Git-Protocol component
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.2.3
-updatedDate: 2023-02-01
+ComponentVersion: 1.2.4
+updatedDate: 2024-06-03
 ---
 
 ## Changelog
+
+### 1.2.4 (June 3, 2024)
+
+* From now it is possible to provide either Maester Object ID or the Maester Object URL as an input in the Create Commit Action
 
 ### 1.2.3 (February 01, 2023)
 

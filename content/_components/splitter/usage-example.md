@@ -5,8 +5,8 @@ description: In this article you will see a flow with which you will clearly see
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2023-03-28
-ComponentVersion: 1.4.4
+updatedDate: 2024-06-03
+ComponentVersion: 1.5.0
 ---
 
 ## Flow example

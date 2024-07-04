@@ -6,8 +6,8 @@ description: A component that can make REST calls while using OAuth2 Client Cred
 icon: rest-api-client-credentials-auth-component.png
 icontext: Rest API OAuth2 Client Credentials Component
 category: rest-api-client
-updatedDate: 2023-12-29
-ComponentVersion: 1.1.0
+updatedDate: 2024-06-03
+ComponentVersion: 1.2.0
 ---
 
 ## General information
@@ -55,6 +55,7 @@ select as a first component during the integration flow design.
     * **None**: Regardless of the HTTP error code, the component should produce an outbound message with the status code and the HTTP response.
     * **Manual**: A range of error codes to throw errors on can be configured via the message input.
 * **Request timeout in sec** (number, optional): How long to wait for a response from the remote server before throwing a timeout error (this timeout value also applies to the token request call).  *Default - 60sec*.
+* **Maximum response size in bytes** (number, optional): You can limit here maximum size of the response body in bytes to prevent OOM errors. Default and maximum is 20971520 bytes (20MB).
 
 #### Input Metadata
 

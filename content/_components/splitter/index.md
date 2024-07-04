@@ -6,13 +6,14 @@ description: The Splitter integration connector was designed to work together wi
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2023-03-28
-ComponentVersion: 1.4.4
+updatedDate: 2024-06-03
+ComponentVersion: 1.5.0
 ---
 
 ## Description
 
-The Splitter processes income messages containing multiple elements that might have to be processed in different ways. The splitter handles incoming messages that contain multiple elements that might need to be handled differently. At the moment, there are two actions that allow you to process incoming data. [Split](actions.html#split-on-jsonata-expression) action takes the incoming message body and applies the configured JSONata transformation on it. [Re-assemble Messages action](actions.html#re-assemble-messages) is the opposite of the Split action. In this document, we will introduce you to all the technical aspects of the component, describe both actions in detail and show an [example of using](usage-example) a Splitter component.
+The Splitter Component is a fundamental part of our platform. Its primary purpose is to split arrays into separate messages or to combine separate messages into one.
+The splitter handles incoming messages that contain multiple elements that might need to be handled differently. At the moment, there are two actions that allow you to process incoming data. [Split](actions.html#split-on-jsonata-expression) action takes the incoming message body and applies the configured JSONata transformation on it. [Re-assemble Messages action](actions.html#re-assemble-messages) is the opposite of the Split action. In this document, we will introduce you to all the technical aspects of the component, describe both actions in detail and show an [example of using](usage-example) a Splitter component.
 
 ### Environment variables
 

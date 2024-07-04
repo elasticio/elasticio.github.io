@@ -13,9 +13,9 @@ The **Recipe** is a set of flows templates that on activation will create a sing
 
 ## Create Recipe - Flows Export
 
-Open the Flows page. Press a gear button of the first Flow which you want to be a part of the Recipe. Choose the “Export to a Recipe” menu item:
+Open the Flows page. Click on the Exports button in the upper right corner **(1)**. Choose the “Export to a Recipe” menu item **(2)**:
 
-{% include img.html max-width="60%" url="/assets/img/integrator-guide/creating-recipes/export-recipe.png" title="Export Recipe" %}
+{% include img.html max-width="120%" url="/assets/img/integrator-guide/creating-recipes/export-recipe.png" title="Export Recipe" %}
 
 The multi-select mode will be enabled and you can choose other flows which will be a part of the Recipe. Then click the “Export to recipe” button in the top right corner.
 

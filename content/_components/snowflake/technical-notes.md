@@ -5,11 +5,15 @@ description: Technical Notes for the Snowflake component.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2022-07-29
-ComponentVersion: 1.3.0
+updatedDate: 2024-06-03
+ComponentVersion: 1.3.1
 ---
 
 ## Changelog
+
+### 1.3.1 (June 03, 2024)
+
+* Added `Emit Behaviour` select view to the Select Action.
 
 ### 1.3.0 (July 29, 2022)
 

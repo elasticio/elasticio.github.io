@@ -5,9 +5,52 @@ description: CSV component actions.
 icon: csv.png
 icontext: CSV component
 category: csv
-updatedDate: 2023-05-02
-ComponentVersion: 3.2.0
+updatedDate: 2024-06-03
+ComponentVersion: 3.3.0
 ---
+
+## Read CSV file from URL
+
+This trigger read the CSV file from the URL provided in the configuration fields and output the result as a JSON object.
+The trigger works pretty much the same as the [Read CSV attachment action](#read-CSV-attachment). The difference is that all the settings are to be provided in the configuration fields, not in the body message. As the triggers do not have input messages.
+
+#### Config Fields
+
+* `Emit Behavior` (dropdown, required) - this selector configures output behavior of the component.
+  * `Fetch All` - the component emits an array of messages.
+  * `Emit Individually` - the component emits a message per row.
+  * `Emit Batch` - component will produce a series of message where each message has an array of max length equal to the `Batch Size`.
+* `Skip empty lines` (checkbox, optional) - by default, empty lines are parsed if checked they will be skipped.
+* `Comment char` (string, optional) - if specified, skips lines starting with this string.
+
+#### Input Metadata
+
+*   `URL` (string, required) - URL of the CSV file to parse.
+*   `Contains headers` (boolean, optional) - If true, the first row of parsed data will be interpreted as field names, false by default.
+*   `Delimiter` (string, optional) - The delimiting character. Leave blank to auto-detect from a list of most common delimiters or provide your own.
+    
+      **Example**
+      
+    If you use "$" as Delimiter, this CSV:
+
+        `a$b$c$d`
+      
+      can be parsed into this JSON:
+
+      ```
+      {
+      "column0": "a",
+      "column1": "b",
+      "column2": "c",
+      "column3": "d"
+      }
+      ```
+
+*   `Convert Data types` (boolean, optional) - Numeric data and boolean data will be converted to their type instead of remaining strings, false by default.
+
+#### Output Metadata
+- For `Fetch page` and `Emit Batch`: An object with key ***result*** that has an array as its value.
+- For `Emit Individually`:  Each object fills the entire message.
 
 ## Read CSV attachment
 

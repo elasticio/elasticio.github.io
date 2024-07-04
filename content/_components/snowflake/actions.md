@@ -5,8 +5,8 @@ description: A component for management over Snowflake database.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2022-07-29
-ComponentVersion: 1.3.0
+updatedDate: 2024-06-03
+ComponentVersion: 1.3.1
 ---
 
 ## Execute custom query action
@@ -43,55 +43,55 @@ This action will execute insert query into the specified table.
 
 ### Config Fields
 
-* **Table** - Dropdown (required) to specify table where row will be inserted
+* **Table** - Dropdown (required) to specify table where row will be inserted.
 
-* **Show insert result** - If selected (checked) then 'inserted object' will be returned as a result. Otherwise if not selected (not checked by default) then value '{ result: true }' will be returned as a result of successful insert operation
+* **Show insert result** - If selected (checked) then 'inserted object' will be returned as a result. Otherwise if not selected (not checked by default) then value '{ result: true }' will be returned as a result of successful insert operation.
 
 ### Input Metadata
 
-Dynamically generated list of properties according to selected `Table`
+Dynamically generated list of properties according to selected `Table`.
 
 ## Lookup row by primary key action
 
-This action will lookup row by it's primary key
+This action will lookup row by it's primary key.
 
 {% include img.html max-width="100%" url="img/lookup-row-by-primary-key.png" title="Lookup row by primary key" %}
 
 ### Config Fields
 
-* **Table** - Dropdown (required) to specify table where row will be searched
+* **Table** - Dropdown (required) to specify table where row will be searched.
 
 ### Input Metadata
 
-Dynamically generated `Primary key` according to selected `Table`
+Dynamically generated `Primary key` according to selected `Table`.
 
 ## Delete row by primary key action
 
-This action will delete row by it's primary key
+This action will delete row by it's primary key.
 
 {% include img.html max-width="100%" url="img/delete-row-by-primary-key.png" title="Delete row by primary key" %}
 
 ### Config Fields
 
-* **Table** - Dropdown (required) to specify table from where row will be deleted
+* **Table** - Dropdown (required) to specify table from where row will be deleted.
 
 ### Input Metadata
 
-Dynamically generated `Primary key` according to selected `Table`
+Dynamically generated `Primary key` according to selected `Table`.
 
 ## Upsert row by primary key action
 
-This action will execute upsert row by it's primary key. Which means if there is no row with the specified id, it will be inserted, if there is the row with provided id, row will be updated. If the number of rows that existing in the table with the same id is greater than 1, an error will be thrown
+This action will execute upsert row by it's primary key. Which means if there is no row with the specified id, it will be inserted, if there is the row with provided id, row will be updated. If the number of rows that existing in the table with the same id is greater than 1, an error will be thrown.
 
 ### Config Fields
 
 * **Table** - Dropdown (required) to specify table where row will be upserted. Tables with only `Primary Key` columns will appear in the dropdown.
 
-* **Show upsert result** - If selected (checked) then 'upserted object' will be returned as a result. Otherwise if not selected (not checked by default) then value '{ result: true }' will be returned as a result of successful upsert operation
+* **Show upsert result** - If selected (checked) then 'upserted object' will be returned as a result. Otherwise if not selected (not checked by default) then value '{ result: true }' will be returned as a result of successful upsert operation.
 
 ### Input Metadata
 
-Dynamically generated list of properties according to selected `Table`
+Dynamically generated list of properties according to selected `Table`.
 
 ## Select action
 
@@ -100,8 +100,7 @@ The action will execute an [SQL](https://en.wikipedia.org/wiki/SQL "SQL") query 
 {% include img.html max-width="100%" url="img/select.png" title="Select" %}
 
 In SQL query you can use clause variables with specific data types.
-Internally we use prepared statements, so all incoming data is
-validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types
+Internally we use prepared statements, so all incoming data is validated against SQL injection, however we had to build a connection from JavaScript types to the SQL data types.
 therefore when doing a prepared statements, you would need to add ``:type`` to **each prepared statement variable**.
 
 For example if you have a following SQL statement:
@@ -131,6 +130,9 @@ Following types are supported:
 ### Config Fields
 
 * **Query** to provide request string.
+* **Emit Behaviour (by default: Emit Individually):**.
+  * **Emit Individually** - Emits the results one per message.
+  * **Emit All** - Emits the results all in one message. Be aware that this is a memory-consuming option. Only use it if amount of data is moderate.
 
 ### Input Metadata
 
@@ -138,12 +140,12 @@ Component supports dynamic incoming metadata - as soon as your query is in place
 
 ## Execute stored procedure action
 
-This action calls stored procedure
+This action calls stored procedure.
 
 ### Config Fields
 
-* **Stored procedure** - a name of a procedure to call, can be selected from the dropdown list
+* **Stored procedure** - a name of a procedure to call, can be selected from the dropdown list.
 
 ### Input Metadata
 
-Metadata generates automatically using procedure parameters for input
+Metadata generates automatically using procedure parameters for input.
