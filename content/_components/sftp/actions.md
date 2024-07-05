@@ -11,7 +11,7 @@ ComponentVersion: 1.7.0
 
 ## Delete File
 
-Action to delete file by provided full file path. If the file does not exist, the empty message (`{}`) is returned
+Action to delete file by provided full file path. If the file does not exist, the empty message (`{}`) is returned.
 
 > **Plesae Note:** To gain a better understanding of the functionality provided by Delete File action, we recommend checking out our [example article](/components/sftp/usage-example#delete-file). It provides a detailed walkthrough of how to use Delete File action effectively, which will assist you in working with it.
 
