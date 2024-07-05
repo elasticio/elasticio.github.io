@@ -6,8 +6,8 @@ description: A open standard application layer protocol for passing business mes
 icon:  amqp.png
 icontext: AMQP component
 category: amqp
-ComponentVersion: 1.4.2
-updatedDate: 2023-03-27
+ComponentVersion: 1.4.3
+updatedDate: 2024-07-05
 ---
 
 ## Description
@@ -15,7 +15,7 @@ updatedDate: 2023-03-27
 A component designed to talk to Advanced Message Queuing Protocol, (**AMQP**) APIs. AMQP is an open standard for passing business messages between applications or organizations (see [amqp.org](https://www.amqp.org) for more).
 AMQP component establishes an asynchronous communications with queues and topics to publish or consume records.
 
-## How works
+## How it works
 
 The consumer will register a non-exclusive non-durable queue with `autodelete=true` and without any dead-letter. Name of the queue will be dynamically generated based on the `USER_ID`, `FLOW_ID` prefixed with `eio_consumer_`. This queue will be bound to the exchange with specified bound key or multiple bound keys that are specified in one string separated by commas.
 
@@ -29,10 +29,6 @@ This component will automatically encrypt data that is sent to the queue when fo
 *   `ELASTICIO_MESSAGE_CRYPTO_PASSWORD` - password for symmetric encryption.
 
 These variables are by default available in the platform environment. Data will be encrypted using symmetric `AES-256` encryption.
-
-### Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about AMQP component like [changelog](/components/amqp/technical-notes#changelog).
 
 ## Credentials
 
@@ -50,7 +46,7 @@ If the exchange doesn't exist it will be created on start.
 {% include img.html max-width="100%" url="img/consume-trigger.png" title="Consume Trigger" %}
 
 > **Please Note:** The flow must be set as real-time! Otherwise, errors may appear.
-We recommend you set the lowest flow schedule (cron expression) frequency possible. E.g. once a day (0 0 * * *). And start the flow with the button ‘Run Now’ manually. Even though it does not affect the logic directly, each scheduled flow execution will create a record in the Executions list with no messages and no logs inside. All the logs and emitted messages will be appearing in the first execution.
+We recommend you set the lowest flow schedule (cron expression) frequency possible. E.g. once a day (0 0 * * *). And start the flow with the button ‘Run Now’ manually. Even though it does not affect the logic directly, each scheduled flow execution will create a record in the Executions list and can make debugging difficult. All the logs and emitted messages will be appearing in the last execution.
 
 #### Configuration Fields
 
@@ -75,6 +71,10 @@ Will publish the messages into an exchange. This exchange will be created on sta
 * **Content-Type** - (string, optional): Content-Type of pushed payload, default is `application/octet-stream`.
 * **Reconnect Timeout** - (string, optional, 5 by default, maximum 1000): In case of errors how long to wait until retry is seconds.
 * **Reconnect Attempts** - (string, optional, 12 by default, maximum 1000): How many times try to reconnect before throw error. 12 by default.
+
+### Technical Notes
+
+The [technical notes](technical-notes) page gives some technical details about AMQP component like [changelog](/components/amqp/technical-notes#changelog).
 
 ## Known limitations
 
