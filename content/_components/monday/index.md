@@ -6,8 +6,8 @@ description: The Monday Component facilitates interaction with the Monday API.
 icon: monday.png
 icontext: Monday component
 category: monday
-updatedDate: 2024-05-08
-ComponentVersion: 1.0.0
+updatedDate: 2024-07-05
+ComponentVersion: 1.2.0
 ---
 
 ## Description
@@ -43,8 +43,23 @@ With the app created, proceed to generate new credentials for the component:
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
+### Webhook 
+
+Creates a subscription to a selected event.
+
+Required scopes: `boards:read`, `webhooks:read`, `webhooks:write`.
+
+More information can be found [here](https://developer.monday.com/api-reference/reference/webhooks).
+
+#### Configuration Fields
+
+- **Board** - (dropdown, required): Select the board where you want to create a subscription.
+- **Event** - (dropdown, required): Select the event that will trigger this webhook.
+- **Config** - (string in JSON format, optional): Add additional configuration if needed.
+
+#### Output Metadata
+
+An object with the key `event` that describes changes.
 
 
 ## Actions
@@ -64,6 +79,7 @@ Execute any mutation available on API. This action can be used to `Create`, `Upd
 * **Mutation type** - (dropdown, required): Mutation type to execute. E.g `Add users to team`.
 * **Select basic fields for resulting object** - (dropdown, optional): Here provided only basic fields that can be included in resulting object, it may affect on query cost
 * **You can provide additional fields here** - (string, optional): Resulting object can be expanded using GraphQL request, it may affect on query cost 
+
 #### Example for Add users to team
 
   ```graphql
@@ -81,10 +97,12 @@ Dynamically generated fields according to chosen `Mutation type`.
 
 Result object from executed mutation.
 
-## Lookup Objects plural
+## Lookup Objects (plural)
+
 Lookup a set of objects by a defined criteria list. Can be emitted differently.
 
 ### Configuration Fields
+
 - **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Boards`.
 - **Select basic fields for resulting object** - (dropdown, optional): Here provided only basic fields that can be included in the resulting object, it may affect query cost.
 - **You can provide additional fields here** - (string, optional): The resulting object can be expanded using GraphQL request, it may affect query cost.
@@ -101,18 +119,23 @@ Lookup a set of objects by a defined criteria list. Can be emitted differently.
 - **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit page` or `Emit individually`.
 
 ### Input Metadata
+
 Dynamically generated fields according to the chosen `Object type`.
 
 ### Output Metadata
+
 For `Emit Page` mode: An object with key `results` that has an array as its value For `Emit Individually` mode: Each object that fills the entire message.
 
 ### Known Limitations
+
 If the response from Monday is not an iterable array, it will be emitted as `Emit Individually` regardless of selected `Emit Behavior`.
 
 ## Lookup Object By ID
+
 Lookup a single object by its ID.
 
 ### Configuration Fields
+
 - **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Boards`.
 - **Select basic fields for resulting object** - (dropdown, optional): Here provided only basic fields that can be included in the resulting object, it may affect query cost.
 - **You can provide additional fields here** - (string, optional): The resulting object can be expanded using GraphQL request, it may affect query cost.
@@ -128,18 +151,19 @@ Lookup a single object by its ID.
 - **Allow zero results** - (checkbox, optional): If checked and Object not found, returns empty Object (otherwise throws an error).
 
 ### Input Metadata
+
 - **ID Value** - (string, required): Value for ID of the object to lookup.
 
 ### Output Metadata
+
 Dynamically generated fields according to chosen `Object type` and selected fields.
 
 ## Make Raw Request
+
 Executes custom requests using the straightforward Monday GraphQL API.
 
-### Configuration Fields
-none
-
 ### Input Metadata
+
 - `Request Body` - (object, optional): Provide the request body.
 
 <details close markdown="block"><summary><strong>Body Example</strong></summary>
@@ -156,9 +180,12 @@ none
   - [GraphQL overview](https://developer.monday.com/api-reference/docs/introduction-to-graphql).
 
 ### Output Metadata
+
 - **Status Code** - (number, required): The HTTP status code of the response.
 - **HTTP headers** - (object, required): The response's HTTP headers.
 - **Response Body** - (object, optional): The body of the HTTP response.
 
 ## Known Limitations
 - For Lookup actions it is required to fill at least one of the fields `Select basic fields for resulting object` or `You can provide additional fields here`.
+- There can be only one `Webhook` per event type on each board. The component will delete all older ones.
+- If the flow with `Webhook` is not real-time, you will need to manually execute it once after the flow is published and started by pressing the `Run Now` button and following the URL to trigger the flow subscription process.
