@@ -10,7 +10,7 @@ updatedDate: 2024-07-05
 ComponentVersion: 1.0.0
 ---
 
-## description
+## Description
 
 The Square Component is designed to facilitate interaction with the [Square API](https://developer.squareup.com/reference/square).
 
