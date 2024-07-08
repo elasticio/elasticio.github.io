@@ -13,7 +13,7 @@ updatedDate: 2024-06-19
 ## General information
 ### Environment variables
 
-There is no need to set up any environment variables manually..
+There is no need to set up any environment variables manually.
 
 However, the component needs the next environment variables: 
 - `ELASTICIO_API_URI`

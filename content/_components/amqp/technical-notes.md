@@ -5,58 +5,64 @@ description: Technical Notes for AMQP component.
 icon:  amqp.png
 icontext: AMQP component
 category: amqp
-ComponentVersion: 1.4.2
-updatedDate: 2023-03-27
+ComponentVersion: 1.4.3
+updatedDate: 2024-07-05
 redirect_from:
   - /components/amqp/changelog.html
 ---
 
 ## Changelog
 
+### 1.4.3 (July 05, 2024)
+
+* Now logs and messages for `Consume` trigger will be located in the last flow execution.
+* Upgrade to sailor `2.7.2`.
+* Upgrade amqplib to `0.10.4`.
+
 ### 1.4.2 (March 27, 2023)
 
-Fixed issue with shutdown hook in `Consume` trigger
+* Fixed issue with shutdown hook in `Consume` trigger.
 
 ### 1.4.1 (March 27, 2023)
 
-Fixed connection cloning in `Publish` action
+Fixed connection cloning in `Publish` action.
 
 ### 1.4.0 (March 25, 2023)
 
-* Implemented retry mechanism on connection errors
-* Added configuration fields to set retry options
-* Added `Don't encrypt payload` and `Content-Type` configuration fields to `Publish` action
-* Added `Don't decrypt payload` configuration field to `Consume` trigger
-* Upgrade to sailor 2.7.1
-* Upgrade amqplib to 0.10.3
+* Implemented retry mechanism on connection errors.
+* Added configuration fields to set retry options.
+* Added `Don't encrypt payload` and `Content-Type` configuration fields to `Publish` action.
+* Added `Don't decrypt payload` configuration field to `Consume` trigger.
+* Upgrade to sailor `2.7.1`.
+* Upgrade amqplib to `0.10.3`.
 
 ### 1.3.3 (March 25, 2021)
 
-* Upgrade to sailor 2.6.24
+* Upgrade to sailor `2.6.24`.
 
 ### 1.3.2 (November 5, 2020)
 
-* Upgrade to sailor 2.6.18
-* Annual audit of the component code to check if it exposes a sensitive data in the logs
-* Annual npm vulnerabilities audit
+* Upgrade to sailor `2.6.18`.
+* Annual audit of the component code to check if it exposes a sensitive data in the logs.
+* Annual npm vulnerabilities audit.
 
 ### 1.3.1 (May 22, 2020)
 
-* Update sailor version to 2.6.7
+* Update sailor version to `2.6.7`.
 
 ### 1.3.0 (April 21, 2017)
 
-* Update sailor version to 2.1.0
+* Update sailor version to `2.1.0`.
 
 ### 1.2.0 (February 21, 2017)
 
-* Update sailor version to 2.0.0
+* Update sailor version to `2.0.0`.
 
 ### 1.1.0 (December 16, 2016)
 
-* Add Consume Trigger
+* Add Consume Trigger.
 
 ### 1.0.0 (December 15, 2016)
 
-* Initial release
-* Add Publish Action
+* Initial release.
+* Add Publish Action.

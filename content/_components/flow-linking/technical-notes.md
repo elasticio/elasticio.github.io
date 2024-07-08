@@ -6,12 +6,13 @@ icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
 ComponentVersion: 1.1.0
-updatedDate: 2024-06-19
+updatedDate: 2024-07-05
 ---
 
 ## Changelog
 
-### 1.1.0 (June 19, 2024)
+### 1.1.0 (July 5, 2024)
+* Fixed `socket hang up` issue.
 * Added `Lookup by id` checkbox to `Trigger another` flow action.
 * Added `Retry errors` checkbox to `Trigger another` flow action.
 

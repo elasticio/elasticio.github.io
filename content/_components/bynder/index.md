@@ -6,8 +6,8 @@ description: Bynder component is designed to interact with Bynder API.
 icon: bynder.png
 icontext: Bynder component
 category: bynder
-updatedDate: 2024-06-03
-ComponentVersion: 1.0.0
+updatedDate: 2024-07-05
+ComponentVersion: 1.1.0
 ---
 
 
@@ -52,6 +52,30 @@ With the app created, proceed to new credentials for the component:
 This component has no trigger functions. This means it will not be accessible to select as a first component during the integration flow design.
 
 ## Actions
+
+### Lookup Object By ID 
+
+Retrieve a single object using its ID.
+
+#### Configuration Fields
+
+* **Object Type** - (string, required): The type of object to look up. The currently supported types are:
+    - `User`.
+    - `Asset`.
+    - `Asset content`.
+    - `Metaproperty`.
+    - `Collection`.
+
+#### Input Metadata
+
+* **ID Value** - (string, required): The ID of the object to look up.
+
+#### Output Metadata
+
+Returns an object with the result of the lookup. If the `Asset content` type is selected, the result will include `attachmentUrl`, which is a link to the file stored within the platform's internal storage (Maester).
+
+#### Known Limitations
+* Due to the limited Bynder API documentation that does not provide a full overview of the API objects, the output metadata available by clicking the `Generate Stub Sample` button, might be limited to the fields described in the samples provided in the documentation at the moment of the initial component build.
 
 ### Make Raw Request
 

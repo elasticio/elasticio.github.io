@@ -5,11 +5,15 @@ description: The Monday Component facilitates interaction with the Monday API.
 icon: monday.png
 icontext: Monday component
 category: monday
-updatedDate: 2024-06-03
-ComponentVersion: 1.1.0
+updatedDate: 2024-07-05
+ComponentVersion: 1.2.0
 ---
 
 ## Changelog
+
+### 1.2.0 (July 05, 2024)
+
+* Added **Webhook** trigger.
 
 ### 1.1.0 (June 03, 2024)
 
