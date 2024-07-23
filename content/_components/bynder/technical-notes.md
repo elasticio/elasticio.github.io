@@ -11,6 +11,10 @@ ComponentVersion: 1.1.0
 
 ## Changelog
 
+### 1.2.0 (July 23, 2024)
+
+* Added `Upsert Object` action.
+
 ### 1.1.0 (July 05, 2024)
 
 * Added Lookup Object By ID action.

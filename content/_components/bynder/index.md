@@ -77,6 +77,29 @@ Returns an object with the result of the lookup. If the `Asset content` type is 
 #### Known Limitations
 * Due to the limited Bynder API documentation that does not provide a full overview of the API objects, the output metadata available by clicking the `Generate Stub Sample` button, might be limited to the fields described in the samples provided in the documentation at the moment of the initial component build.
 
+### Upsert Object
+
+This action either updates an existing object or creates a new one.
+
+#### Configuration Fields
+* **Operation** - (dropdown, required): Choose the operation to perform - either `Update` or `Create`.
+* **Object Type** - (dropdown, required): Select the type of object to update or create. The currently supported types are:
+    - `User`
+    - `Asset` (Update only)
+    - `Metaproperty`
+    - `Collection`
+
+#### Input Metadata
+
+Fields are dynamically generated based on the selected `Object Type`.
+
+If the `Operation` is set to `Update`, an additional field will appear:
+* **{Object Type} ID** - (string, required): The ID of the object to update.
+
+#### Output Metadata
+
+The result object from the create or update operation.
+
 ### Make Raw Request
 
 Allows for the execution of custom requests using the Bynder REST API directly.
