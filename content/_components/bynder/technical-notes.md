@@ -5,8 +5,8 @@ description: Technical Notes for the Bynder component.
 icon: bynder.png
 icontext: Bynder component
 category: bynder
-updatedDate: 2024-07-05
-ComponentVersion: 1.1.0
+updatedDate: 2024-08-14
+ComponentVersion: 1.4.0
 ---
 
 ## Changelog
