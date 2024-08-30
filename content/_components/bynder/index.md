@@ -6,8 +6,8 @@ description: Bynder component is designed to interact with Bynder API.
 icon: bynder.png
 icontext: Bynder component
 category: bynder
-updatedDate: 2024-07-05
-ComponentVersion: 1.1.0
+updatedDate: 2024-08-16
+ComponentVersion: 1.4.0
 ---
 
 
@@ -49,9 +49,47 @@ With the app created, proceed to new credentials for the component:
 
 ## Triggers
 
-This component has no trigger functions. This means it will not be accessible to select as a first component during the integration flow design.
+### Get New and Updated Objects Polling 
+
+Retrieve all the updated or created objects within a given time range.
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): Type of object to poll on. Currently supported only `Assets`
+* **Timestamp field to poll on** - (dropdown, optional): Select the date field to track changes.
+* **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`.
+* **Size of Polling Page** - (optional, positive integer, defaults to 100, max 100): Indicates the size of pages to be fetched.
+* **Start Time** - (string, optional): The timestamp, in ISO8601 format, to start polling from (inclusive). The default value is the beginning of time (January 1, 1970 at 00:00.000). 
+
+#### Input Metadata
+
+None.
+
+#### Output Metadata
+- For `Fetch page`: An object with key ***results*** that has an array as its value.
+- For `Emit Individually`:  Each object fills the entire message.
 
 ## Actions
+
+### Delete Object By ID 
+
+Delete a single object using its ID.
+
+#### Configuration Fields
+
+* **Object Type** - (string, required): The type of object to delete. The currently supported types are:
+    - `User`
+    - `Asset`
+    - `Metaproperty`
+    - `Collection`
+
+#### Input Metadata
+
+* **ID Value** - (string, required): The ID of the object to delete.
+
+#### Output Metadata
+
+Returns the id of the object that was deleted.
 
 ### Lookup Object By ID 
 
@@ -77,6 +115,31 @@ Returns an object with the result of the lookup. If the `Asset content` type is 
 #### Known Limitations
 * Due to the limited Bynder API documentation that does not provide a full overview of the API objects, the output metadata available by clicking the `Generate Stub Sample` button, might be limited to the fields described in the samples provided in the documentation at the moment of the initial component build.
 
+### Lookup Objects (Plural) 
+
+Lookup a set of objects based on a defined list of criteria. The results can be emitted in different ways.
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): The type of object to look up. The currently supported types are:
+    - Users
+    - Groups
+    - Asset content
+    - Metaproperties
+    - Tags
+    - Collections
+    - Assets
+* **Emit Behavior** - (dropdown, required): Specifies how the resulting objects will be emitted, either as `Emit All` or `Emit Individually`.
+
+#### Input Metadata
+
+A dynamically generated list of available criteria.
+
+#### Output Metadata
+
+For `Emit All` mode: An object with the key `results`, which contains an array as its value. In some cases there may be additional keys with information, for example if you use `Assets` as Object Type and set `Include Count` as true, there will be additional key `count`.
+For `Emit Individually` mode: Each object fills the entire message.
+
 ### Upsert Object
 
 This action either updates an existing object or creates a new one.
@@ -85,7 +148,7 @@ This action either updates an existing object or creates a new one.
 * **Operation** - (dropdown, required): Choose the operation to perform - either `Update` or `Create`.
 * **Object Type** - (dropdown, required): Select the type of object to update or create. The currently supported types are:
     - `User`
-    - `Asset` (Update only)
+    - `Asset`
     - `Metaproperty`
     - `Collection`
 

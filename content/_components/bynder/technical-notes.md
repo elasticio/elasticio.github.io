@@ -11,6 +11,14 @@ ComponentVersion: 1.1.0
 
 ## Changelog
 
+## 1.4.0 (August 14, 2024)
+* Added `Lookup Objects (plural)` action
+* Added `Get New and Updated Objects Polling` trigger
+* Added `Delete Object By ID` action
+
+## 1.3.0 (August 06, 2024)
+* Added ability to create assets in `Upsert Object` action
+
 ### 1.2.0 (July 23, 2024)
 
 * Added `Upsert Object` action.
