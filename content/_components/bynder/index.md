@@ -6,7 +6,7 @@ description: Bynder component is designed to interact with Bynder API.
 icon: bynder.png
 icontext: Bynder component
 category: bynder
-updatedDate: 2024-08-16
+updatedDate: 2024-08-14
 ComponentVersion: 1.4.0
 ---
 
