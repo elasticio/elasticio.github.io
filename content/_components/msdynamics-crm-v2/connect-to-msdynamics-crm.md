@@ -125,7 +125,7 @@ Create a new credential on {{site.data.tenant.name}} platform for connecting to 
   {% include img.html max-width="100%" url="img/client-id.png" title="Client Id" %}
 
   * **Client Secret:** Add the client secret generated in the previous step.
-  * **Authorization Endpoint:** Set it to `https://login.windows.net/common/oauth2/authorize?resource={{ URL encoded URL of CRM instance }}`. For example, if your CRM instance URL is `https://orgfb974624.crm4.dynamics.com/`, the encoded URL becomes `https%3A%2F%2Forgfb974624.crm4.dynamics.com%2F`.
+  * **Authorization Endpoint:** Set it to `https://login.windows.net/common/oauth2/authorize?resource={ URL encoded URL of CRM instance }`. For example, if your CRM instance URL is `https://orgfb974624.crm4.dynamics.com/`, the encoded URL becomes `https%3A%2F%2Forgfb974624.crm4.dynamics.com%2F`.
   * **Token Endpoint:** Set it to `https://login.windows.net/common/oauth2/token`.
 
 That's it! You've successfully configured the connection to Microsoft Dynamics CRM using OAuth. Make sure to test the connection on your platform to ensure it's working as expected.
