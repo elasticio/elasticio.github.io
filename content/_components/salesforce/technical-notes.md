@@ -5,19 +5,14 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2024-09-05
-ComponentVersion: 2.8.4
+updatedDate: 2024-03-01
+ComponentVersion: 2.8.3
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
-
-### 2.8.4 (July 11, 2024)
-* Attempt to fix error `The Replay ID validation failed` when `Subscribe to PubSub` trigger does't emit messages more than three days
-* Update Sailor version to 2.7.2
-* Update component-commons-library version to 3.2.0
 
 ### 2.8.3 (March 01, 2024)
 

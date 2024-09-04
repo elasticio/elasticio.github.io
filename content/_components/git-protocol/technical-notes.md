@@ -5,14 +5,11 @@ description: Technical Notes for the Git-Protocol component
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.2.5
-updatedDate: 2024-09-04
+ComponentVersion: 1.2.4
+updatedDate: 2024-06-03
 ---
 
 ## Changelog
-
-### 1.2.5 (August 23, 2024)
-* Updated `nodegit` to 0.28.0-alpha.11
 
 ### 1.2.4 (June 3, 2024)
 

@@ -5,8 +5,8 @@ description: Salesforce component actions.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2024-09-05
-ComponentVersion: 2.8.4
+updatedDate: 2024-03-01
+ComponentVersion: 2.8.3
 ---
 
 ## Query action
@@ -265,7 +265,7 @@ Result is a CSV file in the attachment.
 
 ## Raw Request action
 
-This function executes a custom REST API call request. By default, the service called is `/services/data`, which encompasses most of the services provided by Salesforce.
+This function executes a custom REST API call request. By default, the service called is `/services/data`, which encompasses most of the services provided by Salesforce. 
 Alternatively, you can call any other services, such as `/services/apexrest`, by specifying the full URL instead of a relative one.
 
 {% include img.html max-width="100%" url="img/raw-request.png" title="Raw Request" %}

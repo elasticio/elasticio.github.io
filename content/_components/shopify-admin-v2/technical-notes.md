@@ -5,14 +5,11 @@ description: Technical Notes for the Shopify Admin v2 component.
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2024-09-05
-ComponentVersion: 2.5.0
+updatedDate: 2024-05-08
+ComponentVersion: 2.4.0
 ---
 
 ## Chagelog
-
-### 2.5.0 (July 08, 2024)
-* Added `Upsert Object` action
 
 ### 2.4.0 (May, 08, 2024)
 * Added `Emit empty object if no entities found` checkbox to `Lookup Objects (plural)` action.

@@ -5,19 +5,13 @@ description: Technical Notes for the SFTP component.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2024-09-05
-ComponentVersion: 1.7.3
+updatedDate: 2024-07-05
+ComponentVersion: 1.7.1
 redirect_from:
   - /components/sftp/changelog.html
 ---
 
 ## Changelog
-
-## 1.7.3 (August 19, 2024)
-* Fix the issue when a SFTP connection drops in realtime flows
-
-## 1.7.2 (July 25, 2024)
-* Updated ssh2-sftp-client to 10.0.3 to fix the issue
 
 ### 1.7.1 (July 05, 2024)
 

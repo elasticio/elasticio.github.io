@@ -6,20 +6,19 @@ description: The component to connect Flows
 icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
-ComponentVersion: 1.1.1
-updatedDate: 2024-09-05
+ComponentVersion: 1.1.0
+updatedDate: 2024-06-19
 ---
 
 ## General information
-
 ### Environment variables
 
 There is no need to set up any environment variables manually.
 
-However, the component needs the next environment variables:
+However, the component needs the next environment variables: 
 - `ELASTICIO_API_URI`
-- `ELASTICIO_API_USERNAME`
-- `ELASTICIO_API_KEY`
+- `ELASTICIO_API_USERNAME` 
+- `ELASTICIO_API_KEY` 
 - `ELASTICIO_WORKSPACE_ID`
 
 ### Credentials
