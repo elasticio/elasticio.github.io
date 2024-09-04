@@ -5,8 +5,8 @@ description: Salesforce component triggers.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2024-03-01
-ComponentVersion: 2.8.3
+updatedDate: 2024-09-05
+ComponentVersion: 2.8.4
 ---
 
 ## Get Updated Objects Polling

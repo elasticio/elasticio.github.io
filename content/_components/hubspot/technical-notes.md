@@ -5,11 +5,18 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2023-05-22
-ComponentVersion: 1.6.0
+updatedDate: 2024-09-04
+ComponentVersion: 1.6.1
 ---
 
 ## Changelog
+
+### 1.6.1 (August 21, 2024)
+* Added `Max amount of Polling Pages` text field for `Get New and Updated Objects` trigger
+* Update component-commons-library version to 3.2.0
+* Update Sailor version to 2.7.2
+* Update Node engine to 20.11.0
+* Get rid of vulnerabilities in dependencies
 
 ### 1.6.0 (May 22, 2022)
 

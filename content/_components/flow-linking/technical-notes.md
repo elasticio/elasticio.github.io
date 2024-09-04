@@ -5,11 +5,14 @@ description: Technical Notes for the Flow Linking component
 icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
-ComponentVersion: 1.1.0
-updatedDate: 2024-07-05
+ComponentVersion: 1.1.1
+updatedDate: 2024-09-05
 ---
 
 ## Changelog
+
+### 1.1.1 (July 29, 2024)
+* Added service `flow-linking` to component.json
 
 ### 1.1.0 (July 5, 2024)
 * Fixed `socket hang up` issue.
