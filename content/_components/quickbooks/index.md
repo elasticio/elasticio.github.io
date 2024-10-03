@@ -6,111 +6,120 @@ description: QuickBooks is a software to manage sales and expenses, and keep tra
 icon: quickbooks.png
 icontext: Quickbooks component
 category: quickbooks
-updatedDate: 2020-10-30
-ComponentVersion: 1.1.1
+updatedDate: 2024-10-02
+ComponentVersion: 1.0.0
 ---
 
-## General information
+# QuickBooks Component
 
-### API version / SDK version
+## Table of Contents
 
-By default minor API version 26 is used, but it's also possible to specify a more suitable minor API version in the credentials field `Minor API version` in case you really need it.
+* [Description](#description)
+* [Credentials](#credentials)
+* [Triggers](#triggers)
+  * [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling)
+* [Actions](#actions)
+  * [Make Raw Request](#make-raw-request)
+* [Known Limitations](#known-limitations)
+* [Additional info](#additional-info)
 
-### Environment variables
-
-> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
-> component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
-
-### Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about AWS-S3 component like [changelog](/components/quickbooks/technical-notes#changelog) and [completeness matrix](/components/quickbooks/technical-notes#completeness-matrix).
+## Description
+QuickBooks Component is designed to interact with [QuickBooks Online Accounting API](https://developer.intuit.com/app/developer/qbo/docs/get-started)
 
 ## Credentials
+Quickbooks service uses OAuth 2.0 authorization. [More Info](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0)
 
-Quickbooks service uses OAuth 2.0 authorization.
-Information about how to retrieve OAuth keys you can find [here](https://developer.intuit.com/docs/00_quickbooks_online/1_get_started/40_get_development_keys).
+Below are the steps to obtain and configure your QuickBooks credentials:
+1. Create a QuickBooks Developer Account
+- Navigate to [QuickBooks Developer Portal](https://developer.intuit.com/app/developer/homepage).
+- Sign up or log in with your Intuit Developer account.
+2. Create an App:
+- Once logged in, go to the `Dashboard` section.
+- Click `Create an App` and choose `QuickBooks Online and Payments` as the platform.
+- Fill in the required details for your app.
+3. Obtain API Keys. After creating the app, you'll have access to the following credentials in your app's settings:
+- Client ID: This is the unique identifier for your application.
+- Client Secret: A confidential key used to authenticate your app.
+- Redirect URI: URL where users will be redirected after authentication.
+4. Set Redirect URIs
+- Add Authorized redirect URI as: `https://{your-tenant-address}/callback/oauth2`
 
-The keys could be found [here](https://developer.intuit.com/v2/ui#/app/appdetail/{{application_id}}/{{application_id}}/keys).
+To configure Production Credentials go to your app's settings and click `Production Settings` -> `Keys & credentials`
 
-If you create an app that needs a Callback URL for authentication purposes then the URL structure should be the following:
-
-`https://{YOUR_TENANT_ADDRESS}/callback/oauth2`
-
-Actual Callback URL can be found [here](/guides/oauth-callback-redirect-url.html).
-
-{% include img.html max-width="100%" url="img/quickbooks-credentials.png" title="Credentials" %}
-
-* Company ID - Set the id of the company you want to access.
-* Application Client Id - OAuth client id (client key).
-* Application Client Secret - OAuth client secret.
-* Switching from production to sandbox environment - If `True` - sandbox environment will be used, if `False` - production one.
-* Minor API version - This field represents current API [minor version](https://developer.intuit.com/app/developer/qbo/docs/develop/explore-the-quickbooks-online-api/minor-versions#minor-version-summary). For default, it's 26.
-
->**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
+Now you can create new credentials for the component:
+* **Type** (dropdown, required) - `OAuth2`
+* **Choose Auth Client** (dropdown, required) - select one of created before or `Add New Auth Client`:
+  * **Name** (string, required) - provide any name you want
+  * **Client ID** (string, required) - put here `Client ID` from `Keys & credentials` section
+  * **Client Secret** (string, required) - put here `Client Secret` from from `Keys & credentials` section
+  * **Authorization Endpoint** (string, required) - QuickBooks authorization endpoint `https://appcenter.intuit.com/connect/oauth2`
+  * **Token Endpoint** (string, required) - QuickBooks refresh token endpoint `https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer`
+* **Name Your Credential** (string, required) - provide any name you want
+* **Scopes (Comma-separated list)** (string, required) - Put here needed scopes - `com.intuit.quickbooks.accounting`. [More info](https://developer.intuit.com/app/developer/qbo/docs/learn/scopes)
+* **Company ID** (string, required) - ID of the company you want to access.
+* **Environment** (dropdown, required) - Select the environment: sandbox (development) or production.
+* **Minor API version** (string, oprional) - This field represents current API [minor version](https://developer.intuit.com/app/developer/qbo/docs/develop/explore-the-quickbooks-online-api/minor-versions#minor-version-summary).
+* **Number of retries** (number, optional, 5 by default) - How many times component should retry to make request
+* **Delay between retries** (number ms, optional, 10000 by default) - How much time wait until new try
 
 ## Triggers
 
-### Polling Trigger
+### Get New and Updated Objects Polling
 
-Allows to get entries by chosen type. On first request, trigger will provide all existing objects by current type.
-On the next iterations, trigger will provide ONLY objects which were changed since a previous request. **This trigger supports all type of business entities and response pagination.** To set response size you should set/change 'Batch Size for request pagination' field in trigger settings.
+Retrieve all the updated objects within a given time range.
 
-{% include img.html max-width="100%" url="img/polling-object.png" title="Polling Trigger" %}
+#### Configuration Fields
+* **Object Type** - (dropdown, required): Select one of the available object types to pull on.
+* **Time stamp field to poll on** - (dropdown, required): Select the date field to track changes.
+* **Emit Behavior** - (dropdown, optional, default `Emit individually`): Defines the way result objects will be emitted, one of `Emit page` or `Emit individually`.
+* **Page Size** - (number, optional, defaults to 100, max 100): Indicates the size of pages to be fetched per request.
+* **Start Time** - (string, optional): The timestamp, in ISO8601 format, to start polling from (inclusive). The default value is the beginning of time (January 1, 1970 at 00:00.000).
 
-#### List of Expected Config fields
+#### Input Metadata
 
- * Polling Object - dropdown with a list of objects available for polling
- * Batch Size for request pagination - The maximum number of entities that can be returned is 1000. If the result size is not specified, the default number is 1000. If a query returns a big amount of entities, it is recommended to fetch the entities in chunks.
+None.
+
+#### Output Metadata
+
+- For `Fetch page`: An object with key ***results*** that has an array as its value
+- For `Emit Individually`:  Each object fill the entire message
 
 ## Actions
 
-### Insert Object
+### Make Raw Request
 
-Allows to add a new entity to your company. To Insert entity you must provide mandatory fields and fields which you want to update. This action is available ONLY for entities which can't be updated with API. **This action contains dynamic metadata.**
+Executes custom request.
 
-### Upsert Object
+#### Configuration Fields
 
-Allows to add a new object or update one of the existing objects in your company. To add a new object you should provide business required fields in the request body. To update entity you should provide primary key and fields which you want to update.
-**This action contains dynamic metadata.**
+* **Don't throw error on 404 Response** - (optional, boolean): Treat 404 HTTP responses not as error, defaults to `false`.
 
-### Delete Object
+#### Input Metadata
 
-Allows to remove existing entity in your division. To remove contact you need to provide a primary key in the request body. **This action contains dynamic metadata.**
+* **Url** - (string, required): Path of the resource relative to the base URL.
+* **Method** - (string, required): HTTP verb to use in the request, one of `GET`, `POST`, `PUT`, `DELETE`, `PATCH`.
+* **Request Body** - (object, optional): Body of the request to send.
 
-### General Update & Upsert Actions
+#### Output Metadata
 
-To prevent problems with concurrent access QuickBooks API entities have SyncToken field. This field is required for update API request. If you provide wrong SyncToken your request will be rejected with 400 code.
-
-## Current Limitations
-
-For now, API [XSD description](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions) doesn't have any information about required fields, so be careful while creating insert, update or upsert requests.
-
-Entities metadata structure was created from `v3_minor_version_26` XSD version.
-Be careful, metadata was created once from the XSD, and now is stored in the component `schemas/io`.
-
-**The QuickBooks API has some limitations for request number:**
-
-*   Sandbox servers: Throttled at 100 requests per minute, per individual app.
-*   Production servers: Throttled to 500 requests per minute, per realm ID.
-
-Here is [more information about the request limitations](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions).
+* **Status Code** - (number, required): HTTP status code of the response.
+* **HTTP headers** - (object, required): HTTP headers of the response.
+* **Response Body** - (object, optional): HTTP response body.
 
 ## Known limitations
 
-1. For now, API [XSD description](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions) doesn't have any information about required fields, so be careful while creating insert, update or upsert requests.
-Entities metadata structure was created from ` v3_minor_version_26 ` XSD version.
-Be careful, metadata was created once from the XSD, and now is storing in the component.
-2. The QuickBooks API has some limitations for request number:
+1. The QuickBooks API has some limitations for a request number:
 - Sandbox servers: Throttled at 100 requests per minute, per individual app.
 - Production servers: Throttled to 500 requests per minute, per realm ID.
-[Here](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions) is more information about request limitations.
+[More info on limitations](https://developer.intuit.com/app/developer/qbpayments/docs/learn/rest-api-features#limits-and-throttles)
 
-3. To prevent problems with concurrent access QuickBooks API entities have SyncToken field. This field is required for update API request. If you provide wrong SyncToken your request will be rejected with 400 code.
-
-4. Metadata
-Most field of Quick Books entities are optionally required - they are NOT marked in EIO web so be careful and check the QB [docs](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account) before building a request.
+2. Metadata
+Most field of Quick Books entities are optionally required - they are NOT marked in EIO web so be careful and
+check the QB [docs](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/account)
+before building a request.
 
 ## Additional info
 
-*  [QuickBooks Online REST API documentation](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api).
-*  Here is how to [create custom fields for QuickBooks API](https://developer.intuit.com/docs/00_quickbooks_online/2_build/60_tutorials/0040_create_custom_fields).
+[QuickBooks Online REST API documentation](https://developer.intuit.com/app/developer/qbo/docs/learn/explore-the-quickbooks-online-api)
+
+[All entities, fields and parameters provided by QuickBooks Online API](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities/account)

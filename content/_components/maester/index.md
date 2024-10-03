@@ -6,8 +6,8 @@ description: Maester component for the platform.
 icon: maester.png
 icontext: Maester Component
 category: maester
-updatedDate: 2022-06-07
-ComponentVersion: 2.0.1
+updatedDate: 2024-10-02
+ComponentVersion: 2.0.2
 ---
 
 ## General information
@@ -91,7 +91,7 @@ Depending on the 'Upsert Criteria' (see below) do the following:
 
 >**Please Note**: If there is no object with given ID it creates a new object with the NEW ID. So the new object's id will differ from the provided one.
 
-2. Upsert Criteria: Maester Object ID. Look for an object with the given search headers (up to 5). Further logic is the same as in the previous item.
+2. Upsert Criteria: Custom Headers. Look for an object with the given search headers (up to 5). Further logic is the same as in the previous item.
 
 ![Upsert Object](img/upsert-object.png)
 

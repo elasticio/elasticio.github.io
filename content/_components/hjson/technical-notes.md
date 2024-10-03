@@ -5,11 +5,15 @@ description: Changelog for the HJSON component
 icon: hjson.png
 icontext: HJSON component
 category: hjson
-updatedDate: 2022-10-21
-ComponentVersion: 1.0.5
+updatedDate: 2024-10-02
+ComponentVersion: 1.0.6
 ---
 
 ## Changelog
+
+### 1.0.6 (September 10, 2024)
+
+* Made the component more whitelabel-friendly by removing the company name from the title
 
 ### 1.0.5 (October 21, 2022)
 
