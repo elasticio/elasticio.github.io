@@ -71,10 +71,265 @@ None
 
 #### Input Metadata
 
-Please refer to the [Input Schema file](./src/schemas/actions/sendMessage.in.json) for the full list of metadata fields.
+
+Please refer to the Input Schema file below for the full list of metadata fields. 
+<details close markdown="block"><summary><strong>Input Schema file</strong></summary>
+```json
+{
+  "type": "object",
+  "properties": {
+    "to": {
+      "type": "string",
+      "title": "To",
+      "required": true,
+      "help": {
+        "description": "WhatsApp ID or phone number of the customer you want to send a message to. See Phone Number Formats link below",
+        "link": "https://developers.facebook.com/docs/whatsapp/cloud-api/reference/phone-numbers#phone-number-formats"
+      }
+    },
+    "type": {
+      "type": "string",
+      "title": "Type",
+      "help": {
+        "description": "The type of message you want to send. If omitted, defaults to text"
+      },
+      "required": false,
+      "enum": [
+        "contacts",
+        "location",
+        "text",
+        "template"
+      ]
+    },
+    "contacts": {
+      "type": "object",
+      "required": false,
+      "title": "Contacts",
+      "help": {
+        "description": "Required when type=contacts"
+      },
+      "properties": {
+        "addresses": {
+          "type": "object",
+          "title": "Addresses",
+          "help": {
+            "description": "Full contact address(es) formatted as an addresses object"
+          },
+          "required": false,
+          "properties": {
+            "street": {
+              "type": "string",
+              "title": "Street",
+              "help": {
+                "description": "Street number and name"
+              },
+              "required": false
+            },
+            "city": {
+              "type": "string",
+              "title": "City",
+              "help": {
+                "description": "City name"
+              },
+              "required": false
+            },
+            "state": {
+              "type": "string",
+              "title": "State",
+              "help": {
+                "description": "State abbreviation"
+              },
+              "required": false
+            },
+            "zip": {
+              "type": "string",
+              "title": "ZIP",
+              "help": {
+                "description": "ZIP code"
+              },
+              "required": false
+            },
+            "country": {
+              "type": "string",
+              "title": "Country",
+              "help": {
+                "description": "Full country name"
+              },
+              "required": false
+            },
+            "country_code": {
+              "type": "string",
+              "title": "Country code",
+              "help": {
+                "description": "Two-letter country abbreviation"
+              },
+              "required": false
+            },
+            "type": {
+              "type": "string",
+              "title": "Type",
+              "help": {
+                "description": "Standard values are HOME and WORK"
+              },
+              "required": false
+            }
+          }
+        }
+      }
+    },
+    "template": {
+      "type": "object",
+      "title": "Template",
+      "help": {
+        "description": "Required when type=template"
+      },
+      "required": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "help": {
+            "description": "Name of the template"
+          },
+          "required": false
+        },
+        "language": {
+          "type": "object",
+          "title": "Language",
+          "help": {
+            "description": "Contains a language object. Specifies the language the template may be rendered in"
+          },
+          "required": false,
+          "properties": {
+            "policy": {
+              "type": "string",
+              "title": "Policy",
+              "help": {
+                "description": "The language policy the message should follow. The only supported option is deterministic"
+              },
+              "required": false
+            },
+            "code": {
+              "type": "string",
+              "title": "Code",
+              "help": {
+                "description": "The code of the language or locale to use. Accepts both language and language_locale formats (e.g., en and en_US). For all codes, see https://developers.facebook.com/docs/whatsapp/api/messages/message-templates#supported-languages"
+              },
+              "required": false
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "type": "object",
+      "title": "Text",
+      "help": {
+        "description": "Required for text messages"
+      },
+      "required": false,
+      "properties": {
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "help": {
+            "description": "The text of the text message which can contain URLs which begin with http:// or https:// and formatting"
+          },
+          "required": false
+        },
+        "preview_url": {
+          "type": "boolean",
+          "title": "Preview URL",
+          "help": {
+            "description": "Set to true to have the WhatsApp Messenger and WhatsApp Business apps attempt to render a link preview of any URL in the body text string. URLs must begin with http:// or https://. If multiple URLs are in the body text string, only the first URL will be rendered"
+          },
+          "required": false
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "title": "Location",
+      "help": {
+        "description": "Required when type=location"
+      },
+      "required": false,
+      "properties": {
+        "longitude": {
+          "type": "string",
+          "title": "Longitude",
+          "help": {
+            "description": "Longitude of the location"
+          },
+          "required": false
+        },
+        "latitude": {
+          "type": "string",
+          "title": "Latitude",
+          "help": {
+            "description": "Latitude of the location"
+          },
+          "required": false
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "help": {
+            "description": "Name of the location"
+          },
+          "required": false
+        },
+        "address": {
+          "type": "string",
+          "title": "Address",
+          "help": {
+            "description": "Address of the location"
+          },
+          "required": false
+        }
+      }
+    },
+    "preview_url": {
+      "type": "boolean",
+      "title": "Preview URL",
+      "help": {
+        "description": "Required if type=text"
+      },
+      "required": false
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "help": {
+        "description": "A message's status. You can use this field to mark a message as read"
+      },
+      "required": false
+    },
+    "context": {
+      "type": "object",
+      "title": "Context",
+      "help": {
+        "description": "Required if replying to any message in the conversation"
+      },
+      "required": false,
+      "properties": {
+        "message_id": {
+          "type": "string",
+          "title": "Message ID",
+          "help": {
+            "description": "ID of a previous message you are replying to"
+          },
+          "required": false
+        }
+      }
+    }
+  }
+}
+```
+</details>
+
 Input message fields depend on the type of the message (one of 'contacts', 'location', 'text', 'template').
-E.g. in case type: "template" is specified, you must ensure the template is properly prepared and verified according to the Meta's requirements.
-Please refer to the official guides on how to accomplish it.
+E.g. in case type: "template" is specified, you must ensure the template is properly prepared and verified according to the Meta's requirements. Please refer to the official guides on how to accomplish it.
 
 An example of the input message with the template available for testing purposes:
 ```json
