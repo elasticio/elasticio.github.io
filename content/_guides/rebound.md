@@ -21,7 +21,7 @@ Connecting two separate systems can cause delays in any of single processes whic
 
 ## How the Rebound works?
 
-When the message can not be processed by the component due to the insufficient information then it is sent back or rebounded. This means that the message is sent to a special queue where it waits for a minute and then re-queued for a repeated processing by the component. In case that the message is rebounded again then the waiting period is consequently increased with each iteration. This process can happen several times (currently it’s set to repeat 10 times), after which the message is rejected completely and an error is reported.
+When the message can not be processed by the component due to insufficient information then it is sent back or rebounded. This means that the message is sent to a special queue where it waits and then re-queued for repeated processing by the component. In case the message is rebounded again then the waiting period is consequently increased with each iteration. This process can happen several times (depends on component), after which the message is rejected completely and an error is reported.
 
 ![Rebound-schematics](/assets/img/rebound/rebound-schematics.png)
 
