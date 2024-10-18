@@ -13,7 +13,17 @@ This document is a step-by-step guide to help you understand how our system work
 
 ## Upload your SSH Key
 
-The first step would be to [upload your SSH Key](ssh-keys) to authorise your deployment via git-push process. Please note that **failure to provide (upload) a unique SSH key would result in error "Permission denied" during the code Push phase**.
+The first step would be to [upload your SSH Key](ssh-keys) to authorise your deployment via git-push process. 
+>**Please note:** If you encounter the error below, it may be because RSA signatures using the SHA-1 hashing algorithm have been disabled by default since [OpenSSH 8.8](https://www.openssh.com/txt/release-8.8). It is worth checking the SSH configuration file (usually located in `/etc/ssh/ssh_config` Linux/MacOS) and adding the following lines to allow connection and user authentication:
+`HostkeyAlgorithms +ssh-rsa`\
+`PubkeyAcceptedAlgorithms +ssh-rsa`
+
+```
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+```
 
 ## Clone and prepare your component
 
