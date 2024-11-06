@@ -6,15 +6,25 @@ description: In this case it is not about a particular application but the email
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.2.4
-updatedDate: 2023-01-13
+ComponentVersion: 1.3.0
+updatedDate: 2024-11-07
 ---
 
-## How works
+## Table of Contents
+- [General information](#general-information)
+    - [Description](#description)
+    - [Environment variables](#environment-variables)
+- [Actions](#actions)
+  - [Send Email](#send-email)
+    - [Configuration Fields](#configuration-fields)
+    - [Input Metadata](#input-metadata)
+    - [Output Metadata](#output-metadata)
 
-The component sends a new transaction through Mandrill using the [Send](https://mandrillapp.com/api/docs/messages.JSON.html#method=send) API resource for each incoming message.
+## General information
 
-## Requirements
+### Description
+
+Email component using [Mandrill](http://mandrillapp.com/) REST API.
 
 ### Environment variables
 
@@ -58,9 +68,61 @@ For each incoming message the component send a new transactional message through
 * **Bcc** - (string, optional): Comma separated list of E-mail addresses to receive a blind copy of the mail
 * **Subject** - (string, required): Subject of the E-mail
 * **Body** - (string, required): The content of the E-mail to be sent. If body is a JSON object/array, then it will be stringified
+* **HTML Body** - (string, optional): The HTML content of the E-mail to be sent. Either the 'Text Body' or 'HTML Body' field must be filled in. If both are filled in, the 'HTML Body' will be used.
 * **Attachments** (array, optional): Series of objects with the following format:
     * **Attachment URL** (string, required): URL to file (platform storage or external)
     * **Filename** (string, required): Name of the attached file that will appear in the received email
+
+An HTML body example:
+```
+{
+  "to": "email@example.com",
+  "subject": "HTML content",
+  "textBody": "Poor text content",
+  "htmlBody": " <head>
+                  <meta charset=\"UTF-8\">
+                  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+                  <title>Sample Email</title>
+                  <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        background-color: #f4f4f4;
+                        margin: 0;
+                        padding: 20px;
+                    }
+                    .container {
+                      background-color: #ffffff;
+                      padding: 20px;
+                      border-radius: 5px;
+                      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+                    .btn {
+                      display: inline-block;
+                      padding: 10px 15px;
+                      font-size: 16px;
+                      color: white;
+                      background-color: #007BFF;
+                      text-decoration: none;
+                      border-radius: 5px;
+                    }
+                    .btn:hover {
+                      background-color: #0056b3;
+                    }
+                  </style>
+                </head>
+                <body>
+                  <div class=\"container\">
+                    <h1>Hello, [Recipient's Name]!</h1>
+                    <p>Thank you for subscribing to our newsletter. We're excited to have you on board!</p>
+                    <p>Stay tuned for updates, tips, and exclusive offers just for you.</p>
+                    <p>To get started, click the button below:</p>
+                    <a href=\"https://www.example.com\" class=\"btn\">Get Started</a>
+                    <p>Best regards,<br>Your Company Name</p>
+                  </div>
+                </body>
+              </html>"
+}
+```
 
 #### Output Metadata
 

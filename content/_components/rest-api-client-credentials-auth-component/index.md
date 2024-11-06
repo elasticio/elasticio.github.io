@@ -6,9 +6,19 @@ description: A component that can make REST calls while using OAuth2 Client Cred
 icon: rest-api-client-credentials-auth-component.png
 icontext: Rest API OAuth2 Client Credentials Component
 category: rest-api-client
-updatedDate: 2024-06-03
-ComponentVersion: 1.2.0
+updatedDate: 2024-11-07
+ComponentVersion: 1.3.0
 ---
+
+## Table of Contents
+
+* [General information](#general-information)
+    * [Description](#description)
+    * [Environment variables](#environment-variables)
+* [Credentials](#credentials)
+* [Actions](#actions)
+    * [HTTP request](#http-request)
+* [Known Limitations](#known-limitations)
 
 ## General information
 
@@ -63,9 +73,11 @@ select as a first component during the integration flow design.
  * Method (string enum, required): HTTP Verb for the request.
  * HTTP headers (object, optional): HTTP headers to attach to the request
  * Request Body (object, optional): Body of the request to send
- * If **Error Tolerance** is **Manual**:
+  * If **Error Tolerance** is **Manual**:
     * HTTP Codes to throw errors (array of error ranges, optional default to `[]`): A double array with a list of ranges of HTTP response codes to throw errors upon receiving Use a syntax that matches retry-axios. Example: `[[400, 403], [405,599]]` - Throw errors on all errors apart from 404.
- If array is empty, no error would be thrown, produce an outbound message with the status code and the HTTP response.
+    If array is empty, no error would be thrown, produce an outbound message with the status code and the HTTP response.
+ * If **Error Tolerance** is **Rebound Selected Codes**:
+    * HTTP Codes to rebound (string, required): Coma separated list of the codes to rebound, example: `404, 401`. If you put here `*` all codes will be rebounded. If the rebound code doesn’t match the response code, an error will be thrown.
 
 
 #### Output Metadata
