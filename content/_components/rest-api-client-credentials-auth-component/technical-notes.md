@@ -11,6 +11,7 @@ ComponentVersion: 1.3.0
 
 ## Changelog
 
+
 ### 1.3.0 (November 07, 2024)
 
 * Updated API request handling to use `axiosReqWithRetryOnServerError` from `component-commons-library`

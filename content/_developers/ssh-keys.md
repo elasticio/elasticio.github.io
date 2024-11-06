@@ -35,9 +35,9 @@ This shows that this user called username has already GitHub created SSH key whi
 
 ### Creating a new SSH key
 
->**Please note:** according to the [OpenSSH manual](https://man.openbsd.org/ssh-keygen#t), the following RSA key signature types are available for creation: `rsa-sha2-256` and `rsa-sha2-512` (default for RSA keys), `ssh-rsa` (SHA1 signatures, not recommended).
+>**Please note:** according to the [OpenSSH manual](https://man.openbsd.org/ssh-keygen#rsa), the following RSA key signature types are available for creation: `rsa-sha2-256` and `rsa-sha2-512` (default for RSA keys), `ssh-rsa` (SHA1 signatures, not recommended).
 
-To create an SSH Key open a terminal and type:
+To create an SSH key, for example, a key of type `rsa-sha2-256`, open a terminal and enter:
 
 ```sh
 $ ssh-keygen -t rsa-sha2-256 -b 4096
