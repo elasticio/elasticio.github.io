@@ -2,15 +2,51 @@
 layout: component
 title: Zoho CRM component
 section: CRM components
-description: A component that connects to Zoho-crm API.
+description: A component that connects to Zoho CRM API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.8
-updatedDate: 2023-04-16
+ComponentVersion: 1.3.9
+updatedDate: 2024-11-07
 ---
 
-## General information
+## Table of Contents
+- [Description](#description)
+    - [Completeness Matrix](technical-notes#completeness-matrix)
+    - [Environment variables](#environment-variables)
+- [Credentials](#credentials)
+- [Triggers](#triggers)
+  - [Get New and Updated Objects](#get-new-and-updated-objects)
+    - [Config Fields](#config-fields)
+    - [Input Metadata](#input-metadata)
+    - [Output Metadata](#output-metadata)
+- [Actions](#actions)
+  - [Raw Request](#raw-request)
+    - [Config Fields](#config-fields-1)
+    - [Input Metadata](#input-metadata-1)
+  - [Upsert](#upsert)
+    - [Config Fields](#config-fields-2)
+    - [Input Metadata](#input-metadata-2)
+  - [Lookup object (at most one)](#lookup-object-at-most-one)
+    - [Config Fields](#config-fields-3)
+    - [Input Metadata](#input-metadata-3)
+  - [Lookup Set Of Objects By Unique Criteria](#lookup-set-of-objects-by-unique-criteria)
+    - [Config Fields](#config-fields-4)
+    - [Input Metadata](#input-metadata-4)
+    - [Output Metadata](#output-metadata-1)
+  - [Lookup objects (plural)](#lookup-objects-plural)
+    - [Config Fields](#config-fields-5)
+    - [Input Metadata](#input-metadata-5)
+    - [Output Metadata](#output-metadata-2)
+  - [Delete object](#delete-object)
+    - [Config Fields](#config-fields-6)
+    - [Input Metadata](#input-metadata-6)
+    - [Output Metadata](#output-metadata-3)
+- [Known limitations](#known-limitations)
+
+### Description
+
+A component that connects to Zoho CRM API.
 
 ### Environment variables
 

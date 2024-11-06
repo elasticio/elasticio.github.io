@@ -14,9 +14,7 @@ This document is a step-by-step guide to help you understand how our system work
 ## Upload your SSH Key
 
 The first step would be to [upload your SSH Key](ssh-keys) to authorise your deployment via git-push process. 
-
 >**Please note:** If you encounter the error below during the code Push phase, it may be because RSA signatures using the SHA-1 hashing algorithm have been disabled by default since [OpenSSH 8.8](https://www.openssh.com/txt/release-8.8). It is worth checking the SSH configuration file (usually located in `/etc/ssh/ssh_config` Linux/MacOS) and adding the following lines to allow connection and user authentication:<br />
-
 `HostkeyAlgorithms +ssh-rsa`\
 `PubkeyAcceptedAlgorithms +ssh-rsa`
 

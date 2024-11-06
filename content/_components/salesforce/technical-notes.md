@@ -5,8 +5,8 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2024-09-05
-ComponentVersion: 2.8.4
+updatedDate: 2024-11-07
+ComponentVersion: 2.8.5
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
@@ -14,7 +14,14 @@ redirect_from:
 
 ## Changelog
 
+### 2.8.5 (November 07, 2024)
+
+* Fixed issues in `Get New and Updated Objects Polling` trigger:
+  * Emit only one batch of messages if results are more than 10000
+  * Error `Cannot read properties of undefined (reading 'LastModifiedDate')` if you used and delete `Size of Polling Page` value
+
 ### 2.8.4 (July 11, 2024)
+
 * Attempt to fix error `The Replay ID validation failed` when `Subscribe to PubSub` trigger does't emit messages more than three days
 * Update Sailor version to 2.7.2
 * Update component-commons-library version to 3.2.0

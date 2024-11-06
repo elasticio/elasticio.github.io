@@ -5,11 +5,18 @@ description: Technical Notes for the Zoho CRM component.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.8
-updatedDate: 2023-04-16
+ComponentVersion: 1.3.9
+updatedDate: 2024-11-07
 ---
 
 ## Changelog
+
+### 1.3.9 (November 07, 2024)
+
+* Fix the metadata generation bug in the Get New and Updated Objects trigger. Metadata fields having no `json_type` field coming from the API, will be be default generated as `string`
+* Search values in the Lookup Set Of Objects By Unique Criteria action are made `encodeURIComponent` encoded
+* Bumped sailor from 2.6.29 to 2.7.3
+* Bumped component-commons-library from 3.0.2 to 3.2.1
 
 ### 1.3.8 (March 16, 2023)
 

@@ -5,13 +5,19 @@ description: Technical Notes for the Email component
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.2.4
-updatedDate: 2023-01-13
+ComponentVersion: 1.3.0
+updatedDate: 2024-11-07
 redirect_from:
   - /components/lookup-table/changelog.html
 ---
 
 ## Changelog
+
+### 1.3.0 (November 07, 2024)
+
+* Introduced the new HTML body field to make it possible sending both an HTML and a text contents. The text one becomes optional and will only be used if a HTML content is either not supported by a receiver or is empty. The backward compatibility has not broken
+* Update Sailor version to 2.7.3
+* Migrated to Node.js 20
 
 ### 1.2.4 (January 13, 2023)
 

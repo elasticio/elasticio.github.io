@@ -5,13 +5,17 @@ description: Technical Notes for the Splitter component.
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2024-06-03
-ComponentVersion: 1.5.0
+updatedDate: 2024-11-07
+ComponentVersion: 1.5.1
 redirect_from:
   - /components/splitter/changelog.html
 ---
 
 ## Changelog
+
+### 1.5.1 (November 07, 2024)
+
+* Fixed memory leak in `Re-assembled message` action, when you have more than 1 000 000 messages
 
 ### 1.5.0 (June 05, 2024)
 

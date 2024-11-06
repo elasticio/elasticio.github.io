@@ -5,13 +5,15 @@ description: Technical Notes for the Rest API OAuth2 Client Credentials componen
 icon: rest-api-client-credentials-auth-component.png
 icontext: Rest API OAuth2 Client Credentials Component
 category: rest-api-client
-updatedDate: 2024-10-17
+updatedDate: 2024-11-07
 ComponentVersion: 1.3.0
 ---
 
 ## Changelog
 
-### 1.3.0 (october 17, 2024)
+
+### 1.3.0 (November 07, 2024)
+
 * Updated API request handling to use `axiosReqWithRetryOnServerError` from `component-commons-library`
 * Added new option `Rebound Selected Codes` to configuration field `Error Tolerance` in `HTTP request` action
 * Update Sailor version to `2.7.3`

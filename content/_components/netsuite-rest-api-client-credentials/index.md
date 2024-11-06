@@ -6,10 +6,16 @@ description: The NetSuite REST API Component is specifically crafted to interact
 icon: netsuite_rest_api_client_credentials.png
 icontext: Netsuite REST API client credentials component
 category: netsuite
-updatedDate: 2024-06-03
-ComponentVersion: 1.0.0
+updatedDate: 2024-11-07
+ComponentVersion: 1.0.1
 ---
 
+## Table of Contents
+
+* [Description](#description)
+* [Authentication](#authentication)
+* [Actions](#actions) 
+  * [Make Raw Request](#make-raw-request)
 
 ## Description
 

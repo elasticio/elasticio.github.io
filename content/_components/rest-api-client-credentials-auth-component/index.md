@@ -6,7 +6,7 @@ description: A component that can make REST calls while using OAuth2 Client Cred
 icon: rest-api-client-credentials-auth-component.png
 icontext: Rest API OAuth2 Client Credentials Component
 category: rest-api-client
-updatedDate: 2024-10-17
+updatedDate: 2024-11-07
 ComponentVersion: 1.3.0
 ---
 
@@ -66,7 +66,7 @@ Example: `"{\"access_token\":\"access_token_value\",\"token_type\":\"bearer\",\"
  * Method (string enum, required): HTTP Verb for the request.
  * HTTP headers (object, optional): HTTP headers to attach to the request
  * Request Body (object, optional): Body of the request to send
- * If **Error Tolerance** is **Manual**:
+  * If **Error Tolerance** is **Manual**:
     * HTTP Codes to throw errors (array of error ranges, optional default to `[]`): A double array with a list of ranges of HTTP response codes to throw errors upon receiving Use a syntax that matches retry-axios. Example: `[[400, 403], [405,599]]` - Throw errors on all errors apart from 404.
     If array is empty, no error would be thrown, produce an outbound message with the status code and the HTTP response.
  * If **Error Tolerance** is **Rebound Selected Codes**:

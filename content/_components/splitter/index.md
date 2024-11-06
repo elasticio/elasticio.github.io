@@ -6,8 +6,8 @@ description: The Splitter integration connector was designed to work together wi
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2024-06-03
-ComponentVersion: 1.5.0
+updatedDate: 2024-11-07
+ComponentVersion: 1.5.1
 ---
 
 ## Description
