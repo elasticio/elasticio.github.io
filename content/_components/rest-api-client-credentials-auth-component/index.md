@@ -6,8 +6,8 @@ description: A component that can make REST calls while using OAuth2 Client Cred
 icon: rest-api-client-credentials-auth-component.png
 icontext: Rest API OAuth2 Client Credentials Component
 category: rest-api-client
-updatedDate: 2024-11-07
-ComponentVersion: 1.3.0
+updatedDate: 2024-11-15
+ComponentVersion: 1.3.1
 ---
 
 ## Table of Contents
