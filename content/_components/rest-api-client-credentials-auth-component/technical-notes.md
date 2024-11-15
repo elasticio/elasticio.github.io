@@ -5,12 +5,15 @@ description: Technical Notes for the Rest API OAuth2 Client Credentials componen
 icon: rest-api-client-credentials-auth-component.png
 icontext: Rest API OAuth2 Client Credentials Component
 category: rest-api-client
-updatedDate: 2024-11-07
-ComponentVersion: 1.3.0
+updatedDate: 2024-11-15
+ComponentVersion: 1.3.1
 ---
 
 ## Changelog
 
+### 1.3.1 (November 15, 2024)
+
+* Update Sailor to `2.7.4` to fix the issue with the disappearing rebound indication
 
 ### 1.3.0 (November 07, 2024)
 
