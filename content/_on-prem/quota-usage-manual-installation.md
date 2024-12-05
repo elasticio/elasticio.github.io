@@ -34,7 +34,7 @@ high availability then ClickHouse must run as a replica set.
 3. Apply ksonnet
 4. Restart `api` Deployment to make it reload variables
 
-## Check an experimental page
+## Check the page
 
-Visit `https://[your_domain]/c/[contract_id]/#/contract/[contract_id]/quota-usages` (replace [your_domain] and [contract_id]
+Visit `https://[your_domain]/c/[contract_id]/contract/[contract_id]/quota-usages` (replace [your_domain] and [contract_id]
 with actual values). You should see an experimental dashboard with quota and actual usage.
