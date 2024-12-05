@@ -89,7 +89,9 @@ hr {
 
 table {
   width: 100%;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  display: block;
+  overflow-x: auto; }
 
 table th {
   font-weight: 700;
@@ -428,6 +430,10 @@ h2 {
   background: linear-gradient(52deg, #e64e39 0%, #d87c83 100%);
   color: #fff; }
 
+.welcomer__icon_onprem {
+  background: linear-gradient(52deg, #ff8e31 0%, #f8a149 100%);
+  color: #fff; } 
+
 .search {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -556,6 +562,9 @@ h2 {
 .categories__item:nth-child(7) .categories__icon .fa {
   color: #e64e39;}
 
+.categories__item:nth-child(8) .categories__icon .fa {
+  color: #ff8e31;}
+
 .categories__item:hover .categories__icon .fa {
   color: #fff !important; }
 
@@ -594,6 +603,8 @@ h2 {
 .categories__item_developers:hover .categories__inner {
   background: linear-gradient(52deg, #921cbd 0%, #921cbd 100%); }
 
+.categories__item_onprem:hover .categories__inner {
+  background: linear-gradient(52deg, #ff8e31 0%, #f8a149 100%); }
 
 .categories__name {
   font-size: 18px;
@@ -2217,4 +2228,183 @@ h4:hover .deep-link {
   .article__content {
     padding: 0 !important;
   }
+}
+
+.charts.h2 {
+  font-size: 18px !important;
+  font-weight: 700;
+  font-family: monospace;
+  margin: 2px 0px 2px 0px;
+}
+.charts.h3 {
+  font-size: 18px !important;
+  font-weight: 600;
+  font-family: monospace;
+  margin: 2px 0px 2px 20px;
+}
+.charts.h4 {
+  font-weight: 500;
+  font-family: monospace;
+  font-size: 18px !important;
+  text-transform: none !important;
+  margin: 2px 0px 2px 40px;
+}
+.charts.h5 {
+  font-size: 18px !important;
+  font-weight: 400;
+  font-family: monospace;
+  margin: 2px 0px 2px 60px;
+}
+.charts.h6 {
+  font-size: 18px !important;
+  font-weight: 400;
+  font-family: monospace;
+  margin: 2px 0px 2px 80px;
+}
+.charts.h7 {
+  font-size: 18px !important;
+  font-weight: 400;
+  font-family: monospace;
+  margin: 2px 0px 2px 100px;
+}
+.charts.h8 {
+  font-size: 18px !important;
+  font-weight: 400;
+  font-family: monospace;
+  margin: 2px 0px 2px 120px;
+}
+.charts.level_h2 {
+  margin: 2px 0px 2px 0px;
+}
+.charts.level_h3 {
+  margin: 2px 0px 2px 20px;
+}
+.charts.level_h3 {
+  margin: 2px 0px 2px 40px;
+}
+.charts.level_h4 {
+  margin: 2px 0px 2px 60px;
+}
+.charts.level_h5 {
+  margin: 2px 0px 2px 80px;
+}
+.charts.level_h6 {
+  margin: 2px 0px 2px 100px;
+}
+.charts.level_h7 {
+  margin: 2px 0px 2px 120px;
+}
+.charts.level_h8 {
+  margin: 2px 0px 2px 140px;
+}
+
+.note {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 0.3rem;
+}
+.note:before {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: 400;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.5em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  font-size: 1.2em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.note.normal {
+  color: inherit;
+  background-color: #f5f6fa;
+}
+.note.normal:before {
+  color: inherit;
+  content: "\f15b";
+}
+.note.info {
+  color: inherit;
+  background-color: #e7f5ff;
+}
+.note.info:before {
+  color: #00529B;
+  content: "\f05a";
+}
+.note.success {
+  color: inherit;
+  background-color: #ebfbee;
+}
+.note.success:before {
+  color: #4F8A10;
+  content: "\f00c";
+}
+.note.warning {
+  color: inherit;
+  background-color: #fff9db;
+}
+.note.warning:before {
+  color: #9F6000;
+  content: "\f071";
+}
+.note.errors {
+  color: inherit;
+  background-color: #fff5f5;
+}
+.note.errors:before {
+  color: #D8000C;
+  content: "\f057";
+}
+
+.d-inline {
+  display: inline !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.label:not(g),
+.label-blue:not(g) {
+  display: inline-block;
+  padding: 0.16em 0.56em;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  vertical-align: middle;
+  background-color: #2869e6;
+  border-radius: 12px;
+}
+.label:not(g),
+.label-blue:not(g) {
+  font-size: 0.6875rem !important;
+}
+@media (min-width: 31.25rem) {
+  .label:not(g),
+  .label-blue:not(g) {
+    font-size: 0.75rem !important;
+  }
+}
+
+.label-green:not(g) {
+  background-color: #009c7b;
+}
+
+.label-purple:not(g) {
+  background-color: #5e41d0;
+}
+
+.label-red:not(g) {
+  background-color: #e94c4c;
+}
+
+.label-yellow:not(g) {
+  color: #44434d;
+  background-color: #f7d12e;
 }
