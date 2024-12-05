@@ -115,3 +115,22 @@ admin:
       description: Information that is specific to accounts on app.elastic.io & app-us.elastic.io
     - title: Security and Compliance
       description: Learn how we comply to the highest security standards to protect customers' and users' data in transit and at rest.
+on-prem:
+  title: On-Prem
+  description: Information on the On-Premises installation
+  class: categories__item_onprem
+  welcommer-class: welcomer__icon_onprem
+  fa-icon: fa-server
+  sections:
+    - title: Helm3 deployments
+      description: Our Platform uses Helm package management to deploy the microservices for Kubernetes. Helm charts provide templating syntax for Kubernetes YAML manifest documents. With Helm we can create configurable deployments instead of using static files
+    - title: Operation Guides
+      description: These are different guides to help to operate the Platform
+    - title: Installation Guides
+      description: These are different guides to help you in install and configure the Platform in general and some specific parts in particular
+    - title: Platform Administration
+      description: Welcome to the platform administration and management section. Here we list guides and suggestions on how to administer your tenant as well as your entire installation
+    - title: Platform microservices
+      description: Information on the main Platform services
+    - title: White Labelling
+      description: Here is what can be white labelled and how
