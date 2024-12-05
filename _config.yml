@@ -13,22 +13,24 @@ kramdown:
 
 collections:
   getting-started:
-      output: true
+    output: true
   guides:
-     output: true
+    output: true
   references:
-     output: true
+    output: true
   components:
-     output: true
+    output: true
   releases:
-     output: true
+    output: true
   comp-releases:
     output: true
   admin:
     output: true
   developers:
     output: true
-
+  on-prem:
+    output: true
+     
 plugins:
   - jekyll-redirect-from
 
