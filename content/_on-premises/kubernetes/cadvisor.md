@@ -7,7 +7,7 @@ category: kubernetes
 
 {: .no_toc}
 
-{{page.description}} This data is taken by the [Iron-bank](/on-prem/kubernetes/iron-bank)
+{{page.description}} This data is taken by the [Iron-bank](/on-premises/kubernetes/iron-bank)
 and stored in proper places.
 
 - TOC

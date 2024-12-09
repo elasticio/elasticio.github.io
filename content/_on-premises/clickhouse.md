@@ -27,11 +27,11 @@ If the service is down then the following information will be lost:
 
 If down the following and their dependent services will not work properly:
 
-*   [Bran-Read](/on-prem/kubernetes/bran-read)
-*   [Bran-Write](/on-prem/kubernetes/bran-write)
-*   [Iron-Bank](/on-prem/kubernetes/iron-bank)
+*   [Bran-Read](/on-premises/kubernetes/bran-read)
+*   [Bran-Write](/on-premises/kubernetes/bran-write)
+*   [Iron-Bank](/on-premises/kubernetes/iron-bank)
 
 ## Installation
 
 ClickHouse is installed and run on a separate dedicated VM. Check our
-[ClickHouse installation guide](/on-prem/clickhouse-installation) for more information.
+[ClickHouse installation guide](/on-premises/clickhouse-installation) for more information.

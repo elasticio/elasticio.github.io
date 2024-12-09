@@ -19,7 +19,7 @@ like the password reset, invitations to join, error notifications and more.
 You can customize the look and feel of these emails as well as
 [disable them in your Tenant](configuration).
 
-We use the [**Raven**](/on-prem/kubernetes/raven) service by posting a special
+We use the [**Raven**](/on-premises/kubernetes/raven) service by posting a special
 request to it's API. These requests trigger email formation on basis of templates
 and values passed as arguments in the requests.
 
@@ -33,7 +33,7 @@ call URL (`templateName`).
 
 There are two classes of templates: Default and Custom.
 1.  **Default** email templates are defined / hard-coded inside of service.
-2.  **Custom** email templates are stored in the [Mongodb](/on-prem/mongodb), created edited and maintained by installation administrator (see details below). **You can define custom templates for each tenant separately.**
+2.  **Custom** email templates are stored in the [Mongodb](/on-premises/mongodb), created edited and maintained by installation administrator (see details below). **You can define custom templates for each tenant separately.**
 
 Each template consists of set localized versions. Default templates has
 English localization (`locale=en`). Custom templates can have any locale.

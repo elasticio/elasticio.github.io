@@ -7,7 +7,7 @@ category: kubernetes
 
 {: .no_toc}
 
-{{page.description}} Used by the [API](/on-prem/kubernetes/api).
+{{page.description}} Used by the [API](/on-premises/kubernetes/api).
 
 - TOC
 {:toc}
@@ -29,7 +29,7 @@ Use rolling release. Update pods one by one.
 
 ## Strong dependencies
 
-Bran-read strongly depends on the [Clickhouse](/on-prem/clickhouse). It will not
+Bran-read strongly depends on the [Clickhouse](/on-premises/clickhouse). It will not
 start without it.
 
 ## Weak dependencies

@@ -131,7 +131,7 @@ Platform uses this namespace for the pods running the **monitoring microservices
 ### appNames:
 {: .charts.h3}
 **Service Apps:** Links to charts for all microservices. Each app has a separate
-descriptors and charts pulled during the platform deployment. For more information check the [platform microservices](/on-prem/#:~:text=Platform%20microservices) section.
+descriptors and charts pulled during the platform deployment. For more information check the [platform microservices](/on-premises/#:~:text=Platform%20microservices) section.
 {: .charts.level_h3.note.info}
 #### admiral: `"admiral"`
 {: .charts.h4}
@@ -198,7 +198,7 @@ descriptors and charts pulled during the platform deployment. For more informati
 
 ### services:
 {: .charts.h3}
-**Service availability**: By default all services are enabled. You can disable any service by changing the value of **enable** parameter from true to false. However, **we do not recommend doing this for system critical services.** Consult the [platform microservices](/on-prem/#:~:text=Platform%20microservices) section to know which services are critical.
+**Service availability**: By default all services are enabled. You can disable any service by changing the value of **enable** parameter from true to false. However, **we do not recommend doing this for system critical services.** Consult the [platform microservices](/on-premises/#:~:text=Platform%20microservices) section to know which services are critical.
 {: .charts.level_h3.note.info}
 #### admiral:
 {: .charts.h4}

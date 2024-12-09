@@ -29,7 +29,7 @@ integration flow executions to enable different retention policies for the
 technical logs produced by the platform and the execution logs produced by the
 integration flow steps.
 
-[Fluentd](/on-prem/kubernetes/fluentd) collects logs from the Kubernetes containers
+[Fluentd](/on-premises/kubernetes/fluentd) collects logs from the Kubernetes containers
 and sends logs to GrayLog in the `GELF` format. The plan is to configure GrayLog
 input to receive messages via the following two ports:
 

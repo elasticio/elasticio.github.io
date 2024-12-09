@@ -7,7 +7,7 @@ category: kubernetes
 
 {: .no_toc}
 
-{{page.description}} Centre of the world. Used by the [Frontend](/on-prem/kubernetes/frontend), used by Flow steps
+{{page.description}} Centre of the world. Used by the [Frontend](/on-premises/kubernetes/frontend), used by Flow steps
 in almost all regular jobs.
 
 - TOC
@@ -24,7 +24,7 @@ Flow steps can not be started. Existing steps may (or may not) fail depending on
 ## Scaling
 
 Can be scaled to any reasonable amount of pods. Service is stateless itself (but
-uses external storage – [MongoDB](/on-prem/mongodb)).
+uses external storage – [MongoDB](/on-premises/mongodb)).
 
 ## Deployment
 
@@ -32,14 +32,14 @@ Use rolling release. Remove pod – start pod with a new version. **Forbidden to
 
 ## Strong dependencies
 
-API strongly depends on the [MongoDB](/on-prem/mongodb) and the [RabbitMQ](/on-prem/rabbitmq).
+API strongly depends on the [MongoDB](/on-premises/mongodb) and the [RabbitMQ](/on-premises/rabbitmq).
 Without them it will not start.
 
 ## Weak dependencies
 
 API will start but not function without the following services:
 
-*   [Iron-bank](/on-prem/kubernetes/iron-bank) (degradation),
-*   [Quota-service](/on-prem/kubernetes/quota) (degradation),
-*   [Bran-read](/on-prem/kubernetes/bran-read) (degradation),
-*   [Steward](/on-prem/kubernetes/steward) (degradation).
+*   [Iron-bank](/on-premises/kubernetes/iron-bank) (degradation),
+*   [Quota-service](/on-premises/kubernetes/quota) (degradation),
+*   [Bran-read](/on-premises/kubernetes/bran-read) (degradation),
+*   [Steward](/on-premises/kubernetes/steward) (degradation).
