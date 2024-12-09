@@ -44,7 +44,7 @@ During platform deployment the current and the [Common values](common-values) ch
 **Replicas of microservices:** These are not all microservices but only the ones
 where you can define number of replicas per your requirements and need. Other
 services have their replica sets hard-coded in their configurations. Check the
-[platform microservices](/on-prem/#:~:text=Platform%20microservices) section for more details
+[platform microservices](/on-premises/#:~:text=Platform%20microservices) section for more details
 on each service.
 {: .charts.level_h3.note.info}
 #### dockerRegistry: `2`

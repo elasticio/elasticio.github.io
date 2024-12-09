@@ -7,7 +7,7 @@ category: kubernetes
 
 {: .no_toc}
 
-{{page.description}} It periodically asks the [API](/on-prem/kubernetes/api)
+{{page.description}} It periodically asks the [API](/on-premises/kubernetes/api)
 for Tenants and their respective certificates. Also, it creates/updates/removes
 ingresses and secrets with certificates for those ingresses in the Kubernetes cluster.
 
@@ -42,5 +42,5 @@ Service depend on Kubernetes API service to start.
 
 Handmaiden would not function without the following services:
 
-*   [API](/on-prem/kubernetes/api)
-*   [NGINX-ingress-controller](/on-prem/kubernetes/nginx-ingress-controller) (no ingress controller means no real work).
+*   [API](/on-premises/kubernetes/api)
+*   [NGINX-ingress-controller](/on-premises/kubernetes/nginx-ingress-controller) (no ingress controller means no real work).

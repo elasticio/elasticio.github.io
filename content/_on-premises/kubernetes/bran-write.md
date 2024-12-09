@@ -7,7 +7,7 @@ category: kubernetes
 
 {: .no_toc}
 
-{{page.description}} Collected data is stored in the [Clickhouse](/on-prem/clickhouse) and accessible by the [Bran-read](/on-prem/kubernetes/bran-read) service’s API.
+{{page.description}} Collected data is stored in the [Clickhouse](/on-premises/clickhouse) and accessible by the [Bran-read](/on-premises/kubernetes/bran-read) service’s API.
 
 - TOC
 {:toc}
@@ -17,9 +17,9 @@ category: kubernetes
 Not critical
 {: .label .label-yellow}
 
-Bran-write down means delayed statistics in the [Clickhouse](/on-prem/clickhouse).
+Bran-write down means delayed statistics in the [Clickhouse](/on-premises/clickhouse).
 After start it will process delayed data. **Forbidden to shut down for long time**
-(e.g several hours). It may cause queue overflow in the [RabbitMQ](/on-prem/rabbitmq),
+(e.g several hours). It may cause queue overflow in the [RabbitMQ](/on-premises/rabbitmq),
 and a risk of data loss.
 
 ## Scaling
@@ -32,9 +32,9 @@ Use rolling release. Update pods one by one.
 
 ## Strong dependencies
 
-Bran-write strongly depends on the [Clickhouse](/on-prem/clickhouse) and the
-[RabbitMQ](/on-prem/rabbitmq). It will not start without them.
+Bran-write strongly depends on the [Clickhouse](/on-premises/clickhouse) and the
+[RabbitMQ](/on-premises/rabbitmq). It will not start without them.
 
 ## Weak dependencies
 
-Bran-write would not function without the [Admiral](/on-prem/kubernetes/admiral).
+Bran-write would not function without the [Admiral](/on-premises/kubernetes/admiral).

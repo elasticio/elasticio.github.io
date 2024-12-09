@@ -286,7 +286,7 @@ for custom role creation and role deletion:
 *   You cannot create more than one role with identical names in one scope,
 *   You cannot delete a role that is assigned to a member,
 *   You cannot delete `contract.owner` and `workspace.owner` roles,
-*   You cannot delete a role that is used during the [contract creation](/on-prem/tenant/contract-management#create-contracts).
+*   You cannot delete a role that is used during the [contract creation](/on-premises/tenant/contract-management#create-contracts).
 
 To create, edit or delete a user role follow these instructions:
 
