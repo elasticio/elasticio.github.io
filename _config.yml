@@ -28,7 +28,7 @@ collections:
     output: true
   developers:
     output: true
-  on-prem:
+  on-premises:
     output: true
      
 plugins:
