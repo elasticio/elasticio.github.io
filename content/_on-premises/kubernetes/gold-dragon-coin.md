@@ -7,10 +7,10 @@ category: kubernetes
 
 {: .no_toc}
 
-{{page.description}} [Admiral](/on-prem/kubernetes/admiral) communicates with
+{{page.description}} [Admiral](/on-premises/kubernetes/admiral) communicates with
 this service with messages like: **"Can I start new pod"**  and
 **"I’m going to stop pod, forget about it"**. In case this service disagrees, pod
-is not started/stopped. The service stores it's state in the [MongoDB](/on-prem/mongodb).
+is not started/stopped. The service stores it's state in the [MongoDB](/on-premises/mongodb).
 Default version always responds with `yes` and stores nothing. It is possible to
 configure otherwise.
 

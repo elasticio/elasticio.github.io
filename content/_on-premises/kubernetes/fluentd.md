@@ -7,8 +7,8 @@ category: kubernetes
 
 {: .no_toc}
 
-{{page.description}} It stores them in the [Elasticsearch](/on-prem/elasticsearch)
-(with [GrayLog](/on-prem/graylog) as an intermediate).
+{{page.description}} It stores them in the [Elasticsearch](/on-premises/elasticsearch)
+(with [GrayLog](/on-premises/graylog) as an intermediate).
 
 - TOC
 {:toc}
@@ -36,4 +36,4 @@ The service would not start without the Kubernetes API service.
 
 ## Weak dependencies
 
-Fluentd service would be degraded if the [GrayLog](/on-prem/graylog) is down or unreachable.
+Fluentd service would be degraded if the [GrayLog](/on-premises/graylog) is down or unreachable.

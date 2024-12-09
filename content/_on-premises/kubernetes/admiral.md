@@ -32,8 +32,8 @@ will start one again.
 
 ## Strong dependencies
 
-Admiral strongly depends on [Kubernetes cluster](/on-prem/kubernetes),
-[MongoDB](/on-prem/mongodb) and the [RabbitMQ](/on-prem/rabbitmq). Without them
+Admiral strongly depends on [Kubernetes cluster](/on-premises/kubernetes),
+[MongoDB](/on-premises/mongodb) and the [RabbitMQ](/on-premises/rabbitmq). Without them
 it will not start.
 
 ## Weak dependencies

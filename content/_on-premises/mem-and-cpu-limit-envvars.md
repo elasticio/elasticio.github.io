@@ -20,7 +20,7 @@ configured in Wiper.
 ## List of Environment Variables per Installation
 
 The table below contains the default environment variables set per installation,
-their recommended values and their descriptions. **These values are recommended as optimal for a default platform installation**, and are configured in `values.yaml` file of [HELM3 deployment](/on-prem/common-values).
+their recommended values and their descriptions. **These values are recommended as optimal for a default platform installation**, and are configured in `values.yaml` file of [HELM3 deployment](/on-premises/common-values).
 In case the environment variables were set
 [per component](#list-of-environment-variables-per-component), they override those
 set configured for installation.

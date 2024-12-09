@@ -18,7 +18,7 @@ Very bad
 {: .label .label-red}
 
 The downtime is Bad. Step pods may not start (e.g. pod start due to Flow start or
-ordinary Flow wake-ups). Component pushes into the [Gitreceiver](/on-prem/kubernetes/gitreceiver) won’t work.
+ordinary Flow wake-ups). Component pushes into the [Gitreceiver](/on-premises/kubernetes/gitreceiver) won’t work.
 
 ## Scaling
 

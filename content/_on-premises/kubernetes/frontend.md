@@ -29,10 +29,10 @@ Use rolling release. Remove pods and create new. **It’s forbidden to have less
 
 ## Strong dependencies
 
-The service would not start without the [MongoDB](/on-prem/mongodb) and the
-[RabbitMQ](/on-prem/rabbitmq).
+The service would not start without the [MongoDB](/on-premises/mongodb) and the
+[RabbitMQ](/on-premises/rabbitmq).
 
 ## Weak dependencies
 
-Frontend service would be degraded if the [API](/on-prem/kubernetes/api) and the
-[Elasticsearch](/on-prem/elasticsearch) are down or unreachable.
+Frontend service would be degraded if the [API](/on-premises/kubernetes/api) and the
+[Elasticsearch](/on-premises/elasticsearch) are down or unreachable.

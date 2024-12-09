@@ -47,7 +47,7 @@ Since the ClickHouse supports replication on a table level, It uses ZooKeeper fo
 replicas meta information. Which means you must [install the ZooKeeper](zookeeper-installation) first.
 
 Check that you have not disabled the ClickHouse replication in platform configuration.
-You would have done it by using the `*CLICKHOUSE_NO_REPLICA` [Helm](/on-prem/general-description) variables.
+You would have done it by using the `*CLICKHOUSE_NO_REPLICA` [Helm](/on-premises/general-description) variables.
 If you have disabled the replication and the cluster is running, you need to do
 perform a data migration. Ask our support for instructions.
 {: .mx-6 .mt-2 .mb-2 .bg-grey-lt-000 .p-4}

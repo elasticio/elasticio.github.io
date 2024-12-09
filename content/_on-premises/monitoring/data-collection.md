@@ -107,7 +107,7 @@ scrape_configs:
 ```
 
 Kubernetes Jobs that emit Prometheus metrics require
-[Pushgateway](https://github.com/prometheus/pushgateway). Setup it and use the [.Values.secrets.platform.config.PUSH_GATEWAY_URI](/on-prem/secrets#push_gateway_uri)
+[Pushgateway](https://github.com/prometheus/pushgateway). Setup it and use the [.Values.secrets.platform.config.PUSH_GATEWAY_URI](/on-premises/secrets#push_gateway_uri)
 helm3 variable.
 
 We don't provide information how to collect metrics from 3rd party services,
