@@ -115,7 +115,7 @@ admin:
       description: Information that is specific to accounts on app.elastic.io & app-us.elastic.io
     - title: Security and Compliance
       description: Learn how we comply to the highest security standards to protect customers' and users' data in transit and at rest.
-on-prem:
+on-premises:
   title: On-Prem
   description: Information on the On-Premises installation
   class: categories__item_onprem
