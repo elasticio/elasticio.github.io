@@ -5,8 +5,8 @@ description: Technical Notes for the SOAP component.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2022-04-08
-ComponentVersion: 1.2.9
+updatedDate: 2024-11-21
+ComponentVersion: 1.2.10
 redirect_from:
   - /components/soap/completeness-matrix.html
   - /components/soap/changelog.html
@@ -14,7 +14,11 @@ redirect_from:
 
 ## Changelog
 
-### 1.2.9 (April 8, 2022)
+### 1.2.10 (November 21, 2024)
+
+* Fixed issue when you have `$ref` in generated metadata
+
+### 1.2.9 (April 08, 2022)
 
 * Added possibility to handle WSDL files where the "message" doesn't contain an element
 * Updated the Sailor version to 3.3.9
@@ -49,7 +53,7 @@ redirect_from:
 
 * Replace weight in component.json with order
 
-### 1.2.1 (May 7, 2020)
+### 1.2.1 (May 07, 2020)
 
 * Fix component.json field order
 * Fix component.json descriptions and links

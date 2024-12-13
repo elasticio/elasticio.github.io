@@ -5,8 +5,8 @@ description: Information on how works REST API flow linking.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2022-09-14
-ComponentVersion: 2.0.14
+updatedDate: 2024-11-14
+ComponentVersion: 2.1.0
 ---
 
 ## REST API component as a link

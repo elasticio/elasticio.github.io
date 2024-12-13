@@ -5,13 +5,22 @@ description: Technical Notes for the Utility Component.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2024-03-03
-ComponentVersion: 1.6.0
+updatedDate: 2024-12-12
+ComponentVersion: 1.6.1
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+## 1.6.1 (December 12, 2024)
+
+* Added options to decode data as either plain text or binary to the `String to Attachment` action
+* Moved to Node.js `20`
+* Bumped sailor to `2.7.4`
+* Bumped @elastic.io/component-commons-library to `3.2.1`
+* Bumped a bunch of development dependencies to the recent versions
+* Got rid of a few usused packages and functions
 
 ### 1.6.0 (March 01, 2024)
 

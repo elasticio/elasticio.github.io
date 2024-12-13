@@ -6,9 +6,30 @@ description: A component that is designed for utility operations.
 icon: utility.png
 icontext: Utility Component
 category: utility
-updatedDate: 2024-03-01
-ComponentVersion: 1.6.0
+updatedDate: 2024-12-12
+ComponentVersion: 1.6.1
 ---
+
+# Utility Component 
+## Table of Contents
+* [Description](#description)
+  * [Environment variables](#environment-variables)
+* [Actions](#actions)
+  * [String To Attachment](#string-to-attachment)
+  * [String From Attachment](#string-from-attachment)
+  * [Base64 Decode](#base64-decode)
+  * [Base64 Encode](#base64-encode)
+  * [Convert Between Timezones](#convert-between-timezones)
+  * [Delay](#delay)
+  * [Log Message](#log-message)
+  * [Create JSON patch](#create-json-patch)
+  * [Apply JSON patch](#apply-json-patch)
+  * [Network Diagnostics](#network-diagnostics)
+* [Limitations](#limitations)
+
+
+## Description
+A component that is designed for utility operations.
 
 ## Environment variables
 
@@ -27,21 +48,23 @@ select as a first component during the integration flow design.
 
 ### String To Attachment
 
-Creates attachment from input `value`. Output is `attachmentId` and `attachmentUrl` in `message.body` and attachment object in `message.attachments`:
-
-{% include img.html max-width="100%" url="img/string-to-attachment.png" title="String To Attachment" %}
+Creates attachment from input `value`. Output is `attachmentId` and `attachmentUrl` in `message.body` and attachment object in `message.attachments`.
 
 #### Configuration fields description
-
-* `encodeToBase64` - if checked encode an input `value` using Base64 encode. Than saves encoded value into attachment.
+* Decode/Encode Base64 Before Upload (Select View, optional):
+  * `Decode Base64 as binary` - decode an input `value` as binary data
+  * `Decode Base64 as plain text` - decode an input `value` as plain text (in UTF-8 encoding)
+  * `Encode text to Base64` - encode an input `value` using Base64 encode. Than saves encoded value into attachment.
+  * `No encoding/decoding` - just skip any encoding/decoding. The only purpose of this option to secure the backward compatibility. Select it if you don't need any data encoding or decoding.
 
 ### String From Attachment
 
 Creates string from attachment with provided input `attachmentId` which must be either:
-* A numeric ID of the attachment that can be referenced in the step immediately prior.
+* A numeric ID of the attachment that can be referenced in the step immediately prior
 * A URL to an attachment produced by any component in the flow.
 
-{% include img.html max-width="100%" url="img/string-from-attachment.png" title="String From Attachment" %}
+#### Configuration fields description
+* `decodeFromBase64` - if checked decode attachment content using Base64 decode before output. If content of attachment is malformed or not Base64 encoded string, result will be malformed.
 
 #### Configuration fields description
 

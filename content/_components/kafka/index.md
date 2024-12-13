@@ -6,8 +6,8 @@ description: Kafka Component is designed to consume (read) and produce (send) me
 icon: kafka.png
 icontext: Kafka component
 category: kafka
-ComponentVersion: 1.0.0
-updatedDate: 2023-01-13
+ComponentVersion: 1.1.1
+updatedDate: 2024-12-02
 ---
 
 ## Credentials

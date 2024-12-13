@@ -6,8 +6,8 @@ description: A messaging protocol for exchanging information between application
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2022-04-08
-ComponentVersion: 1.2.9
+updatedDate: 2024-11-21
+ComponentVersion: 1.2.10
 ---
 
 ## General information

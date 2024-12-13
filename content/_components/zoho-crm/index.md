@@ -6,8 +6,8 @@ description: A component that connects to Zoho CRM API.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.9
-updatedDate: 2024-11-07
+ComponentVersion: 1.4.0
+updatedDate: 2024-11-26
 ---
 
 ## Table of Contents
@@ -77,7 +77,7 @@ You will receive next fields: `Client ID`, `Client Secret`.
 In order to setup created Auth Client on Elastic.io platform you should click on `Add New Auth Client`, and fill next fields:
 * **Name** -  Name your Auth Client's name (any).
 * **Client ID** - Your `Client ID` from Zoho Developer Console.
-* **Client Secret** - Your `Client Secret` from Zoho Developer Console |
+* **Client Secret** - Your `Client Secret` from Zoho Developer Console
 * **Authorization Endpoint** - Zoho Accounts URL-based auth url + parameter `access_type` with value `offline` (needed for refresh token to be present).
 
 [Documentation](https://www.zoho.com/crm/developer/docs/api/v2/access-refresh.html). Examples:
@@ -96,7 +96,7 @@ In order to setup created Auth Client on Elastic.io platform you should click on
 Save client and then:
 - [provide scopes](https://www.zoho.com/crm/developer/docs/api/v2/scopes.html)
 
->**Please Note:** attention to the scope of the operations you are going to use. If the provided scope does not satisfy Zoho API requirements the request will fail (E.g. with 400 code - `Request failed with status code 400`).
+>**Please Note:** pay attention to the scope of the operations you are going to use. If the provided scope does not satisfy Zoho API requirements the request will fail (E.g. with 400 code - `Request failed with status code 400`).
 
 A few (not a comprehensive list, just a few examples!) most used scopes:
 1. `ZohoCRM.settings.ALL`. Recommended by default. Is required to get a list of modules (Object types). Is used in all the actions and triggers except for the `Raw Request` action.
@@ -112,7 +112,7 @@ E.g.: `ZohoCRM.settings.ALL,ZohoCRM.modules.ALL,ZohoCRM.users.ALL`.
 
 ### Credentials Fields
 
-* **API version** Dropdown, optional: list of available APIs (2, 2.1, 3, 4). By default the component uses v4 if other is not set in the credentials.
+* **API version** - You may also need to specify the version of the API to be used in the component. The component has been tested with **v2**, but you can set it to any version as required.
 
 ## Trigger
 
@@ -121,6 +121,7 @@ E.g.: `ZohoCRM.settings.ALL,ZohoCRM.modules.ALL,ZohoCRM.users.ALL`.
 #### Config Fields
 
  * **Object Type** Dropdown: Indicates Object Type to be fetched.
+ * **Fields in resulting object** - Multiselect Dropdown: Select the fields that will be included in the resulting object. If you are using **v2**, all fields will be included by default; otherwise, only the `Field to poll` will be included. Please note that you can include a maximum of **49** field names in this parameter.
  * **Emit behavior** Dropdown: Indicates behavior to emit result objects: `Emit individually` or `Emit page`.
  * **Field to poll** Dropdown: Indicates field to poll (new objects or modified objects).
  * **Start Time** - TextField (string, optional): Indicates the beginning time to start retrieving events from.
@@ -147,13 +148,37 @@ Action to call any Zoho-crm API endpoint.
 
 >**Please Note**: when you are trying to get some object by id, in case no object found - Zoho API will return empty body and statusCode 204.
 
-#### Config Fields
-
 #### Input Metadata
-
-* **Url** - Path of the resource relative to the URL base (https://api.hubapi.com), required. For example `/crm/v2/leads`.
+* **Url** - The path of the resource relative to the URL base (e.g., `https://www.zohoapis.com`). This parameter is required. For instance, you might use `/crm/v2/leads`. You may also omit the version if it is included in the credentials, such as using `/leads`. In some cases you may also use JSONata [$encodeUrlComponent()](https://docs.jsonata.org/string-functions#encodeurlcomponent) function - for example to encode email address for the search query.
 * **Method** - Allowed values `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, required. HTTP verb to use in the request.
-* **Request Body** - Body of the request to send.
+* **Request Body** - Body of the request to send
+
+Refer to the [Zoho API docs](https://www.zoho.com/crm/developer/docs/api/v2/modules-api.html) to build a request.
+
+Request example:
+
+```
+{
+  "method": "GET",
+  "url": "/crm/v2/Contacts/search?criteria=((Email:equals:johndoe@example.com))"
+}
+```
+
+Same as:
+```
+{
+  "method": "GET",
+  "url": "/Contacts/search?criteria=((Email:equals:johndoe@example.com))"
+}
+```
+
+Using encodeUrlComponent function on email:
+```
+{
+  "method": "GET",
+  "url": "/crm/v2/Contacts/search?criteria=((Email:equals:" & $encodeUrlComponent("user@example.com") & "))"
+}
+```
 
 ### Upsert
 
