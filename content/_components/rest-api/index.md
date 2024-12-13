@@ -6,11 +6,28 @@ description: A component allows you to connect to any REST API without programmi
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2024-03-28
-ComponentVersion: 2.0.15
+updatedDate: 2024-11-14
+ComponentVersion: 2.1.0
 ---
 
-## Introduction
+## Table of Contents
+
+* [Description](#description)
+  * [Quick Start](#quick-start)
+* [Credentials](#credentials)
+* [Configuration options](#configuration-options)
+  * [Environment Variables](#environment-variables)
+* [Actions](#actions) 
+  * [HTTP Request (Axios Library)](#http-request-axios-library)
+* [Triggers](#triggers) 
+  * [HTTP Request (Axios Library)](#http-request-axios-library) 
+* [Examples of Usage](#examples-of-usage)
+  * [Uploading Files](#uploading-files)
+  * [Sending XML or Text Data](#sending-xml-or-text-data)
+  * [Sending JSON Data](#sending-json-data)
+* [Known limitations](#known-limitations)
+
+## Description
 
 The **REST API** is designed so that you can connect and request almost any *REST API* without having to create a separate component.
 
@@ -21,7 +38,7 @@ In a nutshell, an API call is a process that takes place when you send a request
 
 >**Please Note:** We highly recommend using only the second version of the component The *REST API v1* component has been deprecated and is no longer supported. We highly recommend migrating to the actual version of componet. *REST API v2* component offers improved functionality and ongoing maintenance. If you still using REST API v1 component please update your codebase to utilize the *REST API v2* component as soon as possible to ensure compatibility with future updates and benefit from the latest features.
 
-## Quick Start
+### Quick Start
 
 The best way to understand a *REST API* component is to see it in action. We'll start with a simple example. First of all, you need to create a flow and find the component in the list:
 
@@ -45,7 +62,7 @@ After retrieving a Sample, we will receive information about our own profile as 
 
 We're done. Our simplest flow using the REST API component did its job. If you want to see more complex examples using other components in conjunction with REST API component please read our [Usage example](usage-example).
 
-## Authorization methods
+## Credentials
 
 REST API component supports 4 authorization types:
 
@@ -78,7 +95,7 @@ For more information please read the [Authorization methods](authorization-metho
 * `Request timeout` - Timeout period in milliseconds (1-1140000) while component waiting for server response also can be configured with `REQUEST_TIMEOUT` environment variable if configuration field is not provided. Defaults to 100000 (100 sec). 
 > Notice: Specified for component `REQUEST_TIMEOUT` environment variable would be overwritten by specified value of *Request timeout*, the default value would be also overwritten.
 
-## Environment Variables
+### Environment Variables
 
 | NAME                       | DESCRIPTION    | DEFAULT   | OPTIONAL |
 |----------------------------|------------------------|-----------|----------|
@@ -87,24 +104,104 @@ For more information please read the [Authorization methods](authorization-metho
 | REQUEST_MAX_RETRY          | Number of HTTP authorization request retry attempts.                                                  | 3         | true     |
 | REFRESH_TOKEN_RETRIES          | Number of [Rebound attempts](/guides/rebound.html#how-the-rebound-works) for processing the message.                                                  | 10        | true     |
 
+## Actions
 
-## HTTP request function
+### HTTP Request (Axios Library)
 
-In a REST API component the trigger and action perform the same function - HTTP request witch will send a `GET`/`POST`/`PUT`/`PATCH`/`DELETE` requests and parse the response back to the flow.
+#### Configuration Fields
 
-For more information on HTTP request function and how to:
+* **Method** (dropdown, required): The HTTP verb to use in the request, which can be one of `GET`, `POST`, `PUT`, `DELETE`, or `PATCH`.
+* **URL** (string, required) - The URL of the REST API resource.
+* **Headers** tab: This includes the `Add Header` button, which is used to add custom headers to your request. Each header consists of two fields: the first is used as the header key, and the second is used as the header value.
+* **Body** tab (available only if `Method` is not `GET`) has the following fields:
+  * **Content Type** (string, required): The type of data that you are going to send.
+  * **Body** (object/string/dynamic fields, required) - Based on the provided `Content Type`, the component will generate the appropriate fields:
+    * If `multipart/form-data` or `application/x-www-form-urlencoded` is selected, there will be an `Add Part` button used to add parts to your request; each part consists of a key and a value.
+    * For other cases, a single input field for the body will be generated, allowing you to input an object (using a JSONata expression) or text (if you need to send XML).
+* **Error Handling Policy** (dropdown, optional, default `Retry by component`) - The component considers the following codes as errors that can be handled: *`408`*, *`423`*, *`429`*, everything greater than *`500`*, and *`ECONNABORTED`* (timeout). You can select one of the available options:
+  * `Retry by component` - The component will attempt to retry this request.
+  * `Use rebound functionality` - The component will send the incoming message back to the queue; after some time, this message will return (you can find more information about how rebounds work in the platform documentation).
+  * `Don't retry (throw error)` - The component will throw an error directly.
+  * `Emit error as message (don't throw errors)` - The component will send a message with the response received from the server.
+* **Maximum Retries** (number, optional, default `10`) - Set the maximum number of retry attempts. This option is only applicable when the `Error Handling Policy` is set to `Retry by component`.
+* **Error Codes for retry** (string, optional) - A comma-separated list of codes or ranges. By default, the error handling policy applies when you receive HTTP codes 408, 423, 429, and any codes greater than 500. However, you can override these codes using this field.
+  
+  * You can specify exact codes: `401, 404, 503`.
+  * You can also use ranges: `400-401, 405-410, 502-509`.
+  * You can combine them: `403, 404, 500-599`.
 
-* Define request body
-* Send XML data
-* Work with XML
-* Send JSON data
-* Send Form data
+  Note: You can only include codes above 299 here, and you cannot include 401 if OAuth2 authentication is selected.
+* **Download as Attachment** (boolean) - If checked, the component will download response data to internal storage as an attachment, and you will receive a URL to it instead of the response body.
+* **Upload File** (boolean) - If checked, you will be able to upload data via two available methods: 
+  * For body content type `application/octet-stream`, provide the URL to the file from internal or external storage directly in the "Body" field as a string.
+  * For body content type `multipart/form-data`, specify any key as a string (e.g., `file`) and the value as an object (switch the field to "JSONata Mode"), where one of the object keys should be `url`, pointing to the file. Available parameters in this case:
+    * `url` (string, required) - The link to the file from internal or external storage.
+    * `filename` (string, optional) - The name of the file.
+    * `knownLength` (number, optional) - The size of the file.
+* **Do Not Verify SSL Certificate (unsafe)** (boolean) - Check this option if you want to disable SSL certificate verification on the server.
+* **Maximum Redirects** (number, optional, default `5`) - Defines the maximum number of redirects to follow. If set to 0, no redirects will be followed.
+* **Delay in ms** (number, optional, default `0`) - Delay the next request after the previous request by the specified milliseconds. The maximum delay is 1140000 (19 minutes), with a default of 0.
+* **Request Timeout** (number, optional, default `100000` - 100 seconds) - The timeout period in milliseconds while the component waits for a server response. It should be a positive integer between `1` and `1,140,000` (19 minutes).
+* **Response Size Limit** (number, optional) - The maximum response size in bytes, with a maximum and default of 20MB for regular requests and 100MB for attachments (if `Download as Attachment` is checked).
+* **Request Size Limit** (number, optional, default `unlimited`) - The maximum size of the HTTP request content in bytes.
+* **Response Encoding** (string, optional, default `utf8`) - Indicates the encoding to use for decoding responses. In some cases, when you need to extract data from the message, you can use `base64` here.
 
-For more details please read the [HTTP request function](http-request) page.
+#### Input Metadata
+None
+
+#### Output Metadata
+* **statusCode** (number, required) - The HTTP status code of the response.
+* **HTTPHeaders** (object, required) - The response headers.
+
+If `Download as Attachment` is checked:
+* **attachmentUrl** (string, required) - The link to your file stored in internal storage.
+If `Download as Attachment` is unchecked:
+* **responseBody** (object/string) - The content of the response.
+
+## Triggers
+
+### HTTP Request (Axios Library)
+Refer to the actions section [HTTP Request (Axios Library)](#http-request-axios-lib).
 
 ## Technical Details
 
 Technical questions may arise while working with the component. You can find out about what changes have occurred with the component during its existence in [Technical Notes](technical-notes) page. If you need detailed information about deprecated functions of a component (for example, you are working with a long-established flow) please read [Deprecated functions](deprecated-functions) page.
+
+## Examples of Usage
+
+### Uploading Files
+To upload a file, ensure that you check the `Upload File` option in the configuration. You will then have the following options:
+
+#### Upload Using `application/octet-stream`
+![image](https://github.com/user-attachments/assets/c2624659-28bb-46f3-ae30-d7ef4a7aa6f0)
+
+1. Add the URL to which you will upload the file.
+2. Set the Body content type to `application/octet-stream`.
+3. In the body, provide the URL to the data source from which you need to retrieve the file.
+
+#### Upload Using `multipart/form-data`
+![image](https://github.com/user-attachments/assets/617a4db4-7145-44a9-9bab-9d5346056c10)
+
+1. Add the URL to which you will upload the file.
+2. Set the Body content type to `multipart/form-data`.
+3. Press the `Add Part` button.
+4. Enter a key that describes the field containing the data; a common name is `file`.
+5. Switch to `JSONata mode`.
+6. Create an object with the key `url`—this will be the data source from which you need to retrieve the file.
+
+### Sending XML or Text Data
+![image](https://github.com/user-attachments/assets/be948d9a-1d1a-4a36-8660-ce65438f7034)
+
+1. In `Integrator mode`, you can simply place your text or XML inside the body.
+2. Mapping from previous steps is also available.
+
+You can switch to `JSONata mode` if you need to utilize JSONata expressions.
+
+### Sending JSON Data
+![image](https://github.com/user-attachments/assets/c2954ce2-4c8b-4bfc-9c9f-2345c406c4e1)
+
+1. In `JSONata mode`, you can simply place your JSON inside the body.
+2. Mapping from previous steps and any JSONata expressions are also available.
 
 ## Known Limitations
 

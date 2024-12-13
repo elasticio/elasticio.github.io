@@ -7,10 +7,8 @@ icon: picsart.png
 icontext: picsart component
 category: picsart
 ComponentVersion: 1.0.0
-updatedDate: 2024-11-29
+updatedDate: 2024-11-28
 ---
-
-# Picsart Component
 
 ## Table of Contents
 

@@ -2,65 +2,66 @@
 title: Pipedrive component
 layout: component
 section: CRM components
-description: An integration component for Pipedrive.
+description: The Pipedrive Component enables seamless interaction with the Pipedrive API. 
 icon: pipedrive.png
 icontext: Pipedrive component
 category: pipedrive
-updatedDate: 2023-04-07
+updatedDate: 2024-12-02
 ComponentVersion: 1.0.0
 ---
 
-Pipedrive Component component for the [{{site.data.tenant.name}} platform](http://www.{{site.data.tenant.name}}).
+## Table of Contents
 
-## Getting started
+* [Description](#description)
+* [Credentials](#credentials)
+* [Actions](#actions)
+  * [Make Raw Request](#make-raw-request)
 
-### Authentication
+## Description
 
-You need to configure your company domain and access token to authenticate the
-pipedrive component for pipedrive.
+The Pipedrive Component enables seamless interaction with the [Pipedrive API](https://developers.pipedrive.com/docs/api/v1). This component has been tested with API versions `v1` and `v2`.
 
-### Create Deals
+## Credentials
+To begin building any integration flow, the first step is to create an application by following these instructions:
 
-You can create deals with the help of the `createDeal` action. It will
-automatically create an organisation, a contact, a deal and a notice for the deal for you.
+1. Obtain your [developer sandbox account](https://developers.pipedrive.com/).
+   * If you already have a sandbox account, switch to it by clicking on your profile name or picture in the upper right corner and selecting `Switch company`.
+2. Open the [Developer Hub](https://app.pipedrive.com/developer-hub).
+3. Click the `Create an app` button.
+4. Select `Create private app`.
+5. Enter a desired `App name`.
+6. Provide the `Callback URL` as `https://{your-tenant-address}/callback/oauth2`, where `{your-tenant-address}` is the domain of the integration platform.
+7. In the `OAuth & access scopes` section, select the necessary scopes—object types and operations that you plan to use with this integration. Also, copy the `Client ID` and `Client secret`, as they will be needed in the subsequent steps.
 
-### Technical Notes
+For more information about creating an OAuth app, please refer to the documentation [here](https://pipedrive.readme.io/docs/marketplace-registering-the-app).
 
-The [technical notes](technical-notes) page gives some technical details about Pipedrive component like [changelog](/components/pipedrive/technical-notes#changelog).
+Once the app is created, proceed to set up new credentials for the component:
 
-## Triggers
-
-This component has no trigger functions. This means it will not be accessible to
-select as a first component during the integration flow design.
-
+* **Choose Auth Client** (dropdown, required) - Choose from the previously created clients or select `Add New Auth Client`:
+    * **Name** (string, required) - Assign any desired name.
+    * **Client ID** (string, required) - Enter the `Client ID` obtained from your app.
+    * **Client Secret** (string, required) - Enter the `Client secret` from your app.
+    * **Authorization Endpoint** (string, required) - Enter the OAuth2 authorization endpoint: `https://oauth.pipedrive.com/oauth/authorize`.
+    * **Token Endpoint** (string, required) - Enter the refresh token endpoint: `https://oauth.pipedrive.com/oauth/token`.
+* **Name Your Credential** (string, required) - Enter a name of your choice.
 ## Actions
 
-### Create Activity
+### Make Raw Request
 
-Create a new activity in pipedrive:
+Allows for the execution of custom requests using the Pipedrive REST API directly.
 
-{% include img.html max-width="100%" url="img/create-a-new-activity.png" title="Create Activity" %}
+#### Configuration Fields
 
-### Create Deals
+* **Don't throw an error on 404 Response** - (optional, boolean): Configures the handling of 404 HTTP responses as non-errors. Default is `false`.
 
-Create a new deal in pipedrive:
+#### Input Metadata
 
-{% include img.html max-width="100%" url="img/create-a-new-deal.png" title="Create Deals" %}
+* **Url** - (string, required): The relative path of the resource, appended to the base URL `https://{COMPANYDOMAIN}.pipedrive.com/api/`.
+* **Method** - (string, required): Specifies the HTTP method for the request, one of "GET", "POST", "PUT", "PATCH", "DELETE".
+* **Request Body** - (object, optional): The body content for the request.
 
-### Create Note
+#### Output Metadata
 
-Create a new note in pipedrive:
-
-{% include img.html max-width="100%" url="img/create-a-new-note.png" title="Create Note" %}
-
-### Create Organisation
-
-Create a new organisation in pipedrive:
-
-{% include img.html max-width="100%" url="img/create-a-new-organisation.png" title="Create Organisation" %}
-
-### Create Person
-
-Create a new person in pipedrive:
-
-{% include img.html max-width="100%" url="img/create-a-new-person.png" title="Create Person" %}
+* **Status Code** - (number, required): The HTTP response status code.
+* **HTTP headers** - (object, required): The response's HTTP headers.
+* **Response Body** - (object, optional): The body of the HTTP response.

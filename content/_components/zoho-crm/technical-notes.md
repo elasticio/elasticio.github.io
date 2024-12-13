@@ -5,11 +5,19 @@ description: Technical Notes for the Zoho CRM component.
 category: zoho-crm
 icon: zoho-crm.png
 icontext: Zoho CRM component
-ComponentVersion: 1.3.9
-updatedDate: 2024-11-07
+ComponentVersion: 1.4.0
+updatedDate: 2024-11-26
 ---
 
 ## Changelog
+
+### 1.4.0 (November 26, 2024)
+
+* Added new field `API version` to credential section
+* Added new field `Fields in resulting object` to `Get New and Updated Objects` trigger
+* Reusable zoho client for all actions and trigger
+* `Raw request` action can be used with or without providing version in url 
+* Main client now use `axiosReqWithRetryOnServerError` to prevent server errors
 
 ### 1.3.9 (November 07, 2024)
 
