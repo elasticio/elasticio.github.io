@@ -21,11 +21,11 @@ updatedDate: 2024-11-28
 
 ## Description
 
-The Picsart Component facilitates seamless interaction with the [Picsart Creative APIs](https://docs.picsart.io/reference/?utm_source=[elastic.io](http://elastic.io/)&utm_medium=tech-notes&utm_campaign=no-code-platform-integration). This component has been tested with API version `1.0`.
+The Picsart Component facilitates seamless interaction with the [Picsart Creative APIs](https://docs.picsart.io/reference/?utm_source=elastic.io&utm_medium=tech-notes&utm_campaign=no-code-platform-integration). This component has been tested with API version `1.0`.
 
 ## Credentials
 
-To utilize this component, you must first obtain an API key. Visit the [console](https://console.picsart.io/dashboard/apps/?utm_source=[elastic.io](http://elastic.io/)&utm_medium=tech-notes&utm_campaign=no-code-platform-integration) to find it.
+To utilize this component, you must first obtain an API key. Visit the [console](https://console.picsart.io/dashboard/apps/?utm_source=elastic.io&utm_medium=tech-notes&utm_campaign=no-code-platform-integration) to find it.
 
 The required credential fields for the component are as follows:
 * **API key** (string, required): This key will be included as the `X-Picsart-API-Key` header for each request.
@@ -35,7 +35,7 @@ The required credential fields for the component are as follows:
 
 ### Make Raw Request
 
-This action allows you to execute custom requests directly using the [Picsart Creative REST API](https://docs.picsart.io/reference/?utm_source=[elastic.io](http://elastic.io/)&utm_medium=tech-notes&utm_campaign=no-code-platform-integration).
+This action allows you to execute custom requests directly using the [Picsart Creative REST API](https://docs.picsart.io/reference/?utm_source=elastic.io&utm_medium=tech-notes&utm_campaign=no-code-platform-integration).
 
 #### Configuration Fields
 
