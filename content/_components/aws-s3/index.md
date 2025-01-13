@@ -507,5 +507,5 @@ Be careful: this action can process only one attachment - if it would be more or
 
 ## Known Limitations
 
-1. Maximal possible size for an attachment is 10 MB.
+1. The maximum possible size for an attachment is 100 MB.
 2. Attachments mechanism does not work with [Local Agent Installation](/guides/vpn-agent)
