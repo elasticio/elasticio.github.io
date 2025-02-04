@@ -5,14 +5,19 @@ description: Technical Notes for Salesforce Component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2024-11-07
-ComponentVersion: 2.8.5
+updatedDate: 2025-01-31
+ComponentVersion: 2.8.6
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.8.6 (January 31, 2025)
+
+* Upgrade Sailor version to 2.7.4
+* Enhanced error message text in the `Raw Request` action
 
 ### 2.8.5 (November 07, 2024)
 

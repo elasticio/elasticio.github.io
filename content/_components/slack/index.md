@@ -6,8 +6,8 @@ description: Component is designed to connect with Slack API
 icon: slack.png
 icontext: Slack component
 category: slack
-updatedDate: 2022-07-15
-ComponentVersion: 1.0.0
+updatedDate: 2025-02-02
+ComponentVersion: 1.1.1
 ---
 
 ## Credentials
