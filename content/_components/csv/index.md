@@ -61,5 +61,5 @@ The component does not require credentials to function.
 
   1. You may get `Component run out of memory and terminated.` error during run-time, that means that component needs more memory, please add  `EIO_REQUIRED_RAM_MB` environment variable with an appropriate value (e.g. value `1024` means that 1024 MB will be allocated) for the component in this case.
   2. You may get `Error: write after end` error, as a current workaround try increase value of environment variable: `TIMEOUT_BETWEEN_EVENTS`.
-  3. Maximal possible size for an attachment is 10 MB.
+  3. The maximum possible size for an attachment is only limited by the available RAM memory of the component. In case of running into the limit the platform will give an error message, and if problem persists after a number of restarts the platform will suspend the complete integration flow.
   4. Attachments mechanism does not work with [Local Agent Installation](/guides/vpn-agent).

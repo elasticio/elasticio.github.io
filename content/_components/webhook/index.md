@@ -26,10 +26,6 @@ An open source component for sending and receiving [WebHooks](https://en.wikiped
 
 ## Technical Notes
 
-The [technical notes](technical-notes) page gives some technical details about Webhook component like [changelog](/components/webhook/technical-notes#changelog).
-
-## Credentials
-
 The Webhook component supports the following authorisation types:
 
 ![creds](img/credentials.png)

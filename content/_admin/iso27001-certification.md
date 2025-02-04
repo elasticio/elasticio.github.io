@@ -22,7 +22,7 @@ Information Security Management Systems best practices:
 
 *   Product Development
 *   IT Operations
-*   Human Resources 
+*   Human Resources
 
 ## What is ISO 27001 Certification?
 
@@ -46,7 +46,7 @@ Our customers are welcome to request a copy of the SoA by [contacting us](https:
 individual cases, the conclusion of a non-disclosure agreement (NDA) may be
 necessary in this context.
 
-## ISO 27001-specific employee training 
+## ISO 27001-specific employee training
 
 Several times a year, all of our employees receive training in the following areas:
 *   Security Awareness
@@ -73,5 +73,5 @@ List of important suppliers:
 
 ## Resources
 
-*   The [ISO 27001 certificate](https://www.dropbox.com/s/fe8wtpyc3ej6nfq/31612640%20ISMS17%202022-05-18%20Englisch.pdf?dl=0) (444KB, PDF).
+*   The [ISO 27001 certificate](http://seafile.eio.cloud/f/ca1b2fb22c9a4ed0a331/) (181.4KB, PDF).
 *   [Information Security Management Criteria and Related Controls document](https://www.dropbox.com/s/oxqrkt6kixdsv31/Generic%20INFOSEC%20DATA_220524.pdf?dl=0) (216KB, PDF).

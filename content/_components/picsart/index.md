@@ -2,7 +2,7 @@
 title: Picsart component
 layout: component
 section: Office components
-description: The Picsart Component facilitates seamless interaction with the Picsart API.
+description: The Picsart Component facilitates seamless interaction with the Picsart Creative APIs.
 icon: picsart.png
 icontext: picsart component
 category: picsart
@@ -73,12 +73,12 @@ The foreground should be visually clear, high contrast with relatively sharp edg
 
 #### Input Metadata
 
-* **Image** - (string, semi-required): The URL of an image stored either internally or externally. If a link is provided, the component will download the file and send it as binary data to the Picsart API.
-* **Image URL** - (string, semi-required): The URL of an image stored externally; this will be sent directly to the Picsart API.
+* **Image** - (string, semi-required): The URL of an image stored either internally or externally. If a link is provided, the component will download the file and send it as binary data to the Picsart Creative APIs.
+* **Image URL** - (string, semi-required): The URL of an image stored externally; this will be sent directly to the Picsart Creative APIs.
 * **Image ID** - (string, semi-required): The source image ID of an image that has been previously uploaded to Picsart or the result image ID from a different API.
 * **Output Type** - (string, optional, `cutout` by default): If you submit a photo of a person, `cutout` returns the person as a sticker, while `mask` returns a mask photo of the person.
-* **Background Image** - (string, semi-required): The URL of a background image stored either internally or externally. If a link is provided, the component will download the file and send it as binary data to the Picsart API.
-* **Background Image URL** - (string, semi-required): The URL of a background image stored externally; this will be sent directly to the Picsart API.
+* **Background Image** - (string, semi-required): The URL of a background image stored either internally or externally. If a link is provided, the component will download the file and send it as binary data to the Picsart Creative APIs.
+* **Background Image URL** - (string, semi-required): The URL of a background image stored externally; this will be sent directly to the Picsart Creative APIs.
 * **Background Image ID** - (string, semi-required): The source image ID of a background image that has been previously uploaded to Picsart or the result image ID from a different API.
 * **Background Color** - (string, optional): Can be a hex color code (e.g., #82d5fa, #fff) or a color name (e.g., blue). For semi-transparency, 4-/8-digit hex codes are also supported (e.g., #18d4ff87).
 * **Background Blur** - (number, optional, 0 by default): Provide a blur value ranging from 0 to 100.
@@ -129,8 +129,8 @@ Upscale Factor | Input Image Maximum Recommended Resolution (width x height)
 
 #### Input Metadata
 
-* **Image** - (string, semi-required): The URL of an image stored either internally or externally. If a link is provided, the component will download the file and send it as binary data to the Picsart API.
-* **Image URL** - (string, semi-required): The URL of an image stored externally; this will be sent directly to the Picsart API.
+* **Image** - (string, semi-required): The URL of an image stored either internally or externally. If a link is provided, the component will download the file and send it as binary data to the Picsart Creative APIs.
+* **Image URL** - (string, semi-required): The URL of an image stored externally; this will be sent directly to the Picsart Creative APIs.
 * **Image ID** - (string, semi-required): The source image ID of an image that has been previously uploaded to Picsart or the result image ID from a different API.
 * **Upscale Factor** - (number, required): Select one of the available upscale factors. The options are: 2, 4, 6, 8.
 * **Format** - (string, optional, defaults to `JPG`): The output image format; supported values include: `JPG`, `PNG`, and `WEBP`.
