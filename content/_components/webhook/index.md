@@ -2,49 +2,64 @@
 title: Webhook component
 layout: component
 section: Utility components
-description: A webhook is simply a way for an app to provide other applications with real-time information.
+description: The Webhook component receives data at the specified URL to initiate your workflow.
 icon: webhook.png
 icontext: Webhook component
 category: webhook
-updatedDate: 2022-11-04
-ComponentVersion: 1.2.12
+updatedDate: 2025-01-13
+ComponentVersion: 2.0.0
 ---
 
-## Purpose
+## Table of Contents
+
+* [Description](#description)
+* [Technical Notes](#technical-notes)
+* [Credentials](#credentials)
+* [Triggers](#triggers)
+   * [Receive](#receive)
+* [Supported Data Types](#supported-data-types)
+* [Known Limitations](#known-limitations)
+
+## Description
 
 An open source component for sending and receiving [WebHooks](https://en.wikipedia.org/wiki/Webhook) on {{site.data.tenant.name}}.
-
-## Credentials
-
-Webhook component supports the following authorisation types:
-
-![creds](img/credentials.png)
-
-* **No Auth** - use this method to work with any open REST API.
-* **Basic Auth** - use it to provide login credentials like username/password.
-* **API Key Auth** - use it to provide API Key to access the resource.
-* **HMAC verification shared secret** - use it to verify via a shared secret.
-
-  Component supporting 2 types of HMAC verification shared secrets:
-    - **SHA512**
-    - **SHA256**
-    
-  For both cases of HMAC authentication it is possible to specify the fields:
-  1. **Header Name** - responsible for the Header title passing the request signature.
-  2. **HMAC verification shared secret** - responsible for the encryption secret key. If it's not specified - default `x-eio-signature` will be used.
-  
-  ![HMAC-credentials-settings](img/HMAC-credentials-settings.png)
-
 
 ## Technical Notes
 
 The [technical notes](technical-notes) page gives some technical details about Webhook component like [changelog](/components/webhook/technical-notes#changelog).
 
+## Credentials
+
+The Webhook component supports the following authorisation types:
+
+![creds](img/credentials.png)
+
+* **No Auth** - Use this method to interact with any open REST API.
+* **Basic Auth** - Utilize this method to provide login credentials. This method includes the following fields:
+  * **Username** - (string, required)
+  * **Password** - (string, required)
+* **API Key Auth** - Use this method to provide an API key as part of the headers to access the resource. This method includes the following fields:
+  * **Header Name** - (string, required)
+  * **Header Value** - (string, required)
+* **HMAC (sha256/sha512) verification with shared secret** - Use this method to verify requests using a shared secret. This method includes the following fields:
+  * **Header Name** - (string, optional, defaults to `x-eio-signature`)
+  * **HMAC (sha256/sha512) verification shared secret** - (string, required)
+  
+  ![HMAC-credentials-settings](img/HMAC-credentials-settings.png)
+
 ## Triggers
 
 ### Receive
 
-Simple webhook trigger which receives data as an input and starts the flow execution after this.
+This is a simple webhook trigger that receives data as input and initiates the execution of the workflow.
+
+#### Output Metadata
+The message body emitted from the webhook will contain:
+* A JSON object that was transferred using the `POST` method or query parameters in the case of a `GET` request.
+* `_query` (object) - Contains the query parameters.
+* `_headers` (object) - Contains the headers of the received request.
+* `_method` (string, `POST` or `GET`) - Indicates the HTTP method of the received request.
+* `_url` (string) - The full URL that was received.
 
 Example:
 
@@ -61,6 +76,17 @@ Example:
     "_url": "/hook/5d691738cb5a286adc1e68e2"
   }
 ```
+
+#### Webhook Response
+By default, the webhook URL will respond with the following structure: 
+```json
+{
+    "requestId": "86ad47dfbce4a8ae8a1eb505b85d8bd5",
+    "message": "thank you"
+}
+```
+
+However, you can specify the exact content of the reply using the [HTTP Reply](https://docs.elastic.io/components/request-reply/index.html) component. In this case, you will receive a reply only when the message reaches the step where the `HTTP Reply` is used, or if an error occurs in other steps between the `Webhook` step and the `HTTP Reply`.
 
 ## Supported Data Types
 
@@ -124,8 +150,8 @@ By supporting these various data types, the Webhook component provides flexibili
 
 </details>
 
-## Known limitations
-
-1. Maximal possible size for an attachment is 10 MB.
-
-2. Attachments mechanism does not work with the Local Agents.
+## Known Limitations
+* Currently, the component supports the following HTTP methods: `POST` and `GET`.
+* When using a `POST` request, only `JSON` or `XML` data can be transferred to the workflow; other types, such as text or files, are not supported.
+* `XML` data will be automatically converted to `JSON` format.
+* The base path of the URL begins with the keyword `hook` followed by the flow ID, for example, `/hook/678119de28021e00129641fe`. You can append the desired path only after this base path, such as `/hook/678119de28021e00129641fe/sales/orders`.

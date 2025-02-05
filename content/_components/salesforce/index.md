@@ -1,14 +1,29 @@
 ---
-title: Salesforce Component
+title: Salesforce component
 layout: component
 section: CRM components
 description: A component enables you to manage your organization’s sales, marketing and customer support assets, far beyond email addresses and phone numbers.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2024-11-07
-ComponentVersion: 2.8.5
+updatedDate: 2025-01-31
+ComponentVersion: 2.8.6
 ---
+
+## Table of Contents
+
+* [Description](#description)
+   * [Completeness Matrix](technical-notes.html#completeness-matrix)
+   * [API version](#api-version)
+   * [Environment variables](#environment-variables)
+   * [Technical Notes](#technical-notes)
+* [Credentials](#credentials)
+* [Triggers](#triggers)
+* [Actions](#actions)
+* [Permissions](#permissions)
+* [Known Limitations](#known-limitations)
+
+## Description
 
 {{page.description}}
 
@@ -93,8 +108,8 @@ For more information pleas read our [Creating OAuth App for Salesforce](creating
 
 Salesforce component includes the following triggers:
 
-1.  [Query trigger](triggers#query-trigger) Continuously runs the same `SOQL` query and emits results one-by-one. Use the Salesforce Object Query Language (`SOQL`) to search your organization’s Salesforce data for specific information.
-2.  [Get New and Updated Objects Polling trigger](triggers#get-new-and-updated-objects-polling-trigger) Polls existing and updated objects. You can select any custom or built-in object for your Salesforce instance.
+1.  [Get New and Updated Objects Polling trigger](triggers#get-new-and-updated-objects-polling-trigger) Polls existing and updated objects. You can select any custom or built-in object for your Salesforce instance.
+2.  [Query trigger](triggers#query-trigger) Continuously runs the same `SOQL` query and emits results one-by-one. Use the Salesforce Object Query Language (`SOQL`) to search your organization’s Salesforce data for specific information.
 3.  [Subscribe to platform events](/components/salesforce/triggers#subscribe-to-platform-events-trigger) This trigger will subscribe for any platform Event using Salesforce streaming API. Realtime flows only.
 4. [Subscribe to PubSub](triggers#subscribe-to-PubSub) This trigger will subscribe for any platform Event using [Pub/Sub API](https://developer.salesforce.com/docs/platform/pub-sub-api/overview).
 
@@ -114,7 +129,7 @@ Use this list to navigate to the action you seek.
 8.  [Bulk Query action](actions#bulk-query-action) Fetches records to a CSV file.
 9.  [Raw Request action](actions#raw-request-action) Make raw request.
 
-> You can find information on deprecated actions [here](deprecated-functions#deprecated-triggers).
+> You can find information on deprecated actions [here](deprecated-functions#deprecated-actions).
 
 ## Permissions
 
