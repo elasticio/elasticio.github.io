@@ -5,8 +5,8 @@ description: Salesforce component actions.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2024-11-07
-ComponentVersion: 2.8.5
+updatedDate: 2025-01-31
+ComponentVersion: 2.8.6
 ---
 
 ## Query action

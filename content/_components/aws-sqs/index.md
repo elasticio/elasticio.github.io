@@ -6,9 +6,23 @@ description: Amazon AWS SQS (Simple Queue Service) Component is designed to use 
 icon:  aws-sqs.png
 icontext: AWS SQS component
 category: aws-sqs
-updatedDate: 2023-03-06
-ComponentVersion: 1.1.2
+updatedDate: 2025-01-15
+ComponentVersion: 2.0.0
 ---
+
+## Table of Contents
+
+* [Description](#description)
+* [Credentials](#credentials)
+* [Triggers](#triggers)
+    * [Receive Messages Long Polling](#receive-messages-long-polling)
+* [Actions](#actions)
+    * [Delete Message](#delete-message)
+    * [Receive Message](#receive-message)
+    * [Send Message](#send-message)
+* [Limitations](#limitations)
+    * [High load performance](#high-load-performance)
+    * [Recommendations](#recommendations)
 
 ## Description
 
@@ -143,7 +157,8 @@ Sending a message to a queue
 * **MD5OfMessageAttributes** - An MD5 digest of the message attributes
 * **MessageId** - ID of the message
 
-## High load performance
+## Limitations
+### High load performance
 
 After several load tests we can make several conclusions:
 * `Send Message` action is able to generate:

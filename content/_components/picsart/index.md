@@ -6,18 +6,20 @@ description: The Picsart Component facilitates seamless interaction with the Pic
 icon: picsart.png
 icontext: picsart component
 category: picsart
-ComponentVersion: 1.0.0
-updatedDate: 2024-11-28
+ComponentVersion: 1.0.1
+updatedDate: 2025-01-09
 ---
+
+# Picsart Component
 
 ## Table of Contents
 
 * [Description](#description)
 * [Credentials](#credentials)
-* [Actions](#actions)
+* [Actions](#actions) 
   * [Make Raw Request](#make-raw-request)
-  * [Remove background](#remove-background)
-  * [Upscale](#upscale)
+  * [Remove background](#remove-background) 
+  * [Upscale](#upscale) 
 
 ## Description
 
@@ -29,13 +31,14 @@ To utilize this component, you must first obtain an API key. Visit the [console]
 
 The required credential fields for the component are as follows:
 * **API key** (string, required): This key will be included as the `X-Picsart-API-Key` header for each request.
+![API key](img/api-key.png)
 * **Image API base URL** (string, optional): By default, the component uses the image API at `https://api.picsart.io/tools/1.0/`, but you can modify it here.
 
-## Actions
+## Actions 
 
-### Make Raw Request
+### Make Raw Request 
 
-This action allows you to execute custom requests directly using the [Picsart Creative REST API](https://docs.picsart.io/reference/?utm_source=elastic.io&utm_medium=tech-notes&utm_campaign=no-code-platform-integration).
+This action allows you to execute custom requests directly using the [Picsart Creative APIs](https://docs.picsart.io/reference/?utm_source=elastic.io&utm_medium=tech-notes&utm_campaign=no-code-platform-integration).
 
 #### Configuration Fields
 
@@ -52,8 +55,8 @@ This action allows you to execute custom requests directly using the [Picsart Cr
 * **Status Code** - (number, required): The HTTP status code of the response.
 * **HTTP Headers** - (object, required): The HTTP headers of the response.
 * **Response Body** - (object, optional): The body of the HTTP response.
-
-### Remove background
+  
+### Remove background 
 
 Remove or change background of an image using AI technology.
 
@@ -62,7 +65,7 @@ The recommended composition of an Image, in order to be optimally processed:
 * High contrast (background/foreground)
 * Background/foreground is distinguishable by naked eye
 
-The foreground should be visually clear, high contrast with relatively sharp edges. The foreground should also be comparably big in the photo. Supported source image formats are JPG, PNG, TIFF, WEBP, and MPO.
+The foreground should be visually clear, high contrast with relatively sharp edges. The foreground should also be comparably big in the photo. Supported source image formats are JPG, PNG, TIFF, WEBP, and MPO. 
 
 #### Configuration Fields
 
@@ -91,7 +94,7 @@ The foreground should be visually clear, high contrast with relatively sharp edg
 * **Shadow Blur** - (number, optional, 50 by default): Specifies the blur of the shadow. This option works when the shadow is enabled. Acceptable values range from 0 to 100.
 * **Shadow Offset X** - (number, optional): This parameter is mandatory when **Shadow** is set to `custom`. Acceptable values range from -100 to 100.
 * **Shadow Offset Y** - (number, optional): This parameter is mandatory when **Shadow** is set to `custom`. Acceptable values range from -100 to 100.
-* **Format** - (string, optional, defaults to `JPG`): The output image format. Supported values include: `JPG`, `PNG`, and `WEBP`.
+* **Format** - (string, optional, defaults to `PNG`): The output image format. Supported values include: `JPG`, `PNG`, and `WEBP`.
 
 ❗Note: Only one field should be filled at a time:
 * For image - **Image**, **Image URL**, or **Image ID**.
@@ -106,8 +109,8 @@ The foreground should be visually clear, high contrast with relatively sharp edg
 
 If the **Download result** checkbox is checked, an additional field will be included:
 * **attachmentUrl** - (string): The URL of the resulting file stored internally.
-
-### Upscale
+  
+### Upscale 
 
 Increases the resolutions of an image by a given upscale factor, without increasing its file size. Upscale increases the quality and resolution of your photos by leveraging predictive and generative AI to add pixels to your image. It works especially well on images without noise.
 

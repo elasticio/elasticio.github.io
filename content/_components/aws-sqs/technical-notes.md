@@ -5,15 +5,22 @@ description: Technical Notes for the AWS SQS component
 icon:  aws-sqs.png
 icontext: AWS SQS component
 category: aws-sqs
-updatedDate: 2023-03-06
-ComponentVersion: 1.1.2
+updatedDate: 2025-01-15
+ComponentVersion: 2.0.0
 ---
 
 ## Changelog
 
+### 2.0.0 (January 15, 2025)
+
+* Migration from AWS SDK v2 to AWS SDK v3
+* Updated the Sailor version to 2.7.3
+* Set the Node engine to 20.x
+* Updated dev libraries
+
 ### 1.1.2 (March 02, 2022)
 
-Added `High load performance` information
+* Added `High load performance` information
 
 ### 1.1.1 (January 27, 2022)
 
