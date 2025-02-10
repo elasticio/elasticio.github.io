@@ -28,6 +28,14 @@ careful to safe this in your records to not get locked out of the platform.
 
 {% include img.html max-width="80%" url="/assets/img/getting-started/tour/edit-profile.png" title="Edit Profile" %}
 
+## User image upload
+
+Profile Page allows users to upload images for their avatars, enhancing personalization options within the system. To change their avatar, users can navigate to their Profile, click on Edit Profile, and hover the mouse over their initials. This action triggers the appearance of the Upload option, enabling users to select and upload an image of their choice to set as their avatar, adding a personalized touch to their profile.
+
+> Limitation:
+> - max file size: 500KB
+> - supported formats: `.png` `.jpeg` `.webp`
+
 ## Change your password
 
 Here you can change your password which you use to login to the platform - not your API Key.

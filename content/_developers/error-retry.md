@@ -52,8 +52,9 @@ to click *Retry* and see what happens:
 When you press Retry the platform will then try to run the erroneous process again.
 The error will be removed from the execution page.
 
-> **Note**: the integration flow must be active for Retry feature. When the flow is
-> inactive the Retry button would not be visible.
+> **Note**: the integration flow must be active for Retry feature. When the flow is inactive the Retry button provides a clear hint stating that the flow needs to be active for the retry function to work. 
+
+{% include img.html max-width="100%" url="/assets/img/RN/2436/retry.png" title="Retry" %}
 
 Before you proceed to press Retry button try to assess the situation:
 

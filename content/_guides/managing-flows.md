@@ -13,12 +13,14 @@ actions:
 *   [Start, Stop, Edit, Suspend, Delete](#start-stop-edit-suspend-delete)
 *   [Restoring Deleted Flow](#restoring-deleted-flow)
 *   [Filtering, Sorting Flows](#filtering-sorting-flows)
-*   [Copy Flow within the same Workspace, switch between *real-time* and *ordinary*](#copy-flow-switch-flow-type)
+*   [Copy Flow within the same Workspace, switch between Real-time and Ordinary](#copy-flow-switch-flow-type)
+*   [Editable delay for container shutdown in Ordinary Flows](#editable-delay-for-container-shutdown-in-ordinary-flows)
 *   [Subscribe to Errors](#subscribe-to-errors)
 *   [Schedule via CRON expressions](#scheduling)
 *   [Flow Versioning](#flow-versioning)
 *   [Parallel Processing](#parallel-processing)
 *   [Reset Snapshot](#reset-snapshot)
+*   [Flow step logging level setup](#flow-step-logging-level-setup)
 
 All actions are available to users with the corresponding [permissions](/guides/managing-user-roles-in-a-tenant).
 
@@ -136,7 +138,15 @@ Switching back works the same way. Alternatively, you can navigate to the Flow i
 
 ![Settings - Switch to real-time](/assets/img/tenant-management-guide/managing-flows/Settings-Switch_to_real-time.png)
 
-Note, that you can only switch Flow type if there's at least one published Flow version, and it is not running.
+> **Note:** you can only switch Flow type if there's at least one published Flow version, and it is not running.
+
+## Editable delay for container shutdown in Ordinary Flows
+
+Editable delay provides the ability to adjust the container shutdown delay for Ordinary Flows, enhancing user control and flexibility within the system.
+With the `shut_down_timeout_enabled` feature flag at the Tenant level, users can control the delay duration for container shutdown on a per-flow basis. The addition of the `shut_down_timeout` attribute within Flows allows users to define specific shutdown timeframes (0 to 30 minutes) to better suit their workflow requirements.
+With restrictions in place for long-running (real-time) flows and a dedicated `Shutdown` section in the settings menu of the flow designer (based on the feature flag status), users can efficiently manage container shutdown times, enhancing operational control and system performance.
+{% include img.html max-width="100%" url="/assets/img/RN/2445/Shutdown.png" title="Shutdown" %}
+> **Note:** The `shutdown_timeout` does not take effect immediately after updating the flow. It can take up to 10 minutes (usually 3-4 minutes) before the Kubernetes pods exhibit an increased drop time.
 
 ## Subscribe to Errors
 
@@ -249,6 +259,40 @@ A [Snapshot](/developers/snapshot-overview) is the data saved by a Component dur
 ![Reset Snapshot](/assets/img/tenant-management-guide/managing-flows/Reset_Snapshot.png)
 
 This is the only way to delete an existing snapshot via UI. You can also use the appropriate [API Call]({{site.data.tenant.apiDocsUri}}/v2#/snapshots/delete_flows__flow_id__snapshots__step_id_) for this.
+
+## Flow step logging level setup
+
+As an integrator or component developer we need to dive into the troubleshooting
+and debugging sessions to identify and iron out some problems in our projects.
+For this purposes, the detailed logs are invaluable. On the other hand, detailed
+logs are sometimes unnecessary during the normal operation runs if you tend to
+exchange sensitive data through your integration projects.
+
+To control the logging level for each of your flow-step use **Log Level**, accessible from the Advanced Setting part of flow-step Summary. With this setup you can increase or decrease the output logging level of your component from the default **Info** using the drop-down control shown below.
+![Choose the logging level](/assets/img/tenant-management-guide/managing-flows/log-level-setup.png)
+
+> **Please Note:** To change the logging level of any flow-step, you must create
+> a new draft for your flow, save it and start again.
+
+The available logging levels are **Trace**, **Debug**, **Info**, **Warning** and
+**Error** where the **Trace** will output everything your component can show. On the
+other end of this spectrum, the **Error** level would output only the flow-step errors.
+
+You can set or change the logging level directly using our REST API call. For this
+purposes we extended the flow step configuration by adding the `log_level` parameter:
+
+```json
+"attributes": {
+  "nodes_config": {
+    "step_1": {
+      "log_level":"info"
+    }
+  }
+}
+```
+
+> **Please Note**: You can only change the logging level for run-time executions.
+> This setup would not work on one-time executions like retrieve sample and verify credentials.
 
 ## Related links
 
