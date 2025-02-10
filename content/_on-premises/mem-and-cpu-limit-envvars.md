@@ -47,3 +47,15 @@ that require exceptions from default values. They will override the values set p
 |----------------------------------|---------------------------------------------------|
 | `EIO_REQUIRED_RAM_MB`            | Sets the memory value in MB for a Component pod.   |
 | `EIO_REQUIRED_RAM_MB_FLOW_${task.id}`      | Sets the maximum memory value in MB for a Component pod per Flow. **Note:** ${task.id} is a variable for your Flow ID.  |
+
+To set the custom RAM memory limits on your component open its repository and click on the **Enviroment variables** link.
+![Env var repo](/assets/img/on-premises/mem-and-cpu-limit-envvars/env-vars-repo.png)
+
+We have set recommendations for each component for the minimum amount of RAM
+memory to use `EIO_REQUIRED_RAM_MB`. Check if your component has such requirement and set it accordingly by clicking **Create a new variable** button.
+![Env vars](/assets/img/on-premises/mem-and-cpu-limit-envvars/env-vars.png)
+
+To set the custom RAM memory limit for one flow, consider using `EIO_REQUIRED_RAM_MB_FLOW_${task.id}` environment variable. This way the component will use more RAM memory only in specified flow and you will not suddenly increase the RAM memory consumption for every flow that uses the component.
+![Edit Env var](/assets/img/on-premises/mem-and-cpu-limit-envvars/edit-env-vars.png)
+
+> **Please Note**: Increase environment variable only as a last resort. The maximum allowed platform value on allocated and requested processing memory (RAM) for each pod in the Kubernetes cluster is **4GB (4096)**. Consider increasing memory incrementally, by adjusting and testing your flow. For RAM increases on platform components, [contact support](/admin/reporting-issue.html#how-to-contact-us) to discuss your use case.
