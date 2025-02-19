@@ -105,7 +105,7 @@ following example:
 ```javascript
 const axios = require('axios');
 async function run(msg) {
-  const { data: res } = await axios.get('https://api.elastic.io/v2/users/me', {
+  const { data: res } = await axios.get('{{site.data.tenant.apiBaseUri}}/v2/users/me', {
     auth: {
       username: process.env.ELASTICIO_API_USERNAME,
       password: process.env.ELASTICIO_API_KEY
