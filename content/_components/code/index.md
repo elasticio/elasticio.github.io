@@ -103,20 +103,20 @@ You can code a small REST API call out of the Code component, see
 following example:
 
 ```javascript
+const axios = require('axios');
 async function run(msg) {
-  const res = await request.get({
-    uri: '{{site.data.tenant.apiBaseUri}}/v2/users',
+  const { data: res } = await axios.get('https://api.elastic.io/v2/users/me', {
     auth: {
-      user: process.env.ELASTICIO_API_USERNAME,
-      pass: process.env.ELASTICIO_API_KEY
-    },
-    json: true
+      username: process.env.ELASTICIO_API_USERNAME,
+      password: process.env.ELASTICIO_API_KEY
+    }
   });
+
   return {
-    fullName: res.body.first_name + " " + res.body.last_name,
-    email: res.body.email,
-    userID: res.body.id
-  }
+    fullName: `${res.data.attributes.first_name} ${res.data.attributes.last_name}`,
+    email: res.data.attributes.email,
+    userID: res.data.id
+  };
 }
 ```
 
