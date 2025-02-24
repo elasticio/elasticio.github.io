@@ -65,3 +65,15 @@ inputmessagesttl:
   description: >
     <p>The time in <b>days</b> that the <a href="/developers/error-retry#retry-from-step">messages</a> that led to the error are stored on the platform.</p>
   value: '<b>5d</b>'
+
+messagerate:
+  field: 'Rate limit for emitting messages per second'
+  description: >
+    <p>The limit on <b>Number of Messages</b> a component can emit per second. For messages that are not lightweight, the rate decreases and can vary based on the size.</p>
+  value: '<b>100</b>'
+
+webhookrpm:
+  field: 'Amount of Webhook requests per minute'
+  description: >
+    <p>The limit on <b>Amount of Requests</b> to Webhooks for certain contract per minute, and applies to all Webhook-based triggers, e.g. <a href="/components/flow-linking">Flow-Linking</a>, <a href="/components/hubspot-webhook">Hubspot Webhook</a>, <a href="/components/zoom-webhook">Zoom Webhook</a>, etc. The Webhook URL will respond with a <a href="/releases/24/23.html#updated-status-code-429-for-exceeded-webhook-requests-limit">429 Too Many Requests</a> status code after the quota for requests is exceeded.</p>
+  value: '<b>60</b>'

@@ -28,9 +28,9 @@ common errors connected to these limits and the ways to prevent or address them.
 The table below lists {{site.data.tenant.name}} platform parameters which you
 can configure to impose limits along with their default values.
 
-{% include table3col-30-55-15.html items="msgqueue, sizequeue, outgoingsize, errorret, sampleret, limitworkspace, rammemory, containerlogsttl, executionsttl, logsttl, inputmessagesttl" file="limits" caption="Default limits imposed in the platform" headers="Limit Name, Description, Value" %}
+{% include table3col-30-55-15.html items="msgqueue, sizequeue, outgoingsize, errorret, sampleret, limitworkspace, rammemory, containerlogsttl, executionsttl, logsttl, inputmessagesttl, messagerate, webhookrpm" file="limits" caption="Default limits imposed in the platform" headers="Limit Name, Description, Value" %}
 
->**Please note:** These are default values, but some of them can be changed, e.g. [RAM memory](#give-more-processing-memory).
+>**Please note:** These are default values, but some of them can be changed, e.g. [RAM memory](#give-more-processing-memory), [Amount of Webhook requests per minute](/guides/managing-limit-quotas.html#amount-of-requests-per-minute) increases according to the level of the subscription.
 
 >Platform has set limitations on accepting, processing and exporting attachments.
 Please check the [attachment limitations page](/references/attachments-limitations) for more details.
