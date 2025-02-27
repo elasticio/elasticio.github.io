@@ -236,7 +236,7 @@ Click to expand
 ```sh
 curl -X PUT -H 'Content-Type: application/json' 'http://{ELASTICSEARCH_HOST}:9200/_template/platform-custom-mapping?pretty' -d '
 {
-    "template": "platform_*",
+    "index_patterns": ["platform_*"],
     "settings": {
         "index": {
             "analysis": {
@@ -250,12 +250,10 @@ curl -X PUT -H 'Content-Type: application/json' 'http://{ELASTICSEARCH_HOST}:920
         }
     },
     "mappings": {
-        "message": {
-            "properties": {
-                "msg": {
-                    "type": "text",
-                    "analyzer": "analyzer_keyword"
-                }
+        "properties": {
+            "msg": {
+                "type": "text",
+                "analyzer": "analyzer_keyword"
             }
         }
     }
