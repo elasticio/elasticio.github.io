@@ -234,7 +234,7 @@ Click to expand
 </summary>
 {: .text-delta }
 ```sh
-curl -X PUT -H 'Content-Type: application/json' 'http://{GRAYLOG_HOST}:9200/_template/platform-custom-mapping?pretty' -d '
+curl -X PUT -H 'Content-Type: application/json' 'http://{ELASTICSEARCH_HOST}:9200/_template/platform-custom-mapping?pretty' -d '
 {
     "template": "platform_*",
     "settings": {
@@ -283,7 +283,7 @@ Click to expand
 </summary>
 {: .text-delta }
 ```sh
-curl -X PUT -H 'Content-Type: application/json' 'http://{GRAYLOG_HOST}:9200/_template/exec-custom-mapping?pretty' -d '
+curl -X PUT -H 'Content-Type: application/json' 'http://{ELASTICSEARCH_HOST}:9200/_template/exec-custom-mapping?pretty' -d '
 {
     "order": 0,
     "index_patterns": [
