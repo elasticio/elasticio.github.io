@@ -234,9 +234,9 @@ Click to expand
 </summary>
 {: .text-delta }
 ```sh
-curl -X PUT -H 'Content-Type: application/json' 'http://{GRAYLOG_HOST}:9200/_template/platform-custom-mapping?pretty' -d '
+curl -X PUT -H 'Content-Type: application/json' 'http://{ELASTICSEARCH_HOST}:9200/_template/platform-custom-mapping?pretty' -d '
 {
-    "template": "platform_*",
+    "index_patterns": ["platform_*"],
     "settings": {
         "index": {
             "analysis": {
@@ -250,12 +250,10 @@ curl -X PUT -H 'Content-Type: application/json' 'http://{GRAYLOG_HOST}:9200/_tem
         }
     },
     "mappings": {
-        "message": {
-            "properties": {
-                "msg": {
-                    "type": "text",
-                    "analyzer": "analyzer_keyword"
-                }
+        "properties": {
+            "msg": {
+                "type": "text",
+                "analyzer": "analyzer_keyword"
             }
         }
     }
@@ -283,7 +281,7 @@ Click to expand
 </summary>
 {: .text-delta }
 ```sh
-curl -X PUT -H 'Content-Type: application/json' 'http://{GRAYLOG_HOST}:9200/_template/exec-custom-mapping?pretty' -d '
+curl -X PUT -H 'Content-Type: application/json' 'http://{ELASTICSEARCH_HOST}:9200/_template/exec-custom-mapping?pretty' -d '
 {
     "order": 0,
     "index_patterns": [
