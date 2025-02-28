@@ -79,4 +79,4 @@ Example: `"{\"access_token\":\"access_token_value\",\"token_type\":\"bearer\",\"
 * Response Body (object, optional): JSON representation of the response body from the request
 
 ## Known Limitations
-Please note that for the functionality to save and update the token to work correctly, the platform user must have `workspaces.credential.edit` permission (see elastic.io [API docs](https://api.elastic.io/docs/v2/#update-a-credential)).
+Please note that for the functionality to save and update the token to work correctly, the platform user must have `workspaces.credential.edit` permission (see elastic.io [API docs](https://api.elastic.io/docs/v2#/credentials/patch_credentials__credential_id_)).
