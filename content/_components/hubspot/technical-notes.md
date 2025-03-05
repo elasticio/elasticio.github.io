@@ -5,13 +5,20 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2024-09-04
-ComponentVersion: 1.6.1
+updatedDate: 2025-02-25
+ComponentVersion: 1.6.2
 ---
 
 ## Changelog
 
+### 1.6.2 (February 25, 2025)
+
+* Fixed an issue where removing the "Size of Polling Page" value caused a validation error instead of reverting to the default
+* Updated `component-commons-library` version to 3.2.1
+* Updated `Sailor` version to 2.7.4
+
 ### 1.6.1 (August 21, 2024)
+
 * Added `Max amount of Polling Pages` text field for `Get New and Updated Objects` trigger
 * Update component-commons-library version to 3.2.0
 * Update Sailor version to 2.7.2

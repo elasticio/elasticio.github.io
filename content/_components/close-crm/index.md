@@ -6,8 +6,8 @@ description: The Close CRM Component provides a simple way to interact with the 
 icon: close-crm.png
 icontext: Close CRM component
 category: close-crm
-ComponentVersion: 1.0.0
-updatedDate: 2025-01-21
+ComponentVersion: 1.2.0
+updatedDate: 2025-03-03
 ---
 
 ## Table of Contents
@@ -19,6 +19,9 @@ updatedDate: 2025-01-21
   - [Delete Object By ID](#delete-object-by-id)
   - [Lookup Object By ID](#lookup-object-by-id)
   - [Make Raw Request](#make-raw-request)
+  - [Upsert Object](#upsert-object)
+- [Triggers](#triggers)
+  - [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling)  
 
 ## API version
 
@@ -93,4 +96,46 @@ Enables execution of custom requests directly through the Close API.
 
 - **Status Code** - *(number, required)*: The HTTP response status code returned by the request.
 - **HTTP Headers** - *(object, required)*: The HTTP headers included in the response.
-- **Response Body** - *(object, optional)*: The content of the HTTP response body, if any.
+- **Response Body** - *(object, optional)*: The content of the HTTP response body, if any.\
+
+### Upsert Object
+
+Updates an existing object or creates a new one if it doesn’t exist, based on the selected option.
+
+#### Configuration Fields
+
+- **Operation** - (dropdown, required): Operation to perform. Either `Create` or `Update`.
+- **Object Type** - (dropdown, required): The type of object to upsert.
+
+#### Input Metadata
+
+- **Value to Search in "{Field to Search Object}"** - (string, optional): The identifier of the object to upsert.
+- Dynamically generated fields according to the chosen `Upsert Schema`.
+
+#### Output Metadata
+
+The result object from the upsert operation. It contains the full object in the case of creation, and only the object ID if an existing object was updated.
+
+## Triggers
+
+### Get New and Updated Objects Polling
+
+Continuously retrieves all updated or newly created objects since the last execution.
+
+#### Configuration Fields
+
+- **Object Type** - (dropdown, required): The type of object to poll.
+- **Timestamp Field to Poll On** - (dropdown, required): Select the date field to track changes.
+- **Fields you want to return for the object you're filtering for** - (multiselect, optional): Select the fields you want the response data to have. If no fields are selected, a response will only contain an object ID and a date field specified in the `Timestamp Field to Poll On` field.
+- **Emit Behavior** - (dropdown, optional): Indicates how objects should be emitted - `Emit individually` (default) or `Emit page`.
+- **Size of Polling Page** - (optional, positive integer, defaults to 100, max 100): Indicates the size of pages to be fetched.
+- **Start Time** - (string, optional): The timestamp, in ISO8601 format, to start polling from (inclusive). The default value is the beginning of time (January 1, 1970 at 00:00.000). E.g.: `2025-01-01T10:00:00.000Z`.
+
+#### Input Metadata
+
+N/A
+
+#### Output Metadata
+
+- For `Emit Page`: An object with a key ***results*** that contains an array of objects.
+- For `Emit Individually`: Each object fills the entire message.
