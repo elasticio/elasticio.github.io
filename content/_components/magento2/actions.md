@@ -1,338 +1,108 @@
 ---
-title: Magento2 actions
+title: Magento 2 actions
 layout: component
-description: Magento2 component actions page
+description: Magento 2 component actions page
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2022-06-03
-ComponentVersion: 1.6.7
+updatedDate: 2025-02-28
+ComponentVersion: 1.7.0
 ---
 
-## Custom Request Action
-
-You can do custom request using this action. You should manually specify `method`, `url` and `body`.
-
-### Configuration Fields
-
-There are two configuration fields:
-
-**Don't throw error on 4XX/5XX HTTP response codes** - optional, if checked, the action will return the Magento response as an object, regardless of whether there is an error. However, authentication errors will still be thrown.
-
-**Check if you'd like to make a series of calls (Developer Mode Only)** - optional, if checked, the action will allow a series of API calls as specified by `requests` array and emit an array of `responses`.
-
-### Expected input metadata
-
-Input metadata contains 3 fields:
-
-**Method** - required, specify request method, you can choose one from currently supported by Magento 2 : `GET`, `POST`, `PUT`, `DELETE`. You also may choose any other new available method is case of Magento 2 API update.
-
-**URL** - required, specify an endpoint for request, for example `V1/products/SKU-1`.
-
-**Body** - object, specify body for request if it needed. For example:
-
-```
-{
-   'username': 'dummy_user',
-   'password': 'password 1'
-}
-```
-
-![Custom Request Action](img/custom-request-action.png)
-
-If `Check if you'd like to make a series of calls (Developer Mode Only)` is checked, you will able to specify an array of requests to make. The fields available per request are the same as a single request. The JSON format is as following:
-
-```
-{
-    "requests": [
-      {
-        "url" : "this/is/a/url",
-        "method" : "supported method",
-        "body" : "optional body..."
-      },
-      {
-        "url" : "this/is/a/url",
-        "method" : "supported method",
-        "body" : "optional body..."
-      },
-      ...
-    ]
-}
-```
-
-### Expected output metadata
-
-Output metadata is an object with the property `response`, which contains the response data, and the property `status`, which contains the response status code.
-
-For example:
-
-```
-{
-   'response': 'token'
-   'status': 200
-}
-```
-
-If `Check if you'd like to make a series of calls (Developer Mode Only)` is checked, the output metadata is an array of objects `responses`, each with their own response object and a property `status` which contains the response status code. The JSON format is as following:
-
-```
-{
-    "responses": [
-      {
-        "response" : "Here's a response",
-        "status" : "200",
-      },
-      {
-        "response" : "Here's another response",
-        "status" : "200",
-      },
-      ...
-    ]
-}
-```  
-
-## Set Inventory Action
-
-This action allows you to set the quantity for an already existing product.
-
-![Set Inventory](img/set-inventory.png)
-
-### Expected input metadata
-
-Input metadata contains 3 fields:
-
-**sku** - required, specify what product to set.
-
-**qty** - required, specify what quantity to set.
-
-**is_in_stock** - required, specify if product is in stock.
-
-## Upsert Product Action
-
-You can create new or update existing simple or configurable product and associate with existing child product (for configurable products).
-
-### List of Expected Config fields
-
-**Product Type** - dropdown list with product type options:
-
-- Simple
-- Configurable (Associate with existing child product, single configurable variant)
-
-**Attribute Set** - dropdown list with all existing product attribute sets labels plus an options `Specify attribute set id from incoming message` and `Specify attribute set name from incoming message` to allow this to be populated from incoming message via attribute set id or name.
-
-![Upsert Product Action](img/upsert-product-action.png)
-
-### Expected input metadata
-
-Input metadata for simple product:
-
-**SKU** - required, product sku that needs to be created or updated
-
-**Status** - required, products status
-
-**Name** - required, products name
-
-**Weight** - required, products weight
-
-**Visibility** - required, products visibility, enum of visibility labels
-
-**Price** - required, products price
-
-**Attribute Set id** - is present, if configuration field `Attribute Set` equals to `Specify attribute set id from incoming message`
-
-**Attribute Set name** - is present, if configuration field `Attribute Set` equals to `Specify attribute set name from incoming message`
-
-**Attribute** - dropdown list with all attributes labels, is present, if configuration field `Product Type` equals to `Configurable (Associate with existing child product, single configurable variant)`
-
-**Custom Attributes** - object with global custom attributes and custom attributes for each store view
-
-**Child skus** - an array of child SKUs that should be associated with the configurable product. Is present, if configuration field `Product Type` equals to `Configurable (Associate with existing child product, single configurable variant)`
-
-### Expected output metadata
-
-Output metadata contains created or updated product: `/lib/schemas/upsertProductNew.out.json`
-
-## Set order as shipped Action
-
-You can set order as shipped in this action.
-
-![Set order as shipped](img/set-order-as-shipped.png)
-
-### Expected input metadata
-
-Input metadata contains 2 fields:
-
-**Order Id** - required, specify order id, that needs to be set as shipped.
-
-**skuQtyPairs** - required, array of objects with properties:
-
-**sku** - product sku, than needs to be shipped
-
-**qty** - quantity of products, than needs to be shipped
-
-```json
-[
-   {
-         "sku": "testSku",
-         "qty": 1
-   },
-   {
-         "sku": "testSku2",
-         "qty": 3
-   }
-]
-```
-
-### Expected output metadata
-
-Output metadata contains object with property `response` with shipment ID.
-
-For example:
-
-```json
-{
-   "response": "3"
-}
-```
-
-## Set Sales Order External ID
-
-This action allows to set or update Sales Order external ID for existing Order.
-
-![Set Sales Order External ID](img/set-sales-order-external-id.png)
-
-### Expected input metadata
-
-**magento_order_id** - required, primary id of Sales Order entity for Magento 2 API.
-
-**ext_order_id** - required, specify Sales Order an PID for external system.
-
-```
-{
-   'magento_order_id': 1,
-   'ext_order_id': 'some_external_id'
-}
-```
-
-### Expected output metadata
-
-Sales Order entity structure
-
-| Type | Json schema location |
-|-----------|------------- |
-| SalesOrder  | `/lib/schemas/setSalesOrderExternalId.out.json` |
-
-## Create Invoice Action
-
-This action allows you to create an invoice for an already existing order using the order's `entity id`.
-
-![Create Invoice Action](img/create-invoice.png)
-
-### Expected input metadata
-
-Input metadata contains 2 fields:
-
-**capture** - optional, indicate if payment was received for order. If true, payment was received.
-
-**orderEntityID** - required, specify the order's `entity id`.
-
-## Add Update To Sales Order
-
-This action allows to set or update Sales Order status.
-
-![Add Update To Sales Order](img/add-update-to-sales-order.png)
-
-### Expected input metadata
-
-**id** - required, primary id of Sales Order entity for Magento 2 API.
-
-**isCustomerNotified** - optional boolean, is customer notified flag value. Default false.
-
-**isVisibleOnFront** - optional boolean, is visible on storefront flag value. Default false.
-
-**status** - optional string, new Sales Order status.
-
-**comment** - optional string, add comment to Sales Order.
-
-> **NOTE:** When updating of **status** property, please make sure that the input value is a valid status of your Magento2 system:  https://docs.magento.com/m2/ce/user_guide/sales/order-status.html.
-The Component will not show an error if the **status** value is invalid, but Magento2 API will not validate this value.
-
-```json
-      {
-          "id": 1,
-          "isCustomerNotified": 1,
-          "isCustomerNotified": 1,
-          "status" : "Closed",
-          "comment" : "Issue resolved. Order closed"
-      }
-```
-
-### Expected output metadata
-
- Sales Order entity structure
-
-|Type|Json schema location|
-|-----------| -------------|
-| SalesOrder  | **/lib/schemas/addUpdateToSalesOrder.out.json** |
-
+* [Delete Object](#delete-object)
+* [Lookup Object by ID](#lookup-object-by-id)
+* [Lookup Objects](#lookup-objects)
+* [Make Raw Request](#make-raw-request)
+* [Upsert Object](#upsert-object)
+* [Deprecated Actions](#deprecated-actions)
+   * [Add Update To Sales Order](#add-update-to-sales-order)
+   * [Create Invoice Action](#create-invoice-action)
+   * [Create order](#create-order)
+   * [Custom Request Action](#custom-request-action)
+   * [Lookup Set Of Objects](#lookup-set-of-objects)
+   * [Read Store Config Action](#read-store-config-action)
+   * [Set Inventory Action](#set-inventory-action)
+   * [Set order as shipped Action](#set-order-as-shipped-action)
+   * [Set Sales Order External ID](#set-sales-order-external-id)
+   * [Set Tiered Prices](#set-tiered-prices)
+   * [Upsert Customer](#upsert-customer)
+   * [Upsert Product Action](#upsert-product-action)
+
+## Delete Object
+
+This action allows you to delete the following object types:
+- Customer
+- Product
+- Category
+- Media Gallery Item
+- Product Attribute
+- Product Attribute Set
+  
+by ID or unique criteria.
+
+#### Expected input metadata
+Input metadata will take the unique ID for all object types except Product (The unique identifier will be the SKU) and Customer (The unique identifier can be either ID or Email).
+
+#### Expected output metadata
+The output metadata is the unique ID of deleted object.
 
 ## Lookup Object by ID
 
-This action allows you to search up one of the object types:
-
-- customer
-- product
-- sales order
-
+This action allows you to search up one of the object types
+- Customer
+- Product
+- Sales Order
+- Cart
+- Category
+- Invoice
+- Media Gallery Item
+- Product Attribute
+- Product Attribute Set
+  
 by unique criteria.
 
-### Expected input metadata
+#### Expected input metadata
+Input metadata will take the unique ID and an optional store view code. The store view will be set to `default` by default.
 
-Input metadata will take the unique ID and an optional store view code. The store view will be set to `all` by default.
-
-![Lookup Object by ID](img/lookup-object-by-id.png)
-
-### Expected output metadata
-
+#### Expected output metadata
 The expected output will be the given object.
 
-If `allow zero results?` is selected, the component will always return an empty object rather than an error if zero results are found.
-If `allow ID to be ommitted` is selected, the ID field will not be required to run the action, but the item emitted by 'zero results found' will still be dependent on the other config field.
+If  `allow zero results?` is selected, the component will always return an empty object rather than an error if zero results are found.
+If  `allow ID to be ommitted` is selected, the ID field will not be required to run the action, but the item emitted by 'zero results found' will still be dependent on the other config field.
 
 ## Lookup Objects
 
 Given a field-value return all matching records.
 
-![Lookup Objects](img/lookup-objects.png)
+#### List of Expected Config fields
+##### Object Type
+Drop-down list, contains possible object types.
+  
+Supported default object types:
+- Order
+- Product
+- Customer
+- Category
+- Cart
+- Product Attributes
+- Product Attribute Sets
 
-### List of Expected Config fields
-
-#### Object Type
-
-List contains default object types and custom object types.
-
-|Supported default object types|
-|-----------|
-|Order|
-|Product|
-|Customer|
-
-#### Emit Behaviour
-
-Options are: `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message,
+</details>
+     
+##### Emit Behaviour 
+Options are: `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message, 
 `Fetch Page` emits all objects form selected paging iteration in one message
-
-#### Number of search terms
-
-- not required field, number of search terms.
-
+   
+##### Number of search terms
+- not required field, number of search terms. 
 Determines the number of search terms that the entity must match. Need to be an integer value from 1 to 99, default to 1.
-
-### Expected input metadata
-
-<details close markdown="block"><summary><strong>Click to expand - Input Json Schema: </strong></summary>
-
+   
+   
+#### Expected input metadata
+Input JSON schema:
+      
 ```json
+        
   {
     "type": "object",
     "properties": {
@@ -366,124 +136,328 @@ Determines the number of search terms that the entity must match. Need to be an 
       }
     }
   }
-  ```
+  
+```
+    
+#### Expected output metadata
+Output metadata will be generated dynamically according to Magento 2 documentation 
 
-</details>
+## Make Raw Request
 
-### Expected output metadata
+Executes custom request.
 
-Output metadata will be calculated dynamically according to Magento2 documentation
+#### Configuration Fields
 
-## Lookup Set Of Objects
+* **Don't throw error on 404 Response** - (optional, boolean): Treat 404 HTTP responses not as error, defaults to `false`.
 
-Given an array of identities, this action allows you to find the corresponding objects. Currently, the following lookups are supported:
-  - Customer
-    - Email
-    - Magento ID
-  - Product
-    - SKU
-  - Sales Order
-    - Magento ID
-    - External Order ID
+#### Input Metadata
 
-### Expected input metadata
+* **Url** - (string, required): Path of the resource relative to the base URL.
+* **Method** - (string, required): HTTP verb to use in the request, one of `GET`, `POST`, `PUT`, `DELETE`.
+* **Request Body** - (object, optional): Body of the request to send.
 
-Input metadata will take an array of string values (numbers for magento IDs) for the search field. For product lookups, there will be an optional store view code. If no store view code is provided, then data will be returned from the default magento store.
+#### Output Metadata
 
-![Lookup Set od Objects](img/lookup-set-of-objects.png)
+* **Status Code** - (number, required): HTTP status code of the response.
+* **HTTP headers** - (object, required): HTTP headers of the response.
+* **Response Body** - (object, optional): HTTP response body.
 
-### Expected output metadata
+## Upsert Object
 
-The expected output is an object with a `resultsDictionary` property. The value of this `resultsDictionary` will be a dictionary where the keys are the lookup identity, and the key is the corresponding object.
+#### Operation
+Drop-down list, contains possible operations: Create and Update.
 
-### Configuration
+#### Object Type
+Drop-down list, contains possible object types.
 
-If `Wait for objects to exist if they are not found.` is selected, the component will emit a rebound if not all identities are immediately found.  If this is not selected, then the component will immediately throw an error if any of the provided identities can not be matched to objects.
+Supported default object types:
+  
+- Order
+- Product
+- Customer
+- Category
+- Media Gallery Item
+- Product Link
+- Product Attributes
+- Product Attribute Sets
 
-### Limitations
+#### isProduct
+Checkbox, unlocks required product configurations (required if object type is Product).
 
-  * A maximum of 100 distinct ids can be provided.
-  * `extenstion_attributes` of objects are not returned.
+#### Attribute Set (required for products)
+Drop-down list, contains all existing product attribute sets labels, additionally such options as `Specify attribute set id from incoming message` and `Specify attribute set name from incoming message` to allow this to be populated from incoming message via attribute set id or name.
 
-## Set Tiered Prices
+#### Store View Code
+Drop-down list, contains possible store view codes. This option is only available for such object types: Product, Category, Media Gallery Item and Product Link
+  
+#### Expected input metadata
+Output metadata will be generated dynamically according to Magento2 documentation
 
-This action takes an array as input, and therefore can only be used in **developer mode**.
+#### Expected output metadata
+Output metadata will be generated dynamically according to Magento2 documentation
 
-### Input Metadata
 
-The input metadata is a nested array that takes the following format:
+## Deprecated Actions
+
+### Custom Request Action
+
+You can do custom request using this action. You should manually specify `method`, `url` and `body`.
+
+#### Configuration Fields
+
+There are two configuration fields:
+
+**Don't throw error on 4XX/5XX HTTP response codes** - optional, if checked, the action will return the Magento response as an object, regardless of whether there is an error. However, authentication errors will still be thrown.
+
+**Check if you'd like to make a series of calls (Developer Mode Only)** - optional, if checked, the action will allow a series of API calls as specified by `requests` array and emit an array of `responses`.
+
+#### Expected input metadata
+
+Input metadata contains 3 fields:
+
+**Method** - required, specify request method, you can choose one from currently supported by Magento 2 : `GET`, `POST`, `PUT`, `DELETE`. You also may choose any other new available method is case of Magento 2 API update.
+
+**URL** - required, specify an endpoint for request, for example `V1/products/SKU-1`.
+
+**Body** - object, specify body for request if it needed. For example:
 
 ```
-   {
-   "tieredPrices": [
-   {
-      "sku": string,                              # SKU for one product
-      "prices": [                                 # sets tiered prices for SKU to this array of prices
-         {
-         "price": 100,                           # price (in currency)
-         "price_type": "discount",               # either "discount" or "fixed"
-         "website_id": "other_website",          # website ID can be given as either a string or an int
-         "customer_group": "Retailer",           # Customer group must be given as a string
-         "quantity": 45
-         }
-      ]
-   }, {
-      "sku": string,                              # SKU for one product
-      "prices": []                                # providing an empty array will remove all existing tiered prices for this product
-   }
-   ]
+{
+   'username': 'dummy_user',
+   'password': 'password 1'
 }
 ```
 
-### Output Metadata
+If `Check if you'd like to make a series of calls (Developer Mode Only)` is checked, you will able to specify an array of requests to make. The fields available per request are the same as a single request. The JSON format is as following:
 
-The output will return an array of all the tiered prices for every SKU where they were changes.
-If all tiered prices were removed, the output metadata will be `[]`.
+```
+{
+    "requests": [
+      {
+        "url" : "this/is/a/url",
+        "method" : "supported method",
+        "body" : "optional body..."
+      },
+      {
+        "url" : "this/is/a/url",
+        "method" : "supported method",
+        "body" : "optional body..."
+      },
+      ...
+    ]
+}
+```
 
-## Upsert Customer
+#### Expected output metadata
 
-Updates a customer, or creates it if it doesn't exist. To update, you must provide the customer ID and website ID (Associate to Website). To create, do not enter a customer ID; the system will generate one.
+Output metadata is an object with the property `response`, which contains the response data, and the property `status`, which contains the response status code.
 
-> **Note**:
-* The customer's addresses will be completely overwritten by the provided array of addresses
-* Custom customer attributes can not be set
+For example:
+
+```
+{
+   'response': 'token'
+   'status': 200
+}
+```
+
+If `Check if you'd like to make a series of calls (Developer Mode Only)` is checked, the output metadata is an array of objects `responses`, each with their own response object and a property `status` which contains the response status code. The JSON format is as following:
+
+```
+{
+    "responses": [
+      {
+        "response" : "Here's a response",
+        "status" : "200",
+      },
+      {
+        "response" : "Here's another response",
+        "status" : "200",
+      },
+      ...
+    ]
+}
+```  
+
+### Set Inventory Action
+
+This action allows you to set the quantity for an already existing product.
+
+#### Expected input metadata
+
+Input metadata contains 3 fields:
+
+**sku** - required, specify what product to set.
+
+**qty** - required, specify what quantity to set.
+
+**is_in_stock** - required, specify if product is in stock.
+
+### Upsert Product Action
+
+You can create new or update existing simple or configurable product and associate with existing child product (for configurable products).
+
+#### List of Expected Config fields
+
+**Product Type** - dropdown list with product type options:
+
+- Simple
+- Configurable (Associate with existing child product, single configurable variant)
+
+**Attribute Set** - dropdown list with all existing product attribute sets labels plus an options `Specify attribute set id from incoming message` and `Specify attribute set name from incoming message` to allow this to be populated from incoming message via attribute set id or name.
+
+#### Expected input metadata
+
+Input metadata for simple product:
+
+**SKU** - required, product sku that needs to be created or updated
+
+**Status** - required, products status
+
+**Name** - required, products name
+
+**Weight** - required, products weight
+
+**Visibility** - required, products visibility, enum of visibility labels
+
+**Price** - required, products price
+
+**Attribute Set id** - is present, if configuration field `Attribute Set` equals to `Specify attribute set id from incoming message`
+
+**Attribute Set name** - is present, if configuration field `Attribute Set` equals to `Specify attribute set name from incoming message`
+
+**Attribute** - dropdown list with all attributes labels, is present, if configuration field `Product Type` equals to `Configurable (Associate with existing child product, single configurable variant)`
+
+**Custom Attributes** - object with global custom attributes and custom attributes for each store view
+
+**Child skus** - an array of child SKUs that should be associated with the configurable product. Is present, if configuration field `Product Type` equals to `Configurable (Associate with existing child product, single configurable variant)`
+
+#### Expected output metadata
+
+Output metadata contains created or updated product: `/lib/schemas/upsertProductNew.out.json`
+
+### Set order as shipped Action
+
+You can set order as shipped in this action.
+
+#### Expected input metadata
+
+Input metadata contains 2 fields:
+
+**Order Id** - required, specify order id, that needs to be set as shipped.
+
+**skuQtyPairs** - required, array of objects with properties:
+
+**sku** - product sku, than needs to be shipped
+
+**qty** - quantity of products, than needs to be shipped
+
+```json
+[
+   {
+         "sku": "testSku",
+         "qty": 1
+   },
+   {
+         "sku": "testSku2",
+         "qty": 3
+   }
+]
+```
+
+#### Expected output metadata
+
+Output metadata contains object with property `response` with shipment ID.
+
+For example:
+
+```json
+{
+   "response": "3"
+}
+```
+
+### Set Sales Order External ID
+
+This action allows to set or update Sales Order external ID for existing Order.
 
 ### Expected input metadata
 
-**email** - required, unique email of the customer
+**magento_order_id** - required, primary id of Sales Order entity for Magento 2 API.
 
-**firstname** - required
+**ext_order_id** - required, specify Sales Order an PID for external system.
 
-**lastname** - required
+```
+{
+   'magento_order_id': 1,
+   'ext_order_id': 'some_external_id'
+}
+```
 
-### Expected output metadata
+#### Expected output metadata
 
-The output metadata is the created or updated product.
+Sales Order entity structure
 
-## Delete Object
+| Type | Json schema location |
+|-----------|------------- |
+| SalesOrder  | `/lib/schemas/setSalesOrderExternalId.out.json` |
 
-This action allows you to delete the following object types:
+### Create Invoice Action
 
-- customer
-- product
+This action allows you to create an invoice for an already existing order using the order's `entity id`.
 
-by unique criteria.
+#### Expected input metadata
 
-### Expected input metadata
+Input metadata contains 2 fields:
 
-To delete a customer, input either their customer ID or their email. To delete a product, input the product SKU.
+**capture** - optional, indicate if payment was received for order. If true, payment was received.
 
-### Expected output metadata
+**orderEntityID** - required, specify the order's `entity id`.
 
-For customers, the output is their customer ID. For products, the output is its SKU.
+### Add Update To Sales Order
 
-## Read Store Config Action
+This action allows to set or update Sales Order status.
+
+#### Expected input metadata
+
+**id** - required, primary id of Sales Order entity for Magento 2 API.
+
+**isCustomerNotified** - optional boolean, is customer notified flag value. Default false.
+
+**isVisibleOnFront** - optional boolean, is visible on storefront flag value. Default false.
+
+**status** - optional string, new Sales Order status.
+
+**comment** - optional string, add comment to Sales Order.
+
+> **NOTE:** When updating of **status** property, please make sure that the input value is a valid status of your Magento2 system:  https://docs.magento.com/m2/ce/user_guide/sales/order-status.html.
+The Component will not show an error if the **status** value is invalid, but Magento2 API will not validate this value.
+
+```json
+      {
+          "id": 1,
+          "isCustomerNotified": 1,
+          "isCustomerNotified": 1,
+          "status" : "Closed",
+          "comment" : "Issue resolved. Order closed"
+      }
+```
+
+#### Expected output metadata
+
+ Sales Order entity structure
+
+|Type|Json schema location|
+|-----------| -------------|
+| SalesOrder  | **/lib/schemas/addUpdateToSalesOrder.out.json** |
+
+### Read Store Config Action
 
 You can read all the configured stores on a Magento instance (like [GET /V1/store/storeConfigs](https://devdocs.magento.com/swagger/#/storeStoreConfigManagerV1/storeStoreConfigManagerV1GetStoreConfigsGet))
 
 > **Note**: As this information is very static, it is cached between calls within the same container life cycle.
 
-### Expected output metadata
+#### Expected output metadata
 
 Output metadata contains object with property `storeConfigs`, which contains array of store configs.
 For example:
@@ -535,11 +509,95 @@ For example:
 
 </details>
 
-## Create order
+### Lookup Set Of Objects
+
+Given an array of identities, this action allows you to find the corresponding objects. Currently, the following lookups are supported:
+  - Customer
+    - Email
+    - Magento ID
+  - Product
+    - SKU
+  - Sales Order
+    - Magento ID
+    - External Order ID
+
+#### Expected input metadata
+
+Input metadata will take an array of string values (numbers for magento IDs) for the search field. For product lookups, there will be an optional store view code. If no store view code is provided, then data will be returned from the default magento store.
+
+#### Expected output metadata
+
+The expected output is an object with a `resultsDictionary` property. The value of this `resultsDictionary` will be a dictionary where the keys are the lookup identity, and the key is the corresponding object.
+
+#### Configuration
+
+If `Wait for objects to exist if they are not found.` is selected, the component will emit a rebound if not all identities are immediately found.  If this is not selected, then the component will immediately throw an error if any of the provided identities can not be matched to objects.
+
+#### Limitations
+
+  * A maximum of 100 distinct ids can be provided.
+  * `extenstion_attributes` of objects are not returned.
+
+### Set Tiered Prices
+
+This action takes an array as input, and therefore can only be used in **developer mode**.
+
+#### Input Metadata
+
+The input metadata is a nested array that takes the following format:
+
+```
+   {
+   "tieredPrices": [
+   {
+      "sku": string,                              # SKU for one product
+      "prices": [                                 # sets tiered prices for SKU to this array of prices
+         {
+         "price": 100,                           # price (in currency)
+         "price_type": "discount",               # either "discount" or "fixed"
+         "website_id": "other_website",          # website ID can be given as either a string or an int
+         "customer_group": "Retailer",           # Customer group must be given as a string
+         "quantity": 45
+         }
+      ]
+   }, {
+      "sku": string,                              # SKU for one product
+      "prices": []                                # providing an empty array will remove all existing tiered prices for this product
+   }
+   ]
+}
+```
+
+#### Output Metadata
+
+The output will return an array of all the tiered prices for every SKU where they were changes.
+If all tiered prices were removed, the output metadata will be `[]`.
+
+### Upsert Customer
+
+Updates a customer, or creates it if it doesn't exist. To update, you must provide the customer ID and website ID (Associate to Website). To create, do not enter a customer ID; the system will generate one.
+
+> **Note**:
+* The customer's addresses will be completely overwritten by the provided array of addresses
+* Custom customer attributes can not be set
+
+#### Expected input metadata
+
+**email** - required, unique email of the customer
+
+**firstname** - required
+
+**lastname** - required
+
+#### Expected output metadata
+
+The output metadata is the created or updated product.
+
+### Create order
 
 Creates an order on behalf of a customer given an existing customer id, or creates an order for a guest user.
 
-### Expected input metadata
+#### Expected input metadata
 
 **customerId** - not required. The unique id for the customer in the Magento database. If not specified, order will be created from a guest cart instead of the customer's cart.
 
@@ -549,10 +607,10 @@ Creates an order on behalf of a customer given an existing customer id, or creat
 
 **paymentMethod** - required. The payment method for the order.
 
-### Expected output metadata
+#### Expected output metadata
 
 The output metadata is the contents of order that has just been created.
 
-### Limitations
+#### Limitations
 
 Due to a [preexisting issue with Magento 2.3.2](https://github.com/magento/magento2/issues/23908), this action does not work with Magento version 2.3.2.

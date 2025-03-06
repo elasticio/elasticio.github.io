@@ -1,18 +1,29 @@
 ---
-title: Magento2 Technical Notes
+title: Magento 2 Technical Notes
 layout: component
 description: Technical Notes for the Magento2 component.
 icon: magento.png
 icontext: Magento 2 Component
 category: magento2
-updatedDate: 2022-06-03
-ComponentVersion: 1.6.7
+updatedDate: 2025-02-28
+ComponentVersion: 1.7.0
 redirect_from:
   - /components/magento2/changelog.html
   - /components/magento2/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.7.0 (February 28, 2025)
+
+* Fixed issue in `Verify Credentials`: added validation to reject admin panel URLs in Magento configuration
+* Added `Upsert Object`, `Make Raw Request` actions
+* Revitalized `Lookup Objects`, `Lookup Object by ID`, `Delete Object by ID` actions
+* Revitalized `Get New and Updated Objects Polling` trigger
+* Updated the `Node engine` to version 20.x.
+* Updated the `Sailor` version to 2.7.4
+* Updated the `component-commons-library` version to 3.2.1
+* Updated dev dependencies
 
 ### 1.6.7 (June 3, 2022)
 
@@ -109,9 +120,3 @@ redirect_from:
 ### 1.0.0 (March 16, 2018)
 
 * Initial release
-
-## Completeness Matrix
-
-Here is Magento2 Component Completeness Matrix:
-
-![Completeness Matrix](https://user-images.githubusercontent.com/16806832/75337701-25c18680-5896-11ea-9156-93767e043e78.png)
