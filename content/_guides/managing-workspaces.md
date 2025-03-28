@@ -38,7 +38,7 @@ The following animation shows workspace creation in case of fully operation cont
 You can create a Workspace when viewing all workspaces page as well. Open the menu,
 and expand the workspace list and click on **View All Workspaces** menu item to navigate
 to all workspaces page. Here you can create a new one by clicking on **+ Create New Workspace**
-button.
+button. To find specific workspaces you can use the **Search...** field under the workspace dropdown menu. For easier management, search is also available on the workspaces page. Enter search queries, and then navigate through multiple search results by using pagination.
 
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/managing-workspaces/creating-workspace-all-workspaces.png" title="Creating workspace from all workspaces page" %}
 
