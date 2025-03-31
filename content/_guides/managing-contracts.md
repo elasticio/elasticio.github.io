@@ -10,10 +10,10 @@ category: integrator-management
 ## Maganig Contract via UI
 
 At the moment, it is mostly possible to manage contracts on the platform mostly via API calls. The following functions available through UI:
-*  Find specific workspaces using the **Search…** field under the contract dropdown menu.
+*  Find specific contracts using the **Search…** field under the contract dropdown menu.
 *  Change the name of a contract. For updating Contract name you need `contracts.contract.edit` permission.
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/managing-contracts/search-rename-contract-members.png" title="Searching contracts" %}
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/managing-contracts/search-rename-contract-members.png" title="Search, rename contract on the members page" %}
 
 For the next functions you need have `contracts.membership.edit` permission or to be a user with `TenantAdmin` role:
 
@@ -22,7 +22,7 @@ For the next functions you need have `contracts.membership.edit` permission or t
 * Change member role
 * Remove users from a contract
 
-{% include img.html max-width="100%" url="/assets/img/integrator-guide/managing-contracts/invite-edit-contract-members.png" title="Searching contracts" %}
+{% include img.html max-width="100%" url="/assets/img/integrator-guide/managing-contracts/invite-edit-contract-members.png" title="Invite, edit contract members" %}
 
 Of course, the functionality of contract management is not limited to this. However, it is only possible using the corresponding API calls. All functionality can be divided into 3 groups: getting Contract data, editing Contract memberships and editing Contracts.
 
