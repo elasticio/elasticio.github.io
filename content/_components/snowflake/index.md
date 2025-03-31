@@ -6,11 +6,16 @@ description: A component for management over Snowflake database.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2024-06-03
-ComponentVersion: 1.3.1
+updatedDate: 2025-03-31
+ComponentVersion: 2.0.0
 ---
 
-## General information
+## Table of Contents
+* [Description](#description)
+* [Environment variables](#environment-variables)
+* [Credentials](#credentials)
+* [Triggers](#triggers)
+* [Actions](#actions)
 
 ### Description
 
@@ -32,19 +37,77 @@ No required Environment variables.
 
 ## Credentials
 
-![Credentials](img/credentials.png)
+Before building any flow, you must first create an OAuth 2 integration in [Snowflake Worksheets](https://docs.snowflake.com/en/user-guide/ui-snowsight-worksheets-gs).
 
-* **Username:** Snowflake user login name to connect with
+1. Create a new worksheet.
 
-* **Password:** Password for the user
+2. Use the following query to create a new integration:
+    ```sql
+    CREATE SECURITY INTEGRATION EIO
+      TYPE = OAUTH
+      ENABLED = TRUE
+      OAUTH_CLIENT = CUSTOM
+      OAUTH_CLIENT_TYPE = 'CONFIDENTIAL'
+      OAUTH_REDIRECT_URI = 'https://{your-tenant-address}/callback/oauth2'
+      OAUTH_ISSUE_REFRESH_TOKENS = TRUE
+      OAUTH_REFRESH_TOKEN_VALIDITY = 7776000
+    ;
+    ```
+    The main fields here are:
+      * **EIO** – The name of your integration; you can replace it with your own.
+      * **OAUTH_REDIRECT_URI** – The OAuth 2 redirect URL to our platform. Replace `{your-tenant-address}` with your own.
+      * **OAUTH_REFRESH_TOKEN_VALIDITY** – The duration for which the component can automatically refresh the token.
+      
+        ❗❗❗**Note:** By default, the maximum value is 7776000 seconds (90 days). After this period, you **must** reauthorize the component in Snowflake. If you have a business need to increase the maximum value, request your account administrator to send a request to [Snowflake Support](https://docs.snowflake.com/user-guide/contacting-support).
 
-* **Account Name:** The full name of your account (provided by Snowflake). Please enter the name without `snowflakecomputing.com` part.
+    You can change some values later. For example, to change the **OAUTH_REDIRECT_URI**, you can use the following query:
+    ```sql
+    ALTER SECURITY INTEGRATION EIO
+    SET OAUTH_REDIRECT_URI = 'https://{your-tenant2-address}/callback/oauth2';
+    ```
 
-* **User role:** Security role to use for the session after connecting
+3. After creating the integration, you can use the following query:
+    ```sql
+    SELECT SYSTEM$SHOW_OAUTH_CLIENT_SECRETS('EIO');
+    ```
+    In response, you will receive the following fields that will be needed for the component:
+      * **OAUTH_CLIENT_SECRET**
+      * **OAUTH_CLIENT_ID**
 
-* **Warehouse:** The default virtual warehouse to use for the session after connecting
+4. You will also need this query:
+    ```sql
+    DESC INTEGRATION EIO;
+    ```
+    From this, we will need:
+      * **OAUTH_AUTHORIZATION_ENDPOINT**
+      * **OAUTH_TOKEN_ENDPOINT**
+      * **OAUTH_ALLOWED_AUTHORIZATION_ENDPOINTS**
+      * **OAUTH_ALLOWED_TOKEN_ENDPOINTS**
 
-* **Database Name:** Database name
+5. Finally, to obtain the account name, you can use this query:
+    ```sql
+    SELECT LOWER(CURRENT_ORGANIZATION_NAME() || '-' || CURRENT_ACCOUNT_NAME());
+    ```
+
+Now you can create new credentials for the component:
+
+{% include img.html max-width="100%" url="img/credentials.png" title="Snowflake Component credentials" %}
+* **Type** (dropdown, required) – `OAuth2`
+* **Choose Auth Client** (dropdown, required) – Select one of the previously created clients or choose `Add New Auth Client`:
+  * **Name** (string, required) – Provide any name you wish.
+  * **Client ID** (string, required) – Enter the `OAUTH_CLIENT_ID` here.
+  * **Client Secret** (string, required) – Enter the `OAUTH_CLIENT_SECRET` here.
+  * **Authorization Endpoint** (string, required) – Enter the `OAUTH_AUTHORIZATION_ENDPOINT` or use one of the `OAUTH_ALLOWED_AUTHORIZATION_ENDPOINTS`.
+  * **Token Endpoint** (string, required) – Enter the `OAUTH_TOKEN_ENDPOINT` or use one of the `OAUTH_ALLOWED_TOKEN_ENDPOINTS`.
+
+* **Name Your Credential** (string, required) – Provide any name you wish.
+* **Scopes (Comma-separated list)** (string, required) – Use the following value here: `refresh_token session:role:{ROLE}`, where `{ROLE}` is the name of the role to interact with Snowflake.
+
+    ❗**Note:** The `ACCOUNTADMIN`, `SECURITYADMIN`, and `ORGADMIN` roles are not permitted to use the integration - [more info](https://docs.snowflake.com/en/user-guide/oauth-custom#blocking-specific-roles-from-using-the-integration). Ensure that the specified role has access to the necessary database, schema, and table. You can switch to the required role in the Snowflake UI and check the necessary tables.
+
+* **Additional parameters (Comma-separated list)** (string, required) – Leave this blank.
+* **Account name** (string, required) – The full name of your account; you can find it in the 5th step of the integration creation.
+* **Database Name** (string, required) – The default database to use for the session after connecting.
 
 ## Triggers
 

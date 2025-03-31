@@ -65,6 +65,28 @@ There are six configuration fields here from which four are mandatory:
 
 In a REST API component the trigger and action perform the same function - *HTTP request* witch will send a `GET`/`POST`/`PUT`/`PATCH`/`DELETE` requests and parse the response back to the flow.
 
+### Configuration options
+
+*   `Don't throw Error on Failed Calls` - if enabled return *Error*, *Error code*, and *Stack trace* in message body otherwise throw error in flow.
+* `Split Result if it's an Array` - if enabled and response is an array, create a message for each item of array. Otherwise, create one message with response array.
+* `Retry on failure` - enabling rebound feature for following HTTP status codes:
+
+    * `408` -- Request Timeout
+    * `423` -- Locked
+    * `429` -- Too Many Requests
+    * `500` -- Internal Server Error
+    * `502` -- Bad Gateway
+    * `503` -- Service Unavailable
+    * `504` -- Gateway Timeout
+    * DNS lookup timeout
+    
+* `Do not verify SSL certificate (unsafe)` - disable verifying the server SSL certificate - unsafe.
+* `Follow redirect mode` - If you want to disable *Follow Redirect* functionality, you can use the option *Follow redirect mode*. By default *Follow redirect* mode option has value *Follow redirects*.
+* `Delay` - If you want to slow down requests to your API you can set a delay value (in seconds) and the component will delay calling the next request after the previous request. The time for the delay is calculated as `Delay/Call` Count and shouldn't be more than 1140 seconds (19 minutes due to platform limitations). The Call Count value by default is 1. If you want to use another value, please set the Call Count field. Notice: See [Known Limitations](#known-limitations) about *Delay* value.
+* `Call Count` - the field should be used only in pair with *Delay*, default to 1.
+* `Request timeout` - Timeout period in milliseconds (1-1140000) while component waiting for server response also can be configured with `REQUEST_TIMEOUT` environment variable if configuration field is not provided. Defaults to 100000 (100 sec). 
+> Notice: Specified for component `REQUEST_TIMEOUT` environment variable would be overwritten by specified value of *Request timeout*, the default value would be also overwritten.
+
 ### Output
 
 The messages produced by the *REST API* component will have the following properties:
@@ -214,3 +236,12 @@ name-value pairs in clear-text `string` format. The header value can use
 [JSONata](http://jsonata.org/) expressions.
 
 > **Please note: HTTP Response headers** will not be stored, the components stores body and attachment only.
+
+### Environment Variables
+
+| NAME                       | DESCRIPTION    | DEFAULT   | OPTIONAL |
+|----------------------------|------------------------|-----------|----------|
+| REQUEST_TIMEOUT            | HTTP authorization request timeout in milliseconds.                                                   | 10000     | true     |
+| REQUEST_RETRY_DELAY        | Delay between authorization retry attempts in milliseconds.                                            | 5000      | true     |
+| REQUEST_MAX_RETRY          | Number of HTTP authorization request retry attempts.                                                  | 3         | true     |
+| REFRESH_TOKEN_RETRIES          | Number of [Rebound attempts](/guides/rebound.html#how-the-rebound-works) for processing the message.                                                  | 10        | true     |

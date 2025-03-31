@@ -5,11 +5,20 @@ description: Technical Notes for the Snowflake component.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2024-06-03
-ComponentVersion: 1.3.1
+updatedDate: 2025-03-31
+ComponentVersion: 2.0.0
 ---
 
 ## Changelog
+
+### 2.0.0 (March 31, 2025)
+* ❗**Breaking changes** – The authentication mechanism has been changed to OAuth 2.0 due to [Snowflake restrictions](https://www.snowflake.com/en/blog/blocking-single-factor-password-authentification/):
+  * This will break backward compatibility with versions 1.x.x.
+  * It is required to update the existing credentials.
+* Implemented reuseable client and connection for all actions and trigger
+* Updated the `Node` engine to version 20.x.
+* Updated the `Sailor` version to 2.7.5
+* Updated the `component-commons-library` version to 3.2.2
 
 ### 1.3.1 (June 03, 2024)
 
