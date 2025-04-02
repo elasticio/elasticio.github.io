@@ -5,10 +5,17 @@ description: Technical Notes for the Akeneo component
 icon: akeneo.png
 icontext: Akeneo Component
 category: akeneo
-updatedDate: 2024-11-07
-ComponentVersion: 2.0.0
+updatedDate: 2025-03-21
+ComponentVersion: 2.0.1
 ---
 ## Changelog
+
+### 2.0.1 (March 21, 2025)
+
+* Fixed input metadata for the `Lookup Objects (plural)` action
+* Fixed an issue where no data was emitted in `Emit Individually` mode for the `Lookup Objects (plural)` action
+* `Sailor` bumped from 2.7.3 to 2.7.5
+* `component-commons-library` bumped from 3.2.1 to 3.2.2
 
 ### 2.0.0 (November 07, 2024)
 

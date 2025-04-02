@@ -5,11 +5,18 @@ description: Technical Notes for the Microsoft Dynamics CRM v2 component
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2023-05-19
-ComponentVersion: 1.2.3
+updatedDate: 2025-03-21
+ComponentVersion: 1.2.4
 ---
 
 ## Changelog
+
+### 1.2.4 (March 21, 2025)
+
+* Fixed verify credentials fail without API version in URL
+* Updated the `Node` engine to version 20.x.
+* Updated the `Sailor` version to 2.7.5
+* Updated the `component-commons-library` version to 3.2.2
 
 ### 1.2.3 (May 19, 2023)
 

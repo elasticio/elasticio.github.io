@@ -5,8 +5,8 @@ description: A step-by-step instruction on how to connect to Microsoft Dynamics 
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2023-05-19
-ComponentVersion: 1.2.3
+updatedDate: 2025-03-21
+ComponentVersion: 1.2.4
 ---
 
 ## How to Connect to Microsoft Dynamics CRM
@@ -130,4 +130,4 @@ Create a new credential on {{site.data.tenant.name}} platform for connecting to 
 
 That's it! You've successfully configured the connection to Microsoft Dynamics CRM using OAuth. Make sure to test the connection on your platform to ensure it's working as expected.
 
->**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
+> **Please Note:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.

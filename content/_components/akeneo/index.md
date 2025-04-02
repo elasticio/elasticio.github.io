@@ -6,8 +6,8 @@ description: Akeneo Component is designed to connect Akeneo API.
 icon: akeneo.png
 icontext: Akeneo Component
 category: akeneo
-updatedDate: 2024-11-07
-ComponentVersion: 2.0.0
+updatedDate: 2025-03-21
+ComponentVersion: 2.0.1
 ---
 
 ## Table of Contents
@@ -43,7 +43,7 @@ Component credentials configuration fields:
 * **Username** (string, required) - "Username" from generated connection app.
 * **Password** (string, required) - "Password" from generated connection app.
 
->**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
+> **Please Note:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
 ## Actions
 
@@ -99,7 +99,7 @@ Lookup a single object by it's id.
 
 #### Output Metadata
 
-Object with result of lookup as value.
+* Object with result of lookup as value.
 
 ### Lookup Objects (plural)
 
@@ -112,7 +112,7 @@ Lookup a set of object by defined criteria list. Can be emitted in different way
 
 #### Input Metadata
 
-* **Search Criteria** - (array of strings, required): Search terms to be combined with the AND operator, E.g: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: 'name', operator: 'eq', fieldValue: '"Alex"' }]`.
+* **Search Criteria** - (array of strings, required): Search terms to be combined with the AND operator, E.g: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: 'name', operator: 'eq', fieldValue: '"Alex"' }]`
 
 If selected `Emit Behavior` is `Emit page` additionally fields will be added:
 * **Page Number** - (number, defaults to 0): Indicates index of page to be fetched.
@@ -122,9 +122,9 @@ If selected `Emit Behavior` is `Emit all` additional field will be added:
 
 #### Output Metadata
 
-For `Emit All` & `Emit Page` mode: An object, with key `results` that has an array as its value.
-For `Emit Individually` mode: Each object which fill the entire message.
-If `Emit only total count of results matching search criteria` is set `true` for `Emit All` mode: only `totalCountOfMatchingResults` with total amount of objects found by search criteria will be emitted.
+* For `Emit All` & `Emit Page` mode: An object, with key `results` that has an array as its value.
+* For `Emit Individually` mode: Each object which fill the entire message.
+* If `Emit only total count of results matching search criteria` is set `true` for `Emit All` mode: only `totalCountOfMatchingResults` with total amount of objects found by search criteria will be emitted.
 
 ### Upsert Object
 
@@ -142,10 +142,10 @@ Dynamically generated fields according to chosen `Upsert Schema`.
 
 #### Output Metadata
 
-If `Make GET request after object created/updated` is `true`:
+* If `Make GET request after object created/updated` is `true`:
 Dynamically generated fields according to chosen `Upsert Schema`.
-If `Make GET request after object created/updated` is `false`:
-* **ID** - (string, optional): ID of the upserted object.
+* If `Make GET request after object created/updated` is `false`:
+  - **ID** - (string, optional): ID of the upserted object.
 
 ## Triggers
 
@@ -168,8 +168,8 @@ Retrieve all the updated or created objects within a given time range based on t
 There is no Input Metadata.
 
 #### Output Metadata
-- For `Emit page`: An object with key ***results*** that has an array as its value.
-- For `Emit Individually`:  Each object fill the entire message.
+* For `Emit page`: An object with key ***results*** that has an array as its value.
+* For `Emit Individually`:  Each object fill the entire message.
 
 #### Limitations
 
