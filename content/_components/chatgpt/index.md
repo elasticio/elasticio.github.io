@@ -1,5 +1,5 @@
 ---
-title: ChatGPT component
+title: ChatGPT Component
 layout: component
 section: Service components
 description: ChatGPT Component is designed to connect with ChatGPT

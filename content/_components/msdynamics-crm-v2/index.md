@@ -1,5 +1,5 @@
 ---
-title: Microsoft Dynamics CRM v2 component
+title: Microsoft Dynamics CRM v2 Component
 layout: component
 section: CRM components
 description: Microsoft Dynamics CRM v2 Component is designed to use Web API from Microsoft.
