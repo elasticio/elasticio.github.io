@@ -6,9 +6,28 @@ description: Microsoft Dynamics CRM v2 Component is designed to use Web API from
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2023-05-19
-ComponentVersion: 1.2.3
+updatedDate: 2025-03-21
+ComponentVersion: 1.2.4
 ---
+
+## Table of Contents
+
+* [Description](#description)
+* [Credentials](#credentials)
+* [Actions](#actions) 
+  * [Lookup Objects (plural)](#lookup-objects-plural) 
+  * [Lookup Object (at most one)](#lookup-object-at-most-one) 
+  * [Delete Object By ID](#delete-object-by-id) 
+  * [Upsert Object](#upsert-object) 
+  * [Make Raw Request](#make-raw-request)
+  * [Extract Raw System Metadata](#extract-raw-system-metadata) 
+* [Triggers](#triggers) 
+  * [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling)
+* [Known Limitations](#known-limitations)  
+
+## Description
+
+Microsoft Dynamics CRM v2 Component is designed to use Web API from Microsoft.
 
 ## Credentials
 
@@ -57,7 +76,9 @@ There is no Input Metadata.
 
 #### Output Metadata
 
-Depends on `Object Type` and `Emit behavior` fields. If `Emit behavior` field is equal to `Emit page` - object with property `results` that contains array of selected objects will be returned, if to `Emit individually`, metadata for selected `Object Type` will be returned.
+Depends on `Object Type` and `Emit behavior` fields.
+* If `Emit behavior` field is equal to `Emit page` - object with property `results` that contains array of selected objects will be returned.
+* If to `Emit individually`, metadata for selected `Object Type` will be returned.
 
 ## Actions
 
@@ -72,7 +93,7 @@ Lookup a set of object by defined criteria list. Can be emitted in different way
 
 #### Input Metadata
 
-* **Search Criteria** - (array of strings, required): [Search terms to filter objects](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results). Search terms are array which will be used as value for `filter` parameter of search. Be default, mapping configured to combine all search terms with `and` logical operator, if you want to use another behavior - proceed to advanced mode. Example Search Criteria: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: '_primarycontactid_value', operator: 'eq', fieldValue: 'd1bf9a01-b056-e711-abaa-00155d701c02' }]`.
+* **Search Criteria** - (array of strings, required): [Search terms to filter objects](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results). Search terms are array which will be used as value for `filter` parameter of search. Be default, mapping configured to combine all search terms with `and` logical operator, if you want to use another behavior - proceed to advanced mode. Example Search Criteria: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: '_primarycontactid_value', operator: 'eq', fieldValue: 'd1bf9a01-b056-e711-abaa-00155d701c02' }]`
 
 If selected `Emit Behavior` is `Emit page` additionally fields will be added:
 * **Page Number** - (number, defaults 0): Indicates number of page to fetched.
@@ -80,9 +101,9 @@ If selected `Emit Behavior` is `Emit page` additionally fields will be added:
 
 #### Output Metadata
 
-For `Emit All` mode: An object, with key `results` that has an array as its value.
-For `Emit Page` mode: An object with key `results` that has an array as its value (if `Page Size` > 0). Key `totalCountOfMatchingResults` which contains the total number of results (not just on the page) which match the search criteria (if `Page Size` = 0).
-For `Emit Individually` mode: Each object which fill the entire message.
+* For `Emit All` mode: An object, with key `results` that has an array as its value.
+* For `Emit Page` mode: An object with key `results` that has an array as its value (if `Page Size` > 0). Key `totalCountOfMatchingResults` which contains the total number of results (not just on the page) which match the search criteria (if `Page Size` = 0).
+* For `Emit Individually` mode: Each object which fill the entire message.
 
 ### Lookup Object (at most one)
 
@@ -101,7 +122,7 @@ Lookup a single object by a selected field.
 
 #### Output Metadata
 
-Object with result of lookup as value.
+* Object with result of lookup as value.
 
 ### Upsert Object
 
@@ -119,7 +140,7 @@ Updates (if record found) or creates a new object.
 
 #### Output Metadata
 
-Created or Updated object will be returned. Metadata are dynamically generated fields according to chosen `Object Type`.
+* Created or Updated object will be returned. Metadata are dynamically generated fields according to chosen `Object Type`.
 
 ### Delete Object By ID
 
@@ -181,8 +202,8 @@ Depends on selected `Output`:
 * **In Body**
   * **metadata** (string, required): An XML string with the retrieved contents.
 
-## Limitations
+## Known Limitations
 
-1. Output metadata for `Lookup Object (at most one)` Action can be inaccurate because:
+* Output metadata for `Lookup Object (at most one)` Action can be inaccurate because:
  - some of the fields may have another name. E.g `ownerid` will look like `_ownerid_value`, so extra symbols could be added.
  - microsoft schema has too much data types, most of which doesn't supported by platform so they are set to 'string'.

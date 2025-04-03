@@ -55,7 +55,7 @@ Before building any flow, you must first create an OAuth 2 integration in [Snowf
     ```
     The main fields here are:
       * **EIO** – The name of your integration; you can replace it with your own.
-      * **OAUTH_REDIRECT_URI** – The OAuth 2 redirect URL to our platform. Replace `{your-tenant-address}` with your own.
+      * **OAUTH_REDIRECT_URI** – The [OAuth 2 redirect URL](/guides/oauth-callback-redirect-url.html) to our platform. Replace `{your-tenant-address}` with your own.
       * **OAUTH_REFRESH_TOKEN_VALIDITY** – The duration for which the component can automatically refresh the token.
       
         ❗❗❗**Note:** By default, the maximum value is 7776000 seconds (90 days). After this period, you **must** reauthorize the component in Snowflake. If you have a business need to increase the maximum value, request your account administrator to send a request to [Snowflake Support](https://docs.snowflake.com/user-guide/contacting-support).

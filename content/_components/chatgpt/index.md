@@ -6,29 +6,43 @@ description: ChatGPT Component is designed to connect with ChatGPT
 icon: chatgpt.png
 icontext: ChatGPT component
 category: chatgpt
-updatedDate: 2024-05-08
-ComponentVersion: 1.1.0
+updatedDate: 2025-03-28
+ComponentVersion: 1.2.0
 ---
+
+## Table of Contents
+
+* [Description](#description)
+* [Credentials](#credentials)
+* [Actions](#actions)
+  * [Send Request](#send-request)
+* [Known Limitations](#known-limitations)
 
 ## Description
 
-ChatGPT Component is designed to connect with ChatGPT using [REST OpenAI API](https://platform.openai.com/docs/api-reference/introduction) The current release of component tested with the `Nov 6th, 2023` [API version](https://platform.openai.com/docs/changelog).
+The ChatGPT Component enables interaction with ChatGPT via the [OpenAI REST API](https://platform.openai.com/docs/api-reference/introduction)
+The current release of this component has been tested with the `March 20th, 2025` [API version](https://platform.openai.com/docs/changelog).
 
 ## Credentials
 
-First, [Create OpenAI account](https://platform.openai.com/signup) or [Sign in](https://platform.openai.com/login). Next, navigate to the [API key page](https://platform.openai.com/account/api-keys) and *Create new secret key*, optionally naming the key. Make sure to save this somewhere safe and do not share it with anyone.
+To use this component, follow these steps:
 
-* **API Key** (string, required) - API Token generated as described above.
+1. Create an [OpenAI account](https://platform.openai.com/signup) or [sign in](https://platform.openai.com/login).
+2. Navigate to the [API key page](https://platform.openai.com/account/api-keys) and “Create new secret key”, optionally naming the key.
+3. Save your API key securely and do not share it.
+
+> **API Key** (string, required) - The OpenAI API token generated as described above.
 
 ## Triggers
 
 This component does not have trigger functions, making it inaccessible as the first component during the integration flow design.
 
 ## Actions
-
+  
 ### Send Request
 
-Simply send a request. Only text-based models are supported so far (gpt-4 and gpt-3.5). Stream mode is not supported currently.
+Simply sends a request, supporting text-based models (GPT-4, GPT-3.5) as well as attachments (images and files).
+Stream mode is not supported currently.
 
 #### Configuration Fields
 
@@ -38,9 +52,9 @@ Simply send a request. Only text-based models are supported so far (gpt-4 and gp
 
 #### Input Metadata
 
-Please refer to the Input Schema file below for the full list of metadata fields. 
-<details close markdown="block"><summary><strong>Input Schema file</strong></summary>
-```json
+Please refer to the Input Schema file for the full list of metadata fields. The metadata is rather general for different use-cases. To build a correct request please consult the [official documentation](https://platform.openai.com/docs/api-reference/chat/create).
+<details close markdown="block"><summary><strong>Click to expand Input Schema for more details:</strong></summary>
+```
 {
   "type": "object",
   "properties": {
@@ -68,16 +82,69 @@ Please refer to the Input Schema file below for the full list of metadata fields
             ]
           },
           "content": {
-            "type": "string",
+            "type": "array",
             "help": {
-              "description": "The contents of the message"
+              "description": "An array of message content, which can include text, images, and file attachments"
             },
-            "required": true
+            "required": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["text", "image_url", "file"],
+                  "help": {
+                    "description": "Type of message content"
+                  },
+                  "required": true
+                },
+                "text": {
+                  "type": "string",
+                  "help": {
+                    "description": "The text content of the message (required if type is 'text')"
+                  }
+                },
+                "image_url": {
+                  "type": "object",
+                  "help": {
+                    "description": "An image included in the message (required if type is 'image_url')."
+                  },
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "help": {
+                        "description": "URL of the image. The URL can point to either internal or external public storage."
+                      }
+                    },
+                    "detail": {
+                      "type": "string",
+                      "help": {
+                        "description": "The detail parameter tells the model what level of detail to use when processing and understanding the image (low, high, or auto to let the model decide). If you skip the parameter, the model will use auto. <a href='https://platform.openai.com/docs/guides/images?api-mode=chat#specify-image-input-detail-level'>More Info</a>"
+                      }
+                    }
+                  }
+                },
+                "file": {
+                  "type": "object",
+                  "help": {
+                    "description": "A file included in the message (required if type is 'file'). Only PDF files (.pdf) are supported for file attachments."
+                  },
+                  "properties": {
+                    "file_url": {
+                      "type": "string",
+                      "help": {
+                        "description": "URL of the file to be uploaded. The URL can point to either internal or external public storage."
+                      }
+                    }
+                  }
+                }
+              }
+            }
           },
           "name": {
             "type": "string",
             "help": {
-              "description": "The contents of the message"
+              "description": "An optional name for the participant. Provides the model information to differentiate between participants of the same role"
             },
             "required": false
           },
@@ -283,21 +350,212 @@ Please refer to the Input Schema file below for the full list of metadata fields
 ```
 </details>
 
-The metadata is rather general for different use-cases. To build a correct request please consult the [official documentation](https://platform.openai.com/docs/api-reference/chat/create).
+> **Please Note**: We recommend to use `Developer mode` in the mapping.
 
-Here is an example of a very basic valid request:
+Here are some examples of valid requests:
 
 ```json
 {
   "messages": [
     {
       "role": "user",
-      "content": "Hi there, what is your name?"
+      "content": [
+        { "type": "text", "text": "What’s the capital of France?" },
+        { "type": "image_url", "image_url": { "url": "https://example.com/image.png" } },
+        { "type": "file", "file": { "file_url": "https://example.com/document.pdf" } }
+      ]
     }
   ]
 }
 ```
 
+Attach file from platform internal storage `Maester`:
+
+```json
+{
+   "messages": [
+      {
+         "role": "user",
+         "content": [
+            {
+               "type": "file",
+               "file": {
+                  "file_url": "http://maester-service.platform.svc.cluster.local:3002/objects/{MAESTER_OBJECT_ID}?storage_type=maester"
+               }
+            },
+            {
+               "type": "text",
+               "text": "Summarize this document"
+            }
+         ]
+      }
+   ],
+   "response_format": {
+      "type": "json_object"
+   }
+} 
+```
+
+Attach image from external URL:
+
+```json
+{
+   "messages": [
+      {
+         "role": "user",
+         "content": [
+            {
+               "type": "image_url",
+               "image_url": {
+                  "url":"https://example.com/image.png"
+               }
+            },
+            {
+               "type": "text",
+               "text": "Describe what you see in attached picture"
+            }
+         ]
+      }
+   ],
+   "response_format": {
+      "type": "text"
+   }
+}
+```
+
 #### Output Metadata
 
-Please refer to the [Output Schema file](https://github.com/elasticio/chatgpt-component/blob/master/src/schemas/actions/sendRequest.out.json) for the full list of metadata fields.
+Please refer to the Output Schema file for the full list of metadata fields.
+<details close markdown="block"><summary><strong>Click to expand Output Schema for more details:</strong></summary>
+```
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "label": "A unique identifier for the chat completion",
+      "required": true
+    },
+    "created": {
+      "type": "number",
+      "label": "The Unix timestamp (in seconds) of when the chat completion was created",
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "label": "The model used for the chat completion",
+      "required": true
+    },
+    "system_fingerprint": {
+      "type": "string",
+      "label": "This fingerprint represents the backend configuration that the model runs with",
+      "required": true
+    },
+    "object": {
+      "type": "string",
+      "label": "The object type, which is always 'chat.completion'",
+      "required": true,
+      "enum": [
+        "chat.completion"
+      ]
+    },
+    "choices": {
+      "type": "array",
+      "required": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "finish_reason": {
+            "type": "string",
+            "label": "The reason the model stopped generating tokens. This will be 'stop' if the model hit a natural stop point or a provided stop sequence, 'length' if the maximum number of tokens specified in the request was reached, 'content_filter' if content was omitted due to a flag from our content filters, 'tool_calls' if the model called a tool, or 'function_call' (deprecated) if the model called a function",
+            "required": true
+          },
+          "index": {
+            "type": "number",
+            "label": "The index of the choice in the list of choices",
+            "required": true
+          },
+          "message": {
+            "type": "object",
+            "label": "A chat completion message generated by the model",
+            "required": true,
+            "properties": {
+              "content": {
+                "type": "string",
+                "label": "The contents of the message",
+                "required": false
+              },
+              "role": {
+                "type": "string",
+                "label": "The role of the author of this message",
+                "required": true
+              },
+              "tool_calls": {
+                "type": "array",
+                "label": "The tool calls generated by the model, such as function calls",
+                "required": false,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "label": "The ID of the tool call",
+                      "required": false
+                    },
+                    "type": {
+                      "type": "string",
+                      "label": "The type of the tool. Currently, only 'function' is supported",
+                      "required": false
+                    },
+                    "function": {
+                      "type": "object",
+                      "label": "The function that the model called",
+                      "required": false,
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "label": "The name of the function to call",
+                          "required": false
+                        },
+                        "arguments": {
+                          "type": "string",
+                          "label": "The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function",
+                          "required": false
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "function_call": {
+                "type": "object",
+                "label": "Deprecated and replaced by 'tool_calls'. The name and arguments of a function that should be called, as generated by the model",
+                "required": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "label": "The name of the function to call",
+                    "required": false
+                  },
+                  "arguments": {
+                    "type": "string",
+                    "label": "The arguments to call the function with, as generated by the model in JSON format. Note that the model does not always generate valid JSON, and may hallucinate parameters not defined by your function schema. Validate the arguments in your code before calling your function",
+                    "required": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+</details>
+
+## Known Limitations
+
+  1. Only PDF files (`.pdf`) are supported for file attachments.
+  2. Images must meet OpenAI's input requirements. See [Image Input Requirements](https://platform.openai.com/docs/guides/images?api-mode=chat#image-input-requirements).
+  3. Not all models support attachments (images, files). Before sending a request, please verify model compatibility in the [OpenAI Models documentation](https://platform.openai.com/docs/models).
