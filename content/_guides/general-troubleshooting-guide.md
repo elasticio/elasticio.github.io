@@ -88,7 +88,7 @@ If you are unsure of the reasons for such behavior, contact [support](mailto:{{s
 
 > **Please Note:** 
 > * If a single message processing takes longer than 30 minutes to complete, the container-pod will continue running, but a new parallel process will be initiated. In this timeout scenario, the old process will continue working, potentially causing a duplication. A timeout could occur if the flow logic is not optimised and exceeds platform limits. Please contact [support](mailto:{{site.data.tenant.supportEmail}}) for assistance.
-> * During a one-time ordinary flow execution, if no messages are present on the steps and a single component demands a longer data retrieval period to emit the next message before proceeding, the flow container-pod will terminate in accordance with the [scheduled execution timeout](/releases/24/45.html#extending-scheduled_execution_timeout-to-720-seconds). For this case, consider setting up the [Editable delay for container shutdown in Ordinary Flows](/guides/managing-flows/editable-delay-for-container-shutdown-in-ordinary-flows).
+> * During a one-time ordinary flow execution, if no messages are present on the steps and a single component demands a longer data retrieval period to emit the next message before proceeding, the flow container-pod will terminate in accordance with the [scheduled execution timeout](/releases/24/45.html#extending-scheduled_execution_timeout-to-720-seconds). For this case, consider setting up the [Editable delay for container shutdown in Ordinary Flows](/guides/managing-flows.html#editable-delay-for-container-shutdown-in-ordinary-flows).
 
 If messages on a certain step queue are not proceeding, you can:
 - Confirm if the flow is not in the [suspended](#suspended-flows) state. 
