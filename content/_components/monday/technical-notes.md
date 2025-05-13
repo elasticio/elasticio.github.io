@@ -1,7 +1,7 @@
 ---
-title: Monday component
+title: Monday component Technical Notes
 layout: component
-description: The Monday Component facilitates interaction with the Monday API.
+description: Technical Notes for the Monday component.
 icon: monday.png
 icontext: Monday component
 category: monday

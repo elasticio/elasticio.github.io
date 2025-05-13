@@ -1,10 +1,10 @@
 ---
 layout: component
-title: Maester Component
+title: Maester component
 section: Utility components
 description: Maester component for the platform.
 icon: maester.png
-icontext: Maester Component
+icontext: Maester component
 category: maester
 updatedDate: 2024-10-02
 ComponentVersion: 2.0.2

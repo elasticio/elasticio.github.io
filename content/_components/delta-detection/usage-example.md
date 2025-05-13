@@ -3,7 +3,7 @@ layout: component
 title: Delta Detection Usage Example
 description: Usage Example for the Delta Detection component.
 icon: delta-detection.png
-icontext: Delta Detection Component
+icontext: Delta Detection component
 category: delta-detection
 updatedDate: 2023-01-03
 ComponentVersion: 2.2.0

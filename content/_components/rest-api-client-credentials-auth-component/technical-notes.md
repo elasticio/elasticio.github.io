@@ -1,9 +1,9 @@
 ---
-title: Rest API OAuth2 Client Credentials Component Technical Notes
+title: Rest API OAuth2 Client Credentials component Technical Notes
 layout: component
 description: Technical Notes for the Rest API OAuth2 Client Credentials component
 icon: rest-api-client-credentials-auth-component.png
-icontext: Rest API OAuth2 Client Credentials Component
+icontext: Rest API OAuth2 Client Credentials component
 category: rest-api-client
 updatedDate: 2024-11-15
 ComponentVersion: 1.3.1

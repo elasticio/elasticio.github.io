@@ -1,9 +1,9 @@
 ---
-title: Rest API NTLM Auth Component Technical Notes
+title: Rest API NTLM Auth component Technical Notes
 layout: component
-description: Technical Notes for the Rest API NTLM Auth Component component
+description: Technical Notes for the Rest API NTLM Auth component component
 icon: rest-api-ntlm-auth.png
-icontext: Rest API NTLM Auth Component
+icontext: Rest API NTLM Auth component
 category: rest-api-ntml
 updatedDate: 2022-08-26
 ComponentVersion: 1.0.0

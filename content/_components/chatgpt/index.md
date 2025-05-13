@@ -1,8 +1,8 @@
 ---
-title: ChatGPT Component
+title: ChatGPT component
 layout: component
 section: Service components
-description: ChatGPT Component is designed to connect with ChatGPT
+description: ChatGPT component is designed to connect with ChatGPT
 icon: chatgpt.png
 icontext: ChatGPT component
 category: chatgpt

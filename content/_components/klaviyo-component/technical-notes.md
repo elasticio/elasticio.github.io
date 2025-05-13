@@ -11,7 +11,7 @@ updatedDate: 2024-12-04
 
 ## Changelog
 
-## 1.0.0 (December 04, 2024)
+### 1.0.0 (December 04, 2024)
 
 - Added `Make Raw Request` Action
 - Added `Get New and Updated Objects Polling` Trigger

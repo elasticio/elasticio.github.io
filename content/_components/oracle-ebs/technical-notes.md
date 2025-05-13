@@ -3,7 +3,7 @@ title: Oracle E-Business Suite Technical Notes
 layout: component
 description: Technical Notes for the Oracle E-Business Suite component
 icon: oracle-ebs.png
-icontext: Oracle E-Business Suite Component
+icontext: Oracle E-Business Suite component
 category: oracle-ebs
 updatedDate: 2020-09-20
 ComponentVersion: 1.0.0

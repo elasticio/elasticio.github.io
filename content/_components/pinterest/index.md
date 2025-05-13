@@ -1,10 +1,10 @@
 ---
-title: Pinterest Component
+title: Pinterest component
 layout: component
 section: Service components
-description: Pinterest Component is designed to interact with Pinterest REST API
+description: Pinterest component is designed to interact with Pinterest REST API
 icon: pinterest.png
-icontext: Pinterest Component
+icontext: Pinterest component
 category: pinterest
 ComponentVersion: 1.0.0
 updatedDate: 2023-12-29

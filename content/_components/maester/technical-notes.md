@@ -1,9 +1,9 @@
 ---
 layout: component
 title: Maester Technical Notes
-description: Technical Notes for the Maester Component
+description: Technical Notes for the Maester component
 icon: maester.png
-icontext: Maester Component
+icontext: Maester component
 category: maester
 updatedDate: 2024-10-02
 ComponentVersion: 2.0.2

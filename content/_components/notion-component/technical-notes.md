@@ -1,5 +1,5 @@
 ---
-title: Notion Component
+title: Notion component Technical Notes
 layout: component
 description: Technical Notes for the Notion component.
 icon: notion.png

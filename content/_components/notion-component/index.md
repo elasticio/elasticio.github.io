@@ -1,5 +1,5 @@
 ---
-title: Notion Component
+title: Notion component
 layout: component
 section: Service components
 description: Notion component is designed to interact with Notion API.

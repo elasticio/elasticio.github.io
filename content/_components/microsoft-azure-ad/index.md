@@ -1,10 +1,10 @@
 ---
-title: Microsoft Azure AD Component
+title: Microsoft Azure AD component
 layout: component
 section: Service components
-description: Microsoft Azure AD Component is designed to access users and group data from Azure AD, as well as manage roles, and permissions.
+description: Microsoft Azure AD component is designed to access users and group data from Azure AD, as well as manage roles, and permissions.
 icon: microsoft-azure-ad.png
-icontext: Microsoft Azure AD Component
+icontext: Microsoft Azure AD component
 category: microsoft-azure-ad
 updatedDate: 2023-03-10
 ComponentVersion: 1.1.0
@@ -12,7 +12,7 @@ ComponentVersion: 1.1.0
 
 ## Description
 
-Microsoft Azure AD Component is designed to access users and group data from Azure AD using [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/use-the-api), as well as manage roles, and permissions.
+Microsoft Azure AD component is designed to access users and group data from Azure AD using [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/use-the-api), as well as manage roles, and permissions.
 
 ## Credentials
 

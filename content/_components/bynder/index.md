@@ -1,7 +1,7 @@
 ---
-title: Bynder Component
+title: Bynder component
 layout: component
-section: Service components
+section: Marketing-related components
 description: Bynder component is designed to interact with Bynder API.
 icon: bynder.png
 icontext: Bynder component

@@ -1,10 +1,10 @@
 ---
-title: Rest API OAuth2 Client Credentials Component
+title: Rest API OAuth2 Client Credentials component
 layout: component
 section: Utility components
 description: A component that can make REST calls while using OAuth2 Client Credentials Auth Grant Type.
 icon: rest-api-client-credentials-auth-component.png
-icontext: Rest API OAuth2 Client Credentials Component
+icontext: Rest API OAuth2 Client Credentials component
 category: rest-api-client
 updatedDate: 2024-11-15
 ComponentVersion: 1.3.1
