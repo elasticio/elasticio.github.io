@@ -5,13 +5,18 @@ description: Technical Notes for the Pub-Sub component
 icon: pub-sub.png
 icontext: Pub-Sub component
 category: pub-sub
-updatedDate: 2024-11-06
-ComponentVersion: 1.0.10
+updatedDate: 2025-05-12
+ComponentVersion: 1.0.11
 redirect_from:
   - /components/pub-sub/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.11 (May 12, 2025)
+
+* Add pagination support to topics fetch logic
+* Update Sailor from 2.7.3 to 2.7.5
 
 ### 1.0.10 (November 06, 2024)
 

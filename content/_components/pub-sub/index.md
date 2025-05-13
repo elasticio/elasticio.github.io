@@ -6,8 +6,8 @@ description: An open-source Component for publish–subscribe messaging pattern 
 icon: pub-sub.png
 icontext: Pub-Sub component
 category: pub-sub
-updatedDate: 2024-11-06
-ComponentVersion: 1.0.10
+updatedDate: 2025-05-12
+ComponentVersion: 1.0.11
 ---
 
 ## Description
@@ -106,7 +106,7 @@ You can create as many Subscriber Flows as you want, and they will process messa
 
 ![Trigger input](img/trigger-input.png)
 
->**Please Note:** Topics can only be accessed if they are already in your workspace.Topic can be created via UI or [API-call](https://api.elastic.io/docs/v2/#pub/sub-topics).
+>**Please Note:** Topics can only be accessed if they are already in your workspace.
 
 ![Publisher](img/publisher.png)
 

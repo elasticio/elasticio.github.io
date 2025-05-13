@@ -6,8 +6,8 @@ description: Smarty-streets offers software for address validation and geocoding
 icon: smarty-streets.png
 icontext: Smarty-streets component
 category: Smarty-streets component
-updatedDate: 2023-05-17
-ComponentVersion: 2.0.2
+updatedDate: 2025-05-13
+ComponentVersion: 3.0.0
 ---
 
 ## Credentials
@@ -22,9 +22,8 @@ identify your account and a token which is like a password.
 
 ### How to insert credentials
 
-**Integrate** -> **Credentials** -> Smarty Streets -> Add New Credential
-
-*   Enter Name of account.
+**Credentials** -> Smarty Streets -> Create new credential
+*   Enter a name for your credential.
 *   Enter your `AuthId` and `AuthToken`.
 *   Click on "Verify".
 *   Click on "Save".
