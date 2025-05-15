@@ -1,10 +1,10 @@
 ---
-title: PostgreSQL Component
+title: PostgreSQL component
 layout: component
 section: Database components
 description: PostgreSQL is a general purpose and open source object-relational database management system.
 icon: postgresql.png
-icontext: PostgreSQL Component
+icontext: PostgreSQL component
 category: postgresql-component
 updatedDate: 2021-11-26
 ComponentVersion: 1.4.2

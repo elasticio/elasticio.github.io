@@ -1,10 +1,10 @@
 ---
-title: AppDirect Component
+title: AppDirect component
 layout: component
 section: E-Commerce components
 description: AppDirect component is designed for AppMarket API integration.
 icon:  appdirect.png
-icontext: AppDirect Component
+icontext: AppDirect component
 category: appdirect
 ComponentVersion: 2.0.0
 updatedDate: 2021-05-11

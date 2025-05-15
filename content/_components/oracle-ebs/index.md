@@ -1,10 +1,10 @@
 ---
-title: Oracle E-Business Suite Component
+title: Oracle E-Business Suite component
 layout: component
 section: Service components
 description: A component for working with Oracle E-Business Suite services on the platform.
 icon: oracle-ebs.png
-icontext: Oracle E-Business Suite Component
+icontext: Oracle E-Business Suite component
 category: oracle-ebs
 updatedDate: 2020-09-20
 ComponentVersion: 1.0.0

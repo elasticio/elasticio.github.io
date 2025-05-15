@@ -1,7 +1,7 @@
 ---
 title: Microsoft Dynamics Business Central Technical Notes
 layout: component
-description: Technical Notes for the Microsoft Dynamics Business Central Component.
+description: Technical Notes for the Microsoft Dynamics Business Central component.
 icon: microsoft-dynamic-business-central.png
 icontext: Microsoft-Dynamics-Business-Central component
 category: microsoft-dynamic-business-central

@@ -1,9 +1,9 @@
 ---
-title: Akeneo Technical Notes
+title: Akeneo component Technical Notes
 layout: component
-description: Technical Notes for the Akeneo component
+description: Technical Notes for the Akeneo component.
 icon: akeneo.png
-icontext: Akeneo Component
+icontext: Akeneo component
 category: akeneo
 updatedDate: 2025-03-21
 ComponentVersion: 2.0.1

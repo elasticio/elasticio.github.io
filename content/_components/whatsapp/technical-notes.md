@@ -3,7 +3,7 @@ title: WhatsApp Technical Notes
 layout: component
 description: Technical Notes for the WhatsApp component
 icon: whatsapp.png
-icontext: WhatsApp Component
+icontext: WhatsApp component
 category: whatsapp
 ComponentVersion: 1.1.0
 updatedDate: 2024-09-05

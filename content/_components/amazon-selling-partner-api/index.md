@@ -1,10 +1,10 @@
 ---
 layout: component
-title: Amazon Selling Partner Component
+title: Amazon Selling Partner component
 section: E-Commerce components
-description: Amazon Selling Partner Component is designed to work with Selling Partner API.
+description: Amazon Selling Partner component is designed to work with Selling Partner API.
 icon: amazon-selling-partner-api.png
-icontext: Amazon Selling Partner Component
+icontext: Amazon Selling Partner component
 category: amazon-selling-partner-api
 ComponentVersion: 1.1.0
 updatedDate: 2022-12-13

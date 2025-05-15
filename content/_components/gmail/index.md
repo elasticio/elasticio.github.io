@@ -1,8 +1,8 @@
 ---
-title: Gmail Component
+title: Gmail component
 layout: component
 section: Office components
-description: Gmail Component is designed to connect to Google Gmail, using both low-level REST API calls and high-level Google API client.
+description: Gmail component is designed to connect to Google Gmail, using both low-level REST API calls and high-level Google API client.
 icon: gmail.png
 icontext: Gmail component
 category: gmail

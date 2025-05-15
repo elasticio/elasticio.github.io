@@ -1,10 +1,10 @@
 ---
-title: Akeneo Component
+title: Akeneo component
 layout: component
 section: E-Commerce components
-description: Akeneo Component is designed to connect Akeneo API.
+description: Akeneo component is designed to connect Akeneo API.
 icon: akeneo.png
-icontext: Akeneo Component
+icontext: Akeneo component
 category: akeneo
 updatedDate: 2025-03-21
 ComponentVersion: 2.0.1

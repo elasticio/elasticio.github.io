@@ -3,7 +3,7 @@ title: Pinterest component Technical Notes
 layout: component
 description: Technical Notes for the Pinterest component
 icon: pinterest.png
-icontext: Pinterest Component
+icontext: Pinterest component
 category: pinterest
 ComponentVersion: 1.0.0
 updatedDate: 2023-12-29

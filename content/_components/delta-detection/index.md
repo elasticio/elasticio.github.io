@@ -1,10 +1,10 @@
 ---
 layout: component
-title: Delta Detection Component
+title: Delta Detection component
 section: Utility components
 description: A component to manage records from a system which does not provide timebased change tracking or webhooks.
 icon: delta-detection.png
-icontext: Delta Detection Component
+icontext: Delta Detection component
 category: delta-detection
 updatedDate: 2023-01-03
 ComponentVersion: 2.2.0

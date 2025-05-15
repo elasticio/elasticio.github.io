@@ -6,9 +6,28 @@ description: Shopify admin Component is designed to connect to Shopify GraphQL A
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2024-09-05
-ComponentVersion: 2.5.0
+updatedDate: 2025-04-15
+ComponentVersion: 2.5.1
 ---
+
+## Table of Contents
+
+* [Description](#description)
+* [Credentials](#credentials)
+* [Actions](#actions) 
+  * [Delete Object](#delete-object)
+  * [Create Object](#create-object) 
+  * [Update Object](#update-object)
+  * [Upsert Object](#upsert-object) 
+  * [Execute mutation](#execute-mutation) 
+  * [Lookup Objects (plural)](#lookup-objects-plural)
+  * [Lookup Object By ID](#lookup-object-by-id) 
+  * [Make Raw Request](#make-raw-request)
+* [Triggers](#triggers) 
+  * [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling)
+  * [Webhook](#webhook)
+* [Known Limitations](#known-limitations)
+
 
 ## Description
 
@@ -56,143 +75,6 @@ Component credentials configuration fields:
 > **Notes:**
 * `Admin API access token` shows only once.
 * To rotate the API credentials for a custom app that was created in the Shopify admin, you need to uninstall and reinstall the app.
-
-## Triggers
-
-### Webhook
-
-Creates [webhook subscription](https://shopify.dev/docs/api/admin-graphql/2024-01/mutations/webhookSubscriptionCreate) for selected topics on the Shopify side to receive events.
-
-#### Configuration Fields
-
-* **Select topics** - (multi-select dropdown, required): Select available topics to create a subscription.
-* **Skip validation** - (checkbox, optional): If checked - the component will not validate the incoming message to be sure that it comes from Shopify, use it for test purposes only!
-
-#### Input Metadata
-
-There is no input metadata.
-
-#### Output Metadata
-Event from the subscription on the selected topic.
-
-#### Limitations
-* **Generate Stub Sample** works only for the most used objects.
-* This trigger doesn't support `Retrieve sample` functionality.
-* If you use ordinary flow (The `Real-time` functionality not enabled) after flow starts you will need to run it once - just follow the webhook URL (to make the first execution) this action will create a subscription, error on this execution may be ignored.
-
-### Get New and Updated Objects Polling
-
-Retrieve all the updated or created objects within a given time range.
-
-#### Configuration Fields
-
-* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Customers`.
-
-* **Timestamp field to poll on** - (dropdown, required): Can be either `Last Modified` or `Created dates` (updated or new objects, respectively).
-
-* **Select basic fields for resulting object** - (dropdown, optional): Here only basic fields that can be included in the resulting object, may affect query cost.
-
-* **You can provide additional fields here** - (string, optional): The resulting object can be expanded using GraphQL request, this field represents content from each `edges.node`, it may affect on query cost.
-
-* **Size of Polling Page** - (optional, positive integer, defaults to 250, max 250): Indicates the size of pages to be fetched per request. If you query cost will be over shop limit, you can decrease page size.
-
-* **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`
-
-* **Return Full Response** - (checkbox): Defines the format of emitted result: with service information or without.
-  Examples for Object type `customers` are given below:
-  
-    <details close markdown="block"><summary><strong>Example for customer</strong></summary>
-
-    ```graphql
-        metafields(first: 2) {
-        edges {
-            node {
-            namespace
-            key
-            value
-            }
-        }
-        }
-        addresses {
-        address1
-        country
-        }
-    ```
-
-    </details>
-
-<details close markdown="block"><summary><strong>Response with enabled "Return Full Response" checkbox and "Emit Behavior" = "Emit page"</strong></summary>
-
-```json
-{
-    "data": {
-      "customers": [
-        {
-          "id": "gid://shopify/Customer/2444144115794",
-          "firstName": "Willy"
-        },
-        {
-          "id": "gid://shopify/Customer/2444144148562",
-          "firstName": "Tobi"
-        },
-        {
-          "id": "gid://shopify/Customer/2444144181330",
-          "firstName": "Mathilde"
-        }
-      ]
-    },
-    "extensions": {
-      "cost": {
-        "requestedQueryCost": 5,
-        "actualQueryCost": 5,
-        "throttleStatus": {
-          "maximumAvailable": 1000,
-          "currentlyAvailable": 40,
-          "restoreRate": 50
-        }
-      }
-    }
-}
-```
-</details>
-
-
-<details close markdown="block"><summary><strong>Response with disabled "Return Full Response" checkbox and "Emit Behavior" = "Emit page"</strong></summary>  
-
-```json
-{
-  "results": [
-    {
-      "id": "gid://shopify/Customer/2444144115794",
-      "firstName": "Willy"
-    },
-    {
-      "id": "gid://shopify/Customer/2444144148562",
-      "firstName": "Tobi"
-    },
-    {
-      "id": "gid://shopify/Customer/2444144181330",
-      "firstName": "Mathilde"
-    }
-  ]
-}
-```
-
-</details>
-
-#### Input Metadata
-
-There is no input metadata.
-
-#### Output Metadata
-
-Resulting object will represent content from path `data\\{Object Type}\\edges\node`.
-
-Depends on selected `Object Type`, selected or provided fields and `Emit behavior`:
-- For `Emit Page` mode: 
-    - An object with key `results` that has an array as its value (if `Page Size` > 0)
-- For `Emit Individually` mode: 
-    - Each object which fill the entire message.
 
 ## Actions
 
@@ -586,6 +468,143 @@ There is no configuration fields in this action.
 - **URL** - `/products.json?fields=id,title`.
 - **Method** - `POST`.
 * **Request Body** - `{}`.
+
+## Triggers
+
+### Get New and Updated Objects Polling
+
+Retrieve all the updated or created objects within a given time range.
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Customers`.
+
+* **Timestamp field to poll on** - (dropdown, required): Can be either `Last Modified` or `Created dates` (updated or new objects, respectively).
+
+* **Select basic fields for resulting object** - (dropdown, optional): Here only basic fields that can be included in the resulting object, may affect query cost.
+
+* **You can provide additional fields here** - (string, optional): The resulting object can be expanded using GraphQL request, this field represents content from each `edges.node`, it may affect on query cost.
+
+* **Size of Polling Page** - (optional, positive integer, defaults to 250, max 250): Indicates the size of pages to be fetched per request. If you query cost will be over shop limit, you can decrease page size.
+
+* **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`
+
+* **Return Full Response** - (checkbox): Defines the format of emitted result: with service information or without.
+  Examples for Object type `customers` are given below:
+  
+    <details close markdown="block"><summary><strong>Example for customer</strong></summary>
+
+    ```graphql
+        metafields(first: 2) {
+        edges {
+            node {
+            namespace
+            key
+            value
+            }
+        }
+        }
+        addresses {
+        address1
+        country
+        }
+    ```
+
+    </details>
+
+<details close markdown="block"><summary><strong>Response with enabled "Return Full Response" checkbox and "Emit Behavior" = "Emit page"</strong></summary>
+
+```json
+{
+    "data": {
+      "customers": [
+        {
+          "id": "gid://shopify/Customer/2444144115794",
+          "firstName": "Willy"
+        },
+        {
+          "id": "gid://shopify/Customer/2444144148562",
+          "firstName": "Tobi"
+        },
+        {
+          "id": "gid://shopify/Customer/2444144181330",
+          "firstName": "Mathilde"
+        }
+      ]
+    },
+    "extensions": {
+      "cost": {
+        "requestedQueryCost": 5,
+        "actualQueryCost": 5,
+        "throttleStatus": {
+          "maximumAvailable": 1000,
+          "currentlyAvailable": 40,
+          "restoreRate": 50
+        }
+      }
+    }
+}
+```
+</details>
+
+
+<details close markdown="block"><summary><strong>Response with disabled "Return Full Response" checkbox and "Emit Behavior" = "Emit page"</strong></summary>  
+
+```json
+{
+  "results": [
+    {
+      "id": "gid://shopify/Customer/2444144115794",
+      "firstName": "Willy"
+    },
+    {
+      "id": "gid://shopify/Customer/2444144148562",
+      "firstName": "Tobi"
+    },
+    {
+      "id": "gid://shopify/Customer/2444144181330",
+      "firstName": "Mathilde"
+    }
+  ]
+}
+```
+
+</details>
+
+#### Input Metadata
+
+There is no input metadata.
+
+#### Output Metadata
+
+Resulting object will represent content from path `data\\{Object Type}\\edges\node`.
+
+Depends on selected `Object Type`, selected or provided fields and `Emit behavior`:
+- For `Emit Page` mode: 
+    - An object with key `results` that has an array as its value (if `Page Size` > 0)
+- For `Emit Individually` mode: 
+    - Each object which fill the entire message.
+
+### Webhook
+
+Creates [webhook subscription](https://shopify.dev/docs/api/admin-graphql/2024-01/mutations/webhookSubscriptionCreate) for selected topics on the Shopify side to receive events.
+
+#### Configuration Fields
+
+* **Select topics** - (multi-select dropdown, required): Select available topics to create a subscription.
+* **Skip validation** - (checkbox, optional): If checked - the component will not validate the incoming message to be sure that it comes from Shopify, use it for test purposes only!
+
+#### Input Metadata
+
+There is no input metadata.
+
+#### Output Metadata
+Event from the subscription on the selected topic.
+
+#### Limitations
+* **Generate Stub Sample** works only for the most used objects.
+* This trigger doesn't support `Retrieve sample` functionality.
+* If you use ordinary flow (The `Real-time` functionality not enabled) after flow starts you will need to run it once - just follow the webhook URL (to make the first execution) this action will create a subscription, error on this execution may be ignored.
 
 ## Known limitations
 

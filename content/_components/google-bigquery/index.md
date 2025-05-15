@@ -1,5 +1,5 @@
 ---
-title: Google BigQuery Component
+title: Google BigQuery component
 layout: component
 section: Database components
 description: Integration component to interact with Google BigQuery.
@@ -12,8 +12,7 @@ updatedDate: 2023-02-10
 
 ## Description
 
-Integration component to interact with Google BigQuery using
-`@google-cloud/bigquery` client library version `5.2.0` (API).
+Integration component to interact with Google BigQuery using `@google-cloud/bigquery` client library version `5.2.0` (API).
 
 ## Credentials
 

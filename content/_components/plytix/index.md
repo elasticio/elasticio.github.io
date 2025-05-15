@@ -1,7 +1,7 @@
 ---
 title: Plytix component
 layout: component
-section: Utility components
+section: E-Commerce components
 description: Plytix Component is designed to connect Plytix API.
 icon: plytix.png
 icontext: Plytix component

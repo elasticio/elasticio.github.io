@@ -3,7 +3,7 @@ layout: component
 title: Amazon Selling Partner Technical Notes
 description: Technical Notes for the Amazon Selling Partner component.
 icon: amazon-selling-partner-api.png
-icontext: Amazon Selling Partner Component
+icontext: Amazon Selling Partner component
 category: amazon-selling-partner-api
 ComponentVersion: 1.1.0
 updatedDate: 2022-12-13

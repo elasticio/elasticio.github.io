@@ -3,7 +3,7 @@ layout: component
 title: AppDirect Technical Notes
 description: Technical notes for the AppDirect component.
 icon:  appdirect.png
-icontext: AppDirect Component
+icontext: AppDirect component
 category: appdirect
 ComponentVersion: 2.0.0
 updatedDate: 2021-05-11

@@ -1,10 +1,10 @@
 ---
-title: WhatsApp Component
+title: WhatsApp component
 layout: component
 section: Service components
-description: WhatsApp Component is designed to connect with WhatsApp
+description: WhatsApp component is designed to connect with WhatsApp
 icon: whatsapp.png
-icontext: WhatsApp Component
+icontext: WhatsApp component
 category: whatsapp
 ComponentVersion: 1.1.0
 updatedDate: 2024-09-05

@@ -1,9 +1,9 @@
 ---
 layout: component
 title: Maester Usage Example
-description: Usage Example for the Maester Component
+description: Usage Example for the Maester component
 icon: maester.png
-icontext: Maester Component
+icontext: Maester component
 category: maester
 updatedDate: 2022-06-07
 ComponentVersion: 2.0.1

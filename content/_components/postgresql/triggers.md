@@ -1,9 +1,9 @@
 ---
 title: PostgreSQL triggers
 layout: component
-description: PostgreSQL Component triggers.
+description: PostgreSQL component triggers.
 icon: postgresql.png
-icontext: PostgreSQL Component
+icontext: PostgreSQL component
 category: postgresql-component
 updatedDate: 2021-11-26
 ComponentVersion: 1.4.2

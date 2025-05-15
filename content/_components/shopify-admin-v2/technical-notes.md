@@ -5,11 +5,15 @@ description: Technical Notes for the Shopify Admin v2 component.
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2024-09-05
-ComponentVersion: 2.5.0
+updatedDate: 2025-04-15
+ComponentVersion: 2.5.1
 ---
 
 ## Chagelog
+
+### 2.5.1 (April 15, 2025)
+* Improved errors text
+* Bump dependencies
 
 ### 2.5.0 (July 08, 2024)
 * Added `Upsert Object` action

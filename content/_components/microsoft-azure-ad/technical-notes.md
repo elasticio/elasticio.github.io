@@ -3,7 +3,7 @@ title: Microsoft Azure AD Technical Notes
 layout: component
 description: Technical Notes for the Microsoft Azure AD component
 icon: microsoft-azure-ad.png
-icontext: Microsoft Azure AD Component
+icontext: Microsoft Azure AD component
 category: microsoft-azure-ad
 updatedDate: 2023-03-10
 ComponentVersion: 1.1.0
