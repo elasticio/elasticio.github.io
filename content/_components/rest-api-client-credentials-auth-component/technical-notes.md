@@ -5,11 +5,17 @@ description: Technical Notes for the Rest API OAuth2 Client Credentials componen
 icon: rest-api-client-credentials-auth-component.png
 icontext: Rest API OAuth2 Client Credentials component
 category: rest-api-client
-updatedDate: 2024-11-15
-ComponentVersion: 1.3.1
+updatedDate: 2025-05-21
+ComponentVersion: 1.4.0
 ---
 
 ## Changelog
+
+### 1.4.0 (May 21, 2025)
+
+* Added a new `Response format` configuration field in the `HTTP request` action to support file downloads
+* Updated Sailor version to `2.7.5`
+* Updated component-commons-library version to `3.2.2`
 
 ### 1.3.1 (November 15, 2024)
 

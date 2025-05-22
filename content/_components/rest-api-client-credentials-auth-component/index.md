@@ -6,8 +6,8 @@ description: A component that can make REST calls while using OAuth2 Client Cred
 icon: rest-api-client-credentials-auth-component.png
 icontext: Rest API OAuth2 Client Credentials component
 category: rest-api-client
-updatedDate: 2024-11-15
-ComponentVersion: 1.3.1
+updatedDate: 2025-05-21
+ComponentVersion: 1.4.0
 ---
 
 ## Table of Contents
@@ -23,7 +23,7 @@ ComponentVersion: 1.3.1
 ## General information
 
 ### Description
-Component that can make REST calls while using OAuth2' Client Credentials Auth Grant Type.
+Component that can make REST calls while using OAuth2 Client Credentials Auth Grant Type.
 
 More details about OAuth2 Client Credentials Auth Grant Type:
 
@@ -57,6 +57,7 @@ Example: `"{\"access_token\":\"access_token_value\",\"token_type\":\"bearer\",\"
     * **Manual**: A range of error codes to throw errors on can be configured via the message input.
     * **Rebound Selected Codes**: Error codes to rebound can be configured via the message input. If received code doesn't match with provided, error will be thrown.
 
+* Response format (dropdown, optional): By default the response is parsed as JSON. If you want to download file, select `Attachment URL` or `Base64 string`.
 * Request timeout in sec (number, optional): How long to wait for a response from the remote server before throwing a timeout error (this timeout value also applies to the token request call).  Default - 60sec
 * Maximum request size in bytes (number, optional): You can limit here maximum size of the request body in bytes to prevent OOM errors. Default and maximum is 20971520 bytes (20MB)
 * Maximum response size in bytes (number, optional): You can limit here maximum size of the response body in bytes to prevent OOM errors. Default and maximum is 20971520 bytes (20MB)
@@ -67,7 +68,7 @@ Example: `"{\"access_token\":\"access_token_value\",\"token_type\":\"bearer\",\"
  * HTTP headers (object, optional): HTTP headers to attach to the request
  * Request Body (object, optional): Body of the request to send
   * If **Error Tolerance** is **Manual**:
-    * HTTP Codes to throw errors (array of error ranges, optional default to `[]`): A double array with a list of ranges of HTTP response codes to throw errors upon receiving Use a syntax that matches retry-axios. Example: `[[400, 403], [405,599]]` - Throw errors on all errors apart from 404.
+    * HTTP Codes to throw errors (array of error ranges, optional default to `[]`): A double array with a list of ranges of HTTP response codes to throw errors upon receiving. Use a syntax that matches retry-axios. Example: `[[400, 403], [405,599]]` - Throw errors on all errors apart from 404.
     If array is empty, no error would be thrown, produce an outbound message with the status code and the HTTP response.
  * If **Error Tolerance** is **Rebound Selected Codes**:
     * HTTP Codes to rebound (string, required): Coma separated list of the codes to rebound, example: `404, 401`. If you put here `*` all codes will be rebounded. If the rebound code doesn’t match the response code, an error will be thrown.
@@ -76,7 +77,10 @@ Example: `"{\"access_token\":\"access_token_value\",\"token_type\":\"bearer\",\"
 #### Output Metadata
 * Status Code (integer, required): HTTP status code of the request
 * HTTP Headers (object, optional): HTTP headers of the response
-* Response Body (object, optional): JSON representation of the response body from the request
+* Response Body (object, optional): The format depends on the selected `Response format`:
+  * **JSON** - Returns the response body as a JSON object (default format)
+  * **Attachment URL** - Downloads the response to internal storage and provides an `attachmentUrl` key containing the file location
+  * **Base64 string** - Converts the response to a Base64-encoded string and returns it in the `base64` key
 
 ## Known Limitations
 Please note that for the functionality to save and update the token to work correctly, the platform user must have `workspaces.credential.edit` permission (see elastic.io [API docs](https://api.elastic.io/docs/v2#/credentials/patch_credentials__credential_id_)).
