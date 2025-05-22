@@ -4,7 +4,7 @@ description: This document explains component versions, build history and how to
 layout: article
 section: Building integration flows
 category: building integration flows
-order: 10
+order: 6
 redirect_from:
   - /guides/fix-a-component-version-for-a-particular-flow.html
 ---

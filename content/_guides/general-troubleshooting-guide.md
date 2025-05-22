@@ -93,7 +93,7 @@ If you are unsure of the reasons for such behavior, contact [support](mailto:{{s
 If messages on a certain step queue are not proceeding, you can:
 - Confirm if the flow is not in the [suspended](#suspended-flows) state. 
 - Examine last timestamps on the [Logs](/getting-started/logs-page) page to verify that the flow is not producing any new logs on the stuck step.
-- Check if there are any containers present on the [Containers](/guides/executions.html#containers-page) page for this step, making sure that the container-pod was successfully started and is running.
+- Check if there are any containers present on the [Containers](/guides/containers) page for this step, making sure that the container-pod was successfully started and is running.
 
 Gathering this information and providing it to support will assist us in promptly identifying the reason behind the stuck messages, and taking the necessary actions to resume processing.
 
