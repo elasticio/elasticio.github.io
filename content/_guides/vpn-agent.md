@@ -1,7 +1,7 @@
 ---
 title: VPN Agent
 description: This document provides the basic information on VPN Agents and the way setup one in case you require one.
-order: 11
+order: 7
 layout: article
 section: Building integration flows
 category: building integration flows

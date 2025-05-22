@@ -31,8 +31,7 @@ At the top of our navigation menu you can find your contract name and the status
 Contract status shows state of the contract - Active or Suspended.
 
 If you have access to more than one contract on our platform you will also see the
-chevron icon which you can click on to open list of your contracts. Select the
-name to switch to a different contract.
+chevron icon which you can click on to open list of your contracts. Use the **Search…** field under the contract dropdown menu to find specific contracts. Select the name to switch to a different contract.
 
 ![Menu: Contracts](/assets/img/getting-started/tour/menu-contracts.png "Menu: Contracts")
 
@@ -47,9 +46,10 @@ contract. Select the name to switch to a different workspace.
 The open workspaces sub-menu on the right shows the following details and menu items:
 
 1.  Production or `full` workspace used for production flows.
-2.  Development or `limited` workspace used to develop integration flows and run tests.
-3.  Menu item to [**View All Workspaces**](#workspaces) in the contract.
-4.  Menu item to **+ Create Workspace**.
+2.  The **Search…** field to find specific workspaces.
+3.  Development or `limited` workspace used to develop integration flows and run tests.
+4.  Menu item to [**View All Workspaces**](#workspaces) in the contract.
+5.  Menu item to **+ Create Workspace**.
 
 ## 3. Analyze
 
@@ -96,7 +96,7 @@ narrow down your search and navigate to the one you need.
 
 ### Containers
 
-The Containers menu item opens our [Containers page](/guides/executions#containers-page). This page provides insights into containers and their components. By default, it displays today's log information, but users can expand the date range using the filtering and search features.
+The Containers menu item opens our [Containers page](/guides/containers). This page provides insights into containers and their components. By default, it displays today's log information, but users can expand the date range using the filtering and search features.
 
 <details close markdown="block"><summary><strong>Click to expand for more details.</strong></summary>
 
@@ -107,6 +107,7 @@ Container logs are retained for up to 30 days. On the Containers page, you'll en
 * **Finished** (Red Flag): Suggests that the container has been stopped due to a registered error.
 * **Killed** (Green Flag): Signifies a successful termination of the container.
 * **Killed** (Red Flag): Indicates that the container was abruptly terminated by the operating system.
+* **Failed** (Red Flag): Indicates that the container was abruptly terminated due to an error.
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/tour/container-states.png" title="Container States" %}
 
@@ -246,7 +247,7 @@ manage members and delete it based on your access role.
 While in workspace management page you can:
 
 1.  Rename the workspace.
-2.  Add or Invite new member to this workspace.
+2.  Add or Invite a new member to this workspace.
 3.  See the list of workspace members.
 4.  Edit member roles or remove them completely.
 5.  Delete the workspace.
@@ -298,9 +299,9 @@ page as well.
 You can do the following action if you have `Owner` role in the contract.
 
 1.  Rename the contract.
-2.  The list of members in current contract.
-3.  Workspaces switcher to open page with all workspaces.
-4.  **Invite new member** button to invite new member to this contract based on your role in this contract.
+2.  The list of members in the current contract.
+3.  Workspaces switcher to open the page with all workspaces.
+4.  **Invite new member** button to invite a new member to this contract based on your role in this contract.
 5.  Pencil icon to use for [managing the user roles](/guides/managing-user-roles-in-a-tenant) and bin icon to delete the user.
 
 ![Members](/assets/img/getting-started/tour/members-page.png "Members")
@@ -317,9 +318,12 @@ workspace if you have appropriate access and role in the contract.
 
 <details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
-1.  Click on **+ Create New Workspace** button to create new workspace.
-2.  See the existing workspace cards showing the name, type and number of users.
-3.  Delete the workspace by pressing on bin icon. **Warning: this action is irreversible**.
+1.  Use the **Search…** field under the contract dropdown menu to find specific contracts.
+2.  Check **Show only mine** to see all the workspaces you have access to.
+3.  Click on **+ Create New Workspace** button to create a new workspace.
+4.  See the existing workspace cards showing the name, and icons of member users.
+5.  Delete the workspace by pressing on bin icon. 
+> **Please Note:** that this action is irreversible.
 
 ![Workspaces](/assets/img/getting-started/tour/workspaces-page.png "Workspaces")
 
@@ -350,9 +354,10 @@ create a new ones if your have contract `Admin` access role.
 
 If you clicked on the team name, you will see the functionality to manage your team:
 
-1. Create a new repositories or invite new members.
-2. Delete member of the developer team.
-3. See details on repositories.
+1. Create a new repository or invite new members.
+2. Search fields to find a specific member or repository.
+3. Delete a member of the developer team.
+4. Click on the repository name to see details.
 
 ![Your Team](/assets/img/getting-started/tour/your-team.png "Your Team")
 

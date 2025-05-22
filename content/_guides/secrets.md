@@ -1,7 +1,7 @@
 ---
 title: Understanding Secrets
 description: This document provides basic information about Secrets feature.
-order: 6
+order: 5
 layout: article
 section: Building integration flows
 category: building integration flows
