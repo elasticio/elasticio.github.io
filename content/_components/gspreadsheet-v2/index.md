@@ -32,7 +32,7 @@ Before building any integration flow you must at first configure the app from in
 In case of new domain you may get message like `This app isn't verified`. Please refer to this doc to check how to proceed:
 https://support.google.com/cloud/answer/7454865?hl=en
 
->**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
+> **Please Note:** to prevent refresh token expiration, change the `Publishing status` from `Testing` to `In production` on the [Audience](https://console.cloud.google.com/auth/audience) page for your external Google app.
 
 ### Environment variables
 
@@ -60,7 +60,7 @@ During credentials creation you would need to:
 |Token Endpoint| true | your OAuth Token endpoint for refreshing access token: `https://www.googleapis.com/oauth2/v4/token`|
 
   * Fill field ``Name Your Credential``.
-  * Fill field ``Scopes (Comma-separated list)`` as `https://www.googleapis.com/auth/spreadsheets, https://www.googleapis.com/auth/drive.metadata.readonly`.
+  * Fill field ``Scopes (Comma-separated list)`` as `https://www.googleapis.com/auth/spreadsheets, https://www.googleapis.com/auth/drive.metadata.readonly`
   * Fill field ``Additional parameters (Comma-separated list)`` as `access_type:offline,prompt:consent`.
   * Click on ``Authenticate`` button - the process would take you to Google to log-in and give permissions to the platform to access your Spreadsheets.
   * Optional fill field `Enter number of retries`.
@@ -69,6 +69,7 @@ During credentials creation you would need to:
   * Click on ``Save`` button for saving your credentials.
   * Enter number of retries (Default: 5).
 
+  >**Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
 >**Please Note:** that Google applies quotas and limitations to their services. You can check the actual values here: https://developers.google.com/sheets/api/limits.
 
