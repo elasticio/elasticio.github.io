@@ -78,7 +78,7 @@ Passthrough and input message are separated on UI, and passthrough can not be ed
 
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/instant-error-management/passthrought-edit.png" title="Passthrough can not be edited" %}
 
-> **Please Note**: If the message is bigger 10Mb user cannot edit it due to the limitations of the UI, but can retry the message.
+> **Please Note**: If the message is larger than 10 MB, the user cannot edit it due to user interface limitations, but can retry the message.
 
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/instant-error-management/message-too-large.png" title="Error retention" %}
 
@@ -115,7 +115,7 @@ This limit will protect you from the "chatterbox" Flows that tend to spam too mu
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/instant-error-management/error-retention-limit.png" title="Error retention limit." %}
 
 The default limit is `1000` records per Flow. If the amount of errors per
-Flow gets higher then `1000` value, the Platform removes old error records and
+Flow gets higher than `1000` value, the Platform removes old error records and
 shows a corresponding notification in the UI.
 
 > **Please Note**: ALL lightweight messages can be retried only for the TTL of the storage (24 hours by default). For NON lightweight messages please check the [Input messages TTL](/guides/platform-behavior.html#default-limits). When TTL is expired and message is removed from the storage, UI will show warning to user that the message was deleted and retry is impossible.

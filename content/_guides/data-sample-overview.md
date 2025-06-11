@@ -45,7 +45,7 @@ standard.
 
 ## Handling Large Data Samples
 
-Sometimes there are situations when the size of data sample may be too large and its processing and visualization may take a very long time, which complicates and slows down the debugging of flows. If the data-sample size exceeds 512 Kb, the JSON schema generation mechanism is activated instead of real data.
+Sometimes there are situations when the size of data sample may be too large and its processing and visualization may take a very long time, which complicates and slows down the debugging of flows. If the data-sample size exceeds 256 KB, the JSON schema generation mechanism is activated instead of real data.
 
 {% include img.html max-width="100%" url="/assets/img/integrator-guide/data-sample/generate-json-schema.gif" title="Generate JSON schema" %}
 

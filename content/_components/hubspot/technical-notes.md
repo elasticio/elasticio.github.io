@@ -5,11 +5,18 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2025-02-25
-ComponentVersion: 1.6.2
+updatedDate: 2025-06-06
+ComponentVersion: 1.6.3
 ---
 
 ## Changelog
+
+### 1.6.3 (June 06, 2025)
+
+* Updated `README`
+* Updated `component-commons-library` version to 3.2.2
+* Updated `Sailor` version to 2.7.5
+* Updated dev libs
 
 ### 1.6.2 (February 25, 2025)
 
