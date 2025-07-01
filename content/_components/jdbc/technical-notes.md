@@ -5,14 +5,17 @@ description: Technical Notes for JDBC component
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2023-09-05
-ComponentVersion: 2.5.9
+updatedDate: 2025-06-27
+ComponentVersion: 2.5.10
 redirect_from:
   - /components/jdbc/completeness-matrix.html
   - /components/jdbc/changelog.html
 ---
 
 ## Changelog
+
+### 2.5.10 (June 27, 2025)
+* Fixed the issue with aliases in the `Select Query` action
 
 ### 2.5.9 (August 01, 2024)
 * Bumped Sailor to 4.0.3

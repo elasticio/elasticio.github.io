@@ -1,15 +1,15 @@
 ---
 title: JDBC actions
 layout: component
-description: JDBC Component actions page
+description: JDBC component actions page
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2023-07-07
-ComponentVersion: 2.5.7
+updatedDate: 2025-06-27
+ComponentVersion: 2.5.10
 ---
 
-## Select Query
+## Select Query action
 
 {% include img.html max-width="100%" url="img/select-query-1.png" title="Select Query" %}
 
@@ -53,7 +53,7 @@ Dropdown **Emit Behaviour** contains following possible options:
 
 {% include img.html max-width="100%" url="img/select-query-3.png" title="Select Query" %}
 
-## Execute query action
+## Execute custom query action
 
 Action to execute custom SQL query from provided request string.
 
