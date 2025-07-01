@@ -44,7 +44,11 @@ Component does not use any environment variables
  * Additional Properties (optional): Comma separated list of additional properties. Each property should have key and value with `:` (example: `client_id:123`)
  * Tokens (JSON String, optional): Place to store access tokens & other received metadata (e.g. expiry time).
 
-Example: `"{\"access_token\":\"access_token_value\",\"token_type\":\"bearer\",\"expires_in\":86400,\"tokenExpiryTime\":\"2021-11-11T23:18:00.470Z\"}"`
+Example: 
+```json
+"{\"access_token\":\"access_token_value\",\"token_type\":\"bearer\",\"expires_in\":86400,\"tokenExpiryTime\":\"2021-11-11T23:18:00.470Z\"}"
+
+```
 
 ## Actions
 ### HTTP request
