@@ -1,12 +1,12 @@
 ---
 title: JDBC triggers
 layout: component
-description: JDBC Component triggers page
+description: JDBC component triggers page
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2023-07-07
-ComponentVersion: 2.5.7
+updatedDate: 2025-06-27
+ComponentVersion: 2.5.10
 ---
 
 ## Select trigger
