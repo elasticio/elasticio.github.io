@@ -10,7 +10,28 @@ updatedDate: 2023-08-04
 ComponentVersion: 2.1.0
 ---
 
-## Description
+## Table of Contents
+
+* [General information](#general-information)
+   * [Description](#description)
+   * [Completeness Matrix](/components/outlook/technical-notes#completeness-matrix)
+   * [API version](#api-version)
+   * [Requirements](#requirements)
+   * [Environment variables](#environment-variables)
+* [Credentials](#credentials)
+* [Triggers](#triggers)
+   * [Contacts](#contacts)
+   * [Poll for New Mail](#poll-for-new-mail)
+* [Actions](#actions)
+   * [Check Availability](#check-availability)
+   * [Find Next Available Time](#find-next-available-time)
+   * [Create Event](#create-event)
+   * [Move Mail](#move-mail)
+   * [Send Mail](#send-mail)
+* [Known Limitations](#known-limitations)
+
+## General information
+### Description
 
 [Outlook](https://outlook.live.com/) is a personal information manager web app from Microsoft consisting of webmail, calendaring, contacts, and tasks services.
 
@@ -18,7 +39,7 @@ ComponentVersion: 2.1.0
 
 The component uses [Microsoft Graph REST API v1.0](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0).
 
-## Requirements
+### Requirements
 
 To create the credentials you would need:
 
@@ -51,9 +72,12 @@ offline_access is required for each credential.
 
 Example of the scopes for the `Send Mail` action: `offline_access Mail.Send`
 
-> **Please Note!** To be able to verify the credentials you need these scopes: `offline_access User.Read`
+> **Please Note:** To be able to verify the credentials you need these scopes: `offline_access User.Read`
 
 > You can find more details in [dedicated OAuth2 App creation page](create-oauth-app).
+
+## Credentials
+To create new credentials you need to authorize in Microsoft system using OAuth2 protocol - details are described on the [Creating OAuth2 App](/components/outlook/create-oauth-app.html) page.
 
 ### Environment variables
 
@@ -62,7 +86,7 @@ Example of the scopes for the `Send Mail` action: `offline_access Mail.Send`
 | `MAIL_RETRIEVE_MAX_COUNT` | false | Define max count mails could be retrieved per one `Poll for New Mail` trigger execution. Defaults to 1000| 1000 |
 | `TOP_LIST_MAIL_FOLDER`    | false | Define the maximum number of folders that can be found for dropdown fields containing a list of Mail Folder. Defaults to 100| 100 |
 
-> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
+> **Please Note:** From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Triggers
@@ -72,11 +96,182 @@ Example of the scopes for the `Send Mail` action: `offline_access Mail.Send`
 Triggers to poll all new contacts from Outlook since last polling. Polling is provided by `lastModifiedDateTime` contact's property.
 Per one execution it is possible to poll 900 contacts.
 
+#### Expected output metadata
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "contacts": {
+      "type": "array",
+      "properties": {
+        "id": {
+          "type": "string",
+          "required": true
+        },
+        "createdDateTime": {
+          "type": "string",
+          "required": true
+        },
+        "lastModifiedDateTime": {
+          "type": "string",
+          "required": true
+        },
+        "changeKey": {
+          "type": "string"
+        },
+        "parentFolderId": {
+          "type": "string"
+        },
+        "birthday": {
+          "type": "date"
+        },
+        "fileAs": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "givenName": {
+          "type": "string"
+        },
+        "initials": {
+          "type": "string"
+        },
+        "middleName": {
+          "type": "string"
+        },
+        "nickName": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "emailAddresses": {
+          "type": "array",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string",
+              "required": true
+            }
+          }
+        },
+        "jobTitle": {
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        },
+        "officeLocation": {
+          "type": "string"
+        },
+        "profession": {
+          "type": "string"
+        },
+        "businessHomePage": {
+          "type": "string"
+        },
+        "assistantName": {
+          "type": "string"
+        },
+        "manager": {
+          "type": "string"
+        },
+        "homePhones": {
+          "type": "array"
+        },
+        "mobilePhone": {
+          "type": "array"
+        },
+        "businessPhones": {
+          "type": "array"
+        },
+        "homeAddress": {
+          "type": "object",
+          "properties": {
+            "street": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "countryOrRegion": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            }
+          }
+        },
+        "businessAddress": {
+          "type": "object",
+          "properties": {
+            "street": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "countryOrRegion": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            }
+          }
+        },
+        "otherAddress": {
+          "type": "object",
+          "properties": {
+            "street": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "countryOrRegion": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            }
+          }
+        },
+        "spouseName": {
+          "type": "string"
+        },
+        "personalNotes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+```
+</details>
+
 ### Poll for New Mail
 
 Triggers to poll all new mails from specified folder since last polling. Polling is provided by `lastModifiedDateTime` mail's property.
-
-![Poll for New Mail](img/poll-for-new-mail.png)
 
 Per one execution it is possible to poll 1000 mails by defaults, this can be changed by using environment variable `MAIL_RETRIEVE_MAX_COUNT`.
 
@@ -88,26 +283,272 @@ Per one execution it is possible to poll 1000 mails by defaults, this can be cha
 * **Get Attachment** - CheckBox, if checked, email attachments will be downloaded to the platform and the link will be provided as a part of the output metadata with the key `attachments`.
 * **Emit Behavior** -  Options are: default is `Emit Individually` emits each mail in separate message, `Emit All` emits all found mails in one message.
 
+#### Expected output metadata
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+
+```json
+{
+  "type": "object",
+  "required": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "required": true
+    },
+    "createdDateTime": {
+      "type": "string",
+      "required": true
+    },
+    "lastModifiedDateTime": {
+      "type": "string",
+      "required": true
+    },
+    "changeKey": {
+      "type": "string",
+      "required": true
+    },
+    "categories": {
+      "type": "array",
+      "required": true,
+      "items": {}
+    },
+    "receivedDateTime": {
+      "type": "string",
+      "required": true
+    },
+    "sentDateTime": {
+      "type": "string",
+      "required": true
+    },
+    "hasAttachments": {
+      "type": "boolean",
+      "required": true
+    },
+    "internetMessageId": {
+      "type": "string",
+      "required": true
+    },
+    "subject": {
+      "type": "string",
+      "required": true
+    },
+    "bodyPreview": {
+      "type": "string",
+      "required": true
+    },
+    "importance": {
+      "type": "string",
+      "required": true
+    },
+    "parentFolderId": {
+      "type": "string",
+      "required": true
+    },
+    "conversationId": {
+      "type": "string",
+      "required": true
+    },
+    "conversationIndex": {
+      "type": "string",
+      "required": true
+    },
+    "isDeliveryReceiptRequested": {
+      "type": "string",
+      "required": true
+    },
+    "isReadReceiptRequested": {
+      "type": "boolean",
+      "required": true
+    },
+    "isRead": {
+      "type": "boolean",
+      "required": true
+    },
+    "isDraft": {
+      "type": "boolean",
+      "required": true
+    },
+    "webLink": {
+      "type": "string",
+      "required": true
+    },
+    "inferenceClassification": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "contentType": {
+          "type": "string",
+          "required": true
+        },
+        "content": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "sender": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "emailAddress": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "name": {
+              "type": "string",
+              "required": true
+            },
+            "address": {
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      }
+    },
+    "from": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "emailAddress": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "name": {
+              "required": true,
+              "type": "string"
+            },
+            "address": {
+              "required": true,
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "toRecipients": {
+      "type": "array",
+      "required": true,
+      "properties": {}
+    },
+    "ccRecipients": {
+      "type": "array",
+      "required": true,
+      "properties": {}
+    },
+    "bccRecipients": {
+      "type": "array",
+      "required": true,
+      "properties": {}
+    },
+    "replyTo": {
+      "type": "array",
+      "required": true,
+      "properties": {}
+    },
+    "flag": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "flagStatus": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "contentType": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
+```
+</details>
+
 ## Actions
 
 ### Check Availability
 
 The action retrieves events for the time specified in `Time` field or for the current time (in case if `Time` field is empty) and returns `true` if no events found, or `false` otherwise.
 
-![Check Availability](img/check-availability.png)
+#### List of Expected Configuration fields
+
+- **Time** - string field (YYYY-MM-DDTHH:MM:SS format).
+
+#### Expected output metadata
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+
+```json
+{
+    "type": "object",
+    "required": false,
+    "properties": {
+        "available": {
+            "type": "boolean",
+            "required": false,
+            "title": "Available"
+        }
+    }
+}
+```
+</details>
 
 ### Find Next Available Time
 
 The action retrieves events for the time specified in `Time` field or for the current time (in case if `Time` field is empty).
 Returns specified time if no events found, otherwise calculates the new available time based on found event. If no time specified, the result time will be emitted in UTC time zone (e.g. 2023-08-20T10:00:00Z).
 
-![Find Next Available Time](img/find-next.png)
+#### List of Expected Configuration fields
+
+- **Time** - string field (YYYY-MM-DDTHH:MM:SS format).
+- **Subject** - string field.
+
+#### Expected output metadata
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+
+```json
+{
+    "type": "object",
+    "required": false,
+    "properties": {
+        "time": {
+            "type": "string",
+            "required": false,
+            "title": "Time"
+        },
+        "subject": {
+            "type": "string",
+            "required": false,
+            "title": "Subject"
+        }
+    }
+}
+```
+</details>
 
 ### Create Event
 
 The action creates event in specified calendar with specified options.
-
-![Create Event](img/create-event.png)
 
 #### List of Expected Configuration fields
 
@@ -119,11 +560,220 @@ The action creates event in specified calendar with specified options.
 * **Body Content Type** - Drop-down list, options are: `Text`, `HTML`.
 * **All Day Event** - Check-Box, if set, all day event will be created.
 
+#### Expected output metadata
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+
+```json
+{
+  "type":"object",
+  "properties":{
+    "id": {
+      "type":"string",
+      "required":false,
+      "title":"Event ID"
+    },
+    "createdDateTime": {
+      "type":"string",
+      "required":false,
+      "title":"Created Date Time"
+    },
+    "lastModifiedDateTime": {
+      "type":"string",
+      "required":false,
+      "title":"Last Modified Date Time"
+    },
+    "originalStartTimeZone": {
+      "type":"string",
+      "required":false,
+      "title":"Original Start Time Zone"
+    },
+    "originalEndTimeZone": {
+      "type":"string",
+      "required":false,
+      "title":"Original End Time Zone"
+    },
+    "iCalUId": {
+      "type":"string",
+      "required":false,
+      "title":"iCalUId"
+    },
+    "reminderMinutesBeforeStart": {
+      "type":"string",
+      "required":false,
+      "title":"Reminder Minutes Before Start"
+    },
+    "subject": {
+      "type":"string",
+      "required":false,
+      "title":"Subject"
+    },
+    "importance": {
+      "type":"string",
+      "required":false,
+      "title":"Importance"
+    },
+    "sensitivity": {
+      "type":"string",
+      "required":false,
+      "title":"Sensitivity"
+    },
+    "isAllDay": {
+      "type":"boolean",
+      "required":false,
+      "title":"Is All Day"
+    },
+    "isCancelled": {
+      "type":"boolean",
+      "required":false,
+      "title":"Is Cancelled"
+    },
+    "isOrganizer": {
+      "type":"boolean",
+      "required":false,
+      "title":"Is Organizer"
+    },
+    "showAs": {
+      "type":"string",
+      "required":false,
+      "title":"Show As"
+    },
+    "webLink": {
+      "type":"string",
+      "required":false,
+      "title":"Web Link"
+    },
+    "body": {
+      "type":"object",
+      "required":false,
+      "title":"Object",
+      "properties": {
+        "contentType": {
+          "type":"string",
+          "required":false,
+          "title":"Body Content-Type"
+        },
+        "content": {
+          "type":"string",
+          "required":false,
+          "title":"Body Content"
+        }
+      }
+    },
+    "start": {
+      "type":"object",
+      "required":false,
+      "title":"Start",
+      "properties": {
+        "dateTime": {
+          "type":"string",
+          "required":false,
+          "title":"Start Date and Time"
+        },
+        "timeZone": {
+          "type":"string",
+          "required":false,
+          "title":"Start Time Zone"
+        }
+      }
+    },
+    "end": {
+      "type":"object",
+      "required":false,
+      "title":"End",
+      "properties": {
+        "dateTime": {
+          "type":"string",
+          "required":false,
+          "title":"End Date and Time"
+        },
+        "timeZone": {
+          "type":"string",
+          "required":false,
+          "title":"End Time Zone"
+        }
+      }
+    },
+    "location": {
+      "type":"object",
+      "required":false,
+      "title":"Location",
+      "properties": {
+        "displayName": {
+          "type":"string",
+          "required":false,
+          "title":"Location Display Name"
+        },
+        "address": {
+          "type":"object",
+          "required":false,
+          "title":"Location Address",
+          "properties": {
+            "street": {
+              "type":"string",
+              "required":false,
+              "title":"Location Street"
+            },
+            "city": {
+              "type":"string",
+              "required":false,
+              "title":"Location City"
+            },
+            "state": {
+              "type":"string",
+              "required":false,
+              "title":"Location State"
+            },
+            "countryOrRegion": {
+              "type":"string",
+              "required":false,
+              "title":"Location Country/Region"
+            },
+            "postalCode": {
+              "type":"string",
+              "required":false,
+              "title":"Location Postal Code"
+            }
+          }
+        }
+      }
+    },
+    "organizer": {
+      "type":"object",
+      "required":false,
+      "title":"Organizer",
+      "properties": {
+        "emailAddress": {
+          "type":"object",
+          "required":false,
+          "title":"Organizer Address",
+          "properties": {
+            "name": {
+              "type":"string",
+              "required":false,
+              "title":"Organizer Name"
+            },
+            "address": {
+              "type":"string",
+              "required":false,
+              "title":"Organizer Email Address"
+            }
+          }
+        }
+      }
+    },
+    "calendarId": {
+      "type":"string",
+      "required":false,
+      "title":"Calendar ID"
+    }
+  }
+}
+```
+</details>
+
 ### Move Mail
 
 The action moves message with specified id from the original mail folder to a specified destination mail folder or soft-deletes message if the destination folder isn't specified.
-
-![Move Mail](img/move-mail.png)
 
 #### List of Expected Configuration fields
 
@@ -131,9 +781,251 @@ The action moves message with specified id from the original mail folder to a sp
 * **Destination Mail Folder** - Drop-down list with available Outlook mail folders - where mail should be moved, not required field.
 If not specified, the message will be soft-deleted (moved to the folder with property `deleteditems`).
 
+#### Expected output metadata
+Input metadata contains field `Message ID` - what exactly message should be moved.
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+
+```json
+{
+  "type": "object",
+  "required": true,
+  "properties": {
+    "messageId": {
+      "type": "string",
+      "required": true,
+      "name": "Message ID"
+    }
+  }
+}
+```
+</details>
+
 ### Send Mail
 
 The action simply send a message to a recipient(s).
+
+#### Expected input metadata
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+
+```json
+{
+  "type": "object",
+  "required": true,
+  "properties": {
+    "subject": {
+      "type": "string",
+      "required": true,
+      "name": "The subject of the message"
+    },
+    "ccRecipients": {
+      "type": "array",
+      "required": false,
+      "name": "The Cc: recipients for the message",
+      "items": {
+        "emailAddress": {
+          "type": "object",
+          "required": true,
+          "name": "The subject of the message",
+          "properties": {
+            "address": {
+              "type": "string",
+              "required": true,
+              "name": "The email address of the person or entity"
+            },
+            "name": {
+              "type": "string",
+              "required": false,
+              "name": "The display name of the person or entity"
+            }
+          }
+        }
+      }
+    },
+    "toRecipients": {
+      "type": "array",
+      "required": true,
+      "name": "The To: recipients for the message",
+      "items": {
+        "type": "object",
+        "properties": {
+          "emailAddress": {
+            "type": "object",
+            "required": true,
+            "name": "The subject of the message",
+            "properties": {
+              "address": {
+                "type": "string",
+                "required": true,
+                "name": "The email address of the person or entity"
+              },
+              "name": {
+                "type": "string",
+                "required": false,
+                "name": "The display name of the person or entity"
+              }
+            }
+          }
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "content": {
+          "type": "string",
+          "required": true,
+          "name": "The content of the item"
+        },
+        "contentType": {
+          "type": "string",
+          "required": false,
+          "name": "The type of the content. Possible values are text and html",
+          "enum": [
+            "text",
+            "html"
+          ]
+        }
+      }
+    },
+    "saveToSentItems": {
+      "type": "boolean",
+      "required": false,
+      "name": "Save to Sent items"
+    },
+    "attachments": {
+      "type": "array",
+      "title": "Attachments",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "File name"
+          },
+          "url": {
+            "type": "string",
+            "title": "URL to file"
+          }
+        }
+      }
+    }
+  }
+}
+```
+</details>
+
+#### Expected output metadata
+In case of a success, output metadata simply repeats the incoming message. I.e. output message schema is exactly the same as for input message.
+<details close markdown="block"><summary><strong>Click to expand for more details</strong></summary>
+
+```json
+{
+  "type": "object",
+  "required": true,
+  "properties": {
+    "subject": {
+      "type": "string",
+      "required": true,
+      "name": "The subject of the message"
+    },
+    "ccRecipients": {
+      "type": "array",
+      "required": false,
+      "name": "The Cc: recipients for the message",
+      "items": {
+        "emailAddress": {
+          "type": "object",
+          "required": true,
+          "name": "The subject of the message",
+          "properties": {
+            "address": {
+              "type": "string",
+              "required": true,
+              "name": "The email address of the person or entity"
+            },
+            "name": {
+              "type": "string",
+              "required": false,
+              "name": "The display name of the person or entity"
+            }
+          }
+        }
+      }
+    },
+    "toRecipients": {
+      "type": "array",
+      "required": true,
+      "name": "The To: recipients for the message",
+      "items": {
+        "type": "object",
+        "properties": {
+          "emailAddress": {
+            "type": "object",
+            "required": true,
+            "name": "The subject of the message",
+            "properties": {
+              "address": {
+                "type": "string",
+                "required": true,
+                "name": "The email address of the person or entity"
+              },
+              "name": {
+                "type": "string",
+                "required": false,
+                "name": "The display name of the person or entity"
+              }
+            }
+          }
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "content": {
+          "type": "string",
+          "required": true,
+          "name": "The content of the item"
+        },
+        "contentType": {
+          "type": "string",
+          "required": false,
+          "name": "The type of the content. Possible values are text and html",
+          "enum": [
+            "text",
+            "html"
+          ]
+        }
+      }
+    },
+    "saveToSentItems": {
+      "type": "boolean",
+      "required": false,
+      "name": "Save to Sent items"
+    },
+    "attachments": {
+      "type": "array",
+      "title": "Attachments",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "File name"
+          },
+          "url": {
+            "type": "string",
+            "title": "URL to file"
+          }
+        }
+      }
+    }
+  }
+}
+```
+</details>
 
 #### Message Example
 

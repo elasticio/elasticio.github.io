@@ -14,8 +14,7 @@ ComponentVersion: 2.1.0
 Microsoft Outlook component uses [OAuth 2.0 protocol](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols) and requires a dedicated OAuth2 app registration. This
 article will guide you through the process.
 
-During the process you will be asked to enter a **Redirect Address** for your application.
-It is `{{site.data.tenant.appURL}}/callback/oauth2`. Please refer to
+During the process you will be asked to enter a **Redirect Address** for your application. A Redirect URI for your tenant is: `https://your-tenant-address/callback/oauth2`. Please refer to
 [OAuth Callback redirect URL](/guides/oauth-callback-redirect-url) article for
 more explanation.
 
@@ -119,7 +118,7 @@ By this stage our OAuth2 App is ready in Azure Portal and we have values for bot
 `OAUTH_CLIENT_ID` and `OAUTH_CLIENT_SECRET`. We only need to add these values as
 environment variables to the component repository on the platform.
 
-> **Note: If you don't have access to the component repository ask the support to help you.**
+> **Please Note:** If you don't have access to the component repository ask the support to help you.
 
 Navigate to the the Outlook component repository.
 
