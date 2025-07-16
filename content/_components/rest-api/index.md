@@ -6,8 +6,8 @@ description: A component allows you to connect to any REST API without programmi
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2024-11-14
-ComponentVersion: 2.1.0
+updatedDate: 2025-07-10
+ComponentVersion: 2.2.0
 ---
 
 ## Table of Contents
@@ -101,14 +101,25 @@ For more information please read the [Authorization methods](authorization-metho
   * `Use rebound functionality` - The component will send the incoming message back to the queue; after some time, this message will return (you can find more information about how rebounds work in the platform documentation).
   * `Don't retry (throw error)` - The component will throw an error directly.
   * `Emit error as message (don't throw errors)` - The component will send a message with the response received from the server.
-* **Maximum Retries** (number, optional, default `10`) - Set the maximum number of retry attempts. This option is only applicable when the `Error Handling Policy` is set to `Retry by component`.
-* **Error Codes for retry** (string, optional) - A comma-separated list of codes or ranges. By default, the error handling policy applies when you receive HTTP codes 408, 423, 429, and any codes greater than 500. However, you can override these codes using this field.
+* **Error Codes for Error Handling Policy** (string, optional) - A comma-separated list of codes or ranges. By default, the error handling policy applies when you receive HTTP codes 408, 423, 429, and any codes greater than 500. However, you can override these codes using this field.
+  * You can specify exact codes: `401, 404, 503`.
+  * You can also use ranges: `400-401, 405-410, 502-509`.
+  * You can combine them: `403, 404, 500-599`.
+
+> **Please Note:** You can only include codes above 299 here, and you cannot include 401 if OAuth2 authentication is selected.
+
+* **Error Codes to emit as messages** (string, optional) - A comma-separated list of codes or ranges. By default, this list is empty. When specified, the component will emit a message containing the error instead of throwing it upon receiving one of these codes. This feature is useful for handling specific errors gracefully without interrupting the workflow.
   
   * You can specify exact codes: `401, 404, 503`.
   * You can also use ranges: `400-401, 405-410, 502-509`.
   * You can combine them: `403, 404, 500-599`.
 
-  Note: You can only include codes above 299 here, and you cannot include 401 if OAuth2 authentication is selected.
+> **Please Note:**
+  * These codes have higher priority than those specified in the <b>Error Codes for Error Handling Policy</b> and will ignore <b>Error Handling Policy</b>
+  * You can only include codes above 299 here, and you cannot include 401 if OAuth2 authentication is selected.
+
+* **Maximum Retries** (number, optional, default `10`) - Set the maximum number of retry attempts. This option is only applicable when the `Error Handling Policy` is set to `Retry by component`.
+
 * **Download as Attachment** (boolean) - If checked, the component will download response data to internal storage as an attachment, and you will receive a URL to it instead of the response body.
 * **Upload File** (boolean) - If checked, you will be able to upload data via two available methods: 
   * For body content type `application/octet-stream`, provide the URL to the file from internal or external storage directly in the "Body" field as a string.

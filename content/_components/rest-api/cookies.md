@@ -5,8 +5,8 @@ description: Information on how Cookies works and why to use them.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2024-11-14
-ComponentVersion: 2.1.0
+updatedDate: 2025-07-10
+ComponentVersion: 2.2.0
 ---
 
 ## Cookies

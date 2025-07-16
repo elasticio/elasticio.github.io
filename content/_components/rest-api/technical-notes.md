@@ -5,19 +5,27 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2024-11-14
-ComponentVersion: 2.1.0
+updatedDate: 2025-07-10
+ComponentVersion: 2.2.0
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
 
+### 2.2.0 (July 10, 2025)
+
+* Field `Error Codes for retry` was renamed to `Error Codes for Error Handling Policy` to avoid confusing
+* Added new field `Error Codes to emit as messages`
+* Fixed incorrect placement of application/x-www-form-urlencoded parameters in POST requests
+* Updated `component-commons-library` to version `3.2.2`
+* Updated the Sailor version to `2.7.5`
+
 ### 2.1.0 (November 14, 2024)
 
-* Deprecated the action and trigger **HTTP Request (Request Library)** - the primary reason for this change is the reliance on the deprecated **request** library. 
-* Introduced a new action and trigger **HTTP Request (Axios Library)**.
-* Updated the Node engine to version `20.x`.
+* Deprecated the action and trigger **HTTP Request (Request Library)** - the primary reason for this change is the reliance on the deprecated **request** library
+* Introduced a new action and trigger **HTTP Request (Axios Library)**
+* Updated the Node engine to version `20.x`
 * Updated the Sailor version to `2.7.4`
 
 ### 2.0.15 (March 28, 2024)
