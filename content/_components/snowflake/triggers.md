@@ -5,8 +5,8 @@ description: A component for management over Snowflake database.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2025-03-31
-ComponentVersion: 2.0.0
+updatedDate: 2025-07-11
+ComponentVersion: 2.1.0
 ---
 
 ## Get Rows Polling Trigger
