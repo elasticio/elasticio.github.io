@@ -5,11 +5,14 @@ description: Technical Notes for the Snowflake component.
 icon: snowflake.png
 icontext: Snowflake component
 category: snowflake
-updatedDate: 2025-03-31
-ComponentVersion: 2.0.0
+updatedDate: 2025-07-11
+ComponentVersion: 2.1.0
 ---
 
 ## Changelog
+
+### 2.1.0 (July 11, 2025)
+* Added `Key-pair authentication` method
 
 ### 2.0.0 (March 31, 2025)
 * ❗**Breaking changes** – The authentication mechanism has been changed to OAuth 2.0 due to [Snowflake restrictions](https://www.snowflake.com/en/blog/blocking-single-factor-password-authentification/):
