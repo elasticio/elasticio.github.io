@@ -5,11 +5,17 @@ description: Technical Notes for the Microsoft Dynamics CRM v2 component
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2025-03-21
-ComponentVersion: 1.2.4
+updatedDate: 2025-07-17
+ComponentVersion: 1.3.0
 ---
 
 ## Changelog
+
+### 1.3.0 (July 17, 2025)
+
+* Added new `Lookup Objects (plural)` action, the old one is now deprecated. Main differences:
+  * The new action supports a dynamic list of Object Types.
+  * **Emit Behavior**: The `Emit page` configuration now emits all pages.
 
 ### 1.2.4 (March 21, 2025)
 
