@@ -3,10 +3,10 @@ layout: component
 title: Utility Usage Example
 description: Usage example for the Utility component.
 icon: utility.png
-icontext: Utility Component
+icontext: Utility сomponent
 category: utility
-updatedDate: 2024-12-12
-ComponentVersion: 1.6.1
+updatedDate: 2025-07-18
+ComponentVersion: 1.7.0
 ---
 
 The Utility component is a versatile tool that serves multiple purposes. It can perform various operations to enhance the functionality of your application.

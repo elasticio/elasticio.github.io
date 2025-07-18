@@ -1,13 +1,13 @@
 ---
 layout: component
-title: Utility Component
+title: Utility сomponent
 section: Utility components
 description: A component that is designed for utility operations.
 icon: utility.png
-icontext: Utility Component
+icontext: Utility сomponent
 category: utility
-updatedDate: 2024-12-12
-ComponentVersion: 1.6.1
+updatedDate: 2025-07-18
+ComponentVersion: 1.7.0
 ---
 
 # Utility Component 
@@ -87,6 +87,36 @@ Encodes input `value` using Base64 encoding:
 Given two timezones and an array of timestamps (without any timezone info) converts the timestamps to the output timezone. The output is a dictionary of oldTimezone -> newTimezone values:
 
 {% include img.html max-width="100%" url="img/convert-between-timezones.png" title="Convert Between Timezones" %}
+
+#### Config Fields
+* `From Timezone` - dropdown, required. The timezone to convert from.
+* `To Timezone` - dropdown, required. The timezone to convert to.
+* `Create named time values` - checkbox, optional. When checked, the input metadata should be an array of objects rather than strings, and the output will provide converted time values named according to the original message keys.
+
+#### Input Metadata
+* `timesToConvert` - The content of this field depends on the `Create named time values` checkbox:
+  * If **unchecked**, this should be an array of strings, for example:
+  ```json
+  {
+    "timesToConvert": [
+      "2020-01-01T12:00:00",
+      "2020-07-01T12:00:00"
+    ]
+  }
+  ```
+  * If **checked**, this should be an array of objects, for example:
+  ```json
+  {
+    "timesToConvert": [
+      {
+        "createdDate": "2020-01-01T12:00:00"
+      },
+      {
+        "updatedDate": "2020-07-01T12:00:00"
+      }
+    ]
+  }
+  ```
 
 E.g. If converting from UTC to German time then
 

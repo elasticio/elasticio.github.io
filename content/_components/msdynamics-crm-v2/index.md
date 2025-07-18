@@ -6,8 +6,8 @@ description: Microsoft Dynamics CRM v2 component is designed to use Web API from
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2025-03-21
-ComponentVersion: 1.2.4
+updatedDate: 2025-07-17
+ComponentVersion: 1.3.0
 ---
 
 ## Table of Contents
@@ -20,14 +20,15 @@ ComponentVersion: 1.2.4
   * [Delete Object By ID](#delete-object-by-id) 
   * [Upsert Object](#upsert-object) 
   * [Make Raw Request](#make-raw-request)
-  * [Extract Raw System Metadata](#extract-raw-system-metadata) 
+  * [Extract Raw System Metadata](#extract-raw-system-metadata)
+  * [Deprecated actions](#deprecated-actions) 
 * [Triggers](#triggers) 
   * [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling)
 * [Known Limitations](#known-limitations)  
 
 ## Description
 
-Microsoft Dynamics CRM v2 Component is designed to use Web API from Microsoft.
+Microsoft Dynamics CRM v2 component is designed to use Web API from Microsoft.
 
 ## Credentials
 
@@ -84,26 +85,48 @@ Depends on `Object Type` and `Emit behavior` fields.
 
 ### Lookup Objects (plural)
 
-Lookup a set of object by defined criteria list. Can be emitted in different way.
+Performs a lookup of a set of objects based on a defined list of criteria. The results can be emitted in different ways.
 
 #### Configuration Fields
 
-*   **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Contacts`.
-*   **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
+* **Object Type** - (dropdown, required): Specifies the object type to perform the lookup on, e.g. `accounts`.
+* **Emit Behavior** - (dropdown, optional, default `Emit individually`): Determines how the resulting objects will be emitted — either `Emit page` or `Emit individually`.
+* **Number of search terms** - (strings, optional): Specifies the number of search terms (a positive integer between 0 and 99).
+* **Expert Mode for Filter Expression** - (checkbox, optional, default `false`): When enabled, allows entering any valid [filter expression](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query/filter-rows) directly into the `Filter Expression` metadata field.
+* **Page Size** - (strings, optional, default `100`): The number of records to fetch per request. Must be a positive integer up to a maximum of 1000.
+* **Select fields** - (strings, optional): A comma-separated list of fields to be included in the response, e.g. `name,description`. Leaving this blank returns all default fields.
+* **Expand fields** - (strings, optional): A comma-separated list of fields to be expanded in the response, e.g. `createdby,primarycontactid`. If left blank, no fields will be expanded.
 
 #### Input Metadata
 
-* **Search Criteria** - (array of strings, required): [Search terms to filter objects](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results). Search terms are array which will be used as value for `filter` parameter of search. Be default, mapping configured to combine all search terms with `and` logical operator, if you want to use another behavior - proceed to advanced mode. Example Search Criteria: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: '_primarycontactid_value', operator: 'eq', fieldValue: 'd1bf9a01-b056-e711-abaa-00155d701c02' }]`
+If the configuration field **Expert Mode for Filter Expression** is enabled:
+* **Filter Expression** - (strings, required): Enter any valid [filter expression](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query/filter-rows) (without the `$filter=` prefix) in this field. Intended for advanced users. Examples:
+  * `startswith(name,'C') and followemail eq true`
+  * `name eq 'John'`
 
-If selected `Emit Behavior` is `Emit page` additionally fields will be added:
-* **Page Number** - (number, defaults 0): Indicates number of page to fetched.
-* **Page Size** - (number, defaults to 5000): Indicates amount of objects per page. Value from 0 to 5000.
+If the configuration field **Expert Mode for Filter Expression** is disabled:
+* The input depends on the configured **Number of search terms**. If set to `N`, then `N` search terms and `N-1` logical operators will be generated. If set to `0`, any number of search terms can be provided.  
+Example for **Number of search terms = 2**:
+```json
+{
+  "sTerm_1": {
+    "fieldName": "id",
+    "condition": "eq",
+    "fieldValue": "1"
+  },
+  "link_1_2": "and",
+  "sTerm_2": {
+    "fieldName": "name",
+    "condition": "eq",
+    "fieldValue": "Cronus"
+  }
+}
+```
 
 #### Output Metadata
 
-* For `Emit All` mode: An object, with key `results` that has an array as its value.
-* For `Emit Page` mode: An object with key `results` that has an array as its value (if `Page Size` > 0). Key `totalCountOfMatchingResults` which contains the total number of results (not just on the page) which match the search criteria (if `Page Size` = 0).
-* For `Emit Individually` mode: Each object which fill the entire message.
+* For **Emit Page** mode: Returns an object with a key `results` containing an array of matching objects.
+* For **Emit Individually** mode: Each matched object is emitted as a separate message filling the entire message payload.
 
 ### Lookup Object (at most one)
 
@@ -201,6 +224,31 @@ Depends on selected `Output`:
   * **url** (string, required): Maester URL with the contents
 * **In Body**
   * **metadata** (string, required): An XML string with the retrieved contents.
+
+### Deprecated actions
+
+#### Lookup Objects (plural)
+
+Lookup a set of object by defined criteria list. Can be emitted in different way.
+
+#### Configuration Fields
+
+*   **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Contacts`.
+*   **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
+
+#### Input Metadata
+
+* **Search Criteria** - (array of strings, required): [Search terms to filter objects](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#filter-results). Search terms are array which will be used as value for `filter` parameter of search. Be default, mapping configured to combine all search terms with `and` logical operator, if you want to use another behavior - proceed to advanced mode. Example Search Criteria: `[{ fieldName: 'createdon', operator: 'gt', fieldValue: '2022-08-28T14:27:45Z' }, { fieldName: '_primarycontactid_value', operator: 'eq', fieldValue: 'd1bf9a01-b056-e711-abaa-00155d701c02' }]`
+
+If selected `Emit Behavior` is `Emit page` additionally fields will be added:
+* **Page Number** - (number, defaults 0): Indicates number of page to fetched.
+* **Page Size** - (number, defaults to 5000): Indicates amount of objects per page. Value from 0 to 5000.
+
+#### Output Metadata
+
+* For `Emit All` mode: An object, with key `results` that has an array as its value.
+* For `Emit Page` mode: An object with key `results` that has an array as its value (if `Page Size` > 0). Key `totalCountOfMatchingResults` which contains the total number of results (not just on the page) which match the search criteria (if `Page Size` = 0).
+* For `Emit Individually` mode: Each object which fill the entire message.
 
 ## Known Limitations
 

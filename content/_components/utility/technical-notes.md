@@ -1,17 +1,23 @@
 ---
 layout: component
 title: Utility Technical Notes
-description: Technical Notes for the Utility Component.
+description: Technical Notes for the Utility сomponent.
 icon: utility.png
-icontext: Utility Component
+icontext: Utility сomponent
 category: utility
-updatedDate: 2024-12-12
-ComponentVersion: 1.6.1
+updatedDate: 2025-07-18
+ComponentVersion: 1.7.0
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+### 1.7.0 (July 18, 2024)
+
+* Added `Create named time values` checkbox to `Convert Between Timezones` action
+* Bumped sailor to `2.7.5`
+* Bumped @elastic.io/component-commons-library to `3.2.2`
 
 ## 1.6.1 (December 12, 2024)
 

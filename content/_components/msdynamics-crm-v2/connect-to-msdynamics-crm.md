@@ -5,8 +5,8 @@ description: A step-by-step instruction on how to connect to Microsoft Dynamics 
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2025-03-21
-ComponentVersion: 1.2.4
+updatedDate: 2025-07-17
+ComponentVersion: 1.3.0
 ---
 
 ## How to Connect to Microsoft Dynamics CRM
