@@ -5,14 +5,21 @@ description: Technical Notes for Microsoft Outlook Component.
 icon: outlook.png
 icontext: Outlook component
 category: outlook
-updatedDate: 2023-08-04
-ComponentVersion: 2.1.0
+updatedDate: 2025-07-22
+ComponentVersion: 2.1.1
 redirect_from:
   - /components/outlook/changelog.html
   - /components/outlook/completeness-matrix.html
 ---
 
 ## Changelog
+
+## 2.1.1 (July 22, 2025)
+
+* Slightly improved error handling
+* Updated Sailor 2.7.1 -> 2.7.5
+* Updated axios 1.4.0 -> 1.10.0
+* Updated @elastic.io/component-commons-library 3.1.5 -> 3.2.2
 
 ### 2.1.0 (August 04, 2023)
 
