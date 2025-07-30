@@ -45,8 +45,10 @@ If the exchange doesn't exist it will be created on start.
 
 {% include img.html max-width="100%" url="img/consume-trigger.png" title="Consume Trigger" %}
 
-> **Please Note:** The flow must be set as real-time! Otherwise, errors may appear.
+### Limitations:
+* SUPPORTS REALTIME FLOWS ONLY. Otherwise, errors may appear.
 We recommend you set the lowest flow schedule (cron expression) frequency possible. E.g. once a day (0 0 * * *). And start the flow with the button ‘Run Now’ manually. Even though it does not affect the logic directly, each scheduled flow execution will create a record in the Executions list and can make debugging difficult. All the logs and emitted messages will be appearing in the last execution.
+* Due to API limitations, once the user clicks `Run Now` after the SUSPENDED state, all stored messages in the queues will be processed, but not in the order they were received.
 
 #### Configuration Fields
 

@@ -51,6 +51,8 @@ Receive messages from the queue in a [long polling manner](https://docs.aws.amaz
 The component sends long polling requests to the SQS infinitely. Once a message (a set of messages - up to `MaxNumberOfMessages` messages) received it is being emitted per each message. If, say, 3 messages received, 3 individual messages would be emitted.
 Right after the first call a new API request starts. And so on until the flow is shut down.
 
+Due to API limitations, once the user clicks RESUME after the SUSPENDED state, all stored messages in the queues will be processed, but not in the order they were received.
+
 
 #### Configuration Fields
 
