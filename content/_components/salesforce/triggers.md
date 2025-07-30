@@ -68,7 +68,11 @@ This trigger will subscribe for any platform Event using Salesforce streaming AP
 
 {% include img.html max-width="100%" url="img/subscribe-trigger.png" title="Subscribe to platform events trigger" %}
 
->**Please note:** REALTIME FLOWS ONLY
+### Limittions:
+* SUPPORTS REALTIME FLOWS ONLY
+* `Run Now` action is required after the flow transitions from SUSPEND to RESUME
+* Due to Salesforce API limitations, the trigger does not store messages in the queues during the SUSPEND state. To continue receiving and processing messages, the flow should be triggered by the Run Now action after RESUME.
+
 
 ### Input field description
 
@@ -97,7 +101,8 @@ This trigger will subscribe for any platform Event using [Pub/Sub API](https://d
 * **payload** - (object, required): Dynamically generated content of the event.
 
 ### Limitations:
-* The component starts tracking changes after the first execution (it means you have to "run-now" flow with this trigger or wait for the first execution by the scheduler to establish a connection and only after this new event will be listened).
+* The component starts tracking changes after the first execution (it means you have to `Run Now` flow with this trigger or wait for the first execution by the scheduler to establish a connection and only after this new event will be listened).
+* Due to Salesforce API limitations, once the user clicks RESUME after the SUSPENDED state, all stored messages in the queues will be processed, but not in the order they were received.
 * If you use "Ordinary" flow:
     * Make sure that you execute it at least once per 3 days - according to the [documentation](https://developer.salesforce.com/docs/platform/pub-sub-api/references/methods/subscribe-rpc.html#replaying-an-event-stream) Salesforce stores events for up to 3 days.
 * To `Retrieve new sample from Salesforce v2` you need to trigger an event on Salesforce side or provide a sample manually.

@@ -51,6 +51,10 @@ Required scopes: `boards:read`, `webhooks:read`, `webhooks:write`.
 
 More information can be found [here](https://developer.monday.com/api-reference/reference/webhooks).
 
+#### Limitations:
+* Due to API limitations, once the user clicks RESUME after the SUSPENDED state, all stored messages may be processed with duplicates.
+
+
 #### Configuration Fields
 
 - **Board** - (dropdown, required): Select the board where you want to create a subscription.
