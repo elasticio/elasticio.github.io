@@ -73,5 +73,5 @@ List of important suppliers:
 
 ## Resources
 
-*   The [ISO 27001 certificate](http://seafile.eio.cloud/f/ca1b2fb22c9a4ed0a331/) (181.4KB, PDF).
+*   The [ISO 27001 certificate](http://seafile.eio.cloud/f/cf8d9db4c06b440d9b53/) (135.8KB, PDF).
 *   [Information Security Management Criteria and Related Controls document](https://www.dropbox.com/s/oxqrkt6kixdsv31/Generic%20INFOSEC%20DATA_220524.pdf?dl=0) (216KB, PDF).
