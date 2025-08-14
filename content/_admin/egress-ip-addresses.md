@@ -20,6 +20,8 @@ category: support
 The EU cluster which hosts `app.elastic.io` among other tenants has the following
 outgoing IP addresses:
 
+*   `92.5.117.7`
+*   `130.162.33.7`
 *   `34.89.196.206`
 *   `34.89.174.177`
 *   `34.159.187.160`
