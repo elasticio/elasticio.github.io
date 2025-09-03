@@ -4,10 +4,10 @@ layout: component
 section: E-Commerce components
 description: A component to work with Magento version 2 e-commerce platform.
 icon: magento.png
-icontext: Magento 2 Component
+icontext: Magento 2 component
 category: magento2
-updatedDate: 2025-02-28
-ComponentVersion: 1.7.0
+updatedDate: 2025-07-03
+ComponentVersion: 1.7.1
 ---
 
 ## Table of Contents

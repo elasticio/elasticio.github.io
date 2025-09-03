@@ -5,18 +5,30 @@ description: Technical Notes for the SFTP component.
 icon: sftp.png
 icontext: SFTP component
 category: sftp
-updatedDate: 2024-09-05
-ComponentVersion: 1.7.3
+updatedDate: 2025-07-08
+ComponentVersion: 2.0.0
 redirect_from:
   - /components/sftp/changelog.html
 ---
 
 ## Changelog
 
-## 1.7.3 (August 19, 2024)
+### 2.0.0 (July 08, 2025)
+* **Breaking change:** Removed the deprecated trigger - `Read Files`
+* Migrated the codebase to TypeScript
+* Removed deprecated libraries:  
+  * `oih-standard-library`
+  * `moment`
+* Update Sailor from 2.7.3 to 2.7.5
+* Update component-commons-library from 3.2.0 to 3.2.2
+
+### 1.7.4 (September 12, 2024)
+* Update Sailor version to 2.7.3
+
+### 1.7.3 (August 19, 2024)
 * Fix the issue when a SFTP connection drops in realtime flows
 
-## 1.7.2 (July 25, 2024)
+### 1.7.2 (July 25, 2024)
 * Updated ssh2-sftp-client to 10.0.3 to fix the issue
 
 ### 1.7.1 (July 05, 2024)
