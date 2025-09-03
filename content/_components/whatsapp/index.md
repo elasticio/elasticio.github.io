@@ -6,8 +6,8 @@ description: WhatsApp component is designed to connect with WhatsApp
 icon: whatsapp.png
 icontext: WhatsApp component
 category: whatsapp
-ComponentVersion: 1.1.0
-updatedDate: 2024-09-05
+ComponentVersion: 1.2.0
+updatedDate: 2025-08-01
 ---
 
 # WhatsApp Component
@@ -95,85 +95,282 @@ Please refer to the Input Schema file below for the full list of metadata fields
       },
       "required": false,
       "enum": [
+        "audio",
         "contacts",
+        "document",
+        "image",
         "location",
+        "template",
         "text",
-        "template"
+        "video"
       ]
     },
-    "contacts": {
+    "audio": {
       "type": "object",
-      "required": false,
-      "title": "Contacts",
+      "title": "Audio",
       "help": {
-        "description": "Required when type=contacts"
+        "description": "Required for audio messages"
       },
+      "required": false,
       "properties": {
-        "addresses": {
-          "type": "object",
-          "title": "Addresses",
+        "id": {
+          "type": "string",
+          "title": "Media ID",
           "help": {
-            "description": "Full contact address(es) formatted as an addresses object"
+            "description": "Required if using uploaded media, otherwise omit. ID of the <a href='https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#upload-media'>uploaded media asset</a>."
           },
-          "required": false,
-          "properties": {
-            "street": {
-              "type": "string",
-              "title": "Street",
-              "help": {
-                "description": "Street number and name"
+          "required": false
+        },
+        "link": {
+          "type": "string",
+          "title": "Media URL",
+          "help": {
+            "description": "Required if using hosted media, otherwise omit. URL of the media asset hosted on your public server. It can be an external public URL or an internal Maestar storage URL. <a href='https://developers.facebook.com/docs/whatsapp/cloud-api/messages/audio-messages#supported-audio-formats'>Please check supported audio formats</a>"
+          },
+          "required": false
+        }
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "title": "Contacts",
+      "items": {
+        "type": "object",
+        "properties": {
+          "addresses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "street": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "zip": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "country_code": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "birthday": {
+            "type": "string"
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "name": {
+            "type": "object",
+            "properties": {
+              "formatted_name": {
+                "type": "string"
               },
-              "required": false
-            },
-            "city": {
-              "type": "string",
-              "title": "City",
-              "help": {
-                "description": "City name"
+              "first_name": {
+                "type": "string"
               },
-              "required": false
-            },
-            "state": {
-              "type": "string",
-              "title": "State",
-              "help": {
-                "description": "State abbreviation"
+              "last_name": {
+                "type": "string"
               },
-              "required": false
-            },
-            "zip": {
-              "type": "string",
-              "title": "ZIP",
-              "help": {
-                "description": "ZIP code"
+              "middle_name": {
+                "type": "string"
               },
-              "required": false
-            },
-            "country": {
-              "type": "string",
-              "title": "Country",
-              "help": {
-                "description": "Full country name"
+              "suffix": {
+                "type": "string"
               },
-              "required": false
-            },
-            "country_code": {
-              "type": "string",
-              "title": "Country code",
-              "help": {
-                "description": "Two-letter country abbreviation"
+              "prefix": {
+                "type": "string"
+              }
+            }
+          },
+          "org": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
               },
-              "required": false
-            },
-            "type": {
-              "type": "string",
-              "title": "Type",
-              "help": {
-                "description": "Standard values are HOME and WORK"
+              "department": {
+                "type": "string"
               },
-              "required": false
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "phones": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "phone": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "wa_id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
             }
           }
+        }
+      }
+    },
+    "document": {
+      "type": "object",
+      "title": "Document",
+      "help": {
+        "description": "Required for document messages"
+      },
+      "required": false,
+      "properties": {
+        "caption": {
+          "type": "string",
+          "title": "Caption",
+          "help": {
+            "description": "Document caption text. Maximum 1024 characters."
+          },
+          "required": false
+        },
+        "id": {
+          "type": "string",
+          "title": "Media ID",
+          "help": {
+            "description": "Required if using uploaded media, otherwise omit. ID of the <a href='https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#upload-media'>uploaded media asset</a>."
+          },
+          "required": false
+        },
+        "link": {
+          "type": "string",
+          "title": "Media URL",
+          "help": {
+            "description": "Required if using hosted media, otherwise omit. URL of the media asset hosted on your public server. It can be an external public URL or an internal Maestar storage URL. <a href='https://developers.facebook.com/docs/whatsapp/cloud-api/messages/document-messages#supported-document-types'>Please check supported document formats</a>"
+          },
+          "required": false
+        },
+        "filename": {
+          "type": "string",
+          "title": "Document filename",
+          "help": {
+            "description": "Document filename, with extension. The WhatsApp client will use an appropriate file type icon based on the extension."
+          },
+          "required": false
+        }
+      }
+    },
+    "image": {
+      "type": "object",
+      "title": "Image",
+      "help": {
+        "description": "Required for image messages"
+      },
+      "required": false,
+      "properties": {
+        "caption": {
+          "type": "string",
+          "title": "Caption",
+          "help": {
+            "description": "Media asset caption text. Maximum 1024 characters."
+          },
+          "required": false
+        },
+        "id": {
+          "type": "string",
+          "title": "Media ID",
+          "help": {
+            "description": "Required if using uploaded media, otherwise omit. ID of the <a href='https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#upload-media'>uploaded media asset</a>."
+          },
+          "required": false
+        },
+        "link": {
+          "type": "string",
+          "title": "Media URL",
+          "help": {
+            "description": "Required if using hosted media, otherwise omit. URL of the media asset hosted on your public server.  It can be an external public URL or an internal Maestar storage URL. <a href='https://developers.facebook.com/docs/whatsapp/cloud-api/messages/image-messages#supported-image-formats'>Please check supported image formats</a>"
+          },
+          "required": false
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "title": "Location",
+      "help": {
+        "description": "Required when type=location"
+      },
+      "required": false,
+      "properties": {
+        "longitude": {
+          "type": "string",
+          "title": "Longitude",
+          "help": {
+            "description": "Longitude of the location"
+          },
+          "required": false
+        },
+        "latitude": {
+          "type": "string",
+          "title": "Latitude",
+          "help": {
+            "description": "Latitude of the location"
+          },
+          "required": false
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "help": {
+            "description": "Name of the location"
+          },
+          "required": false
+        },
+        "address": {
+          "type": "string",
+          "title": "Address",
+          "help": {
+            "description": "Address of the location"
+          },
+          "required": false
         }
       }
     },
@@ -247,55 +444,39 @@ Please refer to the Input Schema file below for the full list of metadata fields
         }
       }
     },
-    "location": {
+    "video": {
       "type": "object",
-      "title": "Location",
+      "title": "Video",
       "help": {
-        "description": "Required when type=location"
+        "description": "Required for video messages"
       },
       "required": false,
       "properties": {
-        "longitude": {
+        "caption": {
           "type": "string",
-          "title": "Longitude",
+          "title": "Caption",
           "help": {
-            "description": "Longitude of the location"
+            "description": "Video caption text. Maximum 1024 characters."
           },
           "required": false
         },
-        "latitude": {
+        "id": {
           "type": "string",
-          "title": "Latitude",
+          "title": "Media ID",
           "help": {
-            "description": "Latitude of the location"
+            "description": "Required if using uploaded media, otherwise omit. ID of the <a href='https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#upload-media'>uploaded media asset</a>."
           },
           "required": false
         },
-        "name": {
+        "link": {
           "type": "string",
-          "title": "Name",
+          "title": "Media URL",
           "help": {
-            "description": "Name of the location"
-          },
-          "required": false
-        },
-        "address": {
-          "type": "string",
-          "title": "Address",
-          "help": {
-            "description": "Address of the location"
+            "description": "Required if using hosted media, otherwise omit. URL of the media asset hosted on your public server. It can be an external public URL or an internal Maestar storage URL. <a href='https://developers.facebook.com/docs/whatsapp/cloud-api/messages/video-messages#supported-video-formats'>Please check supported video formats</a>"
           },
           "required": false
         }
       }
-    },
-    "preview_url": {
-      "type": "boolean",
-      "title": "Preview URL",
-      "help": {
-        "description": "Required if type=text"
-      },
-      "required": false
     },
     "status": {
       "type": "string",
@@ -328,20 +509,90 @@ Please refer to the Input Schema file below for the full list of metadata fields
 ```
 </details>
 
-Input message fields depend on the type of the message (one of 'contacts', 'location', 'text', 'template').
-E.g. in case type: "template" is specified, you must ensure the template is properly prepared and verified according to the Meta's requirements. Please refer to the official guides on how to accomplish it.
+Input message fields depend on the type of the message (one of 'contacts', 'location', 'text', 'template', 'image', 'video', 'audio' or 'document').
+E.g. in case type: "template" is specified, you must ensure the template is properly prepared and verified according to the Meta's requirements.
+Please refer to the [official guides](https://developers.facebook.com/docs/whatsapp/message-templates/guidelines/) on how to accomplish it.
 
-An example of the input message with the template available for testing purposes:
+Here are example input payloads for different WhatsApp message types:
+
+✅ 1. Text Message
+
 ```json
 {
-    "to": "+1234567890",
-    "type": "template",
-    "template": {
-        "name": "hello_world",
-        "language": {
-            "code": "en_US"
-        }
+  "to": "+1234567890",
+  "type": "text",
+  "text": {
+    "body": "Hello! This is a plain text message."
+  }
+}
+```
+
+✅ 2. Image Message
+
+```json
+{
+  "to": "+1234567890",
+  "type": "image",
+  "image": {
+    "link": "https://example.com/path/to/image.jpg",
+    "caption": "Here is an image"
+  }
+}
+```
+
+✅ 3. Video Message
+
+```json
+{
+  "to": "+1234567890",
+  "type": "video",
+  "video": {
+    "link": "https://example.com/video.mp4",
+    "caption": "Watch this video"
+  }
+}
+```
+
+✅ 4. Document Message
+
+```json
+{
+  "to": "+1234567890",
+  "type": "document",
+  "document": {
+    "link": "https://example.com/file.pdf",
+    "filename": "Terms_and_Conditions.pdf"
+  }
+}
+```
+
+✅ 5. Location Message
+
+```json
+{
+  "to": "+1234567890",
+  "type": "location",
+  "location": {
+    "latitude": 37.422,
+    "longitude": -122.084,
+    "name": "Googleplex",
+    "address": "1600 Amphitheatre Parkway, Mountain View, CA 94043"
+  }
+}
+```
+
+✅ 6. Template Message
+
+```json
+{
+  "to": "+1234567890",
+  "type": "template",
+  "template": {
+    "name": "hello_world",
+    "language": {
+      "code": "en_US"
     }
+  }
 }
 ```
 

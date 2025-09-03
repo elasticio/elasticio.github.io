@@ -3,10 +3,10 @@ title: Magento 2 actions
 layout: component
 description: Magento 2 component actions page
 icon: magento.png
-icontext: Magento 2 Component
+icontext: Magento 2 component
 category: magento2
-updatedDate: 2025-02-28
-ComponentVersion: 1.7.0
+updatedDate: 2025-07-03
+ComponentVersion: 1.7.1
 ---
 
 * [Delete Object](#delete-object)

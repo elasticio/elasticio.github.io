@@ -2,12 +2,12 @@
 title: Gemini component
 layout: component
 section: Service components
-description: Google Gemini Component is designed to connect with Gemini.
+description: Google Gemini component is designed to connect with Gemini.
 icon: gemini.png
 icontext: Gemini component
 category: gemini
-updatedDate: 2024-02-02
-ComponentVersion: 1.0.0
+updatedDate: 2025-07-02
+ComponentVersion: 1.1.0
 ---
 
 ## Description
@@ -16,15 +16,17 @@ Google Gemini Component is designed to connect with Gemini using [REST API v1 (o
 
 ## Credentials
 
-To use the Gemini API, you’ll need an API key. If you don’t already have one, create a key in Google AI Studio. [Click here to create API Key](https://makersuite.google.com/app/apikey).
+To use the Gemini API, you’ll need an API key. If you don’t already have one, create a key in Google AI Studio.
+[Click here to create API Key](https://makersuite.google.com/app/apikey).
 
-> **Important Note**: For the moment not all the regions over the world are supported. You might want to use a VPN connection to create a key.
+> **Please Note:** - for the moment not all the regions over the world are supported. You might want to use VPN connection to create a key.
 
 [A list of regions that are supported](https://ai.google.dev/available_regions)
 
 ### Component credentials configuration fields:
-- **API Version** (string, optional) - Either `v1` or `v1beta` for now. Refer to the [documentation](https://ai.google.dev/docs/api_versions) to find out the difference.
-- **API Key** (string, required) - API Token generated as described above.
+* **API Version** (string, optional) - Either `v1` or `v1beta` for now. Refer [the documentation](https://ai.google.dev/docs/api_versions) to find out the difference.
+* **API Key** (string, required) - API Token generated as described above
+* **Timeout** (string, optional, 60 by default): The request timeout in seconds (the duration to wait for a reply from the server).
 
 ## Triggers
 

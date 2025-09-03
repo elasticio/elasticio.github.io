@@ -6,7 +6,7 @@ description: Podio component is designed to implement the Podio API.
 icon: podio.png
 icontext: Podio component
 category: podio
-ComponentVersion: 1.0.0
+ComponentVersion: 1.1.0
 updatedDate: 2025-06-03
 ---
 
@@ -15,6 +15,8 @@ updatedDate: 2025-06-03
 * [Description](#description)
 * [Credentials](#credentials)
 * [Actions](#actions)
+  * [Delete Object By ID](#delete-object-by-id)
+  * [Lookup Object By ID](#lookup-object-by-id)
   * [Make Raw Request](#make-raw-request)
 
 ## Description
@@ -48,6 +50,40 @@ Now you can create new credentials for the component on the platform:
 * **Delay between retries** (number ms, optional, 10000 by default) - How much time wait until new try
 
 ## Actions 
+
+### Delete Object By ID
+
+Deletes a single object using its ID.
+
+#### Configuration Fields
+
+- **Object Type** - (dropdown, required): The type of the object to delete.
+
+#### Input Metadata
+
+- **ID Value** - (string, required): The ID of the object to delete.
+
+#### Output Metadata
+
+Returns the ID of the deleted object.
+
+### Lookup Object By ID
+
+Retrieves a single object using its ID.
+
+#### Configuration Fields
+
+- **Object Type** - (dropdown, required): The type of object to look up.
+
+#### Input Metadata
+
+- **ID Value** - (string, required): The ID of the object to look up.
+
+#### Output Metadata
+
+Returns an object with the result of the lookup.
+
+**Known limitation**: Currently, the `Generate Stub Sample` button only allows generating generic metadata, without specific object type details.
 
 ### Make Raw Request 
 

@@ -3,16 +3,23 @@ title: Magento 2 Technical Notes
 layout: component
 description: Technical Notes for the Magento2 component.
 icon: magento.png
-icontext: Magento 2 Component
+icontext: Magento 2 component
 category: magento2
-updatedDate: 2025-02-28
-ComponentVersion: 1.7.0
+updatedDate: 2025-07-03
+ComponentVersion: 1.7.1
 redirect_from:
   - /components/magento2/changelog.html
   - /components/magento2/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.7.1 (July 03, 2025)
+
+* Fixed tooltips for `Upsert Customer`, `Upsert Object` actions
+* Updated the `Sailor` version to 2.7.5
+* Updated the `component-commons-library` version to 3.2.2
+* Updated dev dependencies
 
 ### 1.7.0 (February 28, 2025)
 
