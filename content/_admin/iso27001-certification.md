@@ -37,7 +37,7 @@ and measures up to date and continually improve them to live up to the trust our
 customers and users place in us and our platform.
 
 Our auditor DQS Holding GmbH is ISO 27001 certified by the German Accreditation
-Body GmbH (DAkks). [Following this link](https://www.dropbox.com/s/fe8wtpyc3ej6nfq/31612640%20ISMS17%202022-05-18%20Englisch.pdf?dl=0), you will find the
+Body GmbH (DAkks). [Following this link](http://seafile.eio.cloud/f/cf8d9db4c06b440d9b53/), you will find the
 ISO 27001 certificate for the operation and development of the IPaaS platform elastic.io.
 
 ## Statement of Applicability (SoA)
@@ -62,6 +62,8 @@ certificates are checked at regular intervals.
 
 List of important suppliers:
 *   Google (Google Cloud Platform (GCP))
+*   Oracle (Oracle Cloud Infrastructure (OCI))
+*   Hetzner (Hetzner Cloud products)
 *   Amazon (Route 53, DNS)
 *   Microsoft Azure
 *   Github (via Microsoft)
@@ -74,4 +76,3 @@ List of important suppliers:
 ## Resources
 
 *   The [ISO 27001 certificate](http://seafile.eio.cloud/f/cf8d9db4c06b440d9b53/) (135.8KB, PDF).
-*   [Information Security Management Criteria and Related Controls document](https://www.dropbox.com/s/oxqrkt6kixdsv31/Generic%20INFOSEC%20DATA_220524.pdf?dl=0) (216KB, PDF).
