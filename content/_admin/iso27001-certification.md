@@ -69,7 +69,7 @@ List of important suppliers:
 *   Github (via Microsoft)
 *   Zenhub
 *   Bitwarden
-*   Dropbox
+*   Seafile
 
 *The names listed are trademarks of the respective companies.*
 
