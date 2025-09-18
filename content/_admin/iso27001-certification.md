@@ -40,12 +40,6 @@ Our auditor DQS Holding GmbH is ISO 27001 certified by the German Accreditation
 Body GmbH (DAkks). [Following this link](http://seafile.eio.cloud/f/cf8d9db4c06b440d9b53/), you will find the
 ISO 27001 certificate for the operation and development of the IPaaS platform elastic.io.
 
-## Statement of Applicability (SoA)
-
-Our customers are welcome to request a copy of the SoA by [contacting us](https://www.elastic.io/contact/). In
-individual cases, the conclusion of a non-disclosure agreement (NDA) may be
-necessary in this context.
-
 ## ISO 27001-specific employee training
 
 Several times a year, all of our employees receive training in the following areas:
