@@ -1,5 +1,5 @@
 ---
-title: Bynder component
+title: Bynder Technical Notes
 layout: component
 description: Technical Notes for the Bynder component.
 icon: bynder.png

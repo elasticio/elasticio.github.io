@@ -6,8 +6,8 @@ description: The iLovePDF component is designed to connect to the iLovePDF API.
 icon: i-love-pdf.png
 icontext: iLovePDF component
 category: i-love-pdf
-ComponentVersion: 1.0.0
-updatedDate: 2025-04-11
+ComponentVersion: 1.0.1
+updatedDate: 2025-09-18
 ---
 
 ## Table of Contents
@@ -20,7 +20,7 @@ updatedDate: 2025-04-11
 
 ## Description
 
-The iLovePDF Component is designed to connect to the [iLovePDF API](https://www.iloveapi.com/docs/api-reference#introduction). It enables users to process PDF files with various operations such as merging, compressing, rotating, and more.
+The iLovePDF component is designed to connect to the [iLovePDF API](https://www.iloveapi.com/docs/api-reference#introduction). It enables users to process PDF files with various operations such as merging, compressing, rotating, and more.
 
 ## Credentials
 
