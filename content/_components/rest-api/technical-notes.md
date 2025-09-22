@@ -5,13 +5,17 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2025-09-19
-ComponentVersion: 2.2.1
+updatedDate: 2025-09-22
+ComponentVersion: 2.2.2
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.2.2 (September 22, 2025)
+
+* Removed `elasticio-node` library from deprecated action and trigger to fix the bug introduced in version 2.2.1.
 
 ### 2.2.1 (September 19, 2025)
 
