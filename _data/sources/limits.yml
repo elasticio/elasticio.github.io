@@ -46,7 +46,7 @@ containerlogsttl:
   field: 'Container logs TTL'
   description: >
     <p>The number of <b>days</b> for which <a href="/releases/23/24#implement-new-containers-page">container</a> information is stored on the platform.</p>
-  value: '<b>30d</b>'
+  value: '<b>14d</b>'
 
 executionsttl:
   field: 'Executions TTL'
