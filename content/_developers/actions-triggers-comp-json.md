@@ -48,11 +48,28 @@ The title and description of the action/trigger to be displayed in the UI
 * **`title`:** `Upsert Object`
 * **`description`:** `Given criteria that matches at most one object, update that object or create it if it does not exist`
 
-## Deprecated
+## Deprecated Components and component's triggers/actions
 
-Used to signal that this action/trigger should not be used in new flows and that existing flows should migrate to a different action/trigger.
+- An exclamation mark in an orange circle on the flow card indicates that the flow is using a deprecated component or a deprecated trigger/action.
 
-![Example of Action/Trigger Deprecation in the UI](/assets/img/references/component.json/deprecated-component.png)
+<img width="357" height="321" alt="image" src="https://github.com/user-attachments/assets/fd9bb79d-248a-404f-826e-095999f62fd4" />
+
+- If you see an exclamation mark in an orange circle next to a component on the flow graph, it means that this component is using a deprecated trigger/action.
+
+<img width="200" height="124" alt="image" src="https://github.com/user-attachments/assets/e41ca84d-b3a5-4cd4-898f-6d5ddc10e401" />
+
+- If a component’s icon on the flow graph is shown in gray colour, it means the component itself is deprecated and can no longer be used in new integration flows.
+
+<img width="155" height="113" alt="image" src="https://github.com/user-attachments/assets/d1b54f28-cc3f-47d0-b26f-067927e7bd3a" />
+
+--------
+
+**When a component or its functions are marked as deprecated, our team discontinues code maintenance for that specific feature.**
+
+Please be aware that we cannot guarantee the continued correct operation of deprecated functions in future component updates. We highly recommend that you migrate away from any deprecated features to ensure seamless functionality and continued support.
+
+We strongly recommend reviewing your integrations and switching to the latest component versions with active functions.
+
 
 **Type:** boolean
 
