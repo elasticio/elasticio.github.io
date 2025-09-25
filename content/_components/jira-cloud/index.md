@@ -2,17 +2,31 @@
 title: Jira Cloud component
 layout: component
 section: Service components
-description: Jira Cloud Component is designed to connect to Atlassian Jira Cloud platform.
+description: Jira Cloud component is designed to connect to Atlassian Jira Cloud platform.
 icon: jira-cloud.png
 icontext: Jira Cloud component
 category: jira-cloud
-updatedDate: 2023-05-31
-ComponentVersion: 1.3.0
+updatedDate: 2023-09-25
+ComponentVersion: 1.4.0
 ---
+
+## Table of Contents
+
+* [Description](#description)
+* [API version](#api-version)
+* [Credentials](#credentials)
+* [Actions](#actions)
+  * [Delete Object ](#delete-object)
+  * [Lookup Object (at most one)](#lookup-object-at-most-one)
+  * [Lookup Objects (plural)](#lookup-objects-plural)
+  * [Make Raw Request](#make-raw-request)
+  * [Upsert Object](#upsert-object)
+* [Triggers](#triggers)
+  * [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling)
 
 ## Description
 
-The Jira Cloud Component is specifically designed to integrate with Atlassian products such as the [Jira Cloud platform](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/) and [Jira Service Management Cloud](https://developer.atlassian.com/cloud/jira/service-desk/rest/intro/).
+The Jira Cloud component is specifically designed to integrate with Atlassian products such as the [Jira Cloud platform](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/) and [Jira Service Management Cloud](https://developer.atlassian.com/cloud/jira/service-desk/rest/intro/).
 
 In Jira Cloud, `Service requests` and `Issues` refer to the same type of objects. This means that you can utilize all the available actions and triggers for `Issue` to create, update, and delete `Service requests`. The Jira Cloud Component enables seamless interaction with these objects, allowing you to perform various operations on them within the context of your integration.
 
@@ -52,9 +66,9 @@ Now you can create new credentials for the component:
 
 ## Triggers
 
-### Get New and Updated Objects Polling
+### Get New and Updated Objects Polling 
 
-Retrieve all the updated or created objects within a given time range. Currently supported `Issues` only.
+Retrieve all the updated or created objects within a given time range. Currently supported `Issues` only
 
 #### Configuration Fields
 
@@ -62,21 +76,19 @@ Retrieve all the updated or created objects within a given time range. Currently
 * **Object Type** - (string, required): Object-type to lookup on. E.g `Issues`.
 * **Timestamp field to poll on** - (string, optional): Can be either Last Modified or Created dates (updated or new objects, respectively). Defaults to Last Modified.
 * **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
-* **Start Time** - (string, optional): The timestamp to start polling from (inclusive) - format `YYYY-MM-DD hh:mm`, should include timezone. Default value is the beginning of time (January 1, 1970 at 00:00).
-* **End Time** - (string, optional): The timestamp to stop polling (exclusive) - format `YYYY-MM-DD hh:mm`, should include timezone. Default value is execution time.
+* **Start Time** - (string, optional): The timestamp to start polling from (inclusive) - format YYYY-MM-DD hh:mm, should include timezone. Default value is the beginning of time (January 1, 1970 at 00:00). 
+* **End Time** - (string, optional): The timestamp to stop polling (exclusive) - format YYYY-MM-DD hh:mm, should include timezone. Default value is execution time. 
 
 #### Input Metadata
 
-There is no input metadata in this component.
+None.
 
 #### Output Metadata
-
-For `Emit Page` mode: An object with key `results` that has an array as its value.
-For `Emit Individually` mode: Each object which fill the entire message.
+For `Emit Page` mode: An object with key `results` that has an array as its value 
+For `Emit Individually` mode: Each object which fill the entire message. 
 
 #### Known Limitations
-
-* For `Retrieve sample` there will be limit of 10 records.
+* For `Retrieve sample` there will be limit of 10 records
 
 ## Actions
 
@@ -111,10 +123,9 @@ Example:
 
 ### Lookup Objects (plural)
 
-Lookup a set of objects by defined criteria. Currently supported `Users` and `Issues`.
+Lookup a set of objects by defined criteria. Currently supported `Users` and `Issues`
 
 #### Configuration Fields
-
 * **Select cloud** - (dropdown, required): This will retrieve the sites that have scopes granted by the token.
 * **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Users`.
 * **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit all`, `Emit page` or `Emit individually`.
@@ -124,19 +135,17 @@ Lookup a set of objects by defined criteria. Currently supported `Users` and `Is
 
 * For `Issues` Object Type:
 Groups of fields for each search term:
-  * **Field name** - (string, required): Object field name to filter (a list of allowed values is available).
-  * **Condition** - (string, required): Condition to compare selected field with value, [more info](https://support.atlassian.com/jira-software-cloud/docs/advanced-search-reference-jql-operators/).
+  * **Field name** - (string, required): Object field name to filter (a list of allowed values is available)
+  * **Condition** - (string, required): Condition to compare selected field with value, [more info](https://support.atlassian.com/jira-software-cloud/docs/advanced-search-reference-jql-operators/)
   * **Field value** - (string, optional): Value of selected field, pay attention to syntax - if value contains spaces, they should be quoted, if condition may have several values it should be enclosed in parentheses. for example:
-    * Condition is `=` and value doesn't contains space, it can be simple text: `John`.
-    * Condition is `=` and value contains space, it should be quoted: `"John Smith"`.
-    * Condition is `IN` and value doesn't contains space, it should be enclosed in parentheses: `(Jack,Jill)`.
-    * Condition is `IN` and value contains space, it should be quoted and enclosed in parentheses: `("Jack Smith", "Jill Smith")`.
-  * **Logical operator** - one of the following: `and`, `or` to combine multiple search terms.
+    * Condition is `=` and value doesn't contains space, it can be simple text: `John`
+    * Condition is `=` and value contains space, it should be quoted: `"John Smith"`
+    * Condition is `IN` and value doesn't contains space, it should be enclosed in parentheses: `(Jack,Jill)`
+    * Condition is `IN` and value contains space, it should be quoted and enclosed in parentheses: `("Jack Smith", "Jill Smith")`
+  * **Logical operator** - one of the following: `and`, `or` to combine multiple search terms
+  <details close markdown="block"><summary><strong>Example</strong></summary>
 
-<details close markdown="block"><summary><strong>Example</strong></summary>
-
-
-```json
+    ```json
     {
       "sTerm_1": {
         "fieldName": "summary",
@@ -150,35 +159,28 @@ Groups of fields for each search term:
         "fieldValue": "null"
       }
     }
-```
-
-</details>
+    ```
+  </details>
 
 * For `Users` Object Type:
-
-  * **Query** - (string, optional): Find users by query, you can put here part of string that is matched against user attributes `displayName` and `emailAddress` or use statements [more info](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-user-search/#api-rest-api-3-user-search-query-get).
+  * **Query** - (string, optional): Find users by query, you can put here part of string that is matched against user attributes `displayName` and `emailAddress` or use statements [more info](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-user-search/#api-rest-api-3-user-search-query-get)
 
 
 If `Emit Behavior` equals `Emit page` additional fields will be added:
 
-* **Page Number** - (number, defaults to 0): Indicates index of page to be fetched.
-* **Page Size** - (number, defaults to 100, max 100): Indicates the number of objects per page.
-
+* **Page Size** - (number, defaults to 100, max 100): Indicates the number of objects per page
 
 #### Output Metadata
 
-For `Emit All` mode: An object, with key `results` that has an array as its value.
+For `Emit All` and `Emit Page` mode: An object, with key `results` that has an array as its value.
 
-For `Emit Page` mode: An object with key `results` that has an array as its value (if `Page Size` > 0). Key `totalCountOfMatchingResults` which contains the total number of results (not just on the page) which match the search criteria (not available with `Users` Object Type).
-
-For `Emit Individually` mode: Each object which fill the entire message.
+For `Emit Individually` mode: Each object which fill the entire message. 
 
 #### Known Limitations
-
-* If you expect a big amount of records in result, avoid using `Emit All`.
-* `Number of search terms` not applicable to `Users` Object Type.
-* `Users` total results with provided `Query` restricted to 1000, if you need more, leave it blank.
-* For `Retrieve sample` there will be limit of 10 records.
+* If you expect a big amount of records in result, avoid using `Emit All`
+* `Number of search terms` not applicable to `Users` Object Type
+* `Users` total results with provided `Query` restricted to 1000, if you need more, leave it blank
+* For `Retrieve sample` there will be limit of 10 records
 
 ### Lookup Object (at most one)
 
