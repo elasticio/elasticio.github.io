@@ -5,11 +5,18 @@ description: Technical Notes for the Code component with credentials.
 icon: code-with-credentials.png
 icontext: Code component with credentials
 category: code
-updatedDate: 2024-03-28
-ComponentVersion: 1.0.0
+updatedDate: 2025-09-26
+ComponentVersion: 1.0.1
 ---
 
 ## Changelog
+
+### 1.0.1 (September 26, 2025)
+
+* Updated the following dependencies:
+ * Node.js version 18 -> 22
+ * axios 1.6.8 -> 1.12.2
+ * elasticio-sailor-nodejs 2.7.2 -> 2.7.6
 
 ### 1.0.0 (March 28, 2024)
 
