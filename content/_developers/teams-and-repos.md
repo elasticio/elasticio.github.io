@@ -37,11 +37,11 @@ As you can see, you're the only member of the team. To add more developers, clic
 
 You will see a list of members **(1)**, which you can choose from. Select the required members and click *Send Invites* **(2)** to invite developers:
 
-![List of members - Send Invites](/assets/img/developer-guide/team-repo/Screenshot_3.png)
+![List of members - Send Invites](/assets/img/developer-guide/team-repo/Send_Invites.png)
 
 As soon as you click *Send Invites*, the selected users become team members.
 
->**Please Note** that only members of the same Contract can be invited into this developer team. The list shows all the possible members that can be invited to this current team.
+>**Please Note:** that only members of the same Contract can be invited into this developer team. The list shows all the possible members that can be invited to this current team.
 
 ### Delete the developers team
 
@@ -58,7 +58,7 @@ management. GitHub, one of the most famous code developing and collaborating pla
 is the most famous for its use of repository practice. We use the same tactics which
 give developers complete autonomy to manage their code.
 
->**Note**: Remind your fellow developers to follow the same procedure and upload
+>**Please Note:** Remind your fellow developers to follow the same procedure and upload
 their own unique SSH Key before proceeding further.
 
 ### Create a component repository
@@ -67,7 +67,7 @@ As mentioned above, each repository represents a component. That's why we use
 repository and component terms interchangeably here. Every component resides in
 a particular repository.
 
->**Note**: you must have appropriate [permissions](/guides/managing-user-roles-in-a-tenant) to create repositories.
+>**Please Note:** you must have appropriate [permissions](/guides/managing-user-roles-in-a-tenant) to create repositories.
 
 To create a new repository for your custom Components, click *New Repo* button **(1)**, enter repository name **(2)**, and then click *Save* **(3)**:
 
@@ -77,7 +77,7 @@ You can now see it in the list of repositories:
 
 ![List of repositories](/assets/img/developer-guide/team-repo/Repo_List.png)
 
->**Note:** As with the naming of the teams use letters, digits, `-` and `_` to name your repository.
+>**Please Note:** As with the naming of the teams use letters, digits, `-` and `_` to name your repository.
 
 ### Manage the component repository
 
@@ -89,13 +89,13 @@ To manage your repository click on the name to see the following page with detai
 
 This is the URL that you can push the code for deploying the updates.
 
->**Note:** the cloning of your repositories is not supported. To update the code
+>**Please Note:** the cloning of your repositories is not supported. To update the code
 push it again to create the next version of it. Please contact our support if
 you need the copy of your repository.
 
 #### Environment variables:
 
-You can set all environment variables for this particular repository by following the link. Consult our documentation on How to define environment variables for integration components.
+You can set all environment variables for this particular repository by following the link. Consult our [documentation](/developers/defining-env-vars) on how to define environment variables for integration components.
 
 #### Access and visibility:
 
@@ -114,6 +114,32 @@ Here is the deployment history of the repository containing:
 *   Status of the build - green check mark means success. If the deployment failed it will show a red cross.
 *   State of the build - showing which build is the default.
 *   Log of the deployment - clicking the "View" button will open a pop-out window showing the log of that particular deployment.
+
+### Delete the component repository
+
+To delete a component repository, follow the steps outlined below. Ensure you have the necessary permissions before proceeding.
+
+#### Prerequisites
+
+- You must have access to the **developer team** where the component located.
+- The repository must have **team-level visibility**.
+- If the repository has higher visibility, you’ll need to contact the support team with the repository ID(s) for deletion.
+
+#### Step-by-Step Guide
+
+1. Locate the developer team associated with the component you wish to remove.
+> **Please Note:** Your user account must have access to this team.
+
+2. Identify the component repository, you can use search or [Fetch all components]({{site.data.tenant.apiBaseUri}}/docs/v2#/components/get_workspace__workspace_id__components) visible in your workspace using the API call. The response will include **component IDs**, which are also the **repository IDs**.
+![Search repositories](/assets/img/developer-guide/team-repo/Repo_Search.png)
+```
+https://{your-tenant-address}/c/{contract-id}/teams/{team-id}/repo/{repo-id}
+```
+3. Delete all versions of a component before deleting its repository. Navigate to the component **Build history** and click the **Delete** button next to each version. To delete via API use the following calls: [List all versions]({{site.data.tenant.apiBaseUri}}/docs/v2#/components/get_components__component_id__versions), and [Delete each version]({{site.data.tenant.apiBaseUri}}/docs/v2#/components/delete_components__component_id__versions__version_id_).
+![Delete builds](/assets/img/developer-guide/team-repo/Delete_Version.png)
+> **Please Note:** If a version is currently used in any flow, the delete operation will fail. The error message will show the **flow(s)** where the component is used. To proceed, update affected flows to remove the component, or delete those flows if they’re no longer needed.
+4. After all versions are removed and the component is no longer in use, you can delete the repository. By opening the repository settings and clicking on **Delete** button or [Deleting the component]({{site.data.tenant.apiBaseUri}}/docs/v2#/components/delete_components__component_id_) via API.
+![Delete the repository](/assets/img/developer-guide/team-repo/Delete_Repo.png)
 
 ## Managing Environment variables
 
