@@ -70,6 +70,8 @@ More information you can find [here](https://help.salesforce.com/apex/HTViewHelp
 
 ### Credentials creation
 
+For more information, please read our [Creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
+
 During credentials creation you would need to:
 
 *  select existing Auth-Client from drop-down list ``Choose Auth Client`` or create the new one.
@@ -96,8 +98,6 @@ For creating Auth Client you should specify following fields:
 Here you can see how to select an existing `client`:
 
 {% include img.html max-width="100%" url="img/client-exist.png" title="Choose client" %}
-
-For more information pleas read our [Creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
 
 > **Please Note**: When you deploy the Salesforce component separately into a dedicated tenant or
 > into your developer team it can not use the OAuth App specifically created for
