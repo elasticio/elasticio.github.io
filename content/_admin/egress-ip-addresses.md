@@ -22,16 +22,13 @@ outgoing IP addresses:
 
 *   `92.5.117.7`
 *   `130.162.33.7`
-*   `34.89.196.206`
-*   `34.89.174.177`
-*   `34.159.187.160`
 
 ## Egress IP List for app-us.elastic.io
 
 The US cluster which hosts `app-us.elastic.io` among other tenants has the following
 outgoing IP addresses:
 
-*   `35.245.125.178`
+*   `193.122.172.111`
 
 ## Details
 
@@ -40,8 +37,6 @@ IP connections that originate from a step within a flow within the {{site.data.t
 The IP addresses listed below are common to all {{site.data.tenant.name}} users. If you would like to have egress IP traffic routed through an IP address that is exclusive to you, then the [VPN agents](/guides/vpn-agent) feature can be used to achieve this.
 
 In the future, {{site.data.tenant.companyName}} may need to add or remove IP addresses from the lists below. In this case, {{site.data.tenant.companyName}} will proactively inform you of these changes.
-
-
 
 ## Background Context
 
