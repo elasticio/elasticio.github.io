@@ -34,6 +34,6 @@ outgoing IP addresses:
 
 ## US cluster
 
-The US cluster which hosts `app.elastic.io` among other tenants has the following
+The US cluster which hosts `app-us.elastic.io` among other tenants has the following
 outgoing IP addresses: 
 * [Egress IP List for app-us.elastic.io](/admin/egress-ip-addresses.html#egress-ip-list-for-app-uselasticio)
