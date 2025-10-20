@@ -98,7 +98,7 @@ Retrieve all the updated or created objects within a given time range.
 * **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`
 * **Size of Polling Page** - (optional, positive integer, defaults to 100, max 100): Indicates the size of pages to be fetched
 * **Start Time** - (string, optional): The timestamp, in ISO8601 format, to start polling from (inclusive). The default value is the beginning of time (January 1, 1970 at 00:00.000). 
-* **Additional filters** - (string, optional): You can use an additional filter here in the following format - `["{filed name},{compare operator},{value}"]`, for example `["SyncedToGomocha,1,false", "Id,7,22548"]`
+* **Additional filters** - (string, optional): You can use an additional filter here in the following format - `["{filed name},{compare operator},{value}"]`, for example `["Synced,1,false", "Id,7,22548"]`
 * **Long polling period in seconds (REALTIME FLOWS ONLY)** - (checkbox, optional): If provided, component will execute pulling recursively each * seconds, new flow executions will be ignored
 
 #### Input Metadata
