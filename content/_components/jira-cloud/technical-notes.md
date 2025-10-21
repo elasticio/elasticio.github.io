@@ -5,11 +5,15 @@ description: Technical Notes for the Jira Cloud component.
 icon: jira-cloud.png
 icontext: Jira Cloud component
 category: jira-cloud
-updatedDate: 2023-09-25
-ComponentVersion: 1.4.0
+updatedDate: 2023-10-21
+ComponentVersion: 1.4.1
 ---
 
 ## Changelog
+
+### 1.4.1 (October 21, 2025)
+
+* Adjusted `Page Size` handling for Jira API v3 `/search/jql` endpoint
 
 ### 1.4.0 (September 25, 2025)
 
