@@ -6,8 +6,8 @@ description: Jira Cloud component is designed to connect to Atlassian Jira Cloud
 icon: jira-cloud.png
 icontext: Jira Cloud component
 category: jira-cloud
-updatedDate: 2023-09-25
-ComponentVersion: 1.4.0
+updatedDate: 2023-10-21
+ComponentVersion: 1.4.1
 ---
 
 ## Table of Contents
@@ -168,7 +168,7 @@ Groups of fields for each search term:
 
 If `Emit Behavior` equals `Emit page` additional fields will be added:
 
-* **Page Size** - (number, defaults to 100, max 100): Indicates the number of objects per page
+* **Page Size** - (number, defaults to 100, 1–100): Indicates the number of objects per page. Only integers between 1 and 100 are allowed.
 
 #### Output Metadata
 
