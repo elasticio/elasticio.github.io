@@ -6,8 +6,8 @@ description: The Frontify component enables you to integrate with your Frontify 
 icon: frontify.png
 icontext: Frontify component
 category: frontify
-ComponentVersion: 1.0.0
-updatedDate: 2025-10-10
+ComponentVersion: 1.0.1
+updatedDate: 2025-10-30
 ---
 
 ## Table of Contents
