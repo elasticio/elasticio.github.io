@@ -6,8 +6,8 @@ description: The Basecamp component allows you to interact with your Basecamp ac
 icon: basecamp.png
 icontext: Basecamp component
 category: basecamp
-ComponentVersion: 1.0.0
-updatedDate: 2025-10-22
+ComponentVersion: 1.0.1
+updatedDate: 2025-11-03
 ---
 
 ## Table of Contents
