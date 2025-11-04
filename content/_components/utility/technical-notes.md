@@ -5,13 +5,19 @@ description: Technical Notes for the Utility сomponent.
 icon: utility.png
 icontext: Utility сomponent
 category: utility
-updatedDate: 2025-07-18
-ComponentVersion: 1.7.0
+updatedDate: 2025-09-16
+ComponentVersion: 1.8.0
 redirect_from:
   - /components/utility/changelog.html
 ---
 
 ## Changelog
+
+### 1.8.0 (September 16, 2025)
+
+* Added `Get file metadata` action
+* Bumped sailor to `2.7.6`
+* Bumped @elastic.io/component-commons-library to `4.0.0`
 
 ### 1.7.0 (July 18, 2024)
 
