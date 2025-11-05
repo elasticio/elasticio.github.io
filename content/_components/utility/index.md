@@ -6,8 +6,8 @@ description: A component that is designed for utility operations.
 icon: utility.png
 icontext: Utility сomponent
 category: utility
-updatedDate: 2025-07-18
-ComponentVersion: 1.7.0
+updatedDate: 2025-09-16
+ComponentVersion: 1.8.0
 ---
 
 # Utility Component 
@@ -15,6 +15,7 @@ ComponentVersion: 1.7.0
 * [Description](#description)
   * [Environment variables](#environment-variables)
 * [Actions](#actions)
+  * [Get file metadata](#get-file-metadata)  
   * [String To Attachment](#string-to-attachment)
   * [String From Attachment](#string-from-attachment)
   * [Base64 Decode](#base64-decode)
@@ -45,6 +46,30 @@ This component has no trigger functions. This means it will not be accessible to
 select as a first component during the integration flow design.
 
 ## Actions
+
+### Get file metadata
+Collects useful metadata for a file from a provided URL.
+
+#### Config Fields
+None
+
+#### Input Metadata
+* **File Url** (string, required) - URL of the file to retrieve metadata for: supports both internal and external URLs
+
+#### Output Metadata
+* **size** (integer) - Size of the file in bytes
+* **md5** (object) - MD5 checksum of the file in hex and base64 formats
+* **sha1** (object) - SHA-1 checksum of the file in hex and base64 formats
+* **sha256** (object) - SHA-256 checksum of the file in hex and base64 formats
+* **sha512** (object) - SHA-512 checksum of the file in hex and base64 formats
+* **crc32** (string) - CRC32 checksum of the file
+* **mime** (string) - MIME type identifying the file format
+* **ext** (string) - File extension indicating the file format
+* **filename** (string) - Name of the file, including its extension
+
+> **Please Note:**
+* `filename` is taken from the headers (Content-Disposition). If empty, it is taken from the URL. If that is also empty, the default name `file.` + `ext` is used.
+* `mime` and `ext` will be determined from the data when possible. If not, we will try to obtain them from the headers. If those are also unavailable, the defaults `text/plain` and `txt` will be used, respectively.
 
 ### String To Attachment
 
