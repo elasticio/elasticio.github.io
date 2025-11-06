@@ -1,135 +1,120 @@
 ---
-title: Splitter Actions
+title: Splitter component Actions
 layout: component
-description: The Splitter integration connector was designed to work together with the JSONata-powered Mapper.
+description: The Splitter component provides powerful, fundamental tools for message flow control on the platform.
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2024-11-07
-ComponentVersion: 1.5.1
+updatedDate: 2025-11-05
+ComponentVersion: 1.6.0
 ---
 
-## Split on JSONata Expression
+### Split on JSONata Expression
 
-Splits a single message into several separate messages.
+This action splits a single incoming message into several messages by extracting an array from the message body using a JSONata expression. Each element of the resulting array is then emitted as a separate message.
 
-### Configuration Fields
+#### Configuration
 
-* **JSONata Expression** - (string, required): Enter the expression that will be evaluated as an array.
+*   **JSONata Expression** - (string, required): A valid JSONata expression that evaluates to an array within the incoming message body.
 
-#### Example
+<details close markdown="block"><summary><strong>Example</strong></summary>
 
- You have the following incoming message:
+Given the following incoming message:
 
-  ```json
-    {
-        "FirstName": "Fred",
-        "Surname": "Smith",
-        "Phone": [
-            {
-                "type": "home",
-                "number": "0203 544 1234"
-            },
-            {
-                "type": "office",
-                "number": "01962 001234"
-            },
-            {
-                "type": "mobile",
-                "number": "077 7700 1234"
-            }
-        ]
-    }
-  ```
-
-  If the JSONata expression is set to `Phone.{type: number}`, you will get three messages:
-  
-  ```json
-    {
-        "home": "0203 544 1234"
-    }
-  ```
-  ```json
-    {
-        "office": "01962 001234"
-    }
-  ```
-  ```json
-    {
-        "mobile": "077 7700 1234"
-    }
-  ```
-
-### Output Metadata
-
-Each item of the array will be emitted as a separate message.
-
-
-## Re-assemble Messages
-
-Combines separate messages into one.
-
-### Configuration Fields
-
-* **Behavior** - (dropdown, required): Select one of the following options:
-  * `Group on fixed amount of messages` - Messages keeps collecting continuously. Once the group size is reached, the group is emitted and the new group starts collecting immediately. If the number of incoming messages for a particular group is less than the defined group size, the group will be stored in the internal storage (Maester) and proceed collecting messages into the open group.
-  * `Group on timeout` - All incoming messages will be gathered until there are no more incoming messages within the specified timeframe (delay timer), at which point messages will be emitted for each group.
-  * `Group on amount of messages or timeout` - Specify both group size and delay timer. Once a group is complete, that group will be emitted. If there are no more incoming messages within the specified timeframe, partially completed groups will also be emitted.
-* **Emit result as array** - (checkbox, optional): If selected, `messageData` in the response object will be an array of messages without message IDs.
-
-#### Example with unchecked
-
-  ```json
-    {
-    "groupSize": 2,
-    "groupId": "test22",
-    "messageData": {
-        "d899b000-5455-4c7a-9781-f16203426b93": {
-        "dataFromMessage": "Message1"
-        },
-        "bdfca2b1-7aa7-444c-916d-3a2c17fc5dd6": {
-        "dataFromMessage": "Message2"
-        }
-    }
-    }
-  ```
-#### Example with checked
-
-  ```json
-    {
-    "groupSize": 2,
-    "groupId": "test22",
-    "messageData": [
-        {
-        "dataFromMessage": "Message1"
-        },
-        {
-        "dataFromMessage": "Message2"
-        }
+```json
+{
+    "FirstName": "Fred",
+    "Surname": "Smith",
+    "Phone": [
+        { "type": "home", "number": "0203 544 1234" },
+        { "type": "office", "number": "01962 001234" },
+        { "type": "mobile", "number": "077 7700 1234" }
     ]
-    }
-  ```
+}
+```
+If the JSONata expression is set to `Phone.{type: number}`, the component will emit three separate messages:
+```json
+{ "home": "0203 544 1234" }
+```
+```json
+{ "office": "01962 001234" }
+```
+```json
+{ "mobile": "077 7700 1234" }
+```
+</details>
+<br>
 
-### Input Metadata
+#### Input Metadata
 
-* **Unique ID to describe the group** - (string, required): A unique ID for the group to distinguish it from other groups.
-* **Unique ID to describe this message** - (string, optional): An ID for a message to distinguish it from other messages in the group. Must be unique per group but does not have to be globally unique. This value needs to be different for all messages in a group. If a messageId occurs multiple times, only the messageData of the latest message will be retained. If the messageId is not defined, a random GUID will be generated and used as the messageID.
-* **Message Data** - (object, optional): Data from individual messages.
-  
-If `Group on fixed amount of messages` or `Group on amount of messages or timeout` is selected:
-* **Number of messages expected to be reassembled into the group** - (number, optional): The number of messages when the group is considered full.
-
-If `Group on timeout` or `Group on amount of messages or timeout` is selected:
-* **Delay timer (in ms)** - (number, optional): The time the process waits when no incoming messages before emitting. Maximum is 20000 ms (20 sec). If you try to put here more than allowed, than default value will be used
+None
 
 #### Output Metadata
 
-* **groupSize** - (number, required): The number of messages in this group.
-* **groupId** - (number, required): The ID of this group.
-* **messageData** - (number, required): If `Emit result as array` is selected, this will be an array of messages from previous steps; otherwise, it will be an object with keys as `Unique ID to describe this message` and values as messages from previous steps.
+*   **Message Body**: The body of each output message will be one element from the array returned by the JSONata expression.
 
-#### Known Limitations
+### Re-assemble Messages
 
-* The total size of stored messages in groups should be less than 5MB; otherwise, the component will emit the group regardless of the selected behavior.
-* Messages are stored in component memory during execution - "Suspending" the flow will erase them.
-* With option `Produce Groups of Fixed Size (Don't Emit Partial Groups)` if group is not ready, messages will be stored inside internal storage (Maester) for up to two days
+This action collects and aggregates individual messages into a single grouped message based on a defined strategy (group size, timeout, or both).
+
+#### Configuration
+
+*   **Behavior** - (dropdown, required): Defines the strategy for when to emit a group.
+    *   `Group on fixed amount of messages`: The component collects messages for a group until the specified size is reached. Once full, the group is emitted. This mode does not emit partial groups; if the flow ends before a group is full, the partial group is stored for up to two days to be completed by a future execution.
+    *   `Group on timeout`: The component gathers all incoming messages for a group. When no new messages arrive for that group within the specified `Delay timer`, a single group is emitted.
+    *   `Group on amount of messages or timeout`: A hybrid approach. A group is emitted as soon as it is full. However, if the group is not yet full and no new messages arrive within the specified `Delay timer`, the partially completed group is also emitted.
+*   **Emit result as array** - (checkbox, optional): If checked, the `messageData` in the output will be an array of message bodies. If unchecked, it will be an object where keys are the message IDs.
+
+<details close markdown="block"><summary><strong>Example (Emit as array: OFF)</strong></summary>
+
+```json
+{
+  "groupSize": 2,
+  "groupId": "test22",
+  "messageData": {
+    "d899b000-5455-4c7a-9781-f16203426b93": { "dataFromMessage": "Message1" },
+    "bdfca2b1-7aa7-444c-916d-3a2c17fc5dd6": { "dataFromMessage": "Message2" }
+  }
+}
+```
+</details>
+<br>
+
+<details close markdown="block"><summary><strong>Example (Emit as array: ON)</strong></summary>
+
+```json
+{
+  "groupSize": 2,
+  "groupId": "test22",
+  "messageData": [
+    { "dataFromMessage": "Message1" },
+    { "dataFromMessage": "Message2" }
+  ]
+}
+```
+</details>
+<br>
+
+#### Input Metadata
+
+*   **Unique ID to describe the group** - (string, required): An identifier for the group. All messages with the same `groupId` will be collected together.
+*   **Unique ID to describe this message** - (string, optional): A unique identifier for a message within its group. If not provided, a random GUID will be generated. If multiple messages in the same group have the same `messageId`, only the data from the last message will be retained.
+*   **Message Data** - (object, optional): The body of the individual message to be added to the group.
+*   **Number of messages expected to be reassembled into the group** - (number, optional): The target size for the group. Required when `Behavior` involves a fixed amount.
+*   **Delay timer (in ms)** - (number, optional): The time (in milliseconds) to wait for more messages before emitting a group. Maximum is 20,000 ms (20 seconds). Required when `Behavior` involves a timeout.
+
+#### Output Metadata
+
+*   **groupSize** - (number, required): The number of messages in the emitted group.
+*   **groupId** - (string, required): The ID of the emitted group.
+*   **messageData** - (object or array, required): The aggregated message data. The format depends on the `Emit result as array` setting.
+
+## Known Limitations
+
+*   **Concurrency Issue with Persistent Grouping**: The `Group on fixed amount of messages` behavior relies on an external storage (Maester) to persist partial groups between executions. This process is **not safe for high-concurrency scenarios** where multiple parallel executions of the *same flow step* process messages for the *same `groupId`*. This can lead to a race condition where parallel processes overwrite each other's state, resulting in **data loss**. This mode is only safe if you can guarantee that only one process is handling messages for a specific group at any given time.
+
+*   **Memory and Size Limits**:
+    *   The total size of all messages being collected in memory is limited to **5MB**. If this limit is exceeded, all currently held groups will be emitted immediately to prevent data loss, regardless of their configured `Behavior`.
+    *   Messages are held in the component's memory during a flow's execution. If the flow is paused, stopped, or encounters a fatal error, any data currently being grouped in memory will be lost.
+
+*   **State Persistence Duration**: When using `Group on fixed amount of messages`, partially completed groups are stored externally for a maximum of **two days**. If the group is not completed within this time, it will be permanently deleted.
