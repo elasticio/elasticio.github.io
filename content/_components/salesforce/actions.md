@@ -5,297 +5,171 @@ description: Salesforce component actions.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2025-01-31
-ComponentVersion: 2.8.6
+updatedDate: 2025-10-15
+ComponentVersion: 2.9.0
 ---
 
-## Query action
+## Bulk Create/Update/Delete/Upsert
 
-Executing a SOQL Query that may return many objects. Each resulting object is emitted one-by-one. Use the Salesforce Object Query Language (SOQL) to search your organization’s Salesforce data for specific information. SOQL is similar to the SELECT statement in the widely used Structured Query Language (SQL) but is designed specifically for Salesforce data. This action allows you to interact with your data using SOQL.
-Empty object will be returned, if query doesn't find any data.
-
-{% include img.html max-width="100%" url="img/query-action.png" title="Query action" %}
-
-### Input fields description
-
-* **Include deleted** - checkbox, if checked - deleted records will be included into the result list.
-
-### Input fields description
-
-* **Optional batch size** - A positive integer specifying batch size. If no batch size is specified then results of the query will be emitted one-by-one, otherwise, query results will be emitted in an array of maximum batch size.
-* **Allow all results to be returned in a set** - checkbox which allows emitting query results in a single array. `Optional batch size` and `Max Fetch Count` options are ignored in this case.
-* **SOQL Query** - Input field where you should type the SOQL query. E.g. `"SELECT ID, Name from Contact where Name like 'John Smi%'"`
-* **Max Fetch Count** - limit for a number of messages that can be fetched. 1,000 is the default value when the variable is not set.
-
-## Create Object action
-
-Creates a new Selected Object.
-Action creates a single object. Input metadata is fetched dynamically from your Salesforce account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
-
-{% include img.html max-width="100%" url="img/create-object-action.png" title="Create Object action" %}
-
-> **Please Note**:
-In case of an **Attachment** object type you should specify `Body` in base64 encoding. `ParentId` is a Salesforce ID of an object (Account, Lead, Contact) which an attachment is going to be attached to.
-
-### Input fields description
-
-* **Object** - Input field where you should choose the object type, which you want to find. E.g. `Account`
-
-* **Utilize data attachment from previous step (for objects with a binary field)** - a checkbox, if it is checked and an input message contains an attachment and specified object has a binary field (type of base64) then the input data is put into object's binary field. In this case any data specified for the binary field in the data mapper is discarded.
-
-This action will automatically retrieve all existing fields of chosen object type that available on your Salesforce organization
-
-### Limitations
-
-When **Utilize data attachment from previous step (for objects with a binary field)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'
-
-## Delete Object action (at most 1)
-
-Deletes an object by a selected field. One can filter by either unique fields or all fields of that sobject. Input metadata is fetched dynamically from your Salesforce account.
-
-{% include img.html max-width="100%" url="img/delete-object-action.png" title="Delete Object action (at most 1)" %}
-
-### Input field description
-
-* **Object** - dropdown list where you should choose the object type, which you want to find. E.g. `Account`.
-
-* **Type Of Search** -  dropdown list with two values: `Unique Fields` and `All Fields`.
-
-* **Lookup by field** - dropdown list with all fields on the selected object, if on *Type Of Search* is chosen `All Fields`, or with all fields on the selected object where `type` is `id` or `unique` is `true` , if on *Type Of Search* is chosen `Unique Fields` then all searchable fields both custom and standard will be available for selection.
-
-* **id** - `string`, salesforce object id
-
-* **success** - `boolean`, if operation was successful `true`
-
-* **errors** - `array`, if operation fails, it will contain description of errors
-
-### Metadata description
-
-Metadata for each particular `Object type` + `Lookup by field` is generating dynamically.
-
-## Upsert Object action
-
-Creates or Updates Selected Object.
-Action creates a single object. Input metadata is fetched dynamically from your Salesforce account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
-
-{% include img.html max-width="100%" url="img/upsert-object-action.png" title="Upsert Object action" %}
-
-### Input field description
-
-* **Object** - Input field where you should choose the object type, which you want to find. E.g. `Account`
-* **Type Of Search** - Dropdown list with values: `Unique Fields`, `All Fields` and `External IDs`
-  * `All Fields` - all available fields in the object
-  * `Unique Fields` - fields where `type` is `id` or `unique` is `true`
-  * `External IDs` - fields where `externalId` is `true`, this option uses built-in salesforce method [upsert](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_calls_upsert.htm).
-
-   It works as following:
-   * If there is no value in the lookup field - a new object will be created
-   * If a lookup value is specified and `External IDs` selected as a Type Of Search - it is the most efficient (fast) way to go. In this case an object will be upserted directly on the Salesforce side. When this field has an attribute `Unique` it would guarantee that no errors are emitted.
-   * If a lookup value is specified and one of `Unique Fields` or `All Fields` selected - then an action will first lookup for an existing object in Salesforce:
-      * If no objects found - a new one will be created
-      * If 1 object found - it will be updated
-      * If more than 1 object found - ar error `Found more than 1 Object` will be thrown
-* **Lookup by field** - Dropdown list with fields on the selected object, depending on the *Type Of Search*
-
-#### Expected input metadata
-
-* lookup by - *name of filed selected in 'Lookup by field'*
-* other fields, that used by selected **Object**
-
-#### Expected output metadata
-
-The result of creating or updating an object
-
-* **id** - Unic identificator from salesforce
-* **success** - Boolean result of creation/update object
-* **errors** - Arrey of errors if they exist
-
-### Limitations
-
-When **Utilize data attachment from previous step (for objects with a binary field)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'
-
-## Lookup Object action (at most 1)
-
-Lookup an object by a selected field.
-Action creates a single object. Input metadata is fetched dynamically from your Salesforce account. Output metadata is the same as input metadata, so you may expect all fields that you mapped as input to be returned as output.
-
-{% include img.html max-width="100%" url="img/lookup-object-action.png" title="Lookup Object action (at most 1)" %}
-
-### Input field description
-
-* **Object** - Dropdown list displaying all searchable object types. Select one type to query, e.g. `Account`.
-
-* **Type Of Search** - Dropdown list with two values: `Unique Fields` and `All Fields`.
-
-* **Lookup by field** - Dropdown list with all fields on the selected object if the *Type Of Search* is `All Fields`. If the *Type Of Search* is `Unique Fields`, the dropdown lists instead all fields on the selected object where `type` is `id` or `unique` is `true`.
-
-* **Include linked objects** - Multiselect dropdown list with all the related child and parent objects of the selected object type. List entries are given as `Object Name/Reference To (Relationship Name)`. Select one or more related objects, which will be join queried and included in the response from your Salesforce Organization. Please see the **Limitations** section below for use case advisories.
-
-* **Allow zero results** - Checkbox. If checked and nothing is found in your Salesforce Organization, an empty object will be returned. If not checked and nothing is found, the action will throw an error.
-
-* **Pass binary data to the next component (if found object has it)** - Checkbox. If it is checked and the found object record has a binary field (primitive type `base64`), then its data will be passed to the next component as a binary attachment and link to it will be replaced to link on the platform
-
-### Metadata description
-
-Metadata contains one field whose name, type and mandatoriness are generated according to the value of the configuration fields *Lookup by field* and *Allow criteria to be omitted*.
-
-### Limitations
-
-When **Pass binary data to the next component (if found object has it)** is checked and this action is used with Local Agent error would be thrown: 'getaddrinfo ENOTFOUND steward-service.platform.svc.cluster.local steward-service.platform.svc.cluster.local:8200'
-
-> **Please Note**:
-Action has caching mechanism. By default action stores last 10 request-response pairs for 10 min duration.
-This parameters can be changed by setting environment variables:
-
-* **HASH_LIMIT_TIME** - Hash expiration time in milis
-* **HASH_LIMIT_ELEMENTS** - Hash size number limit
-
-## Lookup Objects action
-
-Lookup a list of objects satisfying specified criteria.
-
-{% include img.html max-width="100%" url="img/lookup-object-actions.png" title="Lookup Object actions" %}
-
-### Input field description
-
-* **Object** - dropdown list where you should choose the object type, which you want to find. E.g. `Account`.
-
-* **Include deleted** - checkbox, if checked - deleted records will be included into the result list.
-
-* **Output method** - dropdown list with following values: "Emit all", "Emit page", "Emit individually".
-
-* **Number of search terms** - text field to specify a number of search terms (positive integer number [1-99] or 0).
-
-* **Enable Cache Usage** - Flag to enable cache usage.
-
-* **Max Fetch Count** - limit for a number of messages that can be fetched. 1,000 is the default value when the variable is not set.
-
-> **Please Note**:
-Action has caching mechanism. By default action stores last 10 request-response pairs for 10 min duration.
-This parameters can be changed by setting environment variables:
-
-* **HASH_LIMIT_TIME** - Hash expiration time in milis
-* **HASH_LIMIT_ELEMENTS** - Hash size number limit
-
-### Metadata description
-
-Depending on the the configuration field *Output method* the input metadata can contain different fields:
-
-<details close markdown="block"><summary><strong>Metadata fields</strong></summary>
-
-* **Output method** - "Emit page":
-
-Field "Page size" - optional positive integer that defaults to 1000;
-Field "Page number" - required non-negative integer (starts with 0, default value 0);
-
-* **Output method** - "Emit all":
-
-Field "Maximum number of records" - optional positive integer (default value 1000);
-
-* **Output method** - "Emit individually":
-
-Field "Maximum number of records" - optional positive integer (default value 10000);
-
->**Please note:** that the number of records the component emits may affect the performance of the platform/component.
-
-Groups of fields for each search term go next:
-
-Field "Field name" - string represents object's field (a list of allowed values is available);
-Field "Field value" - string represents value for selected field;
-Field "Condition" - one of the following: "=", "!=", "<", "<=", ">", ">=", "LIKE", "IN", "NOT IN";
-
-Between each two term's group of fields:
-
-Field "Logical operator" - one of the following: "AND", "OR";
-
-Output data is an object, with a field "results" that is an array of objects.
-
-</details>
-
-### Known limitations
-
-If `Output method` set to `Emit page` maximum "Page number" must be less or equal to "Page size"/2000
-
-## Bulk Create/Update/Delete/Upsert action
-
-Bulk API provides a simple interface for quickly loading large amounts of data from CSV file into Salesforce (up to 10'000 records).
-
-Action takes a CSV file from the attachment as an input. CSV file format is described in the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.api_bulk_v2.meta/api_bulk_v2/datafiles.htm)
+Uses the Bulk API 2.0 to quickly load large amounts of data (up to 10,000 records) from a CSV file into Salesforce. This action takes a CSV file from an attachment as input. The required CSV format is described in the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.api_bulk_v2.meta/api_bulk_v2/datafiles.htm).
 
 {% include img.html max-width="100%" url="img/bulk-create-update-delete.png" title="Bulk Create/Update/Delete action" %}
 
-### Input field description
+#### Configuration Fields
+*   **Operation** (dropdown, required): The bulk operation to perform: `Create`, `Update`, `Upsert`, or `Delete`.
+*   **Object** (dropdown, required): The type of object to perform the bulk operation on (e.g., `Case`).
+*   **Timeout** (integer, optional): The maximum time in seconds to wait for the server to complete the bulk operation. Defaults to `600`.
 
-* **Operation** - dropdown list with 3 supported operations: `Create`, `Update` and `Delete`.
+#### Input Metadata
+*   **External ID Field**: For the `Upsert` operation, specify the name of the External ID field (e.g., `my_external_id__c`).
 
-* **Object** - dropdown list where you should choose the object type to perform bulk operation. E.g. `Case`.
+#### Output Metadata
+The action outputs a message with a `result` property, which is an array of objects. Each object in the array represents the outcome for a record and contains the following fields:
+*   **id**: The Salesforce ID of the object.
+*   **success**: A boolean indicating if the operation was successful (`true` or `false`).
+*   **errors**: An array containing error descriptions if the operation failed.
 
-* **Timeout** - maximum time to wait until the server completes a bulk operation (default: `600` sec).
+#### Limitations
+*   The action does not throw an error for failed records. You must check the `success` field in the output to identify failures.
+*   An `Object ID` is required for `Update` and `Delete` operations.
+*   An `External ID` is required for the `Upsert` operation.
+*   Salesforce processes a maximum of 10,000 records from the input CSV file per operation.
 
-Result is an object with a property **result**: `array`. It contains objects with 3 fields.
+## Bulk Query
 
-* **id** - `string`, salesforce object id
-
-* **success** - `boolean`, if operation was successful `true`
-
-* **errors** - `array`, if operation failed contains description of errors
-
-### Metadata description
-
-* **External ID Field** - a name of the External ID field for `Upsert` operation. E.g. `my_external_id__c`
-
-### Limitations
-
-* No errors thrown in case of failed Object Create/Update/Delete/Upsert (`"success": "false"`).
-* External ID is needed for Upsert.
-* Object ID is needed for Update and Delete.
-* Salesforce processes up to 10'000 records from the input CSV file.
-
-## Bulk Query action
-
-Fetches records to a CSV file.
+Fetches a large number of records using a SOQL query and streams the result as a CSV file in an attachment.
 
 {% include img.html max-width="100%" url="img/bulk-query-action.png" title="Bulk Query action" %}
 
-### Input field description
+#### Input Metadata
+*   **SOQL Query** (string, required): The SOQL query to execute (e.g., `SELECT Id, Name from Contact`).
 
-* **SOQL Query** - Input field where you should type the SOQL query. E.g. `"SELECT ID, Name from Contact where Name like 'John Smi%'"`
+## Create Object
 
-Result is a CSV file in the attachment.
+Creates a single new object in Salesforce.
 
-## Raw Request action
+{% include img.html max-width="100%" url="img/create-object-action.png" title="Create Object action" %}
 
-This function executes a custom REST API call request. By default, the service called is `/services/data`, which encompasses most of the services provided by Salesforce.
-Alternatively, you can call any other services, such as `/services/apexrest`, by specifying the full URL instead of a relative one.
+> **Please Note:** To create an `Attachment`, you must provide the file content as a base64-encoded string in the `Body` field. The `ParentId` must be the Salesforce ID of the object (e.g., Account, Lead) the attachment will be associated with.
+
+#### Configuration Fields
+*   **Object** (dropdown, required): The type of object to create (e.g., `Account`).
+*   **Utilize data attachment from previous step...**: If checked, and if an attachment is present in the input message, the component will use the attachment data for any binary field (e.g., the `Body` of a `Document`).
+
+#### Input/Output Metadata
+This action dynamically retrieves all available fields for the chosen object type. The output metadata will mirror the input metadata.
+
+#### Limitations
+*   When **Utilize data attachment...** is checked, this action may fail if used with a Local Agent due to networking constraints.
+
+## Delete Object (at most 1)
+
+Deletes a single object found by a specified field and value.
+
+{% include img.html max-width="100%" url="img/delete-object-action.png" title="Delete Object action (at most 1)" %}
+
+#### Configuration Fields
+*   **Object** (dropdown, required): The type of object to delete.
+*   **Type Of Search** (dropdown, required): Choose to look up the object by `Unique Fields` or `All Fields`.
+*   **Lookup by field** (dropdown, required): The field to use for the lookup.
+
+#### Input Metadata
+The input metadata is dynamically generated based on the **Lookup by field**.
+
+#### Output Metadata
+*   **id**: The Salesforce ID of the deleted object.
+*   **success**: A boolean indicating if the operation was successful.
+*   **errors**: An array of errors if the operation failed.
+
+## Lookup Object (at most 1)
+
+Looks up a single object by a specified field and value.
+
+{% include img.html max-width="100%" url="img/lookup-object-action.png" title="Lookup Object action (at most 1)" %}
+
+#### Configuration Fields
+*   **Object** (dropdown, required): The type of object to look up.
+*   **Type Of Search** (dropdown, required): Choose to look up the object by `Unique Fields` or `All Fields`.
+*   **Lookup by field** (dropdown, required): The field to use for the lookup.
+*   **Include referenced objects** (multiselect, optional): A list of related objects to include in the result.
+*   **Allow criteria to be omitted** (checkbox, optional): If checked, an empty object will be returned if the lookup criteria is missing from the input.
+*   **Allow zero results** (checkbox, optional): If checked, an empty object will be returned if no matching record is found.
+*   **Pass binary data to the next component...**: If checked, and if the found object contains a binary field, its data will be passed as an attachment.
+*   **Enable Cache Usage** (checkbox, optional): Enables caching for this action.
+
+#### Limitations
+1.  Selecting a binary field (e.g., in Documents or Attachments) under **Include referenced objects** will cause a `MALFORMED_QUERY` error.
+2.  The action does not support looking up objects where the lookup field value is `null`.
+3.  Passing binary data as an attachment may fail if used with a Local Agent.
+
+## Lookup Objects
+
+Looks up a list of objects that satisfy the specified criteria.
+
+{% include img.html max-width="100%" url="img/lookup-object-actions.png" title="Lookup Object actions" %}
+
+#### Configuration Fields
+*   **Object** (dropdown, required): The type of object to look up.
+*   **Include deleted** (checkbox, optional): If checked, deleted records will be included in the results.
+*   **Output method** (dropdown, required): Choose to `Emit all`, `Emit page`, or `Emit individually`.
+*   **Number of search terms** (integer, required): The number of filter conditions to apply (0-99).
+*   **Enable Cache Usage** (checkbox, optional): Enables caching for this action.
+*   **Max Fetch Count** (integer, optional): The maximum number of records to fetch. Defaults to `1000`.
+
+#### Input Metadata
+The input metadata changes based on the **Output method** and the **Number of search terms**.
+
+#### Output Metadata
+An object with a `results` property, which contains an array of found objects.
+
+## Query Action
+
+Executes a SOQL query.
+
+{% include img.html max-width="100%" url="img/query-action.png" title="Query action" %}
+
+#### Configuration Fields
+*   **Optional batch size** (integer, optional): If specified, results will be emitted in arrays of this size. If empty, results are emitted one-by-one.
+*   **Allow all results to be returned in a set** (checkbox, optional): If checked, all results are returned in a single array, ignoring batch size.
+*   **Include deleted** (checkbox, optional): If checked, deleted records will be included in the results.
+*   **Max Fetch Count** (integer, optional): The maximum number of records to fetch. Defaults to `1000`.
+
+#### Input Metadata
+*   **SOQL Query** (string, required): The SOQL query to execute.
+
+## Raw Request
+
+Executes a custom REST API call to a Salesforce endpoint.
 
 {% include img.html max-width="100%" url="img/raw-request.png" title="Raw Request" %}
 
-### Input Metadata
+#### Configuration Fields
+*   **HTTP Verb** (dropdown, required): The HTTP method to use (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`).
+*   **Path** (string, required): The URL path for the request. 
+    *   For standard REST API calls, use a relative path (e.g., `query/?q=SELECT+Id,Name+FROM+Account`).
+    *   For other services like Apex REST, provide the full URL.
+*   **Request Body** (object, optional): The body to attach to the request.
 
-* HTTP Verb - Allowed values GET, POST, PUT, PATCH, DELETE, HEAD, Required. HTTP verb to use in the request.
-  * To call services based on the `/services/data` endpoint, you can utilize a relative path, for instance, `query/?q=SELECT+Id,Name+FROM+Account`. This automatically constructs the URL as follows: `https://{your_instance}.salesforce.com/services/data/{SALESFORCE_API_VERSION}/query/?q=SELECT+Id,Name+FROM+Account`
-  * For calling other services like `/services/apexrest`, provide **the full URL**, such as `https://{your_instance}.salesforce.com/services/apexrest/myApexClass`
-* Path - String, Required. Use a relative path to make a request (for a list of all types of objects - `sobjects`, e.g.,
-to list the type of objects Account - `sobjects/account`). Since Salesforce sends the endpoint that must be called dynamically, there is no need to enter the base URL like this:
-```
-https://{INSTANCE_NAME}.salesforce.com/services/data/v{SALESFORCE_API_VERSION}/sobjects/{SALESFORCE_OBJECT}
-```
-Instead, you should use a relative path - `sobjects/{SALESFORCE_OBJECT}`.
+#### Output Metadata
+*   **Response Object**: The HTTP response body from the API call.
 
-* Request Body - Object, Optional. Body to attach to the HTTP Request
+## Upsert Object
 
-### Output Metadata
+Creates a new object or updates an existing one.
 
-* Response Object (Object, optional): HTTP response body
+{% include img.html max-width="100%" url="img/upsert-object-action.png" title="Upsert Object action" %}
 
-### Resources List
+#### Configuration Fields
+*   **Object** (dropdown, required): The type of object to upsert.
+*   **Type Of Search** (dropdown, required): The type of field to use for the lookup.
+    *   `External IDs`: Uses Salesforce's native, high-performance upsert functionality based on an External ID field.
+    *   `Unique Fields` or `All Fields`: The component will first look up an object. If one is found, it is updated. If none are found, a new one is created. If multiple are found, an error is thrown.
+*   **Lookup by field** (dropdown, required): The field to use for the lookup, based on the **Type Of Search**.
 
-* More information about available resources you can find [here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_list.htm)
+#### Input Metadata
+Dynamically generated based on the selected object and lookup field.
 
-### Request Examples
-
-* Examples of using REST API resources can be found [here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_user_tasks.htm)
-
-### Known limitations
-
-For the methods PUT and HEAD you need to specify the whole path (e.g. `services/OpportunityLineItem/00kR0000001WJJAIA4/OpportunityLineItemSchedules`) which have conflicts with `/services/data/v{SALESFORCE_API_VERSION}/{RESOURCE}` path, so Raw Request does not work for these two methods (PUT and HEAD) just for now.
+#### Output Metadata
+*   **id**: The unique Salesforce identifier of the created or updated object.
+*   **success**: A boolean indicating the result of the operation.
+*   **errors**: An array of errors if the operation failed.

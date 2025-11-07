@@ -1,18 +1,31 @@
 ---
 title: Salesforce Technical Notes
 layout: component
-description: Technical Notes for Salesforce Component.
+description: Technical Notes for Salesforce component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2025-01-31
-ComponentVersion: 2.8.6
+updatedDate: 2025-10-15
+ComponentVersion: 2.9.0
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.9.0 (October 15, 2025)
+
+* **Major Improvement** to `Get Updated Objects Polling` trigger:
+  * Re-architected the polling mechanism to use keyset pagination (`LastModifiedDate` and `Id`).
+  * **Fixed a critical bug** that caused silent data loss when a large number of records had the identical `LastModifiedDate`.
+  * Fixed the underlying cause of a potential infinite loop when a full page of records shared the same timestamp.
+  * Disallowed `Size of Polling Page` to be 0.
+* Updated and improved the `README.md` documentation for clarity, consistency, and accuracy, including:
+  * Adding a `Required Permissions` section for the polling trigger.
+  * Removing obsolete limitations that were resolved by the bug fixes.
+  * General language and formatting enhancements.
+
 
 ### 2.8.6 (January 31, 2025)
 
@@ -250,4 +263,4 @@ Here is the Completeness Matrix for the Salesforce component from version 2.
 
 Here is the Completeness Matrix for the Salesforce component up to version 2.
 
-![Salesforce component completness Matrix](https://user-images.githubusercontent.com/36419533/75436046-9a5ef880-595c-11ea-838f-32660c119972.png)
+![Salesforce component Completness Matrix](https://user-images.githubusercontent.com/36419533/75436046-9a5ef880-595c-11ea-838f-32660c119972.png)

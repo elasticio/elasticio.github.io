@@ -5,104 +5,84 @@ description: Salesforce component triggers.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2025-01-31
-ComponentVersion: 2.8.6
+updatedDate: 2025-10-15
+ComponentVersion: 2.9.0
 ---
 
 ## Get Updated Objects Polling
+Polls for objects that have been created or updated within a given time frame.
 
-### Config Fields
+#### Configuration Fields
+* **Object Type** (dropdown, required): The type of Salesforce object to be fetched.
+* **Selected Fields** (multiselect, optional): A list of fields to be returned in the response. If left empty, all fields will be returned. Selecting only the necessary fields can prevent [431 and 414 Errors](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).
+* **Include linked objects** (multiselect, optional): A list of related child and parent objects to be join-queried and included in the response. List entries are given as `Object Name/Reference To (Relationship Name)`.
+* **Emit behavior** (dropdown, required): Choose to emit objects `Individually` or as a single `Fetch page`.
+* **Start Time** (string, optional): The beginning of the time window to retrieve objects from, in ISO 8601 format (`YYYY-MM-DDThh:mm:ssZ`). Defaults to the beginning of time (`1970-01-01T00:00:00.000Z`).
+* **End Time** (string, optional): If provided, the trigger will not fetch records modified after this time. Must be in ISO 8601 format.
+* **Size of Polling Page** (integer, optional): The maximum number of records to fetch per page. Defaults to `10000`.
+* **Process Single Page Per Execution** (checkbox, optional): If checked, the trigger will process only one page of results per flow execution. If unchecked, it will retrieve all pages in a single execution.
 
- * **Object Type** Dropdown: Indicates Object Type to be fetched.
- * **Selected Fields** Multiselect dropdown: list with all Object Fields. Select fields, which will be returned in response. That can prevent [431 and 414 Errors](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).
- * **Include linked objects** Multiselect dropdown: list with all the related child and parent objects of the selected object type. List entries are given as `Object Name/Reference To (Relationship Name)`. Select one or more related objects, which will be join queried and included in the response from your Salesforce Organization. Please see the **Limitations** section below for use case advisories.
- * **Emit behavior** Dropdown: Indicates emit objects individually or emit by page.
- * **Start Time** - TextField (string, optional): Indicates the beginning time to start retrieving events from in ISO 8601 Date time utc format - `YYYY-MM-DDThh:mm:ssZ`.
- * **End Time** - TextField (string, optional, defaults to never): If provided, don’t fetch records modified after this time in ISO 8601 Date time utc format - `YYYY-MM-DDThh:mm:ssZ`.
- * **Size of Polling Page** - TextField (optional, positive integer, max 10000, defaults to 10000): Indicates the size of pages to be fetched.
- * **Process Single Page Per Execution** - Checkbox: Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page immediately, wait until the next flow start to fetch the next page.
+#### Required Permissions
+Due to the trigger's use of keyset pagination for reliability, the user profile for the credential must have **read access** (Field-Level Security) to the `Id` and `LastModifiedDate` fields for the object being polled. Without these permissions, the trigger will fail.
 
 #### Output Metadata
-
-- For `Fetch page`: An object with key ***results*** that has an array as its value.
-- For `Emit Individually`:  Each object fill the entire message.
+*   **For `Fetch page`:** An object with a `results` property, which contains an array of records.
+*   **For `Emit Individually`:** Each record is emitted as a separate message.
 
 ### Limitations
+*   When a binary field (primitive type `base64`, e.g., in Documents or Attachments) is selected via **Include linked objects**, an error will be thrown: `MALFORMED_QUERY: Binary fields cannot be selected in join queries.` Instead of querying these as linked objects, query them directly.
+*   There is a limit to the number of linked objects that can be queried at once. Beyond two or three (depending on the number of fields), Salesforce may return a `431` or `414` error, indicating the query is too long.
+*   Due to a known issue with multiselect dropdowns, it is recommended to deselect all items in the **Include linked objects** field before changing the **Object Type**.
 
- * If records reach `Size of Polling Page` flow will find largest update date and use it as `Start Time` for next iterations, results with this date will be excluded from that iteration and include in the next one.
- * If all records from one iteration will have same 'LastModifiedDate' they will be proceed, but all objects in the next iteration will start from date strictly greater than this, to avoid this use bigger `Size of Polling Page`.
- * Highly not recommended use very small (less than 5) `Size of Polling Page` (look at previous point).
- * When a binary field (primitive type `base64`, e.g. Documents, Attachments, etc) is selected on **Include linked objects**, an error will be thrown: `MALFORMED_QUERY: Binary fields cannot be selected in join queries. Instead of querying objects with binary fields as linked objects (such as children Attachments), try querying them directly.` There is also a limit to the number of linked objects that you can query at once - beyond two or three, depending on the number of fields in the linked objects, Salesforce could potentially return a Status Code 431 or 414 error, meaning the query is too long. Finally, due to a bug with multiselect dropdowns, it is recommended to deselect all of the elements in this field before you change your selection in the *Object* dropdown list.
+## Query Trigger
 
-## Query trigger
+Executes a user-defined SOQL query during each polling interval to fetch records.
 
-Continuously runs the same SOQL Query and emits results according to `Output method` configuration field.
-Use the Salesforce Object Query Language (SOQL) to search your organization’s Salesforce data for specific information.
-SOQL is similar to the SELECT statement in the widely used Structured Query Language (SQL) but is designed specifically for Salesforce data.
-This trigger allows you to interact with your data using SOQL.
+Use the Salesforce Object Query Language (SOQL) to search your organization’s Salesforce data for specific information. SOQL is similar to the `SELECT` statement in SQL but is designed specifically for Salesforce data.
 
 {% include img.html max-width="100%" url="img/query-trigger.png" title="Query trigger - configure input" %}
 
-### List of Expected Config fields trigger
+#### Configuration Fields
+*   **SOQL Query** (string, required): The SOQL query to execute.
+*   **Output method** (dropdown, optional): `Emit all` emits all found records in a single message with a `records` array. `Emit individually` emits each record as a separate message. Defaults to `Emit individually`.
+*   **Don't emit on empty results** (checkbox, optional): If selected, the component will not produce an empty message if the query returns no results.
 
-* **SOQL Query** - Input field for your SOQL Query.
+## Subscribe to Platform Events
 
-* **Output method** - dropdown list with options: `Emit all` - all found records will be emitted in one array `records`, and `Emit individually` - each found object will be emitted individual. Optional field, defaults to: `Emit individually`.
-
-* **Don't emit on empty results** - checkbox, optional. If selected, component will not produce empty messages when result is empty.
-
-### SOQL Query Input example
-
-```
-SELECT id, Name, Phone, Birthdate, Likes_Ice_Cream
-FROM Contract
-WHERE Phone != null
-LIMIT 5
-```
-
->**Please Note:** Max possible fetch size is 2000 objects per execution.
-
-## Subscribe to platform events trigger
-
-This trigger will subscribe for any platform Event using Salesforce streaming API:
+Subscribes to a specified Platform Event using the Salesforce Streaming API.
 
 {% include img.html max-width="100%" url="img/subscribe-trigger.png" title="Subscribe to platform events trigger" %}
 
-### Limittions:
-* SUPPORTS REALTIME FLOWS ONLY
-* `Run Now` action is required after the flow transitions from SUSPEND to RESUME
-* Due to Salesforce API limitations, the trigger does not store messages in the queues during the SUSPEND state. To continue receiving and processing messages, the flow should be triggered by the Run Now action after RESUME.
+#### How to Create a Platform Event
 
-
-### Input field description
-
-* **Event object name** - Input field where you should select the type of platform event which you want to subscribe E.g. `My platform event`
-
-### How to create new custom Platform event Entity:
-
-`Setup --> Integrations --> Platform Events --> New Platform Event`
+In Salesforce, navigate to `Setup --> Integrations --> Platform Events --> New Platform Event`.
 
 {% include img.html max-width="100%" url="img/platform-events.png" title="Platform Events" %}
 
-You can find more detail information in the [Platform Events Intro Documentation](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_intro.htm).
+For more details, see the [Platform Events Intro Documentation](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/platform_events_intro.htm).
 
-## Subscribe to PubSub
+#### Configuration Fields
+*   **Event object name** (dropdown, required): The name of the Platform Event to subscribe to (e.g., `My_Platform_Event__e`).
 
-This trigger will subscribe for any platform Event using [Pub/Sub API](https://developer.salesforce.com/docs/platform/pub-sub-api/overview).
+#### Limitations
+*   **This trigger is designed for Real-time flows only** and is not supported in Ordinary flows.
+*   Due to Salesforce API limitations, the trigger does not queue messages while the flow is in a `SUSPEND` state. To resume processing messages, you must manually trigger the flow with the **Run Now** action after it resumes.
 
-### Config Fields
-* **Event object name** - (dropdown, required): Input field where you should select the type of platform event to which you want to subscribe E.g. `My platform event`.
-* **Pub/Sub API Endpoint** - (string, optional): You can set Pub/Sub API Endpoint manually or leave it blank for default: `api.pubsub.salesforce.com:7443`. Details about Pub/Sub API Endpoints can be found [here](https://developer.salesforce.com/docs/platform/pub-sub-api/guide/pub-sub-endpoints.html).
-* **Number of events per request** - (positive integer, optional, defaults to 10, max 100): Salesforce uses batches of events to deliver to the component, the bigger number may increase processing speed, but if the batch size is too big, you can get out of memory error. If there are fewer events ready than the batch size, they will be delivered anyway.
-* **Start from Replay Id** - (positive integer, optional): In the Salesforce platform events and change data capture events are retained in the event bus for 3 days and you can subscribe at any position in the stream by providing here Replay Id from the last event. This field is used only for the first execution, following executions will use the Replay Id from the latest event to get a new one.
+## Subscribe to Pub/Sub Events
 
-### Output Metadata
-* **event** - (object, required): Store `replayId` of this message which can be used to retrieve records that were created after (using it as `Start from Replay Id` in configuration).
-* **payload** - (object, required): Dynamically generated content of the event.
+Subscribes to a specified Platform Event using the Salesforce [Pub/Sub API](https://developer.salesforce.com/docs/platform/pub-sub-api/overview).
 
-### Limitations:
-* The component starts tracking changes after the first execution (it means you have to `Run Now` flow with this trigger or wait for the first execution by the scheduler to establish a connection and only after this new event will be listened).
-* Due to Salesforce API limitations, once the user clicks RESUME after the SUSPENDED state, all stored messages in the queues will be processed, but not in the order they were received.
-* If you use "Ordinary" flow:
-    * Make sure that you execute it at least once per 3 days - according to the [documentation](https://developer.salesforce.com/docs/platform/pub-sub-api/references/methods/subscribe-rpc.html#replaying-an-event-stream) Salesforce stores events for up to 3 days.
-* To `Retrieve new sample from Salesforce v2` you need to trigger an event on Salesforce side or provide a sample manually.
+#### Configuration Fields
+*   **Event object name** (dropdown, required): The name of the Platform Event to subscribe to.
+*   **Pub/Sub API Endpoint** (string, optional): The Pub/Sub API endpoint. If left blank, it defaults to `api.pubsub.salesforce.com:7443`. For more details, see the [Pub/Sub API Endpoints documentation](https://developer.salesforce.com/docs/platform/pub-sub-api/guide/pub-sub-endpoints.html).
+*   **Number of events per request** (integer, optional): The maximum number of events to retrieve in a single batch. A larger batch size may improve performance, but setting it too high can cause memory errors. Defaults to `10` (max `100`).
+*   **Start from Replay ID** (integer, optional): A specific Replay ID to start the event stream from. This is only used for the first execution. Subsequent executions will automatically use the Replay ID from the last processed event.
+
+#### Output Metadata
+*   **event**: An object containing the `replayId` of the message.
+*   **payload**: An object containing the dynamically generated content of the event.
+
+#### Limitations
+*   The component begins tracking changes after the first execution. You must run the flow once (either manually or on its schedule) to establish the connection before events will be detected.
+*   If you are using an **Ordinary (polling) flow**, you must ensure it executes at least once every 3 days, as Salesforce retains events for a maximum of 72 hours.
+*   To retrieve a new sample, you must trigger an event in Salesforce or provide a sample manually.
