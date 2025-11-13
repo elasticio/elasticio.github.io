@@ -10,60 +10,67 @@ updatedDate: 2023-09-08
 ComponentVersion: 1.0.1
 ---
 
+## Table of Contents
+
+* [Description](#description)
+* [Credentials](#credentials)
+* [Actions](#actions) 
+    * [Make Raw Request](#make-raw-request)
+    * [Delete Email By ID](#delete-email-by-id)
+    * [Get Email by ID](#get-email-by-id)
+    * [Search emails](#search-emails) 
+    * [Send Email](#send-email)
+* [Triggers](#triggers) 
+  * [Get New Emails](#get-new-emails) 
+
 ## Description
 
-The Gmail Component is designed to establish a connection with Google Gmail, utilizing both low-level REST API calls and high-level Google API client. The current release of the component supports API version v1.
+Gmail Component is designed to connect to Google Gmail, using both low-level REST API calls and high-level [Google API client](https://github.com/googleapis/google-api-nodejs-client).
+The current release of component support API `v1`.
 
 ## Credentials
 
-Before building any integration flow, you must configure the app from within the Google Developers Console.
+Before building any integration flow you must at first configure the app from inside the [Google Developers Console](https://console.cloud.google.com/).
 
-1. Navigate to the APIs & Services -> Enabled APIs & Services page and enable the Gmail API.
-2. Go to the Credentials section and create a new credential of type OAuth client ID:
-  * Set Application type to Web application.
-  * Add Authorized redirect URI as: https://{your-tenant-address}/callback/oauth2.
+1. Go to the `APIs & Services` -> `Enabled APIs & services` page and enable `Gmail API`
+2. Go to the `Credentials` section and create a new credential of type  `OAuth client ID`.
+  - Set Application type to `Web application`
+  - Add Authorized [redirect URI](/guides/oauth-callback-redirect-url) as: `https://{your-tenant-address}/callback/oauth2`
 
-For new domains, you may encounter a message stating, "This app isn't verified." Please refer to this [documentation](https://support.google.com/cloud/answer/7454865?hl=en) to learn how to proceed.
+> In case of a new domain you may get message like `This app isn't verified`. Please refer to this [documentation](https://support.google.com/cloud/answer/7454865?hl=en) to check how to proceed.
 
 Now you can create new credentials for the component:
-
 * **Type** (dropdown, required) - `OAuth2`
-* **Choose Auth Client** (dropdown, required) - select one of the previously created clients or choose `Add New Auth Client`:
-  * **Name** (string, required) - provide any name you prefer.
-  * **Client ID** (string, required) - use the `Client ID` from the `Web application` section in the `Google Developers Console`.
-  * **Client Secret** (string, required) - use the `Client Secret` from the `Web application` section in the `Google Developers Console`.
-  * **Authorization Endpoint** (string, required) - Google OAuth2 authorization endpoint `https://accounts.google.com/o/oauth2/v2/auth`.
-  * **Token Endpoint** (string, required) - Google refresh token endpoint `https://oauth2.googleapis.com/token`.
-* **Name Your Credential** (string, required) - provide any name you want.
-* **Scopes (Comma-separated list)** (string, required) - Enter the scopes to gain access to your Gmail, e.g., `https://www.googleapis.com/auth/gmail.readonly`. For more information, refer to [Google's documentation](https://developers.google.com/gmail/api/auth/scopes).
-* **Additional parameters (Comma-separated list)** (string, required) - Set it as `access_type:offline,prompt:consent` to ensure the proper functioning of the component.
-* **Number of retries** (number, optional, default is 5) - Set how many times the component should retry making a request.
-* **Delay between retries** (number ms, optional, default is 10000) - Set how much time to wait before the next attempt.
+* **Choose Auth Client** (dropdown, required) - select one of created before or `Add New Auth Client`:
+    * **Name** (string, required) - provide any name you want
+    * **Client ID** (string, required) - put here `Client ID` from `Web application` in `Google Developers Console`
+    * **Client Secret** (string, required) - put here `Client Secret` from `Web application` in `Google Developers Console`
+    * **Authorization Endpoint** (string, required) - Google oauth2 authorization endpoint `https://accounts.google.com/o/oauth2/v2/auth`
+    * **Token Endpoint** (string, required) - Google refresh token endpoint `https://oauth2.googleapis.com/token`
+* **Name Your Credential** (string, required) - provide any name you want
+* **Scopes (Comma-separated list)** (string, required) - Put here scopes to get access to your Gmail - e.g.`https://www.googleapis.com/auth/gmail.readonly`, [more info](https://developers.google.com/gmail/api/auth/scopes)
+* **Additional parameters (Comma-separated list)** (string, required) - set it as `access_type:offline,prompt:consent` to make component works properly
+* **Number of retries** (number, optional, 5 by default) - How many times component should retry to make request
+* **Delay between retries** (number ms, optional, 10000 by default) - How much time to wait before the next attempt
 
-> **Important Note:** To verify credentials, you need to set any of the scopes that allow reading basic user data (profile). For example, `https://www.googleapis.com/auth/gmail.readonly` or broader scopes.
-
-## Triggers
-
-This component does not have trigger functions, making it inaccessible as the first component during the integration flow design.
+> **Please note:** In order to be able to Verify Credentials you need to set any of the scopes that allow to read basic user data (profile).
+E.g.: `https://www.googleapis.com/auth/gmail.readonly` or wider
 
 ## Actions
 
 ### Make Raw Request
 
-Executes a custom request. Refer to the official [Gmail REST API documentation](https://developers.google.com/gmail/api/reference/rest).
+Executes a custom request. Please refer to the official [Gmail REST API documentation](https://developers.google.com/gmail/api/reference/rest) 
 
 #### Configuration Fields
-
-* **Don't throw error on 404 Response** - (optional, boolean): Treat 404 HTTP responses not as an error; defaults to `false`.
+* **Don't throw error on 404 Response** - (optional, boolean): Treat 404 HTTP responses not as an error, defaults to `false`.
 
 #### Input Metadata
-
-* **URL** - (string, required): Path of the resource relative to the base URL (`https://gmail.googleapis.com/gmail/v1/`). E.g., `/users/me/messages`.
+* **URL** - (string, required): Path of the resource relative to the base URL (which is `https://gmail.googleapis.com/gmail/v1/`). E.g. `/users/me/messages`.
 * **Method** - (string, required): HTTP verb to use in the request, one of `GET`, `POST`, `PUT`, `PATCH`, `DELETE`.
 * **Request Body** - (object, optional): Body of the request to send.
 
 #### Output Metadata
-
 * **Status Code** - (number, required): HTTP status code of the response.
 * **HTTP headers** - (object, required): HTTP headers of the response.
 * **Response Body** - (object, optional): HTTP response body.
@@ -248,6 +255,8 @@ Incoming Message Sample:
 * **id** - (string, required): The immutable ID of the message.
 * **threadId** - (string, required): The ID of the thread the message belongs to.
 * **labelIds** - (array of strings, required): List of IDs of labels applied to this message.
+
+## Triggers
 
 ### Get New Emails
 
