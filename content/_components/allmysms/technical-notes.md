@@ -5,13 +5,17 @@ description: Technical Notes for the Allmysms component
 category: allmysms
 icon: allmysms.png
 icontext: Allmysms component
-ComponentVersion: 0.0.2
-updatedDate: 2020-11-03
+ComponentVersion: 1.0.0
+updatedDate: 2025-11-13
 redirect_from:
   - /components/allmysms/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.0 (November 13, 2025)
+
+* Force the component builds to be dockerized ad pushed to the Docker Hub
 
 ### 0.0.2 (November 3, 2020)
 
