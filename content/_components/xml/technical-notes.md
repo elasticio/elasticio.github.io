@@ -5,13 +5,20 @@ description: Technical Notes for the XML component.
 icon: xml.png
 icontext: XML component
 category: xml
-ComponentVersion: 1.4.0
-updatedDate: 2023-06-09
+ComponentVersion: 1.4.1
+updatedDate: 2025-11-14
 redirect_from:
   - /components/xml/changelog.html
 ---
 
 ## Changelog
+
+### 1.4.1 (November 14, 2025)
+
+* Fix: support maester attachments in `XML Attachment to JSON` action
+* Updated `Sailor` version to 2.7.6
+* Updated `@elastic.io/component-commons-library` version to 4.0.0
+* Removed `elasticio-node` dependency
 
 ### 1.4.0 (June 09, 2023)
 

@@ -2,15 +2,35 @@
 title: XML component
 layout: component
 section: Protocol components
-description: XML is used to describe the transportation, structure, and storage of data.
+description: An iPaaS component that converts data between XML and JSON formats.
 icon: xml.png
 icontext: XML component
 category: xml
-ComponentVersion: 1.4.0
-updatedDate: 2023-06-09
+ComponentVersion: 1.4.1
+updatedDate: 2025-11-14
 ---
 
-## Requirements and Conversion Behavior
+## Table of Contents
+
+* [Description](#description)
+  * [Purpose](#purpose)
+  * [Requirements and Conversion Behavior](#requirements-and-conversion-behavior)
+  * [Environment variables](#environment-variables)
+* [Actions](#actions)
+  * [XML to JSON](#xml-to-json)
+  * [XML Attachment to JSON](#xml-attachment-to-json)
+  * [JSON to XML](#json-to-xml)
+* [Usage Example](#usage-example)
+* [Known limitations](#known-limitations)
+
+## Description
+
+{{page.description}}
+
+### Purpose
+This component converts XML attachments or strings to and from JSON. It exposes three actions that accept either well‑formed XML/JSON strings or XML attachments and returns the converted payload as a string or attachment. The result can be consumed by downstream components.
+
+### Requirements and Conversion Behavior
 
 Provided XML document (for XML to JSON) should be [well-formed](https://en.wikipedia.org/wiki/Well-formed_document) in order to be parsed correctly. You will get an error otherwise.
 
