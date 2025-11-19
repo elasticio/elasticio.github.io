@@ -2,19 +2,19 @@
 title: JDBC component
 layout: component
 section: Database components
-description: A component to work with object-relational database management systems. It works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
+description: A component to work with object-relational database management systems.
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2025-06-27
-ComponentVersion: 2.5.10
+updatedDate: 2025-11-18
+ComponentVersion: 2.5.11
 ---
 
 ## Table of Contents
 
 * [General information](#general-information)
    * [Description](#description)
-   * [Completeness Matrix](/components/jdbc/technical-notes#completeness-matrix)
+   * [Completeness Matrix](#completeness-matrix)
 * [Credentials](#credentials)
 * [Triggers](#triggers)
 * [Actions](#actions)
@@ -23,11 +23,11 @@ ComponentVersion: 2.5.10
 ## General information
 ### Description
 
-{{page.description}}
+{{page.description}} It works with the `MySQL`, `PostgreSQL`, `Oracle` and `MSSQL` DBs.
 
-### Technical Notes
+### Completeness Matrix
 
-The [technical notes](technical-notes) page gives some technical details about JDBC component like [changelog](/components/jdbc/technical-notes#changelog) and [completeness matrix](/components/jdbc/technical-notes#completeness-matrix).
+On the [technical notes](technical-notes) page you can find some technical details about JDBC component like [changelog](/components/jdbc/technical-notes#changelog) and [completeness matrix](/components/jdbc/technical-notes#completeness-matrix).
 
 ## Credentials
 

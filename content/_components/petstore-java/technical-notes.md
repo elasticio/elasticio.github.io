@@ -5,15 +5,19 @@ description: Technical Notes for the Petstore-java component
 category: petstore-java
 icon: petstore.png
 icontext: Petstore-java componentt
-updatedDate: 2023-07-07
-ComponentVersion: 1.0.7
+updatedDate: 2025-11-18
+ComponentVersion: 1.0.8
 ---
 
 ## Changelog
 
+### 1.0.8 (November 18, 2025)
+
+* Updated the Sailor version to 5.0.0
+
 ### 1.0.7 (July 07, 2023)
 
-* Upgrade sailor version to 4.0.1
+* Updated the Sailor version to 4.0.1
 
 ### 1.0.6 (May 11, 2022)
 
@@ -29,5 +33,5 @@ ComponentVersion: 1.0.7
 
 ### 1.0.3 (March 16, 2022)
 
-* Updated the sailor version to 3.3.8
+* Updated the Sailor version to 3.3.8
 * Add a component pusher to Docker hub

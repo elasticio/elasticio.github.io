@@ -5,13 +5,13 @@ description: Information on deprecated NetSuite functions
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2023-05-26
-ComponentVersion: 3.1.0
+updatedDate: 2025-11-18
+ComponentVersion: 3.2.1
 ---
 
 ## Deprecated Triggers
 
-### Search Entity(deprecated)
+### Search Entity (deprecated)
 
 Deprecated. Use [Get New and Updated Objects Polling](/components/netsuite/triggers#get-new-and-updated-objects-polling) trigger instead.
 
@@ -94,7 +94,7 @@ Retrieve sample result
 
 ## Deprecated Action
 
-### Lookup Customer(deprecated)
+### Lookup Customer (deprecated)
 
 Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead.
 
@@ -122,7 +122,7 @@ When the `externalId` does not exist:
 }
 ```
 
-### Lookup Invoice(deprecated)
+### Lookup Invoice (deprecated)
 
 Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead.
 
@@ -150,7 +150,7 @@ If the `externalId` does not exist:
 }
 ```
 
-### Upsert Customer(deprecated)
+### Upsert Customer (deprecated)
 
 Deprecated. Use [Lookup Object By Id](/components/netsuite/actions#lookup-object-by-id) action instead
 
@@ -173,7 +173,7 @@ sample could look like:
 }
 ```
 
-### Upsert Contact(deprecated)
+### Upsert Contact (deprecated)
 
 Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead.
 
@@ -198,7 +198,7 @@ Request sample:
 }
 ```
 
-### Upsert Invoice(deprecated)
+### Upsert Invoice (deprecated)
 
 Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead.
 
@@ -286,7 +286,7 @@ Request sample:
 }
 ```
 
-### Upsert Sales Order(deprecated)
+### Upsert Sales Order (deprecated)
 
 Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead.
 
@@ -314,7 +314,7 @@ Request sample:
 }
 ```
 
-### Upsert Vendor(deprecated)
+### Upsert Vendor (deprecated)
 
 Deprecated. Use [Upsert Object By Id](/components/netsuite/actions#upsert-object-by-id) action instead.
 

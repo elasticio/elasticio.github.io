@@ -5,8 +5,8 @@ description: NetSuite component actions.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2023-05-26
-ComponentVersion: 3.1.0
+updatedDate: 2025-11-18
+ComponentVersion: 3.2.1
 ---
 
 ## Add Object
@@ -1176,3 +1176,113 @@ Is being fetched dynamically. Sample:
 }
 ```
 </details>
+
+## Upsert custom fields
+
+Currently, You can upsert custom fields only from developer mode.
+You should to use property **type**, which can accept next values:
+
+-   `BooleanCustomFieldRef`
+-   `DateCustomFieldRef`
+-   `DoubleCustomFieldRef`
+-   `LongCustomFieldRef`
+-   `MultiSelectCustomFieldRef`
+-   `SelectCustomFieldRef`
+-   `StringCustomFieldRef`
+
+ You can find example of custom field structures bellow.
+
+- **`BooleanCustomFieldRef`**
+
+```javascript
+{
+  "internalId": "1",
+  "scriptId": "script1",
+  "value": true,
+  "type": "BooleanCustomFieldRef"
+}
+```
+
+- **`DateCustomFieldRef`**
+
+```javascript
+{
+  "internalId": "1",
+  "scriptId": "script1",
+  "value": "2018-01-01T00:00:00.000+00:00",
+  "type": "DateCustomFieldRef"
+}
+```
+
+- **`DoubleCustomFieldRef`**
+
+```javascript
+{
+  "internalId": "1",
+  "scriptId": "script1",
+  "value": 3456.24,
+  "type": "DoubleCustomFieldRef"
+}
+```
+
+- **`LongCustomFieldRef`**
+
+```javascript
+{
+  "internalId": "1",
+  "scriptId": "script1",
+  "value": 987979999,
+  "type": "LongCustomFieldRef"
+}
+```
+
+- **`MultiSelectCustomFieldRef`**
+
+```javascript
+{
+  "internalId": "1",
+  "scriptId": "script1",
+  "value": [
+      {
+      "name":"item1",
+      "internalId":"2134",
+      "externalId":"9878",
+      "typeId":"21"
+      },
+      {
+        "name":"item2",
+        "internalId":"2135",
+        "externalId":"9879",
+        "typeId":"21"
+      }
+  ],
+  "type": "MultiSelectCustomFieldRef"
+}
+```
+
+- **`SelectCustomFieldRef`**
+
+```javascript
+{
+  "internalId": "1",
+  "scriptId": "script1",
+  "value": {
+      "name":"item1",
+      "internalId":"2134",
+      "externalId":"9878",
+      "typeId":"21"
+      },
+  "type": "SelectCustomFieldRef"
+}
+```
+
+- **`StringCustomFieldRef`**
+
+```javascript
+{
+  "internalId": "1",
+  "scriptId": "script1",
+  "value": "some value",
+  "type": "StringCustomFieldRef"
+}
+```

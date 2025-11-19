@@ -5,8 +5,8 @@ description: Technical Notes for JDBC component
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2025-06-27
-ComponentVersion: 2.5.10
+updatedDate: 2025-11-18
+ComponentVersion: 2.5.11
 redirect_from:
   - /components/jdbc/completeness-matrix.html
   - /components/jdbc/changelog.html
@@ -14,21 +14,26 @@ redirect_from:
 
 ## Changelog
 
+### 2.5.11 (November 18, 2025)
+
+* Replaced the Oracle JDBC driver (ojdbc) from 6 to 8 (ojdbc8:21.5.0.0)
+* Updated Sailor version to 5.0.0
+
 ### 2.5.10 (June 27, 2025)
 * Fixed the issue with aliases in the `Select Query` action
 
 ### 2.5.9 (August 01, 2024)
-* Bumped Sailor to 4.0.3
+* Updated Sailor version to 4.0.3
 
 
 ### 2.5.8 (July 09, 2024)
-* Bumped Sailor to 4.0.2
+* Updated Sailor version to 4.0.2
 * Bumped Postgresql library to 42.5.5
 * Bumped MySQL library to 8.4.0
 
 ### 2.5.7 (July 07, 2023)
 
-* Updated Sailor to to 4.0.1
+* Updated Sailor version to 4.0.1
 
 ### 2.5.6 (November 04, 2022)
 

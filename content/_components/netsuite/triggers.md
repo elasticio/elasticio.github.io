@@ -5,8 +5,8 @@ description: NetSuite component triggers.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2023-05-26
-ComponentVersion: 3.1.0
+updatedDate: 2025-11-18
+ComponentVersion: 3.2.1
 ---
 
 ## Get New and Updated Objects Polling
@@ -32,7 +32,6 @@ It will also create an initial state of fetched objects, we call it a *snapshot*
 
 After the initial read, any further requests for an update or create new object in NetSuite will be compared to this snapshot and in case any changes are detected they will be passed along with the integration flow as well.
 
-
 ## Polling objects
 Find an object or a set of objects was updated since last polling of time.
 
@@ -48,28 +47,30 @@ Find an object or a set of objects was updated since last polling of time.
 **Single Page per Interval** - Indicates that if the number of changed records exceeds the maximum number of results in a page, instead of fetching the next page immediately, wait until the next flow start to fetch the next page.
 
 ## Known Limitations
-At the moment trigger supports polling of next object types:
 
-* `Calendar Event`,
-* `Campaign`
-* `Contact`
-* `Customer`
-* `Employee`
-* `Entity`
-* `Entity Group`
-* `Folder`
-* `Issue`
-* `Item`
-* `Item Demand Plan`
-* `Item Supply Plan`
-* `Job`
-* `Opportunity`
-* `Originating Lead`
-* `Partner`
-* `Phone Call`
-* `Project Task`
-* `Solution`
-* `Support Case`
-* `Task`
-* `Transaction`
-* `Vendor`
+- Calling [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling) with Size of Polling Page less then 5 returns Error while NetSuite API call [Invalid search page size.]
+
+- At the moment [Polling objects](#polling-objects) trigger supports polling of next object types
+  * `Calendar Event`,
+  * `Campaign`
+  * `Contact`
+  * `Customer`
+  * `Employee`
+  * `Entity`
+  * `Entity Group`
+  * `Folder`
+  * `Issue`
+  * `Item`
+  * `Item Demand Plan`
+  * `Item Supply Plan`
+  * `Job`
+  * `Opportunity`
+  * `Originating Lead`
+  * `Partner`
+  * `Phone Call`
+  * `Project Task`
+  * `Solution`
+  * `Support Case`
+  * `Task`
+  * `Transaction`
+  * `Vendor`

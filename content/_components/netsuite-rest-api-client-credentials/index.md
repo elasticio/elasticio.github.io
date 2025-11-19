@@ -5,7 +5,7 @@ section: ERP components
 description: The NetSuite REST API Component is specifically crafted to interact with the NetSuite REST API.
 icon: netsuite_rest_api_client_credentials.png
 icontext: Netsuite REST API client credentials component
-category: netsuite
+category: netsuite-rest-api-client-credentials
 updatedDate: 2024-11-07
 ComponentVersion: 1.0.1
 ---

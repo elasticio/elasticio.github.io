@@ -5,13 +5,19 @@ description: Technical Notes for the NetSuite component.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2024-09-04
-ComponentVersion: 3.2.0
+updatedDate: 2025-11-18
+ComponentVersion: 3.2.1
 redirect_from:
   - /components/netsuite/changelog.html
 ---
 
 ## Changelog
+
+### 3.2.1 (November 18, 2025)
+
+* Update Gradle to 7.5.1
+* Update Sailor to 5.0.0
+* Change "jsr353.JSR353Module" to "jsonp.JSONPModule"
 
 ### 3.2.0 (August 22, 2024)
 
