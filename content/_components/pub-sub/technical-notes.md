@@ -5,13 +5,22 @@ description: Technical Notes for the Pub-Sub component
 icon: pub-sub.png
 icontext: Pub-Sub component
 category: pub-sub
-updatedDate: 2025-05-12
-ComponentVersion: 1.0.11
+updatedDate: 2025-11-19
+ComponentVersion: 1.0.12
 redirect_from:
   - /components/pub-sub/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.12 (November 19, 2025)
+
+* Update component-commons-library to 4.0.0
+* Update elasticio-sailor-nodejs to 2.7.7
+* Update uuid to 13.0.0
+* Remove elasticio-node dependency and refactor message creation to src/utils.js
+* Update ESLint and its plugins to compatible versions (eslint 8.57.1, eslint-config-standard 17.1.0, eslint-plugin-import 2.32.0, eslint-plugin-node 11.1.0, eslint-plugin-promise 6.6.0, eslint-plugin-standard 5.0.0)
+* Fix ESLint configuration and formatting issues
 
 ### 1.0.11 (May 12, 2025)
 

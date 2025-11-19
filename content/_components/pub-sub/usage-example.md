@@ -5,8 +5,8 @@ description: Usage Example for the Pub-Sub component.
 icon: pub-sub.png
 icontext: Pub-Sub component
 category: pub-sub
-updatedDate: 2025-05-12
-ComponentVersion: 1.0.11
+updatedDate: 2025-11-19
+ComponentVersion: 1.0.12
 ---
 ## Introduction
 
