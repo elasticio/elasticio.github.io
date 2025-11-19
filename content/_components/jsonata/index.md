@@ -6,19 +6,22 @@ description: Dedicated data transformation component.
 icon: jsonata.png
 icontext: Jsonata component
 category: jsonata
-updatedDate: 2024-03-28
-ComponentVersion: 1.0.13
+updatedDate: 2025-11-19
+ComponentVersion: 1.1.0
 ---
 
-## Authentication
+## Table of Contents
+* [Description](#description)
+* [How it works](#how-it-works)
+* [Actions](#actions)
+  * [Transform](#transform)
 
-This component requires no authentication.
+## Description
+{{page.description}}
 
 ## How it works
 
-This component takes the incoming message body and applies the configured JSONata transformation on it. It uses
-a fact that JSONata expression is a superset of JSON document so that by default any valid JSON document is
-a valid JSONata expression.
+This component takes the incoming message body and applies the configured JSONata transformation on it. It uses a fact that JSONata expression is a superset of JSON document so that by default any valid JSON document is a valid JSONata expression.
 
 For example let's take this sample incoming message body:
 
@@ -67,14 +70,14 @@ For example let's take this sample incoming message body:
 
 You can use following JSONata expressions to transform it:
 
-```jsonata
+```json
 {
 	"account": Account."Account Name",
 	"orderCount" : $count(Account.Order)
 }
 ```
 
-result of that transofrmation will be the following JSON document:
+The result of that transformation will be the following JSON document:
 
 ```json
 {
@@ -83,9 +86,9 @@ result of that transofrmation will be the following JSON document:
 }
 ```
 
-I hope you've got the idea. Now you can also do something more complicated, like this array-to-array transformation:
+After understanding the basic concept, now you can also do something more complicated, like this array-to-array transformation:
 
-```jsonata
+```json
 {
     "account": Account."Account Name",
     "products": Account.Order.Product.({
@@ -96,7 +99,7 @@ I hope you've got the idea. Now you can also do something more complicated, like
 }
 ```
 
-resulting in:
+Resulting in:
 
 ```json
 {
@@ -117,11 +120,6 @@ resulting in:
 }
 ```
 
-### Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about Jsonata component like [changelog](/components/jsonata/technical-notes#changelog).
-
-
 ## Triggers
 
 This component has no trigger functions. This means it will not be accessible to
@@ -129,4 +127,8 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-  * **Transform**
+### Transform
+
+This action executes the specified JSONata expression.
+
+![Transformation](img/transformation.png)
