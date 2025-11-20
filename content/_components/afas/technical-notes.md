@@ -1,15 +1,21 @@
 ---
 title: AFAS component Technical Notes
 layout: component
-description: Technical Notes for the AFAS Component.
+description: Technical Notes for the AFAS component.
 icon: afas.png
 icontext: AFAS component
 category: afas
-ComponentVersion: 2.2.0
-updatedDate: 2025-05-07
+ComponentVersion: 2.2.1
+updatedDate: 2025-11-20
 ---
 
 ## Changelog
+
+### 2.2.1 (November 20, 2025)
+* Fixed `Upsert Object` action metadata loading for `PtRealization`, `KnSalesRelationOrg`, `KnQuotation` object types by adding identifier mapping
+* Updated `Sailor` version to 2.7.7
+* Updated `@elastic.io/component-commons-library` version to 4.0.0
+* Removed `elasticio-node` dependency
 
 ### 2.2.0 (May 07, 2025)
 * Added an option which adds the request body to the response message body. This option has been applied to the following actions:
