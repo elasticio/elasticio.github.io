@@ -6,8 +6,8 @@ description: AFAS component is designed to communicate with Profit Rest Services
 icon: afas.png
 icontext: AFAS component
 category: afas
-ComponentVersion: 2.2.0
-updatedDate: 2025-05-07
+ComponentVersion: 2.2.1
+updatedDate: 2025-11-20
 ---
 
 ## Table of Contents
@@ -22,7 +22,7 @@ updatedDate: 2025-05-07
 
 ## Description
 
-AFAS Component is designed to communicate with [Profit Rest Services](https://help.afas.nl/help/EN/SE/App_Cnr_Rest.htm).
+AFAS component is designed to communicate with [Profit Rest Services](https://help.afas.nl/help/EN/SE/App_Cnr_Rest.htm).
 
 ## Credentials
 
