@@ -5,13 +5,18 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2025-09-22
-ComponentVersion: 2.2.2
+updatedDate: 2025-12-03
+ComponentVersion: 2.2.3
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.2.3 (December 03, 2025)
+
+* Updated `Sailor` to version 2.7.7
+* Updated the Node engine to version 22.x.
 
 ### 2.2.2 (September 22, 2025)
 
