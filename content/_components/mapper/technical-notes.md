@@ -5,13 +5,21 @@ description: Technical Notes for Mapper component.
 icon: mapper.png
 icontext: Mapper component
 category: mapper
-updatedDate: 2023-10-10
-ComponentVersion: 1.0.1
+updatedDate: 2025-12-02
+ComponentVersion: 1.0.2
 redirect_from:
   - /components/mapper/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.2 (December 02, 2025)
+
+* Update Sailor version to 2.7.7
+* Update dependencies to latest backward compatible versions
+* Remove unused `elasticio-node` dependency
+* Remove redundant `@elastic.io/bunyan-logger` dependency
+* Fix vulnerabilities in dependencies
 
 ### 1.0.1 (October 10, 2023)
 
