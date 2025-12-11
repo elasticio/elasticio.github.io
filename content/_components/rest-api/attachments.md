@@ -5,8 +5,8 @@ description: Information on attachments in Rest API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2025-12-03
-ComponentVersion: 2.2.3
+updatedDate: 2025-12-11
+ComponentVersion: 2.2.4
 ---
 
 ## Attachments
