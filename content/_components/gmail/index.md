@@ -37,6 +37,8 @@ Before building any integration flow you must at first configure the app from in
   - Set Application type to `Web application`
   - Add Authorized [redirect URI](/guides/oauth-callback-redirect-url) as: `https://{your-tenant-address}/callback/oauth2`
 
+> **Please Note:** to prevent refresh token expiration, change the `Publishing status` from `Testing` to `In production` on the [Audience](https://console.cloud.google.com/auth/audience) page for your external Google app.
+
 > In case of a new domain you may get message like `This app isn't verified`. Please refer to this [documentation](https://support.google.com/cloud/answer/7454865?hl=en) to check how to proceed.
 
 Now you can create new credentials for the component:
