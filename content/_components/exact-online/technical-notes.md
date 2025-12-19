@@ -5,13 +5,18 @@ description: Technical Notes for the Exact Online component.
 icon: exact-online.png
 icontext: Exact Online component
 category: exact-online
-updatedDate: 2021-08-13
-ComponentVersion: 1.1.1
+updatedDate: 2025-12-19
+ComponentVersion: 1.1.2
 redirect_from:
   - /components/exact-online/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.2 (December 19, 2025)
+
+* Force the component builds to be dockerized ad pushed to the Docker Hub
+* Moved the `odata-component` to the `lib` folder to avoid the need to install it as a dependency (git receiver can not download dependencies from the git repository)
 
 ### 1.1.1 (August 13, 2021)
 
