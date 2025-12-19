@@ -2,19 +2,33 @@
 title: Exact Online component
 layout: component
 section: Finance-related components
-description: A component to work with Exact Online ERP.
+description: A component that interacts with the Exact Online API.
 icon: exact-online.png
 icontext: Exact Online component
 category: exact-online
-updatedDate: 2021-08-13
-ComponentVersion: 1.1.1
+updatedDate: 2025-12-19
+ComponentVersion: 1.1.2
 ---
+
+## Table of Contents
+
+* [Description](#description)
+  * [Environment variables](#environment-variables)
+* [Credentials](#credentials)
+* [Working with dynamic metadata](#working-with-dynamic-metadata)
+* [Triggers](#triggers)
+  * [Webhook Subscription](#webhook-subscription)
+* [Actions](#actions) 
+  * [Lookup Objects](#lookup-objects)
+  * [Upsert Entity](#upsert-entity)
+  * [Insert Entity](#insert-entity)
+  * [Update Entity](#update-entity)
+  * [Delete Entity](#delete-entity)
+* [Links](#links)      
 
 ## Description
 
-It interacts withe [Exact Online API](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-restrefdocs).
-
-## Requirements
+A component that interacts with the [Exact Online API](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-restrefdocs).
 
 ### Environment Variables
 
@@ -71,6 +85,9 @@ See [trigger limitations](#current-limitations)
 -   More about [Exact Online webhook](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-webhooksc)
 -   More about Exact Online [webhook response structure](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-webhookstut)
 
+#### Known limitations
+
+According to Exact Online documentation, you can't create more than one webhook for the same topic, so webhook subscription trigger will remove, on start, all existing webhooks with callback URL or topic which are same to current.
 
 ## Actions
 
@@ -111,8 +128,11 @@ JSON schema location folder: `schemas/io/`. The necessary schema begins with the
 entity `Accounts` schema has name `getAccounts.out.json`
 
 #### Known limitations
-See [action limitations](#current-limitations).
 
+-   Action currently does not support filtering by a null value.
+-   Action currently does not support choosing fields to return.
+-   If any entity was not found, the action did not provide data.
+-   You need to set the `Field Value` according to the field type, `Field Value` is `string` in the metadata and is checked only when executed. The necessary schema begins with the `get` and ends with the `.in` and has an entity type between. For example, for entity `Accounts` schema has name `getAccounts.in.json`.
 
 ### Upsert Entity
 
@@ -123,36 +143,17 @@ To add a new Entity you should provide Account (account ), `FirstName`, and `Las
 
 Allows adding a new entity to your division. To Insert Entity you must provide mandatory fields and fields which you want to update. This action is available ONLY for entities which can't be updated with API. **This action contains dynamic metadata**.
 
-
 ### Update Entity
 
 Allows updating one of the existing entities in your division. To update entity you should provide primary key (usually entity's `GUID`) and fields which you want to update. This action is available ONLY for entities which can't be inserted with API. **This action contains dynamic metadata**.
 
-See [action limitations](#current-limitations).
+#### Known limitations
 
+Can be used for entities that can't be inserted via API only. This action was not fully tested due to the lack of documentation at the Exact Online official documentation. Action’s metadata should be additionally discussed with Exact Online developers or support team.
 
 ### Delete Entity
 
 Allows removing one of the existing entities in your division. To remove Entity you should provide a primary key (usually entity's `GUID`)  in the request body. **This action contains dynamic metadata**.
-
-## Current Limitations
-
-### Webhook Subscription
-
-According to Exact Online documentation, you can't create more than one webhook for the same topic, so webhook subscription trigger will remove, on start, all existing webhooks with callback URL or topic which are same to current.
-
-### Lookup Objects
-
--   Action currently does not support filtering by a null value.
--   Action currently does not support choosing fields to return.
--   If any entity was not found, the action did not provide data.
--   You need to set the `Field Value` according to the field type, `Field Value` is `string` in the metadata and is checked only when executed. The necessary schema begins with the `get` and ends with the `.in` and has an entity type between. For example, for entity `Accounts` schema has name `getAccounts.in.json`.
-
-
-### Update Entity
-
-Can be used for entities that can't be inserted via API only. This action was not fully tested due to the lack of documentation at the Exact Online official documentation. Action’s metadata should be additionally discussed with Exact Online developers or support team.
-
 
 ## Links
 To interact with Exact Online platform, this component interacts with

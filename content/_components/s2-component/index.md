@@ -1,21 +1,38 @@
 ---
-title: Simple Storage component
+title: S2 (Simple Storage) component
 layout: component
 section: Utility components
-description: A component to store and retrieve value from key:value storage.
-icon: simple-storage.png
-icontext: Simple Storage component
-category: Simple Storage component
-updatedDate: 2020-11-20
+description: A component to provide simple possibility to store and retrieve Key:Value pairs.
+icon: s2-component.png
+icontext: S2 (Simple Storage) component
+category: s2-component
+updatedDate: 2025-12-19
+ComponentVersion: 1.1.3
 ---
 
-## How works
+## Table of Contents
 
-Under the hood used MongoDB. During Action configuration collection need to be specified.
+* [General information](#general-information)
+   * [Description](#description)
+   * [Completeness Matrix](/components/s2-component/technical-notes#completeness-matrix)
+   * [Requirements](#requirements)
+   * [Environment variables](#environment-variables)
+* [Credentials](#credentials)
+* [Actions](#actions)
+   * [Store Key](#store-key)
+   * [Store Key Batch](#store-key-batch)
+   * [Retrieve Key](#retrieve-key)
+   * [Retrieve Key Batch](#retrieve-key-batch)
+   * [Remove Key](#remove-key)
 
-### Purpose
+## General information
+
+### Description
 
 Main goal of this component is to provide simple possibility to store and retrieve Key:Value pairs.
+
+- Under the hood used MongoDB. 
+- During Action configuration collection need to be specified.
 
 ### Requirements
 
@@ -23,7 +40,7 @@ Instance of MongoDB with possibility to connect from component.
 
 ### Environment variables
 
-> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
+> **Please Note:** From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Technical Notes
