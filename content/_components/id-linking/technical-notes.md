@@ -5,11 +5,20 @@ description: Technical Notes for the ID Linking component
 icon: id-linking.png
 icontext: ID Linking component
 category: id-linking
-updatedDate: 2022-11-24
-ComponentVersion: 1.2.0
+updatedDate: 2025-12-22
+ComponentVersion: 1.3.0
 ---
 
 ## Changelog
+
+### 1.3.0 (December 22, 2025)
+
+* Updated `@elastic.io/component-commons-library` to `4.0.0`
+* Updated `@elastic.io/maester-client` to `6.0.0`
+* Updated `elasticio-sailor-nodejs` to `2.7.7`
+* Implemented retry mechanism for Maester API calls
+* Fixed JSON parsing error when looking up objects in Maester
+* Improved test coverage and refactored tests to remove nock dependency
 
 ### 1.2.0 (November 24, 2022)
 

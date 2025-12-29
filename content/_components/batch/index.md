@@ -6,15 +6,25 @@ description: A component that provides an opportunity to collect messages to a b
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2024-06-03
-ComponentVersion: 2.0.8
+updatedDate: 2025-12-03
+ComponentVersion: 2.0.9
 ---
+
+* [General information](#general-information)
+   * [Description](#description)
+   * [Requirements](#requirements)
+* [Triggers](#triggers)
+   * [Get ready batches](#get-ready-batches)
+* [Actions](#actions)
+   * [Add message to batch](#add-message-to-batch)
+* [Additional info](#additional-info)
+* [Known Limitations](#known-limitations)
 
 ## General information
 
 ### Description
 
-Сomponent that provides an opportunity to collect messages to a batch.
+{{page.description}}
 
 The main purpose is to provide a user with a simple collection and an opportunity to process messages in batches.
 
@@ -22,13 +32,13 @@ Integrators would need to split an integration logic into 2 parts. The first one
 
 {% include img.html max-width="100%" url="img/flow-parts.png" title="Flow parts" %}
 
-It uses the Maester service as a package repository, the legacy component versions support using MongoDB (versions: 4.0 and higher stable releases) as a batches repository.
+It uses the internal storage service - Maester as a package repository, the legacy component versions support using MongoDB (versions: 4.0 and higher stable releases) as a batches repository.
 
-> **Please be advised that the component does not support external MongoDB as a data store since version 2.0.0 (disabled support for credentials in the component).**
+> **Please Note:** that the component does not support external MongoDB as a data store since version 2.0.0 (disabled support for credentials in the component).
 
 ### Requirements
 
-Maester microservice should be enabled on installation and what would happen if it doesn't.
+Maester microservice should be enabled on the installation.
 
 ## Triggers
 
@@ -48,7 +58,7 @@ Emits all batches that are ready to be processed.
 |Correlation Id|true|Correlation Id between action and trigger. Correlation Id helps identify what collection of batches should be used|Flow1|
 |Do Not Delete Batch After Retrieval|false|If checked, the batch will not be deleted after emit|false|
 
->**Important: Use the same configuration in action for correct batch processing.**
+>**Important:** Use the same configuration in action for correct batch processing.
 
 ## Actions
 
@@ -67,7 +77,7 @@ Stores a message in a batch and emits a created/updated batch with a processed i
 |Max size of Batch in bytes|false|Maximum bytes size of items in batch which makes batch ready for processing `1000000(1 MB)`|500000|
 |Correlation Id|true|Correlation Id between action and trigger. Correlation Id helps identify what collection of batches should be used|Flow1|
 
->**Important: Use the same configuration in trigger for correct batch processing**
+>**Important:** Use the same configuration in trigger for correct batch processing.
 
 ## Additional info
 

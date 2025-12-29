@@ -1,18 +1,22 @@
 ---
 title: Open API Technical Notes
 layout: component
-description: Technical Notes for the Open API Component.
+description: Technical Notes for the Open API component.
 icon: open-api.png
-icontext: Open API Component
+icontext: Open API component
 category: open-api
-updatedDate: 2021-11-26
-ComponentVersion: 1.1.3
+updatedDate: 2025-11-14
+ComponentVersion: 1.1.4
 redirect_from:
   - /components/open-api/completeness-matrix.html
   - /components/open-api/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.4 (November 14, 2025)
+
+* Force the component builds to be dockerized ad pushed to the Docker Hub
 
 ### 1.1.3 (November 26, 2021)
 

@@ -6,9 +6,21 @@ description: A component used to map source data to target data.
 icon: id-linking.png
 icontext: ID Linking component
 category: id-linking
-updatedDate: 2022-11-24
-ComponentVersion: 1.2.0
+updatedDate: 2025-12-22
+ComponentVersion: 1.3.0
 ---
+
+## Table of Contents
+* [General Information](#general-information)
+  * [Description](#description)
+  * [Environment Variables](#environment-variables)
+* [Credentials](#credentials)
+* [Actions](#actions)
+  * [Delete Object](#delete-object)
+  * [Lookup Object](#lookup-object)
+  * [Upsert Object](#upsert-object)
+  * [Write Entire Bucket Contents](#write-entire-bucket-contents)
+  * [Read Entire Bucket Contents](#read-entire-bucket-contents)
 
 ## General information
 
@@ -64,14 +76,12 @@ Bucket contains bucket ID and an array of linked objects between the systems. Li
 ```
 </details>
 
-## Requirements
-
 ### Environment variables
 
 No need to set up any environment variables manually.
 However, the component needs environment variables ELASTICIO_OBJECT_STORAGE_TOKEN and ELASTICIO_OBJECT_STORAGE_URI to connect to Maester service.
 
-### Credentials
+## Credentials
 
 Bucket ID - a text input of a bucket ID to assign.
 

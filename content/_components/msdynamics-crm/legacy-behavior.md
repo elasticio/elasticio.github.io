@@ -5,8 +5,8 @@ description: Documentation On Legacy Behavior
 icon: msdynamics-crm.png
 icontext: Legacy Behavior
 category: msdynamics
-updatedDate: 2020-11-30
-ComponentVersion: 1.2.2
+updatedDate: 2025-12-19
+ComponentVersion: 1.2.5
 ---
 
 ## Deprecated component

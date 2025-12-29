@@ -5,8 +5,8 @@ description: Bazaarvoice component actions.
 icon: bazaarvoice.png
 icontext: Bazaarvoice component
 category: bazaarvoice
-updatedDate: 2021-08-12
-ComponentVersion: 0.0.3
+updatedDate: 2025-11-14
+ComponentVersion: 0.0.4
 ---
 
 ## Retrieve reviews

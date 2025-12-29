@@ -5,8 +5,8 @@ description: Technical Notes for the Microsoft Dynamics CRM component
 icon:  msdynamics-crm.png
 icontext: Microsoft Dynamics CRM component
 category: msdynamics
-updatedDate: 2020-11-30
-ComponentVersion: 1.2.2
+updatedDate: 2025-12-19
+ComponentVersion: 1.2.5
 redirect_from:
   - /components/msdynamics/completeness-matrix.html
   - /components/msdynamics/changelog.html
@@ -19,6 +19,11 @@ redirect_from:
 >Please update your codebase to utilize the [Microsoft Dynamics CRM v2](/components/msdynamics-crm-v2) as soon as possible to ensure compatibility with future updates and benefit from the latest features.
 
 ## Changelog
+
+### 1.2.5 (December 19, 2025)
+
+* Vendorize `odata-component` library to support environments without GitHub access
+* Force the component builds to be dockerized ad pushed to the Docker Hub
 
 ### 1.2.2 (November 30, 2020)
 

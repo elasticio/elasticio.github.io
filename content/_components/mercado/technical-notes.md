@@ -5,11 +5,15 @@ description: Technical Notes for the Mercado Pago component
 icon: mercado.png
 icontext: Mercado component
 category: mercado
-updatedDate: 2022-04-22
-ComponentVersion: 1.0.1
+updatedDate: 2025-11-14
+ComponentVersion: 1.0.2
 ---
 
 ## Changelog
+
+### 1.0.2 (November 14, 2025)
+
+* Force the component builds to be dockerized ad pushed to the Docker Hub
 
 ### 1.0.1 (April 22, 2022)
 

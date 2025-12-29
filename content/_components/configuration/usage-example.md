@@ -5,8 +5,8 @@ description: In this article we demonstrate the function of the Configuration Co
 icon: configuration.png
 icontext: Configuration component
 category: configuration
-updatedDate: 2022-11-04
-ComponentVersion: 1.0.1
+updatedDate: 2025-12-03
+ComponentVersion: 1.0.2
 ---
 
 ## Online Shop example

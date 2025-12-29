@@ -5,11 +5,15 @@ description: Technical Notes for the GraphQL component
 icon: graphql.png
 icontext: GraphQL component
 category:  graphql
-updatedDate: 2022-04-22
-ComponentVersion: 1.1.2
+updatedDate: 2025-11-14
+ComponentVersion: 1.1.3
 ---
 
 ## Changelog
+
+### 1.1.3 (November 14, 2025)
+
+* Force the component builds to be dockerized ad pushed to the Docker Hub
 
 ### 1.1.2 (April 22, 2022)
 

@@ -6,8 +6,8 @@ description: A component to run a piece of JavaScript code inside the integratio
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2023-04-21
-ComponentVersion: 1.2.11
+updatedDate: 2025-12-03
+ComponentVersion: 1.2.13
 ---
 
 ## Description
@@ -15,7 +15,7 @@ ComponentVersion: 1.2.11
 A code component for the platform, runs a piece of a JavaScript code inside your
 integration flow.
 
-## How Works
+## How it Works
 
 Pretty much the same way that you would use any other component in our system.
 It is deployed by default to production, so no need to deploy it yourself
@@ -44,7 +44,7 @@ Here are the available variables and libraries that you can use within the conte
 of execution. The most up-to-date list can always be found in be used within the context of execution or in `code.js` of the component. Below is a sample for the reference.
 Built-in Node.js global objects are also supported.
 
-### {{site.data.tenant.name}} Specific Functionality
+### Platform Specific Functionality
 
 - `msg` - incoming message containing the payload from the previous step
 - `cfg` - step's configuration. At the moment contains only one property: `code` (the code, being executed)
@@ -81,7 +81,7 @@ async function run(msg, cfg, snapshot) {
 }
 ```
 
-> **Please note:** if you have a simple one-in-one-out function you can return a
+> **Please note:** If you have a simple one-in-one-out function you can return a
 > JSON object as a result of your function, it will be automatically emitted as data.
 
 ## Common usage scenarios
@@ -122,4 +122,4 @@ async function run(msg) {
 
 ## Known issues and limitations
 
--   Credentials are not supported
+-   Credentials are not supported, please see [Code component with Credentials](/components/code-with-credentials/).
