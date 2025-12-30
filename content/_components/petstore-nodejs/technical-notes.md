@@ -5,13 +5,17 @@ description: Technical Notes for the Petstore-nodejs component
 category: petstore-nodejs
 icon: petstore.png
 icontext: Petstore-nodejs componentt
-updatedDate: 2022-04-08
-ComponentVersion: 1.0.5
+updatedDate: 2025-11-14
+ComponentVersion: 1.0.6
 redirect_from:
   - /components/petstore-nodejs/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.6 (November 14, 2025)
+
+* Force the component builds to be dockerized ad pushed to the Docker Hub
 
 ### 1.0.5 (April 08, 2022)
 

@@ -5,8 +5,8 @@ description: How to register and configure guide.
 icon: msdynamics-crm.png
 icontext: Configuring ODATA APP
 category: msdynamics
-updatedDate: 2020-11-30
-ComponentVersion: 1.2.2
+updatedDate: 2025-12-19
+ComponentVersion: 1.2.5
 ---
 
 ## Deprecated component

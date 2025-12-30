@@ -5,11 +5,15 @@ description: Technical Notes for the Sdl-translate component.
 icon: sdl-translate.png
 icontext: Sdl-translate component
 category: sdl-translate
-updatedDate: 2023-04-07
-ComponentVersion: 1.0.0
+updatedDate: 2025-11-14
+ComponentVersion: 1.0.1
 ---
 
 ## Changelog
+
+### 1.0.1 (November 14, 2025)
+
+* Force the component builds to be dockerized ad pushed to the Docker Hub
 
 ### 1.0.0 (April 07, 2023)
 

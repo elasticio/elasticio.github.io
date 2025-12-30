@@ -6,8 +6,8 @@ description: A component that is designed for utility operations.
 icon: utility.png
 icontext: Utility сomponent
 category: utility
-updatedDate: 2025-09-16
-ComponentVersion: 1.8.0
+updatedDate: 2025-12-03
+ComponentVersion: 1.8.1
 ---
 
 # Utility Component 
@@ -32,13 +32,15 @@ ComponentVersion: 1.8.0
 ## Description
 A component that is designed for utility operations.
 
-## Environment variables
+### Environment variables
 
-* [optional] **EIO_REQUIRED_RAM_MB** - Number of MB allocated to container. 1024 by default
-* [optional] **REQUEST_TIMEOUT** - HTTP request timeout in milliseconds. 10000 by default
-* [optional] **REQUEST_RETRY_DELAY** - Delay between retry attempts in milliseconds. 7000 by default
-* [optional] **REQUEST_MAX_RETRY** - Number of HTTP request retry attempts. 7 by default
-* [optional] **REQUEST_MAX_CONTENT_LENGTH** - Max size of HTTP request in bytes. 10485760 by default
+| NAME                       | DESCRIPTION                                      | DEFAULT  | REQUIRED |
+|----------------------------|--------------------------------------------------|----------|----------|
+| EIO_REQUIRED_RAM_MB        | Number of MB allocated to container               | 1024     | false    |
+| REQUEST_TIMEOUT            | HTTP request timeout in milliseconds              | 10000    | false    |
+| REQUEST_RETRY_DELAY        | Delay between retry attempts in milliseconds      | 7000     | false    |
+| REQUEST_MAX_RETRY          | Number of HTTP request retry attempts             | 7        | false    |
+| REQUEST_MAX_CONTENT_LENGTH | Max size of HTTP request in bytes                 | 10485760 | false    |
 
 ## Triggers
 

@@ -6,9 +6,22 @@ description: A component that connects to Mercado Pago API.
 icon: mercado.png
 icontext: Mercado component
 category: mercado
-updatedDate: 2022-04-22
-ComponentVersion: 1.0.1
+updatedDate: 2025-11-14
+ComponentVersion: 1.0.2
 ---
+
+## Table of Contents
+
+* [Description](#description)
+* [Credentials](#credentials)
+* [Triggers](#triggers)
+   * [Get New And Updated Objects Polling](#get-new-and-updated-objects-polling)
+* [Actions](#actions)
+   * [Make Raw Request](#make-raw-request)
+   * [Lookup Object (at most 1)](#lookup-object-at-most-1)
+
+## Description
+{{page.description}}
 
 ## Credentials
 

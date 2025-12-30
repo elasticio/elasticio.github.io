@@ -6,9 +6,23 @@ description: A component that use GraphQL - a query language for APIs and a runt
 icon: graphql.png
 icontext: GraphQL component
 category:  graphql
-updatedDate: 2022-04-22
-ComponentVersion: 1.1.2
+updatedDate: 2025-11-14
+ComponentVersion: 1.1.3
 ---
+
+* [General information](#general-information)
+   * [Description](#description)
+   * [Completeness Matrix](/components/graphql/technical-notes#completeness-matrix)
+* [Credentials](#credentials)
+* [Actions](#actions)
+   * [Raw Request](#raw-request)
+   * [Configured Request](#configured-request)
+* [Known Limitations](#known-limitations)
+
+## General information
+
+### Description
+[GraphQL](https://graphql.org/) is a query language for APIs and a runtime for fulfilling those queries with your existing data.
 
 ## Credentials
 

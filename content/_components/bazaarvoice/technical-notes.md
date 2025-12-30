@@ -5,11 +5,15 @@ description: Technical Notes for the Bazaarvoice component.
 icon: bazaarvoice.png
 icontext: Bazaarvoice component
 category: bazaarvoice
-updatedDate: 2021-08-12
-ComponentVersion: 0.0.3
+updatedDate: 2025-11-14
+ComponentVersion: 0.0.4
 ---
 
 ## Changelog
+
+### 0.0.4 (November 14, 2025)
+
+* Force the component builds to be dockerized ad pushed to the Docker Hub
 
 ### 0.0.3 (August 12, 2021)
 

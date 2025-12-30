@@ -5,13 +5,19 @@ description: Technical Notes for the Configuration component
 icon: configuration.png
 icontext: Configuration component
 category: configuration
-updatedDate: 2022-11-04
-ComponentVersion: 1.0.1
+updatedDate: 2025-12-03
+ComponentVersion: 1.0.2
 redirect_from:
   - /components/configuration/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.2 (December 03, 2025)
+
+* Update Sailor version to 2.7.7
+* Remove unused `elasticio-node` dependency
+* Update the Node engine to version 24.x.
 
 ### 1.0.1 (November 04, 2022)
 

@@ -5,8 +5,8 @@ description: In this article you will see a flow with which you will clearly see
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2024-06-03
-ComponentVersion: 2.0.8
+updatedDate: 2025-12-03
+ComponentVersion: 2.0.9
 ---
 
 ## Szenario

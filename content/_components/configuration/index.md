@@ -2,15 +2,19 @@
 title: Configuration component
 layout: component
 section: Utility components
-description: A component allows separating the modification of configurable values from the modification of the flow.
+description: A component that allows separating the modification of configurable values from the modification of the flow.
 icon: configuration.png
 icontext: Configuration component
 category: configuration
-updatedDate: 2022-11-04
-ComponentVersion: 1.0.1
+updatedDate: 2025-12-03
+ComponentVersion: 1.0.2
 ---
 
-## How works.  API version / SDK version
+## Description
+
+{{page.description}}
+
+## How it works.  API version / SDK version
 
 Configuration component has a credential which is a text field with the following
 rules:
@@ -87,7 +91,7 @@ The [technical notes](technical-notes) page gives some technical details about C
 ## Triggers
 
 The configuration component has no trigger functions.
-This means **the component can not be selected as a first step in any integration flow.**
+This means the component can not be selected as a first step in any integration flow.
 
 ## Actions
 

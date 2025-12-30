@@ -1,14 +1,28 @@
 ---
-title: Open API Component
+title: Open API component
 layout: component
 section: Utility components
 description: A component that is designed for utility operations.
 icon: open-api.png
-icontext: Open API Component
+icontext: Open API component
 category: open-api
-updatedDate: 2021-11-26
-ComponentVersion: 1.1.3
+updatedDate: 2025-11-14
+ComponentVersion: 1.1.4
 ---
+
+## Table of Contents
+
+* [General information](#general-information)
+   * [Description](#description)
+   * [Purpose](#purpose)
+   * [Completeness Matrix](#completeness-matrix)
+   * [How it works. API version/SDK version](#how-it-works-api-version--sdk-version)
+* [Credentials](#credentials)
+     * [Type](#type)
+     * [A URL to an OpenAPI/Swagger document](#a-url-to-an-openapiswagger-document)
+* [Actions](#actions)
+   * [Make Request](#make-request)
+* [Known Limitations](#known-limitations)
 
 ## General information
 
@@ -19,9 +33,9 @@ OpenAPI (Swagger) document needs to be hosted online and should be reached witho
 
 ### Purpose
 
-Using OpenAPI Specification make request to REST API on {{site.data.tenant.name}} platform.
+Using OpenAPI Specification make request to REST API on the platform.
 
-### How works. API version / SDK version
+### How it works. API version / SDK version
 
 Currently, it is supported OpenAPI version 2.0 documents.
 It is used [Swagger Client](https://github.com/swagger-api/swagger-js) version 3.10.0.

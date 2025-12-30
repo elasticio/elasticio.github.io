@@ -6,8 +6,8 @@ description: An iPaaS component that converts data between XML and JSON formats.
 icon: xml.png
 icontext: XML component
 category: xml
-ComponentVersion: 1.4.1
-updatedDate: 2025-11-14
+ComponentVersion: 1.4.2
+updatedDate: 2025-12-04
 ---
 
 ## Table of Contents

@@ -5,8 +5,8 @@ description: Usage Example for the ID Linking component
 icon: id-linking.png
 icontext: ID Linking component
 category: id-linking
-updatedDate: 2022-11-24
-ComponentVersion: 1.2.0
+updatedDate: 2025-12-22
+ComponentVersion: 1.3.0
 ---
 
 This documentation provides a detailed usage example for the ID Linking component in {{site.data.tenant.name}} integration platform. The ID Linking component allows you to store and retrieve IDs associated with data objects in a reliable and efficient manner.

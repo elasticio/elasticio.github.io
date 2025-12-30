@@ -5,13 +5,19 @@ description: Technical Notes for the Batch component
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2024-06-03
-ComponentVersion: 2.0.8
+updatedDate: 2025-12-03
+ComponentVersion: 2.0.9
 redirect_from:
   - /components/batch/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.9 (December 03, 2025)
+
+* Update `@elastic.io/maester-client` version to 6.0.0
+* Update Node engine version to 24.x
+* Update Sailor version to 2.7.7
 
 ### 2.0.8 (June 03, 2024)
 

@@ -5,13 +5,23 @@ description: Technical Notes for the Code component.
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2023-04-21
-ComponentVersion: 1.2.11
+updatedDate: 2025-12-03
+ComponentVersion: 1.2.13
 redirect_from:
   - /components/code/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.13 (December 03, 2025)
+
+* Update Sailor version to 2.7.7
+* Remove unused `elasticio-node` dependency
+* Update the Node engine to version 24.x.
+
+### 1.2.12 (September 12, 2024)
+
+* Update Sailor version to 2.7.3
 
 ### 1.2.11 (April 21, 2023)
 

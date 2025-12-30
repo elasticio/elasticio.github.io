@@ -6,8 +6,8 @@ description: PostgreSQL is a general purpose and open source object-relational d
 icon: postgresql.png
 icontext: PostgreSQL component
 category: postgresql-component
-updatedDate: 2021-11-26
-ComponentVersion: 1.4.2
+updatedDate: 2025-11-14
+ComponentVersion: 1.4.3
 ---
 
 ## Description
@@ -35,7 +35,7 @@ The [technical notes](technical-notes) page gives some technical details about P
 
 ## Environment Variables
 
-> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
+> **Please Note:** From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 The component completeness matrix is also [available separately](completeness-matrix).
@@ -51,7 +51,7 @@ There are two options for authentication:
 postgresql://user:password@your.postgresql.host:5432/dbname
 ```
 
->**Note:** if you fill out both the Connection String and all the other connection data fields, the platform will use the connection string to connect to the database.
+>**Please Note:** If you fill out both the Connection String and all the other connection data fields, the platform will use the connection string to connect to the database.
 
 The option `Allow self-signed certificates` add to connection options following:
 
@@ -61,7 +61,7 @@ ssl: {
   }
 ```
 
-It could be useful for instances that are is using self-signed SSL certificates (like [Heroku](https://help.heroku.com/MDM23G46/why-am-i-getting-an-error-when-i-upgrade-to-pg-8))
+It could be useful for instances that are is using self-signed SSL certificates (like [Heroku](https://devcenter.heroku.com/articles/ssl-certificate-self))
 
 See more in [documentation](https://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING).
 
@@ -134,7 +134,5 @@ Same as above, concatenation and traversal in action.
 
 There are several limitations of the component:
 
-We are relying on standard type default js<->postgresql data-type coercion
-[see here](https://github.com/brianc/node-postgres#features)
-
-If in doubt call support.
+* We are relying on standard type default js<->postgresql data-type coercion
+[see here](https://github.com/brianc/node-postgres#features).
