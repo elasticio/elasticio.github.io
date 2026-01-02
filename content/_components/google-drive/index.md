@@ -43,7 +43,7 @@ Before building any integration flow you must at first configure the app from in
 2. Go to the `Credentials` section and create a new credential of type  `OAuth client ID`.
 ![OAuth client ID](img/oauth-client-id.png)
 - Set Application type to `Web application`
-- Add Authorized redirect URI as: `https://{your-tenant-address}/callback/oauth2`
+- Add Authorized [redirect URI](/guides/oauth-callback-redirect-url.html) as: `https://{your-tenant-address}/callback/oauth2`
 ![redirect URI](img/redirect-url.png)
 
 Now you can create new credentials for the component:
