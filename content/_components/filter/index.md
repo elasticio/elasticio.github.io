@@ -6,20 +6,20 @@ description: A component to filter the incoming data based on an arbitrary JSONa
 icon: filter.png
 icontext: Filter component
 category: filter
-ComponentVersion: 1.1.4
-updatedDate: 2022-11-18
+ComponentVersion: 1.1.5
+updatedDate: 2026-01-05
 ---
 
 ## Description
 
-A component to filter the incoming data based on an arbitrary JSONata expression.
+{{page.description}}
 
 ## How it works
 
 Filter will pass through the incoming data if it matches the JSONata condition specified in the configuration.
 You can use any valid JSONata expression, however it can cause an error to be thrown if it is invalid based on the context.
 
->**For example:** $number(hello) > 5 where hello: "world". This JSONata expression is valid but an error will be thrown as hello is NaN.
+>**For example:** `$number(hello) > 5` where `hello: "world"`. This JSONata expression is valid but an error will be thrown as `hello` is `NaN`.
 
 ## Requirements
 
@@ -65,13 +65,13 @@ The expression will be evaluated to a value of true or false.
 
 The given expressions can be true or false if one and two is numbers:
 
-* $number(one) > $number(two), $number(one) < $number(two),
-* $number(one) >= $number(two), $number(one) <= $number(two),
-* $number(one) = $number(two), $number(one) != number(two), etc.
+* `$number(one) > $number(two)`, `$number(one) < $number(two)`,
+* `$number(one) >= $number(two)`, `$number(one) <= $number(two)`,
+* `$number(one) = $number(two)`, `$number(one) != number(two)`, etc.
 
-body.foo - is true if body.foo is defined and not false.
+`body.foo` - is **true** if `body.foo` is defined and not **false**.
 
->**For example:** $exists(body.foo) - if the value exists then it will be defined as true, if not then false.
+>**For example:** `$exists(body.foo)` - if the value exists then it will be defined as **true**, if not then **false**.
 
 If given Checkbox is checked:
 

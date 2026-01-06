@@ -5,11 +5,45 @@ description: An article on how the Content-Based Routing technicaly mechanism wo
 icon: router.png
 icontext: Router component
 category: router
-updatedDate: 2022-12-23
-ComponentVersion: 1.0.1
+updatedDate: 2026-01-05
+ComponentVersion: 1.0.2
 ---
 
 ## How it works?
+
+```
+
+               +-----------------------+
+               | Incoming Message      |
+               +-----------+-----------+
+                           |
+                   Evaluate Branches
+                           |
+        +------------------+------------------+
+        |                  |                  |
+  Branch A True?     Branch B True?     Branch C True?
+        |                  |                  |
+     Yes|              Yes |             Yes   |
+        ▼                  ▼                 ▼
+   +---------+        +---------+       +---------+
+   | Pass to |        | Pass to |       | Pass to |
+   | Branch  |        | Branch  |       | Branch  |
+   +---------+        +---------+       +---------+
+        |                  |                 |
+        +------------------+-----------------+
+                           |
+          If none True — Is Default Branch Configured?
+                           |
+                    +------+------+
+                    |             |
+                  Yes             No
+                    |             |
+                    ▼             ▼
+             +-------------+  No delivery
+             | Pass to     |
+             | Default     |
+             +-------------+
+```
 
 Here is the sample integration flow with CBR inside it:
 

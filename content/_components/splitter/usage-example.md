@@ -5,15 +5,15 @@ description: In this article you will see a flow with which you will clearly see
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2025-11-05
-ComponentVersion: 1.6.0
+updatedDate: 2026-01-05
+ComponentVersion: 1.6.1
 ---
 
 ## Flow example
 
 We want to show you the simplest example of using Re-Assemble action. In this example, you will see the simplest scenario, in which the functionality of the Splitter component is best understood. Our task will be to receive messages, in this case we will receive them from a Webhook component, and then accumulate and re-assemble them using Splitter. What to do with the merged data is up to you, but in our case we will just send it via email. Thus, the entire Fellowship of the Ring will be assembled once again. To do this, we will use this flow:
 
-![Example-Flow](img/example-flow.png)
+{% include img.html max-width="60%" url="img/example-flow.png" title="Example Flow" %}
 
 With the help of the Webhook component, we will send several messages that will be collected using a Splitter component and, after the 20 seconds specified in the `Delay timer`, Re-assemble all these messages into one single array. We will later send this array using the E-mail component.  Here you can see an example of message:
 

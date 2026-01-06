@@ -2,13 +2,17 @@
 title: Mailchimp component
 layout: component
 section: Marketing-related components
-description: A open standard application layer protocol for passing business messages between applications or organizations.
+description: An open standard application layer protocol for passing business messages between applications or organizations.
 icon: mailchimp.png
 icontext: Mailchimp component
 category: mailchimp
-updatedDate: 2023-06-12
-ComponentVersion: 1.0.4
+updatedDate: 2026-01-05
+ComponentVersion: 1.0.5
 ---
+
+## Description
+
+{{page.description}}
 
 ## Credentials
 
