@@ -6,8 +6,8 @@ description: The Splitter component provides powerful, fundamental tools for mes
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2025-11-05
-ComponentVersion: 1.6.0
+updatedDate: 2026-01-05
+ComponentVersion: 1.6.1
 ---
 
 ## Table of Contents

@@ -5,15 +5,15 @@ description: In this article you will see a flow with which you will clearly see
 icon: filter.png
 icontext: Filter component
 category: filter
-ComponentVersion: 1.1.4
-updatedDate: 2022-11-18
+ComponentVersion: 1.1.5
+updatedDate: 2026-01-05
 ---
 
 ## Calculate discount if exists
 
 In this example we want to create a flow that will calculate the discount of your buyers if it exists. The Filter will pass the message if the condition is true. This functionality is similar to what the [Router](/components/router) component offers. The main difference between Filter component and Router component is that the second creates branches for different conditions. The Filter doesn’t route branches, it just passes a message if it is true. If the Router has only one branch it can do the same action as a Filter. Here you can see this flow:
 
-![Flow example](img/example_flow.png)
+{% include img.html max-width="60%" url="img/example_flow.png" title="Flow example" %}
 
 At the beginning of our flow, we will use a [Webhook](/components/webhook) component. At this stage, we will receive client data and pass it on to the Filter component.
 

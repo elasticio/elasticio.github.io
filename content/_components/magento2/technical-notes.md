@@ -5,14 +5,22 @@ description: Technical Notes for the Magento2 component.
 icon: magento.png
 icontext: Magento 2 component
 category: magento2
-updatedDate: 2025-07-03
-ComponentVersion: 1.7.1
+updatedDate: 2026-01-05
+ComponentVersion: 1.7.2
 redirect_from:
   - /components/magento2/changelog.html
   - /components/magento2/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.7.2 (January 05, 2026)
+
+* Updated the `Sailor` version to 2.7.7
+* Updated the Axios version to 1.12.2
+* Updated the `component-commons-library` version to 4.0.0
+* Remove unused `elasticio-node` dependency
+* Update the Node engine to version 24.x.
 
 ### 1.7.1 (July 03, 2025)
 

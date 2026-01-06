@@ -5,13 +5,17 @@ description: Technical Notes for the Splitter component.
 icon: splitter.png
 icontext: Splitter component
 category: splitter
-updatedDate: 2025-11-05
-ComponentVersion: 1.6.0
+updatedDate: 2026-01-05
+ComponentVersion: 1.6.1
 redirect_from:
   - /components/splitter/changelog.html
 ---
 
 ## Changelog
+
+### 1.6.1 (January 05, 2026)
+
+*   Updated `elasticio-sailor-nodejs` to `2.7.7`.
 
 ### 1.6.0 (November 05, 2025)
 

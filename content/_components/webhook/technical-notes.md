@@ -5,13 +5,18 @@ description: Technical Notes for the Webhook component.
 icon: webhook.png
 icontext: Webhook component
 category: webhook
-updatedDate: 2025-01-13
-ComponentVersion: 2.0.0
+updatedDate: 2026-01-05
+ComponentVersion: 2.0.1
 redirect_from:
   - /components/webhook/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.1 (January 05, 2026)
+
+* Update `Sailor` version to 2.7.7
+* Updated the Node engine to version 22.x.
 
 ### 2.0.0 (January 13, 2025)
 

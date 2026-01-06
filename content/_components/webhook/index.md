@@ -6,8 +6,8 @@ description: The Webhook component receives data at the specified URL to initiat
 icon: webhook.png
 icontext: Webhook component
 category: webhook
-updatedDate: 2025-01-13
-ComponentVersion: 2.0.0
+updatedDate: 2026-01-05
+ComponentVersion: 2.0.1
 ---
 
 ## Table of Contents

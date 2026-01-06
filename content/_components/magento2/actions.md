@@ -5,8 +5,8 @@ description: Magento 2 component actions page
 icon: magento.png
 icontext: Magento 2 component
 category: magento2
-updatedDate: 2025-07-03
-ComponentVersion: 1.7.1
+updatedDate: 2026-01-05
+ComponentVersion: 1.7.2
 ---
 
 * [Delete Object](#delete-object)
@@ -30,15 +30,13 @@ ComponentVersion: 1.7.1
 
 ## Delete Object
 
-This action allows you to delete the following object types:
+This action allows you to delete the following object types by ID or unique criteria:
 - Customer
 - Product
 - Category
 - Media Gallery Item
 - Product Attribute
 - Product Attribute Set
-  
-by ID or unique criteria.
 
 #### Expected input metadata
 Input metadata will take the unique ID for all object types except Product (The unique identifier will be the SKU) and Customer (The unique identifier can be either ID or Email).
@@ -48,7 +46,7 @@ The output metadata is the unique ID of deleted object.
 
 ## Lookup Object by ID
 
-This action allows you to search up one of the object types
+This action allows you to search up one of the object types by unique criteria:
 - Customer
 - Product
 - Sales Order
@@ -58,8 +56,6 @@ This action allows you to search up one of the object types
 - Media Gallery Item
 - Product Attribute
 - Product Attribute Set
-  
-by unique criteria.
 
 #### Expected input metadata
 Input metadata will take the unique ID and an optional store view code. The store view will be set to `default` by default.
@@ -86,8 +82,6 @@ Supported default object types:
 - Cart
 - Product Attributes
 - Product Attribute Sets
-
-</details>
      
 ##### Emit Behaviour 
 Options are: `Emit Individually` emits each object in separate message, `Fetch All` emits all objects in one message, 
@@ -430,7 +424,7 @@ This action allows to set or update Sales Order status.
 
 **comment** - optional string, add comment to Sales Order.
 
-> **NOTE:** When updating of **status** property, please make sure that the input value is a valid status of your Magento2 system:  https://docs.magento.com/m2/ce/user_guide/sales/order-status.html.
+> **Please Note:** When updating of **status** property, please make sure that the input value is a valid status of your Magento2 system:  [https://docs.magento.com/m2/ce/user_guide/sales/order-status.html](https://docs.magento.com/m2/ce/user_guide/sales/order-status.html).
 The Component will not show an error if the **status** value is invalid, but Magento2 API will not validate this value.
 
 ```json
@@ -455,7 +449,7 @@ The Component will not show an error if the **status** value is invalid, but Mag
 
 You can read all the configured stores on a Magento instance (like [GET /V1/store/storeConfigs](https://devdocs.magento.com/swagger/#/storeStoreConfigManagerV1/storeStoreConfigManagerV1GetStoreConfigsGet))
 
-> **Note**: As this information is very static, it is cached between calls within the same container life cycle.
+> **Please Note:** As this information is very static, it is cached between calls within the same container life cycle.
 
 #### Expected output metadata
 
@@ -577,7 +571,7 @@ If all tiered prices were removed, the output metadata will be `[]`.
 
 Updates a customer, or creates it if it doesn't exist. To update, you must provide the customer ID and website ID (Associate to Website). To create, do not enter a customer ID; the system will generate one.
 
-> **Note**:
+> **Please Note:**
 * The customer's addresses will be completely overwritten by the provided array of addresses
 * Custom customer attributes can not be set
 

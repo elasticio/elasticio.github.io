@@ -6,11 +6,22 @@ description: Examines the message content and routes the message onto a differen
 icon: router.png
 icontext: Router component
 category: router
-updatedDate: 2022-12-23
-ComponentVersion: 1.0.1
+updatedDate: 2026-01-05
+ComponentVersion: 1.0.2
 ---
 
-This component implements the [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
+## Description
+
+The Content-Based Router implements the [Content-Based Router](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ContentBasedRouter.html) pattern from Enterprise Integration Patterns (EIP).
+
+It evaluates incoming messages and directs them to one or more flow branches based on configurable conditions.
+* The Router evaluates each branch’s expression against the message.
+* If one or more branch expressions evaluate to `true`, the message is passed to each of those matching branches.
+* If all branch expressions evaluate to `false`:
+  - The message is passed to the Default Branch, if configured.
+  - If no default branch is configured, the message is not forwarded to any branch.
+
+> **Please Note:** Expressions must evaluate to a boolean (true/false).
 
 ## Triggers
 
@@ -33,7 +44,7 @@ then you have to define a routing criteria
 
 and setup your next steps:
 
-![Route action 3](img/step_3.png)
+{% include img.html max-width="60%" url="img/step_3.png" title="Route action 3" %}
 
 For a better understanding of how the component is used in flows, we recommend that you look at the example of using the component router, which you can find in [this article](router-usage-example).
 
@@ -43,5 +54,5 @@ If you are interested in the details of how a component works under the hood, yo
 
 ## Environment Variables
 
-> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
+> **Please Note:** From the platform version [20.51](/releases/20/51) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.

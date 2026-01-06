@@ -5,13 +5,21 @@ description: Technical Notes for the Email component
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.3.0
-updatedDate: 2024-11-07
+ComponentVersion: 1.3.1
+updatedDate: 2026-01-05
 redirect_from:
   - /components/lookup-table/changelog.html
 ---
 
 ## Changelog
+
+### 1.3.1 (January 05, 2026)
+
+* Update Sailor version to 2.7.7
+* Update Axios version to 1.12.2
+* Remove unused `elasticio-node` dependency
+* Update `@elastic.io/component-commons-library` to 4.0.0
+* Update the Node engine to version 24.x.
 
 ### 1.3.0 (November 07, 2024)
 

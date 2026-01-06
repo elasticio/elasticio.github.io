@@ -5,13 +5,19 @@ description: Technical Notes for the Router component.
 icon: router.png
 icontext: Router component
 category: router
-updatedDate: 2022-12-23
-ComponentVersion: 1.0.1
+updatedDate: 2026-01-05
+ComponentVersion: 1.0.2
 redirect_from:
   - /components/router/changelog.html
 ---
 
 ## Changelog
+
+### 1.0.2 (January 05, 2026)
+
+* Update `Sailor` version to 2.7.7
+* Updated the Node engine to version 22.x.
+* Remove unused `elasticio-node` dependency
 
 ### 1.0.1 (December 23, 2022)
 
