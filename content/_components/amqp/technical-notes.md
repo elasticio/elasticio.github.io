@@ -5,13 +5,23 @@ description: Technical Notes for AMQP component.
 icon:  amqp.png
 icontext: AMQP component
 category: amqp
-ComponentVersion: 1.4.3
-updatedDate: 2024-07-05
+ComponentVersion: 1.4.4
+updatedDate: 2026-01-15
 redirect_from:
   - /components/amqp/changelog.html
 ---
 
 ## Changelog
+
+### 1.4.4 (January 15, 2026)
+
+* Updated Node.js engine requirement to `24.x`.
+* Upgraded dependencies:
+  * `amqp-connection-manager`: 4.1.14 -> 5.0.0
+  * `elasticio-sailor-nodejs`: 2.7.2 -> 2.7.7
+* Got rid of `elasticio-node` and `amqplib` dependencies
+* Updated CircleCI configuration to reflect Node 24 upgrade.
+* Enhanced README for clarity, improved language, and better formatting.
 
 ### 1.4.3 (July 05, 2024)
 
