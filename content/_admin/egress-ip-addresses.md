@@ -29,6 +29,7 @@ The US cluster which hosts `app-us.elastic.io` among other tenants has the follo
 outgoing IP addresses:
 
 *   `193.122.172.111`
+*   `157.151.204.47`
 
 ## Details
 
