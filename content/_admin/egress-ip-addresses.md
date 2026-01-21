@@ -22,6 +22,7 @@ outgoing IP addresses:
 
 *   `92.5.117.7`
 *   `130.162.33.7`
+*   `79.76.108.15`
 
 ## Egress IP List for app-us.elastic.io
 
