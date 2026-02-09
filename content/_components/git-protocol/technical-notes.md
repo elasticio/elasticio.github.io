@@ -5,13 +5,22 @@ description: Technical Notes for the Git-Protocol component
 icon: git-protocol.png
 icontext: Git-Protocol component
 category: Git-Protocol
-ComponentVersion: 1.2.5
-updatedDate: 2024-09-04
+ComponentVersion: 1.3.0
+updatedDate: 2026-02-05
 ---
 
 ## Changelog
 
+### 1.3.0 (February 05, 2026)
+
+* Added a "Beautify JSON files" option to the `Create Commit` action to improve the readability of diffs.
+* Enhanced test suite with more comprehensive tests for `Create Commit` action and edge cases.
+* Fixed internal dependencies to resolve test failures.
+* Fixed a race condition where parallel executions would collide on the local file system by using unique temporary directories for each action.
+* Updated documentation to include known limitations regarding concurrency and remote push conflicts.
+
 ### 1.2.5 (August 23, 2024)
+
 * Updated `nodegit` to 0.28.0-alpha.11
 
 ### 1.2.4 (June 3, 2024)
