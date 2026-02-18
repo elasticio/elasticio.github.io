@@ -5,13 +5,19 @@ description: Technical Notes for the NetSuite component.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2025-11-18
-ComponentVersion: 3.2.1
+updatedDate: 2026-02-18
+ComponentVersion: 3.2.2
 redirect_from:
   - /components/netsuite/changelog.html
 ---
 
 ## Changelog
+
+### 3.2.2 (February 18, 2026)
+
+* Handled empty "Size of Polling Page" field gracefully in Polling Objects Trigger.
+* Prevented potential `NullPointerException` across multiple actions and triggers by adding robust null checks for NetSuite API responses, status objects, and search results.
+* Added internal validation for "Size of Polling Page" in Polling Objects Trigger. Values 1-4 are now rejected with a clear error message, while 0 (which uses the default of 1000) and values 5 or greater are permitted.
 
 ### 3.2.1 (November 18, 2025)
 
