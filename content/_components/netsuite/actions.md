@@ -5,24 +5,20 @@ description: NetSuite component actions.
 icon: netsuite.png
 icontext: NetSuite component
 category: netsuite
-updatedDate: 2025-11-18
-ComponentVersion: 3.2.1
+updatedDate: 2026-02-18
+ComponentVersion: 3.2.2
 ---
 
 ## Add Object
 
-Add an object to NetSuite.
+Creates a new record in NetSuite.
 
 ### Configuration Fields
-
-* **Object Category** - a category of an object in NetSuite
-    * Standard
-    * Custom
-* **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
+*   **Object Category** (required): The record category (e.g., Standard, Custom).
+*   **Object Type** (required): The specific NetSuite object type. This list is populated dynamically.
 
 ### Input Metadata
-
-Is being fetched dynamically. Sample:
+The input schema is generated dynamically based on the selected Object Type.
 
 <details close markdown="block"><summary><strong>Input metadata for invoice object</strong></summary>
 
@@ -93,24 +89,20 @@ Is being fetched dynamically. Sample:
 
 ## Delete Object By Id
 
-Deletes an object by the ID provided.
+Deletes a record from NetSuite using its Internal or External ID.
 
 ![Delete Object By Id](img/delete-by-id.png)
 
 ### Configuration Fields
 
-* **Object Category** - a category of an object in NetSuite:
-
-  * Standard
-  * Custom
-
-* **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
+*   **Object Category** (required): (e.g., Standard, Custom).
+*   **Object Type** (required): The NetSuite object type. Populated dynamically.
 
 ### Input Metadata
 
-Is being fetched dynamically. The sample:
+Input fields are generated dynamically. 
 
-Input metadata for Transaction objects:
+**Input metadata for Transaction objects:**
 
 ```json
 {
@@ -123,21 +115,17 @@ Input metadata for Transaction objects:
 
 <details close markdown="block"><summary><strong>Deletion Reason Usage Notes:</strong></summary>
 
-> **Please Note:** the following about the deletionReason parameter:
-
->The deletionReason complex type includes two fields: deletionReasonCode and deletionReasonMemo. The deletionReasonCode must identify a deletion reason that is listed at Setup > Accounting > Accounting Lists. If the Use Deletion Reasons feature is enabled and you use the deletionReasonCode to identify a code that does not exist, the request fails with an INVALID_REF_KEY error.
-
-> Deletion reasons can be saved only for transactions. However, in SOAP web services, you must use the deletionReason parameter even when referencing other record types, and even when the Use Deletion Reasons feature is not enabled. For situations where it is not appropriate to identify a deletion reason, pass in a value of null.
-
-> Even when a deletion reason is required, you can use a value of null. In these cases, the system automatically populates the deletion reason fields with default values. These defaults are: Other for deletionReasonCode and This transaction was deleted by script or web service for deletionReasonMemo.
-
-> The deletionReason complex type is defined in the core XSD.
-
-> For more details about the Use Deletion Reasons feature, see Recording a Reason for Deleting a Transaction.
-
+> **Please Note:** the following about the `deletionReason` parameter:
+> The `deletionReason` complex type includes two fields: `deletionReasonCode` and `deletionReasonMemo`. The `deletionReasonCode` must identify a deletion reason that is listed at Setup > Accounting > Accounting Lists. If the "Use Deletion Reasons" feature is enabled and you use a `deletionReasonCode` that does not exist, the request fails with an `INVALID_REF_KEY` error.
+> Deletion reasons can be saved only for transactions. However, in SOAP web services, you must use the `deletionReason` parameter even when referencing other record types, and even when the "Use Deletion Reasons" feature is not enabled. For situations where it is not appropriate to identify a deletion reason, pass in a value of `null`.
+> Even when a deletion reason is required, you can use a value of `null`. In these cases, the system automatically populates the deletion reason fields with default values: `Other` for `deletionReasonCode` and `This transaction was deleted by script or web service for deletionReasonMemo`.
+> The `deletionReason` complex type is defined in the core XSD.
+> For more details about the "Use Deletion Reasons" feature, see "Recording a Reason for Deleting a Transaction" in the NetSuite Help Center.
 </details>
 
-Input metadata for other objects:
+<br>
+
+**Input metadata for other objects:**
 
 ```json
 {
@@ -153,94 +141,66 @@ Input metadata for other objects:
   "internalId": "string"
 }
 ```
+
 ## Get Item Availability
-Allows to get an item availability based on its type and internal ID provided
+Retrieves real-time availability for a specific item.
 
-### Get Item Availability. Config fields
-* **Item Type** - item type to search for. One of:
-  * Assembly Item
-  *  Description Item
-  *  Discount Item
-  *  Download Item
-  *  Inventory Item
-  *  Gift Certificate Item
-  *  Kit Item
-  *  Non-Inventory Purchase Item
-  *  Non Inventory Resale Item
-  *  Non Inventory Sale Item
-  *  Other Charge Purchase Item
-  *  Other Charge Resale Item
-  *  Other Charge Sale Item
-  *  Payment Item
-  *  Service Resale Item
-  Service Sale Item
-* **Allow Empty Results (Defaults: false)** - When an item not found, if this is checked, an empty object will be emitted instead of throwing an error.
+### Configuration Fields
+*   **Item Type** (required): The category of item (e.g., Assembly Item, Inventory Item).
+*   **Allow Empty Results** (boolean, optional): If enabled, the action emits an empty object instead of an error if the item is not found.
 
-### Get Item Availability. Input Metadata
-* **Item Internal ID** - internal ID of an item to search by. Optional
-* **Item External ID** - external ID of an item to search by. Optional.
-Please note that either 'External ID' or 'Internal ID' field must be provided.
+### Input Metadata
+*   **Item Internal ID** (string, optional)
+*   **Item External ID** (string, optional)
 
-Input metadata example:
+> **Please Note:** Either the `Internal ID` or `External ID` must be provided.
+
+**Input metadata example:**
 ```json
 {
   "internalId": "1234"
 }
 ```
 
-### Get Item Availability. Output Metadata
-Generates dynamically based on the item type selected in the configuration field
+### Output Metadata
+Dynamically generated based on the selected Item Type.
 
 ## Lookup Object By Id
 
-Lookup an object by the ID provided.
+Retrieves a specific record by its ID.
 
 ![Lookup Object By Id](img/lookup-by-id.png)
 
 ### Configuration Fields
-
-* **Object Category** - a category of an object in NetSuite
-  * Standard
-  * Custom
-* **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
-* **Allow ID to be omitted**
-* **Allow Zero Results**
+*   **Object Category** (required): (e.g., Standard, Custom).
+*   **Object Type** (required): The NetSuite object type.
+*   **Allow ID to be omitted** (boolean, optional).
+*   **Allow Zero Results** (boolean, optional).
 
 ## Lookup Objects
 
-Looks for objects available in NetSuite which meet given criteria.
+Searches for objects in NetSuite that match specific criteria.
 
 ![Lookup Objects](img/lookup-objects.png)
 
-Use this action to execute the following types of searches:
+This action supports three search methodologies:
+*   [**Basic Search**](#basic-search): Filter records using native fields.
+*   [**Joined Search**](#joined-search): Filter records using fields from associated records.
+*   [**Advanced Search**](#advanced-search): Leverages saved searches or provides granular control over filters and return columns.
 
-* [**Basic search**](#basic-search) — Execute a search on a record type based on search filter fields that are specific to that type. See Basic Searches in SOAP Web Services.
+### Configuration Fields
+*   **Object Type** (required): The NetSuite object type to search.
+*   **Search Type** (required): The search methodology (Basic, Joined, or Advanced).
+*   **Behavior** (required): Defines how multiple results are handled:
+    *   **Emit individually**: Each record is emitted as a separate message.
+    *   **Fetch all**: Emits a single message containing an array of all results.
+    *   **Fetch Page**: Emits a single message containing the first page of results.
 
-* [**Joined search**](#joined-search) — Execute a search on a record type based on search filter fields on an associated record type. See Joined Searches in SOAP Web Services
+### Basic Search
 
-* [**Advanced search**](#advanced-search) — Execute a search on a record type in which you specify search filter fields and/or search return columns or joined search columns. Using advanced search, you can also return an existing saved search. See Advanced Searches in SOAP Web Services.
+Filters records of a specific type using its native fields. Specifying return columns is not supported in Basic Search. The full list of available objects to search can be found  in the Help Center (may vary for each installation). You can find the entire metadata of each object there as well.
 
-### Config fields
-
-* **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
-
-* **Search Type** - a type of search. See below.
-  * Basic
-  * Joined
-  * Advanced
-
-* **Behavior** - a behavior for the component on how to handle the response which has more than 1 object to response with:
-  * Emit individually
-  * Fetch all
-  * Fetch Page
-
-### Basic search
-
-A basic search lets you search records of a specific type using the fields on that record as search filters.
-In a basic search, field criteria are the only values you set. You cannot specify search return columns.
-The full list of available objects to search can be found  in the Help Center (may vary for each installation). You can find the entire metadata of each object there as well.
-
-Log in to your NetSuite account >  Suite Cloud (Customization, Scripting, and Web Services) > SuiteCloud Platform Introduction > SuiteCloud Records Reference Tools > The SuiteScript Records Browser > Click 'Go to the SuiteScript Records Browser.'
+**Reference:** Log in to NetSuite and navigate to: **SuiteCloud > SuiteCloud Platform Introduction > SuiteCloud Records Reference Tools > SuiteScript Records Browser**.
 
 ![SuiteScript Records Browser](https://user-images.githubusercontent.com/8449044/61944948-8490eb80-afa7-11e9-9272-60f63a387ebc.png)
 
@@ -368,11 +328,9 @@ It is just the recommended list. You should always use an actual one based on th
 
 #### Basic Search Samples
 
-##### Search contacts by a provided email
-
-Object Type: Contact
-
-Search Type: ContactSearchBasic
+##### **Search for contacts by email**
+*   **Object Type**: Contact
+*   **Search Type**: ContactSearchBasic
 
 XML request:
 
@@ -461,11 +419,9 @@ Once again, you can find the list of available objects in the Help Center. The c
 
 #### Joined Search Samples
 
-##### Search contacts associated with customers
-
-Object Type: Contact
-
-Search Type: Contact Search Join
+##### **Search for contacts associated with specific customers**
+*   **Object Type**: Contact
+*   **Search Type**: Contact Search Join
 
 The following sample shows how to return an associated joined list of records. In this case, all contacts associated with customers of internalId 1, 2 and 3 are returned.
 
@@ -598,11 +554,9 @@ Response:
 
 </details>
 
-##### Search items with a price equal to 10
-
-Object Type: Item
-
-Search Type: Item Search Join
+##### **Search items with a price equal to 10**
+*   **Object Type**: Item
+*   **Search Type**: Item Search Join
 
 The following sample shows how to search for all items that have a price level of 10.00.
 
@@ -881,8 +835,7 @@ Response
 
 ### Advanced search
 
-Execute a search on a record type in which you specify search filter fields and/or search return columns or joined search columns.
-Using advanced search, you can also return an existing saved search.
+Allows referencing pre-existing saved searches or dynamically defining complex criteria and return columns. For more details, consult the **"Advanced Searches in SOAP Web Services"** section in your NetSuite Help Center.
 
 Advanced searching provides users with the ability to:
 
@@ -895,17 +848,15 @@ The SOAP web services API includes advanced search objects for all records that 
 
 > **Please check** your 'Advanced Search' Help center section in order to build a correct request. You can find it in the following way:
 
-Log in to your NetSuite account >  Suite Cloud (Customization, Scripting, and Web Services) > SuiteTalk Web Services > SuiteTalk SOAP Web Services Platform Guide > SOAP Web Services operations > search > Advanced Searches in SOAP Web Services.
+Log in to your **NetSuite account >  Suite Cloud (Customization, Scripting, and Web Services) > SuiteTalk Web Services > SuiteTalk SOAP Web Services Platform Guide > SOAP Web Services operations > search > Advanced Searches in SOAP Web Services**.
 
 The component will always fetch all the existing metadata for the advanced search for you. All you should do is to delete what you don't need and to build a correct request based on the documentation.
 
 #### Known Limitations
-
  - Enum values for condition operators accessible only in the `Basic search` type.
  - Input metadata for property columns absent for object type: `Transaction` and  `Advance Search` search type.
  - The following transaction searches are not supported:
-
-<details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
+   <details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
      - Blanket Purchase Order
      - CCard Refund
@@ -941,16 +892,13 @@ The component will always fetch all the existing metadata for the advanced searc
      - Tegata Receivable
      - Transfer
      - Vendor Request For Quote
-
- </details>
+   </details>
 
 #### Advanced Search Samples
 
-##### Execute saved search
-
-Object Type: Customer
-
-Search Type: Customer Search Advanced
+##### **Execute a saved search**
+*   **Object Type**: Customer
+*   **Search Type**: Customer Search Advanced
 
 The following sample shows how to find customers, using saved search (by a keyword in an email).
 
@@ -1043,49 +991,17 @@ Response:
 ```
 </details>
 
-## Upsert Object By Id
-
-Either update an object in NetSuite by an ID provided or inserts as a new object if it does not exist.
-
-![Upsert Object By Id](img/upsert-object-by-id.png)
-
-### Upsert Object By Id. Config Fields
-
-* **Object Category** - a category of an object in NetSuite
-  * Standard
-  * Custom
-* **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
-
-## Upsert Custom Fields
-
-Currently, You can upsert custom fields only from developer mode.
-You should to use property **type**, which can accept next values:
-
- - BooleanCustomFieldRef
- - DateCustomFieldRef
- - DoubleCustomFieldRef
- - LongCustomFieldRef
- - MultiSelectCustomFieldRef
- - SelectCustomFieldRef
- - StringCustomFieldRef
-
- You can find example of custom field structures [here](/components/netsuite/index#upsert-custom-fields).
-
 ## Lookup Objects By Custom Field
 
-Looks for objects available in NetSuite which meet given custom string field criteria.
+Finds records matching a specific custom string field.
 
 ### Configuration Fields
+*   **Object Category** (required): (e.g., Standard, Custom).
+*   **Object Type** (required): Populated dynamically.
 
-* **Object Category** - a category of an object in NetSuite
-    * Standard
-    * Custom
-* **Object Type** - an object in NetSuite (Contact, Customer, Invoice, Cash Sale etc.). Fetches dynamically.
-
-Input metadata  objects:
-
-* Custom field name - name of the custom field. E.g. `custbody_tran_number`
-* Custom field value - value of the custom field. E.g. `ABC-123`
+**Input Metadata:**
+*   `customFieldName` (string, required): The script ID of the custom field (e.g., `custbody_tran_number`).
+*   `customFieldValue` (string, required): The value to match (e.g., `ABC-123`). 
 
 ```json
 {
@@ -1096,18 +1012,15 @@ Input metadata  objects:
 
 ## Update Object
 
-Update an object in NetSuite.
+Modifies an existing record in NetSuite.
 
 ### Configuration Fields
-
-* **Object Category** - a category of an object in NetSuite
-    * Standard
-    * Custom
-* **Object Type** - an object in NetSuite (Contact, Customer etc.). Fetches dynamically.
+*   **Object Category** (required): (e.g., Standard, Custom).
+*   **Object Type** (required): Populated dynamically.
 
 ### Input Metadata
 
-Is being fetched dynamically. Sample:
+Fetched dynamically based on the selected Object Type. Sample:
 
 <details close markdown="block"><summary><strong>Input metadata for Invoice object:</strong></summary>
 
@@ -1177,7 +1090,19 @@ Is being fetched dynamically. Sample:
 ```
 </details>
 
-## Upsert custom fields
+## Upsert Object By Id
+
+Updates an existing record or creates a new one if the ID is not found.
+
+![Upsert Object By Id](img/upsert-object-by-id.png)
+
+### Configuration Fields
+*   **Object Category** (required): (e.g., Standard, Custom).
+*   **Object Type** (required): Populated dynamically.
+
+## Upsert Custom Fields
+
+Can upsert custom fields in NetSuite. 
 
 Currently, You can upsert custom fields only from developer mode.
 You should to use property **type**, which can accept next values:
@@ -1190,7 +1115,7 @@ You should to use property **type**, which can accept next values:
 -   `SelectCustomFieldRef`
 -   `StringCustomFieldRef`
 
- You can find example of custom field structures bellow.
+### Custom Field Examples
 
 - **`BooleanCustomFieldRef`**
 
