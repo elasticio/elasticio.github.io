@@ -61,7 +61,7 @@ The code component provides access to the following variables and libraries with
 - [`axios`](https://github.com/axios/axios) - A well-known HTTP Client [Documentation](https://www.npmjs.com/package/axios).
 - [`request`](https://github.com/request/request) - HTTP Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request) so that it is pre-promisified). We recommend using `axios`. Support for `request` is maintained for backward compatibility only.
 - `_` - [Lodash](https://lodash.com/)
-- [`strong-soap`](https://github.com/loopbackio/strong-soap) - SOAP client for invoking web services
+- `strong-soap` - [SOAP client](https://github.com/loopbackio/strong-soap) for invoking web services
 
 ## Credentials
 
