@@ -6,8 +6,8 @@ description: A component to run a piece of JavaScript code inside the integratio
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2025-12-03
-ComponentVersion: 1.2.13
+updatedDate: 2026-02-27
+ComponentVersion: 1.2.15
 ---
 
 ## Description
@@ -57,6 +57,7 @@ Built-in Node.js global objects are also supported.
 - `wait(numberOfMilliscondsToSleep)` - Utility function for sleeping
 - [`request`](https://github.com/request/request) - Http Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request) so that it is pre-promisified)
 - `_` - [Lodash](https://lodash.com/)
+- `strong-soap` - [SOAP client](https://github.com/loopbackio/strong-soap) for invoking web services
 
 ## Code component usage Examples
 
@@ -117,6 +118,42 @@ async function run(msg) {
     email: res.data.attributes.email,
     userID: res.data.id
   };
+}
+```
+
+### Calling a SOAP web service with strong-soap
+
+The Code component exposes the [`strong-soap`](https://github.com/loopbackio/strong-soap) client as `soap`. You can call SOAP operations using async/await. Create the client with a small promise wrapper, then invoke methods (they return promises).
+
+**Basic SOAP call (WSDL URL and operation args from incoming message):**
+
+```javascript
+function createSoapClient(wsdlUrl, options = {}) {
+  return new Promise((resolve, reject) => {
+    soap.createClient(wsdlUrl, options, (err, client) => {
+      if (err) reject(err);
+      else resolve(client);
+    });
+  });
+}
+
+async function run(msg, cfg, snapshot) {
+  const { wsdlUrl, operation, args } = msg.body;
+  const client = await createSoapClient(wsdlUrl);
+  const { result } = await client[operation](args || {});
+  await this.emit('data', { body: result });
+}
+```
+
+**Calling a specific service and port:**
+
+If the WSDL defines multiple services or ports, use the `ServiceName.PortName.MethodName` form (use the same `createSoapClient` helper as in the examples above):
+
+```javascript
+async function run(msg, cfg, snapshot) {
+  const client = await createSoapClient(msg.body.wsdlUrl);
+  const { result } = await client.MyService.MyPort.MyFunction({ name: msg.body.inputName });
+  await this.emit('data', { body: result });
 }
 ```
 

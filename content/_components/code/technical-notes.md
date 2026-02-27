@@ -5,13 +5,21 @@ description: Technical Notes for the Code component.
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2025-12-03
-ComponentVersion: 1.2.13
+updatedDate: 2026-02-27
+ComponentVersion: 1.2.15
 redirect_from:
   - /components/code/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.15 (February 27, 2026)
+
+* Add `strong-soap` v5.0.7 lib support
+
+### 1.2.14 (February 04, 2026)
+
+* Update Sailor version to 2.7.8
 
 ### 1.2.13 (December 03, 2025)
 
