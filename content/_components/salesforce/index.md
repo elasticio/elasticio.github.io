@@ -6,8 +6,8 @@ description: A component for seamless integration with the Salesforce REST API, 
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2026-01-28
-ComponentVersion: 2.9.1
+updatedDate: 2026-02-26
+ComponentVersion: 2.9.2
 ---
 
 ## Table of Contents
@@ -157,6 +157,6 @@ Once you are on the profile editing page, ensure that all the required standard 
 Carefully review the permissions and make any necessary adjustments to enable the required access.
 
 
-## Known limitations
+## Known Limitations
 
-Attachments mechanism doesn't work with [Local Agent Installation](/getting-started/local-agent.html).
+* Attachments mechanism doesn't work with [Local Agent Installation](/getting-started/local-agent.html).

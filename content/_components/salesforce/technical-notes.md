@@ -5,14 +5,31 @@ description: Technical Notes for Salesforce component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2026-01-28
-ComponentVersion: 2.9.1
+updatedDate: 2026-02-26
+ComponentVersion: 2.9.2
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
 ---
 
 ## Changelog
+
+### 2.9.2 (February 26, 2026)
+* **Security Improvements**:
+  * Upgraded `jsforce` from v1.11.1 to v3.10.14, eliminating critical and high severity vulnerabilities:
+    * Removed critical vulnerability: `form-data` (GHSA-fjxv-7rqg-78g4)
+    * Removed high vulnerability: `qs` (GHSA-6rw7-vpxm-498p)
+    * Removed moderate SSRF vulnerability in deprecated `request` package
+  * Updated `elasticio-rest-node` from v1.2.7 to v2.0.0
+  * Removed `.nsprc` file (no longer needed as vulnerabilities are resolved)
+* **Breaking Changes** (handled internally):
+  * Updated query methods to use `scanAll` as an option to `execute()` instead of method chaining (jsforce v3 API change)
+  * Updated `bulkQuery()` to await promise returned by `bulk.query()` before accessing stream
+  * Updated `StreamingExtension` import to use `jsforce/api/streaming` module
+  * Enhanced error handling to properly extract messages from FetchError format (jsforce v3 uses node-fetch instead of request)
+* **Dependencies**:
+  * Removed `better-npm-audit` dependency (replaced with standard `npm audit`)
+  * Updated audit script to use standard `npm audit --production`
 
 ### 2.9.1 (January 28, 2026)
 

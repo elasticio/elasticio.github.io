@@ -5,8 +5,8 @@ description: Salesforce component actions.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2026-01-28
-ComponentVersion: 2.9.1
+updatedDate: 2026-02-26
+ComponentVersion: 2.9.2
 ---
 
 ## Bulk Create/Update/Delete/Upsert
@@ -27,6 +27,8 @@ Uses the Bulk API 2.0 to quickly load large amounts of data (up to 10,000 record
 The action outputs a message with a `result` property, which is an array of objects. Each object in the array represents the outcome for a record and contains the following fields:
 *   **id**: The Salesforce ID of the object.
 *   **success**: A boolean indicating if the operation was successful (`true` or `false`).
+*   **created**: A boolean indicating if the record was created (`true`) or updated/deleted   
+(`false`). This field is only meaningful for `Create` and `Upsert` operations.
 *   **errors**: An array containing error descriptions if the operation failed.
 
 #### Limitations
