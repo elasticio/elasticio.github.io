@@ -2,12 +2,12 @@
 title: Code component with Credentials
 layout: component
 section: Utility components
-description: The component is derived from the code-component v1.2.11 with Credentials feature.
+description: The component is derived from the code-component with Credentials feature.
 icon: code-with-credentials.png
 icontext: Code component with Credentials
 category: code
-updatedDate: 2025-09-26
-ComponentVersion: 1.0.1
+updatedDate: 2026-02-27
+ComponentVersion: 1.0.2
 ---
 
 ## Table of Contents
@@ -25,7 +25,7 @@ ComponentVersion: 1.0.1
 
 ## Description
 
-The code component is derived from the [Code-component](/components/code/) `v1.2.11`. The difference is that an authorization mechanism has been added. Refer to the [Credentials](#credentials) for more details.
+The code component is derived from the [Code-component](/components/code/). The difference is that an authorization mechanism has been added. Refer to the [Credentials](#credentials) for more details.
 
 The code component is a powerful feature of the platform that allows you to run a piece of JavaScript code within your integration flow. It functions just like any other component in our system. 
 
@@ -60,7 +60,8 @@ The code component provides access to the following variables and libraries with
 - `wait(numberOfMilliscondsToSleep)` - Utility function for sleeping.
 - [`axios`](https://github.com/axios/axios) - A well-known HTTP Client [Documentation](https://www.npmjs.com/package/axios).
 - [`request`](https://github.com/request/request) - HTTP Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request) so that it is pre-promisified). We recommend using `axios`. Support for `request` is maintained for backward compatibility only.
-* `_` - [Lodash](https://lodash.com/)
+- `_` - [Lodash](https://lodash.com/)
+- `strong-soap` - [SOAP client](https://github.com/loopbackio/strong-soap) for invoking web services
 
 ## Credentials
 
@@ -200,5 +201,65 @@ async function run(msg, cfg, snapshot) {
     }
   );
   await this.emit('data', { body: data });
+}
+```
+### Calling a SOAP web service with strong-soap
+
+The Code component exposes the [`strong-soap`](https://github.com/loopbackio/strong-soap) client as `soap`. You can call SOAP operations using async/await. Create the client with a small promise wrapper, then invoke methods (they return promises).
+
+**Basic SOAP call (WSDL URL and operation args from incoming message):**
+
+```javascript
+function createSoapClient(wsdlUrl, options = {}) {
+  return new Promise((resolve, reject) => {
+    soap.createClient(wsdlUrl, options, (err, client) => {
+      if (err) reject(err);
+      else resolve(client);
+    });
+  });
+}
+
+async function run(msg, cfg, snapshot) {
+  const { wsdlUrl, operation, args } = msg.body;
+  const client = await createSoapClient(wsdlUrl);
+  const { result } = await client[operation](args || {});
+  await this.emit('data', { body: result });
+}
+```
+
+**SOAP with Basic authentication (using component credentials):**
+
+```javascript
+function createSoapClient(wsdlUrl, options = {}) {
+  return new Promise((resolve, reject) => {
+    soap.createClient(wsdlUrl, options, (err, client) => {
+      if (err) reject(err);
+      else resolve(client);
+    });
+  });
+}
+
+async function run(msg, cfg, snapshot) {
+  const { wsdlUrl, operation, args } = msg.body;
+  const client = await createSoapClient(wsdlUrl);
+
+  if (cfg.credentials && cfg.credentials.username) {
+    client.setSecurity(new soap.BasicAuthSecurity(cfg.credentials.username, cfg.credentials.password));
+  }
+
+  const { result } = await client[operation](args || {});
+  await this.emit('data', { body: result });
+}
+```
+
+**Calling a specific service and port:**
+
+If the WSDL defines multiple services or ports, use the `ServiceName.PortName.MethodName` form (use the same `createSoapClient` helper as in the examples above):
+
+```javascript
+async function run(msg, cfg, snapshot) {
+  const client = await createSoapClient(msg.body.wsdlUrl);
+  const { result } = await client.MyService.MyPort.MyFunction({ name: msg.body.inputName });
+  await this.emit('data', { body: result });
 }
 ```

@@ -1,15 +1,24 @@
 ---
-title: Code component with credentials Technical Notes
+title: Code with Credentials Technical Notes
 layout: component
-description: Technical Notes for the Code component with credentials.
+description: Technical Notes for the Code component with Credentials.
 icon: code-with-credentials.png
 icontext: Code component with credentials
 category: code
-updatedDate: 2025-09-26
-ComponentVersion: 1.0.1
+updatedDate: 2026-02-27
+ComponentVersion: 1.0.2
 ---
 
 ## Changelog
+
+### 1.0.2 (February 27, 2026)
+
+* Updated the following dependencies:
+ * Node.js version 22 -> 24
+ * axios 1.12.2 -> 1.13.5
+ * elasticio-sailor-nodejs 2.7.6 -> 2.7.8
+* Added `strong-soap` v5.0.7 lib support
+* Removed unused `elasticio-node` dependency
 
 ### 1.0.1 (September 26, 2025)
 
