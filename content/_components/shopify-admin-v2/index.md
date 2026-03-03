@@ -2,12 +2,12 @@
 title: Shopify Admin v2 component
 layout: component
 section: E-Commerce components
-description: Shopify admin Component is designed to connect to Shopify GraphQL Admin API.
+description: The Shopify Admin component is designed to connect to the Shopify GraphQL Admin API.
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2025-04-15
-ComponentVersion: 2.5.1
+updatedDate: 2026-03-03
+ComponentVersion: 2.5.3
 ---
 
 ## Table of Contents
@@ -19,7 +19,7 @@ ComponentVersion: 2.5.1
   * [Create Object](#create-object) 
   * [Update Object](#update-object)
   * [Upsert Object](#upsert-object) 
-  * [Execute mutation](#execute-mutation) 
+  * [Execute Mutation](#execute-mutation) 
   * [Lookup Objects (plural)](#lookup-objects-plural)
   * [Lookup Object By ID](#lookup-object-by-id) 
   * [Make Raw Request](#make-raw-request)
@@ -31,23 +31,23 @@ ComponentVersion: 2.5.1
 
 ## Description
 
-Shopify admin Component is designed to connect to Shopify [GraphQL](https://shopify.dev/api/admin-graphql) Admin API.
+The Shopify Admin component is designed to connect to the Shopify [GraphQL](https://shopify.dev/api/admin-graphql) Admin API.
 
 Tested with API version: `2023-01`.
 
 ## Credentials
 
-To use this component you need to create a custom App:
-1. Go to your store [Admin panel](https://accounts.shopify.com/store-login).
+To use this component, you need to create a custom app:
+1. Go to your store's [Admin panel](https://accounts.shopify.com/store-login).
 2. Open `App and sales channel settings`.
 3. Select `Develop apps for your store`.
-4. Then `Create an app` button.
-5. Provide any app name and press `Create app`.
-6. Follow to `Configure Admin API scopes`.
-7. Select access scopes - Objects, that component will have access to and press `Save`.
-8. Now you be able to install this app by pressing `Install app` button in `API credentials` section in the right upper corner.
-9. Finally you can get `Admin API access token` by selecting `Reveal token once`. It will be needed in the component credentials configuration.
-10. In addition, you may need to save `API secret key` if you going to use webhooks.
+4. Click the `Create an app` button.
+5. Provide an app name and click `Create app`.
+6. Go to `Configure Admin API scopes`.
+7. Select the access scopes for the objects the component will need to access and click `Save`.
+8. You will now be able to install this app by clicking the `Install app` button in the `API credentials` section or in the top-right corner.
+9. You can obtain the `Admin API access token` by selecting `Reveal token once`. This token is required for the component's credentials configuration.
+10. Additionally, you may need to save the `API secret key` if you plan to use webhooks.
 
 <details close markdown="block"><summary><strong>Screenshot instructions</strong></summary>
 
@@ -64,29 +64,30 @@ To use this component you need to create a custom App:
 
 Component credentials configuration fields:
 
-* **Store name** (string, required) - Provide you store name here, can be found in [Admin panel](https://accounts.shopify.com/store-login) as a part of store URL.
+* **Store name** (string, required) - Provide your store name here. It can be found in the [Admin panel](https://accounts.shopify.com/store-login) as part of the store URL.
 
 ![Store Name](img/store-name.png)
 
-* **Admin API access token** (string, required) - this token you will get after app creation (look at instructions above)
-* **API version** (string, required) - Provide the API version you are going to work with. The component has been tested on `2023-01`, but should work with any available.
-* **API secret key** (string, required) - This field is used and required **only** for trigger - `Webhook` to [sign the request with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
+* **Admin API access token** (string, required) - The token obtained after app creation (see instructions above).
+* **API version** (string, required) - The API version you intend to work with. The component has been tested on `2023-01`, but it is designed to work with any available version.
+* **API secret key** (string, optional) - This field is required **only** for the `Webhook` trigger to [verify requests with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
 
 > **Notes:**
-* `Admin API access token` shows only once.
-* To rotate the API credentials for a custom app that was created in the Shopify admin, you need to uninstall and reinstall the app.
+* The `Admin API access token` is shown only once.
+* To rotate the API credentials for a custom app created in the Shopify admin, you must uninstall and reinstall the app.
+
 
 ## Actions
 
 ### Delete Object
 
-Objects in Shopify can be deleted with [Execute mutation action](#execute-mutation).
+Shopify objects can be deleted using the [Execute Mutation action](#execute-mutation).
 
-To do that, filter the list of available mutation types in the `Mutation type` configuration field by `Delete` or `Remove` keyword.
+To do this, filter the list of available mutation types in the `Mutation type` configuration field using keywords like `Delete` or `Remove`.
 
 ![Delete Object 1](img/delete-object-1.png)
 
-In most cases you will get one input metadata field with object identifier.
+In most cases, you will receive one input metadata field for the object identifier.
 
 ![Delete Object 2](img/delete-object-2.png)
 
@@ -122,14 +123,13 @@ In most cases you will get one input metadata field with object identifier.
 
 ### Create Object
 
-Objects in Shopify can be created with [Execute mutation action](#execute-mutation).
+Shopify objects can be created using the [Execute Mutation action](#execute-mutation).
 
-
-To do that, filter the list of available mutation types in the `Mutation type` configuration field by `Create` keyword.
+To do this, filter the list of available mutation types in the `Mutation type` configuration field using the `Create` keyword.
 
 ![Create Object](img/create-object-1.png)
 
-Input metadata will represent all needed fields to create an object.
+The input metadata will represent all the fields required to create the object.
 
 <details close markdown="block"><summary><strong>Example of input metadata to create a customer</strong></summary>
 
@@ -145,13 +145,13 @@ Input metadata will represent all needed fields to create an object.
 
 ### Update Object
 
-Objects in Shopify can be updated with [Execute mutation action](#execute-mutation).
+Shopify objects can be updated using the [Execute Mutation action](#execute-mutation).
 
-To do that, filter the list of available mutation types in the `Mutation type` configuration field by `Update` keyword.
+To do this, filter the list of available mutation types in the `Mutation type` configuration field using the `Update` keyword.
 
 ![Update Object](img/update-object-1.png)
 
-Input metadata will represent all needed fields to update an object.
+The input metadata will represent all the fields required to update the object.
 
 <details close markdown="block"><summary><strong>Example of input metadata to update a customer</strong></summary>
 
@@ -168,14 +168,14 @@ Input metadata will represent all needed fields to update an object.
 
 ### Upsert Object 
 
-Updates (of record found) or creates a new object.
+Updates an existing record or creates a new one if no match is found.
 
 #### Configuration Fields
 
-* **Object type** - (dropdown, required): Currently supported only `Customers`.
-* **Unique field to upsert** - (dropdown, required): This field will be used to search object, if object not found or field is empty, new object will be created.
-* **Select basic fields for resulting object** - (dropdown, optional): Here provided only basic fields that can be included in resulting object, it may affect on query cost
-* **You can provide additional fields here** - (string, optional): Resulting object can be expanded using GraphQL request, it may affect on query cost. 
+* **Object type** - (dropdown, required): Currently, only `Customers` are supported.
+* **Unique field to upsert** - (dropdown, required): This field is used to search for the object. If no object is found or the field is empty, a new object will be created.
+* **Select basic fields for resulting object** - (dropdown, optional): Provides basic fields to include in the resulting object. Selecting fewer fields may reduce query costs.
+* **You can provide additional fields here** - (string, optional): Expand the resulting object using a GraphQL request. This may affect the query cost.
 Example for customer:
   ```
     customer {
@@ -184,26 +184,26 @@ Example for customer:
       }
     }
   ```
-> **Please Note**: You need to select basic fields or provide additional fields for resulting object to execute mutation
-* **Input as batch** - (checkbox, optional): If checked, the input metadata will be an array instead of a single object
+> **Please Note**: You must select basic fields or provide additional fields for the resulting object to execute the mutation.
+* **Input as batch** - (checkbox, optional): If checked, the input metadata will be an array instead of a single object.
 
 #### Input Metadata
 
-Dynamically generated fields according to chosen `Object type`.
+Dynamically generated fields based on the chosen `Object type`.
 
 #### Output Metadata
 
-Result object from upsert. 
+The resulting object from the upsert operation. 
 
-### Execute mutation
+### Execute Mutation
 
-Execute any mutation available on selected API version. This action can be used to `Create`, `Update` or `Delete` Objects and any other operations that affect on Shopify data.
+Executes any mutation available in the selected API version. This action can be used to `Create`, `Update`, or `Delete` objects and perform any other operations affecting Shopify data.
 
 #### Configuration Fields
 
-* **Mutation type** - (dropdown, required): Mutation type to execute. E.g `Customer Create`.
-* **Select basic fields for resulting object** - (dropdown, optional): Here provided only basic fields that can be included in resulting object, it may affect on query cost.
-* **You can provide additional fields here** - (string, optional): Resulting object can be expanded using GraphQL request, it may affect on query cost.
+* **Mutation type** - (dropdown, required): The type of mutation to execute (e.g., `Customer Create`).
+* **Select basic fields for resulting object** - (dropdown, optional): Provides basic fields to include in the resulting object.
+* **You can provide additional fields here** - (string, optional): Expand the resulting object using a GraphQL request. 
 
 <details close markdown="block"><summary><strong>Example for customer</strong></summary>
 
@@ -227,127 +227,118 @@ Execute any mutation available on selected API version. This action can be used 
 
 </details>
 
->**Please Note:** You need to select basic fields or provide additional fields for resulting object to execute mutation
+>**Please Note:** You must select basic fields or provide additional fields for the resulting object to execute the mutation.
 
 #### Input Metadata
 
-Dynamically generated fields according to chosen `Mutation type`.
+Dynamically generated fields based on the chosen `Mutation type`.
 
 #### Output Metadata
 
-Result object from executed mutation.
+The resulting object from the executed mutation. 
 
 ### Lookup Objects (plural)
 
-Lookup a set of objects by defined criteria list. Can be emitted in different way.
+Lookup a set of objects based on defined criteria. Results can be emitted in multiple ways.
 
 #### Configuration Fields
 
-* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Customers`.
-* **Select basic fields for resulting object** - (dropdown, optional): Here provided only basic fields that can be included in resulting object, it may affect on query cost.
-* **You can provide additional fields here** - (string, optional): Resulting object can be expanded using GraphQL request, it may affect on query cost.
-* **Emit Behavior** - (dropdown, required): Defines the way result objects will be emitted, one of `Emit page` or `Emit individually`.
-* **Return Full Response** - (checkbox): Defines the format of emitted result: with service information or without.
-Examples for Object type `customers` are given below:
-
-    <details close markdown="block"><summary><strong>Example for customer</strong></summary>
-
+* **Object Type** - (dropdown, required): The type of object to lookup (e.g., `Customers`).
+* **Select basic fields for resulting object** - (dropdown, optional): Basic fields to include in the resulting object.
+* **You can provide additional fields here** - (string, optional): Expand the resulting object using a GraphQL request.
+  <details close markdown="block"><summary><strong>Example for customer</strong></summary>
     ```graphql
-        addresses {
+         addresses {
         address1
         country
-    }
+      }
     ```
-
-    </details>
-
-<details close markdown="block"><summary><strong>Response with enabled `Return Full Response` checkbox and `Emit Behavior` = `Emit page`</strong></summary>
-
-```json
-{
-    "data": {
-      "customers": [
-        {
-          "id": "gid://shopify/Customer/2444144115794",
-          "firstName": "Willy"
-        },
-        {
-          "id": "gid://shopify/Customer/2444144148562",
-          "firstName": "Tobi"
-        },
-        {
-          "id": "gid://shopify/Customer/2444144181330",
-          "firstName": "Mathilde"
-        }
-      ]
-    },
-    "extensions": {
-      "cost": {
-        "requestedQueryCost": 5,
-        "actualQueryCost": 5,
-        "throttleStatus": {
-          "maximumAvailable": 1000,
-          "currentlyAvailable": 40,
-          "restoreRate": 50
+  </details>  
+* **Emit Behavior** - (dropdown, required): Defines how result objects will be emitted: `Emit page` or `Emit individually`.
+* **Return Full Response** - (checkbox): Defines whether the emitted result includes service information. Examples for Object type `customers`: 
+  <details close markdown="block"><summary><strong>Response with `Return Full Response` enabled and `Emit Behavior` = `Emit page`</strong></summary>
+    ```json
+    {
+      "data": {
+        "customers": [
+          {
+            "id": "gid://shopify/Customer/2444144115794",
+            "firstName": "Willy"
+          },
+          {
+            "id": "gid://shopify/Customer/2444144148562",
+            "firstName": "Tobi"
+          },
+          {
+            "id": "gid://shopify/Customer/2444144181330",
+            "firstName": "Mathilde"
+          }
+        ]
+      },
+      "extensions": {
+        "cost": {
+          "requestedQueryCost": 5,
+          "actualQueryCost": 5,
+          "throttleStatus": {
+            "maximumAvailable": 1000,
+            "currentlyAvailable": 40,
+            "restoreRate": 50
+          }
         }
       }
     }
-}
-```
-</details>
+    ```
+   </details>
 
+   <details close markdown="block"><summary><strong>Response with `Return Full Response` disabled and `Emit Behavior` = `Emit page`</strong></summary>
+   ```json
+   {
+    "results": [
+      {
+        "id": "gid://shopify/Customer/2444144115794",
+        "firstName": "Willy"
+      },
+      {
+        "id": "gid://shopify/Customer/2444144148562",
+        "firstName": "Tobi"
+      },
+      {
+        "id": "gid://shopify/Customer/2444144181330",
+        "firstName": "Mathilde"
+      }
+    ]
+   }
+  ```
+  </details>
 
-<details close markdown="block"><summary><strong>Response with disabled `Return Full Response` checkbox and `Emit Behavior` = `Emit page`</strong></summary>
-
-```json
-{
-  "results": [
-    {
-      "id": "gid://shopify/Customer/2444144115794",
-      "firstName": "Willy"
-    },
-    {
-      "id": "gid://shopify/Customer/2444144148562",
-      "firstName": "Tobi"
-    },
-    {
-      "id": "gid://shopify/Customer/2444144181330",
-      "firstName": "Mathilde"
-    }
-  ]
-}
-```
-
-- **Number of search terms** - (number, optional): text field to specify the number of search terms (positive integer number [1-99] or 0).
-- **Emit empty object if no entities found** - (checkbox): If this checkbox is selected and objects are not found component will emit an empty object instead of skipping execution
-
-</details>
+* **Number of search terms** - (number, optional): The number of search terms (positive integer [1-99] or 0).
+* **Emit empty object if no entities found** - (checkbox): If enabled, the component will emit an empty object instead of skipping execution when no objects are found.
 
 #### Input Metadata
 
-* **First** - (strings, optional): Indicates amount of objects per execution. Default to 250.
-  Input Metadata is depending on the configuration field `Number of search terms`.
-  If `Number of search terms` is empty or equal `0`, additional fields will not be generated.
-  If `Number of search terms` = 1, one search term will be added to metadata.
-  If `Number of search terms` > 1, a number of search term equal `Number of search terms` and a number of criteria link equal 'Number of search terms - 1' will de created in metadata.
-  Each search term has 3 fields:
-    - **Field name** - chosen entity's field name. You need to select the one field from Allowed Values section
-        >**Please Note:** Allowed Values section contains fields that are allowed to use in query and fields with `-` sign, which means `NOT` modifier (see [here](https://shopify.dev/docs/api/usage/search-syntax#modifiers)).
+* **First** - (string, optional): Indicates the number of objects per execution. Defaults to 250.
+  Input metadata depends on the `Number of search terms` configuration field.
+  - If `Number of search terms` is empty or `0`, additional fields will not be generated.
+  - If `Number of search terms` = 1, one search term will be added.
+  - If `Number of search terms` > 1, the corresponding number of search terms and logical operators will be created.
 
-    - **Condition** - You need to select the one condition from Allowed Values section
-    - **Field value** - the value that the field must match with the specified condition
-  Between search terms, there is Criteria Link. You need to select the one criteria from Allowed Values section
+Each search term consists of:
+* **Field name** - The entity field name. Select a value from the Allowed Values dropdown.
+  > **Please Note**: Use the `-` sign for the `NOT` modifier (see [Shopify documentation](https://shopify.dev/docs/api/usage/search-syntax#modifiers)).
+* **Condition** - The condition for the search term.
+* **Field value** - The value the field must match.
+  Search terms are linked by logical operators (e.g., `AND`).
 
 
 #### Output Metadata
 
-Dynamically generated fields according to chosen `Object type` and selected fields.
-For `Emit Page` mode: An object, with key `results` that has an array as its value.
-For `Emit Individually` mode: Each object which fill the entire message.
+Dynamically generated fields based on the chosen `Object type` and selected fields.
+For `Emit Page` mode: An object with a `results` key containing an array.
+For `Emit Individually` mode: Each object is emitted as a separate message.
 
 #### Example
 
-For instance, it is needed to execute following Shopify query:
+To execute the following Shopify query:
 
 ```graphql
 query{
@@ -366,55 +357,27 @@ query{
 }
 ```
 
-**1.** Select in `Object type` option `Customers`.
-{% include img.html max-width="100%" url="img/example-1.png" title="Example 1" %}
-
-**2.** From dropdown `Select basic fields for resulting object` select basic fields: `id`, `state` and `firstName`.
-{% include img.html max-width="100%" url="img/example-2.png" title="Example 2" %}
->**Please Note**: Basic fields are fields that can be requested without specifying arguments or adding additional levels: `id`, `email`, etc.
-
-**3.** Paste additional fields in field `You can provide additional fields here`:
-{% include img.html max-width="100%" url="img/example-3.png" title="Example 3" %}
-> **Please Note**: Additional fields are fields that can't be selected in `Basic fields` section. As rule, they are fields with specifying arguments or adding additional levels such as: `addresses{country}`.
-
-**4.** Select `Emit Behavior`. If it is needed to receive each object individually, use `Emit individually`, in other cases, `Emit page` option - all objects will be returned in one array `result`. For example, lets use `Emit individually`.
-{% include img.html max-width="100%" url="img/example-4.png" title="Example 4" %}
-
-**5.** Specify `Number of search terms`: in example query we see 2 conditions, so set it to `2`.
-{% include img.html max-width="100%" url="img/example-5.png" title="Example 5" %}
-
-**6.** Push the button `Continue` and move to fill metadata.
-
-**7.** Set `10` to field `First`.
-{% include img.html max-width="100%" url="img/example-6.png" title="Example 6" %}
-
-**8.** To map condition `country:Canada`:
-- Select in `Field name` from Allowed Values dropdown option `country`:
-{% include img.html max-width="100%" url="img/example-7.png" title="Example 7" %}
-- Select in `Condition` from Allowed Values dropdown option `:`.
-- Set in `Field value` value `Canada`.
-{% include img.html max-width="100%" url="img/example-8.png" title="Example 8" %}
-
-**9.** Select in `Logical operator` from Allowed Values dropdown option `AND`.
-
-**10.** To map condition `-state:DISABLED`: set `Field name` to `-state`, `Condition` to `:` and `Field value` to `DISABLED`.
-{% include img.html max-width="100%" url="img/example-9.png" title="Example 9" %}
-
-**11.** Push the button `Continue` and move to `Sample` section.
-
-**12.** Push the button `Retrieve new sample from Shopify admin component v2`.
-
-**13.** Step is configured.
+1. Select `Customers` in `Object type`.
+2. From the `Select basic fields` dropdown, select `id`, `state`, and `firstName`.
+3. Enter additional fields (e.g., `addresses{country}`) in the `Additional fields` section.
+4. Select `Emit Individually` for `Emit Behavior`.
+5. Set `Number of search terms` to `2`.
+6. Click `Continue` and proceed to metadata mapping.
+7. Set `First` to `10`.
+8. Map the first condition: `Field name` = `country`, `Condition` = `:`, `Field value` = `Canada`.
+9. Set `Logical operator` to `AND`.
+10. Map the second condition: `Field name` = `-state`, `Condition` = `:`, `Field value` = `DISABLED`.
+11. Click `Continue` to retrieve a sample and finish configuration.
 
 ### Lookup Object By ID
 
-Lookup a single object by its ID - only query with one argument `id` can be used in this action.
+Retrieves a single object by its ID.
 
 #### Configuration Fields
 
-* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Customer`.
-* **Select basic fields for resulting object** - (dropdown, optional): Here only basic fields can be included in the resulting object, it may affect query cost.
-* **You can provide additional fields here** - (string, optional): The resulting object can be expanded using GraphQL request, it may affect query cost.
+* **Object Type** - (dropdown, required): The type of object to lookup (e.g., `Customer`).
+* **Select basic fields for resulting object** - (dropdown, optional): Basic fields to include.
+* **You can provide additional fields here** - (string, optional): Expand the resulting object using a GraphQL request.
 
 <details close markdown="block"><summary><strong>Example for customer</strong></summary>
 
@@ -431,15 +394,15 @@ Lookup a single object by its ID - only query with one argument `id` can be used
 
 #### Input Metadata
 
-* **ID Value** - (string, required): Value for ID of the object to lookup.
+* **ID Value** - (string, required): The ID of the object to lookup.
 
 #### Output Metadata
 
-Dynamically generated fields according to chosen `Object type` and selected fields.
+Dynamically generated fields based on the chosen `Object type` and selected fields.
 
 ### Make Raw Request
 
-Executes custom request.
+Executes a custom HTTP request.
 
 #### Configuration Fields
 
@@ -447,17 +410,17 @@ There is no configuration fields in this action.
 
 #### Input Metadata
 
-* **URL** - (string, required): Path of the resource relative to the base URL (`https://{store_name}.myshopify.com/admin/api/{api_version}/`) or full URL
-* **Method** - (string, required): HTTP verb to use in the request, one of `GET`, `POST`, `PUT`, `PATCH`, `DELETE`.
-* **Request Body** - (object, optional): Body of the request to send.
+* **Url** - (string, required): The resource path relative to the base URL (`https://{store_name}.myshopify.com/admin/api/{api_version}/`) or a full URL.
+* **Method** - (string, required): The HTTP method (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`).
+* **Request Body** - (object, optional): The body of the request.
 
 #### Output Metadata
 
-* **Status Code** - (number, required): HTTP status code of the response.
-* **HTTP headers** - (object, required): HTTP headers of the response.
-* **Response Body** - (object, optional): HTTP response body.
+* **Status Code** - (number, required): The HTTP status code of the response.
+* **HTTP headers** - (object, required): The HTTP response headers.
+* **Response Body** - (object, optional): The HTTP response body.
 
-> **Note:** GraphQL and REST endpoints are supported. You can find examples below.
+> **Please Note:** Both GraphQL and REST API endpoints are supported.
 
 #### GraphQL
 * **URL** - `/graphql.json`.
@@ -473,103 +436,36 @@ There is no configuration fields in this action.
 
 ### Get New and Updated Objects Polling
 
-Retrieve all the updated or created objects within a given time range.
+Retrieves all updated or created objects within a specified time range.
 
 #### Configuration Fields
 
-* **Object Type** - (dropdown, required): Object-type to lookup on. E.g `Customers`.
-
-* **Timestamp field to poll on** - (dropdown, required): Can be either `Last Modified` or `Created dates` (updated or new objects, respectively).
-
-* **Select basic fields for resulting object** - (dropdown, optional): Here only basic fields that can be included in the resulting object, may affect query cost.
-
-* **You can provide additional fields here** - (string, optional): The resulting object can be expanded using GraphQL request, this field represents content from each `edges.node`, it may affect on query cost.
-
-* **Size of Polling Page** - (optional, positive integer, defaults to 250, max 250): Indicates the size of pages to be fetched per request. If you query cost will be over shop limit, you can decrease page size.
-
-* **Emit behavior** - (dropdown, optional): Indicates emit objects behavior - `Emit individually` (by default) or `Emit page`
-
-* **Return Full Response** - (checkbox): Defines the format of emitted result: with service information or without.
-  Examples for Object type `customers` are given below:
-  
-    <details close markdown="block"><summary><strong>Example for customer</strong></summary>
-
+* **Object Type** - (dropdown, required): The type of object to lookup (e.g., `Customers`).
+* **Timestamp field to poll on** - (dropdown, required): Choose between `Last Modified` or `Created` dates.
+* **Select basic fields for resulting object** - (dropdown, optional): Basic fields to include.
+* **You can provide additional fields here** - (string, optional): Expand the resulting object. This field represents content from `edges.node`. 
+    <details close markdown="block"><summary><strong>Example for Customers</strong></summary>
     ```graphql
-        metafields(first: 2) {
-        edges {
-            node {
-            namespace
-            key
-            value
-            }
-        }
-        }
-        addresses {
-        address1
-        country
-        }
-    ```
-
-    </details>
-
-<details close markdown="block"><summary><strong>Response with enabled "Return Full Response" checkbox and "Emit Behavior" = "Emit page"</strong></summary>
-
-```json
-{
-    "data": {
-      "customers": [
-        {
-          "id": "gid://shopify/Customer/2444144115794",
-          "firstName": "Willy"
-        },
-        {
-          "id": "gid://shopify/Customer/2444144148562",
-          "firstName": "Tobi"
-        },
-        {
-          "id": "gid://shopify/Customer/2444144181330",
-          "firstName": "Mathilde"
-        }
-      ]
-    },
-    "extensions": {
-      "cost": {
-        "requestedQueryCost": 5,
-        "actualQueryCost": 5,
-        "throttleStatus": {
-          "maximumAvailable": 1000,
-          "currentlyAvailable": 40,
-          "restoreRate": 50
+    metafields(first: 2) {
+      edges {
+        node {
+          namespace
+          key
+          value
         }
       }
     }
-}
-```
-</details>
-
-
-<details close markdown="block"><summary><strong>Response with disabled "Return Full Response" checkbox and "Emit Behavior" = "Emit page"</strong></summary>  
-
-```json
-{
-  "results": [
-    {
-      "id": "gid://shopify/Customer/2444144115794",
-      "firstName": "Willy"
-    },
-    {
-      "id": "gid://shopify/Customer/2444144148562",
-      "firstName": "Tobi"
-    },
-    {
-      "id": "gid://shopify/Customer/2444144181330",
-      "firstName": "Mathilde"
+    addresses {
+      address1
+      country
     }
-  ]
-}
-```
-
-</details>
+  ```
+    </details>
+* **Size of Polling Page** - (optional, positive integer, defaults to 250, max 250): The number of records to fetch per request. Reduce this if you encounter rate limit issues. 
+* **Emit behavior** - (dropdown, optional): Defines the emission behavior: `Emit individually` (default) or `Emit page`.
+* **Return Full Response** - (checkbox): Defines whether the emitted result includes service information.
+* **Start Time** - (string, optional): The ISO8601 timestamp to start polling from (inclusive). Defaults to the beginning of time (January 1, 1970, 00:00:00.000Z). 
+* **End Time** - (string, optional): The ISO8601 timestamp to end at (inclusive). If specified, the trigger will only fetch records up to this time. Once the end time is reached, the trigger will stop fetching new data. Defaults to the current time of execution.
 
 #### Input Metadata
 
@@ -577,38 +473,31 @@ There is no input metadata.
 
 #### Output Metadata
 
-Resulting object will represent content from path `data\\{Object Type}\\edges\node`.
-
-Depends on selected `Object Type`, selected or provided fields and `Emit behavior`:
-- For `Emit Page` mode: 
-    - An object with key `results` that has an array as its value (if `Page Size` > 0)
-- For `Emit Individually` mode: 
-    - Each object which fill the entire message.
+The resulting object represents the content from the path `data\{Object Type}\edges\node`. Output depends on the selected `Object Type`, fields, and `Emit behavior`.
 
 ### Webhook
 
-Creates [webhook subscription](https://shopify.dev/docs/api/admin-graphql/2024-01/mutations/webhookSubscriptionCreate) for selected topics on the Shopify side to receive events.
+Creates [webhook subscriptions](https://shopify.dev/docs/api/admin-graphql/2024-01/mutations/webhookSubscriptionCreate) for selected topics to receive real-time events.
 
 #### Configuration Fields
 
-* **Select topics** - (multi-select dropdown, required): Select available topics to create a subscription.
-* **Skip validation** - (checkbox, optional): If checked - the component will not validate the incoming message to be sure that it comes from Shopify, use it for test purposes only!
+* **Select topics** - (multi-select dropdown, required): Choose topics for the subscription.
+* **Skip validation** - (checkbox, optional): If enabled, the component will not verify that incoming messages originate from Shopify. Use for testing only.
 
 #### Input Metadata
 
 There is no input metadata.
 
 #### Output Metadata
-Event from the subscription on the selected topic.
+The event data from the subscription topic.
 
 #### Limitations
-* **Generate Stub Sample** works only for the most used objects.
-* This trigger doesn't support `Retrieve sample` functionality.
-* If you use ordinary flow (The `Real-time` functionality not enabled) after flow starts you will need to run it once - just follow the webhook URL (to make the first execution) this action will create a subscription, error on this execution may be ignored.
+* **Generate Stub Sample** works only for commonly used objects.
+* This trigger does not support the `Retrieve sample` functionality.
+* In standard flows, the flow must be executed once after starting to create the subscription (e.g., by visiting the webhook URL).
 
 ## Known limitations
 
-* Look at [Shopify API rate limits](https://shopify.dev/api/usage/rate-limits), specially [GraphQL Admin API rate limits](https://shopify.dev/api/usage/rate-limits#graphql-admin-api-rate-limits)
-* If the component reaches API rate limit it will retry the request after waiting until the queue is restored up to 10 times: for example - a query costs `500` points, currently available only `100` points, the restore rate `50` points/second, the component will wait `8` seconds until available points will be restored and try again to get data.
-
-  Be careful with several flows running at the same time, each of them can affect on total available points, if the component won't be able to get data after 10 retries, then the error `"Throttled"` will be thrown.
+* Refer to the [Shopify API rate limits](https://shopify.dev/api/usage/rate-limits) and [GraphQL Admin API rate limits](https://shopify.dev/api/usage/rate-limits#graphql-admin-api-rate-limits).
+* If the component reaches an API rate limit, it will retry the request up to 10 times after waiting for the quota to restore. For example, if a query costs 500 points and only 100 are available with a restore rate of 50 points/second, the component will wait 8 seconds before retrying.
+* Multiple flows running simultaneously can impact the total available points. If the component cannot retrieve data after 10 retries, a `"Throttled"` error will be thrown.
