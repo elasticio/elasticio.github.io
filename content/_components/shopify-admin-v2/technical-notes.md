@@ -5,11 +5,23 @@ description: Technical Notes for the Shopify Admin v2 component.
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2025-04-15
-ComponentVersion: 2.5.1
+updatedDate: 2026-03-03
+ComponentVersion: 2.5.3
 ---
 
 ## Chagelog
+
+### 2.5.3 (March 03, 2026)
+* Fixed issue with GraphQL `InlineFragment` handling in "Additional fields" configuration field.
+* Improved the End Time boundary logic in the `Get New and Updated Objects Polling` trigger (see the README)
+* Updated Sailor to version 2.7.8.
+* Updated `axios` to version 1.13.5.
+
+### 2.5.2 (August 06, 2025)
+* Updated Sailor to version 2.7.6.
+* Updated `@elastic.io/component-commons-library` to version 4.0.0.
+* Updated `axios` to version 1.11.0.
+* Removed the `elasticio-node` library.
 
 ### 2.5.1 (April 15, 2025)
 * Improved errors text
