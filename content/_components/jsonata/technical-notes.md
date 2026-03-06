@@ -1,19 +1,24 @@
 ---
-title: Jsonata Technical Notes
+title: Transformation Technical Notes
 layout: component
-description: Technical Notes for the Jsonata component.
+description: Technical Notes for the Transformation component.
 icon: jsonata.png
-icontext: Jsonata component
+icontext: JSONata Transform component
 category: jsonata
-updatedDate: 2025-11-19
-ComponentVersion: 1.1.0
+updatedDate: 2026-02-04
+ComponentVersion: 1.1.1
 redirect_from:
   - /components/jsonata/changelog.html
 ---
 
 ## Changelog
 
-## 1.1.0 (November 19, 2025)
+### 1.1.1 (February 04, 2026)
+
+* Updated Sailor version to 2.7.8
+* Updated Node version to 24.x
+
+### 1.1.0 (November 19, 2025)
 
 *   Updated dependencies to the latest versions
 *   Removed unused `request` and `bunyan` dependencies
