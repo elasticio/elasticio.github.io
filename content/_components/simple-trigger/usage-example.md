@@ -1,17 +1,17 @@
 ---
-title: Simple-trigger Usage Example
+title: Simple Trigger Usage Example
 layout: component
-description: Usage Example for the Simple-trigger component.
+description: Usage Example for the Simple Trigger component.
 icon: simple-trigger.png
-icontext: Simple-trigger component
+icontext: Simple Trigger component
 category: simple-trigger
-updatedDate: 2023-06-30
-ComponentVersion: 1.2.0
+updatedDate: 2026-03-05
+ComponentVersion: 1.3.0
 ---
 
 ## Overview
 
-The Simple Trigger component allows you to initiate and control a flow based on a specific schedule. In scenarios where your existing component lacks a trigger function, the Simple Trigger component can be seamlessly integrated to act as the initiating step. This guide provides an in-depth usage example to illustrate how to set up a flow using the Simple Trigger component.
+The Simple Trigger Component provides a reliable way to initiate platform flows. It emits a message containing the current execution time and the timestamp of the previous successful execution, allowing for time-windowed logic in subsequent steps. This guide provides an in-depth usage example to illustrate how to set up a flow using the Simple Trigger component.
 
 ## Usage Example
 

@@ -1,17 +1,24 @@
 ---
-title: Simple-trigger Technical Notes
+title: Simple Trigger Technical Notes
 layout: component
-description: Technical Notes for the Simple-trigger component.
+description: Technical Notes for the Simple Trigger component.
 icon: simple-trigger.png
-icontext: Simple-trigger component
+icontext: Simple Trigger component
 category: simple-trigger
-updatedDate: 2023-06-30
-ComponentVersion: 1.2.0
+updatedDate: 2026-03-05
+ComponentVersion: 1.3.0
 redirect_from:
   - /components/simple-trigger/changelog.html
 ---
 
 ## Changelog
+
+### 1.3.0 (March 05, 2026)
+
+* Removed legacy `elasticio-node` dependency and transitioned to local utilities
+* **Modernized Runtime**: Updated Node.js engine from **18.x** to **24.x**.
+* **Dependency Upgrades**:
+    * `elasticio-sailor-nodejs`: 2.7.1 -> 2.7.8
 
 ### 1.2.0 (June 30, 2023)
 
