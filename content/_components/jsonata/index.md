@@ -1,13 +1,13 @@
 ---
-title: Jsonata component
+title: Transformation component
 layout: component
 section: Utility components
-description: Dedicated data transformation component.
+description: Dedicated data transformation component that is based on JSONata.
 icon: jsonata.png
-icontext: Jsonata component
+icontext: JSONata Transform component
 category: jsonata
-updatedDate: 2025-11-19
-ComponentVersion: 1.1.0
+updatedDate: 2026-02-04
+ComponentVersion: 1.1.1
 ---
 
 ## Table of Contents
