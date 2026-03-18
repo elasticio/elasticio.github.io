@@ -5,8 +5,8 @@ description: JDBC component actions page
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2025-11-18
-ComponentVersion: 2.5.11
+updatedDate: 2026-03-18
+ComponentVersion: 2.5.12
 ---
 
 ## Select Query action

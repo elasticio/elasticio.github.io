@@ -5,11 +5,14 @@ description: Technical Notes for the Shopify Admin v2 component.
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2026-03-03
-ComponentVersion: 2.5.3
+updatedDate: 2026-03-18
+ComponentVersion: 2.6.0
 ---
 
 ## Chagelog
+
+### 2.6.0 (March 18, 2026)
+* Added support for the new authentication method - `Client credentials grant`
 
 ### 2.5.3 (March 03, 2026)
 * Fixed issue with GraphQL `InlineFragment` handling in "Additional fields" configuration field.

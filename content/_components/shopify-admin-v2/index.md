@@ -6,8 +6,8 @@ description: The Shopify Admin component is designed to connect to the Shopify G
 icon: shopify-admin-v2.png
 icontext: Shopify Admin v2 component
 category: shopify-admin-v2
-updatedDate: 2026-03-03
-ComponentVersion: 2.5.3
+updatedDate: 2026-03-18
+ComponentVersion: 2.6.0
 ---
 
 ## Table of Contents
@@ -37,17 +37,47 @@ Tested with API version: `2023-01`.
 
 ## Credentials
 
-To use this component, you need to create a custom app:
-1. Go to your store's [Admin panel](https://accounts.shopify.com/store-login).
-2. Open `App and sales channel settings`.
-3. Select `Develop apps for your store`.
-4. Click the `Create an app` button.
-5. Provide an app name and click `Create app`.
-6. Go to `Configure Admin API scopes`.
-7. Select the access scopes for the objects the component will need to access and click `Save`.
-8. You will now be able to install this app by clicking the `Install app` button in the `API credentials` section or in the top-right corner.
-9. You can obtain the `Admin API access token` by selecting `Reveal token once`. This token is required for the component's credentials configuration.
-10. Additionally, you may need to save the `API secret key` if you plan to use webhooks.
+To use this component, you need to create an App:
+
+1. Go to the [Dev Dashboard](https://dev.shopify.com/dashboard/).  
+2. Open the `Apps` tab.  
+3. Click the `Create app` button.  
+4. Enter any App name in the `Start from Dev Dashboard` section, for example, `EIO`.  
+5. Click the `Create` button. You will be redirected to the App version creation page.  
+6. We do not use the `App URL` field, so you can leave it as `https://example.com`.  
+7. In the `Access` window, add the required Scopes that you plan to use in the component.  
+8. Click the `Release` button.  
+9. On the left side, select the `Settings` tab.  
+10. Under the `Credentials` section, you will see `Client ID` and `Secret`. These will be required for the component credentials.  
+11. Now, on the left side, select your App name, such as `EIO`, which we used when creating this app.  
+12. On this page, next to the `Installs` section, you will see the `Install app` button. Click it.  
+13. The previous action will open a new window where you need to select the shop that will be used with the component.  
+14. Here, you can verify once again that all required scopes are included, then click the `Install` button.  
+15. Now go to [Partner Dashboard Apps](https://partners.shopify.com/current/apps).  
+16. Select your new app here, for example, `EIO`.  
+17. Open the `Distribution` tab on the left side.  
+18. Select the `Custom distribution` option.  
+19. Enter your store URL here and click the `Generate Link` button.  
+
+<details>
+  <summary><strong>Deprecated instructions of creating a custom app</strong></summary>
+  <br>
+  <p>To use this component, you need to create a custom app:</p>
+
+  <ol>
+    <li>Go to your store's <a href="https://accounts.shopify.com/store-login">Admin panel</a>.</li>
+    <li>Open <strong>App and sales channel settings</strong>.</li>
+    <li>Select <strong>Develop apps for your store</strong>.</li>
+    <li>Click the <strong>Create an app</strong> button.</li>
+    <li>Provide an app name and click <strong>Create app</strong>.</li>
+    <li>Go to <strong>Configure Admin API scopes</strong>.</li>
+    <li>Select the access scopes for the objects the component will need to access and click <strong>Save</strong>.</li>
+    <li>Install the app by clicking the <strong>Install app</strong> button in the <strong>API credentials</strong> section or in the top-right corner.</li>
+    <li>Obtain the <strong>Admin API access token</strong> by selecting <strong>Reveal token once</strong>. This token is required for the component's credentials configuration.</li>
+    <li>Optionally, save the <strong>API secret key</strong> if you plan to use webhooks.</li>
+  </ol>
+
+<br>
 
 <details close markdown="block"><summary><strong>Screenshot instructions</strong></summary>
 
@@ -62,20 +92,19 @@ To use this component, you need to create a custom app:
 
 </details>
 
-Component credentials configuration fields:
+</details> <br>
 
-* **Store name** (string, required) - Provide your store name here. It can be found in the [Admin panel](https://accounts.shopify.com/store-login) as part of the store URL.
-
-![Store Name](img/store-name.png)
-
-* **Admin API access token** (string, required) - The token obtained after app creation (see instructions above).
+Component credentials configuration fields: 
+* **Store name** (string, required) - Provide your store name here. It can be found in the [Admin panel](https://accounts.shopify.com/store-login) as part of the store URL. <details>![image](https://user-images.githubusercontent.com/7985390/212658330-bd1789dd-e7b6-4afb-ae0c-63464a773eb1.png)</details>
+* **Client ID** (string, optional) - The client ID for the app.
+* **Client Secret** (string, optional) - The client secret for the app.
+* **Admin API access token** (string, optional, **deprecated**) - The token obtained after app creation (see deprecated instructions above).
 * **API version** (string, required) - The API version you intend to work with. The component has been tested on `2023-01`, but it is designed to work with any available version.
 * **API secret key** (string, optional) - This field is required **only** for the `Webhook` trigger to [verify requests with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
 
-> **Notes:**
+> **Please Note:**
 * The `Admin API access token` is shown only once.
 * To rotate the API credentials for a custom app created in the Shopify admin, you must uninstall and reinstall the app.
-
 
 ## Actions
 

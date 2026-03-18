@@ -5,63 +5,42 @@ description: JDBC component triggers page
 icon: jdbc.png
 icontext: JDBC component
 category: jdbc
-updatedDate: 2025-11-18
-ComponentVersion: 2.5.11
+updatedDate: 2026-03-18
+ComponentVersion: 2.5.12
 ---
 
 ## Select trigger
 
-You are able to provide SELECT query with last execution timestamp as WHERE clause criteria.
+Executes a custom SELECT statement for incremental polling.
 
 {% include img.html max-width="100%" url="img/select-trigger.png" title="Select trigger" %}
 
+Before execution, the `%%EIO_LAST_POLL%%` placeholder is replaced with either the ISO date of the last successful execution or the maximum value from the last polled dataset (e.g., `2018-08-01T00:00:00.000`).
 
-Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
-During the first execution, date will be equal to ["start" of Unix Time](https://en.wikipedia.org/wiki/Unix_time) - ``1970-01-01 00:00:00.000``.
-Precision of the polling clause can be till milliseconds.
-The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-dd hh:mi:ss[.sss]``, where
-- ``yyyy`` - year
-- ``mm`` - month
-- ``dd`` - day
-- ``hh`` - hour
-- ``mi`` - minute
-- ``ss`` - second
-- ``sss`` - millisecond (optional)
+**Initial Execution:**
+During the first execution (when no snapshot exists), the placeholder defaults to **midnight of the current day** (Today at 00:00:00.000).
+
+*   **Precision**: Polling supports precision up to milliseconds.
+*   **Start Polling From**: (Optional) You can manually override the default by providing a value in the format: `yyyy-mm-dd hh:mi:ss[.sss]`.
 
 ## Get Rows Polling trigger
 
-This trigger can polling data from provided table. As WHERE clause you can use column, which has datatype like DATE or TIMESTAMP.
+Executes an operation that polls multiple rows from the database since the last record.
 
-Before executing the the statement %%EIO_LAST_POLL%% will be replaced with ISO Date of the last execution or max value of the last pooled datetime, for example ``2018-08-01T00:00:00.000``.
-During the first execution, date will be equal to ["start" of Unix Time](https://en.wikipedia.org/wiki/Unix_time) - ``1970-01-01 00:00:00.000``.
-Precision of the polling clause can be till milliseconds.
-The format of ``Start Polling From (optional)`` field should be like ``yyyy-mm-dd hh:mi:ss[.sss]``, where:
+The `%%EIO_LAST_POLL%%` placeholder functions similarly to the Select Trigger, tracking the last processed record to ensure only new data is retrieved.
 
-- ``yyyy`` - year
-- ``mm`` - month
-- ``dd`` - day
-- ``hh`` - hour
-- ``mi`` - minute
-- ``ss`` - second
-- ``sss`` - millisecond (optional)
+**Initial Execution:**
+If no snapshot exists and the `Start Polling From` field is empty, the trigger defaults to the **Unix Epoch** (1970-01-01 00:00:00.000).
 
-> **Please note** that Component Snapshot will not be overwritten in Real-Time flows due to platform behaviour, so we strongly recommend to use Get Rows Polling trigger in Keen Flows only*
+> **Please note** Component snapshots are not overwritten in Real-Time flows due to platform behavior. We strongly recommend using the Get Rows Polling trigger in **Ordinary Flows** only.
 
 ### Input fields description
 
 {% include img.html max-width="100%" url="img/get-rows-polling-trigger.png" title="Get Rows Polling trigger" %}
 
-  * Tables List
-
-Dropdown list with available table names, required field
-
-  * Timestamp (or similar) Column
-
-Dropdown list with available Column names, that have a type like `java.sql.Date` or `java.sql.Timestamp`, required field
-
-  * Start Polling From (optional)
-
-Optional field, indicates the beginning time to start polling from (defaults to the current time).
+*   **Tables List**: A dropdown of available table names.
+*   **Timestamp Column**: A dropdown of columns with `java.sql.Date` or `java.sql.Timestamp` types.
+*   **Start Polling From**: (Optional) Manually set the beginning time for polling. Defaults to the Unix Epoch (1970-01-01).
 
 ## SELECT trigger (Deprecated)
 
