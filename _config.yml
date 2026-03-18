@@ -38,6 +38,18 @@ algolia:
   application_id: 'OIJ2XNEVHZ'
   index_name:     'test_elasticio_documentation'
   search_only_api_key: 'e434b9595ab515ca31a23e22aa39ecf1'
+  nodes_to_index: 'p,li,h2,h3,h4'
+  settings:
+    searchableAttributes:
+      - unordered(title)
+      - unordered(headings)
+      - unordered(text)
+    attributesToSnippet:
+      - text:20
+    attributesToHighlight:
+      - title
+      - headings
+      - text
 
 exclude:
 
