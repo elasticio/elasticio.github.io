@@ -39,28 +39,28 @@ components:
   welcommer-class: welcomer__icon_components
   fa-icon: fa-puzzle-piece
   sections:
+    - title: AI-related components
+      description: Components leveraging Artificial Intelligence to enable automation, data analysis, predictions, and intelligent decision-making across systems
     - title: CRM components
       description: Components for managing all your company’s relationships and interactions with customers
+    - title: Database components
+      description: Components to connect with different databases to fetch and send a data
     - title: ERP components
       description: Components for managing the Enterprise Resource Planning business processes
-    - title: E-Commerce components
-      description: Components for managing the Electronic commerce transactions
-    - title: Marketing-related components
-      description: Components to assist in setting and managing of marketing campaigns
     - title: Finance-related components
       description: Components to manage financial transactions
+    - title: E-Commerce components
+      description: Components for managing the Electronic commerce transactions      
     - title: Office components
-      description: Components to help in regular office activities
+      description: Components to help in regular office activities        
+    - title: Marketing-related components
+      description: Components to assist in setting and managing of marketing campaigns
+    - title: Utility components
+      description: Generic utility components not bound to any specific system       
     - title: Protocol components
       description: Components enabling the connection protocols to different systems
     - title: Service components
-      description: Components to establish connection with different services
-    - title: Database components
-      description: Components to connect with different databases to fetch and send a data
-    - title: Utility components
-      description: Generic utility components not bound to any specific system
-    - title: AI-related components
-      description: Components leveraging Artificial Intelligence to enable automation, data analysis, predictions, and intelligent decision-making across systems
+      description: Components to establish connection with different services   
 developers:
   title: Component Developers
   description: The place to start learning component development and SDKs
