@@ -1,7 +1,7 @@
 ---
 title: Grok component
 layout: component
-section: Service components
+section: AI-related components
 description: The Grok component integrates with xAI Grok, a conversational AI model designed for real-time and reasoning-based responses.
 icon: grok.png
 icontext: Grok component

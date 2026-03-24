@@ -1,7 +1,7 @@
 ---
 layout: component
 title: Claude AI component
-section: Service components
+section: AI-related components
 description: The Claude AI component integrates with Anthropic’s Claude API to enable advanced text and image-based AI interactions within your integration flows.
 icon: claude-ai.png
 icontext: Claude AI component

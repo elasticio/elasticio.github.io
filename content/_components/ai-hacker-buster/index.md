@@ -1,7 +1,7 @@
 ---
 layout: component
 title: AI Hacker Buster component
-section: Utility components
+section: AI-related components
 description: The AI Hacker Buster component allows you to analyze AI-generated or user-provided content for adherence, guardrails, harmful content, and malicious intent.
 icon: ai-hacker-buster.png
 icontext: AI Hacker Buster component

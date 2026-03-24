@@ -59,6 +59,8 @@ components:
       description: Components to connect with different databases to fetch and send a data
     - title: Utility components
       description: Generic utility components not bound to any specific system
+    - title: AI-related components
+      description: Components leveraging Artificial Intelligence to enable automation, data analysis, predictions, and intelligent decision-making across systems
 developers:
   title: Component Developers
   description: The place to start learning component development and SDKs

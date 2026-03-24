@@ -1,7 +1,7 @@
 ---
 layout: component
 title: Manus AI component
-section: Service components
+section: AI-related components
 description: The Manus AI component lets you orchestrate Manus Tasks and Files directly from your flows, wrapping the Manus v1 REST API endpoints.
 icon: manus-ai.png
 icontext: Manus AI component

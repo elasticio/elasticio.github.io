@@ -1,7 +1,7 @@
 ---
 title: Gemini component
 layout: component
-section: Service components
+section: AI-related components
 description: Google Gemini component is designed to connect with Gemini.
 icon: gemini.png
 icontext: Gemini component
