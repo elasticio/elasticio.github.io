@@ -1,15 +1,23 @@
 ---
-title: Netsuite REST API OAuth Client Credentials
+title: NetSuite REST API OAuth Client Credentials
 layout: component
-description: Technical Notes for the Netsuite REST API client credentials component.
+description: Technical Notes for the NetSuite REST API client credentials component.
 icon: netsuite_rest_api_client_credentials.png
-icontext: Netsuite REST API client credentials component
+icontext: NetSuite REST API client credentials component
 category: netsuite-rest-api-client-credentials
-updatedDate: 2024-11-07
-ComponentVersion: 1.0.1
+updatedDate: 2026-03-27
+ComponentVersion: 1.1.0
 ---
 
 ## Changelog
+
+### 1.1.0 (March 27, 2026)
+
+* Added `Execute SuiteQL Query` action
+* Added `Request Headers` parameter to `Make Raw Request` action
+* Bumped Sailor version from 2.7.3 to 2.7.8
+* Updated dependencies
+* Removed unnecessary dependencies
 
 ### 1.0.1 (November 07, 2024)
 

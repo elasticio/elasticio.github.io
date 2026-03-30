@@ -1,20 +1,21 @@
 ---
-title: Netsuite REST API OAuth Client Credentials
+title: NetSuite REST API OAuth Client Credentials
 layout: component
 section: ERP components
 description: The NetSuite REST API Component is specifically crafted to interact with the NetSuite REST API.
 icon: netsuite_rest_api_client_credentials.png
-icontext: Netsuite REST API client credentials component
+icontext: NetSuite REST API client credentials component
 category: netsuite-rest-api-client-credentials
-updatedDate: 2024-11-07
-ComponentVersion: 1.0.1
+updatedDate: 2026-03-27
+ComponentVersion: 1.1.0
 ---
 
 ## Table of Contents
 
 * [Description](#description)
 * [Authentication](#authentication)
-* [Actions](#actions) 
+* [Actions](#actions)
+  * [Execute SuiteQL Query](#execute-suiteql-query)  
   * [Make Raw Request](#make-raw-request)
 
 ## Description
@@ -59,16 +60,47 @@ This component has no trigger functions. This means it will not be accessible to
 
 ## Actions
 
+### Execute SuiteQL Query 
+
+This action allows you to interact with NetSuite [SuiteQL](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_156257770590.html).
+
+#### Configuration Fields
+
+* **SuiteQL Query** - (string, required): Enter your query here. You can also use parameters such as <i>@value1</i> and <i>@value2</i>.
+* **Emit Behavior** - (dropdown, optional, `Emit individually` by default): Select the emit behavior: `Emit individually` or `Emit original response`.
+* **Collect all results** - (checkbox, optional): If selected, the component automatically retrieves all query results (up to 100,000 records).
+
+#### Input Metadata
+If `Collect all results` is unchecked:
+* **Limit** - (string, required): The number of records to retrieve.
+* **Offset** - (string, required): The number of records to skip.
+* Additional fields will be available for any parameters used in `SuiteQL Query`.
+
+#### Output Metadata
+For `Emit Individually` mode: Each item populates the entire message.
+For `Emit original response` mode: The original data returned from NetSuite, including all items and technical information.
+
+#### Limitation
+* [SuiteQL Limitations and Exceptions](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_156257796125.html)
+* SuiteQL queries can return a maximum of 100,000 results.
+* The component directly replaces parameters with values from the message body, so make sure to properly escape them in the input metadata when needed.<br><br>For example, if your query is `SELECT * FROM account WHERE fullname = '@name'` and the message body (input metadata) is `{ "name": "John's account" }`, the resulting query will be `SELECT * FROM account WHERE fullname = 'John's account'` - this will cause an error! <br><br>You can escape this parameter using a JSONATA expression in the input metadata, for example: `$replace("John's account", "'", "''")` - this will result in the query `SELECT * FROM account WHERE fullname = 'John''s account'`, which is valid and will execute without errors.
+
 ### Make Raw Request
 Enables you to run your own custom requests directly through the Netsuite REST API.
 
 #### Configuration Fields
-- **Don't Throw Error on 404 Response** - (optional, boolean): This setting configures the handling of 404 HTTP responses as non-errors. By default, it is set to `false`.
+
+* **Don't Throw Error on 404 Response** - (optional, boolean): This setting configures the handling of 404 HTTP responses as non-errors. By default, it is set to `false`.
+
 #### Input Metadata
-- URL - (string, required): The specific path of the resource, which is appended to the base URL `https://${accountId}.suitetalk.api.netsuite.com/services/rest`. E.g. `record/v1/customer/1234`.
-- Method - (string, required): Determines the HTTP method for the request.
-- Request Body - (object, optional): Contains the content for the request.
+
+* **URL** - (string, required): The specific path of the resource, which is appended to the base URL `https://${accountId}.suitetalk.api.netsuite.com/services/rest`. E.g. `record/v1/customer/1234`
+* **Method** - (string, required): Determines the HTTP method for the request.
+* **Request Body** - (object, optional): Contains the content for the request.
+* **Request Headers** - (object, optional): Additional headers can  be put here.
+
 #### Output Metadata
-- **Status Code** - (number, required): Indicates the HTTP response status code.
-- **HTTP Headers** - (object, required): Showcases the HTTP headers of the response.
-- **Response Body** - (object, optional): Represents the body of the HTTP response.
+
+* **Status Code** - (number, required): Indicates the HTTP response status code.
+* **HTTP Headers** - (object, required): Showcases the HTTP headers of the response.
+* **Response Body** - (object, optional): Represents the body of the HTTP response.
