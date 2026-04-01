@@ -2,7 +2,7 @@
 title: Google BigQuery component
 layout: component
 section: Database components
-description: Integration component to interact with Google BigQuery.
+description: Integration component to interact with the Google BigQuery.
 icon: google-bigquery.png
 icontext: Google BigQuery component
 category: bigquery
@@ -10,9 +10,25 @@ ComponentVersion: 1.1.0
 updatedDate: 2023-02-10
 ---
 
-## Description
+## Table of Contents
+* [General information](#general-information)
+   * [Description](#description)
+   * [Completeness Matrix](/components/google-bigquery/technical-notes#completeness-matrix)
+   * [API version / SDK version](#api-version--sdk-version)
+* [Credentials](#credentials)
+* [Actions](#actions)
+   * [Query](#query)
+   * [Insert Rows as Stream](#insert-rows-as-stream)
+* [BigQuery API and Documentation links](#bigquery-api-and-documentation-links)
 
-Integration component to interact with Google BigQuery using `@google-cloud/bigquery` client library version `5.2.0` (API).
+## General Information
+### Description
+
+{{page.description}}
+
+### API version / SDK version
+
+The component uses `@google-cloud/bigquery` client library, version `5.2.0`.
 
 ## Credentials
 
@@ -40,10 +56,6 @@ It should look like this:
 }
 
 ```
-
-### Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about Google BigQuery component like [changelog](/components/google-bigquery/technical-notes#changelog) and [completeness matrix](/components/google-bigquery/technical-notes#completeness-matrix).
 
 ## Triggers
 
@@ -89,10 +101,85 @@ The `query` option is required.
 }
 ```
 
-#### Action Limitations
+#### Limitations
 
 The query [options](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest) are an experimental feature and correct behavior is not guaranteed. Only `query`, `location`, `dryRun`, `useQueryCache`, `useLegacySql`, `parameterMode`,`maximumBytesBilled` options were tested.
 
+### Insert Rows as Stream
+
+Inserts an array on rows into the table as stream.
+
+#### Configuration Fields
+
+* **Dataset** - (required, string) dataset to insert rows.
+* **Table** - (required, string) table to insert rows.
+* **Throw error if insert fails** - (required, checkbox) if selected a default error `PartialFailureError` will be thrown in case if insert fails. Otherwise, an object containing error details will be emitted.
+
+#### Input metadata
+
+Input metadata includes an array of json objects representing the table schema. There might be 1 or more objects in the array.
+
+* **Rows** - (array, required) Array of JSON objects each representing a row.
+
+Example:
+
+Integrator Mode:
+```
+[{"comment": "Lorem ipsum"}, {"comment": "dolor"}]
+```
+
+Developer Mode:
+```json
+{
+  "rows": [
+    {
+      "comment": "Lorem ipsum"
+    },
+    {
+      "comment": "dolor"
+    }
+  ]
+}
+```
+
+#### Output metadata
+
+In case of a successful insert an object with an empty errors object inside will be emitted:
+```json
+{
+  "errors": []
+}
+```
+Otherwise, the errors object will contain all the errors with regard to all the rows being sent. E.g.:
+```json
+{
+  "errors": [
+    {
+      "errors": [
+        {
+          "message": "no such field: commddent.",
+          "reason": "invalid"
+        }
+      ],
+      "row": {
+        "commddent": "Lorem ipsum"
+      }
+    },
+    {
+      "errors": [
+        {
+          "message": "",
+          "reason": "stopped"
+        }
+      ],
+      "row": {
+        "comment": "dolor"
+      }
+    }
+  ]
+}
+```
+
 ## BigQuery API and Documentation links
 
-[BigQuery documentation](https://cloud.google.com/bigquery/docs)
+* [BigQuery documentation](https://cloud.google.com/bigquery/docs)
