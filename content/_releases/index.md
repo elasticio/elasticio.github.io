@@ -3,8 +3,16 @@ layout: default
 title: Releases
 description: List of the release notes listing the product updates.
 ---
-
 {% assign releases = site.releases | sort: 'releaseDate' | reverse %}
+{% assign latest = releases.first %}
+{% assign parts = latest.version | split: "." %}
+{% assign year = parts[0] %}
+{% assign week = parts[1] | plus: 0 %}
+{% assign next_week = week | plus: 4 %}
+{% if next_week > 52 %}
+  {% assign next_week = next_week | minus: 52 %}
+{% endif %}
+{% assign next_release = year | append: "." | append: next_week %}
 
 <div class="wrap">
     <div class="breadcrumbs">
@@ -31,7 +39,7 @@ description: List of the release notes listing the product updates.
         <li><strong>WW</strong> is the number of the week in that year.</li>
         </ul>
         <p>
-            The latest release is 26.03 and the next release would be 26.06.
+            The latest release is <strong>v{{ latest.version }}</strong> and the next release would be <strong>v{{ next_release }}</strong>.
         </p>
     </p>
     <!-- {% assign week = releases[0].version | split: "." %}
