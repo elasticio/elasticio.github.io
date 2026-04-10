@@ -100,7 +100,7 @@ Component credentials configuration fields:
 * **Client Secret** (string, optional) - The client secret for the app.
 * **Admin API access token** (string, optional, **deprecated**) - The token obtained after app creation (see deprecated instructions above).
 * **API version** (string, required) - The API version you intend to work with. The component has been tested on `2023-01`, but it is designed to work with any available version.
-* **API secret key** (string, optional) - This field is required **only** for the `Webhook` trigger to [verify requests with an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook).
+* **API secret key** (string, optional, **deprecated**) - This field is required **only** for the `Webhook` trigger to [verify requests using an HMAC header](https://shopify.dev/apps/webhooks/configuration/https#step-5-verify-the-webhook). Starting with component version `2.6.0`, webhook validation for new users is based on `Client Secret`, so you no longer need to use this field.
 
 > **Please Note:**
 * The `Admin API access token` is shown only once.
