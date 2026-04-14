@@ -6,8 +6,8 @@ description: A component allows you to connect to any REST API without programmi
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2025-12-11
-ComponentVersion: 2.2.4
+updatedDate: 2026-04-13
+ComponentVersion: 2.2.5
 ---
 
 ## Table of Contents
