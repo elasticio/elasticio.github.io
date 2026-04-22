@@ -5,13 +5,23 @@ description: Technical Notes for the Mailchimp component
 icon: mailchimp.png
 icontext: Mailchimp component
 category: mailchimp
-updatedDate: 2026-01-05
-ComponentVersion: 1.0.5
+updatedDate: 2026-04-21
+ComponentVersion: 2.0.0
 redirect_from:
   - /components/mailchimp/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.0 (April 21, 2026)
+
+* Added dynamic metadata for `Add new Subscriber` action to support list-specific merge fields.
+* **ATTENTION**: Moving to the dynamic metadata might break existing flow mapping. Please check your flows after upgrading.
+* Upgraded dependencies to latest stable versions:
+    * `elasticio-sailor-nodejs`: 2.7.1 -> 2.7.8
+    * `moment`: 2.29.4 -> 2.30.1
+* Removed `elasticio-node` dependency and replaced it with a local utility.
+* Integrated latest security fixes and `better-npm-audit`.
 
 ### 1.0.5 (January 05, 2026)
 
