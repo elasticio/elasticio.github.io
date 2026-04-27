@@ -1,9 +1,9 @@
 ---
-title: IPass Core Technical Notes
+title: iPaaS Core Technical Notes
 layout: component
-description: Technical Notes for the IPass Core component
+description: Technical Notes for the iPaaS Core component
 icon: ipaas-core.png
-icontext: IPaas Core component
+icontext: iPaaS Core component
 category: ipaas-core
 updatedDate: 2023-07-07
 ComponentVersion: 1.5.2
