@@ -1,15 +1,15 @@
 ---
-title: IPass Core Usage Example
+title: iPaaS Core Usage Example
 layout: component
-description: Usage Example for the IPass Core component
+description: Usage Example for the iPaaS Core component
 icon: ipaas-core.png
-icontext: IPaas Core component
+icontext: iPaaS Core component
 category: ipaas-core
 updatedDate: 2023-07-07
 ComponentVersion: 1.5.2
 ---
 
-This article will show you where and how to use the IPaas Core component. Through a few examples, you'll discover some of the component's possible use cases and gain a better understanding of how it works.
+This article will show you where and how to use the iPaaS Core component. Through a few examples, you'll discover some of the component's possible use cases and gain a better understanding of how it works.
 
 ## Calculate Flow Dependencies
 

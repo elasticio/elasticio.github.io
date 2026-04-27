@@ -1,10 +1,10 @@
 ---
-title: IPaas Core component
+title: iPaaS Core component
 layout: component
 section: Utility components
 description: A component to manipulate integration artifacts such as flows via the REST API (v2) of the Integration Platform As a Service.
 icon: ipaas-core.png
-icontext: IPaas Core component
+icontext: iPaaS Core component
 category: ipaas-core
 updatedDate: 2023-07-07
 ComponentVersion: 1.5.2
