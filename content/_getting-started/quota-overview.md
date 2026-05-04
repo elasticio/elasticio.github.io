@@ -39,7 +39,7 @@ Additionally, a new [API endpoint]({{site.data.tenant.apiDocsUri}}/v2#/runtime%2
 
 This endpoint returns message usage history grouped by month for a specific contract.
 
-### When Quota Is Checked
+### When Is Quota Limit Validation Performed
 
 Message quota limits are validated during the following actions:
 
@@ -76,7 +76,7 @@ For more convenience the quota service will notify you via email on different st
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/quota/memory-usage.png" title="Quota page" %}
 
-By selecting the **View Report** option, you'll gain access to a comprehensive memeory usage chart along with a detailed breakdown of quota utilization for each individual Workspace under your account. To further explore the allocation of quotas, you can simply click on the workspace name displayed in the **Workspace Memory Usage** list within the **Current Month Quota**. This action will seamlessly navigate you to the respective workspace's Dashboard. Here, you'll be presented with an insightful overview of quota distribution per specific Flows, enabling you to assess and manage your resource allocation more effectively.
+By selecting the **View Report** option, you'll gain access to a comprehensive memory usage chart along with a detailed breakdown of quota utilization for each individual Workspace under your account. To further explore the allocation of quotas, you can simply click on the workspace name displayed in the **Workspace Memory Usage** list within the **Current Month Quota**. This action will seamlessly navigate you to the respective workspace's Dashboard. Here, you'll be presented with an insightful overview of quota distribution per specific Flows, enabling you to assess and manage your resource allocation more effectively.
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/quota/memory-report.png" title="Quota Report" %}
 
