@@ -269,19 +269,15 @@ This menu section includes the following items:
 
 ### Quota Usages
 
-The Quota Usages menu item opens our [quota overview](quota-overview) page. Here
-you can check the combined memory usage of flows in all your workspaces of the
-contract. From here you can drill-down the usage based on the workspaces and
-individual flows for the current month. If you have the memory quota limit set for
-your contract then you will see relationship of used and still remaining quota.
-
+The Quota Usages menu item opens our [quota overview](quota-overview) page. Here you can check the **Active Steps**, **Messages**, and **Memory** usage of flows in all your workspaces of the contract. From here, you can drill-down the usage based on the workspaces and individual flows for the current month. If you have the quota limit set for your contract, then you will see the relationship between the used and still remaining quota.
 
 <details close markdown="block"><summary><strong>Click to expand for more details:</strong></summary>
 
-1.  Shows the current month and the current usage. It also shows the quota limit if defined.
-2.  Use the button to drill-down into the workspace and flow level usage.
-3.  The histogram of the used memory per month. If the contract has a quota limit then histogram shows the used memory and the still remaining quota. You can hover on any month to get the exact values.
-4.  The legend for the histogram.
+1.  Shows the current month and the current usage of the active steps quota limit.
+2.  Use the button to drill-down into the workspace and flow level messages usage.
+3.  Use the button to drill-down into the workspace and flow level memory usage.
+4.  The histogram of the used messages per month. If the contract has a quota limit then histogram shows the used messages and the still remaining quota. You can hover on any month to get the exact values.
+5.  The histogram of the used memory per month. If the contract has a quota limit then histogram shows the used memory and the still remaining quota. You can hover on any month to get the exact values.
 
 ![Quota page](/assets/img/getting-started/tour/quota-page.png "Quota page")
 

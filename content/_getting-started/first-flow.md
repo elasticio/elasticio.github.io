@@ -16,11 +16,7 @@ The first step of an Integration Flow is called an initial trigger. Its job is t
 
 For the first step, the list of available Components is limited to those that can be a trigger, so you can't go wrong. In this instruction we will use Simple Trigger as an example of the first step.  
 
-To start the creation of our Flow, go to the navigational menu, select your Workspace and either click "Add new flow" on the dashboard:
-
-{% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-01.png" title="Workspace - add new flow" %}
-
-**OR** go to *Flows* and click "Add New Flow":
+To start the creation of our Flow, go to the navigational menu, go to *Flows* and click "Add New Flow":
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/creating-basic-flow/creating-basic-flow-02.png" title="Flows - add new flow" %}
 
