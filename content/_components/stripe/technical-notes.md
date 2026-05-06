@@ -5,11 +5,24 @@ description: Technical Notes for the Stripe component.
 icon: stripe.png
 icontext: Stripe component
 category: stripe
-updatedDate: 2024-03-01
-ComponentVersion: 1.2.0
+updatedDate: 2026-05-05
+ComponentVersion: 1.3.0
 ---
 
 ## Changelog
+
+### 1.3.0 (May 5, 2026)
+
+* Added `Upsert Object` action
+* Updated default Stripe API version to `2026-04-22.dahlia` in `Make Raw Request` action
+* Modernized dependencies:
+    * `Node.js`: 18 -> 24
+    * `axios`: 0.27.2 -> 1.15.2
+    * `qs`: 6.11.0 -> 6.15.1
+    * `@elastic.io/component-commons-library`: 3.1.5 -> 4.0.0
+    * `elasticio-sailor-nodejs`: 2.7.1 -> 2.7.8
+    * `uuid`: 8.3.2 -> 9.0.1
+* Removed legacy `elasticio-node` and `elasticio-rest-node` libraries
 
 ### 1.2.0 (March 01, 2024)
 
