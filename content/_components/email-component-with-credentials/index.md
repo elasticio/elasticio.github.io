@@ -6,8 +6,8 @@ description: This email component is designed for use with the Mailchimp Transac
 icon: email-with-credentials.png
 icontext: Email component with Credentials
 category: email
-ComponentVersion: 1.0.0
-updatedDate: 2024-11-22
+ComponentVersion: 1.0.1
+updatedDate: 2026-05-07
 ---
 
 ## Table of Contents
