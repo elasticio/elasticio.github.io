@@ -6,8 +6,8 @@ description: This email component is designed for use with the Mailchimp Transac
 icon: email-with-credentials.png
 icontext: Email component with Credentials
 category: email
-ComponentVersion: 1.0.0
-updatedDate: 2024-11-22
+ComponentVersion: 1.0.1
+updatedDate: 2026-05-07
 ---
 
 ## Table of Contents
@@ -106,6 +106,31 @@ An HTML body example:
                   </div>
                 </body>
               </html>"
+}
+```
+
+### HTML Email Styling Best Practices
+
+When providing content for the **HTML Body**, keep in mind that rendering in email clients (like Gmail, Outlook, or Apple Mail) differs significantly from modern web browsers.
+
+1. **CSS Inlining**: Many email clients (especially Gmail and older versions of Outlook) strip out `<style>` blocks located in the `<head>` for security and performance reasons. For the most reliable results, **inline your CSS** directly into the HTML tags using the `style` attribute.
+2. **Avoid CSS Variables**: Email clients do not support CSS variables (e.g., `var(--main-color)`). Use literal hex codes instead.
+3. **Table-Based Layouts**: While modern browsers use Flexbox or Grid, many email clients still require standard HTML tables (`<table>`) for complex multi-column layouts to ensure stability.
+4. **CSS Inlining Support**: This component uses the Mandrill API's `inline_css` feature, which attempts to automatically move styles from your `<style>` block into the elements. However, this is not 100% foolproof (especially with complex selectors or variables), so manual inlining is always recommended for critical designs.
+
+An HTML body example with inlined styles:
+```html
+{
+  "to": "email@example.com",
+  "subject": "HTML content",
+  "textBody": "Hello! Thank you for subscribing.",
+  "htmlBody": "<body style=\"margin:0; padding:20px; font-family:Arial,sans-serif; background-color:#f4f4f4;\">
+                  <div style=\"background-color:#ffffff; padding:20px; border-radius:5px; box-shadow:0 0 10px rgba(0, 0, 0, 0.1); max-width:600px; margin:0 auto;\">
+                    <h1 style=\"color:#333;\">Hello, Recipient!</h1>
+                    <p style=\"font-size:16px; color:#666; line-height:1.5;\">Thank you for subscribing to our newsletter.</p>
+                    <a href=\"https://www.example.com\" style=\"display:inline-block; padding:10px 20px; background-color:#007BFF; color:#ffffff; text-decoration:none; border-radius:5px;\">Get Started</a>
+                  </div>
+                </body>"
 }
 ```
 
