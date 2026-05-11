@@ -6,8 +6,8 @@ description: The Microsoft Fabric component is designed to interact with the Mic
 icon: microsoft-fabric.png
 icontext: Microsoft Fabric component
 category: microsoft-fabric
-ComponentVersion: 1.0.0
-updatedDate: 2026-03-26
+ComponentVersion: 1.1.0
+updatedDate: 2026-05-11
 ---
 
 ## Table of Contents
@@ -15,7 +15,11 @@ updatedDate: 2026-03-26
 * [Description](#description)
 * [Credentials](#credentials)
 * [Actions](#actions) 
+  * [Delete Object By ID](#delete-object-by-id) 
+  * [Lookup Object By ID](#lookup-object-by-id) 
+  * [Lookup Objects (plural)](#lookup-objects-plural) 
   * [Make Raw Request](#make-raw-request)
+  * [Upsert Object](#upsert-object) 
 * [Triggers](#triggers)
 
 ## Description
@@ -44,6 +48,60 @@ The [redirect URI](/guides/oauth-callback-redirect-url) for the platform is `htt
 
 ## Actions 
 
+### Delete Object By ID
+
+Deletes a single object by its ID.
+
+#### Configuration Fields
+
+* **Workspace** - (dropdown, required): Select the workspace.
+* **Hard Delete** - (checkbox, optional): Specifies whether to perform a hard delete. When enabled, the object is permanently deleted and cannot be recovered. When disabled or unspecified, the object is soft-deleted if the object type supports this behavior.
+
+#### Input Metadata
+
+* **ID** - (string, required): The ID of the object to delete.
+
+#### Output Metadata
+
+Returns the ID of the deleted object.
+
+### Lookup Object By ID
+
+Retrieves a single object by its ID.
+
+#### Configuration Fields
+
+* **Workspace** - (dropdown, required): Select the workspace.
+* **Get Definition** - (checkbox, optional): Enable this option to retrieve the object definition.
+
+#### Input Metadata
+
+* **ID** - (string, required): The ID of the object to retrieve.
+
+#### Output Metadata
+
+An object containing the lookup result as its value.
+
+### Lookup Objects (plural)
+
+Retrieves a set of objects. Results can be emitted in different modes.
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): The type of object to look up (e.g., `Event`).
+* **Workspace** - (dropdown, required): Select the workspace.
+* **Emit Behavior** - (dropdown, required): Defines how result objects are emitted. Options: `Emit page` or `Emit individually`.
+
+#### Input Metadata
+
+None.
+
+#### Output Metadata
+
+For `Emit Page` mode: An object with a `results` key containing an array of values.
+
+For `Emit Individually` mode: Each object is emitted as a separate message.
+
 ### Make Raw Request 
 
 Executes a custom request.
@@ -64,6 +122,25 @@ Executes a custom request.
 * **Status Code** - (number, required): The HTTP status code of the response.
 * **HTTP headers** - (object, required): The HTTP headers of the response.
 * **Response Body** - (object, optional): The HTTP response body.
+
+### Upsert Object
+
+Creates a new object or updates an existing one, depending on whether a unique identifier field is provided.
+
+#### Configuration Fields
+
+* **Object Type** - (dropdown, required): The type of object to upsert (e.g., `Event`).
+* **Workspace** - (dropdown, required): Select the workspace.
+* **Skip confirmation** - (checkbox, optional): By default, when the component receives a `202` HTTP status code, it treats this as a [Long Running Operation](https://learn.microsoft.com/en-us/rest/api/fabric/core/long-running-operations/get-operation-state?tabs=HTTP) and waits until the operation state is no longer `Running`. Enabling this option causes the component to skip this verification process.
+
+#### Input Metadata
+
+* A unique field used to identify the object to be updated.
+* Additional fields are generated dynamically based on the selected `Object Type`.
+
+#### Output Metadata
+
+The object returned from the upsert operation. Note that Microsoft does not define a standard response structure.
 
 ## Triggers
 
