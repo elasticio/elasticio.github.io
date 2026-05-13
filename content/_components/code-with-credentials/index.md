@@ -6,8 +6,8 @@ description: The component is derived from the code-component with Credentials f
 icon: code-with-credentials.png
 icontext: Code component with Credentials
 category: code
-updatedDate: 2026-02-27
-ComponentVersion: 1.0.2
+updatedDate: 2026-05-13
+ComponentVersion: 1.0.3
 ---
 
 ## Table of Contents
@@ -21,7 +21,8 @@ ComponentVersion: 1.0.2
   * [Executes custom code](#executes-custom-code-action)
 * [Triggers](#triggers)
   * [Executes custom code](#executes-custom-code-trigger)
-* [Code component usage Examples](#code-component-usage-examples)
+* [Code component usage Example](#code-component-usage-example)
+* [Common usage scenarios](#common-usage-scenarios)
 
 ## Description
 
@@ -62,6 +63,7 @@ The code component provides access to the following variables and libraries with
 - [`request`](https://github.com/request/request) - HTTP Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request) so that it is pre-promisified). We recommend using `axios`. Support for `request` is maintained for backward compatibility only.
 - `_` - [Lodash](https://lodash.com/)
 - `strong-soap` - [SOAP client](https://github.com/loopbackio/strong-soap) for invoking web services
+- [`nodemailer`](https://nodemailer.com/) - Library for sending emails from Node.js ([Example](#sending-an-email-with-nodemailer))
 
 ## Credentials
 
@@ -151,7 +153,7 @@ No input metadata
 
 No output metadata
 
-## Code component usage examples
+## Code component usage Example
 
 Use code is very simple. Just follow these steps:
 
@@ -165,7 +167,7 @@ async function run(msg, cfg, snapshot) {
 }
 ```
 
-Please note that if you have a simple one-in-one-out function, you can simply return a JSON object as the result of your function, and it will be automatically emitted as data.
+> **Please Note:** If you have a simple one-in-one-out function, you can simply return a JSON object as the result of your function, and it will be automatically emitted as data.
 
 ## Common usage scenarios
 
@@ -261,5 +263,53 @@ async function run(msg, cfg, snapshot) {
   const client = await createSoapClient(msg.body.wsdlUrl);
   const { result } = await client.MyService.MyPort.MyFunction({ name: msg.body.inputName });
   await this.emit('data', { body: result });
+}
+```
+
+### Sending an email with nodemailer
+
+The Code component includes [`nodemailer`](https://nodemailer.com/) for sending emails. Here is an example of how to use it:
+
+```javascript
+async function run(msg, cfg, snapshot) {
+  this.logger.info('Verifying nodemailer support...');
+  
+  // 1. Check if the library is available in the context
+  if (typeof nodemailer === 'undefined') {
+    throw new Error('nodemailer library was not found in the execution context');
+  }
+  // 2. Create a test transporter using Ethereal (safe for testing)
+  const testAccount = await nodemailer.createTestAccount();
+  const transporter = nodemailer.createTransport({
+    host: "smtp.ethereal.email",
+    port: 587,
+    secure: false,
+    auth: {
+      user: testAccount.user,
+      pass: testAccount.pass,
+    },
+  });
+  // 3. Attempt to send a test email
+  const info = await transporter.sendMail({
+    from: '"Tester" <test@elastic.io>',
+    to: "bar@example.com",
+    subject: "Nodemailer Test from elastic.io ✔",
+    text: "Nodemailer is correctly installed and accessible!",
+    html: "<b>Nodemailer is correctly installed and accessible!</b>",
+    attachments: [
+      {
+        filename: 'test.txt',
+        content: 'Hello world!'
+      }
+    ]
+  });
+  this.logger.info("Email sent successfully! Message ID: %s", info.messageId);
+  const previewUrl = nodemailer.getTestMessageUrl(info);
+  this.logger.info("You can view the test email at: %s", previewUrl);
+  await this.emit('data', { body: {
+    status: 'Nodemailer is working', 
+    messageId: info.messageId, 
+    previewUrl 
+  }});
 }
 ```
