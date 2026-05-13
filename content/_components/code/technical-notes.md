@@ -5,13 +5,20 @@ description: Technical Notes for the Code component.
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2026-02-27
-ComponentVersion: 1.2.15
+updatedDate: 2026-05-13
+ComponentVersion: 1.2.16
 redirect_from:
   - /components/code/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.16 (May 13, 2026)
+
+* Added `nodemailer` `8.0.7` lib support
+* Updated the following dependencies:
+   * axios `1.13.5` -> `1.16.0`
+   * strong-soap `5.0.2` -> `5.0.9`
 
 ### 1.2.15 (February 27, 2026)
 
