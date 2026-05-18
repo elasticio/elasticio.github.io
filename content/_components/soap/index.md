@@ -2,7 +2,7 @@
 title: SOAP component
 layout: component
 section: Protocol components
-description: A companenet that enables seamless integration with SOAP-based Web Services.
+description: A component that enables seamless integration with SOAP-based Web Services.
 icon: soap.png
 icontext: SOAP component
 category: soap
