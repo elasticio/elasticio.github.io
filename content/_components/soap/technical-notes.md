@@ -5,14 +5,21 @@ description: Technical Notes for the SOAP component.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2024-11-21
-ComponentVersion: 1.2.10
+updatedDate: 2026-05-18
+ComponentVersion: 1.2.11
 redirect_from:
   - /components/soap/completeness-matrix.html
   - /components/soap/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.11 (May 18, 2026)
+
+* Fixed wrong request body in document type WSDLs
+* Fixed "Connection reset" error during metadata generation by implementing robust WSDL downloading and setting a User-Agent
+* Fixed "Unable to generate code using jaxbri" error for .NET services by sanitizing problematic schema references in the WSDL
+* Improved WSDL caching by using unique local filenames
 
 ### 1.2.10 (November 21, 2024)
 
