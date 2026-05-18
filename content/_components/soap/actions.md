@@ -5,46 +5,28 @@ description: SOAP component actions.
 icon: soap.png
 icontext: SOAP component
 category: soap
-updatedDate: 2024-11-21
-ComponentVersion: 1.2.10
+updatedDate: 2026-05-18
+ComponentVersion: 1.2.11
 ---
 
 ## Call
 
-Makes a call to SOAP service over HTTP using public WSDL URL.
+Executes a call to an external SOAP service over HTTP.
+
 Call action supports Basic Authorization, choose Basic Authorization type in credentials and provide credentials for WSDL.
 
 {% include img.html max-width="100%" url="img/soap-call-action.png" title="Call action" %}
 
-Call action supports Basic Authorization, chose Basic Authorization type in credentials and provide credentials for WSDL
-
 ### Input fields description
 
-*   **WSDL URI** - Public URL address of the WSDL
-*   **Binding** - One of the bindings available and described in the WSDL, which you want to use for a SOAP call
-*   **Operation** - One of the operations available for the binding you have selected above.
-*   **Request timeout** - Timeout period in milliseconds (1-1140000) while component waiting for server response. Defaults to 60000 (60 sec).
+* **WSDL URI** - Publicly accessible URL of the WSDL.
+* **Binding** - Select one of the bindings described in the WSDL.
+* **Operation** - Select an operation available for the chosen binding.
+* **Request Timeout** - The timeout period in milliseconds (1-1,140,000). Defaults to `60,000`.
 
-### SOAP Fault
-
-A SOAP fault is used to carry error information within a SOAP message. The component
-handles SOAP faults and emits platform exception in this case. SOAP Fault should
-comply with the [W3C SOAP Fault standard](https://www.w3.org/TR/soap12-part1/#soapfault).
-
-Example of the SOAP 1.1 Fault:
-
-```json
-{
-  "Fault": {
-    "faultcode": "S:Server",
-    "faultstring": "Server error java.lang.NullPointerException",
-    "faultactor": null
-  }
-}
-```
-
-Example of the SOAP 1.2 Fault:
-
+### SOAP Fault Handling
+If the server returns a SOAP Fault, the component emits a platform exception by default. 
+Example of a SOAP 1.2 Fault converted to JSON:
 ```json
 {
   "Fault": {
@@ -65,17 +47,9 @@ You can refer these tools documentation to get deeper understanding about the pr
 
 Output json schema is generated dynamically the same as for the input (see above).
 
-### Additional information
-
-**You should specify input fields exactly in the order below. You'll get an error otherwise**.
-
-1. WSDL URI
-2. Binding
-3. Operation
-
 ## Soap Reply
 
-Wraps and returns input data as SOAP response by provided SOAP metadata:
+Sends an HTTP response back to the original caller of the **Receive SOAP Request** trigger.
 
 {% include img.html max-width="100%" url="img/soap-reply-action.png" title="Soap Reply" %}
 
@@ -95,24 +69,23 @@ You can refer these tools documentation to get deeper understanding about the pr
 
 Output json schema is generated dynamically the same as for the input (see above).
 
-### Input data example:
-
+### Input Data Example:
+If your flow calculated a sum of `30`, you would map it to the **Soap Reply** input:
 ```json
 {
   "AddResponse": {
-    "AddResult": 3
+    "AddResult": 30
   }
 }
 ```
 
-### Output data example:
-
+### Output Data Example (XML sent back to caller):
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
     <soap:Body>
-        <AddResponse xmlns="http://example.org/">
-            <AddResult>3</AddResult>
+        <AddResponse xmlns="http://tempuri.org/">
+            <AddResult>30</AddResult>
         </AddResponse>
     </soap:Body>
 </soap:Envelope>
