@@ -52,7 +52,7 @@ Message quota limits are validated during the following actions:
 - All flows within the affected contract are automatically suspended.
 - Flows can only be resumed after the quota limit is increased by our Support.
 
-Users receive automated notifications when approaching or reaching the quota limit:
+All contract/workspace users receive automated notifications when approaching or reaching the quota limit:
 - **At 80% usage**:  
   “Resource usage for [contract/workspace] message count has exceeded 80% of your quota”
 - **At 100% usage**:  
@@ -72,7 +72,7 @@ You can see the actual resource usage on the dedicated page. You can also use [A
 
 Also on the histogram you can see the Memory quota overuse. If you go over the set Memory quota value the overused part will show in red.
 
-For more convenience the quota service will notify you via email on different steps of approach to the limit.
+For more convenience, the quota service will send email notifications to users with the [contact/workspace Owner role](/guides/managing-user-roles-in-a-tenant.html#roles-and-permissions) at various stages of approaching the limit.
 
 {% include img.html max-width="100%" url="/assets/img/getting-started/quota/memory-usage.png" title="Quota page" %}
 
