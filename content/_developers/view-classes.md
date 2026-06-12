@@ -44,23 +44,15 @@ Here is an example implementation of `TextFieldView` view class:
 
 ```js
 "credentials": {
-  "fields": {
-    "company_domain": {
-      "viewClass": "TextFieldView",
-      "label": "Company domain",
-      "required": true,
-      "placeholder":"yourcompany.pipedrive.com",
-      "note":"Enter <em>only</em>&nbsp; the domain name here"
-      },
-    "token": {
-      "viewClass": "TextFieldView",
-      "label": "API token",
-      "required": true,
-      "placeholder": "API token goes here",
-      "note":"More information is <a href='https://some/article/url'>here</a>."
+    "fields": {
+      "amqpURI": {
+        "label": "AMQP URI",
+        "required": true,
+        "viewClass": "TextFieldView",
+        "placeholder": "amqp://foo:password@server.io"
+      }
     }
   }
-}
 ```
 The above example is rendered on the {{site.data.tenant.name}} UI in the following way:
 
@@ -81,13 +73,29 @@ purposes.
 Here is an example implementation of `TextAreaView` view class:
 
 ```js
-"query": {
-  "label": "SQL Query",
-  "viewClass": "TextAreaView",
-  "required": true,
-  "placeholder": "INSERT INTO films (code,title,kind) VALUES (${code},${title},${kind})",
-  "note": "You can use properties of message body as <em>${values}</em>&nbsp; in your insert or update or delete"
-}
+"selectTrigger": {
+      "main": "io.elastic.jdbc.triggers.SelectTrigger",
+      "title": "Select",
+      "description": "Executes a custom SELECT statement for incremental polling.",
+      "type": "polling",
+      "fields": {
+        "sqlQuery": {
+          "viewClass": "TextAreaView",
+          "label": "SQL Query",
+          "required": true,
+          "placeholder": "SELECT * FROM films WHERE created > '%%EIO_LAST_POLL%%'",
+          "note": "Before execution, the %%EIO_LAST_POLL%% placeholder will be replaced with the ISO date of the last successful execution."
+        },
+        "pollingValue": {
+          "viewClass": "TextFieldView",
+          "label": "Start Polling From (optional)",
+          "note": "Defaults to today at midnight if empty",
+          "required": false,
+          "placeholder": "2026-03-12 00:00:00.000"
+        }
+      }    
+      "dynamicMetadata": "io.elastic.jdbc.providers.ColumnNamesProvider"
+    }
 ```
 
 Which would render in the following way:
@@ -244,7 +252,7 @@ anywhere in the component descriptor.
 }
 ```
 
-Here is how it looks like on the UI:
+Here is how it looks like in the UI:
 
 ![MultiSelectView in the UI](/assets/img/references/view-classes/view-class-multi-select-view.png)
 
@@ -264,28 +272,48 @@ properties:
 Here is an example of `PasswordFieldView` view class usage in the credentials:
 
 ```js
-"credentials" : {
-  "fields": {
-    "host":{
-      "viewClass":"TextFieldView",
-      "label":"Host",
-      "required":true,
-      "placeholder":"Name of the host"
-    },
-    "username": {
-      "viewClass": "TextFieldView",
-      "label": "User Name",
-      "required": true,
-      "placeholder": "Paste your SFTP user name"
-    },
-    "password": {
-      "viewClass": "PasswordFieldView",
-      "label": "Password",
-      "required": true,
-      "placeholder": "Paste your SFTP password"
-    }
-  }
-}
+"credentials": {
+    "fields": {
+      "host": {
+        "viewClass": "TextFieldView",
+        "label": "Host",
+        "required": true,
+        "placeholder": "Name of the host"
+      },
+      "port": {
+        "viewClass": "TextFieldView",
+        "label": "Port",
+        "placeholder": "Port of the host",
+        "note": "If no port is provided, 22 will be used"
+      },
+      "username": {
+        "viewClass": "TextFieldView",
+        "label": "User Name",
+        "required": true,
+        "placeholder": "Paste your SFTP user name"
+      },
+      "password": {
+        "viewClass": "PasswordFieldView",
+        "label": "Password",
+        "required": false,
+        "placeholder": "Paste your SFTP password",
+        "note": "For using username and password based authentication, leave `Private Key` field empty"
+      },
+      "privateKey": {
+        "viewClass": "TextAreaView",
+        "label": "Private Key",
+        "required": false,
+        "placeholder": "Paste your SFTP Private Key",
+        "note": "For using Private Key based authentication, leave Password field empty"
+      },
+      "passphrase": {
+        "viewClass": "PasswordFieldView",
+        "label": "Passphrase",
+        "required": false,
+        "placeholder": "Paste your passphrase",
+        "note": "If private key is protected by a passphrase, put it here"
+      }
+    }}
 ```
 
 This is rendered in the following way:
@@ -309,23 +337,29 @@ OAuth1/Oauth2 authentication then it is worth to present how to use it in
 conjunctions with the [OAuth object](/references/component-json-oauth#oauth2):
 
 ```js
-"credentials" : {
-  "fields":{
-    "oauth":{
-      "viewClass":"OAuthFieldView",
-      "required":true
+"authClientTypes": [
+    "oauth2"
+  ],
+  "credentials": {
+    "fields": {
+      "oauth": {
+        "label": "Authentication",
+        "viewClass": "HTTPAuthView",
+        "required": true
+      },
+      "retries": {
+        "label": "Enter number of retries (Default: 5)",
+        "viewClass": "TextFieldView",
+        "prompt": "Enter number of retries",
+        "required": false
+      },
+      "maxNumberOfCallsPerSecond": {
+        "label": "Max number of calls per second (Default: 5)",
+        "viewClass": "TextFieldView",
+        "required": false
+      }
     }
-  },
-  "oauth2":{
-    "client_id":"{{GOOGLE_APP_ID}}",
-    "client_secret":"{{GOOGLE_APP_SECRET}}",
-    "auth_uri":"https://accounts.google.com/o/oauth2/v2/auth",
-    "token_uri":"https://www.googleapis.com/oauth2/v4/token",
-    "scopes": [ "https://spreadsheets.google.com/feeds" ],
-    "access_type": "offline",
-    "prompt": "consent"
   }
-}
 ```
 
 This will render in the following way:
