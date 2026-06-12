@@ -155,7 +155,7 @@ Here is an example of `SelectView` view class where the `model` property is an
 
 This is rendered in the following way:
 
-![Rendering of the SelectView view class](/assets/img/references/view-classes/view-class-slect-view.png "Rendering of the SelectView view class")
+![Rendering of the SelectView view class](/assets/img/references/view-classes/view-class-select-view.png "Rendering of the SelectView view class")
 
 The true power of this view class is in the ability to pass a `string` containing
 the name of a function exposed by a component that returns a JSON `object`. This
@@ -244,9 +244,9 @@ anywhere in the component descriptor.
 }
 ```
 
-Here is how it looks like in the UI:
+Here is how it looks like on the UI:
 
-![MultiSelectView in the UI](/assets/img/references/view-classes/Screenshot_1.png)
+![MultiSelectView in the UI](/assets/img/references/view-classes/view-class-multi-select-view.png)
 
 
 ## PasswordFieldView
