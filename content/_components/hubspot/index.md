@@ -2,12 +2,12 @@
 title: HubSpot component
 layout: component
 section: CRM components
-description: Hubspot Component is designed to connect to the Hubspot API.
+description: Hubspot component is designed to connect to the Hubspot API.
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2025-06-06
-ComponentVersion: 1.6.3
+updatedDate: 2026-06-12
+ComponentVersion: 1.7.0
 redirect_from:
   - /components/hubspot-component
   - /components/hubspot-component/actions
@@ -46,11 +46,33 @@ Hubspot Component is designed to connect to the [Hubspot API](https://developers
 | Name | Mandatory | Description | Values |
 |----|---------|-----------|------|
 | `REQUEST_MAX_RETRY` | false | Specifies how many times the system retries a failed API request (default: 3) | any `integer` above 0 |
-|`RENEW_LIMIT`| false | Maximum number of records retrieved by the `Get New and Updated Objects` trigger before advancing the start date (default: 9800) | any `integer` above 0 and less 10000|
+|`RENEW_LIMIT`| false | Maximum number of records retrieved by the `Get New and Updated Objects` trigger before advancing the start date (default: 9800) | any `integer` above 0 and less than 10000|
 
 ## Credentials
 
-HubSpot component authentication occurs via OAuth 2.0. Before you can make it work on our platform you MUST create an OAuth2 App on HubSpot side.
+The component supports two authentication mechanisms:
+1. **Service Keys (Beta)**
+2. **OAuth 2.0 (Standard)**
+
+If a **Service Key (Beta)** is provided, the component will use it directly and bypass the OAuth 2.0 flow. If it is left empty, the component will use standard OAuth 2.0.
+
+### 1. Service Keys (Beta)
+
+Provide your HubSpot Service Key in the **Service Key (Beta)** field. Service Keys are static token keys managed at the HubSpot account level. For more details, see the [HubSpot Account Service Keys Documentation](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys).
+
+{% include img.html max-width="100%" url="img/hubspot-credentials-noauth.png" title="No Auth" %}
+
+> **Please Note:**
+* If you select the **OAuth 2.0** credential type on the platform but provide a Service Key, you must still provide a valid Auth Client, scopes, and pass the OAuth authentication flow to save the credentials. However, the component will prioritize and use your Service Key for all HubSpot API access, bypassing the OAuth token.
+* To use this option, you must create a Service Key in your HubSpot portal (under **Settings > Integrations > Service Keys** or **Development > Keys > Service keys**).
+* Ensure you configure the appropriate scopes when creating your Service Key. For example:
+    - `crm.objects.contacts.read`
+    - `crm.objects.contacts.write`
+* No OAuth Client ID, Secret, redirect URLs, or OAuth login flow is required when using a Service Key.
+
+### 2. OAuth 2.0
+
+Before you can make it work on our platform you MUST create an OAuth2 App on HubSpot side.
 
 The HubSpot documentation already contains a detailed explanation of the process and we encourage you to [follow it](https://developers.hubspot.com/docs/api/working-with-oauth).
 
@@ -83,6 +105,7 @@ crm.objects.contacts.read crm.objects.contacts.write crm.schemas.contacts.read o
 > **Please Note:** 
   * Scopes must be the same as provided during app creation in Hubspot, use a space-separated list (not comma-separated).
   * The scope `oauth` is always required for verification and must be included in the scopes list for all app installs.
+  * The scope `crm.objects.owners.read` is always required for credential verification.
   * The required scopes for your integration depend on the types of HubSpot objects your flow will access. You must ensure that all scopes necessary to access the specific object types you want to retrieve or modify are included in this list.
   * **Required scopes** must always be included in the OAuth `scope` parameter for your app to work correctly.
   * **Conditionally required** scopes depend on which HubSpot objects or features your app accesses. For instance, if your flow retrieves contacts, you must include contact-related scopes like `crm.objects.contacts.read`.
@@ -118,7 +141,7 @@ Retrieves new or modified objects in HubSpot based on a polling mechanism.
 * **Field to poll** Dropdown: The field to use for detecting new or updated records.
 * **Start Time** - TextField (string, optional): The starting point in time to begin retrieving events.
 * **End Time** - TextField (string, optional, defaults to never): If set, records modified after this time will not be retrieved.
-* **Size of Polling Page** - TextField (optional, positive integer, max 100, defaults to 100): Indicates the size of pages to be fetched.
+* **Size of Polling Page** - TextField (optional, positive integer, max 100, defaults to 100): Indicates the page size to be fetched.
 * **Single Page per Interval** - Checkbox: When selected, if the number of records exceeds the page limit, the connector will wait until the next polling interval to fetch additional pages. This is ignored if `Max Amount of Polling Pages` is set.
 * **Max amount of Polling Pages** - TextField (optional, positive integer, max 1000, defaults to 1000): Maximum number of pages to fetch per execution.
 
@@ -144,7 +167,7 @@ Receive data from HubSpot based on configured [webhooks](https://developers.hubs
 
 ### Configuration Fields
 
-**Client secret** - Provide Client secret from HubSpot application here otherwise you will get an error during the webhook requests in case of incorrect or missing value.
+**Client secret** - Provide the Client secret from the HubSpot application here otherwise you will get an error during the webhook requests in case of incorrect or missing value.
 
 #### Output Metadata
 
@@ -244,7 +267,7 @@ Returns the matched object, or an empty object {} if no match is found and Allow
 
 ### Lookup Objects (Plural)
 
-Lookups a set of objects based on a defined list of criteria. The results can be emitted in different ways.
+Looks up a set of objects based on a defined list of criteria. The results can be emitted in different ways.
 
 {% include img.html max-width="100%" url="img/lookup-objects.png" title="Lookup Objects (Plural)" %}
 
@@ -258,10 +281,10 @@ Lookups a set of objects based on a defined list of criteria. The results can be
 
 **Search Criteria** Array: An array of search terms combined using the `AND` operator.
 
-> **Please note:** HubSpot support up to three criteria.
+> **Please note:** HubSpot supports up to three criteria.
 
 Example:
-Records created after `2021-10-01T03:30:17.883Z` with property `firstname` containing `Tony`.
+Records created after *'2021-10-01T03:30:17.883Z'* where the *'firstname'* property contains *'Tony'*
 
 ```
 ["createdate GT 1633059017883", "firstname CONTAINS_TOKEN Tony"]
@@ -298,7 +321,7 @@ Order example:
 *   For `Fetch page`: An object with:
     *   key `results` that has an array as its value.
     *   key `*totalCountOfMatchingResults` containing the total number of results (not just on the page) matching the search criteria.
-*   For `Fetch All`:  An object, with key `*results` that has an array as its value.
+*   For `Fetch All`:  An object with the `results` key containing all matched records.
 *   For `Emit Individually`:  Each object fill the entire message.
 
 ### Create Association
@@ -322,7 +345,7 @@ Creates an association between two HubSpot objects.
 
 #### Output Metadata
 
-Object with `statusCode` key that represent result of request.
+An object containing the `statusCode` key, representing the result of the request.
 
 ### Remove Association
 
@@ -345,7 +368,7 @@ Removes an association between two HubSpot objects.
 
 #### Output Metadata
 
-Object with `statusCode` key that represent result of request.
+An object containing the `statusCode` key, representing the result of the request.
 
 ### Delete Object
 
@@ -369,4 +392,4 @@ The expected output is an object with a `id` property. `id` value stands for id 
 ## Known Limitations
 
 1.  [Rate Limits](https://developers.hubspot.com/docs/api/usage-details#rate-limits).
-2.  Please, use a timer (around 5 seconds) if you need to build a flow like `Upsert Object Action` -> any type of `Lookup Object(s) Action` with enabled feature `Enable download attachments`. Uploading the file to HubSpot on `Upsert Object Action` takes some time, your might get `404` error on lookup.
+2.  Please use a delay (around 5 seconds) if you are implementing a flow sequence such as `Upsert Object Action` followed by any `Lookup Object(s) Action` with "Enable download attachments" enabled. Because file uploads to HubSpot are processed asynchronously and take some time, a lookup triggered immediately after an upsert may return a 404 error.

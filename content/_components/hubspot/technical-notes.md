@@ -5,11 +5,22 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2025-06-06
-ComponentVersion: 1.6.3
+updatedDate: 2026-06-12
+ComponentVersion: 1.7.0
 ---
 
 ## Changelog
+
+### 1.7.0 (June 12, 2026)
+
+* Added support for HubSpot Service Keys (Beta) authentication
+* Removed the `elasticio-node` library in favor of a local messaging utility
+* Updated core dependencies:
+  * Upgraded `@elastic.io/component-commons-library` from `3.2.2` to `4.0.0`
+  * Upgraded `axios` from `1.9.0` to `1.17.0`
+  * Upgraded `elasticio-sailor-nodejs` from `2.7.5` to `2.7.8`
+  * Upgraded `form-data` from `4.0.0` to `4.0.5`
+  * Removed `elasticio-node` (`0.0.9`)
 
 ### 1.6.3 (June 06, 2025)
 
