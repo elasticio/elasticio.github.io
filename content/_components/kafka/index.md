@@ -1,7 +1,7 @@
 ---
 title: Kafka component
 layout: component
-section: Service components
+section: Protocol components
 description: Kafka Component is designed to consume (read) and produce (send) messages to/from Kafka servers
 icon: kafka.png
 icontext: Kafka component

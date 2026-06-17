@@ -1,7 +1,7 @@
 ---
 layout: component
 title: Freshworks component
-section: Utility components
+section: Service components
 description: Freshworks Component is designed to connect with different Freshworks products using API
 category: freshworks
 icon: freshworks.png

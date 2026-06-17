@@ -1,7 +1,7 @@
 ---
 title: ChannelEngine component
 layout: component
-section: Service components
+section: E-Commerce components
 description: Component is designed to connect with ChannelEngine using API
 icon: channelengine.png
 icontext: ChannelEngine component
