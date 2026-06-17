@@ -1,7 +1,7 @@
 ---
 title: CSV component
 layout: component
-section: Protocol components
+section: Utility components
 description: A component to read and write Comma Separated Values (CSV) files.
 icon: csv.png
 icontext: CSV component

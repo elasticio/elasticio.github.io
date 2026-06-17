@@ -1,7 +1,7 @@
 ---
 title: XML component
 layout: component
-section: Protocol components
+section: Utility components
 description: An iPaaS component that converts data between XML and JSON formats.
 icon: xml.png
 icontext: XML component
