@@ -5,11 +5,15 @@ description: Technical Notes for the Hubspot component
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2026-06-12
-ComponentVersion: 1.7.0
+updatedDate: 2026-07-01
+ComponentVersion: 1.7.1
 ---
 
 ## Changelog
+
+### 1.7.1 (July 01, 2026)
+
+* Made the description `iPaaS` instead of `elastic.io`
 
 ### 1.7.0 (June 12, 2026)
 
