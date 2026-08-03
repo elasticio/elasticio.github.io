@@ -19,11 +19,21 @@
 
     <link href="/assets/css/common.css" rel="stylesheet">
     <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/modern-theme.css" rel="stylesheet">
 
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/client.js"></script>
 
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+    <script>
+      (function () {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      })();
+    </script>
 
 </head>
 <body>
@@ -41,6 +51,10 @@
 
                 <div id="hits"></div>
             </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <i class="fa fa-moon-o"></i>
+                <i class="fa fa-sun-o"></i>
+            </button>
             <a href="/" class="logo"></a>
         </div>
     </header>
@@ -105,6 +119,21 @@
             })
     );
     search.start();
+</script>
+<script>
+    (function () {
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', function () {
+            var current = document.documentElement.getAttribute('data-theme');
+            var isDark = current
+                ? current === 'dark'
+                : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var next = isDark ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+    })();
 </script>
 </body>
 <script type="text/javascript" src="/assets/js/site.js"></script>
