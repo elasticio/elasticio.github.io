@@ -5,14 +5,21 @@ description: Technical Notes for the Magento2 component.
 icon: magento.png
 icontext: Magento 2 component
 category: magento2
-updatedDate: 2026-01-05
-ComponentVersion: 1.7.2
+updatedDate: 2026-08-07
+ComponentVersion: 1.8.0
 redirect_from:
   - /components/magento2/changelog.html
   - /components/magento2/completeness-matrix.html
 ---
 
 ## Changelog
+
+### 1.8.0 (August 07, 2026)
+
+* Added support for configurable Error Handling Policy (`errorTolerance`) and Error Codes (`errorCodes`) in connector actions
+* Allowed configured non-2xx HTTP status responses to pass through to integration flows without triggering platform execution errors
+* Updated dependencies to latest compatible versions
+* Removed the `elasticio-rest-node` dependency
 
 ### 1.7.2 (January 05, 2026)
 

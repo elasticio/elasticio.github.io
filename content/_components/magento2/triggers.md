@@ -5,8 +5,8 @@ description: Magento 2 component triggers page
 icon: magento.png
 icontext: Magento 2 component
 category: magento2
-updatedDate: 2026-01-05
-ComponentVersion: 1.7.2
+updatedDate: 2026-08-07
+ComponentVersion: 1.8.0
 ---
 
 * [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling)
