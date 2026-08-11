@@ -5,13 +5,17 @@ description: Technical Notes for the Transformation component.
 icon: jsonata.png
 icontext: JSONata Transform component
 category: jsonata
-updatedDate: 2026-02-04
-ComponentVersion: 1.1.1
+updatedDate: 2026-08-05
+ComponentVersion: 1.1.2
 redirect_from:
   - /components/jsonata/changelog.html
 ---
 
 ## Changelog
+
+### 1.1.2 (August 05, 2026)
+
+* Improved diagnostics and error logging for JSONata transformation evaluation failures
 
 ### 1.1.1 (February 04, 2026)
 
