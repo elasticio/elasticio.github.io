@@ -5,8 +5,8 @@ description: REST API Usage Example.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2026-04-13
-ComponentVersion: 2.2.5
+updatedDate: 2026-08-13
+ComponentVersion: 2.2.6
 ---
 
 ## Introduction
