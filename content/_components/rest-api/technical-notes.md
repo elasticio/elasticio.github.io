@@ -5,13 +5,17 @@ description: Technical Notes for REST API component.
 icon: rest-api.png
 icontext: REST API component
 category: rest-api
-updatedDate: 2026-08-13
-ComponentVersion: 2.2.6
+updatedDate: 2026-08-14
+ComponentVersion: 2.2.7
 redirect_from:
   - /components/rest-api/changelog.html
 ---
 
 ## Changelog
+
+### 2.2.7 (August 14, 2026)
+* Updated dependencies:
+  * `@elastic.io/component-commons-library` 4.0.1 -> 4.0.3
 
 ### 2.2.6 (August 13, 2026)
 * Updated Node engine to Node 24
