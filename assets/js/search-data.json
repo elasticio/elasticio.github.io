@@ -1,0 +1,54 @@
+---
+permalink: /assets/js/search-data.json
+---
+[
+{%- assign first_result = true -%}
+
+{%- comment -%}
+  Normal Jekyll pages
+{%- endcomment -%}
+
+{%- for page in site.html_pages -%}
+  {%- if page.title -%}
+    {%- unless page.path == "404.html" -%}
+      {%- unless page.search_exclude -%}
+
+        {%- unless first_result -%},{%- endunless -%}
+        {
+          "doc": {{ page.title | jsonify }},
+          "title": {{ page.title | jsonify }},
+          "content": {{ page.content | strip_html | normalize_whitespace | jsonify }},
+          "url": {{ page.url | absolute_url | jsonify }},
+          "relUrl": {{ page.url | jsonify }}
+        }
+        {%- assign first_result = false -%}
+
+      {%- endunless -%}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- comment -%}
+  Jekyll collections
+{%- endcomment -%}
+
+{%- for collection in site.collections -%}
+  {%- for page in collection.docs -%}
+    {%- if page.title -%}
+      {%- unless page.search_exclude -%}
+
+        {%- unless first_result -%},{%- endunless -%}
+        {
+          "doc": {{ page.title | jsonify }},
+          "title": {{ page.title | jsonify }},
+          "content": {{ page.content | strip_html | normalize_whitespace | jsonify }},
+          "url": {{ page.url | absolute_url | jsonify }},
+          "relUrl": {{ page.url | jsonify }}
+        }
+        {%- assign first_result = false -%}
+
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+]

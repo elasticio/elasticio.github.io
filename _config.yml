@@ -34,11 +34,6 @@ collections:
 plugins:
   - jekyll-redirect-from
 
-algolia:
-  application_id: 'OIJ2XNEVHZ'
-  index_name:     'test_elasticio_documentation'
-  search_only_api_key: 'e434b9595ab515ca31a23e22aa39ecf1'
-
 exclude:
 
   - .jekyll-cache
