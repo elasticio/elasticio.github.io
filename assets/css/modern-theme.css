@@ -432,41 +432,83 @@ blockquote {
 
 /* -- search results dropdown ---------------------------------------------- */
 
-.ais-hits {
+/* Outer search dropdown */
+.header_search .search #hits,
+.header_search .search .autocomplete {
   background: var(--color-surface-raised);
-  border-color: var(--color-border);
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
-  box-shadow: var(--shadow-lg); }
+  border-color: var(--color-brand);
+  box-shadow: var(--shadow-lg);
+}
 
+/* Inner results container */
+.header_search .search #hits .ais-hits,
+.header_search .search .autocomplete .ais-hits {
+  background: var(--color-surface-raised);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* Individual results */
+.autocomplete__item,
+.ais-hits--item {
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+}
+
+/* Result links / separators */
+.autocomplete__item a,
+.ais-hits--item a {
+  color: var(--color-text);
+  border-bottom-color: var(--color-border);
+}
+
+/* Result title */
 .hit-title,
 .autocomplete__item .hit-title,
 .ais-hits--item .hit-title {
-  color: var(--color-heading); }
+  color: var(--color-heading);
+}
 
-.autocomplete__item a,
-.ais-hits--item a {
-  border-bottom-color: var(--color-border); }
-
-.autocomplete__item:last-child a,
-.ais-hits--item:last-child a {
-  border-bottom: none; }
-
+/* Result description */
 .autocomplete__item .desc,
 .ais-hits--item .desc,
 .autocomplete__item .hit-text,
 .ais-hits--item .hit-text {
-  color: var(--color-text-muted); }
+  color: var(--color-text-muted);
+}
 
+/* Hover */
 .autocomplete__item:hover,
 .autocomplete__item.hover,
 .ais-hits--item:hover,
 .ais-hits--item.hover {
-  background: var(--color-bg-subtle); }
+  background: var(--color-bg-subtle);
+}
 
+/* Empty results */
+.ais-hits__empty {
+  background: var(--color-surface-raised);
+  color: var(--color-text-muted);
+}
+
+.ais-hits__empty em {
+  color: var(--color-text);
+}
+
+/* Highlighted search terms */
 .ais-Highlight,
-.algolia__result-highlight,
-.articles__item mark {
+.search .hit-text mark,
+.search .hit-title mark {
   background: var(--color-highlight-bg);
-  color: var(--color-highlight-text);
+  color: inherit;
   border-radius: 2px;
-  padding: 0 1px; }
+  padding: 0 1px;
+}
+
+/* -- mobile theme toggle ----------------------------------------------- */
+
+@media only screen and (max-width: 1150px) {
+  .theme-toggle {
+    margin-top: 6px;
+  }
+}

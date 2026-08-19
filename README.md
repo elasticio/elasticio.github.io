@@ -7,7 +7,7 @@ the [doc.elastic.io](https://docs.elastic.io) to see it live.
 
 *   [Contributing](#contributing)
 *   [White-labeling](#white-labeling)
-*   [Creating Algolia configuration](#creating-algolia-configuration)
+*   [Search](#search)
 *   [Testing locally](#testing-locally)
 
 ## Contributing
@@ -27,27 +27,22 @@ following steps:
 1. Fork this repository
 2. Customize [variables](_data/tenant.yml) used in documentation pages
 3. Customize the [styles](./assets/css/common.css)
-4. Customize your [Algolia](https://www.algolia.com/) configuration in the [_config.yml](./_config.yml) file (application_id, index_name and search_only_api_key) or delete them if you don't need search
-5. Customize `CNAME` file (OPTIONAL: This is only required if documentation hosted on GitHub, but not necessary if documentation hosted on servers)
-6. DO NOT edit any content to avoid merging conflicts
-7. Pull changes from the original repository regularly so that your docs are up-to-date
+4.  Customize `CNAME` file (OPTIONAL: This is only required if documentation hosted on GitHub, but not necessary if documentation hosted on servers)
+5. DO NOT edit any content to avoid merging conflicts
+6. Pull changes from the original repository regularly so that your docs are up-to-date
 
-### Creating Algolia configuration
-*(Required to have search run on a white-labeled instance. Local dev runs fine without this step.)*
+## Search
 
-As a part of white-labelling you must take care of your own configuration to build
-the search statistics. To do so, create an Algolia account and use your own keys in
-the setup as explained here.
+The documentation uses a local client-side search.
 
-1. [Sign-up](https://www.algolia.com/users/sign_up) or [sign-in](https://www.algolia.com/users/sign_in)
-2. Go to “Indices” section and add new index:
-![algolia2](https://user-images.githubusercontent.com/36419533/41036629-59584f76-6999-11e8-99d9-cb04a49612dd.png)
-3. Here is your `index_name`:
-![algolia3](https://user-images.githubusercontent.com/36419533/41036633-5ec96c60-6999-11e8-8af3-3a2cd26f5933.png)
-4. Find `application_id` and `search_only_api_key` in “API Keys” section:
-![algolia4](https://user-images.githubusercontent.com/36419533/41036640-6449c626-6999-11e8-93b7-c5d0ea8ede03.png)
+Jekyll generates the search index at:
 
-5. Now you can Customize your Algolia configuration in the `_config.yml` file
+`/assets/js/search-data.json`
+
+The index is regenerated automatically whenever the documentation site is built:
+
+```bash
+bundle exec jekyll build
 
 ## Testing locally
 

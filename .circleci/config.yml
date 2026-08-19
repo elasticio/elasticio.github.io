@@ -29,8 +29,3 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-      # run indexing
-      - run:
-          name: run indexing
-          command: bundle exec jekyll algolia 

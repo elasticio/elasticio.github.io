@@ -46,7 +46,7 @@
             <div class="search">
                 <i class="search__ico"></i>
                 <div class="search__inner">
-                    <input type="text" name="q" id="search-input" class="search__input" placeholder="Search Docs">
+                    <input type="text" name="q" id="search-input" class="search__input" placeholder="Search documentation..." autocomplete="off">
                 </div>
 
                 <div id="hits"></div>
@@ -74,52 +74,6 @@
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
-
-<script type="text/html" id="hit-template">
-{% raw %}
-    <div class="hit">
-        <h2 class="hit-title"><a href="{{{url}}}">{{{_highlightResult.title.value}}}</a></h2>
-        <p class="hit-text"><a href="{{{url}}}">{{{_highlightResult.text.value}}}</a></p>
-    </div>
-{% endraw %}
-</script>
-<script>
-    var search = instantsearch({
-        appId: '{{ site.algolia.application_id }}',
-        apiKey: '{{ site.algolia.search_only_api_key }}',
-        indexName: '{{ site.algolia.index_name }}',
-        urlSync: false,
-        searchFunction: function(helper) {
-            var searchResults = $('#hits');
-            if (helper.state.query === '') {
-                searchResults.hide();
-                $('#search-input').blur();
-                return;
-            }
-            helper.search();
-            searchResults.show();
-        }
-    });
-
-    search.addWidget(
-            instantsearch.widgets.searchBox({
-                container: '#search-input'
-            })
-    );
-
-    search.addWidget(
-            instantsearch.widgets.hits({
-                container: '#hits',
-                hitsPerPage: 10,
-                templates: {
-                    item: document.getElementById('hit-template').innerHTML,
-                    empty: "We didn't find any results for the search <em>\"{{query}}\"</em>"
-                }
-            })
-    );
-    search.start();
-</script>
 <script>
     (function () {
         var toggle = document.getElementById('theme-toggle');
@@ -135,6 +89,9 @@
         });
     })();
 </script>
+
+<script src="/assets/js/local-search.js"></script>
+
 </body>
 <script type="text/javascript" src="/assets/js/site.js"></script>
 <script type="text/javascript" src="/assets/js/lightbox.js"></script>
