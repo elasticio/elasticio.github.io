@@ -504,3 +504,11 @@ blockquote {
   border-radius: 2px;
   padding: 0 1px;
 }
+
+/* -- mobile theme toggle ----------------------------------------------- */
+
+@media only screen and (max-width: 1150px) {
+  .theme-toggle {
+    margin-top: 6px;
+  }
+}
