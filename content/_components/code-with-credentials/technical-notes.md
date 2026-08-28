@@ -5,13 +5,23 @@ description: Technical Notes for the Code component with Credentials.
 icon: code-with-credentials.png
 icontext: Code component with credentials
 category: code
-updatedDate: 2026-05-13
-ComponentVersion: 1.0.3
+updatedDate: 2026-08-27
+ComponentVersion: 1.0.4
 ---
 
 ## Changelog
 
+### 1.0.4 (August 27, 2026)
+
+* Updated the following dependencies:
+ * @elastic.io/component-commons-library `4.0.0` -> `4.0.3`
+ * axios `1.16.0` -> `1.20.0`
+ * elasticio-sailor-nodejs `2.7.8` -> `2.7.9`
+ * nodemailer `8.0.7` -> `9.0.5`
+ * strong-soap `5.0.9` -> `6.0.2`
+
 ### 1.0.3 (May 13, 2026)
+
 * Added `nodemailer` `8.0.7` lib support
 * Updated the following dependencies:
    * axios `1.13.5` -> `1.16.0`

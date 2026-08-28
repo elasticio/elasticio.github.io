@@ -529,6 +529,7 @@ h2 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-backface-visibility: hidden;
+  margin-bottom: 10px;
 }
 
 .welcomer_icon {
@@ -727,7 +728,7 @@ h2 {
   border-radius: 0 0 5px 5px;
 
   box-shadow: 0 20px 40px rgba(23, 35, 61, 0.14);
-
+  
   pointer-events: auto;
 }
 
@@ -989,7 +990,7 @@ h2 {
     max-width: none;
     box-sizing: border-box;
   }
-}
+
 
   /*
    * Dropdown exactly matches the search box.

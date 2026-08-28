@@ -6,8 +6,8 @@ description: A component to run a piece of JavaScript code inside the integratio
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2026-05-13
-ComponentVersion: 1.2.16
+updatedDate: 2026-08-27
+ComponentVersion: 1.2.17
 ---
 
 ## Description
@@ -54,8 +54,9 @@ Built-in Node.js global objects are also supported.
 
 ### Other Libraries/functions
 
-- `wait(numberOfMilliscondsToSleep)` - Utility function for sleeping
-- [`request`](https://github.com/request/request) - Http Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request) so that it is pre-promisified)
+- `wait(numberOfMilliscondsToSleep)` - Utility function for sleeping.
+- [`axios`](https://github.com/axios/axios) - A well-known HTTP Client [Documentation](https://www.npmjs.com/package/axios).
+- [`request`](https://github.com/request/request) - HTTP Client (wrapped in `co` - [this library](https://www.npmjs.com/package/co-request) so that it is pre-promisified). We recommend using `axios`. Support for `request` is maintained for backward compatibility only.
 - `_` - [Lodash](https://lodash.com/)
 - `strong-soap` - [SOAP client](https://github.com/loopbackio/strong-soap) for invoking web services
 - [`nodemailer`](https://nodemailer.com/) - Library for sending emails from Node.js ([Example](#sending-an-email-with-nodemailer))

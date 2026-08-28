@@ -5,13 +5,20 @@ description: Technical Notes for the Code component.
 icon: code.png
 icontext: Code component
 category: code
-updatedDate: 2026-05-13
-ComponentVersion: 1.2.16
+updatedDate: 2026-08-27
+ComponentVersion: 1.2.17
 redirect_from:
   - /components/code/changelog.html
 ---
 
 ## Changelog
+
+### 1.2.17 (August 27, 2026)
+
+* Updated the following dependencies:
+ * elasticio-sailor-nodejs `2.7.8` -> `2.7.9`
+ * nodemailer `8.0.7` -> `9.0.5`
+ * strong-soap `5.0.9` -> `6.0.2`
 
 ### 1.2.16 (May 13, 2026)
 
