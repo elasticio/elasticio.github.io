@@ -6,8 +6,8 @@ description: The component is derived from the code-component with Credentials f
 icon: code-with-credentials.png
 icontext: Code component with Credentials
 category: code
-updatedDate: 2026-05-13
-ComponentVersion: 1.0.3
+updatedDate: 2026-08-27
+ComponentVersion: 1.0.4
 ---
 
 ## Table of Contents
