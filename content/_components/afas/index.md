@@ -6,8 +6,8 @@ description: AFAS component is designed to communicate with Profit Rest Services
 icon: afas.png
 icontext: AFAS component
 category: afas
-ComponentVersion: 2.2.1
-updatedDate: 2025-11-20
+ComponentVersion: 2.3.0
+updatedDate: 2026-08-31
 ---
 
 ## Table of Contents
@@ -28,7 +28,10 @@ AFAS component is designed to communicate with [Profit Rest Services](https://he
 
 Component credentials configuration fields: 
 * **Rest services URL**  (string, required) - Provide here an endpoint to REST/JSON service, [more info](https://help.afas.nl/help/EN/SE/App_Conect_WebSrv_Addrss.htm)
-* **Token**  (string, required) - [create](https://help.afas.nl/help/EN/SE/App_Cnr_Rest_Token.htm) a token and put it in this field. E.g. `<token><version>1</version><data>5DEFA8EC26234BB2993040350BDAB18754DB8AF8484301AD1C6CB7BBA20AC16D</data></token>`
+* **Token**  (string, semi-optional) - [create](https://help.afas.nl/help/EN/SE/App_Cnr_Rest_Token.htm) a token and enter it in this field. E.g., `<token><version>1</version><data>5DEFA8EC26234BB2993040350BDAB18754DB8AF8484301AD1C6CB7BBA20AC16D</data></token>`, or use a combination of `Client Id` and `Client Secret`.
+* **Client Id**  (string, semi-optional) - Enter your Client Id here (this should be generated using the [Client credentials flow](https://help.afas.nl/help/NL/SE/120718.htm).
+* **Client Secret**  (string, semi-optional) - Enter your Client Secret here (this should be generated using the [Client credentials flow](https://help.afas.nl/help/NL/SE/120718.htm)).
+  * Note: You must use either the Token or a combination of Client Id and Client Secret. One of these authentication methods is required, and they cannot be used simultaneously.
 * **Integration Id**  (string, optional) - This ID will be added to each request as a header with the key 'IntegrationId'
 * **Timeout**  (number, optional) - Timeout for requests to AFAS server in seconds. Default 15s
 * **Retry attempts**  (dropdown, optional) - How many time component will retry in case of errors. Default 3
@@ -43,7 +46,7 @@ Component credentials configuration fields:
 
 ### Make Raw Request
 
-Executes custom request.
+Executes a custom request.
 
 #### Configuration Fields
 
