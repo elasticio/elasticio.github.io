@@ -8,7 +8,7 @@ order: 4
 category: intro
 ---
 
-This document provides basic information on [logs page](#logs-page-vs-executions-page) and how to filter logs based on [flow names](#flow-name), [logs levels](#log-level) and [time interval](#time-interval).
+This document provides basic information on [logs page](#logs-page-vs-executions-page) and how to filter logs based on [flow names](#filter-by-flow-name), [logs levels](#filter-by-log-level) and [time interval](#filter-by-time-interval) and [resize columns](#resize-columns-on-logs-page).
 
 ## Logs Page vs. Executions Page
 
@@ -44,7 +44,6 @@ Here you can search for the flow names to find the relevant flows faster.
 > **Note**, by deselecting all (or pressing *Clear*) you will return to the default
 > view of all executions from all the active flows.
 
-
 ## Filter by Time Interval
 
 This filter allows you to list logs based on their time. A drop-down menu
@@ -69,3 +68,9 @@ of the interval:
 This filter allows you to list logs of the same type (level), like `Error`, `Debug`, `Info`, etc.:
 
 ![Level log filtering](/assets/img/getting-started/logs-page/filter-by-level.png)
+
+## Resize Columns on Logs Page
+
+The column widths on the **Logs** page are resizable. Simply hover your mouse over the border of a column in the Logs table and drag to adjust its width.
+
+{% include img.html max-width="100%" url="/assets/img/RN/2627/resizable-columns.png" title="Resizable Columns on Logs Page" %}

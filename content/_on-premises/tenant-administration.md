@@ -13,3 +13,4 @@ category: tenant
 
 1.  [Contract Management](tenant/contract-management) This article describes how to manage the contracts from the tenant administration point of view.
 2.  [Roles Management](tenant/roles-management) This article describes how to manage the user roles in tenant.
+3.  [Component Usage Insights](tenant/component-usage-insight) This article describes how to retrieve connector usage statistics across tenant workspaces.

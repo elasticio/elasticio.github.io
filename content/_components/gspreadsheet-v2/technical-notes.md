@@ -1,15 +1,22 @@
 ---
 title: Google Spreadsheets v2 Technical Notes
 layout: component
-description: Technical Notes for the  Google Spreadsheets component v2
+description: Technical Notes for the Google Spreadsheets v2 component
 icon: gspreadsheet.png
 icontext: Google Spreadsheets component
 category: gspreadsheet-v2
-updatedDate: 2023-07-03
-ComponentVersion: 1.0.3
+updatedDate: 2025-08-06
+ComponentVersion: 1.1.1
 ---
 
 ## Changelog
+
+### 1.1.1 (August 06, 2025)
+
+* Updated Sailor to version 2.7.6.
+* Updated `@elastic.io/component-commons-library` to version 4.0.0.
+* Updated `axios` to version 1.11.0.
+* Removed the `elasticio-node` library.
 
 ### 1.1.0 (December 4, 2023)
 
@@ -37,4 +44,4 @@ ComponentVersion: 1.0.3
 
 ### Completeness Matrix
 
-![Completeness Matrix](https://user-images.githubusercontent.com/16806832/181498512-fba88280-5562-448a-aaf0-85a175f1ba18.png)
+[Google Spreadsheets Component Completeness Matrix](https://docs.google.com/spreadsheets/d/1usD_k7NxyiplSEXgttAT9dmpgDNADCED7z4UCoRaAfs/edit#gid=0)
