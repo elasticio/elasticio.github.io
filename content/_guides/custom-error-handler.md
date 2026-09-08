@@ -19,7 +19,7 @@ The screenshot below shows what kind of error information you can get:
 
 ![Error emitter](/assets/img/integrator-guide/custom-error-handler/error-emitter.png)
 
-## How works
+## How it works
 
 To create an Custom Error Handler for your flow switch to the draft mode and click
 on **"Add Error handling"** button:

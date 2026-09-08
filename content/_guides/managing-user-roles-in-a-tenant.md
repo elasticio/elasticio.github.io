@@ -28,7 +28,7 @@ The default **tenant role** is:
 
 *   **Tenant-Admin** - Users with this role can manage tenants, contracts and users.
 
-> Please note that with `global.tenant.edit_roles` permission you can use `PATCH /v2/tenants/:tenantId/roles` API call which allows to create a new role with permissions in a tenant scope. Please use `PATCH /v2/tenants/{tenant_id}/members/{user_id}` [API endpoint]({{site.data.tenant.apiDocsUri}}/v2#/tenants/patch_tenants__tenant_id__members__user_id_) to grante any role from the tenant’s scope to any user.
+> **Please Note:** that with `global.tenant.edit_roles` permission you can use `PATCH /v2/tenants/:tenantId/roles` API call which allows to create a new role with permissions in a tenant scope. Please use `PATCH /v2/tenants/{tenant_id}/members/{user_id}` [API endpoint]({{site.data.tenant.apiDocsUri}}/v2#/tenants/patch_tenants__tenant_id__members__user_id_) to grante any role from the tenant’s scope to any user.
 
 The default **contract roles** are:
 
@@ -47,7 +47,7 @@ Note that a full set of contract permissions does not automatically mean a full
 set of permissions for every workspace. A contract **Admin** may be a **Guest**
 in a certain workspace.
 
-> Please note that you can always get the list of available permissions using an [API call]({{site.data.tenant.apiDocsUri}}/v2#/permissions/get_permissions). This endpoint is available to all the platforms' users.
+> **Please note** that you can always get the list of available permissions using an [API call]({{site.data.tenant.apiDocsUri}}/v2#/permissions/get_permissions). This endpoint is available to all the platforms' users.
 
 ## Setting user roles in Workspace
 
@@ -55,6 +55,8 @@ As a workspace Owner or Admin you can modify user roles in the workspace by
 navigating to **Workspace** in navigation menu and clicking **Edit member’s role**:
 
 ![Workspace - navigation menu](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-01.png)
+
+> **Please Note:** Users will receive an email notification whenever their role in a Workspace has been updated.
 
 As a workspace Owner or Admin you can set the user role while adding them to the
 workspace. Click **Add new member**, select an existing user and use the **Role**
@@ -86,6 +88,8 @@ contract by visiting **Members** section of the **Contract Settings** and
 clicking to edit (the pencil).
 
 ![Edit member’s roles](/assets/img/tenant-management-guide/managing-user-roles-in-a-tenant/setting-user-roles-05.png)
+
+> **Please Note:** Users will receive an email notification whenever their role in a Contract has been updated.
 
 As a contract **Owner** or **Admin** you can set the user role while inviting to
 the Contract. Click on **Invite new member** button and start filling in the form.

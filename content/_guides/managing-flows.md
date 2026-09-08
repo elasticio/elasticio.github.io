@@ -13,7 +13,9 @@ actions:
 *   [Start, Stop, Edit, Suspend, Delete](#start-stop-edit-suspend-delete)
 *   [Restoring Deleted Flow](#restoring-deleted-flow)
 *   [Filtering, Sorting Flows](#filtering-sorting-flows)
+*   [Favorites for Flows](#favorites-for-flows)
 *   [Copy Flow within the same Workspace, switch between Real-time and Ordinary](#copy-flow-switch-flow-type)
+*   [Trigger type indicator on Flows list page](#trigger-type-indicator-on-flows-list-page)
 *   [Editable delay for container shutdown in Ordinary Flows](#editable-delay-for-container-shutdown-in-ordinary-flows)
 *   [Subscribe to Errors](#subscribe-to-errors)
 *   [Schedule via CRON expressions](#scheduling)
@@ -21,6 +23,7 @@ actions:
 *   [Parallel Processing](#parallel-processing)
 *   [Reset Snapshot](#reset-snapshot)
 *   [Flow step logging level setup](#flow-step-logging-level-setup)
+*   [Notes Field in Flow Designer](#notes-field-in-flow-designer)
 
 All actions are available to users with the corresponding [permissions](/guides/managing-user-roles-in-a-tenant).
 
@@ -109,6 +112,18 @@ You can:
 
 9. You can [Export multiple Flows](/getting-started/copy-and-export-flow) or [Export multiple Flows to Recipes](/guides/creating-recipes) **(9)**.
 
+## Favorites for Flows
+
+Each flow card includes a star icon you can click to add or remove the flow from your favorites. 
+Flows are grouped into two sections - *Favorites* (shown first) and *Other Flows* - so frequently used flows are easier to find. Click the star on any flow card to toggle its favorite status. 
+
+How it looks:
+* **Not favorite:** transparent star with a black outline.
+* **Favorite:** filled star in yellow.
+
+> **Please Note:** By default, no flows are marked as favorites.
+
+{% include img.html max-width="100%" url="/assets/img/RN/2619/favorite-flows.png" title="Flows Favorite" %}
 
 ## Copy Flow, Switch Flow Type
 
@@ -128,7 +143,7 @@ As a result, you get a copy of your Flow:
 
 ![Flow copy](/assets/img/tenant-management-guide/managing-flows/Flow_copy.png)
 
-> **Note:** If you need to publish a Flow not in the current Workspace, you can use the Export Flow(s) feature, which is described in detail [here](/getting-started/copy-and-export-flow).
+> **Please Note:** If you need to publish a Flow not in the current Workspace, you can use the Export Flow(s) feature, which is described in detail [here](/getting-started/copy-and-export-flow).
 
 To switch between real-time and ordinary types, navigate to see your Flows. Then click on the corresponding icon to open the settings menu of the selected Flow:
 
@@ -138,7 +153,20 @@ Switching back works the same way. Alternatively, you can navigate to the Flow i
 
 ![Settings - Switch to real-time](/assets/img/tenant-management-guide/managing-flows/Settings-Switch_to_real-time.png)
 
-> **Note:** you can only switch Flow type if there's at least one published Flow version, and it is not running.
+> **Please Note:** you can only switch Flow type if there's at least one published Flow version, and it is not running.
+
+## Trigger type indicator on Flows list page
+
+Each flow card shows an icon representing the trigger used by the flow’s first step.
+The supported trigger types include:
+* **Polling** – scheduled execution based on cron (handled by the scheduler service)
+* **Flow Linking** – triggered by another flow via flow-linking component
+* **Pub/Sub** – triggered when a message is published to a topic
+* **Webhook** – triggered via an incoming HTTP request
+
+Users can quickly identify how a flow is started without opening it, making discovery and troubleshooting faster.
+
+{% include img.html max-width="100%" url="/assets/img/RN/2619/trigger-type-indicator.png" title="Trigger Type Indicator" %}
 
 ## Editable delay for container shutdown in Ordinary Flows
 
@@ -158,7 +186,7 @@ To subscribe to errors, use the settings menu **(1)** of the corresponding Flow 
 
 Unsubscribing works the same way.
 
-> **Note:** With the appropriate permissions [you can change the default contract behavior](/guides/managing-contracts#feature-flag-subscribe-to-error-by-default) by turning off the automatic error subscription feature.
+> **Please Note:** With the appropriate permissions [you can change the default contract behavior](/guides/managing-contracts#feature-flag-subscribe-to-error-by-default) by turning off the automatic error subscription feature.
 
 ## Scheduling
 
@@ -167,7 +195,7 @@ To schedule your Flow via [CRON expressions](https://en.wikipedia.org/wiki/Cron#
 ![Settings - Scheduling](/assets/img/tenant-management-guide/managing-flows/Settings-Scheduling.png)
 
 The default CRON expression is `*/10 * * * *`, meaning "Every 10 minutes".
-> **Note:** The default value of this parameter can be changed by configuring the internal environment variable `SCHEDULER_TASK_POLLING_INTERVAL`.
+> **Please Note:** The default value of this parameter can be changed by configuring the internal environment variable `SCHEDULER_TASK_POLLING_INTERVAL`.
 
 The positions in the expression from left to right represent:
 
@@ -226,7 +254,7 @@ You can work on one draft of a given Flow at a time. If you try to create anothe
 ## Parallel Processing
 
 Parallel Processing (also known as a prefetch count) - the number of messages that will be consumed at once, and will be processed in one execution in a parallel-sequential way. It means that at one point in time step will be working on one message but as soon as it is waiting for some IO operation it will start processing another message. The default value is 1, increasing the prefetch count should help for integration flows that have a considerable amount of messages in the queue.
-> **Note:** that the processing speed is not linear to the Parallel Processing configuration.
+> **Please Note:** that the processing speed is not linear to the Parallel Processing configuration.
 
 Parallel processing can be configured via the UI and the API.
 
@@ -234,7 +262,7 @@ Parallel processing can be configured via the UI and the API.
 
 ![Advanced Settings](/assets/img/tenant-management-guide/managing-flows/advanced-settings.png)
 
-> **Note:** the changes will be applied after clicking the *Finish Step* button.
+> **Please Note:** the changes will be applied after clicking the *Finish Step* button.
 
 
 2\. To configure parallel processing via the API, use `prefetch` field as a parameter to `nodeConfig` section of the `/v2/flows` endpoint. The Mapper-Step gets the same prefetch as the previous Step.
@@ -293,6 +321,20 @@ purposes we extended the flow step configuration by adding the `log_level` param
 
 > **Please Note**: You can only change the logging level for run-time executions.
 > This setup would not work on one-time executions like retrieve sample and verify credentials.
+
+## Notes Field in Flow Designer
+
+Use the Notes field to document a flow's purpose, behavior, and other relevant details. Adding notes provides context that can help teammates understand, maintain, and troubleshoot the flow.
+
+{% include img.html max-width="100%" url="/assets/img/RN/2627/notes.png" title="Flow Designer Notes Section" %}
+
+To add notes:
+1. In **Flow Designer**, open the dropdown menu.
+2. Select **Notes** field.
+
+Include information such as the flow's purpose, key actions, dependencies, or other details that may be useful to teammates when working with the flow.
+
+> **Please Note:** After you enter or edit the field using the built-in text formatter. Click the **Save** (floppy disk) icon to save your notes. Otherwise, your notes will not be saved.
 
 ## Related links
 

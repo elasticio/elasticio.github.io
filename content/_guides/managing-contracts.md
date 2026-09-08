@@ -7,7 +7,7 @@ order: 1
 category: integrator-management
 ---
 
-## Maganig Contract via UI
+## Managing Contract via UI
 
 At the moment, it is mostly possible to manage contracts on the platform mostly via API calls. The following functions available through UI:
 *  Find specific contracts using the **Search…** field under the contract dropdown menu.
@@ -47,7 +47,7 @@ A Contract member with the corresponding [permission](/guides/managing-user-role
 4. [Update membership in the Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/patch_contracts__contract_id__members__user_id_)
 5. [Remove a user from a Contract]({{site.data.tenant.apiDocsUri}}/v2#/contracts/delete_contracts__contract_id__invites__invite_id_)
 
->**PLease Note:**
+>**Please Note:**
 - If a contract only has one member, which is the Owner, it is still possible to remove this member. However, this user also will be removed from the Platform completely if they are not a member of other contracts.
 - It is not possible to remove the last Contract Owner, if there are still members in the Contract.
 
@@ -120,6 +120,20 @@ You can enable [subscription for flow errors](/guides/managing-flows.html#subscr
       "attributes":{
         "feature_flags":{
             "subscribe_to_error_by_default": true
+          }
+      }
+    }
+  }
+```
+
+#### Feature Flag: Disable Real-Time in Flows inside the Tenant
+You can disable [real-time](/guides/realtime-flows.html#real-time-flows) in flows inside the tenant by default.
+```json
+  {
+    "data": {
+      "attributes":{
+        "feature_flags":{
+            "disable_realtime_feature": true
           }
       }
     }

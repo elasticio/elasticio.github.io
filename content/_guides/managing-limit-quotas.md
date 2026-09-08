@@ -64,6 +64,18 @@ Limits the number of workspaces with type [Full](/getting-started/contracts-and-
 
 Limits the number of workspaces with type [Limited](/getting-started/contracts-and-workspaces.html#workspaces).
 
+### Monthly Message Limit for Flow Steps
+
+Monthly limit on the number of emitted data items (records and errors) produced by flow steps.
+
+- `per_contract_message_count_limit`
+
+Limits the monthly number of messages for certain Contract.
+
+- `per_workspace_message_count_limit`
+
+Limits the monthly number of messages for certain Workspace.
+
 ### Amount of Memory and CPU usage
 
 - `per_contract_cpu_usage_monthly_limit`
@@ -116,7 +128,7 @@ Limits the number of Flows for certain Tenant.
 
 Limits the number of users that can be present in a contract.
 
-### Count of Containers
+### Count of Containers (Active steps Limit)
 
 - `per_contract_container_count_limit`
 
@@ -128,6 +140,25 @@ You can see the total number of containers occupied by one Flow, for example, in
 
 > **Please Note:** Before you can use this quota you MUST sync your existing containers count with the quotatxns DB tables. Use `POST {{site.data.tenant.apiBaseUri}}/sidedoor/quotatxns/sync/container` endpoint using the *Service Account* credentials.
 
+### Flow Limits for Ordinary and Long-Running Flows
+
+Limits that control the number of ordinary and long-running (real-time) flows in workspaces and contracts.
+
+- `per_contract_ordinary_flow_count_limit`
+
+Limits the number of Ordinary Flows for certain Contract.
+
+- `per_contract_long_running_flow_count_limit`
+
+Limits the number of Real-Time Flows for certain Contract.
+
+- `per_workspace_ordinary_flow_count_limit`
+
+Limits the number of Ordinary Flows for certain Workspace.
+
+- `per_workspace_long_running_flow_count_limit`
+
+Limits the number of Real-Time Flows for certain Workspace.
 
 ## Related links
 
