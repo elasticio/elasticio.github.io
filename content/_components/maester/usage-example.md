@@ -5,8 +5,8 @@ description: Usage Example for the Maester component
 icon: maester.png
 icontext: Maester component
 category: maester
-updatedDate: 2022-06-07
-ComponentVersion: 2.0.1
+updatedDate: 2026-09-09
+ComponentVersion: 2.0.3
 ---
 
 ## Use case

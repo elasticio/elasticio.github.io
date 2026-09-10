@@ -5,13 +5,21 @@ description: Technical Notes for the Maester component
 icon: maester.png
 icontext: Maester component
 category: maester
-updatedDate: 2024-10-02
-ComponentVersion: 2.0.2
+updatedDate: 2026-09-09
+ComponentVersion: 2.0.3
 ---
 
 ## Changelog
 
+## 2.0.3 (September 09, 2026)
+
+* Updated Node.js engine to 24.x
+* Bumped `@elastic.io/maester-client` to 6.0.3
+* Bumped `@elastic.io/component-commons-library` to 4.0.3
+* Updated `elasticio-sailor-nodejs` to 2.7.9
+
 ### 2.0.2 (September 12, 2024)
+
 * Updated Node.js engine from 16 to 18
 * Updated Sailor to 2.7.3
 * Bumped maester-client from 4.0.3 to 5.0.3
