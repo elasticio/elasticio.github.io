@@ -33,6 +33,7 @@ Across the platform's components, most of what you'll build a flow from boils do
 |---|---|---|
 | Start a flow when a record is created or changed, and the system has to be asked periodically | **Get New and Updated Objects (Polling)** | Trigger |
 | Start a flow the instant something happens, pushed by the external system | **Webhook** | Trigger |
+| Start a flow the instant something happens, via a live subscription to the source system's event stream | **Subscribe to Events** (and similar) | Trigger |
 | Create a record, or update it if a matching one already exists | **Upsert Object** | Action |
 | Create a new record only | **Create Object** | Action |
 | Change a record you already have the ID for | **Update Object** | Action |
@@ -60,7 +61,7 @@ Practically, this means:
 * [Choosing a Trigger](choosing-a-trigger) — a closer look at polling, webhooks, and real-time streams, and how to tell which one a given component offers.
 * [Choosing an Action](choosing-an-action) — a decision guide for picking between Create, Update, Upsert, Lookup, Delete, and Raw Request.
 * [Creating a Basic Integration Flow](first-flow) — if you haven't built a flow at all yet, start there first.
-* Each component's own documentation page (for example, [Salesforce](/components/salesforce), [AFAS](/components/afas), [Shopify Admin](/components/shopify-admin-v2)) lists exactly which of these actions and triggers it supports, plus any configuration fields specific to that system.
+* Each component's own documentation page (for example, [Salesforce](/components/salesforce), [Microsoft Dynamics Business Central](/components/microsoft-dynamics-business-central), [Shopify Admin](/components/shopify-admin-v2)) lists exactly which of these actions and triggers it supports, plus any configuration fields specific to that system.
 
 ## Related links
 

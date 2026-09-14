@@ -57,12 +57,11 @@ A handful of components — Salesforce is the clearest example, with **Bulk Crea
 ## Quick decision guide
 
 1. **Writing a record and you're not sure if it exists yet?** Upsert Object.
-2. **Writing a record and you're sure whether it exists?** Create Object or Update Object.
-3. **Reading exactly one known record?** Lookup Object (By ID).
-4. **Reading a list of records matching some criteria?** Lookup Objects.
-5. **Removing a record?** Delete Object.
-6. **Moving a large batch of records at once, and a Bulk action is available?** Use it instead of the single-record action.
-7. **None of the above covers what you need?** Make Raw Request — check the component's documentation page first for the exact input it expects.
+2. **Reading exactly one known record?** Lookup Object (By ID).
+3. **Reading a list of records matching some criteria?** Lookup Objects.
+4. **Removing a record?** Delete Object.
+5. **Moving a large batch of records at once, and a Bulk action is available?** Use it instead of the single-record action.
+6. **None of the above covers what you need?** Make Raw Request — check the component's documentation page first for the exact input it expects.
 
 ## Related links
 

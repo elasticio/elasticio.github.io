@@ -17,7 +17,7 @@ Every flow starts with a trigger. Before you pick a component, it helps to know 
 |---|---|---|---|
 | Polling | **Get New and Updated Objects (Polling)** | The platform asks the connected system, on a schedule, "anything new or changed since last time?" | Minutes, depending on your polling interval |
 | Webhook | **Webhook** / **Webhook Subscription** | The connected system pushes a notification to the platform the moment something happens | Seconds |
-| Real-time stream | **Subscribe to Platform Events**, **Subscribe to PubSub**, and similar | The flow keeps an open, persistent connection to the connected system's event stream | Near-instant, but only inside a real-time flow |
+| Event subscription | **Subscribe to Events**, **Subscribe to Platform Events**, **Subscribe to PubSub**, and similar | The flow keeps a live subscription to the connected system's event stream | Near-instant; whether it needs a real-time flow depends on the trigger — see below |
 
 ### Polling triggers
 
@@ -42,25 +42,20 @@ Use a webhook trigger when:
 
 See the [Webhook Overview](webhooks-overview) and [Creating a webhook flow](webhooks-flow) for a full walkthrough of setting one up.
 
-### Real-time stream triggers
+### Event subscription triggers
 
-A smaller number of components — Salesforce's **Subscribe to Platform Events** and **Subscribe to PubSub**, for example — offer a trigger that stays connected to a live event stream from the source system. These are the fastest option, but they only run inside a [real-time flow](/guides/realtime-flows), a specific flow mode on the platform built to keep a persistent connection open. If you drop one of these triggers into a regular, non-real-time flow, it won't work — check the component's own documentation page for whether a trigger has this requirement before you build around it.
+A growing number of components offer a trigger that subscribes directly to a live event stream from the source system — look for names like **Subscribe to Events**, **Subscribe to Platform Events**, or **Subscribe to PubSub**. Not all of them require a [real-time flow](/guides/realtime-flows): some keep a persistent subscription open and run perfectly well in an ordinary flow, while others genuinely need the real-time flow mode to keep that connection alive. Which one you have is usually spelled out right in the trigger's own name (for example, Salesforce's **Subscribe to platform events (Realtime flows only)**) — check the trigger's name and the component's documentation page rather than assuming either way.
 
-Use a real-time stream trigger when:
+Use an event subscription trigger when:
 
 * the connected system exposes an event-streaming API (platform events, pub/sub, CDC streams) for what you need
-* you're already using, or are prepared to set up, a real-time flow
-
-## Neither fits? Look for Delta Detection
-
-Some systems offer no webhooks and no reliable "changed since" field to poll against. For those, look for a flow built around the [Delta Detection component](/components/delta-detection), which keeps its own record of what it has already seen and works out what's new or changed by comparison, rather than relying on the source system to tell it.
+* if the trigger's name indicates it needs a real-time flow, you're already using one or are prepared to set one up
 
 ## Quick decision guide
 
 1. **Does the component offer a Webhook trigger for what you need, and can you register it?** Use it — it's the best combination of speed and simplicity for most flows.
-2. **Do you need near-instant reaction and are you working in a real-time flow?** Look for a streaming trigger like Subscribe to Platform Events.
+2. **Do you need near-instant reaction?** Look for an event subscription trigger such as Subscribe to Events or Subscribe to Platform Events, and check its name for whether it requires a real-time flow.
 3. **Otherwise, use the polling trigger** and set the interval to match how time-sensitive the flow actually is.
-4. **No webhook, no stream, and no reliable "changed since" field on the source system?** Reach for Delta Detection.
 
 ## Related links
 
@@ -69,4 +64,3 @@ Some systems offer no webhooks and no reliable "changed since" field to poll aga
 - [Webhook Overview](webhooks-overview)
 - [Creating a webhook flow](webhooks-flow)
 - [Building real-time flows](/guides/realtime-flows)
-- [Delta Detection component](/components/delta-detection)
