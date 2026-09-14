@@ -11,7 +11,7 @@ Every step in an integration flow runs as its own container. Keeping thousands o
 
 ## Why flows sleep
 
-An `ordinary` flow — what every flow is unless you change it — only runs its containers while there's work to do. When a trigger produces a message, the platform starts the flow's containers, processes it through each step, and then, once things go idle, shuts them back down.
+An `ordinary` flow — what every flow is unless you change it — only runs its containers while there's work to do. When a trigger receives a message, the platform starts the flow's containers, processes it through each step, and then, once things go idle, shuts them back down.
 
 ![Container life cycle](/assets/img/integrator-guide/realtime-flows/container-lifecycle.png "Container life cycle")
 
