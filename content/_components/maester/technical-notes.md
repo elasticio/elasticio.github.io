@@ -11,7 +11,7 @@ ComponentVersion: 2.0.3
 
 ## Changelog
 
-## 2.0.3 (September 09, 2026)
+### 2.0.3 (September 09, 2026)
 
 * Updated Node.js engine to 24.x
 * Bumped `@elastic.io/maester-client` to 6.0.3

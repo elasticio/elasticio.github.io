@@ -2,193 +2,357 @@
 layout: component
 title: Creatio component
 section: CRM components
-description: The Creatio component allows you to interact with your Creatio account via API.
+description: The Creatio component connects our integration platform to your Creatio CRM instance via the Creatio OData API.
 icon: creatio.png
 icontext: Creatio component
 category: creatio
-ComponentVersion: 1.0.0
-updatedDate: 2025-12-15
+ComponentVersion: 1.1.0
+updatedDate: 2026-09-14
 ---
 
 ## Table of Contents
 
-* [Description](#description)
-* [Credentials](#credentials)
-* [Triggers](#triggers)
-  * [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling)
-* [Actions](#actions)
-  * [Delete Object By ID](#delete-object-by-id)
-  * [Lookup Object By ID](#lookup-object-by-id)
-  * [Lookup Objects (plural)](#lookup-objects-plural)
-  * [Make Raw Request](#make-raw-request)
-  * [Upsert Object](#upsert-object)
-* [Known Limitations](#known-limitations)
+- [General Information](#general-information)
+  - [Description](#description)
+  - [Prerequisites](#prerequisites)
+- [Credentials](#credentials)
+  - [Registering an OAuth 2.0 Client in Creatio](#registering-an-oauth-20-client-in-creatio)
+  - [Configuring Platform Credentials](#configuring-platform-credentials)
+- [Environment Variables](#environment-variables)
+- [Triggers](#triggers)
+  - [Get New and Updated Objects Polling](#get-new-and-updated-objects-polling)
+- [Actions](#actions)
+  - [Delete Object By ID](#delete-object-by-id)
+  - [Lookup Object By ID](#lookup-object-by-id)
+  - [Lookup Objects (plural)](#lookup-objects-plural)
+  - [Make Raw Request](#make-raw-request)
+  - [Upsert Object](#upsert-object)
+- [Known Limitations & Rate Limits](#known-limitations--rate-limits)
 
-## Description
+## General Information
 
-{{page.description}}
+The component interacts with Creatio using its OData 4.0 REST API (`/0/odata/`). It dynamically queries metadata (`/0/odata/$metadata`) to populate available entity types, date/time fields, and JSON schema properties in the integration designer.
+
+### Description
+
+The **Creatio component** connects our integration platform to your [Creatio CRM](https://www.creatio.com) instance via the Creatio OData API. It provides triggers and actions to poll, search, retrieve, create, update, and delete Creatio records, as well as execute custom raw API requests.
+
+### Prerequisites
+
+- An active Creatio CRM environment with administrative access.
+- Registered OAuth 2.0 Integrated Application credentials in Creatio.
 
 ## Credentials
 
+The component uses **OAuth 2.0** for secure API authentication.
+
+### Registering an OAuth 2.0 Client in Creatio
+
 To build an integration flow, you must first register an OAuth 2.0 application in your Creatio CRM environment:
 
-1. Sign in with a system administrator account, click the gear icon to open `System Designer`, then go to `Import and integration` → `OAuth 2.0 integrated applications`.
-2. Click `New` → `On behalf of a user`.
-3. Provide the details:
-   - **Name** – any label that helps you recognise the client.
-   - **Application URL** – url of an application.
-   - **Description** – description for the credentials.
-4. Then specify the [Redirect URI](/guides/oauth-callback-redirect-url.html) as `https://{your-tenant-address}/callback/oauth2`, where `{your-tenant-address}` is the domain of your integration platform.
-5. Save the record and copy the generated **Client Id** and **Client secret**.
+1. Sign in with a system administrator account, click the gear icon to open the `System Designer` page, then go to the `Import and integration` section and click `OAuth 2.0 integrated applications`.
+2. Click `New`.
+3. Set up your integration by providing the following details:
+   - **Name** (required) – any name that helps you identify the integration.
+   - **Application URL** – the URL of your application.
+   - **Description** – a description of the integration.
+4. Under **Choose allowed OAuth flows**, select `On behalf of a user (authorization code)`.
+5. Open the `AUTHORIZATION CODE` tab and specify:
+   - **Redirect URI** – specify the [Redirect URI](/guides/oauth-callback-redirect-url.html) as `https://{your-tenant-address}/callback/oauth2`, where `{your-tenant-address}` is the domain of your integration platform.
+   - **Permitted users** – specify which users are permitted to use this integration to authorize access via OAuth.
+6. Save the integration.
 
-After the OAuth client exists, configure the component credentials:
+### Configuring Platform Credentials
 
-* **Type** (dropdown, required) – `OAuth2`.
-* **Choose Auth Client** (dropdown, required) – pick the previously created client or choose `Add New Auth Client` and supply:
-  * **Name** – any label.
-  * **Client ID** – value copied from Creatio.
-  * **Client Secret** – value copied from Creatio.
-  * **Authorization Endpoint** – `https://{your-creatio-domain}/0/connect/authorize`.
-  * **Token Endpoint** – `https://{your-creatio-domain}/0/connect/token`.
-   * **Scope** – `offline_access,ApplicationAccess_{ID}`; ID can be found at `System Designer` → `Lookups` → `OAuth resources`.
-* **Instance URL** (string, required) – the instance URL of your Creatio environment, e.g. `https://123-crm-bundle.creatio.com`.
-* **Number of retries** (number, optional, default `5`) – how many times requests are retried when throttled.
-* **Delay between retries** (number, optional, default `10000`) – wait time in milliseconds before the next retry.
-* **Name Your Credential** (string, required) – any label that helps you identify the credential.
+When creating a new credential on the elastic.io platform:
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| **Type** | Dropdown | Yes | Select `OAuth2`. |
+| **Choose Auth Client** | Dropdown | Yes | Select an existing client or choose `Add New Auth Client` and supply: Client ID, Client Secret, Authorization Endpoint (`https://{your-creatio-domain}/0/connect/authorize`), Token Endpoint (`https://{your-creatio-domain}/0/connect/token`), and Scope (`offline_access,ApplicationAccess_{ID}`). |
+| **Instance URL** | String | Yes | Base URL of your Creatio environment, e.g. `https://123-crm-bundle.creatio.com`. |
+| **Number of retries** | Number | No | Maximum retry attempts when encountering rate limiting (`429`) or server errors. Defaults to `5`. |
+| **Delay between retries** | Number | No | Delay in milliseconds before retrying after a rate limit error. Defaults to `10000` (10 seconds). |
+| **Name Your Credential** | String | Yes | A descriptive label for the credential. |
+
+## Environment Variables
+
+| Variable | Description |
+|---|---|
+| `ELASTICIO_FLOW_TYPE` | Set to `debug` during sample retrieval in the flow designer. When `debug`, maximum page size is automatically capped at `10`. |
+| `EIO_REQUIRED_RAM_MB` | Recommended container memory allocation. Default: `256` MB. |
 
 ## Triggers
 
 ### Get New and Updated Objects Polling
 
-Polls Creatio for records that have been created or updated after the snapshot time. Results can be emitted one-by-one or as pages.
+Polls Creatio for records that have been created or modified since the previous poll. Stores the highest timestamp seen in the snapshot to prevent duplicate emissions.
 
 #### Configuration Fields
 
-* **Object type** (dropdown, required) – Creatio entity to monitor. List is populated from your instance metadata.
-* **Poll configuration field** (dropdown, required) – which date/time field to evaluate (e.g., `CreatedOn`, `ModifiedOn`). Available values are derived from the selected object type.
-* **Start Time** (string, optional) – ISO 8601 timestamp for the initial poll; defaults to `1970-01-01T00:00:00Z` when omitted.
-* **Page Size** (number, optional, default `100`) – number of records to request per API call; must be between 1 and 100 (reduced to 10 in debug/sample flows).
-* **Emit Behavior** (dropdown, optional, default `Emit individually`) – choose `Emit individually` to output each record separately or `Emit page` to output pages of results.
+| Field | Type | Required | Description |
+|---|---|---|---|
+| **Object Type** | Dropdown | Yes | The Creatio entity to monitor (e.g., `Contact`, `Account`). Populated dynamically and sorted alphabetically. |
+| **Time stamp field to poll on** | Dropdown | Yes | Timestamp field to evaluate (e.g., `CreatedOn`, `ModifiedOn`). Populated dynamically based on the selected object type. |
+| **Emit Behavior** | Dropdown | No | `Emit individually` (emits one message per record; default) or `Emit page` (emits an array of records under `results`). |
+| **Page size** | Number | No | Number of records to request per page (1–100, default `100`). In debug flows, capped at `10`. |
+| **Start Time** | String | No | ISO 8601 UTC timestamp to start polling from (e.g., `2024-01-01T00:00:00Z`). Defaults to `1970-01-01T00:00:00Z`. |
 
-#### Output Metadata
+#### Input Data
 
-* **Emit individually** – identical to `Lookup Objects` response for the selected type.
-* **Emit page** – `{ results: [...] }` where `results` is the same structure as the individual emit records.
+None. This trigger evaluates polling timestamps based on configuration and the latest snapshot.
 
-#### Snapshot Behavior
+#### Output Data Examples
 
-The trigger stores the latest seen value of the selected poll configuration field. The next run starts strictly after that timestamp (plus one second when no new data was found) to avoid duplicate emissions.
+**Emit individually (`emitBehavior: emitIndividually`):**
+
+```json
+{
+  "Id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2",
+  "Name": "John Doe",
+  "CreatedOn": "2024-01-15T08:30:00Z",
+  "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+  "ModifiedOn": "2024-01-15T09:45:00Z",
+  "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+  "ProcessListeners": 0
+}
+```
+
+**Emit page (`emitBehavior: emitPage`):**
+
+```json
+{
+  "results": [
+    {
+      "Id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2",
+      "Name": "John Doe",
+      "CreatedOn": "2024-01-15T08:30:00Z",
+      "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+      "ModifiedOn": "2024-01-15T09:45:00Z",
+      "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+      "ProcessListeners": 0
+    }
+  ]
+}
+```
 
 ## Actions
 
 ### Delete Object By ID
 
-Deletes a single record from Creatio by its unique identifier (ID).
+Deletes a single record from Creatio by its unique identifier (GUID).
 
 #### Configuration Fields
 
-* **Object type** (dropdown, required) – the type of Creatio object to delete. The list is dynamically populated from your Creatio instance.
+| Field | Type | Required | Description |
+|---|---|---|---|
+| **Object type** | Dropdown | Yes | The entity type to delete from (e.g., `Contact`, `Account`). |
 
-#### Input Metadata
+#### Input Data
 
-* **Object ID** - (string, UUID, required): The unique identifier of the object to delete.
+```json
+{
+  "id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2"
+}
+```
 
-#### Output Metadata
+#### Output Data
 
-* **Status Code** - (number, required): HTTP status returned by Creatio after the delete request.
-* **Deleted Object ID** - (string, UUID, required): Identifier of the record that was deleted.
+```json
+{
+  "status": 204,
+  "deletedId": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2"
+}
+```
 
 ### Lookup Object By ID
 
-Retrieves a single record from a Creatio object type by its unique identifier (ID).
+Retrieves a single record from Creatio by its unique identifier (GUID).
 
 #### Configuration Fields
 
-* **Object type** (dropdown, required) – the type of Creatio object to query (e.g., Account, Contact, etc.). The list is dynamically populated based on your Creatio instance.
+| Field | Type | Required | Description |
+|---|---|---|---|
+| **Object type** | Dropdown | Yes | The entity type to query (e.g., `Contact`, `Account`). |
 
-#### Input Metadata
+#### Input Data
 
-* **Object ID** - (string, UUID, required): The unique identifier of the object to retrieve.
+```json
+{
+  "id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2"
+}
+```
 
-#### Output Metadata
+#### Output Data
 
-The output message contains a single object with properties specific to the selected object type. Common fields include:
-
-* **Id** - (string, UUID): Unique identifier for the record.
-* **CreatedOn** - (string, date-time): Record creation timestamp.
-* **CreatedById** - (string, UUID): User who created the record.
-* **ModifiedOn** - (string, date-time): Last modification timestamp.
-* **ModifiedById** - (string, UUID): User who last modified the record.
-* **ProcessListeners** - (integer): Internal system field for process listeners.
-* Additional fields depend on the object type.
+```json
+{
+  "Id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2",
+  "Name": "Acme Corporation",
+  "CreatedOn": "2024-01-10T12:00:00Z",
+  "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+  "ModifiedOn": "2024-01-11T15:20:00Z",
+  "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+  "ProcessListeners": 0
+}
+```
 
 ### Lookup Objects (plural)
 
-Retrieves multiple records from a Creatio object type. Can emit records individually or as pages.
+Queries multiple records of a given object type from Creatio, automatically handling pagination via `$skip` and `$top`.
 
 #### Configuration Fields
 
-* **Object type** (dropdown, required) – the type of Creatio object to query (e.g., Account, Contact, etc.). The list is dynamically populated based on your Creatio instance.
-* **Emit Behavior** (dropdown, required) – determines how records are emitted:
-  * `Emit individually` – each record is emitted as a separate message.
-  * `Emit page` – records are emitted in pages as arrays.
+| Field | Type | Required | Description |
+|---|---|---|---|
+| **Object type** | Dropdown | Yes | The entity type to query (e.g., `Contact`, `Account`). |
+| **Emit Behavior** | Dropdown | Yes | `Emit individually` or `Emit page`. |
 
-#### Input Metadata
+#### Input Data
 
-* **Page Size** - (number, optional, default `100`): Maximum number of records to return per page. Must be between 1 and 100.
+```json
+{
+  "pageSize": 50
+}
+```
 
-#### Output Metadata
+#### Output Data Examples
 
-The output structure depends on the selected **Emit Behavior**:
+**Emit individually (`emitBehavior: emitIndividually`):**
 
-* **Emit individually**: Each output message contains a single object with properties specific to the selected object type. Common fields include:
-  * **Id** - (string, UUID): Unique identifier for the record.
-  * **CreatedOn** - (string, date-time): Record creation timestamp.
-  * **ModifiedOn** - (string, date-time): Last modification timestamp.
-  * Additional fields depend on the object type.
+```json
+{
+  "Id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2",
+  "Name": "Acme Corporation",
+  "CreatedOn": "2024-01-10T12:00:00Z",
+  "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+  "ModifiedOn": "2024-01-11T15:20:00Z",
+  "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+  "ProcessListeners": 0
+}
+```
 
-* **Emit page**: Each output message contains an object with:
-  * **results** - (array): Array of objects with the same structure as described above for individual emit.
+**Emit page (`emitBehavior: emitPage`):**
+
+```json
+{
+  "results": [
+    {
+      "Id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2",
+      "Name": "Acme Corporation",
+      "CreatedOn": "2024-01-10T12:00:00Z",
+      "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+      "ModifiedOn": "2024-01-11T15:20:00Z",
+      "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+      "ProcessListeners": 0
+    }
+  ]
+}
+```
 
 ### Make Raw Request
 
-Sends a custom HTTP request to the Creatio API. Use this action when you need functionality not covered by prebuilt actions.
+Executes an arbitrary HTTP request against your Creatio instance with automatic OAuth 2.0 token management.
 
 #### Configuration Fields
 
 None.
 
-#### Input Metadata
+#### Input Data
 
-* **Url** - (string, required): Path of the resource relative to the base URL. Here comes a part of the path that goes after specified instance URL.
-* **Method** - (string, required): HTTP verb to use in the request, one of `GET`, `POST`, `PATCH`, `DELETE`.
-* **Request Body** - (object, optional): Body of the request to send.
+**GET Request Example:**
 
-#### Output Metadata
+```json
+{
+  "url": "/0/odata/Contact?$top=5&$select=Id,Name,Email",
+  "method": "GET"
+}
+```
 
-* **Status Code** - (number, required): HTTP status code of the response.
-* **HTTP headers** - (object, required): HTTP headers of the response.
-* **Response Body** - (object, optional): HTTP response body.
+**POST Request Example:**
+
+```json
+{
+  "url": "/0/odata/Account",
+  "method": "POST",
+  "data": {
+    "Name": "New Corporation"
+  }
+}
+```
+
+#### Output Data
+
+```json
+{
+  "statusCode": 200,
+  "headers": {
+    "content-type": "application/json; odata.metadata=minimal"
+  },
+  "responseBody": {
+    "@odata.context": "https://creatio.example.com/0/odata/$metadata#Account",
+    "value": [
+      {
+        "Id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2",
+        "Name": "New Corporation"
+      }
+    ]
+  }
+}
+```
 
 ### Upsert Object
 
-Creates a new record or updates an existing one depending on the selected operation and the presence of a record ID.
+Creates a new record (`POST`) or updates an existing record (`PATCH`) in Creatio.
 
 #### Configuration Fields
 
-* **Object type** (dropdown, required) – Creatio entity to create or update. Populated dynamically from your instance metadata.
-* **Operation** (dropdown, required) – choose `Create` to insert a new record or `Update` to modify an existing record. When `Update` is selected, an `Id` field becomes mandatory in the input metadata.
+| Field | Type | Required | Description |
+|---|---|---|---|
+| **Operation** | Dropdown | Yes | `Create` to insert a new record, or `Update` to modify an existing record. |
+| **Object type** | Dropdown | Yes | The entity type to upsert (e.g., `Contact`, `Account`). |
 
-#### Input Metadata
+#### Input Data
 
-The schema is generated dynamically from Creatio metadata for the selected object type. It contains all writable fields on that entity. Additionally:
+**Create Operation (`operation: Create`):**
 
-* **Id** - (string, UUID): Required when **Operation** is `Update`; ignored when `Create` is selected. Use either `Id` or `id` in the payload.
+```json
+{
+  "Name": "Jane Smith",
+  "Email": "jane.smith@example.com",
+  "JobTitle": "Lead Engineer"
+}
+```
 
-#### Output Metadata
+**Update Operation (`operation: Update`):**
+> When `Update` is selected, `Id` (or `id`) is mandatory.
 
-Matches the record returned by Creatio after the upsert. Common fields include `Id`, `CreatedOn`, `ModifiedOn`, `CreatedById`, `ModifiedById`, and any other properties available on the selected object type.
+```json
+{
+  "Id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2",
+  "Name": "Jane Smith",
+  "Email": "jane.smith@example.com"
+}
+```
 
-## Known Limitations
+#### Output Data
 
-* To authenticate the credentials, you must have an active Creatio session.
+```json
+{
+  "Id": "c3e7f4c0-2f9a-4c28-98e1-5e8a3d6174a2",
+  "Name": "Jane Smith",
+  "Email": "jane.smith@example.com",
+  "CreatedOn": "2024-01-15T08:30:00Z",
+  "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+  "ModifiedOn": "2024-01-15T09:45:00Z",
+  "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+  "ProcessListeners": 0
+}
+```
+
+## Known Limitations & Rate Limits
+
+1. **Active Session Requirement**: To authenticate credentials, you must ensure the configured OAuth application is active and valid in your Creatio CRM instance.
+2. **Rate Limiting (`HTTP 429`)**: If Creatio throttles requests, the component automatically waits for `retriesDelay` milliseconds (default: 10 seconds) and retries up to `retries` times (default: 5) before failing.
+3. **Token Expiration (`HTTP 401`)**: The component automatically refreshes expired access tokens and retries the request without failing the flow execution.
+4. **Page Size Limit**: The maximum page size for query and polling actions is `100` records per request (automatically capped at `10` in debug/sample flows).
