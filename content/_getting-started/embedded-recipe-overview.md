@@ -1,5 +1,5 @@
 ---
-title: Embedded Recipe
+title: Embedded Recipe Overview
 layout: article
 section: Platform Features
 order: 19

@@ -3,7 +3,7 @@ title: Choosing a Trigger
 layout: article
 section: Tutorials
 order: 4
-description: A practical guide to the trigger types you'll find across components — polling, webhooks, and real-time streams — and how to decide between them.
+description: A practical guide to the trigger types you'll find across components — polling, webhooks, and real-time flows — and how to decide between them.
 category: actions-and-triggers
 ---
 

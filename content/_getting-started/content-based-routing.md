@@ -1,5 +1,5 @@
 ---
-title: Content-Based Routing
+title: Content-Based Routing Overview
 layout: article
 section: Platform Features
 order: 12

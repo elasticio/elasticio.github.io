@@ -15,7 +15,7 @@ Every step after the first in a flow has a mapping screen showing the incoming f
 
 ## When a straight connection isn't enough
 
-Source and destination fields don't always line up cleanly — a date might need reformatting, a full name might need splitting into first and last, a numeric total might need to be summed across an array. For that, the mapper has a **developer mode** where any field's value can be written as a [JSONata](http://jsonata.org/) expression instead of a straight connection — the same expression language used in [Content-Based Routing](content-based-routing) conditions. The mapper evaluates the expression against your real data sample as you write it, so you can see the actual result before the flow ever runs.
+Source and destination fields don't always line up cleanly — a date might need reformatting, a full name might need splitting into first and last, a numeric total might need to be summed across an array. For that, the mapper has a **developer mode** where any field's value can be written as a [JSONata](http://jsonata.org/) expression instead of a straight connection — the same expression language used in [Content-Based Routing Overview](content-based-routing) conditions. The mapper evaluates the expression against your real data sample as you write it, so you can see the actual result before the flow ever runs.
 
 ## Arrays and nested objects
 
@@ -26,4 +26,4 @@ Mapping gets more interesting once either side involves an array — for example
 - [Mapping Data](/guides/mapping-data) — the full walkthrough, including array-to-array mapping and array-of-objects examples
 - [Transforming data](/guides/transforming-data) — a closer look at JSONata itself: strings, numbers, dates, and arrays
 - [Understanding Data Sample](/guides/data-sample-overview)
-- [Content-Based Routing](content-based-routing)
+- [Content-Based Routing Overview](content-based-routing)

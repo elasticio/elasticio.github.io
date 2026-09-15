@@ -1,5 +1,5 @@
 ---
-title: Custom Error Handler
+title: Custom Error Handler Overview
 layout: article
 section: Platform Features
 order: 15
