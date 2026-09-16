@@ -5,13 +5,31 @@ description: Technical Notes for the MongoDB component.
 icon: mongodb.png
 icontext: MongoDB component
 category: mongodb
-updatedDate: 2023-07-06
-ComponentVersion: 1.6.0
+updatedDate: 2026-09-16
+ComponentVersion: 2.0.0
 redirect_from:
   - /components/mongodb/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.0 (September 16, 2026)
+* Revitalized the component with modern standards:
+  * Updated Node.js engine requirement to **24.x** (from 18.x)
+  * Updated core dependencies to latest versions:
+    * `mongodb`: `3.5.9` -> `7.6.0` (Unified driver supporting MongoDB 4.0+)
+    * `uuid`: `8.2.0` -> `11.1.1`
+    * `elasticio-sailor-nodejs`: `2.7.1` -> `2.7.9`
+  * Removed legacy `elasticio-node` dependency and transitioned to local utilities
+  * Added `ObjectId` support to **Delete By Unique Criteria** action
+  * Fixed metadata generation failure when documents contain null or undefined fields
+  * Sorted collection and database dropdown lists alphabetically across all actions
+  * Moved Document ID field in **Upsert By ID** action from step configuration to input message metadata mapping level, enabling dynamic ID mapping from previous flow steps
+  * Unified and improved `ObjectId` handling across all actions:
+    * Direct ID actions (**Lookup By ID**, **Delete By ID**, **Upsert By ID**) now accept both raw 24-character hexadecimal strings and `ObjectId('...')` template wrappers
+    * Criteria actions now support multiple `ObjectId`s, nested filter operators (`$eq`, `$in`, `$or`, `$and`), and double-quote syntax
+    * Extended `ObjectId` template conversion to **Aggregate** pipelines and **Bulk Write** operations
+  * **Potentially breaking change**: Simplified Credentials by removing the manual `mongoVersion` selection (now automatically handled by unified driver)
 
 ### 1.6.0 (November 30, 2023)
 * Added support for MongoDB latest versions (incl. 7.0) updating MongoDB Node.js driver to the latest version (6.2.0)
