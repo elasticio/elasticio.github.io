@@ -2,18 +2,19 @@
 title: Email component
 layout: component
 section: Utility components
-description: In this case it is not about a particular application but the email function in general.
+description: Email component for our platform supporting email delivery via Mandrill REST API or a custom SMTP server.
 icon: email.png
 icontext: Email component
 category: email
-ComponentVersion: 1.3.1
-updatedDate: 2026-01-05
+ComponentVersion: 1.4.0
+updatedDate: 2026-09-17
 ---
 
 ## Table of Contents
+
 - [General information](#general-information)
-    - [Description](#description)
-    - [Environment variables](#environment-variables)
+  - [Description](#description)
+  - [Environment variables](#environment-variables)
 - [Actions](#actions)
   - [Send Email](#send-email)
     - [Configuration Fields](#configuration-fields)
@@ -23,26 +24,21 @@ updatedDate: 2026-01-05
 ## General information
 
 ### Description
-
-Email component using [Mandrill](http://mandrillapp.com/) REST API.
+Email component for our platform supporting email delivery via [Mandrill](http://mandrillapp.com/) REST API or a custom SMTP server using `SMTP_URI`.
 
 ### Environment variables
+The component can be configured using the following environmental variables (at least one of `MANDRILL_API_KEY` or `SMTP_URI` must be configured; if both are set, `SMTP_URI` takes precedence and is used):
 
-The component can be configured using the following environmental variables
+| Name | Mandatory | Description | Values |
+|---|---|---|---|
+| `MANDRILL_API_KEY` | false | You can use API key provided by platform or [generate](https://mailchimp.com/developer/transactional/guides/quick-start/#generate-your-api-key) it by yourself (required when sending via Mandrill). | any `string` |
+| `SMTP_URI` | false | SMTP connection URI (e.g. `smtp://USER:PASS@HOST:PORT` or `smtps://USER:PASS@HOST:PORT`). Required when sending via custom SMTP server. If both `SMTP_URI` and `MANDRILL_API_KEY` are set, `SMTP_URI` is used. | any `string` |
+| `MANDRILL_FROM_EMAIL` | false | Sender email address, `no-reply@elastic.io` by default | any `string` |
+| `MANDRILL_FROM_NAME` | false | Sender name, `elastic.io` by default | any `string` |
+| `MANDRILL_URL` | false | Base path and version of mandrill installation, `https://mandrillapp.com/api/1.0` by default (used only with Mandrill) | any `string` |
+| `MAX_BODY_LENGTH` | false | Maximum email message size (including attachments), `10485760` (10MB) by default | any `number` |
 
-| Name                  | Mandatory | Description                                                                                                                                                                                                 | Values       |
-|-----------------------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| `MANDRILL_API_KEY`    | true      | You can use API key provided by platform or [generate](https://mailchimp.com/developer/transactional/guides/quick-start/#generate-your-api-key) it by yourself (required for custom component/installation) | any `string` |
-| `MANDRILL_FROM_EMAIL` | false     | Sender email address | any `string` |
-| `MANDRILL_FROM_NAME`  | false     | Sender name | any `string` |
-| `MANDRILL_URL`        | false     | Base path and version of mandrill installation, `https://mandrillapp.com/api/1.0` by default | any `string` |
-| `MAX_BODY_LENGTH`     | false     | Maximum email message size (including attachments), `10485760` (10MB) by default | any `number` |
-
->**Please note:** that you must [verify your domain](https://mailchimp.com/developer/transactional/docs/authentication-delivery/#authentication) before using this component and configuring it with your environmental variables.
-
-### Technical Notes
-
-The [technical notes](technical-notes) page gives some technical details about Email component like [changelog](/components/email/technical-notes#changelog).
+> **Please Note:** that you must [verify your domain](https://mailchimp.com/developer/transactional/docs/authentication-delivery/#authentication) when using Mandrill.      
 
 ## Triggers
 
@@ -51,11 +47,8 @@ select as a first component during the integration flow design.
 
 ## Actions
 
-### Send Email
-
-For each incoming message the component send a new transactional message through Mandrill using the [Send new message](https://mailchimp.com/developer/transactional/api/messages/send-new-message/) API resource.
-
-![Send](img/email-action.png)
+### Send Email 
+For each incoming message the component sends an email message via SMTP (if `SMTP_URI` is provided, taking precedence over Mandrill) or via Mandrill using the [Send new message](https://mailchimp.com/developer/transactional/api/messages/send-new-message/) API resource.
 
 #### Configuration Fields
 
@@ -63,18 +56,20 @@ For each incoming message the component send a new transactional message through
 
 #### Input Metadata
 
+{% include img.html max-width="100%" url="img/email-action.png" title="Send" %}
+
 * **To** - (string, required): The email address(es) for primary recipients, you can fill comma separated list
 * **Cc** - (string, optional): Comma separated list of E-mail addresses to receive a copy of the mail
 * **Bcc** - (string, optional): Comma separated list of E-mail addresses to receive a blind copy of the mail
 * **Subject** - (string, required): Subject of the E-mail
-* **Body** - (string, required): The content of the E-mail to be sent. If body is a JSON object/array, then it will be stringified
+* **Text Body** - (string, optional): The text content of the E-mail to be sent. If body is a JSON object/array, then it will be stringified. The text field serves as a fallback for email clients that do not render HTML. If a recipient’s email client cannot display HTML emails or the HTML body field is empty, the plain text version will be shown instead. Either the 'Text Body' or 'HTML Body' field must be filled in. If both are filled in, the 'HTML Body' will be used.
 * **HTML Body** - (string, optional): The HTML content of the E-mail to be sent. Either the 'Text Body' or 'HTML Body' field must be filled in. If both are filled in, the 'HTML Body' will be used.
 * **Attachments** (array, optional): Series of objects with the following format:
     * **Attachment URL** (string, required): URL to file (platform storage or external)
     * **Filename** (string, required): Name of the attached file that will appear in the received email
 
 An HTML body example:
-```
+```html
 {
   "to": "email@example.com",
   "subject": "HTML content",
