@@ -85,8 +85,8 @@ To create a new Auth Client, specify the following fields:
 | Name                   | Yes       | A name for your Auth Client. |
 | Client ID              | Yes       | Your Connected App's Consumer Key. |
 | Client Secret          | Yes       | Your Connected App's Consumer Secret. |
-| Authorization Endpoint | Yes       | Your OAuth authorization endpoint. For production, use `<code>https://login.salesforce.com/services/oauth2/authorize</code>`. For sandboxes, use `<code>https://test.salesforce.com/services/oauth2/authorize</code>`. |
-| Token Endpoint         | Yes       | Your OAuth token endpoint for refreshing access tokens. For production, use `<code>https://login.salesforce.com/services/oauth2/token</code>`. For sandboxes, use `<code>https://test.salesforce.com/services/oauth2/token</code>`. |
+| Authorization Endpoint | Yes       | Your OAuth authorization endpoint. For production, use `https://login.salesforce.com/services/oauth2/authorize`. For sandboxes, use `https://test.salesforce.com/services/oauth2/authorize`. |
+| Token Endpoint         | Yes       | Your OAuth token endpoint for refreshing access tokens. For production, use `https://login.salesforce.com/services/oauth2/token`. For sandboxes, use `https://test.salesforce.com/services/oauth2/token`. |
 
 Here you can see how to select an existing `client`:
 
