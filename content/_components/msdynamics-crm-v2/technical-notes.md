@@ -5,11 +5,20 @@ description: Technical Notes for the Microsoft Dynamics CRM v2 component
 icon:  msdynamics-crm-v2.png
 icontext: Microsoft Dynamics CRM v2 component
 category: msdynamics-v2
-updatedDate: 2025-07-17
-ComponentVersion: 1.3.0
+updatedDate: 2026-10-06
+ComponentVersion: 1.3.1
 ---
 
 ## Changelog
+
+### 1.3.1 (October 06, 2026)
+
+* Migrated CI/CD pipelines from CircleCI to GitHub Actions
+* Updated the `Node` engine to `24.x`
+* Updated platform and runtime dependencies:
+  * `elasticio-sailor-nodejs`: `2.7.5` -> `2.7.9`
+  * `axios`: `1.8.4` -> `1.20.0`
+* Removed deprecated legacy dependencies `elasticio-node` and `elasticio-rest-node`, replaced with native local message utilities
 
 ### 1.3.0 (July 17, 2025)
 
