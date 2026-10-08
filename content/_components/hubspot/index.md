@@ -6,8 +6,8 @@ description: Hubspot component is designed to connect to the Hubspot API.
 icon: hubspot.png
 icontext: Hubspot component
 category: hubspot
-updatedDate: 2026-07-01
-ComponentVersion: 1.7.1
+updatedDate: 2026-10-08
+ComponentVersion: 1.7.2
 redirect_from:
   - /components/hubspot-component
   - /components/hubspot-component/actions
@@ -16,30 +16,33 @@ redirect_from:
 
 ## Table of Contents
 
-* [General information](#general-information)
-  * [Description](#description)
-  * [Completeness Matrix](/components/hubspot/technical-notes.html#completeness-matrix)
-  * [Environment variables](#environment-variables)
-* [Credentials](#credentials)
-* [Triggers](#triggers)
-  * [Get New and Updated Objects](#get-new-and-updated-objects)
-  * [Deprecated triggers](#webhook-deprecated)
-* [Actions](#actions)
-  * [Raw Request](#raw-request)
-  * [Upsert Object](#upsert-object)
-  * [Lookup Set Of Objects By Unique Criteria](#lookup-set-of-objects-by-unique-criteria)
-  * [Lookup Object (at most one)](#lookup-object-at-most-one)
-  * [Lookup Objects (Plural)](#lookup-objects-plural)
-  * [Create Association](#create-association)
-  * [Remove Association](#remove-association)
-  * [Delete Object](#delete-object)
-* [Known Limitations](#known-limitations)
+- [General information](#general-information)
+  - [Description](#description)
+  - [Completeness Matrix](/technical-notes#completeness-matrix)
+  - [Environment variables](#environment-variables)
+- [Credentials](#credentials)
+  - [1. Service Keys (Beta)](#1-service-keys-beta)
+  - [2. OAuth 2.0](#2-oauth-20)
+  - [User Permissions](#user-permissions)
+- [Triggers](#triggers)
+  - [Get New and Updated Objects](#get-new-and-updated-objects)
+  - [Webhook (deprecated)](#webhook-deprecated)
+- [Actions](#actions)
+  - [Raw Request](#raw-request)
+  - [Upsert Object](#upsert-object)
+  - [Lookup Set Of Objects By Unique Criteria](#lookup-set-of-objects-by-unique-criteria)
+  - [Lookup Object (at most one)](#lookup-object-at-most-one)
+  - [Lookup Objects (Plural)](#lookup-objects-plural)
+  - [Create Association](#create-association)
+  - [Remove Association](#remove-association)
+  - [Delete Object](#delete-object)
+- [Known Limitations](#known-limitations)
 
 ## General information
 
 ### Description
 
-Hubspot component is designed to connect to the [Hubspot API](https://developers.hubspot.com/docs/reference/api/overview).
+HubSpot component is designed to connect to the [HubSpot API](https://developers.hubspot.com/docs/reference/api/overview).
 
 ### Environment variables
 
@@ -72,7 +75,7 @@ Provide your HubSpot Service Key in the **Service Key (Beta)** field. Service Ke
 
 ### 2. OAuth 2.0
 
-Before you can make it work on our platform you MUST create an OAuth2 App on HubSpot side.
+To enable OAuth, you need to create an *App* in your HubSpot account.
 
 The HubSpot documentation already contains a detailed explanation of the process and we encourage you to [follow it](https://developers.hubspot.com/docs/api/working-with-oauth).
 
@@ -87,14 +90,14 @@ The HubSpot documentation already contains a detailed explanation of the process
 |Name| true | A name for your Auth Client (can be any value) |
 |Client ID| true | OAuth Client ID (provided by HubSpot) |
 |Client Secret| true | OAuth Client Secret (provided by HubSpot) |
-|Authorization Endpoint| true | OAuth authorization endpoint. ex: <br>`https://app-eu1.hubspot.com/oauth/authorize`
-|Token Endpoint| true | OAuth Token endpoint for refreshing the access token: <br>`https://api.hubapi.com/oauth/v1/token`|
+|Authorization Endpoint| true | OAuth authorization endpoint: <br>`https://app.hubspot.com/oauth/authorize` (or `https://app-eu1.hubspot.com/oauth/authorize` for EU accounts)
+|Token Endpoint| true | OAuth Token endpoint for refreshing the access token: <br>`https://api.hubapi.com/oauth/v3/token`|
 
 {% include img.html max-width="100%" url="img/auth-settings.png" title="Hubspot Auth settings" %}
 
-**2.**  Fill-in the field **Name Your Credential** (any).
+{% include img.html max-width="100%" url="img/hubspot-oauth2.png" title="OAuth2" %}
 
-{% include img.html max-width="50%" url="img/hubspot-oauth2.png" title="OAuth2" %}
+**2.**  Fill-in the field **Name Your Credential** (any).
 
 **3.**  Fill-in the field **Scopes** like: 
 ```
@@ -103,7 +106,7 @@ crm.objects.contacts.read crm.objects.contacts.write crm.schemas.contacts.read o
 {% include img.html max-width="100%" url="img/scopes.png" title="Hubspot scopes" %}
 
 > **Please Note:** 
-  * Scopes must be the same as provided during app creation in Hubspot, use a space-separated list (not comma-separated).
+  * Scopes must be the same as those provided during app creation in HubSpot. Use a space-separated list (not comma-separated).
   * The scope `oauth` is always required for verification and must be included in the scopes list for all app installs.
   * The scope `crm.objects.owners.read` is always required for credential verification.
   * The required scopes for your integration depend on the types of HubSpot objects your flow will access. You must ensure that all scopes necessary to access the specific object types you want to retrieve or modify are included in this list.
