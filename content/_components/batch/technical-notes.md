@@ -5,13 +5,20 @@ description: Technical Notes for the Batch component
 icon: batch.png
 icontext: Batch component
 category: batch
-updatedDate: 2025-12-03
-ComponentVersion: 2.0.9
+updatedDate: 2026-10-08
+ComponentVersion: 2.0.10
 redirect_from:
   - /components/batch/changelog.html
 ---
 
 ## Changelog
+
+### 2.0.10 (October 08, 2026)
+
+* Fixed an issue where transient errors in `Add item to batch` action locked the execution queue indefinitely
+* Updated core dependencies:
+  * Upgraded `elasticio-sailor-nodejs` from `2.7.7` to `2.7.9`
+* Migrated CI/CD workflows from CircleCI to GitHub Actions (`test.yml` and `publish_release.yml`)
 
 ### 2.0.9 (December 03, 2025)
 

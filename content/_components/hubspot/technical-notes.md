@@ -1,15 +1,23 @@
 ---
-title: Hubspot Technical Notes
+title: HubSpot Technical Notes
 layout: component
-description: Technical Notes for the Hubspot component
+description: Technical Notes for the HubSpot component
 icon: hubspot.png
-icontext: Hubspot component
+icontext: HubSpot component
 category: hubspot
-updatedDate: 2026-07-01
-ComponentVersion: 1.7.1
+updatedDate: 2026-10-08
+ComponentVersion: 1.7.2
 ---
 
 ## Changelog
+
+### 1.7.2 (October 08, 2026)
+
+* Updated OAuth 2.0 token endpoint to `/oauth/v3/token` in documentation to comply with HubSpot's v1 OAuth API deprecation
+* Updated core dependencies:
+  * Upgraded `@elastic.io/component-commons-library` from `4.0.0` to `4.0.3`
+  * Upgraded `axios` from `1.17.0` to `1.20.0`
+  * Upgraded `elasticio-sailor-nodejs` from `2.7.8` to `2.7.9`
 
 ### 1.7.1 (July 01, 2026)
 
