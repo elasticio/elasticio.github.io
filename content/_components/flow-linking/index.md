@@ -2,72 +2,122 @@
 title: Flow Linking component
 layout: component
 section: Utility components
-description: The component to connect Flows
+description: The Flow Linking component enables synchronous communication and data exchange between different flows in the same workspace on the platform.
 icon: flow-linking.png
 icontext: Flow Linking  component
 category: flow-linking
-ComponentVersion: 1.1.1
-updatedDate: 2024-09-05
+ComponentVersion: 1.2.0
+updatedDate: 2026-10-09
 ---
 
-## General information
+## Table of Contents
+* [General Information](#general-information)
+    * [Description](#description)
+    * [Environment Variables](#environment-variables)
+* [Credentials](#credentials)
+* [Actions](#actions)
+    * [Trigger another flow](#trigger-another-flow)
+* [Triggers](#triggers)
+    * [Receive trigger from another flow](#receive-trigger-from-another-flow)
+* [Known Limitations](#known-limitations)
 
-### Environment variables
+## General Information
 
-There is no need to set up any environment variables manually.
+### Description
 
-However, the component needs the next environment variables:
-- `ELASTICIO_API_URI`
-- `ELASTICIO_API_USERNAME`
-- `ELASTICIO_API_KEY`
-- `ELASTICIO_WORKSPACE_ID`
+{{page.description}}
 
-### Credentials
+### Environment Variables
 
-* **Shared Secret** (string, required): A value to be used to authenticate all HTTP calls.
+Environment variables are automatically injected by the platform:
+* `ELASTICIO_API_URI`: Platform API endpoint URL.
+* `ELASTICIO_API_USERNAME`: API service username.
+* `ELASTICIO_API_KEY`: API service key.
+* `ELASTICIO_WORKSPACE_ID`: ID of the current workspace.
+* `ELASTICIO_WEBHOOK_URI` / `ELASTICIO_FLOW_WEBHOOK_URI`: Base URL for triggering flow webhooks.
 
-## Triggers
+## Credentials
 
-### Receive trigger from another flow
-
-This trigger allows you to receive and validate requests from other actions.
-
-> **Note:** You can use the [HTTP Reply component](/components/request-reply) with the Reply action as the last step of the flow to get a result of the execution.
-
-#### Output Metadata
-
-* Body from the request (Object, required).
+* **Shared Secret** (`sharedSecret`, string, required): A secret string configured identically on both the calling action and the receiving trigger to authenticate execution requests.
+* **Webhook Auth** (`auth`, optional): Additional webhook authentication settings if applicable.
 
 ## Actions
 
 ### Trigger another flow
+This action triggers a target flow in the workspace via its webhook URL and waits for the response.
 
-This action allows you to trigger another flow with a request body.
-
-> **Note:** There are no limits on the number of flows that trigger the same flow with the Receive trigger.
+> **Please Note:** There are no limits on the number of flows that trigger the same flow with the Receive trigger.
 
 #### Configuration Fields
 
-* **Lookup by id** - (optional, boolean): If checked, the component will use flow **Id** instead of flow **Name** to trigger another flow.
-* **Retry errors** - (optional, boolean): If checked, the component will retry the request in case of errors, exceptions are HTTP codes less than `500` or equal `504`.
+* **Lookup by id** (`lookupById`, boolean, optional): If checked, the component looks up the target flow by its **Flow ID** instead of **Flow Name**.
+* **Retry errors** (`doRetry`, boolean, optional): If checked, the component automatically retries the webhook call in case of server errors (`5xx`, except `504 Gateway Timeout`) or `404 Not Found` if enabled.
+* **Number of retry attempts** (`retryCount`, number, optional): Number of retry attempts when retries are enabled (default: `3`, maximum: `5`).
+* **Initial delay between retries (in seconds)** (`initialDelay`, number, optional): Initial delay before the first retry attempt (default: `1`, maximum: `10`). Subsequent delays scale exponentially with randomized jitter to prevent request stampedes.
+* **Retry 404 (Not Found)** (`retryOn404`, boolean, optional): If checked, `404 Not Found` responses will also be retried. Recommended for eventual consistency workflows where target records or resources may still be propagating.
+* **Do not throw error on failed calls** (`dontThrowErrorOnFailedCalls`, boolean, optional): If checked, non-2xx HTTP responses will not fail the flow step. Instead, the component emits an output message containing the response data and HTTP status code, allowing downstream router or filter steps to handle errors gracefully.
 
 #### Input Metadata
-
 * If `Lookup by id` is unchecked:
-    * **Flow Name to Call** (String Enum, required): A single flow name from a list of flows that have the "Flow Linking Component" as the trigger within the current workspace. If the number of matching flows is not exactly 1, then an error will be thrown.
-
+  * **Flow Name to Call** (`flowName`, string enum, required): The name of the target flow within the current workspace that has the Flow Linking Component's `Receive trigger from another flow` trigger.
 * If `Lookup by id` is checked:
-    * **Flow Id to Call** (String Enum, required): A single flow id from a list of flows that have the "Flow Linking Component" as the trigger within the current workspace.
+  * **Flow Id to Call** (`flowId`, string enum, required): The ID of the target flow within the current workspace.
+* **Data to transfer** (`data`, object, required): JSON object payload to send to the target flow.
 
-> **Note:** Enum is only available if the number of the flows is less than 100. Otherwise, manually specify the name or ID of the flow.
-
-* **Data to transfer** (Object, required): JSON object containing data to send into the next flow.
+```json
+{
+  "flowName": "Order Validation Flow",
+  "data": {
+    "orderId": "ORD-12345",
+    "customerId": "CUST-987"
+  }
+}
+```
 
 #### Output Metadata
 
-* **Response** (Object, required): Response of triggering request.
+**Standard Output (when `dontThrowErrorOnFailedCalls` is disabled):**
+```json
+{
+  "result": {
+    "status": "validated",
+    "processedAt": "2026-09-30T10:00:00.000Z"
+  }
+}
+```
 
-## Known limitations
+**Extended Output (when `dontThrowErrorOnFailedCalls` is enabled):**
+```json
+{
+  "result": {
+    "error": "Customer not found",
+    "code": "ENTITY_NOT_FOUND"
+  },
+  "statusCode": 404
+}
+```
 
-* Receive trigger from another flow has a restriction on receiving a sample, you need to provide it manually. Safely ignore the following error `"Shared Secret" is not valid!`.
-* `Flow Name to Call` lists all flows that contain `Flow Linking Component` technical trigger name - `receiveTrigger`.
+## Triggers
+
+### Receive trigger from another flow
+Receives incoming payloads triggered by the `Trigger another flow` action, validates the shared secret, and emits the payload to subsequent steps in the flow.
+
+> **Please Note:** Use the [HTTP Reply Component](/components/request-reply) as the final step in the receiving flow to return synchronous responses back to the caller.
+
+#### Input Metadata
+* Incoming HTTP headers and body received from the calling webhook request.
+
+#### Output Metadata
+* The JSON body forwarded from the caller:
+```json
+{
+  "orderId": "ORD-12345",
+  "customerId": "CUST-987"
+}
+```
+
+## Known Limitations
+
+* **Platform Webhook Timeout**: Webhook calls are subject to the platform's hard 3-minute (180s) gateway timeout. Total cumulative retry duration is kept within safe limits to prevent 504 timeouts.
+* **Sample Retrieval**: The `Receive trigger from another flow` trigger cannot retrieve samples dynamically from the platform UI; provide a manual sample JSON. Safely ignore the UI warning `"Shared Secret" is not valid!` during sample configuration.
+* **Flow List Scope**: `Flow Name to Call` / `Flow Id to Call` dropdowns list only flows that use the Flow Linking component's technical trigger name (`receiveTrigger`).
