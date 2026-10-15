@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 To learn about the details of OAuth2 authorization and the mechanism behind we
-refer to [The OAuth Bible](https://github.com/Kong/mashape-oauth) which we highly
+refer to [The OAuth Bible](https://gist.github.com/skyzyx/6036988#file-oauth-bible-md) which we highly
 recommend. The explanation below is based on that extensive document customized
 to the case of this iPaaS.
 
@@ -135,7 +135,7 @@ After the tokens are refreshed **Application** can resume accessing the protecte
 
 ## Related links
 
-- [The OAuth Bible](https://github.com/Kong/mashape-oauth)
+- [The OAuth Bible](https://gist.github.com/skyzyx/6036988#file-oauth-bible-md)
 - [OAuth Callback redirect URL](/guides/oauth-callback-redirect-url)
 - [Salesforce component](/components/salesforce/index)
-- [Google Spreadsheets component](/components/gspreadsheet/index)s
+- [Google Spreadsheets component](/components/gspreadsheet/index)

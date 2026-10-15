@@ -24,7 +24,8 @@ Here are the general view classes which are used to render the input fields in
 | [SelectView](#selectview)        | Renders a drop-down menu to select from available values |
 | [MultiSelectView](#multiselectview)        | Renders a drop-down menu to select multiple values from the available ones |
 | [PasswordFieldView](#passwordfieldview) | Renders a standard password entry text field where the input values are replaced by symbols such as the asterisk (`*`) or a dot (`•`) |
-| [OAuthFieldView](#oauthfieldview)    | Renders button for initiating the OAuth process |
+| [OAuthFieldView](#oauthfieldview)    | Renders a button for initiating the OAuth process |
+| [FileTextView](#filetextview)    | Renders the file upload fields |
 
 ## TextFieldView
 
@@ -369,6 +370,32 @@ This will render in the following way:
 In the above presented method the OAuth2 authentication will be initiated when the
 button *Authenticate* is pressed.
 
+## FileTextView
+
+`FileTextView` class and its additional parameters can be used to render file upload fields. It has the following properties:
+
+| Property Name | Type     | Required | Description |
+| :------------ | :------: | :------: | :---------- |
+| accept         | `string` | Yes      | Renders a comma-separated list of allowed file extensions in the format `.fileExt,.fileExt2`, for example, `.txt,.crt`. The default value is `*`, which allows files with any extension. |
+| maxlength      | `string`| Yes      | Specifies the maximum allowed file size in MB. The default value is `5`, which corresponds to 5 MB. |
+
+Here is an example of `FileTextView` view class usage in the credentials:
+
+```js
+{
+  "requiredFileField": {
+    "viewClass": "FileTextView",
+    "accept": ".txt,.crt,.jpg,.png",
+    "maxlength": "5",
+    "required": true,
+    "label": "Required File Field"
+  }
+}
+```
+
+This will render in the following way:
+
+![Rendering of the FileTextView view class](/assets/img/references/view-classes/view-class-file-text-view.png "Rendering of the FileTextView view class")
 
 ## Related links
 

@@ -16,67 +16,18 @@ It is important to make sure that this setup is prepared and provided during the
 The `oauth` setup in the `component.json` of your component ensures that several things are set:
 
   * The `credentials` field is presented in the user interface for the user to give its explicit authorization to the {{site.data.tenant.name}} **Application**. This ensures the ability to add security credentials to be used for the integration component proper function.
-
-  * The proper connection endpoints, as well as connection specific protocols, are indicated. Those endpoints are used by the verification process to authorize the user `credentials`.
+  
+  * The `authClientTypes` property specifies the authentication types supported by the component. It supports `oauth2`, `oauth2_client_credentials`, `basic`, `api_key`, `noauth` - allowing users to choose their preferred authentication method. Both types can be specified together.
 
 ## Example
 
-Let us explain how it should be done on an example of currently working example. Here are the first 31 lines from `component.json` of [Microsoft Outlook component](/components/outlook/index) by {{site.data.tenant.name}} showing those parts:
+Let us explain how it should be done on an example of currently working example. Here are the corresponding lines from [component.json](https://github.com/elasticio/outlook/blob/master/component.json) of our [Outlook component](/components/outlook/index) showing those parts:
 
 ```js
 {
   "title": "Outlook",
-  "description": "integration component for Office 365 Outlook REST API",
-  "envVars": {
-    "MSAPP_CLIENT_ID": {
-      "required": true,
-      "description": "Your App Client ID"
-    },
-    "MSAPP_CLIENT_SECRET": {
-      "required": true,
-      "description": "Your App Client Secret"
-    }
-  },
-  "credentials": {
-    "fields": {
-      "oauth": {
-        "label": "Authentication",
-        "viewClass": "OAuthFieldView",
-        "required": true
-      }
-    },
-    "oauth2": {
-      "client_id": "{{MSAPP_CLIENT_ID}}",
-      "client_secret": "{{MSAPP_CLIENT_SECRET}}",
-      "auth_uri": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
-      "token_uri": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
-      "scopes": [
-        "openid","offline_access","User.Read","Contacts.Read","Profile","Calendars.ReadWrite"
-      ]
-    }
-  }
-}
-```
-
-There are two ways how we can exchange authorization code for tokens:
-- Using `client_id` and `client_secret` inside body parameter (as example above).
-- Using headers - Basic Authentication, where `client_id` and `client_secret` will be used as user and password.
-
-To use headers - you need to provide additional parameter in `component.json` at credentials section:
-
-```json
-"oauth2" : {
-      "client_auth": "basic"
-}
-```
-
-Your `component.json` will be look like this:
-
-
-```json{
-  "title": "Best component",
-  "description": "Best component",
-  "version": "1.0.0",
+  "description": "elastic.io integration component for Office 365 Outlook REST API",
+  "version": "2.1.1",
   "authClientTypes": [
     "oauth2"
   ],
@@ -87,20 +38,60 @@ Your `component.json` will be look like this:
         "viewClass": "HTTPAuthView",
         "required": true
       }
-    },
-    "oauth2" : {
-      "client_auth": "basic"
     }
   },
   ...
+}
+``` 
+
+The `authClientTypes` property specifies the authentication types supported by the component. To support multiple OAuth2 authentication types, configure it as follows:
+
+```json
+"authClientTypes": [
+  "oauth2",
+  "oauth2_client_credentials"
+]
 ```
+
+This allows users to choose their preferred authentication method when configuring the integration component.
+
+Once added, your `component.json` will look like this:
+
+
+```json
+{
+  "title": "Best component",
+  "description": "Best component",
+  "version": "1.0.0",
+  "authClientTypes": [
+    "oauth2",
+    "oauth2_client_credentials"
+  ],
+  "credentials": {
+    "fields": {
+      "oauth": {
+        "label": "Authentication",
+        "viewClass": "HTTPAuthView",
+        "required": true
+      }
+    }
+  },
+  ...
+} 
+```
+
+## Token Refresh Behavior
+
+The `oauth2_client_credentials` authentication type uses the OAuth 2.0 Client Credentials grant, which allows an application to obtain an access token using its own client credentials without requiring explicit user authorization. For more details, see the official [OAuth 2.0 Client Credentials Grant Specification (RFC 6749)](https://datatracker.ietf.org/doc/html/rfc6749).
+
+When the access token expires, a new access token is requested from the token endpoint using the Client Credentials grant. Unlike authorization code flows, this flow typically does not issue a refresh token. Therefore, token renewal is performed by requesting a new access token rather than exchanging a refresh token.
 
 ## Notes
 
-From the example we have the following sections to note:
+From the examples, we have the following sections to note:
 
-Lines 16-20 show the `oauth` which will be used to draw the interface for `credentials`. For more details please refer to credentials object description. This would be the interface where the **User** would be asked to authorise. This is just one example representation and can be different from component to component. However, everything which is involved in drawing that part should be included here.
+* The `oauth` field draws the user interface for `credentials`. For more details, please refer to the credentials object description. This would be the interface where the **User** would be asked to authorise. This is just one example representation and can be different from component to component. However, everything which is involved in drawing that part should be included here.
+* The `authClientTypes` property specifies the authentication types supported by the component. For example, the `oauth2` type represents the OAuth 2.0 authorization flow, while `oauth2_client_credentials` enables authentication using the Client Credentials grant. Both types can be specified together, allowing users to choose their preferred authentication method.
+* The `oauth2_client_credentials` type does not require interactive user authorization. When the access token expires, a new token is requested using the client credentials rather than a refresh token.
 
-Lines 22-30 represent the `oauth2` setup which contains the necessary parameters and endpoint like `client_id`, `client_secret`, `auth_uri`, `token_uri` and several more to initiate the user redirection. These parameters will be used to connect and enquire for the `access_token` and other parameters.
-
->It is also worth to mention that `oauth` would also be used as a name of the JSON structure where the final `credentials` would be saved in the database.
+> It is also worth mentioning that `oauth` is used as the name of the JSON structure where the final `credentials` are saved in the database.
