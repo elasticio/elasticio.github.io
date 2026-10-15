@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 To learn about the details of OAuth2 authorization and the mechanism behind we
-refer to [The OAuth Bible](https://github.com/Kong/mashape-oauth) which we highly
+refer to [The OAuth Bible](https://gist.github.com/skyzyx/6036988#file-oauth-bible-md) which we highly
 recommend. The explanation below is based on that extensive document customized
 to the case of this iPaaS.
 
@@ -79,7 +79,7 @@ Some **Service** providers might require a slightly different sequence of events
 
 In the end, the **Service** is redirecting our **User** back to the **Application** using the specific OAuth Callback URL with a specific `code`. This `code` will be used by the **Application** for further negotiation.
 
->**Please note** that if everything is done properly this would be the last instance where the **User** would need to manually interfere to authorize the **Application** to act on behalf of him/her to access the protected data at **Service** provider.
+> **Please Note** that if everything is done properly this would be the last instance where the **User** would need to manually interfere to authorize the **Application** to act on behalf of him/her to access the protected data at **Service** provider.
 
 ## Application asks for an access
 
@@ -135,7 +135,7 @@ After the tokens are refreshed **Application** can resume accessing the protecte
 
 ## Related links
 
-- [The OAuth Bible](https://github.com/Kong/mashape-oauth)
+- [The OAuth Bible](https://gist.github.com/skyzyx/6036988#file-oauth-bible-md)
 - [OAuth Callback redirect URL](/guides/oauth-callback-redirect-url)
 - [Salesforce component](/components/salesforce/index)
-- [Google Spreadsheets component](/components/gspreadsheet/index)s
+- [Google Spreadsheets component](/components/gspreadsheet/index)

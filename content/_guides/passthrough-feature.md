@@ -18,12 +18,11 @@ explains [why would you use it](#passthrough-usage), and gives a
 Most components in an [integration flow](/guides/integration-flow) receive, process and
 send data. Incoming data typically differs from the outgoing one, so the
 last step may receive a message without even a small trace of the initial data.
-If you want a component to map data other than what it receives from the previous
-step, you can use the passthrough feature.
+If you want a component to map data what it receives from the previous steps, you can use the passthrough feature.
 
 > Passthrough enables the data re-usability along the integration flow; meaning we
 > can re-use and re-mapp again - **nothing is lost**. This feature enables mapping
-> of the data from non-adjacent steps. Thanks to this, you can use the passthrough
+> of the data from other steps. Thanks to this, you can use the passthrough
 > feature for a content enrichment purposes.
 
 With this feature enabled you can *pass-it-through* the data from the
@@ -38,9 +37,7 @@ received by *Step 1*, *Step 2* and *Step 3*. Here is how it looks schematically:
 
 ![Passthrough schematics](/assets/img/getting-started/passthrough/passthrough-schematics.png)
 
-The schematics above shows the passthrough feature in the flow. Without this
-feature the *Step 4* reads and processes the data sent by *Step 3*, but you can
-configure it to choose a messages from any other previous steps, if required.
+The schematics above shows the passthrough feature in the flow. Without this feature, the *Step 4* is triggered, but it does not read or process the data sent by *Step 3*. If needed, you can configure it to select messages from any other previous steps.
 
 ## Passthrough Usage
 
@@ -82,7 +79,7 @@ Using the passthrough features we can get the list of Orders and list of the O
 
 <details close markdown="block"><summary><strong>Flow view</strong></summary>
 
-{% include img.html max-width="40%" url="/assets/img/getting-started/passthrough/entire-flow.png" title="Entige flow" %}
+{% include img.html max-width="40%" url="/assets/img/getting-started/passthrough/entire-flow.png" title="Entire flow" %}
 
 </details>
 
@@ -110,7 +107,7 @@ In this step in the same way as in the previous step we use [Google Spreadsheet]
 
 In this step [Filter](/components/filter/) component allows you to match Order ID's from the Orders table with Order ID's from the OrderItems table.
 
-> **Please тote:** If you use DB instead of Google Spreadsheets, you won't need filtering step, because there is possibility to query records with regard to ID at once.
+> **Please Note:** If you use DB instead of Google Spreadsheets, you won't need filtering step, because there is possibility to query records with regard to ID at once.
 
 > In this step, we already use the **passthrough feature** to match the data from the tables
 
@@ -136,10 +133,8 @@ With the **passthrough** feature, we cut the complexity of the task **in half**,
 
 In larger integration flows having large body of passthrough message can have
 an adverse affect. The accumulating passthrough message can quickly create a large
-overhead and cause out of memory by its own. To avoid this, you can disable the
-passthrough from any particular step. This would mean the passthrough message will
-be dropped from that point on and the subsequent steps would not have access to the
-data from previous steps.
+overhead and cause [out of memory](/guides/platform-behavior.html#component-run-out-of-memory) by its own. To avoid this, you can disable the
+passthrough from any particular step. When disabled, the passthrough message is dropped, and subsequent steps will no longer have access to passthrough data from any previous steps, even if passthrough was enabled in earlier steps.
 
 > **Please note**: The passthrough messages will start accumulating again after the particular
 > step where passthrough was disabled.
