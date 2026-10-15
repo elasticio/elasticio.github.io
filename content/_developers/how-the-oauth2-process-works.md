@@ -79,7 +79,7 @@ Some **Service** providers might require a slightly different sequence of events
 
 In the end, the **Service** is redirecting our **User** back to the **Application** using the specific OAuth Callback URL with a specific `code`. This `code` will be used by the **Application** for further negotiation.
 
->**Please note** that if everything is done properly this would be the last instance where the **User** would need to manually interfere to authorize the **Application** to act on behalf of him/her to access the protected data at **Service** provider.
+> **Please Note** that if everything is done properly this would be the last instance where the **User** would need to manually interfere to authorize the **Application** to act on behalf of him/her to access the protected data at **Service** provider.
 
 ## Application asks for an access
 
