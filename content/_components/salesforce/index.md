@@ -6,8 +6,8 @@ description: A component for seamless integration with the Salesforce REST API, 
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2026-02-26
-ComponentVersion: 2.9.2
+updatedDate: 2026-10-20
+ComponentVersion: 2.10.0
 ---
 
 ## Table of Contents
@@ -59,26 +59,32 @@ The component uses Salesforce API Version 46.0 by default, but this can be overr
 
 ## Credentials
 
-Authentication occurs via OAuth 2.0.
+Authentication occurs via OAuth 2.0. The component supports both **OAuth2** types: **Authorization Code** and **Client Credentials** authentication types. No additional manipulations or steps are required—you can choose either type when configuring your Auth Client on the platform.
 
-To use OAuth 2.0, you must create a Connected App in your Salesforce instance. During the app creation process, you will be asked to specify a Callback URL. To process OAuth authentication on the platform, your [callback URL](/guides/oauth-callback-redirect-url) should be in the format `https://your-tenant.elastic.io/callback/oauth2`.
+To use OAuth 2.0, you must create a **Connected App** in your Salesforce instance. During the app creation process, you will be asked to specify a Callback URL. To process OAuth authentication on the platform, your [callback URL](/guides/oauth-callback-redirect-url) should be in the format `https://your-tenant.elastic.io/callback/oauth2`.
 
 More information can be found in the official [Salesforce documentation](https://help.salesforce.com/apex/HTViewHelpDoc?id=connected_app_create.htm).
 
 > **Warning:** To maintain a smooth experience, we recommend reusing stored credentials where possible. Duplicating secrets across OAuth clients can result in errors and complications.
 
-
 For more information, please read our [Creating OAuth App for Salesforce](creating-oauth-app-for-salesforce) article.
 
 During credentials creation you would need to:
 
-**1.**  Select an existing Auth Client from the **Choose Auth Client** dropdown or create a new one.
+**1.**  Select the preferred auth type from the **Type** dropdown:
 
 {% include img.html max-width="100%" url="img/add-new-client.png" title="Add new client" %}
 
-To create a new Auth Client, specify the following fields:
-
-{% include img.html max-width="70%" url="img/define-client.png" title="Define client" %}
+To create a new Auth Client click on **Choose Auth Client** dropdown and click on *+Add New Auth Client*, then specify the following fields:
+<br>
+<details close markdown="block"><summary><strong>Click to expand OAuth2 Client Credentials auth client:</strong></summary>
+{% include img.html max-width="100%" url="img/client-credentials.png" title="Client Credentials" %}
+</details>
+<br>
+<details close markdown="block"><summary><strong>Click to expand OAuth2 auth client:</strong></summary>
+{% include img.html max-width="100%" url="img/oauth2.png" title="OAuth2" %}
+</details>
+<br>
 
 | Field Name             | Mandatory | Description |
 |------------------------|-----------|-------------|
@@ -87,10 +93,6 @@ To create a new Auth Client, specify the following fields:
 | Client Secret          | Yes       | Your Connected App's Consumer Secret. |
 | Authorization Endpoint | Yes       | Your OAuth authorization endpoint. For production, use `https://login.salesforce.com/services/oauth2/authorize`. For sandboxes, use `https://test.salesforce.com/services/oauth2/authorize`. |
 | Token Endpoint         | Yes       | Your OAuth token endpoint for refreshing access tokens. For production, use `https://login.salesforce.com/services/oauth2/token`. For sandboxes, use `https://test.salesforce.com/services/oauth2/token`. |
-
-Here you can see how to select an existing `client`:
-
-{% include img.html max-width="100%" url="img/client-exist.png" title="Choose client" %}
 
 **2.**  Provide a name for your credential in the **Name Your Credential** field.
 
