@@ -5,11 +5,23 @@ description: Technical Notes for the Email component with Credentials.
 icon: email-with-credentials.png
 icontext: Email component with Credentials
 category: email
-ComponentVersion: 1.0.1
-updatedDate: 2026-05-07
+ComponentVersion: 1.1.0
+updatedDate: 2026-10-19
 ---
 
 ## Changelog
+
+### 1.1.0 (October 19, 2026)
+
+* Added support for SMTP transport via optional 'SMTP URI' (`smtpUri`) field in credentials.
+* Made 'Mandrill API Key' (`key`) credential field optional (at least one of 'Mandrill API Key' or 'SMTP URI' must be configured).
+* Migrated CI/CD from CircleCI to GitHub Actions workflows (`test.yml`, `publish_release.yml`).
+* Updated Node.js engine target to `24.x`.
+* Upgraded dependencies to latest stable versions:
+    * `@elastic.io/component-commons-library`: 4.0.0 -> 4.0.3
+    * `axios`: 1.16.0 -> 1.20.0
+    * `elasticio-sailor-nodejs`: 2.7.8 -> 2.7.9
+    * `nodemailer`: added 10.0.9
 
 ### 1.0.1 (May 07, 2026)
 
