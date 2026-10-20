@@ -5,8 +5,8 @@ description: How to create OAuth App for Salesforce.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2026-02-26
-ComponentVersion: 2.9.2
+updatedDate: 2026-10-20
+ComponentVersion: 2.10.0
 ---
 
 ## Purpose
@@ -25,7 +25,7 @@ through the necessary steps to show where to locate those setup options.
 To start you need to navigate to the Setup section. Please log-in to your account
 and select the Setup menu.
 
-{% include img.html max-width="100%" url="img/salesforce-navigate-to-setup.png" title="Navigate to Salesforce setup" %}
+{% include img.html max-width="80%" url="img/salesforce-navigate-to-setup.png" title="Navigate to Salesforce setup" %}
 
 Next on the left-side menu use the **Quick Find** and search for `App Manager`,
 click to navigate to the page, and press on `New Connected App` to start.
@@ -43,7 +43,7 @@ extend into the following setup:
 
 {% include img.html max-width="100%" url="img/Salesforce-api-enable-oauth-settings.png" title="Configuring the OAuth settings" %}
 
-*  **Callback URL** - put the correct URL which should of the `https://your-tenant-address/callback/oauth2` form.
+*  **Callback URL** - put the [correct URL](/guides/oauth-callback-redirect-url) which should of the `https://your-tenant-address/callback/oauth2` form.
 *  **Selected Oauth Scopes** - The Salesforce documentation explains [API (Enable OAuth Settings)](https://help.salesforce.com/articleView?id=connected_app_create.htm&type=5) part requirements. In particular, a special care must be taken to select at least these two settings:
    *   **Full access (full)** - which allows access to all data accessible by the logged-in user, and encompasses all other scopes. This option, however, doesn't return a `refresh_token`. For that purposes you need to explicitly request the `refresh_token` scope to get one.
    *   **Perform requests at any time (refresh_token, offline_access)** - This option would allows a `refresh_token` to be returned if you are eligible to receive one. This lets the app interact with the user's data while the user is offline. **The `refresh_token` scope is synonymous with offline_access**.
@@ -65,24 +65,8 @@ the necessary details of your newly created OAuth App.
 From this setup you would need to copy the **Consumer Key** and the **Consumer Secret**
 for use in your custom installation of Salesforce component.
 
-> These two keys would need to be defined as Environment Variables for your
-> custom deployed component.
+> These two keys would need to be defined as Environment Variables for your custom deployed component.
 
-You can create a Auth client directly in the credentials section:
+Then create an Auth client directly as described in the [Credentials](index.html#credentials) section.
 
-{% include img.html max-width="100%" url="img/add-new-client.png" title="Add new client" %}
-
-You would need to define four variables here:
-
-{% include img.html max-width="100%" url="img/define-client.png" title="Define client" %}
-
-*   **Client ID** - your OAuth client key, meaning the **Consumer Key**.
-*   **Client Secret** - your OAuth client secret, meaning the **Consumer Secret**.
-*   **Authorization Endpoint** - The authorization endpoint is used to interact with the resource owner and obtain an authorization grant. For production use `https://login.salesforce.com/services/oauth2/authorize`, for sandbox - `https://test.salesforce.com/services/oauth2/authorize`.
-*   **Token Endpoint** - The token endpoint is used by the client to obtain or refresh an access token. For production use `https://login.salesforce.com/services/oauth2/token`, for sandbox - `https://test.salesforce.com/services/oauth2/token`.
-
-Here you can see how to select an existing `client`:
-
-{% include img.html max-width="100%" url="img/client-exist.png" title="Choose client" %}
-
-For more information pleas read our [Secrets feature](/getting-started/secrets) article.
+For more information please read our [Secrets feature](/getting-started/secrets) article.

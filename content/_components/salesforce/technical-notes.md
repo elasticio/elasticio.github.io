@@ -5,8 +5,8 @@ description: Technical Notes for Salesforce component.
 icon: salesforce.png
 icontext: Salesforce component
 category: salesforce
-updatedDate: 2026-02-26
-ComponentVersion: 2.9.2
+updatedDate: 2026-10-20
+ComponentVersion: 2.10.0
 redirect_from:
   - /components/salesforce/completeness-matrix.html
   - /components/salesforce/changelog.html
@@ -14,7 +14,18 @@ redirect_from:
 
 ## Changelog
 
+## 2.10.0 (October 20, 2026)
+
+* Added support for the new OAuth 2 authentication type — Client Credentials
+* Migrated CI/CD pipelines from CircleCI to GitHub Actions
+* Updated platform and runtime dependencies:
+  * `elasticio-sailor-nodejs`: `2.7.8` -> `2.7.9`
+  * `@elastic.io/component-commons-library`: `4.0.0` -> `4.0.3`
+  * `@grpc/grpc-js`: `1.9.13` -> `1.14.6`
+  * `axios`: `1.13.5` -> `1.20.0`
+
 ### 2.9.2 (February 26, 2026)
+
 * **Security Improvements**:
   * Upgraded `jsforce` from v1.11.1 to v3.10.14, eliminating critical and high severity vulnerabilities:
     * Removed critical vulnerability: `form-data` (GHSA-fjxv-7rqg-78g4)
@@ -55,7 +66,6 @@ redirect_from:
   * Adding a `Required Permissions` section for the polling trigger.
   * Removing obsolete limitations that were resolved by the bug fixes.
   * General language and formatting enhancements.
-
 
 ### 2.8.6 (January 31, 2025)
 
