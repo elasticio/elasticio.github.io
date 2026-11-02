@@ -185,26 +185,6 @@ async function run(msg, cfg, snapshot) {
 }
 ```
 
-### Calling an external REST API
-
-It's very simple to code a small REST API call out of the Code component, see following example:
-
-```javascript
-async function run(msg, cfg, snapshot) {
-  const username = process.env.ELASTICIO_API_USERNAME;
-  const password = process.env.ELASTICIO_API_KEY;
-  const url = 'https://api.elastic.io/v2/users/me';
-  const { data } = await axios.get(url,
-    {
-      auth: {
-        username,
-        password
-      }
-    }
-  );
-  await this.emit('data', { body: data });
-}
-```
 ### Calling a SOAP web service with strong-soap
 
 The Code component exposes the [`strong-soap`](https://github.com/loopbackio/strong-soap) client as `soap`. You can call SOAP operations using async/await. Create the client with a small promise wrapper, then invoke methods (they return promises).
