@@ -40,7 +40,7 @@ Instance of MongoDB with possibility to connect from component.
 
 ### Environment variables
 
-> **Please Note:** From the platform version [20.51](/releases/20/51) we deprecated the
+> **Please Note:** From the platform version [20.51](/releases/2020Q4) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Technical Notes

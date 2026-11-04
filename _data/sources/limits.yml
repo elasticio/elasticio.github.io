@@ -45,7 +45,7 @@ limitworkspace:
 containerlogsttl:
   field: 'Container logs TTL'
   description: >
-    <p>The number of <b>days</b> for which <a href="/releases/23/24#implement-new-containers-page">container</a> information is stored on the platform.</p>
+    <p>The number of <b>days</b> for which <a href="/releases/2023Q2#implement-new-containers-page-v2324">container</a> information is stored on the platform.</p>
   value: '<b>14d</b>'
 
 executionsttl:
@@ -75,5 +75,5 @@ messagerate:
 webhookrpm:
   field: 'Amount of Webhook requests per minute'
   description: >
-    <p>The limit on <b>Amount of Requests</b> to Webhooks for certain contract per minute, and applies to all Webhook-based triggers, e.g. <a href="/components/flow-linking">Flow-Linking</a>, <a href="/components/hubspot-webhook">Hubspot Webhook</a>, <a href="/components/zoom-webhook">Zoom Webhook</a>, etc. The Webhook URL will respond with a <a href="/releases/24/23.html#updated-status-code-429-for-exceeded-webhook-requests-limit">429 Too Many Requests</a> status code after the quota for requests is exceeded.</p>
+    <p>The limit on <b>Amount of Requests</b> to Webhooks for certain contract per minute, and applies to all Webhook-based triggers, e.g. <a href="/components/flow-linking">Flow-Linking</a>, <a href="/components/hubspot-webhook">Hubspot Webhook</a>, <a href="/components/zoom-webhook">Zoom Webhook</a>, etc. The Webhook URL will respond with a <a href="/releases/2024Q2#updated-status-code-429-for-exceeded-webhook-requests-limit-v2423">429 Too Many Requests</a> status code after the quota for requests is exceeded.</p>
   value: '<b>60</b>'

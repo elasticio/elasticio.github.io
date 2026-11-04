@@ -86,7 +86,7 @@ To create new credentials you need to authorize in Microsoft system using OAuth2
 | `MAIL_RETRIEVE_MAX_COUNT` | false | Define max count mails could be retrieved per one `Poll for New Mail` trigger execution. Defaults to 1000| 1000 |
 | `TOP_LIST_MAIL_FOLDER`    | false | Define the maximum number of folders that can be found for dropdown fields containing a list of Mail Folder. Defaults to 100| 100 |
 
-> **Please Note:** From the platform version [20.51](/releases/20/51) we deprecated the
+> **Please Note:** From the platform version [20.51](/releases/2020Q4) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Triggers

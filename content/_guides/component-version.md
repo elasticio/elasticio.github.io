@@ -21,7 +21,7 @@ The screenshot shows table of deployments when you navigate to component reposit
 page from the **Development** > **Developer Teams** > **Team** > **Repository**.
 The columns in this table has the following information for each deployment:
 *   **Date** - the date when the component code was deployed to the platform.
-*   **Version** - the version of component. Previously sequential number assigned after each deployment. Now the actual semantic version of each deployment (from [21.19](/releases/21.19)) taken from the `version` parameter of the `component.json` configuration. The platform will reject an attempt to deploy a component code with the same version twice.
+*   **Version** - the version of component. Previously sequential number assigned after each deployment. Now the actual semantic version of each deployment (from [21.19](/releases/2021Q2)) taken from the `version` parameter of the `component.json` configuration. The platform will reject an attempt to deploy a component code with the same version twice.
 *   **Commit** - the short-hash of the component code version.
 *   **Status** - the deployment status. The check-mark means a success.
 *   **State** - showing the *Current* version - the `latest` version.
@@ -53,7 +53,7 @@ time then select the **Latest** label as shown in the screenshot.
 
 ## Available versions
 
-Starting from the [platform release 21.41](/releases/21.41#reduce-list-of-component-version),
+Starting from the [platform release 21.41](/releases/2021Q4#reduce-list-of-component-version-v2141),
 we limit the component versions available to select during the integration flow
 step design to two (2). This means you can select latest 2 deployments.
 

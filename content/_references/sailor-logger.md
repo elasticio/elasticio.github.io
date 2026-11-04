@@ -13,7 +13,7 @@ category: sailor
 Information about currently used logger in components and how to implement it in
 your components. This document describes the changes in node.js sailor from January 2020.
 
-As of {{site.data.tenant.name}} platform version [20.03](/releases/20.03) a new
+As of {{site.data.tenant.name}} platform version [20.03](/releases/2020Q1) a new
 [executions](/getting-started/executions) page is introduced. Unlike the main
 dashboard which shows log statements from both `console.log()` and `this.logger.info()`,
 the new executions page will show the logs if you enveloper your message in `this.logger.info()`.

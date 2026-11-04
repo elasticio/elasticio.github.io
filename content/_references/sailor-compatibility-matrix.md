@@ -63,7 +63,7 @@ Here is where to pay particular attention:
 | [Disable Passthrough](/guides/passthrough-feature.html#disable-passthrough) | -      | -      | -      | -     | Yes   |
 | [Dynamic flow control](/guides/flow-control) | -      | -      | -      | -     | Yes   |
 | [Custom error handler](/guides/custom-error-handler.html) | -      | -      | -      | -     | Yes   |
-| [Lightweight messages](/releases/20/31.html#support-for-large-messages) | -      | -      | -      | -     | Yes   |
+| [Lightweight messages](/releases/2020Q3#support-for-large-messages-v2031) | -      | -      | -      | -     | Yes   |
 
 ## Java - build.gradle
 
@@ -93,4 +93,4 @@ dependencies {
 | [Disable Passthrough](/guides/passthrough-feature.html#disable-passthrough) | -      | Yes    | Yes    | Yes    | Yes    | Yes    |
 | [Dynamic flow control](/guides/flow-control) | -      | -      | -      | Yes    | Yes    | Yes    |
 | [Custom error handler](/guides/custom-error-handler.html) | -      | -      | -      | -      | -      | Yes    |
-| [Lightweight messages](/releases/20/31.html#support-for-large-messages) | -      | -      | -      | -      | Yes    | Yes    |
+| [Lightweight messages](/releases/2020Q3#support-for-large-messages-v2031) | -      | -      | -      | -      | Yes    | Yes    |

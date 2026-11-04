@@ -28,7 +28,7 @@ At the moment, there are two actions that allow you to process incoming data. [S
 
 Component does not have any required environment variables, but we suggest to use `EIO_REQUIRED_RAM_MB` in order to avoid `Component run out of memory and terminated` error, recommended value of allocated memory is `512` MB.
 
-> **Please Note:** From the platform version [20.51](/releases/20/51) we deprecated the
+> **Please Note:** From the platform version [20.51](/releases/2020Q4) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Technical Notes
