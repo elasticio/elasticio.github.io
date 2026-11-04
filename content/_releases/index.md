@@ -5,7 +5,7 @@ description: List of the release notes listing the product updates.
 # Release numbers are set manually (YY.WW) because the release dates are not on a fixed schedule.
 # Update both values with every release. If a value is empty, the latest one is taken from the
 # newest release note and the next one is not shown.
-latest_release: "26.45"
+latest_release: "26.46"
 next_release: "26.49"
 ---
 {% assign releases = site.releases | sort: 'releaseDate' | reverse %}
