@@ -32,7 +32,7 @@ The [technical notes](technical-notes) page gives some technical details about C
 |REQUEST_MAX_CONTENT_LENGTH| false | Max size of http request in bytes | Default value: `10485760` |
 |TIMEOUT_BETWEEN_EVENTS| false | Number of milliseconds write action wait before creating separate attachments | Default value: `10000` |
 
-> Please Note: From the platform version [20.51](/releases/20/51) we deprecated the
+> Please Note: From the platform version [20.51](/releases/2020Q4) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ### Credentials

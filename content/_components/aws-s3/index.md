@@ -60,7 +60,7 @@ The component is based on [AWS S3 SDK](https://aws.amazon.com/sdk-for-node-js/ '
 |`ACCESS_KEY_SECRET`| false | This variable is required for integration-tests |  |
 |`REGION`| false | This variable is required for integration-tests |  |
 
-> **Please Note:** From the platform version [20.51](/releases/20/51) we deprecated the
+> **Please Note:** From the platform version [20.51](/releases/2020Q4) we deprecated the
 > component `LOG_LEVEL` environment variable. Now you can control logging level per each step of the flow.
 
 ## Credentials
