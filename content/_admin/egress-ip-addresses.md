@@ -32,21 +32,6 @@ outgoing IP addresses:
 *   `193.122.172.111`
 *   `157.151.204.47`
 
-## Hosting and Server Locations
-
-{{site.data.tenant.companyName}} hosts the {{site.data.tenant.name}} integration platform, including connectors, on Oracle Cloud Infrastructure (Oracle) and Hetzner. Integration processes run automatically on these cloud platforms.
-
-**Oracle**
-
-*   (EU) Frankfurt
-*   (US) Ashburn
-*   (AU) Sydney
-
-**Hetzner**
-
-*   (EU) Falkenstein
-*   (EU) Nuremberg
-
 ## Details
 
 IP connections that originate from a step within a flow within the {{site.data.tenant.name}} platform will be randomly routed through one of the IP addresses listed below. If you have enabled IP whitelisting on your server, all IP addresses listed below should be added to the IP whitelist of that server.

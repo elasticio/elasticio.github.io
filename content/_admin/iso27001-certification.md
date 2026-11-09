@@ -67,6 +67,23 @@ List of important suppliers:
 
 *The names listed are trademarks of the respective companies.*
 
+### Hosting and server locations
+
+elastic.io hosts its integration platform, including connectors, on Oracle Cloud
+Infrastructure (Oracle) and Hetzner. Integration processes run automatically on
+these cloud platforms.
+
+**Oracle**
+
+*   (EU) Frankfurt
+*   (US) Ashburn
+*   (AU) Sydney
+
+**Hetzner**
+
+*   (EU) Falkenstein
+*   (EU) Nuremberg
+
 ## Resources
 
 *   The [ISO 27001 certificate](http://seafile.eio.cloud/f/cf8d9db4c06b440d9b53/) (135.8KB, PDF).
