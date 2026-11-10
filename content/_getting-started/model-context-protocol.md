@@ -11,23 +11,19 @@ category: platform-features
 
 An MCP server that connects AI assistants to the **elastic.io** iPaaS platform — letting them discover, build, modify, and debug integration flows directly.
 
-> **Please Note:** The [elastic.io](http://elastic.io/) MCP server is optional. By installing it or connecting an AI agent to [elastic.io](http://elastic.io/) through it, you agree to the [elastic.io](http://elastic.io/) Terms of Use, in particular section 9 (MCP Interface and AI agents). In short:
-* Everything your AI agent does through MCP counts as an action of your account.
-* The agent can read, change and delete data within the permissions of the user account you connect. Use a dedicated user with only the permissions the agent needs, and read-only access wherever possible.
-* Data the agent reads is sent to your AI provider. You are responsible for your agreement with that provider.
-* [elastic.io](http://elastic.io/) does not provide or control your AI agent and is not responsible for its actions or outputs.
+> **Important:** Before proceeding with the installation of the MCP server, please read the applicable [Terms of Use](#terms-of-use).
 
 ## Terms of Use
 
-The elastic.io MCP server is optional. By connecting an AI agent to elastic.io through it, you agree to the [elastic.io Terms of Use](https://www.elastic.io/terms-of-use/), in particular the *MCP Interface and AI agents* section.
+The [elastic.io MCP](https://elastic.io/model-context-protocol/) server is optional. By installing it or connecting an AI agent to [elastic.io](http://elastic.io/) through it, you agree to the [elastic.io Terms of Use](https://www.elastic.io/terms-of-use/), in particular the *MCP Interface and AI agents* section.
 
 In short:
 
-- **Your agent acts as you.** Everything your AI agent does through MCP is done on behalf of your elastic.io account.
-- **Limit its permissions.** The agent can read, change and delete data within the permissions of the user account you connect. Use a dedicated user with only the permissions the agent needs, and read-only access wherever possible.
-- **Your data goes to your AI provider.** Data the agent reads is sent to the AI provider you use. You are responsible for your agreement with that provider.
-- **We don't control your agent.** elastic.io does not provide or control your AI agent and is not responsible for its actions or outputs.
-- **We don't use AI on your data.** elastic.io does not use AI to process your data and does not use it to train AI models.
+- **Your agent acts as you:** Everything your AI agent does through MCP is done on behalf of your account.
+- **Limit its permissions:** The agent can read, change and delete data within the permissions of the user account you connect. Use a dedicated user with only the permissions the agent needs, and read-only access wherever possible.
+- **Your data goes to your AI provider:** Data the agent reads is sent to the AI provider you use. You are responsible for your agreement with that provider.
+- **We don't control your agent:** [elastic.io](http://elastic.io/) does not provide or control your AI agent and is not responsible for its actions or outputs.
+- **We don't use AI on your data:** [elastic.io](http://elastic.io/) does not use AI to process your data and does not use it to train AI models.
 
 ## Quick Start
 
@@ -35,16 +31,16 @@ In short:
 
 1. **Node.js 22+** — download from [nodejs.org](https://nodejs.org/)
 2. **A desktop AI client** — install one of the supported clients (see below)
-3. **elastic.io credentials** — log in to your elastic.io account, go to your profile page, and click the example to copy the `curl` command to clipboard. The setup wizard accepts this command directly — just paste it when prompted.
+3. **Platform credentials** — log in to the platform account, go to your [User Profile](/getting-started/user-profile-information) page, and click the example to copy the `curl` command to clipboard. The setup wizard accepts this command directly — just paste it when prompted.
 
-   ![Where to find the curl command on your profile page](https://filebrowser.psteam.vip/filebrowser/api/public/dl/_drvN-Ah?inline=true)
+{% include img.html max-width="100%" url="/assets/img/getting-started/model-context-protocol/profile-page-curl.png" title="Where to find the curl command on your profile page" %}
 
 ### One-Command Setup
 
 Run this in your terminal — it will detect your installed AI clients and configure them automatically:
 
 **macOS / Linux:**
-```
+```bash
 npx -y @elastic.io/mcp@beta setup
 ```
 
@@ -101,14 +97,14 @@ If you prefer to configure manually, add the following to your client's MCP conf
       "env": {
         "ELASTICIO_API_EMAIL": "your_email@example.com",
         "ELASTICIO_API_KEY": "your_api_key",
-        "ELASTICIO_API_BASE_URL": "https://api.elastic.io"
+        "ELASTICIO_API_BASE_URL": "https://<tenant_api_base_url>"
       }
     }
   }
 }
 ```
 
-> **Note:** ChatGPT / Codex uses TOML format — use `npx -y @elastic.io/mcp@beta setup` for automatic configuration.
+> **Please Note:** ChatGPT / Codex uses TOML format — use `npx -y @elastic.io/mcp@beta setup` for automatic configuration.
 
 ## How It Works
 
@@ -129,9 +125,9 @@ The server exposes tools that let the AI: list components, discover credentials,
 
 | Variable | Required | Default | Description |
 |---|---|---|---|
-| `ELASTICIO_API_EMAIL` | yes | — | Your elastic.io account email |
-| `ELASTICIO_API_KEY` | yes | — | Your elastic.io API key |
-| `ELASTICIO_API_BASE_URL` | no | `https://api.elastic.io` | Base URL for the elastic.io REST API |
+| `ELASTICIO_API_EMAIL` | yes | — | Your user account email |
+| `ELASTICIO_API_KEY` | yes | — | Your user [API key](/getting-started/user-profile-information#manage-your-api-key) |
+| `ELASTICIO_API_BASE_URL` | no | `https://<tenant_api_base_url>` | Base URL for the platform REST API |
 | `ELASTICIO_MCP_LOCAL_SEARCH` | no | — | Set to any truthy value to use local Qdrant + Gemini search instead of platform API |
 | `EMBEDDING_PROVIDER_API_KEY` | if local search | — | Google Gemini API key for generating embeddings |
 | `VECTOR_STORE_URL` | if local search | — | Qdrant instance URL |
@@ -196,8 +192,8 @@ Remove-Item -Recurse -Force "$env:USERPROFILE\.npm\_npx"
 Your elastic.io API key is stored in plain text in each config file listed above. After removing the config entries:
 
 1. Log in to your elastic.io account
-2. Go to your profile page
-3. Regenerate your API key
+2. Go to your [User Profile](/getting-started/user-profile-information) page
+3. Regenerate your [API key](/getting-started/user-profile-information#manage-your-api-key)
 
 This invalidates the old key even if a copy remains on disk.
 
