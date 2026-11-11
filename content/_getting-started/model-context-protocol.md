@@ -15,7 +15,7 @@ An MCP server that connects AI assistants to the **elastic.io** iPaaS platform â
 
 ## Terms of Use
 
-The [elastic.io MCP](https://elastic.io/model-context-protocol/) server is optional. By installing it or connecting an AI agent to [elastic.io](http://elastic.io/) through it, you agree to the [elastic.io Terms of Use](https://www.elastic.io/terms-of-use/), in particular the *MCP Interface and AI agents* section.
+The [elastic.io MCP](https://elastic.io/model-context-protocol/) server is optional. By installing it or connecting an AI agent to [elastic.io](http://elastic.io/) through it, you agree to the [elastic.io Terms of Use](https://www.elastic.io/tou/), in particular the *MCP Interface and AI agents* section.
 
 In short:
 
@@ -205,6 +205,6 @@ Restart any AI clients that were configured to pick up the changes.
 
 ## Related links
 
-- [elastic.io Terms of Use](https://www.elastic.io/terms-of-use/)
+- [elastic.io Terms of Use](https://www.elastic.io/tou/)
 - [nodejs.org](https://nodejs.org/)
 - [Install MCP Server](https://www.npmjs.com/package/@elastic.io/mcp)
