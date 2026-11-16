@@ -2,7 +2,7 @@
 title: Model Context Protocol (MCP)
 layout: article
 section: Platform Features
-order: 20
+order: 0
 description: An MCP server that connects AI assistants to our iPaaS platform — letting them discover, build, modify, and debug integration flows directly.
 category: platform-features
 ---
