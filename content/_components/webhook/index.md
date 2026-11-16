@@ -46,7 +46,8 @@ The Webhook component supports the following authorisation types:
   * **HMAC (sha256/sha512) verification shared secret** - (string, required)
   
   ![HMAC-credentials-settings](img/HMAC-credentials-settings.png)
-
+  > **Please Note:** HMAC authentication signs only the raw request body using HMAC-SHA256 or HMAC-SHA512. The signature is encoded in lowercase hexadecimal with no prefix. Headers, URLs, query parameters, and timestamps are excluded. Signatures remain valid indefinitely.
+  
 ## Triggers
 
 ### Receive
