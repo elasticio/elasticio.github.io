@@ -6,8 +6,8 @@ description: The Creatio component connects our integration platform to your Cre
 icon: creatio.png
 icontext: Creatio component
 category: creatio
-ComponentVersion: 1.1.0
-updatedDate: 2026-09-14
+ComponentVersion: 1.2.1
+updatedDate: 2026-11-19
 ---
 
 ## Table of Contents
@@ -51,25 +51,26 @@ The component uses **OAuth 2.0** for secure API authentication.
 To build an integration flow, you must first register an OAuth 2.0 application in your Creatio CRM environment:
 
 1. Sign in with a system administrator account, click the gear icon to open the `System Designer` page, then go to the `Import and integration` section and click `OAuth 2.0 integrated applications`.
+
 2. Click `New`.
+
 3. Set up your integration by providing the following details:
    - **Name** (required) – any name that helps you identify the integration.
    - **Application URL** – the URL of your application.
    - **Description** – a description of the integration.
-4. Under **Choose allowed OAuth flows**, select `On behalf of a user (authorization code)`.
-5. Open the `AUTHORIZATION CODE` tab and specify:
-   - **Redirect URI** – specify the [Redirect URI](/guides/oauth-callback-redirect-url.html) as `https://{your-tenant-address}/callback/oauth2`, where `{your-tenant-address}` is the domain of your integration platform.
-   - **Permitted users** – specify which users are permitted to use this integration to authorize access via OAuth.
-6. Save the integration.
+
+4. Under **Choose allowed OAuth flows**, select `Server-to-server (client credentials)`. You may need to uncheck `Create separate technical user for this integration` and select existing `System user` 
+
+5. Save `Client Id` and `Client secret`, you will need them in component credentials.
 
 ### Configuring Platform Credentials
 
-When creating a new credential on the elastic.io platform:
+When creating a new credential on the platform:
 
 | Field | Type | Required | Description |
 |---|---|---|---|
-| **Type** | Dropdown | Yes | Select `OAuth2`. |
-| **Choose Auth Client** | Dropdown | Yes | Select an existing client or choose `Add New Auth Client` and supply: Client ID, Client Secret, Authorization Endpoint (`https://{your-creatio-domain}/0/connect/authorize`), Token Endpoint (`https://{your-creatio-domain}/0/connect/token`), and Scope (`offline_access,ApplicationAccess_{ID}`). |
+| **Type** | Dropdown | Yes | Select `OAuth2 Client Credentials`. |
+| **Choose Auth Client** | Dropdown | Yes | Select an existing client or choose `Add New Auth Client` and supply: Client ID, Client Secret, and Token Endpoint (`https://{your-creatio-domain}/0/connect/token`) |
 | **Instance URL** | String | Yes | Base URL of your Creatio environment, e.g. `https://123-crm-bundle.creatio.com`. |
 | **Number of retries** | Number | No | Maximum retry attempts when encountering rate limiting (`429`) or server errors. Defaults to `5`. |
 | **Delay between retries** | Number | No | Delay in milliseconds before retrying after a rate limit error. Defaults to `10000` (10 seconds). |
