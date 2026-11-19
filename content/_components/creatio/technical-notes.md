@@ -5,11 +5,24 @@ description: Technical Notes for Creatio component.
 icon: creatio.png
 icontext: Creatio component
 category: creatio
-ComponentVersion: 1.1.0
-updatedDate: 2026-09-14
+ComponentVersion: 1.2.1
+updatedDate: 2026-11-19
 ---
 
 ## Changelog
+
+### 1.2.1 (November 19, 2026)
+
+* Added new records to the vulnerability ignore list
+
+### 1.2.0 (November 19, 2026)
+
+* Migrated to `OAuth2 Client Credentials` authentication
+* Added GitHub Actions CI/CD workflows, removed CircleCI configuration
+* Removed unused dev dependencies: `better-npm-audit`, `c8`, `chai`, `sinon`, and `ts-node`
+* Update dependencies:
+  * `axios`: `1.20.0` -> `1.21.1`
+  * `fast-xml-parser`: `5.11.1` -> `5.12.1`
 
 ### 1.1.0 (September 14, 2026)
 
